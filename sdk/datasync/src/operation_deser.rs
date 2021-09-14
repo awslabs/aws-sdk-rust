@@ -15,27 +15,25 @@ pub fn parse_cancel_task_execution_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::CancelTaskExecutionError {
-            meta: generic,
-            kind: crate::error::CancelTaskExecutionErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::CancelTaskExecutionError {
+                meta: generic,
+                kind: crate::error::CancelTaskExecutionErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CancelTaskExecutionError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CancelTaskExecutionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::CancelTaskExecutionError {
             meta: generic,
             kind: crate::error::CancelTaskExecutionErrorKind::InvalidRequestException({
@@ -44,11 +42,7 @@ pub fn parse_cancel_task_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CancelTaskExecutionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CancelTaskExecutionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -89,27 +83,25 @@ pub fn parse_create_agent_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::CreateAgentError {
-            meta: generic,
-            kind: crate::error::CreateAgentErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::CreateAgentError {
+                meta: generic,
+                kind: crate::error::CreateAgentErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateAgentError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAgentError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::CreateAgentError {
             meta: generic,
             kind: crate::error::CreateAgentErrorKind::InvalidRequestException({
@@ -118,11 +110,7 @@ pub fn parse_create_agent_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateAgentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAgentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -143,8 +131,11 @@ pub fn parse_create_agent_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_agent_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_agent(response.body().as_ref(), output)
-            .map_err(crate::error::CreateAgentError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_agent(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateAgentError::unhandled)?;
         output.build()
     })
 }
@@ -163,27 +154,25 @@ pub fn parse_create_location_efs_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::CreateLocationEfsError {
-            meta: generic,
-            kind: crate::error::CreateLocationEfsErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::CreateLocationEfsError {
+                meta: generic,
+                kind: crate::error::CreateLocationEfsErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLocationEfsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLocationEfsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::CreateLocationEfsError {
             meta: generic,
             kind: crate::error::CreateLocationEfsErrorKind::InvalidRequestException({
@@ -192,11 +181,7 @@ pub fn parse_create_location_efs_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLocationEfsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLocationEfsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -218,7 +203,7 @@ pub fn parse_create_location_efs_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_location_efs_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_location_efs(
+        output = crate::json_deser::deser_operation_crate_operation_create_location_efs(
             response.body().as_ref(),
             output,
         )
@@ -247,27 +232,25 @@ pub fn parse_create_location_fsx_windows_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::CreateLocationFsxWindowsError {
-            meta: generic,
-            kind: crate::error::CreateLocationFsxWindowsErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::CreateLocationFsxWindowsError {
+                meta: generic,
+                kind: crate::error::CreateLocationFsxWindowsErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLocationFsxWindowsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLocationFsxWindowsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::CreateLocationFsxWindowsError {
             meta: generic,
             kind: crate::error::CreateLocationFsxWindowsErrorKind::InvalidRequestException({
@@ -276,11 +259,7 @@ pub fn parse_create_location_fsx_windows_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLocationFsxWindowsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLocationFsxWindowsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -304,7 +283,7 @@ pub fn parse_create_location_fsx_windows_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_location_fsx_windows_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_location_fsx_windows(
+        output = crate::json_deser::deser_operation_crate_operation_create_location_fsx_windows(
             response.body().as_ref(),
             output,
         )
@@ -327,27 +306,25 @@ pub fn parse_create_location_nfs_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::CreateLocationNfsError {
-            meta: generic,
-            kind: crate::error::CreateLocationNfsErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::CreateLocationNfsError {
+                meta: generic,
+                kind: crate::error::CreateLocationNfsErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLocationNfsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLocationNfsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::CreateLocationNfsError {
             meta: generic,
             kind: crate::error::CreateLocationNfsErrorKind::InvalidRequestException({
@@ -356,11 +333,7 @@ pub fn parse_create_location_nfs_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLocationNfsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLocationNfsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -382,7 +355,7 @@ pub fn parse_create_location_nfs_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_location_nfs_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_location_nfs(
+        output = crate::json_deser::deser_operation_crate_operation_create_location_nfs(
             response.body().as_ref(),
             output,
         )
@@ -411,27 +384,25 @@ pub fn parse_create_location_object_storage_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::CreateLocationObjectStorageError {
-            meta: generic,
-            kind: crate::error::CreateLocationObjectStorageErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::CreateLocationObjectStorageError {
+                meta: generic,
+                kind: crate::error::CreateLocationObjectStorageErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLocationObjectStorageError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLocationObjectStorageError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::CreateLocationObjectStorageError {
             meta: generic,
             kind: crate::error::CreateLocationObjectStorageErrorKind::InvalidRequestException({
@@ -440,11 +411,7 @@ pub fn parse_create_location_object_storage_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLocationObjectStorageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLocationObjectStorageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -468,7 +435,7 @@ pub fn parse_create_location_object_storage_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_location_object_storage_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_location_object_storage(
+        output = crate::json_deser::deser_operation_crate_operation_create_location_object_storage(
             response.body().as_ref(),
             output,
         )
@@ -491,27 +458,25 @@ pub fn parse_create_location_s3_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::CreateLocationS3Error {
-            meta: generic,
-            kind: crate::error::CreateLocationS3ErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::CreateLocationS3Error {
+                meta: generic,
+                kind: crate::error::CreateLocationS3ErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLocationS3Error::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLocationS3Error::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::CreateLocationS3Error {
             meta: generic,
             kind: crate::error::CreateLocationS3ErrorKind::InvalidRequestException({
@@ -520,11 +485,7 @@ pub fn parse_create_location_s3_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLocationS3Error::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLocationS3Error::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -546,9 +507,11 @@ pub fn parse_create_location_s3_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_location_s3_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_create_location_s3(response.body().as_ref(), output)
-                .map_err(crate::error::CreateLocationS3Error::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_location_s3(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateLocationS3Error::unhandled)?;
         output.build()
     })
 }
@@ -567,27 +530,25 @@ pub fn parse_create_location_smb_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::CreateLocationSmbError {
-            meta: generic,
-            kind: crate::error::CreateLocationSmbErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::CreateLocationSmbError {
+                meta: generic,
+                kind: crate::error::CreateLocationSmbErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLocationSmbError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLocationSmbError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::CreateLocationSmbError {
             meta: generic,
             kind: crate::error::CreateLocationSmbErrorKind::InvalidRequestException({
@@ -596,11 +557,7 @@ pub fn parse_create_location_smb_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLocationSmbError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLocationSmbError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -622,7 +579,7 @@ pub fn parse_create_location_smb_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_location_smb_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_location_smb(
+        output = crate::json_deser::deser_operation_crate_operation_create_location_smb(
             response.body().as_ref(),
             output,
         )
@@ -644,27 +601,25 @@ pub fn parse_create_task_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::CreateTaskError {
-            meta: generic,
-            kind: crate::error::CreateTaskErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::CreateTaskError {
+                meta: generic,
+                kind: crate::error::CreateTaskErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateTaskError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTaskError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::CreateTaskError {
             meta: generic,
             kind: crate::error::CreateTaskErrorKind::InvalidRequestException({
@@ -673,11 +628,7 @@ pub fn parse_create_task_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTaskError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -698,8 +649,11 @@ pub fn parse_create_task_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_task_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_task(response.body().as_ref(), output)
-            .map_err(crate::error::CreateTaskError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_task(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateTaskError::unhandled)?;
         output.build()
     })
 }
@@ -717,27 +671,25 @@ pub fn parse_delete_agent_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::DeleteAgentError {
-            meta: generic,
-            kind: crate::error::DeleteAgentErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::DeleteAgentError {
+                meta: generic,
+                kind: crate::error::DeleteAgentErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteAgentError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAgentError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::DeleteAgentError {
             meta: generic,
             kind: crate::error::DeleteAgentErrorKind::InvalidRequestException({
@@ -746,11 +698,7 @@ pub fn parse_delete_agent_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteAgentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAgentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -788,27 +736,25 @@ pub fn parse_delete_location_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::DeleteLocationError {
-            meta: generic,
-            kind: crate::error::DeleteLocationErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::DeleteLocationError {
+                meta: generic,
+                kind: crate::error::DeleteLocationErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteLocationError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteLocationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::DeleteLocationError {
             meta: generic,
             kind: crate::error::DeleteLocationErrorKind::InvalidRequestException({
@@ -817,11 +763,7 @@ pub fn parse_delete_location_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteLocationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteLocationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -859,27 +801,25 @@ pub fn parse_delete_task_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::DeleteTaskError {
-            meta: generic,
-            kind: crate::error::DeleteTaskErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::DeleteTaskError {
+                meta: generic,
+                kind: crate::error::DeleteTaskErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteTaskError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteTaskError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::DeleteTaskError {
             meta: generic,
             kind: crate::error::DeleteTaskErrorKind::InvalidRequestException({
@@ -888,11 +828,7 @@ pub fn parse_delete_task_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteTaskError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -930,27 +866,25 @@ pub fn parse_describe_agent_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::DescribeAgentError {
-            meta: generic,
-            kind: crate::error::DescribeAgentErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::DescribeAgentError {
+                meta: generic,
+                kind: crate::error::DescribeAgentErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAgentError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAgentError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::DescribeAgentError {
             meta: generic,
             kind: crate::error::DescribeAgentErrorKind::InvalidRequestException({
@@ -959,11 +893,7 @@ pub fn parse_describe_agent_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAgentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAgentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -984,9 +914,11 @@ pub fn parse_describe_agent_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_agent_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_agent(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeAgentError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_agent(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeAgentError::unhandled)?;
         output.build()
     })
 }
@@ -1007,27 +939,25 @@ pub fn parse_describe_location_efs_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::DescribeLocationEfsError {
-            meta: generic,
-            kind: crate::error::DescribeLocationEfsErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::DescribeLocationEfsError {
+                meta: generic,
+                kind: crate::error::DescribeLocationEfsErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeLocationEfsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationEfsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::DescribeLocationEfsError {
             meta: generic,
             kind: crate::error::DescribeLocationEfsErrorKind::InvalidRequestException({
@@ -1036,11 +966,7 @@ pub fn parse_describe_location_efs_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeLocationEfsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationEfsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1064,7 +990,7 @@ pub fn parse_describe_location_efs_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_location_efs_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_location_efs(
+        output = crate::json_deser::deser_operation_crate_operation_describe_location_efs(
             response.body().as_ref(),
             output,
         )
@@ -1093,27 +1019,25 @@ pub fn parse_describe_location_fsx_windows_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::DescribeLocationFsxWindowsError {
-            meta: generic,
-            kind: crate::error::DescribeLocationFsxWindowsErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::DescribeLocationFsxWindowsError {
+                meta: generic,
+                kind: crate::error::DescribeLocationFsxWindowsErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeLocationFsxWindowsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationFsxWindowsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::DescribeLocationFsxWindowsError {
             meta: generic,
             kind: crate::error::DescribeLocationFsxWindowsErrorKind::InvalidRequestException({
@@ -1122,11 +1046,7 @@ pub fn parse_describe_location_fsx_windows_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeLocationFsxWindowsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationFsxWindowsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1150,7 +1070,7 @@ pub fn parse_describe_location_fsx_windows_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_location_fsx_windows_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_location_fsx_windows(
+        output = crate::json_deser::deser_operation_crate_operation_describe_location_fsx_windows(
             response.body().as_ref(),
             output,
         )
@@ -1175,27 +1095,25 @@ pub fn parse_describe_location_nfs_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::DescribeLocationNfsError {
-            meta: generic,
-            kind: crate::error::DescribeLocationNfsErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::DescribeLocationNfsError {
+                meta: generic,
+                kind: crate::error::DescribeLocationNfsErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeLocationNfsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationNfsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::DescribeLocationNfsError {
             meta: generic,
             kind: crate::error::DescribeLocationNfsErrorKind::InvalidRequestException({
@@ -1204,11 +1122,7 @@ pub fn parse_describe_location_nfs_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeLocationNfsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationNfsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1232,7 +1146,7 @@ pub fn parse_describe_location_nfs_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_location_nfs_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_location_nfs(
+        output = crate::json_deser::deser_operation_crate_operation_describe_location_nfs(
             response.body().as_ref(),
             output,
         )
@@ -1261,27 +1175,25 @@ pub fn parse_describe_location_object_storage_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::DescribeLocationObjectStorageError {
-            meta: generic,
-            kind: crate::error::DescribeLocationObjectStorageErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::DescribeLocationObjectStorageError {
+                meta: generic,
+                kind: crate::error::DescribeLocationObjectStorageErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeLocationObjectStorageError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationObjectStorageError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::DescribeLocationObjectStorageError {
             meta: generic,
             kind: crate::error::DescribeLocationObjectStorageErrorKind::InvalidRequestException({
@@ -1290,11 +1202,7 @@ pub fn parse_describe_location_object_storage_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeLocationObjectStorageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationObjectStorageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1318,11 +1226,12 @@ pub fn parse_describe_location_object_storage_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_location_object_storage_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_location_object_storage(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeLocationObjectStorageError::unhandled)?;
+        output =
+            crate::json_deser::deser_operation_crate_operation_describe_location_object_storage(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeLocationObjectStorageError::unhandled)?;
         output.build()
     })
 }
@@ -1343,27 +1252,25 @@ pub fn parse_describe_location_s3_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::DescribeLocationS3Error {
-            meta: generic,
-            kind: crate::error::DescribeLocationS3ErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::DescribeLocationS3Error {
+                meta: generic,
+                kind: crate::error::DescribeLocationS3ErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeLocationS3Error::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationS3Error::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::DescribeLocationS3Error {
             meta: generic,
             kind: crate::error::DescribeLocationS3ErrorKind::InvalidRequestException({
@@ -1372,11 +1279,7 @@ pub fn parse_describe_location_s3_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeLocationS3Error::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationS3Error::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1400,7 +1303,7 @@ pub fn parse_describe_location_s3_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_location_s3_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_location_s3(
+        output = crate::json_deser::deser_operation_crate_operation_describe_location_s3(
             response.body().as_ref(),
             output,
         )
@@ -1425,27 +1328,25 @@ pub fn parse_describe_location_smb_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::DescribeLocationSmbError {
-            meta: generic,
-            kind: crate::error::DescribeLocationSmbErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::DescribeLocationSmbError {
+                meta: generic,
+                kind: crate::error::DescribeLocationSmbErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeLocationSmbError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationSmbError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::DescribeLocationSmbError {
             meta: generic,
             kind: crate::error::DescribeLocationSmbErrorKind::InvalidRequestException({
@@ -1454,11 +1355,7 @@ pub fn parse_describe_location_smb_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeLocationSmbError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationSmbError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1482,7 +1379,7 @@ pub fn parse_describe_location_smb_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_location_smb_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_location_smb(
+        output = crate::json_deser::deser_operation_crate_operation_describe_location_smb(
             response.body().as_ref(),
             output,
         )
@@ -1504,27 +1401,25 @@ pub fn parse_describe_task_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::DescribeTaskError {
-            meta: generic,
-            kind: crate::error::DescribeTaskErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::DescribeTaskError {
+                meta: generic,
+                kind: crate::error::DescribeTaskErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeTaskError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTaskError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::DescribeTaskError {
             meta: generic,
             kind: crate::error::DescribeTaskErrorKind::InvalidRequestException({
@@ -1533,11 +1428,7 @@ pub fn parse_describe_task_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTaskError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1558,8 +1449,11 @@ pub fn parse_describe_task_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_task_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_task(response.body().as_ref(), output)
-            .map_err(crate::error::DescribeTaskError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_task(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeTaskError::unhandled)?;
         output.build()
     })
 }
@@ -1580,27 +1474,25 @@ pub fn parse_describe_task_execution_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::DescribeTaskExecutionError {
-            meta: generic,
-            kind: crate::error::DescribeTaskExecutionErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::DescribeTaskExecutionError {
+                meta: generic,
+                kind: crate::error::DescribeTaskExecutionErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeTaskExecutionError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTaskExecutionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::DescribeTaskExecutionError {
             meta: generic,
             kind: crate::error::DescribeTaskExecutionErrorKind::InvalidRequestException({
@@ -1609,11 +1501,7 @@ pub fn parse_describe_task_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeTaskExecutionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTaskExecutionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1637,7 +1525,7 @@ pub fn parse_describe_task_execution_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_task_execution_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_task_execution(
+        output = crate::json_deser::deser_operation_crate_operation_describe_task_execution(
             response.body().as_ref(),
             output,
         )
@@ -1659,27 +1547,25 @@ pub fn parse_list_agents_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::ListAgentsError {
-            meta: generic,
-            kind: crate::error::ListAgentsErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::ListAgentsError {
+                meta: generic,
+                kind: crate::error::ListAgentsErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListAgentsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAgentsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::ListAgentsError {
             meta: generic,
             kind: crate::error::ListAgentsErrorKind::InvalidRequestException({
@@ -1688,11 +1574,7 @@ pub fn parse_list_agents_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListAgentsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAgentsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1713,8 +1595,11 @@ pub fn parse_list_agents_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_agents_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_agents(response.body().as_ref(), output)
-            .map_err(crate::error::ListAgentsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_agents(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListAgentsError::unhandled)?;
         output.build()
     })
 }
@@ -1732,27 +1617,25 @@ pub fn parse_list_locations_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::ListLocationsError {
-            meta: generic,
-            kind: crate::error::ListLocationsErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::ListLocationsError {
+                meta: generic,
+                kind: crate::error::ListLocationsErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListLocationsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLocationsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::ListLocationsError {
             meta: generic,
             kind: crate::error::ListLocationsErrorKind::InvalidRequestException({
@@ -1761,11 +1644,7 @@ pub fn parse_list_locations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListLocationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLocationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1786,9 +1665,11 @@ pub fn parse_list_locations_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_locations_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_locations(response.body().as_ref(), output)
-                .map_err(crate::error::ListLocationsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_locations(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListLocationsError::unhandled)?;
         output.build()
     })
 }
@@ -1809,27 +1690,25 @@ pub fn parse_list_tags_for_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::ListTagsForResourceError {
+                meta: generic,
+                kind: crate::error::ListTagsForResourceErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::ListTagsForResourceError {
             meta: generic,
             kind: crate::error::ListTagsForResourceErrorKind::InvalidRequestException({
@@ -1838,11 +1717,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1866,7 +1741,7 @@ pub fn parse_list_tags_for_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_for_resource_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_tags_for_resource(
+        output = crate::json_deser::deser_operation_crate_operation_list_tags_for_resource(
             response.body().as_ref(),
             output,
         )
@@ -1891,27 +1766,25 @@ pub fn parse_list_task_executions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::ListTaskExecutionsError {
-            meta: generic,
-            kind: crate::error::ListTaskExecutionsErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::ListTaskExecutionsError {
+                meta: generic,
+                kind: crate::error::ListTaskExecutionsErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTaskExecutionsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTaskExecutionsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::ListTaskExecutionsError {
             meta: generic,
             kind: crate::error::ListTaskExecutionsErrorKind::InvalidRequestException({
@@ -1920,11 +1793,7 @@ pub fn parse_list_task_executions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTaskExecutionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTaskExecutionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1948,7 +1817,7 @@ pub fn parse_list_task_executions_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_task_executions_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_task_executions(
+        output = crate::json_deser::deser_operation_crate_operation_list_task_executions(
             response.body().as_ref(),
             output,
         )
@@ -1970,27 +1839,25 @@ pub fn parse_list_tasks_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::ListTasksError {
-            meta: generic,
-            kind: crate::error::ListTasksErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::ListTasksError {
+                meta: generic,
+                kind: crate::error::ListTasksErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTasksError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTasksError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::ListTasksError {
             meta: generic,
             kind: crate::error::ListTasksErrorKind::InvalidRequestException({
@@ -1999,11 +1866,7 @@ pub fn parse_list_tasks_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTasksError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTasksError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2024,8 +1887,11 @@ pub fn parse_list_tasks_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_tasks_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_tasks(response.body().as_ref(), output)
-            .map_err(crate::error::ListTasksError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_tasks(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListTasksError::unhandled)?;
         output.build()
     })
 }
@@ -2046,27 +1912,25 @@ pub fn parse_start_task_execution_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::StartTaskExecutionError {
-            meta: generic,
-            kind: crate::error::StartTaskExecutionErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::StartTaskExecutionError {
+                meta: generic,
+                kind: crate::error::StartTaskExecutionErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartTaskExecutionError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartTaskExecutionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::StartTaskExecutionError {
             meta: generic,
             kind: crate::error::StartTaskExecutionErrorKind::InvalidRequestException({
@@ -2075,11 +1939,7 @@ pub fn parse_start_task_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartTaskExecutionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartTaskExecutionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2103,7 +1963,7 @@ pub fn parse_start_task_execution_response(
         #[allow(unused_mut)]
         let mut output = crate::output::start_task_execution_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_start_task_execution(
+        output = crate::json_deser::deser_operation_crate_operation_start_task_execution(
             response.body().as_ref(),
             output,
         )
@@ -2125,27 +1985,25 @@ pub fn parse_tag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::TagResourceError {
+                meta: generic,
+                kind: crate::error::TagResourceErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::TagResourceError {
             meta: generic,
             kind: crate::error::TagResourceErrorKind::InvalidRequestException({
@@ -2154,11 +2012,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2196,27 +2050,25 @@ pub fn parse_untag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::UntagResourceError {
+                meta: generic,
+                kind: crate::error::UntagResourceErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::UntagResourceError {
             meta: generic,
             kind: crate::error::UntagResourceErrorKind::InvalidRequestException({
@@ -2225,11 +2077,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2267,27 +2115,25 @@ pub fn parse_update_agent_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::UpdateAgentError {
-            meta: generic,
-            kind: crate::error::UpdateAgentErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::UpdateAgentError {
+                meta: generic,
+                kind: crate::error::UpdateAgentErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateAgentError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAgentError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::UpdateAgentError {
             meta: generic,
             kind: crate::error::UpdateAgentErrorKind::InvalidRequestException({
@@ -2296,11 +2142,7 @@ pub fn parse_update_agent_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateAgentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAgentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2339,27 +2181,25 @@ pub fn parse_update_location_nfs_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::UpdateLocationNfsError {
-            meta: generic,
-            kind: crate::error::UpdateLocationNfsErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::UpdateLocationNfsError {
+                meta: generic,
+                kind: crate::error::UpdateLocationNfsErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateLocationNfsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateLocationNfsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::UpdateLocationNfsError {
             meta: generic,
             kind: crate::error::UpdateLocationNfsErrorKind::InvalidRequestException({
@@ -2368,11 +2208,7 @@ pub fn parse_update_location_nfs_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateLocationNfsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateLocationNfsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2418,27 +2254,25 @@ pub fn parse_update_location_object_storage_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::UpdateLocationObjectStorageError {
-            meta: generic,
-            kind: crate::error::UpdateLocationObjectStorageErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::UpdateLocationObjectStorageError {
+                meta: generic,
+                kind: crate::error::UpdateLocationObjectStorageErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateLocationObjectStorageError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateLocationObjectStorageError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::UpdateLocationObjectStorageError {
             meta: generic,
             kind: crate::error::UpdateLocationObjectStorageErrorKind::InvalidRequestException({
@@ -2447,11 +2281,7 @@ pub fn parse_update_location_object_storage_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateLocationObjectStorageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateLocationObjectStorageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2493,27 +2323,25 @@ pub fn parse_update_location_smb_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::UpdateLocationSmbError {
-            meta: generic,
-            kind: crate::error::UpdateLocationSmbErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::UpdateLocationSmbError {
+                meta: generic,
+                kind: crate::error::UpdateLocationSmbErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateLocationSmbError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateLocationSmbError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::UpdateLocationSmbError {
             meta: generic,
             kind: crate::error::UpdateLocationSmbErrorKind::InvalidRequestException({
@@ -2522,11 +2350,7 @@ pub fn parse_update_location_smb_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateLocationSmbError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateLocationSmbError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2565,27 +2389,25 @@ pub fn parse_update_task_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::UpdateTaskError {
-            meta: generic,
-            kind: crate::error::UpdateTaskErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::UpdateTaskError {
+                meta: generic,
+                kind: crate::error::UpdateTaskErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateTaskError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateTaskError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::UpdateTaskError {
             meta: generic,
             kind: crate::error::UpdateTaskErrorKind::InvalidRequestException({
@@ -2594,11 +2416,7 @@ pub fn parse_update_task_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateTaskError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2639,27 +2457,25 @@ pub fn parse_update_task_execution_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::UpdateTaskExecutionError {
-            meta: generic,
-            kind: crate::error::UpdateTaskExecutionErrorKind::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => {
+            crate::error::UpdateTaskExecutionError {
+                meta: generic,
+                kind: crate::error::UpdateTaskExecutionErrorKind::InternalException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateTaskExecutionError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateTaskExecutionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidRequestException" => crate::error::UpdateTaskExecutionError {
             meta: generic,
             kind: crate::error::UpdateTaskExecutionErrorKind::InvalidRequestException({
@@ -2668,11 +2484,7 @@ pub fn parse_update_task_execution_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateTaskExecutionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateTaskExecutionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

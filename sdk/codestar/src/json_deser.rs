@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_concurrent_modification_exceptionjson_err(
+pub fn deser_structure_crate_error_concurrent_modification_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::concurrent_modification_exception::Builder,
 ) -> Result<crate::error::concurrent_modification_exception::Builder, smithy_json::deserialize::Error>
@@ -45,7 +45,7 @@ pub fn deser_structure_concurrent_modification_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_service_role_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_service_role_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_service_role_exception::Builder,
 ) -> Result<crate::error::invalid_service_role_exception::Builder, smithy_json::deserialize::Error>
@@ -85,7 +85,7 @@ pub fn deser_structure_invalid_service_role_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -124,7 +124,7 @@ pub fn deser_structure_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_project_configuration_exceptionjson_err(
+pub fn deser_structure_crate_error_project_configuration_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::project_configuration_exception::Builder,
 ) -> Result<crate::error::project_configuration_exception::Builder, smithy_json::deserialize::Error>
@@ -164,7 +164,7 @@ pub fn deser_structure_project_configuration_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_project_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_project_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::project_not_found_exception::Builder,
 ) -> Result<crate::error::project_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -203,7 +203,7 @@ pub fn deser_structure_project_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_team_member_already_associated_exceptionjson_err(
+pub fn deser_structure_crate_error_team_member_already_associated_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::team_member_already_associated_exception::Builder,
 ) -> Result<
@@ -245,7 +245,7 @@ pub fn deser_structure_team_member_already_associated_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -284,7 +284,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_associate_team_member(
+pub fn deser_operation_crate_operation_associate_team_member(
     input: &[u8],
     mut builder: crate::output::associate_team_member_output::Builder,
 ) -> Result<crate::output::associate_team_member_output::Builder, smithy_json::deserialize::Error> {
@@ -323,7 +323,7 @@ pub fn deser_operation_associate_team_member(
     Ok(builder)
 }
 
-pub fn deser_structure_project_already_exists_exceptionjson_err(
+pub fn deser_structure_crate_error_project_already_exists_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::project_already_exists_exception::Builder,
 ) -> Result<crate::error::project_already_exists_exception::Builder, smithy_json::deserialize::Error>
@@ -363,7 +363,7 @@ pub fn deser_structure_project_already_exists_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_project_creation_failed_exceptionjson_err(
+pub fn deser_structure_crate_error_project_creation_failed_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::project_creation_failed_exception::Builder,
 ) -> Result<crate::error::project_creation_failed_exception::Builder, smithy_json::deserialize::Error>
@@ -403,7 +403,7 @@ pub fn deser_structure_project_creation_failed_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_project(
+pub fn deser_operation_crate_operation_create_project(
     input: &[u8],
     mut builder: crate::output::create_project_output::Builder,
 ) -> Result<crate::output::create_project_output::Builder, smithy_json::deserialize::Error> {
@@ -463,7 +463,7 @@ pub fn deser_operation_create_project(
     Ok(builder)
 }
 
-pub fn deser_structure_user_profile_already_exists_exceptionjson_err(
+pub fn deser_structure_crate_error_user_profile_already_exists_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::user_profile_already_exists_exception::Builder,
 ) -> Result<
@@ -505,7 +505,7 @@ pub fn deser_structure_user_profile_already_exists_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_user_profile(
+pub fn deser_operation_crate_operation_create_user_profile(
     input: &[u8],
     mut builder: crate::output::create_user_profile_output::Builder,
 ) -> Result<crate::output::create_user_profile_output::Builder, smithy_json::deserialize::Error> {
@@ -581,7 +581,7 @@ pub fn deser_operation_create_user_profile(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_project(
+pub fn deser_operation_crate_operation_delete_project(
     input: &[u8],
     mut builder: crate::output::delete_project_output::Builder,
 ) -> Result<crate::output::delete_project_output::Builder, smithy_json::deserialize::Error> {
@@ -627,7 +627,7 @@ pub fn deser_operation_delete_project(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_user_profile(
+pub fn deser_operation_crate_operation_delete_user_profile(
     input: &[u8],
     mut builder: crate::output::delete_user_profile_output::Builder,
 ) -> Result<crate::output::delete_user_profile_output::Builder, smithy_json::deserialize::Error> {
@@ -666,7 +666,7 @@ pub fn deser_operation_delete_user_profile(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_project(
+pub fn deser_operation_crate_operation_describe_project(
     input: &[u8],
     mut builder: crate::output::describe_project_output::Builder,
 ) -> Result<crate::output::describe_project_output::Builder, smithy_json::deserialize::Error> {
@@ -738,8 +738,9 @@ pub fn deser_operation_describe_project(
                         );
                     }
                     "status" => {
-                        builder = builder
-                            .set_status(crate::json_deser::deser_structure_project_status(tokens)?);
+                        builder = builder.set_status(
+                            crate::json_deser::deser_structure_crate_model_project_status(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -759,7 +760,7 @@ pub fn deser_operation_describe_project(
     Ok(builder)
 }
 
-pub fn deser_structure_user_profile_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_user_profile_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::user_profile_not_found_exception::Builder,
 ) -> Result<crate::error::user_profile_not_found_exception::Builder, smithy_json::deserialize::Error>
@@ -799,7 +800,7 @@ pub fn deser_structure_user_profile_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_user_profile(
+pub fn deser_operation_crate_operation_describe_user_profile(
     input: &[u8],
     mut builder: crate::output::describe_user_profile_output::Builder,
 ) -> Result<crate::output::describe_user_profile_output::Builder, smithy_json::deserialize::Error> {
@@ -875,7 +876,7 @@ pub fn deser_operation_describe_user_profile(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_next_token_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_next_token_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_next_token_exception::Builder,
 ) -> Result<crate::error::invalid_next_token_exception::Builder, smithy_json::deserialize::Error> {
@@ -914,7 +915,7 @@ pub fn deser_structure_invalid_next_token_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_list_projects(
+pub fn deser_operation_crate_operation_list_projects(
     input: &[u8],
     mut builder: crate::output::list_projects_output::Builder,
 ) -> Result<crate::output::list_projects_output::Builder, smithy_json::deserialize::Error> {
@@ -929,8 +930,11 @@ pub fn deser_operation_list_projects(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "projects" => {
-                        builder = builder
-                            .set_projects(crate::json_deser::deser_list_projects_list(tokens)?);
+                        builder = builder.set_projects(
+                            crate::json_deser::deser_list_com_amazonaws_codestar_projects_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "nextToken" => {
                         builder = builder.set_next_token(
@@ -957,7 +961,7 @@ pub fn deser_operation_list_projects(
     Ok(builder)
 }
 
-pub fn deser_operation_list_resources(
+pub fn deser_operation_crate_operation_list_resources(
     input: &[u8],
     mut builder: crate::output::list_resources_output::Builder,
 ) -> Result<crate::output::list_resources_output::Builder, smithy_json::deserialize::Error> {
@@ -972,8 +976,11 @@ pub fn deser_operation_list_resources(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "resources" => {
-                        builder = builder
-                            .set_resources(crate::json_deser::deser_list_resources_result(tokens)?);
+                        builder = builder.set_resources(
+                            crate::json_deser::deser_list_com_amazonaws_codestar_resources_result(
+                                tokens,
+                            )?,
+                        );
                     }
                     "nextToken" => {
                         builder = builder.set_next_token(
@@ -1000,7 +1007,7 @@ pub fn deser_operation_list_resources(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_project(
+pub fn deser_operation_crate_operation_list_tags_for_project(
     input: &[u8],
     mut builder: crate::output::list_tags_for_project_output::Builder,
 ) -> Result<crate::output::list_tags_for_project_output::Builder, smithy_json::deserialize::Error> {
@@ -1015,7 +1022,9 @@ pub fn deser_operation_list_tags_for_project(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tags(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_codestar_tags(tokens)?,
+                        );
                     }
                     "nextToken" => {
                         builder = builder.set_next_token(
@@ -1042,7 +1051,7 @@ pub fn deser_operation_list_tags_for_project(
     Ok(builder)
 }
 
-pub fn deser_operation_list_team_members(
+pub fn deser_operation_crate_operation_list_team_members(
     input: &[u8],
     mut builder: crate::output::list_team_members_output::Builder,
 ) -> Result<crate::output::list_team_members_output::Builder, smithy_json::deserialize::Error> {
@@ -1058,7 +1067,7 @@ pub fn deser_operation_list_team_members(
                 match key.to_unescaped()?.as_ref() {
                     "teamMembers" => {
                         builder = builder.set_team_members(
-                            crate::json_deser::deser_list_team_member_result(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codestar_team_member_result(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -1086,7 +1095,7 @@ pub fn deser_operation_list_team_members(
     Ok(builder)
 }
 
-pub fn deser_operation_list_user_profiles(
+pub fn deser_operation_crate_operation_list_user_profiles(
     input: &[u8],
     mut builder: crate::output::list_user_profiles_output::Builder,
 ) -> Result<crate::output::list_user_profiles_output::Builder, smithy_json::deserialize::Error> {
@@ -1102,7 +1111,7 @@ pub fn deser_operation_list_user_profiles(
                 match key.to_unescaped()?.as_ref() {
                     "userProfiles" => {
                         builder = builder.set_user_profiles(
-                            crate::json_deser::deser_list_user_profiles_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codestar_user_profiles_list(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -1130,7 +1139,7 @@ pub fn deser_operation_list_user_profiles(
     Ok(builder)
 }
 
-pub fn deser_operation_tag_project(
+pub fn deser_operation_crate_operation_tag_project(
     input: &[u8],
     mut builder: crate::output::tag_project_output::Builder,
 ) -> Result<crate::output::tag_project_output::Builder, smithy_json::deserialize::Error> {
@@ -1145,7 +1154,9 @@ pub fn deser_operation_tag_project(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tags(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_codestar_tags(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1165,7 +1176,7 @@ pub fn deser_operation_tag_project(
     Ok(builder)
 }
 
-pub fn deser_structure_team_member_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_team_member_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::team_member_not_found_exception::Builder,
 ) -> Result<crate::error::team_member_not_found_exception::Builder, smithy_json::deserialize::Error>
@@ -1205,7 +1216,7 @@ pub fn deser_structure_team_member_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_update_team_member(
+pub fn deser_operation_crate_operation_update_team_member(
     input: &[u8],
     mut builder: crate::output::update_team_member_output::Builder,
 ) -> Result<crate::output::update_team_member_output::Builder, smithy_json::deserialize::Error> {
@@ -1256,7 +1267,7 @@ pub fn deser_operation_update_team_member(
     Ok(builder)
 }
 
-pub fn deser_operation_update_user_profile(
+pub fn deser_operation_crate_operation_update_user_profile(
     input: &[u8],
     mut builder: crate::output::update_user_profile_output::Builder,
 ) -> Result<crate::output::update_user_profile_output::Builder, smithy_json::deserialize::Error> {
@@ -1340,7 +1351,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_project_status<'a, I>(
+pub fn deser_structure_crate_model_project_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ProjectStatus>, smithy_json::deserialize::Error>
 where
@@ -1395,7 +1406,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_projects_list<'a, I>(
+pub fn deser_list_com_amazonaws_codestar_projects_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ProjectSummary>>, smithy_json::deserialize::Error>
 where
@@ -1414,7 +1425,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_project_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_project_summary(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1430,7 +1442,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_resources_result<'a, I>(
+pub fn deser_list_com_amazonaws_codestar_resources_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Resource>>, smithy_json::deserialize::Error>
 where
@@ -1449,7 +1461,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_resource(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_resource(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1465,7 +1478,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_tags<'a, I>(
+pub fn deser_map_com_amazonaws_codestar_tags<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1509,7 +1522,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_team_member_result<'a, I>(
+pub fn deser_list_com_amazonaws_codestar_team_member_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::TeamMember>>, smithy_json::deserialize::Error>
 where
@@ -1528,7 +1541,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_team_member(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_team_member(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1544,7 +1558,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_user_profiles_list<'a, I>(
+pub fn deser_list_com_amazonaws_codestar_user_profiles_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::UserProfileSummary>>, smithy_json::deserialize::Error>
 where
@@ -1564,7 +1578,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_user_profile_summary(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_user_profile_summary(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1579,7 +1595,7 @@ where
     }
 }
 
-pub fn deser_structure_project_summary<'a, I>(
+pub fn deser_structure_crate_model_project_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ProjectSummary>, smithy_json::deserialize::Error>
 where
@@ -1633,7 +1649,7 @@ where
     }
 }
 
-pub fn deser_structure_resource<'a, I>(
+pub fn deser_structure_crate_model_resource<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Resource>, smithy_json::deserialize::Error>
 where
@@ -1678,7 +1694,7 @@ where
     }
 }
 
-pub fn deser_structure_team_member<'a, I>(
+pub fn deser_structure_crate_model_team_member<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TeamMember>, smithy_json::deserialize::Error>
 where
@@ -1739,7 +1755,7 @@ where
     }
 }
 
-pub fn deser_structure_user_profile_summary<'a, I>(
+pub fn deser_structure_crate_model_user_profile_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UserProfileSummary>, smithy_json::deserialize::Error>
 where

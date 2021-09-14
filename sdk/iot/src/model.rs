@@ -1646,7 +1646,7 @@ pub struct MitigationActionParams {
     /// <p>Parameters to define a mitigation action that adds a blank policy to restrict permissions.</p>
     pub replace_default_policy_version_params:
         std::option::Option<crate::model::ReplaceDefaultPolicyVersionParams>,
-    /// <p>Parameters to define a mitigation action that enables AWS IoT logging at a specified level of detail.</p>
+    /// <p>Parameters to define a mitigation action that enables Amazon Web Services IoT Core logging at a specified level of detail.</p>
     pub enable_io_t_logging_params: std::option::Option<crate::model::EnableIoTLoggingParams>,
     /// <p>Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service (Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.</p>
     pub publish_finding_to_sns_params: std::option::Option<crate::model::PublishFindingToSnsParams>,
@@ -1761,7 +1761,7 @@ pub mod mitigation_action_params {
             self.replace_default_policy_version_params = input;
             self
         }
-        /// <p>Parameters to define a mitigation action that enables AWS IoT logging at a specified level of detail.</p>
+        /// <p>Parameters to define a mitigation action that enables Amazon Web Services IoT Core logging at a specified level of detail.</p>
         pub fn enable_io_t_logging_params(
             mut self,
             input: crate::model::EnableIoTLoggingParams,
@@ -1858,7 +1858,7 @@ impl PublishFindingToSnsParams {
     }
 }
 
-/// <p>Parameters used when defining a mitigation action that enable AWS IoT logging.</p>
+/// <p>Parameters used when defining a mitigation action that enable Amazon Web Services IoT Core logging.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableIoTLoggingParams {
@@ -2461,7 +2461,7 @@ pub struct AbortCriteria {
     /// <p>The type of job action to take to initiate the job abort.</p>
     pub action: std::option::Option<crate::model::AbortAction>,
     /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
-    /// <p>AWS IoT supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
+    /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
     pub threshold_percentage: std::option::Option<f64>,
     /// <p>The minimum number of things which must receive job execution notifications before the job
     /// can be aborted.</p>
@@ -2514,7 +2514,7 @@ pub mod abort_criteria {
             self
         }
         /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
-        /// <p>AWS IoT supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
+        /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
         pub fn threshold_percentage(mut self, input: f64) -> Self {
             self.threshold_percentage = Some(input);
             self
@@ -2733,7 +2733,7 @@ pub struct ExponentialRolloutRate {
     /// This parameter allows you to define the initial rate of rollout.</p>
     pub base_rate_per_minute: std::option::Option<i32>,
     /// <p>The exponential factor to increase the rate of rollout for a job.</p>
-    /// <p>AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
+    /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
     pub increment_factor: f64,
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
     pub rate_increase_criteria: std::option::Option<crate::model::RateIncreaseCriteria>,
@@ -2769,7 +2769,7 @@ pub mod exponential_rollout_rate {
             self
         }
         /// <p>The exponential factor to increase the rate of rollout for a job.</p>
-        /// <p>AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
+        /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
         pub fn increment_factor(mut self, input: f64) -> Self {
             self.increment_factor = Some(input);
             self
@@ -3035,7 +3035,7 @@ impl ThingGroupIndexingConfiguration {
 pub struct Field {
     /// <p>The name of the field.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The datatype of the field.</p>
+    /// <p>The data type of the field.</p>
     pub r#type: std::option::Option<crate::model::FieldType>,
 }
 impl std::fmt::Debug for Field {
@@ -3065,7 +3065,7 @@ pub mod field {
             self.name = input;
             self
         }
-        /// <p>The datatype of the field.</p>
+        /// <p>The data type of the field.</p>
         pub fn r#type(mut self, input: crate::model::FieldType) -> Self {
             self.r#type = Some(input);
             self
@@ -3215,7 +3215,8 @@ pub struct ThingIndexingConfiguration {
     /// <ul>
     /// <li>
     /// <p>STATUS – Your thing index contains connectivity status. To enable thing
-    /// connectivity indexing, thingIndexMode must not be set to OFF.</p>
+    /// connectivity indexing, <i>thingIndexMode</i> must not be set to
+    /// OFF.</p>
     /// </li>
     /// <li>
     /// <p>OFF - Thing connectivity status indexing is disabled.</p>
@@ -3282,7 +3283,8 @@ pub mod thing_indexing_configuration {
         /// <ul>
         /// <li>
         /// <p>STATUS – Your thing index contains connectivity status. To enable thing
-        /// connectivity indexing, thingIndexMode must not be set to OFF.</p>
+        /// connectivity indexing, <i>thingIndexMode</i> must not be set to
+        /// OFF.</p>
         /// </li>
         /// <li>
         /// <p>OFF - Thing connectivity status indexing is disabled.</p>
@@ -3444,6 +3446,280 @@ impl ThingIndexingMode {
     }
 }
 impl AsRef<str> for ThingIndexingMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FleetMetricUnit {
+    Bits,
+    BitsSecond,
+    Bytes,
+    BytesSecond,
+    Count,
+    CountSecond,
+    Gigabits,
+    GigabitsSecond,
+    Gigabytes,
+    GigabytesSecond,
+    Kilobits,
+    KilobitsSecond,
+    Kilobytes,
+    KilobytesSecond,
+    Megabits,
+    MegabitsSecond,
+    Megabytes,
+    MegabytesSecond,
+    Microseconds,
+    Milliseconds,
+    None,
+    Percent,
+    Seconds,
+    Terabits,
+    TerabitsSecond,
+    Terabytes,
+    TerabytesSecond,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FleetMetricUnit {
+    fn from(s: &str) -> Self {
+        match s {
+            "Bits" => FleetMetricUnit::Bits,
+            "Bits/Second" => FleetMetricUnit::BitsSecond,
+            "Bytes" => FleetMetricUnit::Bytes,
+            "Bytes/Second" => FleetMetricUnit::BytesSecond,
+            "Count" => FleetMetricUnit::Count,
+            "Count/Second" => FleetMetricUnit::CountSecond,
+            "Gigabits" => FleetMetricUnit::Gigabits,
+            "Gigabits/Second" => FleetMetricUnit::GigabitsSecond,
+            "Gigabytes" => FleetMetricUnit::Gigabytes,
+            "Gigabytes/Second" => FleetMetricUnit::GigabytesSecond,
+            "Kilobits" => FleetMetricUnit::Kilobits,
+            "Kilobits/Second" => FleetMetricUnit::KilobitsSecond,
+            "Kilobytes" => FleetMetricUnit::Kilobytes,
+            "Kilobytes/Second" => FleetMetricUnit::KilobytesSecond,
+            "Megabits" => FleetMetricUnit::Megabits,
+            "Megabits/Second" => FleetMetricUnit::MegabitsSecond,
+            "Megabytes" => FleetMetricUnit::Megabytes,
+            "Megabytes/Second" => FleetMetricUnit::MegabytesSecond,
+            "Microseconds" => FleetMetricUnit::Microseconds,
+            "Milliseconds" => FleetMetricUnit::Milliseconds,
+            "None" => FleetMetricUnit::None,
+            "Percent" => FleetMetricUnit::Percent,
+            "Seconds" => FleetMetricUnit::Seconds,
+            "Terabits" => FleetMetricUnit::Terabits,
+            "Terabits/Second" => FleetMetricUnit::TerabitsSecond,
+            "Terabytes" => FleetMetricUnit::Terabytes,
+            "Terabytes/Second" => FleetMetricUnit::TerabytesSecond,
+            other => FleetMetricUnit::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FleetMetricUnit {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FleetMetricUnit::from(s))
+    }
+}
+impl FleetMetricUnit {
+    pub fn as_str(&self) -> &str {
+        match self {
+            FleetMetricUnit::Bits => "Bits",
+            FleetMetricUnit::BitsSecond => "Bits/Second",
+            FleetMetricUnit::Bytes => "Bytes",
+            FleetMetricUnit::BytesSecond => "Bytes/Second",
+            FleetMetricUnit::Count => "Count",
+            FleetMetricUnit::CountSecond => "Count/Second",
+            FleetMetricUnit::Gigabits => "Gigabits",
+            FleetMetricUnit::GigabitsSecond => "Gigabits/Second",
+            FleetMetricUnit::Gigabytes => "Gigabytes",
+            FleetMetricUnit::GigabytesSecond => "Gigabytes/Second",
+            FleetMetricUnit::Kilobits => "Kilobits",
+            FleetMetricUnit::KilobitsSecond => "Kilobits/Second",
+            FleetMetricUnit::Kilobytes => "Kilobytes",
+            FleetMetricUnit::KilobytesSecond => "Kilobytes/Second",
+            FleetMetricUnit::Megabits => "Megabits",
+            FleetMetricUnit::MegabitsSecond => "Megabits/Second",
+            FleetMetricUnit::Megabytes => "Megabytes",
+            FleetMetricUnit::MegabytesSecond => "Megabytes/Second",
+            FleetMetricUnit::Microseconds => "Microseconds",
+            FleetMetricUnit::Milliseconds => "Milliseconds",
+            FleetMetricUnit::None => "None",
+            FleetMetricUnit::Percent => "Percent",
+            FleetMetricUnit::Seconds => "Seconds",
+            FleetMetricUnit::Terabits => "Terabits",
+            FleetMetricUnit::TerabitsSecond => "Terabits/Second",
+            FleetMetricUnit::Terabytes => "Terabytes",
+            FleetMetricUnit::TerabytesSecond => "Terabytes/Second",
+            FleetMetricUnit::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Bits",
+            "Bits/Second",
+            "Bytes",
+            "Bytes/Second",
+            "Count",
+            "Count/Second",
+            "Gigabits",
+            "Gigabits/Second",
+            "Gigabytes",
+            "Gigabytes/Second",
+            "Kilobits",
+            "Kilobits/Second",
+            "Kilobytes",
+            "Kilobytes/Second",
+            "Megabits",
+            "Megabits/Second",
+            "Megabytes",
+            "Megabytes/Second",
+            "Microseconds",
+            "Milliseconds",
+            "None",
+            "Percent",
+            "Seconds",
+            "Terabits",
+            "Terabits/Second",
+            "Terabytes",
+            "Terabytes/Second",
+        ]
+    }
+}
+impl AsRef<str> for FleetMetricUnit {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The type of aggregation queries.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AggregationType {
+    /// <p>The name of the aggregation type.</p>
+    pub name: std::option::Option<crate::model::AggregationTypeName>,
+    /// <p>A list of the values of aggregation types.</p>
+    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for AggregationType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AggregationType");
+        formatter.field("name", &self.name);
+        formatter.field("values", &self.values);
+        formatter.finish()
+    }
+}
+/// See [`AggregationType`](crate::model::AggregationType)
+pub mod aggregation_type {
+    /// A builder for [`AggregationType`](crate::model::AggregationType)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<crate::model::AggregationTypeName>,
+        pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The name of the aggregation type.</p>
+        pub fn name(mut self, input: crate::model::AggregationTypeName) -> Self {
+            self.name = Some(input);
+            self
+        }
+        pub fn set_name(
+            mut self,
+            input: std::option::Option<crate::model::AggregationTypeName>,
+        ) -> Self {
+            self.name = input;
+            self
+        }
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.values.unwrap_or_default();
+            v.push(input.into());
+            self.values = Some(v);
+            self
+        }
+        pub fn set_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AggregationType`](crate::model::AggregationType)
+        pub fn build(self) -> crate::model::AggregationType {
+            crate::model::AggregationType {
+                name: self.name,
+                values: self.values,
+            }
+        }
+    }
+}
+impl AggregationType {
+    /// Creates a new builder-style object to manufacture [`AggregationType`](crate::model::AggregationType)
+    pub fn builder() -> crate::model::aggregation_type::Builder {
+        crate::model::aggregation_type::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AggregationTypeName {
+    Cardinality,
+    Percentiles,
+    Statistics,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AggregationTypeName {
+    fn from(s: &str) -> Self {
+        match s {
+            "Cardinality" => AggregationTypeName::Cardinality,
+            "Percentiles" => AggregationTypeName::Percentiles,
+            "Statistics" => AggregationTypeName::Statistics,
+            other => AggregationTypeName::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AggregationTypeName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AggregationTypeName::from(s))
+    }
+}
+impl AggregationTypeName {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AggregationTypeName::Cardinality => "Cardinality",
+            AggregationTypeName::Percentiles => "Percentiles",
+            AggregationTypeName::Statistics => "Statistics",
+            AggregationTypeName::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Cardinality", "Percentiles", "Statistics"]
+    }
+}
+impl AsRef<str> for AggregationTypeName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -5017,7 +5293,7 @@ impl ExplicitDeny {
     }
 }
 
-/// <p>Describes an AWS IoT policy.</p>
+/// <p>Describes an IoT policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Policy {
@@ -5956,7 +6232,7 @@ pub struct ThingDocument {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The shadow.</p>
     pub shadow: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+    /// <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core service.</p>
     pub connectivity: std::option::Option<crate::model::ThingConnectivity>,
 }
 impl std::fmt::Debug for ThingDocument {
@@ -6060,7 +6336,7 @@ pub mod thing_document {
             self.shadow = input;
             self
         }
-        /// <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+        /// <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core service.</p>
         pub fn connectivity(mut self, input: crate::model::ThingConnectivity) -> Self {
             self.connectivity = Some(input);
             self
@@ -6097,18 +6373,21 @@ impl ThingDocument {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThingConnectivity {
-    /// <p>True if the thing is connected to the AWS IoT service; false if it is not
+    /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not
     /// connected.</p>
     pub connected: bool,
     /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the
-    /// thing has been disconnected for more than a few weeks, the time value might be missing.</p>
+    /// thing has been disconnected for approximately an hour, the time value might be missing.</p>
     pub timestamp: std::option::Option<i64>,
+    /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
+    pub disconnect_reason: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ThingConnectivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThingConnectivity");
         formatter.field("connected", &self.connected);
         formatter.field("timestamp", &self.timestamp);
+        formatter.field("disconnect_reason", &self.disconnect_reason);
         formatter.finish()
     }
 }
@@ -6120,9 +6399,10 @@ pub mod thing_connectivity {
     pub struct Builder {
         pub(crate) connected: std::option::Option<bool>,
         pub(crate) timestamp: std::option::Option<i64>,
+        pub(crate) disconnect_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>True if the thing is connected to the AWS IoT service; false if it is not
+        /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not
         /// connected.</p>
         pub fn connected(mut self, input: bool) -> Self {
             self.connected = Some(input);
@@ -6133,7 +6413,7 @@ pub mod thing_connectivity {
             self
         }
         /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the
-        /// thing has been disconnected for more than a few weeks, the time value might be missing.</p>
+        /// thing has been disconnected for approximately an hour, the time value might be missing.</p>
         pub fn timestamp(mut self, input: i64) -> Self {
             self.timestamp = Some(input);
             self
@@ -6142,11 +6422,24 @@ pub mod thing_connectivity {
             self.timestamp = input;
             self
         }
+        /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
+        pub fn disconnect_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.disconnect_reason = Some(input.into());
+            self
+        }
+        pub fn set_disconnect_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.disconnect_reason = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ThingConnectivity`](crate::model::ThingConnectivity)
         pub fn build(self) -> crate::model::ThingConnectivity {
             crate::model::ThingConnectivity {
                 connected: self.connected.unwrap_or_default(),
                 timestamp: self.timestamp,
+                disconnect_reason: self.disconnect_reason,
             }
         }
     }
@@ -6162,8 +6455,8 @@ impl ThingConnectivity {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TopicRulePayload {
-    /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">AWS IoT SQL
-    /// Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
+    /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL
+    /// Reference</a> in the <i>IoT Developer Guide</i>.</p>
     pub sql: std::option::Option<std::string::String>,
     /// <p>The description of the rule.</p>
     pub description: std::option::Option<std::string::String>,
@@ -6202,8 +6495,8 @@ pub mod topic_rule_payload {
         pub(crate) error_action: std::option::Option<crate::model::Action>,
     }
     impl Builder {
-        /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">AWS IoT SQL
-        /// Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
+        /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL
+        /// Reference</a> in the <i>IoT Developer Guide</i>.</p>
         pub fn sql(mut self, input: impl Into<std::string::String>) -> Self {
             self.sql = Some(input.into());
             self
@@ -6318,14 +6611,17 @@ pub struct Action {
     /// <p>Send data to CloudWatch Logs.</p>
     pub cloudwatch_logs: std::option::Option<crate::model::CloudwatchLogsAction>,
     /// <p>Write data to an Amazon Elasticsearch Service domain.</p>
+    /// <note>
+    /// <p>This action is deprecated. Use the <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch action</a> instead.</p>
+    /// </note>
     pub elasticsearch: std::option::Option<crate::model::ElasticsearchAction>,
     /// <p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
     pub salesforce: std::option::Option<crate::model::SalesforceAction>,
-    /// <p>Sends message data to an AWS IoT Analytics channel.</p>
+    /// <p>Sends message data to an IoT Analytics channel.</p>
     pub iot_analytics: std::option::Option<crate::model::IotAnalyticsAction>,
-    /// <p>Sends an input to an AWS IoT Events detector.</p>
+    /// <p>Sends an input to an IoT Events detector.</p>
     pub iot_events: std::option::Option<crate::model::IotEventsAction>,
-    /// <p>Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise asset
+    /// <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise asset
     /// properties.</p>
     pub iot_site_wise: std::option::Option<crate::model::IotSiteWiseAction>,
     /// <p>Starts execution of a Step Functions state machine.</p>
@@ -6338,6 +6634,8 @@ pub struct Action {
     pub http: std::option::Option<crate::model::HttpAction>,
     /// <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka cluster.</p>
     pub kafka: std::option::Option<crate::model::KafkaAction>,
+    /// <p>Write data to an Amazon OpenSearch Service domain.</p>
+    pub open_search: std::option::Option<crate::model::OpenSearchAction>,
 }
 impl std::fmt::Debug for Action {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6363,6 +6661,7 @@ impl std::fmt::Debug for Action {
         formatter.field("timestream", &self.timestream);
         formatter.field("http", &self.http);
         formatter.field("kafka", &self.kafka);
+        formatter.field("open_search", &self.open_search);
         formatter.finish()
     }
 }
@@ -6393,6 +6692,7 @@ pub mod action {
         pub(crate) timestream: std::option::Option<crate::model::TimestreamAction>,
         pub(crate) http: std::option::Option<crate::model::HttpAction>,
         pub(crate) kafka: std::option::Option<crate::model::KafkaAction>,
+        pub(crate) open_search: std::option::Option<crate::model::OpenSearchAction>,
     }
     impl Builder {
         /// <p>Write to a DynamoDB table.</p>
@@ -6533,6 +6833,9 @@ pub mod action {
             self
         }
         /// <p>Write data to an Amazon Elasticsearch Service domain.</p>
+        /// <note>
+        /// <p>This action is deprecated. Use the <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch action</a> instead.</p>
+        /// </note>
         pub fn elasticsearch(mut self, input: crate::model::ElasticsearchAction) -> Self {
             self.elasticsearch = Some(input);
             self
@@ -6556,7 +6859,7 @@ pub mod action {
             self.salesforce = input;
             self
         }
-        /// <p>Sends message data to an AWS IoT Analytics channel.</p>
+        /// <p>Sends message data to an IoT Analytics channel.</p>
         pub fn iot_analytics(mut self, input: crate::model::IotAnalyticsAction) -> Self {
             self.iot_analytics = Some(input);
             self
@@ -6568,7 +6871,7 @@ pub mod action {
             self.iot_analytics = input;
             self
         }
-        /// <p>Sends an input to an AWS IoT Events detector.</p>
+        /// <p>Sends an input to an IoT Events detector.</p>
         pub fn iot_events(mut self, input: crate::model::IotEventsAction) -> Self {
             self.iot_events = Some(input);
             self
@@ -6580,7 +6883,7 @@ pub mod action {
             self.iot_events = input;
             self
         }
-        /// <p>Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise asset
+        /// <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise asset
         /// properties.</p>
         pub fn iot_site_wise(mut self, input: crate::model::IotSiteWiseAction) -> Self {
             self.iot_site_wise = Some(input);
@@ -6637,6 +6940,18 @@ pub mod action {
             self.kafka = input;
             self
         }
+        /// <p>Write data to an Amazon OpenSearch Service domain.</p>
+        pub fn open_search(mut self, input: crate::model::OpenSearchAction) -> Self {
+            self.open_search = Some(input);
+            self
+        }
+        pub fn set_open_search(
+            mut self,
+            input: std::option::Option<crate::model::OpenSearchAction>,
+        ) -> Self {
+            self.open_search = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Action`](crate::model::Action)
         pub fn build(self) -> crate::model::Action {
             crate::model::Action {
@@ -6661,6 +6976,7 @@ pub mod action {
                 timestream: self.timestream,
                 http: self.http,
                 kafka: self.kafka,
+                open_search: self.open_search,
             }
         }
     }
@@ -6669,6 +6985,110 @@ impl Action {
     /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action)
     pub fn builder() -> crate::model::action::Builder {
         crate::model::action::Builder::default()
+    }
+}
+
+/// <p>Describes an action that writes data to an Amazon OpenSearch Service
+/// domain.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OpenSearchAction {
+    /// <p>The IAM role ARN that has access to OpenSearch.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The endpoint of your OpenSearch domain.</p>
+    pub endpoint: std::option::Option<std::string::String>,
+    /// <p>The OpenSearch index where you want to store your data.</p>
+    pub index: std::option::Option<std::string::String>,
+    /// <p>The type of document you are storing.</p>
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the document you are storing.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for OpenSearchAction {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OpenSearchAction");
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("endpoint", &self.endpoint);
+        formatter.field("index", &self.index);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+/// See [`OpenSearchAction`](crate::model::OpenSearchAction)
+pub mod open_search_action {
+    /// A builder for [`OpenSearchAction`](crate::model::OpenSearchAction)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) endpoint: std::option::Option<std::string::String>,
+        pub(crate) index: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The IAM role ARN that has access to OpenSearch.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The endpoint of your OpenSearch domain.</p>
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
+            self
+        }
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
+            self
+        }
+        /// <p>The OpenSearch index where you want to store your data.</p>
+        pub fn index(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index = Some(input.into());
+            self
+        }
+        pub fn set_index(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index = input;
+            self
+        }
+        /// <p>The type of document you are storing.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The unique identifier for the document you are storing.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OpenSearchAction`](crate::model::OpenSearchAction)
+        pub fn build(self) -> crate::model::OpenSearchAction {
+            crate::model::OpenSearchAction {
+                role_arn: self.role_arn,
+                endpoint: self.endpoint,
+                index: self.index,
+                r#type: self.r#type,
+                id: self.id,
+            }
+        }
+    }
+}
+impl OpenSearchAction {
+    /// Creates a new builder-style object to manufacture [`OpenSearchAction`](crate::model::OpenSearchAction)
+    pub fn builder() -> crate::model::open_search_action::Builder {
+        crate::model::open_search_action::Builder::default()
     }
 }
 
@@ -6799,8 +7219,8 @@ pub struct HttpAction {
     /// <code>confirmationUrl</code>. If this is a new destination, a new
     /// <code>TopicRuleDestination</code> is created if possible.</p>
     pub url: std::option::Option<std::string::String>,
-    /// <p>The URL to which AWS IoT sends a confirmation message. The value of the confirmation URL
-    /// must be a prefix of the endpoint URL. If you do not specify a confirmation URL AWS IoT uses
+    /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL
+    /// must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses
     /// the endpoint URL as the confirmation URL. If you use substitution templates in the
     /// confirmationUrl, you must create and enable topic rule destinations that match each
     /// possible value of the substitution template before traffic is allowed to your endpoint
@@ -6844,8 +7264,8 @@ pub mod http_action {
             self.url = input;
             self
         }
-        /// <p>The URL to which AWS IoT sends a confirmation message. The value of the confirmation URL
-        /// must be a prefix of the endpoint URL. If you do not specify a confirmation URL AWS IoT uses
+        /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL
+        /// must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses
         /// the endpoint URL as the confirmation URL. If you use substitution templates in the
         /// confirmationUrl, you must create and enable topic rule destinations that match each
         /// possible value of the substitution template before traffic is allowed to your endpoint
@@ -7455,7 +7875,7 @@ impl StepFunctionsAction {
     }
 }
 
-/// <p>Describes an action to send data from an MQTT message that triggered the rule to AWS IoT
+/// <p>Describes an action to send data from an MQTT message that triggered the rule to IoT
 /// SiteWise asset properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7463,8 +7883,7 @@ pub struct IotSiteWiseAction {
     /// <p>A list of asset property value entries.</p>
     pub put_asset_property_value_entries:
         std::option::Option<std::vec::Vec<crate::model::PutAssetPropertyValueEntry>>,
-    /// <p>The ARN of the role that grants AWS IoT permission to send an asset property value to AWS
-    /// IoTSiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust
+    /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust
     /// policy can restrict access to specific asset hierarchy paths.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
@@ -7506,8 +7925,7 @@ pub mod iot_site_wise_action {
             self.put_asset_property_value_entries = input;
             self
         }
-        /// <p>The ARN of the role that grants AWS IoT permission to send an asset property value to AWS
-        /// IoTSiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust
+        /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust
         /// policy can restrict access to specific asset hierarchy paths.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
@@ -7541,7 +7959,7 @@ pub struct PutAssetPropertyValueEntry {
     /// message caused an error in case of failure. Accepts substitution templates. Defaults to a new
     /// UUID.</p>
     pub entry_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS IoT SiteWise asset. You must specify either a <code>propertyAlias</code>
+    /// <p>The ID of the IoT SiteWise asset. You must specify either a <code>propertyAlias</code>
     /// or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution
     /// templates.</p>
     pub asset_id: std::option::Option<std::string::String>,
@@ -7593,7 +8011,7 @@ pub mod put_asset_property_value_entry {
             self.entry_id = input;
             self
         }
-        /// <p>The ID of the AWS IoT SiteWise asset. You must specify either a <code>propertyAlias</code>
+        /// <p>The ID of the IoT SiteWise asset. You must specify either a <code>propertyAlias</code>
         /// or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution
         /// templates.</p>
         pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7876,30 +8294,30 @@ impl AssetPropertyVariant {
     }
 }
 
-/// <p>Sends an input to an AWS IoT Events detector.</p>
+/// <p>Sends an input to an IoT Events detector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IotEventsAction {
-    /// <p>The name of the AWS IoT Events input.</p>
+    /// <p>The name of the IoT Events input.</p>
     pub input_name: std::option::Option<std::string::String>,
     /// <p>The ID of the message. The default <code>messageId</code> is a new UUID value.</p>
     /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a
     /// <code>messageId</code>--a new UUID value will be assigned.</p>
     /// <p>Assign a value to this property to ensure that only one input (message) with a given
-    /// <code>messageId</code> will be processed by an AWS IoT Events detector.</p>
+    /// <code>messageId</code> will be processed by an IoT Events detector.</p>
     pub message_id: std::option::Option<std::string::String>,
     /// <p>Whether to process the event actions as a batch. The default value is
     /// <code>false</code>.</p>
     /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a
     /// <code>messageId</code>. </p>
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
-    /// to an Array, each Array element is treated as a separate message when it's sent to AWS IoT
+    /// to an Array, each Array element is treated as a separate message when it's sent to IoT
     /// Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
     /// <code>BatchPutMessage</code>
     /// </a>.  The resulting array can't have more
     /// than 10 messages.</p>
     pub batch_mode: std::option::Option<bool>,
-    /// <p>The ARN of the role that grants AWS IoT permission to send an input to an AWS IoT
+    /// <p>The ARN of the role that grants IoT permission to send an input to an IoT
     /// Events detector. ("Action":"iotevents:BatchPutMessage").</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
@@ -7925,7 +8343,7 @@ pub mod iot_events_action {
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS IoT Events input.</p>
+        /// <p>The name of the IoT Events input.</p>
         pub fn input_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_name = Some(input.into());
             self
@@ -7938,7 +8356,7 @@ pub mod iot_events_action {
         /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a
         /// <code>messageId</code>--a new UUID value will be assigned.</p>
         /// <p>Assign a value to this property to ensure that only one input (message) with a given
-        /// <code>messageId</code> will be processed by an AWS IoT Events detector.</p>
+        /// <code>messageId</code> will be processed by an IoT Events detector.</p>
         pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_id = Some(input.into());
             self
@@ -7952,7 +8370,7 @@ pub mod iot_events_action {
         /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a
         /// <code>messageId</code>. </p>
         /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
-        /// to an Array, each Array element is treated as a separate message when it's sent to AWS IoT
+        /// to an Array, each Array element is treated as a separate message when it's sent to IoT
         /// Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
         /// <code>BatchPutMessage</code>
         /// </a>.  The resulting array can't have more
@@ -7965,7 +8383,7 @@ pub mod iot_events_action {
             self.batch_mode = input;
             self
         }
-        /// <p>The ARN of the role that grants AWS IoT permission to send an input to an AWS IoT
+        /// <p>The ARN of the role that grants IoT permission to send an input to an IoT
         /// Events detector. ("Action":"iotevents:BatchPutMessage").</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
@@ -7993,7 +8411,7 @@ impl IotEventsAction {
     }
 }
 
-/// <p>Sends message data to an AWS IoT Analytics channel.</p>
+/// <p>Sends message data to an IoT Analytics channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IotAnalyticsAction {
@@ -8007,7 +8425,7 @@ pub struct IotAnalyticsAction {
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
     /// to an Array, each Array element is delivered as a separate message when passed by <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
     /// <code>BatchPutMessage</code>
-    /// </a> to the AWS IoT Analytics channel. The resulting array can't have more
+    /// </a> to the IoT Analytics channel. The resulting array can't have more
     /// than 100 messages.</p>
     pub batch_mode: std::option::Option<bool>,
     /// <p>The ARN of the role which has a policy that grants IoT Analytics permission to send
@@ -8060,7 +8478,7 @@ pub mod iot_analytics_action {
         /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
         /// to an Array, each Array element is delivered as a separate message when passed by <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
         /// <code>BatchPutMessage</code>
-        /// </a> to the AWS IoT Analytics channel. The resulting array can't have more
+        /// </a> to the IoT Analytics channel. The resulting array can't have more
         /// than 100 messages.</p>
         pub fn batch_mode(mut self, input: bool) -> Self {
             self.batch_mode = Some(input);
@@ -8168,6 +8586,9 @@ impl SalesforceAction {
 
 /// <p>Describes an action that writes data to an Amazon Elasticsearch Service
 /// domain.</p>
+/// <note>
+/// <p>This action is deprecated. Use the <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch action</a> instead.</p>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElasticsearchAction {
@@ -11740,7 +12161,7 @@ pub struct OutgoingCertificate {
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The certificate ID.</p>
     pub certificate_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account to which the transfer was made.</p>
+    /// <p>The Amazon Web Services account to which the transfer was made.</p>
     pub transferred_to: std::option::Option<std::string::String>,
     /// <p>The date the transfer was initiated.</p>
     pub transfer_date: std::option::Option<smithy_types::Instant>,
@@ -11799,7 +12220,7 @@ pub mod outgoing_certificate {
             self.certificate_id = input;
             self
         }
-        /// <p>The AWS account to which the transfer was made.</p>
+        /// <p>The Amazon Web Services account to which the transfer was made.</p>
         pub fn transferred_to(mut self, input: impl Into<std::string::String>) -> Self {
             self.transferred_to = Some(input.into());
             self
@@ -12846,8 +13267,69 @@ impl JobExecutionSummaryForJob {
     }
 }
 
+/// <p>The name and ARN of a fleet metric.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FleetMetricNameAndArn {
+    /// <p>The fleet metric name.</p>
+    pub metric_name: std::option::Option<std::string::String>,
+    /// <p>The fleet metric ARN.</p>
+    pub metric_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for FleetMetricNameAndArn {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FleetMetricNameAndArn");
+        formatter.field("metric_name", &self.metric_name);
+        formatter.field("metric_arn", &self.metric_arn);
+        formatter.finish()
+    }
+}
+/// See [`FleetMetricNameAndArn`](crate::model::FleetMetricNameAndArn)
+pub mod fleet_metric_name_and_arn {
+    /// A builder for [`FleetMetricNameAndArn`](crate::model::FleetMetricNameAndArn)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_name: std::option::Option<std::string::String>,
+        pub(crate) metric_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The fleet metric name.</p>
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_name = Some(input.into());
+            self
+        }
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_name = input;
+            self
+        }
+        /// <p>The fleet metric ARN.</p>
+        pub fn metric_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_arn = Some(input.into());
+            self
+        }
+        pub fn set_metric_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FleetMetricNameAndArn`](crate::model::FleetMetricNameAndArn)
+        pub fn build(self) -> crate::model::FleetMetricNameAndArn {
+            crate::model::FleetMetricNameAndArn {
+                metric_name: self.metric_name,
+                metric_arn: self.metric_arn,
+            }
+        }
+    }
+}
+impl FleetMetricNameAndArn {
+    /// Creates a new builder-style object to manufacture [`FleetMetricNameAndArn`](crate::model::FleetMetricNameAndArn)
+    pub fn builder() -> crate::model::fleet_metric_name_and_arn::Builder {
+        crate::model::fleet_metric_name_and_arn::Builder::default()
+    }
+}
+
 /// <p>The summary of a domain configuration. A domain configuration specifies custom IoT-specific information about a domain.
-/// A domain configuration can be associated with an AWS-managed domain
+/// A domain configuration can be associated with an Amazon Web Services-managed domain
 /// (for example, dbc123defghijk.iot.us-west-2.amazonaws.com), a customer managed domain, or a default endpoint.</p>
 /// <ul>
 /// <li>
@@ -16273,9 +16755,9 @@ pub struct OtaUpdateInfo {
     pub ota_update_files: std::option::Option<std::vec::Vec<crate::model::OtaUpdateFile>>,
     /// <p>The status of the OTA update.</p>
     pub ota_update_status: std::option::Option<crate::model::OtaUpdateStatus>,
-    /// <p>The AWS IoT job ID associated with the OTA update.</p>
+    /// <p>The IoT job ID associated with the OTA update.</p>
     pub aws_iot_job_id: std::option::Option<std::string::String>,
-    /// <p>The AWS IoT job ARN associated with the OTA update.</p>
+    /// <p>The IoT job ARN associated with the OTA update.</p>
     pub aws_iot_job_arn: std::option::Option<std::string::String>,
     /// <p>Error information associated with the OTA update.</p>
     pub error_info: std::option::Option<crate::model::ErrorInfo>,
@@ -16495,7 +16977,7 @@ pub mod ota_update_info {
             self.ota_update_status = input;
             self
         }
-        /// <p>The AWS IoT job ID associated with the OTA update.</p>
+        /// <p>The IoT job ID associated with the OTA update.</p>
         pub fn aws_iot_job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_iot_job_id = Some(input.into());
             self
@@ -16507,7 +16989,7 @@ pub mod ota_update_info {
             self.aws_iot_job_id = input;
             self
         }
-        /// <p>The AWS IoT job ARN associated with the OTA update.</p>
+        /// <p>The IoT job ARN associated with the OTA update.</p>
         pub fn aws_iot_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_iot_job_arn = Some(input.into());
             self
@@ -16783,7 +17265,7 @@ impl OtaUpdateFile {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeSigning {
-    /// <p>The ID of the AWSSignerJob which was created to sign the file.</p>
+    /// <p>The ID of the <code>AWSSignerJob</code> which was created to sign the file.</p>
     pub aws_signer_job_id: std::option::Option<std::string::String>,
     /// <p>Describes the code-signing job.</p>
     pub start_signing_job_parameter: std::option::Option<crate::model::StartSigningJobParameter>,
@@ -16814,7 +17296,7 @@ pub mod code_signing {
         pub(crate) custom_code_signing: std::option::Option<crate::model::CustomCodeSigning>,
     }
     impl Builder {
-        /// <p>The ID of the AWSSignerJob which was created to sign the file.</p>
+        /// <p>The ID of the <code>AWSSignerJob</code> which was created to sign the file.</p>
         pub fn aws_signer_job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_signer_job_id = Some(input.into());
             self
@@ -17632,7 +18114,7 @@ pub struct AwsJobExponentialRolloutRate {
     /// factor.</p>
     pub increment_factor: f64,
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
-    /// <p>AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
+    /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
     pub rate_increase_criteria: std::option::Option<crate::model::AwsJobRateIncreaseCriteria>,
 }
 impl std::fmt::Debug for AwsJobExponentialRolloutRate {
@@ -17677,7 +18159,7 @@ pub mod aws_job_exponential_rollout_rate {
             self
         }
         /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
-        /// <p>AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
+        /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
         pub fn rate_increase_criteria(
             mut self,
             input: crate::model::AwsJobRateIncreaseCriteria,
@@ -17902,6 +18384,164 @@ impl EffectivePolicy {
     /// Creates a new builder-style object to manufacture [`EffectivePolicy`](crate::model::EffectivePolicy)
     pub fn builder() -> crate::model::effective_policy::Builder {
         crate::model::effective_policy::Builder::default()
+    }
+}
+
+/// <p>A count of documents that meets a specific aggregation criteria.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Bucket {
+    /// <p>The value counted for the particular bucket.</p>
+    pub key_value: std::option::Option<std::string::String>,
+    /// <p>The number of documents that have the value counted for the particular bucket.</p>
+    pub count: i32,
+}
+impl std::fmt::Debug for Bucket {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Bucket");
+        formatter.field("key_value", &self.key_value);
+        formatter.field("count", &self.count);
+        formatter.finish()
+    }
+}
+/// See [`Bucket`](crate::model::Bucket)
+pub mod bucket {
+    /// A builder for [`Bucket`](crate::model::Bucket)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key_value: std::option::Option<std::string::String>,
+        pub(crate) count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The value counted for the particular bucket.</p>
+        pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_value = Some(input.into());
+            self
+        }
+        pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_value = input;
+            self
+        }
+        /// <p>The number of documents that have the value counted for the particular bucket.</p>
+        pub fn count(mut self, input: i32) -> Self {
+            self.count = Some(input);
+            self
+        }
+        pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Bucket`](crate::model::Bucket)
+        pub fn build(self) -> crate::model::Bucket {
+            crate::model::Bucket {
+                key_value: self.key_value,
+                count: self.count.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl Bucket {
+    /// Creates a new builder-style object to manufacture [`Bucket`](crate::model::Bucket)
+    pub fn builder() -> crate::model::bucket::Builder {
+        crate::model::bucket::Builder::default()
+    }
+}
+
+/// <p>The type of bucketed aggregation performed.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BucketsAggregationType {
+    /// <p>Performs an aggregation that will return a list of buckets. The list of buckets is a ranked list of the number of occurrences of an aggregation field value.</p>
+    pub terms_aggregation: std::option::Option<crate::model::TermsAggregation>,
+}
+impl std::fmt::Debug for BucketsAggregationType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BucketsAggregationType");
+        formatter.field("terms_aggregation", &self.terms_aggregation);
+        formatter.finish()
+    }
+}
+/// See [`BucketsAggregationType`](crate::model::BucketsAggregationType)
+pub mod buckets_aggregation_type {
+    /// A builder for [`BucketsAggregationType`](crate::model::BucketsAggregationType)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) terms_aggregation: std::option::Option<crate::model::TermsAggregation>,
+    }
+    impl Builder {
+        /// <p>Performs an aggregation that will return a list of buckets. The list of buckets is a ranked list of the number of occurrences of an aggregation field value.</p>
+        pub fn terms_aggregation(mut self, input: crate::model::TermsAggregation) -> Self {
+            self.terms_aggregation = Some(input);
+            self
+        }
+        pub fn set_terms_aggregation(
+            mut self,
+            input: std::option::Option<crate::model::TermsAggregation>,
+        ) -> Self {
+            self.terms_aggregation = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BucketsAggregationType`](crate::model::BucketsAggregationType)
+        pub fn build(self) -> crate::model::BucketsAggregationType {
+            crate::model::BucketsAggregationType {
+                terms_aggregation: self.terms_aggregation,
+            }
+        }
+    }
+}
+impl BucketsAggregationType {
+    /// Creates a new builder-style object to manufacture [`BucketsAggregationType`](crate::model::BucketsAggregationType)
+    pub fn builder() -> crate::model::buckets_aggregation_type::Builder {
+        crate::model::buckets_aggregation_type::Builder::default()
+    }
+}
+
+/// <p>Performs an aggregation that will return a list of buckets. The list of buckets is a ranked list of the number of occurrences of an aggregation field value.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TermsAggregation {
+    /// <p>The number of buckets to return in the response. Default to 10.</p>
+    pub max_buckets: i32,
+}
+impl std::fmt::Debug for TermsAggregation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TermsAggregation");
+        formatter.field("max_buckets", &self.max_buckets);
+        formatter.finish()
+    }
+}
+/// See [`TermsAggregation`](crate::model::TermsAggregation)
+pub mod terms_aggregation {
+    /// A builder for [`TermsAggregation`](crate::model::TermsAggregation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_buckets: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The number of buckets to return in the response. Default to 10.</p>
+        pub fn max_buckets(mut self, input: i32) -> Self {
+            self.max_buckets = Some(input);
+            self
+        }
+        pub fn set_max_buckets(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_buckets = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TermsAggregation`](crate::model::TermsAggregation)
+        pub fn build(self) -> crate::model::TermsAggregation {
+            crate::model::TermsAggregation {
+                max_buckets: self.max_buckets.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl TermsAggregation {
+    /// Creates a new builder-style object to manufacture [`TermsAggregation`](crate::model::TermsAggregation)
+    pub fn builder() -> crate::model::terms_aggregation::Builder {
+        crate::model::terms_aggregation::Builder::default()
     }
 }
 
@@ -18289,7 +18929,7 @@ pub struct StreamInfo {
     pub created_at: std::option::Option<smithy_types::Instant>,
     /// <p>The date when the stream was last updated.</p>
     pub last_updated_at: std::option::Option<smithy_types::Instant>,
-    /// <p>An IAM role AWS IoT assumes to access your S3 files.</p>
+    /// <p>An IAM role IoT assumes to access your S3 files.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StreamInfo {
@@ -18392,7 +19032,7 @@ pub mod stream_info {
             self.last_updated_at = input;
             self
         }
-        /// <p>An IAM role AWS IoT assumes to access your S3 files.</p>
+        /// <p>An IAM role IoT assumes to access your S3 files.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -18893,7 +19533,7 @@ pub struct Job {
     /// be automatically set to <code>TIMED_OUT</code>.</p>
     pub timeout_config: std::option::Option<crate::model::TimeoutConfig>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
     /// contain the value in the following format.</p>
     /// <p>
     /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -19155,7 +19795,7 @@ pub mod job {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
         /// contain the value in the following format.</p>
         /// <p>
         /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
@@ -19662,7 +20302,7 @@ pub struct AuthorizerDescription {
     pub creation_date: std::option::Option<smithy_types::Instant>,
     /// <p>The UNIX timestamp of when the authorizer was last updated.</p>
     pub last_modified_date: std::option::Option<smithy_types::Instant>,
-    /// <p>Specifies whether AWS IoT validates the token signature in an authorization request.</p>
+    /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
     pub signing_disabled: std::option::Option<bool>,
 }
 impl std::fmt::Debug for AuthorizerDescription {
@@ -19802,7 +20442,7 @@ pub mod authorizer_description {
             self.last_modified_date = input;
             self
         }
-        /// <p>Specifies whether AWS IoT validates the token signature in an authorization request.</p>
+        /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
         pub fn signing_disabled(mut self, input: bool) -> Self {
             self.signing_disabled = Some(input);
             self
@@ -19848,9 +20488,9 @@ pub struct CertificateDescription {
     pub status: std::option::Option<crate::model::CertificateStatus>,
     /// <p>The certificate data, in PEM format.</p>
     pub certificate_pem: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that owns the certificate.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the certificate.</p>
     pub owned_by: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account of the previous owner of the certificate.</p>
+    /// <p>The ID of the Amazon Web Services account of the previous owner of the certificate.</p>
     pub previous_owned_by: std::option::Option<std::string::String>,
     /// <p>The date and time the certificate was created.</p>
     pub creation_date: std::option::Option<smithy_types::Instant>,
@@ -19969,7 +20609,7 @@ pub mod certificate_description {
             self.certificate_pem = input;
             self
         }
-        /// <p>The ID of the AWS account that owns the certificate.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the certificate.</p>
         pub fn owned_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.owned_by = Some(input.into());
             self
@@ -19978,7 +20618,7 @@ pub mod certificate_description {
             self.owned_by = input;
             self
         }
-        /// <p>The ID of the AWS account of the previous owner of the certificate.</p>
+        /// <p>The ID of the Amazon Web Services account of the previous owner of the certificate.</p>
         pub fn previous_owned_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.previous_owned_by = Some(input.into());
             self
@@ -20160,7 +20800,7 @@ impl CertificateValidity {
     }
 }
 
-/// <p>Data used to transfer a certificate to an AWS account.</p>
+/// <p>Data used to transfer a certificate to an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransferData {
@@ -21188,7 +21828,7 @@ impl VpcDestinationConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpUrlDestinationConfiguration {
-    /// <p>The URL AWS IoT uses to confirm ownership of or access to the topic rule destination
+    /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination
     /// URL.</p>
     pub confirmation_url: std::option::Option<std::string::String>,
 }
@@ -21208,7 +21848,7 @@ pub mod http_url_destination_configuration {
         pub(crate) confirmation_url: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The URL AWS IoT uses to confirm ownership of or access to the topic rule destination
+        /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination
         /// URL.</p>
         pub fn confirmation_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.confirmation_url = Some(input.into());
@@ -21425,7 +22065,7 @@ pub struct AwsJobAbortCriteria {
     /// <p>The type of job action to take to initiate the job abort.</p>
     pub action: std::option::Option<crate::model::AwsJobAbortCriteriaAbortAction>,
     /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
-    /// <p>AWS IoT supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
+    /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
     pub threshold_percentage: std::option::Option<f64>,
     /// <p>The minimum number of things which must receive job execution notifications before the job
     /// can be aborted.</p>
@@ -21481,7 +22121,7 @@ pub mod aws_job_abort_criteria {
             self
         }
         /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
-        /// <p>AWS IoT supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
+        /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
         pub fn threshold_percentage(mut self, input: f64) -> Self {
             self.threshold_percentage = Some(input);
             self

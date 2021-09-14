@@ -1079,6 +1079,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_perform_auto_ml(input);
             self
         }
+        /// <note>
+        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
+        /// Contact AWS Support or your account manager to learn more about access privileges.
+        /// </p>
+        /// </note>
         /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy.
         /// To apply an AutoML strategy that minimizes training time, use
         /// <code>LatencyOptimized</code>.</p>
@@ -1251,6 +1256,18 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The accuracy metric used to optimize the predictor.</p>
+        pub fn optimization_metric(mut self, inp: crate::model::OptimizationMetric) -> Self {
+            self.inner = self.inner.optimization_metric(inp);
+            self
+        }
+        pub fn set_optimization_metric(
+            mut self,
+            input: std::option::Option<crate::model::OptimizationMetric>,
+        ) -> Self {
+            self.inner = self.inner.set_optimization_metric(input);
             self
         }
     }

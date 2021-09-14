@@ -6,7 +6,7 @@ pub fn parse_http_generic_error(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_insufficient_privileges_exception_xml_err(
+pub fn deser_structure_crate_error_insufficient_privileges_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::insufficient_privileges_exception::Builder,
 ) -> Result<crate::error::insufficient_privileges_exception::Builder, smithy_xml::decode::XmlError>
@@ -40,7 +40,7 @@ pub fn deser_structure_insufficient_privileges_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_elastic_beanstalk_service_exception_xml_err(
+pub fn deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::elastic_beanstalk_service_exception::Builder,
 ) -> Result<crate::error::elastic_beanstalk_service_exception::Builder, smithy_xml::decode::XmlError>
@@ -74,7 +74,7 @@ pub fn deser_structure_elastic_beanstalk_service_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_managed_action_invalid_state_exception_xml_err(
+pub fn deser_structure_crate_error_managed_action_invalid_state_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::managed_action_invalid_state_exception::Builder,
 ) -> Result<
@@ -110,7 +110,7 @@ pub fn deser_structure_managed_action_invalid_state_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_apply_environment_managed_action(
+pub fn deser_operation_crate_operation_apply_environment_managed_action(
     inp: &[u8],
     mut builder: crate::output::apply_environment_managed_action_output::Builder,
 ) -> Result<
@@ -139,7 +139,7 @@ pub fn deser_operation_apply_environment_managed_action(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ActionId") /* ActionId com.amazonaws.elasticbeanstalk#ApplyEnvironmentManagedActionOutput$ActionId */ =>  {
+            s if s.matches("ActionId") /* ActionId com.amazonaws.elasticbeanstalk.synthetic#ApplyEnvironmentManagedActionOutput$ActionId */ =>  {
                 let var_4 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -152,7 +152,7 @@ pub fn deser_operation_apply_environment_managed_action(
                 builder = builder.set_action_id(var_4);
             }
             ,
-            s if s.matches("ActionDescription") /* ActionDescription com.amazonaws.elasticbeanstalk#ApplyEnvironmentManagedActionOutput$ActionDescription */ =>  {
+            s if s.matches("ActionDescription") /* ActionDescription com.amazonaws.elasticbeanstalk.synthetic#ApplyEnvironmentManagedActionOutput$ActionDescription */ =>  {
                 let var_5 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -165,7 +165,7 @@ pub fn deser_operation_apply_environment_managed_action(
                 builder = builder.set_action_description(var_5);
             }
             ,
-            s if s.matches("ActionType") /* ActionType com.amazonaws.elasticbeanstalk#ApplyEnvironmentManagedActionOutput$ActionType */ =>  {
+            s if s.matches("ActionType") /* ActionType com.amazonaws.elasticbeanstalk.synthetic#ApplyEnvironmentManagedActionOutput$ActionType */ =>  {
                 let var_6 =
                     Some(
                         Result::<crate::model::ActionType, smithy_xml::decode::XmlError>::Ok(
@@ -179,7 +179,7 @@ pub fn deser_operation_apply_environment_managed_action(
                 builder = builder.set_action_type(var_6);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.elasticbeanstalk#ApplyEnvironmentManagedActionOutput$Status */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.elasticbeanstalk.synthetic#ApplyEnvironmentManagedActionOutput$Status */ =>  {
                 let var_7 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -204,7 +204,7 @@ pub fn deser_operation_apply_environment_managed_action(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_check_dns_availability(
+pub fn deser_operation_crate_operation_check_dns_availability(
     inp: &[u8],
     mut builder: crate::output::check_dns_availability_output::Builder,
 ) -> Result<crate::output::check_dns_availability_output::Builder, smithy_xml::decode::XmlError> {
@@ -230,7 +230,7 @@ pub fn deser_operation_check_dns_availability(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Available") /* Available com.amazonaws.elasticbeanstalk#CheckDNSAvailabilityOutput$Available */ =>  {
+            s if s.matches("Available") /* Available com.amazonaws.elasticbeanstalk.synthetic#CheckDNSAvailabilityOutput$Available */ =>  {
                 let var_8 =
                     Some(
                          {
@@ -245,7 +245,7 @@ pub fn deser_operation_check_dns_availability(
                 builder = builder.set_available(var_8);
             }
             ,
-            s if s.matches("FullyQualifiedCNAME") /* FullyQualifiedCNAME com.amazonaws.elasticbeanstalk#CheckDNSAvailabilityOutput$FullyQualifiedCNAME */ =>  {
+            s if s.matches("FullyQualifiedCNAME") /* FullyQualifiedCNAME com.amazonaws.elasticbeanstalk.synthetic#CheckDNSAvailabilityOutput$FullyQualifiedCNAME */ =>  {
                 let var_9 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -270,7 +270,7 @@ pub fn deser_operation_check_dns_availability(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_environments_exception_xml_err(
+pub fn deser_structure_crate_error_too_many_environments_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_environments_exception::Builder,
 ) -> Result<crate::error::too_many_environments_exception::Builder, smithy_xml::decode::XmlError> {
@@ -303,7 +303,7 @@ pub fn deser_structure_too_many_environments_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_compose_environments(
+pub fn deser_operation_crate_operation_compose_environments(
     inp: &[u8],
     mut builder: crate::output::compose_environments_output::Builder,
 ) -> Result<crate::output::compose_environments_output::Builder, smithy_xml::decode::XmlError> {
@@ -329,17 +329,17 @@ pub fn deser_operation_compose_environments(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Environments") /* Environments com.amazonaws.elasticbeanstalk#ComposeEnvironmentsOutput$Environments */ =>  {
+            s if s.matches("Environments") /* Environments com.amazonaws.elasticbeanstalk.synthetic#ComposeEnvironmentsOutput$Environments */ =>  {
                 let var_11 =
                     Some(
-                        crate::xml_deser::deser_list_environment_descriptions_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_environment_descriptions_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_environments(var_11);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.elasticbeanstalk#ComposeEnvironmentsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.elasticbeanstalk.synthetic#ComposeEnvironmentsOutput$NextToken */ =>  {
                 let var_12 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -364,7 +364,7 @@ pub fn deser_operation_compose_environments(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_applications_exception_xml_err(
+pub fn deser_structure_crate_error_too_many_applications_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_applications_exception::Builder,
 ) -> Result<crate::error::too_many_applications_exception::Builder, smithy_xml::decode::XmlError> {
@@ -397,7 +397,7 @@ pub fn deser_structure_too_many_applications_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_application(
+pub fn deser_operation_crate_operation_create_application(
     inp: &[u8],
     mut builder: crate::output::create_application_output::Builder,
 ) -> Result<crate::output::create_application_output::Builder, smithy_xml::decode::XmlError> {
@@ -423,10 +423,10 @@ pub fn deser_operation_create_application(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Application") /* Application com.amazonaws.elasticbeanstalk#CreateApplicationOutput$Application */ =>  {
+            s if s.matches("Application") /* Application com.amazonaws.elasticbeanstalk.synthetic#CreateApplicationOutput$Application */ =>  {
                 let var_14 =
                     Some(
-                        crate::xml_deser::deser_structure_application_description(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_application_description(&mut tag)
                         ?
                     )
                 ;
@@ -445,7 +445,7 @@ pub fn deser_operation_create_application(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_code_build_not_in_service_region_exception_xml_err(
+pub fn deser_structure_crate_error_code_build_not_in_service_region_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::code_build_not_in_service_region_exception::Builder,
 ) -> Result<
@@ -481,7 +481,7 @@ pub fn deser_structure_code_build_not_in_service_region_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_s3_location_not_in_service_region_exception_xml_err(
+pub fn deser_structure_crate_error_s3_location_not_in_service_region_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::s3_location_not_in_service_region_exception::Builder,
 ) -> Result<
@@ -517,7 +517,7 @@ pub fn deser_structure_s3_location_not_in_service_region_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_application_versions_exception_xml_err(
+pub fn deser_structure_crate_error_too_many_application_versions_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_application_versions_exception::Builder,
 ) -> Result<
@@ -553,7 +553,7 @@ pub fn deser_structure_too_many_application_versions_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_application_version(
+pub fn deser_operation_crate_operation_create_application_version(
     inp: &[u8],
     mut builder: crate::output::create_application_version_output::Builder,
 ) -> Result<crate::output::create_application_version_output::Builder, smithy_xml::decode::XmlError>
@@ -580,10 +580,10 @@ pub fn deser_operation_create_application_version(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ApplicationVersion") /* ApplicationVersion com.amazonaws.elasticbeanstalk#CreateApplicationVersionOutput$ApplicationVersion */ =>  {
+            s if s.matches("ApplicationVersion") /* ApplicationVersion com.amazonaws.elasticbeanstalk.synthetic#CreateApplicationVersionOutput$ApplicationVersion */ =>  {
                 let var_18 =
                     Some(
-                        crate::xml_deser::deser_structure_application_version_description(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_application_version_description(&mut tag)
                         ?
                     )
                 ;
@@ -602,7 +602,7 @@ pub fn deser_operation_create_application_version(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_buckets_exception_xml_err(
+pub fn deser_structure_crate_error_too_many_buckets_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_buckets_exception::Builder,
 ) -> Result<crate::error::too_many_buckets_exception::Builder, smithy_xml::decode::XmlError> {
@@ -635,7 +635,7 @@ pub fn deser_structure_too_many_buckets_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_configuration_templates_exception_xml_err(
+pub fn deser_structure_crate_error_too_many_configuration_templates_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_configuration_templates_exception::Builder,
 ) -> Result<
@@ -671,7 +671,7 @@ pub fn deser_structure_too_many_configuration_templates_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_configuration_template(
+pub fn deser_operation_crate_operation_create_configuration_template(
     inp: &[u8],
     mut builder: crate::output::create_configuration_template_output::Builder,
 ) -> Result<
@@ -700,7 +700,7 @@ pub fn deser_operation_create_configuration_template(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("SolutionStackName") /* SolutionStackName com.amazonaws.elasticbeanstalk#CreateConfigurationTemplateOutput$SolutionStackName */ =>  {
+            s if s.matches("SolutionStackName") /* SolutionStackName com.amazonaws.elasticbeanstalk.synthetic#CreateConfigurationTemplateOutput$SolutionStackName */ =>  {
                 let var_21 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -713,7 +713,7 @@ pub fn deser_operation_create_configuration_template(
                 builder = builder.set_solution_stack_name(var_21);
             }
             ,
-            s if s.matches("PlatformArn") /* PlatformArn com.amazonaws.elasticbeanstalk#CreateConfigurationTemplateOutput$PlatformArn */ =>  {
+            s if s.matches("PlatformArn") /* PlatformArn com.amazonaws.elasticbeanstalk.synthetic#CreateConfigurationTemplateOutput$PlatformArn */ =>  {
                 let var_22 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -726,7 +726,7 @@ pub fn deser_operation_create_configuration_template(
                 builder = builder.set_platform_arn(var_22);
             }
             ,
-            s if s.matches("ApplicationName") /* ApplicationName com.amazonaws.elasticbeanstalk#CreateConfigurationTemplateOutput$ApplicationName */ =>  {
+            s if s.matches("ApplicationName") /* ApplicationName com.amazonaws.elasticbeanstalk.synthetic#CreateConfigurationTemplateOutput$ApplicationName */ =>  {
                 let var_23 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -739,7 +739,7 @@ pub fn deser_operation_create_configuration_template(
                 builder = builder.set_application_name(var_23);
             }
             ,
-            s if s.matches("TemplateName") /* TemplateName com.amazonaws.elasticbeanstalk#CreateConfigurationTemplateOutput$TemplateName */ =>  {
+            s if s.matches("TemplateName") /* TemplateName com.amazonaws.elasticbeanstalk.synthetic#CreateConfigurationTemplateOutput$TemplateName */ =>  {
                 let var_24 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -752,7 +752,7 @@ pub fn deser_operation_create_configuration_template(
                 builder = builder.set_template_name(var_24);
             }
             ,
-            s if s.matches("Description") /* Description com.amazonaws.elasticbeanstalk#CreateConfigurationTemplateOutput$Description */ =>  {
+            s if s.matches("Description") /* Description com.amazonaws.elasticbeanstalk.synthetic#CreateConfigurationTemplateOutput$Description */ =>  {
                 let var_25 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -765,7 +765,7 @@ pub fn deser_operation_create_configuration_template(
                 builder = builder.set_description(var_25);
             }
             ,
-            s if s.matches("EnvironmentName") /* EnvironmentName com.amazonaws.elasticbeanstalk#CreateConfigurationTemplateOutput$EnvironmentName */ =>  {
+            s if s.matches("EnvironmentName") /* EnvironmentName com.amazonaws.elasticbeanstalk.synthetic#CreateConfigurationTemplateOutput$EnvironmentName */ =>  {
                 let var_26 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -778,7 +778,7 @@ pub fn deser_operation_create_configuration_template(
                 builder = builder.set_environment_name(var_26);
             }
             ,
-            s if s.matches("DeploymentStatus") /* DeploymentStatus com.amazonaws.elasticbeanstalk#CreateConfigurationTemplateOutput$DeploymentStatus */ =>  {
+            s if s.matches("DeploymentStatus") /* DeploymentStatus com.amazonaws.elasticbeanstalk.synthetic#CreateConfigurationTemplateOutput$DeploymentStatus */ =>  {
                 let var_27 =
                     Some(
                         Result::<crate::model::ConfigurationDeploymentStatus, smithy_xml::decode::XmlError>::Ok(
@@ -792,7 +792,7 @@ pub fn deser_operation_create_configuration_template(
                 builder = builder.set_deployment_status(var_27);
             }
             ,
-            s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk#CreateConfigurationTemplateOutput$DateCreated */ =>  {
+            s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk.synthetic#CreateConfigurationTemplateOutput$DateCreated */ =>  {
                 let var_28 =
                     Some(
                         smithy_types::Instant::from_str(
@@ -806,7 +806,7 @@ pub fn deser_operation_create_configuration_template(
                 builder = builder.set_date_created(var_28);
             }
             ,
-            s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk#CreateConfigurationTemplateOutput$DateUpdated */ =>  {
+            s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk.synthetic#CreateConfigurationTemplateOutput$DateUpdated */ =>  {
                 let var_29 =
                     Some(
                         smithy_types::Instant::from_str(
@@ -820,10 +820,10 @@ pub fn deser_operation_create_configuration_template(
                 builder = builder.set_date_updated(var_29);
             }
             ,
-            s if s.matches("OptionSettings") /* OptionSettings com.amazonaws.elasticbeanstalk#CreateConfigurationTemplateOutput$OptionSettings */ =>  {
+            s if s.matches("OptionSettings") /* OptionSettings com.amazonaws.elasticbeanstalk.synthetic#CreateConfigurationTemplateOutput$OptionSettings */ =>  {
                 let var_30 =
                     Some(
-                        crate::xml_deser::deser_list_configuration_option_settings_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_configuration_option_settings_list(&mut tag)
                         ?
                     )
                 ;
@@ -842,7 +842,7 @@ pub fn deser_operation_create_configuration_template(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_environment(
+pub fn deser_operation_crate_operation_create_environment(
     inp: &[u8],
     mut builder: crate::output::create_environment_output::Builder,
 ) -> Result<crate::output::create_environment_output::Builder, smithy_xml::decode::XmlError> {
@@ -868,7 +868,7 @@ pub fn deser_operation_create_environment(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("EnvironmentName") /* EnvironmentName com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$EnvironmentName */ =>  {
+            s if s.matches("EnvironmentName") /* EnvironmentName com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$EnvironmentName */ =>  {
                 let var_31 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -881,7 +881,7 @@ pub fn deser_operation_create_environment(
                 builder = builder.set_environment_name(var_31);
             }
             ,
-            s if s.matches("EnvironmentId") /* EnvironmentId com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$EnvironmentId */ =>  {
+            s if s.matches("EnvironmentId") /* EnvironmentId com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$EnvironmentId */ =>  {
                 let var_32 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -894,7 +894,7 @@ pub fn deser_operation_create_environment(
                 builder = builder.set_environment_id(var_32);
             }
             ,
-            s if s.matches("ApplicationName") /* ApplicationName com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$ApplicationName */ =>  {
+            s if s.matches("ApplicationName") /* ApplicationName com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$ApplicationName */ =>  {
                 let var_33 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -907,7 +907,7 @@ pub fn deser_operation_create_environment(
                 builder = builder.set_application_name(var_33);
             }
             ,
-            s if s.matches("VersionLabel") /* VersionLabel com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$VersionLabel */ =>  {
+            s if s.matches("VersionLabel") /* VersionLabel com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$VersionLabel */ =>  {
                 let var_34 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -920,7 +920,7 @@ pub fn deser_operation_create_environment(
                 builder = builder.set_version_label(var_34);
             }
             ,
-            s if s.matches("SolutionStackName") /* SolutionStackName com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$SolutionStackName */ =>  {
+            s if s.matches("SolutionStackName") /* SolutionStackName com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$SolutionStackName */ =>  {
                 let var_35 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -933,7 +933,7 @@ pub fn deser_operation_create_environment(
                 builder = builder.set_solution_stack_name(var_35);
             }
             ,
-            s if s.matches("PlatformArn") /* PlatformArn com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$PlatformArn */ =>  {
+            s if s.matches("PlatformArn") /* PlatformArn com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$PlatformArn */ =>  {
                 let var_36 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -946,7 +946,7 @@ pub fn deser_operation_create_environment(
                 builder = builder.set_platform_arn(var_36);
             }
             ,
-            s if s.matches("TemplateName") /* TemplateName com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$TemplateName */ =>  {
+            s if s.matches("TemplateName") /* TemplateName com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$TemplateName */ =>  {
                 let var_37 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -959,7 +959,7 @@ pub fn deser_operation_create_environment(
                 builder = builder.set_template_name(var_37);
             }
             ,
-            s if s.matches("Description") /* Description com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$Description */ =>  {
+            s if s.matches("Description") /* Description com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$Description */ =>  {
                 let var_38 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -972,7 +972,7 @@ pub fn deser_operation_create_environment(
                 builder = builder.set_description(var_38);
             }
             ,
-            s if s.matches("EndpointURL") /* EndpointURL com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$EndpointURL */ =>  {
+            s if s.matches("EndpointURL") /* EndpointURL com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$EndpointURL */ =>  {
                 let var_39 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -985,7 +985,7 @@ pub fn deser_operation_create_environment(
                 builder = builder.set_endpoint_url(var_39);
             }
             ,
-            s if s.matches("CNAME") /* CNAME com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$CNAME */ =>  {
+            s if s.matches("CNAME") /* CNAME com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$CNAME */ =>  {
                 let var_40 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -998,7 +998,7 @@ pub fn deser_operation_create_environment(
                 builder = builder.set_cname(var_40);
             }
             ,
-            s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$DateCreated */ =>  {
+            s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$DateCreated */ =>  {
                 let var_41 =
                     Some(
                         smithy_types::Instant::from_str(
@@ -1012,7 +1012,7 @@ pub fn deser_operation_create_environment(
                 builder = builder.set_date_created(var_41);
             }
             ,
-            s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$DateUpdated */ =>  {
+            s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$DateUpdated */ =>  {
                 let var_42 =
                     Some(
                         smithy_types::Instant::from_str(
@@ -1026,7 +1026,7 @@ pub fn deser_operation_create_environment(
                 builder = builder.set_date_updated(var_42);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$Status */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$Status */ =>  {
                 let var_43 =
                     Some(
                         Result::<crate::model::EnvironmentStatus, smithy_xml::decode::XmlError>::Ok(
@@ -1040,7 +1040,7 @@ pub fn deser_operation_create_environment(
                 builder = builder.set_status(var_43);
             }
             ,
-            s if s.matches("AbortableOperationInProgress") /* AbortableOperationInProgress com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$AbortableOperationInProgress */ =>  {
+            s if s.matches("AbortableOperationInProgress") /* AbortableOperationInProgress com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$AbortableOperationInProgress */ =>  {
                 let var_44 =
                     Some(
                          {
@@ -1055,7 +1055,7 @@ pub fn deser_operation_create_environment(
                 builder = builder.set_abortable_operation_in_progress(var_44);
             }
             ,
-            s if s.matches("Health") /* Health com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$Health */ =>  {
+            s if s.matches("Health") /* Health com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$Health */ =>  {
                 let var_45 =
                     Some(
                         Result::<crate::model::EnvironmentHealth, smithy_xml::decode::XmlError>::Ok(
@@ -1069,7 +1069,7 @@ pub fn deser_operation_create_environment(
                 builder = builder.set_health(var_45);
             }
             ,
-            s if s.matches("HealthStatus") /* HealthStatus com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$HealthStatus */ =>  {
+            s if s.matches("HealthStatus") /* HealthStatus com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$HealthStatus */ =>  {
                 let var_46 =
                     Some(
                         Result::<crate::model::EnvironmentHealthStatus, smithy_xml::decode::XmlError>::Ok(
@@ -1083,37 +1083,37 @@ pub fn deser_operation_create_environment(
                 builder = builder.set_health_status(var_46);
             }
             ,
-            s if s.matches("Resources") /* Resources com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$Resources */ =>  {
+            s if s.matches("Resources") /* Resources com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$Resources */ =>  {
                 let var_47 =
                     Some(
-                        crate::xml_deser::deser_structure_environment_resources_description(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_environment_resources_description(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_resources(var_47);
             }
             ,
-            s if s.matches("Tier") /* Tier com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$Tier */ =>  {
+            s if s.matches("Tier") /* Tier com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$Tier */ =>  {
                 let var_48 =
                     Some(
-                        crate::xml_deser::deser_structure_environment_tier(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_environment_tier(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_tier(var_48);
             }
             ,
-            s if s.matches("EnvironmentLinks") /* EnvironmentLinks com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$EnvironmentLinks */ =>  {
+            s if s.matches("EnvironmentLinks") /* EnvironmentLinks com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$EnvironmentLinks */ =>  {
                 let var_49 =
                     Some(
-                        crate::xml_deser::deser_list_environment_links(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_environment_links(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_environment_links(var_49);
             }
             ,
-            s if s.matches("EnvironmentArn") /* EnvironmentArn com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$EnvironmentArn */ =>  {
+            s if s.matches("EnvironmentArn") /* EnvironmentArn com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$EnvironmentArn */ =>  {
                 let var_50 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1126,7 +1126,7 @@ pub fn deser_operation_create_environment(
                 builder = builder.set_environment_arn(var_50);
             }
             ,
-            s if s.matches("OperationsRole") /* OperationsRole com.amazonaws.elasticbeanstalk#CreateEnvironmentOutput$OperationsRole */ =>  {
+            s if s.matches("OperationsRole") /* OperationsRole com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$OperationsRole */ =>  {
                 let var_51 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1151,7 +1151,7 @@ pub fn deser_operation_create_environment(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_platforms_exception_xml_err(
+pub fn deser_structure_crate_error_too_many_platforms_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_platforms_exception::Builder,
 ) -> Result<crate::error::too_many_platforms_exception::Builder, smithy_xml::decode::XmlError> {
@@ -1184,7 +1184,7 @@ pub fn deser_structure_too_many_platforms_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_platform_version(
+pub fn deser_operation_crate_operation_create_platform_version(
     inp: &[u8],
     mut builder: crate::output::create_platform_version_output::Builder,
 ) -> Result<crate::output::create_platform_version_output::Builder, smithy_xml::decode::XmlError> {
@@ -1210,20 +1210,20 @@ pub fn deser_operation_create_platform_version(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("PlatformSummary") /* PlatformSummary com.amazonaws.elasticbeanstalk#CreatePlatformVersionOutput$PlatformSummary */ =>  {
+            s if s.matches("PlatformSummary") /* PlatformSummary com.amazonaws.elasticbeanstalk.synthetic#CreatePlatformVersionOutput$PlatformSummary */ =>  {
                 let var_53 =
                     Some(
-                        crate::xml_deser::deser_structure_platform_summary(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_platform_summary(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_platform_summary(var_53);
             }
             ,
-            s if s.matches("Builder") /* Builder com.amazonaws.elasticbeanstalk#CreatePlatformVersionOutput$Builder */ =>  {
+            s if s.matches("Builder") /* Builder com.amazonaws.elasticbeanstalk.synthetic#CreatePlatformVersionOutput$Builder */ =>  {
                 let var_54 =
                     Some(
-                        crate::xml_deser::deser_structure_builder(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_builder(&mut tag)
                         ?
                     )
                 ;
@@ -1242,7 +1242,7 @@ pub fn deser_operation_create_platform_version(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_s3_subscription_required_exception_xml_err(
+pub fn deser_structure_crate_error_s3_subscription_required_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::s3_subscription_required_exception::Builder,
 ) -> Result<crate::error::s3_subscription_required_exception::Builder, smithy_xml::decode::XmlError>
@@ -1276,7 +1276,7 @@ pub fn deser_structure_s3_subscription_required_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_storage_location(
+pub fn deser_operation_crate_operation_create_storage_location(
     inp: &[u8],
     mut builder: crate::output::create_storage_location_output::Builder,
 ) -> Result<crate::output::create_storage_location_output::Builder, smithy_xml::decode::XmlError> {
@@ -1302,7 +1302,7 @@ pub fn deser_operation_create_storage_location(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("S3Bucket") /* S3Bucket com.amazonaws.elasticbeanstalk#CreateStorageLocationOutput$S3Bucket */ =>  {
+            s if s.matches("S3Bucket") /* S3Bucket com.amazonaws.elasticbeanstalk.synthetic#CreateStorageLocationOutput$S3Bucket */ =>  {
                 let var_56 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1327,7 +1327,7 @@ pub fn deser_operation_create_storage_location(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_operation_in_progress_exception_xml_err(
+pub fn deser_structure_crate_error_operation_in_progress_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::operation_in_progress_exception::Builder,
 ) -> Result<crate::error::operation_in_progress_exception::Builder, smithy_xml::decode::XmlError> {
@@ -1360,7 +1360,7 @@ pub fn deser_structure_operation_in_progress_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_source_bundle_deletion_exception_xml_err(
+pub fn deser_structure_crate_error_source_bundle_deletion_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::source_bundle_deletion_exception::Builder,
 ) -> Result<crate::error::source_bundle_deletion_exception::Builder, smithy_xml::decode::XmlError> {
@@ -1393,7 +1393,7 @@ pub fn deser_structure_source_bundle_deletion_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_platform_version_still_referenced_exception_xml_err(
+pub fn deser_structure_crate_error_platform_version_still_referenced_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::platform_version_still_referenced_exception::Builder,
 ) -> Result<
@@ -1429,7 +1429,7 @@ pub fn deser_structure_platform_version_still_referenced_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_delete_platform_version(
+pub fn deser_operation_crate_operation_delete_platform_version(
     inp: &[u8],
     mut builder: crate::output::delete_platform_version_output::Builder,
 ) -> Result<crate::output::delete_platform_version_output::Builder, smithy_xml::decode::XmlError> {
@@ -1455,10 +1455,10 @@ pub fn deser_operation_delete_platform_version(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("PlatformSummary") /* PlatformSummary com.amazonaws.elasticbeanstalk#DeletePlatformVersionOutput$PlatformSummary */ =>  {
+            s if s.matches("PlatformSummary") /* PlatformSummary com.amazonaws.elasticbeanstalk.synthetic#DeletePlatformVersionOutput$PlatformSummary */ =>  {
                 let var_60 =
                     Some(
-                        crate::xml_deser::deser_structure_platform_summary(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_platform_summary(&mut tag)
                         ?
                     )
                 ;
@@ -1477,7 +1477,7 @@ pub fn deser_operation_delete_platform_version(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_account_attributes(
+pub fn deser_operation_crate_operation_describe_account_attributes(
     inp: &[u8],
     mut builder: crate::output::describe_account_attributes_output::Builder,
 ) -> Result<crate::output::describe_account_attributes_output::Builder, smithy_xml::decode::XmlError>
@@ -1504,10 +1504,10 @@ pub fn deser_operation_describe_account_attributes(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ResourceQuotas") /* ResourceQuotas com.amazonaws.elasticbeanstalk#DescribeAccountAttributesOutput$ResourceQuotas */ =>  {
+            s if s.matches("ResourceQuotas") /* ResourceQuotas com.amazonaws.elasticbeanstalk.synthetic#DescribeAccountAttributesOutput$ResourceQuotas */ =>  {
                 let var_61 =
                     Some(
-                        crate::xml_deser::deser_structure_resource_quotas(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_resource_quotas(&mut tag)
                         ?
                     )
                 ;
@@ -1526,7 +1526,7 @@ pub fn deser_operation_describe_account_attributes(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_applications(
+pub fn deser_operation_crate_operation_describe_applications(
     inp: &[u8],
     mut builder: crate::output::describe_applications_output::Builder,
 ) -> Result<crate::output::describe_applications_output::Builder, smithy_xml::decode::XmlError> {
@@ -1552,10 +1552,10 @@ pub fn deser_operation_describe_applications(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Applications") /* Applications com.amazonaws.elasticbeanstalk#DescribeApplicationsOutput$Applications */ =>  {
+            s if s.matches("Applications") /* Applications com.amazonaws.elasticbeanstalk.synthetic#DescribeApplicationsOutput$Applications */ =>  {
                 let var_62 =
                     Some(
-                        crate::xml_deser::deser_list_application_description_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_application_description_list(&mut tag)
                         ?
                     )
                 ;
@@ -1574,7 +1574,7 @@ pub fn deser_operation_describe_applications(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_application_versions(
+pub fn deser_operation_crate_operation_describe_application_versions(
     inp: &[u8],
     mut builder: crate::output::describe_application_versions_output::Builder,
 ) -> Result<
@@ -1603,17 +1603,17 @@ pub fn deser_operation_describe_application_versions(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ApplicationVersions") /* ApplicationVersions com.amazonaws.elasticbeanstalk#DescribeApplicationVersionsOutput$ApplicationVersions */ =>  {
+            s if s.matches("ApplicationVersions") /* ApplicationVersions com.amazonaws.elasticbeanstalk.synthetic#DescribeApplicationVersionsOutput$ApplicationVersions */ =>  {
                 let var_63 =
                     Some(
-                        crate::xml_deser::deser_list_application_version_description_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_application_version_description_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_application_versions(var_63);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.elasticbeanstalk#DescribeApplicationVersionsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.elasticbeanstalk.synthetic#DescribeApplicationVersionsOutput$NextToken */ =>  {
                 let var_64 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1638,7 +1638,7 @@ pub fn deser_operation_describe_application_versions(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_configuration_options(
+pub fn deser_operation_crate_operation_describe_configuration_options(
     inp: &[u8],
     mut builder: crate::output::describe_configuration_options_output::Builder,
 ) -> Result<
@@ -1667,7 +1667,7 @@ pub fn deser_operation_describe_configuration_options(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("SolutionStackName") /* SolutionStackName com.amazonaws.elasticbeanstalk#DescribeConfigurationOptionsOutput$SolutionStackName */ =>  {
+            s if s.matches("SolutionStackName") /* SolutionStackName com.amazonaws.elasticbeanstalk.synthetic#DescribeConfigurationOptionsOutput$SolutionStackName */ =>  {
                 let var_65 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1680,7 +1680,7 @@ pub fn deser_operation_describe_configuration_options(
                 builder = builder.set_solution_stack_name(var_65);
             }
             ,
-            s if s.matches("PlatformArn") /* PlatformArn com.amazonaws.elasticbeanstalk#DescribeConfigurationOptionsOutput$PlatformArn */ =>  {
+            s if s.matches("PlatformArn") /* PlatformArn com.amazonaws.elasticbeanstalk.synthetic#DescribeConfigurationOptionsOutput$PlatformArn */ =>  {
                 let var_66 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1693,10 +1693,10 @@ pub fn deser_operation_describe_configuration_options(
                 builder = builder.set_platform_arn(var_66);
             }
             ,
-            s if s.matches("Options") /* Options com.amazonaws.elasticbeanstalk#DescribeConfigurationOptionsOutput$Options */ =>  {
+            s if s.matches("Options") /* Options com.amazonaws.elasticbeanstalk.synthetic#DescribeConfigurationOptionsOutput$Options */ =>  {
                 let var_67 =
                     Some(
-                        crate::xml_deser::deser_list_configuration_option_descriptions_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_configuration_option_descriptions_list(&mut tag)
                         ?
                     )
                 ;
@@ -1715,7 +1715,7 @@ pub fn deser_operation_describe_configuration_options(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_configuration_settings(
+pub fn deser_operation_crate_operation_describe_configuration_settings(
     inp: &[u8],
     mut builder: crate::output::describe_configuration_settings_output::Builder,
 ) -> Result<
@@ -1744,10 +1744,10 @@ pub fn deser_operation_describe_configuration_settings(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ConfigurationSettings") /* ConfigurationSettings com.amazonaws.elasticbeanstalk#DescribeConfigurationSettingsOutput$ConfigurationSettings */ =>  {
+            s if s.matches("ConfigurationSettings") /* ConfigurationSettings com.amazonaws.elasticbeanstalk.synthetic#DescribeConfigurationSettingsOutput$ConfigurationSettings */ =>  {
                 let var_68 =
                     Some(
-                        crate::xml_deser::deser_list_configuration_settings_description_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_configuration_settings_description_list(&mut tag)
                         ?
                     )
                 ;
@@ -1766,7 +1766,7 @@ pub fn deser_operation_describe_configuration_settings(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_request_exception_xml_err(
+pub fn deser_structure_crate_error_invalid_request_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_request_exception::Builder,
 ) -> Result<crate::error::invalid_request_exception::Builder, smithy_xml::decode::XmlError> {
@@ -1799,7 +1799,7 @@ pub fn deser_structure_invalid_request_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_environment_health(
+pub fn deser_operation_crate_operation_describe_environment_health(
     inp: &[u8],
     mut builder: crate::output::describe_environment_health_output::Builder,
 ) -> Result<crate::output::describe_environment_health_output::Builder, smithy_xml::decode::XmlError>
@@ -1826,7 +1826,7 @@ pub fn deser_operation_describe_environment_health(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("EnvironmentName") /* EnvironmentName com.amazonaws.elasticbeanstalk#DescribeEnvironmentHealthOutput$EnvironmentName */ =>  {
+            s if s.matches("EnvironmentName") /* EnvironmentName com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentHealthOutput$EnvironmentName */ =>  {
                 let var_70 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1839,7 +1839,7 @@ pub fn deser_operation_describe_environment_health(
                 builder = builder.set_environment_name(var_70);
             }
             ,
-            s if s.matches("HealthStatus") /* HealthStatus com.amazonaws.elasticbeanstalk#DescribeEnvironmentHealthOutput$HealthStatus */ =>  {
+            s if s.matches("HealthStatus") /* HealthStatus com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentHealthOutput$HealthStatus */ =>  {
                 let var_71 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1852,7 +1852,7 @@ pub fn deser_operation_describe_environment_health(
                 builder = builder.set_health_status(var_71);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.elasticbeanstalk#DescribeEnvironmentHealthOutput$Status */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentHealthOutput$Status */ =>  {
                 let var_72 =
                     Some(
                         Result::<crate::model::EnvironmentHealth, smithy_xml::decode::XmlError>::Ok(
@@ -1866,7 +1866,7 @@ pub fn deser_operation_describe_environment_health(
                 builder = builder.set_status(var_72);
             }
             ,
-            s if s.matches("Color") /* Color com.amazonaws.elasticbeanstalk#DescribeEnvironmentHealthOutput$Color */ =>  {
+            s if s.matches("Color") /* Color com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentHealthOutput$Color */ =>  {
                 let var_73 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1879,37 +1879,37 @@ pub fn deser_operation_describe_environment_health(
                 builder = builder.set_color(var_73);
             }
             ,
-            s if s.matches("Causes") /* Causes com.amazonaws.elasticbeanstalk#DescribeEnvironmentHealthOutput$Causes */ =>  {
+            s if s.matches("Causes") /* Causes com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentHealthOutput$Causes */ =>  {
                 let var_74 =
                     Some(
-                        crate::xml_deser::deser_list_causes(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_causes(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_causes(var_74);
             }
             ,
-            s if s.matches("ApplicationMetrics") /* ApplicationMetrics com.amazonaws.elasticbeanstalk#DescribeEnvironmentHealthOutput$ApplicationMetrics */ =>  {
+            s if s.matches("ApplicationMetrics") /* ApplicationMetrics com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentHealthOutput$ApplicationMetrics */ =>  {
                 let var_75 =
                     Some(
-                        crate::xml_deser::deser_structure_application_metrics(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_application_metrics(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_application_metrics(var_75);
             }
             ,
-            s if s.matches("InstancesHealth") /* InstancesHealth com.amazonaws.elasticbeanstalk#DescribeEnvironmentHealthOutput$InstancesHealth */ =>  {
+            s if s.matches("InstancesHealth") /* InstancesHealth com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentHealthOutput$InstancesHealth */ =>  {
                 let var_76 =
                     Some(
-                        crate::xml_deser::deser_structure_instance_health_summary(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_instance_health_summary(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_instances_health(var_76);
             }
             ,
-            s if s.matches("RefreshedAt") /* RefreshedAt com.amazonaws.elasticbeanstalk#DescribeEnvironmentHealthOutput$RefreshedAt */ =>  {
+            s if s.matches("RefreshedAt") /* RefreshedAt com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentHealthOutput$RefreshedAt */ =>  {
                 let var_77 =
                     Some(
                         smithy_types::Instant::from_str(
@@ -1935,7 +1935,7 @@ pub fn deser_operation_describe_environment_health(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_environment_managed_action_history(
+pub fn deser_operation_crate_operation_describe_environment_managed_action_history(
     inp: &[u8],
     mut builder: crate::output::describe_environment_managed_action_history_output::Builder,
 ) -> Result<
@@ -1964,17 +1964,17 @@ pub fn deser_operation_describe_environment_managed_action_history(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ManagedActionHistoryItems") /* ManagedActionHistoryItems com.amazonaws.elasticbeanstalk#DescribeEnvironmentManagedActionHistoryOutput$ManagedActionHistoryItems */ =>  {
+            s if s.matches("ManagedActionHistoryItems") /* ManagedActionHistoryItems com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentManagedActionHistoryOutput$ManagedActionHistoryItems */ =>  {
                 let var_78 =
                     Some(
-                        crate::xml_deser::deser_list_managed_action_history_items(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_managed_action_history_items(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_managed_action_history_items(var_78);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.elasticbeanstalk#DescribeEnvironmentManagedActionHistoryOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentManagedActionHistoryOutput$NextToken */ =>  {
                 let var_79 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1999,7 +1999,7 @@ pub fn deser_operation_describe_environment_managed_action_history(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_environment_managed_actions(
+pub fn deser_operation_crate_operation_describe_environment_managed_actions(
     inp: &[u8],
     mut builder: crate::output::describe_environment_managed_actions_output::Builder,
 ) -> Result<
@@ -2028,10 +2028,10 @@ pub fn deser_operation_describe_environment_managed_actions(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ManagedActions") /* ManagedActions com.amazonaws.elasticbeanstalk#DescribeEnvironmentManagedActionsOutput$ManagedActions */ =>  {
+            s if s.matches("ManagedActions") /* ManagedActions com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentManagedActionsOutput$ManagedActions */ =>  {
                 let var_80 =
                     Some(
-                        crate::xml_deser::deser_list_managed_actions(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_managed_actions(&mut tag)
                         ?
                     )
                 ;
@@ -2050,7 +2050,7 @@ pub fn deser_operation_describe_environment_managed_actions(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_environment_resources(
+pub fn deser_operation_crate_operation_describe_environment_resources(
     inp: &[u8],
     mut builder: crate::output::describe_environment_resources_output::Builder,
 ) -> Result<
@@ -2079,10 +2079,10 @@ pub fn deser_operation_describe_environment_resources(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("EnvironmentResources") /* EnvironmentResources com.amazonaws.elasticbeanstalk#DescribeEnvironmentResourcesOutput$EnvironmentResources */ =>  {
+            s if s.matches("EnvironmentResources") /* EnvironmentResources com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentResourcesOutput$EnvironmentResources */ =>  {
                 let var_81 =
                     Some(
-                        crate::xml_deser::deser_structure_environment_resource_description(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_environment_resource_description(&mut tag)
                         ?
                     )
                 ;
@@ -2101,7 +2101,7 @@ pub fn deser_operation_describe_environment_resources(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_environments(
+pub fn deser_operation_crate_operation_describe_environments(
     inp: &[u8],
     mut builder: crate::output::describe_environments_output::Builder,
 ) -> Result<crate::output::describe_environments_output::Builder, smithy_xml::decode::XmlError> {
@@ -2127,17 +2127,17 @@ pub fn deser_operation_describe_environments(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Environments") /* Environments com.amazonaws.elasticbeanstalk#DescribeEnvironmentsOutput$Environments */ =>  {
+            s if s.matches("Environments") /* Environments com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentsOutput$Environments */ =>  {
                 let var_82 =
                     Some(
-                        crate::xml_deser::deser_list_environment_descriptions_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_environment_descriptions_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_environments(var_82);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.elasticbeanstalk#DescribeEnvironmentsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentsOutput$NextToken */ =>  {
                 let var_83 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2162,7 +2162,7 @@ pub fn deser_operation_describe_environments(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_events(
+pub fn deser_operation_crate_operation_describe_events(
     inp: &[u8],
     mut builder: crate::output::describe_events_output::Builder,
 ) -> Result<crate::output::describe_events_output::Builder, smithy_xml::decode::XmlError> {
@@ -2188,17 +2188,17 @@ pub fn deser_operation_describe_events(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Events") /* Events com.amazonaws.elasticbeanstalk#DescribeEventsOutput$Events */ =>  {
+            s if s.matches("Events") /* Events com.amazonaws.elasticbeanstalk.synthetic#DescribeEventsOutput$Events */ =>  {
                 let var_84 =
                     Some(
-                        crate::xml_deser::deser_list_event_description_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_event_description_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_events(var_84);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.elasticbeanstalk#DescribeEventsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.elasticbeanstalk.synthetic#DescribeEventsOutput$NextToken */ =>  {
                 let var_85 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2223,7 +2223,7 @@ pub fn deser_operation_describe_events(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_instances_health(
+pub fn deser_operation_crate_operation_describe_instances_health(
     inp: &[u8],
     mut builder: crate::output::describe_instances_health_output::Builder,
 ) -> Result<crate::output::describe_instances_health_output::Builder, smithy_xml::decode::XmlError>
@@ -2250,17 +2250,17 @@ pub fn deser_operation_describe_instances_health(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("InstanceHealthList") /* InstanceHealthList com.amazonaws.elasticbeanstalk#DescribeInstancesHealthOutput$InstanceHealthList */ =>  {
+            s if s.matches("InstanceHealthList") /* InstanceHealthList com.amazonaws.elasticbeanstalk.synthetic#DescribeInstancesHealthOutput$InstanceHealthList */ =>  {
                 let var_86 =
                     Some(
-                        crate::xml_deser::deser_list_instance_health_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_instance_health_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_instance_health_list(var_86);
             }
             ,
-            s if s.matches("RefreshedAt") /* RefreshedAt com.amazonaws.elasticbeanstalk#DescribeInstancesHealthOutput$RefreshedAt */ =>  {
+            s if s.matches("RefreshedAt") /* RefreshedAt com.amazonaws.elasticbeanstalk.synthetic#DescribeInstancesHealthOutput$RefreshedAt */ =>  {
                 let var_87 =
                     Some(
                         smithy_types::Instant::from_str(
@@ -2274,7 +2274,7 @@ pub fn deser_operation_describe_instances_health(
                 builder = builder.set_refreshed_at(var_87);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.elasticbeanstalk#DescribeInstancesHealthOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.elasticbeanstalk.synthetic#DescribeInstancesHealthOutput$NextToken */ =>  {
                 let var_88 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2299,7 +2299,7 @@ pub fn deser_operation_describe_instances_health(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_platform_version(
+pub fn deser_operation_crate_operation_describe_platform_version(
     inp: &[u8],
     mut builder: crate::output::describe_platform_version_output::Builder,
 ) -> Result<crate::output::describe_platform_version_output::Builder, smithy_xml::decode::XmlError>
@@ -2326,10 +2326,10 @@ pub fn deser_operation_describe_platform_version(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("PlatformDescription") /* PlatformDescription com.amazonaws.elasticbeanstalk#DescribePlatformVersionOutput$PlatformDescription */ =>  {
+            s if s.matches("PlatformDescription") /* PlatformDescription com.amazonaws.elasticbeanstalk.synthetic#DescribePlatformVersionOutput$PlatformDescription */ =>  {
                 let var_89 =
                     Some(
-                        crate::xml_deser::deser_structure_platform_description(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_platform_description(&mut tag)
                         ?
                     )
                 ;
@@ -2348,7 +2348,7 @@ pub fn deser_operation_describe_platform_version(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_available_solution_stacks(
+pub fn deser_operation_crate_operation_list_available_solution_stacks(
     inp: &[u8],
     mut builder: crate::output::list_available_solution_stacks_output::Builder,
 ) -> Result<
@@ -2377,20 +2377,20 @@ pub fn deser_operation_list_available_solution_stacks(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("SolutionStacks") /* SolutionStacks com.amazonaws.elasticbeanstalk#ListAvailableSolutionStacksOutput$SolutionStacks */ =>  {
+            s if s.matches("SolutionStacks") /* SolutionStacks com.amazonaws.elasticbeanstalk.synthetic#ListAvailableSolutionStacksOutput$SolutionStacks */ =>  {
                 let var_90 =
                     Some(
-                        crate::xml_deser::deser_list_available_solution_stack_names_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_available_solution_stack_names_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_solution_stacks(var_90);
             }
             ,
-            s if s.matches("SolutionStackDetails") /* SolutionStackDetails com.amazonaws.elasticbeanstalk#ListAvailableSolutionStacksOutput$SolutionStackDetails */ =>  {
+            s if s.matches("SolutionStackDetails") /* SolutionStackDetails com.amazonaws.elasticbeanstalk.synthetic#ListAvailableSolutionStacksOutput$SolutionStackDetails */ =>  {
                 let var_91 =
                     Some(
-                        crate::xml_deser::deser_list_available_solution_stack_details_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_available_solution_stack_details_list(&mut tag)
                         ?
                     )
                 ;
@@ -2409,7 +2409,7 @@ pub fn deser_operation_list_available_solution_stacks(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_platform_branches(
+pub fn deser_operation_crate_operation_list_platform_branches(
     inp: &[u8],
     mut builder: crate::output::list_platform_branches_output::Builder,
 ) -> Result<crate::output::list_platform_branches_output::Builder, smithy_xml::decode::XmlError> {
@@ -2435,17 +2435,17 @@ pub fn deser_operation_list_platform_branches(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("PlatformBranchSummaryList") /* PlatformBranchSummaryList com.amazonaws.elasticbeanstalk#ListPlatformBranchesOutput$PlatformBranchSummaryList */ =>  {
+            s if s.matches("PlatformBranchSummaryList") /* PlatformBranchSummaryList com.amazonaws.elasticbeanstalk.synthetic#ListPlatformBranchesOutput$PlatformBranchSummaryList */ =>  {
                 let var_92 =
                     Some(
-                        crate::xml_deser::deser_list_platform_branch_summary_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_platform_branch_summary_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_platform_branch_summary_list(var_92);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.elasticbeanstalk#ListPlatformBranchesOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.elasticbeanstalk.synthetic#ListPlatformBranchesOutput$NextToken */ =>  {
                 let var_93 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2470,7 +2470,7 @@ pub fn deser_operation_list_platform_branches(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_platform_versions(
+pub fn deser_operation_crate_operation_list_platform_versions(
     inp: &[u8],
     mut builder: crate::output::list_platform_versions_output::Builder,
 ) -> Result<crate::output::list_platform_versions_output::Builder, smithy_xml::decode::XmlError> {
@@ -2496,17 +2496,17 @@ pub fn deser_operation_list_platform_versions(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("PlatformSummaryList") /* PlatformSummaryList com.amazonaws.elasticbeanstalk#ListPlatformVersionsOutput$PlatformSummaryList */ =>  {
+            s if s.matches("PlatformSummaryList") /* PlatformSummaryList com.amazonaws.elasticbeanstalk.synthetic#ListPlatformVersionsOutput$PlatformSummaryList */ =>  {
                 let var_94 =
                     Some(
-                        crate::xml_deser::deser_list_platform_summary_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_platform_summary_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_platform_summary_list(var_94);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.elasticbeanstalk#ListPlatformVersionsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.elasticbeanstalk.synthetic#ListPlatformVersionsOutput$NextToken */ =>  {
                 let var_95 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2531,7 +2531,7 @@ pub fn deser_operation_list_platform_versions(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_resource_not_found_exception_xml_err(
+pub fn deser_structure_crate_error_resource_not_found_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_xml::decode::XmlError> {
@@ -2564,7 +2564,7 @@ pub fn deser_structure_resource_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_resource_type_not_supported_exception_xml_err(
+pub fn deser_structure_crate_error_resource_type_not_supported_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::resource_type_not_supported_exception::Builder,
 ) -> Result<
@@ -2600,7 +2600,7 @@ pub fn deser_structure_resource_type_not_supported_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     inp: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_xml::decode::XmlError> {
@@ -2626,7 +2626,7 @@ pub fn deser_operation_list_tags_for_resource(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ResourceArn") /* ResourceArn com.amazonaws.elasticbeanstalk#ListTagsForResourceOutput$ResourceArn */ =>  {
+            s if s.matches("ResourceArn") /* ResourceArn com.amazonaws.elasticbeanstalk.synthetic#ListTagsForResourceOutput$ResourceArn */ =>  {
                 let var_98 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2639,10 +2639,10 @@ pub fn deser_operation_list_tags_for_resource(
                 builder = builder.set_resource_arn(var_98);
             }
             ,
-            s if s.matches("ResourceTags") /* ResourceTags com.amazonaws.elasticbeanstalk#ListTagsForResourceOutput$ResourceTags */ =>  {
+            s if s.matches("ResourceTags") /* ResourceTags com.amazonaws.elasticbeanstalk.synthetic#ListTagsForResourceOutput$ResourceTags */ =>  {
                 let var_99 =
                     Some(
-                        crate::xml_deser::deser_list_tag_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_tag_list(&mut tag)
                         ?
                     )
                 ;
@@ -2661,7 +2661,7 @@ pub fn deser_operation_list_tags_for_resource(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_retrieve_environment_info(
+pub fn deser_operation_crate_operation_retrieve_environment_info(
     inp: &[u8],
     mut builder: crate::output::retrieve_environment_info_output::Builder,
 ) -> Result<crate::output::retrieve_environment_info_output::Builder, smithy_xml::decode::XmlError>
@@ -2688,10 +2688,10 @@ pub fn deser_operation_retrieve_environment_info(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("EnvironmentInfo") /* EnvironmentInfo com.amazonaws.elasticbeanstalk#RetrieveEnvironmentInfoOutput$EnvironmentInfo */ =>  {
+            s if s.matches("EnvironmentInfo") /* EnvironmentInfo com.amazonaws.elasticbeanstalk.synthetic#RetrieveEnvironmentInfoOutput$EnvironmentInfo */ =>  {
                 let var_100 =
                     Some(
-                        crate::xml_deser::deser_list_environment_info_description_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_environment_info_description_list(&mut tag)
                         ?
                     )
                 ;
@@ -2710,7 +2710,7 @@ pub fn deser_operation_retrieve_environment_info(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_terminate_environment(
+pub fn deser_operation_crate_operation_terminate_environment(
     inp: &[u8],
     mut builder: crate::output::terminate_environment_output::Builder,
 ) -> Result<crate::output::terminate_environment_output::Builder, smithy_xml::decode::XmlError> {
@@ -2736,7 +2736,7 @@ pub fn deser_operation_terminate_environment(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("EnvironmentName") /* EnvironmentName com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$EnvironmentName */ =>  {
+            s if s.matches("EnvironmentName") /* EnvironmentName com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$EnvironmentName */ =>  {
                 let var_101 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2749,7 +2749,7 @@ pub fn deser_operation_terminate_environment(
                 builder = builder.set_environment_name(var_101);
             }
             ,
-            s if s.matches("EnvironmentId") /* EnvironmentId com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$EnvironmentId */ =>  {
+            s if s.matches("EnvironmentId") /* EnvironmentId com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$EnvironmentId */ =>  {
                 let var_102 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2762,7 +2762,7 @@ pub fn deser_operation_terminate_environment(
                 builder = builder.set_environment_id(var_102);
             }
             ,
-            s if s.matches("ApplicationName") /* ApplicationName com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$ApplicationName */ =>  {
+            s if s.matches("ApplicationName") /* ApplicationName com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$ApplicationName */ =>  {
                 let var_103 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2775,7 +2775,7 @@ pub fn deser_operation_terminate_environment(
                 builder = builder.set_application_name(var_103);
             }
             ,
-            s if s.matches("VersionLabel") /* VersionLabel com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$VersionLabel */ =>  {
+            s if s.matches("VersionLabel") /* VersionLabel com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$VersionLabel */ =>  {
                 let var_104 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2788,7 +2788,7 @@ pub fn deser_operation_terminate_environment(
                 builder = builder.set_version_label(var_104);
             }
             ,
-            s if s.matches("SolutionStackName") /* SolutionStackName com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$SolutionStackName */ =>  {
+            s if s.matches("SolutionStackName") /* SolutionStackName com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$SolutionStackName */ =>  {
                 let var_105 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2801,7 +2801,7 @@ pub fn deser_operation_terminate_environment(
                 builder = builder.set_solution_stack_name(var_105);
             }
             ,
-            s if s.matches("PlatformArn") /* PlatformArn com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$PlatformArn */ =>  {
+            s if s.matches("PlatformArn") /* PlatformArn com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$PlatformArn */ =>  {
                 let var_106 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2814,7 +2814,7 @@ pub fn deser_operation_terminate_environment(
                 builder = builder.set_platform_arn(var_106);
             }
             ,
-            s if s.matches("TemplateName") /* TemplateName com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$TemplateName */ =>  {
+            s if s.matches("TemplateName") /* TemplateName com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$TemplateName */ =>  {
                 let var_107 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2827,7 +2827,7 @@ pub fn deser_operation_terminate_environment(
                 builder = builder.set_template_name(var_107);
             }
             ,
-            s if s.matches("Description") /* Description com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$Description */ =>  {
+            s if s.matches("Description") /* Description com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$Description */ =>  {
                 let var_108 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2840,7 +2840,7 @@ pub fn deser_operation_terminate_environment(
                 builder = builder.set_description(var_108);
             }
             ,
-            s if s.matches("EndpointURL") /* EndpointURL com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$EndpointURL */ =>  {
+            s if s.matches("EndpointURL") /* EndpointURL com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$EndpointURL */ =>  {
                 let var_109 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2853,7 +2853,7 @@ pub fn deser_operation_terminate_environment(
                 builder = builder.set_endpoint_url(var_109);
             }
             ,
-            s if s.matches("CNAME") /* CNAME com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$CNAME */ =>  {
+            s if s.matches("CNAME") /* CNAME com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$CNAME */ =>  {
                 let var_110 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2866,7 +2866,7 @@ pub fn deser_operation_terminate_environment(
                 builder = builder.set_cname(var_110);
             }
             ,
-            s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$DateCreated */ =>  {
+            s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$DateCreated */ =>  {
                 let var_111 =
                     Some(
                         smithy_types::Instant::from_str(
@@ -2880,7 +2880,7 @@ pub fn deser_operation_terminate_environment(
                 builder = builder.set_date_created(var_111);
             }
             ,
-            s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$DateUpdated */ =>  {
+            s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$DateUpdated */ =>  {
                 let var_112 =
                     Some(
                         smithy_types::Instant::from_str(
@@ -2894,7 +2894,7 @@ pub fn deser_operation_terminate_environment(
                 builder = builder.set_date_updated(var_112);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$Status */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$Status */ =>  {
                 let var_113 =
                     Some(
                         Result::<crate::model::EnvironmentStatus, smithy_xml::decode::XmlError>::Ok(
@@ -2908,7 +2908,7 @@ pub fn deser_operation_terminate_environment(
                 builder = builder.set_status(var_113);
             }
             ,
-            s if s.matches("AbortableOperationInProgress") /* AbortableOperationInProgress com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$AbortableOperationInProgress */ =>  {
+            s if s.matches("AbortableOperationInProgress") /* AbortableOperationInProgress com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$AbortableOperationInProgress */ =>  {
                 let var_114 =
                     Some(
                          {
@@ -2923,7 +2923,7 @@ pub fn deser_operation_terminate_environment(
                 builder = builder.set_abortable_operation_in_progress(var_114);
             }
             ,
-            s if s.matches("Health") /* Health com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$Health */ =>  {
+            s if s.matches("Health") /* Health com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$Health */ =>  {
                 let var_115 =
                     Some(
                         Result::<crate::model::EnvironmentHealth, smithy_xml::decode::XmlError>::Ok(
@@ -2937,7 +2937,7 @@ pub fn deser_operation_terminate_environment(
                 builder = builder.set_health(var_115);
             }
             ,
-            s if s.matches("HealthStatus") /* HealthStatus com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$HealthStatus */ =>  {
+            s if s.matches("HealthStatus") /* HealthStatus com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$HealthStatus */ =>  {
                 let var_116 =
                     Some(
                         Result::<crate::model::EnvironmentHealthStatus, smithy_xml::decode::XmlError>::Ok(
@@ -2951,37 +2951,37 @@ pub fn deser_operation_terminate_environment(
                 builder = builder.set_health_status(var_116);
             }
             ,
-            s if s.matches("Resources") /* Resources com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$Resources */ =>  {
+            s if s.matches("Resources") /* Resources com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$Resources */ =>  {
                 let var_117 =
                     Some(
-                        crate::xml_deser::deser_structure_environment_resources_description(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_environment_resources_description(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_resources(var_117);
             }
             ,
-            s if s.matches("Tier") /* Tier com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$Tier */ =>  {
+            s if s.matches("Tier") /* Tier com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$Tier */ =>  {
                 let var_118 =
                     Some(
-                        crate::xml_deser::deser_structure_environment_tier(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_environment_tier(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_tier(var_118);
             }
             ,
-            s if s.matches("EnvironmentLinks") /* EnvironmentLinks com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$EnvironmentLinks */ =>  {
+            s if s.matches("EnvironmentLinks") /* EnvironmentLinks com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$EnvironmentLinks */ =>  {
                 let var_119 =
                     Some(
-                        crate::xml_deser::deser_list_environment_links(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_environment_links(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_environment_links(var_119);
             }
             ,
-            s if s.matches("EnvironmentArn") /* EnvironmentArn com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$EnvironmentArn */ =>  {
+            s if s.matches("EnvironmentArn") /* EnvironmentArn com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$EnvironmentArn */ =>  {
                 let var_120 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2994,7 +2994,7 @@ pub fn deser_operation_terminate_environment(
                 builder = builder.set_environment_arn(var_120);
             }
             ,
-            s if s.matches("OperationsRole") /* OperationsRole com.amazonaws.elasticbeanstalk#TerminateEnvironmentOutput$OperationsRole */ =>  {
+            s if s.matches("OperationsRole") /* OperationsRole com.amazonaws.elasticbeanstalk.synthetic#TerminateEnvironmentOutput$OperationsRole */ =>  {
                 let var_121 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3019,7 +3019,7 @@ pub fn deser_operation_terminate_environment(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_update_application(
+pub fn deser_operation_crate_operation_update_application(
     inp: &[u8],
     mut builder: crate::output::update_application_output::Builder,
 ) -> Result<crate::output::update_application_output::Builder, smithy_xml::decode::XmlError> {
@@ -3045,10 +3045,10 @@ pub fn deser_operation_update_application(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Application") /* Application com.amazonaws.elasticbeanstalk#UpdateApplicationOutput$Application */ =>  {
+            s if s.matches("Application") /* Application com.amazonaws.elasticbeanstalk.synthetic#UpdateApplicationOutput$Application */ =>  {
                 let var_122 =
                     Some(
-                        crate::xml_deser::deser_structure_application_description(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_application_description(&mut tag)
                         ?
                     )
                 ;
@@ -3067,7 +3067,7 @@ pub fn deser_operation_update_application(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_update_application_resource_lifecycle(
+pub fn deser_operation_crate_operation_update_application_resource_lifecycle(
     inp: &[u8],
     mut builder: crate::output::update_application_resource_lifecycle_output::Builder,
 ) -> Result<
@@ -3096,7 +3096,7 @@ pub fn deser_operation_update_application_resource_lifecycle(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ApplicationName") /* ApplicationName com.amazonaws.elasticbeanstalk#UpdateApplicationResourceLifecycleOutput$ApplicationName */ =>  {
+            s if s.matches("ApplicationName") /* ApplicationName com.amazonaws.elasticbeanstalk.synthetic#UpdateApplicationResourceLifecycleOutput$ApplicationName */ =>  {
                 let var_123 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3109,10 +3109,10 @@ pub fn deser_operation_update_application_resource_lifecycle(
                 builder = builder.set_application_name(var_123);
             }
             ,
-            s if s.matches("ResourceLifecycleConfig") /* ResourceLifecycleConfig com.amazonaws.elasticbeanstalk#UpdateApplicationResourceLifecycleOutput$ResourceLifecycleConfig */ =>  {
+            s if s.matches("ResourceLifecycleConfig") /* ResourceLifecycleConfig com.amazonaws.elasticbeanstalk.synthetic#UpdateApplicationResourceLifecycleOutput$ResourceLifecycleConfig */ =>  {
                 let var_124 =
                     Some(
-                        crate::xml_deser::deser_structure_application_resource_lifecycle_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_application_resource_lifecycle_config(&mut tag)
                         ?
                     )
                 ;
@@ -3131,7 +3131,7 @@ pub fn deser_operation_update_application_resource_lifecycle(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_update_application_version(
+pub fn deser_operation_crate_operation_update_application_version(
     inp: &[u8],
     mut builder: crate::output::update_application_version_output::Builder,
 ) -> Result<crate::output::update_application_version_output::Builder, smithy_xml::decode::XmlError>
@@ -3158,10 +3158,10 @@ pub fn deser_operation_update_application_version(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ApplicationVersion") /* ApplicationVersion com.amazonaws.elasticbeanstalk#UpdateApplicationVersionOutput$ApplicationVersion */ =>  {
+            s if s.matches("ApplicationVersion") /* ApplicationVersion com.amazonaws.elasticbeanstalk.synthetic#UpdateApplicationVersionOutput$ApplicationVersion */ =>  {
                 let var_125 =
                     Some(
-                        crate::xml_deser::deser_structure_application_version_description(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_application_version_description(&mut tag)
                         ?
                     )
                 ;
@@ -3180,7 +3180,7 @@ pub fn deser_operation_update_application_version(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_update_configuration_template(
+pub fn deser_operation_crate_operation_update_configuration_template(
     inp: &[u8],
     mut builder: crate::output::update_configuration_template_output::Builder,
 ) -> Result<
@@ -3209,7 +3209,7 @@ pub fn deser_operation_update_configuration_template(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("SolutionStackName") /* SolutionStackName com.amazonaws.elasticbeanstalk#UpdateConfigurationTemplateOutput$SolutionStackName */ =>  {
+            s if s.matches("SolutionStackName") /* SolutionStackName com.amazonaws.elasticbeanstalk.synthetic#UpdateConfigurationTemplateOutput$SolutionStackName */ =>  {
                 let var_126 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3222,7 +3222,7 @@ pub fn deser_operation_update_configuration_template(
                 builder = builder.set_solution_stack_name(var_126);
             }
             ,
-            s if s.matches("PlatformArn") /* PlatformArn com.amazonaws.elasticbeanstalk#UpdateConfigurationTemplateOutput$PlatformArn */ =>  {
+            s if s.matches("PlatformArn") /* PlatformArn com.amazonaws.elasticbeanstalk.synthetic#UpdateConfigurationTemplateOutput$PlatformArn */ =>  {
                 let var_127 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3235,7 +3235,7 @@ pub fn deser_operation_update_configuration_template(
                 builder = builder.set_platform_arn(var_127);
             }
             ,
-            s if s.matches("ApplicationName") /* ApplicationName com.amazonaws.elasticbeanstalk#UpdateConfigurationTemplateOutput$ApplicationName */ =>  {
+            s if s.matches("ApplicationName") /* ApplicationName com.amazonaws.elasticbeanstalk.synthetic#UpdateConfigurationTemplateOutput$ApplicationName */ =>  {
                 let var_128 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3248,7 +3248,7 @@ pub fn deser_operation_update_configuration_template(
                 builder = builder.set_application_name(var_128);
             }
             ,
-            s if s.matches("TemplateName") /* TemplateName com.amazonaws.elasticbeanstalk#UpdateConfigurationTemplateOutput$TemplateName */ =>  {
+            s if s.matches("TemplateName") /* TemplateName com.amazonaws.elasticbeanstalk.synthetic#UpdateConfigurationTemplateOutput$TemplateName */ =>  {
                 let var_129 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3261,7 +3261,7 @@ pub fn deser_operation_update_configuration_template(
                 builder = builder.set_template_name(var_129);
             }
             ,
-            s if s.matches("Description") /* Description com.amazonaws.elasticbeanstalk#UpdateConfigurationTemplateOutput$Description */ =>  {
+            s if s.matches("Description") /* Description com.amazonaws.elasticbeanstalk.synthetic#UpdateConfigurationTemplateOutput$Description */ =>  {
                 let var_130 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3274,7 +3274,7 @@ pub fn deser_operation_update_configuration_template(
                 builder = builder.set_description(var_130);
             }
             ,
-            s if s.matches("EnvironmentName") /* EnvironmentName com.amazonaws.elasticbeanstalk#UpdateConfigurationTemplateOutput$EnvironmentName */ =>  {
+            s if s.matches("EnvironmentName") /* EnvironmentName com.amazonaws.elasticbeanstalk.synthetic#UpdateConfigurationTemplateOutput$EnvironmentName */ =>  {
                 let var_131 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3287,7 +3287,7 @@ pub fn deser_operation_update_configuration_template(
                 builder = builder.set_environment_name(var_131);
             }
             ,
-            s if s.matches("DeploymentStatus") /* DeploymentStatus com.amazonaws.elasticbeanstalk#UpdateConfigurationTemplateOutput$DeploymentStatus */ =>  {
+            s if s.matches("DeploymentStatus") /* DeploymentStatus com.amazonaws.elasticbeanstalk.synthetic#UpdateConfigurationTemplateOutput$DeploymentStatus */ =>  {
                 let var_132 =
                     Some(
                         Result::<crate::model::ConfigurationDeploymentStatus, smithy_xml::decode::XmlError>::Ok(
@@ -3301,7 +3301,7 @@ pub fn deser_operation_update_configuration_template(
                 builder = builder.set_deployment_status(var_132);
             }
             ,
-            s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk#UpdateConfigurationTemplateOutput$DateCreated */ =>  {
+            s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk.synthetic#UpdateConfigurationTemplateOutput$DateCreated */ =>  {
                 let var_133 =
                     Some(
                         smithy_types::Instant::from_str(
@@ -3315,7 +3315,7 @@ pub fn deser_operation_update_configuration_template(
                 builder = builder.set_date_created(var_133);
             }
             ,
-            s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk#UpdateConfigurationTemplateOutput$DateUpdated */ =>  {
+            s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk.synthetic#UpdateConfigurationTemplateOutput$DateUpdated */ =>  {
                 let var_134 =
                     Some(
                         smithy_types::Instant::from_str(
@@ -3329,10 +3329,10 @@ pub fn deser_operation_update_configuration_template(
                 builder = builder.set_date_updated(var_134);
             }
             ,
-            s if s.matches("OptionSettings") /* OptionSettings com.amazonaws.elasticbeanstalk#UpdateConfigurationTemplateOutput$OptionSettings */ =>  {
+            s if s.matches("OptionSettings") /* OptionSettings com.amazonaws.elasticbeanstalk.synthetic#UpdateConfigurationTemplateOutput$OptionSettings */ =>  {
                 let var_135 =
                     Some(
-                        crate::xml_deser::deser_list_configuration_option_settings_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_configuration_option_settings_list(&mut tag)
                         ?
                     )
                 ;
@@ -3351,7 +3351,7 @@ pub fn deser_operation_update_configuration_template(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_update_environment(
+pub fn deser_operation_crate_operation_update_environment(
     inp: &[u8],
     mut builder: crate::output::update_environment_output::Builder,
 ) -> Result<crate::output::update_environment_output::Builder, smithy_xml::decode::XmlError> {
@@ -3377,7 +3377,7 @@ pub fn deser_operation_update_environment(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("EnvironmentName") /* EnvironmentName com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$EnvironmentName */ =>  {
+            s if s.matches("EnvironmentName") /* EnvironmentName com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$EnvironmentName */ =>  {
                 let var_136 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3390,7 +3390,7 @@ pub fn deser_operation_update_environment(
                 builder = builder.set_environment_name(var_136);
             }
             ,
-            s if s.matches("EnvironmentId") /* EnvironmentId com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$EnvironmentId */ =>  {
+            s if s.matches("EnvironmentId") /* EnvironmentId com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$EnvironmentId */ =>  {
                 let var_137 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3403,7 +3403,7 @@ pub fn deser_operation_update_environment(
                 builder = builder.set_environment_id(var_137);
             }
             ,
-            s if s.matches("ApplicationName") /* ApplicationName com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$ApplicationName */ =>  {
+            s if s.matches("ApplicationName") /* ApplicationName com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$ApplicationName */ =>  {
                 let var_138 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3416,7 +3416,7 @@ pub fn deser_operation_update_environment(
                 builder = builder.set_application_name(var_138);
             }
             ,
-            s if s.matches("VersionLabel") /* VersionLabel com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$VersionLabel */ =>  {
+            s if s.matches("VersionLabel") /* VersionLabel com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$VersionLabel */ =>  {
                 let var_139 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3429,7 +3429,7 @@ pub fn deser_operation_update_environment(
                 builder = builder.set_version_label(var_139);
             }
             ,
-            s if s.matches("SolutionStackName") /* SolutionStackName com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$SolutionStackName */ =>  {
+            s if s.matches("SolutionStackName") /* SolutionStackName com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$SolutionStackName */ =>  {
                 let var_140 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3442,7 +3442,7 @@ pub fn deser_operation_update_environment(
                 builder = builder.set_solution_stack_name(var_140);
             }
             ,
-            s if s.matches("PlatformArn") /* PlatformArn com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$PlatformArn */ =>  {
+            s if s.matches("PlatformArn") /* PlatformArn com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$PlatformArn */ =>  {
                 let var_141 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3455,7 +3455,7 @@ pub fn deser_operation_update_environment(
                 builder = builder.set_platform_arn(var_141);
             }
             ,
-            s if s.matches("TemplateName") /* TemplateName com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$TemplateName */ =>  {
+            s if s.matches("TemplateName") /* TemplateName com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$TemplateName */ =>  {
                 let var_142 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3468,7 +3468,7 @@ pub fn deser_operation_update_environment(
                 builder = builder.set_template_name(var_142);
             }
             ,
-            s if s.matches("Description") /* Description com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$Description */ =>  {
+            s if s.matches("Description") /* Description com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$Description */ =>  {
                 let var_143 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3481,7 +3481,7 @@ pub fn deser_operation_update_environment(
                 builder = builder.set_description(var_143);
             }
             ,
-            s if s.matches("EndpointURL") /* EndpointURL com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$EndpointURL */ =>  {
+            s if s.matches("EndpointURL") /* EndpointURL com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$EndpointURL */ =>  {
                 let var_144 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3494,7 +3494,7 @@ pub fn deser_operation_update_environment(
                 builder = builder.set_endpoint_url(var_144);
             }
             ,
-            s if s.matches("CNAME") /* CNAME com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$CNAME */ =>  {
+            s if s.matches("CNAME") /* CNAME com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$CNAME */ =>  {
                 let var_145 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3507,7 +3507,7 @@ pub fn deser_operation_update_environment(
                 builder = builder.set_cname(var_145);
             }
             ,
-            s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$DateCreated */ =>  {
+            s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$DateCreated */ =>  {
                 let var_146 =
                     Some(
                         smithy_types::Instant::from_str(
@@ -3521,7 +3521,7 @@ pub fn deser_operation_update_environment(
                 builder = builder.set_date_created(var_146);
             }
             ,
-            s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$DateUpdated */ =>  {
+            s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$DateUpdated */ =>  {
                 let var_147 =
                     Some(
                         smithy_types::Instant::from_str(
@@ -3535,7 +3535,7 @@ pub fn deser_operation_update_environment(
                 builder = builder.set_date_updated(var_147);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$Status */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$Status */ =>  {
                 let var_148 =
                     Some(
                         Result::<crate::model::EnvironmentStatus, smithy_xml::decode::XmlError>::Ok(
@@ -3549,7 +3549,7 @@ pub fn deser_operation_update_environment(
                 builder = builder.set_status(var_148);
             }
             ,
-            s if s.matches("AbortableOperationInProgress") /* AbortableOperationInProgress com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$AbortableOperationInProgress */ =>  {
+            s if s.matches("AbortableOperationInProgress") /* AbortableOperationInProgress com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$AbortableOperationInProgress */ =>  {
                 let var_149 =
                     Some(
                          {
@@ -3564,7 +3564,7 @@ pub fn deser_operation_update_environment(
                 builder = builder.set_abortable_operation_in_progress(var_149);
             }
             ,
-            s if s.matches("Health") /* Health com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$Health */ =>  {
+            s if s.matches("Health") /* Health com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$Health */ =>  {
                 let var_150 =
                     Some(
                         Result::<crate::model::EnvironmentHealth, smithy_xml::decode::XmlError>::Ok(
@@ -3578,7 +3578,7 @@ pub fn deser_operation_update_environment(
                 builder = builder.set_health(var_150);
             }
             ,
-            s if s.matches("HealthStatus") /* HealthStatus com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$HealthStatus */ =>  {
+            s if s.matches("HealthStatus") /* HealthStatus com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$HealthStatus */ =>  {
                 let var_151 =
                     Some(
                         Result::<crate::model::EnvironmentHealthStatus, smithy_xml::decode::XmlError>::Ok(
@@ -3592,37 +3592,37 @@ pub fn deser_operation_update_environment(
                 builder = builder.set_health_status(var_151);
             }
             ,
-            s if s.matches("Resources") /* Resources com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$Resources */ =>  {
+            s if s.matches("Resources") /* Resources com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$Resources */ =>  {
                 let var_152 =
                     Some(
-                        crate::xml_deser::deser_structure_environment_resources_description(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_environment_resources_description(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_resources(var_152);
             }
             ,
-            s if s.matches("Tier") /* Tier com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$Tier */ =>  {
+            s if s.matches("Tier") /* Tier com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$Tier */ =>  {
                 let var_153 =
                     Some(
-                        crate::xml_deser::deser_structure_environment_tier(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_environment_tier(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_tier(var_153);
             }
             ,
-            s if s.matches("EnvironmentLinks") /* EnvironmentLinks com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$EnvironmentLinks */ =>  {
+            s if s.matches("EnvironmentLinks") /* EnvironmentLinks com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$EnvironmentLinks */ =>  {
                 let var_154 =
                     Some(
-                        crate::xml_deser::deser_list_environment_links(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_environment_links(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_environment_links(var_154);
             }
             ,
-            s if s.matches("EnvironmentArn") /* EnvironmentArn com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$EnvironmentArn */ =>  {
+            s if s.matches("EnvironmentArn") /* EnvironmentArn com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$EnvironmentArn */ =>  {
                 let var_155 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3635,7 +3635,7 @@ pub fn deser_operation_update_environment(
                 builder = builder.set_environment_arn(var_155);
             }
             ,
-            s if s.matches("OperationsRole") /* OperationsRole com.amazonaws.elasticbeanstalk#UpdateEnvironmentOutput$OperationsRole */ =>  {
+            s if s.matches("OperationsRole") /* OperationsRole com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$OperationsRole */ =>  {
                 let var_156 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3660,7 +3660,7 @@ pub fn deser_operation_update_environment(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_tags_exception_xml_err(
+pub fn deser_structure_crate_error_too_many_tags_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_tags_exception::Builder,
 ) -> Result<crate::error::too_many_tags_exception::Builder, smithy_xml::decode::XmlError> {
@@ -3693,7 +3693,7 @@ pub fn deser_structure_too_many_tags_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_validate_configuration_settings(
+pub fn deser_operation_crate_operation_validate_configuration_settings(
     inp: &[u8],
     mut builder: crate::output::validate_configuration_settings_output::Builder,
 ) -> Result<
@@ -3722,10 +3722,10 @@ pub fn deser_operation_validate_configuration_settings(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Messages") /* Messages com.amazonaws.elasticbeanstalk#ValidateConfigurationSettingsOutput$Messages */ =>  {
+            s if s.matches("Messages") /* Messages com.amazonaws.elasticbeanstalk.synthetic#ValidateConfigurationSettingsOutput$Messages */ =>  {
                 let var_158 =
                     Some(
-                        crate::xml_deser::deser_list_validation_messages_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_validation_messages_list(&mut tag)
                         ?
                     )
                 ;
@@ -3743,7 +3743,7 @@ pub fn deser_operation_validate_configuration_settings(
     Ok(builder)
 }
 
-pub fn deser_list_environment_descriptions_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_environment_descriptions_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::EnvironmentDescription>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -3751,7 +3751,7 @@ pub fn deser_list_environment_descriptions_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#EnvironmentDescriptionsList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_environment_description(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_environment_description(&mut tag)
                     ?
                 );
             }
@@ -3762,7 +3762,7 @@ pub fn deser_list_environment_descriptions_list(
     Ok(out)
 }
 
-pub fn deser_structure_application_description(
+pub fn deser_structure_crate_model_application_description(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ApplicationDescription, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3839,7 +3839,7 @@ pub fn deser_structure_application_description(
             s if s.matches("Versions") /* Versions com.amazonaws.elasticbeanstalk#ApplicationDescription$Versions */ =>  {
                 let var_164 =
                     Some(
-                        crate::xml_deser::deser_list_version_labels_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_version_labels_list(&mut tag)
                         ?
                     )
                 ;
@@ -3849,7 +3849,7 @@ pub fn deser_structure_application_description(
             s if s.matches("ConfigurationTemplates") /* ConfigurationTemplates com.amazonaws.elasticbeanstalk#ApplicationDescription$ConfigurationTemplates */ =>  {
                 let var_165 =
                     Some(
-                        crate::xml_deser::deser_list_configuration_template_names_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_configuration_template_names_list(&mut tag)
                         ?
                     )
                 ;
@@ -3859,7 +3859,7 @@ pub fn deser_structure_application_description(
             s if s.matches("ResourceLifecycleConfig") /* ResourceLifecycleConfig com.amazonaws.elasticbeanstalk#ApplicationDescription$ResourceLifecycleConfig */ =>  {
                 let var_166 =
                     Some(
-                        crate::xml_deser::deser_structure_application_resource_lifecycle_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_application_resource_lifecycle_config(&mut tag)
                         ?
                     )
                 ;
@@ -3872,7 +3872,7 @@ pub fn deser_structure_application_description(
     Ok(builder.build())
 }
 
-pub fn deser_structure_application_version_description(
+pub fn deser_structure_crate_model_application_version_description(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ApplicationVersionDescription, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3934,7 +3934,7 @@ pub fn deser_structure_application_version_description(
             s if s.matches("SourceBuildInformation") /* SourceBuildInformation com.amazonaws.elasticbeanstalk#ApplicationVersionDescription$SourceBuildInformation */ =>  {
                 let var_171 =
                     Some(
-                        crate::xml_deser::deser_structure_source_build_information(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_source_build_information(&mut tag)
                         ?
                     )
                 ;
@@ -3957,7 +3957,7 @@ pub fn deser_structure_application_version_description(
             s if s.matches("SourceBundle") /* SourceBundle com.amazonaws.elasticbeanstalk#ApplicationVersionDescription$SourceBundle */ =>  {
                 let var_173 =
                     Some(
-                        crate::xml_deser::deser_structure_s3_location(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_s3_location(&mut tag)
                         ?
                     )
                 ;
@@ -4012,7 +4012,7 @@ pub fn deser_structure_application_version_description(
     Ok(builder.build())
 }
 
-pub fn deser_list_configuration_option_settings_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_configuration_option_settings_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ConfigurationOptionSetting>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4020,7 +4020,7 @@ pub fn deser_list_configuration_option_settings_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#ConfigurationOptionSettingsList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_configuration_option_setting(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_configuration_option_setting(&mut tag)
                     ?
                 );
             }
@@ -4031,7 +4031,7 @@ pub fn deser_list_configuration_option_settings_list(
     Ok(out)
 }
 
-pub fn deser_structure_environment_resources_description(
+pub fn deser_structure_crate_model_environment_resources_description(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::EnvironmentResourcesDescription, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4041,7 +4041,7 @@ pub fn deser_structure_environment_resources_description(
             s if s.matches("LoadBalancer") /* LoadBalancer com.amazonaws.elasticbeanstalk#EnvironmentResourcesDescription$LoadBalancer */ =>  {
                 let var_177 =
                     Some(
-                        crate::xml_deser::deser_structure_load_balancer_description(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_load_balancer_description(&mut tag)
                         ?
                     )
                 ;
@@ -4054,7 +4054,7 @@ pub fn deser_structure_environment_resources_description(
     Ok(builder.build())
 }
 
-pub fn deser_structure_environment_tier(
+pub fn deser_structure_crate_model_environment_tier(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::EnvironmentTier, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4106,7 +4106,7 @@ pub fn deser_structure_environment_tier(
     Ok(builder.build())
 }
 
-pub fn deser_list_environment_links(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_environment_links(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::EnvironmentLink>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4114,7 +4114,7 @@ pub fn deser_list_environment_links(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#EnvironmentLinks$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_environment_link(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_environment_link(&mut tag)
                     ?
                 );
             }
@@ -4125,7 +4125,7 @@ pub fn deser_list_environment_links(
     Ok(out)
 }
 
-pub fn deser_structure_platform_summary(
+pub fn deser_structure_crate_model_platform_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PlatformSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4214,7 +4214,7 @@ pub fn deser_structure_platform_summary(
             s if s.matches("SupportedTierList") /* SupportedTierList com.amazonaws.elasticbeanstalk#PlatformSummary$SupportedTierList */ =>  {
                 let var_187 =
                     Some(
-                        crate::xml_deser::deser_list_supported_tier_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_supported_tier_list(&mut tag)
                         ?
                     )
                 ;
@@ -4224,7 +4224,7 @@ pub fn deser_structure_platform_summary(
             s if s.matches("SupportedAddonList") /* SupportedAddonList com.amazonaws.elasticbeanstalk#PlatformSummary$SupportedAddonList */ =>  {
                 let var_188 =
                     Some(
-                        crate::xml_deser::deser_list_supported_addon_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_supported_addon_list(&mut tag)
                         ?
                     )
                 ;
@@ -4289,7 +4289,7 @@ pub fn deser_structure_platform_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_builder(
+pub fn deser_structure_crate_model_builder(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Builder, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4315,7 +4315,7 @@ pub fn deser_structure_builder(
     Ok(builder.build())
 }
 
-pub fn deser_structure_resource_quotas(
+pub fn deser_structure_crate_model_resource_quotas(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ResourceQuotas, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4325,7 +4325,7 @@ pub fn deser_structure_resource_quotas(
             s if s.matches("ApplicationQuota") /* ApplicationQuota com.amazonaws.elasticbeanstalk#ResourceQuotas$ApplicationQuota */ =>  {
                 let var_194 =
                     Some(
-                        crate::xml_deser::deser_structure_resource_quota(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_resource_quota(&mut tag)
                         ?
                     )
                 ;
@@ -4335,7 +4335,7 @@ pub fn deser_structure_resource_quotas(
             s if s.matches("ApplicationVersionQuota") /* ApplicationVersionQuota com.amazonaws.elasticbeanstalk#ResourceQuotas$ApplicationVersionQuota */ =>  {
                 let var_195 =
                     Some(
-                        crate::xml_deser::deser_structure_resource_quota(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_resource_quota(&mut tag)
                         ?
                     )
                 ;
@@ -4345,7 +4345,7 @@ pub fn deser_structure_resource_quotas(
             s if s.matches("EnvironmentQuota") /* EnvironmentQuota com.amazonaws.elasticbeanstalk#ResourceQuotas$EnvironmentQuota */ =>  {
                 let var_196 =
                     Some(
-                        crate::xml_deser::deser_structure_resource_quota(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_resource_quota(&mut tag)
                         ?
                     )
                 ;
@@ -4355,7 +4355,7 @@ pub fn deser_structure_resource_quotas(
             s if s.matches("ConfigurationTemplateQuota") /* ConfigurationTemplateQuota com.amazonaws.elasticbeanstalk#ResourceQuotas$ConfigurationTemplateQuota */ =>  {
                 let var_197 =
                     Some(
-                        crate::xml_deser::deser_structure_resource_quota(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_resource_quota(&mut tag)
                         ?
                     )
                 ;
@@ -4365,7 +4365,7 @@ pub fn deser_structure_resource_quotas(
             s if s.matches("CustomPlatformQuota") /* CustomPlatformQuota com.amazonaws.elasticbeanstalk#ResourceQuotas$CustomPlatformQuota */ =>  {
                 let var_198 =
                     Some(
-                        crate::xml_deser::deser_structure_resource_quota(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_resource_quota(&mut tag)
                         ?
                     )
                 ;
@@ -4378,7 +4378,7 @@ pub fn deser_structure_resource_quotas(
     Ok(builder.build())
 }
 
-pub fn deser_list_application_description_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_application_description_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ApplicationDescription>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4386,7 +4386,7 @@ pub fn deser_list_application_description_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#ApplicationDescriptionList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_application_description(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_application_description(&mut tag)
                     ?
                 );
             }
@@ -4397,7 +4397,7 @@ pub fn deser_list_application_description_list(
     Ok(out)
 }
 
-pub fn deser_list_application_version_description_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_application_version_description_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ApplicationVersionDescription>, smithy_xml::decode::XmlError>
 {
@@ -4406,7 +4406,7 @@ pub fn deser_list_application_version_description_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#ApplicationVersionDescriptionList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_application_version_description(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_application_version_description(&mut tag)
                     ?
                 );
             }
@@ -4417,7 +4417,7 @@ pub fn deser_list_application_version_description_list(
     Ok(out)
 }
 
-pub fn deser_list_configuration_option_descriptions_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_configuration_option_descriptions_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ConfigurationOptionDescription>, smithy_xml::decode::XmlError>
 {
@@ -4426,7 +4426,7 @@ pub fn deser_list_configuration_option_descriptions_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#ConfigurationOptionDescriptionsList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_configuration_option_description(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_configuration_option_description(&mut tag)
                     ?
                 );
             }
@@ -4437,7 +4437,7 @@ pub fn deser_list_configuration_option_descriptions_list(
     Ok(out)
 }
 
-pub fn deser_list_configuration_settings_description_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_configuration_settings_description_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::vec::Vec<crate::model::ConfigurationSettingsDescription>,
@@ -4448,7 +4448,7 @@ pub fn deser_list_configuration_settings_description_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#ConfigurationSettingsDescriptionList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_configuration_settings_description(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_configuration_settings_description(&mut tag)
                     ?
                 );
             }
@@ -4459,7 +4459,7 @@ pub fn deser_list_configuration_settings_description_list(
     Ok(out)
 }
 
-pub fn deser_list_causes(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_causes(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4481,7 +4481,7 @@ pub fn deser_list_causes(
     Ok(out)
 }
 
-pub fn deser_structure_application_metrics(
+pub fn deser_structure_crate_model_application_metrics(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ApplicationMetrics, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4521,7 +4521,7 @@ pub fn deser_structure_application_metrics(
             s if s.matches("StatusCodes") /* StatusCodes com.amazonaws.elasticbeanstalk#ApplicationMetrics$StatusCodes */ =>  {
                 let var_201 =
                     Some(
-                        crate::xml_deser::deser_structure_status_codes(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_status_codes(&mut tag)
                         ?
                     )
                 ;
@@ -4531,7 +4531,7 @@ pub fn deser_structure_application_metrics(
             s if s.matches("Latency") /* Latency com.amazonaws.elasticbeanstalk#ApplicationMetrics$Latency */ =>  {
                 let var_202 =
                     Some(
-                        crate::xml_deser::deser_structure_latency(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_latency(&mut tag)
                         ?
                     )
                 ;
@@ -4544,7 +4544,7 @@ pub fn deser_structure_application_metrics(
     Ok(builder.build())
 }
 
-pub fn deser_structure_instance_health_summary(
+pub fn deser_structure_crate_model_instance_health_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::InstanceHealthSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4677,7 +4677,7 @@ pub fn deser_structure_instance_health_summary(
     Ok(builder.build())
 }
 
-pub fn deser_list_managed_action_history_items(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_managed_action_history_items(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ManagedActionHistoryItem>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4685,7 +4685,7 @@ pub fn deser_list_managed_action_history_items(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#ManagedActionHistoryItems$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_managed_action_history_item(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_managed_action_history_item(&mut tag)
                     ?
                 );
             }
@@ -4696,7 +4696,7 @@ pub fn deser_list_managed_action_history_items(
     Ok(out)
 }
 
-pub fn deser_list_managed_actions(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_managed_actions(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ManagedAction>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4704,7 +4704,7 @@ pub fn deser_list_managed_actions(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#ManagedActions$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_managed_action(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_managed_action(&mut tag)
                     ?
                 );
             }
@@ -4715,7 +4715,7 @@ pub fn deser_list_managed_actions(
     Ok(out)
 }
 
-pub fn deser_structure_environment_resource_description(
+pub fn deser_structure_crate_model_environment_resource_description(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::EnvironmentResourceDescription, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4738,7 +4738,7 @@ pub fn deser_structure_environment_resource_description(
             s if s.matches("AutoScalingGroups") /* AutoScalingGroups com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$AutoScalingGroups */ =>  {
                 let var_212 =
                     Some(
-                        crate::xml_deser::deser_list_auto_scaling_group_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_auto_scaling_group_list(&mut tag)
                         ?
                     )
                 ;
@@ -4748,7 +4748,7 @@ pub fn deser_structure_environment_resource_description(
             s if s.matches("Instances") /* Instances com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$Instances */ =>  {
                 let var_213 =
                     Some(
-                        crate::xml_deser::deser_list_instance_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_instance_list(&mut tag)
                         ?
                     )
                 ;
@@ -4758,7 +4758,7 @@ pub fn deser_structure_environment_resource_description(
             s if s.matches("LaunchConfigurations") /* LaunchConfigurations com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$LaunchConfigurations */ =>  {
                 let var_214 =
                     Some(
-                        crate::xml_deser::deser_list_launch_configuration_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_launch_configuration_list(&mut tag)
                         ?
                     )
                 ;
@@ -4768,7 +4768,7 @@ pub fn deser_structure_environment_resource_description(
             s if s.matches("LaunchTemplates") /* LaunchTemplates com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$LaunchTemplates */ =>  {
                 let var_215 =
                     Some(
-                        crate::xml_deser::deser_list_launch_template_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_launch_template_list(&mut tag)
                         ?
                     )
                 ;
@@ -4778,7 +4778,7 @@ pub fn deser_structure_environment_resource_description(
             s if s.matches("LoadBalancers") /* LoadBalancers com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$LoadBalancers */ =>  {
                 let var_216 =
                     Some(
-                        crate::xml_deser::deser_list_load_balancer_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_load_balancer_list(&mut tag)
                         ?
                     )
                 ;
@@ -4788,7 +4788,7 @@ pub fn deser_structure_environment_resource_description(
             s if s.matches("Triggers") /* Triggers com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$Triggers */ =>  {
                 let var_217 =
                     Some(
-                        crate::xml_deser::deser_list_trigger_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_trigger_list(&mut tag)
                         ?
                     )
                 ;
@@ -4798,7 +4798,7 @@ pub fn deser_structure_environment_resource_description(
             s if s.matches("Queues") /* Queues com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$Queues */ =>  {
                 let var_218 =
                     Some(
-                        crate::xml_deser::deser_list_queue_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_queue_list(&mut tag)
                         ?
                     )
                 ;
@@ -4811,7 +4811,7 @@ pub fn deser_structure_environment_resource_description(
     Ok(builder.build())
 }
 
-pub fn deser_list_event_description_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_event_description_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::EventDescription>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4819,7 +4819,7 @@ pub fn deser_list_event_description_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#EventDescriptionList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_event_description(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_event_description(&mut tag)
                     ?
                 );
             }
@@ -4830,7 +4830,7 @@ pub fn deser_list_event_description_list(
     Ok(out)
 }
 
-pub fn deser_list_instance_health_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_instance_health_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::SingleInstanceHealth>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4838,7 +4838,7 @@ pub fn deser_list_instance_health_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#InstanceHealthList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_single_instance_health(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_single_instance_health(&mut tag)
                     ?
                 );
             }
@@ -4849,7 +4849,7 @@ pub fn deser_list_instance_health_list(
     Ok(out)
 }
 
-pub fn deser_structure_platform_description(
+pub fn deser_structure_crate_model_platform_description(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PlatformDescription, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5031,7 +5031,7 @@ pub fn deser_structure_platform_description(
             s if s.matches("ProgrammingLanguages") /* ProgrammingLanguages com.amazonaws.elasticbeanstalk#PlatformDescription$ProgrammingLanguages */ =>  {
                 let var_232 =
                     Some(
-                        crate::xml_deser::deser_list_platform_programming_languages(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_platform_programming_languages(&mut tag)
                         ?
                     )
                 ;
@@ -5041,7 +5041,7 @@ pub fn deser_structure_platform_description(
             s if s.matches("Frameworks") /* Frameworks com.amazonaws.elasticbeanstalk#PlatformDescription$Frameworks */ =>  {
                 let var_233 =
                     Some(
-                        crate::xml_deser::deser_list_platform_frameworks(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_platform_frameworks(&mut tag)
                         ?
                     )
                 ;
@@ -5051,7 +5051,7 @@ pub fn deser_structure_platform_description(
             s if s.matches("CustomAmiList") /* CustomAmiList com.amazonaws.elasticbeanstalk#PlatformDescription$CustomAmiList */ =>  {
                 let var_234 =
                     Some(
-                        crate::xml_deser::deser_list_custom_ami_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_custom_ami_list(&mut tag)
                         ?
                     )
                 ;
@@ -5061,7 +5061,7 @@ pub fn deser_structure_platform_description(
             s if s.matches("SupportedTierList") /* SupportedTierList com.amazonaws.elasticbeanstalk#PlatformDescription$SupportedTierList */ =>  {
                 let var_235 =
                     Some(
-                        crate::xml_deser::deser_list_supported_tier_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_supported_tier_list(&mut tag)
                         ?
                     )
                 ;
@@ -5071,7 +5071,7 @@ pub fn deser_structure_platform_description(
             s if s.matches("SupportedAddonList") /* SupportedAddonList com.amazonaws.elasticbeanstalk#PlatformDescription$SupportedAddonList */ =>  {
                 let var_236 =
                     Some(
-                        crate::xml_deser::deser_list_supported_addon_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_supported_addon_list(&mut tag)
                         ?
                     )
                 ;
@@ -5123,7 +5123,7 @@ pub fn deser_structure_platform_description(
     Ok(builder.build())
 }
 
-pub fn deser_list_available_solution_stack_names_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_available_solution_stack_names_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5145,7 +5145,7 @@ pub fn deser_list_available_solution_stack_names_list(
     Ok(out)
 }
 
-pub fn deser_list_available_solution_stack_details_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_available_solution_stack_details_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::SolutionStackDescription>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5153,7 +5153,7 @@ pub fn deser_list_available_solution_stack_details_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#AvailableSolutionStackDetailsList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_solution_stack_description(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_solution_stack_description(&mut tag)
                     ?
                 );
             }
@@ -5164,7 +5164,7 @@ pub fn deser_list_available_solution_stack_details_list(
     Ok(out)
 }
 
-pub fn deser_list_platform_branch_summary_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_platform_branch_summary_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::PlatformBranchSummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5172,7 +5172,7 @@ pub fn deser_list_platform_branch_summary_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#PlatformBranchSummaryList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_platform_branch_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_platform_branch_summary(&mut tag)
                     ?
                 );
             }
@@ -5183,7 +5183,7 @@ pub fn deser_list_platform_branch_summary_list(
     Ok(out)
 }
 
-pub fn deser_list_platform_summary_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_platform_summary_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::PlatformSummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5191,7 +5191,7 @@ pub fn deser_list_platform_summary_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#PlatformSummaryList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_platform_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_platform_summary(&mut tag)
                     ?
                 );
             }
@@ -5202,7 +5202,7 @@ pub fn deser_list_platform_summary_list(
     Ok(out)
 }
 
-pub fn deser_list_tag_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_tag_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Tag>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5210,7 +5210,7 @@ pub fn deser_list_tag_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#TagList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_tag(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_tag(&mut tag)
                     ?
                 );
             }
@@ -5221,7 +5221,7 @@ pub fn deser_list_tag_list(
     Ok(out)
 }
 
-pub fn deser_list_environment_info_description_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_environment_info_description_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::EnvironmentInfoDescription>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5229,7 +5229,7 @@ pub fn deser_list_environment_info_description_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#EnvironmentInfoDescriptionList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_environment_info_description(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_environment_info_description(&mut tag)
                     ?
                 );
             }
@@ -5240,7 +5240,7 @@ pub fn deser_list_environment_info_description_list(
     Ok(out)
 }
 
-pub fn deser_structure_application_resource_lifecycle_config(
+pub fn deser_structure_crate_model_application_resource_lifecycle_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ApplicationResourceLifecycleConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5263,7 +5263,7 @@ pub fn deser_structure_application_resource_lifecycle_config(
             s if s.matches("VersionLifecycleConfig") /* VersionLifecycleConfig com.amazonaws.elasticbeanstalk#ApplicationResourceLifecycleConfig$VersionLifecycleConfig */ =>  {
                 let var_241 =
                     Some(
-                        crate::xml_deser::deser_structure_application_version_lifecycle_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_application_version_lifecycle_config(&mut tag)
                         ?
                     )
                 ;
@@ -5276,7 +5276,7 @@ pub fn deser_structure_application_resource_lifecycle_config(
     Ok(builder.build())
 }
 
-pub fn deser_list_validation_messages_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_validation_messages_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ValidationMessage>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5284,7 +5284,7 @@ pub fn deser_list_validation_messages_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#ValidationMessagesList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_validation_message(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_validation_message(&mut tag)
                     ?
                 );
             }
@@ -5295,7 +5295,7 @@ pub fn deser_list_validation_messages_list(
     Ok(out)
 }
 
-pub fn deser_structure_environment_description(
+pub fn deser_structure_crate_model_environment_description(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::EnvironmentDescription, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5520,7 +5520,7 @@ pub fn deser_structure_environment_description(
             s if s.matches("Resources") /* Resources com.amazonaws.elasticbeanstalk#EnvironmentDescription$Resources */ =>  {
                 let var_258 =
                     Some(
-                        crate::xml_deser::deser_structure_environment_resources_description(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_environment_resources_description(&mut tag)
                         ?
                     )
                 ;
@@ -5530,7 +5530,7 @@ pub fn deser_structure_environment_description(
             s if s.matches("Tier") /* Tier com.amazonaws.elasticbeanstalk#EnvironmentDescription$Tier */ =>  {
                 let var_259 =
                     Some(
-                        crate::xml_deser::deser_structure_environment_tier(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_environment_tier(&mut tag)
                         ?
                     )
                 ;
@@ -5540,7 +5540,7 @@ pub fn deser_structure_environment_description(
             s if s.matches("EnvironmentLinks") /* EnvironmentLinks com.amazonaws.elasticbeanstalk#EnvironmentDescription$EnvironmentLinks */ =>  {
                 let var_260 =
                     Some(
-                        crate::xml_deser::deser_list_environment_links(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_environment_links(&mut tag)
                         ?
                     )
                 ;
@@ -5579,7 +5579,7 @@ pub fn deser_structure_environment_description(
     Ok(builder.build())
 }
 
-pub fn deser_list_version_labels_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_version_labels_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5601,7 +5601,7 @@ pub fn deser_list_version_labels_list(
     Ok(out)
 }
 
-pub fn deser_list_configuration_template_names_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_configuration_template_names_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5623,7 +5623,7 @@ pub fn deser_list_configuration_template_names_list(
     Ok(out)
 }
 
-pub fn deser_structure_source_build_information(
+pub fn deser_structure_crate_model_source_build_information(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::SourceBuildInformation, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5677,7 +5677,7 @@ pub fn deser_structure_source_build_information(
     Ok(builder.build())
 }
 
-pub fn deser_structure_s3_location(
+pub fn deser_structure_crate_model_s3_location(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::S3Location, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5716,7 +5716,7 @@ pub fn deser_structure_s3_location(
     Ok(builder.build())
 }
 
-pub fn deser_structure_configuration_option_setting(
+pub fn deser_structure_crate_model_configuration_option_setting(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ConfigurationOptionSetting, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5781,7 +5781,7 @@ pub fn deser_structure_configuration_option_setting(
     Ok(builder.build())
 }
 
-pub fn deser_structure_load_balancer_description(
+pub fn deser_structure_crate_model_load_balancer_description(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LoadBalancerDescription, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5817,7 +5817,7 @@ pub fn deser_structure_load_balancer_description(
             s if s.matches("Listeners") /* Listeners com.amazonaws.elasticbeanstalk#LoadBalancerDescription$Listeners */ =>  {
                 let var_274 =
                     Some(
-                        crate::xml_deser::deser_list_load_balancer_listeners_description(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_load_balancer_listeners_description(&mut tag)
                         ?
                     )
                 ;
@@ -5830,7 +5830,7 @@ pub fn deser_structure_load_balancer_description(
     Ok(builder.build())
 }
 
-pub fn deser_structure_environment_link(
+pub fn deser_structure_crate_model_environment_link(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::EnvironmentLink, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5869,7 +5869,7 @@ pub fn deser_structure_environment_link(
     Ok(builder.build())
 }
 
-pub fn deser_list_supported_tier_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_supported_tier_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5891,7 +5891,7 @@ pub fn deser_list_supported_tier_list(
     Ok(out)
 }
 
-pub fn deser_list_supported_addon_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_supported_addon_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5913,7 +5913,7 @@ pub fn deser_list_supported_addon_list(
     Ok(out)
 }
 
-pub fn deser_structure_resource_quota(
+pub fn deser_structure_crate_model_resource_quota(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ResourceQuota, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5941,7 +5941,7 @@ pub fn deser_structure_resource_quota(
     Ok(builder.build())
 }
 
-pub fn deser_structure_configuration_option_description(
+pub fn deser_structure_crate_model_configuration_option_description(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ConfigurationOptionDescription, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6032,7 +6032,7 @@ pub fn deser_structure_configuration_option_description(
             s if s.matches("ValueOptions") /* ValueOptions com.amazonaws.elasticbeanstalk#ConfigurationOptionDescription$ValueOptions */ =>  {
                 let var_284 =
                     Some(
-                        crate::xml_deser::deser_list_configuration_option_possible_values(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_configuration_option_possible_values(&mut tag)
                         ?
                     )
                 ;
@@ -6087,7 +6087,7 @@ pub fn deser_structure_configuration_option_description(
             s if s.matches("Regex") /* Regex com.amazonaws.elasticbeanstalk#ConfigurationOptionDescription$Regex */ =>  {
                 let var_288 =
                     Some(
-                        crate::xml_deser::deser_structure_option_restriction_regex(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_option_restriction_regex(&mut tag)
                         ?
                     )
                 ;
@@ -6100,7 +6100,7 @@ pub fn deser_structure_configuration_option_description(
     Ok(builder.build())
 }
 
-pub fn deser_structure_configuration_settings_description(
+pub fn deser_structure_crate_model_configuration_settings_description(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ConfigurationSettingsDescription, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6230,7 +6230,7 @@ pub fn deser_structure_configuration_settings_description(
             s if s.matches("OptionSettings") /* OptionSettings com.amazonaws.elasticbeanstalk#ConfigurationSettingsDescription$OptionSettings */ =>  {
                 let var_298 =
                     Some(
-                        crate::xml_deser::deser_list_configuration_option_settings_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_configuration_option_settings_list(&mut tag)
                         ?
                     )
                 ;
@@ -6243,7 +6243,7 @@ pub fn deser_structure_configuration_settings_description(
     Ok(builder.build())
 }
 
-pub fn deser_structure_status_codes(
+pub fn deser_structure_crate_model_status_codes(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StatusCodes, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6316,7 +6316,7 @@ pub fn deser_structure_status_codes(
     Ok(builder.build())
 }
 
-pub fn deser_structure_latency(
+pub fn deser_structure_crate_model_latency(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Latency, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6449,7 +6449,7 @@ pub fn deser_structure_latency(
     Ok(builder.build())
 }
 
-pub fn deser_structure_managed_action_history_item(
+pub fn deser_structure_crate_model_managed_action_history_item(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ManagedActionHistoryItem, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6571,7 +6571,7 @@ pub fn deser_structure_managed_action_history_item(
     Ok(builder.build())
 }
 
-pub fn deser_structure_managed_action(
+pub fn deser_structure_crate_model_managed_action(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ManagedAction, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6652,7 +6652,7 @@ pub fn deser_structure_managed_action(
     Ok(builder.build())
 }
 
-pub fn deser_list_auto_scaling_group_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_auto_scaling_group_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::AutoScalingGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6660,7 +6660,7 @@ pub fn deser_list_auto_scaling_group_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#AutoScalingGroupList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_auto_scaling_group(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_auto_scaling_group(&mut tag)
                     ?
                 );
             }
@@ -6671,7 +6671,7 @@ pub fn deser_list_auto_scaling_group_list(
     Ok(out)
 }
 
-pub fn deser_list_instance_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_instance_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Instance>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6679,7 +6679,7 @@ pub fn deser_list_instance_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#InstanceList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_instance(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_instance(&mut tag)
                     ?
                 );
             }
@@ -6690,7 +6690,7 @@ pub fn deser_list_instance_list(
     Ok(out)
 }
 
-pub fn deser_list_launch_configuration_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_launch_configuration_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::LaunchConfiguration>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6698,7 +6698,7 @@ pub fn deser_list_launch_configuration_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#LaunchConfigurationList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_launch_configuration(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_launch_configuration(&mut tag)
                     ?
                 );
             }
@@ -6709,7 +6709,7 @@ pub fn deser_list_launch_configuration_list(
     Ok(out)
 }
 
-pub fn deser_list_launch_template_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_launch_template_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::LaunchTemplate>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6717,7 +6717,7 @@ pub fn deser_list_launch_template_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#LaunchTemplateList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_launch_template(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_launch_template(&mut tag)
                     ?
                 );
             }
@@ -6728,7 +6728,7 @@ pub fn deser_list_launch_template_list(
     Ok(out)
 }
 
-pub fn deser_list_load_balancer_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_load_balancer_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::LoadBalancer>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6736,7 +6736,7 @@ pub fn deser_list_load_balancer_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#LoadBalancerList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_load_balancer(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_load_balancer(&mut tag)
                     ?
                 );
             }
@@ -6747,7 +6747,7 @@ pub fn deser_list_load_balancer_list(
     Ok(out)
 }
 
-pub fn deser_list_trigger_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_trigger_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Trigger>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6755,7 +6755,7 @@ pub fn deser_list_trigger_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#TriggerList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_trigger(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_trigger(&mut tag)
                     ?
                 );
             }
@@ -6766,7 +6766,7 @@ pub fn deser_list_trigger_list(
     Ok(out)
 }
 
-pub fn deser_list_queue_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_queue_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Queue>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6774,7 +6774,7 @@ pub fn deser_list_queue_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#QueueList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_queue(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_queue(&mut tag)
                     ?
                 );
             }
@@ -6785,7 +6785,7 @@ pub fn deser_list_queue_list(
     Ok(out)
 }
 
-pub fn deser_structure_event_description(
+pub fn deser_structure_crate_model_event_description(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::EventDescription, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6917,7 +6917,7 @@ pub fn deser_structure_event_description(
     Ok(builder.build())
 }
 
-pub fn deser_structure_single_instance_health(
+pub fn deser_structure_crate_model_single_instance_health(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::SingleInstanceHealth, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6966,7 +6966,7 @@ pub fn deser_structure_single_instance_health(
             s if s.matches("Causes") /* Causes com.amazonaws.elasticbeanstalk#SingleInstanceHealth$Causes */ =>  {
                 let var_336 =
                     Some(
-                        crate::xml_deser::deser_list_causes(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_causes(&mut tag)
                         ?
                     )
                 ;
@@ -6990,7 +6990,7 @@ pub fn deser_structure_single_instance_health(
             s if s.matches("ApplicationMetrics") /* ApplicationMetrics com.amazonaws.elasticbeanstalk#SingleInstanceHealth$ApplicationMetrics */ =>  {
                 let var_338 =
                     Some(
-                        crate::xml_deser::deser_structure_application_metrics(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_application_metrics(&mut tag)
                         ?
                     )
                 ;
@@ -7000,7 +7000,7 @@ pub fn deser_structure_single_instance_health(
             s if s.matches("System") /* System com.amazonaws.elasticbeanstalk#SingleInstanceHealth$System */ =>  {
                 let var_339 =
                     Some(
-                        crate::xml_deser::deser_structure_system_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_system_status(&mut tag)
                         ?
                     )
                 ;
@@ -7010,7 +7010,7 @@ pub fn deser_structure_single_instance_health(
             s if s.matches("Deployment") /* Deployment com.amazonaws.elasticbeanstalk#SingleInstanceHealth$Deployment */ =>  {
                 let var_340 =
                     Some(
-                        crate::xml_deser::deser_structure_deployment(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_deployment(&mut tag)
                         ?
                     )
                 ;
@@ -7049,7 +7049,7 @@ pub fn deser_structure_single_instance_health(
     Ok(builder.build())
 }
 
-pub fn deser_list_platform_programming_languages(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_platform_programming_languages(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::PlatformProgrammingLanguage>, smithy_xml::decode::XmlError>
 {
@@ -7058,7 +7058,7 @@ pub fn deser_list_platform_programming_languages(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#PlatformProgrammingLanguages$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_platform_programming_language(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_platform_programming_language(&mut tag)
                     ?
                 );
             }
@@ -7069,7 +7069,7 @@ pub fn deser_list_platform_programming_languages(
     Ok(out)
 }
 
-pub fn deser_list_platform_frameworks(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_platform_frameworks(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::PlatformFramework>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7077,7 +7077,7 @@ pub fn deser_list_platform_frameworks(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#PlatformFrameworks$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_platform_framework(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_platform_framework(&mut tag)
                     ?
                 );
             }
@@ -7088,7 +7088,7 @@ pub fn deser_list_platform_frameworks(
     Ok(out)
 }
 
-pub fn deser_list_custom_ami_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_custom_ami_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::CustomAmi>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7096,7 +7096,7 @@ pub fn deser_list_custom_ami_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#CustomAmiList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_custom_ami(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_custom_ami(&mut tag)
                     ?
                 );
             }
@@ -7107,7 +7107,7 @@ pub fn deser_list_custom_ami_list(
     Ok(out)
 }
 
-pub fn deser_structure_solution_stack_description(
+pub fn deser_structure_crate_model_solution_stack_description(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::SolutionStackDescription, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7130,7 +7130,7 @@ pub fn deser_structure_solution_stack_description(
             s if s.matches("PermittedFileTypes") /* PermittedFileTypes com.amazonaws.elasticbeanstalk#SolutionStackDescription$PermittedFileTypes */ =>  {
                 let var_344 =
                     Some(
-                        crate::xml_deser::deser_list_solution_stack_file_type_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_solution_stack_file_type_list(&mut tag)
                         ?
                     )
                 ;
@@ -7143,7 +7143,7 @@ pub fn deser_structure_solution_stack_description(
     Ok(builder.build())
 }
 
-pub fn deser_structure_platform_branch_summary(
+pub fn deser_structure_crate_model_platform_branch_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PlatformBranchSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7207,7 +7207,7 @@ pub fn deser_structure_platform_branch_summary(
             s if s.matches("SupportedTierList") /* SupportedTierList com.amazonaws.elasticbeanstalk#PlatformBranchSummary$SupportedTierList */ =>  {
                 let var_349 =
                     Some(
-                        crate::xml_deser::deser_list_supported_tier_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_supported_tier_list(&mut tag)
                         ?
                     )
                 ;
@@ -7220,7 +7220,7 @@ pub fn deser_structure_platform_branch_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_tag(
+pub fn deser_structure_crate_model_tag(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Tag, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7259,7 +7259,7 @@ pub fn deser_structure_tag(
     Ok(builder.build())
 }
 
-pub fn deser_structure_environment_info_description(
+pub fn deser_structure_crate_model_environment_info_description(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::EnvironmentInfoDescription, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7326,7 +7326,7 @@ pub fn deser_structure_environment_info_description(
     Ok(builder.build())
 }
 
-pub fn deser_structure_application_version_lifecycle_config(
+pub fn deser_structure_crate_model_application_version_lifecycle_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ApplicationVersionLifecycleConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7336,7 +7336,7 @@ pub fn deser_structure_application_version_lifecycle_config(
             s if s.matches("MaxCountRule") /* MaxCountRule com.amazonaws.elasticbeanstalk#ApplicationVersionLifecycleConfig$MaxCountRule */ =>  {
                 let var_356 =
                     Some(
-                        crate::xml_deser::deser_structure_max_count_rule(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_max_count_rule(&mut tag)
                         ?
                     )
                 ;
@@ -7346,7 +7346,7 @@ pub fn deser_structure_application_version_lifecycle_config(
             s if s.matches("MaxAgeRule") /* MaxAgeRule com.amazonaws.elasticbeanstalk#ApplicationVersionLifecycleConfig$MaxAgeRule */ =>  {
                 let var_357 =
                     Some(
-                        crate::xml_deser::deser_structure_max_age_rule(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_max_age_rule(&mut tag)
                         ?
                     )
                 ;
@@ -7359,7 +7359,7 @@ pub fn deser_structure_application_version_lifecycle_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_validation_message(
+pub fn deser_structure_crate_model_validation_message(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ValidationMessage, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7425,7 +7425,7 @@ pub fn deser_structure_validation_message(
     Ok(builder.build())
 }
 
-pub fn deser_list_load_balancer_listeners_description(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_load_balancer_listeners_description(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Listener>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7433,7 +7433,7 @@ pub fn deser_list_load_balancer_listeners_description(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticbeanstalk#LoadBalancerListenersDescription$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_listener(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_listener(&mut tag)
                     ?
                 );
             }
@@ -7444,7 +7444,7 @@ pub fn deser_list_load_balancer_listeners_description(
     Ok(out)
 }
 
-pub fn deser_list_configuration_option_possible_values(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_configuration_option_possible_values(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7466,7 +7466,7 @@ pub fn deser_list_configuration_option_possible_values(
     Ok(out)
 }
 
-pub fn deser_structure_option_restriction_regex(
+pub fn deser_structure_crate_model_option_restriction_regex(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OptionRestrictionRegex, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7505,7 +7505,7 @@ pub fn deser_structure_option_restriction_regex(
     Ok(builder.build())
 }
 
-pub fn deser_structure_auto_scaling_group(
+pub fn deser_structure_crate_model_auto_scaling_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AutoScalingGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7531,7 +7531,7 @@ pub fn deser_structure_auto_scaling_group(
     Ok(builder.build())
 }
 
-pub fn deser_structure_instance(
+pub fn deser_structure_crate_model_instance(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Instance, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7557,7 +7557,7 @@ pub fn deser_structure_instance(
     Ok(builder.build())
 }
 
-pub fn deser_structure_launch_configuration(
+pub fn deser_structure_crate_model_launch_configuration(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LaunchConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7583,7 +7583,7 @@ pub fn deser_structure_launch_configuration(
     Ok(builder.build())
 }
 
-pub fn deser_structure_launch_template(
+pub fn deser_structure_crate_model_launch_template(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LaunchTemplate, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7609,7 +7609,7 @@ pub fn deser_structure_launch_template(
     Ok(builder.build())
 }
 
-pub fn deser_structure_load_balancer(
+pub fn deser_structure_crate_model_load_balancer(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LoadBalancer, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7635,7 +7635,7 @@ pub fn deser_structure_load_balancer(
     Ok(builder.build())
 }
 
-pub fn deser_structure_trigger(
+pub fn deser_structure_crate_model_trigger(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Trigger, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7661,7 +7661,7 @@ pub fn deser_structure_trigger(
     Ok(builder.build())
 }
 
-pub fn deser_structure_queue(
+pub fn deser_structure_crate_model_queue(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Queue, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7700,7 +7700,7 @@ pub fn deser_structure_queue(
     Ok(builder.build())
 }
 
-pub fn deser_structure_system_status(
+pub fn deser_structure_crate_model_system_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::SystemStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7710,7 +7710,7 @@ pub fn deser_structure_system_status(
             s if s.matches("CPUUtilization") /* CPUUtilization com.amazonaws.elasticbeanstalk#SystemStatus$CPUUtilization */ =>  {
                 let var_372 =
                     Some(
-                        crate::xml_deser::deser_structure_cpu_utilization(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_cpu_utilization(&mut tag)
                         ?
                     )
                 ;
@@ -7720,7 +7720,7 @@ pub fn deser_structure_system_status(
             s if s.matches("LoadAverage") /* LoadAverage com.amazonaws.elasticbeanstalk#SystemStatus$LoadAverage */ =>  {
                 let var_373 =
                     Some(
-                        crate::xml_deser::deser_list_load_average(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticbeanstalk_load_average(&mut tag)
                         ?
                     )
                 ;
@@ -7733,7 +7733,7 @@ pub fn deser_structure_system_status(
     Ok(builder.build())
 }
 
-pub fn deser_structure_deployment(
+pub fn deser_structure_crate_model_deployment(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Deployment, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7801,7 +7801,7 @@ pub fn deser_structure_deployment(
     Ok(builder.build())
 }
 
-pub fn deser_structure_platform_programming_language(
+pub fn deser_structure_crate_model_platform_programming_language(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PlatformProgrammingLanguage, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7840,7 +7840,7 @@ pub fn deser_structure_platform_programming_language(
     Ok(builder.build())
 }
 
-pub fn deser_structure_platform_framework(
+pub fn deser_structure_crate_model_platform_framework(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PlatformFramework, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7879,7 +7879,7 @@ pub fn deser_structure_platform_framework(
     Ok(builder.build())
 }
 
-pub fn deser_structure_custom_ami(
+pub fn deser_structure_crate_model_custom_ami(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CustomAmi, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7918,7 +7918,7 @@ pub fn deser_structure_custom_ami(
     Ok(builder.build())
 }
 
-pub fn deser_list_solution_stack_file_type_list(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_solution_stack_file_type_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7940,7 +7940,7 @@ pub fn deser_list_solution_stack_file_type_list(
     Ok(out)
 }
 
-pub fn deser_structure_max_count_rule(
+pub fn deser_structure_crate_model_max_count_rule(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::MaxCountRule, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7998,7 +7998,7 @@ pub fn deser_structure_max_count_rule(
     Ok(builder.build())
 }
 
-pub fn deser_structure_max_age_rule(
+pub fn deser_structure_crate_model_max_age_rule(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::MaxAgeRule, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8056,7 +8056,7 @@ pub fn deser_structure_max_age_rule(
     Ok(builder.build())
 }
 
-pub fn deser_structure_listener(
+pub fn deser_structure_crate_model_listener(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Listener, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8097,7 +8097,7 @@ pub fn deser_structure_listener(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cpu_utilization(
+pub fn deser_structure_crate_model_cpu_utilization(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CpuUtilization, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8230,7 +8230,7 @@ pub fn deser_structure_cpu_utilization(
     Ok(builder.build())
 }
 
-pub fn deser_list_load_average(
+pub fn deser_list_com_amazonaws_elasticbeanstalk_load_average(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<f64>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();

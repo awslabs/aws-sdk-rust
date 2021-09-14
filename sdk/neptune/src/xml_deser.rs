@@ -6,7 +6,7 @@ pub fn parse_http_generic_error(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_cluster_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_db_cluster_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_cluster_not_found_fault::Builder,
 ) -> Result<crate::error::db_cluster_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -39,7 +39,7 @@ pub fn deser_structure_db_cluster_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_cluster_role_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_db_cluster_role_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_cluster_role_already_exists_fault::Builder,
 ) -> Result<crate::error::db_cluster_role_already_exists_fault::Builder, smithy_xml::decode::XmlError>
@@ -73,7 +73,7 @@ pub fn deser_structure_db_cluster_role_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_cluster_role_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_db_cluster_role_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_cluster_role_quota_exceeded_fault::Builder,
 ) -> Result<crate::error::db_cluster_role_quota_exceeded_fault::Builder, smithy_xml::decode::XmlError>
@@ -107,7 +107,7 @@ pub fn deser_structure_db_cluster_role_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_db_cluster_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_db_cluster_state_fault::Builder,
 ) -> Result<crate::error::invalid_db_cluster_state_fault::Builder, smithy_xml::decode::XmlError> {
@@ -140,7 +140,7 @@ pub fn deser_structure_invalid_db_cluster_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_source_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_source_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::source_not_found_fault::Builder,
 ) -> Result<crate::error::source_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -173,7 +173,7 @@ pub fn deser_structure_source_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_subscription_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_subscription_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::subscription_not_found_fault::Builder,
 ) -> Result<crate::error::subscription_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -206,7 +206,7 @@ pub fn deser_structure_subscription_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_add_source_identifier_to_subscription(
+pub fn deser_operation_crate_operation_add_source_identifier_to_subscription(
     inp: &[u8],
     mut builder: crate::output::add_source_identifier_to_subscription_output::Builder,
 ) -> Result<
@@ -235,10 +235,10 @@ pub fn deser_operation_add_source_identifier_to_subscription(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("EventSubscription") /* EventSubscription com.amazonaws.neptune#AddSourceIdentifierToSubscriptionOutput$EventSubscription */ =>  {
+            s if s.matches("EventSubscription") /* EventSubscription com.amazonaws.neptune.synthetic#AddSourceIdentifierToSubscriptionOutput$EventSubscription */ =>  {
                 let var_7 =
                     Some(
-                        crate::xml_deser::deser_structure_event_subscription(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_event_subscription(&mut tag)
                         ?
                     )
                 ;
@@ -257,7 +257,7 @@ pub fn deser_operation_add_source_identifier_to_subscription(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_instance_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_db_instance_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_instance_not_found_fault::Builder,
 ) -> Result<crate::error::db_instance_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -290,7 +290,7 @@ pub fn deser_structure_db_instance_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_snapshot_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_db_snapshot_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_snapshot_not_found_fault::Builder,
 ) -> Result<crate::error::db_snapshot_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -323,7 +323,7 @@ pub fn deser_structure_db_snapshot_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_resource_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_resource_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::resource_not_found_fault::Builder,
 ) -> Result<crate::error::resource_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -356,7 +356,7 @@ pub fn deser_structure_resource_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_apply_pending_maintenance_action(
+pub fn deser_operation_crate_operation_apply_pending_maintenance_action(
     inp: &[u8],
     mut builder: crate::output::apply_pending_maintenance_action_output::Builder,
 ) -> Result<
@@ -385,10 +385,10 @@ pub fn deser_operation_apply_pending_maintenance_action(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ResourcePendingMaintenanceActions") /* ResourcePendingMaintenanceActions com.amazonaws.neptune#ApplyPendingMaintenanceActionOutput$ResourcePendingMaintenanceActions */ =>  {
+            s if s.matches("ResourcePendingMaintenanceActions") /* ResourcePendingMaintenanceActions com.amazonaws.neptune.synthetic#ApplyPendingMaintenanceActionOutput$ResourcePendingMaintenanceActions */ =>  {
                 let var_11 =
                     Some(
-                        crate::xml_deser::deser_structure_resource_pending_maintenance_actions(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_resource_pending_maintenance_actions(&mut tag)
                         ?
                     )
                 ;
@@ -407,7 +407,7 @@ pub fn deser_operation_apply_pending_maintenance_action(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_parameter_group_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_db_parameter_group_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_parameter_group_already_exists_fault::Builder,
 ) -> Result<
@@ -443,7 +443,7 @@ pub fn deser_structure_db_parameter_group_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_parameter_group_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_db_parameter_group_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_parameter_group_not_found_fault::Builder,
 ) -> Result<crate::error::db_parameter_group_not_found_fault::Builder, smithy_xml::decode::XmlError>
@@ -477,7 +477,7 @@ pub fn deser_structure_db_parameter_group_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_parameter_group_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_db_parameter_group_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_parameter_group_quota_exceeded_fault::Builder,
 ) -> Result<
@@ -513,7 +513,7 @@ pub fn deser_structure_db_parameter_group_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_copy_db_cluster_parameter_group(
+pub fn deser_operation_crate_operation_copy_db_cluster_parameter_group(
     inp: &[u8],
     mut builder: crate::output::copy_db_cluster_parameter_group_output::Builder,
 ) -> Result<
@@ -542,10 +542,10 @@ pub fn deser_operation_copy_db_cluster_parameter_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBClusterParameterGroup") /* DBClusterParameterGroup com.amazonaws.neptune#CopyDBClusterParameterGroupOutput$DBClusterParameterGroup */ =>  {
+            s if s.matches("DBClusterParameterGroup") /* DBClusterParameterGroup com.amazonaws.neptune.synthetic#CopyDBClusterParameterGroupOutput$DBClusterParameterGroup */ =>  {
                 let var_15 =
                     Some(
-                        crate::xml_deser::deser_structure_db_cluster_parameter_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_cluster_parameter_group(&mut tag)
                         ?
                     )
                 ;
@@ -564,7 +564,7 @@ pub fn deser_operation_copy_db_cluster_parameter_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_cluster_snapshot_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_db_cluster_snapshot_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_cluster_snapshot_already_exists_fault::Builder,
 ) -> Result<
@@ -600,7 +600,7 @@ pub fn deser_structure_db_cluster_snapshot_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_cluster_snapshot_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_db_cluster_snapshot_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_cluster_snapshot_not_found_fault::Builder,
 ) -> Result<crate::error::db_cluster_snapshot_not_found_fault::Builder, smithy_xml::decode::XmlError>
@@ -634,7 +634,7 @@ pub fn deser_structure_db_cluster_snapshot_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_db_cluster_snapshot_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_db_cluster_snapshot_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_db_cluster_snapshot_state_fault::Builder,
 ) -> Result<
@@ -670,7 +670,7 @@ pub fn deser_structure_invalid_db_cluster_snapshot_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_kms_key_not_accessible_fault_xml_err(
+pub fn deser_structure_crate_error_kms_key_not_accessible_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::kms_key_not_accessible_fault::Builder,
 ) -> Result<crate::error::kms_key_not_accessible_fault::Builder, smithy_xml::decode::XmlError> {
@@ -703,7 +703,7 @@ pub fn deser_structure_kms_key_not_accessible_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_snapshot_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_snapshot_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::snapshot_quota_exceeded_fault::Builder,
 ) -> Result<crate::error::snapshot_quota_exceeded_fault::Builder, smithy_xml::decode::XmlError> {
@@ -736,7 +736,7 @@ pub fn deser_structure_snapshot_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_copy_db_cluster_snapshot(
+pub fn deser_operation_crate_operation_copy_db_cluster_snapshot(
     inp: &[u8],
     mut builder: crate::output::copy_db_cluster_snapshot_output::Builder,
 ) -> Result<crate::output::copy_db_cluster_snapshot_output::Builder, smithy_xml::decode::XmlError> {
@@ -762,10 +762,10 @@ pub fn deser_operation_copy_db_cluster_snapshot(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBClusterSnapshot") /* DBClusterSnapshot com.amazonaws.neptune#CopyDBClusterSnapshotOutput$DBClusterSnapshot */ =>  {
+            s if s.matches("DBClusterSnapshot") /* DBClusterSnapshot com.amazonaws.neptune.synthetic#CopyDBClusterSnapshotOutput$DBClusterSnapshot */ =>  {
                 let var_21 =
                     Some(
-                        crate::xml_deser::deser_structure_db_cluster_snapshot(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_cluster_snapshot(&mut tag)
                         ?
                     )
                 ;
@@ -784,7 +784,7 @@ pub fn deser_operation_copy_db_cluster_snapshot(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_copy_db_parameter_group(
+pub fn deser_operation_crate_operation_copy_db_parameter_group(
     inp: &[u8],
     mut builder: crate::output::copy_db_parameter_group_output::Builder,
 ) -> Result<crate::output::copy_db_parameter_group_output::Builder, smithy_xml::decode::XmlError> {
@@ -810,10 +810,10 @@ pub fn deser_operation_copy_db_parameter_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBParameterGroup") /* DBParameterGroup com.amazonaws.neptune#CopyDBParameterGroupOutput$DBParameterGroup */ =>  {
+            s if s.matches("DBParameterGroup") /* DBParameterGroup com.amazonaws.neptune.synthetic#CopyDBParameterGroupOutput$DBParameterGroup */ =>  {
                 let var_22 =
                     Some(
-                        crate::xml_deser::deser_structure_db_parameter_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_parameter_group(&mut tag)
                         ?
                     )
                 ;
@@ -832,7 +832,7 @@ pub fn deser_operation_copy_db_parameter_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_cluster_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_db_cluster_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_cluster_already_exists_fault::Builder,
 ) -> Result<crate::error::db_cluster_already_exists_fault::Builder, smithy_xml::decode::XmlError> {
@@ -865,7 +865,7 @@ pub fn deser_structure_db_cluster_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_cluster_parameter_group_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_db_cluster_parameter_group_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_cluster_parameter_group_not_found_fault::Builder,
 ) -> Result<
@@ -901,7 +901,7 @@ pub fn deser_structure_db_cluster_parameter_group_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_cluster_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_db_cluster_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_cluster_quota_exceeded_fault::Builder,
 ) -> Result<crate::error::db_cluster_quota_exceeded_fault::Builder, smithy_xml::decode::XmlError> {
@@ -934,7 +934,7 @@ pub fn deser_structure_db_cluster_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_subnet_group_does_not_cover_enough_a_zs_xml_err(
+pub fn deser_structure_crate_error_db_subnet_group_does_not_cover_enough_a_zs_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_subnet_group_does_not_cover_enough_a_zs::Builder,
 ) -> Result<
@@ -970,7 +970,7 @@ pub fn deser_structure_db_subnet_group_does_not_cover_enough_a_zs_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_subnet_group_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_db_subnet_group_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_subnet_group_not_found_fault::Builder,
 ) -> Result<crate::error::db_subnet_group_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -1003,7 +1003,7 @@ pub fn deser_structure_db_subnet_group_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_insufficient_storage_cluster_capacity_fault_xml_err(
+pub fn deser_structure_crate_error_insufficient_storage_cluster_capacity_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::insufficient_storage_cluster_capacity_fault::Builder,
 ) -> Result<
@@ -1039,7 +1039,7 @@ pub fn deser_structure_insufficient_storage_cluster_capacity_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_db_instance_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_db_instance_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_db_instance_state_fault::Builder,
 ) -> Result<crate::error::invalid_db_instance_state_fault::Builder, smithy_xml::decode::XmlError> {
@@ -1072,7 +1072,7 @@ pub fn deser_structure_invalid_db_instance_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_db_subnet_group_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_db_subnet_group_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_db_subnet_group_state_fault::Builder,
 ) -> Result<crate::error::invalid_db_subnet_group_state_fault::Builder, smithy_xml::decode::XmlError>
@@ -1106,7 +1106,7 @@ pub fn deser_structure_invalid_db_subnet_group_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_subnet_xml_err(
+pub fn deser_structure_crate_error_invalid_subnet_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_subnet::Builder,
 ) -> Result<crate::error::invalid_subnet::Builder, smithy_xml::decode::XmlError> {
@@ -1139,7 +1139,7 @@ pub fn deser_structure_invalid_subnet_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_vpc_network_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_vpc_network_state_fault::Builder,
 ) -> Result<crate::error::invalid_vpc_network_state_fault::Builder, smithy_xml::decode::XmlError> {
@@ -1172,7 +1172,7 @@ pub fn deser_structure_invalid_vpc_network_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_storage_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_storage_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::storage_quota_exceeded_fault::Builder,
 ) -> Result<crate::error::storage_quota_exceeded_fault::Builder, smithy_xml::decode::XmlError> {
@@ -1205,7 +1205,7 @@ pub fn deser_structure_storage_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_db_cluster(
+pub fn deser_operation_crate_operation_create_db_cluster(
     inp: &[u8],
     mut builder: crate::output::create_db_cluster_output::Builder,
 ) -> Result<crate::output::create_db_cluster_output::Builder, smithy_xml::decode::XmlError> {
@@ -1231,10 +1231,10 @@ pub fn deser_operation_create_db_cluster(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune#CreateDBClusterOutput$DBCluster */ =>  {
+            s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune.synthetic#CreateDBClusterOutput$DBCluster */ =>  {
                 let var_34 =
                     Some(
-                        crate::xml_deser::deser_structure_db_cluster(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
@@ -1253,7 +1253,7 @@ pub fn deser_operation_create_db_cluster(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_cluster_endpoint_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_db_cluster_endpoint_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_cluster_endpoint_already_exists_fault::Builder,
 ) -> Result<
@@ -1289,7 +1289,7 @@ pub fn deser_structure_db_cluster_endpoint_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_cluster_endpoint_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_db_cluster_endpoint_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_cluster_endpoint_quota_exceeded_fault::Builder,
 ) -> Result<
@@ -1325,7 +1325,7 @@ pub fn deser_structure_db_cluster_endpoint_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_db_cluster_endpoint(
+pub fn deser_operation_crate_operation_create_db_cluster_endpoint(
     inp: &[u8],
     mut builder: crate::output::create_db_cluster_endpoint_output::Builder,
 ) -> Result<crate::output::create_db_cluster_endpoint_output::Builder, smithy_xml::decode::XmlError>
@@ -1352,7 +1352,7 @@ pub fn deser_operation_create_db_cluster_endpoint(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBClusterEndpointIdentifier") /* DBClusterEndpointIdentifier com.amazonaws.neptune#CreateDBClusterEndpointOutput$DBClusterEndpointIdentifier */ =>  {
+            s if s.matches("DBClusterEndpointIdentifier") /* DBClusterEndpointIdentifier com.amazonaws.neptune.synthetic#CreateDBClusterEndpointOutput$DBClusterEndpointIdentifier */ =>  {
                 let var_37 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1365,7 +1365,7 @@ pub fn deser_operation_create_db_cluster_endpoint(
                 builder = builder.set_db_cluster_endpoint_identifier(var_37);
             }
             ,
-            s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.neptune#CreateDBClusterEndpointOutput$DBClusterIdentifier */ =>  {
+            s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.neptune.synthetic#CreateDBClusterEndpointOutput$DBClusterIdentifier */ =>  {
                 let var_38 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1378,7 +1378,7 @@ pub fn deser_operation_create_db_cluster_endpoint(
                 builder = builder.set_db_cluster_identifier(var_38);
             }
             ,
-            s if s.matches("DBClusterEndpointResourceIdentifier") /* DBClusterEndpointResourceIdentifier com.amazonaws.neptune#CreateDBClusterEndpointOutput$DBClusterEndpointResourceIdentifier */ =>  {
+            s if s.matches("DBClusterEndpointResourceIdentifier") /* DBClusterEndpointResourceIdentifier com.amazonaws.neptune.synthetic#CreateDBClusterEndpointOutput$DBClusterEndpointResourceIdentifier */ =>  {
                 let var_39 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1391,7 +1391,7 @@ pub fn deser_operation_create_db_cluster_endpoint(
                 builder = builder.set_db_cluster_endpoint_resource_identifier(var_39);
             }
             ,
-            s if s.matches("Endpoint") /* Endpoint com.amazonaws.neptune#CreateDBClusterEndpointOutput$Endpoint */ =>  {
+            s if s.matches("Endpoint") /* Endpoint com.amazonaws.neptune.synthetic#CreateDBClusterEndpointOutput$Endpoint */ =>  {
                 let var_40 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1404,7 +1404,7 @@ pub fn deser_operation_create_db_cluster_endpoint(
                 builder = builder.set_endpoint(var_40);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.neptune#CreateDBClusterEndpointOutput$Status */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.neptune.synthetic#CreateDBClusterEndpointOutput$Status */ =>  {
                 let var_41 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1417,7 +1417,7 @@ pub fn deser_operation_create_db_cluster_endpoint(
                 builder = builder.set_status(var_41);
             }
             ,
-            s if s.matches("EndpointType") /* EndpointType com.amazonaws.neptune#CreateDBClusterEndpointOutput$EndpointType */ =>  {
+            s if s.matches("EndpointType") /* EndpointType com.amazonaws.neptune.synthetic#CreateDBClusterEndpointOutput$EndpointType */ =>  {
                 let var_42 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1430,7 +1430,7 @@ pub fn deser_operation_create_db_cluster_endpoint(
                 builder = builder.set_endpoint_type(var_42);
             }
             ,
-            s if s.matches("CustomEndpointType") /* CustomEndpointType com.amazonaws.neptune#CreateDBClusterEndpointOutput$CustomEndpointType */ =>  {
+            s if s.matches("CustomEndpointType") /* CustomEndpointType com.amazonaws.neptune.synthetic#CreateDBClusterEndpointOutput$CustomEndpointType */ =>  {
                 let var_43 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1443,27 +1443,27 @@ pub fn deser_operation_create_db_cluster_endpoint(
                 builder = builder.set_custom_endpoint_type(var_43);
             }
             ,
-            s if s.matches("StaticMembers") /* StaticMembers com.amazonaws.neptune#CreateDBClusterEndpointOutput$StaticMembers */ =>  {
+            s if s.matches("StaticMembers") /* StaticMembers com.amazonaws.neptune.synthetic#CreateDBClusterEndpointOutput$StaticMembers */ =>  {
                 let var_44 =
                     Some(
-                        crate::xml_deser::deser_list_string_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_string_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_static_members(var_44);
             }
             ,
-            s if s.matches("ExcludedMembers") /* ExcludedMembers com.amazonaws.neptune#CreateDBClusterEndpointOutput$ExcludedMembers */ =>  {
+            s if s.matches("ExcludedMembers") /* ExcludedMembers com.amazonaws.neptune.synthetic#CreateDBClusterEndpointOutput$ExcludedMembers */ =>  {
                 let var_45 =
                     Some(
-                        crate::xml_deser::deser_list_string_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_string_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_excluded_members(var_45);
             }
             ,
-            s if s.matches("DBClusterEndpointArn") /* DBClusterEndpointArn com.amazonaws.neptune#CreateDBClusterEndpointOutput$DBClusterEndpointArn */ =>  {
+            s if s.matches("DBClusterEndpointArn") /* DBClusterEndpointArn com.amazonaws.neptune.synthetic#CreateDBClusterEndpointOutput$DBClusterEndpointArn */ =>  {
                 let var_46 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1488,7 +1488,7 @@ pub fn deser_operation_create_db_cluster_endpoint(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_db_cluster_parameter_group(
+pub fn deser_operation_crate_operation_create_db_cluster_parameter_group(
     inp: &[u8],
     mut builder: crate::output::create_db_cluster_parameter_group_output::Builder,
 ) -> Result<
@@ -1517,10 +1517,10 @@ pub fn deser_operation_create_db_cluster_parameter_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBClusterParameterGroup") /* DBClusterParameterGroup com.amazonaws.neptune#CreateDBClusterParameterGroupOutput$DBClusterParameterGroup */ =>  {
+            s if s.matches("DBClusterParameterGroup") /* DBClusterParameterGroup com.amazonaws.neptune.synthetic#CreateDBClusterParameterGroupOutput$DBClusterParameterGroup */ =>  {
                 let var_47 =
                     Some(
-                        crate::xml_deser::deser_structure_db_cluster_parameter_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_cluster_parameter_group(&mut tag)
                         ?
                     )
                 ;
@@ -1539,7 +1539,7 @@ pub fn deser_operation_create_db_cluster_parameter_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_db_cluster_snapshot(
+pub fn deser_operation_crate_operation_create_db_cluster_snapshot(
     inp: &[u8],
     mut builder: crate::output::create_db_cluster_snapshot_output::Builder,
 ) -> Result<crate::output::create_db_cluster_snapshot_output::Builder, smithy_xml::decode::XmlError>
@@ -1566,10 +1566,10 @@ pub fn deser_operation_create_db_cluster_snapshot(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBClusterSnapshot") /* DBClusterSnapshot com.amazonaws.neptune#CreateDBClusterSnapshotOutput$DBClusterSnapshot */ =>  {
+            s if s.matches("DBClusterSnapshot") /* DBClusterSnapshot com.amazonaws.neptune.synthetic#CreateDBClusterSnapshotOutput$DBClusterSnapshot */ =>  {
                 let var_48 =
                     Some(
-                        crate::xml_deser::deser_structure_db_cluster_snapshot(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_cluster_snapshot(&mut tag)
                         ?
                     )
                 ;
@@ -1588,7 +1588,7 @@ pub fn deser_operation_create_db_cluster_snapshot(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_authorization_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_authorization_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::authorization_not_found_fault::Builder,
 ) -> Result<crate::error::authorization_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -1621,7 +1621,7 @@ pub fn deser_structure_authorization_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_instance_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_db_instance_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_instance_already_exists_fault::Builder,
 ) -> Result<crate::error::db_instance_already_exists_fault::Builder, smithy_xml::decode::XmlError> {
@@ -1654,7 +1654,7 @@ pub fn deser_structure_db_instance_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_security_group_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_db_security_group_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_security_group_not_found_fault::Builder,
 ) -> Result<crate::error::db_security_group_not_found_fault::Builder, smithy_xml::decode::XmlError>
@@ -1688,7 +1688,7 @@ pub fn deser_structure_db_security_group_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_domain_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_domain_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::domain_not_found_fault::Builder,
 ) -> Result<crate::error::domain_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -1721,7 +1721,7 @@ pub fn deser_structure_domain_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_instance_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_instance_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::instance_quota_exceeded_fault::Builder,
 ) -> Result<crate::error::instance_quota_exceeded_fault::Builder, smithy_xml::decode::XmlError> {
@@ -1754,7 +1754,7 @@ pub fn deser_structure_instance_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_insufficient_db_instance_capacity_fault_xml_err(
+pub fn deser_structure_crate_error_insufficient_db_instance_capacity_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::insufficient_db_instance_capacity_fault::Builder,
 ) -> Result<
@@ -1790,7 +1790,7 @@ pub fn deser_structure_insufficient_db_instance_capacity_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_option_group_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_option_group_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::option_group_not_found_fault::Builder,
 ) -> Result<crate::error::option_group_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -1823,7 +1823,7 @@ pub fn deser_structure_option_group_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_provisioned_iops_not_available_in_az_fault_xml_err(
+pub fn deser_structure_crate_error_provisioned_iops_not_available_in_az_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::provisioned_iops_not_available_in_az_fault::Builder,
 ) -> Result<
@@ -1859,7 +1859,7 @@ pub fn deser_structure_provisioned_iops_not_available_in_az_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_storage_type_not_supported_fault_xml_err(
+pub fn deser_structure_crate_error_storage_type_not_supported_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::storage_type_not_supported_fault::Builder,
 ) -> Result<crate::error::storage_type_not_supported_fault::Builder, smithy_xml::decode::XmlError> {
@@ -1892,7 +1892,7 @@ pub fn deser_structure_storage_type_not_supported_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_db_instance(
+pub fn deser_operation_crate_operation_create_db_instance(
     inp: &[u8],
     mut builder: crate::output::create_db_instance_output::Builder,
 ) -> Result<crate::output::create_db_instance_output::Builder, smithy_xml::decode::XmlError> {
@@ -1918,10 +1918,10 @@ pub fn deser_operation_create_db_instance(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBInstance") /* DBInstance com.amazonaws.neptune#CreateDBInstanceOutput$DBInstance */ =>  {
+            s if s.matches("DBInstance") /* DBInstance com.amazonaws.neptune.synthetic#CreateDBInstanceOutput$DBInstance */ =>  {
                 let var_58 =
                     Some(
-                        crate::xml_deser::deser_structure_db_instance(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_instance(&mut tag)
                         ?
                     )
                 ;
@@ -1940,7 +1940,7 @@ pub fn deser_operation_create_db_instance(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_db_parameter_group(
+pub fn deser_operation_crate_operation_create_db_parameter_group(
     inp: &[u8],
     mut builder: crate::output::create_db_parameter_group_output::Builder,
 ) -> Result<crate::output::create_db_parameter_group_output::Builder, smithy_xml::decode::XmlError>
@@ -1967,10 +1967,10 @@ pub fn deser_operation_create_db_parameter_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBParameterGroup") /* DBParameterGroup com.amazonaws.neptune#CreateDBParameterGroupOutput$DBParameterGroup */ =>  {
+            s if s.matches("DBParameterGroup") /* DBParameterGroup com.amazonaws.neptune.synthetic#CreateDBParameterGroupOutput$DBParameterGroup */ =>  {
                 let var_59 =
                     Some(
-                        crate::xml_deser::deser_structure_db_parameter_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_parameter_group(&mut tag)
                         ?
                     )
                 ;
@@ -1989,7 +1989,7 @@ pub fn deser_operation_create_db_parameter_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_subnet_group_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_db_subnet_group_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_subnet_group_already_exists_fault::Builder,
 ) -> Result<crate::error::db_subnet_group_already_exists_fault::Builder, smithy_xml::decode::XmlError>
@@ -2023,7 +2023,7 @@ pub fn deser_structure_db_subnet_group_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_subnet_group_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_db_subnet_group_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_subnet_group_quota_exceeded_fault::Builder,
 ) -> Result<crate::error::db_subnet_group_quota_exceeded_fault::Builder, smithy_xml::decode::XmlError>
@@ -2057,7 +2057,7 @@ pub fn deser_structure_db_subnet_group_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_subnet_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_db_subnet_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_subnet_quota_exceeded_fault::Builder,
 ) -> Result<crate::error::db_subnet_quota_exceeded_fault::Builder, smithy_xml::decode::XmlError> {
@@ -2090,7 +2090,7 @@ pub fn deser_structure_db_subnet_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_db_subnet_group(
+pub fn deser_operation_crate_operation_create_db_subnet_group(
     inp: &[u8],
     mut builder: crate::output::create_db_subnet_group_output::Builder,
 ) -> Result<crate::output::create_db_subnet_group_output::Builder, smithy_xml::decode::XmlError> {
@@ -2116,10 +2116,10 @@ pub fn deser_operation_create_db_subnet_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBSubnetGroup") /* DBSubnetGroup com.amazonaws.neptune#CreateDBSubnetGroupOutput$DBSubnetGroup */ =>  {
+            s if s.matches("DBSubnetGroup") /* DBSubnetGroup com.amazonaws.neptune.synthetic#CreateDBSubnetGroupOutput$DBSubnetGroup */ =>  {
                 let var_63 =
                     Some(
-                        crate::xml_deser::deser_structure_db_subnet_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_subnet_group(&mut tag)
                         ?
                     )
                 ;
@@ -2138,7 +2138,7 @@ pub fn deser_operation_create_db_subnet_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_event_subscription_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_event_subscription_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::event_subscription_quota_exceeded_fault::Builder,
 ) -> Result<
@@ -2174,7 +2174,7 @@ pub fn deser_structure_event_subscription_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_sns_invalid_topic_fault_xml_err(
+pub fn deser_structure_crate_error_sns_invalid_topic_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::sns_invalid_topic_fault::Builder,
 ) -> Result<crate::error::sns_invalid_topic_fault::Builder, smithy_xml::decode::XmlError> {
@@ -2207,7 +2207,7 @@ pub fn deser_structure_sns_invalid_topic_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_sns_no_authorization_fault_xml_err(
+pub fn deser_structure_crate_error_sns_no_authorization_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::sns_no_authorization_fault::Builder,
 ) -> Result<crate::error::sns_no_authorization_fault::Builder, smithy_xml::decode::XmlError> {
@@ -2240,7 +2240,7 @@ pub fn deser_structure_sns_no_authorization_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_sns_topic_arn_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_sns_topic_arn_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::sns_topic_arn_not_found_fault::Builder,
 ) -> Result<crate::error::sns_topic_arn_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -2273,7 +2273,7 @@ pub fn deser_structure_sns_topic_arn_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_subscription_already_exist_fault_xml_err(
+pub fn deser_structure_crate_error_subscription_already_exist_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::subscription_already_exist_fault::Builder,
 ) -> Result<crate::error::subscription_already_exist_fault::Builder, smithy_xml::decode::XmlError> {
@@ -2306,7 +2306,7 @@ pub fn deser_structure_subscription_already_exist_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_subscription_category_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_subscription_category_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::subscription_category_not_found_fault::Builder,
 ) -> Result<
@@ -2342,7 +2342,7 @@ pub fn deser_structure_subscription_category_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_event_subscription(
+pub fn deser_operation_crate_operation_create_event_subscription(
     inp: &[u8],
     mut builder: crate::output::create_event_subscription_output::Builder,
 ) -> Result<crate::output::create_event_subscription_output::Builder, smithy_xml::decode::XmlError>
@@ -2369,10 +2369,10 @@ pub fn deser_operation_create_event_subscription(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("EventSubscription") /* EventSubscription com.amazonaws.neptune#CreateEventSubscriptionOutput$EventSubscription */ =>  {
+            s if s.matches("EventSubscription") /* EventSubscription com.amazonaws.neptune.synthetic#CreateEventSubscriptionOutput$EventSubscription */ =>  {
                 let var_70 =
                     Some(
-                        crate::xml_deser::deser_structure_event_subscription(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_event_subscription(&mut tag)
                         ?
                     )
                 ;
@@ -2391,7 +2391,7 @@ pub fn deser_operation_create_event_subscription(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_delete_db_cluster(
+pub fn deser_operation_crate_operation_delete_db_cluster(
     inp: &[u8],
     mut builder: crate::output::delete_db_cluster_output::Builder,
 ) -> Result<crate::output::delete_db_cluster_output::Builder, smithy_xml::decode::XmlError> {
@@ -2417,10 +2417,10 @@ pub fn deser_operation_delete_db_cluster(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune#DeleteDBClusterOutput$DBCluster */ =>  {
+            s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune.synthetic#DeleteDBClusterOutput$DBCluster */ =>  {
                 let var_71 =
                     Some(
-                        crate::xml_deser::deser_structure_db_cluster(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
@@ -2439,7 +2439,7 @@ pub fn deser_operation_delete_db_cluster(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_cluster_endpoint_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_db_cluster_endpoint_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_cluster_endpoint_not_found_fault::Builder,
 ) -> Result<crate::error::db_cluster_endpoint_not_found_fault::Builder, smithy_xml::decode::XmlError>
@@ -2473,7 +2473,7 @@ pub fn deser_structure_db_cluster_endpoint_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_db_cluster_endpoint_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_db_cluster_endpoint_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_db_cluster_endpoint_state_fault::Builder,
 ) -> Result<
@@ -2509,7 +2509,7 @@ pub fn deser_structure_invalid_db_cluster_endpoint_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_delete_db_cluster_endpoint(
+pub fn deser_operation_crate_operation_delete_db_cluster_endpoint(
     inp: &[u8],
     mut builder: crate::output::delete_db_cluster_endpoint_output::Builder,
 ) -> Result<crate::output::delete_db_cluster_endpoint_output::Builder, smithy_xml::decode::XmlError>
@@ -2536,7 +2536,7 @@ pub fn deser_operation_delete_db_cluster_endpoint(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBClusterEndpointIdentifier") /* DBClusterEndpointIdentifier com.amazonaws.neptune#DeleteDBClusterEndpointOutput$DBClusterEndpointIdentifier */ =>  {
+            s if s.matches("DBClusterEndpointIdentifier") /* DBClusterEndpointIdentifier com.amazonaws.neptune.synthetic#DeleteDBClusterEndpointOutput$DBClusterEndpointIdentifier */ =>  {
                 let var_74 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2549,7 +2549,7 @@ pub fn deser_operation_delete_db_cluster_endpoint(
                 builder = builder.set_db_cluster_endpoint_identifier(var_74);
             }
             ,
-            s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.neptune#DeleteDBClusterEndpointOutput$DBClusterIdentifier */ =>  {
+            s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.neptune.synthetic#DeleteDBClusterEndpointOutput$DBClusterIdentifier */ =>  {
                 let var_75 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2562,7 +2562,7 @@ pub fn deser_operation_delete_db_cluster_endpoint(
                 builder = builder.set_db_cluster_identifier(var_75);
             }
             ,
-            s if s.matches("DBClusterEndpointResourceIdentifier") /* DBClusterEndpointResourceIdentifier com.amazonaws.neptune#DeleteDBClusterEndpointOutput$DBClusterEndpointResourceIdentifier */ =>  {
+            s if s.matches("DBClusterEndpointResourceIdentifier") /* DBClusterEndpointResourceIdentifier com.amazonaws.neptune.synthetic#DeleteDBClusterEndpointOutput$DBClusterEndpointResourceIdentifier */ =>  {
                 let var_76 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2575,7 +2575,7 @@ pub fn deser_operation_delete_db_cluster_endpoint(
                 builder = builder.set_db_cluster_endpoint_resource_identifier(var_76);
             }
             ,
-            s if s.matches("Endpoint") /* Endpoint com.amazonaws.neptune#DeleteDBClusterEndpointOutput$Endpoint */ =>  {
+            s if s.matches("Endpoint") /* Endpoint com.amazonaws.neptune.synthetic#DeleteDBClusterEndpointOutput$Endpoint */ =>  {
                 let var_77 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2588,7 +2588,7 @@ pub fn deser_operation_delete_db_cluster_endpoint(
                 builder = builder.set_endpoint(var_77);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.neptune#DeleteDBClusterEndpointOutput$Status */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.neptune.synthetic#DeleteDBClusterEndpointOutput$Status */ =>  {
                 let var_78 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2601,7 +2601,7 @@ pub fn deser_operation_delete_db_cluster_endpoint(
                 builder = builder.set_status(var_78);
             }
             ,
-            s if s.matches("EndpointType") /* EndpointType com.amazonaws.neptune#DeleteDBClusterEndpointOutput$EndpointType */ =>  {
+            s if s.matches("EndpointType") /* EndpointType com.amazonaws.neptune.synthetic#DeleteDBClusterEndpointOutput$EndpointType */ =>  {
                 let var_79 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2614,7 +2614,7 @@ pub fn deser_operation_delete_db_cluster_endpoint(
                 builder = builder.set_endpoint_type(var_79);
             }
             ,
-            s if s.matches("CustomEndpointType") /* CustomEndpointType com.amazonaws.neptune#DeleteDBClusterEndpointOutput$CustomEndpointType */ =>  {
+            s if s.matches("CustomEndpointType") /* CustomEndpointType com.amazonaws.neptune.synthetic#DeleteDBClusterEndpointOutput$CustomEndpointType */ =>  {
                 let var_80 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2627,27 +2627,27 @@ pub fn deser_operation_delete_db_cluster_endpoint(
                 builder = builder.set_custom_endpoint_type(var_80);
             }
             ,
-            s if s.matches("StaticMembers") /* StaticMembers com.amazonaws.neptune#DeleteDBClusterEndpointOutput$StaticMembers */ =>  {
+            s if s.matches("StaticMembers") /* StaticMembers com.amazonaws.neptune.synthetic#DeleteDBClusterEndpointOutput$StaticMembers */ =>  {
                 let var_81 =
                     Some(
-                        crate::xml_deser::deser_list_string_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_string_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_static_members(var_81);
             }
             ,
-            s if s.matches("ExcludedMembers") /* ExcludedMembers com.amazonaws.neptune#DeleteDBClusterEndpointOutput$ExcludedMembers */ =>  {
+            s if s.matches("ExcludedMembers") /* ExcludedMembers com.amazonaws.neptune.synthetic#DeleteDBClusterEndpointOutput$ExcludedMembers */ =>  {
                 let var_82 =
                     Some(
-                        crate::xml_deser::deser_list_string_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_string_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_excluded_members(var_82);
             }
             ,
-            s if s.matches("DBClusterEndpointArn") /* DBClusterEndpointArn com.amazonaws.neptune#DeleteDBClusterEndpointOutput$DBClusterEndpointArn */ =>  {
+            s if s.matches("DBClusterEndpointArn") /* DBClusterEndpointArn com.amazonaws.neptune.synthetic#DeleteDBClusterEndpointOutput$DBClusterEndpointArn */ =>  {
                 let var_83 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2672,7 +2672,7 @@ pub fn deser_operation_delete_db_cluster_endpoint(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_db_parameter_group_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_db_parameter_group_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_db_parameter_group_state_fault::Builder,
 ) -> Result<
@@ -2708,7 +2708,7 @@ pub fn deser_structure_invalid_db_parameter_group_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_delete_db_cluster_snapshot(
+pub fn deser_operation_crate_operation_delete_db_cluster_snapshot(
     inp: &[u8],
     mut builder: crate::output::delete_db_cluster_snapshot_output::Builder,
 ) -> Result<crate::output::delete_db_cluster_snapshot_output::Builder, smithy_xml::decode::XmlError>
@@ -2735,10 +2735,10 @@ pub fn deser_operation_delete_db_cluster_snapshot(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBClusterSnapshot") /* DBClusterSnapshot com.amazonaws.neptune#DeleteDBClusterSnapshotOutput$DBClusterSnapshot */ =>  {
+            s if s.matches("DBClusterSnapshot") /* DBClusterSnapshot com.amazonaws.neptune.synthetic#DeleteDBClusterSnapshotOutput$DBClusterSnapshot */ =>  {
                 let var_85 =
                     Some(
-                        crate::xml_deser::deser_structure_db_cluster_snapshot(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_cluster_snapshot(&mut tag)
                         ?
                     )
                 ;
@@ -2757,7 +2757,7 @@ pub fn deser_operation_delete_db_cluster_snapshot(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_snapshot_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_db_snapshot_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_snapshot_already_exists_fault::Builder,
 ) -> Result<crate::error::db_snapshot_already_exists_fault::Builder, smithy_xml::decode::XmlError> {
@@ -2790,7 +2790,7 @@ pub fn deser_structure_db_snapshot_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_delete_db_instance(
+pub fn deser_operation_crate_operation_delete_db_instance(
     inp: &[u8],
     mut builder: crate::output::delete_db_instance_output::Builder,
 ) -> Result<crate::output::delete_db_instance_output::Builder, smithy_xml::decode::XmlError> {
@@ -2816,10 +2816,10 @@ pub fn deser_operation_delete_db_instance(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBInstance") /* DBInstance com.amazonaws.neptune#DeleteDBInstanceOutput$DBInstance */ =>  {
+            s if s.matches("DBInstance") /* DBInstance com.amazonaws.neptune.synthetic#DeleteDBInstanceOutput$DBInstance */ =>  {
                 let var_87 =
                     Some(
-                        crate::xml_deser::deser_structure_db_instance(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_instance(&mut tag)
                         ?
                     )
                 ;
@@ -2838,7 +2838,7 @@ pub fn deser_operation_delete_db_instance(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_db_subnet_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_db_subnet_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_db_subnet_state_fault::Builder,
 ) -> Result<crate::error::invalid_db_subnet_state_fault::Builder, smithy_xml::decode::XmlError> {
@@ -2871,7 +2871,7 @@ pub fn deser_structure_invalid_db_subnet_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_event_subscription_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_event_subscription_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_event_subscription_state_fault::Builder,
 ) -> Result<
@@ -2907,7 +2907,7 @@ pub fn deser_structure_invalid_event_subscription_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_delete_event_subscription(
+pub fn deser_operation_crate_operation_delete_event_subscription(
     inp: &[u8],
     mut builder: crate::output::delete_event_subscription_output::Builder,
 ) -> Result<crate::output::delete_event_subscription_output::Builder, smithy_xml::decode::XmlError>
@@ -2934,10 +2934,10 @@ pub fn deser_operation_delete_event_subscription(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("EventSubscription") /* EventSubscription com.amazonaws.neptune#DeleteEventSubscriptionOutput$EventSubscription */ =>  {
+            s if s.matches("EventSubscription") /* EventSubscription com.amazonaws.neptune.synthetic#DeleteEventSubscriptionOutput$EventSubscription */ =>  {
                 let var_90 =
                     Some(
-                        crate::xml_deser::deser_structure_event_subscription(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_event_subscription(&mut tag)
                         ?
                     )
                 ;
@@ -2956,7 +2956,7 @@ pub fn deser_operation_delete_event_subscription(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_db_cluster_endpoints(
+pub fn deser_operation_crate_operation_describe_db_cluster_endpoints(
     inp: &[u8],
     mut builder: crate::output::describe_db_cluster_endpoints_output::Builder,
 ) -> Result<
@@ -2985,7 +2985,7 @@ pub fn deser_operation_describe_db_cluster_endpoints(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.neptune#DescribeDBClusterEndpointsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.neptune.synthetic#DescribeDBClusterEndpointsOutput$Marker */ =>  {
                 let var_91 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2998,10 +2998,10 @@ pub fn deser_operation_describe_db_cluster_endpoints(
                 builder = builder.set_marker(var_91);
             }
             ,
-            s if s.matches("DBClusterEndpoints") /* DBClusterEndpoints com.amazonaws.neptune#DescribeDBClusterEndpointsOutput$DBClusterEndpoints */ =>  {
+            s if s.matches("DBClusterEndpoints") /* DBClusterEndpoints com.amazonaws.neptune.synthetic#DescribeDBClusterEndpointsOutput$DBClusterEndpoints */ =>  {
                 let var_92 =
                     Some(
-                        crate::xml_deser::deser_list_db_cluster_endpoint_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_db_cluster_endpoint_list(&mut tag)
                         ?
                     )
                 ;
@@ -3020,7 +3020,7 @@ pub fn deser_operation_describe_db_cluster_endpoints(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_db_cluster_parameter_groups(
+pub fn deser_operation_crate_operation_describe_db_cluster_parameter_groups(
     inp: &[u8],
     mut builder: crate::output::describe_db_cluster_parameter_groups_output::Builder,
 ) -> Result<
@@ -3049,7 +3049,7 @@ pub fn deser_operation_describe_db_cluster_parameter_groups(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.neptune#DescribeDBClusterParameterGroupsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.neptune.synthetic#DescribeDBClusterParameterGroupsOutput$Marker */ =>  {
                 let var_93 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3062,10 +3062,10 @@ pub fn deser_operation_describe_db_cluster_parameter_groups(
                 builder = builder.set_marker(var_93);
             }
             ,
-            s if s.matches("DBClusterParameterGroups") /* DBClusterParameterGroups com.amazonaws.neptune#DescribeDBClusterParameterGroupsOutput$DBClusterParameterGroups */ =>  {
+            s if s.matches("DBClusterParameterGroups") /* DBClusterParameterGroups com.amazonaws.neptune.synthetic#DescribeDBClusterParameterGroupsOutput$DBClusterParameterGroups */ =>  {
                 let var_94 =
                     Some(
-                        crate::xml_deser::deser_list_db_cluster_parameter_group_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_db_cluster_parameter_group_list(&mut tag)
                         ?
                     )
                 ;
@@ -3084,7 +3084,7 @@ pub fn deser_operation_describe_db_cluster_parameter_groups(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_db_cluster_parameters(
+pub fn deser_operation_crate_operation_describe_db_cluster_parameters(
     inp: &[u8],
     mut builder: crate::output::describe_db_cluster_parameters_output::Builder,
 ) -> Result<
@@ -3113,17 +3113,17 @@ pub fn deser_operation_describe_db_cluster_parameters(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Parameters") /* Parameters com.amazonaws.neptune#DescribeDBClusterParametersOutput$Parameters */ =>  {
+            s if s.matches("Parameters") /* Parameters com.amazonaws.neptune.synthetic#DescribeDBClusterParametersOutput$Parameters */ =>  {
                 let var_95 =
                     Some(
-                        crate::xml_deser::deser_list_parameters_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_parameters_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_parameters(var_95);
             }
             ,
-            s if s.matches("Marker") /* Marker com.amazonaws.neptune#DescribeDBClusterParametersOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.neptune.synthetic#DescribeDBClusterParametersOutput$Marker */ =>  {
                 let var_96 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3148,7 +3148,7 @@ pub fn deser_operation_describe_db_cluster_parameters(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_db_clusters(
+pub fn deser_operation_crate_operation_describe_db_clusters(
     inp: &[u8],
     mut builder: crate::output::describe_db_clusters_output::Builder,
 ) -> Result<crate::output::describe_db_clusters_output::Builder, smithy_xml::decode::XmlError> {
@@ -3174,7 +3174,7 @@ pub fn deser_operation_describe_db_clusters(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.neptune#DescribeDBClustersOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.neptune.synthetic#DescribeDBClustersOutput$Marker */ =>  {
                 let var_97 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3187,10 +3187,10 @@ pub fn deser_operation_describe_db_clusters(
                 builder = builder.set_marker(var_97);
             }
             ,
-            s if s.matches("DBClusters") /* DBClusters com.amazonaws.neptune#DescribeDBClustersOutput$DBClusters */ =>  {
+            s if s.matches("DBClusters") /* DBClusters com.amazonaws.neptune.synthetic#DescribeDBClustersOutput$DBClusters */ =>  {
                 let var_98 =
                     Some(
-                        crate::xml_deser::deser_list_db_cluster_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_db_cluster_list(&mut tag)
                         ?
                     )
                 ;
@@ -3209,7 +3209,7 @@ pub fn deser_operation_describe_db_clusters(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_db_cluster_snapshot_attributes(
+pub fn deser_operation_crate_operation_describe_db_cluster_snapshot_attributes(
     inp: &[u8],
     mut builder: crate::output::describe_db_cluster_snapshot_attributes_output::Builder,
 ) -> Result<
@@ -3238,10 +3238,10 @@ pub fn deser_operation_describe_db_cluster_snapshot_attributes(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBClusterSnapshotAttributesResult") /* DBClusterSnapshotAttributesResult com.amazonaws.neptune#DescribeDBClusterSnapshotAttributesOutput$DBClusterSnapshotAttributesResult */ =>  {
+            s if s.matches("DBClusterSnapshotAttributesResult") /* DBClusterSnapshotAttributesResult com.amazonaws.neptune.synthetic#DescribeDBClusterSnapshotAttributesOutput$DBClusterSnapshotAttributesResult */ =>  {
                 let var_99 =
                     Some(
-                        crate::xml_deser::deser_structure_db_cluster_snapshot_attributes_result(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_cluster_snapshot_attributes_result(&mut tag)
                         ?
                     )
                 ;
@@ -3260,7 +3260,7 @@ pub fn deser_operation_describe_db_cluster_snapshot_attributes(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_db_cluster_snapshots(
+pub fn deser_operation_crate_operation_describe_db_cluster_snapshots(
     inp: &[u8],
     mut builder: crate::output::describe_db_cluster_snapshots_output::Builder,
 ) -> Result<
@@ -3289,7 +3289,7 @@ pub fn deser_operation_describe_db_cluster_snapshots(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.neptune#DescribeDBClusterSnapshotsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.neptune.synthetic#DescribeDBClusterSnapshotsOutput$Marker */ =>  {
                 let var_100 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3302,10 +3302,10 @@ pub fn deser_operation_describe_db_cluster_snapshots(
                 builder = builder.set_marker(var_100);
             }
             ,
-            s if s.matches("DBClusterSnapshots") /* DBClusterSnapshots com.amazonaws.neptune#DescribeDBClusterSnapshotsOutput$DBClusterSnapshots */ =>  {
+            s if s.matches("DBClusterSnapshots") /* DBClusterSnapshots com.amazonaws.neptune.synthetic#DescribeDBClusterSnapshotsOutput$DBClusterSnapshots */ =>  {
                 let var_101 =
                     Some(
-                        crate::xml_deser::deser_list_db_cluster_snapshot_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_db_cluster_snapshot_list(&mut tag)
                         ?
                     )
                 ;
@@ -3324,7 +3324,7 @@ pub fn deser_operation_describe_db_cluster_snapshots(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_db_engine_versions(
+pub fn deser_operation_crate_operation_describe_db_engine_versions(
     inp: &[u8],
     mut builder: crate::output::describe_db_engine_versions_output::Builder,
 ) -> Result<crate::output::describe_db_engine_versions_output::Builder, smithy_xml::decode::XmlError>
@@ -3351,7 +3351,7 @@ pub fn deser_operation_describe_db_engine_versions(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.neptune#DescribeDBEngineVersionsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.neptune.synthetic#DescribeDBEngineVersionsOutput$Marker */ =>  {
                 let var_102 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3364,10 +3364,10 @@ pub fn deser_operation_describe_db_engine_versions(
                 builder = builder.set_marker(var_102);
             }
             ,
-            s if s.matches("DBEngineVersions") /* DBEngineVersions com.amazonaws.neptune#DescribeDBEngineVersionsOutput$DBEngineVersions */ =>  {
+            s if s.matches("DBEngineVersions") /* DBEngineVersions com.amazonaws.neptune.synthetic#DescribeDBEngineVersionsOutput$DBEngineVersions */ =>  {
                 let var_103 =
                     Some(
-                        crate::xml_deser::deser_list_db_engine_version_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_db_engine_version_list(&mut tag)
                         ?
                     )
                 ;
@@ -3386,7 +3386,7 @@ pub fn deser_operation_describe_db_engine_versions(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_db_instances(
+pub fn deser_operation_crate_operation_describe_db_instances(
     inp: &[u8],
     mut builder: crate::output::describe_db_instances_output::Builder,
 ) -> Result<crate::output::describe_db_instances_output::Builder, smithy_xml::decode::XmlError> {
@@ -3412,7 +3412,7 @@ pub fn deser_operation_describe_db_instances(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.neptune#DescribeDBInstancesOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.neptune.synthetic#DescribeDBInstancesOutput$Marker */ =>  {
                 let var_104 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3425,10 +3425,10 @@ pub fn deser_operation_describe_db_instances(
                 builder = builder.set_marker(var_104);
             }
             ,
-            s if s.matches("DBInstances") /* DBInstances com.amazonaws.neptune#DescribeDBInstancesOutput$DBInstances */ =>  {
+            s if s.matches("DBInstances") /* DBInstances com.amazonaws.neptune.synthetic#DescribeDBInstancesOutput$DBInstances */ =>  {
                 let var_105 =
                     Some(
-                        crate::xml_deser::deser_list_db_instance_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_db_instance_list(&mut tag)
                         ?
                     )
                 ;
@@ -3447,7 +3447,7 @@ pub fn deser_operation_describe_db_instances(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_db_parameter_groups(
+pub fn deser_operation_crate_operation_describe_db_parameter_groups(
     inp: &[u8],
     mut builder: crate::output::describe_db_parameter_groups_output::Builder,
 ) -> Result<crate::output::describe_db_parameter_groups_output::Builder, smithy_xml::decode::XmlError>
@@ -3474,7 +3474,7 @@ pub fn deser_operation_describe_db_parameter_groups(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.neptune#DescribeDBParameterGroupsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.neptune.synthetic#DescribeDBParameterGroupsOutput$Marker */ =>  {
                 let var_106 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3487,10 +3487,10 @@ pub fn deser_operation_describe_db_parameter_groups(
                 builder = builder.set_marker(var_106);
             }
             ,
-            s if s.matches("DBParameterGroups") /* DBParameterGroups com.amazonaws.neptune#DescribeDBParameterGroupsOutput$DBParameterGroups */ =>  {
+            s if s.matches("DBParameterGroups") /* DBParameterGroups com.amazonaws.neptune.synthetic#DescribeDBParameterGroupsOutput$DBParameterGroups */ =>  {
                 let var_107 =
                     Some(
-                        crate::xml_deser::deser_list_db_parameter_group_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_db_parameter_group_list(&mut tag)
                         ?
                     )
                 ;
@@ -3509,7 +3509,7 @@ pub fn deser_operation_describe_db_parameter_groups(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_db_parameters(
+pub fn deser_operation_crate_operation_describe_db_parameters(
     inp: &[u8],
     mut builder: crate::output::describe_db_parameters_output::Builder,
 ) -> Result<crate::output::describe_db_parameters_output::Builder, smithy_xml::decode::XmlError> {
@@ -3535,17 +3535,17 @@ pub fn deser_operation_describe_db_parameters(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Parameters") /* Parameters com.amazonaws.neptune#DescribeDBParametersOutput$Parameters */ =>  {
+            s if s.matches("Parameters") /* Parameters com.amazonaws.neptune.synthetic#DescribeDBParametersOutput$Parameters */ =>  {
                 let var_108 =
                     Some(
-                        crate::xml_deser::deser_list_parameters_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_parameters_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_parameters(var_108);
             }
             ,
-            s if s.matches("Marker") /* Marker com.amazonaws.neptune#DescribeDBParametersOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.neptune.synthetic#DescribeDBParametersOutput$Marker */ =>  {
                 let var_109 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3570,7 +3570,7 @@ pub fn deser_operation_describe_db_parameters(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_db_subnet_groups(
+pub fn deser_operation_crate_operation_describe_db_subnet_groups(
     inp: &[u8],
     mut builder: crate::output::describe_db_subnet_groups_output::Builder,
 ) -> Result<crate::output::describe_db_subnet_groups_output::Builder, smithy_xml::decode::XmlError>
@@ -3597,7 +3597,7 @@ pub fn deser_operation_describe_db_subnet_groups(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.neptune#DescribeDBSubnetGroupsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.neptune.synthetic#DescribeDBSubnetGroupsOutput$Marker */ =>  {
                 let var_110 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3610,10 +3610,10 @@ pub fn deser_operation_describe_db_subnet_groups(
                 builder = builder.set_marker(var_110);
             }
             ,
-            s if s.matches("DBSubnetGroups") /* DBSubnetGroups com.amazonaws.neptune#DescribeDBSubnetGroupsOutput$DBSubnetGroups */ =>  {
+            s if s.matches("DBSubnetGroups") /* DBSubnetGroups com.amazonaws.neptune.synthetic#DescribeDBSubnetGroupsOutput$DBSubnetGroups */ =>  {
                 let var_111 =
                     Some(
-                        crate::xml_deser::deser_list_db_subnet_groups(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_db_subnet_groups(&mut tag)
                         ?
                     )
                 ;
@@ -3632,7 +3632,7 @@ pub fn deser_operation_describe_db_subnet_groups(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_engine_default_cluster_parameters(
+pub fn deser_operation_crate_operation_describe_engine_default_cluster_parameters(
     inp: &[u8],
     mut builder: crate::output::describe_engine_default_cluster_parameters_output::Builder,
 ) -> Result<
@@ -3661,10 +3661,10 @@ pub fn deser_operation_describe_engine_default_cluster_parameters(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("EngineDefaults") /* EngineDefaults com.amazonaws.neptune#DescribeEngineDefaultClusterParametersOutput$EngineDefaults */ =>  {
+            s if s.matches("EngineDefaults") /* EngineDefaults com.amazonaws.neptune.synthetic#DescribeEngineDefaultClusterParametersOutput$EngineDefaults */ =>  {
                 let var_112 =
                     Some(
-                        crate::xml_deser::deser_structure_engine_defaults(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_engine_defaults(&mut tag)
                         ?
                     )
                 ;
@@ -3683,7 +3683,7 @@ pub fn deser_operation_describe_engine_default_cluster_parameters(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_engine_default_parameters(
+pub fn deser_operation_crate_operation_describe_engine_default_parameters(
     inp: &[u8],
     mut builder: crate::output::describe_engine_default_parameters_output::Builder,
 ) -> Result<
@@ -3712,10 +3712,10 @@ pub fn deser_operation_describe_engine_default_parameters(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("EngineDefaults") /* EngineDefaults com.amazonaws.neptune#DescribeEngineDefaultParametersOutput$EngineDefaults */ =>  {
+            s if s.matches("EngineDefaults") /* EngineDefaults com.amazonaws.neptune.synthetic#DescribeEngineDefaultParametersOutput$EngineDefaults */ =>  {
                 let var_113 =
                     Some(
-                        crate::xml_deser::deser_structure_engine_defaults(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_engine_defaults(&mut tag)
                         ?
                     )
                 ;
@@ -3734,7 +3734,7 @@ pub fn deser_operation_describe_engine_default_parameters(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_event_categories(
+pub fn deser_operation_crate_operation_describe_event_categories(
     inp: &[u8],
     mut builder: crate::output::describe_event_categories_output::Builder,
 ) -> Result<crate::output::describe_event_categories_output::Builder, smithy_xml::decode::XmlError>
@@ -3761,10 +3761,10 @@ pub fn deser_operation_describe_event_categories(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("EventCategoriesMapList") /* EventCategoriesMapList com.amazonaws.neptune#DescribeEventCategoriesOutput$EventCategoriesMapList */ =>  {
+            s if s.matches("EventCategoriesMapList") /* EventCategoriesMapList com.amazonaws.neptune.synthetic#DescribeEventCategoriesOutput$EventCategoriesMapList */ =>  {
                 let var_114 =
                     Some(
-                        crate::xml_deser::deser_list_event_categories_map_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_event_categories_map_list(&mut tag)
                         ?
                     )
                 ;
@@ -3783,7 +3783,7 @@ pub fn deser_operation_describe_event_categories(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_events(
+pub fn deser_operation_crate_operation_describe_events(
     inp: &[u8],
     mut builder: crate::output::describe_events_output::Builder,
 ) -> Result<crate::output::describe_events_output::Builder, smithy_xml::decode::XmlError> {
@@ -3809,7 +3809,7 @@ pub fn deser_operation_describe_events(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.neptune#DescribeEventsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.neptune.synthetic#DescribeEventsOutput$Marker */ =>  {
                 let var_115 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3822,10 +3822,10 @@ pub fn deser_operation_describe_events(
                 builder = builder.set_marker(var_115);
             }
             ,
-            s if s.matches("Events") /* Events com.amazonaws.neptune#DescribeEventsOutput$Events */ =>  {
+            s if s.matches("Events") /* Events com.amazonaws.neptune.synthetic#DescribeEventsOutput$Events */ =>  {
                 let var_116 =
                     Some(
-                        crate::xml_deser::deser_list_event_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_event_list(&mut tag)
                         ?
                     )
                 ;
@@ -3844,7 +3844,7 @@ pub fn deser_operation_describe_events(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_event_subscriptions(
+pub fn deser_operation_crate_operation_describe_event_subscriptions(
     inp: &[u8],
     mut builder: crate::output::describe_event_subscriptions_output::Builder,
 ) -> Result<crate::output::describe_event_subscriptions_output::Builder, smithy_xml::decode::XmlError>
@@ -3871,7 +3871,7 @@ pub fn deser_operation_describe_event_subscriptions(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Marker") /* Marker com.amazonaws.neptune#DescribeEventSubscriptionsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.neptune.synthetic#DescribeEventSubscriptionsOutput$Marker */ =>  {
                 let var_117 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3884,10 +3884,10 @@ pub fn deser_operation_describe_event_subscriptions(
                 builder = builder.set_marker(var_117);
             }
             ,
-            s if s.matches("EventSubscriptionsList") /* EventSubscriptionsList com.amazonaws.neptune#DescribeEventSubscriptionsOutput$EventSubscriptionsList */ =>  {
+            s if s.matches("EventSubscriptionsList") /* EventSubscriptionsList com.amazonaws.neptune.synthetic#DescribeEventSubscriptionsOutput$EventSubscriptionsList */ =>  {
                 let var_118 =
                     Some(
-                        crate::xml_deser::deser_list_event_subscriptions_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_event_subscriptions_list(&mut tag)
                         ?
                     )
                 ;
@@ -3906,7 +3906,7 @@ pub fn deser_operation_describe_event_subscriptions(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_orderable_db_instance_options(
+pub fn deser_operation_crate_operation_describe_orderable_db_instance_options(
     inp: &[u8],
     mut builder: crate::output::describe_orderable_db_instance_options_output::Builder,
 ) -> Result<
@@ -3935,17 +3935,17 @@ pub fn deser_operation_describe_orderable_db_instance_options(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("OrderableDBInstanceOptions") /* OrderableDBInstanceOptions com.amazonaws.neptune#DescribeOrderableDBInstanceOptionsOutput$OrderableDBInstanceOptions */ =>  {
+            s if s.matches("OrderableDBInstanceOptions") /* OrderableDBInstanceOptions com.amazonaws.neptune.synthetic#DescribeOrderableDBInstanceOptionsOutput$OrderableDBInstanceOptions */ =>  {
                 let var_119 =
                     Some(
-                        crate::xml_deser::deser_list_orderable_db_instance_options_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_orderable_db_instance_options_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_orderable_db_instance_options(var_119);
             }
             ,
-            s if s.matches("Marker") /* Marker com.amazonaws.neptune#DescribeOrderableDBInstanceOptionsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.neptune.synthetic#DescribeOrderableDBInstanceOptionsOutput$Marker */ =>  {
                 let var_120 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3970,7 +3970,7 @@ pub fn deser_operation_describe_orderable_db_instance_options(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_pending_maintenance_actions(
+pub fn deser_operation_crate_operation_describe_pending_maintenance_actions(
     inp: &[u8],
     mut builder: crate::output::describe_pending_maintenance_actions_output::Builder,
 ) -> Result<
@@ -3999,17 +3999,17 @@ pub fn deser_operation_describe_pending_maintenance_actions(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("PendingMaintenanceActions") /* PendingMaintenanceActions com.amazonaws.neptune#DescribePendingMaintenanceActionsOutput$PendingMaintenanceActions */ =>  {
+            s if s.matches("PendingMaintenanceActions") /* PendingMaintenanceActions com.amazonaws.neptune.synthetic#DescribePendingMaintenanceActionsOutput$PendingMaintenanceActions */ =>  {
                 let var_121 =
                     Some(
-                        crate::xml_deser::deser_list_pending_maintenance_actions(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_pending_maintenance_actions(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_pending_maintenance_actions(var_121);
             }
             ,
-            s if s.matches("Marker") /* Marker com.amazonaws.neptune#DescribePendingMaintenanceActionsOutput$Marker */ =>  {
+            s if s.matches("Marker") /* Marker com.amazonaws.neptune.synthetic#DescribePendingMaintenanceActionsOutput$Marker */ =>  {
                 let var_122 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4034,7 +4034,7 @@ pub fn deser_operation_describe_pending_maintenance_actions(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_valid_db_instance_modifications(
+pub fn deser_operation_crate_operation_describe_valid_db_instance_modifications(
     inp: &[u8],
     mut builder: crate::output::describe_valid_db_instance_modifications_output::Builder,
 ) -> Result<
@@ -4063,10 +4063,10 @@ pub fn deser_operation_describe_valid_db_instance_modifications(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ValidDBInstanceModificationsMessage") /* ValidDBInstanceModificationsMessage com.amazonaws.neptune#DescribeValidDBInstanceModificationsOutput$ValidDBInstanceModificationsMessage */ =>  {
+            s if s.matches("ValidDBInstanceModificationsMessage") /* ValidDBInstanceModificationsMessage com.amazonaws.neptune.synthetic#DescribeValidDBInstanceModificationsOutput$ValidDBInstanceModificationsMessage */ =>  {
                 let var_123 =
                     Some(
-                        crate::xml_deser::deser_structure_valid_db_instance_modifications_message(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_valid_db_instance_modifications_message(&mut tag)
                         ?
                     )
                 ;
@@ -4085,7 +4085,7 @@ pub fn deser_operation_describe_valid_db_instance_modifications(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_failover_db_cluster(
+pub fn deser_operation_crate_operation_failover_db_cluster(
     inp: &[u8],
     mut builder: crate::output::failover_db_cluster_output::Builder,
 ) -> Result<crate::output::failover_db_cluster_output::Builder, smithy_xml::decode::XmlError> {
@@ -4111,10 +4111,10 @@ pub fn deser_operation_failover_db_cluster(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune#FailoverDBClusterOutput$DBCluster */ =>  {
+            s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune.synthetic#FailoverDBClusterOutput$DBCluster */ =>  {
                 let var_124 =
                     Some(
-                        crate::xml_deser::deser_structure_db_cluster(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
@@ -4133,7 +4133,7 @@ pub fn deser_operation_failover_db_cluster(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     inp: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_xml::decode::XmlError> {
@@ -4159,10 +4159,10 @@ pub fn deser_operation_list_tags_for_resource(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("TagList") /* TagList com.amazonaws.neptune#ListTagsForResourceOutput$TagList */ =>  {
+            s if s.matches("TagList") /* TagList com.amazonaws.neptune.synthetic#ListTagsForResourceOutput$TagList */ =>  {
                 let var_125 =
                     Some(
-                        crate::xml_deser::deser_list_tag_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_tag_list(&mut tag)
                         ?
                     )
                 ;
@@ -4181,7 +4181,7 @@ pub fn deser_operation_list_tags_for_resource(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_db_security_group_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_db_security_group_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_db_security_group_state_fault::Builder,
 ) -> Result<
@@ -4217,7 +4217,7 @@ pub fn deser_structure_invalid_db_security_group_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_db_cluster(
+pub fn deser_operation_crate_operation_modify_db_cluster(
     inp: &[u8],
     mut builder: crate::output::modify_db_cluster_output::Builder,
 ) -> Result<crate::output::modify_db_cluster_output::Builder, smithy_xml::decode::XmlError> {
@@ -4243,10 +4243,10 @@ pub fn deser_operation_modify_db_cluster(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune#ModifyDBClusterOutput$DBCluster */ =>  {
+            s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune.synthetic#ModifyDBClusterOutput$DBCluster */ =>  {
                 let var_127 =
                     Some(
-                        crate::xml_deser::deser_structure_db_cluster(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
@@ -4265,7 +4265,7 @@ pub fn deser_operation_modify_db_cluster(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_db_cluster_endpoint(
+pub fn deser_operation_crate_operation_modify_db_cluster_endpoint(
     inp: &[u8],
     mut builder: crate::output::modify_db_cluster_endpoint_output::Builder,
 ) -> Result<crate::output::modify_db_cluster_endpoint_output::Builder, smithy_xml::decode::XmlError>
@@ -4292,7 +4292,7 @@ pub fn deser_operation_modify_db_cluster_endpoint(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBClusterEndpointIdentifier") /* DBClusterEndpointIdentifier com.amazonaws.neptune#ModifyDBClusterEndpointOutput$DBClusterEndpointIdentifier */ =>  {
+            s if s.matches("DBClusterEndpointIdentifier") /* DBClusterEndpointIdentifier com.amazonaws.neptune.synthetic#ModifyDBClusterEndpointOutput$DBClusterEndpointIdentifier */ =>  {
                 let var_128 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4305,7 +4305,7 @@ pub fn deser_operation_modify_db_cluster_endpoint(
                 builder = builder.set_db_cluster_endpoint_identifier(var_128);
             }
             ,
-            s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.neptune#ModifyDBClusterEndpointOutput$DBClusterIdentifier */ =>  {
+            s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.neptune.synthetic#ModifyDBClusterEndpointOutput$DBClusterIdentifier */ =>  {
                 let var_129 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4318,7 +4318,7 @@ pub fn deser_operation_modify_db_cluster_endpoint(
                 builder = builder.set_db_cluster_identifier(var_129);
             }
             ,
-            s if s.matches("DBClusterEndpointResourceIdentifier") /* DBClusterEndpointResourceIdentifier com.amazonaws.neptune#ModifyDBClusterEndpointOutput$DBClusterEndpointResourceIdentifier */ =>  {
+            s if s.matches("DBClusterEndpointResourceIdentifier") /* DBClusterEndpointResourceIdentifier com.amazonaws.neptune.synthetic#ModifyDBClusterEndpointOutput$DBClusterEndpointResourceIdentifier */ =>  {
                 let var_130 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4331,7 +4331,7 @@ pub fn deser_operation_modify_db_cluster_endpoint(
                 builder = builder.set_db_cluster_endpoint_resource_identifier(var_130);
             }
             ,
-            s if s.matches("Endpoint") /* Endpoint com.amazonaws.neptune#ModifyDBClusterEndpointOutput$Endpoint */ =>  {
+            s if s.matches("Endpoint") /* Endpoint com.amazonaws.neptune.synthetic#ModifyDBClusterEndpointOutput$Endpoint */ =>  {
                 let var_131 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4344,7 +4344,7 @@ pub fn deser_operation_modify_db_cluster_endpoint(
                 builder = builder.set_endpoint(var_131);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.neptune#ModifyDBClusterEndpointOutput$Status */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.neptune.synthetic#ModifyDBClusterEndpointOutput$Status */ =>  {
                 let var_132 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4357,7 +4357,7 @@ pub fn deser_operation_modify_db_cluster_endpoint(
                 builder = builder.set_status(var_132);
             }
             ,
-            s if s.matches("EndpointType") /* EndpointType com.amazonaws.neptune#ModifyDBClusterEndpointOutput$EndpointType */ =>  {
+            s if s.matches("EndpointType") /* EndpointType com.amazonaws.neptune.synthetic#ModifyDBClusterEndpointOutput$EndpointType */ =>  {
                 let var_133 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4370,7 +4370,7 @@ pub fn deser_operation_modify_db_cluster_endpoint(
                 builder = builder.set_endpoint_type(var_133);
             }
             ,
-            s if s.matches("CustomEndpointType") /* CustomEndpointType com.amazonaws.neptune#ModifyDBClusterEndpointOutput$CustomEndpointType */ =>  {
+            s if s.matches("CustomEndpointType") /* CustomEndpointType com.amazonaws.neptune.synthetic#ModifyDBClusterEndpointOutput$CustomEndpointType */ =>  {
                 let var_134 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4383,27 +4383,27 @@ pub fn deser_operation_modify_db_cluster_endpoint(
                 builder = builder.set_custom_endpoint_type(var_134);
             }
             ,
-            s if s.matches("StaticMembers") /* StaticMembers com.amazonaws.neptune#ModifyDBClusterEndpointOutput$StaticMembers */ =>  {
+            s if s.matches("StaticMembers") /* StaticMembers com.amazonaws.neptune.synthetic#ModifyDBClusterEndpointOutput$StaticMembers */ =>  {
                 let var_135 =
                     Some(
-                        crate::xml_deser::deser_list_string_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_string_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_static_members(var_135);
             }
             ,
-            s if s.matches("ExcludedMembers") /* ExcludedMembers com.amazonaws.neptune#ModifyDBClusterEndpointOutput$ExcludedMembers */ =>  {
+            s if s.matches("ExcludedMembers") /* ExcludedMembers com.amazonaws.neptune.synthetic#ModifyDBClusterEndpointOutput$ExcludedMembers */ =>  {
                 let var_136 =
                     Some(
-                        crate::xml_deser::deser_list_string_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_string_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_excluded_members(var_136);
             }
             ,
-            s if s.matches("DBClusterEndpointArn") /* DBClusterEndpointArn com.amazonaws.neptune#ModifyDBClusterEndpointOutput$DBClusterEndpointArn */ =>  {
+            s if s.matches("DBClusterEndpointArn") /* DBClusterEndpointArn com.amazonaws.neptune.synthetic#ModifyDBClusterEndpointOutput$DBClusterEndpointArn */ =>  {
                 let var_137 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4428,7 +4428,7 @@ pub fn deser_operation_modify_db_cluster_endpoint(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_db_cluster_parameter_group(
+pub fn deser_operation_crate_operation_modify_db_cluster_parameter_group(
     inp: &[u8],
     mut builder: crate::output::modify_db_cluster_parameter_group_output::Builder,
 ) -> Result<
@@ -4457,7 +4457,7 @@ pub fn deser_operation_modify_db_cluster_parameter_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBClusterParameterGroupName") /* DBClusterParameterGroupName com.amazonaws.neptune#ModifyDBClusterParameterGroupOutput$DBClusterParameterGroupName */ =>  {
+            s if s.matches("DBClusterParameterGroupName") /* DBClusterParameterGroupName com.amazonaws.neptune.synthetic#ModifyDBClusterParameterGroupOutput$DBClusterParameterGroupName */ =>  {
                 let var_138 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4482,7 +4482,7 @@ pub fn deser_operation_modify_db_cluster_parameter_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_shared_snapshot_quota_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_shared_snapshot_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::shared_snapshot_quota_exceeded_fault::Builder,
 ) -> Result<crate::error::shared_snapshot_quota_exceeded_fault::Builder, smithy_xml::decode::XmlError>
@@ -4516,7 +4516,7 @@ pub fn deser_structure_shared_snapshot_quota_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_db_cluster_snapshot_attribute(
+pub fn deser_operation_crate_operation_modify_db_cluster_snapshot_attribute(
     inp: &[u8],
     mut builder: crate::output::modify_db_cluster_snapshot_attribute_output::Builder,
 ) -> Result<
@@ -4545,10 +4545,10 @@ pub fn deser_operation_modify_db_cluster_snapshot_attribute(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBClusterSnapshotAttributesResult") /* DBClusterSnapshotAttributesResult com.amazonaws.neptune#ModifyDBClusterSnapshotAttributeOutput$DBClusterSnapshotAttributesResult */ =>  {
+            s if s.matches("DBClusterSnapshotAttributesResult") /* DBClusterSnapshotAttributesResult com.amazonaws.neptune.synthetic#ModifyDBClusterSnapshotAttributeOutput$DBClusterSnapshotAttributesResult */ =>  {
                 let var_140 =
                     Some(
-                        crate::xml_deser::deser_structure_db_cluster_snapshot_attributes_result(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_cluster_snapshot_attributes_result(&mut tag)
                         ?
                     )
                 ;
@@ -4567,7 +4567,7 @@ pub fn deser_operation_modify_db_cluster_snapshot_attribute(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_certificate_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_certificate_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::certificate_not_found_fault::Builder,
 ) -> Result<crate::error::certificate_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -4600,7 +4600,7 @@ pub fn deser_structure_certificate_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_upgrade_dependency_failure_fault_xml_err(
+pub fn deser_structure_crate_error_db_upgrade_dependency_failure_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_upgrade_dependency_failure_fault::Builder,
 ) -> Result<crate::error::db_upgrade_dependency_failure_fault::Builder, smithy_xml::decode::XmlError>
@@ -4634,7 +4634,7 @@ pub fn deser_structure_db_upgrade_dependency_failure_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_db_instance(
+pub fn deser_operation_crate_operation_modify_db_instance(
     inp: &[u8],
     mut builder: crate::output::modify_db_instance_output::Builder,
 ) -> Result<crate::output::modify_db_instance_output::Builder, smithy_xml::decode::XmlError> {
@@ -4660,10 +4660,10 @@ pub fn deser_operation_modify_db_instance(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBInstance") /* DBInstance com.amazonaws.neptune#ModifyDBInstanceOutput$DBInstance */ =>  {
+            s if s.matches("DBInstance") /* DBInstance com.amazonaws.neptune.synthetic#ModifyDBInstanceOutput$DBInstance */ =>  {
                 let var_143 =
                     Some(
-                        crate::xml_deser::deser_structure_db_instance(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_instance(&mut tag)
                         ?
                     )
                 ;
@@ -4682,7 +4682,7 @@ pub fn deser_operation_modify_db_instance(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_db_parameter_group(
+pub fn deser_operation_crate_operation_modify_db_parameter_group(
     inp: &[u8],
     mut builder: crate::output::modify_db_parameter_group_output::Builder,
 ) -> Result<crate::output::modify_db_parameter_group_output::Builder, smithy_xml::decode::XmlError>
@@ -4709,7 +4709,7 @@ pub fn deser_operation_modify_db_parameter_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBParameterGroupName") /* DBParameterGroupName com.amazonaws.neptune#ModifyDBParameterGroupOutput$DBParameterGroupName */ =>  {
+            s if s.matches("DBParameterGroupName") /* DBParameterGroupName com.amazonaws.neptune.synthetic#ModifyDBParameterGroupOutput$DBParameterGroupName */ =>  {
                 let var_144 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4734,7 +4734,7 @@ pub fn deser_operation_modify_db_parameter_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_subnet_already_in_use_xml_err(
+pub fn deser_structure_crate_error_subnet_already_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::subnet_already_in_use::Builder,
 ) -> Result<crate::error::subnet_already_in_use::Builder, smithy_xml::decode::XmlError> {
@@ -4767,7 +4767,7 @@ pub fn deser_structure_subnet_already_in_use_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_db_subnet_group(
+pub fn deser_operation_crate_operation_modify_db_subnet_group(
     inp: &[u8],
     mut builder: crate::output::modify_db_subnet_group_output::Builder,
 ) -> Result<crate::output::modify_db_subnet_group_output::Builder, smithy_xml::decode::XmlError> {
@@ -4793,10 +4793,10 @@ pub fn deser_operation_modify_db_subnet_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBSubnetGroup") /* DBSubnetGroup com.amazonaws.neptune#ModifyDBSubnetGroupOutput$DBSubnetGroup */ =>  {
+            s if s.matches("DBSubnetGroup") /* DBSubnetGroup com.amazonaws.neptune.synthetic#ModifyDBSubnetGroupOutput$DBSubnetGroup */ =>  {
                 let var_146 =
                     Some(
-                        crate::xml_deser::deser_structure_db_subnet_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_subnet_group(&mut tag)
                         ?
                     )
                 ;
@@ -4815,7 +4815,7 @@ pub fn deser_operation_modify_db_subnet_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_event_subscription(
+pub fn deser_operation_crate_operation_modify_event_subscription(
     inp: &[u8],
     mut builder: crate::output::modify_event_subscription_output::Builder,
 ) -> Result<crate::output::modify_event_subscription_output::Builder, smithy_xml::decode::XmlError>
@@ -4842,10 +4842,10 @@ pub fn deser_operation_modify_event_subscription(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("EventSubscription") /* EventSubscription com.amazonaws.neptune#ModifyEventSubscriptionOutput$EventSubscription */ =>  {
+            s if s.matches("EventSubscription") /* EventSubscription com.amazonaws.neptune.synthetic#ModifyEventSubscriptionOutput$EventSubscription */ =>  {
                 let var_147 =
                     Some(
-                        crate::xml_deser::deser_structure_event_subscription(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_event_subscription(&mut tag)
                         ?
                     )
                 ;
@@ -4864,7 +4864,7 @@ pub fn deser_operation_modify_event_subscription(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_promote_read_replica_db_cluster(
+pub fn deser_operation_crate_operation_promote_read_replica_db_cluster(
     inp: &[u8],
     mut builder: crate::output::promote_read_replica_db_cluster_output::Builder,
 ) -> Result<
@@ -4893,10 +4893,10 @@ pub fn deser_operation_promote_read_replica_db_cluster(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune#PromoteReadReplicaDBClusterOutput$DBCluster */ =>  {
+            s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune.synthetic#PromoteReadReplicaDBClusterOutput$DBCluster */ =>  {
                 let var_148 =
                     Some(
-                        crate::xml_deser::deser_structure_db_cluster(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
@@ -4915,7 +4915,7 @@ pub fn deser_operation_promote_read_replica_db_cluster(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_reboot_db_instance(
+pub fn deser_operation_crate_operation_reboot_db_instance(
     inp: &[u8],
     mut builder: crate::output::reboot_db_instance_output::Builder,
 ) -> Result<crate::output::reboot_db_instance_output::Builder, smithy_xml::decode::XmlError> {
@@ -4941,10 +4941,10 @@ pub fn deser_operation_reboot_db_instance(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBInstance") /* DBInstance com.amazonaws.neptune#RebootDBInstanceOutput$DBInstance */ =>  {
+            s if s.matches("DBInstance") /* DBInstance com.amazonaws.neptune.synthetic#RebootDBInstanceOutput$DBInstance */ =>  {
                 let var_149 =
                     Some(
-                        crate::xml_deser::deser_structure_db_instance(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_instance(&mut tag)
                         ?
                     )
                 ;
@@ -4963,7 +4963,7 @@ pub fn deser_operation_reboot_db_instance(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_db_cluster_role_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_db_cluster_role_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::db_cluster_role_not_found_fault::Builder,
 ) -> Result<crate::error::db_cluster_role_not_found_fault::Builder, smithy_xml::decode::XmlError> {
@@ -4996,7 +4996,7 @@ pub fn deser_structure_db_cluster_role_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_remove_source_identifier_from_subscription(
+pub fn deser_operation_crate_operation_remove_source_identifier_from_subscription(
     inp: &[u8],
     mut builder: crate::output::remove_source_identifier_from_subscription_output::Builder,
 ) -> Result<
@@ -5025,10 +5025,10 @@ pub fn deser_operation_remove_source_identifier_from_subscription(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("EventSubscription") /* EventSubscription com.amazonaws.neptune#RemoveSourceIdentifierFromSubscriptionOutput$EventSubscription */ =>  {
+            s if s.matches("EventSubscription") /* EventSubscription com.amazonaws.neptune.synthetic#RemoveSourceIdentifierFromSubscriptionOutput$EventSubscription */ =>  {
                 let var_151 =
                     Some(
-                        crate::xml_deser::deser_structure_event_subscription(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_event_subscription(&mut tag)
                         ?
                     )
                 ;
@@ -5047,7 +5047,7 @@ pub fn deser_operation_remove_source_identifier_from_subscription(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_reset_db_cluster_parameter_group(
+pub fn deser_operation_crate_operation_reset_db_cluster_parameter_group(
     inp: &[u8],
     mut builder: crate::output::reset_db_cluster_parameter_group_output::Builder,
 ) -> Result<
@@ -5076,7 +5076,7 @@ pub fn deser_operation_reset_db_cluster_parameter_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBClusterParameterGroupName") /* DBClusterParameterGroupName com.amazonaws.neptune#ResetDBClusterParameterGroupOutput$DBClusterParameterGroupName */ =>  {
+            s if s.matches("DBClusterParameterGroupName") /* DBClusterParameterGroupName com.amazonaws.neptune.synthetic#ResetDBClusterParameterGroupOutput$DBClusterParameterGroupName */ =>  {
                 let var_152 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -5101,7 +5101,7 @@ pub fn deser_operation_reset_db_cluster_parameter_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_reset_db_parameter_group(
+pub fn deser_operation_crate_operation_reset_db_parameter_group(
     inp: &[u8],
     mut builder: crate::output::reset_db_parameter_group_output::Builder,
 ) -> Result<crate::output::reset_db_parameter_group_output::Builder, smithy_xml::decode::XmlError> {
@@ -5127,7 +5127,7 @@ pub fn deser_operation_reset_db_parameter_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBParameterGroupName") /* DBParameterGroupName com.amazonaws.neptune#ResetDBParameterGroupOutput$DBParameterGroupName */ =>  {
+            s if s.matches("DBParameterGroupName") /* DBParameterGroupName com.amazonaws.neptune.synthetic#ResetDBParameterGroupOutput$DBParameterGroupName */ =>  {
                 let var_153 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -5152,7 +5152,7 @@ pub fn deser_operation_reset_db_parameter_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_insufficient_db_cluster_capacity_fault_xml_err(
+pub fn deser_structure_crate_error_insufficient_db_cluster_capacity_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::insufficient_db_cluster_capacity_fault::Builder,
 ) -> Result<
@@ -5188,7 +5188,7 @@ pub fn deser_structure_insufficient_db_cluster_capacity_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_db_snapshot_state_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_db_snapshot_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_db_snapshot_state_fault::Builder,
 ) -> Result<crate::error::invalid_db_snapshot_state_fault::Builder, smithy_xml::decode::XmlError> {
@@ -5221,7 +5221,7 @@ pub fn deser_structure_invalid_db_snapshot_state_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_restore_fault_xml_err(
+pub fn deser_structure_crate_error_invalid_restore_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_restore_fault::Builder,
 ) -> Result<crate::error::invalid_restore_fault::Builder, smithy_xml::decode::XmlError> {
@@ -5254,7 +5254,7 @@ pub fn deser_structure_invalid_restore_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_restore_db_cluster_from_snapshot(
+pub fn deser_operation_crate_operation_restore_db_cluster_from_snapshot(
     inp: &[u8],
     mut builder: crate::output::restore_db_cluster_from_snapshot_output::Builder,
 ) -> Result<
@@ -5283,10 +5283,10 @@ pub fn deser_operation_restore_db_cluster_from_snapshot(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune#RestoreDBClusterFromSnapshotOutput$DBCluster */ =>  {
+            s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune.synthetic#RestoreDBClusterFromSnapshotOutput$DBCluster */ =>  {
                 let var_157 =
                     Some(
-                        crate::xml_deser::deser_structure_db_cluster(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
@@ -5305,7 +5305,7 @@ pub fn deser_operation_restore_db_cluster_from_snapshot(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_restore_db_cluster_to_point_in_time(
+pub fn deser_operation_crate_operation_restore_db_cluster_to_point_in_time(
     inp: &[u8],
     mut builder: crate::output::restore_db_cluster_to_point_in_time_output::Builder,
 ) -> Result<
@@ -5334,10 +5334,10 @@ pub fn deser_operation_restore_db_cluster_to_point_in_time(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune#RestoreDBClusterToPointInTimeOutput$DBCluster */ =>  {
+            s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune.synthetic#RestoreDBClusterToPointInTimeOutput$DBCluster */ =>  {
                 let var_158 =
                     Some(
-                        crate::xml_deser::deser_structure_db_cluster(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
@@ -5356,7 +5356,7 @@ pub fn deser_operation_restore_db_cluster_to_point_in_time(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_start_db_cluster(
+pub fn deser_operation_crate_operation_start_db_cluster(
     inp: &[u8],
     mut builder: crate::output::start_db_cluster_output::Builder,
 ) -> Result<crate::output::start_db_cluster_output::Builder, smithy_xml::decode::XmlError> {
@@ -5382,10 +5382,10 @@ pub fn deser_operation_start_db_cluster(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune#StartDBClusterOutput$DBCluster */ =>  {
+            s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune.synthetic#StartDBClusterOutput$DBCluster */ =>  {
                 let var_159 =
                     Some(
-                        crate::xml_deser::deser_structure_db_cluster(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
@@ -5404,7 +5404,7 @@ pub fn deser_operation_start_db_cluster(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_stop_db_cluster(
+pub fn deser_operation_crate_operation_stop_db_cluster(
     inp: &[u8],
     mut builder: crate::output::stop_db_cluster_output::Builder,
 ) -> Result<crate::output::stop_db_cluster_output::Builder, smithy_xml::decode::XmlError> {
@@ -5430,10 +5430,10 @@ pub fn deser_operation_stop_db_cluster(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune#StopDBClusterOutput$DBCluster */ =>  {
+            s if s.matches("DBCluster") /* DBCluster com.amazonaws.neptune.synthetic#StopDBClusterOutput$DBCluster */ =>  {
                 let var_160 =
                     Some(
-                        crate::xml_deser::deser_structure_db_cluster(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                         ?
                     )
                 ;
@@ -5451,7 +5451,7 @@ pub fn deser_operation_stop_db_cluster(
     Ok(builder)
 }
 
-pub fn deser_structure_event_subscription(
+pub fn deser_structure_crate_model_event_subscription(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::EventSubscription, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5539,7 +5539,7 @@ pub fn deser_structure_event_subscription(
             s if s.matches("SourceIdsList") /* SourceIdsList com.amazonaws.neptune#EventSubscription$SourceIdsList */ =>  {
                 let var_167 =
                     Some(
-                        crate::xml_deser::deser_list_source_ids_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_source_ids_list(&mut tag)
                         ?
                     )
                 ;
@@ -5549,7 +5549,7 @@ pub fn deser_structure_event_subscription(
             s if s.matches("EventCategoriesList") /* EventCategoriesList com.amazonaws.neptune#EventSubscription$EventCategoriesList */ =>  {
                 let var_168 =
                     Some(
-                        crate::xml_deser::deser_list_event_categories_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_event_categories_list(&mut tag)
                         ?
                     )
                 ;
@@ -5590,7 +5590,7 @@ pub fn deser_structure_event_subscription(
     Ok(builder.build())
 }
 
-pub fn deser_structure_resource_pending_maintenance_actions(
+pub fn deser_structure_crate_model_resource_pending_maintenance_actions(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ResourcePendingMaintenanceActions, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5613,7 +5613,7 @@ pub fn deser_structure_resource_pending_maintenance_actions(
             s if s.matches("PendingMaintenanceActionDetails") /* PendingMaintenanceActionDetails com.amazonaws.neptune#ResourcePendingMaintenanceActions$PendingMaintenanceActionDetails */ =>  {
                 let var_172 =
                     Some(
-                        crate::xml_deser::deser_list_pending_maintenance_action_details(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_pending_maintenance_action_details(&mut tag)
                         ?
                     )
                 ;
@@ -5626,7 +5626,7 @@ pub fn deser_structure_resource_pending_maintenance_actions(
     Ok(builder.build())
 }
 
-pub fn deser_structure_db_cluster_parameter_group(
+pub fn deser_structure_crate_model_db_cluster_parameter_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DbClusterParameterGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5691,7 +5691,7 @@ pub fn deser_structure_db_cluster_parameter_group(
     Ok(builder.build())
 }
 
-pub fn deser_structure_db_cluster_snapshot(
+pub fn deser_structure_crate_model_db_cluster_snapshot(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DbClusterSnapshot, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5701,7 +5701,7 @@ pub fn deser_structure_db_cluster_snapshot(
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.neptune#DBClusterSnapshot$AvailabilityZones */ =>  {
                 let var_177 =
                     Some(
-                        crate::xml_deser::deser_list_availability_zones(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_availability_zones(&mut tag)
                         ?
                     )
                 ;
@@ -5973,7 +5973,7 @@ pub fn deser_structure_db_cluster_snapshot(
     Ok(builder.build())
 }
 
-pub fn deser_structure_db_parameter_group(
+pub fn deser_structure_crate_model_db_parameter_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DbParameterGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6038,7 +6038,7 @@ pub fn deser_structure_db_parameter_group(
     Ok(builder.build())
 }
 
-pub fn deser_structure_db_cluster(
+pub fn deser_structure_crate_model_db_cluster(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DbCluster, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6063,7 +6063,7 @@ pub fn deser_structure_db_cluster(
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.neptune#DBCluster$AvailabilityZones */ =>  {
                 let var_202 =
                     Some(
-                        crate::xml_deser::deser_list_availability_zones(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_availability_zones(&mut tag)
                         ?
                     )
                 ;
@@ -6302,7 +6302,7 @@ pub fn deser_structure_db_cluster(
             s if s.matches("DBClusterOptionGroupMemberships") /* DBClusterOptionGroupMemberships com.amazonaws.neptune#DBCluster$DBClusterOptionGroupMemberships */ =>  {
                 let var_220 =
                     Some(
-                        crate::xml_deser::deser_list_db_cluster_option_group_memberships(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_db_cluster_option_group_memberships(&mut tag)
                         ?
                     )
                 ;
@@ -6351,7 +6351,7 @@ pub fn deser_structure_db_cluster(
             s if s.matches("ReadReplicaIdentifiers") /* ReadReplicaIdentifiers com.amazonaws.neptune#DBCluster$ReadReplicaIdentifiers */ =>  {
                 let var_224 =
                     Some(
-                        crate::xml_deser::deser_list_read_replica_identifier_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_read_replica_identifier_list(&mut tag)
                         ?
                     )
                 ;
@@ -6361,7 +6361,7 @@ pub fn deser_structure_db_cluster(
             s if s.matches("DBClusterMembers") /* DBClusterMembers com.amazonaws.neptune#DBCluster$DBClusterMembers */ =>  {
                 let var_225 =
                     Some(
-                        crate::xml_deser::deser_list_db_cluster_member_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_db_cluster_member_list(&mut tag)
                         ?
                     )
                 ;
@@ -6371,7 +6371,7 @@ pub fn deser_structure_db_cluster(
             s if s.matches("VpcSecurityGroups") /* VpcSecurityGroups com.amazonaws.neptune#DBCluster$VpcSecurityGroups */ =>  {
                 let var_226 =
                     Some(
-                        crate::xml_deser::deser_list_vpc_security_group_membership_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_vpc_security_group_membership_list(&mut tag)
                         ?
                     )
                 ;
@@ -6448,7 +6448,7 @@ pub fn deser_structure_db_cluster(
             s if s.matches("AssociatedRoles") /* AssociatedRoles com.amazonaws.neptune#DBCluster$AssociatedRoles */ =>  {
                 let var_232 =
                     Some(
-                        crate::xml_deser::deser_list_db_cluster_roles(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_db_cluster_roles(&mut tag)
                         ?
                     )
                 ;
@@ -6515,7 +6515,7 @@ pub fn deser_structure_db_cluster(
             s if s.matches("EnabledCloudwatchLogsExports") /* EnabledCloudwatchLogsExports com.amazonaws.neptune#DBCluster$EnabledCloudwatchLogsExports */ =>  {
                 let var_237 =
                     Some(
-                        crate::xml_deser::deser_list_log_type_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_log_type_list(&mut tag)
                         ?
                     )
                 ;
@@ -6572,7 +6572,7 @@ pub fn deser_structure_db_cluster(
     Ok(builder.build())
 }
 
-pub fn deser_list_string_list(
+pub fn deser_list_com_amazonaws_neptune_string_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6594,7 +6594,7 @@ pub fn deser_list_string_list(
     Ok(out)
 }
 
-pub fn deser_structure_db_instance(
+pub fn deser_structure_crate_model_db_instance(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DbInstance, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6682,7 +6682,7 @@ pub fn deser_structure_db_instance(
             s if s.matches("Endpoint") /* Endpoint com.amazonaws.neptune#DBInstance$Endpoint */ =>  {
                 let var_247 =
                     Some(
-                        crate::xml_deser::deser_structure_endpoint(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
                         ?
                     )
                 ;
@@ -6749,7 +6749,7 @@ pub fn deser_structure_db_instance(
             s if s.matches("DBSecurityGroups") /* DBSecurityGroups com.amazonaws.neptune#DBInstance$DBSecurityGroups */ =>  {
                 let var_252 =
                     Some(
-                        crate::xml_deser::deser_list_db_security_group_membership_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_db_security_group_membership_list(&mut tag)
                         ?
                     )
                 ;
@@ -6759,7 +6759,7 @@ pub fn deser_structure_db_instance(
             s if s.matches("VpcSecurityGroups") /* VpcSecurityGroups com.amazonaws.neptune#DBInstance$VpcSecurityGroups */ =>  {
                 let var_253 =
                     Some(
-                        crate::xml_deser::deser_list_vpc_security_group_membership_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_vpc_security_group_membership_list(&mut tag)
                         ?
                     )
                 ;
@@ -6769,7 +6769,7 @@ pub fn deser_structure_db_instance(
             s if s.matches("DBParameterGroups") /* DBParameterGroups com.amazonaws.neptune#DBInstance$DBParameterGroups */ =>  {
                 let var_254 =
                     Some(
-                        crate::xml_deser::deser_list_db_parameter_group_status_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_db_parameter_group_status_list(&mut tag)
                         ?
                     )
                 ;
@@ -6792,7 +6792,7 @@ pub fn deser_structure_db_instance(
             s if s.matches("DBSubnetGroup") /* DBSubnetGroup com.amazonaws.neptune#DBInstance$DBSubnetGroup */ =>  {
                 let var_256 =
                     Some(
-                        crate::xml_deser::deser_structure_db_subnet_group(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_db_subnet_group(&mut tag)
                         ?
                     )
                 ;
@@ -6815,7 +6815,7 @@ pub fn deser_structure_db_instance(
             s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.neptune#DBInstance$PendingModifiedValues */ =>  {
                 let var_258 =
                     Some(
-                        crate::xml_deser::deser_structure_pending_modified_values(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_pending_modified_values(&mut tag)
                         ?
                     )
                 ;
@@ -6895,7 +6895,7 @@ pub fn deser_structure_db_instance(
             s if s.matches("ReadReplicaDBInstanceIdentifiers") /* ReadReplicaDBInstanceIdentifiers com.amazonaws.neptune#DBInstance$ReadReplicaDBInstanceIdentifiers */ =>  {
                 let var_264 =
                     Some(
-                        crate::xml_deser::deser_list_read_replica_db_instance_identifier_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_read_replica_db_instance_identifier_list(&mut tag)
                         ?
                     )
                 ;
@@ -6905,7 +6905,7 @@ pub fn deser_structure_db_instance(
             s if s.matches("ReadReplicaDBClusterIdentifiers") /* ReadReplicaDBClusterIdentifiers com.amazonaws.neptune#DBInstance$ReadReplicaDBClusterIdentifiers */ =>  {
                 let var_265 =
                     Some(
-                        crate::xml_deser::deser_list_read_replica_db_cluster_identifier_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_read_replica_db_cluster_identifier_list(&mut tag)
                         ?
                     )
                 ;
@@ -6943,7 +6943,7 @@ pub fn deser_structure_db_instance(
             s if s.matches("OptionGroupMemberships") /* OptionGroupMemberships com.amazonaws.neptune#DBInstance$OptionGroupMemberships */ =>  {
                 let var_268 =
                     Some(
-                        crate::xml_deser::deser_list_option_group_membership_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_option_group_membership_list(&mut tag)
                         ?
                     )
                 ;
@@ -6994,7 +6994,7 @@ pub fn deser_structure_db_instance(
             s if s.matches("StatusInfos") /* StatusInfos com.amazonaws.neptune#DBInstance$StatusInfos */ =>  {
                 let var_272 =
                     Some(
-                        crate::xml_deser::deser_list_db_instance_status_info_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_db_instance_status_info_list(&mut tag)
                         ?
                     )
                 ;
@@ -7112,7 +7112,7 @@ pub fn deser_structure_db_instance(
             s if s.matches("DomainMemberships") /* DomainMemberships com.amazonaws.neptune#DBInstance$DomainMemberships */ =>  {
                 let var_281 =
                     Some(
-                        crate::xml_deser::deser_list_domain_membership_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_domain_membership_list(&mut tag)
                         ?
                     )
                 ;
@@ -7262,7 +7262,7 @@ pub fn deser_structure_db_instance(
             s if s.matches("EnabledCloudwatchLogsExports") /* EnabledCloudwatchLogsExports com.amazonaws.neptune#DBInstance$EnabledCloudwatchLogsExports */ =>  {
                 let var_292 =
                     Some(
-                        crate::xml_deser::deser_list_log_type_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_log_type_list(&mut tag)
                         ?
                     )
                 ;
@@ -7290,7 +7290,7 @@ pub fn deser_structure_db_instance(
     Ok(builder.build())
 }
 
-pub fn deser_structure_db_subnet_group(
+pub fn deser_structure_crate_model_db_subnet_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DbSubnetGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7352,7 +7352,7 @@ pub fn deser_structure_db_subnet_group(
             s if s.matches("Subnets") /* Subnets com.amazonaws.neptune#DBSubnetGroup$Subnets */ =>  {
                 let var_298 =
                     Some(
-                        crate::xml_deser::deser_list_subnet_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_subnet_list(&mut tag)
                         ?
                     )
                 ;
@@ -7378,7 +7378,7 @@ pub fn deser_structure_db_subnet_group(
     Ok(builder.build())
 }
 
-pub fn deser_list_db_cluster_endpoint_list(
+pub fn deser_list_com_amazonaws_neptune_db_cluster_endpoint_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DbClusterEndpoint>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7386,7 +7386,7 @@ pub fn deser_list_db_cluster_endpoint_list(
         match tag.start_el() {
             s if s.matches("DBClusterEndpointList") /* member com.amazonaws.neptune#DBClusterEndpointList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_db_cluster_endpoint(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_db_cluster_endpoint(&mut tag)
                     ?
                 );
             }
@@ -7397,7 +7397,7 @@ pub fn deser_list_db_cluster_endpoint_list(
     Ok(out)
 }
 
-pub fn deser_list_db_cluster_parameter_group_list(
+pub fn deser_list_com_amazonaws_neptune_db_cluster_parameter_group_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DbClusterParameterGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7405,7 +7405,7 @@ pub fn deser_list_db_cluster_parameter_group_list(
         match tag.start_el() {
             s if s.matches("DBClusterParameterGroup") /* member com.amazonaws.neptune#DBClusterParameterGroupList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_db_cluster_parameter_group(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_db_cluster_parameter_group(&mut tag)
                     ?
                 );
             }
@@ -7416,7 +7416,7 @@ pub fn deser_list_db_cluster_parameter_group_list(
     Ok(out)
 }
 
-pub fn deser_list_parameters_list(
+pub fn deser_list_com_amazonaws_neptune_parameters_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Parameter>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7424,7 +7424,7 @@ pub fn deser_list_parameters_list(
         match tag.start_el() {
             s if s.matches("Parameter") /* member com.amazonaws.neptune#ParametersList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_parameter(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_parameter(&mut tag)
                     ?
                 );
             }
@@ -7435,7 +7435,7 @@ pub fn deser_list_parameters_list(
     Ok(out)
 }
 
-pub fn deser_list_db_cluster_list(
+pub fn deser_list_com_amazonaws_neptune_db_cluster_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DbCluster>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7443,7 +7443,7 @@ pub fn deser_list_db_cluster_list(
         match tag.start_el() {
             s if s.matches("DBCluster") /* member com.amazonaws.neptune#DBClusterList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_db_cluster(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_db_cluster(&mut tag)
                     ?
                 );
             }
@@ -7454,7 +7454,7 @@ pub fn deser_list_db_cluster_list(
     Ok(out)
 }
 
-pub fn deser_structure_db_cluster_snapshot_attributes_result(
+pub fn deser_structure_crate_model_db_cluster_snapshot_attributes_result(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DbClusterSnapshotAttributesResult, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7477,7 +7477,7 @@ pub fn deser_structure_db_cluster_snapshot_attributes_result(
             s if s.matches("DBClusterSnapshotAttributes") /* DBClusterSnapshotAttributes com.amazonaws.neptune#DBClusterSnapshotAttributesResult$DBClusterSnapshotAttributes */ =>  {
                 let var_301 =
                     Some(
-                        crate::xml_deser::deser_list_db_cluster_snapshot_attribute_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_db_cluster_snapshot_attribute_list(&mut tag)
                         ?
                     )
                 ;
@@ -7490,7 +7490,7 @@ pub fn deser_structure_db_cluster_snapshot_attributes_result(
     Ok(builder.build())
 }
 
-pub fn deser_list_db_cluster_snapshot_list(
+pub fn deser_list_com_amazonaws_neptune_db_cluster_snapshot_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DbClusterSnapshot>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7498,7 +7498,7 @@ pub fn deser_list_db_cluster_snapshot_list(
         match tag.start_el() {
             s if s.matches("DBClusterSnapshot") /* member com.amazonaws.neptune#DBClusterSnapshotList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_db_cluster_snapshot(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_db_cluster_snapshot(&mut tag)
                     ?
                 );
             }
@@ -7509,7 +7509,7 @@ pub fn deser_list_db_cluster_snapshot_list(
     Ok(out)
 }
 
-pub fn deser_list_db_engine_version_list(
+pub fn deser_list_com_amazonaws_neptune_db_engine_version_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DbEngineVersion>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7517,7 +7517,7 @@ pub fn deser_list_db_engine_version_list(
         match tag.start_el() {
             s if s.matches("DBEngineVersion") /* member com.amazonaws.neptune#DBEngineVersionList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_db_engine_version(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_db_engine_version(&mut tag)
                     ?
                 );
             }
@@ -7528,7 +7528,7 @@ pub fn deser_list_db_engine_version_list(
     Ok(out)
 }
 
-pub fn deser_list_db_instance_list(
+pub fn deser_list_com_amazonaws_neptune_db_instance_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DbInstance>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7536,7 +7536,7 @@ pub fn deser_list_db_instance_list(
         match tag.start_el() {
             s if s.matches("DBInstance") /* member com.amazonaws.neptune#DBInstanceList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_db_instance(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_db_instance(&mut tag)
                     ?
                 );
             }
@@ -7547,7 +7547,7 @@ pub fn deser_list_db_instance_list(
     Ok(out)
 }
 
-pub fn deser_list_db_parameter_group_list(
+pub fn deser_list_com_amazonaws_neptune_db_parameter_group_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DbParameterGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7555,7 +7555,7 @@ pub fn deser_list_db_parameter_group_list(
         match tag.start_el() {
             s if s.matches("DBParameterGroup") /* member com.amazonaws.neptune#DBParameterGroupList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_db_parameter_group(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_db_parameter_group(&mut tag)
                     ?
                 );
             }
@@ -7566,7 +7566,7 @@ pub fn deser_list_db_parameter_group_list(
     Ok(out)
 }
 
-pub fn deser_list_db_subnet_groups(
+pub fn deser_list_com_amazonaws_neptune_db_subnet_groups(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DbSubnetGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7574,7 +7574,7 @@ pub fn deser_list_db_subnet_groups(
         match tag.start_el() {
             s if s.matches("DBSubnetGroup") /* member com.amazonaws.neptune#DBSubnetGroups$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_db_subnet_group(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_db_subnet_group(&mut tag)
                     ?
                 );
             }
@@ -7585,7 +7585,7 @@ pub fn deser_list_db_subnet_groups(
     Ok(out)
 }
 
-pub fn deser_structure_engine_defaults(
+pub fn deser_structure_crate_model_engine_defaults(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::EngineDefaults, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7621,7 +7621,7 @@ pub fn deser_structure_engine_defaults(
             s if s.matches("Parameters") /* Parameters com.amazonaws.neptune#EngineDefaults$Parameters */ =>  {
                 let var_304 =
                     Some(
-                        crate::xml_deser::deser_list_parameters_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_parameters_list(&mut tag)
                         ?
                     )
                 ;
@@ -7634,7 +7634,7 @@ pub fn deser_structure_engine_defaults(
     Ok(builder.build())
 }
 
-pub fn deser_list_event_categories_map_list(
+pub fn deser_list_com_amazonaws_neptune_event_categories_map_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::EventCategoriesMap>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7642,7 +7642,7 @@ pub fn deser_list_event_categories_map_list(
         match tag.start_el() {
             s if s.matches("EventCategoriesMap") /* member com.amazonaws.neptune#EventCategoriesMapList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_event_categories_map(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_event_categories_map(&mut tag)
                     ?
                 );
             }
@@ -7653,7 +7653,7 @@ pub fn deser_list_event_categories_map_list(
     Ok(out)
 }
 
-pub fn deser_list_event_list(
+pub fn deser_list_com_amazonaws_neptune_event_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Event>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7661,7 +7661,7 @@ pub fn deser_list_event_list(
         match tag.start_el() {
             s if s.matches("Event") /* member com.amazonaws.neptune#EventList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_event(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_event(&mut tag)
                     ?
                 );
             }
@@ -7672,7 +7672,7 @@ pub fn deser_list_event_list(
     Ok(out)
 }
 
-pub fn deser_list_event_subscriptions_list(
+pub fn deser_list_com_amazonaws_neptune_event_subscriptions_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::EventSubscription>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7680,7 +7680,7 @@ pub fn deser_list_event_subscriptions_list(
         match tag.start_el() {
             s if s.matches("EventSubscription") /* member com.amazonaws.neptune#EventSubscriptionsList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_event_subscription(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_event_subscription(&mut tag)
                     ?
                 );
             }
@@ -7691,7 +7691,7 @@ pub fn deser_list_event_subscriptions_list(
     Ok(out)
 }
 
-pub fn deser_list_orderable_db_instance_options_list(
+pub fn deser_list_com_amazonaws_neptune_orderable_db_instance_options_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::OrderableDbInstanceOption>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7699,7 +7699,7 @@ pub fn deser_list_orderable_db_instance_options_list(
         match tag.start_el() {
             s if s.matches("OrderableDBInstanceOption") /* member com.amazonaws.neptune#OrderableDBInstanceOptionsList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_orderable_db_instance_option(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_orderable_db_instance_option(&mut tag)
                     ?
                 );
             }
@@ -7710,7 +7710,7 @@ pub fn deser_list_orderable_db_instance_options_list(
     Ok(out)
 }
 
-pub fn deser_list_pending_maintenance_actions(
+pub fn deser_list_com_amazonaws_neptune_pending_maintenance_actions(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>,
@@ -7721,7 +7721,7 @@ pub fn deser_list_pending_maintenance_actions(
         match tag.start_el() {
             s if s.matches("ResourcePendingMaintenanceActions") /* member com.amazonaws.neptune#PendingMaintenanceActions$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_resource_pending_maintenance_actions(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_resource_pending_maintenance_actions(&mut tag)
                     ?
                 );
             }
@@ -7732,7 +7732,7 @@ pub fn deser_list_pending_maintenance_actions(
     Ok(out)
 }
 
-pub fn deser_structure_valid_db_instance_modifications_message(
+pub fn deser_structure_crate_model_valid_db_instance_modifications_message(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ValidDbInstanceModificationsMessage, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7742,7 +7742,7 @@ pub fn deser_structure_valid_db_instance_modifications_message(
             s if s.matches("Storage") /* Storage com.amazonaws.neptune#ValidDBInstanceModificationsMessage$Storage */ =>  {
                 let var_305 =
                     Some(
-                        crate::xml_deser::deser_list_valid_storage_options_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_valid_storage_options_list(&mut tag)
                         ?
                     )
                 ;
@@ -7755,7 +7755,7 @@ pub fn deser_structure_valid_db_instance_modifications_message(
     Ok(builder.build())
 }
 
-pub fn deser_list_tag_list(
+pub fn deser_list_com_amazonaws_neptune_tag_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Tag>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7763,7 +7763,7 @@ pub fn deser_list_tag_list(
         match tag.start_el() {
             s if s.matches("Tag") /* member com.amazonaws.neptune#TagList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_tag(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_tag(&mut tag)
                     ?
                 );
             }
@@ -7774,7 +7774,7 @@ pub fn deser_list_tag_list(
     Ok(out)
 }
 
-pub fn deser_list_source_ids_list(
+pub fn deser_list_com_amazonaws_neptune_source_ids_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7796,7 +7796,7 @@ pub fn deser_list_source_ids_list(
     Ok(out)
 }
 
-pub fn deser_list_event_categories_list(
+pub fn deser_list_com_amazonaws_neptune_event_categories_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7818,7 +7818,7 @@ pub fn deser_list_event_categories_list(
     Ok(out)
 }
 
-pub fn deser_list_pending_maintenance_action_details(
+pub fn deser_list_com_amazonaws_neptune_pending_maintenance_action_details(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::PendingMaintenanceAction>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7826,7 +7826,7 @@ pub fn deser_list_pending_maintenance_action_details(
         match tag.start_el() {
             s if s.matches("PendingMaintenanceAction") /* member com.amazonaws.neptune#PendingMaintenanceActionDetails$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_pending_maintenance_action(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_pending_maintenance_action(&mut tag)
                     ?
                 );
             }
@@ -7837,7 +7837,7 @@ pub fn deser_list_pending_maintenance_action_details(
     Ok(out)
 }
 
-pub fn deser_list_availability_zones(
+pub fn deser_list_com_amazonaws_neptune_availability_zones(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7859,7 +7859,7 @@ pub fn deser_list_availability_zones(
     Ok(out)
 }
 
-pub fn deser_list_db_cluster_option_group_memberships(
+pub fn deser_list_com_amazonaws_neptune_db_cluster_option_group_memberships(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DbClusterOptionGroupStatus>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7867,7 +7867,7 @@ pub fn deser_list_db_cluster_option_group_memberships(
         match tag.start_el() {
             s if s.matches("DBClusterOptionGroup") /* member com.amazonaws.neptune#DBClusterOptionGroupMemberships$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_db_cluster_option_group_status(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_db_cluster_option_group_status(&mut tag)
                     ?
                 );
             }
@@ -7878,7 +7878,7 @@ pub fn deser_list_db_cluster_option_group_memberships(
     Ok(out)
 }
 
-pub fn deser_list_read_replica_identifier_list(
+pub fn deser_list_com_amazonaws_neptune_read_replica_identifier_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7900,7 +7900,7 @@ pub fn deser_list_read_replica_identifier_list(
     Ok(out)
 }
 
-pub fn deser_list_db_cluster_member_list(
+pub fn deser_list_com_amazonaws_neptune_db_cluster_member_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DbClusterMember>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7908,7 +7908,7 @@ pub fn deser_list_db_cluster_member_list(
         match tag.start_el() {
             s if s.matches("DBClusterMember") /* member com.amazonaws.neptune#DBClusterMemberList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_db_cluster_member(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_db_cluster_member(&mut tag)
                     ?
                 );
             }
@@ -7919,7 +7919,7 @@ pub fn deser_list_db_cluster_member_list(
     Ok(out)
 }
 
-pub fn deser_list_vpc_security_group_membership_list(
+pub fn deser_list_com_amazonaws_neptune_vpc_security_group_membership_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::VpcSecurityGroupMembership>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7927,7 +7927,7 @@ pub fn deser_list_vpc_security_group_membership_list(
         match tag.start_el() {
             s if s.matches("VpcSecurityGroupMembership") /* member com.amazonaws.neptune#VpcSecurityGroupMembershipList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_vpc_security_group_membership(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_vpc_security_group_membership(&mut tag)
                     ?
                 );
             }
@@ -7938,7 +7938,7 @@ pub fn deser_list_vpc_security_group_membership_list(
     Ok(out)
 }
 
-pub fn deser_list_db_cluster_roles(
+pub fn deser_list_com_amazonaws_neptune_db_cluster_roles(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DbClusterRole>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7946,7 +7946,7 @@ pub fn deser_list_db_cluster_roles(
         match tag.start_el() {
             s if s.matches("DBClusterRole") /* member com.amazonaws.neptune#DBClusterRoles$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_db_cluster_role(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_db_cluster_role(&mut tag)
                     ?
                 );
             }
@@ -7957,7 +7957,7 @@ pub fn deser_list_db_cluster_roles(
     Ok(out)
 }
 
-pub fn deser_list_log_type_list(
+pub fn deser_list_com_amazonaws_neptune_log_type_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7979,7 +7979,7 @@ pub fn deser_list_log_type_list(
     Ok(out)
 }
 
-pub fn deser_structure_endpoint(
+pub fn deser_structure_crate_model_endpoint(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Endpoint, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8033,7 +8033,7 @@ pub fn deser_structure_endpoint(
     Ok(builder.build())
 }
 
-pub fn deser_list_db_security_group_membership_list(
+pub fn deser_list_com_amazonaws_neptune_db_security_group_membership_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DbSecurityGroupMembership>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8041,7 +8041,7 @@ pub fn deser_list_db_security_group_membership_list(
         match tag.start_el() {
             s if s.matches("DBSecurityGroup") /* member com.amazonaws.neptune#DBSecurityGroupMembershipList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_db_security_group_membership(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_db_security_group_membership(&mut tag)
                     ?
                 );
             }
@@ -8052,7 +8052,7 @@ pub fn deser_list_db_security_group_membership_list(
     Ok(out)
 }
 
-pub fn deser_list_db_parameter_group_status_list(
+pub fn deser_list_com_amazonaws_neptune_db_parameter_group_status_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DbParameterGroupStatus>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8060,7 +8060,7 @@ pub fn deser_list_db_parameter_group_status_list(
         match tag.start_el() {
             s if s.matches("DBParameterGroup") /* member com.amazonaws.neptune#DBParameterGroupStatusList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_db_parameter_group_status(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_db_parameter_group_status(&mut tag)
                     ?
                 );
             }
@@ -8071,7 +8071,7 @@ pub fn deser_list_db_parameter_group_status_list(
     Ok(out)
 }
 
-pub fn deser_structure_pending_modified_values(
+pub fn deser_structure_crate_model_pending_modified_values(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PendingModifiedValues, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8260,7 +8260,7 @@ pub fn deser_structure_pending_modified_values(
             s if s.matches("PendingCloudwatchLogsExports") /* PendingCloudwatchLogsExports com.amazonaws.neptune#PendingModifiedValues$PendingCloudwatchLogsExports */ =>  {
                 let var_322 =
                     Some(
-                        crate::xml_deser::deser_structure_pending_cloudwatch_logs_exports(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_pending_cloudwatch_logs_exports(&mut tag)
                         ?
                     )
                 ;
@@ -8273,7 +8273,7 @@ pub fn deser_structure_pending_modified_values(
     Ok(builder.build())
 }
 
-pub fn deser_list_read_replica_db_instance_identifier_list(
+pub fn deser_list_com_amazonaws_neptune_read_replica_db_instance_identifier_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8295,7 +8295,7 @@ pub fn deser_list_read_replica_db_instance_identifier_list(
     Ok(out)
 }
 
-pub fn deser_list_read_replica_db_cluster_identifier_list(
+pub fn deser_list_com_amazonaws_neptune_read_replica_db_cluster_identifier_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8317,7 +8317,7 @@ pub fn deser_list_read_replica_db_cluster_identifier_list(
     Ok(out)
 }
 
-pub fn deser_list_option_group_membership_list(
+pub fn deser_list_com_amazonaws_neptune_option_group_membership_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::OptionGroupMembership>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8325,7 +8325,7 @@ pub fn deser_list_option_group_membership_list(
         match tag.start_el() {
             s if s.matches("OptionGroupMembership") /* member com.amazonaws.neptune#OptionGroupMembershipList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_option_group_membership(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_option_group_membership(&mut tag)
                     ?
                 );
             }
@@ -8336,7 +8336,7 @@ pub fn deser_list_option_group_membership_list(
     Ok(out)
 }
 
-pub fn deser_list_db_instance_status_info_list(
+pub fn deser_list_com_amazonaws_neptune_db_instance_status_info_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DbInstanceStatusInfo>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8344,7 +8344,7 @@ pub fn deser_list_db_instance_status_info_list(
         match tag.start_el() {
             s if s.matches("DBInstanceStatusInfo") /* member com.amazonaws.neptune#DBInstanceStatusInfoList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_db_instance_status_info(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_db_instance_status_info(&mut tag)
                     ?
                 );
             }
@@ -8355,7 +8355,7 @@ pub fn deser_list_db_instance_status_info_list(
     Ok(out)
 }
 
-pub fn deser_list_domain_membership_list(
+pub fn deser_list_com_amazonaws_neptune_domain_membership_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DomainMembership>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8363,7 +8363,7 @@ pub fn deser_list_domain_membership_list(
         match tag.start_el() {
             s if s.matches("DomainMembership") /* member com.amazonaws.neptune#DomainMembershipList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_domain_membership(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_domain_membership(&mut tag)
                     ?
                 );
             }
@@ -8374,7 +8374,7 @@ pub fn deser_list_domain_membership_list(
     Ok(out)
 }
 
-pub fn deser_list_subnet_list(
+pub fn deser_list_com_amazonaws_neptune_subnet_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Subnet>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8382,7 +8382,7 @@ pub fn deser_list_subnet_list(
         match tag.start_el() {
             s if s.matches("Subnet") /* member com.amazonaws.neptune#SubnetList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_subnet(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_subnet(&mut tag)
                     ?
                 );
             }
@@ -8393,7 +8393,7 @@ pub fn deser_list_subnet_list(
     Ok(out)
 }
 
-pub fn deser_structure_db_cluster_endpoint(
+pub fn deser_structure_crate_model_db_cluster_endpoint(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DbClusterEndpoint, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8494,7 +8494,7 @@ pub fn deser_structure_db_cluster_endpoint(
             s if s.matches("StaticMembers") /* StaticMembers com.amazonaws.neptune#DBClusterEndpoint$StaticMembers */ =>  {
                 let var_330 =
                     Some(
-                        crate::xml_deser::deser_list_string_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_string_list(&mut tag)
                         ?
                     )
                 ;
@@ -8504,7 +8504,7 @@ pub fn deser_structure_db_cluster_endpoint(
             s if s.matches("ExcludedMembers") /* ExcludedMembers com.amazonaws.neptune#DBClusterEndpoint$ExcludedMembers */ =>  {
                 let var_331 =
                     Some(
-                        crate::xml_deser::deser_list_string_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_string_list(&mut tag)
                         ?
                     )
                 ;
@@ -8530,7 +8530,7 @@ pub fn deser_structure_db_cluster_endpoint(
     Ok(builder.build())
 }
 
-pub fn deser_structure_parameter(
+pub fn deser_structure_crate_model_parameter(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Parameter, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8676,7 +8676,7 @@ pub fn deser_structure_parameter(
     Ok(builder.build())
 }
 
-pub fn deser_list_db_cluster_snapshot_attribute_list(
+pub fn deser_list_com_amazonaws_neptune_db_cluster_snapshot_attribute_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DbClusterSnapshotAttribute>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -8684,7 +8684,7 @@ pub fn deser_list_db_cluster_snapshot_attribute_list(
         match tag.start_el() {
             s if s.matches("DBClusterSnapshotAttribute") /* member com.amazonaws.neptune#DBClusterSnapshotAttributeList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_db_cluster_snapshot_attribute(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_db_cluster_snapshot_attribute(&mut tag)
                     ?
                 );
             }
@@ -8695,7 +8695,7 @@ pub fn deser_list_db_cluster_snapshot_attribute_list(
     Ok(out)
 }
 
-pub fn deser_structure_db_engine_version(
+pub fn deser_structure_crate_model_db_engine_version(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DbEngineVersion, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8770,7 +8770,7 @@ pub fn deser_structure_db_engine_version(
             s if s.matches("DefaultCharacterSet") /* DefaultCharacterSet com.amazonaws.neptune#DBEngineVersion$DefaultCharacterSet */ =>  {
                 let var_348 =
                     Some(
-                        crate::xml_deser::deser_structure_character_set(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_character_set(&mut tag)
                         ?
                     )
                 ;
@@ -8780,7 +8780,7 @@ pub fn deser_structure_db_engine_version(
             s if s.matches("SupportedCharacterSets") /* SupportedCharacterSets com.amazonaws.neptune#DBEngineVersion$SupportedCharacterSets */ =>  {
                 let var_349 =
                     Some(
-                        crate::xml_deser::deser_list_supported_character_sets_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_supported_character_sets_list(&mut tag)
                         ?
                     )
                 ;
@@ -8790,7 +8790,7 @@ pub fn deser_structure_db_engine_version(
             s if s.matches("ValidUpgradeTarget") /* ValidUpgradeTarget com.amazonaws.neptune#DBEngineVersion$ValidUpgradeTarget */ =>  {
                 let var_350 =
                     Some(
-                        crate::xml_deser::deser_list_valid_upgrade_target_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_valid_upgrade_target_list(&mut tag)
                         ?
                     )
                 ;
@@ -8800,7 +8800,7 @@ pub fn deser_structure_db_engine_version(
             s if s.matches("SupportedTimezones") /* SupportedTimezones com.amazonaws.neptune#DBEngineVersion$SupportedTimezones */ =>  {
                 let var_351 =
                     Some(
-                        crate::xml_deser::deser_list_supported_timezones_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_supported_timezones_list(&mut tag)
                         ?
                     )
                 ;
@@ -8810,7 +8810,7 @@ pub fn deser_structure_db_engine_version(
             s if s.matches("ExportableLogTypes") /* ExportableLogTypes com.amazonaws.neptune#DBEngineVersion$ExportableLogTypes */ =>  {
                 let var_352 =
                     Some(
-                        crate::xml_deser::deser_list_log_type_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_log_type_list(&mut tag)
                         ?
                     )
                 ;
@@ -8853,7 +8853,7 @@ pub fn deser_structure_db_engine_version(
     Ok(builder.build())
 }
 
-pub fn deser_structure_event_categories_map(
+pub fn deser_structure_crate_model_event_categories_map(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::EventCategoriesMap, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8876,7 +8876,7 @@ pub fn deser_structure_event_categories_map(
             s if s.matches("EventCategories") /* EventCategories com.amazonaws.neptune#EventCategoriesMap$EventCategories */ =>  {
                 let var_356 =
                     Some(
-                        crate::xml_deser::deser_list_event_categories_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_event_categories_list(&mut tag)
                         ?
                     )
                 ;
@@ -8889,7 +8889,7 @@ pub fn deser_structure_event_categories_map(
     Ok(builder.build())
 }
 
-pub fn deser_structure_event(
+pub fn deser_structure_crate_model_event(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Event, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8939,7 +8939,7 @@ pub fn deser_structure_event(
             s if s.matches("EventCategories") /* EventCategories com.amazonaws.neptune#Event$EventCategories */ =>  {
                 let var_360 =
                     Some(
-                        crate::xml_deser::deser_list_event_categories_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_event_categories_list(&mut tag)
                         ?
                     )
                 ;
@@ -8979,7 +8979,7 @@ pub fn deser_structure_event(
     Ok(builder.build())
 }
 
-pub fn deser_structure_orderable_db_instance_option(
+pub fn deser_structure_crate_model_orderable_db_instance_option(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OrderableDbInstanceOption, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9041,7 +9041,7 @@ pub fn deser_structure_orderable_db_instance_option(
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.neptune#OrderableDBInstanceOption$AvailabilityZones */ =>  {
                 let var_367 =
                     Some(
-                        crate::xml_deser::deser_list_availability_zone_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_availability_zone_list(&mut tag)
                         ?
                     )
                 ;
@@ -9277,7 +9277,7 @@ pub fn deser_structure_orderable_db_instance_option(
     Ok(builder.build())
 }
 
-pub fn deser_list_valid_storage_options_list(
+pub fn deser_list_com_amazonaws_neptune_valid_storage_options_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ValidStorageOptions>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9285,7 +9285,7 @@ pub fn deser_list_valid_storage_options_list(
         match tag.start_el() {
             s if s.matches("ValidStorageOptions") /* member com.amazonaws.neptune#ValidStorageOptionsList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_valid_storage_options(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_valid_storage_options(&mut tag)
                     ?
                 );
             }
@@ -9296,7 +9296,7 @@ pub fn deser_list_valid_storage_options_list(
     Ok(out)
 }
 
-pub fn deser_structure_tag(
+pub fn deser_structure_crate_model_tag(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Tag, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9335,7 +9335,7 @@ pub fn deser_structure_tag(
     Ok(builder.build())
 }
 
-pub fn deser_structure_pending_maintenance_action(
+pub fn deser_structure_crate_model_pending_maintenance_action(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PendingMaintenanceAction, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9429,7 +9429,7 @@ pub fn deser_structure_pending_maintenance_action(
     Ok(builder.build())
 }
 
-pub fn deser_structure_db_cluster_option_group_status(
+pub fn deser_structure_crate_model_db_cluster_option_group_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DbClusterOptionGroupStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9468,7 +9468,7 @@ pub fn deser_structure_db_cluster_option_group_status(
     Ok(builder.build())
 }
 
-pub fn deser_structure_db_cluster_member(
+pub fn deser_structure_crate_model_db_cluster_member(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DbClusterMember, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9537,7 +9537,7 @@ pub fn deser_structure_db_cluster_member(
     Ok(builder.build())
 }
 
-pub fn deser_structure_vpc_security_group_membership(
+pub fn deser_structure_crate_model_vpc_security_group_membership(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::VpcSecurityGroupMembership, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9576,7 +9576,7 @@ pub fn deser_structure_vpc_security_group_membership(
     Ok(builder.build())
 }
 
-pub fn deser_structure_db_cluster_role(
+pub fn deser_structure_crate_model_db_cluster_role(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DbClusterRole, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9628,7 +9628,7 @@ pub fn deser_structure_db_cluster_role(
     Ok(builder.build())
 }
 
-pub fn deser_structure_db_security_group_membership(
+pub fn deser_structure_crate_model_db_security_group_membership(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DbSecurityGroupMembership, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9667,7 +9667,7 @@ pub fn deser_structure_db_security_group_membership(
     Ok(builder.build())
 }
 
-pub fn deser_structure_db_parameter_group_status(
+pub fn deser_structure_crate_model_db_parameter_group_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DbParameterGroupStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9706,7 +9706,7 @@ pub fn deser_structure_db_parameter_group_status(
     Ok(builder.build())
 }
 
-pub fn deser_structure_pending_cloudwatch_logs_exports(
+pub fn deser_structure_crate_model_pending_cloudwatch_logs_exports(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PendingCloudwatchLogsExports, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9716,7 +9716,7 @@ pub fn deser_structure_pending_cloudwatch_logs_exports(
             s if s.matches("LogTypesToEnable") /* LogTypesToEnable com.amazonaws.neptune#PendingCloudwatchLogsExports$LogTypesToEnable */ =>  {
                 let var_406 =
                     Some(
-                        crate::xml_deser::deser_list_log_type_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_log_type_list(&mut tag)
                         ?
                     )
                 ;
@@ -9726,7 +9726,7 @@ pub fn deser_structure_pending_cloudwatch_logs_exports(
             s if s.matches("LogTypesToDisable") /* LogTypesToDisable com.amazonaws.neptune#PendingCloudwatchLogsExports$LogTypesToDisable */ =>  {
                 let var_407 =
                     Some(
-                        crate::xml_deser::deser_list_log_type_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_log_type_list(&mut tag)
                         ?
                     )
                 ;
@@ -9739,7 +9739,7 @@ pub fn deser_structure_pending_cloudwatch_logs_exports(
     Ok(builder.build())
 }
 
-pub fn deser_structure_option_group_membership(
+pub fn deser_structure_crate_model_option_group_membership(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OptionGroupMembership, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9778,7 +9778,7 @@ pub fn deser_structure_option_group_membership(
     Ok(builder.build())
 }
 
-pub fn deser_structure_db_instance_status_info(
+pub fn deser_structure_crate_model_db_instance_status_info(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DbInstanceStatusInfo, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9845,7 +9845,7 @@ pub fn deser_structure_db_instance_status_info(
     Ok(builder.build())
 }
 
-pub fn deser_structure_domain_membership(
+pub fn deser_structure_crate_model_domain_membership(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DomainMembership, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9910,7 +9910,7 @@ pub fn deser_structure_domain_membership(
     Ok(builder.build())
 }
 
-pub fn deser_structure_subnet(
+pub fn deser_structure_crate_model_subnet(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Subnet, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9933,7 +9933,7 @@ pub fn deser_structure_subnet(
             s if s.matches("SubnetAvailabilityZone") /* SubnetAvailabilityZone com.amazonaws.neptune#Subnet$SubnetAvailabilityZone */ =>  {
                 let var_419 =
                     Some(
-                        crate::xml_deser::deser_structure_availability_zone(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_availability_zone(&mut tag)
                         ?
                     )
                 ;
@@ -9959,7 +9959,7 @@ pub fn deser_structure_subnet(
     Ok(builder.build())
 }
 
-pub fn deser_structure_db_cluster_snapshot_attribute(
+pub fn deser_structure_crate_model_db_cluster_snapshot_attribute(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DbClusterSnapshotAttribute, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9982,7 +9982,7 @@ pub fn deser_structure_db_cluster_snapshot_attribute(
             s if s.matches("AttributeValues") /* AttributeValues com.amazonaws.neptune#DBClusterSnapshotAttribute$AttributeValues */ =>  {
                 let var_422 =
                     Some(
-                        crate::xml_deser::deser_list_attribute_value_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_attribute_value_list(&mut tag)
                         ?
                     )
                 ;
@@ -9995,7 +9995,7 @@ pub fn deser_structure_db_cluster_snapshot_attribute(
     Ok(builder.build())
 }
 
-pub fn deser_structure_character_set(
+pub fn deser_structure_crate_model_character_set(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CharacterSet, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10034,7 +10034,7 @@ pub fn deser_structure_character_set(
     Ok(builder.build())
 }
 
-pub fn deser_list_supported_character_sets_list(
+pub fn deser_list_com_amazonaws_neptune_supported_character_sets_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::CharacterSet>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10042,7 +10042,7 @@ pub fn deser_list_supported_character_sets_list(
         match tag.start_el() {
             s if s.matches("CharacterSet") /* member com.amazonaws.neptune#SupportedCharacterSetsList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_character_set(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_character_set(&mut tag)
                     ?
                 );
             }
@@ -10053,7 +10053,7 @@ pub fn deser_list_supported_character_sets_list(
     Ok(out)
 }
 
-pub fn deser_list_valid_upgrade_target_list(
+pub fn deser_list_com_amazonaws_neptune_valid_upgrade_target_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::UpgradeTarget>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10061,7 +10061,7 @@ pub fn deser_list_valid_upgrade_target_list(
         match tag.start_el() {
             s if s.matches("UpgradeTarget") /* member com.amazonaws.neptune#ValidUpgradeTargetList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_upgrade_target(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_upgrade_target(&mut tag)
                     ?
                 );
             }
@@ -10072,7 +10072,7 @@ pub fn deser_list_valid_upgrade_target_list(
     Ok(out)
 }
 
-pub fn deser_list_supported_timezones_list(
+pub fn deser_list_com_amazonaws_neptune_supported_timezones_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Timezone>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10080,7 +10080,7 @@ pub fn deser_list_supported_timezones_list(
         match tag.start_el() {
             s if s.matches("Timezone") /* member com.amazonaws.neptune#SupportedTimezonesList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_timezone(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_timezone(&mut tag)
                     ?
                 );
             }
@@ -10091,7 +10091,7 @@ pub fn deser_list_supported_timezones_list(
     Ok(out)
 }
 
-pub fn deser_list_availability_zone_list(
+pub fn deser_list_com_amazonaws_neptune_availability_zone_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::AvailabilityZone>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10099,7 +10099,7 @@ pub fn deser_list_availability_zone_list(
         match tag.start_el() {
             s if s.matches("AvailabilityZone") /* member com.amazonaws.neptune#AvailabilityZoneList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_availability_zone(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_availability_zone(&mut tag)
                     ?
                 );
             }
@@ -10110,7 +10110,7 @@ pub fn deser_list_availability_zone_list(
     Ok(out)
 }
 
-pub fn deser_structure_valid_storage_options(
+pub fn deser_structure_crate_model_valid_storage_options(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ValidStorageOptions, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10133,7 +10133,7 @@ pub fn deser_structure_valid_storage_options(
             s if s.matches("StorageSize") /* StorageSize com.amazonaws.neptune#ValidStorageOptions$StorageSize */ =>  {
                 let var_426 =
                     Some(
-                        crate::xml_deser::deser_list_range_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_range_list(&mut tag)
                         ?
                     )
                 ;
@@ -10143,7 +10143,7 @@ pub fn deser_structure_valid_storage_options(
             s if s.matches("ProvisionedIops") /* ProvisionedIops com.amazonaws.neptune#ValidStorageOptions$ProvisionedIops */ =>  {
                 let var_427 =
                     Some(
-                        crate::xml_deser::deser_list_range_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_range_list(&mut tag)
                         ?
                     )
                 ;
@@ -10153,7 +10153,7 @@ pub fn deser_structure_valid_storage_options(
             s if s.matches("IopsToStorageRatio") /* IopsToStorageRatio com.amazonaws.neptune#ValidStorageOptions$IopsToStorageRatio */ =>  {
                 let var_428 =
                     Some(
-                        crate::xml_deser::deser_list_double_range_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_neptune_double_range_list(&mut tag)
                         ?
                     )
                 ;
@@ -10166,7 +10166,7 @@ pub fn deser_structure_valid_storage_options(
     Ok(builder.build())
 }
 
-pub fn deser_structure_availability_zone(
+pub fn deser_structure_crate_model_availability_zone(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AvailabilityZone, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10192,7 +10192,7 @@ pub fn deser_structure_availability_zone(
     Ok(builder.build())
 }
 
-pub fn deser_list_attribute_value_list(
+pub fn deser_list_com_amazonaws_neptune_attribute_value_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10214,7 +10214,7 @@ pub fn deser_list_attribute_value_list(
     Ok(out)
 }
 
-pub fn deser_structure_upgrade_target(
+pub fn deser_structure_crate_model_upgrade_target(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::UpgradeTarget, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10296,7 +10296,7 @@ pub fn deser_structure_upgrade_target(
     Ok(builder.build())
 }
 
-pub fn deser_structure_timezone(
+pub fn deser_structure_crate_model_timezone(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Timezone, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10322,7 +10322,7 @@ pub fn deser_structure_timezone(
     Ok(builder.build())
 }
 
-pub fn deser_list_range_list(
+pub fn deser_list_com_amazonaws_neptune_range_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Range>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10330,7 +10330,7 @@ pub fn deser_list_range_list(
         match tag.start_el() {
             s if s.matches("Range") /* member com.amazonaws.neptune#RangeList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_range(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_range(&mut tag)
                     ?
                 );
             }
@@ -10341,7 +10341,7 @@ pub fn deser_list_range_list(
     Ok(out)
 }
 
-pub fn deser_list_double_range_list(
+pub fn deser_list_com_amazonaws_neptune_double_range_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DoubleRange>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -10349,7 +10349,7 @@ pub fn deser_list_double_range_list(
         match tag.start_el() {
             s if s.matches("DoubleRange") /* member com.amazonaws.neptune#DoubleRangeList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_double_range(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_double_range(&mut tag)
                     ?
                 );
             }
@@ -10360,7 +10360,7 @@ pub fn deser_list_double_range_list(
     Ok(out)
 }
 
-pub fn deser_structure_range(
+pub fn deser_structure_crate_model_range(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Range, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -10418,7 +10418,7 @@ pub fn deser_structure_range(
     Ok(builder.build())
 }
 
-pub fn deser_structure_double_range(
+pub fn deser_structure_crate_model_double_range(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DoubleRange, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]

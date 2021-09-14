@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_bad_request_exceptionjson_err(
+pub fn deser_structure_crate_error_bad_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::bad_request_exception::Builder,
 ) -> Result<crate::error::bad_request_exception::Builder, smithy_json::deserialize::Error> {
@@ -51,7 +51,7 @@ pub fn deser_structure_bad_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_capacity_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_capacity_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::capacity_exceeded_exception::Builder,
 ) -> Result<crate::error::capacity_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -90,7 +90,7 @@ pub fn deser_structure_capacity_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_session_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_session_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_session_exception::Builder,
 ) -> Result<crate::error::invalid_session_exception::Builder, smithy_json::deserialize::Error> {
@@ -136,7 +136,7 @@ pub fn deser_structure_invalid_session_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -175,7 +175,7 @@ pub fn deser_structure_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_occ_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_occ_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::occ_conflict_exception::Builder,
 ) -> Result<crate::error::occ_conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -214,7 +214,7 @@ pub fn deser_structure_occ_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_rate_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_rate_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::rate_exceeded_exception::Builder,
 ) -> Result<crate::error::rate_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -253,7 +253,7 @@ pub fn deser_structure_rate_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_send_command(
+pub fn deser_operation_crate_operation_send_command(
     input: &[u8],
     mut builder: crate::output::send_command_output::Builder,
 ) -> Result<crate::output::send_command_output::Builder, smithy_json::deserialize::Error> {
@@ -269,37 +269,43 @@ pub fn deser_operation_send_command(
                 match key.to_unescaped()?.as_ref() {
                     "StartSession" => {
                         builder = builder.set_start_session(
-                            crate::json_deser::deser_structure_start_session_result(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_start_session_result(
+                                tokens,
+                            )?,
                         );
                     }
                     "StartTransaction" => {
                         builder = builder.set_start_transaction(
-                            crate::json_deser::deser_structure_start_transaction_result(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_start_transaction_result(tokens)?
                         );
                     }
                     "EndSession" => {
                         builder = builder.set_end_session(
-                            crate::json_deser::deser_structure_end_session_result(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_end_session_result(
+                                tokens,
+                            )?,
                         );
                     }
                     "CommitTransaction" => {
                         builder = builder.set_commit_transaction(
-                            crate::json_deser::deser_structure_commit_transaction_result(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_commit_transaction_result(tokens)?
                         );
                     }
                     "AbortTransaction" => {
                         builder = builder.set_abort_transaction(
-                            crate::json_deser::deser_structure_abort_transaction_result(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_abort_transaction_result(tokens)?
                         );
                     }
                     "ExecuteStatement" => {
                         builder = builder.set_execute_statement(
-                            crate::json_deser::deser_structure_execute_statement_result(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_execute_statement_result(tokens)?
                         );
                     }
                     "FetchPage" => {
                         builder = builder.set_fetch_page(
-                            crate::json_deser::deser_structure_fetch_page_result(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_fetch_page_result(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -328,7 +334,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_start_session_result<'a, I>(
+pub fn deser_structure_crate_model_start_session_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::StartSessionResult>, smithy_json::deserialize::Error>
 where
@@ -357,7 +363,7 @@ where
                             }
                             "TimingInformation" => {
                                 builder = builder.set_timing_information(
-                                    crate::json_deser::deser_structure_timing_information(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_timing_information(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -378,7 +384,7 @@ where
     }
 }
 
-pub fn deser_structure_start_transaction_result<'a, I>(
+pub fn deser_structure_crate_model_start_transaction_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::StartTransactionResult>, smithy_json::deserialize::Error>
 where
@@ -407,7 +413,7 @@ where
                             }
                             "TimingInformation" => {
                                 builder = builder.set_timing_information(
-                                    crate::json_deser::deser_structure_timing_information(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_timing_information(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -428,7 +434,7 @@ where
     }
 }
 
-pub fn deser_structure_end_session_result<'a, I>(
+pub fn deser_structure_crate_model_end_session_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EndSessionResult>, smithy_json::deserialize::Error>
 where
@@ -448,7 +454,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "TimingInformation" => {
                                 builder = builder.set_timing_information(
-                                    crate::json_deser::deser_structure_timing_information(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_timing_information(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -469,7 +475,7 @@ where
     }
 }
 
-pub fn deser_structure_commit_transaction_result<'a, I>(
+pub fn deser_structure_crate_model_commit_transaction_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CommitTransactionResult>, smithy_json::deserialize::Error>
 where
@@ -505,12 +511,14 @@ where
                             }
                             "TimingInformation" => {
                                 builder = builder.set_timing_information(
-                                    crate::json_deser::deser_structure_timing_information(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_timing_information(tokens)?
                                 );
                             }
                             "ConsumedIOs" => {
                                 builder = builder.set_consumed_i_os(
-                                    crate::json_deser::deser_structure_io_usage(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_io_usage(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -531,7 +539,7 @@ where
     }
 }
 
-pub fn deser_structure_abort_transaction_result<'a, I>(
+pub fn deser_structure_crate_model_abort_transaction_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AbortTransactionResult>, smithy_json::deserialize::Error>
 where
@@ -551,7 +559,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "TimingInformation" => {
                                 builder = builder.set_timing_information(
-                                    crate::json_deser::deser_structure_timing_information(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_timing_information(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -572,7 +580,7 @@ where
     }
 }
 
-pub fn deser_structure_execute_statement_result<'a, I>(
+pub fn deser_structure_crate_model_execute_statement_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ExecuteStatementResult>, smithy_json::deserialize::Error>
 where
@@ -592,17 +600,19 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "FirstPage" => {
                                 builder = builder.set_first_page(
-                                    crate::json_deser::deser_structure_page(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_page(tokens)?,
                                 );
                             }
                             "TimingInformation" => {
                                 builder = builder.set_timing_information(
-                                    crate::json_deser::deser_structure_timing_information(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_timing_information(tokens)?
                                 );
                             }
                             "ConsumedIOs" => {
                                 builder = builder.set_consumed_i_os(
-                                    crate::json_deser::deser_structure_io_usage(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_io_usage(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -623,7 +633,7 @@ where
     }
 }
 
-pub fn deser_structure_fetch_page_result<'a, I>(
+pub fn deser_structure_crate_model_fetch_page_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FetchPageResult>, smithy_json::deserialize::Error>
 where
@@ -642,17 +652,20 @@ where
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
                             "Page" => {
-                                builder = builder
-                                    .set_page(crate::json_deser::deser_structure_page(tokens)?);
+                                builder = builder.set_page(
+                                    crate::json_deser::deser_structure_crate_model_page(tokens)?,
+                                );
                             }
                             "TimingInformation" => {
                                 builder = builder.set_timing_information(
-                                    crate::json_deser::deser_structure_timing_information(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_timing_information(tokens)?
                                 );
                             }
                             "ConsumedIOs" => {
                                 builder = builder.set_consumed_i_os(
-                                    crate::json_deser::deser_structure_io_usage(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_io_usage(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -673,7 +686,7 @@ where
     }
 }
 
-pub fn deser_structure_timing_information<'a, I>(
+pub fn deser_structure_crate_model_timing_information<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TimingInformation>, smithy_json::deserialize::Error>
 where
@@ -717,7 +730,7 @@ where
     }
 }
 
-pub fn deser_structure_io_usage<'a, I>(
+pub fn deser_structure_crate_model_io_usage<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::IoUsage>, smithy_json::deserialize::Error>
 where
@@ -769,7 +782,7 @@ where
     }
 }
 
-pub fn deser_structure_page<'a, I>(
+pub fn deser_structure_crate_model_page<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Page>, smithy_json::deserialize::Error>
 where
@@ -789,7 +802,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Values" => {
                                 builder = builder.set_values(
-                                    crate::json_deser::deser_list_value_holders(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_qldbsession_value_holders(tokens)?
                                 );
                             }
                             "NextPageToken" => {
@@ -820,7 +833,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_value_holders<'a, I>(
+pub fn deser_list_com_amazonaws_qldbsession_value_holders<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ValueHolder>>, smithy_json::deserialize::Error>
 where
@@ -839,7 +852,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_value_holder(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_value_holder(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -854,7 +868,7 @@ where
     }
 }
 
-pub fn deser_structure_value_holder<'a, I>(
+pub fn deser_structure_crate_model_value_holder<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ValueHolder>, smithy_json::deserialize::Error>
 where

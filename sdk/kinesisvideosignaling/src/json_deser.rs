@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_client_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_client_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::client_limit_exceeded_exception::Builder,
 ) -> Result<crate::error::client_limit_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -45,7 +45,7 @@ pub fn deser_structure_client_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_argument_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_argument_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_argument_exception::Builder,
 ) -> Result<crate::error::invalid_argument_exception::Builder, smithy_json::deserialize::Error> {
@@ -84,7 +84,7 @@ pub fn deser_structure_invalid_argument_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_client_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_client_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_client_exception::Builder,
 ) -> Result<crate::error::invalid_client_exception::Builder, smithy_json::deserialize::Error> {
@@ -123,7 +123,7 @@ pub fn deser_structure_invalid_client_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_not_authorized_exceptionjson_err(
+pub fn deser_structure_crate_error_not_authorized_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::not_authorized_exception::Builder,
 ) -> Result<crate::error::not_authorized_exception::Builder, smithy_json::deserialize::Error> {
@@ -162,7 +162,7 @@ pub fn deser_structure_not_authorized_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -201,7 +201,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_session_expired_exceptionjson_err(
+pub fn deser_structure_crate_error_session_expired_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::session_expired_exception::Builder,
 ) -> Result<crate::error::session_expired_exception::Builder, smithy_json::deserialize::Error> {
@@ -240,7 +240,7 @@ pub fn deser_structure_session_expired_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_ice_server_config(
+pub fn deser_operation_crate_operation_get_ice_server_config(
     input: &[u8],
     mut builder: crate::output::get_ice_server_config_output::Builder,
 ) -> Result<crate::output::get_ice_server_config_output::Builder, smithy_json::deserialize::Error> {
@@ -256,7 +256,7 @@ pub fn deser_operation_get_ice_server_config(
                 match key.to_unescaped()?.as_ref() {
                     "IceServerList" => {
                         builder = builder.set_ice_server_list(
-                            crate::json_deser::deser_list_ice_server_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_kinesisvideosignaling_ice_server_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -277,7 +277,7 @@ pub fn deser_operation_get_ice_server_config(
     Ok(builder)
 }
 
-pub fn deser_operation_send_alexa_offer_to_master(
+pub fn deser_operation_crate_operation_send_alexa_offer_to_master(
     input: &[u8],
     mut builder: crate::output::send_alexa_offer_to_master_output::Builder,
 ) -> Result<
@@ -328,7 +328,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_ice_server_list<'a, I>(
+pub fn deser_list_com_amazonaws_kinesisvideosignaling_ice_server_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::IceServer>>, smithy_json::deserialize::Error>
 where
@@ -347,7 +347,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_ice_server(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_ice_server(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -362,7 +363,7 @@ where
     }
 }
 
-pub fn deser_structure_ice_server<'a, I>(
+pub fn deser_structure_crate_model_ice_server<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::IceServer>, smithy_json::deserialize::Error>
 where
@@ -381,8 +382,9 @@ where
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
                             "Uris" => {
-                                builder =
-                                    builder.set_uris(crate::json_deser::deser_list_uris(tokens)?);
+                                builder = builder.set_uris(
+                                    crate::json_deser::deser_list_com_amazonaws_kinesisvideosignaling_uris(tokens)?
+                                );
                             }
                             "Username" => {
                                 builder = builder.set_username(
@@ -429,7 +431,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_uris<'a, I>(
+pub fn deser_list_com_amazonaws_kinesisvideosignaling_uris<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where

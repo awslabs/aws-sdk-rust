@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_constraint_violation_exceptionjson_err(
+pub fn deser_structure_crate_error_constraint_violation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::constraint_violation_exception::Builder,
 ) -> Result<crate::error::constraint_violation_exception::Builder, smithy_json::deserialize::Error>
@@ -45,7 +45,7 @@ pub fn deser_structure_constraint_violation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_service_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_service_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_service_exception::Builder,
 ) -> Result<crate::error::internal_service_exception::Builder, smithy_json::deserialize::Error> {
@@ -84,7 +84,7 @@ pub fn deser_structure_internal_service_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_parameter_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_parameter_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_parameter_exception::Builder,
 ) -> Result<crate::error::invalid_parameter_exception::Builder, smithy_json::deserialize::Error> {
@@ -123,7 +123,7 @@ pub fn deser_structure_invalid_parameter_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttled_exceptionjson_err(
+pub fn deser_structure_crate_error_throttled_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttled_exception::Builder,
 ) -> Result<crate::error::throttled_exception::Builder, smithy_json::deserialize::Error> {
@@ -162,7 +162,7 @@ pub fn deser_structure_throttled_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_report_creation(
+pub fn deser_operation_crate_operation_describe_report_creation(
     input: &[u8],
     mut builder: crate::output::describe_report_creation_output::Builder,
 ) -> Result<crate::output::describe_report_creation_output::Builder, smithy_json::deserialize::Error>
@@ -223,7 +223,7 @@ pub fn deser_operation_describe_report_creation(
     Ok(builder)
 }
 
-pub fn deser_operation_get_compliance_summary(
+pub fn deser_operation_crate_operation_get_compliance_summary(
     input: &[u8],
     mut builder: crate::output::get_compliance_summary_output::Builder,
 ) -> Result<crate::output::get_compliance_summary_output::Builder, smithy_json::deserialize::Error>
@@ -239,8 +239,9 @@ pub fn deser_operation_get_compliance_summary(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "SummaryList" => {
-                        builder = builder
-                            .set_summary_list(crate::json_deser::deser_list_summary_list(tokens)?);
+                        builder = builder.set_summary_list(
+                            crate::json_deser::deser_list_com_amazonaws_resourcegroupstaggingapi_summary_list(tokens)?
+                        );
                     }
                     "PaginationToken" => {
                         builder = builder.set_pagination_token(
@@ -267,7 +268,7 @@ pub fn deser_operation_get_compliance_summary(
     Ok(builder)
 }
 
-pub fn deser_structure_pagination_token_expired_exceptionjson_err(
+pub fn deser_structure_crate_error_pagination_token_expired_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::pagination_token_expired_exception::Builder,
 ) -> Result<
@@ -309,7 +310,7 @@ pub fn deser_structure_pagination_token_expired_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_resources(
+pub fn deser_operation_crate_operation_get_resources(
     input: &[u8],
     mut builder: crate::output::get_resources_output::Builder,
 ) -> Result<crate::output::get_resources_output::Builder, smithy_json::deserialize::Error> {
@@ -332,7 +333,7 @@ pub fn deser_operation_get_resources(
                     }
                     "ResourceTagMappingList" => {
                         builder = builder.set_resource_tag_mapping_list(
-                            crate::json_deser::deser_list_resource_tag_mapping_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_resourcegroupstaggingapi_resource_tag_mapping_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -353,7 +354,7 @@ pub fn deser_operation_get_resources(
     Ok(builder)
 }
 
-pub fn deser_operation_get_tag_keys(
+pub fn deser_operation_crate_operation_get_tag_keys(
     input: &[u8],
     mut builder: crate::output::get_tag_keys_output::Builder,
 ) -> Result<crate::output::get_tag_keys_output::Builder, smithy_json::deserialize::Error> {
@@ -375,8 +376,9 @@ pub fn deser_operation_get_tag_keys(
                         );
                     }
                     "TagKeys" => {
-                        builder = builder
-                            .set_tag_keys(crate::json_deser::deser_list_tag_key_list(tokens)?);
+                        builder = builder.set_tag_keys(
+                            crate::json_deser::deser_list_com_amazonaws_resourcegroupstaggingapi_tag_key_list(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -396,7 +398,7 @@ pub fn deser_operation_get_tag_keys(
     Ok(builder)
 }
 
-pub fn deser_operation_get_tag_values(
+pub fn deser_operation_crate_operation_get_tag_values(
     input: &[u8],
     mut builder: crate::output::get_tag_values_output::Builder,
 ) -> Result<crate::output::get_tag_values_output::Builder, smithy_json::deserialize::Error> {
@@ -419,7 +421,7 @@ pub fn deser_operation_get_tag_values(
                     }
                     "TagValues" => {
                         builder = builder.set_tag_values(
-                            crate::json_deser::deser_list_tag_values_output_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_resourcegroupstaggingapi_tag_values_output_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -440,7 +442,7 @@ pub fn deser_operation_get_tag_values(
     Ok(builder)
 }
 
-pub fn deser_structure_concurrent_modification_exceptionjson_err(
+pub fn deser_structure_crate_error_concurrent_modification_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::concurrent_modification_exception::Builder,
 ) -> Result<crate::error::concurrent_modification_exception::Builder, smithy_json::deserialize::Error>
@@ -480,7 +482,7 @@ pub fn deser_structure_concurrent_modification_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_tag_resources(
+pub fn deser_operation_crate_operation_tag_resources(
     input: &[u8],
     mut builder: crate::output::tag_resources_output::Builder,
 ) -> Result<crate::output::tag_resources_output::Builder, smithy_json::deserialize::Error> {
@@ -496,7 +498,7 @@ pub fn deser_operation_tag_resources(
                 match key.to_unescaped()?.as_ref() {
                     "FailedResourcesMap" => {
                         builder = builder.set_failed_resources_map(
-                            crate::json_deser::deser_map_failed_resources_map(tokens)?,
+                            crate::json_deser::deser_map_com_amazonaws_resourcegroupstaggingapi_failed_resources_map(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -517,7 +519,7 @@ pub fn deser_operation_tag_resources(
     Ok(builder)
 }
 
-pub fn deser_operation_untag_resources(
+pub fn deser_operation_crate_operation_untag_resources(
     input: &[u8],
     mut builder: crate::output::untag_resources_output::Builder,
 ) -> Result<crate::output::untag_resources_output::Builder, smithy_json::deserialize::Error> {
@@ -533,7 +535,7 @@ pub fn deser_operation_untag_resources(
                 match key.to_unescaped()?.as_ref() {
                     "FailedResourcesMap" => {
                         builder = builder.set_failed_resources_map(
-                            crate::json_deser::deser_map_failed_resources_map(tokens)?,
+                            crate::json_deser::deser_map_com_amazonaws_resourcegroupstaggingapi_failed_resources_map(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -563,7 +565,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_resourcegroupstaggingapi_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Summary>>, smithy_json::deserialize::Error>
 where
@@ -582,7 +584,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_summary(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_summary(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -598,7 +600,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_resource_tag_mapping_list<'a, I>(
+pub fn deser_list_com_amazonaws_resourcegroupstaggingapi_resource_tag_mapping_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ResourceTagMapping>>, smithy_json::deserialize::Error>
 where
@@ -618,7 +620,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_resource_tag_mapping(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_resource_tag_mapping(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -634,7 +638,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_key_list<'a, I>(
+pub fn deser_list_com_amazonaws_resourcegroupstaggingapi_tag_key_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -672,7 +676,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_values_output_list<'a, I>(
+pub fn deser_list_com_amazonaws_resourcegroupstaggingapi_tag_values_output_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -710,7 +714,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_failed_resources_map<'a, I>(
+pub fn deser_map_com_amazonaws_resourcegroupstaggingapi_failed_resources_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, crate::model::FailureInfo>>,
@@ -730,7 +734,8 @@ where
                     Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key.to_unescaped().map(|u| u.into_owned())?;
-                        let value = crate::json_deser::deser_structure_failure_info(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_failure_info(tokens)?;
                         if let Some(value) = value {
                             map.insert(key, value);
                         }
@@ -750,7 +755,7 @@ where
     }
 }
 
-pub fn deser_structure_summary<'a, I>(
+pub fn deser_structure_crate_model_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Summary>, smithy_json::deserialize::Error>
 where
@@ -842,7 +847,7 @@ where
     }
 }
 
-pub fn deser_structure_resource_tag_mapping<'a, I>(
+pub fn deser_structure_crate_model_resource_tag_mapping<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResourceTagMapping>, smithy_json::deserialize::Error>
 where
@@ -870,12 +875,13 @@ where
                                 );
                             }
                             "Tags" => {
-                                builder = builder
-                                    .set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
+                                builder = builder.set_tags(
+                                    crate::json_deser::deser_list_com_amazonaws_resourcegroupstaggingapi_tag_list(tokens)?
+                                );
                             }
                             "ComplianceDetails" => {
                                 builder = builder.set_compliance_details(
-                                    crate::json_deser::deser_structure_compliance_details(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_compliance_details(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -896,7 +902,7 @@ where
     }
 }
 
-pub fn deser_structure_failure_info<'a, I>(
+pub fn deser_structure_crate_model_failure_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::FailureInfo>, smithy_json::deserialize::Error>
 where
@@ -962,7 +968,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_resourcegroupstaggingapi_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -981,7 +987,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -996,7 +1002,7 @@ where
     }
 }
 
-pub fn deser_structure_compliance_details<'a, I>(
+pub fn deser_structure_crate_model_compliance_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ComplianceDetails>, smithy_json::deserialize::Error>
 where
@@ -1016,12 +1022,12 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "NoncompliantKeys" => {
                                 builder = builder.set_noncompliant_keys(
-                                    crate::json_deser::deser_list_tag_key_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_resourcegroupstaggingapi_tag_key_list(tokens)?
                                 );
                             }
                             "KeysWithNoncompliantValues" => {
                                 builder = builder.set_keys_with_noncompliant_values(
-                                    crate::json_deser::deser_list_tag_key_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_resourcegroupstaggingapi_tag_key_list(tokens)?
                                 );
                             }
                             "ComplianceStatus" => {
@@ -1049,7 +1055,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where

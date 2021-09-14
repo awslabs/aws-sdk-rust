@@ -23,11 +23,7 @@ pub fn parse_accept_reserved_instances_exchange_quote_response(
         let mut output =
             crate::output::accept_reserved_instances_exchange_quote_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_accept_reserved_instances_exchange_quote(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::AcceptReservedInstancesExchangeQuoteError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_accept_reserved_instances_exchange_quote(response.body().as_ref(), output).map_err(crate::error::AcceptReservedInstancesExchangeQuoteError::unhandled)?;
         output.build()
     })
 }
@@ -54,14 +50,7 @@ pub fn parse_accept_transit_gateway_multicast_domain_associations_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::accept_transit_gateway_multicast_domain_associations_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_accept_transit_gateway_multicast_domain_associations(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(
-                crate::error::AcceptTransitGatewayMulticastDomainAssociationsError::unhandled,
-            )?;
+        output = crate::xml_deser::deser_operation_crate_operation_accept_transit_gateway_multicast_domain_associations(response.body().as_ref(), output).map_err(crate::error::AcceptTransitGatewayMulticastDomainAssociationsError::unhandled)?;
         output.build()
     })
 }
@@ -90,11 +79,7 @@ pub fn parse_accept_transit_gateway_peering_attachment_response(
         let mut output =
             crate::output::accept_transit_gateway_peering_attachment_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_accept_transit_gateway_peering_attachment(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::AcceptTransitGatewayPeeringAttachmentError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_accept_transit_gateway_peering_attachment(response.body().as_ref(), output).map_err(crate::error::AcceptTransitGatewayPeeringAttachmentError::unhandled)?;
         output.build()
     })
 }
@@ -123,11 +108,7 @@ pub fn parse_accept_transit_gateway_vpc_attachment_response(
         let mut output =
             crate::output::accept_transit_gateway_vpc_attachment_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_accept_transit_gateway_vpc_attachment(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::AcceptTransitGatewayVpcAttachmentError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_accept_transit_gateway_vpc_attachment(response.body().as_ref(), output).map_err(crate::error::AcceptTransitGatewayVpcAttachmentError::unhandled)?;
         output.build()
     })
 }
@@ -157,7 +138,7 @@ pub fn parse_accept_vpc_endpoint_connections_response(
         #[allow(unused_mut)]
         let mut output = crate::output::accept_vpc_endpoint_connections_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_accept_vpc_endpoint_connections(
+        output = crate::xml_deser::deser_operation_crate_operation_accept_vpc_endpoint_connections(
             response.body().as_ref(),
             output,
         )
@@ -191,7 +172,7 @@ pub fn parse_accept_vpc_peering_connection_response(
         #[allow(unused_mut)]
         let mut output = crate::output::accept_vpc_peering_connection_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_accept_vpc_peering_connection(
+        output = crate::xml_deser::deser_operation_crate_operation_accept_vpc_peering_connection(
             response.body().as_ref(),
             output,
         )
@@ -223,7 +204,7 @@ pub fn parse_advertise_byoip_cidr_response(
         #[allow(unused_mut)]
         let mut output = crate::output::advertise_byoip_cidr_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_advertise_byoip_cidr(
+        output = crate::xml_deser::deser_operation_crate_operation_advertise_byoip_cidr(
             response.body().as_ref(),
             output,
         )
@@ -249,9 +230,11 @@ pub fn parse_allocate_address_response(
         #[allow(unused_mut)]
         let mut output = crate::output::allocate_address_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_allocate_address(response.body().as_ref(), output)
-                .map_err(crate::error::AllocateAddressError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_allocate_address(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AllocateAddressError::unhandled)?;
         output.build()
     })
 }
@@ -273,8 +256,11 @@ pub fn parse_allocate_hosts_response(
         #[allow(unused_mut)]
         let mut output = crate::output::allocate_hosts_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_allocate_hosts(response.body().as_ref(), output)
-            .map_err(crate::error::AllocateHostsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_allocate_hosts(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AllocateHostsError::unhandled)?;
         output.build()
     })
 }
@@ -301,12 +287,7 @@ pub fn parse_apply_security_groups_to_client_vpn_target_network_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::apply_security_groups_to_client_vpn_target_network_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_apply_security_groups_to_client_vpn_target_network(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::ApplySecurityGroupsToClientVpnTargetNetworkError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_apply_security_groups_to_client_vpn_target_network(response.body().as_ref(), output).map_err(crate::error::ApplySecurityGroupsToClientVpnTargetNetworkError::unhandled)?;
         output.build()
     })
 }
@@ -334,7 +315,7 @@ pub fn parse_assign_ipv6_addresses_response(
         #[allow(unused_mut)]
         let mut output = crate::output::assign_ipv6_addresses_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_assign_ipv6_addresses(
+        output = crate::xml_deser::deser_operation_crate_operation_assign_ipv6_addresses(
             response.body().as_ref(),
             output,
         )
@@ -368,7 +349,7 @@ pub fn parse_assign_private_ip_addresses_response(
         #[allow(unused_mut)]
         let mut output = crate::output::assign_private_ip_addresses_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_assign_private_ip_addresses(
+        output = crate::xml_deser::deser_operation_crate_operation_assign_private_ip_addresses(
             response.body().as_ref(),
             output,
         )
@@ -396,9 +377,11 @@ pub fn parse_associate_address_response(
         #[allow(unused_mut)]
         let mut output = crate::output::associate_address_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_associate_address(response.body().as_ref(), output)
-                .map_err(crate::error::AssociateAddressError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_associate_address(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AssociateAddressError::unhandled)?;
         output.build()
     })
 }
@@ -429,11 +412,12 @@ pub fn parse_associate_client_vpn_target_network_response(
         let mut output =
             crate::output::associate_client_vpn_target_network_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_associate_client_vpn_target_network(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::AssociateClientVpnTargetNetworkError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_associate_client_vpn_target_network(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::AssociateClientVpnTargetNetworkError::unhandled)?;
         output.build()
     })
 }
@@ -489,11 +473,7 @@ pub fn parse_associate_enclave_certificate_iam_role_response(
         let mut output =
             crate::output::associate_enclave_certificate_iam_role_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_associate_enclave_certificate_iam_role(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::AssociateEnclaveCertificateIamRoleError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_associate_enclave_certificate_iam_role(response.body().as_ref(), output).map_err(crate::error::AssociateEnclaveCertificateIamRoleError::unhandled)?;
         output.build()
     })
 }
@@ -523,7 +503,7 @@ pub fn parse_associate_iam_instance_profile_response(
         #[allow(unused_mut)]
         let mut output = crate::output::associate_iam_instance_profile_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_associate_iam_instance_profile(
+        output = crate::xml_deser::deser_operation_crate_operation_associate_iam_instance_profile(
             response.body().as_ref(),
             output,
         )
@@ -557,7 +537,7 @@ pub fn parse_associate_instance_event_window_response(
         #[allow(unused_mut)]
         let mut output = crate::output::associate_instance_event_window_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_associate_instance_event_window(
+        output = crate::xml_deser::deser_operation_crate_operation_associate_instance_event_window(
             response.body().as_ref(),
             output,
         )
@@ -589,7 +569,7 @@ pub fn parse_associate_route_table_response(
         #[allow(unused_mut)]
         let mut output = crate::output::associate_route_table_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_associate_route_table(
+        output = crate::xml_deser::deser_operation_crate_operation_associate_route_table(
             response.body().as_ref(),
             output,
         )
@@ -623,7 +603,7 @@ pub fn parse_associate_subnet_cidr_block_response(
         #[allow(unused_mut)]
         let mut output = crate::output::associate_subnet_cidr_block_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_associate_subnet_cidr_block(
+        output = crate::xml_deser::deser_operation_crate_operation_associate_subnet_cidr_block(
             response.body().as_ref(),
             output,
         )
@@ -656,11 +636,7 @@ pub fn parse_associate_transit_gateway_multicast_domain_response(
         let mut output =
             crate::output::associate_transit_gateway_multicast_domain_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_associate_transit_gateway_multicast_domain(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::AssociateTransitGatewayMulticastDomainError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_associate_transit_gateway_multicast_domain(response.body().as_ref(), output).map_err(crate::error::AssociateTransitGatewayMulticastDomainError::unhandled)?;
         output.build()
     })
 }
@@ -689,11 +665,7 @@ pub fn parse_associate_transit_gateway_route_table_response(
         let mut output =
             crate::output::associate_transit_gateway_route_table_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_associate_transit_gateway_route_table(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::AssociateTransitGatewayRouteTableError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_associate_transit_gateway_route_table(response.body().as_ref(), output).map_err(crate::error::AssociateTransitGatewayRouteTableError::unhandled)?;
         output.build()
     })
 }
@@ -721,7 +693,7 @@ pub fn parse_associate_trunk_interface_response(
         #[allow(unused_mut)]
         let mut output = crate::output::associate_trunk_interface_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_associate_trunk_interface(
+        output = crate::xml_deser::deser_operation_crate_operation_associate_trunk_interface(
             response.body().as_ref(),
             output,
         )
@@ -753,7 +725,7 @@ pub fn parse_associate_vpc_cidr_block_response(
         #[allow(unused_mut)]
         let mut output = crate::output::associate_vpc_cidr_block_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_associate_vpc_cidr_block(
+        output = crate::xml_deser::deser_operation_crate_operation_associate_vpc_cidr_block(
             response.body().as_ref(),
             output,
         )
@@ -785,7 +757,7 @@ pub fn parse_attach_classic_link_vpc_response(
         #[allow(unused_mut)]
         let mut output = crate::output::attach_classic_link_vpc_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_attach_classic_link_vpc(
+        output = crate::xml_deser::deser_operation_crate_operation_attach_classic_link_vpc(
             response.body().as_ref(),
             output,
         )
@@ -844,7 +816,7 @@ pub fn parse_attach_network_interface_response(
         #[allow(unused_mut)]
         let mut output = crate::output::attach_network_interface_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_attach_network_interface(
+        output = crate::xml_deser::deser_operation_crate_operation_attach_network_interface(
             response.body().as_ref(),
             output,
         )
@@ -870,8 +842,11 @@ pub fn parse_attach_volume_response(
         #[allow(unused_mut)]
         let mut output = crate::output::attach_volume_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_attach_volume(response.body().as_ref(), output)
-            .map_err(crate::error::AttachVolumeError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_attach_volume(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AttachVolumeError::unhandled)?;
         output.build()
     })
 }
@@ -895,9 +870,11 @@ pub fn parse_attach_vpn_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::attach_vpn_gateway_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_attach_vpn_gateway(response.body().as_ref(), output)
-                .map_err(crate::error::AttachVpnGatewayError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_attach_vpn_gateway(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AttachVpnGatewayError::unhandled)?;
         output.build()
     })
 }
@@ -927,7 +904,7 @@ pub fn parse_authorize_client_vpn_ingress_response(
         #[allow(unused_mut)]
         let mut output = crate::output::authorize_client_vpn_ingress_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_authorize_client_vpn_ingress(
+        output = crate::xml_deser::deser_operation_crate_operation_authorize_client_vpn_ingress(
             response.body().as_ref(),
             output,
         )
@@ -961,7 +938,7 @@ pub fn parse_authorize_security_group_egress_response(
         #[allow(unused_mut)]
         let mut output = crate::output::authorize_security_group_egress_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_authorize_security_group_egress(
+        output = crate::xml_deser::deser_operation_crate_operation_authorize_security_group_egress(
             response.body().as_ref(),
             output,
         )
@@ -995,11 +972,12 @@ pub fn parse_authorize_security_group_ingress_response(
         #[allow(unused_mut)]
         let mut output = crate::output::authorize_security_group_ingress_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_authorize_security_group_ingress(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::AuthorizeSecurityGroupIngressError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_authorize_security_group_ingress(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::AuthorizeSecurityGroupIngressError::unhandled)?;
         output.build()
     })
 }
@@ -1021,9 +999,11 @@ pub fn parse_bundle_instance_response(
         #[allow(unused_mut)]
         let mut output = crate::output::bundle_instance_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_bundle_instance(response.body().as_ref(), output)
-                .map_err(crate::error::BundleInstanceError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_bundle_instance(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::BundleInstanceError::unhandled)?;
         output.build()
     })
 }
@@ -1047,9 +1027,11 @@ pub fn parse_cancel_bundle_task_response(
         #[allow(unused_mut)]
         let mut output = crate::output::cancel_bundle_task_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_cancel_bundle_task(response.body().as_ref(), output)
-                .map_err(crate::error::CancelBundleTaskError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_cancel_bundle_task(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CancelBundleTaskError::unhandled)?;
         output.build()
     })
 }
@@ -1079,7 +1061,7 @@ pub fn parse_cancel_capacity_reservation_response(
         #[allow(unused_mut)]
         let mut output = crate::output::cancel_capacity_reservation_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_cancel_capacity_reservation(
+        output = crate::xml_deser::deser_operation_crate_operation_cancel_capacity_reservation(
             response.body().as_ref(),
             output,
         )
@@ -1157,9 +1139,11 @@ pub fn parse_cancel_import_task_response(
         #[allow(unused_mut)]
         let mut output = crate::output::cancel_import_task_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_cancel_import_task(response.body().as_ref(), output)
-                .map_err(crate::error::CancelImportTaskError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_cancel_import_task(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CancelImportTaskError::unhandled)?;
         output.build()
     })
 }
@@ -1190,11 +1174,12 @@ pub fn parse_cancel_reserved_instances_listing_response(
         let mut output =
             crate::output::cancel_reserved_instances_listing_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_cancel_reserved_instances_listing(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::CancelReservedInstancesListingError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_cancel_reserved_instances_listing(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::CancelReservedInstancesListingError::unhandled)?;
         output.build()
     })
 }
@@ -1222,7 +1207,7 @@ pub fn parse_cancel_spot_fleet_requests_response(
         #[allow(unused_mut)]
         let mut output = crate::output::cancel_spot_fleet_requests_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_cancel_spot_fleet_requests(
+        output = crate::xml_deser::deser_operation_crate_operation_cancel_spot_fleet_requests(
             response.body().as_ref(),
             output,
         )
@@ -1256,7 +1241,7 @@ pub fn parse_cancel_spot_instance_requests_response(
         #[allow(unused_mut)]
         let mut output = crate::output::cancel_spot_instance_requests_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_cancel_spot_instance_requests(
+        output = crate::xml_deser::deser_operation_crate_operation_cancel_spot_instance_requests(
             response.body().as_ref(),
             output,
         )
@@ -1288,7 +1273,7 @@ pub fn parse_confirm_product_instance_response(
         #[allow(unused_mut)]
         let mut output = crate::output::confirm_product_instance_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_confirm_product_instance(
+        output = crate::xml_deser::deser_operation_crate_operation_confirm_product_instance(
             response.body().as_ref(),
             output,
         )
@@ -1314,9 +1299,11 @@ pub fn parse_copy_fpga_image_response(
         #[allow(unused_mut)]
         let mut output = crate::output::copy_fpga_image_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_copy_fpga_image(response.body().as_ref(), output)
-                .map_err(crate::error::CopyFpgaImageError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_copy_fpga_image(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CopyFpgaImageError::unhandled)?;
         output.build()
     })
 }
@@ -1338,8 +1325,11 @@ pub fn parse_copy_image_response(
         #[allow(unused_mut)]
         let mut output = crate::output::copy_image_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_copy_image(response.body().as_ref(), output)
-            .map_err(crate::error::CopyImageError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_copy_image(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CopyImageError::unhandled)?;
         output.build()
     })
 }
@@ -1361,8 +1351,11 @@ pub fn parse_copy_snapshot_response(
         #[allow(unused_mut)]
         let mut output = crate::output::copy_snapshot_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_copy_snapshot(response.body().as_ref(), output)
-            .map_err(crate::error::CopySnapshotError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_copy_snapshot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CopySnapshotError::unhandled)?;
         output.build()
     })
 }
@@ -1392,7 +1385,7 @@ pub fn parse_create_capacity_reservation_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_capacity_reservation_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_capacity_reservation(
+        output = crate::xml_deser::deser_operation_crate_operation_create_capacity_reservation(
             response.body().as_ref(),
             output,
         )
@@ -1424,7 +1417,7 @@ pub fn parse_create_carrier_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_carrier_gateway_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_carrier_gateway(
+        output = crate::xml_deser::deser_operation_crate_operation_create_carrier_gateway(
             response.body().as_ref(),
             output,
         )
@@ -1456,7 +1449,7 @@ pub fn parse_create_client_vpn_endpoint_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_client_vpn_endpoint_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_client_vpn_endpoint(
+        output = crate::xml_deser::deser_operation_crate_operation_create_client_vpn_endpoint(
             response.body().as_ref(),
             output,
         )
@@ -1488,7 +1481,7 @@ pub fn parse_create_client_vpn_route_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_client_vpn_route_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_client_vpn_route(
+        output = crate::xml_deser::deser_operation_crate_operation_create_client_vpn_route(
             response.body().as_ref(),
             output,
         )
@@ -1520,7 +1513,7 @@ pub fn parse_create_customer_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_customer_gateway_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_customer_gateway(
+        output = crate::xml_deser::deser_operation_crate_operation_create_customer_gateway(
             response.body().as_ref(),
             output,
         )
@@ -1552,7 +1545,7 @@ pub fn parse_create_default_subnet_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_default_subnet_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_default_subnet(
+        output = crate::xml_deser::deser_operation_crate_operation_create_default_subnet(
             response.body().as_ref(),
             output,
         )
@@ -1580,9 +1573,11 @@ pub fn parse_create_default_vpc_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_default_vpc_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_default_vpc(response.body().as_ref(), output)
-                .map_err(crate::error::CreateDefaultVpcError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_default_vpc(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateDefaultVpcError::unhandled)?;
         output.build()
     })
 }
@@ -1606,9 +1601,11 @@ pub fn parse_create_dhcp_options_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_dhcp_options_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_dhcp_options(response.body().as_ref(), output)
-                .map_err(crate::error::CreateDhcpOptionsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_dhcp_options(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateDhcpOptionsError::unhandled)?;
         output.build()
     })
 }
@@ -1639,11 +1636,12 @@ pub fn parse_create_egress_only_internet_gateway_response(
         let mut output =
             crate::output::create_egress_only_internet_gateway_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_egress_only_internet_gateway(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::CreateEgressOnlyInternetGatewayError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_create_egress_only_internet_gateway(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::CreateEgressOnlyInternetGatewayError::unhandled)?;
         output.build()
     })
 }
@@ -1665,8 +1663,11 @@ pub fn parse_create_fleet_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_fleet_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_fleet(response.body().as_ref(), output)
-            .map_err(crate::error::CreateFleetError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_fleet(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateFleetError::unhandled)?;
         output.build()
     })
 }
@@ -1688,9 +1689,11 @@ pub fn parse_create_flow_logs_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_flow_logs_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_flow_logs(response.body().as_ref(), output)
-                .map_err(crate::error::CreateFlowLogsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_flow_logs(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateFlowLogsError::unhandled)?;
         output.build()
     })
 }
@@ -1712,9 +1715,11 @@ pub fn parse_create_fpga_image_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_fpga_image_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_fpga_image(response.body().as_ref(), output)
-                .map_err(crate::error::CreateFpgaImageError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_fpga_image(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateFpgaImageError::unhandled)?;
         output.build()
     })
 }
@@ -1736,8 +1741,11 @@ pub fn parse_create_image_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_image_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_image(response.body().as_ref(), output)
-            .map_err(crate::error::CreateImageError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_image(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateImageError::unhandled)?;
         output.build()
     })
 }
@@ -1767,7 +1775,7 @@ pub fn parse_create_instance_event_window_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_instance_event_window_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_instance_event_window(
+        output = crate::xml_deser::deser_operation_crate_operation_create_instance_event_window(
             response.body().as_ref(),
             output,
         )
@@ -1801,7 +1809,7 @@ pub fn parse_create_instance_export_task_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_instance_export_task_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_instance_export_task(
+        output = crate::xml_deser::deser_operation_crate_operation_create_instance_export_task(
             response.body().as_ref(),
             output,
         )
@@ -1833,7 +1841,7 @@ pub fn parse_create_internet_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_internet_gateway_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_internet_gateway(
+        output = crate::xml_deser::deser_operation_crate_operation_create_internet_gateway(
             response.body().as_ref(),
             output,
         )
@@ -1859,9 +1867,11 @@ pub fn parse_create_key_pair_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_key_pair_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_key_pair(response.body().as_ref(), output)
-                .map_err(crate::error::CreateKeyPairError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_key_pair(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateKeyPairError::unhandled)?;
         output.build()
     })
 }
@@ -1889,7 +1899,7 @@ pub fn parse_create_launch_template_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_launch_template_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_launch_template(
+        output = crate::xml_deser::deser_operation_crate_operation_create_launch_template(
             response.body().as_ref(),
             output,
         )
@@ -1923,7 +1933,7 @@ pub fn parse_create_launch_template_version_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_launch_template_version_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_launch_template_version(
+        output = crate::xml_deser::deser_operation_crate_operation_create_launch_template_version(
             response.body().as_ref(),
             output,
         )
@@ -1955,7 +1965,7 @@ pub fn parse_create_local_gateway_route_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_local_gateway_route_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_local_gateway_route(
+        output = crate::xml_deser::deser_operation_crate_operation_create_local_gateway_route(
             response.body().as_ref(),
             output,
         )
@@ -1986,12 +1996,7 @@ pub fn parse_create_local_gateway_route_table_vpc_association_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::create_local_gateway_route_table_vpc_association_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_local_gateway_route_table_vpc_association(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::CreateLocalGatewayRouteTableVpcAssociationError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_local_gateway_route_table_vpc_association(response.body().as_ref(), output).map_err(crate::error::CreateLocalGatewayRouteTableVpcAssociationError::unhandled)?;
         output.build()
     })
 }
@@ -2019,7 +2024,7 @@ pub fn parse_create_managed_prefix_list_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_managed_prefix_list_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_managed_prefix_list(
+        output = crate::xml_deser::deser_operation_crate_operation_create_managed_prefix_list(
             response.body().as_ref(),
             output,
         )
@@ -2047,9 +2052,11 @@ pub fn parse_create_nat_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_nat_gateway_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_nat_gateway(response.body().as_ref(), output)
-                .map_err(crate::error::CreateNatGatewayError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_nat_gateway(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateNatGatewayError::unhandled)?;
         output.build()
     })
 }
@@ -2073,9 +2080,11 @@ pub fn parse_create_network_acl_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_network_acl_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_network_acl(response.body().as_ref(), output)
-                .map_err(crate::error::CreateNetworkAclError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_network_acl(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateNetworkAclError::unhandled)?;
         output.build()
     })
 }
@@ -2132,7 +2141,7 @@ pub fn parse_create_network_insights_path_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_network_insights_path_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_network_insights_path(
+        output = crate::xml_deser::deser_operation_crate_operation_create_network_insights_path(
             response.body().as_ref(),
             output,
         )
@@ -2164,7 +2173,7 @@ pub fn parse_create_network_interface_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_network_interface_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_network_interface(
+        output = crate::xml_deser::deser_operation_crate_operation_create_network_interface(
             response.body().as_ref(),
             output,
         )
@@ -2197,11 +2206,12 @@ pub fn parse_create_network_interface_permission_response(
         let mut output =
             crate::output::create_network_interface_permission_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_network_interface_permission(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::CreateNetworkInterfacePermissionError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_create_network_interface_permission(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::CreateNetworkInterfacePermissionError::unhandled)?;
         output.build()
     })
 }
@@ -2229,7 +2239,7 @@ pub fn parse_create_placement_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_placement_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_placement_group(
+        output = crate::xml_deser::deser_operation_crate_operation_create_placement_group(
             response.body().as_ref(),
             output,
         )
@@ -2263,7 +2273,7 @@ pub fn parse_create_replace_root_volume_task_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_replace_root_volume_task_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_replace_root_volume_task(
+        output = crate::xml_deser::deser_operation_crate_operation_create_replace_root_volume_task(
             response.body().as_ref(),
             output,
         )
@@ -2298,11 +2308,12 @@ pub fn parse_create_reserved_instances_listing_response(
         let mut output =
             crate::output::create_reserved_instances_listing_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_reserved_instances_listing(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::CreateReservedInstancesListingError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_create_reserved_instances_listing(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::CreateReservedInstancesListingError::unhandled)?;
         output.build()
     })
 }
@@ -2330,7 +2341,7 @@ pub fn parse_create_restore_image_task_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_restore_image_task_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_restore_image_task(
+        output = crate::xml_deser::deser_operation_crate_operation_create_restore_image_task(
             response.body().as_ref(),
             output,
         )
@@ -2356,8 +2367,11 @@ pub fn parse_create_route_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_route_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_route(response.body().as_ref(), output)
-            .map_err(crate::error::CreateRouteError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_route(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateRouteError::unhandled)?;
         output.build()
     })
 }
@@ -2381,9 +2395,11 @@ pub fn parse_create_route_table_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_route_table_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_route_table(response.body().as_ref(), output)
-                .map_err(crate::error::CreateRouteTableError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_route_table(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateRouteTableError::unhandled)?;
         output.build()
     })
 }
@@ -2411,7 +2427,7 @@ pub fn parse_create_security_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_security_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_security_group(
+        output = crate::xml_deser::deser_operation_crate_operation_create_security_group(
             response.body().as_ref(),
             output,
         )
@@ -2437,9 +2453,11 @@ pub fn parse_create_snapshot_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_snapshot_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_snapshot(response.body().as_ref(), output)
-                .map_err(crate::error::CreateSnapshotError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_snapshot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateSnapshotError::unhandled)?;
         output.build()
     })
 }
@@ -2461,9 +2479,11 @@ pub fn parse_create_snapshots_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_snapshots_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_snapshots(response.body().as_ref(), output)
-                .map_err(crate::error::CreateSnapshotsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_snapshots(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateSnapshotsError::unhandled)?;
         output.build()
     })
 }
@@ -2494,11 +2514,12 @@ pub fn parse_create_spot_datafeed_subscription_response(
         let mut output =
             crate::output::create_spot_datafeed_subscription_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_spot_datafeed_subscription(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::CreateSpotDatafeedSubscriptionError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_create_spot_datafeed_subscription(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::CreateSpotDatafeedSubscriptionError::unhandled)?;
         output.build()
     })
 }
@@ -2526,7 +2547,7 @@ pub fn parse_create_store_image_task_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_store_image_task_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_store_image_task(
+        output = crate::xml_deser::deser_operation_crate_operation_create_store_image_task(
             response.body().as_ref(),
             output,
         )
@@ -2552,8 +2573,11 @@ pub fn parse_create_subnet_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_subnet_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_subnet(response.body().as_ref(), output)
-            .map_err(crate::error::CreateSubnetError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_subnet(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateSubnetError::unhandled)?;
         output.build()
     })
 }
@@ -2583,7 +2607,7 @@ pub fn parse_create_subnet_cidr_reservation_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_subnet_cidr_reservation_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_subnet_cidr_reservation(
+        output = crate::xml_deser::deser_operation_crate_operation_create_subnet_cidr_reservation(
             response.body().as_ref(),
             output,
         )
@@ -2638,7 +2662,7 @@ pub fn parse_create_traffic_mirror_filter_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_traffic_mirror_filter_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_traffic_mirror_filter(
+        output = crate::xml_deser::deser_operation_crate_operation_create_traffic_mirror_filter(
             response.body().as_ref(),
             output,
         )
@@ -2673,11 +2697,12 @@ pub fn parse_create_traffic_mirror_filter_rule_response(
         let mut output =
             crate::output::create_traffic_mirror_filter_rule_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_traffic_mirror_filter_rule(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::CreateTrafficMirrorFilterRuleError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_create_traffic_mirror_filter_rule(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::CreateTrafficMirrorFilterRuleError::unhandled)?;
         output.build()
     })
 }
@@ -2707,7 +2732,7 @@ pub fn parse_create_traffic_mirror_session_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_traffic_mirror_session_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_traffic_mirror_session(
+        output = crate::xml_deser::deser_operation_crate_operation_create_traffic_mirror_session(
             response.body().as_ref(),
             output,
         )
@@ -2741,7 +2766,7 @@ pub fn parse_create_traffic_mirror_target_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_traffic_mirror_target_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_traffic_mirror_target(
+        output = crate::xml_deser::deser_operation_crate_operation_create_traffic_mirror_target(
             response.body().as_ref(),
             output,
         )
@@ -2773,7 +2798,7 @@ pub fn parse_create_transit_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_transit_gateway_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_transit_gateway(
+        output = crate::xml_deser::deser_operation_crate_operation_create_transit_gateway(
             response.body().as_ref(),
             output,
         )
@@ -2807,7 +2832,7 @@ pub fn parse_create_transit_gateway_connect_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_transit_gateway_connect_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_transit_gateway_connect(
+        output = crate::xml_deser::deser_operation_crate_operation_create_transit_gateway_connect(
             response.body().as_ref(),
             output,
         )
@@ -2842,11 +2867,12 @@ pub fn parse_create_transit_gateway_connect_peer_response(
         let mut output =
             crate::output::create_transit_gateway_connect_peer_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_transit_gateway_connect_peer(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::CreateTransitGatewayConnectPeerError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_create_transit_gateway_connect_peer(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::CreateTransitGatewayConnectPeerError::unhandled)?;
         output.build()
     })
 }
@@ -2875,11 +2901,7 @@ pub fn parse_create_transit_gateway_multicast_domain_response(
         let mut output =
             crate::output::create_transit_gateway_multicast_domain_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_transit_gateway_multicast_domain(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::CreateTransitGatewayMulticastDomainError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_transit_gateway_multicast_domain(response.body().as_ref(), output).map_err(crate::error::CreateTransitGatewayMulticastDomainError::unhandled)?;
         output.build()
     })
 }
@@ -2908,11 +2930,7 @@ pub fn parse_create_transit_gateway_peering_attachment_response(
         let mut output =
             crate::output::create_transit_gateway_peering_attachment_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_transit_gateway_peering_attachment(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::CreateTransitGatewayPeeringAttachmentError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_transit_gateway_peering_attachment(response.body().as_ref(), output).map_err(crate::error::CreateTransitGatewayPeeringAttachmentError::unhandled)?;
         output.build()
     })
 }
@@ -2941,11 +2959,7 @@ pub fn parse_create_transit_gateway_prefix_list_reference_response(
         let mut output =
             crate::output::create_transit_gateway_prefix_list_reference_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_transit_gateway_prefix_list_reference(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::CreateTransitGatewayPrefixListReferenceError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_transit_gateway_prefix_list_reference(response.body().as_ref(), output).map_err(crate::error::CreateTransitGatewayPrefixListReferenceError::unhandled)?;
         output.build()
     })
 }
@@ -2975,7 +2989,7 @@ pub fn parse_create_transit_gateway_route_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_transit_gateway_route_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_transit_gateway_route(
+        output = crate::xml_deser::deser_operation_crate_operation_create_transit_gateway_route(
             response.body().as_ref(),
             output,
         )
@@ -3010,11 +3024,12 @@ pub fn parse_create_transit_gateway_route_table_response(
         let mut output =
             crate::output::create_transit_gateway_route_table_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_transit_gateway_route_table(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::CreateTransitGatewayRouteTableError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_create_transit_gateway_route_table(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::CreateTransitGatewayRouteTableError::unhandled)?;
         output.build()
     })
 }
@@ -3043,11 +3058,7 @@ pub fn parse_create_transit_gateway_vpc_attachment_response(
         let mut output =
             crate::output::create_transit_gateway_vpc_attachment_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_transit_gateway_vpc_attachment(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::CreateTransitGatewayVpcAttachmentError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_transit_gateway_vpc_attachment(response.body().as_ref(), output).map_err(crate::error::CreateTransitGatewayVpcAttachmentError::unhandled)?;
         output.build()
     })
 }
@@ -3069,8 +3080,11 @@ pub fn parse_create_volume_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_volume_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_volume(response.body().as_ref(), output)
-            .map_err(crate::error::CreateVolumeError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_volume(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateVolumeError::unhandled)?;
         output.build()
     })
 }
@@ -3092,8 +3106,11 @@ pub fn parse_create_vpc_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_vpc_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_vpc(response.body().as_ref(), output)
-            .map_err(crate::error::CreateVpcError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_vpc(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateVpcError::unhandled)?;
         output.build()
     })
 }
@@ -3117,9 +3134,11 @@ pub fn parse_create_vpc_endpoint_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_vpc_endpoint_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_vpc_endpoint(response.body().as_ref(), output)
-                .map_err(crate::error::CreateVpcEndpointError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_vpc_endpoint(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateVpcEndpointError::unhandled)?;
         output.build()
     })
 }
@@ -3148,11 +3167,7 @@ pub fn parse_create_vpc_endpoint_connection_notification_response(
         let mut output =
             crate::output::create_vpc_endpoint_connection_notification_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_vpc_endpoint_connection_notification(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::CreateVpcEndpointConnectionNotificationError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_vpc_endpoint_connection_notification(response.body().as_ref(), output).map_err(crate::error::CreateVpcEndpointConnectionNotificationError::unhandled)?;
         output.build()
     })
 }
@@ -3181,11 +3196,7 @@ pub fn parse_create_vpc_endpoint_service_configuration_response(
         let mut output =
             crate::output::create_vpc_endpoint_service_configuration_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_vpc_endpoint_service_configuration(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::CreateVpcEndpointServiceConfigurationError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_vpc_endpoint_service_configuration(response.body().as_ref(), output).map_err(crate::error::CreateVpcEndpointServiceConfigurationError::unhandled)?;
         output.build()
     })
 }
@@ -3215,7 +3226,7 @@ pub fn parse_create_vpc_peering_connection_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_vpc_peering_connection_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_vpc_peering_connection(
+        output = crate::xml_deser::deser_operation_crate_operation_create_vpc_peering_connection(
             response.body().as_ref(),
             output,
         )
@@ -3247,7 +3258,7 @@ pub fn parse_create_vpn_connection_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_vpn_connection_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_vpn_connection(
+        output = crate::xml_deser::deser_operation_crate_operation_create_vpn_connection(
             response.body().as_ref(),
             output,
         )
@@ -3304,9 +3315,11 @@ pub fn parse_create_vpn_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_vpn_gateway_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_vpn_gateway(response.body().as_ref(), output)
-                .map_err(crate::error::CreateVpnGatewayError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_vpn_gateway(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateVpnGatewayError::unhandled)?;
         output.build()
     })
 }
@@ -3334,7 +3347,7 @@ pub fn parse_delete_carrier_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_carrier_gateway_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_carrier_gateway(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_carrier_gateway(
             response.body().as_ref(),
             output,
         )
@@ -3366,7 +3379,7 @@ pub fn parse_delete_client_vpn_endpoint_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_client_vpn_endpoint_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_client_vpn_endpoint(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_client_vpn_endpoint(
             response.body().as_ref(),
             output,
         )
@@ -3398,7 +3411,7 @@ pub fn parse_delete_client_vpn_route_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_client_vpn_route_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_client_vpn_route(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_client_vpn_route(
             response.body().as_ref(),
             output,
         )
@@ -3483,11 +3496,12 @@ pub fn parse_delete_egress_only_internet_gateway_response(
         let mut output =
             crate::output::delete_egress_only_internet_gateway_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_egress_only_internet_gateway(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DeleteEgressOnlyInternetGatewayError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_delete_egress_only_internet_gateway(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DeleteEgressOnlyInternetGatewayError::unhandled)?;
         output.build()
     })
 }
@@ -3509,8 +3523,11 @@ pub fn parse_delete_fleets_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_fleets_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_fleets(response.body().as_ref(), output)
-            .map_err(crate::error::DeleteFleetsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_fleets(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteFleetsError::unhandled)?;
         output.build()
     })
 }
@@ -3532,9 +3549,11 @@ pub fn parse_delete_flow_logs_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_flow_logs_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_delete_flow_logs(response.body().as_ref(), output)
-                .map_err(crate::error::DeleteFlowLogsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_flow_logs(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteFlowLogsError::unhandled)?;
         output.build()
     })
 }
@@ -3556,9 +3575,11 @@ pub fn parse_delete_fpga_image_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_fpga_image_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_delete_fpga_image(response.body().as_ref(), output)
-                .map_err(crate::error::DeleteFpgaImageError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_fpga_image(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteFpgaImageError::unhandled)?;
         output.build()
     })
 }
@@ -3588,7 +3609,7 @@ pub fn parse_delete_instance_event_window_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_instance_event_window_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_instance_event_window(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_instance_event_window(
             response.body().as_ref(),
             output,
         )
@@ -3668,7 +3689,7 @@ pub fn parse_delete_launch_template_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_launch_template_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_launch_template(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_launch_template(
             response.body().as_ref(),
             output,
         )
@@ -3702,7 +3723,7 @@ pub fn parse_delete_launch_template_versions_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_launch_template_versions_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_launch_template_versions(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_launch_template_versions(
             response.body().as_ref(),
             output,
         )
@@ -3734,7 +3755,7 @@ pub fn parse_delete_local_gateway_route_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_local_gateway_route_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_local_gateway_route(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_local_gateway_route(
             response.body().as_ref(),
             output,
         )
@@ -3765,12 +3786,7 @@ pub fn parse_delete_local_gateway_route_table_vpc_association_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::delete_local_gateway_route_table_vpc_association_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_delete_local_gateway_route_table_vpc_association(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::DeleteLocalGatewayRouteTableVpcAssociationError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_local_gateway_route_table_vpc_association(response.body().as_ref(), output).map_err(crate::error::DeleteLocalGatewayRouteTableVpcAssociationError::unhandled)?;
         output.build()
     })
 }
@@ -3798,7 +3814,7 @@ pub fn parse_delete_managed_prefix_list_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_managed_prefix_list_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_managed_prefix_list(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_managed_prefix_list(
             response.body().as_ref(),
             output,
         )
@@ -3826,9 +3842,11 @@ pub fn parse_delete_nat_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_nat_gateway_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_delete_nat_gateway(response.body().as_ref(), output)
-                .map_err(crate::error::DeleteNatGatewayError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_nat_gateway(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteNatGatewayError::unhandled)?;
         output.build()
     })
 }
@@ -3908,11 +3926,12 @@ pub fn parse_delete_network_insights_analysis_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_network_insights_analysis_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_network_insights_analysis(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DeleteNetworkInsightsAnalysisError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_delete_network_insights_analysis(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DeleteNetworkInsightsAnalysisError::unhandled)?;
         output.build()
     })
 }
@@ -3942,7 +3961,7 @@ pub fn parse_delete_network_insights_path_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_network_insights_path_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_network_insights_path(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_network_insights_path(
             response.body().as_ref(),
             output,
         )
@@ -4002,11 +4021,12 @@ pub fn parse_delete_network_interface_permission_response(
         let mut output =
             crate::output::delete_network_interface_permission_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_network_interface_permission(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DeleteNetworkInterfacePermissionError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_delete_network_interface_permission(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DeleteNetworkInterfacePermissionError::unhandled)?;
         output.build()
     })
 }
@@ -4063,11 +4083,12 @@ pub fn parse_delete_queued_reserved_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_queued_reserved_instances_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_queued_reserved_instances(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DeleteQueuedReservedInstancesError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_delete_queued_reserved_instances(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DeleteQueuedReservedInstancesError::unhandled)?;
         output.build()
     })
 }
@@ -4240,7 +4261,7 @@ pub fn parse_delete_subnet_cidr_reservation_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_subnet_cidr_reservation_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_subnet_cidr_reservation(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_subnet_cidr_reservation(
             response.body().as_ref(),
             output,
         )
@@ -4295,7 +4316,7 @@ pub fn parse_delete_traffic_mirror_filter_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_traffic_mirror_filter_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_traffic_mirror_filter(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_traffic_mirror_filter(
             response.body().as_ref(),
             output,
         )
@@ -4330,11 +4351,12 @@ pub fn parse_delete_traffic_mirror_filter_rule_response(
         let mut output =
             crate::output::delete_traffic_mirror_filter_rule_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_traffic_mirror_filter_rule(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DeleteTrafficMirrorFilterRuleError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_delete_traffic_mirror_filter_rule(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DeleteTrafficMirrorFilterRuleError::unhandled)?;
         output.build()
     })
 }
@@ -4364,7 +4386,7 @@ pub fn parse_delete_traffic_mirror_session_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_traffic_mirror_session_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_traffic_mirror_session(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_traffic_mirror_session(
             response.body().as_ref(),
             output,
         )
@@ -4398,7 +4420,7 @@ pub fn parse_delete_traffic_mirror_target_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_traffic_mirror_target_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_traffic_mirror_target(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_traffic_mirror_target(
             response.body().as_ref(),
             output,
         )
@@ -4430,7 +4452,7 @@ pub fn parse_delete_transit_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_transit_gateway_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_transit_gateway(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_transit_gateway(
             response.body().as_ref(),
             output,
         )
@@ -4464,7 +4486,7 @@ pub fn parse_delete_transit_gateway_connect_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_transit_gateway_connect_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_transit_gateway_connect(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_transit_gateway_connect(
             response.body().as_ref(),
             output,
         )
@@ -4499,11 +4521,12 @@ pub fn parse_delete_transit_gateway_connect_peer_response(
         let mut output =
             crate::output::delete_transit_gateway_connect_peer_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_transit_gateway_connect_peer(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DeleteTransitGatewayConnectPeerError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_delete_transit_gateway_connect_peer(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DeleteTransitGatewayConnectPeerError::unhandled)?;
         output.build()
     })
 }
@@ -4532,11 +4555,7 @@ pub fn parse_delete_transit_gateway_multicast_domain_response(
         let mut output =
             crate::output::delete_transit_gateway_multicast_domain_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_transit_gateway_multicast_domain(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DeleteTransitGatewayMulticastDomainError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_transit_gateway_multicast_domain(response.body().as_ref(), output).map_err(crate::error::DeleteTransitGatewayMulticastDomainError::unhandled)?;
         output.build()
     })
 }
@@ -4565,11 +4584,7 @@ pub fn parse_delete_transit_gateway_peering_attachment_response(
         let mut output =
             crate::output::delete_transit_gateway_peering_attachment_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_transit_gateway_peering_attachment(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DeleteTransitGatewayPeeringAttachmentError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_transit_gateway_peering_attachment(response.body().as_ref(), output).map_err(crate::error::DeleteTransitGatewayPeeringAttachmentError::unhandled)?;
         output.build()
     })
 }
@@ -4598,11 +4613,7 @@ pub fn parse_delete_transit_gateway_prefix_list_reference_response(
         let mut output =
             crate::output::delete_transit_gateway_prefix_list_reference_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_transit_gateway_prefix_list_reference(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DeleteTransitGatewayPrefixListReferenceError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_transit_gateway_prefix_list_reference(response.body().as_ref(), output).map_err(crate::error::DeleteTransitGatewayPrefixListReferenceError::unhandled)?;
         output.build()
     })
 }
@@ -4632,7 +4643,7 @@ pub fn parse_delete_transit_gateway_route_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_transit_gateway_route_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_transit_gateway_route(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_transit_gateway_route(
             response.body().as_ref(),
             output,
         )
@@ -4667,11 +4678,12 @@ pub fn parse_delete_transit_gateway_route_table_response(
         let mut output =
             crate::output::delete_transit_gateway_route_table_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_transit_gateway_route_table(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DeleteTransitGatewayRouteTableError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_delete_transit_gateway_route_table(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DeleteTransitGatewayRouteTableError::unhandled)?;
         output.build()
     })
 }
@@ -4700,11 +4712,7 @@ pub fn parse_delete_transit_gateway_vpc_attachment_response(
         let mut output =
             crate::output::delete_transit_gateway_vpc_attachment_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_transit_gateway_vpc_attachment(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DeleteTransitGatewayVpcAttachmentError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_transit_gateway_vpc_attachment(response.body().as_ref(), output).map_err(crate::error::DeleteTransitGatewayVpcAttachmentError::unhandled)?;
         output.build()
     })
 }
@@ -4775,11 +4783,7 @@ pub fn parse_delete_vpc_endpoint_connection_notifications_response(
         let mut output =
             crate::output::delete_vpc_endpoint_connection_notifications_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_vpc_endpoint_connection_notifications(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DeleteVpcEndpointConnectionNotificationsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_vpc_endpoint_connection_notifications(response.body().as_ref(), output).map_err(crate::error::DeleteVpcEndpointConnectionNotificationsError::unhandled)?;
         output.build()
     })
 }
@@ -4807,7 +4811,7 @@ pub fn parse_delete_vpc_endpoints_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_vpc_endpoints_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_vpc_endpoints(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_vpc_endpoints(
             response.body().as_ref(),
             output,
         )
@@ -4840,11 +4844,7 @@ pub fn parse_delete_vpc_endpoint_service_configurations_response(
         let mut output =
             crate::output::delete_vpc_endpoint_service_configurations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_vpc_endpoint_service_configurations(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DeleteVpcEndpointServiceConfigurationsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_vpc_endpoint_service_configurations(response.body().as_ref(), output).map_err(crate::error::DeleteVpcEndpointServiceConfigurationsError::unhandled)?;
         output.build()
     })
 }
@@ -4874,7 +4874,7 @@ pub fn parse_delete_vpc_peering_connection_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_vpc_peering_connection_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_vpc_peering_connection(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_vpc_peering_connection(
             response.body().as_ref(),
             output,
         )
@@ -4985,7 +4985,7 @@ pub fn parse_deprovision_byoip_cidr_response(
         #[allow(unused_mut)]
         let mut output = crate::output::deprovision_byoip_cidr_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_deprovision_byoip_cidr(
+        output = crate::xml_deser::deser_operation_crate_operation_deprovision_byoip_cidr(
             response.body().as_ref(),
             output,
         )
@@ -5037,12 +5037,7 @@ pub fn parse_deregister_instance_event_notification_attributes_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::deregister_instance_event_notification_attributes_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_deregister_instance_event_notification_attributes(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::DeregisterInstanceEventNotificationAttributesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_deregister_instance_event_notification_attributes(response.body().as_ref(), output).map_err(crate::error::DeregisterInstanceEventNotificationAttributesError::unhandled)?;
         output.build()
     })
 }
@@ -5069,12 +5064,7 @@ pub fn parse_deregister_transit_gateway_multicast_group_members_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::deregister_transit_gateway_multicast_group_members_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_deregister_transit_gateway_multicast_group_members(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::DeregisterTransitGatewayMulticastGroupMembersError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_deregister_transit_gateway_multicast_group_members(response.body().as_ref(), output).map_err(crate::error::DeregisterTransitGatewayMulticastGroupMembersError::unhandled)?;
         output.build()
     })
 }
@@ -5101,12 +5091,7 @@ pub fn parse_deregister_transit_gateway_multicast_group_sources_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::deregister_transit_gateway_multicast_group_sources_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_deregister_transit_gateway_multicast_group_sources(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::DeregisterTransitGatewayMulticastGroupSourcesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_deregister_transit_gateway_multicast_group_sources(response.body().as_ref(), output).map_err(crate::error::DeregisterTransitGatewayMulticastGroupSourcesError::unhandled)?;
         output.build()
     })
 }
@@ -5136,7 +5121,7 @@ pub fn parse_describe_account_attributes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_account_attributes_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_account_attributes(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_account_attributes(
             response.body().as_ref(),
             output,
         )
@@ -5164,9 +5149,11 @@ pub fn parse_describe_addresses_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_addresses_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_addresses(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeAddressesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_addresses(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeAddressesError::unhandled)?;
         output.build()
     })
 }
@@ -5196,7 +5183,7 @@ pub fn parse_describe_addresses_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_addresses_attribute_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_addresses_attribute(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_addresses_attribute(
             response.body().as_ref(),
             output,
         )
@@ -5230,7 +5217,7 @@ pub fn parse_describe_aggregate_id_format_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_aggregate_id_format_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_aggregate_id_format(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_aggregate_id_format(
             response.body().as_ref(),
             output,
         )
@@ -5264,7 +5251,7 @@ pub fn parse_describe_availability_zones_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_availability_zones_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_availability_zones(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_availability_zones(
             response.body().as_ref(),
             output,
         )
@@ -5296,7 +5283,7 @@ pub fn parse_describe_bundle_tasks_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_bundle_tasks_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_bundle_tasks(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_bundle_tasks(
             response.body().as_ref(),
             output,
         )
@@ -5328,7 +5315,7 @@ pub fn parse_describe_byoip_cidrs_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_byoip_cidrs_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_byoip_cidrs(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_byoip_cidrs(
             response.body().as_ref(),
             output,
         )
@@ -5362,7 +5349,7 @@ pub fn parse_describe_capacity_reservations_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_capacity_reservations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_capacity_reservations(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_capacity_reservations(
             response.body().as_ref(),
             output,
         )
@@ -5394,7 +5381,7 @@ pub fn parse_describe_carrier_gateways_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_carrier_gateways_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_carrier_gateways(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_carrier_gateways(
             response.body().as_ref(),
             output,
         )
@@ -5428,7 +5415,7 @@ pub fn parse_describe_classic_link_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_classic_link_instances_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_classic_link_instances(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_classic_link_instances(
             response.body().as_ref(),
             output,
         )
@@ -5461,11 +5448,7 @@ pub fn parse_describe_client_vpn_authorization_rules_response(
         let mut output =
             crate::output::describe_client_vpn_authorization_rules_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_client_vpn_authorization_rules(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeClientVpnAuthorizationRulesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_client_vpn_authorization_rules(response.body().as_ref(), output).map_err(crate::error::DescribeClientVpnAuthorizationRulesError::unhandled)?;
         output.build()
     })
 }
@@ -5495,7 +5478,7 @@ pub fn parse_describe_client_vpn_connections_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_client_vpn_connections_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_client_vpn_connections(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_client_vpn_connections(
             response.body().as_ref(),
             output,
         )
@@ -5529,7 +5512,7 @@ pub fn parse_describe_client_vpn_endpoints_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_client_vpn_endpoints_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_client_vpn_endpoints(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_client_vpn_endpoints(
             response.body().as_ref(),
             output,
         )
@@ -5561,7 +5544,7 @@ pub fn parse_describe_client_vpn_routes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_client_vpn_routes_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_client_vpn_routes(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_client_vpn_routes(
             response.body().as_ref(),
             output,
         )
@@ -5596,11 +5579,12 @@ pub fn parse_describe_client_vpn_target_networks_response(
         let mut output =
             crate::output::describe_client_vpn_target_networks_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_client_vpn_target_networks(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeClientVpnTargetNetworksError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_client_vpn_target_networks(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeClientVpnTargetNetworksError::unhandled)?;
         output.build()
     })
 }
@@ -5624,9 +5608,11 @@ pub fn parse_describe_coip_pools_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_coip_pools_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_coip_pools(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeCoipPoolsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_coip_pools(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeCoipPoolsError::unhandled)?;
         output.build()
     })
 }
@@ -5654,7 +5640,7 @@ pub fn parse_describe_conversion_tasks_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_conversion_tasks_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_conversion_tasks(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_conversion_tasks(
             response.body().as_ref(),
             output,
         )
@@ -5688,7 +5674,7 @@ pub fn parse_describe_customer_gateways_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_customer_gateways_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_customer_gateways(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_customer_gateways(
             response.body().as_ref(),
             output,
         )
@@ -5720,7 +5706,7 @@ pub fn parse_describe_dhcp_options_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_dhcp_options_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_dhcp_options(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_dhcp_options(
             response.body().as_ref(),
             output,
         )
@@ -5753,11 +5739,7 @@ pub fn parse_describe_egress_only_internet_gateways_response(
         let mut output =
             crate::output::describe_egress_only_internet_gateways_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_egress_only_internet_gateways(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeEgressOnlyInternetGatewaysError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_egress_only_internet_gateways(response.body().as_ref(), output).map_err(crate::error::DescribeEgressOnlyInternetGatewaysError::unhandled)?;
         output.build()
     })
 }
@@ -5785,7 +5767,7 @@ pub fn parse_describe_elastic_gpus_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_elastic_gpus_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_elastic_gpus(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_elastic_gpus(
             response.body().as_ref(),
             output,
         )
@@ -5819,7 +5801,7 @@ pub fn parse_describe_export_image_tasks_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_export_image_tasks_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_export_image_tasks(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_export_image_tasks(
             response.body().as_ref(),
             output,
         )
@@ -5851,7 +5833,7 @@ pub fn parse_describe_export_tasks_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_export_tasks_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_export_tasks(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_export_tasks(
             response.body().as_ref(),
             output,
         )
@@ -5885,7 +5867,7 @@ pub fn parse_describe_fast_snapshot_restores_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_fast_snapshot_restores_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_fast_snapshot_restores(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_fast_snapshot_restores(
             response.body().as_ref(),
             output,
         )
@@ -5917,7 +5899,7 @@ pub fn parse_describe_fleet_history_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_fleet_history_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_fleet_history(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_fleet_history(
             response.body().as_ref(),
             output,
         )
@@ -5949,7 +5931,7 @@ pub fn parse_describe_fleet_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_fleet_instances_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_fleet_instances(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_fleet_instances(
             response.body().as_ref(),
             output,
         )
@@ -5975,9 +5957,11 @@ pub fn parse_describe_fleets_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_fleets_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_fleets(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeFleetsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_fleets(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeFleetsError::unhandled)?;
         output.build()
     })
 }
@@ -6001,9 +5985,11 @@ pub fn parse_describe_flow_logs_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_flow_logs_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_flow_logs(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeFlowLogsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_flow_logs(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeFlowLogsError::unhandled)?;
         output.build()
     })
 }
@@ -6033,7 +6019,7 @@ pub fn parse_describe_fpga_image_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_fpga_image_attribute_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_fpga_image_attribute(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_fpga_image_attribute(
             response.body().as_ref(),
             output,
         )
@@ -6065,7 +6051,7 @@ pub fn parse_describe_fpga_images_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_fpga_images_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_fpga_images(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_fpga_images(
             response.body().as_ref(),
             output,
         )
@@ -6098,11 +6084,12 @@ pub fn parse_describe_host_reservation_offerings_response(
         let mut output =
             crate::output::describe_host_reservation_offerings_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_host_reservation_offerings(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeHostReservationOfferingsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_host_reservation_offerings(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeHostReservationOfferingsError::unhandled)?;
         output.build()
     })
 }
@@ -6132,7 +6119,7 @@ pub fn parse_describe_host_reservations_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_host_reservations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_host_reservations(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_host_reservations(
             response.body().as_ref(),
             output,
         )
@@ -6158,8 +6145,11 @@ pub fn parse_describe_hosts_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_hosts_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_hosts(response.body().as_ref(), output)
-            .map_err(crate::error::DescribeHostsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_hosts(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeHostsError::unhandled)?;
         output.build()
     })
 }
@@ -6188,11 +6178,7 @@ pub fn parse_describe_iam_instance_profile_associations_response(
         let mut output =
             crate::output::describe_iam_instance_profile_associations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_iam_instance_profile_associations(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeIamInstanceProfileAssociationsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_iam_instance_profile_associations(response.body().as_ref(), output).map_err(crate::error::DescribeIamInstanceProfileAssociationsError::unhandled)?;
         output.build()
     })
 }
@@ -6222,7 +6208,7 @@ pub fn parse_describe_identity_id_format_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_identity_id_format_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_identity_id_format(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_identity_id_format(
             response.body().as_ref(),
             output,
         )
@@ -6250,9 +6236,11 @@ pub fn parse_describe_id_format_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_id_format_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_id_format(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeIdFormatError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_id_format(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeIdFormatError::unhandled)?;
         output.build()
     })
 }
@@ -6280,7 +6268,7 @@ pub fn parse_describe_image_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_image_attribute_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_image_attribute(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_image_attribute(
             response.body().as_ref(),
             output,
         )
@@ -6306,9 +6294,11 @@ pub fn parse_describe_images_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_images_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_images(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeImagesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_images(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeImagesError::unhandled)?;
         output.build()
     })
 }
@@ -6338,7 +6328,7 @@ pub fn parse_describe_import_image_tasks_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_import_image_tasks_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_import_image_tasks(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_import_image_tasks(
             response.body().as_ref(),
             output,
         )
@@ -6372,7 +6362,7 @@ pub fn parse_describe_import_snapshot_tasks_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_import_snapshot_tasks_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_import_snapshot_tasks(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_import_snapshot_tasks(
             response.body().as_ref(),
             output,
         )
@@ -6406,7 +6396,7 @@ pub fn parse_describe_instance_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_instance_attribute_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_instance_attribute(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_instance_attribute(
             response.body().as_ref(),
             output,
         )
@@ -6439,11 +6429,7 @@ pub fn parse_describe_instance_credit_specifications_response(
         let mut output =
             crate::output::describe_instance_credit_specifications_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_instance_credit_specifications(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeInstanceCreditSpecificationsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_instance_credit_specifications(response.body().as_ref(), output).map_err(crate::error::DescribeInstanceCreditSpecificationsError::unhandled)?;
         output.build()
     })
 }
@@ -6473,11 +6459,7 @@ pub fn parse_describe_instance_event_notification_attributes_response(
             crate::output::describe_instance_event_notification_attributes_output::Builder::default(
             );
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_instance_event_notification_attributes(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeInstanceEventNotificationAttributesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_instance_event_notification_attributes(response.body().as_ref(), output).map_err(crate::error::DescribeInstanceEventNotificationAttributesError::unhandled)?;
         output.build()
     })
 }
@@ -6507,7 +6489,7 @@ pub fn parse_describe_instance_event_windows_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_instance_event_windows_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_instance_event_windows(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_instance_event_windows(
             response.body().as_ref(),
             output,
         )
@@ -6535,9 +6517,11 @@ pub fn parse_describe_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_instances_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_instances(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeInstancesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_instances(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeInstancesError::unhandled)?;
         output.build()
     })
 }
@@ -6565,7 +6549,7 @@ pub fn parse_describe_instance_status_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_instance_status_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_instance_status(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_instance_status(
             response.body().as_ref(),
             output,
         )
@@ -6599,11 +6583,12 @@ pub fn parse_describe_instance_type_offerings_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_instance_type_offerings_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_instance_type_offerings(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeInstanceTypeOfferingsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_instance_type_offerings(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeInstanceTypeOfferingsError::unhandled)?;
         output.build()
     })
 }
@@ -6631,7 +6616,7 @@ pub fn parse_describe_instance_types_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_instance_types_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_instance_types(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_instance_types(
             response.body().as_ref(),
             output,
         )
@@ -6665,7 +6650,7 @@ pub fn parse_describe_internet_gateways_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_internet_gateways_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_internet_gateways(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_internet_gateways(
             response.body().as_ref(),
             output,
         )
@@ -6693,9 +6678,11 @@ pub fn parse_describe_ipv6_pools_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_ipv6_pools_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_ipv6_pools(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeIpv6PoolsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_ipv6_pools(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeIpv6PoolsError::unhandled)?;
         output.build()
     })
 }
@@ -6719,9 +6706,11 @@ pub fn parse_describe_key_pairs_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_key_pairs_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_key_pairs(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeKeyPairsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_key_pairs(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeKeyPairsError::unhandled)?;
         output.build()
     })
 }
@@ -6749,7 +6738,7 @@ pub fn parse_describe_launch_templates_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_launch_templates_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_launch_templates(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_launch_templates(
             response.body().as_ref(),
             output,
         )
@@ -6784,11 +6773,12 @@ pub fn parse_describe_launch_template_versions_response(
         let mut output =
             crate::output::describe_launch_template_versions_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_launch_template_versions(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeLaunchTemplateVersionsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_launch_template_versions(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeLaunchTemplateVersionsError::unhandled)?;
         output.build()
     })
 }
@@ -6819,11 +6809,12 @@ pub fn parse_describe_local_gateway_route_tables_response(
         let mut output =
             crate::output::describe_local_gateway_route_tables_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_local_gateway_route_tables(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeLocalGatewayRouteTablesError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_local_gateway_route_tables(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeLocalGatewayRouteTablesError::unhandled)?;
         output.build()
     })
 }
@@ -6853,7 +6844,7 @@ pub fn parse_describe_local_gateway_route_table_virtual_interface_group_associat
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::describe_local_gateway_route_table_virtual_interface_group_associations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_local_gateway_route_table_virtual_interface_group_associations(response.body().as_ref(), output).map_err(crate::error::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_local_gateway_route_table_virtual_interface_group_associations(response.body().as_ref(), output).map_err(crate::error::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError::unhandled)?;
         output.build()
     })
 }
@@ -6880,12 +6871,7 @@ pub fn parse_describe_local_gateway_route_table_vpc_associations_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::describe_local_gateway_route_table_vpc_associations_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_local_gateway_route_table_vpc_associations(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::DescribeLocalGatewayRouteTableVpcAssociationsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_local_gateway_route_table_vpc_associations(response.body().as_ref(), output).map_err(crate::error::DescribeLocalGatewayRouteTableVpcAssociationsError::unhandled)?;
         output.build()
     })
 }
@@ -6913,7 +6899,7 @@ pub fn parse_describe_local_gateways_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_local_gateways_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_local_gateways(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_local_gateways(
             response.body().as_ref(),
             output,
         )
@@ -6947,11 +6933,7 @@ pub fn parse_describe_local_gateway_virtual_interface_groups_response(
             crate::output::describe_local_gateway_virtual_interface_groups_output::Builder::default(
             );
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_local_gateway_virtual_interface_groups(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeLocalGatewayVirtualInterfaceGroupsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_local_gateway_virtual_interface_groups(response.body().as_ref(), output).map_err(crate::error::DescribeLocalGatewayVirtualInterfaceGroupsError::unhandled)?;
         output.build()
     })
 }
@@ -6980,11 +6962,7 @@ pub fn parse_describe_local_gateway_virtual_interfaces_response(
         let mut output =
             crate::output::describe_local_gateway_virtual_interfaces_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_local_gateway_virtual_interfaces(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeLocalGatewayVirtualInterfacesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_local_gateway_virtual_interfaces(response.body().as_ref(), output).map_err(crate::error::DescribeLocalGatewayVirtualInterfacesError::unhandled)?;
         output.build()
     })
 }
@@ -7014,7 +6992,7 @@ pub fn parse_describe_managed_prefix_lists_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_managed_prefix_lists_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_managed_prefix_lists(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_managed_prefix_lists(
             response.body().as_ref(),
             output,
         )
@@ -7046,7 +7024,7 @@ pub fn parse_describe_moving_addresses_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_moving_addresses_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_moving_addresses(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_moving_addresses(
             response.body().as_ref(),
             output,
         )
@@ -7078,7 +7056,7 @@ pub fn parse_describe_nat_gateways_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_nat_gateways_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_nat_gateways(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_nat_gateways(
             response.body().as_ref(),
             output,
         )
@@ -7110,7 +7088,7 @@ pub fn parse_describe_network_acls_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_network_acls_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_network_acls(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_network_acls(
             response.body().as_ref(),
             output,
         )
@@ -7145,11 +7123,12 @@ pub fn parse_describe_network_insights_analyses_response(
         let mut output =
             crate::output::describe_network_insights_analyses_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_network_insights_analyses(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeNetworkInsightsAnalysesError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_network_insights_analyses(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeNetworkInsightsAnalysesError::unhandled)?;
         output.build()
     })
 }
@@ -7179,7 +7158,7 @@ pub fn parse_describe_network_insights_paths_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_network_insights_paths_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_network_insights_paths(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_network_insights_paths(
             response.body().as_ref(),
             output,
         )
@@ -7212,11 +7191,12 @@ pub fn parse_describe_network_interface_attribute_response(
         let mut output =
             crate::output::describe_network_interface_attribute_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_network_interface_attribute(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeNetworkInterfaceAttributeError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_network_interface_attribute(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeNetworkInterfaceAttributeError::unhandled)?;
         output.build()
     })
 }
@@ -7245,11 +7225,7 @@ pub fn parse_describe_network_interface_permissions_response(
         let mut output =
             crate::output::describe_network_interface_permissions_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_network_interface_permissions(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeNetworkInterfacePermissionsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_network_interface_permissions(response.body().as_ref(), output).map_err(crate::error::DescribeNetworkInterfacePermissionsError::unhandled)?;
         output.build()
     })
 }
@@ -7279,7 +7255,7 @@ pub fn parse_describe_network_interfaces_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_network_interfaces_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_network_interfaces(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_network_interfaces(
             response.body().as_ref(),
             output,
         )
@@ -7311,7 +7287,7 @@ pub fn parse_describe_placement_groups_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_placement_groups_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_placement_groups(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_placement_groups(
             response.body().as_ref(),
             output,
         )
@@ -7343,7 +7319,7 @@ pub fn parse_describe_prefix_lists_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_prefix_lists_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_prefix_lists(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_prefix_lists(
             response.body().as_ref(),
             output,
         )
@@ -7377,7 +7353,7 @@ pub fn parse_describe_principal_id_format_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_principal_id_format_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_principal_id_format(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_principal_id_format(
             response.body().as_ref(),
             output,
         )
@@ -7409,7 +7385,7 @@ pub fn parse_describe_public_ipv4_pools_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_public_ipv4_pools_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_public_ipv4_pools(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_public_ipv4_pools(
             response.body().as_ref(),
             output,
         )
@@ -7435,9 +7411,11 @@ pub fn parse_describe_regions_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_regions_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_regions(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeRegionsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_regions(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeRegionsError::unhandled)?;
         output.build()
     })
 }
@@ -7468,11 +7446,12 @@ pub fn parse_describe_replace_root_volume_tasks_response(
         let mut output =
             crate::output::describe_replace_root_volume_tasks_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_replace_root_volume_tasks(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeReplaceRootVolumeTasksError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_replace_root_volume_tasks(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeReplaceRootVolumeTasksError::unhandled)?;
         output.build()
     })
 }
@@ -7502,7 +7481,7 @@ pub fn parse_describe_reserved_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_reserved_instances_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_reserved_instances(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_reserved_instances(
             response.body().as_ref(),
             output,
         )
@@ -7535,11 +7514,12 @@ pub fn parse_describe_reserved_instances_listings_response(
         let mut output =
             crate::output::describe_reserved_instances_listings_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_reserved_instances_listings(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeReservedInstancesListingsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_reserved_instances_listings(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeReservedInstancesListingsError::unhandled)?;
         output.build()
     })
 }
@@ -7568,11 +7548,7 @@ pub fn parse_describe_reserved_instances_modifications_response(
         let mut output =
             crate::output::describe_reserved_instances_modifications_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_reserved_instances_modifications(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeReservedInstancesModificationsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_reserved_instances_modifications(response.body().as_ref(), output).map_err(crate::error::DescribeReservedInstancesModificationsError::unhandled)?;
         output.build()
     })
 }
@@ -7601,11 +7577,7 @@ pub fn parse_describe_reserved_instances_offerings_response(
         let mut output =
             crate::output::describe_reserved_instances_offerings_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_reserved_instances_offerings(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeReservedInstancesOfferingsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_reserved_instances_offerings(response.body().as_ref(), output).map_err(crate::error::DescribeReservedInstancesOfferingsError::unhandled)?;
         output.build()
     })
 }
@@ -7633,7 +7605,7 @@ pub fn parse_describe_route_tables_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_route_tables_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_route_tables(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_route_tables(
             response.body().as_ref(),
             output,
         )
@@ -7666,11 +7638,7 @@ pub fn parse_describe_scheduled_instance_availability_response(
         let mut output =
             crate::output::describe_scheduled_instance_availability_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_scheduled_instance_availability(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeScheduledInstanceAvailabilityError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_scheduled_instance_availability(response.body().as_ref(), output).map_err(crate::error::DescribeScheduledInstanceAvailabilityError::unhandled)?;
         output.build()
     })
 }
@@ -7700,7 +7668,7 @@ pub fn parse_describe_scheduled_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_scheduled_instances_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_scheduled_instances(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_scheduled_instances(
             response.body().as_ref(),
             output,
         )
@@ -7735,11 +7703,12 @@ pub fn parse_describe_security_group_references_response(
         let mut output =
             crate::output::describe_security_group_references_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_security_group_references(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeSecurityGroupReferencesError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_security_group_references(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeSecurityGroupReferencesError::unhandled)?;
         output.build()
     })
 }
@@ -7769,7 +7738,7 @@ pub fn parse_describe_security_group_rules_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_security_group_rules_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_security_group_rules(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_security_group_rules(
             response.body().as_ref(),
             output,
         )
@@ -7801,7 +7770,7 @@ pub fn parse_describe_security_groups_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_security_groups_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_security_groups(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_security_groups(
             response.body().as_ref(),
             output,
         )
@@ -7835,7 +7804,7 @@ pub fn parse_describe_snapshot_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_snapshot_attribute_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_snapshot_attribute(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_snapshot_attribute(
             response.body().as_ref(),
             output,
         )
@@ -7863,9 +7832,11 @@ pub fn parse_describe_snapshots_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_snapshots_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_snapshots(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeSnapshotsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_snapshots(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeSnapshotsError::unhandled)?;
         output.build()
     })
 }
@@ -7894,11 +7865,12 @@ pub fn parse_describe_spot_datafeed_subscription_response(
         let mut output =
             crate::output::describe_spot_datafeed_subscription_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_spot_datafeed_subscription(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeSpotDatafeedSubscriptionError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_spot_datafeed_subscription(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeSpotDatafeedSubscriptionError::unhandled)?;
         output.build()
     })
 }
@@ -7928,7 +7900,7 @@ pub fn parse_describe_spot_fleet_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_spot_fleet_instances_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_spot_fleet_instances(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_spot_fleet_instances(
             response.body().as_ref(),
             output,
         )
@@ -7963,11 +7935,12 @@ pub fn parse_describe_spot_fleet_request_history_response(
         let mut output =
             crate::output::describe_spot_fleet_request_history_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_spot_fleet_request_history(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeSpotFleetRequestHistoryError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_spot_fleet_request_history(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeSpotFleetRequestHistoryError::unhandled)?;
         output.build()
     })
 }
@@ -7997,7 +7970,7 @@ pub fn parse_describe_spot_fleet_requests_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_spot_fleet_requests_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_spot_fleet_requests(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_spot_fleet_requests(
             response.body().as_ref(),
             output,
         )
@@ -8031,7 +8004,7 @@ pub fn parse_describe_spot_instance_requests_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_spot_instance_requests_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_spot_instance_requests(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_spot_instance_requests(
             response.body().as_ref(),
             output,
         )
@@ -8065,7 +8038,7 @@ pub fn parse_describe_spot_price_history_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_spot_price_history_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_spot_price_history(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_spot_price_history(
             response.body().as_ref(),
             output,
         )
@@ -8099,7 +8072,7 @@ pub fn parse_describe_stale_security_groups_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_stale_security_groups_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_stale_security_groups(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_stale_security_groups(
             response.body().as_ref(),
             output,
         )
@@ -8131,7 +8104,7 @@ pub fn parse_describe_store_image_tasks_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_store_image_tasks_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_store_image_tasks(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_store_image_tasks(
             response.body().as_ref(),
             output,
         )
@@ -8157,9 +8130,11 @@ pub fn parse_describe_subnets_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_subnets_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_subnets(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeSubnetsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_subnets(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeSubnetsError::unhandled)?;
         output.build()
     })
 }
@@ -8181,8 +8156,11 @@ pub fn parse_describe_tags_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_tags_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_tags(response.body().as_ref(), output)
-            .map_err(crate::error::DescribeTagsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_tags(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeTagsError::unhandled)?;
         output.build()
     })
 }
@@ -8212,7 +8190,7 @@ pub fn parse_describe_traffic_mirror_filters_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_traffic_mirror_filters_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_traffic_mirror_filters(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_traffic_mirror_filters(
             response.body().as_ref(),
             output,
         )
@@ -8246,11 +8224,12 @@ pub fn parse_describe_traffic_mirror_sessions_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_traffic_mirror_sessions_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_traffic_mirror_sessions(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeTrafficMirrorSessionsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_traffic_mirror_sessions(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeTrafficMirrorSessionsError::unhandled)?;
         output.build()
     })
 }
@@ -8280,7 +8259,7 @@ pub fn parse_describe_traffic_mirror_targets_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_traffic_mirror_targets_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_traffic_mirror_targets(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_traffic_mirror_targets(
             response.body().as_ref(),
             output,
         )
@@ -8313,11 +8292,12 @@ pub fn parse_describe_transit_gateway_attachments_response(
         let mut output =
             crate::output::describe_transit_gateway_attachments_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_transit_gateway_attachments(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeTransitGatewayAttachmentsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_transit_gateway_attachments(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeTransitGatewayAttachmentsError::unhandled)?;
         output.build()
     })
 }
@@ -8346,11 +8326,7 @@ pub fn parse_describe_transit_gateway_connect_peers_response(
         let mut output =
             crate::output::describe_transit_gateway_connect_peers_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_transit_gateway_connect_peers(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeTransitGatewayConnectPeersError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_transit_gateway_connect_peers(response.body().as_ref(), output).map_err(crate::error::DescribeTransitGatewayConnectPeersError::unhandled)?;
         output.build()
     })
 }
@@ -8381,11 +8357,12 @@ pub fn parse_describe_transit_gateway_connects_response(
         let mut output =
             crate::output::describe_transit_gateway_connects_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_transit_gateway_connects(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeTransitGatewayConnectsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_transit_gateway_connects(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeTransitGatewayConnectsError::unhandled)?;
         output.build()
     })
 }
@@ -8414,11 +8391,7 @@ pub fn parse_describe_transit_gateway_multicast_domains_response(
         let mut output =
             crate::output::describe_transit_gateway_multicast_domains_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_transit_gateway_multicast_domains(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeTransitGatewayMulticastDomainsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_transit_gateway_multicast_domains(response.body().as_ref(), output).map_err(crate::error::DescribeTransitGatewayMulticastDomainsError::unhandled)?;
         output.build()
     })
 }
@@ -8447,11 +8420,7 @@ pub fn parse_describe_transit_gateway_peering_attachments_response(
         let mut output =
             crate::output::describe_transit_gateway_peering_attachments_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_transit_gateway_peering_attachments(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeTransitGatewayPeeringAttachmentsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_transit_gateway_peering_attachments(response.body().as_ref(), output).map_err(crate::error::DescribeTransitGatewayPeeringAttachmentsError::unhandled)?;
         output.build()
     })
 }
@@ -8480,11 +8449,7 @@ pub fn parse_describe_transit_gateway_route_tables_response(
         let mut output =
             crate::output::describe_transit_gateway_route_tables_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_transit_gateway_route_tables(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeTransitGatewayRouteTablesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_transit_gateway_route_tables(response.body().as_ref(), output).map_err(crate::error::DescribeTransitGatewayRouteTablesError::unhandled)?;
         output.build()
     })
 }
@@ -8512,7 +8477,7 @@ pub fn parse_describe_transit_gateways_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_transit_gateways_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_transit_gateways(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_transit_gateways(
             response.body().as_ref(),
             output,
         )
@@ -8545,11 +8510,7 @@ pub fn parse_describe_transit_gateway_vpc_attachments_response(
         let mut output =
             crate::output::describe_transit_gateway_vpc_attachments_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_transit_gateway_vpc_attachments(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeTransitGatewayVpcAttachmentsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_transit_gateway_vpc_attachments(response.body().as_ref(), output).map_err(crate::error::DescribeTransitGatewayVpcAttachmentsError::unhandled)?;
         output.build()
     })
 }
@@ -8578,11 +8539,7 @@ pub fn parse_describe_trunk_interface_associations_response(
         let mut output =
             crate::output::describe_trunk_interface_associations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_trunk_interface_associations(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeTrunkInterfaceAssociationsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_trunk_interface_associations(response.body().as_ref(), output).map_err(crate::error::DescribeTrunkInterfaceAssociationsError::unhandled)?;
         output.build()
     })
 }
@@ -8610,7 +8567,7 @@ pub fn parse_describe_volume_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_volume_attribute_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_volume_attribute(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_volume_attribute(
             response.body().as_ref(),
             output,
         )
@@ -8636,9 +8593,11 @@ pub fn parse_describe_volumes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_volumes_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_volumes(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeVolumesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_volumes(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeVolumesError::unhandled)?;
         output.build()
     })
 }
@@ -8668,7 +8627,7 @@ pub fn parse_describe_volumes_modifications_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_volumes_modifications_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_volumes_modifications(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_volumes_modifications(
             response.body().as_ref(),
             output,
         )
@@ -8700,7 +8659,7 @@ pub fn parse_describe_volume_status_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_volume_status_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_volume_status(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_volume_status(
             response.body().as_ref(),
             output,
         )
@@ -8732,7 +8691,7 @@ pub fn parse_describe_vpc_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_vpc_attribute_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_vpc_attribute(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_vpc_attribute(
             response.body().as_ref(),
             output,
         )
@@ -8764,7 +8723,7 @@ pub fn parse_describe_vpc_classic_link_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_vpc_classic_link_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_vpc_classic_link(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_vpc_classic_link(
             response.body().as_ref(),
             output,
         )
@@ -8797,11 +8756,7 @@ pub fn parse_describe_vpc_classic_link_dns_support_response(
         let mut output =
             crate::output::describe_vpc_classic_link_dns_support_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_vpc_classic_link_dns_support(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeVpcClassicLinkDnsSupportError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_vpc_classic_link_dns_support(response.body().as_ref(), output).map_err(crate::error::DescribeVpcClassicLinkDnsSupportError::unhandled)?;
         output.build()
     })
 }
@@ -8831,11 +8786,7 @@ pub fn parse_describe_vpc_endpoint_connection_notifications_response(
             crate::output::describe_vpc_endpoint_connection_notifications_output::Builder::default(
             );
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_vpc_endpoint_connection_notifications(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeVpcEndpointConnectionNotificationsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_vpc_endpoint_connection_notifications(response.body().as_ref(), output).map_err(crate::error::DescribeVpcEndpointConnectionNotificationsError::unhandled)?;
         output.build()
     })
 }
@@ -8866,11 +8817,12 @@ pub fn parse_describe_vpc_endpoint_connections_response(
         let mut output =
             crate::output::describe_vpc_endpoint_connections_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_vpc_endpoint_connections(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeVpcEndpointConnectionsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_vpc_endpoint_connections(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeVpcEndpointConnectionsError::unhandled)?;
         output.build()
     })
 }
@@ -8898,7 +8850,7 @@ pub fn parse_describe_vpc_endpoints_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_vpc_endpoints_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_vpc_endpoints(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_vpc_endpoints(
             response.body().as_ref(),
             output,
         )
@@ -8931,11 +8883,7 @@ pub fn parse_describe_vpc_endpoint_service_configurations_response(
         let mut output =
             crate::output::describe_vpc_endpoint_service_configurations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_vpc_endpoint_service_configurations(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeVpcEndpointServiceConfigurationsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_vpc_endpoint_service_configurations(response.body().as_ref(), output).map_err(crate::error::DescribeVpcEndpointServiceConfigurationsError::unhandled)?;
         output.build()
     })
 }
@@ -8964,11 +8912,7 @@ pub fn parse_describe_vpc_endpoint_service_permissions_response(
         let mut output =
             crate::output::describe_vpc_endpoint_service_permissions_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_vpc_endpoint_service_permissions(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeVpcEndpointServicePermissionsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_vpc_endpoint_service_permissions(response.body().as_ref(), output).map_err(crate::error::DescribeVpcEndpointServicePermissionsError::unhandled)?;
         output.build()
     })
 }
@@ -8998,7 +8942,7 @@ pub fn parse_describe_vpc_endpoint_services_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_vpc_endpoint_services_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_vpc_endpoint_services(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_vpc_endpoint_services(
             response.body().as_ref(),
             output,
         )
@@ -9032,11 +8976,12 @@ pub fn parse_describe_vpc_peering_connections_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_vpc_peering_connections_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_vpc_peering_connections(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeVpcPeeringConnectionsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_vpc_peering_connections(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeVpcPeeringConnectionsError::unhandled)?;
         output.build()
     })
 }
@@ -9058,8 +9003,11 @@ pub fn parse_describe_vpcs_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_vpcs_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_vpcs(response.body().as_ref(), output)
-            .map_err(crate::error::DescribeVpcsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_vpcs(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeVpcsError::unhandled)?;
         output.build()
     })
 }
@@ -9087,7 +9035,7 @@ pub fn parse_describe_vpn_connections_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_vpn_connections_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_vpn_connections(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_vpn_connections(
             response.body().as_ref(),
             output,
         )
@@ -9119,7 +9067,7 @@ pub fn parse_describe_vpn_gateways_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_vpn_gateways_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_vpn_gateways(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_vpn_gateways(
             response.body().as_ref(),
             output,
         )
@@ -9151,7 +9099,7 @@ pub fn parse_detach_classic_link_vpc_response(
         #[allow(unused_mut)]
         let mut output = crate::output::detach_classic_link_vpc_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_detach_classic_link_vpc(
+        output = crate::xml_deser::deser_operation_crate_operation_detach_classic_link_vpc(
             response.body().as_ref(),
             output,
         )
@@ -9231,8 +9179,11 @@ pub fn parse_detach_volume_response(
         #[allow(unused_mut)]
         let mut output = crate::output::detach_volume_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_detach_volume(response.body().as_ref(), output)
-            .map_err(crate::error::DetachVolumeError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_detach_volume(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DetachVolumeError::unhandled)?;
         output.build()
     })
 }
@@ -9286,11 +9237,12 @@ pub fn parse_disable_ebs_encryption_by_default_response(
         let mut output =
             crate::output::disable_ebs_encryption_by_default_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_disable_ebs_encryption_by_default(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DisableEbsEncryptionByDefaultError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_disable_ebs_encryption_by_default(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DisableEbsEncryptionByDefaultError::unhandled)?;
         output.build()
     })
 }
@@ -9320,7 +9272,7 @@ pub fn parse_disable_fast_snapshot_restores_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disable_fast_snapshot_restores_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_disable_fast_snapshot_restores(
+        output = crate::xml_deser::deser_operation_crate_operation_disable_fast_snapshot_restores(
             response.body().as_ref(),
             output,
         )
@@ -9352,7 +9304,7 @@ pub fn parse_disable_image_deprecation_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disable_image_deprecation_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_disable_image_deprecation(
+        output = crate::xml_deser::deser_operation_crate_operation_disable_image_deprecation(
             response.body().as_ref(),
             output,
         )
@@ -9386,7 +9338,7 @@ pub fn parse_disable_serial_console_access_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disable_serial_console_access_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_disable_serial_console_access(
+        output = crate::xml_deser::deser_operation_crate_operation_disable_serial_console_access(
             response.body().as_ref(),
             output,
         )
@@ -9420,11 +9372,7 @@ pub fn parse_disable_transit_gateway_route_table_propagation_response(
             crate::output::disable_transit_gateway_route_table_propagation_output::Builder::default(
             );
         let _ = response;
-        output = crate::xml_deser::deser_operation_disable_transit_gateway_route_table_propagation(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DisableTransitGatewayRouteTablePropagationError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_disable_transit_gateway_route_table_propagation(response.body().as_ref(), output).map_err(crate::error::DisableTransitGatewayRouteTablePropagationError::unhandled)?;
         output.build()
     })
 }
@@ -9481,7 +9429,7 @@ pub fn parse_disable_vpc_classic_link_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disable_vpc_classic_link_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_disable_vpc_classic_link(
+        output = crate::xml_deser::deser_operation_crate_operation_disable_vpc_classic_link(
             response.body().as_ref(),
             output,
         )
@@ -9516,11 +9464,12 @@ pub fn parse_disable_vpc_classic_link_dns_support_response(
         let mut output =
             crate::output::disable_vpc_classic_link_dns_support_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_disable_vpc_classic_link_dns_support(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DisableVpcClassicLinkDnsSupportError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_disable_vpc_classic_link_dns_support(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DisableVpcClassicLinkDnsSupportError::unhandled)?;
         output.build()
     })
 }
@@ -9576,11 +9525,7 @@ pub fn parse_disassociate_client_vpn_target_network_response(
         let mut output =
             crate::output::disassociate_client_vpn_target_network_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_disassociate_client_vpn_target_network(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DisassociateClientVpnTargetNetworkError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_disassociate_client_vpn_target_network(response.body().as_ref(), output).map_err(crate::error::DisassociateClientVpnTargetNetworkError::unhandled)?;
         output.build()
     })
 }
@@ -9609,11 +9554,7 @@ pub fn parse_disassociate_enclave_certificate_iam_role_response(
         let mut output =
             crate::output::disassociate_enclave_certificate_iam_role_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_disassociate_enclave_certificate_iam_role(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DisassociateEnclaveCertificateIamRoleError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_disassociate_enclave_certificate_iam_role(response.body().as_ref(), output).map_err(crate::error::DisassociateEnclaveCertificateIamRoleError::unhandled)?;
         output.build()
     })
 }
@@ -9644,11 +9585,12 @@ pub fn parse_disassociate_iam_instance_profile_response(
         let mut output =
             crate::output::disassociate_iam_instance_profile_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_disassociate_iam_instance_profile(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DisassociateIamInstanceProfileError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_disassociate_iam_instance_profile(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DisassociateIamInstanceProfileError::unhandled)?;
         output.build()
     })
 }
@@ -9679,11 +9621,12 @@ pub fn parse_disassociate_instance_event_window_response(
         let mut output =
             crate::output::disassociate_instance_event_window_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_disassociate_instance_event_window(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DisassociateInstanceEventWindowError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_disassociate_instance_event_window(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DisassociateInstanceEventWindowError::unhandled)?;
         output.build()
     })
 }
@@ -9740,7 +9683,7 @@ pub fn parse_disassociate_subnet_cidr_block_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disassociate_subnet_cidr_block_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_disassociate_subnet_cidr_block(
+        output = crate::xml_deser::deser_operation_crate_operation_disassociate_subnet_cidr_block(
             response.body().as_ref(),
             output,
         )
@@ -9773,11 +9716,7 @@ pub fn parse_disassociate_transit_gateway_multicast_domain_response(
         let mut output =
             crate::output::disassociate_transit_gateway_multicast_domain_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_disassociate_transit_gateway_multicast_domain(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DisassociateTransitGatewayMulticastDomainError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_disassociate_transit_gateway_multicast_domain(response.body().as_ref(), output).map_err(crate::error::DisassociateTransitGatewayMulticastDomainError::unhandled)?;
         output.build()
     })
 }
@@ -9806,11 +9745,7 @@ pub fn parse_disassociate_transit_gateway_route_table_response(
         let mut output =
             crate::output::disassociate_transit_gateway_route_table_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_disassociate_transit_gateway_route_table(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DisassociateTransitGatewayRouteTableError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_disassociate_transit_gateway_route_table(response.body().as_ref(), output).map_err(crate::error::DisassociateTransitGatewayRouteTableError::unhandled)?;
         output.build()
     })
 }
@@ -9840,7 +9775,7 @@ pub fn parse_disassociate_trunk_interface_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disassociate_trunk_interface_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_disassociate_trunk_interface(
+        output = crate::xml_deser::deser_operation_crate_operation_disassociate_trunk_interface(
             response.body().as_ref(),
             output,
         )
@@ -9874,7 +9809,7 @@ pub fn parse_disassociate_vpc_cidr_block_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disassociate_vpc_cidr_block_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_disassociate_vpc_cidr_block(
+        output = crate::xml_deser::deser_operation_crate_operation_disassociate_vpc_cidr_block(
             response.body().as_ref(),
             output,
         )
@@ -9908,11 +9843,12 @@ pub fn parse_enable_ebs_encryption_by_default_response(
         #[allow(unused_mut)]
         let mut output = crate::output::enable_ebs_encryption_by_default_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_enable_ebs_encryption_by_default(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::EnableEbsEncryptionByDefaultError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_enable_ebs_encryption_by_default(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::EnableEbsEncryptionByDefaultError::unhandled)?;
         output.build()
     })
 }
@@ -9942,7 +9878,7 @@ pub fn parse_enable_fast_snapshot_restores_response(
         #[allow(unused_mut)]
         let mut output = crate::output::enable_fast_snapshot_restores_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_enable_fast_snapshot_restores(
+        output = crate::xml_deser::deser_operation_crate_operation_enable_fast_snapshot_restores(
             response.body().as_ref(),
             output,
         )
@@ -9974,7 +9910,7 @@ pub fn parse_enable_image_deprecation_response(
         #[allow(unused_mut)]
         let mut output = crate::output::enable_image_deprecation_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_enable_image_deprecation(
+        output = crate::xml_deser::deser_operation_crate_operation_enable_image_deprecation(
             response.body().as_ref(),
             output,
         )
@@ -10008,7 +9944,7 @@ pub fn parse_enable_serial_console_access_response(
         #[allow(unused_mut)]
         let mut output = crate::output::enable_serial_console_access_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_enable_serial_console_access(
+        output = crate::xml_deser::deser_operation_crate_operation_enable_serial_console_access(
             response.body().as_ref(),
             output,
         )
@@ -10042,11 +9978,7 @@ pub fn parse_enable_transit_gateway_route_table_propagation_response(
             crate::output::enable_transit_gateway_route_table_propagation_output::Builder::default(
             );
         let _ = response;
-        output = crate::xml_deser::deser_operation_enable_transit_gateway_route_table_propagation(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::EnableTransitGatewayRouteTablePropagationError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_enable_transit_gateway_route_table_propagation(response.body().as_ref(), output).map_err(crate::error::EnableTransitGatewayRouteTablePropagationError::unhandled)?;
         output.build()
     })
 }
@@ -10124,7 +10056,7 @@ pub fn parse_enable_vpc_classic_link_response(
         #[allow(unused_mut)]
         let mut output = crate::output::enable_vpc_classic_link_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_enable_vpc_classic_link(
+        output = crate::xml_deser::deser_operation_crate_operation_enable_vpc_classic_link(
             response.body().as_ref(),
             output,
         )
@@ -10159,11 +10091,12 @@ pub fn parse_enable_vpc_classic_link_dns_support_response(
         let mut output =
             crate::output::enable_vpc_classic_link_dns_support_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_enable_vpc_classic_link_dns_support(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::EnableVpcClassicLinkDnsSupportError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_enable_vpc_classic_link_dns_support(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::EnableVpcClassicLinkDnsSupportError::unhandled)?;
         output.build()
     })
 }
@@ -10190,14 +10123,7 @@ pub fn parse_export_client_vpn_client_certificate_revocation_list_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::export_client_vpn_client_certificate_revocation_list_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_export_client_vpn_client_certificate_revocation_list(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(
-                crate::error::ExportClientVpnClientCertificateRevocationListError::unhandled,
-            )?;
+        output = crate::xml_deser::deser_operation_crate_operation_export_client_vpn_client_certificate_revocation_list(response.body().as_ref(), output).map_err(crate::error::ExportClientVpnClientCertificateRevocationListError::unhandled)?;
         output.build()
     })
 }
@@ -10226,11 +10152,7 @@ pub fn parse_export_client_vpn_client_configuration_response(
         let mut output =
             crate::output::export_client_vpn_client_configuration_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_export_client_vpn_client_configuration(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ExportClientVpnClientConfigurationError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_export_client_vpn_client_configuration(response.body().as_ref(), output).map_err(crate::error::ExportClientVpnClientConfigurationError::unhandled)?;
         output.build()
     })
 }
@@ -10252,8 +10174,11 @@ pub fn parse_export_image_response(
         #[allow(unused_mut)]
         let mut output = crate::output::export_image_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_export_image(response.body().as_ref(), output)
-            .map_err(crate::error::ExportImageError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_export_image(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ExportImageError::unhandled)?;
         output.build()
     })
 }
@@ -10283,7 +10208,7 @@ pub fn parse_export_transit_gateway_routes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::export_transit_gateway_routes_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_export_transit_gateway_routes(
+        output = crate::xml_deser::deser_operation_crate_operation_export_transit_gateway_routes(
             response.body().as_ref(),
             output,
         )
@@ -10316,11 +10241,7 @@ pub fn parse_get_associated_enclave_certificate_iam_roles_response(
         let mut output =
             crate::output::get_associated_enclave_certificate_iam_roles_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_associated_enclave_certificate_iam_roles(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::GetAssociatedEnclaveCertificateIamRolesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_associated_enclave_certificate_iam_roles(response.body().as_ref(), output).map_err(crate::error::GetAssociatedEnclaveCertificateIamRolesError::unhandled)?;
         output.build()
     })
 }
@@ -10350,7 +10271,7 @@ pub fn parse_get_associated_ipv6_pool_cidrs_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_associated_ipv6_pool_cidrs_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_associated_ipv6_pool_cidrs(
+        output = crate::xml_deser::deser_operation_crate_operation_get_associated_ipv6_pool_cidrs(
             response.body().as_ref(),
             output,
         )
@@ -10384,7 +10305,7 @@ pub fn parse_get_capacity_reservation_usage_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_capacity_reservation_usage_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_capacity_reservation_usage(
+        output = crate::xml_deser::deser_operation_crate_operation_get_capacity_reservation_usage(
             response.body().as_ref(),
             output,
         )
@@ -10412,9 +10333,11 @@ pub fn parse_get_coip_pool_usage_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_coip_pool_usage_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_get_coip_pool_usage(response.body().as_ref(), output)
-                .map_err(crate::error::GetCoipPoolUsageError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_coip_pool_usage(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetCoipPoolUsageError::unhandled)?;
         output.build()
     })
 }
@@ -10438,9 +10361,11 @@ pub fn parse_get_console_output_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_console_output_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_get_console_output(response.body().as_ref(), output)
-                .map_err(crate::error::GetConsoleOutputError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_console_output(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetConsoleOutputError::unhandled)?;
         output.build()
     })
 }
@@ -10468,7 +10393,7 @@ pub fn parse_get_console_screenshot_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_console_screenshot_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_console_screenshot(
+        output = crate::xml_deser::deser_operation_crate_operation_get_console_screenshot(
             response.body().as_ref(),
             output,
         )
@@ -10502,11 +10427,12 @@ pub fn parse_get_default_credit_specification_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_default_credit_specification_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_default_credit_specification(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::GetDefaultCreditSpecificationError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_get_default_credit_specification(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetDefaultCreditSpecificationError::unhandled)?;
         output.build()
     })
 }
@@ -10534,7 +10460,7 @@ pub fn parse_get_ebs_default_kms_key_id_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_ebs_default_kms_key_id_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_ebs_default_kms_key_id(
+        output = crate::xml_deser::deser_operation_crate_operation_get_ebs_default_kms_key_id(
             response.body().as_ref(),
             output,
         )
@@ -10568,7 +10494,7 @@ pub fn parse_get_ebs_encryption_by_default_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_ebs_encryption_by_default_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_ebs_encryption_by_default(
+        output = crate::xml_deser::deser_operation_crate_operation_get_ebs_encryption_by_default(
             response.body().as_ref(),
             output,
         )
@@ -10603,11 +10529,12 @@ pub fn parse_get_flow_logs_integration_template_response(
         let mut output =
             crate::output::get_flow_logs_integration_template_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_flow_logs_integration_template(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::GetFlowLogsIntegrationTemplateError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_get_flow_logs_integration_template(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetFlowLogsIntegrationTemplateError::unhandled)?;
         output.build()
     })
 }
@@ -10638,11 +10565,12 @@ pub fn parse_get_groups_for_capacity_reservation_response(
         let mut output =
             crate::output::get_groups_for_capacity_reservation_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_groups_for_capacity_reservation(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::GetGroupsForCapacityReservationError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_get_groups_for_capacity_reservation(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetGroupsForCapacityReservationError::unhandled)?;
         output.build()
     })
 }
@@ -10671,11 +10599,7 @@ pub fn parse_get_host_reservation_purchase_preview_response(
         let mut output =
             crate::output::get_host_reservation_purchase_preview_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_host_reservation_purchase_preview(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::GetHostReservationPurchasePreviewError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_host_reservation_purchase_preview(response.body().as_ref(), output).map_err(crate::error::GetHostReservationPurchasePreviewError::unhandled)?;
         output.build()
     })
 }
@@ -10703,7 +10627,7 @@ pub fn parse_get_launch_template_data_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_launch_template_data_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_launch_template_data(
+        output = crate::xml_deser::deser_operation_crate_operation_get_launch_template_data(
             response.body().as_ref(),
             output,
         )
@@ -10736,11 +10660,12 @@ pub fn parse_get_managed_prefix_list_associations_response(
         let mut output =
             crate::output::get_managed_prefix_list_associations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_managed_prefix_list_associations(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::GetManagedPrefixListAssociationsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_get_managed_prefix_list_associations(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetManagedPrefixListAssociationsError::unhandled)?;
         output.build()
     })
 }
@@ -10770,7 +10695,7 @@ pub fn parse_get_managed_prefix_list_entries_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_managed_prefix_list_entries_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_managed_prefix_list_entries(
+        output = crate::xml_deser::deser_operation_crate_operation_get_managed_prefix_list_entries(
             response.body().as_ref(),
             output,
         )
@@ -10796,9 +10721,11 @@ pub fn parse_get_password_data_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_password_data_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_get_password_data(response.body().as_ref(), output)
-                .map_err(crate::error::GetPasswordDataError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_password_data(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetPasswordDataError::unhandled)?;
         output.build()
     })
 }
@@ -10827,11 +10754,7 @@ pub fn parse_get_reserved_instances_exchange_quote_response(
         let mut output =
             crate::output::get_reserved_instances_exchange_quote_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_reserved_instances_exchange_quote(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::GetReservedInstancesExchangeQuoteError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_reserved_instances_exchange_quote(response.body().as_ref(), output).map_err(crate::error::GetReservedInstancesExchangeQuoteError::unhandled)?;
         output.build()
     })
 }
@@ -10861,11 +10784,12 @@ pub fn parse_get_serial_console_access_status_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_serial_console_access_status_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_serial_console_access_status(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::GetSerialConsoleAccessStatusError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_get_serial_console_access_status(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetSerialConsoleAccessStatusError::unhandled)?;
         output.build()
     })
 }
@@ -10895,7 +10819,7 @@ pub fn parse_get_subnet_cidr_reservations_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_subnet_cidr_reservations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_subnet_cidr_reservations(
+        output = crate::xml_deser::deser_operation_crate_operation_get_subnet_cidr_reservations(
             response.body().as_ref(),
             output,
         )
@@ -10928,11 +10852,7 @@ pub fn parse_get_transit_gateway_attachment_propagations_response(
         let mut output =
             crate::output::get_transit_gateway_attachment_propagations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_transit_gateway_attachment_propagations(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::GetTransitGatewayAttachmentPropagationsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_transit_gateway_attachment_propagations(response.body().as_ref(), output).map_err(crate::error::GetTransitGatewayAttachmentPropagationsError::unhandled)?;
         output.build()
     })
 }
@@ -10959,12 +10879,7 @@ pub fn parse_get_transit_gateway_multicast_domain_associations_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::get_transit_gateway_multicast_domain_associations_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_get_transit_gateway_multicast_domain_associations(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::GetTransitGatewayMulticastDomainAssociationsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_transit_gateway_multicast_domain_associations(response.body().as_ref(), output).map_err(crate::error::GetTransitGatewayMulticastDomainAssociationsError::unhandled)?;
         output.build()
     })
 }
@@ -10993,11 +10908,7 @@ pub fn parse_get_transit_gateway_prefix_list_references_response(
         let mut output =
             crate::output::get_transit_gateway_prefix_list_references_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_transit_gateway_prefix_list_references(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::GetTransitGatewayPrefixListReferencesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_transit_gateway_prefix_list_references(response.body().as_ref(), output).map_err(crate::error::GetTransitGatewayPrefixListReferencesError::unhandled)?;
         output.build()
     })
 }
@@ -11026,11 +10937,7 @@ pub fn parse_get_transit_gateway_route_table_associations_response(
         let mut output =
             crate::output::get_transit_gateway_route_table_associations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_transit_gateway_route_table_associations(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::GetTransitGatewayRouteTableAssociationsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_transit_gateway_route_table_associations(response.body().as_ref(), output).map_err(crate::error::GetTransitGatewayRouteTableAssociationsError::unhandled)?;
         output.build()
     })
 }
@@ -11059,11 +10966,7 @@ pub fn parse_get_transit_gateway_route_table_propagations_response(
         let mut output =
             crate::output::get_transit_gateway_route_table_propagations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_transit_gateway_route_table_propagations(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::GetTransitGatewayRouteTablePropagationsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_transit_gateway_route_table_propagations(response.body().as_ref(), output).map_err(crate::error::GetTransitGatewayRouteTablePropagationsError::unhandled)?;
         output.build()
     })
 }
@@ -11090,14 +10993,7 @@ pub fn parse_import_client_vpn_client_certificate_revocation_list_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::import_client_vpn_client_certificate_revocation_list_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_import_client_vpn_client_certificate_revocation_list(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(
-                crate::error::ImportClientVpnClientCertificateRevocationListError::unhandled,
-            )?;
+        output = crate::xml_deser::deser_operation_crate_operation_import_client_vpn_client_certificate_revocation_list(response.body().as_ref(), output).map_err(crate::error::ImportClientVpnClientCertificateRevocationListError::unhandled)?;
         output.build()
     })
 }
@@ -11119,8 +11015,11 @@ pub fn parse_import_image_response(
         #[allow(unused_mut)]
         let mut output = crate::output::import_image_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_import_image(response.body().as_ref(), output)
-            .map_err(crate::error::ImportImageError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_import_image(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ImportImageError::unhandled)?;
         output.build()
     })
 }
@@ -11142,9 +11041,11 @@ pub fn parse_import_instance_response(
         #[allow(unused_mut)]
         let mut output = crate::output::import_instance_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_import_instance(response.body().as_ref(), output)
-                .map_err(crate::error::ImportInstanceError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_import_instance(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ImportInstanceError::unhandled)?;
         output.build()
     })
 }
@@ -11166,9 +11067,11 @@ pub fn parse_import_key_pair_response(
         #[allow(unused_mut)]
         let mut output = crate::output::import_key_pair_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_import_key_pair(response.body().as_ref(), output)
-                .map_err(crate::error::ImportKeyPairError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_import_key_pair(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ImportKeyPairError::unhandled)?;
         output.build()
     })
 }
@@ -11190,9 +11093,11 @@ pub fn parse_import_snapshot_response(
         #[allow(unused_mut)]
         let mut output = crate::output::import_snapshot_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_import_snapshot(response.body().as_ref(), output)
-                .map_err(crate::error::ImportSnapshotError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_import_snapshot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ImportSnapshotError::unhandled)?;
         output.build()
     })
 }
@@ -11214,8 +11119,11 @@ pub fn parse_import_volume_response(
         #[allow(unused_mut)]
         let mut output = crate::output::import_volume_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_import_volume(response.body().as_ref(), output)
-            .map_err(crate::error::ImportVolumeError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_import_volume(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ImportVolumeError::unhandled)?;
         output.build()
     })
 }
@@ -11243,7 +11151,7 @@ pub fn parse_modify_address_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_address_attribute_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_address_attribute(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_address_attribute(
             response.body().as_ref(),
             output,
         )
@@ -11277,7 +11185,7 @@ pub fn parse_modify_availability_zone_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_availability_zone_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_availability_zone_group(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_availability_zone_group(
             response.body().as_ref(),
             output,
         )
@@ -11311,7 +11219,7 @@ pub fn parse_modify_capacity_reservation_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_capacity_reservation_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_capacity_reservation(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_capacity_reservation(
             response.body().as_ref(),
             output,
         )
@@ -11343,7 +11251,7 @@ pub fn parse_modify_client_vpn_endpoint_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_client_vpn_endpoint_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_client_vpn_endpoint(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_client_vpn_endpoint(
             response.body().as_ref(),
             output,
         )
@@ -11376,11 +11284,12 @@ pub fn parse_modify_default_credit_specification_response(
         let mut output =
             crate::output::modify_default_credit_specification_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_default_credit_specification(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ModifyDefaultCreditSpecificationError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_modify_default_credit_specification(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ModifyDefaultCreditSpecificationError::unhandled)?;
         output.build()
     })
 }
@@ -11410,7 +11319,7 @@ pub fn parse_modify_ebs_default_kms_key_id_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_ebs_default_kms_key_id_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_ebs_default_kms_key_id(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_ebs_default_kms_key_id(
             response.body().as_ref(),
             output,
         )
@@ -11436,8 +11345,11 @@ pub fn parse_modify_fleet_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_fleet_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_fleet(response.body().as_ref(), output)
-            .map_err(crate::error::ModifyFleetError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_fleet(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifyFleetError::unhandled)?;
         output.build()
     })
 }
@@ -11467,7 +11379,7 @@ pub fn parse_modify_fpga_image_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_fpga_image_attribute_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_fpga_image_attribute(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_fpga_image_attribute(
             response.body().as_ref(),
             output,
         )
@@ -11493,8 +11405,11 @@ pub fn parse_modify_hosts_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_hosts_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_hosts(response.body().as_ref(), output)
-            .map_err(crate::error::ModifyHostsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_hosts(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifyHostsError::unhandled)?;
         output.build()
     })
 }
@@ -11626,11 +11541,7 @@ pub fn parse_modify_instance_capacity_reservation_attributes_response(
             crate::output::modify_instance_capacity_reservation_attributes_output::Builder::default(
             );
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_instance_capacity_reservation_attributes(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ModifyInstanceCapacityReservationAttributesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_instance_capacity_reservation_attributes(response.body().as_ref(), output).map_err(crate::error::ModifyInstanceCapacityReservationAttributesError::unhandled)?;
         output.build()
     })
 }
@@ -11659,11 +11570,12 @@ pub fn parse_modify_instance_credit_specification_response(
         let mut output =
             crate::output::modify_instance_credit_specification_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_instance_credit_specification(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ModifyInstanceCreditSpecificationError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_modify_instance_credit_specification(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ModifyInstanceCreditSpecificationError::unhandled)?;
         output.build()
     })
 }
@@ -11693,11 +11605,12 @@ pub fn parse_modify_instance_event_start_time_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_instance_event_start_time_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_instance_event_start_time(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ModifyInstanceEventStartTimeError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_modify_instance_event_start_time(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ModifyInstanceEventStartTimeError::unhandled)?;
         output.build()
     })
 }
@@ -11727,7 +11640,7 @@ pub fn parse_modify_instance_event_window_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_instance_event_window_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_instance_event_window(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_instance_event_window(
             response.body().as_ref(),
             output,
         )
@@ -11761,11 +11674,12 @@ pub fn parse_modify_instance_metadata_options_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_instance_metadata_options_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_instance_metadata_options(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ModifyInstanceMetadataOptionsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_modify_instance_metadata_options(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ModifyInstanceMetadataOptionsError::unhandled)?;
         output.build()
     })
 }
@@ -11793,7 +11707,7 @@ pub fn parse_modify_instance_placement_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_instance_placement_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_instance_placement(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_instance_placement(
             response.body().as_ref(),
             output,
         )
@@ -11825,7 +11739,7 @@ pub fn parse_modify_launch_template_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_launch_template_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_launch_template(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_launch_template(
             response.body().as_ref(),
             output,
         )
@@ -11857,7 +11771,7 @@ pub fn parse_modify_managed_prefix_list_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_managed_prefix_list_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_managed_prefix_list(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_managed_prefix_list(
             response.body().as_ref(),
             output,
         )
@@ -11919,7 +11833,7 @@ pub fn parse_modify_reserved_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_reserved_instances_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_reserved_instances(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_reserved_instances(
             response.body().as_ref(),
             output,
         )
@@ -11953,7 +11867,7 @@ pub fn parse_modify_security_group_rules_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_security_group_rules_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_security_group_rules(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_security_group_rules(
             response.body().as_ref(),
             output,
         )
@@ -12012,7 +11926,7 @@ pub fn parse_modify_spot_fleet_request_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_spot_fleet_request_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_spot_fleet_request(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_spot_fleet_request(
             response.body().as_ref(),
             output,
         )
@@ -12072,11 +11986,7 @@ pub fn parse_modify_traffic_mirror_filter_network_services_response(
         let mut output =
             crate::output::modify_traffic_mirror_filter_network_services_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_traffic_mirror_filter_network_services(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ModifyTrafficMirrorFilterNetworkServicesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_traffic_mirror_filter_network_services(response.body().as_ref(), output).map_err(crate::error::ModifyTrafficMirrorFilterNetworkServicesError::unhandled)?;
         output.build()
     })
 }
@@ -12107,11 +12017,12 @@ pub fn parse_modify_traffic_mirror_filter_rule_response(
         let mut output =
             crate::output::modify_traffic_mirror_filter_rule_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_traffic_mirror_filter_rule(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ModifyTrafficMirrorFilterRuleError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_modify_traffic_mirror_filter_rule(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ModifyTrafficMirrorFilterRuleError::unhandled)?;
         output.build()
     })
 }
@@ -12141,7 +12052,7 @@ pub fn parse_modify_traffic_mirror_session_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_traffic_mirror_session_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_traffic_mirror_session(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_traffic_mirror_session(
             response.body().as_ref(),
             output,
         )
@@ -12173,7 +12084,7 @@ pub fn parse_modify_transit_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_transit_gateway_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_transit_gateway(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_transit_gateway(
             response.body().as_ref(),
             output,
         )
@@ -12206,11 +12117,7 @@ pub fn parse_modify_transit_gateway_prefix_list_reference_response(
         let mut output =
             crate::output::modify_transit_gateway_prefix_list_reference_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_transit_gateway_prefix_list_reference(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ModifyTransitGatewayPrefixListReferenceError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_transit_gateway_prefix_list_reference(response.body().as_ref(), output).map_err(crate::error::ModifyTransitGatewayPrefixListReferenceError::unhandled)?;
         output.build()
     })
 }
@@ -12239,11 +12146,7 @@ pub fn parse_modify_transit_gateway_vpc_attachment_response(
         let mut output =
             crate::output::modify_transit_gateway_vpc_attachment_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_transit_gateway_vpc_attachment(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ModifyTransitGatewayVpcAttachmentError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_transit_gateway_vpc_attachment(response.body().as_ref(), output).map_err(crate::error::ModifyTransitGatewayVpcAttachmentError::unhandled)?;
         output.build()
     })
 }
@@ -12265,8 +12168,11 @@ pub fn parse_modify_volume_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_volume_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_volume(response.body().as_ref(), output)
-            .map_err(crate::error::ModifyVolumeError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_volume(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifyVolumeError::unhandled)?;
         output.build()
     })
 }
@@ -12344,9 +12250,11 @@ pub fn parse_modify_vpc_endpoint_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_vpc_endpoint_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_modify_vpc_endpoint(response.body().as_ref(), output)
-                .map_err(crate::error::ModifyVpcEndpointError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_vpc_endpoint(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifyVpcEndpointError::unhandled)?;
         output.build()
     })
 }
@@ -12375,11 +12283,7 @@ pub fn parse_modify_vpc_endpoint_connection_notification_response(
         let mut output =
             crate::output::modify_vpc_endpoint_connection_notification_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_vpc_endpoint_connection_notification(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ModifyVpcEndpointConnectionNotificationError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_vpc_endpoint_connection_notification(response.body().as_ref(), output).map_err(crate::error::ModifyVpcEndpointConnectionNotificationError::unhandled)?;
         output.build()
     })
 }
@@ -12408,11 +12312,7 @@ pub fn parse_modify_vpc_endpoint_service_configuration_response(
         let mut output =
             crate::output::modify_vpc_endpoint_service_configuration_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_vpc_endpoint_service_configuration(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ModifyVpcEndpointServiceConfigurationError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_vpc_endpoint_service_configuration(response.body().as_ref(), output).map_err(crate::error::ModifyVpcEndpointServiceConfigurationError::unhandled)?;
         output.build()
     })
 }
@@ -12441,11 +12341,7 @@ pub fn parse_modify_vpc_endpoint_service_permissions_response(
         let mut output =
             crate::output::modify_vpc_endpoint_service_permissions_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_vpc_endpoint_service_permissions(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ModifyVpcEndpointServicePermissionsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_vpc_endpoint_service_permissions(response.body().as_ref(), output).map_err(crate::error::ModifyVpcEndpointServicePermissionsError::unhandled)?;
         output.build()
     })
 }
@@ -12474,11 +12370,7 @@ pub fn parse_modify_vpc_peering_connection_options_response(
         let mut output =
             crate::output::modify_vpc_peering_connection_options_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_vpc_peering_connection_options(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ModifyVpcPeeringConnectionOptionsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_vpc_peering_connection_options(response.body().as_ref(), output).map_err(crate::error::ModifyVpcPeeringConnectionOptionsError::unhandled)?;
         output.build()
     })
 }
@@ -12502,9 +12394,11 @@ pub fn parse_modify_vpc_tenancy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_vpc_tenancy_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_modify_vpc_tenancy(response.body().as_ref(), output)
-                .map_err(crate::error::ModifyVpcTenancyError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_vpc_tenancy(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifyVpcTenancyError::unhandled)?;
         output.build()
     })
 }
@@ -12532,7 +12426,7 @@ pub fn parse_modify_vpn_connection_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_vpn_connection_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_vpn_connection(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_vpn_connection(
             response.body().as_ref(),
             output,
         )
@@ -12566,7 +12460,7 @@ pub fn parse_modify_vpn_connection_options_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_vpn_connection_options_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_vpn_connection_options(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_vpn_connection_options(
             response.body().as_ref(),
             output,
         )
@@ -12600,7 +12494,7 @@ pub fn parse_modify_vpn_tunnel_certificate_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_vpn_tunnel_certificate_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_vpn_tunnel_certificate(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_vpn_tunnel_certificate(
             response.body().as_ref(),
             output,
         )
@@ -12632,7 +12526,7 @@ pub fn parse_modify_vpn_tunnel_options_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_vpn_tunnel_options_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_vpn_tunnel_options(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_vpn_tunnel_options(
             response.body().as_ref(),
             output,
         )
@@ -12660,9 +12554,11 @@ pub fn parse_monitor_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::monitor_instances_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_monitor_instances(response.body().as_ref(), output)
-                .map_err(crate::error::MonitorInstancesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_monitor_instances(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::MonitorInstancesError::unhandled)?;
         output.build()
     })
 }
@@ -12686,9 +12582,11 @@ pub fn parse_move_address_to_vpc_response(
         #[allow(unused_mut)]
         let mut output = crate::output::move_address_to_vpc_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_move_address_to_vpc(response.body().as_ref(), output)
-                .map_err(crate::error::MoveAddressToVpcError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_move_address_to_vpc(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::MoveAddressToVpcError::unhandled)?;
         output.build()
     })
 }
@@ -12716,7 +12614,7 @@ pub fn parse_provision_byoip_cidr_response(
         #[allow(unused_mut)]
         let mut output = crate::output::provision_byoip_cidr_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_provision_byoip_cidr(
+        output = crate::xml_deser::deser_operation_crate_operation_provision_byoip_cidr(
             response.body().as_ref(),
             output,
         )
@@ -12748,7 +12646,7 @@ pub fn parse_purchase_host_reservation_response(
         #[allow(unused_mut)]
         let mut output = crate::output::purchase_host_reservation_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_purchase_host_reservation(
+        output = crate::xml_deser::deser_operation_crate_operation_purchase_host_reservation(
             response.body().as_ref(),
             output,
         )
@@ -12781,11 +12679,12 @@ pub fn parse_purchase_reserved_instances_offering_response(
         let mut output =
             crate::output::purchase_reserved_instances_offering_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_purchase_reserved_instances_offering(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::PurchaseReservedInstancesOfferingError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_purchase_reserved_instances_offering(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::PurchaseReservedInstancesOfferingError::unhandled)?;
         output.build()
     })
 }
@@ -12815,7 +12714,7 @@ pub fn parse_purchase_scheduled_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::purchase_scheduled_instances_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_purchase_scheduled_instances(
+        output = crate::xml_deser::deser_operation_crate_operation_purchase_scheduled_instances(
             response.body().as_ref(),
             output,
         )
@@ -12862,8 +12761,11 @@ pub fn parse_register_image_response(
         #[allow(unused_mut)]
         let mut output = crate::output::register_image_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_register_image(response.body().as_ref(), output)
-            .map_err(crate::error::RegisterImageError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_register_image(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RegisterImageError::unhandled)?;
         output.build()
     })
 }
@@ -12893,11 +12795,7 @@ pub fn parse_register_instance_event_notification_attributes_response(
             crate::output::register_instance_event_notification_attributes_output::Builder::default(
             );
         let _ = response;
-        output = crate::xml_deser::deser_operation_register_instance_event_notification_attributes(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::RegisterInstanceEventNotificationAttributesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_register_instance_event_notification_attributes(response.body().as_ref(), output).map_err(crate::error::RegisterInstanceEventNotificationAttributesError::unhandled)?;
         output.build()
     })
 }
@@ -12924,12 +12822,7 @@ pub fn parse_register_transit_gateway_multicast_group_members_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::register_transit_gateway_multicast_group_members_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_register_transit_gateway_multicast_group_members(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::RegisterTransitGatewayMulticastGroupMembersError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_register_transit_gateway_multicast_group_members(response.body().as_ref(), output).map_err(crate::error::RegisterTransitGatewayMulticastGroupMembersError::unhandled)?;
         output.build()
     })
 }
@@ -12956,12 +12849,7 @@ pub fn parse_register_transit_gateway_multicast_group_sources_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::register_transit_gateway_multicast_group_sources_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_register_transit_gateway_multicast_group_sources(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::RegisterTransitGatewayMulticastGroupSourcesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_register_transit_gateway_multicast_group_sources(response.body().as_ref(), output).map_err(crate::error::RegisterTransitGatewayMulticastGroupSourcesError::unhandled)?;
         output.build()
     })
 }
@@ -12988,14 +12876,7 @@ pub fn parse_reject_transit_gateway_multicast_domain_associations_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::reject_transit_gateway_multicast_domain_associations_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_reject_transit_gateway_multicast_domain_associations(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(
-                crate::error::RejectTransitGatewayMulticastDomainAssociationsError::unhandled,
-            )?;
+        output = crate::xml_deser::deser_operation_crate_operation_reject_transit_gateway_multicast_domain_associations(response.body().as_ref(), output).map_err(crate::error::RejectTransitGatewayMulticastDomainAssociationsError::unhandled)?;
         output.build()
     })
 }
@@ -13024,11 +12905,7 @@ pub fn parse_reject_transit_gateway_peering_attachment_response(
         let mut output =
             crate::output::reject_transit_gateway_peering_attachment_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_reject_transit_gateway_peering_attachment(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::RejectTransitGatewayPeeringAttachmentError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_reject_transit_gateway_peering_attachment(response.body().as_ref(), output).map_err(crate::error::RejectTransitGatewayPeeringAttachmentError::unhandled)?;
         output.build()
     })
 }
@@ -13057,11 +12934,7 @@ pub fn parse_reject_transit_gateway_vpc_attachment_response(
         let mut output =
             crate::output::reject_transit_gateway_vpc_attachment_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_reject_transit_gateway_vpc_attachment(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::RejectTransitGatewayVpcAttachmentError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_reject_transit_gateway_vpc_attachment(response.body().as_ref(), output).map_err(crate::error::RejectTransitGatewayVpcAttachmentError::unhandled)?;
         output.build()
     })
 }
@@ -13091,7 +12964,7 @@ pub fn parse_reject_vpc_endpoint_connections_response(
         #[allow(unused_mut)]
         let mut output = crate::output::reject_vpc_endpoint_connections_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_reject_vpc_endpoint_connections(
+        output = crate::xml_deser::deser_operation_crate_operation_reject_vpc_endpoint_connections(
             response.body().as_ref(),
             output,
         )
@@ -13125,7 +12998,7 @@ pub fn parse_reject_vpc_peering_connection_response(
         #[allow(unused_mut)]
         let mut output = crate::output::reject_vpc_peering_connection_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_reject_vpc_peering_connection(
+        output = crate::xml_deser::deser_operation_crate_operation_reject_vpc_peering_connection(
             response.body().as_ref(),
             output,
         )
@@ -13172,8 +13045,11 @@ pub fn parse_release_hosts_response(
         #[allow(unused_mut)]
         let mut output = crate::output::release_hosts_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_release_hosts(response.body().as_ref(), output)
-            .map_err(crate::error::ReleaseHostsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_release_hosts(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ReleaseHostsError::unhandled)?;
         output.build()
     })
 }
@@ -13202,11 +13078,7 @@ pub fn parse_replace_iam_instance_profile_association_response(
         let mut output =
             crate::output::replace_iam_instance_profile_association_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_replace_iam_instance_profile_association(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ReplaceIamInstanceProfileAssociationError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_replace_iam_instance_profile_association(response.body().as_ref(), output).map_err(crate::error::ReplaceIamInstanceProfileAssociationError::unhandled)?;
         output.build()
     })
 }
@@ -13236,7 +13108,7 @@ pub fn parse_replace_network_acl_association_response(
         #[allow(unused_mut)]
         let mut output = crate::output::replace_network_acl_association_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_replace_network_acl_association(
+        output = crate::xml_deser::deser_operation_crate_operation_replace_network_acl_association(
             response.body().as_ref(),
             output,
         )
@@ -13318,7 +13190,7 @@ pub fn parse_replace_route_table_association_response(
         #[allow(unused_mut)]
         let mut output = crate::output::replace_route_table_association_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_replace_route_table_association(
+        output = crate::xml_deser::deser_operation_crate_operation_replace_route_table_association(
             response.body().as_ref(),
             output,
         )
@@ -13352,7 +13224,7 @@ pub fn parse_replace_transit_gateway_route_response(
         #[allow(unused_mut)]
         let mut output = crate::output::replace_transit_gateway_route_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_replace_transit_gateway_route(
+        output = crate::xml_deser::deser_operation_crate_operation_replace_transit_gateway_route(
             response.body().as_ref(),
             output,
         )
@@ -13407,9 +13279,11 @@ pub fn parse_request_spot_fleet_response(
         #[allow(unused_mut)]
         let mut output = crate::output::request_spot_fleet_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_request_spot_fleet(response.body().as_ref(), output)
-                .map_err(crate::error::RequestSpotFleetError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_request_spot_fleet(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RequestSpotFleetError::unhandled)?;
         output.build()
     })
 }
@@ -13437,7 +13311,7 @@ pub fn parse_request_spot_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::request_spot_instances_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_request_spot_instances(
+        output = crate::xml_deser::deser_operation_crate_operation_request_spot_instances(
             response.body().as_ref(),
             output,
         )
@@ -13469,7 +13343,7 @@ pub fn parse_reset_address_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::reset_address_attribute_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_reset_address_attribute(
+        output = crate::xml_deser::deser_operation_crate_operation_reset_address_attribute(
             response.body().as_ref(),
             output,
         )
@@ -13501,7 +13375,7 @@ pub fn parse_reset_ebs_default_kms_key_id_response(
         #[allow(unused_mut)]
         let mut output = crate::output::reset_ebs_default_kms_key_id_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_reset_ebs_default_kms_key_id(
+        output = crate::xml_deser::deser_operation_crate_operation_reset_ebs_default_kms_key_id(
             response.body().as_ref(),
             output,
         )
@@ -13533,7 +13407,7 @@ pub fn parse_reset_fpga_image_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::reset_fpga_image_attribute_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_reset_fpga_image_attribute(
+        output = crate::xml_deser::deser_operation_crate_operation_reset_fpga_image_attribute(
             response.body().as_ref(),
             output,
         )
@@ -13676,7 +13550,7 @@ pub fn parse_restore_address_to_classic_response(
         #[allow(unused_mut)]
         let mut output = crate::output::restore_address_to_classic_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_restore_address_to_classic(
+        output = crate::xml_deser::deser_operation_crate_operation_restore_address_to_classic(
             response.body().as_ref(),
             output,
         )
@@ -13711,11 +13585,12 @@ pub fn parse_restore_managed_prefix_list_version_response(
         let mut output =
             crate::output::restore_managed_prefix_list_version_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_restore_managed_prefix_list_version(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::RestoreManagedPrefixListVersionError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_restore_managed_prefix_list_version(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::RestoreManagedPrefixListVersionError::unhandled)?;
         output.build()
     })
 }
@@ -13743,7 +13618,7 @@ pub fn parse_revoke_client_vpn_ingress_response(
         #[allow(unused_mut)]
         let mut output = crate::output::revoke_client_vpn_ingress_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_revoke_client_vpn_ingress(
+        output = crate::xml_deser::deser_operation_crate_operation_revoke_client_vpn_ingress(
             response.body().as_ref(),
             output,
         )
@@ -13777,7 +13652,7 @@ pub fn parse_revoke_security_group_egress_response(
         #[allow(unused_mut)]
         let mut output = crate::output::revoke_security_group_egress_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_revoke_security_group_egress(
+        output = crate::xml_deser::deser_operation_crate_operation_revoke_security_group_egress(
             response.body().as_ref(),
             output,
         )
@@ -13811,7 +13686,7 @@ pub fn parse_revoke_security_group_ingress_response(
         #[allow(unused_mut)]
         let mut output = crate::output::revoke_security_group_ingress_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_revoke_security_group_ingress(
+        output = crate::xml_deser::deser_operation_crate_operation_revoke_security_group_ingress(
             response.body().as_ref(),
             output,
         )
@@ -13837,8 +13712,11 @@ pub fn parse_run_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::run_instances_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_run_instances(response.body().as_ref(), output)
-            .map_err(crate::error::RunInstancesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_run_instances(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RunInstancesError::unhandled)?;
         output.build()
     })
 }
@@ -13866,7 +13744,7 @@ pub fn parse_run_scheduled_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::run_scheduled_instances_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_run_scheduled_instances(
+        output = crate::xml_deser::deser_operation_crate_operation_run_scheduled_instances(
             response.body().as_ref(),
             output,
         )
@@ -13900,7 +13778,7 @@ pub fn parse_search_local_gateway_routes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::search_local_gateway_routes_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_search_local_gateway_routes(
+        output = crate::xml_deser::deser_operation_crate_operation_search_local_gateway_routes(
             response.body().as_ref(),
             output,
         )
@@ -13933,11 +13811,7 @@ pub fn parse_search_transit_gateway_multicast_groups_response(
         let mut output =
             crate::output::search_transit_gateway_multicast_groups_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_search_transit_gateway_multicast_groups(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::SearchTransitGatewayMulticastGroupsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_search_transit_gateway_multicast_groups(response.body().as_ref(), output).map_err(crate::error::SearchTransitGatewayMulticastGroupsError::unhandled)?;
         output.build()
     })
 }
@@ -13967,7 +13841,7 @@ pub fn parse_search_transit_gateway_routes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::search_transit_gateway_routes_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_search_transit_gateway_routes(
+        output = crate::xml_deser::deser_operation_crate_operation_search_transit_gateway_routes(
             response.body().as_ref(),
             output,
         )
@@ -14020,9 +13894,11 @@ pub fn parse_start_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::start_instances_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_start_instances(response.body().as_ref(), output)
-                .map_err(crate::error::StartInstancesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_start_instances(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StartInstancesError::unhandled)?;
         output.build()
     })
 }
@@ -14052,7 +13928,7 @@ pub fn parse_start_network_insights_analysis_response(
         #[allow(unused_mut)]
         let mut output = crate::output::start_network_insights_analysis_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_start_network_insights_analysis(
+        output = crate::xml_deser::deser_operation_crate_operation_start_network_insights_analysis(
             response.body().as_ref(),
             output,
         )
@@ -14083,12 +13959,7 @@ pub fn parse_start_vpc_endpoint_service_private_dns_verification_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::start_vpc_endpoint_service_private_dns_verification_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_start_vpc_endpoint_service_private_dns_verification(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::StartVpcEndpointServicePrivateDnsVerificationError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_start_vpc_endpoint_service_private_dns_verification(response.body().as_ref(), output).map_err(crate::error::StartVpcEndpointServicePrivateDnsVerificationError::unhandled)?;
         output.build()
     })
 }
@@ -14110,8 +13981,11 @@ pub fn parse_stop_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::stop_instances_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_stop_instances(response.body().as_ref(), output)
-            .map_err(crate::error::StopInstancesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_stop_instances(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StopInstancesError::unhandled)?;
         output.build()
     })
 }
@@ -14141,11 +14015,12 @@ pub fn parse_terminate_client_vpn_connections_response(
         #[allow(unused_mut)]
         let mut output = crate::output::terminate_client_vpn_connections_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_terminate_client_vpn_connections(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::TerminateClientVpnConnectionsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_terminate_client_vpn_connections(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::TerminateClientVpnConnectionsError::unhandled)?;
         output.build()
     })
 }
@@ -14173,9 +14048,11 @@ pub fn parse_terminate_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::terminate_instances_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_terminate_instances(response.body().as_ref(), output)
-                .map_err(crate::error::TerminateInstancesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_terminate_instances(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::TerminateInstancesError::unhandled)?;
         output.build()
     })
 }
@@ -14203,7 +14080,7 @@ pub fn parse_unassign_ipv6_addresses_response(
         #[allow(unused_mut)]
         let mut output = crate::output::unassign_ipv6_addresses_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_unassign_ipv6_addresses(
+        output = crate::xml_deser::deser_operation_crate_operation_unassign_ipv6_addresses(
             response.body().as_ref(),
             output,
         )
@@ -14264,9 +14141,11 @@ pub fn parse_unmonitor_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::unmonitor_instances_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_unmonitor_instances(response.body().as_ref(), output)
-                .map_err(crate::error::UnmonitorInstancesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_unmonitor_instances(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UnmonitorInstancesError::unhandled)?;
         output.build()
     })
 }
@@ -14296,11 +14175,7 @@ pub fn parse_update_security_group_rule_descriptions_egress_response(
             crate::output::update_security_group_rule_descriptions_egress_output::Builder::default(
             );
         let _ = response;
-        output = crate::xml_deser::deser_operation_update_security_group_rule_descriptions_egress(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::UpdateSecurityGroupRuleDescriptionsEgressError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_update_security_group_rule_descriptions_egress(response.body().as_ref(), output).map_err(crate::error::UpdateSecurityGroupRuleDescriptionsEgressError::unhandled)?;
         output.build()
     })
 }
@@ -14330,11 +14205,7 @@ pub fn parse_update_security_group_rule_descriptions_ingress_response(
             crate::output::update_security_group_rule_descriptions_ingress_output::Builder::default(
             );
         let _ = response;
-        output = crate::xml_deser::deser_operation_update_security_group_rule_descriptions_ingress(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::UpdateSecurityGroupRuleDescriptionsIngressError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_update_security_group_rule_descriptions_ingress(response.body().as_ref(), output).map_err(crate::error::UpdateSecurityGroupRuleDescriptionsIngressError::unhandled)?;
         output.build()
     })
 }
@@ -14358,9 +14229,11 @@ pub fn parse_withdraw_byoip_cidr_response(
         #[allow(unused_mut)]
         let mut output = crate::output::withdraw_byoip_cidr_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_withdraw_byoip_cidr(response.body().as_ref(), output)
-                .map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_withdraw_byoip_cidr(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
         output.build()
     })
 }

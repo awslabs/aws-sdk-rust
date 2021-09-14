@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_forbidden_exceptionjson_err(
+pub fn deser_structure_crate_error_forbidden_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::forbidden_exception::Builder,
 ) -> Result<crate::error::forbidden_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_forbidden_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_gone_exceptionjson_err(
+pub fn deser_structure_crate_error_gone_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::gone_exception::Builder,
 ) -> Result<crate::error::gone_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_gone_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_connection(
+pub fn deser_operation_crate_operation_get_connection(
     input: &[u8],
     mut builder: crate::output::get_connection_output::Builder,
 ) -> Result<crate::output::get_connection_output::Builder, smithy_json::deserialize::Error> {
@@ -145,8 +145,9 @@ pub fn deser_operation_get_connection(
                         );
                     }
                     "identity" => {
-                        builder = builder
-                            .set_identity(crate::json_deser::deser_structure_identity(tokens)?);
+                        builder = builder.set_identity(
+                            crate::json_deser::deser_structure_crate_model_identity(tokens)?,
+                        );
                     }
                     "lastActiveAt" => {
                         builder = builder.set_last_active_at(
@@ -174,7 +175,7 @@ pub fn deser_operation_get_connection(
     Ok(builder)
 }
 
-pub fn deser_structure_payload_too_large_exceptionjson_err(
+pub fn deser_structure_crate_error_payload_too_large_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::payload_too_large_exception::Builder,
 ) -> Result<crate::error::payload_too_large_exception::Builder, smithy_json::deserialize::Error> {
@@ -221,7 +222,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_identity<'a, I>(
+pub fn deser_structure_crate_model_identity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Identity>, smithy_json::deserialize::Error>
 where

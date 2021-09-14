@@ -231,11 +231,11 @@ pub mod fluent_builders {
         /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
         /// <ul>
         /// <li>
-        /// <p>The encryption option for this repository association. It is either owned by AWS
+        /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services
         /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
         /// </li>
         /// <li>
-        /// <p>The ID of the AWS KMS key that
+        /// <p>The ID of the Amazon Web Services KMS key that
         /// is associated with this respository association.</p>
         /// </li>
         /// </ul>
@@ -296,7 +296,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>
-        /// The name of the code review. The name of each code review in your AWS account must be unique.
+        /// The name of the code review. The name of each code review in your Amazon Web Services account must be unique.
         /// </p>
         pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(inp);
@@ -502,9 +502,9 @@ pub mod fluent_builders {
         /// Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.
         /// </p>
         /// <p>
-        /// The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon Resource Name (ARN). For
+        /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
         /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-        /// Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
+        /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
         /// </p>
         pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_id(inp);
@@ -886,12 +886,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
         /// <p>
-        /// An AWS user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.
+        /// An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.
         /// </p>
         /// <p>
-        /// The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon Resource Name (ARN). For
+        /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
         /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-        /// Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
+        /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
         /// </p>
         pub fn user_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_ids(inp);
@@ -1151,7 +1151,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_owners`](Self::set_owners).
         /// <p>List of owners to use as a filter.
-        /// For AWS CodeCommit, it is the name of the CodeCommit account that was
+        /// For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was
         /// used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account
         /// that was used to associate the repository. </p>
         pub fn owners(mut self, inp: impl Into<std::string::String>) -> Self {

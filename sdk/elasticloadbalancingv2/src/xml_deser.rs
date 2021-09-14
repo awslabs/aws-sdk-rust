@@ -6,7 +6,7 @@ pub fn parse_http_generic_error(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_certificate_not_found_exception_xml_err(
+pub fn deser_structure_crate_error_certificate_not_found_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::certificate_not_found_exception::Builder,
 ) -> Result<crate::error::certificate_not_found_exception::Builder, smithy_xml::decode::XmlError> {
@@ -39,7 +39,7 @@ pub fn deser_structure_certificate_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_listener_not_found_exception_xml_err(
+pub fn deser_structure_crate_error_listener_not_found_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::listener_not_found_exception::Builder,
 ) -> Result<crate::error::listener_not_found_exception::Builder, smithy_xml::decode::XmlError> {
@@ -72,7 +72,7 @@ pub fn deser_structure_listener_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_certificates_exception_xml_err(
+pub fn deser_structure_crate_error_too_many_certificates_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_certificates_exception::Builder,
 ) -> Result<crate::error::too_many_certificates_exception::Builder, smithy_xml::decode::XmlError> {
@@ -105,7 +105,7 @@ pub fn deser_structure_too_many_certificates_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_add_listener_certificates(
+pub fn deser_operation_crate_operation_add_listener_certificates(
     inp: &[u8],
     mut builder: crate::output::add_listener_certificates_output::Builder,
 ) -> Result<crate::output::add_listener_certificates_output::Builder, smithy_xml::decode::XmlError>
@@ -132,10 +132,10 @@ pub fn deser_operation_add_listener_certificates(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Certificates") /* Certificates com.amazonaws.elasticloadbalancingv2#AddListenerCertificatesOutput$Certificates */ =>  {
+            s if s.matches("Certificates") /* Certificates com.amazonaws.elasticloadbalancingv2.synthetic#AddListenerCertificatesOutput$Certificates */ =>  {
                 let var_4 =
                     Some(
-                        crate::xml_deser::deser_list_certificate_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_certificate_list(&mut tag)
                         ?
                     )
                 ;
@@ -154,7 +154,7 @@ pub fn deser_operation_add_listener_certificates(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_duplicate_tag_keys_exception_xml_err(
+pub fn deser_structure_crate_error_duplicate_tag_keys_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::duplicate_tag_keys_exception::Builder,
 ) -> Result<crate::error::duplicate_tag_keys_exception::Builder, smithy_xml::decode::XmlError> {
@@ -187,7 +187,7 @@ pub fn deser_structure_duplicate_tag_keys_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_load_balancer_not_found_exception_xml_err(
+pub fn deser_structure_crate_error_load_balancer_not_found_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::load_balancer_not_found_exception::Builder,
 ) -> Result<crate::error::load_balancer_not_found_exception::Builder, smithy_xml::decode::XmlError>
@@ -221,7 +221,7 @@ pub fn deser_structure_load_balancer_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_target_group_not_found_exception_xml_err(
+pub fn deser_structure_crate_error_target_group_not_found_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::target_group_not_found_exception::Builder,
 ) -> Result<crate::error::target_group_not_found_exception::Builder, smithy_xml::decode::XmlError> {
@@ -254,7 +254,7 @@ pub fn deser_structure_target_group_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_tags_exception_xml_err(
+pub fn deser_structure_crate_error_too_many_tags_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_tags_exception::Builder,
 ) -> Result<crate::error::too_many_tags_exception::Builder, smithy_xml::decode::XmlError> {
@@ -287,7 +287,7 @@ pub fn deser_structure_too_many_tags_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_alpn_policy_not_supported_exception_xml_err(
+pub fn deser_structure_crate_error_alpn_policy_not_supported_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::alpn_policy_not_supported_exception::Builder,
 ) -> Result<crate::error::alpn_policy_not_supported_exception::Builder, smithy_xml::decode::XmlError>
@@ -321,7 +321,7 @@ pub fn deser_structure_alpn_policy_not_supported_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_duplicate_listener_exception_xml_err(
+pub fn deser_structure_crate_error_duplicate_listener_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::duplicate_listener_exception::Builder,
 ) -> Result<crate::error::duplicate_listener_exception::Builder, smithy_xml::decode::XmlError> {
@@ -354,7 +354,7 @@ pub fn deser_structure_duplicate_listener_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_incompatible_protocols_exception_xml_err(
+pub fn deser_structure_crate_error_incompatible_protocols_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::incompatible_protocols_exception::Builder,
 ) -> Result<crate::error::incompatible_protocols_exception::Builder, smithy_xml::decode::XmlError> {
@@ -387,7 +387,7 @@ pub fn deser_structure_incompatible_protocols_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_configuration_request_exception_xml_err(
+pub fn deser_structure_crate_error_invalid_configuration_request_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_configuration_request_exception::Builder,
 ) -> Result<
@@ -423,7 +423,7 @@ pub fn deser_structure_invalid_configuration_request_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_load_balancer_action_exception_xml_err(
+pub fn deser_structure_crate_error_invalid_load_balancer_action_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_load_balancer_action_exception::Builder,
 ) -> Result<
@@ -459,7 +459,7 @@ pub fn deser_structure_invalid_load_balancer_action_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_ssl_policy_not_found_exception_xml_err(
+pub fn deser_structure_crate_error_ssl_policy_not_found_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::ssl_policy_not_found_exception::Builder,
 ) -> Result<crate::error::ssl_policy_not_found_exception::Builder, smithy_xml::decode::XmlError> {
@@ -492,7 +492,7 @@ pub fn deser_structure_ssl_policy_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_target_group_association_limit_exception_xml_err(
+pub fn deser_structure_crate_error_target_group_association_limit_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::target_group_association_limit_exception::Builder,
 ) -> Result<
@@ -528,7 +528,7 @@ pub fn deser_structure_target_group_association_limit_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_actions_exception_xml_err(
+pub fn deser_structure_crate_error_too_many_actions_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_actions_exception::Builder,
 ) -> Result<crate::error::too_many_actions_exception::Builder, smithy_xml::decode::XmlError> {
@@ -561,7 +561,7 @@ pub fn deser_structure_too_many_actions_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_listeners_exception_xml_err(
+pub fn deser_structure_crate_error_too_many_listeners_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_listeners_exception::Builder,
 ) -> Result<crate::error::too_many_listeners_exception::Builder, smithy_xml::decode::XmlError> {
@@ -594,7 +594,7 @@ pub fn deser_structure_too_many_listeners_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_registrations_for_target_id_exception_xml_err(
+pub fn deser_structure_crate_error_too_many_registrations_for_target_id_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_registrations_for_target_id_exception::Builder,
 ) -> Result<
@@ -630,7 +630,7 @@ pub fn deser_structure_too_many_registrations_for_target_id_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_targets_exception_xml_err(
+pub fn deser_structure_crate_error_too_many_targets_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_targets_exception::Builder,
 ) -> Result<crate::error::too_many_targets_exception::Builder, smithy_xml::decode::XmlError> {
@@ -663,7 +663,7 @@ pub fn deser_structure_too_many_targets_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_unique_target_groups_per_load_balancer_exception_xml_err(
+pub fn deser_structure_crate_error_too_many_unique_target_groups_per_load_balancer_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_unique_target_groups_per_load_balancer_exception::Builder,
 ) -> Result<
@@ -699,7 +699,7 @@ pub fn deser_structure_too_many_unique_target_groups_per_load_balancer_exception
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_unsupported_protocol_exception_xml_err(
+pub fn deser_structure_crate_error_unsupported_protocol_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::unsupported_protocol_exception::Builder,
 ) -> Result<crate::error::unsupported_protocol_exception::Builder, smithy_xml::decode::XmlError> {
@@ -732,7 +732,7 @@ pub fn deser_structure_unsupported_protocol_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_listener(
+pub fn deser_operation_crate_operation_create_listener(
     inp: &[u8],
     mut builder: crate::output::create_listener_output::Builder,
 ) -> Result<crate::output::create_listener_output::Builder, smithy_xml::decode::XmlError> {
@@ -758,10 +758,10 @@ pub fn deser_operation_create_listener(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Listeners") /* Listeners com.amazonaws.elasticloadbalancingv2#CreateListenerOutput$Listeners */ =>  {
+            s if s.matches("Listeners") /* Listeners com.amazonaws.elasticloadbalancingv2.synthetic#CreateListenerOutput$Listeners */ =>  {
                 let var_22 =
                     Some(
-                        crate::xml_deser::deser_list_listeners(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_listeners(&mut tag)
                         ?
                     )
                 ;
@@ -780,7 +780,7 @@ pub fn deser_operation_create_listener(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_allocation_id_not_found_exception_xml_err(
+pub fn deser_structure_crate_error_allocation_id_not_found_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::allocation_id_not_found_exception::Builder,
 ) -> Result<crate::error::allocation_id_not_found_exception::Builder, smithy_xml::decode::XmlError>
@@ -814,7 +814,7 @@ pub fn deser_structure_allocation_id_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_availability_zone_not_supported_exception_xml_err(
+pub fn deser_structure_crate_error_availability_zone_not_supported_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::availability_zone_not_supported_exception::Builder,
 ) -> Result<
@@ -850,7 +850,7 @@ pub fn deser_structure_availability_zone_not_supported_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_duplicate_load_balancer_name_exception_xml_err(
+pub fn deser_structure_crate_error_duplicate_load_balancer_name_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::duplicate_load_balancer_name_exception::Builder,
 ) -> Result<
@@ -886,7 +886,7 @@ pub fn deser_structure_duplicate_load_balancer_name_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_scheme_exception_xml_err(
+pub fn deser_structure_crate_error_invalid_scheme_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_scheme_exception::Builder,
 ) -> Result<crate::error::invalid_scheme_exception::Builder, smithy_xml::decode::XmlError> {
@@ -919,7 +919,7 @@ pub fn deser_structure_invalid_scheme_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_security_group_exception_xml_err(
+pub fn deser_structure_crate_error_invalid_security_group_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_security_group_exception::Builder,
 ) -> Result<crate::error::invalid_security_group_exception::Builder, smithy_xml::decode::XmlError> {
@@ -952,7 +952,7 @@ pub fn deser_structure_invalid_security_group_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_subnet_exception_xml_err(
+pub fn deser_structure_crate_error_invalid_subnet_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_subnet_exception::Builder,
 ) -> Result<crate::error::invalid_subnet_exception::Builder, smithy_xml::decode::XmlError> {
@@ -985,7 +985,7 @@ pub fn deser_structure_invalid_subnet_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_operation_not_permitted_exception_xml_err(
+pub fn deser_structure_crate_error_operation_not_permitted_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::operation_not_permitted_exception::Builder,
 ) -> Result<crate::error::operation_not_permitted_exception::Builder, smithy_xml::decode::XmlError>
@@ -1019,7 +1019,7 @@ pub fn deser_structure_operation_not_permitted_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_resource_in_use_exception_xml_err(
+pub fn deser_structure_crate_error_resource_in_use_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::resource_in_use_exception::Builder,
 ) -> Result<crate::error::resource_in_use_exception::Builder, smithy_xml::decode::XmlError> {
@@ -1052,7 +1052,7 @@ pub fn deser_structure_resource_in_use_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_subnet_not_found_exception_xml_err(
+pub fn deser_structure_crate_error_subnet_not_found_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::subnet_not_found_exception::Builder,
 ) -> Result<crate::error::subnet_not_found_exception::Builder, smithy_xml::decode::XmlError> {
@@ -1085,7 +1085,7 @@ pub fn deser_structure_subnet_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_load_balancers_exception_xml_err(
+pub fn deser_structure_crate_error_too_many_load_balancers_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_load_balancers_exception::Builder,
 ) -> Result<crate::error::too_many_load_balancers_exception::Builder, smithy_xml::decode::XmlError>
@@ -1119,7 +1119,7 @@ pub fn deser_structure_too_many_load_balancers_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_load_balancer(
+pub fn deser_operation_crate_operation_create_load_balancer(
     inp: &[u8],
     mut builder: crate::output::create_load_balancer_output::Builder,
 ) -> Result<crate::output::create_load_balancer_output::Builder, smithy_xml::decode::XmlError> {
@@ -1145,10 +1145,10 @@ pub fn deser_operation_create_load_balancer(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("LoadBalancers") /* LoadBalancers com.amazonaws.elasticloadbalancingv2#CreateLoadBalancerOutput$LoadBalancers */ =>  {
+            s if s.matches("LoadBalancers") /* LoadBalancers com.amazonaws.elasticloadbalancingv2.synthetic#CreateLoadBalancerOutput$LoadBalancers */ =>  {
                 let var_33 =
                     Some(
-                        crate::xml_deser::deser_list_load_balancers(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_load_balancers(&mut tag)
                         ?
                     )
                 ;
@@ -1167,7 +1167,7 @@ pub fn deser_operation_create_load_balancer(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_priority_in_use_exception_xml_err(
+pub fn deser_structure_crate_error_priority_in_use_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::priority_in_use_exception::Builder,
 ) -> Result<crate::error::priority_in_use_exception::Builder, smithy_xml::decode::XmlError> {
@@ -1200,7 +1200,7 @@ pub fn deser_structure_priority_in_use_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_rules_exception_xml_err(
+pub fn deser_structure_crate_error_too_many_rules_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_rules_exception::Builder,
 ) -> Result<crate::error::too_many_rules_exception::Builder, smithy_xml::decode::XmlError> {
@@ -1233,7 +1233,7 @@ pub fn deser_structure_too_many_rules_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_too_many_target_groups_exception_xml_err(
+pub fn deser_structure_crate_error_too_many_target_groups_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_target_groups_exception::Builder,
 ) -> Result<crate::error::too_many_target_groups_exception::Builder, smithy_xml::decode::XmlError> {
@@ -1266,7 +1266,7 @@ pub fn deser_structure_too_many_target_groups_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_rule(
+pub fn deser_operation_crate_operation_create_rule(
     inp: &[u8],
     mut builder: crate::output::create_rule_output::Builder,
 ) -> Result<crate::output::create_rule_output::Builder, smithy_xml::decode::XmlError> {
@@ -1292,10 +1292,10 @@ pub fn deser_operation_create_rule(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Rules") /* Rules com.amazonaws.elasticloadbalancingv2#CreateRuleOutput$Rules */ =>  {
+            s if s.matches("Rules") /* Rules com.amazonaws.elasticloadbalancingv2.synthetic#CreateRuleOutput$Rules */ =>  {
                 let var_37 =
                     Some(
-                        crate::xml_deser::deser_list_rules(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_rules(&mut tag)
                         ?
                     )
                 ;
@@ -1314,7 +1314,7 @@ pub fn deser_operation_create_rule(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_duplicate_target_group_name_exception_xml_err(
+pub fn deser_structure_crate_error_duplicate_target_group_name_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::duplicate_target_group_name_exception::Builder,
 ) -> Result<
@@ -1350,7 +1350,7 @@ pub fn deser_structure_duplicate_target_group_name_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_target_group(
+pub fn deser_operation_crate_operation_create_target_group(
     inp: &[u8],
     mut builder: crate::output::create_target_group_output::Builder,
 ) -> Result<crate::output::create_target_group_output::Builder, smithy_xml::decode::XmlError> {
@@ -1376,10 +1376,10 @@ pub fn deser_operation_create_target_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("TargetGroups") /* TargetGroups com.amazonaws.elasticloadbalancingv2#CreateTargetGroupOutput$TargetGroups */ =>  {
+            s if s.matches("TargetGroups") /* TargetGroups com.amazonaws.elasticloadbalancingv2.synthetic#CreateTargetGroupOutput$TargetGroups */ =>  {
                 let var_39 =
                     Some(
-                        crate::xml_deser::deser_list_target_groups(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_target_groups(&mut tag)
                         ?
                     )
                 ;
@@ -1398,7 +1398,7 @@ pub fn deser_operation_create_target_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_rule_not_found_exception_xml_err(
+pub fn deser_structure_crate_error_rule_not_found_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::rule_not_found_exception::Builder,
 ) -> Result<crate::error::rule_not_found_exception::Builder, smithy_xml::decode::XmlError> {
@@ -1431,7 +1431,7 @@ pub fn deser_structure_rule_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_target_exception_xml_err(
+pub fn deser_structure_crate_error_invalid_target_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_target_exception::Builder,
 ) -> Result<crate::error::invalid_target_exception::Builder, smithy_xml::decode::XmlError> {
@@ -1464,7 +1464,7 @@ pub fn deser_structure_invalid_target_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_account_limits(
+pub fn deser_operation_crate_operation_describe_account_limits(
     inp: &[u8],
     mut builder: crate::output::describe_account_limits_output::Builder,
 ) -> Result<crate::output::describe_account_limits_output::Builder, smithy_xml::decode::XmlError> {
@@ -1490,17 +1490,17 @@ pub fn deser_operation_describe_account_limits(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Limits") /* Limits com.amazonaws.elasticloadbalancingv2#DescribeAccountLimitsOutput$Limits */ =>  {
+            s if s.matches("Limits") /* Limits com.amazonaws.elasticloadbalancingv2.synthetic#DescribeAccountLimitsOutput$Limits */ =>  {
                 let var_42 =
                     Some(
-                        crate::xml_deser::deser_list_limits(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_limits(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_limits(var_42);
             }
             ,
-            s if s.matches("NextMarker") /* NextMarker com.amazonaws.elasticloadbalancingv2#DescribeAccountLimitsOutput$NextMarker */ =>  {
+            s if s.matches("NextMarker") /* NextMarker com.amazonaws.elasticloadbalancingv2.synthetic#DescribeAccountLimitsOutput$NextMarker */ =>  {
                 let var_43 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1525,7 +1525,7 @@ pub fn deser_operation_describe_account_limits(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_listener_certificates(
+pub fn deser_operation_crate_operation_describe_listener_certificates(
     inp: &[u8],
     mut builder: crate::output::describe_listener_certificates_output::Builder,
 ) -> Result<
@@ -1554,17 +1554,17 @@ pub fn deser_operation_describe_listener_certificates(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Certificates") /* Certificates com.amazonaws.elasticloadbalancingv2#DescribeListenerCertificatesOutput$Certificates */ =>  {
+            s if s.matches("Certificates") /* Certificates com.amazonaws.elasticloadbalancingv2.synthetic#DescribeListenerCertificatesOutput$Certificates */ =>  {
                 let var_44 =
                     Some(
-                        crate::xml_deser::deser_list_certificate_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_certificate_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_certificates(var_44);
             }
             ,
-            s if s.matches("NextMarker") /* NextMarker com.amazonaws.elasticloadbalancingv2#DescribeListenerCertificatesOutput$NextMarker */ =>  {
+            s if s.matches("NextMarker") /* NextMarker com.amazonaws.elasticloadbalancingv2.synthetic#DescribeListenerCertificatesOutput$NextMarker */ =>  {
                 let var_45 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1589,7 +1589,7 @@ pub fn deser_operation_describe_listener_certificates(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_listeners(
+pub fn deser_operation_crate_operation_describe_listeners(
     inp: &[u8],
     mut builder: crate::output::describe_listeners_output::Builder,
 ) -> Result<crate::output::describe_listeners_output::Builder, smithy_xml::decode::XmlError> {
@@ -1615,17 +1615,17 @@ pub fn deser_operation_describe_listeners(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Listeners") /* Listeners com.amazonaws.elasticloadbalancingv2#DescribeListenersOutput$Listeners */ =>  {
+            s if s.matches("Listeners") /* Listeners com.amazonaws.elasticloadbalancingv2.synthetic#DescribeListenersOutput$Listeners */ =>  {
                 let var_46 =
                     Some(
-                        crate::xml_deser::deser_list_listeners(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_listeners(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_listeners(var_46);
             }
             ,
-            s if s.matches("NextMarker") /* NextMarker com.amazonaws.elasticloadbalancingv2#DescribeListenersOutput$NextMarker */ =>  {
+            s if s.matches("NextMarker") /* NextMarker com.amazonaws.elasticloadbalancingv2.synthetic#DescribeListenersOutput$NextMarker */ =>  {
                 let var_47 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1650,7 +1650,7 @@ pub fn deser_operation_describe_listeners(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_load_balancer_attributes(
+pub fn deser_operation_crate_operation_describe_load_balancer_attributes(
     inp: &[u8],
     mut builder: crate::output::describe_load_balancer_attributes_output::Builder,
 ) -> Result<
@@ -1679,10 +1679,10 @@ pub fn deser_operation_describe_load_balancer_attributes(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Attributes") /* Attributes com.amazonaws.elasticloadbalancingv2#DescribeLoadBalancerAttributesOutput$Attributes */ =>  {
+            s if s.matches("Attributes") /* Attributes com.amazonaws.elasticloadbalancingv2.synthetic#DescribeLoadBalancerAttributesOutput$Attributes */ =>  {
                 let var_48 =
                     Some(
-                        crate::xml_deser::deser_list_load_balancer_attributes(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_load_balancer_attributes(&mut tag)
                         ?
                     )
                 ;
@@ -1701,7 +1701,7 @@ pub fn deser_operation_describe_load_balancer_attributes(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_load_balancers(
+pub fn deser_operation_crate_operation_describe_load_balancers(
     inp: &[u8],
     mut builder: crate::output::describe_load_balancers_output::Builder,
 ) -> Result<crate::output::describe_load_balancers_output::Builder, smithy_xml::decode::XmlError> {
@@ -1727,17 +1727,17 @@ pub fn deser_operation_describe_load_balancers(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("LoadBalancers") /* LoadBalancers com.amazonaws.elasticloadbalancingv2#DescribeLoadBalancersOutput$LoadBalancers */ =>  {
+            s if s.matches("LoadBalancers") /* LoadBalancers com.amazonaws.elasticloadbalancingv2.synthetic#DescribeLoadBalancersOutput$LoadBalancers */ =>  {
                 let var_49 =
                     Some(
-                        crate::xml_deser::deser_list_load_balancers(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_load_balancers(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_load_balancers(var_49);
             }
             ,
-            s if s.matches("NextMarker") /* NextMarker com.amazonaws.elasticloadbalancingv2#DescribeLoadBalancersOutput$NextMarker */ =>  {
+            s if s.matches("NextMarker") /* NextMarker com.amazonaws.elasticloadbalancingv2.synthetic#DescribeLoadBalancersOutput$NextMarker */ =>  {
                 let var_50 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1762,7 +1762,7 @@ pub fn deser_operation_describe_load_balancers(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_rules(
+pub fn deser_operation_crate_operation_describe_rules(
     inp: &[u8],
     mut builder: crate::output::describe_rules_output::Builder,
 ) -> Result<crate::output::describe_rules_output::Builder, smithy_xml::decode::XmlError> {
@@ -1788,17 +1788,17 @@ pub fn deser_operation_describe_rules(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Rules") /* Rules com.amazonaws.elasticloadbalancingv2#DescribeRulesOutput$Rules */ =>  {
+            s if s.matches("Rules") /* Rules com.amazonaws.elasticloadbalancingv2.synthetic#DescribeRulesOutput$Rules */ =>  {
                 let var_51 =
                     Some(
-                        crate::xml_deser::deser_list_rules(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_rules(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_rules(var_51);
             }
             ,
-            s if s.matches("NextMarker") /* NextMarker com.amazonaws.elasticloadbalancingv2#DescribeRulesOutput$NextMarker */ =>  {
+            s if s.matches("NextMarker") /* NextMarker com.amazonaws.elasticloadbalancingv2.synthetic#DescribeRulesOutput$NextMarker */ =>  {
                 let var_52 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1823,7 +1823,7 @@ pub fn deser_operation_describe_rules(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_ssl_policies(
+pub fn deser_operation_crate_operation_describe_ssl_policies(
     inp: &[u8],
     mut builder: crate::output::describe_ssl_policies_output::Builder,
 ) -> Result<crate::output::describe_ssl_policies_output::Builder, smithy_xml::decode::XmlError> {
@@ -1849,17 +1849,17 @@ pub fn deser_operation_describe_ssl_policies(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("SslPolicies") /* SslPolicies com.amazonaws.elasticloadbalancingv2#DescribeSSLPoliciesOutput$SslPolicies */ =>  {
+            s if s.matches("SslPolicies") /* SslPolicies com.amazonaws.elasticloadbalancingv2.synthetic#DescribeSSLPoliciesOutput$SslPolicies */ =>  {
                 let var_53 =
                     Some(
-                        crate::xml_deser::deser_list_ssl_policies(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_ssl_policies(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_ssl_policies(var_53);
             }
             ,
-            s if s.matches("NextMarker") /* NextMarker com.amazonaws.elasticloadbalancingv2#DescribeSSLPoliciesOutput$NextMarker */ =>  {
+            s if s.matches("NextMarker") /* NextMarker com.amazonaws.elasticloadbalancingv2.synthetic#DescribeSSLPoliciesOutput$NextMarker */ =>  {
                 let var_54 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1884,7 +1884,7 @@ pub fn deser_operation_describe_ssl_policies(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_tags(
+pub fn deser_operation_crate_operation_describe_tags(
     inp: &[u8],
     mut builder: crate::output::describe_tags_output::Builder,
 ) -> Result<crate::output::describe_tags_output::Builder, smithy_xml::decode::XmlError> {
@@ -1910,10 +1910,10 @@ pub fn deser_operation_describe_tags(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("TagDescriptions") /* TagDescriptions com.amazonaws.elasticloadbalancingv2#DescribeTagsOutput$TagDescriptions */ =>  {
+            s if s.matches("TagDescriptions") /* TagDescriptions com.amazonaws.elasticloadbalancingv2.synthetic#DescribeTagsOutput$TagDescriptions */ =>  {
                 let var_55 =
                     Some(
-                        crate::xml_deser::deser_list_tag_descriptions(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_tag_descriptions(&mut tag)
                         ?
                     )
                 ;
@@ -1932,7 +1932,7 @@ pub fn deser_operation_describe_tags(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_target_group_attributes(
+pub fn deser_operation_crate_operation_describe_target_group_attributes(
     inp: &[u8],
     mut builder: crate::output::describe_target_group_attributes_output::Builder,
 ) -> Result<
@@ -1961,10 +1961,10 @@ pub fn deser_operation_describe_target_group_attributes(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Attributes") /* Attributes com.amazonaws.elasticloadbalancingv2#DescribeTargetGroupAttributesOutput$Attributes */ =>  {
+            s if s.matches("Attributes") /* Attributes com.amazonaws.elasticloadbalancingv2.synthetic#DescribeTargetGroupAttributesOutput$Attributes */ =>  {
                 let var_56 =
                     Some(
-                        crate::xml_deser::deser_list_target_group_attributes(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_target_group_attributes(&mut tag)
                         ?
                     )
                 ;
@@ -1983,7 +1983,7 @@ pub fn deser_operation_describe_target_group_attributes(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_target_groups(
+pub fn deser_operation_crate_operation_describe_target_groups(
     inp: &[u8],
     mut builder: crate::output::describe_target_groups_output::Builder,
 ) -> Result<crate::output::describe_target_groups_output::Builder, smithy_xml::decode::XmlError> {
@@ -2009,17 +2009,17 @@ pub fn deser_operation_describe_target_groups(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("TargetGroups") /* TargetGroups com.amazonaws.elasticloadbalancingv2#DescribeTargetGroupsOutput$TargetGroups */ =>  {
+            s if s.matches("TargetGroups") /* TargetGroups com.amazonaws.elasticloadbalancingv2.synthetic#DescribeTargetGroupsOutput$TargetGroups */ =>  {
                 let var_57 =
                     Some(
-                        crate::xml_deser::deser_list_target_groups(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_target_groups(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_target_groups(var_57);
             }
             ,
-            s if s.matches("NextMarker") /* NextMarker com.amazonaws.elasticloadbalancingv2#DescribeTargetGroupsOutput$NextMarker */ =>  {
+            s if s.matches("NextMarker") /* NextMarker com.amazonaws.elasticloadbalancingv2.synthetic#DescribeTargetGroupsOutput$NextMarker */ =>  {
                 let var_58 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2044,7 +2044,7 @@ pub fn deser_operation_describe_target_groups(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_health_unavailable_exception_xml_err(
+pub fn deser_structure_crate_error_health_unavailable_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::health_unavailable_exception::Builder,
 ) -> Result<crate::error::health_unavailable_exception::Builder, smithy_xml::decode::XmlError> {
@@ -2077,7 +2077,7 @@ pub fn deser_structure_health_unavailable_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_target_health(
+pub fn deser_operation_crate_operation_describe_target_health(
     inp: &[u8],
     mut builder: crate::output::describe_target_health_output::Builder,
 ) -> Result<crate::output::describe_target_health_output::Builder, smithy_xml::decode::XmlError> {
@@ -2103,10 +2103,10 @@ pub fn deser_operation_describe_target_health(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("TargetHealthDescriptions") /* TargetHealthDescriptions com.amazonaws.elasticloadbalancingv2#DescribeTargetHealthOutput$TargetHealthDescriptions */ =>  {
+            s if s.matches("TargetHealthDescriptions") /* TargetHealthDescriptions com.amazonaws.elasticloadbalancingv2.synthetic#DescribeTargetHealthOutput$TargetHealthDescriptions */ =>  {
                 let var_60 =
                     Some(
-                        crate::xml_deser::deser_list_target_health_descriptions(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_target_health_descriptions(&mut tag)
                         ?
                     )
                 ;
@@ -2125,7 +2125,7 @@ pub fn deser_operation_describe_target_health(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_listener(
+pub fn deser_operation_crate_operation_modify_listener(
     inp: &[u8],
     mut builder: crate::output::modify_listener_output::Builder,
 ) -> Result<crate::output::modify_listener_output::Builder, smithy_xml::decode::XmlError> {
@@ -2151,10 +2151,10 @@ pub fn deser_operation_modify_listener(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Listeners") /* Listeners com.amazonaws.elasticloadbalancingv2#ModifyListenerOutput$Listeners */ =>  {
+            s if s.matches("Listeners") /* Listeners com.amazonaws.elasticloadbalancingv2.synthetic#ModifyListenerOutput$Listeners */ =>  {
                 let var_61 =
                     Some(
-                        crate::xml_deser::deser_list_listeners(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_listeners(&mut tag)
                         ?
                     )
                 ;
@@ -2173,7 +2173,7 @@ pub fn deser_operation_modify_listener(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_load_balancer_attributes(
+pub fn deser_operation_crate_operation_modify_load_balancer_attributes(
     inp: &[u8],
     mut builder: crate::output::modify_load_balancer_attributes_output::Builder,
 ) -> Result<
@@ -2202,10 +2202,10 @@ pub fn deser_operation_modify_load_balancer_attributes(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Attributes") /* Attributes com.amazonaws.elasticloadbalancingv2#ModifyLoadBalancerAttributesOutput$Attributes */ =>  {
+            s if s.matches("Attributes") /* Attributes com.amazonaws.elasticloadbalancingv2.synthetic#ModifyLoadBalancerAttributesOutput$Attributes */ =>  {
                 let var_62 =
                     Some(
-                        crate::xml_deser::deser_list_load_balancer_attributes(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_load_balancer_attributes(&mut tag)
                         ?
                     )
                 ;
@@ -2224,7 +2224,7 @@ pub fn deser_operation_modify_load_balancer_attributes(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_rule(
+pub fn deser_operation_crate_operation_modify_rule(
     inp: &[u8],
     mut builder: crate::output::modify_rule_output::Builder,
 ) -> Result<crate::output::modify_rule_output::Builder, smithy_xml::decode::XmlError> {
@@ -2250,10 +2250,10 @@ pub fn deser_operation_modify_rule(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Rules") /* Rules com.amazonaws.elasticloadbalancingv2#ModifyRuleOutput$Rules */ =>  {
+            s if s.matches("Rules") /* Rules com.amazonaws.elasticloadbalancingv2.synthetic#ModifyRuleOutput$Rules */ =>  {
                 let var_63 =
                     Some(
-                        crate::xml_deser::deser_list_rules(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_rules(&mut tag)
                         ?
                     )
                 ;
@@ -2272,7 +2272,7 @@ pub fn deser_operation_modify_rule(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_target_group(
+pub fn deser_operation_crate_operation_modify_target_group(
     inp: &[u8],
     mut builder: crate::output::modify_target_group_output::Builder,
 ) -> Result<crate::output::modify_target_group_output::Builder, smithy_xml::decode::XmlError> {
@@ -2298,10 +2298,10 @@ pub fn deser_operation_modify_target_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("TargetGroups") /* TargetGroups com.amazonaws.elasticloadbalancingv2#ModifyTargetGroupOutput$TargetGroups */ =>  {
+            s if s.matches("TargetGroups") /* TargetGroups com.amazonaws.elasticloadbalancingv2.synthetic#ModifyTargetGroupOutput$TargetGroups */ =>  {
                 let var_64 =
                     Some(
-                        crate::xml_deser::deser_list_target_groups(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_target_groups(&mut tag)
                         ?
                     )
                 ;
@@ -2320,7 +2320,7 @@ pub fn deser_operation_modify_target_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_modify_target_group_attributes(
+pub fn deser_operation_crate_operation_modify_target_group_attributes(
     inp: &[u8],
     mut builder: crate::output::modify_target_group_attributes_output::Builder,
 ) -> Result<
@@ -2349,10 +2349,10 @@ pub fn deser_operation_modify_target_group_attributes(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Attributes") /* Attributes com.amazonaws.elasticloadbalancingv2#ModifyTargetGroupAttributesOutput$Attributes */ =>  {
+            s if s.matches("Attributes") /* Attributes com.amazonaws.elasticloadbalancingv2.synthetic#ModifyTargetGroupAttributesOutput$Attributes */ =>  {
                 let var_65 =
                     Some(
-                        crate::xml_deser::deser_list_target_group_attributes(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_target_group_attributes(&mut tag)
                         ?
                     )
                 ;
@@ -2371,7 +2371,7 @@ pub fn deser_operation_modify_target_group_attributes(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_set_ip_address_type(
+pub fn deser_operation_crate_operation_set_ip_address_type(
     inp: &[u8],
     mut builder: crate::output::set_ip_address_type_output::Builder,
 ) -> Result<crate::output::set_ip_address_type_output::Builder, smithy_xml::decode::XmlError> {
@@ -2397,7 +2397,7 @@ pub fn deser_operation_set_ip_address_type(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("IpAddressType") /* IpAddressType com.amazonaws.elasticloadbalancingv2#SetIpAddressTypeOutput$IpAddressType */ =>  {
+            s if s.matches("IpAddressType") /* IpAddressType com.amazonaws.elasticloadbalancingv2.synthetic#SetIpAddressTypeOutput$IpAddressType */ =>  {
                 let var_66 =
                     Some(
                         Result::<crate::model::IpAddressType, smithy_xml::decode::XmlError>::Ok(
@@ -2423,7 +2423,7 @@ pub fn deser_operation_set_ip_address_type(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_set_rule_priorities(
+pub fn deser_operation_crate_operation_set_rule_priorities(
     inp: &[u8],
     mut builder: crate::output::set_rule_priorities_output::Builder,
 ) -> Result<crate::output::set_rule_priorities_output::Builder, smithy_xml::decode::XmlError> {
@@ -2449,10 +2449,10 @@ pub fn deser_operation_set_rule_priorities(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Rules") /* Rules com.amazonaws.elasticloadbalancingv2#SetRulePrioritiesOutput$Rules */ =>  {
+            s if s.matches("Rules") /* Rules com.amazonaws.elasticloadbalancingv2.synthetic#SetRulePrioritiesOutput$Rules */ =>  {
                 let var_67 =
                     Some(
-                        crate::xml_deser::deser_list_rules(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_rules(&mut tag)
                         ?
                     )
                 ;
@@ -2471,7 +2471,7 @@ pub fn deser_operation_set_rule_priorities(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_set_security_groups(
+pub fn deser_operation_crate_operation_set_security_groups(
     inp: &[u8],
     mut builder: crate::output::set_security_groups_output::Builder,
 ) -> Result<crate::output::set_security_groups_output::Builder, smithy_xml::decode::XmlError> {
@@ -2497,10 +2497,10 @@ pub fn deser_operation_set_security_groups(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("SecurityGroupIds") /* SecurityGroupIds com.amazonaws.elasticloadbalancingv2#SetSecurityGroupsOutput$SecurityGroupIds */ =>  {
+            s if s.matches("SecurityGroupIds") /* SecurityGroupIds com.amazonaws.elasticloadbalancingv2.synthetic#SetSecurityGroupsOutput$SecurityGroupIds */ =>  {
                 let var_68 =
                     Some(
-                        crate::xml_deser::deser_list_security_groups(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_security_groups(&mut tag)
                         ?
                     )
                 ;
@@ -2519,7 +2519,7 @@ pub fn deser_operation_set_security_groups(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_set_subnets(
+pub fn deser_operation_crate_operation_set_subnets(
     inp: &[u8],
     mut builder: crate::output::set_subnets_output::Builder,
 ) -> Result<crate::output::set_subnets_output::Builder, smithy_xml::decode::XmlError> {
@@ -2545,17 +2545,17 @@ pub fn deser_operation_set_subnets(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.elasticloadbalancingv2#SetSubnetsOutput$AvailabilityZones */ =>  {
+            s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.elasticloadbalancingv2.synthetic#SetSubnetsOutput$AvailabilityZones */ =>  {
                 let var_69 =
                     Some(
-                        crate::xml_deser::deser_list_availability_zones(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_availability_zones(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_availability_zones(var_69);
             }
             ,
-            s if s.matches("IpAddressType") /* IpAddressType com.amazonaws.elasticloadbalancingv2#SetSubnetsOutput$IpAddressType */ =>  {
+            s if s.matches("IpAddressType") /* IpAddressType com.amazonaws.elasticloadbalancingv2.synthetic#SetSubnetsOutput$IpAddressType */ =>  {
                 let var_70 =
                     Some(
                         Result::<crate::model::IpAddressType, smithy_xml::decode::XmlError>::Ok(
@@ -2580,7 +2580,7 @@ pub fn deser_operation_set_subnets(
     Ok(builder)
 }
 
-pub fn deser_list_certificate_list(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_certificate_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Certificate>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2588,7 +2588,7 @@ pub fn deser_list_certificate_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#CertificateList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_certificate(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_certificate(&mut tag)
                     ?
                 );
             }
@@ -2599,7 +2599,7 @@ pub fn deser_list_certificate_list(
     Ok(out)
 }
 
-pub fn deser_list_listeners(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_listeners(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Listener>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2607,7 +2607,7 @@ pub fn deser_list_listeners(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#Listeners$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_listener(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_listener(&mut tag)
                     ?
                 );
             }
@@ -2618,7 +2618,7 @@ pub fn deser_list_listeners(
     Ok(out)
 }
 
-pub fn deser_list_load_balancers(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_load_balancers(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::LoadBalancer>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2626,7 +2626,7 @@ pub fn deser_list_load_balancers(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#LoadBalancers$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_load_balancer(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_load_balancer(&mut tag)
                     ?
                 );
             }
@@ -2637,7 +2637,7 @@ pub fn deser_list_load_balancers(
     Ok(out)
 }
 
-pub fn deser_list_rules(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_rules(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Rule>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2645,7 +2645,7 @@ pub fn deser_list_rules(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#Rules$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_rule(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_rule(&mut tag)
                     ?
                 );
             }
@@ -2656,7 +2656,7 @@ pub fn deser_list_rules(
     Ok(out)
 }
 
-pub fn deser_list_target_groups(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_target_groups(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::TargetGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2664,7 +2664,7 @@ pub fn deser_list_target_groups(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#TargetGroups$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_target_group(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_target_group(&mut tag)
                     ?
                 );
             }
@@ -2675,7 +2675,7 @@ pub fn deser_list_target_groups(
     Ok(out)
 }
 
-pub fn deser_list_limits(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_limits(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Limit>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2683,7 +2683,7 @@ pub fn deser_list_limits(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#Limits$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_limit(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_limit(&mut tag)
                     ?
                 );
             }
@@ -2694,7 +2694,7 @@ pub fn deser_list_limits(
     Ok(out)
 }
 
-pub fn deser_list_load_balancer_attributes(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_load_balancer_attributes(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::LoadBalancerAttribute>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2702,7 +2702,7 @@ pub fn deser_list_load_balancer_attributes(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#LoadBalancerAttributes$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_load_balancer_attribute(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_load_balancer_attribute(&mut tag)
                     ?
                 );
             }
@@ -2713,7 +2713,7 @@ pub fn deser_list_load_balancer_attributes(
     Ok(out)
 }
 
-pub fn deser_list_ssl_policies(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_ssl_policies(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::SslPolicy>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2721,7 +2721,7 @@ pub fn deser_list_ssl_policies(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#SslPolicies$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_ssl_policy(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_ssl_policy(&mut tag)
                     ?
                 );
             }
@@ -2732,7 +2732,7 @@ pub fn deser_list_ssl_policies(
     Ok(out)
 }
 
-pub fn deser_list_tag_descriptions(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_tag_descriptions(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::TagDescription>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2740,7 +2740,7 @@ pub fn deser_list_tag_descriptions(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#TagDescriptions$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_tag_description(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_tag_description(&mut tag)
                     ?
                 );
             }
@@ -2751,7 +2751,7 @@ pub fn deser_list_tag_descriptions(
     Ok(out)
 }
 
-pub fn deser_list_target_group_attributes(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_target_group_attributes(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::TargetGroupAttribute>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2759,7 +2759,7 @@ pub fn deser_list_target_group_attributes(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#TargetGroupAttributes$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_target_group_attribute(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_target_group_attribute(&mut tag)
                     ?
                 );
             }
@@ -2770,7 +2770,7 @@ pub fn deser_list_target_group_attributes(
     Ok(out)
 }
 
-pub fn deser_list_target_health_descriptions(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_target_health_descriptions(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::TargetHealthDescription>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2778,7 +2778,7 @@ pub fn deser_list_target_health_descriptions(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#TargetHealthDescriptions$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_target_health_description(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_target_health_description(&mut tag)
                     ?
                 );
             }
@@ -2789,7 +2789,7 @@ pub fn deser_list_target_health_descriptions(
     Ok(out)
 }
 
-pub fn deser_list_security_groups(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_security_groups(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2811,7 +2811,7 @@ pub fn deser_list_security_groups(
     Ok(out)
 }
 
-pub fn deser_list_availability_zones(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_availability_zones(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::AvailabilityZone>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2819,7 +2819,7 @@ pub fn deser_list_availability_zones(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#AvailabilityZones$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_availability_zone(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_availability_zone(&mut tag)
                     ?
                 );
             }
@@ -2830,7 +2830,7 @@ pub fn deser_list_availability_zones(
     Ok(out)
 }
 
-pub fn deser_structure_certificate(
+pub fn deser_structure_crate_model_certificate(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Certificate, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2871,7 +2871,7 @@ pub fn deser_structure_certificate(
     Ok(builder.build())
 }
 
-pub fn deser_structure_listener(
+pub fn deser_structure_crate_model_listener(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Listener, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2936,7 +2936,7 @@ pub fn deser_structure_listener(
             s if s.matches("Certificates") /* Certificates com.amazonaws.elasticloadbalancingv2#Listener$Certificates */ =>  {
                 let var_77 =
                     Some(
-                        crate::xml_deser::deser_list_certificate_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_certificate_list(&mut tag)
                         ?
                     )
                 ;
@@ -2959,7 +2959,7 @@ pub fn deser_structure_listener(
             s if s.matches("DefaultActions") /* DefaultActions com.amazonaws.elasticloadbalancingv2#Listener$DefaultActions */ =>  {
                 let var_79 =
                     Some(
-                        crate::xml_deser::deser_list_actions(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_actions(&mut tag)
                         ?
                     )
                 ;
@@ -2969,7 +2969,7 @@ pub fn deser_structure_listener(
             s if s.matches("AlpnPolicy") /* AlpnPolicy com.amazonaws.elasticloadbalancingv2#Listener$AlpnPolicy */ =>  {
                 let var_80 =
                     Some(
-                        crate::xml_deser::deser_list_alpn_policy_name(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_alpn_policy_name(&mut tag)
                         ?
                     )
                 ;
@@ -2982,7 +2982,7 @@ pub fn deser_structure_listener(
     Ok(builder.build())
 }
 
-pub fn deser_structure_load_balancer(
+pub fn deser_structure_crate_model_load_balancer(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LoadBalancer, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3085,7 +3085,7 @@ pub fn deser_structure_load_balancer(
             s if s.matches("State") /* State com.amazonaws.elasticloadbalancingv2#LoadBalancer$State */ =>  {
                 let var_88 =
                     Some(
-                        crate::xml_deser::deser_structure_load_balancer_state(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_load_balancer_state(&mut tag)
                         ?
                     )
                 ;
@@ -3109,7 +3109,7 @@ pub fn deser_structure_load_balancer(
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.elasticloadbalancingv2#LoadBalancer$AvailabilityZones */ =>  {
                 let var_90 =
                     Some(
-                        crate::xml_deser::deser_list_availability_zones(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_availability_zones(&mut tag)
                         ?
                     )
                 ;
@@ -3119,7 +3119,7 @@ pub fn deser_structure_load_balancer(
             s if s.matches("SecurityGroups") /* SecurityGroups com.amazonaws.elasticloadbalancingv2#LoadBalancer$SecurityGroups */ =>  {
                 let var_91 =
                     Some(
-                        crate::xml_deser::deser_list_security_groups(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_security_groups(&mut tag)
                         ?
                     )
                 ;
@@ -3159,7 +3159,7 @@ pub fn deser_structure_load_balancer(
     Ok(builder.build())
 }
 
-pub fn deser_structure_rule(
+pub fn deser_structure_crate_model_rule(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Rule, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3195,7 +3195,7 @@ pub fn deser_structure_rule(
             s if s.matches("Conditions") /* Conditions com.amazonaws.elasticloadbalancingv2#Rule$Conditions */ =>  {
                 let var_96 =
                     Some(
-                        crate::xml_deser::deser_list_rule_condition_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_rule_condition_list(&mut tag)
                         ?
                     )
                 ;
@@ -3205,7 +3205,7 @@ pub fn deser_structure_rule(
             s if s.matches("Actions") /* Actions com.amazonaws.elasticloadbalancingv2#Rule$Actions */ =>  {
                 let var_97 =
                     Some(
-                        crate::xml_deser::deser_list_actions(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_actions(&mut tag)
                         ?
                     )
                 ;
@@ -3233,7 +3233,7 @@ pub fn deser_structure_rule(
     Ok(builder.build())
 }
 
-pub fn deser_structure_target_group(
+pub fn deser_structure_crate_model_target_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TargetGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3426,7 +3426,7 @@ pub fn deser_structure_target_group(
             s if s.matches("Matcher") /* Matcher com.amazonaws.elasticloadbalancingv2#TargetGroup$Matcher */ =>  {
                 let var_112 =
                     Some(
-                        crate::xml_deser::deser_structure_matcher(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_matcher(&mut tag)
                         ?
                     )
                 ;
@@ -3436,7 +3436,7 @@ pub fn deser_structure_target_group(
             s if s.matches("LoadBalancerArns") /* LoadBalancerArns com.amazonaws.elasticloadbalancingv2#TargetGroup$LoadBalancerArns */ =>  {
                 let var_113 =
                     Some(
-                        crate::xml_deser::deser_list_load_balancer_arns(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_load_balancer_arns(&mut tag)
                         ?
                     )
                 ;
@@ -3476,7 +3476,7 @@ pub fn deser_structure_target_group(
     Ok(builder.build())
 }
 
-pub fn deser_structure_limit(
+pub fn deser_structure_crate_model_limit(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Limit, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3515,7 +3515,7 @@ pub fn deser_structure_limit(
     Ok(builder.build())
 }
 
-pub fn deser_structure_load_balancer_attribute(
+pub fn deser_structure_crate_model_load_balancer_attribute(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LoadBalancerAttribute, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3554,7 +3554,7 @@ pub fn deser_structure_load_balancer_attribute(
     Ok(builder.build())
 }
 
-pub fn deser_structure_ssl_policy(
+pub fn deser_structure_crate_model_ssl_policy(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::SslPolicy, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3564,7 +3564,7 @@ pub fn deser_structure_ssl_policy(
             s if s.matches("SslProtocols") /* SslProtocols com.amazonaws.elasticloadbalancingv2#SslPolicy$SslProtocols */ =>  {
                 let var_120 =
                     Some(
-                        crate::xml_deser::deser_list_ssl_protocols(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_ssl_protocols(&mut tag)
                         ?
                     )
                 ;
@@ -3574,7 +3574,7 @@ pub fn deser_structure_ssl_policy(
             s if s.matches("Ciphers") /* Ciphers com.amazonaws.elasticloadbalancingv2#SslPolicy$Ciphers */ =>  {
                 let var_121 =
                     Some(
-                        crate::xml_deser::deser_list_ciphers(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_ciphers(&mut tag)
                         ?
                     )
                 ;
@@ -3600,7 +3600,7 @@ pub fn deser_structure_ssl_policy(
     Ok(builder.build())
 }
 
-pub fn deser_structure_tag_description(
+pub fn deser_structure_crate_model_tag_description(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TagDescription, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3623,7 +3623,7 @@ pub fn deser_structure_tag_description(
             s if s.matches("Tags") /* Tags com.amazonaws.elasticloadbalancingv2#TagDescription$Tags */ =>  {
                 let var_124 =
                     Some(
-                        crate::xml_deser::deser_list_tag_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_tag_list(&mut tag)
                         ?
                     )
                 ;
@@ -3636,7 +3636,7 @@ pub fn deser_structure_tag_description(
     Ok(builder.build())
 }
 
-pub fn deser_structure_target_group_attribute(
+pub fn deser_structure_crate_model_target_group_attribute(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TargetGroupAttribute, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3675,7 +3675,7 @@ pub fn deser_structure_target_group_attribute(
     Ok(builder.build())
 }
 
-pub fn deser_structure_target_health_description(
+pub fn deser_structure_crate_model_target_health_description(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TargetHealthDescription, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3685,7 +3685,7 @@ pub fn deser_structure_target_health_description(
             s if s.matches("Target") /* Target com.amazonaws.elasticloadbalancingv2#TargetHealthDescription$Target */ =>  {
                 let var_127 =
                     Some(
-                        crate::xml_deser::deser_structure_target_description(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_target_description(&mut tag)
                         ?
                     )
                 ;
@@ -3708,7 +3708,7 @@ pub fn deser_structure_target_health_description(
             s if s.matches("TargetHealth") /* TargetHealth com.amazonaws.elasticloadbalancingv2#TargetHealthDescription$TargetHealth */ =>  {
                 let var_129 =
                     Some(
-                        crate::xml_deser::deser_structure_target_health(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_target_health(&mut tag)
                         ?
                     )
                 ;
@@ -3721,7 +3721,7 @@ pub fn deser_structure_target_health_description(
     Ok(builder.build())
 }
 
-pub fn deser_structure_availability_zone(
+pub fn deser_structure_crate_model_availability_zone(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AvailabilityZone, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3770,7 +3770,7 @@ pub fn deser_structure_availability_zone(
             s if s.matches("LoadBalancerAddresses") /* LoadBalancerAddresses com.amazonaws.elasticloadbalancingv2#AvailabilityZone$LoadBalancerAddresses */ =>  {
                 let var_133 =
                     Some(
-                        crate::xml_deser::deser_list_load_balancer_addresses(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_load_balancer_addresses(&mut tag)
                         ?
                     )
                 ;
@@ -3783,7 +3783,7 @@ pub fn deser_structure_availability_zone(
     Ok(builder.build())
 }
 
-pub fn deser_list_actions(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_actions(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Action>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -3791,7 +3791,7 @@ pub fn deser_list_actions(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#Actions$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_action(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_action(&mut tag)
                     ?
                 );
             }
@@ -3802,7 +3802,7 @@ pub fn deser_list_actions(
     Ok(out)
 }
 
-pub fn deser_list_alpn_policy_name(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_alpn_policy_name(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -3824,7 +3824,7 @@ pub fn deser_list_alpn_policy_name(
     Ok(out)
 }
 
-pub fn deser_structure_load_balancer_state(
+pub fn deser_structure_crate_model_load_balancer_state(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LoadBalancerState, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3864,7 +3864,7 @@ pub fn deser_structure_load_balancer_state(
     Ok(builder.build())
 }
 
-pub fn deser_list_rule_condition_list(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_rule_condition_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::RuleCondition>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -3872,7 +3872,7 @@ pub fn deser_list_rule_condition_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#RuleConditionList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_rule_condition(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_rule_condition(&mut tag)
                     ?
                 );
             }
@@ -3883,7 +3883,7 @@ pub fn deser_list_rule_condition_list(
     Ok(out)
 }
 
-pub fn deser_structure_matcher(
+pub fn deser_structure_crate_model_matcher(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Matcher, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3922,7 +3922,7 @@ pub fn deser_structure_matcher(
     Ok(builder.build())
 }
 
-pub fn deser_list_load_balancer_arns(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_load_balancer_arns(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -3944,7 +3944,7 @@ pub fn deser_list_load_balancer_arns(
     Ok(out)
 }
 
-pub fn deser_list_ssl_protocols(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_ssl_protocols(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -3966,7 +3966,7 @@ pub fn deser_list_ssl_protocols(
     Ok(out)
 }
 
-pub fn deser_list_ciphers(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_ciphers(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Cipher>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -3974,7 +3974,7 @@ pub fn deser_list_ciphers(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#Ciphers$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_cipher(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_cipher(&mut tag)
                     ?
                 );
             }
@@ -3985,7 +3985,7 @@ pub fn deser_list_ciphers(
     Ok(out)
 }
 
-pub fn deser_list_tag_list(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_tag_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Tag>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -3993,7 +3993,7 @@ pub fn deser_list_tag_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#TagList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_tag(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_tag(&mut tag)
                     ?
                 );
             }
@@ -4004,7 +4004,7 @@ pub fn deser_list_tag_list(
     Ok(out)
 }
 
-pub fn deser_structure_target_description(
+pub fn deser_structure_crate_model_target_description(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TargetDescription, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4058,7 +4058,7 @@ pub fn deser_structure_target_description(
     Ok(builder.build())
 }
 
-pub fn deser_structure_target_health(
+pub fn deser_structure_crate_model_target_health(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TargetHealth, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4112,7 +4112,7 @@ pub fn deser_structure_target_health(
     Ok(builder.build())
 }
 
-pub fn deser_list_load_balancer_addresses(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_load_balancer_addresses(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::LoadBalancerAddress>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4120,7 +4120,7 @@ pub fn deser_list_load_balancer_addresses(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#LoadBalancerAddresses$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_load_balancer_address(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_load_balancer_address(&mut tag)
                     ?
                 );
             }
@@ -4131,7 +4131,7 @@ pub fn deser_list_load_balancer_addresses(
     Ok(out)
 }
 
-pub fn deser_structure_action(
+pub fn deser_structure_crate_model_action(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Action, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4168,7 +4168,7 @@ pub fn deser_structure_action(
             s if s.matches("AuthenticateOidcConfig") /* AuthenticateOidcConfig com.amazonaws.elasticloadbalancingv2#Action$AuthenticateOidcConfig */ =>  {
                 let var_146 =
                     Some(
-                        crate::xml_deser::deser_structure_authenticate_oidc_action_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_authenticate_oidc_action_config(&mut tag)
                         ?
                     )
                 ;
@@ -4178,7 +4178,7 @@ pub fn deser_structure_action(
             s if s.matches("AuthenticateCognitoConfig") /* AuthenticateCognitoConfig com.amazonaws.elasticloadbalancingv2#Action$AuthenticateCognitoConfig */ =>  {
                 let var_147 =
                     Some(
-                        crate::xml_deser::deser_structure_authenticate_cognito_action_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_authenticate_cognito_action_config(&mut tag)
                         ?
                     )
                 ;
@@ -4203,7 +4203,7 @@ pub fn deser_structure_action(
             s if s.matches("RedirectConfig") /* RedirectConfig com.amazonaws.elasticloadbalancingv2#Action$RedirectConfig */ =>  {
                 let var_149 =
                     Some(
-                        crate::xml_deser::deser_structure_redirect_action_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_redirect_action_config(&mut tag)
                         ?
                     )
                 ;
@@ -4213,7 +4213,7 @@ pub fn deser_structure_action(
             s if s.matches("FixedResponseConfig") /* FixedResponseConfig com.amazonaws.elasticloadbalancingv2#Action$FixedResponseConfig */ =>  {
                 let var_150 =
                     Some(
-                        crate::xml_deser::deser_structure_fixed_response_action_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_fixed_response_action_config(&mut tag)
                         ?
                     )
                 ;
@@ -4223,7 +4223,7 @@ pub fn deser_structure_action(
             s if s.matches("ForwardConfig") /* ForwardConfig com.amazonaws.elasticloadbalancingv2#Action$ForwardConfig */ =>  {
                 let var_151 =
                     Some(
-                        crate::xml_deser::deser_structure_forward_action_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_forward_action_config(&mut tag)
                         ?
                     )
                 ;
@@ -4236,7 +4236,7 @@ pub fn deser_structure_action(
     Ok(builder.build())
 }
 
-pub fn deser_structure_rule_condition(
+pub fn deser_structure_crate_model_rule_condition(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::RuleCondition, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4259,7 +4259,7 @@ pub fn deser_structure_rule_condition(
             s if s.matches("Values") /* Values com.amazonaws.elasticloadbalancingv2#RuleCondition$Values */ =>  {
                 let var_153 =
                     Some(
-                        crate::xml_deser::deser_list_list_of_string(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_list_of_string(&mut tag)
                         ?
                     )
                 ;
@@ -4269,7 +4269,7 @@ pub fn deser_structure_rule_condition(
             s if s.matches("HostHeaderConfig") /* HostHeaderConfig com.amazonaws.elasticloadbalancingv2#RuleCondition$HostHeaderConfig */ =>  {
                 let var_154 =
                     Some(
-                        crate::xml_deser::deser_structure_host_header_condition_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_host_header_condition_config(&mut tag)
                         ?
                     )
                 ;
@@ -4279,7 +4279,7 @@ pub fn deser_structure_rule_condition(
             s if s.matches("PathPatternConfig") /* PathPatternConfig com.amazonaws.elasticloadbalancingv2#RuleCondition$PathPatternConfig */ =>  {
                 let var_155 =
                     Some(
-                        crate::xml_deser::deser_structure_path_pattern_condition_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_path_pattern_condition_config(&mut tag)
                         ?
                     )
                 ;
@@ -4289,7 +4289,7 @@ pub fn deser_structure_rule_condition(
             s if s.matches("HttpHeaderConfig") /* HttpHeaderConfig com.amazonaws.elasticloadbalancingv2#RuleCondition$HttpHeaderConfig */ =>  {
                 let var_156 =
                     Some(
-                        crate::xml_deser::deser_structure_http_header_condition_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_http_header_condition_config(&mut tag)
                         ?
                     )
                 ;
@@ -4299,7 +4299,7 @@ pub fn deser_structure_rule_condition(
             s if s.matches("QueryStringConfig") /* QueryStringConfig com.amazonaws.elasticloadbalancingv2#RuleCondition$QueryStringConfig */ =>  {
                 let var_157 =
                     Some(
-                        crate::xml_deser::deser_structure_query_string_condition_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_query_string_condition_config(&mut tag)
                         ?
                     )
                 ;
@@ -4309,7 +4309,7 @@ pub fn deser_structure_rule_condition(
             s if s.matches("HttpRequestMethodConfig") /* HttpRequestMethodConfig com.amazonaws.elasticloadbalancingv2#RuleCondition$HttpRequestMethodConfig */ =>  {
                 let var_158 =
                     Some(
-                        crate::xml_deser::deser_structure_http_request_method_condition_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_http_request_method_condition_config(&mut tag)
                         ?
                     )
                 ;
@@ -4319,7 +4319,7 @@ pub fn deser_structure_rule_condition(
             s if s.matches("SourceIpConfig") /* SourceIpConfig com.amazonaws.elasticloadbalancingv2#RuleCondition$SourceIpConfig */ =>  {
                 let var_159 =
                     Some(
-                        crate::xml_deser::deser_structure_source_ip_condition_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_source_ip_condition_config(&mut tag)
                         ?
                     )
                 ;
@@ -4332,7 +4332,7 @@ pub fn deser_structure_rule_condition(
     Ok(builder.build())
 }
 
-pub fn deser_structure_cipher(
+pub fn deser_structure_crate_model_cipher(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Cipher, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4373,7 +4373,7 @@ pub fn deser_structure_cipher(
     Ok(builder.build())
 }
 
-pub fn deser_structure_tag(
+pub fn deser_structure_crate_model_tag(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Tag, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4412,7 +4412,7 @@ pub fn deser_structure_tag(
     Ok(builder.build())
 }
 
-pub fn deser_structure_load_balancer_address(
+pub fn deser_structure_crate_model_load_balancer_address(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LoadBalancerAddress, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4477,7 +4477,7 @@ pub fn deser_structure_load_balancer_address(
     Ok(builder.build())
 }
 
-pub fn deser_structure_authenticate_oidc_action_config(
+pub fn deser_structure_crate_model_authenticate_oidc_action_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AuthenticateOidcActionConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4606,7 +4606,7 @@ pub fn deser_structure_authenticate_oidc_action_config(
             s if s.matches("AuthenticationRequestExtraParams") /* AuthenticationRequestExtraParams com.amazonaws.elasticloadbalancingv2#AuthenticateOidcActionConfig$AuthenticationRequestExtraParams */ =>  {
                 let var_177 =
                     Some(
-                        crate::xml_deser::deser_map_authenticate_oidc_action_authentication_request_extra_params(&mut tag)
+                        crate::xml_deser::deser_map_com_amazonaws_elasticloadbalancingv2_authenticate_oidc_action_authentication_request_extra_params(&mut tag)
                         ?
                     )
                 ;
@@ -4648,7 +4648,7 @@ pub fn deser_structure_authenticate_oidc_action_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_authenticate_cognito_action_config(
+pub fn deser_structure_crate_model_authenticate_cognito_action_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AuthenticateCognitoActionConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4738,7 +4738,7 @@ pub fn deser_structure_authenticate_cognito_action_config(
             s if s.matches("AuthenticationRequestExtraParams") /* AuthenticationRequestExtraParams com.amazonaws.elasticloadbalancingv2#AuthenticateCognitoActionConfig$AuthenticationRequestExtraParams */ =>  {
                 let var_186 =
                     Some(
-                        crate::xml_deser::deser_map_authenticate_cognito_action_authentication_request_extra_params(&mut tag)
+                        crate::xml_deser::deser_map_com_amazonaws_elasticloadbalancingv2_authenticate_cognito_action_authentication_request_extra_params(&mut tag)
                         ?
                     )
                 ;
@@ -4765,7 +4765,7 @@ pub fn deser_structure_authenticate_cognito_action_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_redirect_action_config(
+pub fn deser_structure_crate_model_redirect_action_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::RedirectActionConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4857,7 +4857,7 @@ pub fn deser_structure_redirect_action_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_fixed_response_action_config(
+pub fn deser_structure_crate_model_fixed_response_action_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FixedResponseActionConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4909,7 +4909,7 @@ pub fn deser_structure_fixed_response_action_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_forward_action_config(
+pub fn deser_structure_crate_model_forward_action_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ForwardActionConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4919,7 +4919,7 @@ pub fn deser_structure_forward_action_config(
             s if s.matches("TargetGroups") /* TargetGroups com.amazonaws.elasticloadbalancingv2#ForwardActionConfig$TargetGroups */ =>  {
                 let var_197 =
                     Some(
-                        crate::xml_deser::deser_list_target_group_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_target_group_list(&mut tag)
                         ?
                     )
                 ;
@@ -4929,7 +4929,7 @@ pub fn deser_structure_forward_action_config(
             s if s.matches("TargetGroupStickinessConfig") /* TargetGroupStickinessConfig com.amazonaws.elasticloadbalancingv2#ForwardActionConfig$TargetGroupStickinessConfig */ =>  {
                 let var_198 =
                     Some(
-                        crate::xml_deser::deser_structure_target_group_stickiness_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_target_group_stickiness_config(&mut tag)
                         ?
                     )
                 ;
@@ -4942,7 +4942,7 @@ pub fn deser_structure_forward_action_config(
     Ok(builder.build())
 }
 
-pub fn deser_list_list_of_string(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_list_of_string(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4964,7 +4964,7 @@ pub fn deser_list_list_of_string(
     Ok(out)
 }
 
-pub fn deser_structure_host_header_condition_config(
+pub fn deser_structure_crate_model_host_header_condition_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::HostHeaderConditionConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4974,7 +4974,7 @@ pub fn deser_structure_host_header_condition_config(
             s if s.matches("Values") /* Values com.amazonaws.elasticloadbalancingv2#HostHeaderConditionConfig$Values */ =>  {
                 let var_199 =
                     Some(
-                        crate::xml_deser::deser_list_list_of_string(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_list_of_string(&mut tag)
                         ?
                     )
                 ;
@@ -4987,7 +4987,7 @@ pub fn deser_structure_host_header_condition_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_path_pattern_condition_config(
+pub fn deser_structure_crate_model_path_pattern_condition_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PathPatternConditionConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4997,7 +4997,7 @@ pub fn deser_structure_path_pattern_condition_config(
             s if s.matches("Values") /* Values com.amazonaws.elasticloadbalancingv2#PathPatternConditionConfig$Values */ =>  {
                 let var_200 =
                     Some(
-                        crate::xml_deser::deser_list_list_of_string(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_list_of_string(&mut tag)
                         ?
                     )
                 ;
@@ -5010,7 +5010,7 @@ pub fn deser_structure_path_pattern_condition_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_http_header_condition_config(
+pub fn deser_structure_crate_model_http_header_condition_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::HttpHeaderConditionConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5033,7 +5033,7 @@ pub fn deser_structure_http_header_condition_config(
             s if s.matches("Values") /* Values com.amazonaws.elasticloadbalancingv2#HttpHeaderConditionConfig$Values */ =>  {
                 let var_202 =
                     Some(
-                        crate::xml_deser::deser_list_list_of_string(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_list_of_string(&mut tag)
                         ?
                     )
                 ;
@@ -5046,7 +5046,7 @@ pub fn deser_structure_http_header_condition_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_query_string_condition_config(
+pub fn deser_structure_crate_model_query_string_condition_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::QueryStringConditionConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5056,7 +5056,7 @@ pub fn deser_structure_query_string_condition_config(
             s if s.matches("Values") /* Values com.amazonaws.elasticloadbalancingv2#QueryStringConditionConfig$Values */ =>  {
                 let var_203 =
                     Some(
-                        crate::xml_deser::deser_list_query_string_key_value_pair_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_query_string_key_value_pair_list(&mut tag)
                         ?
                     )
                 ;
@@ -5069,7 +5069,7 @@ pub fn deser_structure_query_string_condition_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_http_request_method_condition_config(
+pub fn deser_structure_crate_model_http_request_method_condition_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::HttpRequestMethodConditionConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5079,7 +5079,7 @@ pub fn deser_structure_http_request_method_condition_config(
             s if s.matches("Values") /* Values com.amazonaws.elasticloadbalancingv2#HttpRequestMethodConditionConfig$Values */ =>  {
                 let var_204 =
                     Some(
-                        crate::xml_deser::deser_list_list_of_string(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_list_of_string(&mut tag)
                         ?
                     )
                 ;
@@ -5092,7 +5092,7 @@ pub fn deser_structure_http_request_method_condition_config(
     Ok(builder.build())
 }
 
-pub fn deser_structure_source_ip_condition_config(
+pub fn deser_structure_crate_model_source_ip_condition_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::SourceIpConditionConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5102,7 +5102,7 @@ pub fn deser_structure_source_ip_condition_config(
             s if s.matches("Values") /* Values com.amazonaws.elasticloadbalancingv2#SourceIpConditionConfig$Values */ =>  {
                 let var_205 =
                     Some(
-                        crate::xml_deser::deser_list_list_of_string(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_list_of_string(&mut tag)
                         ?
                     )
                 ;
@@ -5115,7 +5115,7 @@ pub fn deser_structure_source_ip_condition_config(
     Ok(builder.build())
 }
 
-pub fn deser_map_authenticate_oidc_action_authentication_request_extra_params(
+pub fn deser_map_com_amazonaws_elasticloadbalancingv2_authenticate_oidc_action_authentication_request_extra_params(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::collections::HashMap<std::string::String, std::string::String>,
@@ -5125,7 +5125,7 @@ pub fn deser_map_authenticate_oidc_action_authentication_request_extra_params(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("entry") => {
-                crate::xml_deser::deser_map_authenticate_oidc_action_authentication_request_extra_params_entry(&mut tag, &mut out)?;
+                crate::xml_deser::deser_map_com_amazonaws_elasticloadbalancingv2_authenticate_oidc_action_authentication_request_extra_params_entry(&mut tag, &mut out)?;
             }
             _ => {}
         }
@@ -5133,7 +5133,7 @@ pub fn deser_map_authenticate_oidc_action_authentication_request_extra_params(
     Ok(out)
 }
 
-pub fn deser_map_authenticate_cognito_action_authentication_request_extra_params(
+pub fn deser_map_com_amazonaws_elasticloadbalancingv2_authenticate_cognito_action_authentication_request_extra_params(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::collections::HashMap<std::string::String, std::string::String>,
@@ -5143,7 +5143,7 @@ pub fn deser_map_authenticate_cognito_action_authentication_request_extra_params
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("entry") => {
-                crate::xml_deser::deser_map_authenticate_cognito_action_authentication_request_extra_params_entry(&mut tag, &mut out)?;
+                crate::xml_deser::deser_map_com_amazonaws_elasticloadbalancingv2_authenticate_cognito_action_authentication_request_extra_params_entry(&mut tag, &mut out)?;
             }
             _ => {}
         }
@@ -5151,7 +5151,7 @@ pub fn deser_map_authenticate_cognito_action_authentication_request_extra_params
     Ok(out)
 }
 
-pub fn deser_list_target_group_list(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_target_group_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::TargetGroupTuple>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5159,7 +5159,7 @@ pub fn deser_list_target_group_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#TargetGroupList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_target_group_tuple(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_target_group_tuple(&mut tag)
                     ?
                 );
             }
@@ -5170,7 +5170,7 @@ pub fn deser_list_target_group_list(
     Ok(out)
 }
 
-pub fn deser_structure_target_group_stickiness_config(
+pub fn deser_structure_crate_model_target_group_stickiness_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TargetGroupStickinessConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5213,7 +5213,7 @@ pub fn deser_structure_target_group_stickiness_config(
     Ok(builder.build())
 }
 
-pub fn deser_list_query_string_key_value_pair_list(
+pub fn deser_list_com_amazonaws_elasticloadbalancingv2_query_string_key_value_pair_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::QueryStringKeyValuePair>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5221,7 +5221,7 @@ pub fn deser_list_query_string_key_value_pair_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.elasticloadbalancingv2#QueryStringKeyValuePairList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_query_string_key_value_pair(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_query_string_key_value_pair(&mut tag)
                     ?
                 );
             }
@@ -5232,7 +5232,7 @@ pub fn deser_list_query_string_key_value_pair_list(
     Ok(out)
 }
 
-pub fn deser_map_authenticate_oidc_action_authentication_request_extra_params_entry(
+pub fn deser_map_com_amazonaws_elasticloadbalancingv2_authenticate_oidc_action_authentication_request_extra_params_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
     out: &mut std::collections::HashMap<std::string::String, std::string::String>,
 ) -> Result<(), smithy_xml::decode::XmlError> {
@@ -5269,7 +5269,7 @@ pub fn deser_map_authenticate_oidc_action_authentication_request_extra_params_en
     Ok(())
 }
 
-pub fn deser_map_authenticate_cognito_action_authentication_request_extra_params_entry(
+pub fn deser_map_com_amazonaws_elasticloadbalancingv2_authenticate_cognito_action_authentication_request_extra_params_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
     out: &mut std::collections::HashMap<std::string::String, std::string::String>,
 ) -> Result<(), smithy_xml::decode::XmlError> {
@@ -5306,7 +5306,7 @@ pub fn deser_map_authenticate_cognito_action_authentication_request_extra_params
     Ok(())
 }
 
-pub fn deser_structure_target_group_tuple(
+pub fn deser_structure_crate_model_target_group_tuple(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TargetGroupTuple, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5347,7 +5347,7 @@ pub fn deser_structure_target_group_tuple(
     Ok(builder.build())
 }
 
-pub fn deser_structure_query_string_key_value_pair(
+pub fn deser_structure_crate_model_query_string_key_value_pair(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::QueryStringKeyValuePair, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]

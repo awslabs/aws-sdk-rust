@@ -317,7 +317,7 @@ impl Stage {
     }
 }
 
-/// <p>The contact or contact channel that is being engaged.</p>
+/// <p>The contact or contact channel that's being engaged.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Target {

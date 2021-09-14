@@ -6,7 +6,7 @@ pub fn parse_http_generic_error(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cfn_registry_exception_xml_err(
+pub fn deser_structure_crate_error_cfn_registry_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::cfn_registry_exception::Builder,
 ) -> Result<crate::error::cfn_registry_exception::Builder, smithy_xml::decode::XmlError> {
@@ -39,7 +39,7 @@ pub fn deser_structure_cfn_registry_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_type_not_found_exception_xml_err(
+pub fn deser_structure_crate_error_type_not_found_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::type_not_found_exception::Builder,
 ) -> Result<crate::error::type_not_found_exception::Builder, smithy_xml::decode::XmlError> {
@@ -72,7 +72,7 @@ pub fn deser_structure_type_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_activate_type(
+pub fn deser_operation_crate_operation_activate_type(
     inp: &[u8],
     mut builder: crate::output::activate_type_output::Builder,
 ) -> Result<crate::output::activate_type_output::Builder, smithy_xml::decode::XmlError> {
@@ -98,7 +98,7 @@ pub fn deser_operation_activate_type(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Arn") /* Arn com.amazonaws.cloudformation#ActivateTypeOutput$Arn */ =>  {
+            s if s.matches("Arn") /* Arn com.amazonaws.cloudformation.synthetic#ActivateTypeOutput$Arn */ =>  {
                 let var_3 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -123,7 +123,7 @@ pub fn deser_operation_activate_type(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_type_configuration_not_found_exception_xml_err(
+pub fn deser_structure_crate_error_type_configuration_not_found_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::type_configuration_not_found_exception::Builder,
 ) -> Result<
@@ -159,7 +159,7 @@ pub fn deser_structure_type_configuration_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_batch_describe_type_configurations(
+pub fn deser_operation_crate_operation_batch_describe_type_configurations(
     inp: &[u8],
     mut builder: crate::output::batch_describe_type_configurations_output::Builder,
 ) -> Result<
@@ -188,30 +188,30 @@ pub fn deser_operation_batch_describe_type_configurations(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Errors") /* Errors com.amazonaws.cloudformation#BatchDescribeTypeConfigurationsOutput$Errors */ =>  {
+            s if s.matches("Errors") /* Errors com.amazonaws.cloudformation.synthetic#BatchDescribeTypeConfigurationsOutput$Errors */ =>  {
                 let var_5 =
                     Some(
-                        crate::xml_deser::deser_list_batch_describe_type_configurations_errors(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_batch_describe_type_configurations_errors(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_errors(var_5);
             }
             ,
-            s if s.matches("UnprocessedTypeConfigurations") /* UnprocessedTypeConfigurations com.amazonaws.cloudformation#BatchDescribeTypeConfigurationsOutput$UnprocessedTypeConfigurations */ =>  {
+            s if s.matches("UnprocessedTypeConfigurations") /* UnprocessedTypeConfigurations com.amazonaws.cloudformation.synthetic#BatchDescribeTypeConfigurationsOutput$UnprocessedTypeConfigurations */ =>  {
                 let var_6 =
                     Some(
-                        crate::xml_deser::deser_list_unprocessed_type_configurations(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_unprocessed_type_configurations(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_unprocessed_type_configurations(var_6);
             }
             ,
-            s if s.matches("TypeConfigurations") /* TypeConfigurations com.amazonaws.cloudformation#BatchDescribeTypeConfigurationsOutput$TypeConfigurations */ =>  {
+            s if s.matches("TypeConfigurations") /* TypeConfigurations com.amazonaws.cloudformation.synthetic#BatchDescribeTypeConfigurationsOutput$TypeConfigurations */ =>  {
                 let var_7 =
                     Some(
-                        crate::xml_deser::deser_list_type_configuration_details_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_type_configuration_details_list(&mut tag)
                         ?
                     )
                 ;
@@ -230,7 +230,7 @@ pub fn deser_operation_batch_describe_type_configurations(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_token_already_exists_exception_xml_err(
+pub fn deser_structure_crate_error_token_already_exists_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::token_already_exists_exception::Builder,
 ) -> Result<crate::error::token_already_exists_exception::Builder, smithy_xml::decode::XmlError> {
@@ -263,7 +263,7 @@ pub fn deser_structure_token_already_exists_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_already_exists_exception_xml_err(
+pub fn deser_structure_crate_error_already_exists_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::already_exists_exception::Builder,
 ) -> Result<crate::error::already_exists_exception::Builder, smithy_xml::decode::XmlError> {
@@ -296,7 +296,7 @@ pub fn deser_structure_already_exists_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_insufficient_capabilities_exception_xml_err(
+pub fn deser_structure_crate_error_insufficient_capabilities_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::insufficient_capabilities_exception::Builder,
 ) -> Result<crate::error::insufficient_capabilities_exception::Builder, smithy_xml::decode::XmlError>
@@ -330,7 +330,7 @@ pub fn deser_structure_insufficient_capabilities_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_limit_exceeded_exception_xml_err(
+pub fn deser_structure_crate_error_limit_exceeded_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_xml::decode::XmlError> {
@@ -363,7 +363,7 @@ pub fn deser_structure_limit_exceeded_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_change_set(
+pub fn deser_operation_crate_operation_create_change_set(
     inp: &[u8],
     mut builder: crate::output::create_change_set_output::Builder,
 ) -> Result<crate::output::create_change_set_output::Builder, smithy_xml::decode::XmlError> {
@@ -389,7 +389,7 @@ pub fn deser_operation_create_change_set(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Id") /* Id com.amazonaws.cloudformation#CreateChangeSetOutput$Id */ =>  {
+            s if s.matches("Id") /* Id com.amazonaws.cloudformation.synthetic#CreateChangeSetOutput$Id */ =>  {
                 let var_12 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -402,7 +402,7 @@ pub fn deser_operation_create_change_set(
                 builder = builder.set_id(var_12);
             }
             ,
-            s if s.matches("StackId") /* StackId com.amazonaws.cloudformation#CreateChangeSetOutput$StackId */ =>  {
+            s if s.matches("StackId") /* StackId com.amazonaws.cloudformation.synthetic#CreateChangeSetOutput$StackId */ =>  {
                 let var_13 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -427,7 +427,7 @@ pub fn deser_operation_create_change_set(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_stack(
+pub fn deser_operation_crate_operation_create_stack(
     inp: &[u8],
     mut builder: crate::output::create_stack_output::Builder,
 ) -> Result<crate::output::create_stack_output::Builder, smithy_xml::decode::XmlError> {
@@ -453,7 +453,7 @@ pub fn deser_operation_create_stack(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("StackId") /* StackId com.amazonaws.cloudformation#CreateStackOutput$StackId */ =>  {
+            s if s.matches("StackId") /* StackId com.amazonaws.cloudformation.synthetic#CreateStackOutput$StackId */ =>  {
                 let var_14 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -478,7 +478,7 @@ pub fn deser_operation_create_stack(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_operation_exception_xml_err(
+pub fn deser_structure_crate_error_invalid_operation_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_operation_exception::Builder,
 ) -> Result<crate::error::invalid_operation_exception::Builder, smithy_xml::decode::XmlError> {
@@ -511,7 +511,7 @@ pub fn deser_structure_invalid_operation_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_operation_id_already_exists_exception_xml_err(
+pub fn deser_structure_crate_error_operation_id_already_exists_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::operation_id_already_exists_exception::Builder,
 ) -> Result<
@@ -547,7 +547,7 @@ pub fn deser_structure_operation_id_already_exists_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_operation_in_progress_exception_xml_err(
+pub fn deser_structure_crate_error_operation_in_progress_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::operation_in_progress_exception::Builder,
 ) -> Result<crate::error::operation_in_progress_exception::Builder, smithy_xml::decode::XmlError> {
@@ -580,7 +580,7 @@ pub fn deser_structure_operation_in_progress_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_stack_set_not_found_exception_xml_err(
+pub fn deser_structure_crate_error_stack_set_not_found_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::stack_set_not_found_exception::Builder,
 ) -> Result<crate::error::stack_set_not_found_exception::Builder, smithy_xml::decode::XmlError> {
@@ -613,7 +613,7 @@ pub fn deser_structure_stack_set_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_stale_request_exception_xml_err(
+pub fn deser_structure_crate_error_stale_request_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::stale_request_exception::Builder,
 ) -> Result<crate::error::stale_request_exception::Builder, smithy_xml::decode::XmlError> {
@@ -646,7 +646,7 @@ pub fn deser_structure_stale_request_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_stack_instances(
+pub fn deser_operation_crate_operation_create_stack_instances(
     inp: &[u8],
     mut builder: crate::output::create_stack_instances_output::Builder,
 ) -> Result<crate::output::create_stack_instances_output::Builder, smithy_xml::decode::XmlError> {
@@ -672,7 +672,7 @@ pub fn deser_operation_create_stack_instances(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("OperationId") /* OperationId com.amazonaws.cloudformation#CreateStackInstancesOutput$OperationId */ =>  {
+            s if s.matches("OperationId") /* OperationId com.amazonaws.cloudformation.synthetic#CreateStackInstancesOutput$OperationId */ =>  {
                 let var_20 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -697,7 +697,7 @@ pub fn deser_operation_create_stack_instances(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_created_but_modified_exception_xml_err(
+pub fn deser_structure_crate_error_created_but_modified_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::created_but_modified_exception::Builder,
 ) -> Result<crate::error::created_but_modified_exception::Builder, smithy_xml::decode::XmlError> {
@@ -730,7 +730,7 @@ pub fn deser_structure_created_but_modified_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_name_already_exists_exception_xml_err(
+pub fn deser_structure_crate_error_name_already_exists_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::name_already_exists_exception::Builder,
 ) -> Result<crate::error::name_already_exists_exception::Builder, smithy_xml::decode::XmlError> {
@@ -763,7 +763,7 @@ pub fn deser_structure_name_already_exists_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_stack_set(
+pub fn deser_operation_crate_operation_create_stack_set(
     inp: &[u8],
     mut builder: crate::output::create_stack_set_output::Builder,
 ) -> Result<crate::output::create_stack_set_output::Builder, smithy_xml::decode::XmlError> {
@@ -789,7 +789,7 @@ pub fn deser_operation_create_stack_set(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("StackSetId") /* StackSetId com.amazonaws.cloudformation#CreateStackSetOutput$StackSetId */ =>  {
+            s if s.matches("StackSetId") /* StackSetId com.amazonaws.cloudformation.synthetic#CreateStackSetOutput$StackSetId */ =>  {
                 let var_23 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -814,7 +814,7 @@ pub fn deser_operation_create_stack_set(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_change_set_status_exception_xml_err(
+pub fn deser_structure_crate_error_invalid_change_set_status_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_change_set_status_exception::Builder,
 ) -> Result<crate::error::invalid_change_set_status_exception::Builder, smithy_xml::decode::XmlError>
@@ -848,7 +848,7 @@ pub fn deser_structure_invalid_change_set_status_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_delete_stack_instances(
+pub fn deser_operation_crate_operation_delete_stack_instances(
     inp: &[u8],
     mut builder: crate::output::delete_stack_instances_output::Builder,
 ) -> Result<crate::output::delete_stack_instances_output::Builder, smithy_xml::decode::XmlError> {
@@ -874,7 +874,7 @@ pub fn deser_operation_delete_stack_instances(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("OperationId") /* OperationId com.amazonaws.cloudformation#DeleteStackInstancesOutput$OperationId */ =>  {
+            s if s.matches("OperationId") /* OperationId com.amazonaws.cloudformation.synthetic#DeleteStackInstancesOutput$OperationId */ =>  {
                 let var_25 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -899,7 +899,7 @@ pub fn deser_operation_delete_stack_instances(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_stack_set_not_empty_exception_xml_err(
+pub fn deser_structure_crate_error_stack_set_not_empty_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::stack_set_not_empty_exception::Builder,
 ) -> Result<crate::error::stack_set_not_empty_exception::Builder, smithy_xml::decode::XmlError> {
@@ -932,7 +932,7 @@ pub fn deser_structure_stack_set_not_empty_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_account_limits(
+pub fn deser_operation_crate_operation_describe_account_limits(
     inp: &[u8],
     mut builder: crate::output::describe_account_limits_output::Builder,
 ) -> Result<crate::output::describe_account_limits_output::Builder, smithy_xml::decode::XmlError> {
@@ -958,17 +958,17 @@ pub fn deser_operation_describe_account_limits(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("AccountLimits") /* AccountLimits com.amazonaws.cloudformation#DescribeAccountLimitsOutput$AccountLimits */ =>  {
+            s if s.matches("AccountLimits") /* AccountLimits com.amazonaws.cloudformation.synthetic#DescribeAccountLimitsOutput$AccountLimits */ =>  {
                 let var_27 =
                     Some(
-                        crate::xml_deser::deser_list_account_limit_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_account_limit_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_account_limits(var_27);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation#DescribeAccountLimitsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#DescribeAccountLimitsOutput$NextToken */ =>  {
                 let var_28 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -993,7 +993,7 @@ pub fn deser_operation_describe_account_limits(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_change_set_not_found_exception_xml_err(
+pub fn deser_structure_crate_error_change_set_not_found_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::change_set_not_found_exception::Builder,
 ) -> Result<crate::error::change_set_not_found_exception::Builder, smithy_xml::decode::XmlError> {
@@ -1026,7 +1026,7 @@ pub fn deser_structure_change_set_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_change_set(
+pub fn deser_operation_crate_operation_describe_change_set(
     inp: &[u8],
     mut builder: crate::output::describe_change_set_output::Builder,
 ) -> Result<crate::output::describe_change_set_output::Builder, smithy_xml::decode::XmlError> {
@@ -1052,7 +1052,7 @@ pub fn deser_operation_describe_change_set(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ChangeSetName") /* ChangeSetName com.amazonaws.cloudformation#DescribeChangeSetOutput$ChangeSetName */ =>  {
+            s if s.matches("ChangeSetName") /* ChangeSetName com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$ChangeSetName */ =>  {
                 let var_30 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1065,7 +1065,7 @@ pub fn deser_operation_describe_change_set(
                 builder = builder.set_change_set_name(var_30);
             }
             ,
-            s if s.matches("ChangeSetId") /* ChangeSetId com.amazonaws.cloudformation#DescribeChangeSetOutput$ChangeSetId */ =>  {
+            s if s.matches("ChangeSetId") /* ChangeSetId com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$ChangeSetId */ =>  {
                 let var_31 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1078,7 +1078,7 @@ pub fn deser_operation_describe_change_set(
                 builder = builder.set_change_set_id(var_31);
             }
             ,
-            s if s.matches("StackId") /* StackId com.amazonaws.cloudformation#DescribeChangeSetOutput$StackId */ =>  {
+            s if s.matches("StackId") /* StackId com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$StackId */ =>  {
                 let var_32 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1091,7 +1091,7 @@ pub fn deser_operation_describe_change_set(
                 builder = builder.set_stack_id(var_32);
             }
             ,
-            s if s.matches("StackName") /* StackName com.amazonaws.cloudformation#DescribeChangeSetOutput$StackName */ =>  {
+            s if s.matches("StackName") /* StackName com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$StackName */ =>  {
                 let var_33 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1104,7 +1104,7 @@ pub fn deser_operation_describe_change_set(
                 builder = builder.set_stack_name(var_33);
             }
             ,
-            s if s.matches("Description") /* Description com.amazonaws.cloudformation#DescribeChangeSetOutput$Description */ =>  {
+            s if s.matches("Description") /* Description com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$Description */ =>  {
                 let var_34 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1117,17 +1117,17 @@ pub fn deser_operation_describe_change_set(
                 builder = builder.set_description(var_34);
             }
             ,
-            s if s.matches("Parameters") /* Parameters com.amazonaws.cloudformation#DescribeChangeSetOutput$Parameters */ =>  {
+            s if s.matches("Parameters") /* Parameters com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$Parameters */ =>  {
                 let var_35 =
                     Some(
-                        crate::xml_deser::deser_list_parameters(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_parameters(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_parameters(var_35);
             }
             ,
-            s if s.matches("CreationTime") /* CreationTime com.amazonaws.cloudformation#DescribeChangeSetOutput$CreationTime */ =>  {
+            s if s.matches("CreationTime") /* CreationTime com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$CreationTime */ =>  {
                 let var_36 =
                     Some(
                         smithy_types::Instant::from_str(
@@ -1141,7 +1141,7 @@ pub fn deser_operation_describe_change_set(
                 builder = builder.set_creation_time(var_36);
             }
             ,
-            s if s.matches("ExecutionStatus") /* ExecutionStatus com.amazonaws.cloudformation#DescribeChangeSetOutput$ExecutionStatus */ =>  {
+            s if s.matches("ExecutionStatus") /* ExecutionStatus com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$ExecutionStatus */ =>  {
                 let var_37 =
                     Some(
                         Result::<crate::model::ExecutionStatus, smithy_xml::decode::XmlError>::Ok(
@@ -1155,7 +1155,7 @@ pub fn deser_operation_describe_change_set(
                 builder = builder.set_execution_status(var_37);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.cloudformation#DescribeChangeSetOutput$Status */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$Status */ =>  {
                 let var_38 =
                     Some(
                         Result::<crate::model::ChangeSetStatus, smithy_xml::decode::XmlError>::Ok(
@@ -1169,7 +1169,7 @@ pub fn deser_operation_describe_change_set(
                 builder = builder.set_status(var_38);
             }
             ,
-            s if s.matches("StatusReason") /* StatusReason com.amazonaws.cloudformation#DescribeChangeSetOutput$StatusReason */ =>  {
+            s if s.matches("StatusReason") /* StatusReason com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$StatusReason */ =>  {
                 let var_39 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1182,57 +1182,57 @@ pub fn deser_operation_describe_change_set(
                 builder = builder.set_status_reason(var_39);
             }
             ,
-            s if s.matches("NotificationARNs") /* NotificationARNs com.amazonaws.cloudformation#DescribeChangeSetOutput$NotificationARNs */ =>  {
+            s if s.matches("NotificationARNs") /* NotificationARNs com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$NotificationARNs */ =>  {
                 let var_40 =
                     Some(
-                        crate::xml_deser::deser_list_notification_ar_ns(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_notification_ar_ns(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_notification_ar_ns(var_40);
             }
             ,
-            s if s.matches("RollbackConfiguration") /* RollbackConfiguration com.amazonaws.cloudformation#DescribeChangeSetOutput$RollbackConfiguration */ =>  {
+            s if s.matches("RollbackConfiguration") /* RollbackConfiguration com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$RollbackConfiguration */ =>  {
                 let var_41 =
                     Some(
-                        crate::xml_deser::deser_structure_rollback_configuration(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_rollback_configuration(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_rollback_configuration(var_41);
             }
             ,
-            s if s.matches("Capabilities") /* Capabilities com.amazonaws.cloudformation#DescribeChangeSetOutput$Capabilities */ =>  {
+            s if s.matches("Capabilities") /* Capabilities com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$Capabilities */ =>  {
                 let var_42 =
                     Some(
-                        crate::xml_deser::deser_list_capabilities(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_capabilities(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_capabilities(var_42);
             }
             ,
-            s if s.matches("Tags") /* Tags com.amazonaws.cloudformation#DescribeChangeSetOutput$Tags */ =>  {
+            s if s.matches("Tags") /* Tags com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$Tags */ =>  {
                 let var_43 =
                     Some(
-                        crate::xml_deser::deser_list_tags(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_tags(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_tags(var_43);
             }
             ,
-            s if s.matches("Changes") /* Changes com.amazonaws.cloudformation#DescribeChangeSetOutput$Changes */ =>  {
+            s if s.matches("Changes") /* Changes com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$Changes */ =>  {
                 let var_44 =
                     Some(
-                        crate::xml_deser::deser_list_changes(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_changes(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_changes(var_44);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation#DescribeChangeSetOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$NextToken */ =>  {
                 let var_45 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1245,7 +1245,7 @@ pub fn deser_operation_describe_change_set(
                 builder = builder.set_next_token(var_45);
             }
             ,
-            s if s.matches("IncludeNestedStacks") /* IncludeNestedStacks com.amazonaws.cloudformation#DescribeChangeSetOutput$IncludeNestedStacks */ =>  {
+            s if s.matches("IncludeNestedStacks") /* IncludeNestedStacks com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$IncludeNestedStacks */ =>  {
                 let var_46 =
                     Some(
                          {
@@ -1260,7 +1260,7 @@ pub fn deser_operation_describe_change_set(
                 builder = builder.set_include_nested_stacks(var_46);
             }
             ,
-            s if s.matches("ParentChangeSetId") /* ParentChangeSetId com.amazonaws.cloudformation#DescribeChangeSetOutput$ParentChangeSetId */ =>  {
+            s if s.matches("ParentChangeSetId") /* ParentChangeSetId com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$ParentChangeSetId */ =>  {
                 let var_47 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1273,7 +1273,7 @@ pub fn deser_operation_describe_change_set(
                 builder = builder.set_parent_change_set_id(var_47);
             }
             ,
-            s if s.matches("RootChangeSetId") /* RootChangeSetId com.amazonaws.cloudformation#DescribeChangeSetOutput$RootChangeSetId */ =>  {
+            s if s.matches("RootChangeSetId") /* RootChangeSetId com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$RootChangeSetId */ =>  {
                 let var_48 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1298,7 +1298,7 @@ pub fn deser_operation_describe_change_set(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_publisher(
+pub fn deser_operation_crate_operation_describe_publisher(
     inp: &[u8],
     mut builder: crate::output::describe_publisher_output::Builder,
 ) -> Result<crate::output::describe_publisher_output::Builder, smithy_xml::decode::XmlError> {
@@ -1324,7 +1324,7 @@ pub fn deser_operation_describe_publisher(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("PublisherId") /* PublisherId com.amazonaws.cloudformation#DescribePublisherOutput$PublisherId */ =>  {
+            s if s.matches("PublisherId") /* PublisherId com.amazonaws.cloudformation.synthetic#DescribePublisherOutput$PublisherId */ =>  {
                 let var_49 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1337,7 +1337,7 @@ pub fn deser_operation_describe_publisher(
                 builder = builder.set_publisher_id(var_49);
             }
             ,
-            s if s.matches("PublisherStatus") /* PublisherStatus com.amazonaws.cloudformation#DescribePublisherOutput$PublisherStatus */ =>  {
+            s if s.matches("PublisherStatus") /* PublisherStatus com.amazonaws.cloudformation.synthetic#DescribePublisherOutput$PublisherStatus */ =>  {
                 let var_50 =
                     Some(
                         Result::<crate::model::PublisherStatus, smithy_xml::decode::XmlError>::Ok(
@@ -1351,7 +1351,7 @@ pub fn deser_operation_describe_publisher(
                 builder = builder.set_publisher_status(var_50);
             }
             ,
-            s if s.matches("IdentityProvider") /* IdentityProvider com.amazonaws.cloudformation#DescribePublisherOutput$IdentityProvider */ =>  {
+            s if s.matches("IdentityProvider") /* IdentityProvider com.amazonaws.cloudformation.synthetic#DescribePublisherOutput$IdentityProvider */ =>  {
                 let var_51 =
                     Some(
                         Result::<crate::model::IdentityProvider, smithy_xml::decode::XmlError>::Ok(
@@ -1365,7 +1365,7 @@ pub fn deser_operation_describe_publisher(
                 builder = builder.set_identity_provider(var_51);
             }
             ,
-            s if s.matches("PublisherProfile") /* PublisherProfile com.amazonaws.cloudformation#DescribePublisherOutput$PublisherProfile */ =>  {
+            s if s.matches("PublisherProfile") /* PublisherProfile com.amazonaws.cloudformation.synthetic#DescribePublisherOutput$PublisherProfile */ =>  {
                 let var_52 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1390,7 +1390,7 @@ pub fn deser_operation_describe_publisher(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_stack_drift_detection_status(
+pub fn deser_operation_crate_operation_describe_stack_drift_detection_status(
     inp: &[u8],
     mut builder: crate::output::describe_stack_drift_detection_status_output::Builder,
 ) -> Result<
@@ -1419,7 +1419,7 @@ pub fn deser_operation_describe_stack_drift_detection_status(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("StackId") /* StackId com.amazonaws.cloudformation#DescribeStackDriftDetectionStatusOutput$StackId */ =>  {
+            s if s.matches("StackId") /* StackId com.amazonaws.cloudformation.synthetic#DescribeStackDriftDetectionStatusOutput$StackId */ =>  {
                 let var_53 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1432,7 +1432,7 @@ pub fn deser_operation_describe_stack_drift_detection_status(
                 builder = builder.set_stack_id(var_53);
             }
             ,
-            s if s.matches("StackDriftDetectionId") /* StackDriftDetectionId com.amazonaws.cloudformation#DescribeStackDriftDetectionStatusOutput$StackDriftDetectionId */ =>  {
+            s if s.matches("StackDriftDetectionId") /* StackDriftDetectionId com.amazonaws.cloudformation.synthetic#DescribeStackDriftDetectionStatusOutput$StackDriftDetectionId */ =>  {
                 let var_54 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1445,7 +1445,7 @@ pub fn deser_operation_describe_stack_drift_detection_status(
                 builder = builder.set_stack_drift_detection_id(var_54);
             }
             ,
-            s if s.matches("StackDriftStatus") /* StackDriftStatus com.amazonaws.cloudformation#DescribeStackDriftDetectionStatusOutput$StackDriftStatus */ =>  {
+            s if s.matches("StackDriftStatus") /* StackDriftStatus com.amazonaws.cloudformation.synthetic#DescribeStackDriftDetectionStatusOutput$StackDriftStatus */ =>  {
                 let var_55 =
                     Some(
                         Result::<crate::model::StackDriftStatus, smithy_xml::decode::XmlError>::Ok(
@@ -1459,7 +1459,7 @@ pub fn deser_operation_describe_stack_drift_detection_status(
                 builder = builder.set_stack_drift_status(var_55);
             }
             ,
-            s if s.matches("DetectionStatus") /* DetectionStatus com.amazonaws.cloudformation#DescribeStackDriftDetectionStatusOutput$DetectionStatus */ =>  {
+            s if s.matches("DetectionStatus") /* DetectionStatus com.amazonaws.cloudformation.synthetic#DescribeStackDriftDetectionStatusOutput$DetectionStatus */ =>  {
                 let var_56 =
                     Some(
                         Result::<crate::model::StackDriftDetectionStatus, smithy_xml::decode::XmlError>::Ok(
@@ -1473,7 +1473,7 @@ pub fn deser_operation_describe_stack_drift_detection_status(
                 builder = builder.set_detection_status(var_56);
             }
             ,
-            s if s.matches("DetectionStatusReason") /* DetectionStatusReason com.amazonaws.cloudformation#DescribeStackDriftDetectionStatusOutput$DetectionStatusReason */ =>  {
+            s if s.matches("DetectionStatusReason") /* DetectionStatusReason com.amazonaws.cloudformation.synthetic#DescribeStackDriftDetectionStatusOutput$DetectionStatusReason */ =>  {
                 let var_57 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1486,7 +1486,7 @@ pub fn deser_operation_describe_stack_drift_detection_status(
                 builder = builder.set_detection_status_reason(var_57);
             }
             ,
-            s if s.matches("DriftedStackResourceCount") /* DriftedStackResourceCount com.amazonaws.cloudformation#DescribeStackDriftDetectionStatusOutput$DriftedStackResourceCount */ =>  {
+            s if s.matches("DriftedStackResourceCount") /* DriftedStackResourceCount com.amazonaws.cloudformation.synthetic#DescribeStackDriftDetectionStatusOutput$DriftedStackResourceCount */ =>  {
                 let var_58 =
                     Some(
                          {
@@ -1501,7 +1501,7 @@ pub fn deser_operation_describe_stack_drift_detection_status(
                 builder = builder.set_drifted_stack_resource_count(var_58);
             }
             ,
-            s if s.matches("Timestamp") /* Timestamp com.amazonaws.cloudformation#DescribeStackDriftDetectionStatusOutput$Timestamp */ =>  {
+            s if s.matches("Timestamp") /* Timestamp com.amazonaws.cloudformation.synthetic#DescribeStackDriftDetectionStatusOutput$Timestamp */ =>  {
                 let var_59 =
                     Some(
                         smithy_types::Instant::from_str(
@@ -1527,7 +1527,7 @@ pub fn deser_operation_describe_stack_drift_detection_status(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_stack_events(
+pub fn deser_operation_crate_operation_describe_stack_events(
     inp: &[u8],
     mut builder: crate::output::describe_stack_events_output::Builder,
 ) -> Result<crate::output::describe_stack_events_output::Builder, smithy_xml::decode::XmlError> {
@@ -1553,17 +1553,17 @@ pub fn deser_operation_describe_stack_events(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("StackEvents") /* StackEvents com.amazonaws.cloudformation#DescribeStackEventsOutput$StackEvents */ =>  {
+            s if s.matches("StackEvents") /* StackEvents com.amazonaws.cloudformation.synthetic#DescribeStackEventsOutput$StackEvents */ =>  {
                 let var_60 =
                     Some(
-                        crate::xml_deser::deser_list_stack_events(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_stack_events(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_stack_events(var_60);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation#DescribeStackEventsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#DescribeStackEventsOutput$NextToken */ =>  {
                 let var_61 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1588,7 +1588,7 @@ pub fn deser_operation_describe_stack_events(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_stack_instance_not_found_exception_xml_err(
+pub fn deser_structure_crate_error_stack_instance_not_found_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::stack_instance_not_found_exception::Builder,
 ) -> Result<crate::error::stack_instance_not_found_exception::Builder, smithy_xml::decode::XmlError>
@@ -1622,7 +1622,7 @@ pub fn deser_structure_stack_instance_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_stack_instance(
+pub fn deser_operation_crate_operation_describe_stack_instance(
     inp: &[u8],
     mut builder: crate::output::describe_stack_instance_output::Builder,
 ) -> Result<crate::output::describe_stack_instance_output::Builder, smithy_xml::decode::XmlError> {
@@ -1648,10 +1648,10 @@ pub fn deser_operation_describe_stack_instance(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("StackInstance") /* StackInstance com.amazonaws.cloudformation#DescribeStackInstanceOutput$StackInstance */ =>  {
+            s if s.matches("StackInstance") /* StackInstance com.amazonaws.cloudformation.synthetic#DescribeStackInstanceOutput$StackInstance */ =>  {
                 let var_63 =
                     Some(
-                        crate::xml_deser::deser_structure_stack_instance(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_stack_instance(&mut tag)
                         ?
                     )
                 ;
@@ -1670,7 +1670,7 @@ pub fn deser_operation_describe_stack_instance(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_stack_resource(
+pub fn deser_operation_crate_operation_describe_stack_resource(
     inp: &[u8],
     mut builder: crate::output::describe_stack_resource_output::Builder,
 ) -> Result<crate::output::describe_stack_resource_output::Builder, smithy_xml::decode::XmlError> {
@@ -1696,10 +1696,10 @@ pub fn deser_operation_describe_stack_resource(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("StackResourceDetail") /* StackResourceDetail com.amazonaws.cloudformation#DescribeStackResourceOutput$StackResourceDetail */ =>  {
+            s if s.matches("StackResourceDetail") /* StackResourceDetail com.amazonaws.cloudformation.synthetic#DescribeStackResourceOutput$StackResourceDetail */ =>  {
                 let var_64 =
                     Some(
-                        crate::xml_deser::deser_structure_stack_resource_detail(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_stack_resource_detail(&mut tag)
                         ?
                     )
                 ;
@@ -1718,7 +1718,7 @@ pub fn deser_operation_describe_stack_resource(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_stack_resource_drifts(
+pub fn deser_operation_crate_operation_describe_stack_resource_drifts(
     inp: &[u8],
     mut builder: crate::output::describe_stack_resource_drifts_output::Builder,
 ) -> Result<
@@ -1747,17 +1747,17 @@ pub fn deser_operation_describe_stack_resource_drifts(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("StackResourceDrifts") /* StackResourceDrifts com.amazonaws.cloudformation#DescribeStackResourceDriftsOutput$StackResourceDrifts */ =>  {
+            s if s.matches("StackResourceDrifts") /* StackResourceDrifts com.amazonaws.cloudformation.synthetic#DescribeStackResourceDriftsOutput$StackResourceDrifts */ =>  {
                 let var_65 =
                     Some(
-                        crate::xml_deser::deser_list_stack_resource_drifts(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_stack_resource_drifts(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_stack_resource_drifts(var_65);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation#DescribeStackResourceDriftsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#DescribeStackResourceDriftsOutput$NextToken */ =>  {
                 let var_66 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1782,7 +1782,7 @@ pub fn deser_operation_describe_stack_resource_drifts(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_stack_resources(
+pub fn deser_operation_crate_operation_describe_stack_resources(
     inp: &[u8],
     mut builder: crate::output::describe_stack_resources_output::Builder,
 ) -> Result<crate::output::describe_stack_resources_output::Builder, smithy_xml::decode::XmlError> {
@@ -1808,10 +1808,10 @@ pub fn deser_operation_describe_stack_resources(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("StackResources") /* StackResources com.amazonaws.cloudformation#DescribeStackResourcesOutput$StackResources */ =>  {
+            s if s.matches("StackResources") /* StackResources com.amazonaws.cloudformation.synthetic#DescribeStackResourcesOutput$StackResources */ =>  {
                 let var_67 =
                     Some(
-                        crate::xml_deser::deser_list_stack_resources(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_stack_resources(&mut tag)
                         ?
                     )
                 ;
@@ -1830,7 +1830,7 @@ pub fn deser_operation_describe_stack_resources(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_stacks(
+pub fn deser_operation_crate_operation_describe_stacks(
     inp: &[u8],
     mut builder: crate::output::describe_stacks_output::Builder,
 ) -> Result<crate::output::describe_stacks_output::Builder, smithy_xml::decode::XmlError> {
@@ -1856,17 +1856,17 @@ pub fn deser_operation_describe_stacks(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Stacks") /* Stacks com.amazonaws.cloudformation#DescribeStacksOutput$Stacks */ =>  {
+            s if s.matches("Stacks") /* Stacks com.amazonaws.cloudformation.synthetic#DescribeStacksOutput$Stacks */ =>  {
                 let var_68 =
                     Some(
-                        crate::xml_deser::deser_list_stacks(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_stacks(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_stacks(var_68);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation#DescribeStacksOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#DescribeStacksOutput$NextToken */ =>  {
                 let var_69 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1891,7 +1891,7 @@ pub fn deser_operation_describe_stacks(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_stack_set(
+pub fn deser_operation_crate_operation_describe_stack_set(
     inp: &[u8],
     mut builder: crate::output::describe_stack_set_output::Builder,
 ) -> Result<crate::output::describe_stack_set_output::Builder, smithy_xml::decode::XmlError> {
@@ -1917,10 +1917,10 @@ pub fn deser_operation_describe_stack_set(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("StackSet") /* StackSet com.amazonaws.cloudformation#DescribeStackSetOutput$StackSet */ =>  {
+            s if s.matches("StackSet") /* StackSet com.amazonaws.cloudformation.synthetic#DescribeStackSetOutput$StackSet */ =>  {
                 let var_70 =
                     Some(
-                        crate::xml_deser::deser_structure_stack_set(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_stack_set(&mut tag)
                         ?
                     )
                 ;
@@ -1939,7 +1939,7 @@ pub fn deser_operation_describe_stack_set(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_operation_not_found_exception_xml_err(
+pub fn deser_structure_crate_error_operation_not_found_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::operation_not_found_exception::Builder,
 ) -> Result<crate::error::operation_not_found_exception::Builder, smithy_xml::decode::XmlError> {
@@ -1972,7 +1972,7 @@ pub fn deser_structure_operation_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_stack_set_operation(
+pub fn deser_operation_crate_operation_describe_stack_set_operation(
     inp: &[u8],
     mut builder: crate::output::describe_stack_set_operation_output::Builder,
 ) -> Result<crate::output::describe_stack_set_operation_output::Builder, smithy_xml::decode::XmlError>
@@ -1999,10 +1999,10 @@ pub fn deser_operation_describe_stack_set_operation(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("StackSetOperation") /* StackSetOperation com.amazonaws.cloudformation#DescribeStackSetOperationOutput$StackSetOperation */ =>  {
+            s if s.matches("StackSetOperation") /* StackSetOperation com.amazonaws.cloudformation.synthetic#DescribeStackSetOperationOutput$StackSetOperation */ =>  {
                 let var_72 =
                     Some(
-                        crate::xml_deser::deser_structure_stack_set_operation(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_stack_set_operation(&mut tag)
                         ?
                     )
                 ;
@@ -2021,7 +2021,7 @@ pub fn deser_operation_describe_stack_set_operation(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_type(
+pub fn deser_operation_crate_operation_describe_type(
     inp: &[u8],
     mut builder: crate::output::describe_type_output::Builder,
 ) -> Result<crate::output::describe_type_output::Builder, smithy_xml::decode::XmlError> {
@@ -2047,7 +2047,7 @@ pub fn deser_operation_describe_type(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Arn") /* Arn com.amazonaws.cloudformation#DescribeTypeOutput$Arn */ =>  {
+            s if s.matches("Arn") /* Arn com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$Arn */ =>  {
                 let var_73 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2060,7 +2060,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_arn(var_73);
             }
             ,
-            s if s.matches("Type") /* Type com.amazonaws.cloudformation#DescribeTypeOutput$Type */ =>  {
+            s if s.matches("Type") /* Type com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$Type */ =>  {
                 let var_74 =
                     Some(
                         Result::<crate::model::RegistryType, smithy_xml::decode::XmlError>::Ok(
@@ -2074,7 +2074,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_type(var_74);
             }
             ,
-            s if s.matches("TypeName") /* TypeName com.amazonaws.cloudformation#DescribeTypeOutput$TypeName */ =>  {
+            s if s.matches("TypeName") /* TypeName com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$TypeName */ =>  {
                 let var_75 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2087,7 +2087,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_type_name(var_75);
             }
             ,
-            s if s.matches("DefaultVersionId") /* DefaultVersionId com.amazonaws.cloudformation#DescribeTypeOutput$DefaultVersionId */ =>  {
+            s if s.matches("DefaultVersionId") /* DefaultVersionId com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$DefaultVersionId */ =>  {
                 let var_76 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2100,7 +2100,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_default_version_id(var_76);
             }
             ,
-            s if s.matches("IsDefaultVersion") /* IsDefaultVersion com.amazonaws.cloudformation#DescribeTypeOutput$IsDefaultVersion */ =>  {
+            s if s.matches("IsDefaultVersion") /* IsDefaultVersion com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$IsDefaultVersion */ =>  {
                 let var_77 =
                     Some(
                          {
@@ -2115,7 +2115,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_is_default_version(var_77);
             }
             ,
-            s if s.matches("TypeTestsStatus") /* TypeTestsStatus com.amazonaws.cloudformation#DescribeTypeOutput$TypeTestsStatus */ =>  {
+            s if s.matches("TypeTestsStatus") /* TypeTestsStatus com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$TypeTestsStatus */ =>  {
                 let var_78 =
                     Some(
                         Result::<crate::model::TypeTestsStatus, smithy_xml::decode::XmlError>::Ok(
@@ -2129,7 +2129,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_type_tests_status(var_78);
             }
             ,
-            s if s.matches("TypeTestsStatusDescription") /* TypeTestsStatusDescription com.amazonaws.cloudformation#DescribeTypeOutput$TypeTestsStatusDescription */ =>  {
+            s if s.matches("TypeTestsStatusDescription") /* TypeTestsStatusDescription com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$TypeTestsStatusDescription */ =>  {
                 let var_79 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2142,7 +2142,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_type_tests_status_description(var_79);
             }
             ,
-            s if s.matches("Description") /* Description com.amazonaws.cloudformation#DescribeTypeOutput$Description */ =>  {
+            s if s.matches("Description") /* Description com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$Description */ =>  {
                 let var_80 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2155,7 +2155,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_description(var_80);
             }
             ,
-            s if s.matches("Schema") /* Schema com.amazonaws.cloudformation#DescribeTypeOutput$Schema */ =>  {
+            s if s.matches("Schema") /* Schema com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$Schema */ =>  {
                 let var_81 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2168,7 +2168,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_schema(var_81);
             }
             ,
-            s if s.matches("ProvisioningType") /* ProvisioningType com.amazonaws.cloudformation#DescribeTypeOutput$ProvisioningType */ =>  {
+            s if s.matches("ProvisioningType") /* ProvisioningType com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$ProvisioningType */ =>  {
                 let var_82 =
                     Some(
                         Result::<crate::model::ProvisioningType, smithy_xml::decode::XmlError>::Ok(
@@ -2182,7 +2182,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_provisioning_type(var_82);
             }
             ,
-            s if s.matches("DeprecatedStatus") /* DeprecatedStatus com.amazonaws.cloudformation#DescribeTypeOutput$DeprecatedStatus */ =>  {
+            s if s.matches("DeprecatedStatus") /* DeprecatedStatus com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$DeprecatedStatus */ =>  {
                 let var_83 =
                     Some(
                         Result::<crate::model::DeprecatedStatus, smithy_xml::decode::XmlError>::Ok(
@@ -2196,27 +2196,27 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_deprecated_status(var_83);
             }
             ,
-            s if s.matches("LoggingConfig") /* LoggingConfig com.amazonaws.cloudformation#DescribeTypeOutput$LoggingConfig */ =>  {
+            s if s.matches("LoggingConfig") /* LoggingConfig com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$LoggingConfig */ =>  {
                 let var_84 =
                     Some(
-                        crate::xml_deser::deser_structure_logging_config(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_logging_config(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_logging_config(var_84);
             }
             ,
-            s if s.matches("RequiredActivatedTypes") /* RequiredActivatedTypes com.amazonaws.cloudformation#DescribeTypeOutput$RequiredActivatedTypes */ =>  {
+            s if s.matches("RequiredActivatedTypes") /* RequiredActivatedTypes com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$RequiredActivatedTypes */ =>  {
                 let var_85 =
                     Some(
-                        crate::xml_deser::deser_list_required_activated_types(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_required_activated_types(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_required_activated_types(var_85);
             }
             ,
-            s if s.matches("ExecutionRoleArn") /* ExecutionRoleArn com.amazonaws.cloudformation#DescribeTypeOutput$ExecutionRoleArn */ =>  {
+            s if s.matches("ExecutionRoleArn") /* ExecutionRoleArn com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$ExecutionRoleArn */ =>  {
                 let var_86 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2229,7 +2229,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_execution_role_arn(var_86);
             }
             ,
-            s if s.matches("Visibility") /* Visibility com.amazonaws.cloudformation#DescribeTypeOutput$Visibility */ =>  {
+            s if s.matches("Visibility") /* Visibility com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$Visibility */ =>  {
                 let var_87 =
                     Some(
                         Result::<crate::model::Visibility, smithy_xml::decode::XmlError>::Ok(
@@ -2243,7 +2243,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_visibility(var_87);
             }
             ,
-            s if s.matches("SourceUrl") /* SourceUrl com.amazonaws.cloudformation#DescribeTypeOutput$SourceUrl */ =>  {
+            s if s.matches("SourceUrl") /* SourceUrl com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$SourceUrl */ =>  {
                 let var_88 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2256,7 +2256,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_source_url(var_88);
             }
             ,
-            s if s.matches("DocumentationUrl") /* DocumentationUrl com.amazonaws.cloudformation#DescribeTypeOutput$DocumentationUrl */ =>  {
+            s if s.matches("DocumentationUrl") /* DocumentationUrl com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$DocumentationUrl */ =>  {
                 let var_89 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2269,7 +2269,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_documentation_url(var_89);
             }
             ,
-            s if s.matches("LastUpdated") /* LastUpdated com.amazonaws.cloudformation#DescribeTypeOutput$LastUpdated */ =>  {
+            s if s.matches("LastUpdated") /* LastUpdated com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$LastUpdated */ =>  {
                 let var_90 =
                     Some(
                         smithy_types::Instant::from_str(
@@ -2283,7 +2283,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_last_updated(var_90);
             }
             ,
-            s if s.matches("TimeCreated") /* TimeCreated com.amazonaws.cloudformation#DescribeTypeOutput$TimeCreated */ =>  {
+            s if s.matches("TimeCreated") /* TimeCreated com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$TimeCreated */ =>  {
                 let var_91 =
                     Some(
                         smithy_types::Instant::from_str(
@@ -2297,7 +2297,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_time_created(var_91);
             }
             ,
-            s if s.matches("ConfigurationSchema") /* ConfigurationSchema com.amazonaws.cloudformation#DescribeTypeOutput$ConfigurationSchema */ =>  {
+            s if s.matches("ConfigurationSchema") /* ConfigurationSchema com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$ConfigurationSchema */ =>  {
                 let var_92 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2310,7 +2310,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_configuration_schema(var_92);
             }
             ,
-            s if s.matches("PublisherId") /* PublisherId com.amazonaws.cloudformation#DescribeTypeOutput$PublisherId */ =>  {
+            s if s.matches("PublisherId") /* PublisherId com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$PublisherId */ =>  {
                 let var_93 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2323,7 +2323,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_publisher_id(var_93);
             }
             ,
-            s if s.matches("OriginalTypeName") /* OriginalTypeName com.amazonaws.cloudformation#DescribeTypeOutput$OriginalTypeName */ =>  {
+            s if s.matches("OriginalTypeName") /* OriginalTypeName com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$OriginalTypeName */ =>  {
                 let var_94 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2336,7 +2336,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_original_type_name(var_94);
             }
             ,
-            s if s.matches("OriginalTypeArn") /* OriginalTypeArn com.amazonaws.cloudformation#DescribeTypeOutput$OriginalTypeArn */ =>  {
+            s if s.matches("OriginalTypeArn") /* OriginalTypeArn com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$OriginalTypeArn */ =>  {
                 let var_95 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2349,7 +2349,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_original_type_arn(var_95);
             }
             ,
-            s if s.matches("PublicVersionNumber") /* PublicVersionNumber com.amazonaws.cloudformation#DescribeTypeOutput$PublicVersionNumber */ =>  {
+            s if s.matches("PublicVersionNumber") /* PublicVersionNumber com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$PublicVersionNumber */ =>  {
                 let var_96 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2362,7 +2362,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_public_version_number(var_96);
             }
             ,
-            s if s.matches("LatestPublicVersion") /* LatestPublicVersion com.amazonaws.cloudformation#DescribeTypeOutput$LatestPublicVersion */ =>  {
+            s if s.matches("LatestPublicVersion") /* LatestPublicVersion com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$LatestPublicVersion */ =>  {
                 let var_97 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2375,7 +2375,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_latest_public_version(var_97);
             }
             ,
-            s if s.matches("IsActivated") /* IsActivated com.amazonaws.cloudformation#DescribeTypeOutput$IsActivated */ =>  {
+            s if s.matches("IsActivated") /* IsActivated com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$IsActivated */ =>  {
                 let var_98 =
                     Some(
                          {
@@ -2390,7 +2390,7 @@ pub fn deser_operation_describe_type(
                 builder = builder.set_is_activated(var_98);
             }
             ,
-            s if s.matches("AutoUpdate") /* AutoUpdate com.amazonaws.cloudformation#DescribeTypeOutput$AutoUpdate */ =>  {
+            s if s.matches("AutoUpdate") /* AutoUpdate com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$AutoUpdate */ =>  {
                 let var_99 =
                     Some(
                          {
@@ -2417,7 +2417,7 @@ pub fn deser_operation_describe_type(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_type_registration(
+pub fn deser_operation_crate_operation_describe_type_registration(
     inp: &[u8],
     mut builder: crate::output::describe_type_registration_output::Builder,
 ) -> Result<crate::output::describe_type_registration_output::Builder, smithy_xml::decode::XmlError>
@@ -2444,7 +2444,7 @@ pub fn deser_operation_describe_type_registration(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ProgressStatus") /* ProgressStatus com.amazonaws.cloudformation#DescribeTypeRegistrationOutput$ProgressStatus */ =>  {
+            s if s.matches("ProgressStatus") /* ProgressStatus com.amazonaws.cloudformation.synthetic#DescribeTypeRegistrationOutput$ProgressStatus */ =>  {
                 let var_100 =
                     Some(
                         Result::<crate::model::RegistrationStatus, smithy_xml::decode::XmlError>::Ok(
@@ -2458,7 +2458,7 @@ pub fn deser_operation_describe_type_registration(
                 builder = builder.set_progress_status(var_100);
             }
             ,
-            s if s.matches("Description") /* Description com.amazonaws.cloudformation#DescribeTypeRegistrationOutput$Description */ =>  {
+            s if s.matches("Description") /* Description com.amazonaws.cloudformation.synthetic#DescribeTypeRegistrationOutput$Description */ =>  {
                 let var_101 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2471,7 +2471,7 @@ pub fn deser_operation_describe_type_registration(
                 builder = builder.set_description(var_101);
             }
             ,
-            s if s.matches("TypeArn") /* TypeArn com.amazonaws.cloudformation#DescribeTypeRegistrationOutput$TypeArn */ =>  {
+            s if s.matches("TypeArn") /* TypeArn com.amazonaws.cloudformation.synthetic#DescribeTypeRegistrationOutput$TypeArn */ =>  {
                 let var_102 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2484,7 +2484,7 @@ pub fn deser_operation_describe_type_registration(
                 builder = builder.set_type_arn(var_102);
             }
             ,
-            s if s.matches("TypeVersionArn") /* TypeVersionArn com.amazonaws.cloudformation#DescribeTypeRegistrationOutput$TypeVersionArn */ =>  {
+            s if s.matches("TypeVersionArn") /* TypeVersionArn com.amazonaws.cloudformation.synthetic#DescribeTypeRegistrationOutput$TypeVersionArn */ =>  {
                 let var_103 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2509,7 +2509,7 @@ pub fn deser_operation_describe_type_registration(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_detect_stack_drift(
+pub fn deser_operation_crate_operation_detect_stack_drift(
     inp: &[u8],
     mut builder: crate::output::detect_stack_drift_output::Builder,
 ) -> Result<crate::output::detect_stack_drift_output::Builder, smithy_xml::decode::XmlError> {
@@ -2535,7 +2535,7 @@ pub fn deser_operation_detect_stack_drift(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("StackDriftDetectionId") /* StackDriftDetectionId com.amazonaws.cloudformation#DetectStackDriftOutput$StackDriftDetectionId */ =>  {
+            s if s.matches("StackDriftDetectionId") /* StackDriftDetectionId com.amazonaws.cloudformation.synthetic#DetectStackDriftOutput$StackDriftDetectionId */ =>  {
                 let var_104 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2560,7 +2560,7 @@ pub fn deser_operation_detect_stack_drift(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_detect_stack_resource_drift(
+pub fn deser_operation_crate_operation_detect_stack_resource_drift(
     inp: &[u8],
     mut builder: crate::output::detect_stack_resource_drift_output::Builder,
 ) -> Result<crate::output::detect_stack_resource_drift_output::Builder, smithy_xml::decode::XmlError>
@@ -2587,10 +2587,10 @@ pub fn deser_operation_detect_stack_resource_drift(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("StackResourceDrift") /* StackResourceDrift com.amazonaws.cloudformation#DetectStackResourceDriftOutput$StackResourceDrift */ =>  {
+            s if s.matches("StackResourceDrift") /* StackResourceDrift com.amazonaws.cloudformation.synthetic#DetectStackResourceDriftOutput$StackResourceDrift */ =>  {
                 let var_105 =
                     Some(
-                        crate::xml_deser::deser_structure_stack_resource_drift(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_stack_resource_drift(&mut tag)
                         ?
                     )
                 ;
@@ -2609,7 +2609,7 @@ pub fn deser_operation_detect_stack_resource_drift(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_detect_stack_set_drift(
+pub fn deser_operation_crate_operation_detect_stack_set_drift(
     inp: &[u8],
     mut builder: crate::output::detect_stack_set_drift_output::Builder,
 ) -> Result<crate::output::detect_stack_set_drift_output::Builder, smithy_xml::decode::XmlError> {
@@ -2635,7 +2635,7 @@ pub fn deser_operation_detect_stack_set_drift(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("OperationId") /* OperationId com.amazonaws.cloudformation#DetectStackSetDriftOutput$OperationId */ =>  {
+            s if s.matches("OperationId") /* OperationId com.amazonaws.cloudformation.synthetic#DetectStackSetDriftOutput$OperationId */ =>  {
                 let var_106 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2660,7 +2660,7 @@ pub fn deser_operation_detect_stack_set_drift(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_estimate_template_cost(
+pub fn deser_operation_crate_operation_estimate_template_cost(
     inp: &[u8],
     mut builder: crate::output::estimate_template_cost_output::Builder,
 ) -> Result<crate::output::estimate_template_cost_output::Builder, smithy_xml::decode::XmlError> {
@@ -2686,7 +2686,7 @@ pub fn deser_operation_estimate_template_cost(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Url") /* Url com.amazonaws.cloudformation#EstimateTemplateCostOutput$Url */ =>  {
+            s if s.matches("Url") /* Url com.amazonaws.cloudformation.synthetic#EstimateTemplateCostOutput$Url */ =>  {
                 let var_107 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2711,7 +2711,7 @@ pub fn deser_operation_estimate_template_cost(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_get_stack_policy(
+pub fn deser_operation_crate_operation_get_stack_policy(
     inp: &[u8],
     mut builder: crate::output::get_stack_policy_output::Builder,
 ) -> Result<crate::output::get_stack_policy_output::Builder, smithy_xml::decode::XmlError> {
@@ -2737,7 +2737,7 @@ pub fn deser_operation_get_stack_policy(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("StackPolicyBody") /* StackPolicyBody com.amazonaws.cloudformation#GetStackPolicyOutput$StackPolicyBody */ =>  {
+            s if s.matches("StackPolicyBody") /* StackPolicyBody com.amazonaws.cloudformation.synthetic#GetStackPolicyOutput$StackPolicyBody */ =>  {
                 let var_108 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2762,7 +2762,7 @@ pub fn deser_operation_get_stack_policy(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_get_template(
+pub fn deser_operation_crate_operation_get_template(
     inp: &[u8],
     mut builder: crate::output::get_template_output::Builder,
 ) -> Result<crate::output::get_template_output::Builder, smithy_xml::decode::XmlError> {
@@ -2788,7 +2788,7 @@ pub fn deser_operation_get_template(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("TemplateBody") /* TemplateBody com.amazonaws.cloudformation#GetTemplateOutput$TemplateBody */ =>  {
+            s if s.matches("TemplateBody") /* TemplateBody com.amazonaws.cloudformation.synthetic#GetTemplateOutput$TemplateBody */ =>  {
                 let var_109 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2801,10 +2801,10 @@ pub fn deser_operation_get_template(
                 builder = builder.set_template_body(var_109);
             }
             ,
-            s if s.matches("StagesAvailable") /* StagesAvailable com.amazonaws.cloudformation#GetTemplateOutput$StagesAvailable */ =>  {
+            s if s.matches("StagesAvailable") /* StagesAvailable com.amazonaws.cloudformation.synthetic#GetTemplateOutput$StagesAvailable */ =>  {
                 let var_110 =
                     Some(
-                        crate::xml_deser::deser_list_stage_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_stage_list(&mut tag)
                         ?
                     )
                 ;
@@ -2823,7 +2823,7 @@ pub fn deser_operation_get_template(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_get_template_summary(
+pub fn deser_operation_crate_operation_get_template_summary(
     inp: &[u8],
     mut builder: crate::output::get_template_summary_output::Builder,
 ) -> Result<crate::output::get_template_summary_output::Builder, smithy_xml::decode::XmlError> {
@@ -2849,17 +2849,17 @@ pub fn deser_operation_get_template_summary(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Parameters") /* Parameters com.amazonaws.cloudformation#GetTemplateSummaryOutput$Parameters */ =>  {
+            s if s.matches("Parameters") /* Parameters com.amazonaws.cloudformation.synthetic#GetTemplateSummaryOutput$Parameters */ =>  {
                 let var_111 =
                     Some(
-                        crate::xml_deser::deser_list_parameter_declarations(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_parameter_declarations(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_parameters(var_111);
             }
             ,
-            s if s.matches("Description") /* Description com.amazonaws.cloudformation#GetTemplateSummaryOutput$Description */ =>  {
+            s if s.matches("Description") /* Description com.amazonaws.cloudformation.synthetic#GetTemplateSummaryOutput$Description */ =>  {
                 let var_112 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2872,17 +2872,17 @@ pub fn deser_operation_get_template_summary(
                 builder = builder.set_description(var_112);
             }
             ,
-            s if s.matches("Capabilities") /* Capabilities com.amazonaws.cloudformation#GetTemplateSummaryOutput$Capabilities */ =>  {
+            s if s.matches("Capabilities") /* Capabilities com.amazonaws.cloudformation.synthetic#GetTemplateSummaryOutput$Capabilities */ =>  {
                 let var_113 =
                     Some(
-                        crate::xml_deser::deser_list_capabilities(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_capabilities(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_capabilities(var_113);
             }
             ,
-            s if s.matches("CapabilitiesReason") /* CapabilitiesReason com.amazonaws.cloudformation#GetTemplateSummaryOutput$CapabilitiesReason */ =>  {
+            s if s.matches("CapabilitiesReason") /* CapabilitiesReason com.amazonaws.cloudformation.synthetic#GetTemplateSummaryOutput$CapabilitiesReason */ =>  {
                 let var_114 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2895,17 +2895,17 @@ pub fn deser_operation_get_template_summary(
                 builder = builder.set_capabilities_reason(var_114);
             }
             ,
-            s if s.matches("ResourceTypes") /* ResourceTypes com.amazonaws.cloudformation#GetTemplateSummaryOutput$ResourceTypes */ =>  {
+            s if s.matches("ResourceTypes") /* ResourceTypes com.amazonaws.cloudformation.synthetic#GetTemplateSummaryOutput$ResourceTypes */ =>  {
                 let var_115 =
                     Some(
-                        crate::xml_deser::deser_list_resource_types(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_resource_types(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_resource_types(var_115);
             }
             ,
-            s if s.matches("Version") /* Version com.amazonaws.cloudformation#GetTemplateSummaryOutput$Version */ =>  {
+            s if s.matches("Version") /* Version com.amazonaws.cloudformation.synthetic#GetTemplateSummaryOutput$Version */ =>  {
                 let var_116 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2918,7 +2918,7 @@ pub fn deser_operation_get_template_summary(
                 builder = builder.set_version(var_116);
             }
             ,
-            s if s.matches("Metadata") /* Metadata com.amazonaws.cloudformation#GetTemplateSummaryOutput$Metadata */ =>  {
+            s if s.matches("Metadata") /* Metadata com.amazonaws.cloudformation.synthetic#GetTemplateSummaryOutput$Metadata */ =>  {
                 let var_117 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2931,20 +2931,20 @@ pub fn deser_operation_get_template_summary(
                 builder = builder.set_metadata(var_117);
             }
             ,
-            s if s.matches("DeclaredTransforms") /* DeclaredTransforms com.amazonaws.cloudformation#GetTemplateSummaryOutput$DeclaredTransforms */ =>  {
+            s if s.matches("DeclaredTransforms") /* DeclaredTransforms com.amazonaws.cloudformation.synthetic#GetTemplateSummaryOutput$DeclaredTransforms */ =>  {
                 let var_118 =
                     Some(
-                        crate::xml_deser::deser_list_transforms_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_transforms_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_declared_transforms(var_118);
             }
             ,
-            s if s.matches("ResourceIdentifierSummaries") /* ResourceIdentifierSummaries com.amazonaws.cloudformation#GetTemplateSummaryOutput$ResourceIdentifierSummaries */ =>  {
+            s if s.matches("ResourceIdentifierSummaries") /* ResourceIdentifierSummaries com.amazonaws.cloudformation.synthetic#GetTemplateSummaryOutput$ResourceIdentifierSummaries */ =>  {
                 let var_119 =
                     Some(
-                        crate::xml_deser::deser_list_resource_identifier_summaries(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_resource_identifier_summaries(&mut tag)
                         ?
                     )
                 ;
@@ -2963,7 +2963,7 @@ pub fn deser_operation_get_template_summary(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_stack_not_found_exception_xml_err(
+pub fn deser_structure_crate_error_stack_not_found_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::stack_not_found_exception::Builder,
 ) -> Result<crate::error::stack_not_found_exception::Builder, smithy_xml::decode::XmlError> {
@@ -2996,7 +2996,7 @@ pub fn deser_structure_stack_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_import_stacks_to_stack_set(
+pub fn deser_operation_crate_operation_import_stacks_to_stack_set(
     inp: &[u8],
     mut builder: crate::output::import_stacks_to_stack_set_output::Builder,
 ) -> Result<crate::output::import_stacks_to_stack_set_output::Builder, smithy_xml::decode::XmlError>
@@ -3023,7 +3023,7 @@ pub fn deser_operation_import_stacks_to_stack_set(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("OperationId") /* OperationId com.amazonaws.cloudformation#ImportStacksToStackSetOutput$OperationId */ =>  {
+            s if s.matches("OperationId") /* OperationId com.amazonaws.cloudformation.synthetic#ImportStacksToStackSetOutput$OperationId */ =>  {
                 let var_121 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3048,7 +3048,7 @@ pub fn deser_operation_import_stacks_to_stack_set(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_change_sets(
+pub fn deser_operation_crate_operation_list_change_sets(
     inp: &[u8],
     mut builder: crate::output::list_change_sets_output::Builder,
 ) -> Result<crate::output::list_change_sets_output::Builder, smithy_xml::decode::XmlError> {
@@ -3074,17 +3074,17 @@ pub fn deser_operation_list_change_sets(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Summaries") /* Summaries com.amazonaws.cloudformation#ListChangeSetsOutput$Summaries */ =>  {
+            s if s.matches("Summaries") /* Summaries com.amazonaws.cloudformation.synthetic#ListChangeSetsOutput$Summaries */ =>  {
                 let var_122 =
                     Some(
-                        crate::xml_deser::deser_list_change_set_summaries(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_change_set_summaries(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_summaries(var_122);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation#ListChangeSetsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#ListChangeSetsOutput$NextToken */ =>  {
                 let var_123 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3109,7 +3109,7 @@ pub fn deser_operation_list_change_sets(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_exports(
+pub fn deser_operation_crate_operation_list_exports(
     inp: &[u8],
     mut builder: crate::output::list_exports_output::Builder,
 ) -> Result<crate::output::list_exports_output::Builder, smithy_xml::decode::XmlError> {
@@ -3135,17 +3135,17 @@ pub fn deser_operation_list_exports(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Exports") /* Exports com.amazonaws.cloudformation#ListExportsOutput$Exports */ =>  {
+            s if s.matches("Exports") /* Exports com.amazonaws.cloudformation.synthetic#ListExportsOutput$Exports */ =>  {
                 let var_124 =
                     Some(
-                        crate::xml_deser::deser_list_exports(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_exports(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_exports(var_124);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation#ListExportsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#ListExportsOutput$NextToken */ =>  {
                 let var_125 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3170,7 +3170,7 @@ pub fn deser_operation_list_exports(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_imports(
+pub fn deser_operation_crate_operation_list_imports(
     inp: &[u8],
     mut builder: crate::output::list_imports_output::Builder,
 ) -> Result<crate::output::list_imports_output::Builder, smithy_xml::decode::XmlError> {
@@ -3196,17 +3196,17 @@ pub fn deser_operation_list_imports(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Imports") /* Imports com.amazonaws.cloudformation#ListImportsOutput$Imports */ =>  {
+            s if s.matches("Imports") /* Imports com.amazonaws.cloudformation.synthetic#ListImportsOutput$Imports */ =>  {
                 let var_126 =
                     Some(
-                        crate::xml_deser::deser_list_imports(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_imports(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_imports(var_126);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation#ListImportsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#ListImportsOutput$NextToken */ =>  {
                 let var_127 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3231,7 +3231,7 @@ pub fn deser_operation_list_imports(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_stack_instances(
+pub fn deser_operation_crate_operation_list_stack_instances(
     inp: &[u8],
     mut builder: crate::output::list_stack_instances_output::Builder,
 ) -> Result<crate::output::list_stack_instances_output::Builder, smithy_xml::decode::XmlError> {
@@ -3257,17 +3257,17 @@ pub fn deser_operation_list_stack_instances(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Summaries") /* Summaries com.amazonaws.cloudformation#ListStackInstancesOutput$Summaries */ =>  {
+            s if s.matches("Summaries") /* Summaries com.amazonaws.cloudformation.synthetic#ListStackInstancesOutput$Summaries */ =>  {
                 let var_128 =
                     Some(
-                        crate::xml_deser::deser_list_stack_instance_summaries(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_stack_instance_summaries(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_summaries(var_128);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation#ListStackInstancesOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#ListStackInstancesOutput$NextToken */ =>  {
                 let var_129 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3292,7 +3292,7 @@ pub fn deser_operation_list_stack_instances(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_stack_resources(
+pub fn deser_operation_crate_operation_list_stack_resources(
     inp: &[u8],
     mut builder: crate::output::list_stack_resources_output::Builder,
 ) -> Result<crate::output::list_stack_resources_output::Builder, smithy_xml::decode::XmlError> {
@@ -3318,17 +3318,17 @@ pub fn deser_operation_list_stack_resources(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("StackResourceSummaries") /* StackResourceSummaries com.amazonaws.cloudformation#ListStackResourcesOutput$StackResourceSummaries */ =>  {
+            s if s.matches("StackResourceSummaries") /* StackResourceSummaries com.amazonaws.cloudformation.synthetic#ListStackResourcesOutput$StackResourceSummaries */ =>  {
                 let var_130 =
                     Some(
-                        crate::xml_deser::deser_list_stack_resource_summaries(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_stack_resource_summaries(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_stack_resource_summaries(var_130);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation#ListStackResourcesOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#ListStackResourcesOutput$NextToken */ =>  {
                 let var_131 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3353,7 +3353,7 @@ pub fn deser_operation_list_stack_resources(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_stacks(
+pub fn deser_operation_crate_operation_list_stacks(
     inp: &[u8],
     mut builder: crate::output::list_stacks_output::Builder,
 ) -> Result<crate::output::list_stacks_output::Builder, smithy_xml::decode::XmlError> {
@@ -3379,17 +3379,17 @@ pub fn deser_operation_list_stacks(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("StackSummaries") /* StackSummaries com.amazonaws.cloudformation#ListStacksOutput$StackSummaries */ =>  {
+            s if s.matches("StackSummaries") /* StackSummaries com.amazonaws.cloudformation.synthetic#ListStacksOutput$StackSummaries */ =>  {
                 let var_132 =
                     Some(
-                        crate::xml_deser::deser_list_stack_summaries(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_stack_summaries(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_stack_summaries(var_132);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation#ListStacksOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#ListStacksOutput$NextToken */ =>  {
                 let var_133 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3414,7 +3414,7 @@ pub fn deser_operation_list_stacks(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_stack_set_operation_results(
+pub fn deser_operation_crate_operation_list_stack_set_operation_results(
     inp: &[u8],
     mut builder: crate::output::list_stack_set_operation_results_output::Builder,
 ) -> Result<
@@ -3443,17 +3443,17 @@ pub fn deser_operation_list_stack_set_operation_results(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Summaries") /* Summaries com.amazonaws.cloudformation#ListStackSetOperationResultsOutput$Summaries */ =>  {
+            s if s.matches("Summaries") /* Summaries com.amazonaws.cloudformation.synthetic#ListStackSetOperationResultsOutput$Summaries */ =>  {
                 let var_134 =
                     Some(
-                        crate::xml_deser::deser_list_stack_set_operation_result_summaries(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_stack_set_operation_result_summaries(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_summaries(var_134);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation#ListStackSetOperationResultsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#ListStackSetOperationResultsOutput$NextToken */ =>  {
                 let var_135 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3478,7 +3478,7 @@ pub fn deser_operation_list_stack_set_operation_results(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_stack_set_operations(
+pub fn deser_operation_crate_operation_list_stack_set_operations(
     inp: &[u8],
     mut builder: crate::output::list_stack_set_operations_output::Builder,
 ) -> Result<crate::output::list_stack_set_operations_output::Builder, smithy_xml::decode::XmlError>
@@ -3505,17 +3505,17 @@ pub fn deser_operation_list_stack_set_operations(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Summaries") /* Summaries com.amazonaws.cloudformation#ListStackSetOperationsOutput$Summaries */ =>  {
+            s if s.matches("Summaries") /* Summaries com.amazonaws.cloudformation.synthetic#ListStackSetOperationsOutput$Summaries */ =>  {
                 let var_136 =
                     Some(
-                        crate::xml_deser::deser_list_stack_set_operation_summaries(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_stack_set_operation_summaries(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_summaries(var_136);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation#ListStackSetOperationsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#ListStackSetOperationsOutput$NextToken */ =>  {
                 let var_137 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3540,7 +3540,7 @@ pub fn deser_operation_list_stack_set_operations(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_stack_sets(
+pub fn deser_operation_crate_operation_list_stack_sets(
     inp: &[u8],
     mut builder: crate::output::list_stack_sets_output::Builder,
 ) -> Result<crate::output::list_stack_sets_output::Builder, smithy_xml::decode::XmlError> {
@@ -3566,17 +3566,17 @@ pub fn deser_operation_list_stack_sets(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Summaries") /* Summaries com.amazonaws.cloudformation#ListStackSetsOutput$Summaries */ =>  {
+            s if s.matches("Summaries") /* Summaries com.amazonaws.cloudformation.synthetic#ListStackSetsOutput$Summaries */ =>  {
                 let var_138 =
                     Some(
-                        crate::xml_deser::deser_list_stack_set_summaries(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_stack_set_summaries(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_summaries(var_138);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation#ListStackSetsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#ListStackSetsOutput$NextToken */ =>  {
                 let var_139 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3601,7 +3601,7 @@ pub fn deser_operation_list_stack_sets(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_type_registrations(
+pub fn deser_operation_crate_operation_list_type_registrations(
     inp: &[u8],
     mut builder: crate::output::list_type_registrations_output::Builder,
 ) -> Result<crate::output::list_type_registrations_output::Builder, smithy_xml::decode::XmlError> {
@@ -3627,17 +3627,17 @@ pub fn deser_operation_list_type_registrations(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("RegistrationTokenList") /* RegistrationTokenList com.amazonaws.cloudformation#ListTypeRegistrationsOutput$RegistrationTokenList */ =>  {
+            s if s.matches("RegistrationTokenList") /* RegistrationTokenList com.amazonaws.cloudformation.synthetic#ListTypeRegistrationsOutput$RegistrationTokenList */ =>  {
                 let var_140 =
                     Some(
-                        crate::xml_deser::deser_list_registration_token_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_registration_token_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_registration_token_list(var_140);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation#ListTypeRegistrationsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#ListTypeRegistrationsOutput$NextToken */ =>  {
                 let var_141 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3662,7 +3662,7 @@ pub fn deser_operation_list_type_registrations(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_types(
+pub fn deser_operation_crate_operation_list_types(
     inp: &[u8],
     mut builder: crate::output::list_types_output::Builder,
 ) -> Result<crate::output::list_types_output::Builder, smithy_xml::decode::XmlError> {
@@ -3688,17 +3688,17 @@ pub fn deser_operation_list_types(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("TypeSummaries") /* TypeSummaries com.amazonaws.cloudformation#ListTypesOutput$TypeSummaries */ =>  {
+            s if s.matches("TypeSummaries") /* TypeSummaries com.amazonaws.cloudformation.synthetic#ListTypesOutput$TypeSummaries */ =>  {
                 let var_142 =
                     Some(
-                        crate::xml_deser::deser_list_type_summaries(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_type_summaries(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_type_summaries(var_142);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation#ListTypesOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#ListTypesOutput$NextToken */ =>  {
                 let var_143 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3723,7 +3723,7 @@ pub fn deser_operation_list_types(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_type_versions(
+pub fn deser_operation_crate_operation_list_type_versions(
     inp: &[u8],
     mut builder: crate::output::list_type_versions_output::Builder,
 ) -> Result<crate::output::list_type_versions_output::Builder, smithy_xml::decode::XmlError> {
@@ -3749,17 +3749,17 @@ pub fn deser_operation_list_type_versions(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("TypeVersionSummaries") /* TypeVersionSummaries com.amazonaws.cloudformation#ListTypeVersionsOutput$TypeVersionSummaries */ =>  {
+            s if s.matches("TypeVersionSummaries") /* TypeVersionSummaries com.amazonaws.cloudformation.synthetic#ListTypeVersionsOutput$TypeVersionSummaries */ =>  {
                 let var_144 =
                     Some(
-                        crate::xml_deser::deser_list_type_version_summaries(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_type_version_summaries(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_type_version_summaries(var_144);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation#ListTypeVersionsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#ListTypeVersionsOutput$NextToken */ =>  {
                 let var_145 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3784,7 +3784,7 @@ pub fn deser_operation_list_type_versions(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_publish_type(
+pub fn deser_operation_crate_operation_publish_type(
     inp: &[u8],
     mut builder: crate::output::publish_type_output::Builder,
 ) -> Result<crate::output::publish_type_output::Builder, smithy_xml::decode::XmlError> {
@@ -3810,7 +3810,7 @@ pub fn deser_operation_publish_type(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("PublicTypeArn") /* PublicTypeArn com.amazonaws.cloudformation#PublishTypeOutput$PublicTypeArn */ =>  {
+            s if s.matches("PublicTypeArn") /* PublicTypeArn com.amazonaws.cloudformation.synthetic#PublishTypeOutput$PublicTypeArn */ =>  {
                 let var_146 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3835,7 +3835,7 @@ pub fn deser_operation_publish_type(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_state_transition_exception_xml_err(
+pub fn deser_structure_crate_error_invalid_state_transition_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_state_transition_exception::Builder,
 ) -> Result<crate::error::invalid_state_transition_exception::Builder, smithy_xml::decode::XmlError>
@@ -3869,7 +3869,7 @@ pub fn deser_structure_invalid_state_transition_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_operation_status_check_failed_exception_xml_err(
+pub fn deser_structure_crate_error_operation_status_check_failed_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::operation_status_check_failed_exception::Builder,
 ) -> Result<
@@ -3905,7 +3905,7 @@ pub fn deser_structure_operation_status_check_failed_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_register_publisher(
+pub fn deser_operation_crate_operation_register_publisher(
     inp: &[u8],
     mut builder: crate::output::register_publisher_output::Builder,
 ) -> Result<crate::output::register_publisher_output::Builder, smithy_xml::decode::XmlError> {
@@ -3931,7 +3931,7 @@ pub fn deser_operation_register_publisher(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("PublisherId") /* PublisherId com.amazonaws.cloudformation#RegisterPublisherOutput$PublisherId */ =>  {
+            s if s.matches("PublisherId") /* PublisherId com.amazonaws.cloudformation.synthetic#RegisterPublisherOutput$PublisherId */ =>  {
                 let var_149 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -3956,7 +3956,7 @@ pub fn deser_operation_register_publisher(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_register_type(
+pub fn deser_operation_crate_operation_register_type(
     inp: &[u8],
     mut builder: crate::output::register_type_output::Builder,
 ) -> Result<crate::output::register_type_output::Builder, smithy_xml::decode::XmlError> {
@@ -3982,7 +3982,7 @@ pub fn deser_operation_register_type(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("RegistrationToken") /* RegistrationToken com.amazonaws.cloudformation#RegisterTypeOutput$RegistrationToken */ =>  {
+            s if s.matches("RegistrationToken") /* RegistrationToken com.amazonaws.cloudformation.synthetic#RegisterTypeOutput$RegistrationToken */ =>  {
                 let var_150 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4007,7 +4007,7 @@ pub fn deser_operation_register_type(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_rollback_stack(
+pub fn deser_operation_crate_operation_rollback_stack(
     inp: &[u8],
     mut builder: crate::output::rollback_stack_output::Builder,
 ) -> Result<crate::output::rollback_stack_output::Builder, smithy_xml::decode::XmlError> {
@@ -4033,7 +4033,7 @@ pub fn deser_operation_rollback_stack(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("StackId") /* StackId com.amazonaws.cloudformation#RollbackStackOutput$StackId */ =>  {
+            s if s.matches("StackId") /* StackId com.amazonaws.cloudformation.synthetic#RollbackStackOutput$StackId */ =>  {
                 let var_151 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4058,7 +4058,7 @@ pub fn deser_operation_rollback_stack(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_set_type_configuration(
+pub fn deser_operation_crate_operation_set_type_configuration(
     inp: &[u8],
     mut builder: crate::output::set_type_configuration_output::Builder,
 ) -> Result<crate::output::set_type_configuration_output::Builder, smithy_xml::decode::XmlError> {
@@ -4084,7 +4084,7 @@ pub fn deser_operation_set_type_configuration(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ConfigurationArn") /* ConfigurationArn com.amazonaws.cloudformation#SetTypeConfigurationOutput$ConfigurationArn */ =>  {
+            s if s.matches("ConfigurationArn") /* ConfigurationArn com.amazonaws.cloudformation.synthetic#SetTypeConfigurationOutput$ConfigurationArn */ =>  {
                 let var_152 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4109,7 +4109,7 @@ pub fn deser_operation_set_type_configuration(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_test_type(
+pub fn deser_operation_crate_operation_test_type(
     inp: &[u8],
     mut builder: crate::output::test_type_output::Builder,
 ) -> Result<crate::output::test_type_output::Builder, smithy_xml::decode::XmlError> {
@@ -4135,7 +4135,7 @@ pub fn deser_operation_test_type(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("TypeVersionArn") /* TypeVersionArn com.amazonaws.cloudformation#TestTypeOutput$TypeVersionArn */ =>  {
+            s if s.matches("TypeVersionArn") /* TypeVersionArn com.amazonaws.cloudformation.synthetic#TestTypeOutput$TypeVersionArn */ =>  {
                 let var_153 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4160,7 +4160,7 @@ pub fn deser_operation_test_type(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_update_stack(
+pub fn deser_operation_crate_operation_update_stack(
     inp: &[u8],
     mut builder: crate::output::update_stack_output::Builder,
 ) -> Result<crate::output::update_stack_output::Builder, smithy_xml::decode::XmlError> {
@@ -4186,7 +4186,7 @@ pub fn deser_operation_update_stack(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("StackId") /* StackId com.amazonaws.cloudformation#UpdateStackOutput$StackId */ =>  {
+            s if s.matches("StackId") /* StackId com.amazonaws.cloudformation.synthetic#UpdateStackOutput$StackId */ =>  {
                 let var_154 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4211,7 +4211,7 @@ pub fn deser_operation_update_stack(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_update_stack_instances(
+pub fn deser_operation_crate_operation_update_stack_instances(
     inp: &[u8],
     mut builder: crate::output::update_stack_instances_output::Builder,
 ) -> Result<crate::output::update_stack_instances_output::Builder, smithy_xml::decode::XmlError> {
@@ -4237,7 +4237,7 @@ pub fn deser_operation_update_stack_instances(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("OperationId") /* OperationId com.amazonaws.cloudformation#UpdateStackInstancesOutput$OperationId */ =>  {
+            s if s.matches("OperationId") /* OperationId com.amazonaws.cloudformation.synthetic#UpdateStackInstancesOutput$OperationId */ =>  {
                 let var_155 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4262,7 +4262,7 @@ pub fn deser_operation_update_stack_instances(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_update_stack_set(
+pub fn deser_operation_crate_operation_update_stack_set(
     inp: &[u8],
     mut builder: crate::output::update_stack_set_output::Builder,
 ) -> Result<crate::output::update_stack_set_output::Builder, smithy_xml::decode::XmlError> {
@@ -4288,7 +4288,7 @@ pub fn deser_operation_update_stack_set(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("OperationId") /* OperationId com.amazonaws.cloudformation#UpdateStackSetOutput$OperationId */ =>  {
+            s if s.matches("OperationId") /* OperationId com.amazonaws.cloudformation.synthetic#UpdateStackSetOutput$OperationId */ =>  {
                 let var_156 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4313,7 +4313,7 @@ pub fn deser_operation_update_stack_set(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_update_termination_protection(
+pub fn deser_operation_crate_operation_update_termination_protection(
     inp: &[u8],
     mut builder: crate::output::update_termination_protection_output::Builder,
 ) -> Result<
@@ -4342,7 +4342,7 @@ pub fn deser_operation_update_termination_protection(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("StackId") /* StackId com.amazonaws.cloudformation#UpdateTerminationProtectionOutput$StackId */ =>  {
+            s if s.matches("StackId") /* StackId com.amazonaws.cloudformation.synthetic#UpdateTerminationProtectionOutput$StackId */ =>  {
                 let var_157 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4367,7 +4367,7 @@ pub fn deser_operation_update_termination_protection(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_validate_template(
+pub fn deser_operation_crate_operation_validate_template(
     inp: &[u8],
     mut builder: crate::output::validate_template_output::Builder,
 ) -> Result<crate::output::validate_template_output::Builder, smithy_xml::decode::XmlError> {
@@ -4393,17 +4393,17 @@ pub fn deser_operation_validate_template(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Parameters") /* Parameters com.amazonaws.cloudformation#ValidateTemplateOutput$Parameters */ =>  {
+            s if s.matches("Parameters") /* Parameters com.amazonaws.cloudformation.synthetic#ValidateTemplateOutput$Parameters */ =>  {
                 let var_158 =
                     Some(
-                        crate::xml_deser::deser_list_template_parameters(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_template_parameters(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_parameters(var_158);
             }
             ,
-            s if s.matches("Description") /* Description com.amazonaws.cloudformation#ValidateTemplateOutput$Description */ =>  {
+            s if s.matches("Description") /* Description com.amazonaws.cloudformation.synthetic#ValidateTemplateOutput$Description */ =>  {
                 let var_159 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4416,17 +4416,17 @@ pub fn deser_operation_validate_template(
                 builder = builder.set_description(var_159);
             }
             ,
-            s if s.matches("Capabilities") /* Capabilities com.amazonaws.cloudformation#ValidateTemplateOutput$Capabilities */ =>  {
+            s if s.matches("Capabilities") /* Capabilities com.amazonaws.cloudformation.synthetic#ValidateTemplateOutput$Capabilities */ =>  {
                 let var_160 =
                     Some(
-                        crate::xml_deser::deser_list_capabilities(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_capabilities(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_capabilities(var_160);
             }
             ,
-            s if s.matches("CapabilitiesReason") /* CapabilitiesReason com.amazonaws.cloudformation#ValidateTemplateOutput$CapabilitiesReason */ =>  {
+            s if s.matches("CapabilitiesReason") /* CapabilitiesReason com.amazonaws.cloudformation.synthetic#ValidateTemplateOutput$CapabilitiesReason */ =>  {
                 let var_161 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -4439,10 +4439,10 @@ pub fn deser_operation_validate_template(
                 builder = builder.set_capabilities_reason(var_161);
             }
             ,
-            s if s.matches("DeclaredTransforms") /* DeclaredTransforms com.amazonaws.cloudformation#ValidateTemplateOutput$DeclaredTransforms */ =>  {
+            s if s.matches("DeclaredTransforms") /* DeclaredTransforms com.amazonaws.cloudformation.synthetic#ValidateTemplateOutput$DeclaredTransforms */ =>  {
                 let var_162 =
                     Some(
-                        crate::xml_deser::deser_list_transforms_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_transforms_list(&mut tag)
                         ?
                     )
                 ;
@@ -4460,7 +4460,7 @@ pub fn deser_operation_validate_template(
     Ok(builder)
 }
 
-pub fn deser_list_batch_describe_type_configurations_errors(
+pub fn deser_list_com_amazonaws_cloudformation_batch_describe_type_configurations_errors(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::vec::Vec<crate::model::BatchDescribeTypeConfigurationsError>,
@@ -4471,7 +4471,7 @@ pub fn deser_list_batch_describe_type_configurations_errors(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#BatchDescribeTypeConfigurationsErrors$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_batch_describe_type_configurations_error(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_batch_describe_type_configurations_error(&mut tag)
                     ?
                 );
             }
@@ -4482,7 +4482,7 @@ pub fn deser_list_batch_describe_type_configurations_errors(
     Ok(out)
 }
 
-pub fn deser_list_unprocessed_type_configurations(
+pub fn deser_list_com_amazonaws_cloudformation_unprocessed_type_configurations(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::TypeConfigurationIdentifier>, smithy_xml::decode::XmlError>
 {
@@ -4491,7 +4491,7 @@ pub fn deser_list_unprocessed_type_configurations(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#UnprocessedTypeConfigurations$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_type_configuration_identifier(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_type_configuration_identifier(&mut tag)
                     ?
                 );
             }
@@ -4502,7 +4502,7 @@ pub fn deser_list_unprocessed_type_configurations(
     Ok(out)
 }
 
-pub fn deser_list_type_configuration_details_list(
+pub fn deser_list_com_amazonaws_cloudformation_type_configuration_details_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::TypeConfigurationDetails>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4510,7 +4510,7 @@ pub fn deser_list_type_configuration_details_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#TypeConfigurationDetailsList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_type_configuration_details(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_type_configuration_details(&mut tag)
                     ?
                 );
             }
@@ -4521,7 +4521,7 @@ pub fn deser_list_type_configuration_details_list(
     Ok(out)
 }
 
-pub fn deser_list_account_limit_list(
+pub fn deser_list_com_amazonaws_cloudformation_account_limit_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::AccountLimit>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4529,7 +4529,7 @@ pub fn deser_list_account_limit_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#AccountLimitList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_account_limit(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_account_limit(&mut tag)
                     ?
                 );
             }
@@ -4540,7 +4540,7 @@ pub fn deser_list_account_limit_list(
     Ok(out)
 }
 
-pub fn deser_list_parameters(
+pub fn deser_list_com_amazonaws_cloudformation_parameters(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Parameter>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4548,7 +4548,7 @@ pub fn deser_list_parameters(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#Parameters$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_parameter(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_parameter(&mut tag)
                     ?
                 );
             }
@@ -4559,7 +4559,7 @@ pub fn deser_list_parameters(
     Ok(out)
 }
 
-pub fn deser_list_notification_ar_ns(
+pub fn deser_list_com_amazonaws_cloudformation_notification_ar_ns(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4581,7 +4581,7 @@ pub fn deser_list_notification_ar_ns(
     Ok(out)
 }
 
-pub fn deser_structure_rollback_configuration(
+pub fn deser_structure_crate_model_rollback_configuration(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::RollbackConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4591,7 +4591,7 @@ pub fn deser_structure_rollback_configuration(
             s if s.matches("RollbackTriggers") /* RollbackTriggers com.amazonaws.cloudformation#RollbackConfiguration$RollbackTriggers */ =>  {
                 let var_163 =
                     Some(
-                        crate::xml_deser::deser_list_rollback_triggers(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_rollback_triggers(&mut tag)
                         ?
                     )
                 ;
@@ -4619,7 +4619,7 @@ pub fn deser_structure_rollback_configuration(
     Ok(builder.build())
 }
 
-pub fn deser_list_capabilities(
+pub fn deser_list_com_amazonaws_cloudformation_capabilities(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Capability>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4642,7 +4642,7 @@ pub fn deser_list_capabilities(
     Ok(out)
 }
 
-pub fn deser_list_tags(
+pub fn deser_list_com_amazonaws_cloudformation_tags(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Tag>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4650,7 +4650,7 @@ pub fn deser_list_tags(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#Tags$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_tag(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_tag(&mut tag)
                     ?
                 );
             }
@@ -4661,7 +4661,7 @@ pub fn deser_list_tags(
     Ok(out)
 }
 
-pub fn deser_list_changes(
+pub fn deser_list_com_amazonaws_cloudformation_changes(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Change>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4669,7 +4669,7 @@ pub fn deser_list_changes(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#Changes$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_change(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_change(&mut tag)
                     ?
                 );
             }
@@ -4680,7 +4680,7 @@ pub fn deser_list_changes(
     Ok(out)
 }
 
-pub fn deser_list_stack_events(
+pub fn deser_list_com_amazonaws_cloudformation_stack_events(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::StackEvent>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4688,7 +4688,7 @@ pub fn deser_list_stack_events(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#StackEvents$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_stack_event(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_stack_event(&mut tag)
                     ?
                 );
             }
@@ -4699,7 +4699,7 @@ pub fn deser_list_stack_events(
     Ok(out)
 }
 
-pub fn deser_structure_stack_instance(
+pub fn deser_structure_crate_model_stack_instance(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackInstance, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4761,7 +4761,7 @@ pub fn deser_structure_stack_instance(
             s if s.matches("ParameterOverrides") /* ParameterOverrides com.amazonaws.cloudformation#StackInstance$ParameterOverrides */ =>  {
                 let var_169 =
                     Some(
-                        crate::xml_deser::deser_list_parameters(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_parameters(&mut tag)
                         ?
                     )
                 ;
@@ -4785,7 +4785,7 @@ pub fn deser_structure_stack_instance(
             s if s.matches("StackInstanceStatus") /* StackInstanceStatus com.amazonaws.cloudformation#StackInstance$StackInstanceStatus */ =>  {
                 let var_171 =
                     Some(
-                        crate::xml_deser::deser_structure_stack_instance_comprehensive_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_stack_instance_comprehensive_status(&mut tag)
                         ?
                     )
                 ;
@@ -4852,7 +4852,7 @@ pub fn deser_structure_stack_instance(
     Ok(builder.build())
 }
 
-pub fn deser_structure_stack_resource_detail(
+pub fn deser_structure_crate_model_stack_resource_detail(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackResourceDetail, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4994,7 +4994,7 @@ pub fn deser_structure_stack_resource_detail(
             s if s.matches("DriftInformation") /* DriftInformation com.amazonaws.cloudformation#StackResourceDetail$DriftInformation */ =>  {
                 let var_186 =
                     Some(
-                        crate::xml_deser::deser_structure_stack_resource_drift_information(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_stack_resource_drift_information(&mut tag)
                         ?
                     )
                 ;
@@ -5004,7 +5004,7 @@ pub fn deser_structure_stack_resource_detail(
             s if s.matches("ModuleInfo") /* ModuleInfo com.amazonaws.cloudformation#StackResourceDetail$ModuleInfo */ =>  {
                 let var_187 =
                     Some(
-                        crate::xml_deser::deser_structure_module_info(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_module_info(&mut tag)
                         ?
                     )
                 ;
@@ -5017,7 +5017,7 @@ pub fn deser_structure_stack_resource_detail(
     Ok(builder.build())
 }
 
-pub fn deser_list_stack_resource_drifts(
+pub fn deser_list_com_amazonaws_cloudformation_stack_resource_drifts(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::StackResourceDrift>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5025,7 +5025,7 @@ pub fn deser_list_stack_resource_drifts(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#StackResourceDrifts$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_stack_resource_drift(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_stack_resource_drift(&mut tag)
                     ?
                 );
             }
@@ -5036,7 +5036,7 @@ pub fn deser_list_stack_resource_drifts(
     Ok(out)
 }
 
-pub fn deser_list_stack_resources(
+pub fn deser_list_com_amazonaws_cloudformation_stack_resources(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::StackResource>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5044,7 +5044,7 @@ pub fn deser_list_stack_resources(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#StackResources$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_stack_resource(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_stack_resource(&mut tag)
                     ?
                 );
             }
@@ -5055,7 +5055,7 @@ pub fn deser_list_stack_resources(
     Ok(out)
 }
 
-pub fn deser_list_stacks(
+pub fn deser_list_com_amazonaws_cloudformation_stacks(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Stack>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5063,7 +5063,7 @@ pub fn deser_list_stacks(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#Stacks$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_stack(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_stack(&mut tag)
                     ?
                 );
             }
@@ -5074,7 +5074,7 @@ pub fn deser_list_stacks(
     Ok(out)
 }
 
-pub fn deser_structure_stack_set(
+pub fn deser_structure_crate_model_stack_set(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackSet, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5150,7 +5150,7 @@ pub fn deser_structure_stack_set(
             s if s.matches("Parameters") /* Parameters com.amazonaws.cloudformation#StackSet$Parameters */ =>  {
                 let var_193 =
                     Some(
-                        crate::xml_deser::deser_list_parameters(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_parameters(&mut tag)
                         ?
                     )
                 ;
@@ -5160,7 +5160,7 @@ pub fn deser_structure_stack_set(
             s if s.matches("Capabilities") /* Capabilities com.amazonaws.cloudformation#StackSet$Capabilities */ =>  {
                 let var_194 =
                     Some(
-                        crate::xml_deser::deser_list_capabilities(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_capabilities(&mut tag)
                         ?
                     )
                 ;
@@ -5170,7 +5170,7 @@ pub fn deser_structure_stack_set(
             s if s.matches("Tags") /* Tags com.amazonaws.cloudformation#StackSet$Tags */ =>  {
                 let var_195 =
                     Some(
-                        crate::xml_deser::deser_list_tags(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_tags(&mut tag)
                         ?
                     )
                 ;
@@ -5219,7 +5219,7 @@ pub fn deser_structure_stack_set(
             s if s.matches("StackSetDriftDetectionDetails") /* StackSetDriftDetectionDetails com.amazonaws.cloudformation#StackSet$StackSetDriftDetectionDetails */ =>  {
                 let var_199 =
                     Some(
-                        crate::xml_deser::deser_structure_stack_set_drift_detection_details(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_stack_set_drift_detection_details(&mut tag)
                         ?
                     )
                 ;
@@ -5229,7 +5229,7 @@ pub fn deser_structure_stack_set(
             s if s.matches("AutoDeployment") /* AutoDeployment com.amazonaws.cloudformation#StackSet$AutoDeployment */ =>  {
                 let var_200 =
                     Some(
-                        crate::xml_deser::deser_structure_auto_deployment(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_auto_deployment(&mut tag)
                         ?
                     )
                 ;
@@ -5253,7 +5253,7 @@ pub fn deser_structure_stack_set(
             s if s.matches("OrganizationalUnitIds") /* OrganizationalUnitIds com.amazonaws.cloudformation#StackSet$OrganizationalUnitIds */ =>  {
                 let var_202 =
                     Some(
-                        crate::xml_deser::deser_list_organizational_unit_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_organizational_unit_id_list(&mut tag)
                         ?
                     )
                 ;
@@ -5266,7 +5266,7 @@ pub fn deser_structure_stack_set(
     Ok(builder.build())
 }
 
-pub fn deser_structure_stack_set_operation(
+pub fn deser_structure_crate_model_stack_set_operation(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackSetOperation, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5330,7 +5330,7 @@ pub fn deser_structure_stack_set_operation(
             s if s.matches("OperationPreferences") /* OperationPreferences com.amazonaws.cloudformation#StackSetOperation$OperationPreferences */ =>  {
                 let var_207 =
                     Some(
-                        crate::xml_deser::deser_structure_stack_set_operation_preferences(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_stack_set_operation_preferences(&mut tag)
                         ?
                     )
                 ;
@@ -5409,7 +5409,7 @@ pub fn deser_structure_stack_set_operation(
             s if s.matches("DeploymentTargets") /* DeploymentTargets com.amazonaws.cloudformation#StackSetOperation$DeploymentTargets */ =>  {
                 let var_213 =
                     Some(
-                        crate::xml_deser::deser_structure_deployment_targets(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_deployment_targets(&mut tag)
                         ?
                     )
                 ;
@@ -5419,7 +5419,7 @@ pub fn deser_structure_stack_set_operation(
             s if s.matches("StackSetDriftDetectionDetails") /* StackSetDriftDetectionDetails com.amazonaws.cloudformation#StackSetOperation$StackSetDriftDetectionDetails */ =>  {
                 let var_214 =
                     Some(
-                        crate::xml_deser::deser_structure_stack_set_drift_detection_details(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_stack_set_drift_detection_details(&mut tag)
                         ?
                     )
                 ;
@@ -5432,7 +5432,7 @@ pub fn deser_structure_stack_set_operation(
     Ok(builder.build())
 }
 
-pub fn deser_structure_logging_config(
+pub fn deser_structure_crate_model_logging_config(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LoggingConfig, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5471,7 +5471,7 @@ pub fn deser_structure_logging_config(
     Ok(builder.build())
 }
 
-pub fn deser_list_required_activated_types(
+pub fn deser_list_com_amazonaws_cloudformation_required_activated_types(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::RequiredActivatedType>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5479,7 +5479,7 @@ pub fn deser_list_required_activated_types(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#RequiredActivatedTypes$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_required_activated_type(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_required_activated_type(&mut tag)
                     ?
                 );
             }
@@ -5490,7 +5490,7 @@ pub fn deser_list_required_activated_types(
     Ok(out)
 }
 
-pub fn deser_structure_stack_resource_drift(
+pub fn deser_structure_crate_model_stack_resource_drift(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackResourceDrift, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5539,7 +5539,7 @@ pub fn deser_structure_stack_resource_drift(
             s if s.matches("PhysicalResourceIdContext") /* PhysicalResourceIdContext com.amazonaws.cloudformation#StackResourceDrift$PhysicalResourceIdContext */ =>  {
                 let var_220 =
                     Some(
-                        crate::xml_deser::deser_list_physical_resource_id_context(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_physical_resource_id_context(&mut tag)
                         ?
                     )
                 ;
@@ -5588,7 +5588,7 @@ pub fn deser_structure_stack_resource_drift(
             s if s.matches("PropertyDifferences") /* PropertyDifferences com.amazonaws.cloudformation#StackResourceDrift$PropertyDifferences */ =>  {
                 let var_224 =
                     Some(
-                        crate::xml_deser::deser_list_property_differences(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_property_differences(&mut tag)
                         ?
                     )
                 ;
@@ -5626,7 +5626,7 @@ pub fn deser_structure_stack_resource_drift(
             s if s.matches("ModuleInfo") /* ModuleInfo com.amazonaws.cloudformation#StackResourceDrift$ModuleInfo */ =>  {
                 let var_227 =
                     Some(
-                        crate::xml_deser::deser_structure_module_info(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_module_info(&mut tag)
                         ?
                     )
                 ;
@@ -5639,7 +5639,7 @@ pub fn deser_structure_stack_resource_drift(
     Ok(builder.build())
 }
 
-pub fn deser_list_stage_list(
+pub fn deser_list_com_amazonaws_cloudformation_stage_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::TemplateStage>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5662,7 +5662,7 @@ pub fn deser_list_stage_list(
     Ok(out)
 }
 
-pub fn deser_list_parameter_declarations(
+pub fn deser_list_com_amazonaws_cloudformation_parameter_declarations(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ParameterDeclaration>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5670,7 +5670,7 @@ pub fn deser_list_parameter_declarations(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#ParameterDeclarations$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_parameter_declaration(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_parameter_declaration(&mut tag)
                     ?
                 );
             }
@@ -5681,7 +5681,7 @@ pub fn deser_list_parameter_declarations(
     Ok(out)
 }
 
-pub fn deser_list_resource_types(
+pub fn deser_list_com_amazonaws_cloudformation_resource_types(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5703,7 +5703,7 @@ pub fn deser_list_resource_types(
     Ok(out)
 }
 
-pub fn deser_list_transforms_list(
+pub fn deser_list_com_amazonaws_cloudformation_transforms_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5725,7 +5725,7 @@ pub fn deser_list_transforms_list(
     Ok(out)
 }
 
-pub fn deser_list_resource_identifier_summaries(
+pub fn deser_list_com_amazonaws_cloudformation_resource_identifier_summaries(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ResourceIdentifierSummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5733,7 +5733,7 @@ pub fn deser_list_resource_identifier_summaries(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#ResourceIdentifierSummaries$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_resource_identifier_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_resource_identifier_summary(&mut tag)
                     ?
                 );
             }
@@ -5744,7 +5744,7 @@ pub fn deser_list_resource_identifier_summaries(
     Ok(out)
 }
 
-pub fn deser_list_change_set_summaries(
+pub fn deser_list_com_amazonaws_cloudformation_change_set_summaries(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ChangeSetSummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5752,7 +5752,7 @@ pub fn deser_list_change_set_summaries(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#ChangeSetSummaries$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_change_set_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_change_set_summary(&mut tag)
                     ?
                 );
             }
@@ -5763,7 +5763,7 @@ pub fn deser_list_change_set_summaries(
     Ok(out)
 }
 
-pub fn deser_list_exports(
+pub fn deser_list_com_amazonaws_cloudformation_exports(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Export>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5771,7 +5771,7 @@ pub fn deser_list_exports(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#Exports$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_export(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_export(&mut tag)
                     ?
                 );
             }
@@ -5782,7 +5782,7 @@ pub fn deser_list_exports(
     Ok(out)
 }
 
-pub fn deser_list_imports(
+pub fn deser_list_com_amazonaws_cloudformation_imports(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5804,7 +5804,7 @@ pub fn deser_list_imports(
     Ok(out)
 }
 
-pub fn deser_list_stack_instance_summaries(
+pub fn deser_list_com_amazonaws_cloudformation_stack_instance_summaries(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::StackInstanceSummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5812,7 +5812,7 @@ pub fn deser_list_stack_instance_summaries(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#StackInstanceSummaries$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_stack_instance_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_stack_instance_summary(&mut tag)
                     ?
                 );
             }
@@ -5823,7 +5823,7 @@ pub fn deser_list_stack_instance_summaries(
     Ok(out)
 }
 
-pub fn deser_list_stack_resource_summaries(
+pub fn deser_list_com_amazonaws_cloudformation_stack_resource_summaries(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::StackResourceSummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5831,7 +5831,7 @@ pub fn deser_list_stack_resource_summaries(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#StackResourceSummaries$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_stack_resource_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_stack_resource_summary(&mut tag)
                     ?
                 );
             }
@@ -5842,7 +5842,7 @@ pub fn deser_list_stack_resource_summaries(
     Ok(out)
 }
 
-pub fn deser_list_stack_summaries(
+pub fn deser_list_com_amazonaws_cloudformation_stack_summaries(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::StackSummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5850,7 +5850,7 @@ pub fn deser_list_stack_summaries(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#StackSummaries$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_stack_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_stack_summary(&mut tag)
                     ?
                 );
             }
@@ -5861,7 +5861,7 @@ pub fn deser_list_stack_summaries(
     Ok(out)
 }
 
-pub fn deser_list_stack_set_operation_result_summaries(
+pub fn deser_list_com_amazonaws_cloudformation_stack_set_operation_result_summaries(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::StackSetOperationResultSummary>, smithy_xml::decode::XmlError>
 {
@@ -5870,7 +5870,7 @@ pub fn deser_list_stack_set_operation_result_summaries(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#StackSetOperationResultSummaries$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_stack_set_operation_result_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_stack_set_operation_result_summary(&mut tag)
                     ?
                 );
             }
@@ -5881,7 +5881,7 @@ pub fn deser_list_stack_set_operation_result_summaries(
     Ok(out)
 }
 
-pub fn deser_list_stack_set_operation_summaries(
+pub fn deser_list_com_amazonaws_cloudformation_stack_set_operation_summaries(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::StackSetOperationSummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5889,7 +5889,7 @@ pub fn deser_list_stack_set_operation_summaries(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#StackSetOperationSummaries$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_stack_set_operation_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_stack_set_operation_summary(&mut tag)
                     ?
                 );
             }
@@ -5900,7 +5900,7 @@ pub fn deser_list_stack_set_operation_summaries(
     Ok(out)
 }
 
-pub fn deser_list_stack_set_summaries(
+pub fn deser_list_com_amazonaws_cloudformation_stack_set_summaries(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::StackSetSummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5908,7 +5908,7 @@ pub fn deser_list_stack_set_summaries(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#StackSetSummaries$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_stack_set_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_stack_set_summary(&mut tag)
                     ?
                 );
             }
@@ -5919,7 +5919,7 @@ pub fn deser_list_stack_set_summaries(
     Ok(out)
 }
 
-pub fn deser_list_registration_token_list(
+pub fn deser_list_com_amazonaws_cloudformation_registration_token_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5941,7 +5941,7 @@ pub fn deser_list_registration_token_list(
     Ok(out)
 }
 
-pub fn deser_list_type_summaries(
+pub fn deser_list_com_amazonaws_cloudformation_type_summaries(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::TypeSummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5949,7 +5949,7 @@ pub fn deser_list_type_summaries(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#TypeSummaries$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_type_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_type_summary(&mut tag)
                     ?
                 );
             }
@@ -5960,7 +5960,7 @@ pub fn deser_list_type_summaries(
     Ok(out)
 }
 
-pub fn deser_list_type_version_summaries(
+pub fn deser_list_com_amazonaws_cloudformation_type_version_summaries(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::TypeVersionSummary>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5968,7 +5968,7 @@ pub fn deser_list_type_version_summaries(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#TypeVersionSummaries$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_type_version_summary(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_type_version_summary(&mut tag)
                     ?
                 );
             }
@@ -5979,7 +5979,7 @@ pub fn deser_list_type_version_summaries(
     Ok(out)
 }
 
-pub fn deser_list_template_parameters(
+pub fn deser_list_com_amazonaws_cloudformation_template_parameters(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::TemplateParameter>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5987,7 +5987,7 @@ pub fn deser_list_template_parameters(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#TemplateParameters$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_template_parameter(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_template_parameter(&mut tag)
                     ?
                 );
             }
@@ -5998,7 +5998,7 @@ pub fn deser_list_template_parameters(
     Ok(out)
 }
 
-pub fn deser_structure_batch_describe_type_configurations_error(
+pub fn deser_structure_crate_model_batch_describe_type_configurations_error(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::BatchDescribeTypeConfigurationsError, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6034,7 +6034,7 @@ pub fn deser_structure_batch_describe_type_configurations_error(
             s if s.matches("TypeConfigurationIdentifier") /* TypeConfigurationIdentifier com.amazonaws.cloudformation#BatchDescribeTypeConfigurationsError$TypeConfigurationIdentifier */ =>  {
                 let var_230 =
                     Some(
-                        crate::xml_deser::deser_structure_type_configuration_identifier(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_type_configuration_identifier(&mut tag)
                         ?
                     )
                 ;
@@ -6047,7 +6047,7 @@ pub fn deser_structure_batch_describe_type_configurations_error(
     Ok(builder.build())
 }
 
-pub fn deser_structure_type_configuration_identifier(
+pub fn deser_structure_crate_model_type_configuration_identifier(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TypeConfigurationIdentifier, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6126,7 +6126,7 @@ pub fn deser_structure_type_configuration_identifier(
     Ok(builder.build())
 }
 
-pub fn deser_structure_type_configuration_details(
+pub fn deser_structure_crate_model_type_configuration_details(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TypeConfigurationDetails, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6233,7 +6233,7 @@ pub fn deser_structure_type_configuration_details(
     Ok(builder.build())
 }
 
-pub fn deser_structure_account_limit(
+pub fn deser_structure_crate_model_account_limit(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AccountLimit, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6274,7 +6274,7 @@ pub fn deser_structure_account_limit(
     Ok(builder.build())
 }
 
-pub fn deser_structure_parameter(
+pub fn deser_structure_crate_model_parameter(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Parameter, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6341,7 +6341,7 @@ pub fn deser_structure_parameter(
     Ok(builder.build())
 }
 
-pub fn deser_list_rollback_triggers(
+pub fn deser_list_com_amazonaws_cloudformation_rollback_triggers(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::RollbackTrigger>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6349,7 +6349,7 @@ pub fn deser_list_rollback_triggers(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#RollbackTriggers$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_rollback_trigger(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_rollback_trigger(&mut tag)
                     ?
                 );
             }
@@ -6360,7 +6360,7 @@ pub fn deser_list_rollback_triggers(
     Ok(out)
 }
 
-pub fn deser_structure_tag(
+pub fn deser_structure_crate_model_tag(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Tag, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6399,7 +6399,7 @@ pub fn deser_structure_tag(
     Ok(builder.build())
 }
 
-pub fn deser_structure_change(
+pub fn deser_structure_crate_model_change(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Change, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6423,7 +6423,7 @@ pub fn deser_structure_change(
             s if s.matches("ResourceChange") /* ResourceChange com.amazonaws.cloudformation#Change$ResourceChange */ =>  {
                 let var_252 =
                     Some(
-                        crate::xml_deser::deser_structure_resource_change(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_resource_change(&mut tag)
                         ?
                     )
                 ;
@@ -6436,7 +6436,7 @@ pub fn deser_structure_change(
     Ok(builder.build())
 }
 
-pub fn deser_structure_stack_event(
+pub fn deser_structure_crate_model_stack_event(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackEvent, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6594,7 +6594,7 @@ pub fn deser_structure_stack_event(
     Ok(builder.build())
 }
 
-pub fn deser_structure_stack_instance_comprehensive_status(
+pub fn deser_structure_crate_model_stack_instance_comprehensive_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackInstanceComprehensiveStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6621,7 +6621,7 @@ pub fn deser_structure_stack_instance_comprehensive_status(
     Ok(builder.build())
 }
 
-pub fn deser_structure_stack_resource_drift_information(
+pub fn deser_structure_crate_model_stack_resource_drift_information(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackResourceDriftInformation, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6662,7 +6662,7 @@ pub fn deser_structure_stack_resource_drift_information(
     Ok(builder.build())
 }
 
-pub fn deser_structure_module_info(
+pub fn deser_structure_crate_model_module_info(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ModuleInfo, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6701,7 +6701,7 @@ pub fn deser_structure_module_info(
     Ok(builder.build())
 }
 
-pub fn deser_structure_stack_resource(
+pub fn deser_structure_crate_model_stack_resource(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackResource, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6830,7 +6830,7 @@ pub fn deser_structure_stack_resource(
             s if s.matches("DriftInformation") /* DriftInformation com.amazonaws.cloudformation#StackResource$DriftInformation */ =>  {
                 let var_278 =
                     Some(
-                        crate::xml_deser::deser_structure_stack_resource_drift_information(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_stack_resource_drift_information(&mut tag)
                         ?
                     )
                 ;
@@ -6840,7 +6840,7 @@ pub fn deser_structure_stack_resource(
             s if s.matches("ModuleInfo") /* ModuleInfo com.amazonaws.cloudformation#StackResource$ModuleInfo */ =>  {
                 let var_279 =
                     Some(
-                        crate::xml_deser::deser_structure_module_info(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_module_info(&mut tag)
                         ?
                     )
                 ;
@@ -6853,7 +6853,7 @@ pub fn deser_structure_stack_resource(
     Ok(builder.build())
 }
 
-pub fn deser_structure_stack(
+pub fn deser_structure_crate_model_stack(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Stack, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6915,7 +6915,7 @@ pub fn deser_structure_stack(
             s if s.matches("Parameters") /* Parameters com.amazonaws.cloudformation#Stack$Parameters */ =>  {
                 let var_284 =
                     Some(
-                        crate::xml_deser::deser_list_parameters(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_parameters(&mut tag)
                         ?
                     )
                 ;
@@ -6967,7 +6967,7 @@ pub fn deser_structure_stack(
             s if s.matches("RollbackConfiguration") /* RollbackConfiguration com.amazonaws.cloudformation#Stack$RollbackConfiguration */ =>  {
                 let var_288 =
                     Some(
-                        crate::xml_deser::deser_structure_rollback_configuration(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_rollback_configuration(&mut tag)
                         ?
                     )
                 ;
@@ -7019,7 +7019,7 @@ pub fn deser_structure_stack(
             s if s.matches("NotificationARNs") /* NotificationARNs com.amazonaws.cloudformation#Stack$NotificationARNs */ =>  {
                 let var_292 =
                     Some(
-                        crate::xml_deser::deser_list_notification_ar_ns(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_notification_ar_ns(&mut tag)
                         ?
                     )
                 ;
@@ -7044,7 +7044,7 @@ pub fn deser_structure_stack(
             s if s.matches("Capabilities") /* Capabilities com.amazonaws.cloudformation#Stack$Capabilities */ =>  {
                 let var_294 =
                     Some(
-                        crate::xml_deser::deser_list_capabilities(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_capabilities(&mut tag)
                         ?
                     )
                 ;
@@ -7054,7 +7054,7 @@ pub fn deser_structure_stack(
             s if s.matches("Outputs") /* Outputs com.amazonaws.cloudformation#Stack$Outputs */ =>  {
                 let var_295 =
                     Some(
-                        crate::xml_deser::deser_list_outputs(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_outputs(&mut tag)
                         ?
                     )
                 ;
@@ -7077,7 +7077,7 @@ pub fn deser_structure_stack(
             s if s.matches("Tags") /* Tags com.amazonaws.cloudformation#Stack$Tags */ =>  {
                 let var_297 =
                     Some(
-                        crate::xml_deser::deser_list_tags(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_tags(&mut tag)
                         ?
                     )
                 ;
@@ -7128,7 +7128,7 @@ pub fn deser_structure_stack(
             s if s.matches("DriftInformation") /* DriftInformation com.amazonaws.cloudformation#Stack$DriftInformation */ =>  {
                 let var_301 =
                     Some(
-                        crate::xml_deser::deser_structure_stack_drift_information(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_stack_drift_information(&mut tag)
                         ?
                     )
                 ;
@@ -7141,7 +7141,7 @@ pub fn deser_structure_stack(
     Ok(builder.build())
 }
 
-pub fn deser_structure_stack_set_drift_detection_details(
+pub fn deser_structure_crate_model_stack_set_drift_detection_details(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackSetDriftDetectionDetails, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7271,7 +7271,7 @@ pub fn deser_structure_stack_set_drift_detection_details(
     Ok(builder.build())
 }
 
-pub fn deser_structure_auto_deployment(
+pub fn deser_structure_crate_model_auto_deployment(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AutoDeployment, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7314,7 +7314,7 @@ pub fn deser_structure_auto_deployment(
     Ok(builder.build())
 }
 
-pub fn deser_list_organizational_unit_id_list(
+pub fn deser_list_com_amazonaws_cloudformation_organizational_unit_id_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7336,7 +7336,7 @@ pub fn deser_list_organizational_unit_id_list(
     Ok(out)
 }
 
-pub fn deser_structure_stack_set_operation_preferences(
+pub fn deser_structure_crate_model_stack_set_operation_preferences(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackSetOperationPreferences, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7360,7 +7360,7 @@ pub fn deser_structure_stack_set_operation_preferences(
             s if s.matches("RegionOrder") /* RegionOrder com.amazonaws.cloudformation#StackSetOperationPreferences$RegionOrder */ =>  {
                 let var_313 =
                     Some(
-                        crate::xml_deser::deser_list_region_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_region_list(&mut tag)
                         ?
                     )
                 ;
@@ -7433,7 +7433,7 @@ pub fn deser_structure_stack_set_operation_preferences(
     Ok(builder.build())
 }
 
-pub fn deser_structure_deployment_targets(
+pub fn deser_structure_crate_model_deployment_targets(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DeploymentTargets, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7443,7 +7443,7 @@ pub fn deser_structure_deployment_targets(
             s if s.matches("Accounts") /* Accounts com.amazonaws.cloudformation#DeploymentTargets$Accounts */ =>  {
                 let var_318 =
                     Some(
-                        crate::xml_deser::deser_list_account_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_account_list(&mut tag)
                         ?
                     )
                 ;
@@ -7466,7 +7466,7 @@ pub fn deser_structure_deployment_targets(
             s if s.matches("OrganizationalUnitIds") /* OrganizationalUnitIds com.amazonaws.cloudformation#DeploymentTargets$OrganizationalUnitIds */ =>  {
                 let var_320 =
                     Some(
-                        crate::xml_deser::deser_list_organizational_unit_id_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_organizational_unit_id_list(&mut tag)
                         ?
                     )
                 ;
@@ -7479,7 +7479,7 @@ pub fn deser_structure_deployment_targets(
     Ok(builder.build())
 }
 
-pub fn deser_structure_required_activated_type(
+pub fn deser_structure_crate_model_required_activated_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::RequiredActivatedType, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7528,7 +7528,7 @@ pub fn deser_structure_required_activated_type(
             s if s.matches("SupportedMajorVersions") /* SupportedMajorVersions com.amazonaws.cloudformation#RequiredActivatedType$SupportedMajorVersions */ =>  {
                 let var_324 =
                     Some(
-                        crate::xml_deser::deser_list_supported_major_versions(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_supported_major_versions(&mut tag)
                         ?
                     )
                 ;
@@ -7541,7 +7541,7 @@ pub fn deser_structure_required_activated_type(
     Ok(builder.build())
 }
 
-pub fn deser_list_physical_resource_id_context(
+pub fn deser_list_com_amazonaws_cloudformation_physical_resource_id_context(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::vec::Vec<crate::model::PhysicalResourceIdContextKeyValuePair>,
@@ -7552,7 +7552,7 @@ pub fn deser_list_physical_resource_id_context(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#PhysicalResourceIdContext$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_physical_resource_id_context_key_value_pair(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_physical_resource_id_context_key_value_pair(&mut tag)
                     ?
                 );
             }
@@ -7563,7 +7563,7 @@ pub fn deser_list_physical_resource_id_context(
     Ok(out)
 }
 
-pub fn deser_list_property_differences(
+pub fn deser_list_com_amazonaws_cloudformation_property_differences(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::PropertyDifference>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -7571,7 +7571,7 @@ pub fn deser_list_property_differences(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#PropertyDifferences$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_property_difference(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_property_difference(&mut tag)
                     ?
                 );
             }
@@ -7582,7 +7582,7 @@ pub fn deser_list_property_differences(
     Ok(out)
 }
 
-pub fn deser_structure_parameter_declaration(
+pub fn deser_structure_crate_model_parameter_declaration(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ParameterDeclaration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7659,7 +7659,7 @@ pub fn deser_structure_parameter_declaration(
             s if s.matches("ParameterConstraints") /* ParameterConstraints com.amazonaws.cloudformation#ParameterDeclaration$ParameterConstraints */ =>  {
                 let var_330 =
                     Some(
-                        crate::xml_deser::deser_structure_parameter_constraints(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_parameter_constraints(&mut tag)
                         ?
                     )
                 ;
@@ -7672,7 +7672,7 @@ pub fn deser_structure_parameter_declaration(
     Ok(builder.build())
 }
 
-pub fn deser_structure_resource_identifier_summary(
+pub fn deser_structure_crate_model_resource_identifier_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ResourceIdentifierSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7695,7 +7695,7 @@ pub fn deser_structure_resource_identifier_summary(
             s if s.matches("LogicalResourceIds") /* LogicalResourceIds com.amazonaws.cloudformation#ResourceIdentifierSummary$LogicalResourceIds */ =>  {
                 let var_332 =
                     Some(
-                        crate::xml_deser::deser_list_logical_resource_ids(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_logical_resource_ids(&mut tag)
                         ?
                     )
                 ;
@@ -7705,7 +7705,7 @@ pub fn deser_structure_resource_identifier_summary(
             s if s.matches("ResourceIdentifiers") /* ResourceIdentifiers com.amazonaws.cloudformation#ResourceIdentifierSummary$ResourceIdentifiers */ =>  {
                 let var_333 =
                     Some(
-                        crate::xml_deser::deser_list_resource_identifiers(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_resource_identifiers(&mut tag)
                         ?
                     )
                 ;
@@ -7718,7 +7718,7 @@ pub fn deser_structure_resource_identifier_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_change_set_summary(
+pub fn deser_structure_crate_model_change_set_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ChangeSetSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7892,7 +7892,7 @@ pub fn deser_structure_change_set_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_export(
+pub fn deser_structure_crate_model_export(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Export, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -7944,7 +7944,7 @@ pub fn deser_structure_export(
     Ok(builder.build())
 }
 
-pub fn deser_structure_stack_instance_summary(
+pub fn deser_structure_crate_model_stack_instance_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackInstanceSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8033,7 +8033,7 @@ pub fn deser_structure_stack_instance_summary(
             s if s.matches("StackInstanceStatus") /* StackInstanceStatus com.amazonaws.cloudformation#StackInstanceSummary$StackInstanceStatus */ =>  {
                 let var_355 =
                     Some(
-                        crate::xml_deser::deser_structure_stack_instance_comprehensive_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_stack_instance_comprehensive_status(&mut tag)
                         ?
                     )
                 ;
@@ -8087,7 +8087,7 @@ pub fn deser_structure_stack_instance_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_stack_resource_summary(
+pub fn deser_structure_crate_model_stack_resource_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackResourceSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8177,7 +8177,7 @@ pub fn deser_structure_stack_resource_summary(
             s if s.matches("DriftInformation") /* DriftInformation com.amazonaws.cloudformation#StackResourceSummary$DriftInformation */ =>  {
                 let var_365 =
                     Some(
-                        crate::xml_deser::deser_structure_stack_resource_drift_information_summary(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_stack_resource_drift_information_summary(&mut tag)
                         ?
                     )
                 ;
@@ -8187,7 +8187,7 @@ pub fn deser_structure_stack_resource_summary(
             s if s.matches("ModuleInfo") /* ModuleInfo com.amazonaws.cloudformation#StackResourceSummary$ModuleInfo */ =>  {
                 let var_366 =
                     Some(
-                        crate::xml_deser::deser_structure_module_info(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_module_info(&mut tag)
                         ?
                     )
                 ;
@@ -8200,7 +8200,7 @@ pub fn deser_structure_stack_resource_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_stack_summary(
+pub fn deser_structure_crate_model_stack_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8344,7 +8344,7 @@ pub fn deser_structure_stack_summary(
             s if s.matches("DriftInformation") /* DriftInformation com.amazonaws.cloudformation#StackSummary$DriftInformation */ =>  {
                 let var_377 =
                     Some(
-                        crate::xml_deser::deser_structure_stack_drift_information_summary(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_stack_drift_information_summary(&mut tag)
                         ?
                     )
                 ;
@@ -8357,7 +8357,7 @@ pub fn deser_structure_stack_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_stack_set_operation_result_summary(
+pub fn deser_structure_crate_model_stack_set_operation_result_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackSetOperationResultSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8420,7 +8420,7 @@ pub fn deser_structure_stack_set_operation_result_summary(
             s if s.matches("AccountGateResult") /* AccountGateResult com.amazonaws.cloudformation#StackSetOperationResultSummary$AccountGateResult */ =>  {
                 let var_382 =
                     Some(
-                        crate::xml_deser::deser_structure_account_gate_result(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_account_gate_result(&mut tag)
                         ?
                     )
                 ;
@@ -8446,7 +8446,7 @@ pub fn deser_structure_stack_set_operation_result_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_stack_set_operation_summary(
+pub fn deser_structure_crate_model_stack_set_operation_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackSetOperationSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8528,7 +8528,7 @@ pub fn deser_structure_stack_set_operation_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_stack_set_summary(
+pub fn deser_structure_crate_model_stack_set_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackSetSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8591,7 +8591,7 @@ pub fn deser_structure_stack_set_summary(
             s if s.matches("AutoDeployment") /* AutoDeployment com.amazonaws.cloudformation#StackSetSummary$AutoDeployment */ =>  {
                 let var_393 =
                     Some(
-                        crate::xml_deser::deser_structure_auto_deployment(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_auto_deployment(&mut tag)
                         ?
                     )
                 ;
@@ -8646,7 +8646,7 @@ pub fn deser_structure_stack_set_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_type_summary(
+pub fn deser_structure_crate_model_type_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TypeSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8833,7 +8833,7 @@ pub fn deser_structure_type_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_type_version_summary(
+pub fn deser_structure_crate_model_type_version_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TypeVersionSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -8954,7 +8954,7 @@ pub fn deser_structure_type_version_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_template_parameter(
+pub fn deser_structure_crate_model_template_parameter(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TemplateParameter, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9021,7 +9021,7 @@ pub fn deser_structure_template_parameter(
     Ok(builder.build())
 }
 
-pub fn deser_structure_rollback_trigger(
+pub fn deser_structure_crate_model_rollback_trigger(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::RollbackTrigger, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9060,7 +9060,7 @@ pub fn deser_structure_rollback_trigger(
     Ok(builder.build())
 }
 
-pub fn deser_structure_resource_change(
+pub fn deser_structure_crate_model_resource_change(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ResourceChange, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9137,7 +9137,7 @@ pub fn deser_structure_resource_change(
             s if s.matches("Scope") /* Scope com.amazonaws.cloudformation#ResourceChange$Scope */ =>  {
                 let var_429 =
                     Some(
-                        crate::xml_deser::deser_list_scope(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_scope(&mut tag)
                         ?
                     )
                 ;
@@ -9147,7 +9147,7 @@ pub fn deser_structure_resource_change(
             s if s.matches("Details") /* Details com.amazonaws.cloudformation#ResourceChange$Details */ =>  {
                 let var_430 =
                     Some(
-                        crate::xml_deser::deser_list_resource_change_details(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_resource_change_details(&mut tag)
                         ?
                     )
                 ;
@@ -9170,7 +9170,7 @@ pub fn deser_structure_resource_change(
             s if s.matches("ModuleInfo") /* ModuleInfo com.amazonaws.cloudformation#ResourceChange$ModuleInfo */ =>  {
                 let var_432 =
                     Some(
-                        crate::xml_deser::deser_structure_module_info(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_module_info(&mut tag)
                         ?
                     )
                 ;
@@ -9183,7 +9183,7 @@ pub fn deser_structure_resource_change(
     Ok(builder.build())
 }
 
-pub fn deser_list_outputs(
+pub fn deser_list_com_amazonaws_cloudformation_outputs(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Output>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9191,7 +9191,7 @@ pub fn deser_list_outputs(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#Outputs$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_output(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_output(&mut tag)
                     ?
                 );
             }
@@ -9202,7 +9202,7 @@ pub fn deser_list_outputs(
     Ok(out)
 }
 
-pub fn deser_structure_stack_drift_information(
+pub fn deser_structure_crate_model_stack_drift_information(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackDriftInformation, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9243,7 +9243,7 @@ pub fn deser_structure_stack_drift_information(
     Ok(builder.build())
 }
 
-pub fn deser_list_region_list(
+pub fn deser_list_com_amazonaws_cloudformation_region_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9265,7 +9265,7 @@ pub fn deser_list_region_list(
     Ok(out)
 }
 
-pub fn deser_list_account_list(
+pub fn deser_list_com_amazonaws_cloudformation_account_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9287,7 +9287,7 @@ pub fn deser_list_account_list(
     Ok(out)
 }
 
-pub fn deser_list_supported_major_versions(
+pub fn deser_list_com_amazonaws_cloudformation_supported_major_versions(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<i32>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9311,7 +9311,7 @@ pub fn deser_list_supported_major_versions(
     Ok(out)
 }
 
-pub fn deser_structure_physical_resource_id_context_key_value_pair(
+pub fn deser_structure_crate_model_physical_resource_id_context_key_value_pair(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PhysicalResourceIdContextKeyValuePair, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9350,7 +9350,7 @@ pub fn deser_structure_physical_resource_id_context_key_value_pair(
     Ok(builder.build())
 }
 
-pub fn deser_structure_property_difference(
+pub fn deser_structure_crate_model_property_difference(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PropertyDifference, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9416,7 +9416,7 @@ pub fn deser_structure_property_difference(
     Ok(builder.build())
 }
 
-pub fn deser_structure_parameter_constraints(
+pub fn deser_structure_crate_model_parameter_constraints(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ParameterConstraints, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9426,7 +9426,7 @@ pub fn deser_structure_parameter_constraints(
             s if s.matches("AllowedValues") /* AllowedValues com.amazonaws.cloudformation#ParameterConstraints$AllowedValues */ =>  {
                 let var_441 =
                     Some(
-                        crate::xml_deser::deser_list_allowed_values(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudformation_allowed_values(&mut tag)
                         ?
                     )
                 ;
@@ -9439,7 +9439,7 @@ pub fn deser_structure_parameter_constraints(
     Ok(builder.build())
 }
 
-pub fn deser_list_logical_resource_ids(
+pub fn deser_list_com_amazonaws_cloudformation_logical_resource_ids(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9461,7 +9461,7 @@ pub fn deser_list_logical_resource_ids(
     Ok(out)
 }
 
-pub fn deser_list_resource_identifiers(
+pub fn deser_list_com_amazonaws_cloudformation_resource_identifiers(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9483,7 +9483,7 @@ pub fn deser_list_resource_identifiers(
     Ok(out)
 }
 
-pub fn deser_structure_stack_resource_drift_information_summary(
+pub fn deser_structure_crate_model_stack_resource_drift_information_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackResourceDriftInformationSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9524,7 +9524,7 @@ pub fn deser_structure_stack_resource_drift_information_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_stack_drift_information_summary(
+pub fn deser_structure_crate_model_stack_drift_information_summary(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StackDriftInformationSummary, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9565,7 +9565,7 @@ pub fn deser_structure_stack_drift_information_summary(
     Ok(builder.build())
 }
 
-pub fn deser_structure_account_gate_result(
+pub fn deser_structure_crate_model_account_gate_result(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AccountGateResult, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9605,7 +9605,7 @@ pub fn deser_structure_account_gate_result(
     Ok(builder.build())
 }
 
-pub fn deser_list_scope(
+pub fn deser_list_com_amazonaws_cloudformation_scope(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ResourceAttribute>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9628,7 +9628,7 @@ pub fn deser_list_scope(
     Ok(out)
 }
 
-pub fn deser_list_resource_change_details(
+pub fn deser_list_com_amazonaws_cloudformation_resource_change_details(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ResourceChangeDetail>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9636,7 +9636,7 @@ pub fn deser_list_resource_change_details(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudformation#ResourceChangeDetails$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_resource_change_detail(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_resource_change_detail(&mut tag)
                     ?
                 );
             }
@@ -9647,7 +9647,7 @@ pub fn deser_list_resource_change_details(
     Ok(out)
 }
 
-pub fn deser_structure_output(
+pub fn deser_structure_crate_model_output(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Output, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9712,7 +9712,7 @@ pub fn deser_structure_output(
     Ok(builder.build())
 }
 
-pub fn deser_list_allowed_values(
+pub fn deser_list_com_amazonaws_cloudformation_allowed_values(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -9734,7 +9734,7 @@ pub fn deser_list_allowed_values(
     Ok(out)
 }
 
-pub fn deser_structure_resource_change_detail(
+pub fn deser_structure_crate_model_resource_change_detail(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ResourceChangeDetail, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -9744,7 +9744,7 @@ pub fn deser_structure_resource_change_detail(
             s if s.matches("Target") /* Target com.amazonaws.cloudformation#ResourceChangeDetail$Target */ =>  {
                 let var_452 =
                     Some(
-                        crate::xml_deser::deser_structure_resource_target_definition(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_resource_target_definition(&mut tag)
                         ?
                     )
                 ;
@@ -9798,7 +9798,7 @@ pub fn deser_structure_resource_change_detail(
     Ok(builder.build())
 }
 
-pub fn deser_structure_resource_target_definition(
+pub fn deser_structure_crate_model_resource_target_definition(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ResourceTargetDefinition, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]

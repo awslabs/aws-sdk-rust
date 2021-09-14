@@ -297,6 +297,38 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteApplicationOutputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteApplicationOutputError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteApplicationOutputErrorKind::ConcurrentModificationException(
+                    inner,
+                ) => Error::ConcurrentModificationException(inner),
+                crate::error::DeleteApplicationOutputErrorKind::InvalidArgumentException(inner) => {
+                    Error::InvalidArgumentException(inner)
+                }
+                crate::error::DeleteApplicationOutputErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
+                }
+                crate::error::DeleteApplicationOutputErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DeleteApplicationOutputErrorKind::UnsupportedOperationException(
+                    inner,
+                ) => Error::UnsupportedOperationException(inner),
+                crate::error::DeleteApplicationOutputErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R>
     From<smithy_http::result::SdkError<crate::error::DeleteApplicationReferenceDataSourceError, R>>
     for Error

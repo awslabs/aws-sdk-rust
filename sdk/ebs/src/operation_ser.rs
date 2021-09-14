@@ -6,12 +6,12 @@ pub fn ser_payload_put_snapshot_block_input(
     Ok(smithy_http::body::SdkBody::from(payload.into_inner()))
 }
 
-pub fn serialize_operation_start_snapshot(
+pub fn serialize_operation_crate_operation_start_snapshot(
     input: &crate::input::StartSnapshotInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_start_snapshot_input(&mut object, input);
+    crate::json_ser::serialize_structure_crate_input_start_snapshot_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }

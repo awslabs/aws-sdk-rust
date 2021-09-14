@@ -224,11 +224,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificate_authority_configuration(input);
             self
         }
-        /// <p>Contains a Boolean value that you can use to enable a certification revocation list
-        /// (CRL) for the CA, the name of the S3 bucket to which ACM Private CA will write the CRL, and an
-        /// optional CNAME alias that you can use to hide the name of your bucket in the <b>CRL Distribution Points</b> extension of your CA certificate. For
-        /// more information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> structure.
-        /// </p>
+        /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support,
+        /// to enable a certificate revocation list (CRL), to enable both, or to enable neither. The
+        /// default is for both certificate validation mechanisms to be disabled. For more
+        /// information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
         pub fn revocation_configuration(
             mut self,
             inp: crate::model::RevocationConfiguration,
@@ -2083,7 +2082,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificate_authority_arn(input);
             self
         }
-        /// <p>Revocation information for your private CA.</p>
+        /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support,
+        /// to enable a certificate revocation list (CRL), to enable both, or to enable neither. If
+        /// this parameter is not supplied, existing capibilites remain unchanged. For more
+        /// information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
         pub fn revocation_configuration(
             mut self,
             inp: crate::model::RevocationConfiguration,

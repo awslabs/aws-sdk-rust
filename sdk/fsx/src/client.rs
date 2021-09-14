@@ -98,11 +98,30 @@ where
     ) -> fluent_builders::CreateFileSystemFromBackup<C, M, R> {
         fluent_builders::CreateFileSystemFromBackup::new(self.handle.clone())
     }
+    pub fn create_storage_virtual_machine(
+        &self,
+    ) -> fluent_builders::CreateStorageVirtualMachine<C, M, R> {
+        fluent_builders::CreateStorageVirtualMachine::new(self.handle.clone())
+    }
+    pub fn create_volume(&self) -> fluent_builders::CreateVolume<C, M, R> {
+        fluent_builders::CreateVolume::new(self.handle.clone())
+    }
+    pub fn create_volume_from_backup(&self) -> fluent_builders::CreateVolumeFromBackup<C, M, R> {
+        fluent_builders::CreateVolumeFromBackup::new(self.handle.clone())
+    }
     pub fn delete_backup(&self) -> fluent_builders::DeleteBackup<C, M, R> {
         fluent_builders::DeleteBackup::new(self.handle.clone())
     }
     pub fn delete_file_system(&self) -> fluent_builders::DeleteFileSystem<C, M, R> {
         fluent_builders::DeleteFileSystem::new(self.handle.clone())
+    }
+    pub fn delete_storage_virtual_machine(
+        &self,
+    ) -> fluent_builders::DeleteStorageVirtualMachine<C, M, R> {
+        fluent_builders::DeleteStorageVirtualMachine::new(self.handle.clone())
+    }
+    pub fn delete_volume(&self) -> fluent_builders::DeleteVolume<C, M, R> {
+        fluent_builders::DeleteVolume::new(self.handle.clone())
     }
     pub fn describe_backups(&self) -> fluent_builders::DescribeBackups<C, M, R> {
         fluent_builders::DescribeBackups::new(self.handle.clone())
@@ -120,6 +139,14 @@ where
     pub fn describe_file_systems(&self) -> fluent_builders::DescribeFileSystems<C, M, R> {
         fluent_builders::DescribeFileSystems::new(self.handle.clone())
     }
+    pub fn describe_storage_virtual_machines(
+        &self,
+    ) -> fluent_builders::DescribeStorageVirtualMachines<C, M, R> {
+        fluent_builders::DescribeStorageVirtualMachines::new(self.handle.clone())
+    }
+    pub fn describe_volumes(&self) -> fluent_builders::DescribeVolumes<C, M, R> {
+        fluent_builders::DescribeVolumes::new(self.handle.clone())
+    }
     pub fn disassociate_file_system_aliases(
         &self,
     ) -> fluent_builders::DisassociateFileSystemAliases<C, M, R> {
@@ -136,6 +163,14 @@ where
     }
     pub fn update_file_system(&self) -> fluent_builders::UpdateFileSystem<C, M, R> {
         fluent_builders::UpdateFileSystem::new(self.handle.clone())
+    }
+    pub fn update_storage_virtual_machine(
+        &self,
+    ) -> fluent_builders::UpdateStorageVirtualMachine<C, M, R> {
+        fluent_builders::UpdateStorageVirtualMachine::new(self.handle.clone())
+    }
+    pub fn update_volume(&self) -> fluent_builders::UpdateVolume<C, M, R> {
+        fluent_builders::UpdateVolume::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -184,8 +219,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the AWS
-        /// Command Line Interface (AWS CLI) or an AWS SDK.</p>
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(inp);
             self
@@ -344,8 +379,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the AWS
-        /// Command Line Interface (AWS CLI) or an AWS SDK.</p>
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(inp);
             self
@@ -370,9 +405,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_backup_id(input);
             self
         }
-        /// <p>The source AWS Region of the backup. Specifies the AWS Region from which
+        /// <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web Services Region from which
         /// the backup is being copied. The source and destination Regions must be in
-        /// the same AWS partition. If you don't specify a Region, it defaults to
+        /// the same Amazon Web Services partition. If you don't specify a Region, it defaults to
         /// the Region where the request is sent from (in-Region copy).</p>
         pub fn source_region(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_region(inp);
@@ -385,12 +420,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_region(input);
             self
         }
-        /// <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data
-        /// for Amazon FSx for Windows File Server file systems and Amazon FSx for Lustre <code>PERSISTENT_1</code> file
-        /// systems at rest. In either case, if not specified, the Amazon FSx managed key
-        /// is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using
-        /// Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-        /// in the <i>AWS Key Management Service API Reference</i>.</p>
+        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data
+        /// for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and
+        /// Amazon FSx for Lustre <code>PERSISTENT_1</code> file systems at rest. If not specified, the Amazon FSx
+        /// managed key is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems
+        /// are always encrypted at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
+        /// in the <i>Key Management Service API Reference</i>.</p>
         pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(inp);
             self
@@ -489,7 +524,7 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure
         /// idempotent creation. This string is automatically filled on your behalf when you use the
-        /// AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(inp);
             self
@@ -516,6 +551,15 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(inp);
+            self
+        }
+        pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_volume_id(input);
             self
         }
     }
@@ -622,8 +666,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the AWS
-        /// Command Line Interface (AWS CLI) or an AWS SDK.</p>
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(inp);
             self
@@ -697,7 +741,7 @@ pub mod fluent_builders {
         }
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
         /// idempotent creation. This string is automatically filled on your behalf when you use the
-        /// AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(inp);
             self
@@ -709,7 +753,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>The type of Amazon FSx file system to create, either <code>WINDOWS</code> or <code>LUSTRE</code>.</p>
+        /// <p>The type of Amazon FSx file system to create. Valid values are <code>WINDOWS</code>,
+        /// <code>LUSTRE</code>, and <code>ONTAP</code>.</p>
         pub fn file_system_type(mut self, inp: crate::model::FileSystemType) -> Self {
             self.inner = self.inner.file_system_type(inp);
             self
@@ -746,6 +791,12 @@ pub mod fluent_builders {
         /// <p>If <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64 TiB).</p>
         /// </li>
         /// </ul>
+        /// <p>For ONTAP file systems:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Valid values are 1024 GiB - 196,608 GiB (192 TiB).</p>
+        /// </li>
+        /// </ul>
         pub fn storage_capacity(mut self, inp: i32) -> Self {
             self.inner = self.inner.storage_capacity(inp);
             self
@@ -759,7 +810,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>Set to <code>SSD</code> to use solid state drive storage.
-        /// SSD is supported on all Windows and Lustre deployment types.</p>
+        /// SSD is supported on all Windows, Lustre, and ONTAP deployment types.</p>
         /// </li>
         /// <li>
         /// <p>Set to <code>HDD</code> to use hard disk drive storage.
@@ -789,12 +840,17 @@ pub mod fluent_builders {
         /// Appends an item to `SubnetIds`.
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
-        /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows <code>MULTI_AZ_1</code>
-        /// file system deployment types, provide exactly two subnet IDs, one for the preferred file server
-        /// and one for the standby file server. You specify one of these subnets as the preferred subnet
-        /// using the <code>WindowsConfiguration > PreferredSubnetID</code> property. For more information,
+        /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+        /// and ONTAP <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs,
+        /// one for the preferred file server and one for the standby file server. You specify one of these
+        /// subnets as the preferred subnet using the <code>WindowsConfiguration > PreferredSubnetID</code>
+        /// or <code>OntapConfiguration > PreferredSubnetID</code> properties. For more information,
         /// see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-        /// Availability and durability: Single-AZ and Multi-AZ file systems</a>.</p>
+        /// Availability and durability: Single-AZ and Multi-AZ file systems</a> in the
+        /// <i>Amazon FSx for Windows User Guide</i> and
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">
+        /// Availability and durability</a> in the
+        /// <i>Amazon FSx for ONTAP User Guide</i>.</p>
         /// <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types and Lustre file systems, provide exactly one subnet ID.
         /// The file server is launched in that subnet's Availability Zone.</p>
         pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -841,12 +897,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data
-        /// for Amazon FSx for Windows File Server file systems and Amazon FSx for Lustre <code>PERSISTENT_1</code> file
-        /// systems at rest. In either case, if not specified, the Amazon FSx managed key
-        /// is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using
-        /// Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-        /// in the <i>AWS Key Management Service API Reference</i>.</p>
+        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data
+        /// for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and
+        /// Amazon FSx for Lustre <code>PERSISTENT_1</code> file systems at rest. If not specified, the Amazon FSx
+        /// managed key is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems
+        /// are always encrypted at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
+        /// in the <i>Key Management Service API Reference</i>.</p>
         pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(inp);
             self
@@ -885,6 +941,21 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::CreateFileSystemLustreConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_lustre_configuration(input);
+            self
+        }
+        /// <p>The ONTAP configuration properties of the FSx for NetApp ONTAP file system that you are creating.</p>
+        pub fn ontap_configuration(
+            mut self,
+            inp: crate::model::CreateFileSystemOntapConfiguration,
+        ) -> Self {
+            self.inner = self.inner.ontap_configuration(inp);
+            self
+        }
+        pub fn set_ontap_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CreateFileSystemOntapConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_ontap_configuration(input);
             self
         }
     }
@@ -943,7 +1014,7 @@ pub mod fluent_builders {
         }
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
         /// idempotent creation. This string is automatically filled on your behalf when you use the
-        /// AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(inp);
             self
@@ -1075,18 +1146,395 @@ pub mod fluent_builders {
             self.inner = self.inner.set_storage_type(input);
             self
         }
-        /// <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data
-        /// for Amazon FSx for Windows File Server file systems and Amazon FSx for Lustre <code>PERSISTENT_1</code> file
-        /// systems at rest. In either case, if not specified, the Amazon FSx managed key
-        /// is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using
-        /// Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-        /// in the <i>AWS Key Management Service API Reference</i>.</p>
+        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data
+        /// for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and
+        /// Amazon FSx for Lustre <code>PERSISTENT_1</code> file systems at rest. If not specified, the Amazon FSx
+        /// managed key is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems
+        /// are always encrypted at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
+        /// in the <i>Key Management Service API Reference</i>.</p>
         pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(inp);
             self
         }
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreateStorageVirtualMachine<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_storage_virtual_machine_input::Builder,
+    }
+    impl<C, M, R> CreateStorageVirtualMachine<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateStorageVirtualMachineOutput,
+            smithy_http::result::SdkError<crate::error::CreateStorageVirtualMachineError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateStorageVirtualMachineInputOperationOutputAlias,
+                crate::output::CreateStorageVirtualMachineOutput,
+                crate::error::CreateStorageVirtualMachineError,
+                crate::input::CreateStorageVirtualMachineInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM.
+        /// Joining an Active Directory provides user authentication and access control for SMB clients,
+        /// including Microsoft Windows and macOS client accessing the file system.</p>
+        pub fn active_directory_configuration(
+            mut self,
+            inp: crate::model::CreateSvmActiveDirectoryConfiguration,
+        ) -> Self {
+            self.inner = self.inner.active_directory_configuration(inp);
+            self
+        }
+        pub fn set_active_directory_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CreateSvmActiveDirectoryConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_active_directory_configuration(input);
+            self
+        }
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(inp);
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(inp);
+            self
+        }
+        pub fn set_file_system_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_file_system_id(input);
+            self
+        }
+        /// <p>The name of the SVM.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The password to use when managing the SVM using the NetApp ONTAP CLI or REST API.
+        /// If you do not specify a password, you can still use the file system's
+        /// <code>fsxadmin</code> user to manage the SVM.</p>
+        pub fn svm_admin_password(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.svm_admin_password(inp);
+            self
+        }
+        pub fn set_svm_admin_password(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_svm_admin_password(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>UNIX</code> if the file system is managed by a UNIX
+        /// administrator, the majority of users are NFS clients, and an application
+        /// accessing the data uses a UNIX user as the service account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NTFS</code> if the file system is managed by a Windows
+        /// administrator, the majority of users are SMB clients, and an application
+        /// accessing the data uses a Windows user as the service account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MIXED</code> if the file system is managed by both UNIX
+        /// and Windows administrators and users consist of both NFS and SMB clients.</p>
+        /// </li>
+        /// </ul>
+        pub fn root_volume_security_style(
+            mut self,
+            inp: crate::model::StorageVirtualMachineRootVolumeSecurityStyle,
+        ) -> Self {
+            self.inner = self.inner.root_volume_security_style(inp);
+            self
+        }
+        pub fn set_root_volume_security_style(
+            mut self,
+            input: std::option::Option<crate::model::StorageVirtualMachineRootVolumeSecurityStyle>,
+        ) -> Self {
+            self.inner = self.inner.set_root_volume_security_style(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreateVolume<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_volume_input::Builder,
+    }
+    impl<C, M, R> CreateVolume<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateVolumeOutput,
+            smithy_http::result::SdkError<crate::error::CreateVolumeError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateVolumeInputOperationOutputAlias,
+                crate::output::CreateVolumeOutput,
+                crate::error::CreateVolumeError,
+                crate::input::CreateVolumeInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(inp);
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// <p>Specifies the type of volume to create; <code>ONTAP</code> is the only valid volume type.</p>
+        pub fn volume_type(mut self, inp: crate::model::VolumeType) -> Self {
+            self.inner = self.inner.volume_type(inp);
+            self
+        }
+        pub fn set_volume_type(
+            mut self,
+            input: std::option::Option<crate::model::VolumeType>,
+        ) -> Self {
+            self.inner = self.inner.set_volume_type(input);
+            self
+        }
+        /// <p>Specifies the name of the volume you're creating.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>Specifies the <code>ONTAP</code> configuration to use in creating the volume.</p>
+        pub fn ontap_configuration(
+            mut self,
+            inp: crate::model::CreateOntapVolumeConfiguration,
+        ) -> Self {
+            self.inner = self.inner.ontap_configuration(inp);
+            self
+        }
+        pub fn set_ontap_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CreateOntapVolumeConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_ontap_configuration(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreateVolumeFromBackup<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_volume_from_backup_input::Builder,
+    }
+    impl<C, M, R> CreateVolumeFromBackup<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateVolumeFromBackupOutput,
+            smithy_http::result::SdkError<crate::error::CreateVolumeFromBackupError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateVolumeFromBackupInputOperationOutputAlias,
+                crate::output::CreateVolumeFromBackupOutput,
+                crate::error::CreateVolumeFromBackupError,
+                crate::input::CreateVolumeFromBackupInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the source backup. Specifies the backup you are copying.</p>
+        pub fn backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(inp);
+            self
+        }
+        pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_backup_id(input);
+            self
+        }
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(inp);
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// <p>The name of the new volume you're creating.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
+        pub fn ontap_configuration(
+            mut self,
+            inp: crate::model::CreateOntapVolumeConfiguration,
+        ) -> Self {
+            self.inner = self.inner.ontap_configuration(inp);
+            self
+        }
+        pub fn set_ontap_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CreateOntapVolumeConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_ontap_configuration(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1144,8 +1592,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-        /// idempotent deletion. This is automatically filled on your behalf when using the AWS CLI
-        /// or SDK.</p>
+        /// idempotent deletion. This is automatically filled on your behalf when using
+        /// the CLI or SDK.</p>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(inp);
             self
@@ -1215,8 +1663,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-        /// idempotent deletion. This is automatically filled on your behalf when using the AWS CLI
-        /// or SDK.</p>
+        /// idempotent deletion. This is automatically filled on your behalf when using the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(inp);
             self
@@ -1258,6 +1706,161 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::DeleteFileSystemLustreConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_lustre_configuration(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteStorageVirtualMachine<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_storage_virtual_machine_input::Builder,
+    }
+    impl<C, M, R> DeleteStorageVirtualMachine<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteStorageVirtualMachineOutput,
+            smithy_http::result::SdkError<crate::error::DeleteStorageVirtualMachineError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteStorageVirtualMachineInputOperationOutputAlias,
+                crate::output::DeleteStorageVirtualMachineOutput,
+                crate::error::DeleteStorageVirtualMachineError,
+                crate::input::DeleteStorageVirtualMachineInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(inp);
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// <p>The ID of the SVM that you want to delete.</p>
+        pub fn storage_virtual_machine_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_virtual_machine_id(inp);
+            self
+        }
+        pub fn set_storage_virtual_machine_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_storage_virtual_machine_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteVolume<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_volume_input::Builder,
+    }
+    impl<C, M, R> DeleteVolume<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteVolumeOutput,
+            smithy_http::result::SdkError<crate::error::DeleteVolumeError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteVolumeInputOperationOutputAlias,
+                crate::output::DeleteVolumeOutput,
+                crate::error::DeleteVolumeError,
+                crate::input::DeleteVolumeInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(inp);
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// <p>The ID of the volume you are deleting.</p>
+        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(inp);
+            self
+        }
+        pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_volume_id(input);
+            self
+        }
+        /// <p>For Amazon FSx for ONTAP volumes, specify whether to take
+        /// a final backup of the volume, and apply tags to the backup.</p>
+        pub fn ontap_configuration(
+            mut self,
+            inp: crate::model::DeleteVolumeOntapConfiguration,
+        ) -> Self {
+            self.inner = self.inner.ontap_configuration(inp);
+            self
+        }
+        pub fn set_ontap_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DeleteVolumeOntapConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_ontap_configuration(input);
             self
         }
     }
@@ -1324,8 +1927,9 @@ pub mod fluent_builders {
         /// Appends an item to `Filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        /// <p>Filters structure. Supported names are file-system-id and
-        /// backup-type.</p>
+        /// <p>Filters structure. Supported names are <code>file-system-id</code>,
+        /// <code>backup-type</code>, <code>file-system-type</code>, and
+        /// <code>volume-id</code>.</p>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
             self.inner = self.inner.filters(inp);
             self
@@ -1504,8 +2108,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the AWS
-        /// Command Line Interface (AWS CLI) or an AWS SDK.</p>
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(inp);
             self
@@ -1639,6 +2243,201 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DescribeStorageVirtualMachines<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_storage_virtual_machines_input::Builder,
+    }
+    impl<C, M, R> DescribeStorageVirtualMachines<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeStorageVirtualMachinesOutput,
+            smithy_http::result::SdkError<crate::error::DescribeStorageVirtualMachinesError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeStorageVirtualMachinesInputOperationOutputAlias,
+                crate::output::DescribeStorageVirtualMachinesOutput,
+                crate::error::DescribeStorageVirtualMachinesError,
+                crate::input::DescribeStorageVirtualMachinesInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `StorageVirtualMachineIds`.
+        ///
+        /// To override the contents of this collection use [`set_storage_virtual_machine_ids`](Self::set_storage_virtual_machine_ids).
+        /// <p>Enter the ID of one or more SVMs that you want to view.</p>
+        pub fn storage_virtual_machine_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_virtual_machine_ids(inp);
+            self
+        }
+        pub fn set_storage_virtual_machine_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_storage_virtual_machine_ids(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        /// <p>Enter a filter name:value pair to view a select set of SVMs.</p>
+        pub fn filters(
+            mut self,
+            inp: impl Into<crate::model::StorageVirtualMachineFilter>,
+        ) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::StorageVirtualMachineFilter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The maximum number of resources to return in the response. This value must be an
+        /// integer greater than zero.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+        /// present, this token indicates from what point you can continue processing the request, where
+        /// the previous <code>NextToken</code> value left off.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeVolumes<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_volumes_input::Builder,
+    }
+    impl<C, M, R> DescribeVolumes<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeVolumesOutput,
+            smithy_http::result::SdkError<crate::error::DescribeVolumesError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeVolumesInputOperationOutputAlias,
+                crate::output::DescribeVolumesOutput,
+                crate::error::DescribeVolumesError,
+                crate::input::DescribeVolumesInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `VolumeIds`.
+        ///
+        /// To override the contents of this collection use [`set_volume_ids`](Self::set_volume_ids).
+        /// <p>IDs of the volumes whose descriptions you want to retrieve.</p>
+        pub fn volume_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_ids(inp);
+            self
+        }
+        pub fn set_volume_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_volume_ids(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        /// <p>Enter a filter name:value pair to view a select set of volumes.</p>
+        pub fn filters(mut self, inp: impl Into<crate::model::VolumeFilter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VolumeFilter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The maximum number of resources to return in the response. This value must be an
+        /// integer greater than zero.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+        /// present, this token indicates from what point you can continue processing the request, where
+        /// the previous <code>NextToken</code> value left off.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DisassociateFileSystemAliases<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -1683,8 +2482,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the AWS
-        /// Command Line Interface (AWS CLI) or an AWS SDK.</p>
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(inp);
             self
@@ -1999,8 +2798,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-        /// idempotent updates. This string is automatically filled on your behalf when you use the AWS
-        /// Command Line Interface (AWS CLI) or an AWS SDK.</p>
+        /// idempotent updates. This string is automatically filled on your behalf when you use
+        /// the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(inp);
             self
@@ -2012,7 +2811,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>Use this parameter to increase the storage capacity of an Amazon FSx file system.
+        /// <p>Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server
+        /// or Amazon FSx for Lustre file system.
         /// Specifies the storage capacity target value, GiB, to increase the storage capacity for the
         /// file system that you're updating. You cannot make a storage capacity increase request if
         /// there is an existing storage capacity increase request in progress.</p>
@@ -2075,6 +2875,202 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::UpdateFileSystemLustreConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_lustre_configuration(input);
+            self
+        }
+        /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
+        pub fn ontap_configuration(
+            mut self,
+            inp: crate::model::UpdateFileSystemOntapConfiguration,
+        ) -> Self {
+            self.inner = self.inner.ontap_configuration(inp);
+            self
+        }
+        pub fn set_ontap_configuration(
+            mut self,
+            input: std::option::Option<crate::model::UpdateFileSystemOntapConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_ontap_configuration(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateStorageVirtualMachine<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_storage_virtual_machine_input::Builder,
+    }
+    impl<C, M, R> UpdateStorageVirtualMachine<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateStorageVirtualMachineOutput,
+            smithy_http::result::SdkError<crate::error::UpdateStorageVirtualMachineError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateStorageVirtualMachineInputOperationOutputAlias,
+                crate::output::UpdateStorageVirtualMachineOutput,
+                crate::error::UpdateStorageVirtualMachineError,
+                crate::input::UpdateStorageVirtualMachineInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.</p>
+        pub fn active_directory_configuration(
+            mut self,
+            inp: crate::model::UpdateSvmActiveDirectoryConfiguration,
+        ) -> Self {
+            self.inner = self.inner.active_directory_configuration(inp);
+            self
+        }
+        pub fn set_active_directory_configuration(
+            mut self,
+            input: std::option::Option<crate::model::UpdateSvmActiveDirectoryConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_active_directory_configuration(input);
+            self
+        }
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(inp);
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
+        pub fn storage_virtual_machine_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_virtual_machine_id(inp);
+            self
+        }
+        pub fn set_storage_virtual_machine_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_storage_virtual_machine_id(input);
+            self
+        }
+        /// <p>Enter a new SvmAdminPassword if you are updating it.</p>
+        pub fn svm_admin_password(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.svm_admin_password(inp);
+            self
+        }
+        pub fn set_svm_admin_password(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_svm_admin_password(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateVolume<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_volume_input::Builder,
+    }
+    impl<C, M, R> UpdateVolume<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateVolumeOutput,
+            smithy_http::result::SdkError<crate::error::UpdateVolumeError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateVolumeInputOperationOutputAlias,
+                crate::output::UpdateVolumeOutput,
+                crate::error::UpdateVolumeError,
+                crate::input::UpdateVolumeInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+        /// ASCII characters. This token is automatically filled on your behalf when you use the
+        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(inp);
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// <p>Specifies the volume that you want to update, formatted <code>fsvol-0123456789abcdef0</code>.</p>
+        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(inp);
+            self
+        }
+        pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_volume_id(input);
+            self
+        }
+        /// <p>The <code>ONTAP</code> configuration of the volume you are updating.</p>
+        pub fn ontap_configuration(
+            mut self,
+            inp: crate::model::UpdateOntapVolumeConfiguration,
+        ) -> Self {
+            self.inner = self.inner.ontap_configuration(inp);
+            self
+        }
+        pub fn set_ontap_configuration(
+            mut self,
+            input: std::option::Option<crate::model::UpdateOntapVolumeConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_ontap_configuration(input);
             self
         }
     }

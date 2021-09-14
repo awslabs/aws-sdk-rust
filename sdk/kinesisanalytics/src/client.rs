@@ -106,6 +106,9 @@ where
     ) -> fluent_builders::DeleteApplicationInputProcessingConfiguration<C, M, R> {
         fluent_builders::DeleteApplicationInputProcessingConfiguration::new(self.handle.clone())
     }
+    pub fn delete_application_output(&self) -> fluent_builders::DeleteApplicationOutput<C, M, R> {
+        fluent_builders::DeleteApplicationOutput::new(self.handle.clone())
+    }
     pub fn delete_application_reference_data_source(
         &self,
     ) -> fluent_builders::DeleteApplicationReferenceDataSource<C, M, R> {
@@ -971,6 +974,95 @@ pub mod fluent_builders {
         }
         pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_input_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteApplicationOutput<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_application_output_input::Builder,
+    }
+    impl<C, M, R> DeleteApplicationOutput<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteApplicationOutputOutput,
+            smithy_http::result::SdkError<crate::error::DeleteApplicationOutputError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteApplicationOutputInputOperationOutputAlias,
+                crate::output::DeleteApplicationOutputOutput,
+                crate::error::DeleteApplicationOutputError,
+                crate::input::DeleteApplicationOutputInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Amazon Kinesis Analytics application name.</p>
+        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(inp);
+            self
+        }
+        pub fn set_application_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_application_name(input);
+            self
+        }
+        /// <p>Amazon Kinesis Analytics application version.
+        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
+        /// If the version specified is not the current version, the
+        /// <code>ConcurrentModificationException</code> is returned.
+        /// </p>
+        pub fn current_application_version_id(mut self, inp: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(inp);
+            self
+        }
+        pub fn set_current_application_version_id(
+            mut self,
+            input: std::option::Option<i64>,
+        ) -> Self {
+            self.inner = self.inner.set_current_application_version_id(input);
+            self
+        }
+        /// <p>The ID of the configuration to delete.
+        /// Each output configuration that is added to the application, either when the application is
+        /// created or later using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a> operation, has a unique ID.
+        /// You need to provide the ID to uniquely identify the output configuration that you want to
+        /// delete from the application configuration.
+        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the specific
+        /// <code>OutputId</code>.
+        /// </p>
+        pub fn output_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_id(inp);
+            self
+        }
+        pub fn set_output_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_output_id(input);
             self
         }
     }

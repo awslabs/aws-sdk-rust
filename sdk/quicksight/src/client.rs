@@ -504,7 +504,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -579,7 +579,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for the Amazon Web Services account; that you want to customize QuickSight for.</p>
+        /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -591,7 +591,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The QuickSight namespace that you want to add customizations to.</p>
+        /// <p>The Amazon QuickSight namespace that you want to add customizations to.</p>
         pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(inp);
             self
@@ -600,8 +600,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p>The QuickSight customizations you're adding in the current Amazon Web Services Region;. You can add
-        /// these to an Amazon Web Services account; and a QuickSight namespace. </p>
+        /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region;. You can add
+        /// these to an Amazon Web Services account and a Amazon QuickSight namespace. </p>
         /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code>
         /// to the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
         /// "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by
@@ -679,7 +679,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; where you are creating an analysis.</p>
+        /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -702,7 +702,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive name for the analysis that you're creating. This name displays for the
-        /// analysis in the QuickSight console. </p>
+        /// analysis in the Amazon QuickSight console. </p>
         pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(inp);
             self
@@ -757,7 +757,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme
-        /// in the QuickSight console, make sure that you have access to it.</p>
+        /// in the Amazon QuickSight console, make sure that you have access to it.</p>
         pub fn theme_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.theme_arn(inp);
             self
@@ -827,7 +827,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; where you want to create the dashboard.</p>
+        /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -839,7 +839,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID for the dashboard, also added to the IAM policy.</p>
+        /// <p>The ID for the dashboard, also added to the IAMpolicy.</p>
         pub fn dashboard_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dashboard_id(inp);
             self
@@ -875,7 +875,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         /// <p>A structure that contains the permissions of the dashboard. You can use this structure
-        /// for granting permissions by providing a list of IAM action information for each
+        /// for granting permissions by providing a list of IAMaction information for each
         /// principal ARN. </p>
         /// <p>To specify no permissions, omit the permissions list.</p>
         pub fn permissions(mut self, inp: impl Into<crate::model::ResourcePermission>) -> Self {
@@ -895,8 +895,8 @@ pub mod fluent_builders {
         /// entity. If you need to create a dashboard from an analysis, first convert the analysis
         /// to a template by using the <a>CreateTemplate</a> API operation. For
         /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
-        /// template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account; and any
-        /// QuickSight-supported Amazon Web Services Region;. </p>
+        /// template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any
+        /// Amazon QuickSight-supported Amazon Web Services Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
         /// list the replacement datasets for the placeholders listed in the original. The schema in
         /// each dataset must match its placeholder. </p>
@@ -945,7 +945,7 @@ pub mod fluent_builders {
         /// <p>
         /// <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
         /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-        /// set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
+        /// set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the
         /// published dashboard, which can be used for ad hoc (one-time) filtering. This
         /// option is <code>ENABLED</code> by default. </p>
         /// </li>
@@ -979,7 +979,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
         /// you add a value for this field, it overrides the value that is used in the source
-        /// entity. The theme ARN must exist in the same Amazon Web Services account; where you create the
+        /// entity. The theme ARN must exist in the same Amazon Web Services account where you create the
         /// dashboard.</p>
         pub fn theme_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.theme_arn(inp);
@@ -1034,7 +1034,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -1046,7 +1046,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>An ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>An ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_set_id(inp);
             self
@@ -1121,7 +1121,7 @@ pub mod fluent_builders {
         /// Appends an item to `ColumnGroups`.
         ///
         /// To override the contents of this collection use [`set_column_groups`](Self::set_column_groups).
-        /// <p>Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+        /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
         pub fn column_groups(mut self, inp: impl Into<crate::model::ColumnGroup>) -> Self {
             self.inner = self.inner.column_groups(inp);
             self
@@ -1234,6 +1234,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
+        pub fn data_set_usage_configuration(
+            mut self,
+            inp: crate::model::DataSetUsageConfiguration,
+        ) -> Self {
+            self.inner = self.inner.data_set_usage_configuration(inp);
+            self
+        }
+        pub fn set_data_set_usage_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DataSetUsageConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_data_set_usage_configuration(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct CreateDataSource<
@@ -1279,7 +1294,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -1291,7 +1306,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;. </p>
+        /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account. </p>
         pub fn data_source_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_source_id(inp);
             self
@@ -1312,13 +1327,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The type of the data source. Currently, the supported types for this operation are:
-        /// <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3,
-        /// SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>.
-        /// Use <code>ListDataSources</code> to return a
-        /// list of all data sources.</p>
-        /// <p>
-        /// <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed Elasticsearch Service.</p>
+        /// <p>The type of the data source. To return a
+        /// list of all data sources, use <code>ListDataSources</code>.</p>
+        /// <p>Use <code>AMAZON_ELASTICSEARCH</code> for Amazon Elasticsearch Service.</p>
         pub fn r#type(mut self, inp: crate::model::DataSourceType) -> Self {
             self.inner = self.inner.r#type(inp);
             self
@@ -1330,7 +1341,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+        /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
         pub fn data_source_parameters(mut self, inp: crate::model::DataSourceParameters) -> Self {
             self.inner = self.inner.data_source_parameters(inp);
             self
@@ -1342,7 +1353,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_source_parameters(input);
             self
         }
-        /// <p>The credentials QuickSight that uses to connect to your underlying source. Currently, only
+        /// <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only
         /// credentials based on user name and password are supported.</p>
         pub fn credentials(mut self, inp: crate::model::DataSourceCredentials) -> Self {
             self.inner = self.inner.credentials(inp);
@@ -1370,7 +1381,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permissions(input);
             self
         }
-        /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to
+        /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to
         /// your underlying source.</p>
         pub fn vpc_connection_properties(
             mut self,
@@ -1386,7 +1397,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_connection_properties(input);
             self
         }
-        /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.</p>
+        /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
         pub fn ssl_properties(mut self, inp: crate::model::SslProperties) -> Self {
             self.inner = self.inner.ssl_properties(inp);
             self
@@ -1695,8 +1706,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -1780,8 +1791,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_name(input);
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -1847,7 +1858,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; where you want to assign an IAM policy to QuickSight users or
+        /// <p>The ID of the Amazon Web Services account where you want to assign an IAMpolicy to Amazon QuickSight users or
         /// groups.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -1860,7 +1871,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account;.</p>
+        /// <p>The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account.</p>
         pub fn assignment_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assignment_name(inp);
             self
@@ -1900,7 +1911,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assignment_status(input);
             self
         }
-        /// <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+        /// <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
         /// specified in this assignment.</p>
         pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(inp);
@@ -1913,7 +1924,7 @@ pub mod fluent_builders {
         /// Adds a key-value pair to `Identities`.
         ///
         /// To override the contents of this collection use [`set_identities`](Self::set_identities).
-        /// <p>The QuickSight users, groups, or both that you want to assign the policy to.</p>
+        /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
         pub fn identities(
             mut self,
             k: impl Into<std::string::String>,
@@ -2003,7 +2014,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ingestion_id(input);
             self
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -2060,7 +2071,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for the Amazon Web Services account; that you want to create the QuickSight namespace in.</p>
+        /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -2154,8 +2165,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -2168,7 +2178,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in
-        /// each Amazon Web Services account;.</p>
+        /// each Amazon Web Services account.</p>
         pub fn template_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_id(inp);
             self
@@ -2207,7 +2217,7 @@ pub mod fluent_builders {
         /// analysis. Both of these require an Amazon Resource Name (ARN). For
         /// <code>SourceTemplate</code>, specify the ARN of the source template. For
         /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-        /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Amazon Web Services Region;. </p>
+        /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
         /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
         /// in the original. The schema in each dataset must match its placeholder. </p>
@@ -2297,7 +2307,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the template that you creating an alias for.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the template that you creating an alias for.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -2383,7 +2393,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; where you want to store the new theme. </p>
+        /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -2395,8 +2405,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region; in
-        /// each Amazon Web Services account;.</p>
+        /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in
+        /// each Amazon Web Services account.</p>
         pub fn theme_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.theme_id(inp);
             self
@@ -2417,7 +2427,7 @@ pub mod fluent_builders {
         /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of
         /// the starting themes defined by Amazon QuickSight. For a list of the starting themes, use
         /// <code>ListThemes</code> or choose <b>Themes</b> from
-        /// within a QuickSight analysis. </p>
+        /// within a Amazon QuickSight analysis. </p>
         pub fn base_theme_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.base_theme_id(inp);
             self
@@ -2533,7 +2543,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the theme for the new theme alias.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme for the new theme alias.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -2619,7 +2629,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for the Amazon Web Services account; that you want to delete QuickSight customizations from in
+        /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in
         /// this Amazon Web Services Region;.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -2632,7 +2642,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The QuickSight namespace that you're deleting the customizations from.</p>
+        /// <p>The Amazon QuickSight namespace that you're deleting the customizations from.</p>
         pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(inp);
             self
@@ -2686,7 +2696,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; where you want to delete an analysis.</p>
+        /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -2707,7 +2717,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_analysis_id(input);
             self
         }
-        /// <p>A value that specifies the number of days that QuickSight waits before it deletes the
+        /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the
         /// analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code>
         /// option in the same API call. The default value is 30.</p>
         pub fn recovery_window_in_days(mut self, inp: i64) -> Self {
@@ -2777,7 +2787,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
         /// deleting.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -2854,7 +2864,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -2866,7 +2876,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_set_id(inp);
             self
@@ -2920,7 +2930,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -2932,7 +2942,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_source_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_source_id(inp);
             self
@@ -3152,8 +3162,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_name(input);
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -3237,8 +3247,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_name(input);
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -3304,7 +3314,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account; ID where you want to delete the IAM policy assignment.</p>
+        /// <p>The Amazon Web Services account ID where you want to delete the IAMpolicy assignment.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -3382,7 +3392,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for the Amazon Web Services account; that you want to delete the QuickSight namespace from.</p>
+        /// <p>The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -3448,7 +3458,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the template that you're deleting.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the template that you're deleting.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -3525,7 +3535,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the item to delete.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the item to delete.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -3603,7 +3613,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the theme that you're deleting.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme that you're deleting.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -3681,7 +3691,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the theme alias to delete.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme alias to delete.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -3765,8 +3775,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_name(input);
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -3841,8 +3851,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_principal_id(input);
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -3908,7 +3918,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for the Amazon Web Services account; that you want to describe QuickSight customizations
+        /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations
         /// for.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -3921,7 +3931,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The QuickSight namespace that you want to describe QuickSight customizations
+        /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations
         /// for.</p>
         pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(inp);
@@ -3932,8 +3942,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view
-        /// of QuickSight customizations is returned. You can add this flag to your command to use
-        /// the same view that QuickSight uses to identify which customizations to apply to the
+        /// of Amazon QuickSight customizations is returned. You can add this flag to your command to use
+        /// the same view that Amazon QuickSight uses to identify which customizations to apply to the
         /// console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations
         /// that are configured at different levels. </p>
         pub fn resolved(mut self, inp: bool) -> Self {
@@ -3989,7 +3999,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for the Amazon Web Services account; that contains the settings that you want to list.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -4046,8 +4056,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the analysis. You must be using the
-        /// Amazon Web Services account; that the analysis is in.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the
+        /// Amazon Web Services account that the analysis is in.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -4114,8 +4124,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the analysis whose permissions you're
-        /// describing. You must be using the Amazon Web Services account; that the analysis is in.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
+        /// describing. You must be using the Amazon Web Services account that the analysis is in.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -4182,7 +4192,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
         /// describing.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -4268,7 +4278,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're describing
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing
         /// permissions for.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -4281,7 +4291,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID for the dashboard, also added to the IAM policy.</p>
+        /// <p>The ID for the dashboard, also added to the IAMpolicy.</p>
         pub fn dashboard_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dashboard_id(inp);
             self
@@ -4335,7 +4345,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -4347,7 +4357,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_set_id(inp);
             self
@@ -4401,7 +4411,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -4413,7 +4423,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_set_id(inp);
             self
@@ -4467,7 +4477,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -4479,7 +4489,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_source_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_source_id(inp);
             self
@@ -4536,7 +4546,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -4548,7 +4558,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_source_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_source_id(inp);
             self
@@ -4812,8 +4822,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_name(input);
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -4879,7 +4889,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the assignment that you want to describe.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the assignment that you want to describe.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -4957,7 +4967,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -5032,7 +5042,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for the Amazon Web Services account; that contains the QuickSight namespace that you want to describe.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespace that you want to describe.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -5098,7 +5108,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the template that you're describing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -5186,7 +5196,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the template alias that you're
+        /// <p>The ID of the Amazon Web Services account that contains the template alias that you're
         /// describing.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -5265,7 +5275,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the template that you're describing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -5331,7 +5341,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the theme that you're describing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -5419,7 +5429,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the theme alias that you're
+        /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're
         /// describing.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -5495,7 +5505,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the theme that you're describing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -5570,8 +5580,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_name(input);
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -5851,7 +5861,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for the Amazon Web Services account; that contains the dashboard that you're embedding.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -5916,9 +5926,9 @@ pub mod fluent_builders {
         }
         /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence
         /// applies to the sheet and the parameter settings. These are control settings that the
-        /// dashboard subscriber (QuickSight reader) chooses while viewing the dashboard. If this is
+        /// dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is
         /// set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same
-        /// dashboard URL. The state is stored in QuickSight, not in a browser cookie. If this is
+        /// dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is
         /// set to FALSE, the state of the user session is not persisted. The default is
         /// <code>FALSE</code>.</p>
         pub fn state_persistence_enabled(mut self, inp: bool) -> Self {
@@ -5940,11 +5950,11 @@ pub mod fluent_builders {
         /// <p>Invited nonfederated users</p>
         /// </li>
         /// <li>
-        /// <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using
-        /// SAML, OpenID Connect, or IAM federation.</p>
+        /// <p>IAMusers and IAMrole-based sessions authenticated through Federated Single Sign-On using
+        /// SAML, OpenID Connect, or IAMfederation.</p>
         /// </li>
         /// </ul>
-        /// <p>Omit this parameter for users in the third group – IAM users and IAM
+        /// <p>Omit this parameter for users in the third group – IAMusers and IAM
         /// role-based sessions.</p>
         pub fn user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_arn(inp);
@@ -5954,7 +5964,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_arn(input);
             self
         }
-        /// <p>The Amazon QuickSight namespace that the user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
+        /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request.
+        /// If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
         pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(inp);
             self
@@ -5969,7 +5980,7 @@ pub mod fluent_builders {
         /// <p>A list of one or more dashboard IDs that you want to add to a session that includes
         /// anonymous users. The <code>IdentityType</code> parameter must be set to
         /// <code>ANONYMOUS</code> for this to work, because other identity types authenticate
-        /// as QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1
+        /// as Amazon QuickSight or IAMusers. For example, if you set "<code>--dashboard-id dash_id1
         /// --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
         /// can access all three dashboards. </p>
         pub fn additional_dashboard_ids(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -6028,7 +6039,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for the Amazon Web Services account; associated with your QuickSight subscription.</p>
+        /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -6066,12 +6077,12 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>/dashboards/<i>DashboardId</i>
-        /// </code> - where <code>DashboardId</code> is the actual ID key from the QuickSight console URL of the dashboard</p>
+        /// </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>/analyses/<i>AnalysisId</i>
-        /// </code> - where <code>AnalysisId</code> is the actual ID key from the QuickSight console URL of the analysis</p>
+        /// </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p>
         /// </li>
         /// </ul>
         pub fn entry_point(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -6162,7 +6173,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the analyses.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analyses.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -6237,7 +6248,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the dashboards that you're
+        /// <p>The ID of the Amazon Web Services account that contains the dashboards that you're
         /// listing.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -6313,7 +6324,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're listing versions
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions
         /// for.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -6398,7 +6409,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -6473,7 +6484,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -6734,8 +6745,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -6801,8 +6812,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -6886,7 +6897,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains these IAM policy assignments.</p>
+        /// <p>The ID of the Amazon Web Services account that contains these IAMpolicy assignments.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -6982,7 +6993,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the assignments.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the assignments.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -7093,7 +7104,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -7159,7 +7170,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for the Amazon Web Services account; that contains the QuickSight namespaces that you want to list.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespaces that you want to list.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -7288,7 +7299,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the template aliases that you're listing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the template aliases that you're listing.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -7372,7 +7383,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the templates that you're listing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -7447,7 +7458,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the templates that you're listing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -7531,7 +7542,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the theme aliases that you're listing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme aliases that you're listing.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -7615,7 +7626,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the themes that you're listing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -7713,7 +7724,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the themes that you're listing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -7806,7 +7817,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_name(input);
             self
         }
-        /// <p>The Amazon Web Services account; ID that the user is in. Currently, you use the ID for the Amazon Web Services account;
+        /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account
         /// that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -7891,8 +7902,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -7981,7 +7992,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
+        /// <code>IAM</code>: A user whose identity maps to an existing IAMuser or role.
         /// </p>
         /// </li>
         /// <li>
@@ -8046,7 +8057,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_role(input);
             self
         }
-        /// <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight. </p>
+        /// <p>The ARN of the IAMuser or role that you are registering with Amazon QuickSight. </p>
         pub fn iam_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_arn(inp);
             self
@@ -8056,10 +8067,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>You need to use this parameter only when you register one or more users using an assumed
-        /// IAM role. You don't need to provide the session name for other scenarios, for example when
-        /// you are registering an IAM user or an Amazon QuickSight user. You can register multiple
-        /// users using the same IAM role if each user has a different session name. For more
-        /// information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
+        /// IAMrole. You don't need to provide the session name for other scenarios, for example when
+        /// you are registering an IAMuser or an Amazon QuickSight user. You can register multiple
+        /// users using the same IAMrole if each user has a different session name. For more
+        /// information on assuming IAMroles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
         /// <code>assume-role</code>
         /// </a> in the <i>AWS CLI Reference.</i>
         /// </p>
@@ -8071,8 +8082,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_session_name(input);
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -8124,13 +8135,13 @@ pub mod fluent_builders {
         /// <a>UpdateUser</a>
         /// </code> instead.</p>
         /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
-        /// you need to create the profile names for custom permission sets by using the QuickSight
+        /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
         /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
-        /// permissions to a QuickSight user. </p>
-        /// <p>QuickSight custom permissions are applied through IAM policies. Therefore, they
-        /// override the permissions typically granted by assigning QuickSight users to one of the
-        /// default security cohorts in QuickSight (admin, author, reader).</p>
-        /// <p>This feature is available only to QuickSight Enterprise edition subscriptions.</p>
+        /// permissions to a Amazon QuickSight user. </p>
+        /// <p>Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they
+        /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
+        /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+        /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
         pub fn custom_permissions_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.custom_permissions_name(inp);
             self
@@ -8142,7 +8153,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_custom_permissions_name(input);
             self
         }
-        /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated AWS Identity and Access Management (IAM) role. The type of supported external login provider can be one of the following.</p>
+        /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -8170,7 +8181,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate
-        /// into QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should
+        /// into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should
         /// only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
         pub fn custom_federation_provider_url(
             mut self,
@@ -8243,7 +8254,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the analysis.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analysis.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -8309,7 +8320,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the analyses that you're searching
+        /// <p>The ID of the Amazon Web Services account that contains the analyses that you're searching
         /// for.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -8400,7 +8411,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the user whose dashboards you're searching
+        /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching
         /// for. </p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -8722,7 +8733,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for the Amazon Web Services account; that you want to update QuickSight customizations
+        /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations
         /// for.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -8735,7 +8746,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The namespace that you want to update QuickSight customizations for.</p>
+        /// <p>The namespace that you want to update Amazon QuickSight customizations for.</p>
         pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(inp);
             self
@@ -8744,7 +8755,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p>The QuickSight customizations you're updating in the current Amazon Web Services Region;. </p>
+        /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region;. </p>
         pub fn account_customization(mut self, inp: crate::model::AccountCustomization) -> Self {
             self.inner = self.inner.account_customization(inp);
             self
@@ -8801,7 +8812,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for the Amazon Web Services account; that contains the QuickSight settings that you want to
+        /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to
         /// list.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -8814,9 +8825,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The default namespace for this Amazon Web Services account;. Currently, the default is
+        /// <p>The default namespace for this Amazon Web Services account. Currently, the default is
         /// <code>default</code>. Identity and Access Management (IAM) users that register
-        /// for the first time with QuickSight provide an email that becomes associated with the
+        /// for the first time with Amazon QuickSight provide an email that becomes associated with the
         /// default namespace.</p>
         pub fn default_namespace(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.default_namespace(inp);
@@ -8829,8 +8840,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_namespace(input);
             self
         }
-        /// <p>The email address that you want QuickSight to send notifications to regarding your
-        /// Amazon Web Services account; or QuickSight subscription.</p>
+        /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your
+        /// Amazon Web Services account or Amazon QuickSight subscription.</p>
         pub fn notification_email(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.notification_email(inp);
             self
@@ -8887,7 +8898,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the analysis that you're updating.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -8910,7 +8921,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive name for the analysis that you're updating. This name displays for the
-        /// analysis in the QuickSight console.</p>
+        /// analysis in the Amazon QuickSight console.</p>
         pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(inp);
             self
@@ -8946,7 +8957,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're
-        /// creating. To see the theme in the QuickSight console, make sure that you have access to
+        /// creating. To see the theme in the Amazon QuickSight console, make sure that you have access to
         /// it.</p>
         pub fn theme_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.theme_arn(inp);
@@ -9001,8 +9012,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the analysis whose permissions you're
-        /// updating. You must be using the Amazon Web Services account; that the analysis is in.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
+        /// updating. You must be using the Amazon Web Services account that the analysis is in.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -9107,7 +9118,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
         /// updating.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -9144,8 +9155,8 @@ pub mod fluent_builders {
         /// entity. If you need to update a dashboard from an analysis, first convert the analysis
         /// to a template by using the <a>CreateTemplate</a> API operation. For
         /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
-        /// template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and any
-        /// QuickSight-supported Amazon Web Services Region;. </p>
+        /// template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any
+        /// Amazon QuickSight-supported Amazon Web Services Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
         /// list the replacement datasets for the placeholders listed in the original. The schema in
         /// each dataset must match its placeholder. </p>
@@ -9192,7 +9203,7 @@ pub mod fluent_builders {
         /// <p>
         /// <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
         /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-        /// set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
+        /// set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the
         /// published dashboard, which can be used for ad hoc (one-time) filtering. This
         /// option is <code>ENABLED</code> by default. </p>
         /// </li>
@@ -9226,7 +9237,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
         /// you add a value for this field, it overrides the value that was originally associated
-        /// with the entity. The theme ARN must exist in the same Amazon Web Services account; where you create the
+        /// with the entity. The theme ARN must exist in the same Amazon Web Services account where you create the
         /// dashboard.</p>
         pub fn theme_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.theme_arn(inp);
@@ -9281,7 +9292,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the dashboard whose permissions you're
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're
         /// updating.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -9384,7 +9395,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
         /// updating.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
@@ -9460,7 +9471,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -9473,7 +9484,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region; for each
-        /// Amazon Web Services account;.</p>
+        /// Amazon Web Services account.</p>
         pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_set_id(inp);
             self
@@ -9548,7 +9559,7 @@ pub mod fluent_builders {
         /// Appends an item to `ColumnGroups`.
         ///
         /// To override the contents of this collection use [`set_column_groups`](Self::set_column_groups).
-        /// <p>Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+        /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
         pub fn column_groups(mut self, inp: impl Into<crate::model::ColumnGroup>) -> Self {
             self.inner = self.inner.column_groups(inp);
             self
@@ -9631,6 +9642,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_column_level_permission_rules(input);
             self
         }
+        /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
+        pub fn data_set_usage_configuration(
+            mut self,
+            inp: crate::model::DataSetUsageConfiguration,
+        ) -> Self {
+            self.inner = self.inner.data_set_usage_configuration(inp);
+            self
+        }
+        pub fn set_data_set_usage_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DataSetUsageConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_data_set_usage_configuration(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct UpdateDataSetPermissions<
@@ -9676,7 +9702,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -9689,7 +9715,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
-        /// Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_set_id(inp);
             self
@@ -9779,7 +9805,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -9791,7 +9817,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;. </p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account. </p>
         pub fn data_source_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_source_id(inp);
             self
@@ -9812,7 +9838,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+        /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
         pub fn data_source_parameters(mut self, inp: crate::model::DataSourceParameters) -> Self {
             self.inner = self.inner.data_source_parameters(inp);
             self
@@ -9824,7 +9850,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_source_parameters(input);
             self
         }
-        /// <p>The credentials that QuickSight that uses to connect to your underlying source. Currently,
+        /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently,
         /// only credentials based on user name and password are supported.</p>
         pub fn credentials(mut self, inp: crate::model::DataSourceCredentials) -> Self {
             self.inner = self.inner.credentials(inp);
@@ -9837,7 +9863,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_credentials(input);
             self
         }
-        /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to
+        /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to
         /// your underlying source.</p>
         pub fn vpc_connection_properties(
             mut self,
@@ -9853,7 +9879,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_connection_properties(input);
             self
         }
-        /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying
+        /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying
         /// source.</p>
         pub fn ssl_properties(mut self, inp: crate::model::SslProperties) -> Self {
             self.inner = self.inner.ssl_properties(inp);
@@ -9911,7 +9937,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -9923,7 +9949,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;. </p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account. </p>
         pub fn data_source_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_source_id(inp);
             self
@@ -10211,8 +10237,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -10278,7 +10304,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the IAM policy assignment. </p>
+        /// <p>The ID of the Amazon Web Services account that contains the IAMpolicy assignment. </p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -10290,7 +10316,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account;.</p>
+        /// <p>The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account.</p>
         pub fn assignment_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assignment_name(inp);
             self
@@ -10339,7 +10365,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assignment_status(input);
             self
         }
-        /// <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+        /// <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
         /// specified in this assignment.</p>
         pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(inp);
@@ -10352,7 +10378,7 @@ pub mod fluent_builders {
         /// Adds a key-value pair to `Identities`.
         ///
         /// To override the contents of this collection use [`set_identities`](Self::set_identities).
-        /// <p>The QuickSight users, groups, or both that you want to assign the policy to.</p>
+        /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
         pub fn identities(
             mut self,
             k: impl Into<std::string::String>,
@@ -10415,7 +10441,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the template that you're updating.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the template that you're updating.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -10442,7 +10468,7 @@ pub mod fluent_builders {
         /// analysis. Both of these require an Amazon Resource Name (ARN). For
         /// <code>SourceTemplate</code>, specify the ARN of the source template. For
         /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-        /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Amazon Web Services Region;. </p>
+        /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
         /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
         /// in the original. The schema in each dataset must match its placeholder. </p>
@@ -10526,7 +10552,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the template alias that you're updating.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the template alias that you're updating.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -10613,7 +10639,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the template.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the template.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -10715,7 +10741,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the theme that you're updating.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme that you're updating.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -10829,7 +10855,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the theme alias that you're updating.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -10913,7 +10939,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account; that contains the theme.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -11024,8 +11050,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_name(input);
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
@@ -11073,7 +11099,7 @@ pub mod fluent_builders {
         /// settings.</p>
         /// </li>
         /// </ul>
-        /// <p>The name of the QuickSight role is invisible to the user except for the console
+        /// <p>The name of the Amazon QuickSight role is invisible to the user except for the console
         /// screens dealing with permissions.</p>
         pub fn role(mut self, inp: crate::model::UserRole) -> Self {
             self.inner = self.inner.role(inp);
@@ -11101,13 +11127,13 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
-        /// you need to create the profile names for custom permission sets by using the QuickSight
+        /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
         /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
-        /// permissions to a QuickSight user. </p>
-        /// <p>QuickSight custom permissions are applied through IAM policies. Therefore, they
-        /// override the permissions typically granted by assigning QuickSight users to one of the
-        /// default security cohorts in QuickSight (admin, author, reader).</p>
-        /// <p>This feature is available only to QuickSight Enterprise edition subscriptions.</p>
+        /// permissions to a Amazon QuickSight user. </p>
+        /// <p>Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they
+        /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
+        /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+        /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
         pub fn custom_permissions_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.custom_permissions_name(inp);
             self
@@ -11131,7 +11157,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_unapply_custom_permissions(input);
             self
         }
-        /// <p>The type of supported external login provider that provides identity to let a user federate into QuickSight with an associated AWS Identity and Access Management (IAM) role. The type of supported external login provider can be one of the following.</p>
+        /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -11165,7 +11191,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate
-        /// into QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should
+        /// into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should
         /// only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
         pub fn custom_federation_provider_url(
             mut self,

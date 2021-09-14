@@ -18,7 +18,7 @@ use crate::web_identity_token::{StaticConfiguration, WebIdentityTokenCredentials
 use aws_types::credentials::{self, CredentialsError, ProvideCredentials};
 use aws_types::os_shim_internal::Fs;
 use smithy_client::erase::DynConnector;
-use std::fmt::{Debug, Formatter};
+use std::fmt::Debug;
 
 #[derive(Debug)]
 pub struct AssumeRoleProvider {
@@ -66,16 +66,10 @@ impl AssumeRoleProvider {
     }
 }
 
+#[derive(Debug)]
 pub(super) struct ProviderChain {
     base: Arc<dyn ProvideCredentials>,
     chain: Vec<AssumeRoleProvider>,
-}
-
-impl Debug for ProviderChain {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        // TODO: ProvideCredentials should probably mandate debug
-        f.debug_struct("ProviderChain").finish()
-    }
 }
 
 impl ProviderChain {

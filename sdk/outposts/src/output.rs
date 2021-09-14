@@ -249,7 +249,9 @@ pub struct GetOutpostInstanceTypesOutput {
     pub instance_types: std::option::Option<std::vec::Vec<crate::model::InstanceTypeItem>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The ID of the Outpost.</p>
+    /// <p>
+    /// The ID of the Outpost.
+    /// </p>
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_arn: std::option::Option<std::string::String>,
@@ -299,7 +301,9 @@ pub mod get_outpost_instance_types_output {
             self.next_token = input;
             self
         }
-        /// <p>The ID of the Outpost.</p>
+        /// <p>
+        /// The ID of the Outpost.
+        /// </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
@@ -482,5 +486,49 @@ impl CreateOutpostOutput {
     /// Creates a new builder-style object to manufacture [`CreateOutpostOutput`](crate::output::CreateOutpostOutput)
     pub fn builder() -> crate::output::create_outpost_output::Builder {
         crate::output::create_outpost_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateOrderOutput {
+    /// <p>Information about this order.</p>
+    pub order: std::option::Option<crate::model::Order>,
+}
+impl std::fmt::Debug for CreateOrderOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateOrderOutput");
+        formatter.field("order", &self.order);
+        formatter.finish()
+    }
+}
+/// See [`CreateOrderOutput`](crate::output::CreateOrderOutput)
+pub mod create_order_output {
+    /// A builder for [`CreateOrderOutput`](crate::output::CreateOrderOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) order: std::option::Option<crate::model::Order>,
+    }
+    impl Builder {
+        /// <p>Information about this order.</p>
+        pub fn order(mut self, input: crate::model::Order) -> Self {
+            self.order = Some(input);
+            self
+        }
+        pub fn set_order(mut self, input: std::option::Option<crate::model::Order>) -> Self {
+            self.order = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateOrderOutput`](crate::output::CreateOrderOutput)
+        pub fn build(self) -> crate::output::CreateOrderOutput {
+            crate::output::CreateOrderOutput { order: self.order }
+        }
+    }
+}
+impl CreateOrderOutput {
+    /// Creates a new builder-style object to manufacture [`CreateOrderOutput`](crate::output::CreateOrderOutput)
+    pub fn builder() -> crate::output::create_order_output::Builder {
+        crate::output::create_order_output::Builder::default()
     }
 }

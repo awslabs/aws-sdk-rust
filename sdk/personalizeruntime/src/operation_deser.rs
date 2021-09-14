@@ -27,11 +27,7 @@ pub fn parse_get_personalized_ranking_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetPersonalizedRankingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetPersonalizedRankingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -40,26 +36,23 @@ pub fn parse_get_personalized_ranking_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::GetPersonalizedRankingError {
-                meta: generic,
-                kind: crate::error::GetPersonalizedRankingErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::GetPersonalizedRankingError {
+            meta: generic,
+            kind: crate::error::GetPersonalizedRankingErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetPersonalizedRankingError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetPersonalizedRankingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetPersonalizedRankingError::generic(generic),
     })
 }
@@ -75,7 +68,7 @@ pub fn parse_get_personalized_ranking_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_personalized_ranking_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_personalized_ranking(
+        output = crate::json_deser::deser_operation_crate_operation_get_personalized_ranking(
             response.body().as_ref(),
             output,
         )
@@ -108,11 +101,7 @@ pub fn parse_get_recommendations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRecommendationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -121,26 +110,23 @@ pub fn parse_get_recommendations_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::GetRecommendationsError {
-                meta: generic,
-                kind: crate::error::GetRecommendationsErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::GetRecommendationsError {
+            meta: generic,
+            kind: crate::error::GetRecommendationsErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRecommendationsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRecommendationsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetRecommendationsError::generic(generic),
     })
 }
@@ -156,7 +142,7 @@ pub fn parse_get_recommendations_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_recommendations_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_recommendations(
+        output = crate::json_deser::deser_operation_crate_operation_get_recommendations(
             response.body().as_ref(),
             output,
         )

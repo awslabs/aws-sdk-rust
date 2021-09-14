@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_marketplace_commerce_analytics_exceptionjson_err(
+pub fn deser_structure_crate_error_marketplace_commerce_analytics_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::marketplace_commerce_analytics_exception::Builder,
 ) -> Result<
@@ -47,7 +47,7 @@ pub fn deser_structure_marketplace_commerce_analytics_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_generate_data_set(
+pub fn deser_operation_crate_operation_generate_data_set(
     input: &[u8],
     mut builder: crate::output::generate_data_set_output::Builder,
 ) -> Result<crate::output::generate_data_set_output::Builder, smithy_json::deserialize::Error> {
@@ -86,7 +86,7 @@ pub fn deser_operation_generate_data_set(
     Ok(builder)
 }
 
-pub fn deser_operation_start_support_data_export(
+pub fn deser_operation_crate_operation_start_support_data_export(
     input: &[u8],
     mut builder: crate::output::start_support_data_export_output::Builder,
 ) -> Result<crate::output::start_support_data_export_output::Builder, smithy_json::deserialize::Error>

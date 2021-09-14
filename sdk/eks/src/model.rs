@@ -1664,6 +1664,1164 @@ impl AsRef<str> for ResolveConflicts {
     }
 }
 
+/// <p>An object representing an Amazon EKS cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Cluster {
+    /// <p>The name of the cluster.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
+    pub created_at: std::option::Option<smithy_types::Instant>,
+    /// <p>The Kubernetes server version for the cluster.</p>
+    pub version: std::option::Option<std::string::String>,
+    /// <p>The endpoint for your Kubernetes API server.</p>
+    pub endpoint: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control
+    /// plane to make calls to Amazon Web Services API operations on your behalf.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have
+    /// specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC
+    /// Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the
+    /// <i>Amazon EKS User Guide</i>.</p>
+    pub resources_vpc_config: std::option::Option<crate::model::VpcConfigResponse>,
+    /// <p>The Kubernetes network configuration for the cluster.</p>
+    pub kubernetes_network_config:
+        std::option::Option<crate::model::KubernetesNetworkConfigResponse>,
+    /// <p>The logging configuration for your cluster.</p>
+    pub logging: std::option::Option<crate::model::Logging>,
+    /// <p>The identity provider information for the cluster.</p>
+    pub identity: std::option::Option<crate::model::Identity>,
+    /// <p>The current status of the cluster.</p>
+    pub status: std::option::Option<crate::model::ClusterStatus>,
+    /// <p>The <code>certificate-authority-data</code> for your cluster.</p>
+    pub certificate_authority: std::option::Option<crate::model::Certificate>,
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>The platform version of your Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+    /// Versions</a> in the <i>
+    /// <i>Amazon EKS User Guide</i>
+    /// </i>.</p>
+    pub platform_version: std::option::Option<std::string::String>,
+    /// <p>The metadata that you apply to the cluster to assist with categorization and
+    /// organization. Each tag consists of a key and an optional value, both of which you
+    /// define. Cluster tags do not propagate to any other resources associated with the
+    /// cluster.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The encryption configuration for the cluster.</p>
+    pub encryption_config: std::option::Option<std::vec::Vec<crate::model::EncryptionConfig>>,
+    /// <p>The configuration used to connect to a cluster for registration.</p>
+    pub connector_config: std::option::Option<crate::model::ConnectorConfigResponse>,
+}
+impl std::fmt::Debug for Cluster {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Cluster");
+        formatter.field("name", &self.name);
+        formatter.field("arn", &self.arn);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("version", &self.version);
+        formatter.field("endpoint", &self.endpoint);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("resources_vpc_config", &self.resources_vpc_config);
+        formatter.field("kubernetes_network_config", &self.kubernetes_network_config);
+        formatter.field("logging", &self.logging);
+        formatter.field("identity", &self.identity);
+        formatter.field("status", &self.status);
+        formatter.field("certificate_authority", &self.certificate_authority);
+        formatter.field("client_request_token", &self.client_request_token);
+        formatter.field("platform_version", &self.platform_version);
+        formatter.field("tags", &self.tags);
+        formatter.field("encryption_config", &self.encryption_config);
+        formatter.field("connector_config", &self.connector_config);
+        formatter.finish()
+    }
+}
+/// See [`Cluster`](crate::model::Cluster)
+pub mod cluster {
+    /// A builder for [`Cluster`](crate::model::Cluster)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) version: std::option::Option<std::string::String>,
+        pub(crate) endpoint: std::option::Option<std::string::String>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) resources_vpc_config: std::option::Option<crate::model::VpcConfigResponse>,
+        pub(crate) kubernetes_network_config:
+            std::option::Option<crate::model::KubernetesNetworkConfigResponse>,
+        pub(crate) logging: std::option::Option<crate::model::Logging>,
+        pub(crate) identity: std::option::Option<crate::model::Identity>,
+        pub(crate) status: std::option::Option<crate::model::ClusterStatus>,
+        pub(crate) certificate_authority: std::option::Option<crate::model::Certificate>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) platform_version: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) encryption_config:
+            std::option::Option<std::vec::Vec<crate::model::EncryptionConfig>>,
+        pub(crate) connector_config: std::option::Option<crate::model::ConnectorConfigResponse>,
+    }
+    impl Builder {
+        /// <p>The name of the cluster.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
+        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>The Kubernetes server version for the cluster.</p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
+            self
+        }
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
+            self
+        }
+        /// <p>The endpoint for your Kubernetes API server.</p>
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
+            self
+        }
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control
+        /// plane to make calls to Amazon Web Services API operations on your behalf.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have
+        /// specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC
+        /// Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the
+        /// <i>Amazon EKS User Guide</i>.</p>
+        pub fn resources_vpc_config(mut self, input: crate::model::VpcConfigResponse) -> Self {
+            self.resources_vpc_config = Some(input);
+            self
+        }
+        pub fn set_resources_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfigResponse>,
+        ) -> Self {
+            self.resources_vpc_config = input;
+            self
+        }
+        /// <p>The Kubernetes network configuration for the cluster.</p>
+        pub fn kubernetes_network_config(
+            mut self,
+            input: crate::model::KubernetesNetworkConfigResponse,
+        ) -> Self {
+            self.kubernetes_network_config = Some(input);
+            self
+        }
+        pub fn set_kubernetes_network_config(
+            mut self,
+            input: std::option::Option<crate::model::KubernetesNetworkConfigResponse>,
+        ) -> Self {
+            self.kubernetes_network_config = input;
+            self
+        }
+        /// <p>The logging configuration for your cluster.</p>
+        pub fn logging(mut self, input: crate::model::Logging) -> Self {
+            self.logging = Some(input);
+            self
+        }
+        pub fn set_logging(mut self, input: std::option::Option<crate::model::Logging>) -> Self {
+            self.logging = input;
+            self
+        }
+        /// <p>The identity provider information for the cluster.</p>
+        pub fn identity(mut self, input: crate::model::Identity) -> Self {
+            self.identity = Some(input);
+            self
+        }
+        pub fn set_identity(mut self, input: std::option::Option<crate::model::Identity>) -> Self {
+            self.identity = input;
+            self
+        }
+        /// <p>The current status of the cluster.</p>
+        pub fn status(mut self, input: crate::model::ClusterStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ClusterStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The <code>certificate-authority-data</code> for your cluster.</p>
+        pub fn certificate_authority(mut self, input: crate::model::Certificate) -> Self {
+            self.certificate_authority = Some(input);
+            self
+        }
+        pub fn set_certificate_authority(
+            mut self,
+            input: std::option::Option<crate::model::Certificate>,
+        ) -> Self {
+            self.certificate_authority = input;
+            self
+        }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// <p>The platform version of your Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+        /// Versions</a> in the <i>
+        /// <i>Amazon EKS User Guide</i>
+        /// </i>.</p>
+        pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_version = Some(input.into());
+            self
+        }
+        pub fn set_platform_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.platform_version = input;
+            self
+        }
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        pub fn encryption_config(
+            mut self,
+            input: impl Into<crate::model::EncryptionConfig>,
+        ) -> Self {
+            let mut v = self.encryption_config.unwrap_or_default();
+            v.push(input.into());
+            self.encryption_config = Some(v);
+            self
+        }
+        pub fn set_encryption_config(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EncryptionConfig>>,
+        ) -> Self {
+            self.encryption_config = input;
+            self
+        }
+        /// <p>The configuration used to connect to a cluster for registration.</p>
+        pub fn connector_config(mut self, input: crate::model::ConnectorConfigResponse) -> Self {
+            self.connector_config = Some(input);
+            self
+        }
+        pub fn set_connector_config(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorConfigResponse>,
+        ) -> Self {
+            self.connector_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Cluster`](crate::model::Cluster)
+        pub fn build(self) -> crate::model::Cluster {
+            crate::model::Cluster {
+                name: self.name,
+                arn: self.arn,
+                created_at: self.created_at,
+                version: self.version,
+                endpoint: self.endpoint,
+                role_arn: self.role_arn,
+                resources_vpc_config: self.resources_vpc_config,
+                kubernetes_network_config: self.kubernetes_network_config,
+                logging: self.logging,
+                identity: self.identity,
+                status: self.status,
+                certificate_authority: self.certificate_authority,
+                client_request_token: self.client_request_token,
+                platform_version: self.platform_version,
+                tags: self.tags,
+                encryption_config: self.encryption_config,
+                connector_config: self.connector_config,
+            }
+        }
+    }
+}
+impl Cluster {
+    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster)
+    pub fn builder() -> crate::model::cluster::Builder {
+        crate::model::cluster::Builder::default()
+    }
+}
+
+/// <p>The full description of your connected cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConnectorConfigResponse {
+    /// <p>A unique ID associated with the cluster for registration purposes.</p>
+    pub activation_id: std::option::Option<std::string::String>,
+    /// <p>A unique code associated with the cluster for registration purposes.</p>
+    pub activation_code: std::option::Option<std::string::String>,
+    /// <p>The expiration time of the connected cluster. The cluster's YAML file must be applied through the native
+    /// provider.</p>
+    pub activation_expiry: std::option::Option<smithy_types::Instant>,
+    /// <p>The cluster's cloud service provider.</p>
+    pub provider: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the role that is used by the EKS connector to communicate with AWS services from the connected Kubernetes cluster.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ConnectorConfigResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConnectorConfigResponse");
+        formatter.field("activation_id", &self.activation_id);
+        formatter.field("activation_code", &self.activation_code);
+        formatter.field("activation_expiry", &self.activation_expiry);
+        formatter.field("provider", &self.provider);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.finish()
+    }
+}
+/// See [`ConnectorConfigResponse`](crate::model::ConnectorConfigResponse)
+pub mod connector_config_response {
+    /// A builder for [`ConnectorConfigResponse`](crate::model::ConnectorConfigResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) activation_id: std::option::Option<std::string::String>,
+        pub(crate) activation_code: std::option::Option<std::string::String>,
+        pub(crate) activation_expiry: std::option::Option<smithy_types::Instant>,
+        pub(crate) provider: std::option::Option<std::string::String>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique ID associated with the cluster for registration purposes.</p>
+        pub fn activation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.activation_id = Some(input.into());
+            self
+        }
+        pub fn set_activation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.activation_id = input;
+            self
+        }
+        /// <p>A unique code associated with the cluster for registration purposes.</p>
+        pub fn activation_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.activation_code = Some(input.into());
+            self
+        }
+        pub fn set_activation_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.activation_code = input;
+            self
+        }
+        /// <p>The expiration time of the connected cluster. The cluster's YAML file must be applied through the native
+        /// provider.</p>
+        pub fn activation_expiry(mut self, input: smithy_types::Instant) -> Self {
+            self.activation_expiry = Some(input);
+            self
+        }
+        pub fn set_activation_expiry(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.activation_expiry = input;
+            self
+        }
+        /// <p>The cluster's cloud service provider.</p>
+        pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
+            self.provider = Some(input.into());
+            self
+        }
+        pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the role that is used by the EKS connector to communicate with AWS services from the connected Kubernetes cluster.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConnectorConfigResponse`](crate::model::ConnectorConfigResponse)
+        pub fn build(self) -> crate::model::ConnectorConfigResponse {
+            crate::model::ConnectorConfigResponse {
+                activation_id: self.activation_id,
+                activation_code: self.activation_code,
+                activation_expiry: self.activation_expiry,
+                provider: self.provider,
+                role_arn: self.role_arn,
+            }
+        }
+    }
+}
+impl ConnectorConfigResponse {
+    /// Creates a new builder-style object to manufacture [`ConnectorConfigResponse`](crate::model::ConnectorConfigResponse)
+    pub fn builder() -> crate::model::connector_config_response::Builder {
+        crate::model::connector_config_response::Builder::default()
+    }
+}
+
+/// <p>The encryption configuration for the cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EncryptionConfig {
+    /// <p>Specifies the resources to be encrypted. The only supported value is "secrets".</p>
+    pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Key Management Service (KMS) key. Either the ARN or the alias can be used.</p>
+    pub provider: std::option::Option<crate::model::Provider>,
+}
+impl std::fmt::Debug for EncryptionConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EncryptionConfig");
+        formatter.field("resources", &self.resources);
+        formatter.field("provider", &self.provider);
+        formatter.finish()
+    }
+}
+/// See [`EncryptionConfig`](crate::model::EncryptionConfig)
+pub mod encryption_config {
+    /// A builder for [`EncryptionConfig`](crate::model::EncryptionConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resources: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) provider: std::option::Option<crate::model::Provider>,
+    }
+    impl Builder {
+        pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.resources.unwrap_or_default();
+            v.push(input.into());
+            self.resources = Some(v);
+            self
+        }
+        pub fn set_resources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.resources = input;
+            self
+        }
+        /// <p>Key Management Service (KMS) key. Either the ARN or the alias can be used.</p>
+        pub fn provider(mut self, input: crate::model::Provider) -> Self {
+            self.provider = Some(input);
+            self
+        }
+        pub fn set_provider(mut self, input: std::option::Option<crate::model::Provider>) -> Self {
+            self.provider = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EncryptionConfig`](crate::model::EncryptionConfig)
+        pub fn build(self) -> crate::model::EncryptionConfig {
+            crate::model::EncryptionConfig {
+                resources: self.resources,
+                provider: self.provider,
+            }
+        }
+    }
+}
+impl EncryptionConfig {
+    /// Creates a new builder-style object to manufacture [`EncryptionConfig`](crate::model::EncryptionConfig)
+    pub fn builder() -> crate::model::encryption_config::Builder {
+        crate::model::encryption_config::Builder::default()
+    }
+}
+
+/// <p>Identifies the Key Management Service (KMS) key used to encrypt the secrets.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Provider {
+    /// <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same
+    /// region as the cluster, and if the KMS key was created in a different account, the user
+    /// must have access to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
+    /// Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service
+    /// Developer Guide</i>.</p>
+    pub key_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Provider {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Provider");
+        formatter.field("key_arn", &self.key_arn);
+        formatter.finish()
+    }
+}
+/// See [`Provider`](crate::model::Provider)
+pub mod provider {
+    /// A builder for [`Provider`](crate::model::Provider)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same
+        /// region as the cluster, and if the KMS key was created in a different account, the user
+        /// must have access to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
+        /// Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service
+        /// Developer Guide</i>.</p>
+        pub fn key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_arn = Some(input.into());
+            self
+        }
+        pub fn set_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Provider`](crate::model::Provider)
+        pub fn build(self) -> crate::model::Provider {
+            crate::model::Provider {
+                key_arn: self.key_arn,
+            }
+        }
+    }
+}
+impl Provider {
+    /// Creates a new builder-style object to manufacture [`Provider`](crate::model::Provider)
+    pub fn builder() -> crate::model::provider::Builder {
+        crate::model::provider::Builder::default()
+    }
+}
+
+/// <p>An object representing the <code>certificate-authority-data</code> for your
+/// cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Certificate {
+    /// <p>The Base64-encoded certificate data required to communicate with your cluster. Add
+    /// this to the <code>certificate-authority-data</code> section of the
+    /// <code>kubeconfig</code> file for your cluster.</p>
+    pub data: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Certificate {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Certificate");
+        formatter.field("data", &self.data);
+        formatter.finish()
+    }
+}
+/// See [`Certificate`](crate::model::Certificate)
+pub mod certificate {
+    /// A builder for [`Certificate`](crate::model::Certificate)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Base64-encoded certificate data required to communicate with your cluster. Add
+        /// this to the <code>certificate-authority-data</code> section of the
+        /// <code>kubeconfig</code> file for your cluster.</p>
+        pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data = Some(input.into());
+            self
+        }
+        pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Certificate`](crate::model::Certificate)
+        pub fn build(self) -> crate::model::Certificate {
+            crate::model::Certificate { data: self.data }
+        }
+    }
+}
+impl Certificate {
+    /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate)
+    pub fn builder() -> crate::model::certificate::Builder {
+        crate::model::certificate::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ClusterStatus {
+    Active,
+    Creating,
+    Deleting,
+    Failed,
+    Pending,
+    Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ClusterStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => ClusterStatus::Active,
+            "CREATING" => ClusterStatus::Creating,
+            "DELETING" => ClusterStatus::Deleting,
+            "FAILED" => ClusterStatus::Failed,
+            "PENDING" => ClusterStatus::Pending,
+            "UPDATING" => ClusterStatus::Updating,
+            other => ClusterStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ClusterStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ClusterStatus::from(s))
+    }
+}
+impl ClusterStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ClusterStatus::Active => "ACTIVE",
+            ClusterStatus::Creating => "CREATING",
+            ClusterStatus::Deleting => "DELETING",
+            ClusterStatus::Failed => "FAILED",
+            ClusterStatus::Pending => "PENDING",
+            ClusterStatus::Updating => "UPDATING",
+            ClusterStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE", "CREATING", "DELETING", "FAILED", "PENDING", "UPDATING",
+        ]
+    }
+}
+impl AsRef<str> for ClusterStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>An object representing an identity provider.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Identity {
+    /// <p>An object representing the <a href="https://openid.net/connect/">OpenID
+    /// Connect</a> identity provider information.</p>
+    pub oidc: std::option::Option<crate::model::Oidc>,
+}
+impl std::fmt::Debug for Identity {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Identity");
+        formatter.field("oidc", &self.oidc);
+        formatter.finish()
+    }
+}
+/// See [`Identity`](crate::model::Identity)
+pub mod identity {
+    /// A builder for [`Identity`](crate::model::Identity)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) oidc: std::option::Option<crate::model::Oidc>,
+    }
+    impl Builder {
+        /// <p>An object representing the <a href="https://openid.net/connect/">OpenID
+        /// Connect</a> identity provider information.</p>
+        pub fn oidc(mut self, input: crate::model::Oidc) -> Self {
+            self.oidc = Some(input);
+            self
+        }
+        pub fn set_oidc(mut self, input: std::option::Option<crate::model::Oidc>) -> Self {
+            self.oidc = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Identity`](crate::model::Identity)
+        pub fn build(self) -> crate::model::Identity {
+            crate::model::Identity { oidc: self.oidc }
+        }
+    }
+}
+impl Identity {
+    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity)
+    pub fn builder() -> crate::model::identity::Builder {
+        crate::model::identity::Builder::default()
+    }
+}
+
+/// <p>An object representing the <a href="https://openid.net/connect/">OpenID
+/// Connect</a> (OIDC) identity provider information for the cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Oidc {
+    /// <p>The issuer URL for the OIDC identity provider.</p>
+    pub issuer: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Oidc {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Oidc");
+        formatter.field("issuer", &self.issuer);
+        formatter.finish()
+    }
+}
+/// See [`Oidc`](crate::model::Oidc)
+pub mod oidc {
+    /// A builder for [`Oidc`](crate::model::Oidc)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) issuer: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The issuer URL for the OIDC identity provider.</p>
+        pub fn issuer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.issuer = Some(input.into());
+            self
+        }
+        pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.issuer = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Oidc`](crate::model::Oidc)
+        pub fn build(self) -> crate::model::Oidc {
+            crate::model::Oidc {
+                issuer: self.issuer,
+            }
+        }
+    }
+}
+impl Oidc {
+    /// Creates a new builder-style object to manufacture [`Oidc`](crate::model::Oidc)
+    pub fn builder() -> crate::model::oidc::Builder {
+        crate::model::oidc::Builder::default()
+    }
+}
+
+/// <p>The Kubernetes network configuration for the cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct KubernetesNetworkConfigResponse {
+    /// <p>The CIDR block that Kubernetes service IP addresses are assigned from. If you didn't
+    /// specify a CIDR block when you created the cluster, then Kubernetes assigns addresses
+    /// from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was specified, then
+    /// it was specified when the cluster was created and it cannot be changed.</p>
+    pub service_ipv4_cidr: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for KubernetesNetworkConfigResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("KubernetesNetworkConfigResponse");
+        formatter.field("service_ipv4_cidr", &self.service_ipv4_cidr);
+        formatter.finish()
+    }
+}
+/// See [`KubernetesNetworkConfigResponse`](crate::model::KubernetesNetworkConfigResponse)
+pub mod kubernetes_network_config_response {
+    /// A builder for [`KubernetesNetworkConfigResponse`](crate::model::KubernetesNetworkConfigResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) service_ipv4_cidr: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The CIDR block that Kubernetes service IP addresses are assigned from. If you didn't
+        /// specify a CIDR block when you created the cluster, then Kubernetes assigns addresses
+        /// from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was specified, then
+        /// it was specified when the cluster was created and it cannot be changed.</p>
+        pub fn service_ipv4_cidr(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_ipv4_cidr = Some(input.into());
+            self
+        }
+        pub fn set_service_ipv4_cidr(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.service_ipv4_cidr = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`KubernetesNetworkConfigResponse`](crate::model::KubernetesNetworkConfigResponse)
+        pub fn build(self) -> crate::model::KubernetesNetworkConfigResponse {
+            crate::model::KubernetesNetworkConfigResponse {
+                service_ipv4_cidr: self.service_ipv4_cidr,
+            }
+        }
+    }
+}
+impl KubernetesNetworkConfigResponse {
+    /// Creates a new builder-style object to manufacture [`KubernetesNetworkConfigResponse`](crate::model::KubernetesNetworkConfigResponse)
+    pub fn builder() -> crate::model::kubernetes_network_config_response::Builder {
+        crate::model::kubernetes_network_config_response::Builder::default()
+    }
+}
+
+/// <p>An object representing an Amazon EKS cluster VPC configuration response.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VpcConfigResponse {
+    /// <p>The subnets associated with your cluster.</p>
+    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The security groups associated with the cross-account elastic network interfaces that
+    /// are used to allow communication between your nodes and the Kubernetes control
+    /// plane.</p>
+    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The cluster security group that was created by Amazon EKS for the cluster. Managed node
+    /// groups use this security group for control-plane-to-data-plane communication.</p>
+    pub cluster_security_group_id: std::option::Option<std::string::String>,
+    /// <p>The VPC associated with your cluster.</p>
+    pub vpc_id: std::option::Option<std::string::String>,
+    /// <p>This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If
+    /// the Amazon EKS public API server endpoint is disabled, your cluster's Kubernetes API server
+    /// can only receive requests that originate from within the cluster VPC.</p>
+    pub endpoint_public_access: bool,
+    /// <p>This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If
+    /// the Amazon EKS private API server endpoint is enabled, Kubernetes API requests that originate
+    /// from within your cluster's VPC use the private VPC endpoint instead of traversing the
+    /// internet. If this value is disabled and you have nodes or Fargate pods in the cluster,
+    /// then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
+    /// communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+    /// endpoint access control</a> in the <i>
+    /// <i>Amazon EKS User Guide</i>
+    /// </i>.</p>
+    pub endpoint_private_access: bool,
+    /// <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes API server
+    /// endpoint. Communication to the endpoint from addresses outside of the listed CIDR blocks
+    /// is denied. The default value is <code>0.0.0.0/0</code>. If you've disabled private
+    /// endpoint access and you have nodes or Fargate pods in the cluster, then ensure that the
+    /// necessary CIDR blocks are listed. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+    /// endpoint access control</a> in the <i>
+    /// <i>Amazon EKS User Guide</i>
+    /// </i>.</p>
+    pub public_access_cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for VpcConfigResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VpcConfigResponse");
+        formatter.field("subnet_ids", &self.subnet_ids);
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.field("cluster_security_group_id", &self.cluster_security_group_id);
+        formatter.field("vpc_id", &self.vpc_id);
+        formatter.field("endpoint_public_access", &self.endpoint_public_access);
+        formatter.field("endpoint_private_access", &self.endpoint_private_access);
+        formatter.field("public_access_cidrs", &self.public_access_cidrs);
+        formatter.finish()
+    }
+}
+/// See [`VpcConfigResponse`](crate::model::VpcConfigResponse)
+pub mod vpc_config_response {
+    /// A builder for [`VpcConfigResponse`](crate::model::VpcConfigResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) cluster_security_group_id: std::option::Option<std::string::String>,
+        pub(crate) vpc_id: std::option::Option<std::string::String>,
+        pub(crate) endpoint_public_access: std::option::Option<bool>,
+        pub(crate) endpoint_private_access: std::option::Option<bool>,
+        pub(crate) public_access_cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnet_ids.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_ids = Some(v);
+            self
+        }
+        pub fn set_subnet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnet_ids = input;
+            self
+        }
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_ids = Some(v);
+            self
+        }
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_ids = input;
+            self
+        }
+        /// <p>The cluster security group that was created by Amazon EKS for the cluster. Managed node
+        /// groups use this security group for control-plane-to-data-plane communication.</p>
+        pub fn cluster_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_security_group_id = Some(input.into());
+            self
+        }
+        pub fn set_cluster_security_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cluster_security_group_id = input;
+            self
+        }
+        /// <p>The VPC associated with your cluster.</p>
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
+            self
+        }
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
+            self
+        }
+        /// <p>This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If
+        /// the Amazon EKS public API server endpoint is disabled, your cluster's Kubernetes API server
+        /// can only receive requests that originate from within the cluster VPC.</p>
+        pub fn endpoint_public_access(mut self, input: bool) -> Self {
+            self.endpoint_public_access = Some(input);
+            self
+        }
+        pub fn set_endpoint_public_access(mut self, input: std::option::Option<bool>) -> Self {
+            self.endpoint_public_access = input;
+            self
+        }
+        /// <p>This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If
+        /// the Amazon EKS private API server endpoint is enabled, Kubernetes API requests that originate
+        /// from within your cluster's VPC use the private VPC endpoint instead of traversing the
+        /// internet. If this value is disabled and you have nodes or Fargate pods in the cluster,
+        /// then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
+        /// communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+        /// endpoint access control</a> in the <i>
+        /// <i>Amazon EKS User Guide</i>
+        /// </i>.</p>
+        pub fn endpoint_private_access(mut self, input: bool) -> Self {
+            self.endpoint_private_access = Some(input);
+            self
+        }
+        pub fn set_endpoint_private_access(mut self, input: std::option::Option<bool>) -> Self {
+            self.endpoint_private_access = input;
+            self
+        }
+        pub fn public_access_cidrs(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.public_access_cidrs.unwrap_or_default();
+            v.push(input.into());
+            self.public_access_cidrs = Some(v);
+            self
+        }
+        pub fn set_public_access_cidrs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.public_access_cidrs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VpcConfigResponse`](crate::model::VpcConfigResponse)
+        pub fn build(self) -> crate::model::VpcConfigResponse {
+            crate::model::VpcConfigResponse {
+                subnet_ids: self.subnet_ids,
+                security_group_ids: self.security_group_ids,
+                cluster_security_group_id: self.cluster_security_group_id,
+                vpc_id: self.vpc_id,
+                endpoint_public_access: self.endpoint_public_access.unwrap_or_default(),
+                endpoint_private_access: self.endpoint_private_access.unwrap_or_default(),
+                public_access_cidrs: self.public_access_cidrs,
+            }
+        }
+    }
+}
+impl VpcConfigResponse {
+    /// Creates a new builder-style object to manufacture [`VpcConfigResponse`](crate::model::VpcConfigResponse)
+    pub fn builder() -> crate::model::vpc_config_response::Builder {
+        crate::model::vpc_config_response::Builder::default()
+    }
+}
+
+/// <p>The configuration sent to a cluster for configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConnectorConfigRequest {
+    /// <p>The Amazon Resource Name (ARN) of the role that is authorized to request the connector configuration.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The cloud provider for the target cluster to connect.</p>
+    pub provider: std::option::Option<crate::model::ConnectorConfigProvider>,
+}
+impl std::fmt::Debug for ConnectorConfigRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConnectorConfigRequest");
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("provider", &self.provider);
+        formatter.finish()
+    }
+}
+/// See [`ConnectorConfigRequest`](crate::model::ConnectorConfigRequest)
+pub mod connector_config_request {
+    /// A builder for [`ConnectorConfigRequest`](crate::model::ConnectorConfigRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) provider: std::option::Option<crate::model::ConnectorConfigProvider>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the role that is authorized to request the connector configuration.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The cloud provider for the target cluster to connect.</p>
+        pub fn provider(mut self, input: crate::model::ConnectorConfigProvider) -> Self {
+            self.provider = Some(input);
+            self
+        }
+        pub fn set_provider(
+            mut self,
+            input: std::option::Option<crate::model::ConnectorConfigProvider>,
+        ) -> Self {
+            self.provider = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConnectorConfigRequest`](crate::model::ConnectorConfigRequest)
+        pub fn build(self) -> crate::model::ConnectorConfigRequest {
+            crate::model::ConnectorConfigRequest {
+                role_arn: self.role_arn,
+                provider: self.provider,
+            }
+        }
+    }
+}
+impl ConnectorConfigRequest {
+    /// Creates a new builder-style object to manufacture [`ConnectorConfigRequest`](crate::model::ConnectorConfigRequest)
+    pub fn builder() -> crate::model::connector_config_request::Builder {
+        crate::model::connector_config_request::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ConnectorConfigProvider {
+    Aks,
+    Anthos,
+    Ec2,
+    EksAnywhere,
+    Gke,
+    Openshift,
+    Other,
+    Rancher,
+    Tanzu,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ConnectorConfigProvider {
+    fn from(s: &str) -> Self {
+        match s {
+            "AKS" => ConnectorConfigProvider::Aks,
+            "ANTHOS" => ConnectorConfigProvider::Anthos,
+            "EC2" => ConnectorConfigProvider::Ec2,
+            "EKS_ANYWHERE" => ConnectorConfigProvider::EksAnywhere,
+            "GKE" => ConnectorConfigProvider::Gke,
+            "OPENSHIFT" => ConnectorConfigProvider::Openshift,
+            "OTHER" => ConnectorConfigProvider::Other,
+            "RANCHER" => ConnectorConfigProvider::Rancher,
+            "TANZU" => ConnectorConfigProvider::Tanzu,
+            other => ConnectorConfigProvider::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ConnectorConfigProvider {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ConnectorConfigProvider::from(s))
+    }
+}
+impl ConnectorConfigProvider {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ConnectorConfigProvider::Aks => "AKS",
+            ConnectorConfigProvider::Anthos => "ANTHOS",
+            ConnectorConfigProvider::Ec2 => "EC2",
+            ConnectorConfigProvider::EksAnywhere => "EKS_ANYWHERE",
+            ConnectorConfigProvider::Gke => "GKE",
+            ConnectorConfigProvider::Openshift => "OPENSHIFT",
+            ConnectorConfigProvider::Other => "OTHER",
+            ConnectorConfigProvider::Rancher => "RANCHER",
+            ConnectorConfigProvider::Tanzu => "TANZU",
+            ConnectorConfigProvider::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AKS",
+            "ANTHOS",
+            "EC2",
+            "EKS_ANYWHERE",
+            "GKE",
+            "OPENSHIFT",
+            "OTHER",
+            "RANCHER",
+            "TANZU",
+        ]
+    }
+}
+impl AsRef<str> for ConnectorConfigProvider {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>An object representing an identity provider configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3036,7 +4194,7 @@ impl AsRef<str> for NodegroupStatus {
     }
 }
 
-/// <p>An object that represents an identity configuration.</p>
+/// <p>The full description of your identity configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityProviderConfigResponse {
@@ -3753,883 +4911,6 @@ impl FargateProfileSelector {
     /// Creates a new builder-style object to manufacture [`FargateProfileSelector`](crate::model::FargateProfileSelector)
     pub fn builder() -> crate::model::fargate_profile_selector::Builder {
         crate::model::fargate_profile_selector::Builder::default()
-    }
-}
-
-/// <p>An object representing an Amazon EKS cluster.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Cluster {
-    /// <p>The name of the cluster.</p>
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
-    /// <p>The Kubernetes server version for the cluster.</p>
-    pub version: std::option::Option<std::string::String>,
-    /// <p>The endpoint for your Kubernetes API server.</p>
-    pub endpoint: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control
-    /// plane to make calls to Amazon Web Services API operations on your behalf.</p>
-    pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have
-    /// specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC
-    /// Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the
-    /// <i>Amazon EKS User Guide</i>.</p>
-    pub resources_vpc_config: std::option::Option<crate::model::VpcConfigResponse>,
-    /// <p>The Kubernetes network configuration for the cluster.</p>
-    pub kubernetes_network_config:
-        std::option::Option<crate::model::KubernetesNetworkConfigResponse>,
-    /// <p>The logging configuration for your cluster.</p>
-    pub logging: std::option::Option<crate::model::Logging>,
-    /// <p>The identity provider information for the cluster.</p>
-    pub identity: std::option::Option<crate::model::Identity>,
-    /// <p>The current status of the cluster.</p>
-    pub status: std::option::Option<crate::model::ClusterStatus>,
-    /// <p>The <code>certificate-authority-data</code> for your cluster.</p>
-    pub certificate_authority: std::option::Option<crate::model::Certificate>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
-    pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The platform version of your Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
-    /// Versions</a> in the <i>
-    /// <i>Amazon EKS User Guide</i>
-    /// </i>.</p>
-    pub platform_version: std::option::Option<std::string::String>,
-    /// <p>The metadata that you apply to the cluster to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Cluster tags do not propagate to any other resources associated with the
-    /// cluster. </p>
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The encryption configuration for the cluster.</p>
-    pub encryption_config: std::option::Option<std::vec::Vec<crate::model::EncryptionConfig>>,
-}
-impl std::fmt::Debug for Cluster {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cluster");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("version", &self.version);
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("resources_vpc_config", &self.resources_vpc_config);
-        formatter.field("kubernetes_network_config", &self.kubernetes_network_config);
-        formatter.field("logging", &self.logging);
-        formatter.field("identity", &self.identity);
-        formatter.field("status", &self.status);
-        formatter.field("certificate_authority", &self.certificate_authority);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field("tags", &self.tags);
-        formatter.field("encryption_config", &self.encryption_config);
-        formatter.finish()
-    }
-}
-/// See [`Cluster`](crate::model::Cluster)
-pub mod cluster {
-    /// A builder for [`Cluster`](crate::model::Cluster)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) version: std::option::Option<std::string::String>,
-        pub(crate) endpoint: std::option::Option<std::string::String>,
-        pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) resources_vpc_config: std::option::Option<crate::model::VpcConfigResponse>,
-        pub(crate) kubernetes_network_config:
-            std::option::Option<crate::model::KubernetesNetworkConfigResponse>,
-        pub(crate) logging: std::option::Option<crate::model::Logging>,
-        pub(crate) identity: std::option::Option<crate::model::Identity>,
-        pub(crate) status: std::option::Option<crate::model::ClusterStatus>,
-        pub(crate) certificate_authority: std::option::Option<crate::model::Certificate>,
-        pub(crate) client_request_token: std::option::Option<std::string::String>,
-        pub(crate) platform_version: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) encryption_config:
-            std::option::Option<std::vec::Vec<crate::model::EncryptionConfig>>,
-    }
-    impl Builder {
-        /// <p>The name of the cluster.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
-            self.created_at = Some(input);
-            self
-        }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_at = input;
-            self
-        }
-        /// <p>The Kubernetes server version for the cluster.</p>
-        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-            self.version = Some(input.into());
-            self
-        }
-        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
-        }
-        /// <p>The endpoint for your Kubernetes API server.</p>
-        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-            self.endpoint = Some(input.into());
-            self
-        }
-        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = input;
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control
-        /// plane to make calls to Amazon Web Services API operations on your behalf.</p>
-        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(input.into());
-            self
-        }
-        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
-        }
-        /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have
-        /// specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC
-        /// Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the
-        /// <i>Amazon EKS User Guide</i>.</p>
-        pub fn resources_vpc_config(mut self, input: crate::model::VpcConfigResponse) -> Self {
-            self.resources_vpc_config = Some(input);
-            self
-        }
-        pub fn set_resources_vpc_config(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfigResponse>,
-        ) -> Self {
-            self.resources_vpc_config = input;
-            self
-        }
-        /// <p>The Kubernetes network configuration for the cluster.</p>
-        pub fn kubernetes_network_config(
-            mut self,
-            input: crate::model::KubernetesNetworkConfigResponse,
-        ) -> Self {
-            self.kubernetes_network_config = Some(input);
-            self
-        }
-        pub fn set_kubernetes_network_config(
-            mut self,
-            input: std::option::Option<crate::model::KubernetesNetworkConfigResponse>,
-        ) -> Self {
-            self.kubernetes_network_config = input;
-            self
-        }
-        /// <p>The logging configuration for your cluster.</p>
-        pub fn logging(mut self, input: crate::model::Logging) -> Self {
-            self.logging = Some(input);
-            self
-        }
-        pub fn set_logging(mut self, input: std::option::Option<crate::model::Logging>) -> Self {
-            self.logging = input;
-            self
-        }
-        /// <p>The identity provider information for the cluster.</p>
-        pub fn identity(mut self, input: crate::model::Identity) -> Self {
-            self.identity = Some(input);
-            self
-        }
-        pub fn set_identity(mut self, input: std::option::Option<crate::model::Identity>) -> Self {
-            self.identity = input;
-            self
-        }
-        /// <p>The current status of the cluster.</p>
-        pub fn status(mut self, input: crate::model::ClusterStatus) -> Self {
-            self.status = Some(input);
-            self
-        }
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ClusterStatus>,
-        ) -> Self {
-            self.status = input;
-            self
-        }
-        /// <p>The <code>certificate-authority-data</code> for your cluster.</p>
-        pub fn certificate_authority(mut self, input: crate::model::Certificate) -> Self {
-            self.certificate_authority = Some(input);
-            self
-        }
-        pub fn set_certificate_authority(
-            mut self,
-            input: std::option::Option<crate::model::Certificate>,
-        ) -> Self {
-            self.certificate_authority = input;
-            self
-        }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.client_request_token = Some(input.into());
-            self
-        }
-        pub fn set_client_request_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.client_request_token = input;
-            self
-        }
-        /// <p>The platform version of your Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
-        /// Versions</a> in the <i>
-        /// <i>Amazon EKS User Guide</i>
-        /// </i>.</p>
-        pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
-            self.platform_version = Some(input.into());
-            self
-        }
-        pub fn set_platform_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_version = input;
-            self
-        }
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
-        }
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
-        }
-        pub fn encryption_config(
-            mut self,
-            input: impl Into<crate::model::EncryptionConfig>,
-        ) -> Self {
-            let mut v = self.encryption_config.unwrap_or_default();
-            v.push(input.into());
-            self.encryption_config = Some(v);
-            self
-        }
-        pub fn set_encryption_config(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EncryptionConfig>>,
-        ) -> Self {
-            self.encryption_config = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Cluster`](crate::model::Cluster)
-        pub fn build(self) -> crate::model::Cluster {
-            crate::model::Cluster {
-                name: self.name,
-                arn: self.arn,
-                created_at: self.created_at,
-                version: self.version,
-                endpoint: self.endpoint,
-                role_arn: self.role_arn,
-                resources_vpc_config: self.resources_vpc_config,
-                kubernetes_network_config: self.kubernetes_network_config,
-                logging: self.logging,
-                identity: self.identity,
-                status: self.status,
-                certificate_authority: self.certificate_authority,
-                client_request_token: self.client_request_token,
-                platform_version: self.platform_version,
-                tags: self.tags,
-                encryption_config: self.encryption_config,
-            }
-        }
-    }
-}
-impl Cluster {
-    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster)
-    pub fn builder() -> crate::model::cluster::Builder {
-        crate::model::cluster::Builder::default()
-    }
-}
-
-/// <p>The encryption configuration for the cluster.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EncryptionConfig {
-    /// <p>Specifies the resources to be encrypted. The only supported value is "secrets".</p>
-    pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Key Management Service (KMS) key. Either the ARN or the alias can be used.</p>
-    pub provider: std::option::Option<crate::model::Provider>,
-}
-impl std::fmt::Debug for EncryptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionConfig");
-        formatter.field("resources", &self.resources);
-        formatter.field("provider", &self.provider);
-        formatter.finish()
-    }
-}
-/// See [`EncryptionConfig`](crate::model::EncryptionConfig)
-pub mod encryption_config {
-    /// A builder for [`EncryptionConfig`](crate::model::EncryptionConfig)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) resources: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) provider: std::option::Option<crate::model::Provider>,
-    }
-    impl Builder {
-        pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
-            self.resources = Some(v);
-            self
-        }
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resources = input;
-            self
-        }
-        /// <p>Key Management Service (KMS) key. Either the ARN or the alias can be used.</p>
-        pub fn provider(mut self, input: crate::model::Provider) -> Self {
-            self.provider = Some(input);
-            self
-        }
-        pub fn set_provider(mut self, input: std::option::Option<crate::model::Provider>) -> Self {
-            self.provider = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`EncryptionConfig`](crate::model::EncryptionConfig)
-        pub fn build(self) -> crate::model::EncryptionConfig {
-            crate::model::EncryptionConfig {
-                resources: self.resources,
-                provider: self.provider,
-            }
-        }
-    }
-}
-impl EncryptionConfig {
-    /// Creates a new builder-style object to manufacture [`EncryptionConfig`](crate::model::EncryptionConfig)
-    pub fn builder() -> crate::model::encryption_config::Builder {
-        crate::model::encryption_config::Builder::default()
-    }
-}
-
-/// <p>Identifies the Key Management Service (KMS) key used to encrypt the secrets.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Provider {
-    /// <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same
-    /// region as the cluster, and if the KMS key was created in a different account, the user
-    /// must have access to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-    /// Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service
-    /// Developer Guide</i>.</p>
-    pub key_arn: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for Provider {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Provider");
-        formatter.field("key_arn", &self.key_arn);
-        formatter.finish()
-    }
-}
-/// See [`Provider`](crate::model::Provider)
-pub mod provider {
-    /// A builder for [`Provider`](crate::model::Provider)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) key_arn: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same
-        /// region as the cluster, and if the KMS key was created in a different account, the user
-        /// must have access to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-        /// Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service
-        /// Developer Guide</i>.</p>
-        pub fn key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.key_arn = Some(input.into());
-            self
-        }
-        pub fn set_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_arn = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Provider`](crate::model::Provider)
-        pub fn build(self) -> crate::model::Provider {
-            crate::model::Provider {
-                key_arn: self.key_arn,
-            }
-        }
-    }
-}
-impl Provider {
-    /// Creates a new builder-style object to manufacture [`Provider`](crate::model::Provider)
-    pub fn builder() -> crate::model::provider::Builder {
-        crate::model::provider::Builder::default()
-    }
-}
-
-/// <p>An object representing the <code>certificate-authority-data</code> for your
-/// cluster.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Certificate {
-    /// <p>The Base64-encoded certificate data required to communicate with your cluster. Add
-    /// this to the <code>certificate-authority-data</code> section of the
-    /// <code>kubeconfig</code> file for your cluster.</p>
-    pub data: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for Certificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Certificate");
-        formatter.field("data", &self.data);
-        formatter.finish()
-    }
-}
-/// See [`Certificate`](crate::model::Certificate)
-pub mod certificate {
-    /// A builder for [`Certificate`](crate::model::Certificate)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) data: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The Base64-encoded certificate data required to communicate with your cluster. Add
-        /// this to the <code>certificate-authority-data</code> section of the
-        /// <code>kubeconfig</code> file for your cluster.</p>
-        pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
-            self.data = Some(input.into());
-            self
-        }
-        pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Certificate`](crate::model::Certificate)
-        pub fn build(self) -> crate::model::Certificate {
-            crate::model::Certificate { data: self.data }
-        }
-    }
-}
-impl Certificate {
-    /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate)
-    pub fn builder() -> crate::model::certificate::Builder {
-        crate::model::certificate::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ClusterStatus {
-    Active,
-    Creating,
-    Deleting,
-    Failed,
-    Updating,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for ClusterStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => ClusterStatus::Active,
-            "CREATING" => ClusterStatus::Creating,
-            "DELETING" => ClusterStatus::Deleting,
-            "FAILED" => ClusterStatus::Failed,
-            "UPDATING" => ClusterStatus::Updating,
-            other => ClusterStatus::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for ClusterStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ClusterStatus::from(s))
-    }
-}
-impl ClusterStatus {
-    pub fn as_str(&self) -> &str {
-        match self {
-            ClusterStatus::Active => "ACTIVE",
-            ClusterStatus::Creating => "CREATING",
-            ClusterStatus::Deleting => "DELETING",
-            ClusterStatus::Failed => "FAILED",
-            ClusterStatus::Updating => "UPDATING",
-            ClusterStatus::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
-    }
-}
-impl AsRef<str> for ClusterStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>An object representing an identity provider.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Identity {
-    /// <p>An object representing the <a href="https://openid.net/connect/">OpenID
-    /// Connect</a> identity provider information.</p>
-    pub oidc: std::option::Option<crate::model::Oidc>,
-}
-impl std::fmt::Debug for Identity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Identity");
-        formatter.field("oidc", &self.oidc);
-        formatter.finish()
-    }
-}
-/// See [`Identity`](crate::model::Identity)
-pub mod identity {
-    /// A builder for [`Identity`](crate::model::Identity)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) oidc: std::option::Option<crate::model::Oidc>,
-    }
-    impl Builder {
-        /// <p>An object representing the <a href="https://openid.net/connect/">OpenID
-        /// Connect</a> identity provider information.</p>
-        pub fn oidc(mut self, input: crate::model::Oidc) -> Self {
-            self.oidc = Some(input);
-            self
-        }
-        pub fn set_oidc(mut self, input: std::option::Option<crate::model::Oidc>) -> Self {
-            self.oidc = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Identity`](crate::model::Identity)
-        pub fn build(self) -> crate::model::Identity {
-            crate::model::Identity { oidc: self.oidc }
-        }
-    }
-}
-impl Identity {
-    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity)
-    pub fn builder() -> crate::model::identity::Builder {
-        crate::model::identity::Builder::default()
-    }
-}
-
-/// <p>An object representing the <a href="https://openid.net/connect/">OpenID
-/// Connect</a> (OIDC) identity provider information for the cluster.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Oidc {
-    /// <p>The issuer URL for the OIDC identity provider.</p>
-    pub issuer: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for Oidc {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Oidc");
-        formatter.field("issuer", &self.issuer);
-        formatter.finish()
-    }
-}
-/// See [`Oidc`](crate::model::Oidc)
-pub mod oidc {
-    /// A builder for [`Oidc`](crate::model::Oidc)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) issuer: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The issuer URL for the OIDC identity provider.</p>
-        pub fn issuer(mut self, input: impl Into<std::string::String>) -> Self {
-            self.issuer = Some(input.into());
-            self
-        }
-        pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.issuer = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Oidc`](crate::model::Oidc)
-        pub fn build(self) -> crate::model::Oidc {
-            crate::model::Oidc {
-                issuer: self.issuer,
-            }
-        }
-    }
-}
-impl Oidc {
-    /// Creates a new builder-style object to manufacture [`Oidc`](crate::model::Oidc)
-    pub fn builder() -> crate::model::oidc::Builder {
-        crate::model::oidc::Builder::default()
-    }
-}
-
-/// <p>The Kubernetes network configuration for the cluster.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct KubernetesNetworkConfigResponse {
-    /// <p>The CIDR block that Kubernetes service IP addresses are assigned from. If you didn't
-    /// specify a CIDR block when you created the cluster, then Kubernetes assigns addresses
-    /// from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was specified, then
-    /// it was specified when the cluster was created and it cannot be changed.</p>
-    pub service_ipv4_cidr: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KubernetesNetworkConfigResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KubernetesNetworkConfigResponse");
-        formatter.field("service_ipv4_cidr", &self.service_ipv4_cidr);
-        formatter.finish()
-    }
-}
-/// See [`KubernetesNetworkConfigResponse`](crate::model::KubernetesNetworkConfigResponse)
-pub mod kubernetes_network_config_response {
-    /// A builder for [`KubernetesNetworkConfigResponse`](crate::model::KubernetesNetworkConfigResponse)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) service_ipv4_cidr: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The CIDR block that Kubernetes service IP addresses are assigned from. If you didn't
-        /// specify a CIDR block when you created the cluster, then Kubernetes assigns addresses
-        /// from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was specified, then
-        /// it was specified when the cluster was created and it cannot be changed.</p>
-        pub fn service_ipv4_cidr(mut self, input: impl Into<std::string::String>) -> Self {
-            self.service_ipv4_cidr = Some(input.into());
-            self
-        }
-        pub fn set_service_ipv4_cidr(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_ipv4_cidr = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`KubernetesNetworkConfigResponse`](crate::model::KubernetesNetworkConfigResponse)
-        pub fn build(self) -> crate::model::KubernetesNetworkConfigResponse {
-            crate::model::KubernetesNetworkConfigResponse {
-                service_ipv4_cidr: self.service_ipv4_cidr,
-            }
-        }
-    }
-}
-impl KubernetesNetworkConfigResponse {
-    /// Creates a new builder-style object to manufacture [`KubernetesNetworkConfigResponse`](crate::model::KubernetesNetworkConfigResponse)
-    pub fn builder() -> crate::model::kubernetes_network_config_response::Builder {
-        crate::model::kubernetes_network_config_response::Builder::default()
-    }
-}
-
-/// <p>An object representing an Amazon EKS cluster VPC configuration response.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VpcConfigResponse {
-    /// <p>The subnets associated with your cluster.</p>
-    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The security groups associated with the cross-account elastic network interfaces that
-    /// are used to allow communication between your nodes and the Kubernetes control
-    /// plane.</p>
-    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The cluster security group that was created by Amazon EKS for the cluster. Managed node
-    /// groups use this security group for control-plane-to-data-plane communication.</p>
-    pub cluster_security_group_id: std::option::Option<std::string::String>,
-    /// <p>The VPC associated with your cluster.</p>
-    pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If
-    /// the Amazon EKS public API server endpoint is disabled, your cluster's Kubernetes API server
-    /// can only receive requests that originate from within the cluster VPC.</p>
-    pub endpoint_public_access: bool,
-    /// <p>This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If
-    /// the Amazon EKS private API server endpoint is enabled, Kubernetes API requests that originate
-    /// from within your cluster's VPC use the private VPC endpoint instead of traversing the
-    /// internet. If this value is disabled and you have nodes or Fargate pods in the cluster,
-    /// then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
-    /// communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
-    /// endpoint access control</a> in the <i>
-    /// <i>Amazon EKS User Guide</i>
-    /// </i>.</p>
-    pub endpoint_private_access: bool,
-    /// <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes API server
-    /// endpoint. Communication to the endpoint from addresses outside of the listed CIDR blocks
-    /// is denied. The default value is <code>0.0.0.0/0</code>. If you've disabled private
-    /// endpoint access and you have nodes or Fargate pods in the cluster, then ensure that the
-    /// necessary CIDR blocks are listed. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
-    /// endpoint access control</a> in the <i>
-    /// <i>Amazon EKS User Guide</i>
-    /// </i>.</p>
-    pub public_access_cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
-}
-impl std::fmt::Debug for VpcConfigResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfigResponse");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("cluster_security_group_id", &self.cluster_security_group_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("endpoint_public_access", &self.endpoint_public_access);
-        formatter.field("endpoint_private_access", &self.endpoint_private_access);
-        formatter.field("public_access_cidrs", &self.public_access_cidrs);
-        formatter.finish()
-    }
-}
-/// See [`VpcConfigResponse`](crate::model::VpcConfigResponse)
-pub mod vpc_config_response {
-    /// A builder for [`VpcConfigResponse`](crate::model::VpcConfigResponse)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) cluster_security_group_id: std::option::Option<std::string::String>,
-        pub(crate) vpc_id: std::option::Option<std::string::String>,
-        pub(crate) endpoint_public_access: std::option::Option<bool>,
-        pub(crate) endpoint_private_access: std::option::Option<bool>,
-        pub(crate) public_access_cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
-    }
-    impl Builder {
-        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
-        }
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
-        }
-        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
-        }
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
-        }
-        /// <p>The cluster security group that was created by Amazon EKS for the cluster. Managed node
-        /// groups use this security group for control-plane-to-data-plane communication.</p>
-        pub fn cluster_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.cluster_security_group_id = Some(input.into());
-            self
-        }
-        pub fn set_cluster_security_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_security_group_id = input;
-            self
-        }
-        /// <p>The VPC associated with your cluster.</p>
-        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.vpc_id = Some(input.into());
-            self
-        }
-        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
-        }
-        /// <p>This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If
-        /// the Amazon EKS public API server endpoint is disabled, your cluster's Kubernetes API server
-        /// can only receive requests that originate from within the cluster VPC.</p>
-        pub fn endpoint_public_access(mut self, input: bool) -> Self {
-            self.endpoint_public_access = Some(input);
-            self
-        }
-        pub fn set_endpoint_public_access(mut self, input: std::option::Option<bool>) -> Self {
-            self.endpoint_public_access = input;
-            self
-        }
-        /// <p>This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If
-        /// the Amazon EKS private API server endpoint is enabled, Kubernetes API requests that originate
-        /// from within your cluster's VPC use the private VPC endpoint instead of traversing the
-        /// internet. If this value is disabled and you have nodes or Fargate pods in the cluster,
-        /// then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
-        /// communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
-        /// endpoint access control</a> in the <i>
-        /// <i>Amazon EKS User Guide</i>
-        /// </i>.</p>
-        pub fn endpoint_private_access(mut self, input: bool) -> Self {
-            self.endpoint_private_access = Some(input);
-            self
-        }
-        pub fn set_endpoint_private_access(mut self, input: std::option::Option<bool>) -> Self {
-            self.endpoint_private_access = input;
-            self
-        }
-        pub fn public_access_cidrs(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.public_access_cidrs.unwrap_or_default();
-            v.push(input.into());
-            self.public_access_cidrs = Some(v);
-            self
-        }
-        pub fn set_public_access_cidrs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.public_access_cidrs = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`VpcConfigResponse`](crate::model::VpcConfigResponse)
-        pub fn build(self) -> crate::model::VpcConfigResponse {
-            crate::model::VpcConfigResponse {
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
-                cluster_security_group_id: self.cluster_security_group_id,
-                vpc_id: self.vpc_id,
-                endpoint_public_access: self.endpoint_public_access.unwrap_or_default(),
-                endpoint_private_access: self.endpoint_private_access.unwrap_or_default(),
-                public_access_cidrs: self.public_access_cidrs,
-            }
-        }
-    }
-}
-impl VpcConfigResponse {
-    /// Creates a new builder-style object to manufacture [`VpcConfigResponse`](crate::model::VpcConfigResponse)
-    pub fn builder() -> crate::model::vpc_config_response::Builder {
-        crate::model::vpc_config_response::Builder::default()
     }
 }
 

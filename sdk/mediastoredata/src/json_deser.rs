@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_container_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_container_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::container_not_found_exception::Builder,
 ) -> Result<crate::error::container_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_container_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_server_errorjson_err(
+pub fn deser_structure_crate_error_internal_server_errorjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_error::Builder,
 ) -> Result<crate::error::internal_server_error::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_internal_server_errorjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_object_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_object_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::object_not_found_exception::Builder,
 ) -> Result<crate::error::object_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_object_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_requested_range_not_satisfiable_exceptionjson_err(
+pub fn deser_structure_crate_error_requested_range_not_satisfiable_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::requested_range_not_satisfiable_exception::Builder,
 ) -> Result<
@@ -164,7 +164,7 @@ pub fn deser_structure_requested_range_not_satisfiable_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_list_items(
+pub fn deser_operation_crate_operation_list_items(
     input: &[u8],
     mut builder: crate::output::list_items_output::Builder,
 ) -> Result<crate::output::list_items_output::Builder, smithy_json::deserialize::Error> {
@@ -179,8 +179,11 @@ pub fn deser_operation_list_items(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Items" => {
-                        builder =
-                            builder.set_items(crate::json_deser::deser_list_item_list(tokens)?);
+                        builder = builder.set_items(
+                            crate::json_deser::deser_list_com_amazonaws_mediastoredata_item_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -207,7 +210,7 @@ pub fn deser_operation_list_items(
     Ok(builder)
 }
 
-pub fn deser_operation_put_object(
+pub fn deser_operation_crate_operation_put_object(
     input: &[u8],
     mut builder: crate::output::put_object_output::Builder,
 ) -> Result<crate::output::put_object_output::Builder, smithy_json::deserialize::Error> {
@@ -272,7 +275,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_item_list<'a, I>(
+pub fn deser_list_com_amazonaws_mediastoredata_item_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Item>>, smithy_json::deserialize::Error>
 where
@@ -291,7 +294,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_item(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_item(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -306,7 +309,7 @@ where
     }
 }
 
-pub fn deser_structure_item<'a, I>(
+pub fn deser_structure_crate_model_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Item>, smithy_json::deserialize::Error>
 where

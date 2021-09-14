@@ -2782,6 +2782,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_encryption_kms_key_id(input);
             self
         }
+        /// Adds a key-value pair to `KMSEncryptionContext`.
+        ///
+        /// To override the contents of this collection use [`set_kms_encryption_context`](Self::set_kms_encryption_context).
+        /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added
+        /// layer of security for your data.</p>
+        pub fn kms_encryption_context(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.kms_encryption_context(k, v);
+            self
+        }
+        pub fn set_kms_encryption_context(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_kms_encryption_context(input);
+            self
+        }
         /// <p>Optional settings for the medical transcription job.</p>
         pub fn settings(mut self, inp: crate::model::MedicalTranscriptionSetting) -> Self {
             self.inner = self.inner.settings(inp);
@@ -3032,6 +3054,28 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_output_encryption_kms_key_id(input);
+            self
+        }
+        /// Adds a key-value pair to `KMSEncryptionContext`.
+        ///
+        /// To override the contents of this collection use [`set_kms_encryption_context`](Self::set_kms_encryption_context).
+        /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added
+        /// layer of security for your data.</p>
+        pub fn kms_encryption_context(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.kms_encryption_context(k, v);
+            self
+        }
+        pub fn set_kms_encryption_context(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_kms_encryption_context(input);
             self
         }
         /// <p>A <code>Settings</code> object that provides optional settings for a transcription job.</p>

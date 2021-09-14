@@ -15,27 +15,25 @@ pub fn parse_create_http_namespace_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateRequest" => crate::error::CreateHttpNamespaceError {
-            meta: generic,
-            kind: crate::error::CreateHttpNamespaceErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::CreateHttpNamespaceError {
+                meta: generic,
+                kind: crate::error::CreateHttpNamespaceErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateHttpNamespaceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::CreateHttpNamespaceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::CreateHttpNamespaceError {
             meta: generic,
             kind: crate::error::CreateHttpNamespaceErrorKind::InvalidInput({
@@ -44,7 +42,7 @@ pub fn parse_create_http_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -65,11 +63,7 @@ pub fn parse_create_http_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::namespace_already_exists::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_namespace_already_existsjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateHttpNamespaceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_namespace_already_existsjson_err(response.body().as_ref(), output).map_err(crate::error::CreateHttpNamespaceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -86,11 +80,7 @@ pub fn parse_create_http_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateHttpNamespaceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::CreateHttpNamespaceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -107,11 +97,7 @@ pub fn parse_create_http_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_too_many_tags_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateHttpNamespaceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateHttpNamespaceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -135,7 +121,7 @@ pub fn parse_create_http_namespace_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_http_namespace_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_http_namespace(
+        output = crate::json_deser::deser_operation_crate_operation_create_http_namespace(
             response.body().as_ref(),
             output,
         )
@@ -164,27 +150,25 @@ pub fn parse_create_private_dns_namespace_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateRequest" => crate::error::CreatePrivateDnsNamespaceError {
-            meta: generic,
-            kind: crate::error::CreatePrivateDnsNamespaceErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::CreatePrivateDnsNamespaceError {
+                meta: generic,
+                kind: crate::error::CreatePrivateDnsNamespaceErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePrivateDnsNamespaceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePrivateDnsNamespaceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::CreatePrivateDnsNamespaceError {
             meta: generic,
             kind: crate::error::CreatePrivateDnsNamespaceErrorKind::InvalidInput({
@@ -193,7 +177,7 @@ pub fn parse_create_private_dns_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -214,11 +198,7 @@ pub fn parse_create_private_dns_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::namespace_already_exists::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_namespace_already_existsjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePrivateDnsNamespaceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_namespace_already_existsjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePrivateDnsNamespaceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -235,11 +215,7 @@ pub fn parse_create_private_dns_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePrivateDnsNamespaceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePrivateDnsNamespaceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -256,11 +232,7 @@ pub fn parse_create_private_dns_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_too_many_tags_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePrivateDnsNamespaceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePrivateDnsNamespaceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -284,7 +256,7 @@ pub fn parse_create_private_dns_namespace_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_private_dns_namespace_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_private_dns_namespace(
+        output = crate::json_deser::deser_operation_crate_operation_create_private_dns_namespace(
             response.body().as_ref(),
             output,
         )
@@ -313,27 +285,25 @@ pub fn parse_create_public_dns_namespace_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateRequest" => crate::error::CreatePublicDnsNamespaceError {
-            meta: generic,
-            kind: crate::error::CreatePublicDnsNamespaceErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::CreatePublicDnsNamespaceError {
+                meta: generic,
+                kind: crate::error::CreatePublicDnsNamespaceErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePublicDnsNamespaceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePublicDnsNamespaceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::CreatePublicDnsNamespaceError {
             meta: generic,
             kind: crate::error::CreatePublicDnsNamespaceErrorKind::InvalidInput({
@@ -342,7 +312,7 @@ pub fn parse_create_public_dns_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -363,11 +333,7 @@ pub fn parse_create_public_dns_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::namespace_already_exists::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_namespace_already_existsjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePublicDnsNamespaceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_namespace_already_existsjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePublicDnsNamespaceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -384,11 +350,7 @@ pub fn parse_create_public_dns_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePublicDnsNamespaceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePublicDnsNamespaceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -405,11 +367,7 @@ pub fn parse_create_public_dns_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_too_many_tags_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePublicDnsNamespaceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePublicDnsNamespaceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -433,7 +391,7 @@ pub fn parse_create_public_dns_namespace_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_public_dns_namespace_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_public_dns_namespace(
+        output = crate::json_deser::deser_operation_crate_operation_create_public_dns_namespace(
             response.body().as_ref(),
             output,
         )
@@ -463,7 +421,7 @@ pub fn parse_create_service_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -476,27 +434,25 @@ pub fn parse_create_service_error(
                 tmp
             }),
         },
-        "NamespaceNotFound" => crate::error::CreateServiceError {
-            meta: generic,
-            kind: crate::error::CreateServiceErrorKind::NamespaceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "NamespaceNotFound" => {
+            crate::error::CreateServiceError {
+                meta: generic,
+                kind: crate::error::CreateServiceErrorKind::NamespaceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::namespace_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_namespace_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateServiceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::namespace_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_namespace_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceLimitExceeded" => crate::error::CreateServiceError {
             meta: generic,
             kind: crate::error::CreateServiceErrorKind::ResourceLimitExceeded({
@@ -505,11 +461,7 @@ pub fn parse_create_service_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateServiceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -526,11 +478,7 @@ pub fn parse_create_service_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_already_exists::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_already_existsjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateServiceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_already_existsjson_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -547,11 +495,7 @@ pub fn parse_create_service_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_too_many_tags_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateServiceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -572,9 +516,11 @@ pub fn parse_create_service_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_service_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_create_service(response.body().as_ref(), output)
-                .map_err(crate::error::CreateServiceError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_service(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateServiceError::unhandled)?;
         output.build()
     })
 }
@@ -592,27 +538,25 @@ pub fn parse_delete_namespace_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateRequest" => crate::error::DeleteNamespaceError {
-            meta: generic,
-            kind: crate::error::DeleteNamespaceErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::DeleteNamespaceError {
+                meta: generic,
+                kind: crate::error::DeleteNamespaceErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteNamespaceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteNamespaceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::DeleteNamespaceError {
             meta: generic,
             kind: crate::error::DeleteNamespaceErrorKind::InvalidInput({
@@ -621,7 +565,7 @@ pub fn parse_delete_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -634,27 +578,25 @@ pub fn parse_delete_namespace_error(
                 tmp
             }),
         },
-        "NamespaceNotFound" => crate::error::DeleteNamespaceError {
-            meta: generic,
-            kind: crate::error::DeleteNamespaceErrorKind::NamespaceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "NamespaceNotFound" => {
+            crate::error::DeleteNamespaceError {
+                meta: generic,
+                kind: crate::error::DeleteNamespaceErrorKind::NamespaceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::namespace_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_namespace_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteNamespaceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::namespace_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_namespace_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteNamespaceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceInUse" => crate::error::DeleteNamespaceError {
             meta: generic,
             kind: crate::error::DeleteNamespaceErrorKind::ResourceInUse({
@@ -663,11 +605,12 @@ pub fn parse_delete_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_in_usejson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteNamespaceError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_resource_in_usejson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::DeleteNamespaceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -688,9 +631,11 @@ pub fn parse_delete_namespace_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_namespace_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_delete_namespace(response.body().as_ref(), output)
-                .map_err(crate::error::DeleteNamespaceError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_delete_namespace(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteNamespaceError::unhandled)?;
         output.build()
     })
 }
@@ -716,7 +661,7 @@ pub fn parse_delete_service_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -737,11 +682,12 @@ pub fn parse_delete_service_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_in_usejson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteServiceError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_resource_in_usejson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::DeleteServiceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -750,27 +696,25 @@ pub fn parse_delete_service_error(
                 tmp
             }),
         },
-        "ServiceNotFound" => crate::error::DeleteServiceError {
-            meta: generic,
-            kind: crate::error::DeleteServiceErrorKind::ServiceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ServiceNotFound" => {
+            crate::error::DeleteServiceError {
+                meta: generic,
+                kind: crate::error::DeleteServiceErrorKind::ServiceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_service_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteServiceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::service_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DeleteServiceError::generic(generic),
     })
 }
@@ -803,48 +747,44 @@ pub fn parse_deregister_instance_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateRequest" => crate::error::DeregisterInstanceError {
-            meta: generic,
-            kind: crate::error::DeregisterInstanceErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::DeregisterInstanceError {
+                meta: generic,
+                kind: crate::error::DeregisterInstanceErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeregisterInstanceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InstanceNotFound" => crate::error::DeregisterInstanceError {
-            meta: generic,
-            kind: crate::error::DeregisterInstanceErrorKind::InstanceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::DeregisterInstanceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InstanceNotFound" => {
+            crate::error::DeregisterInstanceError {
+                meta: generic,
+                kind: crate::error::DeregisterInstanceErrorKind::InstanceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::instance_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_instance_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeregisterInstanceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::instance_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_instance_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::DeregisterInstanceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::DeregisterInstanceError {
             meta: generic,
             kind: crate::error::DeregisterInstanceErrorKind::InvalidInput({
@@ -853,7 +793,7 @@ pub fn parse_deregister_instance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -874,11 +814,12 @@ pub fn parse_deregister_instance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_in_usejson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeregisterInstanceError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_resource_in_usejson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::DeregisterInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -887,27 +828,25 @@ pub fn parse_deregister_instance_error(
                 tmp
             }),
         },
-        "ServiceNotFound" => crate::error::DeregisterInstanceError {
-            meta: generic,
-            kind: crate::error::DeregisterInstanceErrorKind::ServiceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ServiceNotFound" => {
+            crate::error::DeregisterInstanceError {
+                meta: generic,
+                kind: crate::error::DeregisterInstanceErrorKind::ServiceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_service_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeregisterInstanceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::service_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::DeregisterInstanceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DeregisterInstanceError::generic(generic),
     })
 }
@@ -923,7 +862,7 @@ pub fn parse_deregister_instance_response(
         #[allow(unused_mut)]
         let mut output = crate::output::deregister_instance_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_deregister_instance(
+        output = crate::json_deser::deser_operation_crate_operation_deregister_instance(
             response.body().as_ref(),
             output,
         )
@@ -954,7 +893,7 @@ pub fn parse_discover_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -967,27 +906,25 @@ pub fn parse_discover_instances_error(
                 tmp
             }),
         },
-        "NamespaceNotFound" => crate::error::DiscoverInstancesError {
-            meta: generic,
-            kind: crate::error::DiscoverInstancesErrorKind::NamespaceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "NamespaceNotFound" => {
+            crate::error::DiscoverInstancesError {
+                meta: generic,
+                kind: crate::error::DiscoverInstancesErrorKind::NamespaceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::namespace_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_namespace_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DiscoverInstancesError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::namespace_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_namespace_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::DiscoverInstancesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "RequestLimitExceeded" => crate::error::DiscoverInstancesError {
             meta: generic,
             kind: crate::error::DiscoverInstancesErrorKind::RequestLimitExceeded({
@@ -996,11 +933,7 @@ pub fn parse_discover_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_request_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DiscoverInstancesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_request_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::DiscoverInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1009,27 +942,25 @@ pub fn parse_discover_instances_error(
                 tmp
             }),
         },
-        "ServiceNotFound" => crate::error::DiscoverInstancesError {
-            meta: generic,
-            kind: crate::error::DiscoverInstancesErrorKind::ServiceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ServiceNotFound" => {
+            crate::error::DiscoverInstancesError {
+                meta: generic,
+                kind: crate::error::DiscoverInstancesErrorKind::ServiceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_service_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DiscoverInstancesError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::service_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::DiscoverInstancesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DiscoverInstancesError::generic(generic),
     })
 }
@@ -1043,9 +974,11 @@ pub fn parse_discover_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::discover_instances_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_discover_instances(response.body().as_ref(), output)
-                .map_err(crate::error::DiscoverInstancesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_discover_instances(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DiscoverInstancesError::unhandled)?;
         output.build()
     })
 }
@@ -1063,27 +996,25 @@ pub fn parse_get_instance_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InstanceNotFound" => crate::error::GetInstanceError {
-            meta: generic,
-            kind: crate::error::GetInstanceErrorKind::InstanceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InstanceNotFound" => {
+            crate::error::GetInstanceError {
+                meta: generic,
+                kind: crate::error::GetInstanceErrorKind::InstanceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::instance_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_instance_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetInstanceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::instance_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_instance_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::GetInstanceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::GetInstanceError {
             meta: generic,
             kind: crate::error::GetInstanceErrorKind::InvalidInput({
@@ -1092,7 +1023,7 @@ pub fn parse_get_instance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1105,27 +1036,25 @@ pub fn parse_get_instance_error(
                 tmp
             }),
         },
-        "ServiceNotFound" => crate::error::GetInstanceError {
-            meta: generic,
-            kind: crate::error::GetInstanceErrorKind::ServiceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ServiceNotFound" => {
+            crate::error::GetInstanceError {
+                meta: generic,
+                kind: crate::error::GetInstanceErrorKind::ServiceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_service_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetInstanceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::service_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::GetInstanceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::GetInstanceError::generic(generic),
     })
 }
@@ -1138,8 +1067,11 @@ pub fn parse_get_instance_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_instance_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_instance(response.body().as_ref(), output)
-            .map_err(crate::error::GetInstanceError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_get_instance(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetInstanceError::unhandled)?;
         output.build()
     })
 }
@@ -1164,27 +1096,25 @@ pub fn parse_get_instances_health_status_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InstanceNotFound" => crate::error::GetInstancesHealthStatusError {
-            meta: generic,
-            kind: crate::error::GetInstancesHealthStatusErrorKind::InstanceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InstanceNotFound" => {
+            crate::error::GetInstancesHealthStatusError {
+                meta: generic,
+                kind: crate::error::GetInstancesHealthStatusErrorKind::InstanceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::instance_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_instance_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetInstancesHealthStatusError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::instance_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_instance_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::GetInstancesHealthStatusError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::GetInstancesHealthStatusError {
             meta: generic,
             kind: crate::error::GetInstancesHealthStatusErrorKind::InvalidInput({
@@ -1193,7 +1123,7 @@ pub fn parse_get_instances_health_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1206,27 +1136,25 @@ pub fn parse_get_instances_health_status_error(
                 tmp
             }),
         },
-        "ServiceNotFound" => crate::error::GetInstancesHealthStatusError {
-            meta: generic,
-            kind: crate::error::GetInstancesHealthStatusErrorKind::ServiceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ServiceNotFound" => {
+            crate::error::GetInstancesHealthStatusError {
+                meta: generic,
+                kind: crate::error::GetInstancesHealthStatusErrorKind::ServiceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_service_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetInstancesHealthStatusError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::service_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::GetInstancesHealthStatusError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::GetInstancesHealthStatusError::generic(generic),
     })
 }
@@ -1242,7 +1170,7 @@ pub fn parse_get_instances_health_status_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_instances_health_status_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_instances_health_status(
+        output = crate::json_deser::deser_operation_crate_operation_get_instances_health_status(
             response.body().as_ref(),
             output,
         )
@@ -1272,7 +1200,7 @@ pub fn parse_get_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1285,27 +1213,25 @@ pub fn parse_get_namespace_error(
                 tmp
             }),
         },
-        "NamespaceNotFound" => crate::error::GetNamespaceError {
-            meta: generic,
-            kind: crate::error::GetNamespaceErrorKind::NamespaceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "NamespaceNotFound" => {
+            crate::error::GetNamespaceError {
+                meta: generic,
+                kind: crate::error::GetNamespaceErrorKind::NamespaceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::namespace_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_namespace_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetNamespaceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::namespace_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_namespace_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::GetNamespaceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::GetNamespaceError::generic(generic),
     })
 }
@@ -1318,8 +1244,11 @@ pub fn parse_get_namespace_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_namespace_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_namespace(response.body().as_ref(), output)
-            .map_err(crate::error::GetNamespaceError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_get_namespace(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetNamespaceError::unhandled)?;
         output.build()
     })
 }
@@ -1345,7 +1274,7 @@ pub fn parse_get_operation_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1358,27 +1287,25 @@ pub fn parse_get_operation_error(
                 tmp
             }),
         },
-        "OperationNotFound" => crate::error::GetOperationError {
-            meta: generic,
-            kind: crate::error::GetOperationErrorKind::OperationNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "OperationNotFound" => {
+            crate::error::GetOperationError {
+                meta: generic,
+                kind: crate::error::GetOperationErrorKind::OperationNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::operation_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_operation_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetOperationError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::operation_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_operation_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::GetOperationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::GetOperationError::generic(generic),
     })
 }
@@ -1391,8 +1318,11 @@ pub fn parse_get_operation_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_operation_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_operation(response.body().as_ref(), output)
-            .map_err(crate::error::GetOperationError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_get_operation(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetOperationError::unhandled)?;
         output.build()
     })
 }
@@ -1418,7 +1348,7 @@ pub fn parse_get_service_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1431,27 +1361,25 @@ pub fn parse_get_service_error(
                 tmp
             }),
         },
-        "ServiceNotFound" => crate::error::GetServiceError {
-            meta: generic,
-            kind: crate::error::GetServiceErrorKind::ServiceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ServiceNotFound" => {
+            crate::error::GetServiceError {
+                meta: generic,
+                kind: crate::error::GetServiceErrorKind::ServiceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_service_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetServiceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::service_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::GetServiceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::GetServiceError::generic(generic),
     })
 }
@@ -1464,8 +1392,11 @@ pub fn parse_get_service_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_service_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_service(response.body().as_ref(), output)
-            .map_err(crate::error::GetServiceError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_get_service(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetServiceError::unhandled)?;
         output.build()
     })
 }
@@ -1491,7 +1422,7 @@ pub fn parse_list_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1504,27 +1435,25 @@ pub fn parse_list_instances_error(
                 tmp
             }),
         },
-        "ServiceNotFound" => crate::error::ListInstancesError {
-            meta: generic,
-            kind: crate::error::ListInstancesErrorKind::ServiceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ServiceNotFound" => {
+            crate::error::ListInstancesError {
+                meta: generic,
+                kind: crate::error::ListInstancesErrorKind::ServiceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_service_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListInstancesError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::service_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::ListInstancesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::ListInstancesError::generic(generic),
     })
 }
@@ -1537,9 +1466,11 @@ pub fn parse_list_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_instances_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_instances(response.body().as_ref(), output)
-                .map_err(crate::error::ListInstancesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_instances(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListInstancesError::unhandled)?;
         output.build()
     })
 }
@@ -1565,7 +1496,7 @@ pub fn parse_list_namespaces_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1590,9 +1521,11 @@ pub fn parse_list_namespaces_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_namespaces_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_namespaces(response.body().as_ref(), output)
-                .map_err(crate::error::ListNamespacesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_namespaces(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListNamespacesError::unhandled)?;
         output.build()
     })
 }
@@ -1618,7 +1551,7 @@ pub fn parse_list_operations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1643,9 +1576,11 @@ pub fn parse_list_operations_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_operations_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_operations(response.body().as_ref(), output)
-                .map_err(crate::error::ListOperationsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_operations(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListOperationsError::unhandled)?;
         output.build()
     })
 }
@@ -1671,7 +1606,7 @@ pub fn parse_list_services_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1696,8 +1631,11 @@ pub fn parse_list_services_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_services_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_services(response.body().as_ref(), output)
-            .map_err(crate::error::ListServicesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_services(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListServicesError::unhandled)?;
         output.build()
     })
 }
@@ -1726,7 +1664,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1739,26 +1677,23 @@ pub fn parse_list_tags_for_resource_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ListTagsForResourceError {
-                meta: generic,
-                kind: crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::ListTagsForResourceError {
+            meta: generic,
+            kind: crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ListTagsForResourceError::generic(generic),
     })
 }
@@ -1774,7 +1709,7 @@ pub fn parse_list_tags_for_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_for_resource_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_tags_for_resource(
+        output = crate::json_deser::deser_operation_crate_operation_list_tags_for_resource(
             response.body().as_ref(),
             output,
         )
@@ -1797,27 +1732,25 @@ pub fn parse_register_instance_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateRequest" => crate::error::RegisterInstanceError {
-            meta: generic,
-            kind: crate::error::RegisterInstanceErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::RegisterInstanceError {
+                meta: generic,
+                kind: crate::error::RegisterInstanceErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RegisterInstanceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterInstanceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::RegisterInstanceError {
             meta: generic,
             kind: crate::error::RegisterInstanceErrorKind::InvalidInput({
@@ -1826,7 +1759,7 @@ pub fn parse_register_instance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1847,11 +1780,12 @@ pub fn parse_register_instance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_in_usejson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RegisterInstanceError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_resource_in_usejson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::RegisterInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1868,11 +1802,7 @@ pub fn parse_register_instance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_limit_exceeded::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_limit_exceededjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RegisterInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1881,27 +1811,25 @@ pub fn parse_register_instance_error(
                 tmp
             }),
         },
-        "ServiceNotFound" => crate::error::RegisterInstanceError {
-            meta: generic,
-            kind: crate::error::RegisterInstanceErrorKind::ServiceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ServiceNotFound" => {
+            crate::error::RegisterInstanceError {
+                meta: generic,
+                kind: crate::error::RegisterInstanceErrorKind::ServiceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_service_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RegisterInstanceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::service_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterInstanceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::RegisterInstanceError::generic(generic),
     })
 }
@@ -1915,9 +1843,11 @@ pub fn parse_register_instance_response(
         #[allow(unused_mut)]
         let mut output = crate::output::register_instance_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_register_instance(response.body().as_ref(), output)
-                .map_err(crate::error::RegisterInstanceError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_register_instance(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RegisterInstanceError::unhandled)?;
         output.build()
     })
 }
@@ -1943,7 +1873,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1956,26 +1886,23 @@ pub fn parse_tag_resource_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::TagResourceError {
-                meta: generic,
-                kind: crate::error::TagResourceErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::TagResourceError {
+            meta: generic,
+            kind: crate::error::TagResourceErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TooManyTagsException" => crate::error::TagResourceError {
             meta: generic,
             kind: crate::error::TagResourceErrorKind::TooManyTagsException({
@@ -1984,11 +1911,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_too_many_tags_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2034,7 +1957,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2047,26 +1970,23 @@ pub fn parse_untag_resource_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::UntagResourceError {
-                meta: generic,
-                kind: crate::error::UntagResourceErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::UntagResourceError {
+            meta: generic,
+            kind: crate::error::UntagResourceErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::UntagResourceError::generic(generic),
     })
 }
@@ -2099,27 +2019,25 @@ pub fn parse_update_http_namespace_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateRequest" => crate::error::UpdateHttpNamespaceError {
-            meta: generic,
-            kind: crate::error::UpdateHttpNamespaceErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::UpdateHttpNamespaceError {
+                meta: generic,
+                kind: crate::error::UpdateHttpNamespaceErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateHttpNamespaceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateHttpNamespaceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::UpdateHttpNamespaceError {
             meta: generic,
             kind: crate::error::UpdateHttpNamespaceErrorKind::InvalidInput({
@@ -2128,7 +2046,7 @@ pub fn parse_update_http_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2141,27 +2059,25 @@ pub fn parse_update_http_namespace_error(
                 tmp
             }),
         },
-        "NamespaceNotFound" => crate::error::UpdateHttpNamespaceError {
-            meta: generic,
-            kind: crate::error::UpdateHttpNamespaceErrorKind::NamespaceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "NamespaceNotFound" => {
+            crate::error::UpdateHttpNamespaceError {
+                meta: generic,
+                kind: crate::error::UpdateHttpNamespaceErrorKind::NamespaceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::namespace_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_namespace_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateHttpNamespaceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::namespace_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_namespace_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateHttpNamespaceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceInUse" => crate::error::UpdateHttpNamespaceError {
             meta: generic,
             kind: crate::error::UpdateHttpNamespaceErrorKind::ResourceInUse({
@@ -2170,11 +2086,12 @@ pub fn parse_update_http_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_in_usejson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateHttpNamespaceError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_resource_in_usejson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::UpdateHttpNamespaceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2198,7 +2115,7 @@ pub fn parse_update_http_namespace_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_http_namespace_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_http_namespace(
+        output = crate::json_deser::deser_operation_crate_operation_update_http_namespace(
             response.body().as_ref(),
             output,
         )
@@ -2233,11 +2150,7 @@ pub fn parse_update_instance_custom_health_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::custom_health_not_found::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_custom_health_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateInstanceCustomHealthStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_custom_health_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateInstanceCustomHealthStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2246,27 +2159,25 @@ pub fn parse_update_instance_custom_health_status_error(
                 tmp
             }),
         },
-        "InstanceNotFound" => crate::error::UpdateInstanceCustomHealthStatusError {
-            meta: generic,
-            kind: crate::error::UpdateInstanceCustomHealthStatusErrorKind::InstanceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InstanceNotFound" => {
+            crate::error::UpdateInstanceCustomHealthStatusError {
+                meta: generic,
+                kind: crate::error::UpdateInstanceCustomHealthStatusErrorKind::InstanceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::instance_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_instance_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateInstanceCustomHealthStatusError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::instance_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_instance_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateInstanceCustomHealthStatusError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::UpdateInstanceCustomHealthStatusError {
             meta: generic,
             kind: crate::error::UpdateInstanceCustomHealthStatusErrorKind::InvalidInput({
@@ -2275,7 +2186,7 @@ pub fn parse_update_instance_custom_health_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2288,27 +2199,25 @@ pub fn parse_update_instance_custom_health_status_error(
                 tmp
             }),
         },
-        "ServiceNotFound" => crate::error::UpdateInstanceCustomHealthStatusError {
-            meta: generic,
-            kind: crate::error::UpdateInstanceCustomHealthStatusErrorKind::ServiceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ServiceNotFound" => {
+            crate::error::UpdateInstanceCustomHealthStatusError {
+                meta: generic,
+                kind: crate::error::UpdateInstanceCustomHealthStatusErrorKind::ServiceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_service_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateInstanceCustomHealthStatusError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::service_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateInstanceCustomHealthStatusError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::UpdateInstanceCustomHealthStatusError::generic(generic),
     })
 }
@@ -2349,27 +2258,25 @@ pub fn parse_update_private_dns_namespace_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateRequest" => crate::error::UpdatePrivateDnsNamespaceError {
-            meta: generic,
-            kind: crate::error::UpdatePrivateDnsNamespaceErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::UpdatePrivateDnsNamespaceError {
+                meta: generic,
+                kind: crate::error::UpdatePrivateDnsNamespaceErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdatePrivateDnsNamespaceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePrivateDnsNamespaceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::UpdatePrivateDnsNamespaceError {
             meta: generic,
             kind: crate::error::UpdatePrivateDnsNamespaceErrorKind::InvalidInput({
@@ -2378,7 +2285,7 @@ pub fn parse_update_private_dns_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2391,27 +2298,25 @@ pub fn parse_update_private_dns_namespace_error(
                 tmp
             }),
         },
-        "NamespaceNotFound" => crate::error::UpdatePrivateDnsNamespaceError {
-            meta: generic,
-            kind: crate::error::UpdatePrivateDnsNamespaceErrorKind::NamespaceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "NamespaceNotFound" => {
+            crate::error::UpdatePrivateDnsNamespaceError {
+                meta: generic,
+                kind: crate::error::UpdatePrivateDnsNamespaceErrorKind::NamespaceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::namespace_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_namespace_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdatePrivateDnsNamespaceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::namespace_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_namespace_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePrivateDnsNamespaceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceInUse" => crate::error::UpdatePrivateDnsNamespaceError {
             meta: generic,
             kind: crate::error::UpdatePrivateDnsNamespaceErrorKind::ResourceInUse({
@@ -2420,11 +2325,12 @@ pub fn parse_update_private_dns_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_in_usejson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdatePrivateDnsNamespaceError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_resource_in_usejson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::UpdatePrivateDnsNamespaceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2448,7 +2354,7 @@ pub fn parse_update_private_dns_namespace_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_private_dns_namespace_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_private_dns_namespace(
+        output = crate::json_deser::deser_operation_crate_operation_update_private_dns_namespace(
             response.body().as_ref(),
             output,
         )
@@ -2477,27 +2383,25 @@ pub fn parse_update_public_dns_namespace_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateRequest" => crate::error::UpdatePublicDnsNamespaceError {
-            meta: generic,
-            kind: crate::error::UpdatePublicDnsNamespaceErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::UpdatePublicDnsNamespaceError {
+                meta: generic,
+                kind: crate::error::UpdatePublicDnsNamespaceErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdatePublicDnsNamespaceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePublicDnsNamespaceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::UpdatePublicDnsNamespaceError {
             meta: generic,
             kind: crate::error::UpdatePublicDnsNamespaceErrorKind::InvalidInput({
@@ -2506,7 +2410,7 @@ pub fn parse_update_public_dns_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2519,27 +2423,25 @@ pub fn parse_update_public_dns_namespace_error(
                 tmp
             }),
         },
-        "NamespaceNotFound" => crate::error::UpdatePublicDnsNamespaceError {
-            meta: generic,
-            kind: crate::error::UpdatePublicDnsNamespaceErrorKind::NamespaceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "NamespaceNotFound" => {
+            crate::error::UpdatePublicDnsNamespaceError {
+                meta: generic,
+                kind: crate::error::UpdatePublicDnsNamespaceErrorKind::NamespaceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::namespace_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_namespace_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdatePublicDnsNamespaceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::namespace_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_namespace_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePublicDnsNamespaceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceInUse" => crate::error::UpdatePublicDnsNamespaceError {
             meta: generic,
             kind: crate::error::UpdatePublicDnsNamespaceErrorKind::ResourceInUse({
@@ -2548,11 +2450,12 @@ pub fn parse_update_public_dns_namespace_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_in_usejson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdatePublicDnsNamespaceError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_resource_in_usejson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::UpdatePublicDnsNamespaceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2576,7 +2479,7 @@ pub fn parse_update_public_dns_namespace_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_public_dns_namespace_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_public_dns_namespace(
+        output = crate::json_deser::deser_operation_crate_operation_update_public_dns_namespace(
             response.body().as_ref(),
             output,
         )
@@ -2598,27 +2501,25 @@ pub fn parse_update_service_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateRequest" => crate::error::UpdateServiceError {
-            meta: generic,
-            kind: crate::error::UpdateServiceErrorKind::DuplicateRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DuplicateRequest" => {
+            crate::error::UpdateServiceError {
+                meta: generic,
+                kind: crate::error::UpdateServiceErrorKind::DuplicateRequest({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_duplicate_requestjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateServiceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_requestjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidInput" => crate::error::UpdateServiceError {
             meta: generic,
             kind: crate::error::UpdateServiceErrorKind::InvalidInput({
@@ -2627,7 +2528,7 @@ pub fn parse_update_service_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_inputjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_inputjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2640,27 +2541,25 @@ pub fn parse_update_service_error(
                 tmp
             }),
         },
-        "ServiceNotFound" => crate::error::UpdateServiceError {
-            meta: generic,
-            kind: crate::error::UpdateServiceErrorKind::ServiceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ServiceNotFound" => {
+            crate::error::UpdateServiceError {
+                meta: generic,
+                kind: crate::error::UpdateServiceErrorKind::ServiceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_service_not_foundjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateServiceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::service_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::UpdateServiceError::generic(generic),
     })
 }
@@ -2673,9 +2572,11 @@ pub fn parse_update_service_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_service_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_update_service(response.body().as_ref(), output)
-                .map_err(crate::error::UpdateServiceError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_update_service(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateServiceError::unhandled)?;
         output.build()
     })
 }

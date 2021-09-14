@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_internal_error_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_error_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_error_exception::Builder,
 ) -> Result<crate::error::internal_error_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_internal_error_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_parameter_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_parameter_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_parameter_exception::Builder,
 ) -> Result<crate::error::invalid_parameter_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_invalid_parameter_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_not_authorized_exceptionjson_err(
+pub fn deser_structure_crate_error_not_authorized_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::not_authorized_exception::Builder,
 ) -> Result<crate::error::not_authorized_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_not_authorized_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_too_many_requests_exceptionjson_err(
+pub fn deser_structure_crate_error_too_many_requests_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::too_many_requests_exception::Builder,
 ) -> Result<crate::error::too_many_requests_exception::Builder, smithy_json::deserialize::Error> {
@@ -200,7 +200,7 @@ pub fn deser_structure_too_many_requests_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_user_import_in_progress_exceptionjson_err(
+pub fn deser_structure_crate_error_user_import_in_progress_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::user_import_in_progress_exception::Builder,
 ) -> Result<crate::error::user_import_in_progress_exception::Builder, smithy_json::deserialize::Error>
@@ -240,7 +240,7 @@ pub fn deser_structure_user_import_in_progress_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_user_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_user_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::user_not_found_exception::Builder,
 ) -> Result<crate::error::user_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -279,7 +279,7 @@ pub fn deser_structure_user_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_lambda_response_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_lambda_response_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_lambda_response_exception::Builder,
 ) -> Result<crate::error::invalid_lambda_response_exception::Builder, smithy_json::deserialize::Error>
@@ -319,7 +319,7 @@ pub fn deser_structure_invalid_lambda_response_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -358,7 +358,7 @@ pub fn deser_structure_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_too_many_failed_attempts_exceptionjson_err(
+pub fn deser_structure_crate_error_too_many_failed_attempts_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::too_many_failed_attempts_exception::Builder,
 ) -> Result<
@@ -400,7 +400,7 @@ pub fn deser_structure_too_many_failed_attempts_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unexpected_lambda_exceptionjson_err(
+pub fn deser_structure_crate_error_unexpected_lambda_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unexpected_lambda_exception::Builder,
 ) -> Result<crate::error::unexpected_lambda_exception::Builder, smithy_json::deserialize::Error> {
@@ -439,7 +439,7 @@ pub fn deser_structure_unexpected_lambda_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_user_lambda_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_user_lambda_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::user_lambda_validation_exception::Builder,
 ) -> Result<crate::error::user_lambda_validation_exception::Builder, smithy_json::deserialize::Error>
@@ -479,7 +479,7 @@ pub fn deser_structure_user_lambda_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_code_delivery_failure_exceptionjson_err(
+pub fn deser_structure_crate_error_code_delivery_failure_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::code_delivery_failure_exception::Builder,
 ) -> Result<crate::error::code_delivery_failure_exception::Builder, smithy_json::deserialize::Error>
@@ -519,7 +519,7 @@ pub fn deser_structure_code_delivery_failure_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_password_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_password_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_password_exception::Builder,
 ) -> Result<crate::error::invalid_password_exception::Builder, smithy_json::deserialize::Error> {
@@ -558,7 +558,7 @@ pub fn deser_structure_invalid_password_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_sms_role_access_policy_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_sms_role_access_policy_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_sms_role_access_policy_exception::Builder,
 ) -> Result<
@@ -600,7 +600,7 @@ pub fn deser_structure_invalid_sms_role_access_policy_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_sms_role_trust_relationship_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_sms_role_trust_relationship_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_sms_role_trust_relationship_exception::Builder,
 ) -> Result<
@@ -642,7 +642,7 @@ pub fn deser_structure_invalid_sms_role_trust_relationship_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_precondition_not_met_exceptionjson_err(
+pub fn deser_structure_crate_error_precondition_not_met_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::precondition_not_met_exception::Builder,
 ) -> Result<crate::error::precondition_not_met_exception::Builder, smithy_json::deserialize::Error>
@@ -682,7 +682,7 @@ pub fn deser_structure_precondition_not_met_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unsupported_user_state_exceptionjson_err(
+pub fn deser_structure_crate_error_unsupported_user_state_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unsupported_user_state_exception::Builder,
 ) -> Result<crate::error::unsupported_user_state_exception::Builder, smithy_json::deserialize::Error>
@@ -722,7 +722,7 @@ pub fn deser_structure_unsupported_user_state_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_username_exists_exceptionjson_err(
+pub fn deser_structure_crate_error_username_exists_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::username_exists_exception::Builder,
 ) -> Result<crate::error::username_exists_exception::Builder, smithy_json::deserialize::Error> {
@@ -761,7 +761,7 @@ pub fn deser_structure_username_exists_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_admin_create_user(
+pub fn deser_operation_crate_operation_admin_create_user(
     input: &[u8],
     mut builder: crate::output::admin_create_user_output::Builder,
 ) -> Result<crate::output::admin_create_user_output::Builder, smithy_json::deserialize::Error> {
@@ -776,8 +776,9 @@ pub fn deser_operation_admin_create_user(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "User" => {
-                        builder =
-                            builder.set_user(crate::json_deser::deser_structure_user_type(tokens)?);
+                        builder = builder.set_user(
+                            crate::json_deser::deser_structure_crate_model_user_type(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -797,7 +798,7 @@ pub fn deser_operation_admin_create_user(
     Ok(builder)
 }
 
-pub fn deser_structure_alias_exists_exceptionjson_err(
+pub fn deser_structure_crate_error_alias_exists_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::alias_exists_exception::Builder,
 ) -> Result<crate::error::alias_exists_exception::Builder, smithy_json::deserialize::Error> {
@@ -836,7 +837,7 @@ pub fn deser_structure_alias_exists_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_user_pool_configuration_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_user_pool_configuration_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_user_pool_configuration_exception::Builder,
 ) -> Result<
@@ -878,7 +879,7 @@ pub fn deser_structure_invalid_user_pool_configuration_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_admin_get_device(
+pub fn deser_operation_crate_operation_admin_get_device(
     input: &[u8],
     mut builder: crate::output::admin_get_device_output::Builder,
 ) -> Result<crate::output::admin_get_device_output::Builder, smithy_json::deserialize::Error> {
@@ -893,8 +894,9 @@ pub fn deser_operation_admin_get_device(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Device" => {
-                        builder = builder
-                            .set_device(crate::json_deser::deser_structure_device_type(tokens)?);
+                        builder = builder.set_device(
+                            crate::json_deser::deser_structure_crate_model_device_type(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -914,7 +916,7 @@ pub fn deser_operation_admin_get_device(
     Ok(builder)
 }
 
-pub fn deser_operation_admin_get_user(
+pub fn deser_operation_crate_operation_admin_get_user(
     input: &[u8],
     mut builder: crate::output::admin_get_user_output::Builder,
 ) -> Result<crate::output::admin_get_user_output::Builder, smithy_json::deserialize::Error> {
@@ -937,7 +939,7 @@ pub fn deser_operation_admin_get_user(
                     }
                     "UserAttributes" => {
                         builder = builder.set_user_attributes(
-                            crate::json_deser::deser_list_attribute_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_attribute_list_type(tokens)?
                         );
                     }
                     "UserCreateDate" => {
@@ -973,7 +975,7 @@ pub fn deser_operation_admin_get_user(
                     }
                     "MFAOptions" => {
                         builder = builder.set_mfa_options(
-                            crate::json_deser::deser_list_mfa_option_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_mfa_option_list_type(tokens)?
                         );
                     }
                     "PreferredMfaSetting" => {
@@ -985,7 +987,7 @@ pub fn deser_operation_admin_get_user(
                     }
                     "UserMFASettingList" => {
                         builder = builder.set_user_mfa_setting_list(
-                            crate::json_deser::deser_list_user_mfa_setting_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_user_mfa_setting_list_type(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1006,7 +1008,7 @@ pub fn deser_operation_admin_get_user(
     Ok(builder)
 }
 
-pub fn deser_structure_mfa_method_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_mfa_method_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::mfa_method_not_found_exception::Builder,
 ) -> Result<crate::error::mfa_method_not_found_exception::Builder, smithy_json::deserialize::Error>
@@ -1046,7 +1048,7 @@ pub fn deser_structure_mfa_method_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_password_reset_required_exceptionjson_err(
+pub fn deser_structure_crate_error_password_reset_required_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::password_reset_required_exception::Builder,
 ) -> Result<crate::error::password_reset_required_exception::Builder, smithy_json::deserialize::Error>
@@ -1086,7 +1088,7 @@ pub fn deser_structure_password_reset_required_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_user_not_confirmed_exceptionjson_err(
+pub fn deser_structure_crate_error_user_not_confirmed_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::user_not_confirmed_exception::Builder,
 ) -> Result<crate::error::user_not_confirmed_exception::Builder, smithy_json::deserialize::Error> {
@@ -1125,7 +1127,7 @@ pub fn deser_structure_user_not_confirmed_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_admin_initiate_auth(
+pub fn deser_operation_crate_operation_admin_initiate_auth(
     input: &[u8],
     mut builder: crate::output::admin_initiate_auth_output::Builder,
 ) -> Result<crate::output::admin_initiate_auth_output::Builder, smithy_json::deserialize::Error> {
@@ -1158,12 +1160,12 @@ pub fn deser_operation_admin_initiate_auth(
                     }
                     "ChallengeParameters" => {
                         builder = builder.set_challenge_parameters(
-                            crate::json_deser::deser_map_challenge_parameters_type(tokens)?,
+                            crate::json_deser::deser_map_com_amazonaws_cognitoidentityprovider_challenge_parameters_type(tokens)?
                         );
                     }
                     "AuthenticationResult" => {
                         builder = builder.set_authentication_result(
-                            crate::json_deser::deser_structure_authentication_result_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_authentication_result_type(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1184,7 +1186,7 @@ pub fn deser_operation_admin_initiate_auth(
     Ok(builder)
 }
 
-pub fn deser_operation_admin_list_devices(
+pub fn deser_operation_crate_operation_admin_list_devices(
     input: &[u8],
     mut builder: crate::output::admin_list_devices_output::Builder,
 ) -> Result<crate::output::admin_list_devices_output::Builder, smithy_json::deserialize::Error> {
@@ -1199,8 +1201,9 @@ pub fn deser_operation_admin_list_devices(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Devices" => {
-                        builder = builder
-                            .set_devices(crate::json_deser::deser_list_device_list_type(tokens)?);
+                        builder = builder.set_devices(
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_device_list_type(tokens)?
+                        );
                     }
                     "PaginationToken" => {
                         builder = builder.set_pagination_token(
@@ -1227,7 +1230,7 @@ pub fn deser_operation_admin_list_devices(
     Ok(builder)
 }
 
-pub fn deser_operation_admin_list_groups_for_user(
+pub fn deser_operation_crate_operation_admin_list_groups_for_user(
     input: &[u8],
     mut builder: crate::output::admin_list_groups_for_user_output::Builder,
 ) -> Result<
@@ -1245,8 +1248,9 @@ pub fn deser_operation_admin_list_groups_for_user(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Groups" => {
-                        builder = builder
-                            .set_groups(crate::json_deser::deser_list_group_list_type(tokens)?);
+                        builder = builder.set_groups(
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_group_list_type(tokens)?
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -1273,7 +1277,7 @@ pub fn deser_operation_admin_list_groups_for_user(
     Ok(builder)
 }
 
-pub fn deser_structure_user_pool_add_on_not_enabled_exceptionjson_err(
+pub fn deser_structure_crate_error_user_pool_add_on_not_enabled_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::user_pool_add_on_not_enabled_exception::Builder,
 ) -> Result<
@@ -1315,7 +1319,7 @@ pub fn deser_structure_user_pool_add_on_not_enabled_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_admin_list_user_auth_events(
+pub fn deser_operation_crate_operation_admin_list_user_auth_events(
     input: &[u8],
     mut builder: crate::output::admin_list_user_auth_events_output::Builder,
 ) -> Result<
@@ -1334,7 +1338,7 @@ pub fn deser_operation_admin_list_user_auth_events(
                 match key.to_unescaped()?.as_ref() {
                     "AuthEvents" => {
                         builder = builder.set_auth_events(
-                            crate::json_deser::deser_list_auth_events_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_auth_events_type(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1362,7 +1366,7 @@ pub fn deser_operation_admin_list_user_auth_events(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_email_role_access_policy_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_email_role_access_policy_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_email_role_access_policy_exception::Builder,
 ) -> Result<
@@ -1404,7 +1408,7 @@ pub fn deser_structure_invalid_email_role_access_policy_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_code_mismatch_exceptionjson_err(
+pub fn deser_structure_crate_error_code_mismatch_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::code_mismatch_exception::Builder,
 ) -> Result<crate::error::code_mismatch_exception::Builder, smithy_json::deserialize::Error> {
@@ -1443,7 +1447,7 @@ pub fn deser_structure_code_mismatch_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_expired_code_exceptionjson_err(
+pub fn deser_structure_crate_error_expired_code_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::expired_code_exception::Builder,
 ) -> Result<crate::error::expired_code_exception::Builder, smithy_json::deserialize::Error> {
@@ -1482,7 +1486,7 @@ pub fn deser_structure_expired_code_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_software_token_mfa_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_software_token_mfa_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::software_token_mfa_not_found_exception::Builder,
 ) -> Result<
@@ -1524,7 +1528,7 @@ pub fn deser_structure_software_token_mfa_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_admin_respond_to_auth_challenge(
+pub fn deser_operation_crate_operation_admin_respond_to_auth_challenge(
     input: &[u8],
     mut builder: crate::output::admin_respond_to_auth_challenge_output::Builder,
 ) -> Result<
@@ -1560,12 +1564,12 @@ pub fn deser_operation_admin_respond_to_auth_challenge(
                     }
                     "ChallengeParameters" => {
                         builder = builder.set_challenge_parameters(
-                            crate::json_deser::deser_map_challenge_parameters_type(tokens)?,
+                            crate::json_deser::deser_map_com_amazonaws_cognitoidentityprovider_challenge_parameters_type(tokens)?
                         );
                     }
                     "AuthenticationResult" => {
                         builder = builder.set_authentication_result(
-                            crate::json_deser::deser_structure_authentication_result_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_authentication_result_type(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1586,7 +1590,7 @@ pub fn deser_operation_admin_respond_to_auth_challenge(
     Ok(builder)
 }
 
-pub fn deser_structure_concurrent_modification_exceptionjson_err(
+pub fn deser_structure_crate_error_concurrent_modification_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::concurrent_modification_exception::Builder,
 ) -> Result<crate::error::concurrent_modification_exception::Builder, smithy_json::deserialize::Error>
@@ -1626,7 +1630,7 @@ pub fn deser_structure_concurrent_modification_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_associate_software_token(
+pub fn deser_operation_crate_operation_associate_software_token(
     input: &[u8],
     mut builder: crate::output::associate_software_token_output::Builder,
 ) -> Result<crate::output::associate_software_token_output::Builder, smithy_json::deserialize::Error>
@@ -1673,7 +1677,7 @@ pub fn deser_operation_associate_software_token(
     Ok(builder)
 }
 
-pub fn deser_operation_confirm_device(
+pub fn deser_operation_crate_operation_confirm_device(
     input: &[u8],
     mut builder: crate::output::confirm_device_output::Builder,
 ) -> Result<crate::output::confirm_device_output::Builder, smithy_json::deserialize::Error> {
@@ -1710,7 +1714,7 @@ pub fn deser_operation_confirm_device(
     Ok(builder)
 }
 
-pub fn deser_structure_group_exists_exceptionjson_err(
+pub fn deser_structure_crate_error_group_exists_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::group_exists_exception::Builder,
 ) -> Result<crate::error::group_exists_exception::Builder, smithy_json::deserialize::Error> {
@@ -1749,7 +1753,7 @@ pub fn deser_structure_group_exists_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_group(
+pub fn deser_operation_crate_operation_create_group(
     input: &[u8],
     mut builder: crate::output::create_group_output::Builder,
 ) -> Result<crate::output::create_group_output::Builder, smithy_json::deserialize::Error> {
@@ -1764,8 +1768,9 @@ pub fn deser_operation_create_group(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Group" => {
-                        builder = builder
-                            .set_group(crate::json_deser::deser_structure_group_type(tokens)?);
+                        builder = builder.set_group(
+                            crate::json_deser::deser_structure_crate_model_group_type(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1785,7 +1790,7 @@ pub fn deser_operation_create_group(
     Ok(builder)
 }
 
-pub fn deser_structure_duplicate_provider_exceptionjson_err(
+pub fn deser_structure_crate_error_duplicate_provider_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::duplicate_provider_exception::Builder,
 ) -> Result<crate::error::duplicate_provider_exception::Builder, smithy_json::deserialize::Error> {
@@ -1824,7 +1829,7 @@ pub fn deser_structure_duplicate_provider_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_identity_provider(
+pub fn deser_operation_crate_operation_create_identity_provider(
     input: &[u8],
     mut builder: crate::output::create_identity_provider_output::Builder,
 ) -> Result<crate::output::create_identity_provider_output::Builder, smithy_json::deserialize::Error>
@@ -1841,7 +1846,9 @@ pub fn deser_operation_create_identity_provider(
                 match key.to_unescaped()?.as_ref() {
                     "IdentityProvider" => {
                         builder = builder.set_identity_provider(
-                            crate::json_deser::deser_structure_identity_provider_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_identity_provider_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1862,7 +1869,7 @@ pub fn deser_operation_create_identity_provider(
     Ok(builder)
 }
 
-pub fn deser_operation_create_resource_server(
+pub fn deser_operation_crate_operation_create_resource_server(
     input: &[u8],
     mut builder: crate::output::create_resource_server_output::Builder,
 ) -> Result<crate::output::create_resource_server_output::Builder, smithy_json::deserialize::Error>
@@ -1879,7 +1886,9 @@ pub fn deser_operation_create_resource_server(
                 match key.to_unescaped()?.as_ref() {
                     "ResourceServer" => {
                         builder = builder.set_resource_server(
-                            crate::json_deser::deser_structure_resource_server_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resource_server_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1900,7 +1909,7 @@ pub fn deser_operation_create_resource_server(
     Ok(builder)
 }
 
-pub fn deser_operation_create_user_import_job(
+pub fn deser_operation_crate_operation_create_user_import_job(
     input: &[u8],
     mut builder: crate::output::create_user_import_job_output::Builder,
 ) -> Result<crate::output::create_user_import_job_output::Builder, smithy_json::deserialize::Error>
@@ -1917,7 +1926,9 @@ pub fn deser_operation_create_user_import_job(
                 match key.to_unescaped()?.as_ref() {
                     "UserImportJob" => {
                         builder = builder.set_user_import_job(
-                            crate::json_deser::deser_structure_user_import_job_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_user_import_job_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1938,7 +1949,7 @@ pub fn deser_operation_create_user_import_job(
     Ok(builder)
 }
 
-pub fn deser_structure_user_pool_tagging_exceptionjson_err(
+pub fn deser_structure_crate_error_user_pool_tagging_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::user_pool_tagging_exception::Builder,
 ) -> Result<crate::error::user_pool_tagging_exception::Builder, smithy_json::deserialize::Error> {
@@ -1977,7 +1988,7 @@ pub fn deser_structure_user_pool_tagging_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_user_pool(
+pub fn deser_operation_crate_operation_create_user_pool(
     input: &[u8],
     mut builder: crate::output::create_user_pool_output::Builder,
 ) -> Result<crate::output::create_user_pool_output::Builder, smithy_json::deserialize::Error> {
@@ -1993,7 +2004,7 @@ pub fn deser_operation_create_user_pool(
                 match key.to_unescaped()?.as_ref() {
                     "UserPool" => {
                         builder = builder.set_user_pool(
-                            crate::json_deser::deser_structure_user_pool_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_user_pool_type(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2014,7 +2025,7 @@ pub fn deser_operation_create_user_pool(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_o_auth_flow_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_o_auth_flow_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_o_auth_flow_exception::Builder,
 ) -> Result<crate::error::invalid_o_auth_flow_exception::Builder, smithy_json::deserialize::Error> {
@@ -2053,7 +2064,7 @@ pub fn deser_structure_invalid_o_auth_flow_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_scope_does_not_exist_exceptionjson_err(
+pub fn deser_structure_crate_error_scope_does_not_exist_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::scope_does_not_exist_exception::Builder,
 ) -> Result<crate::error::scope_does_not_exist_exception::Builder, smithy_json::deserialize::Error>
@@ -2093,7 +2104,7 @@ pub fn deser_structure_scope_does_not_exist_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_user_pool_client(
+pub fn deser_operation_crate_operation_create_user_pool_client(
     input: &[u8],
     mut builder: crate::output::create_user_pool_client_output::Builder,
 ) -> Result<crate::output::create_user_pool_client_output::Builder, smithy_json::deserialize::Error>
@@ -2110,7 +2121,9 @@ pub fn deser_operation_create_user_pool_client(
                 match key.to_unescaped()?.as_ref() {
                     "UserPoolClient" => {
                         builder = builder.set_user_pool_client(
-                            crate::json_deser::deser_structure_user_pool_client_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_user_pool_client_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2131,7 +2144,7 @@ pub fn deser_operation_create_user_pool_client(
     Ok(builder)
 }
 
-pub fn deser_operation_create_user_pool_domain(
+pub fn deser_operation_crate_operation_create_user_pool_domain(
     input: &[u8],
     mut builder: crate::output::create_user_pool_domain_output::Builder,
 ) -> Result<crate::output::create_user_pool_domain_output::Builder, smithy_json::deserialize::Error>
@@ -2171,7 +2184,7 @@ pub fn deser_operation_create_user_pool_domain(
     Ok(builder)
 }
 
-pub fn deser_structure_unsupported_identity_provider_exceptionjson_err(
+pub fn deser_structure_crate_error_unsupported_identity_provider_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unsupported_identity_provider_exception::Builder,
 ) -> Result<
@@ -2213,7 +2226,7 @@ pub fn deser_structure_unsupported_identity_provider_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_identity_provider(
+pub fn deser_operation_crate_operation_describe_identity_provider(
     input: &[u8],
     mut builder: crate::output::describe_identity_provider_output::Builder,
 ) -> Result<
@@ -2232,7 +2245,9 @@ pub fn deser_operation_describe_identity_provider(
                 match key.to_unescaped()?.as_ref() {
                     "IdentityProvider" => {
                         builder = builder.set_identity_provider(
-                            crate::json_deser::deser_structure_identity_provider_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_identity_provider_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2253,7 +2268,7 @@ pub fn deser_operation_describe_identity_provider(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_resource_server(
+pub fn deser_operation_crate_operation_describe_resource_server(
     input: &[u8],
     mut builder: crate::output::describe_resource_server_output::Builder,
 ) -> Result<crate::output::describe_resource_server_output::Builder, smithy_json::deserialize::Error>
@@ -2270,7 +2285,9 @@ pub fn deser_operation_describe_resource_server(
                 match key.to_unescaped()?.as_ref() {
                     "ResourceServer" => {
                         builder = builder.set_resource_server(
-                            crate::json_deser::deser_structure_resource_server_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resource_server_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2291,7 +2308,7 @@ pub fn deser_operation_describe_resource_server(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_risk_configuration(
+pub fn deser_operation_crate_operation_describe_risk_configuration(
     input: &[u8],
     mut builder: crate::output::describe_risk_configuration_output::Builder,
 ) -> Result<
@@ -2310,7 +2327,9 @@ pub fn deser_operation_describe_risk_configuration(
                 match key.to_unescaped()?.as_ref() {
                     "RiskConfiguration" => {
                         builder = builder.set_risk_configuration(
-                            crate::json_deser::deser_structure_risk_configuration_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_risk_configuration_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2331,7 +2350,7 @@ pub fn deser_operation_describe_risk_configuration(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_user_import_job(
+pub fn deser_operation_crate_operation_describe_user_import_job(
     input: &[u8],
     mut builder: crate::output::describe_user_import_job_output::Builder,
 ) -> Result<crate::output::describe_user_import_job_output::Builder, smithy_json::deserialize::Error>
@@ -2348,7 +2367,9 @@ pub fn deser_operation_describe_user_import_job(
                 match key.to_unescaped()?.as_ref() {
                     "UserImportJob" => {
                         builder = builder.set_user_import_job(
-                            crate::json_deser::deser_structure_user_import_job_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_user_import_job_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2369,7 +2390,7 @@ pub fn deser_operation_describe_user_import_job(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_user_pool(
+pub fn deser_operation_crate_operation_describe_user_pool(
     input: &[u8],
     mut builder: crate::output::describe_user_pool_output::Builder,
 ) -> Result<crate::output::describe_user_pool_output::Builder, smithy_json::deserialize::Error> {
@@ -2385,7 +2406,7 @@ pub fn deser_operation_describe_user_pool(
                 match key.to_unescaped()?.as_ref() {
                     "UserPool" => {
                         builder = builder.set_user_pool(
-                            crate::json_deser::deser_structure_user_pool_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_user_pool_type(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2406,7 +2427,7 @@ pub fn deser_operation_describe_user_pool(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_user_pool_client(
+pub fn deser_operation_crate_operation_describe_user_pool_client(
     input: &[u8],
     mut builder: crate::output::describe_user_pool_client_output::Builder,
 ) -> Result<crate::output::describe_user_pool_client_output::Builder, smithy_json::deserialize::Error>
@@ -2423,7 +2444,9 @@ pub fn deser_operation_describe_user_pool_client(
                 match key.to_unescaped()?.as_ref() {
                     "UserPoolClient" => {
                         builder = builder.set_user_pool_client(
-                            crate::json_deser::deser_structure_user_pool_client_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_user_pool_client_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2444,7 +2467,7 @@ pub fn deser_operation_describe_user_pool_client(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_user_pool_domain(
+pub fn deser_operation_crate_operation_describe_user_pool_domain(
     input: &[u8],
     mut builder: crate::output::describe_user_pool_domain_output::Builder,
 ) -> Result<crate::output::describe_user_pool_domain_output::Builder, smithy_json::deserialize::Error>
@@ -2461,7 +2484,9 @@ pub fn deser_operation_describe_user_pool_domain(
                 match key.to_unescaped()?.as_ref() {
                     "DomainDescription" => {
                         builder = builder.set_domain_description(
-                            crate::json_deser::deser_structure_domain_description_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_domain_description_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2482,7 +2507,7 @@ pub fn deser_operation_describe_user_pool_domain(
     Ok(builder)
 }
 
-pub fn deser_operation_forgot_password(
+pub fn deser_operation_crate_operation_forgot_password(
     input: &[u8],
     mut builder: crate::output::forgot_password_output::Builder,
 ) -> Result<crate::output::forgot_password_output::Builder, smithy_json::deserialize::Error> {
@@ -2498,7 +2523,7 @@ pub fn deser_operation_forgot_password(
                 match key.to_unescaped()?.as_ref() {
                     "CodeDeliveryDetails" => {
                         builder = builder.set_code_delivery_details(
-                            crate::json_deser::deser_structure_code_delivery_details_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_code_delivery_details_type(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2519,7 +2544,7 @@ pub fn deser_operation_forgot_password(
     Ok(builder)
 }
 
-pub fn deser_operation_get_csv_header(
+pub fn deser_operation_crate_operation_get_csv_header(
     input: &[u8],
     mut builder: crate::output::get_csv_header_output::Builder,
 ) -> Result<crate::output::get_csv_header_output::Builder, smithy_json::deserialize::Error> {
@@ -2542,7 +2567,7 @@ pub fn deser_operation_get_csv_header(
                     }
                     "CSVHeader" => {
                         builder = builder.set_csv_header(
-                            crate::json_deser::deser_list_list_of_string_types(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_list_of_string_types(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2563,7 +2588,7 @@ pub fn deser_operation_get_csv_header(
     Ok(builder)
 }
 
-pub fn deser_operation_get_device(
+pub fn deser_operation_crate_operation_get_device(
     input: &[u8],
     mut builder: crate::output::get_device_output::Builder,
 ) -> Result<crate::output::get_device_output::Builder, smithy_json::deserialize::Error> {
@@ -2578,8 +2603,9 @@ pub fn deser_operation_get_device(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Device" => {
-                        builder = builder
-                            .set_device(crate::json_deser::deser_structure_device_type(tokens)?);
+                        builder = builder.set_device(
+                            crate::json_deser::deser_structure_crate_model_device_type(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -2599,7 +2625,7 @@ pub fn deser_operation_get_device(
     Ok(builder)
 }
 
-pub fn deser_operation_get_group(
+pub fn deser_operation_crate_operation_get_group(
     input: &[u8],
     mut builder: crate::output::get_group_output::Builder,
 ) -> Result<crate::output::get_group_output::Builder, smithy_json::deserialize::Error> {
@@ -2614,8 +2640,9 @@ pub fn deser_operation_get_group(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Group" => {
-                        builder = builder
-                            .set_group(crate::json_deser::deser_structure_group_type(tokens)?);
+                        builder = builder.set_group(
+                            crate::json_deser::deser_structure_crate_model_group_type(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -2635,7 +2662,7 @@ pub fn deser_operation_get_group(
     Ok(builder)
 }
 
-pub fn deser_operation_get_identity_provider_by_identifier(
+pub fn deser_operation_crate_operation_get_identity_provider_by_identifier(
     input: &[u8],
     mut builder: crate::output::get_identity_provider_by_identifier_output::Builder,
 ) -> Result<
@@ -2654,7 +2681,9 @@ pub fn deser_operation_get_identity_provider_by_identifier(
                 match key.to_unescaped()?.as_ref() {
                     "IdentityProvider" => {
                         builder = builder.set_identity_provider(
-                            crate::json_deser::deser_structure_identity_provider_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_identity_provider_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2675,7 +2704,7 @@ pub fn deser_operation_get_identity_provider_by_identifier(
     Ok(builder)
 }
 
-pub fn deser_operation_get_signing_certificate(
+pub fn deser_operation_crate_operation_get_signing_certificate(
     input: &[u8],
     mut builder: crate::output::get_signing_certificate_output::Builder,
 ) -> Result<crate::output::get_signing_certificate_output::Builder, smithy_json::deserialize::Error>
@@ -2715,7 +2744,7 @@ pub fn deser_operation_get_signing_certificate(
     Ok(builder)
 }
 
-pub fn deser_operation_get_ui_customization(
+pub fn deser_operation_crate_operation_get_ui_customization(
     input: &[u8],
     mut builder: crate::output::get_ui_customization_output::Builder,
 ) -> Result<crate::output::get_ui_customization_output::Builder, smithy_json::deserialize::Error> {
@@ -2731,7 +2760,9 @@ pub fn deser_operation_get_ui_customization(
                 match key.to_unescaped()?.as_ref() {
                     "UICustomization" => {
                         builder = builder.set_ui_customization(
-                            crate::json_deser::deser_structure_ui_customization_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_ui_customization_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2752,7 +2783,7 @@ pub fn deser_operation_get_ui_customization(
     Ok(builder)
 }
 
-pub fn deser_operation_get_user(
+pub fn deser_operation_crate_operation_get_user(
     input: &[u8],
     mut builder: crate::output::get_user_output::Builder,
 ) -> Result<crate::output::get_user_output::Builder, smithy_json::deserialize::Error> {
@@ -2775,12 +2806,12 @@ pub fn deser_operation_get_user(
                     }
                     "UserAttributes" => {
                         builder = builder.set_user_attributes(
-                            crate::json_deser::deser_list_attribute_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_attribute_list_type(tokens)?
                         );
                     }
                     "MFAOptions" => {
                         builder = builder.set_mfa_options(
-                            crate::json_deser::deser_list_mfa_option_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_mfa_option_list_type(tokens)?
                         );
                     }
                     "PreferredMfaSetting" => {
@@ -2792,7 +2823,7 @@ pub fn deser_operation_get_user(
                     }
                     "UserMFASettingList" => {
                         builder = builder.set_user_mfa_setting_list(
-                            crate::json_deser::deser_list_user_mfa_setting_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_user_mfa_setting_list_type(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2813,7 +2844,7 @@ pub fn deser_operation_get_user(
     Ok(builder)
 }
 
-pub fn deser_operation_get_user_attribute_verification_code(
+pub fn deser_operation_crate_operation_get_user_attribute_verification_code(
     input: &[u8],
     mut builder: crate::output::get_user_attribute_verification_code_output::Builder,
 ) -> Result<
@@ -2832,7 +2863,7 @@ pub fn deser_operation_get_user_attribute_verification_code(
                 match key.to_unescaped()?.as_ref() {
                     "CodeDeliveryDetails" => {
                         builder = builder.set_code_delivery_details(
-                            crate::json_deser::deser_structure_code_delivery_details_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_code_delivery_details_type(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2853,7 +2884,7 @@ pub fn deser_operation_get_user_attribute_verification_code(
     Ok(builder)
 }
 
-pub fn deser_operation_get_user_pool_mfa_config(
+pub fn deser_operation_crate_operation_get_user_pool_mfa_config(
     input: &[u8],
     mut builder: crate::output::get_user_pool_mfa_config_output::Builder,
 ) -> Result<crate::output::get_user_pool_mfa_config_output::Builder, smithy_json::deserialize::Error>
@@ -2870,14 +2901,14 @@ pub fn deser_operation_get_user_pool_mfa_config(
                 match key.to_unescaped()?.as_ref() {
                     "SmsMfaConfiguration" => {
                         builder = builder.set_sms_mfa_configuration(
-                            crate::json_deser::deser_structure_sms_mfa_config_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_sms_mfa_config_type(
+                                tokens,
+                            )?,
                         );
                     }
                     "SoftwareTokenMfaConfiguration" => {
                         builder = builder.set_software_token_mfa_configuration(
-                            crate::json_deser::deser_structure_software_token_mfa_config_type(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_software_token_mfa_config_type(tokens)?
                         );
                     }
                     "MfaConfiguration" => {
@@ -2908,7 +2939,7 @@ pub fn deser_operation_get_user_pool_mfa_config(
     Ok(builder)
 }
 
-pub fn deser_operation_initiate_auth(
+pub fn deser_operation_crate_operation_initiate_auth(
     input: &[u8],
     mut builder: crate::output::initiate_auth_output::Builder,
 ) -> Result<crate::output::initiate_auth_output::Builder, smithy_json::deserialize::Error> {
@@ -2941,12 +2972,12 @@ pub fn deser_operation_initiate_auth(
                     }
                     "ChallengeParameters" => {
                         builder = builder.set_challenge_parameters(
-                            crate::json_deser::deser_map_challenge_parameters_type(tokens)?,
+                            crate::json_deser::deser_map_com_amazonaws_cognitoidentityprovider_challenge_parameters_type(tokens)?
                         );
                     }
                     "AuthenticationResult" => {
                         builder = builder.set_authentication_result(
-                            crate::json_deser::deser_structure_authentication_result_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_authentication_result_type(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2967,7 +2998,7 @@ pub fn deser_operation_initiate_auth(
     Ok(builder)
 }
 
-pub fn deser_operation_list_devices(
+pub fn deser_operation_crate_operation_list_devices(
     input: &[u8],
     mut builder: crate::output::list_devices_output::Builder,
 ) -> Result<crate::output::list_devices_output::Builder, smithy_json::deserialize::Error> {
@@ -2982,8 +3013,9 @@ pub fn deser_operation_list_devices(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Devices" => {
-                        builder = builder
-                            .set_devices(crate::json_deser::deser_list_device_list_type(tokens)?);
+                        builder = builder.set_devices(
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_device_list_type(tokens)?
+                        );
                     }
                     "PaginationToken" => {
                         builder = builder.set_pagination_token(
@@ -3010,7 +3042,7 @@ pub fn deser_operation_list_devices(
     Ok(builder)
 }
 
-pub fn deser_operation_list_groups(
+pub fn deser_operation_crate_operation_list_groups(
     input: &[u8],
     mut builder: crate::output::list_groups_output::Builder,
 ) -> Result<crate::output::list_groups_output::Builder, smithy_json::deserialize::Error> {
@@ -3025,8 +3057,9 @@ pub fn deser_operation_list_groups(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Groups" => {
-                        builder = builder
-                            .set_groups(crate::json_deser::deser_list_group_list_type(tokens)?);
+                        builder = builder.set_groups(
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_group_list_type(tokens)?
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -3053,7 +3086,7 @@ pub fn deser_operation_list_groups(
     Ok(builder)
 }
 
-pub fn deser_operation_list_identity_providers(
+pub fn deser_operation_crate_operation_list_identity_providers(
     input: &[u8],
     mut builder: crate::output::list_identity_providers_output::Builder,
 ) -> Result<crate::output::list_identity_providers_output::Builder, smithy_json::deserialize::Error>
@@ -3070,7 +3103,7 @@ pub fn deser_operation_list_identity_providers(
                 match key.to_unescaped()?.as_ref() {
                     "Providers" => {
                         builder = builder.set_providers(
-                            crate::json_deser::deser_list_providers_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_providers_list_type(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -3098,7 +3131,7 @@ pub fn deser_operation_list_identity_providers(
     Ok(builder)
 }
 
-pub fn deser_operation_list_resource_servers(
+pub fn deser_operation_crate_operation_list_resource_servers(
     input: &[u8],
     mut builder: crate::output::list_resource_servers_output::Builder,
 ) -> Result<crate::output::list_resource_servers_output::Builder, smithy_json::deserialize::Error> {
@@ -3114,7 +3147,7 @@ pub fn deser_operation_list_resource_servers(
                 match key.to_unescaped()?.as_ref() {
                     "ResourceServers" => {
                         builder = builder.set_resource_servers(
-                            crate::json_deser::deser_list_resource_servers_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_resource_servers_list_type(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -3142,7 +3175,7 @@ pub fn deser_operation_list_resource_servers(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -3158,8 +3191,9 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Tags" => {
-                        builder = builder
-                            .set_tags(crate::json_deser::deser_map_user_pool_tags_type(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_cognitoidentityprovider_user_pool_tags_type(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -3179,7 +3213,7 @@ pub fn deser_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_list_user_import_jobs(
+pub fn deser_operation_crate_operation_list_user_import_jobs(
     input: &[u8],
     mut builder: crate::output::list_user_import_jobs_output::Builder,
 ) -> Result<crate::output::list_user_import_jobs_output::Builder, smithy_json::deserialize::Error> {
@@ -3195,7 +3229,7 @@ pub fn deser_operation_list_user_import_jobs(
                 match key.to_unescaped()?.as_ref() {
                     "UserImportJobs" => {
                         builder = builder.set_user_import_jobs(
-                            crate::json_deser::deser_list_user_import_jobs_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_user_import_jobs_list_type(tokens)?
                         );
                     }
                     "PaginationToken" => {
@@ -3223,7 +3257,7 @@ pub fn deser_operation_list_user_import_jobs(
     Ok(builder)
 }
 
-pub fn deser_operation_list_user_pool_clients(
+pub fn deser_operation_crate_operation_list_user_pool_clients(
     input: &[u8],
     mut builder: crate::output::list_user_pool_clients_output::Builder,
 ) -> Result<crate::output::list_user_pool_clients_output::Builder, smithy_json::deserialize::Error>
@@ -3240,7 +3274,7 @@ pub fn deser_operation_list_user_pool_clients(
                 match key.to_unescaped()?.as_ref() {
                     "UserPoolClients" => {
                         builder = builder.set_user_pool_clients(
-                            crate::json_deser::deser_list_user_pool_client_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_user_pool_client_list_type(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -3268,7 +3302,7 @@ pub fn deser_operation_list_user_pool_clients(
     Ok(builder)
 }
 
-pub fn deser_operation_list_user_pools(
+pub fn deser_operation_crate_operation_list_user_pools(
     input: &[u8],
     mut builder: crate::output::list_user_pools_output::Builder,
 ) -> Result<crate::output::list_user_pools_output::Builder, smithy_json::deserialize::Error> {
@@ -3284,7 +3318,7 @@ pub fn deser_operation_list_user_pools(
                 match key.to_unescaped()?.as_ref() {
                     "UserPools" => {
                         builder = builder.set_user_pools(
-                            crate::json_deser::deser_list_user_pool_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_user_pool_list_type(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -3312,7 +3346,7 @@ pub fn deser_operation_list_user_pools(
     Ok(builder)
 }
 
-pub fn deser_operation_list_users(
+pub fn deser_operation_crate_operation_list_users(
     input: &[u8],
     mut builder: crate::output::list_users_output::Builder,
 ) -> Result<crate::output::list_users_output::Builder, smithy_json::deserialize::Error> {
@@ -3327,8 +3361,9 @@ pub fn deser_operation_list_users(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Users" => {
-                        builder = builder
-                            .set_users(crate::json_deser::deser_list_users_list_type(tokens)?);
+                        builder = builder.set_users(
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_users_list_type(tokens)?
+                        );
                     }
                     "PaginationToken" => {
                         builder = builder.set_pagination_token(
@@ -3355,7 +3390,7 @@ pub fn deser_operation_list_users(
     Ok(builder)
 }
 
-pub fn deser_operation_list_users_in_group(
+pub fn deser_operation_crate_operation_list_users_in_group(
     input: &[u8],
     mut builder: crate::output::list_users_in_group_output::Builder,
 ) -> Result<crate::output::list_users_in_group_output::Builder, smithy_json::deserialize::Error> {
@@ -3370,8 +3405,9 @@ pub fn deser_operation_list_users_in_group(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Users" => {
-                        builder = builder
-                            .set_users(crate::json_deser::deser_list_users_list_type(tokens)?);
+                        builder = builder.set_users(
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_users_list_type(tokens)?
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -3398,7 +3434,7 @@ pub fn deser_operation_list_users_in_group(
     Ok(builder)
 }
 
-pub fn deser_operation_resend_confirmation_code(
+pub fn deser_operation_crate_operation_resend_confirmation_code(
     input: &[u8],
     mut builder: crate::output::resend_confirmation_code_output::Builder,
 ) -> Result<crate::output::resend_confirmation_code_output::Builder, smithy_json::deserialize::Error>
@@ -3415,7 +3451,7 @@ pub fn deser_operation_resend_confirmation_code(
                 match key.to_unescaped()?.as_ref() {
                     "CodeDeliveryDetails" => {
                         builder = builder.set_code_delivery_details(
-                            crate::json_deser::deser_structure_code_delivery_details_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_code_delivery_details_type(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3436,7 +3472,7 @@ pub fn deser_operation_resend_confirmation_code(
     Ok(builder)
 }
 
-pub fn deser_operation_respond_to_auth_challenge(
+pub fn deser_operation_crate_operation_respond_to_auth_challenge(
     input: &[u8],
     mut builder: crate::output::respond_to_auth_challenge_output::Builder,
 ) -> Result<crate::output::respond_to_auth_challenge_output::Builder, smithy_json::deserialize::Error>
@@ -3470,12 +3506,12 @@ pub fn deser_operation_respond_to_auth_challenge(
                     }
                     "ChallengeParameters" => {
                         builder = builder.set_challenge_parameters(
-                            crate::json_deser::deser_map_challenge_parameters_type(tokens)?,
+                            crate::json_deser::deser_map_com_amazonaws_cognitoidentityprovider_challenge_parameters_type(tokens)?
                         );
                     }
                     "AuthenticationResult" => {
                         builder = builder.set_authentication_result(
-                            crate::json_deser::deser_structure_authentication_result_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_authentication_result_type(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3496,7 +3532,7 @@ pub fn deser_operation_respond_to_auth_challenge(
     Ok(builder)
 }
 
-pub fn deser_structure_unauthorized_exceptionjson_err(
+pub fn deser_structure_crate_error_unauthorized_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unauthorized_exception::Builder,
 ) -> Result<crate::error::unauthorized_exception::Builder, smithy_json::deserialize::Error> {
@@ -3535,7 +3571,7 @@ pub fn deser_structure_unauthorized_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unsupported_operation_exceptionjson_err(
+pub fn deser_structure_crate_error_unsupported_operation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unsupported_operation_exception::Builder,
 ) -> Result<crate::error::unsupported_operation_exception::Builder, smithy_json::deserialize::Error>
@@ -3575,7 +3611,7 @@ pub fn deser_structure_unsupported_operation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unsupported_token_type_exceptionjson_err(
+pub fn deser_structure_crate_error_unsupported_token_type_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unsupported_token_type_exception::Builder,
 ) -> Result<crate::error::unsupported_token_type_exception::Builder, smithy_json::deserialize::Error>
@@ -3615,7 +3651,7 @@ pub fn deser_structure_unsupported_token_type_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_set_risk_configuration(
+pub fn deser_operation_crate_operation_set_risk_configuration(
     input: &[u8],
     mut builder: crate::output::set_risk_configuration_output::Builder,
 ) -> Result<crate::output::set_risk_configuration_output::Builder, smithy_json::deserialize::Error>
@@ -3632,7 +3668,9 @@ pub fn deser_operation_set_risk_configuration(
                 match key.to_unescaped()?.as_ref() {
                     "RiskConfiguration" => {
                         builder = builder.set_risk_configuration(
-                            crate::json_deser::deser_structure_risk_configuration_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_risk_configuration_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3653,7 +3691,7 @@ pub fn deser_operation_set_risk_configuration(
     Ok(builder)
 }
 
-pub fn deser_operation_set_ui_customization(
+pub fn deser_operation_crate_operation_set_ui_customization(
     input: &[u8],
     mut builder: crate::output::set_ui_customization_output::Builder,
 ) -> Result<crate::output::set_ui_customization_output::Builder, smithy_json::deserialize::Error> {
@@ -3669,7 +3707,9 @@ pub fn deser_operation_set_ui_customization(
                 match key.to_unescaped()?.as_ref() {
                     "UICustomization" => {
                         builder = builder.set_ui_customization(
-                            crate::json_deser::deser_structure_ui_customization_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_ui_customization_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3690,7 +3730,7 @@ pub fn deser_operation_set_ui_customization(
     Ok(builder)
 }
 
-pub fn deser_operation_set_user_pool_mfa_config(
+pub fn deser_operation_crate_operation_set_user_pool_mfa_config(
     input: &[u8],
     mut builder: crate::output::set_user_pool_mfa_config_output::Builder,
 ) -> Result<crate::output::set_user_pool_mfa_config_output::Builder, smithy_json::deserialize::Error>
@@ -3707,14 +3747,14 @@ pub fn deser_operation_set_user_pool_mfa_config(
                 match key.to_unescaped()?.as_ref() {
                     "SmsMfaConfiguration" => {
                         builder = builder.set_sms_mfa_configuration(
-                            crate::json_deser::deser_structure_sms_mfa_config_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_sms_mfa_config_type(
+                                tokens,
+                            )?,
                         );
                     }
                     "SoftwareTokenMfaConfiguration" => {
                         builder = builder.set_software_token_mfa_configuration(
-                            crate::json_deser::deser_structure_software_token_mfa_config_type(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_software_token_mfa_config_type(tokens)?
                         );
                     }
                     "MfaConfiguration" => {
@@ -3745,7 +3785,7 @@ pub fn deser_operation_set_user_pool_mfa_config(
     Ok(builder)
 }
 
-pub fn deser_operation_sign_up(
+pub fn deser_operation_crate_operation_sign_up(
     input: &[u8],
     mut builder: crate::output::sign_up_output::Builder,
 ) -> Result<crate::output::sign_up_output::Builder, smithy_json::deserialize::Error> {
@@ -3766,7 +3806,7 @@ pub fn deser_operation_sign_up(
                     }
                     "CodeDeliveryDetails" => {
                         builder = builder.set_code_delivery_details(
-                            crate::json_deser::deser_structure_code_delivery_details_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_code_delivery_details_type(tokens)?
                         );
                     }
                     "UserSub" => {
@@ -3794,7 +3834,7 @@ pub fn deser_operation_sign_up(
     Ok(builder)
 }
 
-pub fn deser_operation_start_user_import_job(
+pub fn deser_operation_crate_operation_start_user_import_job(
     input: &[u8],
     mut builder: crate::output::start_user_import_job_output::Builder,
 ) -> Result<crate::output::start_user_import_job_output::Builder, smithy_json::deserialize::Error> {
@@ -3810,7 +3850,9 @@ pub fn deser_operation_start_user_import_job(
                 match key.to_unescaped()?.as_ref() {
                     "UserImportJob" => {
                         builder = builder.set_user_import_job(
-                            crate::json_deser::deser_structure_user_import_job_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_user_import_job_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3831,7 +3873,7 @@ pub fn deser_operation_start_user_import_job(
     Ok(builder)
 }
 
-pub fn deser_operation_stop_user_import_job(
+pub fn deser_operation_crate_operation_stop_user_import_job(
     input: &[u8],
     mut builder: crate::output::stop_user_import_job_output::Builder,
 ) -> Result<crate::output::stop_user_import_job_output::Builder, smithy_json::deserialize::Error> {
@@ -3847,7 +3889,9 @@ pub fn deser_operation_stop_user_import_job(
                 match key.to_unescaped()?.as_ref() {
                     "UserImportJob" => {
                         builder = builder.set_user_import_job(
-                            crate::json_deser::deser_structure_user_import_job_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_user_import_job_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3868,7 +3912,7 @@ pub fn deser_operation_stop_user_import_job(
     Ok(builder)
 }
 
-pub fn deser_operation_update_group(
+pub fn deser_operation_crate_operation_update_group(
     input: &[u8],
     mut builder: crate::output::update_group_output::Builder,
 ) -> Result<crate::output::update_group_output::Builder, smithy_json::deserialize::Error> {
@@ -3883,8 +3927,9 @@ pub fn deser_operation_update_group(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Group" => {
-                        builder = builder
-                            .set_group(crate::json_deser::deser_structure_group_type(tokens)?);
+                        builder = builder.set_group(
+                            crate::json_deser::deser_structure_crate_model_group_type(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -3904,7 +3949,7 @@ pub fn deser_operation_update_group(
     Ok(builder)
 }
 
-pub fn deser_operation_update_identity_provider(
+pub fn deser_operation_crate_operation_update_identity_provider(
     input: &[u8],
     mut builder: crate::output::update_identity_provider_output::Builder,
 ) -> Result<crate::output::update_identity_provider_output::Builder, smithy_json::deserialize::Error>
@@ -3921,7 +3966,9 @@ pub fn deser_operation_update_identity_provider(
                 match key.to_unescaped()?.as_ref() {
                     "IdentityProvider" => {
                         builder = builder.set_identity_provider(
-                            crate::json_deser::deser_structure_identity_provider_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_identity_provider_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3942,7 +3989,7 @@ pub fn deser_operation_update_identity_provider(
     Ok(builder)
 }
 
-pub fn deser_operation_update_resource_server(
+pub fn deser_operation_crate_operation_update_resource_server(
     input: &[u8],
     mut builder: crate::output::update_resource_server_output::Builder,
 ) -> Result<crate::output::update_resource_server_output::Builder, smithy_json::deserialize::Error>
@@ -3959,7 +4006,9 @@ pub fn deser_operation_update_resource_server(
                 match key.to_unescaped()?.as_ref() {
                     "ResourceServer" => {
                         builder = builder.set_resource_server(
-                            crate::json_deser::deser_structure_resource_server_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_resource_server_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3980,7 +4029,7 @@ pub fn deser_operation_update_resource_server(
     Ok(builder)
 }
 
-pub fn deser_operation_update_user_attributes(
+pub fn deser_operation_crate_operation_update_user_attributes(
     input: &[u8],
     mut builder: crate::output::update_user_attributes_output::Builder,
 ) -> Result<crate::output::update_user_attributes_output::Builder, smithy_json::deserialize::Error>
@@ -3997,7 +4046,7 @@ pub fn deser_operation_update_user_attributes(
                 match key.to_unescaped()?.as_ref() {
                     "CodeDeliveryDetailsList" => {
                         builder = builder.set_code_delivery_details_list(
-                            crate::json_deser::deser_list_code_delivery_details_list_type(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_code_delivery_details_list_type(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4018,7 +4067,7 @@ pub fn deser_operation_update_user_attributes(
     Ok(builder)
 }
 
-pub fn deser_operation_update_user_pool_client(
+pub fn deser_operation_crate_operation_update_user_pool_client(
     input: &[u8],
     mut builder: crate::output::update_user_pool_client_output::Builder,
 ) -> Result<crate::output::update_user_pool_client_output::Builder, smithy_json::deserialize::Error>
@@ -4035,7 +4084,9 @@ pub fn deser_operation_update_user_pool_client(
                 match key.to_unescaped()?.as_ref() {
                     "UserPoolClient" => {
                         builder = builder.set_user_pool_client(
-                            crate::json_deser::deser_structure_user_pool_client_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_user_pool_client_type(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4056,7 +4107,7 @@ pub fn deser_operation_update_user_pool_client(
     Ok(builder)
 }
 
-pub fn deser_operation_update_user_pool_domain(
+pub fn deser_operation_crate_operation_update_user_pool_domain(
     input: &[u8],
     mut builder: crate::output::update_user_pool_domain_output::Builder,
 ) -> Result<crate::output::update_user_pool_domain_output::Builder, smithy_json::deserialize::Error>
@@ -4096,7 +4147,7 @@ pub fn deser_operation_update_user_pool_domain(
     Ok(builder)
 }
 
-pub fn deser_structure_enable_software_token_mfa_exceptionjson_err(
+pub fn deser_structure_crate_error_enable_software_token_mfa_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::enable_software_token_mfa_exception::Builder,
 ) -> Result<
@@ -4138,7 +4189,7 @@ pub fn deser_structure_enable_software_token_mfa_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_verify_software_token(
+pub fn deser_operation_crate_operation_verify_software_token(
     input: &[u8],
     mut builder: crate::output::verify_software_token_output::Builder,
 ) -> Result<crate::output::verify_software_token_output::Builder, smithy_json::deserialize::Error> {
@@ -4198,7 +4249,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_user_type<'a, I>(
+pub fn deser_structure_crate_model_user_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UserType>, smithy_json::deserialize::Error>
 where
@@ -4227,7 +4278,7 @@ where
                             }
                             "Attributes" => {
                                 builder = builder.set_attributes(
-                                    crate::json_deser::deser_list_attribute_list_type(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_attribute_list_type(tokens)?
                                 );
                             }
                             "UserCreateDate" => {
@@ -4267,7 +4318,7 @@ where
                             }
                             "MFAOptions" => {
                                 builder = builder.set_mfa_options(
-                                    crate::json_deser::deser_list_mfa_option_list_type(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_mfa_option_list_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4288,7 +4339,7 @@ where
     }
 }
 
-pub fn deser_structure_device_type<'a, I>(
+pub fn deser_structure_crate_model_device_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DeviceType>, smithy_json::deserialize::Error>
 where
@@ -4317,7 +4368,7 @@ where
                             }
                             "DeviceAttributes" => {
                                 builder = builder.set_device_attributes(
-                                    crate::json_deser::deser_list_attribute_list_type(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_attribute_list_type(tokens)?
                                 );
                             }
                             "DeviceCreateDate" => {
@@ -4363,7 +4414,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_attribute_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_attribute_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::AttributeType>>, smithy_json::deserialize::Error>
 where
@@ -4382,7 +4433,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_attribute_type(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_attribute_type(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4398,7 +4450,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_mfa_option_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_mfa_option_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::MfaOptionType>>, smithy_json::deserialize::Error>
 where
@@ -4417,7 +4469,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_mfa_option_type(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_mfa_option_type(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4433,7 +4486,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_user_mfa_setting_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_user_mfa_setting_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -4471,7 +4524,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_challenge_parameters_type<'a, I>(
+pub fn deser_map_com_amazonaws_cognitoidentityprovider_challenge_parameters_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -4514,7 +4567,7 @@ where
     }
 }
 
-pub fn deser_structure_authentication_result_type<'a, I>(
+pub fn deser_structure_crate_model_authentication_result_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AuthenticationResultType>, smithy_json::deserialize::Error>
 where
@@ -4578,9 +4631,7 @@ where
                             }
                             "NewDeviceMetadata" => {
                                 builder = builder.set_new_device_metadata(
-                                    crate::json_deser::deser_structure_new_device_metadata_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_new_device_metadata_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4602,7 +4653,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_device_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_device_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DeviceType>>, smithy_json::deserialize::Error>
 where
@@ -4621,7 +4672,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_device_type(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_device_type(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4637,7 +4689,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_group_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_group_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::GroupType>>, smithy_json::deserialize::Error>
 where
@@ -4656,7 +4708,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_group_type(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_group_type(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4672,7 +4725,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_auth_events_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_auth_events_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::AuthEventType>>, smithy_json::deserialize::Error>
 where
@@ -4691,7 +4744,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_auth_event_type(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_auth_event_type(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4706,7 +4760,7 @@ where
     }
 }
 
-pub fn deser_structure_group_type<'a, I>(
+pub fn deser_structure_crate_model_group_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GroupType>, smithy_json::deserialize::Error>
 where
@@ -4802,7 +4856,7 @@ where
     }
 }
 
-pub fn deser_structure_identity_provider_type<'a, I>(
+pub fn deser_structure_crate_model_identity_provider_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::IdentityProviderType>, smithy_json::deserialize::Error>
 where
@@ -4853,19 +4907,17 @@ where
                             }
                             "ProviderDetails" => {
                                 builder = builder.set_provider_details(
-                                    crate::json_deser::deser_map_provider_details_type(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_cognitoidentityprovider_provider_details_type(tokens)?
                                 );
                             }
                             "AttributeMapping" => {
                                 builder = builder.set_attribute_mapping(
-                                    crate::json_deser::deser_map_attribute_mapping_type(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_cognitoidentityprovider_attribute_mapping_type(tokens)?
                                 );
                             }
                             "IdpIdentifiers" => {
                                 builder = builder.set_idp_identifiers(
-                                    crate::json_deser::deser_list_idp_identifiers_list_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_idp_identifiers_list_type(tokens)?
                                 );
                             }
                             "LastModifiedDate" => {
@@ -4902,7 +4954,7 @@ where
     }
 }
 
-pub fn deser_structure_resource_server_type<'a, I>(
+pub fn deser_structure_crate_model_resource_server_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResourceServerType>, smithy_json::deserialize::Error>
 where
@@ -4949,9 +5001,7 @@ where
                             }
                             "Scopes" => {
                                 builder = builder.set_scopes(
-                                    crate::json_deser::deser_list_resource_server_scope_list_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_resource_server_scope_list_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4972,7 +5022,7 @@ where
     }
 }
 
-pub fn deser_structure_user_import_job_type<'a, I>(
+pub fn deser_structure_crate_model_user_import_job_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UserImportJobType>, smithy_json::deserialize::Error>
 where
@@ -5123,7 +5173,7 @@ where
     }
 }
 
-pub fn deser_structure_user_pool_type<'a, I>(
+pub fn deser_structure_crate_model_user_pool_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UserPoolType>, smithy_json::deserialize::Error>
 where
@@ -5161,14 +5211,12 @@ where
                             }
                             "Policies" => {
                                 builder = builder.set_policies(
-                                    crate::json_deser::deser_structure_user_pool_policy_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_user_pool_policy_type(tokens)?
                                 );
                             }
                             "LambdaConfig" => {
                                 builder = builder.set_lambda_config(
-                                    crate::json_deser::deser_structure_lambda_config_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_lambda_config_type(tokens)?
                                 );
                             }
                             "Status" => {
@@ -5201,30 +5249,22 @@ where
                             }
                             "SchemaAttributes" => {
                                 builder = builder.set_schema_attributes(
-                                    crate::json_deser::deser_list_schema_attributes_list_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_schema_attributes_list_type(tokens)?
                                 );
                             }
                             "AutoVerifiedAttributes" => {
                                 builder = builder.set_auto_verified_attributes(
-                                    crate::json_deser::deser_list_verified_attributes_list_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_verified_attributes_list_type(tokens)?
                                 );
                             }
                             "AliasAttributes" => {
                                 builder = builder.set_alias_attributes(
-                                    crate::json_deser::deser_list_alias_attributes_list_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_alias_attributes_list_type(tokens)?
                                 );
                             }
                             "UsernameAttributes" => {
                                 builder = builder.set_username_attributes(
-                                    crate::json_deser::deser_list_username_attributes_list_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_username_attributes_list_type(tokens)?
                                 );
                             }
                             "SmsVerificationMessage" => {
@@ -5256,7 +5296,7 @@ where
                             }
                             "VerificationMessageTemplate" => {
                                 builder = builder.set_verification_message_template(
-                                    crate::json_deser::deser_structure_verification_message_template_type(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_verification_message_template_type(tokens)?
                                 );
                             }
                             "SmsAuthenticationMessage" => {
@@ -5283,9 +5323,7 @@ where
                             }
                             "DeviceConfiguration" => {
                                 builder = builder.set_device_configuration(
-                                    crate::json_deser::deser_structure_device_configuration_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_device_configuration_type(tokens)?
                                 );
                             }
                             "EstimatedNumberOfUsers" => {
@@ -5298,21 +5336,17 @@ where
                             }
                             "EmailConfiguration" => {
                                 builder = builder.set_email_configuration(
-                                    crate::json_deser::deser_structure_email_configuration_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_email_configuration_type(tokens)?
                                 );
                             }
                             "SmsConfiguration" => {
                                 builder = builder.set_sms_configuration(
-                                    crate::json_deser::deser_structure_sms_configuration_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_sms_configuration_type(tokens)?
                                 );
                             }
                             "UserPoolTags" => {
                                 builder = builder.set_user_pool_tags(
-                                    crate::json_deser::deser_map_user_pool_tags_type(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_cognitoidentityprovider_user_pool_tags_type(tokens)?
                                 );
                             }
                             "SmsConfigurationFailure" => {
@@ -5353,21 +5387,17 @@ where
                             }
                             "AdminCreateUserConfig" => {
                                 builder = builder.set_admin_create_user_config(
-                                    crate::json_deser::deser_structure_admin_create_user_config_type(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_admin_create_user_config_type(tokens)?
                                 );
                             }
                             "UserPoolAddOns" => {
                                 builder = builder.set_user_pool_add_ons(
-                                    crate::json_deser::deser_structure_user_pool_add_ons_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_user_pool_add_ons_type(tokens)?
                                 );
                             }
                             "UsernameConfiguration" => {
                                 builder = builder.set_username_configuration(
-                                    crate::json_deser::deser_structure_username_configuration_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_username_configuration_type(tokens)?
                                 );
                             }
                             "Arn" => {
@@ -5381,7 +5411,7 @@ where
                             }
                             "AccountRecoverySetting" => {
                                 builder = builder.set_account_recovery_setting(
-                                    crate::json_deser::deser_structure_account_recovery_setting_type(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_account_recovery_setting_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -5402,7 +5432,7 @@ where
     }
 }
 
-pub fn deser_structure_user_pool_client_type<'a, I>(
+pub fn deser_structure_crate_model_user_pool_client_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UserPoolClientType>, smithy_json::deserialize::Error>
 where
@@ -5498,45 +5528,37 @@ where
                             }
                             "TokenValidityUnits" => {
                                 builder = builder.set_token_validity_units(
-                                    crate::json_deser::deser_structure_token_validity_units_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_token_validity_units_type(tokens)?
                                 );
                             }
                             "ReadAttributes" => {
                                 builder = builder.set_read_attributes(
-                                    crate::json_deser::deser_list_client_permission_list_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_client_permission_list_type(tokens)?
                                 );
                             }
                             "WriteAttributes" => {
                                 builder = builder.set_write_attributes(
-                                    crate::json_deser::deser_list_client_permission_list_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_client_permission_list_type(tokens)?
                                 );
                             }
                             "ExplicitAuthFlows" => {
                                 builder = builder.set_explicit_auth_flows(
-                                    crate::json_deser::deser_list_explicit_auth_flows_list_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_explicit_auth_flows_list_type(tokens)?
                                 );
                             }
                             "SupportedIdentityProviders" => {
                                 builder = builder.set_supported_identity_providers(
-                                    crate::json_deser::deser_list_supported_identity_providers_list_type(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_supported_identity_providers_list_type(tokens)?
                                 );
                             }
                             "CallbackURLs" => {
                                 builder = builder.set_callback_ur_ls(
-                                    crate::json_deser::deser_list_callback_ur_ls_list_type(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_callback_ur_ls_list_type(tokens)?
                                 );
                             }
                             "LogoutURLs" => {
                                 builder = builder.set_logout_ur_ls(
-                                    crate::json_deser::deser_list_logout_ur_ls_list_type(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_logout_ur_ls_list_type(tokens)?
                                 );
                             }
                             "DefaultRedirectURI" => {
@@ -5550,12 +5572,12 @@ where
                             }
                             "AllowedOAuthFlows" => {
                                 builder = builder.set_allowed_o_auth_flows(
-                                    crate::json_deser::deser_list_o_auth_flows_type(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_o_auth_flows_type(tokens)?
                                 );
                             }
                             "AllowedOAuthScopes" => {
                                 builder = builder.set_allowed_o_auth_scopes(
-                                    crate::json_deser::deser_list_scope_list_type(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_scope_list_type(tokens)?
                                 );
                             }
                             "AllowedOAuthFlowsUserPoolClient" => {
@@ -5567,7 +5589,7 @@ where
                             }
                             "AnalyticsConfiguration" => {
                                 builder = builder.set_analytics_configuration(
-                                    crate::json_deser::deser_structure_analytics_configuration_type(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_analytics_configuration_type(tokens)?
                                 );
                             }
                             "PreventUserExistenceErrors" => {
@@ -5610,7 +5632,7 @@ where
     }
 }
 
-pub fn deser_structure_risk_configuration_type<'a, I>(
+pub fn deser_structure_crate_model_risk_configuration_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RiskConfigurationType>, smithy_json::deserialize::Error>
 where
@@ -5648,17 +5670,17 @@ where
                             }
                             "CompromisedCredentialsRiskConfiguration" => {
                                 builder = builder.set_compromised_credentials_risk_configuration(
-                                    crate::json_deser::deser_structure_compromised_credentials_risk_configuration_type(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_compromised_credentials_risk_configuration_type(tokens)?
                                 );
                             }
                             "AccountTakeoverRiskConfiguration" => {
                                 builder = builder.set_account_takeover_risk_configuration(
-                                    crate::json_deser::deser_structure_account_takeover_risk_configuration_type(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_account_takeover_risk_configuration_type(tokens)?
                                 );
                             }
                             "RiskExceptionConfiguration" => {
                                 builder = builder.set_risk_exception_configuration(
-                                    crate::json_deser::deser_structure_risk_exception_configuration_type(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_risk_exception_configuration_type(tokens)?
                                 );
                             }
                             "LastModifiedDate" => {
@@ -5687,7 +5709,7 @@ where
     }
 }
 
-pub fn deser_structure_domain_description_type<'a, I>(
+pub fn deser_structure_crate_model_domain_description_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DomainDescriptionType>, smithy_json::deserialize::Error>
 where
@@ -5774,9 +5796,7 @@ where
                             }
                             "CustomDomainConfig" => {
                                 builder = builder.set_custom_domain_config(
-                                    crate::json_deser::deser_structure_custom_domain_config_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_custom_domain_config_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -5797,7 +5817,7 @@ where
     }
 }
 
-pub fn deser_structure_code_delivery_details_type<'a, I>(
+pub fn deser_structure_crate_model_code_delivery_details_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CodeDeliveryDetailsType>, smithy_json::deserialize::Error>
 where
@@ -5865,7 +5885,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_list_of_string_types<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_list_of_string_types<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -5902,7 +5922,7 @@ where
     }
 }
 
-pub fn deser_structure_ui_customization_type<'a, I>(
+pub fn deser_structure_crate_model_ui_customization_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UiCustomizationType>, smithy_json::deserialize::Error>
 where
@@ -5999,7 +6019,7 @@ where
     }
 }
 
-pub fn deser_structure_sms_mfa_config_type<'a, I>(
+pub fn deser_structure_crate_model_sms_mfa_config_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SmsMfaConfigType>, smithy_json::deserialize::Error>
 where
@@ -6028,9 +6048,7 @@ where
                             }
                             "SmsConfiguration" => {
                                 builder = builder.set_sms_configuration(
-                                    crate::json_deser::deser_structure_sms_configuration_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_sms_configuration_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -6051,7 +6069,7 @@ where
     }
 }
 
-pub fn deser_structure_software_token_mfa_config_type<'a, I>(
+pub fn deser_structure_crate_model_software_token_mfa_config_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SoftwareTokenMfaConfigType>, smithy_json::deserialize::Error>
 where
@@ -6095,7 +6113,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_providers_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_providers_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ProviderDescription>>, smithy_json::deserialize::Error>
 where
@@ -6115,7 +6133,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_provider_description(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_provider_description(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6131,7 +6151,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_resource_servers_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_resource_servers_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ResourceServerType>>, smithy_json::deserialize::Error>
 where
@@ -6151,7 +6171,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_resource_server_type(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_resource_server_type(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6167,7 +6189,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_user_pool_tags_type<'a, I>(
+pub fn deser_map_com_amazonaws_cognitoidentityprovider_user_pool_tags_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -6211,7 +6233,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_user_import_jobs_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_user_import_jobs_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::UserImportJobType>>, smithy_json::deserialize::Error>
 where
@@ -6231,7 +6253,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_user_import_job_type(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_user_import_job_type(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6247,7 +6271,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_user_pool_client_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_user_pool_client_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::UserPoolClientDescription>>,
@@ -6270,9 +6294,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_user_pool_client_description(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_user_pool_client_description(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6288,7 +6311,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_user_pool_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_user_pool_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::UserPoolDescriptionType>>,
@@ -6311,7 +6334,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_user_pool_description_type(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_user_pool_description_type(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6327,7 +6351,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_users_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_users_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::UserType>>, smithy_json::deserialize::Error>
 where
@@ -6346,7 +6370,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_user_type(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_user_type(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6362,7 +6387,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_code_delivery_details_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_code_delivery_details_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::CodeDeliveryDetailsType>>,
@@ -6385,7 +6410,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_code_delivery_details_type(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_code_delivery_details_type(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6400,7 +6426,7 @@ where
     }
 }
 
-pub fn deser_structure_attribute_type<'a, I>(
+pub fn deser_structure_crate_model_attribute_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AttributeType>, smithy_json::deserialize::Error>
 where
@@ -6454,7 +6480,7 @@ where
     }
 }
 
-pub fn deser_structure_mfa_option_type<'a, I>(
+pub fn deser_structure_crate_model_mfa_option_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MfaOptionType>, smithy_json::deserialize::Error>
 where
@@ -6512,7 +6538,7 @@ where
     }
 }
 
-pub fn deser_structure_new_device_metadata_type<'a, I>(
+pub fn deser_structure_crate_model_new_device_metadata_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::NewDeviceMetadataType>, smithy_json::deserialize::Error>
 where
@@ -6566,7 +6592,7 @@ where
     }
 }
 
-pub fn deser_structure_auth_event_type<'a, I>(
+pub fn deser_structure_crate_model_auth_event_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AuthEventType>, smithy_json::deserialize::Error>
 where
@@ -6628,26 +6654,24 @@ where
                             }
                             "EventRisk" => {
                                 builder = builder.set_event_risk(
-                                    crate::json_deser::deser_structure_event_risk_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_event_risk_type(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "ChallengeResponses" => {
                                 builder = builder.set_challenge_responses(
-                                    crate::json_deser::deser_list_challenge_response_list_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_challenge_response_list_type(tokens)?
                                 );
                             }
                             "EventContextData" => {
                                 builder = builder.set_event_context_data(
-                                    crate::json_deser::deser_structure_event_context_data_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_event_context_data_type(tokens)?
                                 );
                             }
                             "EventFeedback" => {
                                 builder = builder.set_event_feedback(
-                                    crate::json_deser::deser_structure_event_feedback_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_event_feedback_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -6669,7 +6693,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_provider_details_type<'a, I>(
+pub fn deser_map_com_amazonaws_cognitoidentityprovider_provider_details_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -6713,7 +6737,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_attribute_mapping_type<'a, I>(
+pub fn deser_map_com_amazonaws_cognitoidentityprovider_attribute_mapping_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -6757,7 +6781,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_idp_identifiers_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_idp_identifiers_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -6795,7 +6819,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_resource_server_scope_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_resource_server_scope_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ResourceServerScopeType>>,
@@ -6818,7 +6842,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_resource_server_scope_type(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_resource_server_scope_type(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6833,7 +6858,7 @@ where
     }
 }
 
-pub fn deser_structure_user_pool_policy_type<'a, I>(
+pub fn deser_structure_crate_model_user_pool_policy_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UserPoolPolicyType>, smithy_json::deserialize::Error>
 where
@@ -6853,9 +6878,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "PasswordPolicy" => {
                                 builder = builder.set_password_policy(
-                                    crate::json_deser::deser_structure_password_policy_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_password_policy_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -6876,7 +6899,7 @@ where
     }
 }
 
-pub fn deser_structure_lambda_config_type<'a, I>(
+pub fn deser_structure_crate_model_lambda_config_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LambdaConfigType>, smithy_json::deserialize::Error>
 where
@@ -6986,12 +7009,12 @@ where
                             }
                             "CustomSMSSender" => {
                                 builder = builder.set_custom_sms_sender(
-                                    crate::json_deser::deser_structure_custom_sms_lambda_version_config_type(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_custom_sms_lambda_version_config_type(tokens)?
                                 );
                             }
                             "CustomEmailSender" => {
                                 builder = builder.set_custom_email_sender(
-                                    crate::json_deser::deser_structure_custom_email_lambda_version_config_type(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_custom_email_lambda_version_config_type(tokens)?
                                 );
                             }
                             "KMSKeyID" => {
@@ -7022,7 +7045,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_schema_attributes_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_schema_attributes_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::SchemaAttributeType>>, smithy_json::deserialize::Error>
 where
@@ -7042,7 +7065,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_schema_attribute_type(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_schema_attribute_type(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -7058,7 +7083,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_verified_attributes_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_verified_attributes_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::VerifiedAttributeType>>,
@@ -7103,7 +7128,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_alias_attributes_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_alias_attributes_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::AliasAttributeType>>, smithy_json::deserialize::Error>
 where
@@ -7144,7 +7169,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_username_attributes_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_username_attributes_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::UsernameAttributeType>>,
@@ -7188,7 +7213,7 @@ where
     }
 }
 
-pub fn deser_structure_verification_message_template_type<'a, I>(
+pub fn deser_structure_crate_model_verification_message_template_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::VerificationMessageTemplateType>, smithy_json::deserialize::Error>
 where
@@ -7282,7 +7307,7 @@ where
     }
 }
 
-pub fn deser_structure_device_configuration_type<'a, I>(
+pub fn deser_structure_crate_model_device_configuration_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DeviceConfigurationType>, smithy_json::deserialize::Error>
 where
@@ -7332,7 +7357,7 @@ where
     }
 }
 
-pub fn deser_structure_email_configuration_type<'a, I>(
+pub fn deser_structure_crate_model_email_configuration_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EmailConfigurationType>, smithy_json::deserialize::Error>
 where
@@ -7417,7 +7442,7 @@ where
     }
 }
 
-pub fn deser_structure_sms_configuration_type<'a, I>(
+pub fn deser_structure_crate_model_sms_configuration_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SmsConfigurationType>, smithy_json::deserialize::Error>
 where
@@ -7471,7 +7496,7 @@ where
     }
 }
 
-pub fn deser_structure_admin_create_user_config_type<'a, I>(
+pub fn deser_structure_crate_model_admin_create_user_config_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AdminCreateUserConfigType>, smithy_json::deserialize::Error>
 where
@@ -7506,9 +7531,7 @@ where
                             }
                             "InviteMessageTemplate" => {
                                 builder = builder.set_invite_message_template(
-                                    crate::json_deser::deser_structure_message_template_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_message_template_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -7529,7 +7552,7 @@ where
     }
 }
 
-pub fn deser_structure_user_pool_add_ons_type<'a, I>(
+pub fn deser_structure_crate_model_user_pool_add_ons_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UserPoolAddOnsType>, smithy_json::deserialize::Error>
 where
@@ -7578,7 +7601,7 @@ where
     }
 }
 
-pub fn deser_structure_username_configuration_type<'a, I>(
+pub fn deser_structure_crate_model_username_configuration_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UsernameConfigurationType>, smithy_json::deserialize::Error>
 where
@@ -7621,7 +7644,7 @@ where
     }
 }
 
-pub fn deser_structure_account_recovery_setting_type<'a, I>(
+pub fn deser_structure_crate_model_account_recovery_setting_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AccountRecoverySettingType>, smithy_json::deserialize::Error>
 where
@@ -7641,7 +7664,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "RecoveryMechanisms" => {
                                 builder = builder.set_recovery_mechanisms(
-                                    crate::json_deser::deser_list_recovery_mechanisms_type(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_recovery_mechanisms_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -7662,7 +7685,7 @@ where
     }
 }
 
-pub fn deser_structure_token_validity_units_type<'a, I>(
+pub fn deser_structure_crate_model_token_validity_units_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TokenValidityUnitsType>, smithy_json::deserialize::Error>
 where
@@ -7735,7 +7758,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_client_permission_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_client_permission_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -7773,7 +7796,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_explicit_auth_flows_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_explicit_auth_flows_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ExplicitAuthFlowsType>>,
@@ -7818,7 +7841,10 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_supported_identity_providers_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_supported_identity_providers_list_type<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -7856,7 +7882,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_callback_ur_ls_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_callback_ur_ls_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -7894,7 +7920,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_logout_ur_ls_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_logout_ur_ls_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -7932,7 +7958,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_o_auth_flows_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_o_auth_flows_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::OAuthFlowType>>, smithy_json::deserialize::Error>
 where
@@ -7973,7 +7999,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_scope_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_scope_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -8010,7 +8036,7 @@ where
     }
 }
 
-pub fn deser_structure_analytics_configuration_type<'a, I>(
+pub fn deser_structure_crate_model_analytics_configuration_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AnalyticsConfigurationType>, smithy_json::deserialize::Error>
 where
@@ -8089,7 +8115,7 @@ where
     }
 }
 
-pub fn deser_structure_compromised_credentials_risk_configuration_type<'a, I>(
+pub fn deser_structure_crate_model_compromised_credentials_risk_configuration_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::CompromisedCredentialsRiskConfigurationType>,
@@ -8112,12 +8138,12 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "EventFilter" => {
                                 builder = builder.set_event_filter(
-                                    crate::json_deser::deser_list_event_filters_type(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_event_filters_type(tokens)?
                                 );
                             }
                             "Actions" => {
                                 builder = builder.set_actions(
-                                    crate::json_deser::deser_structure_compromised_credentials_actions_type(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_compromised_credentials_actions_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -8138,7 +8164,7 @@ where
     }
 }
 
-pub fn deser_structure_account_takeover_risk_configuration_type<'a, I>(
+pub fn deser_structure_crate_model_account_takeover_risk_configuration_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::AccountTakeoverRiskConfigurationType>,
@@ -8161,14 +8187,12 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "NotifyConfiguration" => {
                                 builder = builder.set_notify_configuration(
-                                    crate::json_deser::deser_structure_notify_configuration_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_notify_configuration_type(tokens)?
                                 );
                             }
                             "Actions" => {
                                 builder = builder.set_actions(
-                                    crate::json_deser::deser_structure_account_takeover_actions_type(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_account_takeover_actions_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -8189,7 +8213,7 @@ where
     }
 }
 
-pub fn deser_structure_risk_exception_configuration_type<'a, I>(
+pub fn deser_structure_crate_model_risk_exception_configuration_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RiskExceptionConfigurationType>, smithy_json::deserialize::Error>
 where
@@ -8209,16 +8233,12 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "BlockedIPRangeList" => {
                                 builder = builder.set_blocked_ip_range_list(
-                                    crate::json_deser::deser_list_blocked_ip_range_list_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_blocked_ip_range_list_type(tokens)?
                                 );
                             }
                             "SkippedIPRangeList" => {
                                 builder = builder.set_skipped_ip_range_list(
-                                    crate::json_deser::deser_list_skipped_ip_range_list_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_cognitoidentityprovider_skipped_ip_range_list_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -8239,7 +8259,7 @@ where
     }
 }
 
-pub fn deser_structure_custom_domain_config_type<'a, I>(
+pub fn deser_structure_crate_model_custom_domain_config_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CustomDomainConfigType>, smithy_json::deserialize::Error>
 where
@@ -8284,7 +8304,7 @@ where
     }
 }
 
-pub fn deser_structure_provider_description<'a, I>(
+pub fn deser_structure_crate_model_provider_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ProviderDescription>, smithy_json::deserialize::Error>
 where
@@ -8358,7 +8378,7 @@ where
     }
 }
 
-pub fn deser_structure_user_pool_client_description<'a, I>(
+pub fn deser_structure_crate_model_user_pool_client_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UserPoolClientDescription>, smithy_json::deserialize::Error>
 where
@@ -8421,7 +8441,7 @@ where
     }
 }
 
-pub fn deser_structure_user_pool_description_type<'a, I>(
+pub fn deser_structure_crate_model_user_pool_description_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UserPoolDescriptionType>, smithy_json::deserialize::Error>
 where
@@ -8459,7 +8479,7 @@ where
                             }
                             "LambdaConfig" => {
                                 builder = builder.set_lambda_config(
-                                    crate::json_deser::deser_structure_lambda_config_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_lambda_config_type(tokens)?
                                 );
                             }
                             "Status" => {
@@ -8508,7 +8528,7 @@ where
     }
 }
 
-pub fn deser_structure_event_risk_type<'a, I>(
+pub fn deser_structure_crate_model_event_risk_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EventRiskType>, smithy_json::deserialize::Error>
 where
@@ -8577,7 +8597,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_challenge_response_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_challenge_response_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ChallengeResponseType>>,
@@ -8600,7 +8620,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_challenge_response_type(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_challenge_response_type(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -8615,7 +8637,7 @@ where
     }
 }
 
-pub fn deser_structure_event_context_data_type<'a, I>(
+pub fn deser_structure_crate_model_event_context_data_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EventContextDataType>, smithy_json::deserialize::Error>
 where
@@ -8696,7 +8718,7 @@ where
     }
 }
 
-pub fn deser_structure_event_feedback_type<'a, I>(
+pub fn deser_structure_crate_model_event_feedback_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EventFeedbackType>, smithy_json::deserialize::Error>
 where
@@ -8762,7 +8784,7 @@ where
     }
 }
 
-pub fn deser_structure_resource_server_scope_type<'a, I>(
+pub fn deser_structure_crate_model_resource_server_scope_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResourceServerScopeType>, smithy_json::deserialize::Error>
 where
@@ -8816,7 +8838,7 @@ where
     }
 }
 
-pub fn deser_structure_password_policy_type<'a, I>(
+pub fn deser_structure_crate_model_password_policy_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PasswordPolicyType>, smithy_json::deserialize::Error>
 where
@@ -8896,7 +8918,7 @@ where
     }
 }
 
-pub fn deser_structure_custom_sms_lambda_version_config_type<'a, I>(
+pub fn deser_structure_crate_model_custom_sms_lambda_version_config_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CustomSmsLambdaVersionConfigType>, smithy_json::deserialize::Error>
 where
@@ -8956,7 +8978,7 @@ where
     }
 }
 
-pub fn deser_structure_custom_email_lambda_version_config_type<'a, I>(
+pub fn deser_structure_crate_model_custom_email_lambda_version_config_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CustomEmailLambdaVersionConfigType>, smithy_json::deserialize::Error>
 where
@@ -9016,7 +9038,7 @@ where
     }
 }
 
-pub fn deser_structure_schema_attribute_type<'a, I>(
+pub fn deser_structure_crate_model_schema_attribute_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SchemaAttributeType>, smithy_json::deserialize::Error>
 where
@@ -9079,12 +9101,12 @@ where
                             }
                             "NumberAttributeConstraints" => {
                                 builder = builder.set_number_attribute_constraints(
-                                    crate::json_deser::deser_structure_number_attribute_constraints_type(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_number_attribute_constraints_type(tokens)?
                                 );
                             }
                             "StringAttributeConstraints" => {
                                 builder = builder.set_string_attribute_constraints(
-                                    crate::json_deser::deser_structure_string_attribute_constraints_type(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_string_attribute_constraints_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -9105,7 +9127,7 @@ where
     }
 }
 
-pub fn deser_structure_message_template_type<'a, I>(
+pub fn deser_structure_crate_model_message_template_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MessageTemplateType>, smithy_json::deserialize::Error>
 where
@@ -9169,7 +9191,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_recovery_mechanisms_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_recovery_mechanisms_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::RecoveryOptionType>>, smithy_json::deserialize::Error>
 where
@@ -9189,7 +9211,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_recovery_option_type(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_recovery_option_type(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -9205,7 +9229,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_event_filters_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_event_filters_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::EventFilterType>>, smithy_json::deserialize::Error>
 where
@@ -9245,7 +9269,7 @@ where
     }
 }
 
-pub fn deser_structure_compromised_credentials_actions_type<'a, I>(
+pub fn deser_structure_crate_model_compromised_credentials_actions_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CompromisedCredentialsActionsType>, smithy_json::deserialize::Error>
 where
@@ -9290,7 +9314,7 @@ where
     }
 }
 
-pub fn deser_structure_notify_configuration_type<'a, I>(
+pub fn deser_structure_crate_model_notify_configuration_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::NotifyConfigurationType>, smithy_json::deserialize::Error>
 where
@@ -9337,17 +9361,17 @@ where
                             }
                             "BlockEmail" => {
                                 builder = builder.set_block_email(
-                                    crate::json_deser::deser_structure_notify_email_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_notify_email_type(tokens)?
                                 );
                             }
                             "NoActionEmail" => {
                                 builder = builder.set_no_action_email(
-                                    crate::json_deser::deser_structure_notify_email_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_notify_email_type(tokens)?
                                 );
                             }
                             "MfaEmail" => {
                                 builder = builder.set_mfa_email(
-                                    crate::json_deser::deser_structure_notify_email_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_notify_email_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -9368,7 +9392,7 @@ where
     }
 }
 
-pub fn deser_structure_account_takeover_actions_type<'a, I>(
+pub fn deser_structure_crate_model_account_takeover_actions_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AccountTakeoverActionsType>, smithy_json::deserialize::Error>
 where
@@ -9388,17 +9412,17 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "LowAction" => {
                                 builder = builder.set_low_action(
-                                    crate::json_deser::deser_structure_account_takeover_action_type(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_account_takeover_action_type(tokens)?
                                 );
                             }
                             "MediumAction" => {
                                 builder = builder.set_medium_action(
-                                    crate::json_deser::deser_structure_account_takeover_action_type(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_account_takeover_action_type(tokens)?
                                 );
                             }
                             "HighAction" => {
                                 builder = builder.set_high_action(
-                                    crate::json_deser::deser_structure_account_takeover_action_type(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_account_takeover_action_type(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -9420,7 +9444,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_blocked_ip_range_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_blocked_ip_range_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -9458,7 +9482,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_skipped_ip_range_list_type<'a, I>(
+pub fn deser_list_com_amazonaws_cognitoidentityprovider_skipped_ip_range_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -9495,7 +9519,7 @@ where
     }
 }
 
-pub fn deser_structure_challenge_response_type<'a, I>(
+pub fn deser_structure_crate_model_challenge_response_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ChallengeResponseType>, smithy_json::deserialize::Error>
 where
@@ -9556,7 +9580,7 @@ where
     }
 }
 
-pub fn deser_structure_number_attribute_constraints_type<'a, I>(
+pub fn deser_structure_crate_model_number_attribute_constraints_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::NumberAttributeConstraintsType>, smithy_json::deserialize::Error>
 where
@@ -9610,7 +9634,7 @@ where
     }
 }
 
-pub fn deser_structure_string_attribute_constraints_type<'a, I>(
+pub fn deser_structure_crate_model_string_attribute_constraints_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::StringAttributeConstraintsType>, smithy_json::deserialize::Error>
 where
@@ -9664,7 +9688,7 @@ where
     }
 }
 
-pub fn deser_structure_recovery_option_type<'a, I>(
+pub fn deser_structure_crate_model_recovery_option_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RecoveryOptionType>, smithy_json::deserialize::Error>
 where
@@ -9721,7 +9745,7 @@ where
     }
 }
 
-pub fn deser_structure_notify_email_type<'a, I>(
+pub fn deser_structure_crate_model_notify_email_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::NotifyEmailType>, smithy_json::deserialize::Error>
 where
@@ -9784,7 +9808,7 @@ where
     }
 }
 
-pub fn deser_structure_account_takeover_action_type<'a, I>(
+pub fn deser_structure_crate_model_account_takeover_action_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AccountTakeoverActionType>, smithy_json::deserialize::Error>
 where

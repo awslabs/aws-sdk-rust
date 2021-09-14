@@ -3872,7 +3872,7 @@ pub struct AwsSecurityFinding {
     /// <p>The name of the product that generated the finding.</p>
     /// <p>Security Hub populates this attribute automatically for each finding. You cannot update it using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is when you use a custom integration.</p>
     /// <p>When you use the Security Hub console to filter findings by product name, you use this attribute.</p>
-    /// <p>When you use the Security Hub API to filter findings by product name, you use the <code>aws/securityhub/ProductyName</code> attribute under <code>ProductFields</code>.</p>
+    /// <p>When you use the Security Hub API to filter findings by product name, you use the <code>aws/securityhub/ProductName</code> attribute under <code>ProductFields</code>.</p>
     /// <p>Security Hub does not synchronize those two attributes.</p>
     pub product_name: std::option::Option<std::string::String>,
     /// <p>The name of the company for the product that generated the finding.</p>
@@ -4129,7 +4129,7 @@ pub mod aws_security_finding {
         /// <p>The name of the product that generated the finding.</p>
         /// <p>Security Hub populates this attribute automatically for each finding. You cannot update it using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is when you use a custom integration.</p>
         /// <p>When you use the Security Hub console to filter findings by product name, you use this attribute.</p>
-        /// <p>When you use the Security Hub API to filter findings by product name, you use the <code>aws/securityhub/ProductyName</code> attribute under <code>ProductFields</code>.</p>
+        /// <p>When you use the Security Hub API to filter findings by product name, you use the <code>aws/securityhub/ProductName</code> attribute under <code>ProductFields</code>.</p>
         /// <p>Security Hub does not synchronize those two attributes.</p>
         pub fn product_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.product_name = Some(input.into());
@@ -6767,6 +6767,10 @@ pub struct Cvss {
     pub base_score: f64,
     /// <p>The base scoring vector for the CVSS score.</p>
     pub base_vector: std::option::Option<std::string::String>,
+    /// <p>The origin of the original CVSS score and vector.</p>
+    pub source: std::option::Option<std::string::String>,
+    /// <p>Adjustments to the CVSS metrics.</p>
+    pub adjustments: std::option::Option<std::vec::Vec<crate::model::Adjustment>>,
 }
 impl std::fmt::Debug for Cvss {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6774,6 +6778,8 @@ impl std::fmt::Debug for Cvss {
         formatter.field("version", &self.version);
         formatter.field("base_score", &self.base_score);
         formatter.field("base_vector", &self.base_vector);
+        formatter.field("source", &self.source);
+        formatter.field("adjustments", &self.adjustments);
         formatter.finish()
     }
 }
@@ -6786,6 +6792,8 @@ pub mod cvss {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) base_score: std::option::Option<f64>,
         pub(crate) base_vector: std::option::Option<std::string::String>,
+        pub(crate) source: std::option::Option<std::string::String>,
+        pub(crate) adjustments: std::option::Option<std::vec::Vec<crate::model::Adjustment>>,
     }
     impl Builder {
         /// <p>The version of CVSS for the CVSS score.</p>
@@ -6815,12 +6823,36 @@ pub mod cvss {
             self.base_vector = input;
             self
         }
+        /// <p>The origin of the original CVSS score and vector.</p>
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source = Some(input.into());
+            self
+        }
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source = input;
+            self
+        }
+        pub fn adjustments(mut self, input: impl Into<crate::model::Adjustment>) -> Self {
+            let mut v = self.adjustments.unwrap_or_default();
+            v.push(input.into());
+            self.adjustments = Some(v);
+            self
+        }
+        pub fn set_adjustments(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Adjustment>>,
+        ) -> Self {
+            self.adjustments = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Cvss`](crate::model::Cvss)
         pub fn build(self) -> crate::model::Cvss {
             crate::model::Cvss {
                 version: self.version,
                 base_score: self.base_score.unwrap_or_default(),
                 base_vector: self.base_vector,
+                source: self.source,
+                adjustments: self.adjustments,
             }
         }
     }
@@ -6829,6 +6861,67 @@ impl Cvss {
     /// Creates a new builder-style object to manufacture [`Cvss`](crate::model::Cvss)
     pub fn builder() -> crate::model::cvss::Builder {
         crate::model::cvss::Builder::default()
+    }
+}
+
+/// <p>An adjustment to the CVSS metric.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Adjustment {
+    /// <p>The metric to adjust.</p>
+    pub metric: std::option::Option<std::string::String>,
+    /// <p>The reason for the adjustment.</p>
+    pub reason: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Adjustment {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Adjustment");
+        formatter.field("metric", &self.metric);
+        formatter.field("reason", &self.reason);
+        formatter.finish()
+    }
+}
+/// See [`Adjustment`](crate::model::Adjustment)
+pub mod adjustment {
+    /// A builder for [`Adjustment`](crate::model::Adjustment)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric: std::option::Option<std::string::String>,
+        pub(crate) reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The metric to adjust.</p>
+        pub fn metric(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric = Some(input.into());
+            self
+        }
+        pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric = input;
+            self
+        }
+        /// <p>The reason for the adjustment.</p>
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reason = Some(input.into());
+            self
+        }
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Adjustment`](crate::model::Adjustment)
+        pub fn build(self) -> crate::model::Adjustment {
+            crate::model::Adjustment {
+                metric: self.metric,
+                reason: self.reason,
+            }
+        }
+    }
+}
+impl Adjustment {
+    /// Creates a new builder-style object to manufacture [`Adjustment`](crate::model::Adjustment)
+    pub fn builder() -> crate::model::adjustment::Builder {
+        crate::model::adjustment::Builder::default()
     }
 }
 
@@ -6846,6 +6939,10 @@ pub struct SoftwarePackage {
     pub release: std::option::Option<std::string::String>,
     /// <p>The architecture used for the software package.</p>
     pub architecture: std::option::Option<std::string::String>,
+    /// <p>The source of the package.</p>
+    pub package_manager: std::option::Option<std::string::String>,
+    /// <p>The file system path to the package manager inventory file.</p>
+    pub file_path: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SoftwarePackage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6855,6 +6952,8 @@ impl std::fmt::Debug for SoftwarePackage {
         formatter.field("epoch", &self.epoch);
         formatter.field("release", &self.release);
         formatter.field("architecture", &self.architecture);
+        formatter.field("package_manager", &self.package_manager);
+        formatter.field("file_path", &self.file_path);
         formatter.finish()
     }
 }
@@ -6869,6 +6968,8 @@ pub mod software_package {
         pub(crate) epoch: std::option::Option<std::string::String>,
         pub(crate) release: std::option::Option<std::string::String>,
         pub(crate) architecture: std::option::Option<std::string::String>,
+        pub(crate) package_manager: std::option::Option<std::string::String>,
+        pub(crate) file_path: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the software package.</p>
@@ -6916,6 +7017,27 @@ pub mod software_package {
             self.architecture = input;
             self
         }
+        /// <p>The source of the package.</p>
+        pub fn package_manager(mut self, input: impl Into<std::string::String>) -> Self {
+            self.package_manager = Some(input.into());
+            self
+        }
+        pub fn set_package_manager(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.package_manager = input;
+            self
+        }
+        /// <p>The file system path to the package manager inventory file.</p>
+        pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_path = Some(input.into());
+            self
+        }
+        pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_path = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SoftwarePackage`](crate::model::SoftwarePackage)
         pub fn build(self) -> crate::model::SoftwarePackage {
             crate::model::SoftwarePackage {
@@ -6924,6 +7046,8 @@ pub mod software_package {
                 epoch: self.epoch,
                 release: self.release,
                 architecture: self.architecture,
+                package_manager: self.package_manager,
+                file_path: self.file_path,
             }
         }
     }
@@ -7020,8 +7144,8 @@ impl Note {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Workflow {
-    /// <p>The status of the investigation into the finding. The allowed values are the
-    /// following.</p>
+    /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
+    /// <p>The allowed values are the following.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -7050,8 +7174,7 @@ pub struct Workflow {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>SUPPRESSED</code> - The finding will not be reviewed again and will not be
-    /// acted upon.</p>
+    /// <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -7077,8 +7200,8 @@ pub mod workflow {
         pub(crate) status: std::option::Option<crate::model::WorkflowStatus>,
     }
     impl Builder {
-        /// <p>The status of the investigation into the finding. The allowed values are the
-        /// following.</p>
+        /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
+        /// <p>The allowed values are the following.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -7107,8 +7230,7 @@ pub mod workflow {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>SUPPRESSED</code> - The finding will not be reviewed again and will not be
-        /// acted upon.</p>
+        /// <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -7851,7 +7973,7 @@ pub struct ResourceDetails {
         std::option::Option<crate::model::AwsCertificateManagerCertificateDetails>,
     /// <p>Contains details about an Amazon Redshift cluster.</p>
     pub aws_redshift_cluster: std::option::Option<crate::model::AwsRedshiftClusterDetails>,
-    /// <p>contains details about a Classic Load Balancer.</p>
+    /// <p>Contains details about a Classic Load Balancer.</p>
     pub aws_elb_load_balancer: std::option::Option<crate::model::AwsElbLoadBalancerDetails>,
     /// <p>Contains details about an IAM group.</p>
     pub aws_iam_group: std::option::Option<crate::model::AwsIamGroupDetails>,
@@ -7905,6 +8027,13 @@ pub struct ResourceDetails {
         std::option::Option<crate::model::AwsRdsEventSubscriptionDetails>,
     /// <p>Details about a service within an ECS cluster.</p>
     pub aws_ecs_service: std::option::Option<crate::model::AwsEcsServiceDetails>,
+    /// <p>Provides details about a launch configuration.</p>
+    pub aws_auto_scaling_launch_configuration:
+        std::option::Option<crate::model::AwsAutoScalingLaunchConfigurationDetails>,
+    /// <p>Details about an EC2 VPN connection.</p>
+    pub aws_ec2_vpn_connection: std::option::Option<crate::model::AwsEc2VpnConnectionDetails>,
+    /// <p>information about an Amazon ECR image.</p>
+    pub aws_ecr_container_image: std::option::Option<crate::model::AwsEcrContainerImageDetails>,
 }
 impl std::fmt::Debug for ResourceDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7982,6 +8111,12 @@ impl std::fmt::Debug for ResourceDetails {
             &self.aws_rds_event_subscription,
         );
         formatter.field("aws_ecs_service", &self.aws_ecs_service);
+        formatter.field(
+            "aws_auto_scaling_launch_configuration",
+            &self.aws_auto_scaling_launch_configuration,
+        );
+        formatter.field("aws_ec2_vpn_connection", &self.aws_ec2_vpn_connection);
+        formatter.field("aws_ecr_container_image", &self.aws_ecr_container_image);
         formatter.finish()
     }
 }
@@ -8065,6 +8200,12 @@ pub mod resource_details {
         pub(crate) aws_rds_event_subscription:
             std::option::Option<crate::model::AwsRdsEventSubscriptionDetails>,
         pub(crate) aws_ecs_service: std::option::Option<crate::model::AwsEcsServiceDetails>,
+        pub(crate) aws_auto_scaling_launch_configuration:
+            std::option::Option<crate::model::AwsAutoScalingLaunchConfigurationDetails>,
+        pub(crate) aws_ec2_vpn_connection:
+            std::option::Option<crate::model::AwsEc2VpnConnectionDetails>,
+        pub(crate) aws_ecr_container_image:
+            std::option::Option<crate::model::AwsEcrContainerImageDetails>,
     }
     impl Builder {
         /// <p>Details for an autoscaling group.</p>
@@ -8481,7 +8622,7 @@ pub mod resource_details {
             self.aws_redshift_cluster = input;
             self
         }
-        /// <p>contains details about a Classic Load Balancer.</p>
+        /// <p>Contains details about a Classic Load Balancer.</p>
         pub fn aws_elb_load_balancer(
             mut self,
             input: crate::model::AwsElbLoadBalancerDetails,
@@ -8734,6 +8875,51 @@ pub mod resource_details {
             self.aws_ecs_service = input;
             self
         }
+        /// <p>Provides details about a launch configuration.</p>
+        pub fn aws_auto_scaling_launch_configuration(
+            mut self,
+            input: crate::model::AwsAutoScalingLaunchConfigurationDetails,
+        ) -> Self {
+            self.aws_auto_scaling_launch_configuration = Some(input);
+            self
+        }
+        pub fn set_aws_auto_scaling_launch_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AwsAutoScalingLaunchConfigurationDetails>,
+        ) -> Self {
+            self.aws_auto_scaling_launch_configuration = input;
+            self
+        }
+        /// <p>Details about an EC2 VPN connection.</p>
+        pub fn aws_ec2_vpn_connection(
+            mut self,
+            input: crate::model::AwsEc2VpnConnectionDetails,
+        ) -> Self {
+            self.aws_ec2_vpn_connection = Some(input);
+            self
+        }
+        pub fn set_aws_ec2_vpn_connection(
+            mut self,
+            input: std::option::Option<crate::model::AwsEc2VpnConnectionDetails>,
+        ) -> Self {
+            self.aws_ec2_vpn_connection = input;
+            self
+        }
+        /// <p>information about an Amazon ECR image.</p>
+        pub fn aws_ecr_container_image(
+            mut self,
+            input: crate::model::AwsEcrContainerImageDetails,
+        ) -> Self {
+            self.aws_ecr_container_image = Some(input);
+            self
+        }
+        pub fn set_aws_ecr_container_image(
+            mut self,
+            input: std::option::Option<crate::model::AwsEcrContainerImageDetails>,
+        ) -> Self {
+            self.aws_ecr_container_image = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResourceDetails`](crate::model::ResourceDetails)
         pub fn build(self) -> crate::model::ResourceDetails {
             crate::model::ResourceDetails {
@@ -8786,6 +8972,9 @@ pub mod resource_details {
                 other: self.other,
                 aws_rds_event_subscription: self.aws_rds_event_subscription,
                 aws_ecs_service: self.aws_ecs_service,
+                aws_auto_scaling_launch_configuration: self.aws_auto_scaling_launch_configuration,
+                aws_ec2_vpn_connection: self.aws_ec2_vpn_connection,
+                aws_ecr_container_image: self.aws_ecr_container_image,
             }
         }
     }
@@ -8794,6 +8983,1677 @@ impl ResourceDetails {
     /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails)
     pub fn builder() -> crate::model::resource_details::Builder {
         crate::model::resource_details::Builder::default()
+    }
+}
+
+/// <p>Information about an Amazon ECR image.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsEcrContainerImageDetails {
+    /// <p>The Amazon Web Services account identifier that is associated with the registry that the image belongs
+    /// to.</p>
+    pub registry_id: std::option::Option<std::string::String>,
+    /// <p>The name of the repository that the image belongs to.</p>
+    pub repository_name: std::option::Option<std::string::String>,
+    /// <p>The architecture of the image.</p>
+    pub architecture: std::option::Option<std::string::String>,
+    /// <p>The sha256 digest of the image manifest.</p>
+    pub image_digest: std::option::Option<std::string::String>,
+    /// <p>The list of tags that are associated with the image.</p>
+    pub image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The date and time when the image was pushed to the repository.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet
+    /// Date/Time Format</a>. The value cannot contain spaces. For example,
+    /// <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub image_published_at: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsEcrContainerImageDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsEcrContainerImageDetails");
+        formatter.field("registry_id", &self.registry_id);
+        formatter.field("repository_name", &self.repository_name);
+        formatter.field("architecture", &self.architecture);
+        formatter.field("image_digest", &self.image_digest);
+        formatter.field("image_tags", &self.image_tags);
+        formatter.field("image_published_at", &self.image_published_at);
+        formatter.finish()
+    }
+}
+/// See [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails)
+pub mod aws_ecr_container_image_details {
+    /// A builder for [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) registry_id: std::option::Option<std::string::String>,
+        pub(crate) repository_name: std::option::Option<std::string::String>,
+        pub(crate) architecture: std::option::Option<std::string::String>,
+        pub(crate) image_digest: std::option::Option<std::string::String>,
+        pub(crate) image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) image_published_at: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services account identifier that is associated with the registry that the image belongs
+        /// to.</p>
+        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registry_id = Some(input.into());
+            self
+        }
+        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registry_id = input;
+            self
+        }
+        /// <p>The name of the repository that the image belongs to.</p>
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.repository_name = Some(input.into());
+            self
+        }
+        pub fn set_repository_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.repository_name = input;
+            self
+        }
+        /// <p>The architecture of the image.</p>
+        pub fn architecture(mut self, input: impl Into<std::string::String>) -> Self {
+            self.architecture = Some(input.into());
+            self
+        }
+        pub fn set_architecture(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.architecture = input;
+            self
+        }
+        /// <p>The sha256 digest of the image manifest.</p>
+        pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_digest = Some(input.into());
+            self
+        }
+        pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_digest = input;
+            self
+        }
+        pub fn image_tags(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.image_tags.unwrap_or_default();
+            v.push(input.into());
+            self.image_tags = Some(v);
+            self
+        }
+        pub fn set_image_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.image_tags = input;
+            self
+        }
+        /// <p>The date and time when the image was pushed to the repository.</p>
+        /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet
+        /// Date/Time Format</a>. The value cannot contain spaces. For example,
+        /// <code>2020-03-22T13:22:13.933Z</code>.</p>
+        pub fn image_published_at(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_published_at = Some(input.into());
+            self
+        }
+        pub fn set_image_published_at(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.image_published_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails)
+        pub fn build(self) -> crate::model::AwsEcrContainerImageDetails {
+            crate::model::AwsEcrContainerImageDetails {
+                registry_id: self.registry_id,
+                repository_name: self.repository_name,
+                architecture: self.architecture,
+                image_digest: self.image_digest,
+                image_tags: self.image_tags,
+                image_published_at: self.image_published_at,
+            }
+        }
+    }
+}
+impl AwsEcrContainerImageDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails)
+    pub fn builder() -> crate::model::aws_ecr_container_image_details::Builder {
+        crate::model::aws_ecr_container_image_details::Builder::default()
+    }
+}
+
+/// <p>Details about an Amazon EC2 VPN
+/// connection.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsEc2VpnConnectionDetails {
+    /// <p>The identifier of the VPN connection.</p>
+    pub vpn_connection_id: std::option::Option<std::string::String>,
+    /// <p>The current state of the VPN connection.</p>
+    pub state: std::option::Option<std::string::String>,
+    /// <p>The identifier of the customer gateway that is at your end of the VPN connection.</p>
+    pub customer_gateway_id: std::option::Option<std::string::String>,
+    /// <p>The configuration information for the VPN connection's customer gateway, in the native XML
+    /// format.</p>
+    pub customer_gateway_configuration: std::option::Option<std::string::String>,
+    /// <p>The type of VPN connection.</p>
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p>The identifier of the virtual private gateway that is at the Amazon Web Services side of the VPN
+    /// connection.</p>
+    pub vpn_gateway_id: std::option::Option<std::string::String>,
+    /// <p>The category of the VPN connection. <code>VPN</code> indicates an Amazon Web Services VPN connection. <code>VPN-Classic</code>
+    /// indicates an Amazon Web Services Classic VPN connection.</p>
+    pub category: std::option::Option<std::string::String>,
+    /// <p>Information about the VPN tunnel.</p>
+    pub vgw_telemetry:
+        std::option::Option<std::vec::Vec<crate::model::AwsEc2VpnConnectionVgwTelemetryDetails>>,
+    /// <p>The VPN connection options.</p>
+    pub options: std::option::Option<crate::model::AwsEc2VpnConnectionOptionsDetails>,
+    /// <p>The static routes that are associated with the VPN connection.</p>
+    pub routes: std::option::Option<std::vec::Vec<crate::model::AwsEc2VpnConnectionRoutesDetails>>,
+    /// <p>The identifier of the transit gateway that is associated with the VPN connection.</p>
+    pub transit_gateway_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsEc2VpnConnectionDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsEc2VpnConnectionDetails");
+        formatter.field("vpn_connection_id", &self.vpn_connection_id);
+        formatter.field("state", &self.state);
+        formatter.field("customer_gateway_id", &self.customer_gateway_id);
+        formatter.field(
+            "customer_gateway_configuration",
+            &self.customer_gateway_configuration,
+        );
+        formatter.field("r#type", &self.r#type);
+        formatter.field("vpn_gateway_id", &self.vpn_gateway_id);
+        formatter.field("category", &self.category);
+        formatter.field("vgw_telemetry", &self.vgw_telemetry);
+        formatter.field("options", &self.options);
+        formatter.field("routes", &self.routes);
+        formatter.field("transit_gateway_id", &self.transit_gateway_id);
+        formatter.finish()
+    }
+}
+/// See [`AwsEc2VpnConnectionDetails`](crate::model::AwsEc2VpnConnectionDetails)
+pub mod aws_ec2_vpn_connection_details {
+    /// A builder for [`AwsEc2VpnConnectionDetails`](crate::model::AwsEc2VpnConnectionDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpn_connection_id: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<std::string::String>,
+        pub(crate) customer_gateway_id: std::option::Option<std::string::String>,
+        pub(crate) customer_gateway_configuration: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) vpn_gateway_id: std::option::Option<std::string::String>,
+        pub(crate) category: std::option::Option<std::string::String>,
+        pub(crate) vgw_telemetry: std::option::Option<
+            std::vec::Vec<crate::model::AwsEc2VpnConnectionVgwTelemetryDetails>,
+        >,
+        pub(crate) options: std::option::Option<crate::model::AwsEc2VpnConnectionOptionsDetails>,
+        pub(crate) routes:
+            std::option::Option<std::vec::Vec<crate::model::AwsEc2VpnConnectionRoutesDetails>>,
+        pub(crate) transit_gateway_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the VPN connection.</p>
+        pub fn vpn_connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpn_connection_id = Some(input.into());
+            self
+        }
+        pub fn set_vpn_connection_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpn_connection_id = input;
+            self
+        }
+        /// <p>The current state of the VPN connection.</p>
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state = Some(input.into());
+            self
+        }
+        pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The identifier of the customer gateway that is at your end of the VPN connection.</p>
+        pub fn customer_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.customer_gateway_id = Some(input.into());
+            self
+        }
+        pub fn set_customer_gateway_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.customer_gateway_id = input;
+            self
+        }
+        /// <p>The configuration information for the VPN connection's customer gateway, in the native XML
+        /// format.</p>
+        pub fn customer_gateway_configuration(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.customer_gateway_configuration = Some(input.into());
+            self
+        }
+        pub fn set_customer_gateway_configuration(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.customer_gateway_configuration = input;
+            self
+        }
+        /// <p>The type of VPN connection.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The identifier of the virtual private gateway that is at the Amazon Web Services side of the VPN
+        /// connection.</p>
+        pub fn vpn_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpn_gateway_id = Some(input.into());
+            self
+        }
+        pub fn set_vpn_gateway_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpn_gateway_id = input;
+            self
+        }
+        /// <p>The category of the VPN connection. <code>VPN</code> indicates an Amazon Web Services VPN connection. <code>VPN-Classic</code>
+        /// indicates an Amazon Web Services Classic VPN connection.</p>
+        pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+            self.category = Some(input.into());
+            self
+        }
+        pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.category = input;
+            self
+        }
+        pub fn vgw_telemetry(
+            mut self,
+            input: impl Into<crate::model::AwsEc2VpnConnectionVgwTelemetryDetails>,
+        ) -> Self {
+            let mut v = self.vgw_telemetry.unwrap_or_default();
+            v.push(input.into());
+            self.vgw_telemetry = Some(v);
+            self
+        }
+        pub fn set_vgw_telemetry(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AwsEc2VpnConnectionVgwTelemetryDetails>,
+            >,
+        ) -> Self {
+            self.vgw_telemetry = input;
+            self
+        }
+        /// <p>The VPN connection options.</p>
+        pub fn options(mut self, input: crate::model::AwsEc2VpnConnectionOptionsDetails) -> Self {
+            self.options = Some(input);
+            self
+        }
+        pub fn set_options(
+            mut self,
+            input: std::option::Option<crate::model::AwsEc2VpnConnectionOptionsDetails>,
+        ) -> Self {
+            self.options = input;
+            self
+        }
+        pub fn routes(
+            mut self,
+            input: impl Into<crate::model::AwsEc2VpnConnectionRoutesDetails>,
+        ) -> Self {
+            let mut v = self.routes.unwrap_or_default();
+            v.push(input.into());
+            self.routes = Some(v);
+            self
+        }
+        pub fn set_routes(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AwsEc2VpnConnectionRoutesDetails>,
+            >,
+        ) -> Self {
+            self.routes = input;
+            self
+        }
+        /// <p>The identifier of the transit gateway that is associated with the VPN connection.</p>
+        pub fn transit_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transit_gateway_id = Some(input.into());
+            self
+        }
+        pub fn set_transit_gateway_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transit_gateway_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsEc2VpnConnectionDetails`](crate::model::AwsEc2VpnConnectionDetails)
+        pub fn build(self) -> crate::model::AwsEc2VpnConnectionDetails {
+            crate::model::AwsEc2VpnConnectionDetails {
+                vpn_connection_id: self.vpn_connection_id,
+                state: self.state,
+                customer_gateway_id: self.customer_gateway_id,
+                customer_gateway_configuration: self.customer_gateway_configuration,
+                r#type: self.r#type,
+                vpn_gateway_id: self.vpn_gateway_id,
+                category: self.category,
+                vgw_telemetry: self.vgw_telemetry,
+                options: self.options,
+                routes: self.routes,
+                transit_gateway_id: self.transit_gateway_id,
+            }
+        }
+    }
+}
+impl AwsEc2VpnConnectionDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionDetails`](crate::model::AwsEc2VpnConnectionDetails)
+    pub fn builder() -> crate::model::aws_ec2_vpn_connection_details::Builder {
+        crate::model::aws_ec2_vpn_connection_details::Builder::default()
+    }
+}
+
+/// <p>A static routes associated with
+/// the VPN connection.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsEc2VpnConnectionRoutesDetails {
+    /// <p>The CIDR block associated with the local subnet of the customer data center.</p>
+    pub destination_cidr_block: std::option::Option<std::string::String>,
+    /// <p>The current state of the static route.</p>
+    pub state: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsEc2VpnConnectionRoutesDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsEc2VpnConnectionRoutesDetails");
+        formatter.field("destination_cidr_block", &self.destination_cidr_block);
+        formatter.field("state", &self.state);
+        formatter.finish()
+    }
+}
+/// See [`AwsEc2VpnConnectionRoutesDetails`](crate::model::AwsEc2VpnConnectionRoutesDetails)
+pub mod aws_ec2_vpn_connection_routes_details {
+    /// A builder for [`AwsEc2VpnConnectionRoutesDetails`](crate::model::AwsEc2VpnConnectionRoutesDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) destination_cidr_block: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The CIDR block associated with the local subnet of the customer data center.</p>
+        pub fn destination_cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination_cidr_block = Some(input.into());
+            self
+        }
+        pub fn set_destination_cidr_block(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.destination_cidr_block = input;
+            self
+        }
+        /// <p>The current state of the static route.</p>
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state = Some(input.into());
+            self
+        }
+        pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsEc2VpnConnectionRoutesDetails`](crate::model::AwsEc2VpnConnectionRoutesDetails)
+        pub fn build(self) -> crate::model::AwsEc2VpnConnectionRoutesDetails {
+            crate::model::AwsEc2VpnConnectionRoutesDetails {
+                destination_cidr_block: self.destination_cidr_block,
+                state: self.state,
+            }
+        }
+    }
+}
+impl AwsEc2VpnConnectionRoutesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionRoutesDetails`](crate::model::AwsEc2VpnConnectionRoutesDetails)
+    pub fn builder() -> crate::model::aws_ec2_vpn_connection_routes_details::Builder {
+        crate::model::aws_ec2_vpn_connection_routes_details::Builder::default()
+    }
+}
+
+/// <p>VPN connection options.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsEc2VpnConnectionOptionsDetails {
+    /// <p>Whether the VPN connection uses static routes only.</p>
+    pub static_routes_only: bool,
+    /// <p>The VPN tunnel options.</p>
+    pub tunnel_options: std::option::Option<
+        std::vec::Vec<crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>,
+    >,
+}
+impl std::fmt::Debug for AwsEc2VpnConnectionOptionsDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsEc2VpnConnectionOptionsDetails");
+        formatter.field("static_routes_only", &self.static_routes_only);
+        formatter.field("tunnel_options", &self.tunnel_options);
+        formatter.finish()
+    }
+}
+/// See [`AwsEc2VpnConnectionOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsDetails)
+pub mod aws_ec2_vpn_connection_options_details {
+    /// A builder for [`AwsEc2VpnConnectionOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) static_routes_only: std::option::Option<bool>,
+        pub(crate) tunnel_options: std::option::Option<
+            std::vec::Vec<crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>,
+        >,
+    }
+    impl Builder {
+        /// <p>Whether the VPN connection uses static routes only.</p>
+        pub fn static_routes_only(mut self, input: bool) -> Self {
+            self.static_routes_only = Some(input);
+            self
+        }
+        pub fn set_static_routes_only(mut self, input: std::option::Option<bool>) -> Self {
+            self.static_routes_only = input;
+            self
+        }
+        pub fn tunnel_options(
+            mut self,
+            input: impl Into<crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>,
+        ) -> Self {
+            let mut v = self.tunnel_options.unwrap_or_default();
+            v.push(input.into());
+            self.tunnel_options = Some(v);
+            self
+        }
+        pub fn set_tunnel_options(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>,
+            >,
+        ) -> Self {
+            self.tunnel_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsEc2VpnConnectionOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsDetails)
+        pub fn build(self) -> crate::model::AwsEc2VpnConnectionOptionsDetails {
+            crate::model::AwsEc2VpnConnectionOptionsDetails {
+                static_routes_only: self.static_routes_only.unwrap_or_default(),
+                tunnel_options: self.tunnel_options,
+            }
+        }
+    }
+}
+impl AwsEc2VpnConnectionOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsDetails)
+    pub fn builder() -> crate::model::aws_ec2_vpn_connection_options_details::Builder {
+        crate::model::aws_ec2_vpn_connection_options_details::Builder::default()
+    }
+}
+
+/// <p>The VPN tunnel options.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
+    /// <p>The number of seconds after which a Dead Peer Detection (DPD) timeout occurs.</p>
+    pub dpd_timeout_seconds: i32,
+    /// <p>The Internet Key Exchange (IKE) versions that are permitted for the VPN tunnel.</p>
+    pub ike_versions: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The external IP address of the VPN tunnel.</p>
+    pub outside_ip_address: std::option::Option<std::string::String>,
+    /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 1 IKE
+    /// negotiations.</p>
+    pub phase1_dh_group_numbers: std::option::Option<std::vec::Vec<i32>>,
+    /// <p>The permitted encryption algorithms for the VPN tunnel for phase 1 IKE
+    /// negotiations.</p>
+    pub phase1_encryption_algorithms: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The permitted integrity algorithms for the VPN tunnel for phase 1 IKE
+    /// negotiations.</p>
+    pub phase1_integrity_algorithms: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The lifetime for phase 1 of the IKE negotiation, in seconds.</p>
+    pub phase1_lifetime_seconds: i32,
+    /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 2 IKE
+    /// negotiations.</p>
+    pub phase2_dh_group_numbers: std::option::Option<std::vec::Vec<i32>>,
+    /// <p>The permitted encryption algorithms for the VPN tunnel for phase 2 IKE
+    /// negotiations.</p>
+    pub phase2_encryption_algorithms: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The permitted integrity algorithms for the VPN tunnel for phase 2 IKE
+    /// negotiations.</p>
+    pub phase2_integrity_algorithms: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
+    pub phase2_lifetime_seconds: i32,
+    /// <p>The preshared key to establish initial authentication between the virtual private gateway
+    /// and the customer gateway.</p>
+    pub pre_shared_key: std::option::Option<std::string::String>,
+    /// <p>The percentage of the rekey window, which is determined by
+    /// <code>RekeyMarginTimeSeconds</code> during which the rekey time is randomly selected.</p>
+    pub rekey_fuzz_percentage: i32,
+    /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the Amazon Web Services
+    /// side of the VPN connection performs an IKE rekey.</p>
+    pub rekey_margin_time_seconds: i32,
+    /// <p>The number of packets in an IKE replay window.</p>
+    pub replay_window_size: i32,
+    /// <p>The range of inside IPv4 addresses for the tunnel.</p>
+    pub tunnel_inside_cidr: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsEc2VpnConnectionOptionsTunnelOptionsDetails");
+        formatter.field("dpd_timeout_seconds", &self.dpd_timeout_seconds);
+        formatter.field("ike_versions", &self.ike_versions);
+        formatter.field("outside_ip_address", &self.outside_ip_address);
+        formatter.field("phase1_dh_group_numbers", &self.phase1_dh_group_numbers);
+        formatter.field(
+            "phase1_encryption_algorithms",
+            &self.phase1_encryption_algorithms,
+        );
+        formatter.field(
+            "phase1_integrity_algorithms",
+            &self.phase1_integrity_algorithms,
+        );
+        formatter.field("phase1_lifetime_seconds", &self.phase1_lifetime_seconds);
+        formatter.field("phase2_dh_group_numbers", &self.phase2_dh_group_numbers);
+        formatter.field(
+            "phase2_encryption_algorithms",
+            &self.phase2_encryption_algorithms,
+        );
+        formatter.field(
+            "phase2_integrity_algorithms",
+            &self.phase2_integrity_algorithms,
+        );
+        formatter.field("phase2_lifetime_seconds", &self.phase2_lifetime_seconds);
+        formatter.field("pre_shared_key", &self.pre_shared_key);
+        formatter.field("rekey_fuzz_percentage", &self.rekey_fuzz_percentage);
+        formatter.field("rekey_margin_time_seconds", &self.rekey_margin_time_seconds);
+        formatter.field("replay_window_size", &self.replay_window_size);
+        formatter.field("tunnel_inside_cidr", &self.tunnel_inside_cidr);
+        formatter.finish()
+    }
+}
+/// See [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails)
+pub mod aws_ec2_vpn_connection_options_tunnel_options_details {
+    /// A builder for [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dpd_timeout_seconds: std::option::Option<i32>,
+        pub(crate) ike_versions: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) outside_ip_address: std::option::Option<std::string::String>,
+        pub(crate) phase1_dh_group_numbers: std::option::Option<std::vec::Vec<i32>>,
+        pub(crate) phase1_encryption_algorithms:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) phase1_integrity_algorithms:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) phase1_lifetime_seconds: std::option::Option<i32>,
+        pub(crate) phase2_dh_group_numbers: std::option::Option<std::vec::Vec<i32>>,
+        pub(crate) phase2_encryption_algorithms:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) phase2_integrity_algorithms:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) phase2_lifetime_seconds: std::option::Option<i32>,
+        pub(crate) pre_shared_key: std::option::Option<std::string::String>,
+        pub(crate) rekey_fuzz_percentage: std::option::Option<i32>,
+        pub(crate) rekey_margin_time_seconds: std::option::Option<i32>,
+        pub(crate) replay_window_size: std::option::Option<i32>,
+        pub(crate) tunnel_inside_cidr: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The number of seconds after which a Dead Peer Detection (DPD) timeout occurs.</p>
+        pub fn dpd_timeout_seconds(mut self, input: i32) -> Self {
+            self.dpd_timeout_seconds = Some(input);
+            self
+        }
+        pub fn set_dpd_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.dpd_timeout_seconds = input;
+            self
+        }
+        pub fn ike_versions(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.ike_versions.unwrap_or_default();
+            v.push(input.into());
+            self.ike_versions = Some(v);
+            self
+        }
+        pub fn set_ike_versions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.ike_versions = input;
+            self
+        }
+        /// <p>The external IP address of the VPN tunnel.</p>
+        pub fn outside_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.outside_ip_address = Some(input.into());
+            self
+        }
+        pub fn set_outside_ip_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.outside_ip_address = input;
+            self
+        }
+        pub fn phase1_dh_group_numbers(mut self, input: impl Into<i32>) -> Self {
+            let mut v = self.phase1_dh_group_numbers.unwrap_or_default();
+            v.push(input.into());
+            self.phase1_dh_group_numbers = Some(v);
+            self
+        }
+        pub fn set_phase1_dh_group_numbers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<i32>>,
+        ) -> Self {
+            self.phase1_dh_group_numbers = input;
+            self
+        }
+        pub fn phase1_encryption_algorithms(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.phase1_encryption_algorithms.unwrap_or_default();
+            v.push(input.into());
+            self.phase1_encryption_algorithms = Some(v);
+            self
+        }
+        pub fn set_phase1_encryption_algorithms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.phase1_encryption_algorithms = input;
+            self
+        }
+        pub fn phase1_integrity_algorithms(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.phase1_integrity_algorithms.unwrap_or_default();
+            v.push(input.into());
+            self.phase1_integrity_algorithms = Some(v);
+            self
+        }
+        pub fn set_phase1_integrity_algorithms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.phase1_integrity_algorithms = input;
+            self
+        }
+        /// <p>The lifetime for phase 1 of the IKE negotiation, in seconds.</p>
+        pub fn phase1_lifetime_seconds(mut self, input: i32) -> Self {
+            self.phase1_lifetime_seconds = Some(input);
+            self
+        }
+        pub fn set_phase1_lifetime_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.phase1_lifetime_seconds = input;
+            self
+        }
+        pub fn phase2_dh_group_numbers(mut self, input: impl Into<i32>) -> Self {
+            let mut v = self.phase2_dh_group_numbers.unwrap_or_default();
+            v.push(input.into());
+            self.phase2_dh_group_numbers = Some(v);
+            self
+        }
+        pub fn set_phase2_dh_group_numbers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<i32>>,
+        ) -> Self {
+            self.phase2_dh_group_numbers = input;
+            self
+        }
+        pub fn phase2_encryption_algorithms(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.phase2_encryption_algorithms.unwrap_or_default();
+            v.push(input.into());
+            self.phase2_encryption_algorithms = Some(v);
+            self
+        }
+        pub fn set_phase2_encryption_algorithms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.phase2_encryption_algorithms = input;
+            self
+        }
+        pub fn phase2_integrity_algorithms(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.phase2_integrity_algorithms.unwrap_or_default();
+            v.push(input.into());
+            self.phase2_integrity_algorithms = Some(v);
+            self
+        }
+        pub fn set_phase2_integrity_algorithms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.phase2_integrity_algorithms = input;
+            self
+        }
+        /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
+        pub fn phase2_lifetime_seconds(mut self, input: i32) -> Self {
+            self.phase2_lifetime_seconds = Some(input);
+            self
+        }
+        pub fn set_phase2_lifetime_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.phase2_lifetime_seconds = input;
+            self
+        }
+        /// <p>The preshared key to establish initial authentication between the virtual private gateway
+        /// and the customer gateway.</p>
+        pub fn pre_shared_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pre_shared_key = Some(input.into());
+            self
+        }
+        pub fn set_pre_shared_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pre_shared_key = input;
+            self
+        }
+        /// <p>The percentage of the rekey window, which is determined by
+        /// <code>RekeyMarginTimeSeconds</code> during which the rekey time is randomly selected.</p>
+        pub fn rekey_fuzz_percentage(mut self, input: i32) -> Self {
+            self.rekey_fuzz_percentage = Some(input);
+            self
+        }
+        pub fn set_rekey_fuzz_percentage(mut self, input: std::option::Option<i32>) -> Self {
+            self.rekey_fuzz_percentage = input;
+            self
+        }
+        /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the Amazon Web Services
+        /// side of the VPN connection performs an IKE rekey.</p>
+        pub fn rekey_margin_time_seconds(mut self, input: i32) -> Self {
+            self.rekey_margin_time_seconds = Some(input);
+            self
+        }
+        pub fn set_rekey_margin_time_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.rekey_margin_time_seconds = input;
+            self
+        }
+        /// <p>The number of packets in an IKE replay window.</p>
+        pub fn replay_window_size(mut self, input: i32) -> Self {
+            self.replay_window_size = Some(input);
+            self
+        }
+        pub fn set_replay_window_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.replay_window_size = input;
+            self
+        }
+        /// <p>The range of inside IPv4 addresses for the tunnel.</p>
+        pub fn tunnel_inside_cidr(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tunnel_inside_cidr = Some(input.into());
+            self
+        }
+        pub fn set_tunnel_inside_cidr(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.tunnel_inside_cidr = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails)
+        pub fn build(self) -> crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
+            crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
+                dpd_timeout_seconds: self.dpd_timeout_seconds.unwrap_or_default(),
+                ike_versions: self.ike_versions,
+                outside_ip_address: self.outside_ip_address,
+                phase1_dh_group_numbers: self.phase1_dh_group_numbers,
+                phase1_encryption_algorithms: self.phase1_encryption_algorithms,
+                phase1_integrity_algorithms: self.phase1_integrity_algorithms,
+                phase1_lifetime_seconds: self.phase1_lifetime_seconds.unwrap_or_default(),
+                phase2_dh_group_numbers: self.phase2_dh_group_numbers,
+                phase2_encryption_algorithms: self.phase2_encryption_algorithms,
+                phase2_integrity_algorithms: self.phase2_integrity_algorithms,
+                phase2_lifetime_seconds: self.phase2_lifetime_seconds.unwrap_or_default(),
+                pre_shared_key: self.pre_shared_key,
+                rekey_fuzz_percentage: self.rekey_fuzz_percentage.unwrap_or_default(),
+                rekey_margin_time_seconds: self.rekey_margin_time_seconds.unwrap_or_default(),
+                replay_window_size: self.replay_window_size.unwrap_or_default(),
+                tunnel_inside_cidr: self.tunnel_inside_cidr,
+            }
+        }
+    }
+}
+impl AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails)
+    pub fn builder() -> crate::model::aws_ec2_vpn_connection_options_tunnel_options_details::Builder
+    {
+        crate::model::aws_ec2_vpn_connection_options_tunnel_options_details::Builder::default()
+    }
+}
+
+/// <p>Information about the VPN tunnel.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsEc2VpnConnectionVgwTelemetryDetails {
+    /// <p>The number of accepted routes.</p>
+    pub accepted_route_count: i32,
+    /// <p>The ARN of the VPN tunnel endpoint certificate.</p>
+    pub certificate_arn: std::option::Option<std::string::String>,
+    /// <p>The date and time of the last change in status.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet
+    /// Date/Time Format</a>. The value cannot contain spaces. For example,
+    /// <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub last_status_change: std::option::Option<std::string::String>,
+    /// <p>The Internet-routable IP address of the virtual private gateway's outside
+    /// interface.</p>
+    pub outside_ip_address: std::option::Option<std::string::String>,
+    /// <p>The status of the VPN tunnel.</p>
+    pub status: std::option::Option<std::string::String>,
+    /// <p>If an error occurs, a description of the error.</p>
+    pub status_message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsEc2VpnConnectionVgwTelemetryDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsEc2VpnConnectionVgwTelemetryDetails");
+        formatter.field("accepted_route_count", &self.accepted_route_count);
+        formatter.field("certificate_arn", &self.certificate_arn);
+        formatter.field("last_status_change", &self.last_status_change);
+        formatter.field("outside_ip_address", &self.outside_ip_address);
+        formatter.field("status", &self.status);
+        formatter.field("status_message", &self.status_message);
+        formatter.finish()
+    }
+}
+/// See [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::model::AwsEc2VpnConnectionVgwTelemetryDetails)
+pub mod aws_ec2_vpn_connection_vgw_telemetry_details {
+    /// A builder for [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::model::AwsEc2VpnConnectionVgwTelemetryDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) accepted_route_count: std::option::Option<i32>,
+        pub(crate) certificate_arn: std::option::Option<std::string::String>,
+        pub(crate) last_status_change: std::option::Option<std::string::String>,
+        pub(crate) outside_ip_address: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) status_message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The number of accepted routes.</p>
+        pub fn accepted_route_count(mut self, input: i32) -> Self {
+            self.accepted_route_count = Some(input);
+            self
+        }
+        pub fn set_accepted_route_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.accepted_route_count = input;
+            self
+        }
+        /// <p>The ARN of the VPN tunnel endpoint certificate.</p>
+        pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_arn = Some(input.into());
+            self
+        }
+        pub fn set_certificate_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.certificate_arn = input;
+            self
+        }
+        /// <p>The date and time of the last change in status.</p>
+        /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet
+        /// Date/Time Format</a>. The value cannot contain spaces. For example,
+        /// <code>2020-03-22T13:22:13.933Z</code>.</p>
+        pub fn last_status_change(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_status_change = Some(input.into());
+            self
+        }
+        pub fn set_last_status_change(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_status_change = input;
+            self
+        }
+        /// <p>The Internet-routable IP address of the virtual private gateway's outside
+        /// interface.</p>
+        pub fn outside_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.outside_ip_address = Some(input.into());
+            self
+        }
+        pub fn set_outside_ip_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.outside_ip_address = input;
+            self
+        }
+        /// <p>The status of the VPN tunnel.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>If an error occurs, a description of the error.</p>
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
+            self
+        }
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::model::AwsEc2VpnConnectionVgwTelemetryDetails)
+        pub fn build(self) -> crate::model::AwsEc2VpnConnectionVgwTelemetryDetails {
+            crate::model::AwsEc2VpnConnectionVgwTelemetryDetails {
+                accepted_route_count: self.accepted_route_count.unwrap_or_default(),
+                certificate_arn: self.certificate_arn,
+                last_status_change: self.last_status_change,
+                outside_ip_address: self.outside_ip_address,
+                status: self.status,
+                status_message: self.status_message,
+            }
+        }
+    }
+}
+impl AwsEc2VpnConnectionVgwTelemetryDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::model::AwsEc2VpnConnectionVgwTelemetryDetails)
+    pub fn builder() -> crate::model::aws_ec2_vpn_connection_vgw_telemetry_details::Builder {
+        crate::model::aws_ec2_vpn_connection_vgw_telemetry_details::Builder::default()
+    }
+}
+
+/// <p>Details about a launch configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsAutoScalingLaunchConfigurationDetails {
+    /// <p>For Auto Scaling groups that run in a VPC, specifies whether to assign a public IP address to the group's instances.</p>
+    pub associate_public_ip_address: bool,
+    /// <p>Specifies the block devices for the instance.</p>
+    pub block_device_mappings: std::option::Option<
+        std::vec::Vec<crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails>,
+    >,
+    /// <p>The identifier of a ClassicLink-enabled VPC that EC2-Classic instances are linked to.</p>
+    pub classic_link_vpc_id: std::option::Option<std::string::String>,
+    /// <p>The identifiers of one or more security groups for the VPC that is specified in <code>ClassicLinkVPCId</code>.</p>
+    pub classic_link_vpc_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The creation date and time for the launch configuration.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet
+    /// Date/Time Format</a>. The value cannot contain spaces. For example,
+    /// <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub created_time: std::option::Option<std::string::String>,
+    /// <p>Whether the launch configuration is optimized for Amazon EBS I/O.</p>
+    pub ebs_optimized: bool,
+    /// <p>The name or the ARN of the instance profile associated with the IAM role for the
+    /// instance. The instance profile contains the IAM role.</p>
+    pub iam_instance_profile: std::option::Option<std::string::String>,
+    /// <p>The identifier of the Amazon Machine Image (AMI) that is used to launch EC2
+    /// instances.</p>
+    pub image_id: std::option::Option<std::string::String>,
+    /// <p>Indicates the type of monitoring for instances in the group.</p>
+    pub instance_monitoring: std::option::Option<
+        crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails,
+    >,
+    /// <p>The instance type for the instances.</p>
+    pub instance_type: std::option::Option<std::string::String>,
+    /// <p>The identifier of the kernel associated with the AMI.</p>
+    pub kernel_id: std::option::Option<std::string::String>,
+    /// <p>The name of the key pair.</p>
+    pub key_name: std::option::Option<std::string::String>,
+    /// <p>The name of the launch configuration.</p>
+    pub launch_configuration_name: std::option::Option<std::string::String>,
+    /// <p>The tenancy of the instance. An instance with <code>dedicated</code> tenancy runs on
+    /// isolated, single-tenant hardware and can only be launched into a VPC.</p>
+    pub placement_tenancy: std::option::Option<std::string::String>,
+    /// <p>The identifier of the RAM disk associated with the AMI.</p>
+    pub ramdisk_id: std::option::Option<std::string::String>,
+    /// <p>The security groups to assign to the instances in the Auto Scaling group.</p>
+    pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The maximum hourly price to be paid for any Spot Instance that is launched to fulfill the
+    /// request.</p>
+    pub spot_price: std::option::Option<std::string::String>,
+    /// <p>The user data to make available to the launched EC2 instances. Must be base64-encoded
+    /// text.</p>
+    pub user_data: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsAutoScalingLaunchConfigurationDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsAutoScalingLaunchConfigurationDetails");
+        formatter.field(
+            "associate_public_ip_address",
+            &self.associate_public_ip_address,
+        );
+        formatter.field("block_device_mappings", &self.block_device_mappings);
+        formatter.field("classic_link_vpc_id", &self.classic_link_vpc_id);
+        formatter.field(
+            "classic_link_vpc_security_groups",
+            &self.classic_link_vpc_security_groups,
+        );
+        formatter.field("created_time", &self.created_time);
+        formatter.field("ebs_optimized", &self.ebs_optimized);
+        formatter.field("iam_instance_profile", &self.iam_instance_profile);
+        formatter.field("image_id", &self.image_id);
+        formatter.field("instance_monitoring", &self.instance_monitoring);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("kernel_id", &self.kernel_id);
+        formatter.field("key_name", &self.key_name);
+        formatter.field("launch_configuration_name", &self.launch_configuration_name);
+        formatter.field("placement_tenancy", &self.placement_tenancy);
+        formatter.field("ramdisk_id", &self.ramdisk_id);
+        formatter.field("security_groups", &self.security_groups);
+        formatter.field("spot_price", &self.spot_price);
+        formatter.field("user_data", &self.user_data);
+        formatter.finish()
+    }
+}
+/// See [`AwsAutoScalingLaunchConfigurationDetails`](crate::model::AwsAutoScalingLaunchConfigurationDetails)
+pub mod aws_auto_scaling_launch_configuration_details {
+    /// A builder for [`AwsAutoScalingLaunchConfigurationDetails`](crate::model::AwsAutoScalingLaunchConfigurationDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) associate_public_ip_address: std::option::Option<bool>,
+        pub(crate) block_device_mappings: std::option::Option<
+            std::vec::Vec<
+                crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails,
+            >,
+        >,
+        pub(crate) classic_link_vpc_id: std::option::Option<std::string::String>,
+        pub(crate) classic_link_vpc_security_groups:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) created_time: std::option::Option<std::string::String>,
+        pub(crate) ebs_optimized: std::option::Option<bool>,
+        pub(crate) iam_instance_profile: std::option::Option<std::string::String>,
+        pub(crate) image_id: std::option::Option<std::string::String>,
+        pub(crate) instance_monitoring: std::option::Option<
+            crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails,
+        >,
+        pub(crate) instance_type: std::option::Option<std::string::String>,
+        pub(crate) kernel_id: std::option::Option<std::string::String>,
+        pub(crate) key_name: std::option::Option<std::string::String>,
+        pub(crate) launch_configuration_name: std::option::Option<std::string::String>,
+        pub(crate) placement_tenancy: std::option::Option<std::string::String>,
+        pub(crate) ramdisk_id: std::option::Option<std::string::String>,
+        pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) spot_price: std::option::Option<std::string::String>,
+        pub(crate) user_data: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>For Auto Scaling groups that run in a VPC, specifies whether to assign a public IP address to the group's instances.</p>
+        pub fn associate_public_ip_address(mut self, input: bool) -> Self {
+            self.associate_public_ip_address = Some(input);
+            self
+        }
+        pub fn set_associate_public_ip_address(mut self, input: std::option::Option<bool>) -> Self {
+            self.associate_public_ip_address = input;
+            self
+        }
+        pub fn block_device_mappings(
+            mut self,
+            input: impl Into<crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails>,
+        ) -> Self {
+            let mut v = self.block_device_mappings.unwrap_or_default();
+            v.push(input.into());
+            self.block_device_mappings = Some(v);
+            self
+        }
+        pub fn set_block_device_mappings(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<
+                    crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails,
+                >,
+            >,
+        ) -> Self {
+            self.block_device_mappings = input;
+            self
+        }
+        /// <p>The identifier of a ClassicLink-enabled VPC that EC2-Classic instances are linked to.</p>
+        pub fn classic_link_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.classic_link_vpc_id = Some(input.into());
+            self
+        }
+        pub fn set_classic_link_vpc_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.classic_link_vpc_id = input;
+            self
+        }
+        pub fn classic_link_vpc_security_groups(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.classic_link_vpc_security_groups.unwrap_or_default();
+            v.push(input.into());
+            self.classic_link_vpc_security_groups = Some(v);
+            self
+        }
+        pub fn set_classic_link_vpc_security_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.classic_link_vpc_security_groups = input;
+            self
+        }
+        /// <p>The creation date and time for the launch configuration.</p>
+        /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet
+        /// Date/Time Format</a>. The value cannot contain spaces. For example,
+        /// <code>2020-03-22T13:22:13.933Z</code>.</p>
+        pub fn created_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.created_time = Some(input.into());
+            self
+        }
+        pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.created_time = input;
+            self
+        }
+        /// <p>Whether the launch configuration is optimized for Amazon EBS I/O.</p>
+        pub fn ebs_optimized(mut self, input: bool) -> Self {
+            self.ebs_optimized = Some(input);
+            self
+        }
+        pub fn set_ebs_optimized(mut self, input: std::option::Option<bool>) -> Self {
+            self.ebs_optimized = input;
+            self
+        }
+        /// <p>The name or the ARN of the instance profile associated with the IAM role for the
+        /// instance. The instance profile contains the IAM role.</p>
+        pub fn iam_instance_profile(mut self, input: impl Into<std::string::String>) -> Self {
+            self.iam_instance_profile = Some(input.into());
+            self
+        }
+        pub fn set_iam_instance_profile(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.iam_instance_profile = input;
+            self
+        }
+        /// <p>The identifier of the Amazon Machine Image (AMI) that is used to launch EC2
+        /// instances.</p>
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_id = Some(input.into());
+            self
+        }
+        pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_id = input;
+            self
+        }
+        /// <p>Indicates the type of monitoring for instances in the group.</p>
+        pub fn instance_monitoring(
+            mut self,
+            input: crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails,
+        ) -> Self {
+            self.instance_monitoring = Some(input);
+            self
+        }
+        pub fn set_instance_monitoring(
+            mut self,
+            input: std::option::Option<
+                crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails,
+            >,
+        ) -> Self {
+            self.instance_monitoring = input;
+            self
+        }
+        /// <p>The instance type for the instances.</p>
+        pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_type = Some(input.into());
+            self
+        }
+        pub fn set_instance_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.instance_type = input;
+            self
+        }
+        /// <p>The identifier of the kernel associated with the AMI.</p>
+        pub fn kernel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kernel_id = Some(input.into());
+            self
+        }
+        pub fn set_kernel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kernel_id = input;
+            self
+        }
+        /// <p>The name of the key pair.</p>
+        pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_name = Some(input.into());
+            self
+        }
+        pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_name = input;
+            self
+        }
+        /// <p>The name of the launch configuration.</p>
+        pub fn launch_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.launch_configuration_name = Some(input.into());
+            self
+        }
+        pub fn set_launch_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.launch_configuration_name = input;
+            self
+        }
+        /// <p>The tenancy of the instance. An instance with <code>dedicated</code> tenancy runs on
+        /// isolated, single-tenant hardware and can only be launched into a VPC.</p>
+        pub fn placement_tenancy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.placement_tenancy = Some(input.into());
+            self
+        }
+        pub fn set_placement_tenancy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.placement_tenancy = input;
+            self
+        }
+        /// <p>The identifier of the RAM disk associated with the AMI.</p>
+        pub fn ramdisk_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ramdisk_id = Some(input.into());
+            self
+        }
+        pub fn set_ramdisk_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ramdisk_id = input;
+            self
+        }
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_groups.unwrap_or_default();
+            v.push(input.into());
+            self.security_groups = Some(v);
+            self
+        }
+        pub fn set_security_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_groups = input;
+            self
+        }
+        /// <p>The maximum hourly price to be paid for any Spot Instance that is launched to fulfill the
+        /// request.</p>
+        pub fn spot_price(mut self, input: impl Into<std::string::String>) -> Self {
+            self.spot_price = Some(input.into());
+            self
+        }
+        pub fn set_spot_price(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.spot_price = input;
+            self
+        }
+        /// <p>The user data to make available to the launched EC2 instances. Must be base64-encoded
+        /// text.</p>
+        pub fn user_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_data = Some(input.into());
+            self
+        }
+        pub fn set_user_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_data = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationDetails`](crate::model::AwsAutoScalingLaunchConfigurationDetails)
+        pub fn build(self) -> crate::model::AwsAutoScalingLaunchConfigurationDetails {
+            crate::model::AwsAutoScalingLaunchConfigurationDetails {
+                associate_public_ip_address: self.associate_public_ip_address.unwrap_or_default(),
+                block_device_mappings: self.block_device_mappings,
+                classic_link_vpc_id: self.classic_link_vpc_id,
+                classic_link_vpc_security_groups: self.classic_link_vpc_security_groups,
+                created_time: self.created_time,
+                ebs_optimized: self.ebs_optimized.unwrap_or_default(),
+                iam_instance_profile: self.iam_instance_profile,
+                image_id: self.image_id,
+                instance_monitoring: self.instance_monitoring,
+                instance_type: self.instance_type,
+                kernel_id: self.kernel_id,
+                key_name: self.key_name,
+                launch_configuration_name: self.launch_configuration_name,
+                placement_tenancy: self.placement_tenancy,
+                ramdisk_id: self.ramdisk_id,
+                security_groups: self.security_groups,
+                spot_price: self.spot_price,
+                user_data: self.user_data,
+            }
+        }
+    }
+}
+impl AwsAutoScalingLaunchConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationDetails`](crate::model::AwsAutoScalingLaunchConfigurationDetails)
+    pub fn builder() -> crate::model::aws_auto_scaling_launch_configuration_details::Builder {
+        crate::model::aws_auto_scaling_launch_configuration_details::Builder::default()
+    }
+}
+
+/// <p>Information about the type of monitoring for instances in the group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
+    /// <p>If set to <code>true</code>, then instances in the group launch with detailed
+    /// monitoring.</p>
+    /// <p>If set to <code>false</code>, then instances in the group launch with basic
+    /// monitoring.</p>
+    pub enabled: bool,
+}
+impl std::fmt::Debug for AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter =
+            f.debug_struct("AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails");
+        formatter.field("enabled", &self.enabled);
+        formatter.finish()
+    }
+}
+/// See [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails)
+pub mod aws_auto_scaling_launch_configuration_instance_monitoring_details {
+    /// A builder for [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enabled: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>If set to <code>true</code>, then instances in the group launch with detailed
+        /// monitoring.</p>
+        /// <p>If set to <code>false</code>, then instances in the group launch with basic
+        /// monitoring.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails)
+        pub fn build(
+            self,
+        ) -> crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
+            crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
+                enabled: self.enabled.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails)
+    pub fn builder(
+    ) -> crate::model::aws_auto_scaling_launch_configuration_instance_monitoring_details::Builder
+    {
+        crate::model::aws_auto_scaling_launch_configuration_instance_monitoring_details::Builder::default()
+    }
+}
+
+/// <p>A block device for the instance.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
+    /// <p>The device name that is exposed to the EC2 instance. For example, <code>/dev/sdh</code> or <code>xvdh</code>.</p>
+    pub device_name: std::option::Option<std::string::String>,
+    /// <p>Parameters that are used to automatically set up Amazon EBS volumes when an instance is launched.</p>
+    pub ebs: std::option::Option<
+        crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails,
+    >,
+    /// <p>Whether to suppress the device that is included in the block device mapping of the Amazon Machine Image (AMI).</p>
+    /// <p>If <code>NoDevice</code> is <code>true</code>, then you cannot specify <code>Ebs</code>.></p>
+    pub no_device: bool,
+    /// <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
+    /// <p>You can provide either <code>VirtualName</code> or <code>Ebs</code>, but not both.</p>
+    pub virtual_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter =
+            f.debug_struct("AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails");
+        formatter.field("device_name", &self.device_name);
+        formatter.field("ebs", &self.ebs);
+        formatter.field("no_device", &self.no_device);
+        formatter.field("virtual_name", &self.virtual_name);
+        formatter.finish()
+    }
+}
+/// See [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails)
+pub mod aws_auto_scaling_launch_configuration_block_device_mappings_details {
+    /// A builder for [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) device_name: std::option::Option<std::string::String>,
+        pub(crate) ebs: std::option::Option<
+            crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails,
+        >,
+        pub(crate) no_device: std::option::Option<bool>,
+        pub(crate) virtual_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The device name that is exposed to the EC2 instance. For example, <code>/dev/sdh</code> or <code>xvdh</code>.</p>
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_name = Some(input.into());
+            self
+        }
+        pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_name = input;
+            self
+        }
+        /// <p>Parameters that are used to automatically set up Amazon EBS volumes when an instance is launched.</p>
+        pub fn ebs(
+            mut self,
+            input: crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails,
+        ) -> Self {
+            self.ebs = Some(input);
+            self
+        }
+        pub fn set_ebs(
+            mut self,
+            input: std::option::Option<
+                crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails,
+            >,
+        ) -> Self {
+            self.ebs = input;
+            self
+        }
+        /// <p>Whether to suppress the device that is included in the block device mapping of the Amazon Machine Image (AMI).</p>
+        /// <p>If <code>NoDevice</code> is <code>true</code>, then you cannot specify <code>Ebs</code>.></p>
+        pub fn no_device(mut self, input: bool) -> Self {
+            self.no_device = Some(input);
+            self
+        }
+        pub fn set_no_device(mut self, input: std::option::Option<bool>) -> Self {
+            self.no_device = input;
+            self
+        }
+        /// <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
+        /// <p>You can provide either <code>VirtualName</code> or <code>Ebs</code>, but not both.</p>
+        pub fn virtual_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.virtual_name = Some(input.into());
+            self
+        }
+        pub fn set_virtual_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails)
+        pub fn build(
+            self,
+        ) -> crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
+            crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
+                device_name: self.device_name,
+                ebs: self.ebs,
+                no_device: self.no_device.unwrap_or_default(),
+                virtual_name: self.virtual_name,
+            }
+        }
+    }
+}
+impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails)
+    pub fn builder(
+    ) -> crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_details::Builder
+    {
+        crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_details::Builder::default()
+    }
+}
+
+/// <p>Parameters that are used to automatically set up EBS volumes when an instance is launched.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
+    /// <p>Whether to delete the volume when the instance is terminated.</p>
+    pub delete_on_termination: bool,
+    /// <p>Whether to encrypt the volume.</p>
+    pub encrypted: bool,
+    /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the volume.</p>
+    /// <p>Only supported for <code>gp3</code> or <code>io1</code> volumes. Required for <code>io1</code> volumes. Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.</p>
+    pub iops: i32,
+    /// <p>The snapshot ID of the volume to use.</p>
+    /// <p>You must specify either <code>VolumeSize</code> or <code>SnapshotId</code>.</p>
+    pub snapshot_id: std::option::Option<std::string::String>,
+    /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type:</p>
+    /// <ul>
+    /// <li>
+    /// <p>gp2 and gp3: 1-16,384</p>
+    /// </li>
+    /// <li>
+    /// <p>io1: 4-16,384</p>
+    /// </li>
+    /// <li>
+    /// <p>st1 and sc1: 125-16,384</p>
+    /// </li>
+    /// <li>
+    /// <p>standard: 1-1,024</p>
+    /// </li>
+    /// </ul>
+    /// <p>You must specify either <code>SnapshotId</code> or <code>VolumeSize</code>. If you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.</p>
+    pub volume_size: i32,
+    /// <p>The volume type.</p>
+    pub volume_type: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter =
+            f.debug_struct("AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails");
+        formatter.field("delete_on_termination", &self.delete_on_termination);
+        formatter.field("encrypted", &self.encrypted);
+        formatter.field("iops", &self.iops);
+        formatter.field("snapshot_id", &self.snapshot_id);
+        formatter.field("volume_size", &self.volume_size);
+        formatter.field("volume_type", &self.volume_type);
+        formatter.finish()
+    }
+}
+/// See [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails)
+pub mod aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details {
+    /// A builder for [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) delete_on_termination: std::option::Option<bool>,
+        pub(crate) encrypted: std::option::Option<bool>,
+        pub(crate) iops: std::option::Option<i32>,
+        pub(crate) snapshot_id: std::option::Option<std::string::String>,
+        pub(crate) volume_size: std::option::Option<i32>,
+        pub(crate) volume_type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Whether to delete the volume when the instance is terminated.</p>
+        pub fn delete_on_termination(mut self, input: bool) -> Self {
+            self.delete_on_termination = Some(input);
+            self
+        }
+        pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
+            self.delete_on_termination = input;
+            self
+        }
+        /// <p>Whether to encrypt the volume.</p>
+        pub fn encrypted(mut self, input: bool) -> Self {
+            self.encrypted = Some(input);
+            self
+        }
+        pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.encrypted = input;
+            self
+        }
+        /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the volume.</p>
+        /// <p>Only supported for <code>gp3</code> or <code>io1</code> volumes. Required for <code>io1</code> volumes. Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.</p>
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
+            self
+        }
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
+            self
+        }
+        /// <p>The snapshot ID of the volume to use.</p>
+        /// <p>You must specify either <code>VolumeSize</code> or <code>SnapshotId</code>.</p>
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_id = Some(input.into());
+            self
+        }
+        pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_id = input;
+            self
+        }
+        /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type:</p>
+        /// <ul>
+        /// <li>
+        /// <p>gp2 and gp3: 1-16,384</p>
+        /// </li>
+        /// <li>
+        /// <p>io1: 4-16,384</p>
+        /// </li>
+        /// <li>
+        /// <p>st1 and sc1: 125-16,384</p>
+        /// </li>
+        /// <li>
+        /// <p>standard: 1-1,024</p>
+        /// </li>
+        /// </ul>
+        /// <p>You must specify either <code>SnapshotId</code> or <code>VolumeSize</code>. If you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.</p>
+        pub fn volume_size(mut self, input: i32) -> Self {
+            self.volume_size = Some(input);
+            self
+        }
+        pub fn set_volume_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.volume_size = input;
+            self
+        }
+        /// <p>The volume type.</p>
+        pub fn volume_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_type = Some(input.into());
+            self
+        }
+        pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails)
+        pub fn build(
+            self,
+        ) -> crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
+            crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
+                delete_on_termination: self.delete_on_termination.unwrap_or_default(),
+                encrypted: self.encrypted.unwrap_or_default(),
+                iops: self.iops.unwrap_or_default(),
+                snapshot_id: self.snapshot_id,
+                volume_size: self.volume_size.unwrap_or_default(),
+                volume_type: self.volume_type,
+            }
+        }
+    }
+}
+impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails)
+    pub fn builder() -> crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details::Builder{
+        crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details::Builder::default()
     }
 }
 
@@ -17035,8 +18895,8 @@ impl WafAction {
 pub struct AwsSqsQueueDetails {
     /// <p>The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again.</p>
     pub kms_data_key_reuse_period_seconds: i32,
-    /// <p>The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom
-    /// CMK.</p>
+    /// <p>The ID of an Amazon Web Services managed key for Amazon SQS or a custom
+    /// KMS key.</p>
     pub kms_master_key_id: std::option::Option<std::string::String>,
     /// <p>The name of the new queue.</p>
     pub queue_name: std::option::Option<std::string::String>,
@@ -17081,8 +18941,8 @@ pub mod aws_sqs_queue_details {
             self.kms_data_key_reuse_period_seconds = input;
             self
         }
-        /// <p>The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom
-        /// CMK.</p>
+        /// <p>The ID of an Amazon Web Services managed key for Amazon SQS or a custom
+        /// KMS key.</p>
         pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_id = Some(input.into());
             self
@@ -17140,8 +19000,7 @@ impl AwsSqsQueueDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsSnsTopicDetails {
-    /// <p>The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom
-    /// CMK.</p>
+    /// <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer managed key.</p>
     pub kms_master_key_id: std::option::Option<std::string::String>,
     /// <p>Subscription is an embedded property that describes the subscription endpoints of an SNS topic.</p>
     pub subscription: std::option::Option<std::vec::Vec<crate::model::AwsSnsTopicSubscription>>,
@@ -17173,8 +19032,7 @@ pub mod aws_sns_topic_details {
         pub(crate) owner: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom
-        /// CMK.</p>
+        /// <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer managed key.</p>
         pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_id = Some(input.into());
             self
@@ -19636,7 +21494,7 @@ pub struct AwsLambdaFunctionDetails {
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The function that Lambda calls to begin executing your function.</p>
     pub handler: std::option::Option<std::string::String>,
-    /// <p>The KMS key that is used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed CMK.</p>
+    /// <p>The KMS key that is used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed customer managed key.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>Indicates when the function was last updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet
@@ -19785,7 +21643,7 @@ pub mod aws_lambda_function_details {
             self.handler = input;
             self
         }
-        /// <p>The KMS key that is used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed CMK.</p>
+        /// <p>The KMS key that is used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
@@ -20410,31 +22268,33 @@ impl AwsLambdaFunctionCode {
     }
 }
 
-/// <p>Contains metadata about a customer master key (CMK).</p>
+/// <p>Contains metadata about an KMS key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsKmsKeyDetails {
-    /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the CMK.</p>
+    /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>Indicates when the CMK was created.</p>
+    /// <p>Indicates when the KMS key was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet
     /// Date/Time Format</a>. The value cannot contain spaces. For example,
     /// <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub creation_date: f64,
-    /// <p>The globally unique identifier for the CMK.</p>
+    /// <p>The globally unique identifier for the KMS key.</p>
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>The manager of the CMK. CMKs in your Amazon Web Services account are either customer managed or Amazon Web Services managed.</p>
+    /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed.</p>
     pub key_manager: std::option::Option<std::string::String>,
-    /// <p>The state of the CMK.</p>
+    /// <p>The state of the KMS key.</p>
     pub key_state: std::option::Option<std::string::String>,
-    /// <p>The source of the CMK's key material.</p>
+    /// <p>The source of the KMS key material.</p>
     /// <p>When this value is <code>AWS_KMS</code>, KMS created the key material.</p>
     /// <p>When this value is <code>EXTERNAL</code>, the key material was imported from your
-    /// existing key management infrastructure or the CMK lacks key material.</p>
+    /// existing key management infrastructure or the KMS key lacks key material.</p>
     /// <p>When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
     pub origin: std::option::Option<std::string::String>,
     /// <p>A description of the key.</p>
     pub description: std::option::Option<std::string::String>,
+    /// <p>Whether the key has key rotation enabled.</p>
+    pub key_rotation_status: bool,
 }
 impl std::fmt::Debug for AwsKmsKeyDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20446,6 +22306,7 @@ impl std::fmt::Debug for AwsKmsKeyDetails {
         formatter.field("key_state", &self.key_state);
         formatter.field("origin", &self.origin);
         formatter.field("description", &self.description);
+        formatter.field("key_rotation_status", &self.key_rotation_status);
         formatter.finish()
     }
 }
@@ -20462,9 +22323,10 @@ pub mod aws_kms_key_details {
         pub(crate) key_state: std::option::Option<std::string::String>,
         pub(crate) origin: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) key_rotation_status: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the CMK.</p>
+        /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -20476,7 +22338,7 @@ pub mod aws_kms_key_details {
             self.aws_account_id = input;
             self
         }
-        /// <p>Indicates when the CMK was created.</p>
+        /// <p>Indicates when the KMS key was created.</p>
         /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet
         /// Date/Time Format</a>. The value cannot contain spaces. For example,
         /// <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -20488,7 +22350,7 @@ pub mod aws_kms_key_details {
             self.creation_date = input;
             self
         }
-        /// <p>The globally unique identifier for the CMK.</p>
+        /// <p>The globally unique identifier for the KMS key.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -20497,7 +22359,7 @@ pub mod aws_kms_key_details {
             self.key_id = input;
             self
         }
-        /// <p>The manager of the CMK. CMKs in your Amazon Web Services account are either customer managed or Amazon Web Services managed.</p>
+        /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed.</p>
         pub fn key_manager(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_manager = Some(input.into());
             self
@@ -20506,7 +22368,7 @@ pub mod aws_kms_key_details {
             self.key_manager = input;
             self
         }
-        /// <p>The state of the CMK.</p>
+        /// <p>The state of the KMS key.</p>
         pub fn key_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_state = Some(input.into());
             self
@@ -20515,10 +22377,10 @@ pub mod aws_kms_key_details {
             self.key_state = input;
             self
         }
-        /// <p>The source of the CMK's key material.</p>
+        /// <p>The source of the KMS key material.</p>
         /// <p>When this value is <code>AWS_KMS</code>, KMS created the key material.</p>
         /// <p>When this value is <code>EXTERNAL</code>, the key material was imported from your
-        /// existing key management infrastructure or the CMK lacks key material.</p>
+        /// existing key management infrastructure or the KMS key lacks key material.</p>
         /// <p>When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
         pub fn origin(mut self, input: impl Into<std::string::String>) -> Self {
             self.origin = Some(input.into());
@@ -20537,6 +22399,15 @@ pub mod aws_kms_key_details {
             self.description = input;
             self
         }
+        /// <p>Whether the key has key rotation enabled.</p>
+        pub fn key_rotation_status(mut self, input: bool) -> Self {
+            self.key_rotation_status = Some(input);
+            self
+        }
+        pub fn set_key_rotation_status(mut self, input: std::option::Option<bool>) -> Self {
+            self.key_rotation_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AwsKmsKeyDetails`](crate::model::AwsKmsKeyDetails)
         pub fn build(self) -> crate::model::AwsKmsKeyDetails {
             crate::model::AwsKmsKeyDetails {
@@ -20547,6 +22418,7 @@ pub mod aws_kms_key_details {
                 key_state: self.key_state,
                 origin: self.origin,
                 description: self.description,
+                key_rotation_status: self.key_rotation_status.unwrap_or_default(),
             }
         }
     }
@@ -28664,7 +30536,7 @@ pub struct AwsDynamoDbTableSseDescription {
     pub status: std::option::Option<std::string::String>,
     /// <p>The type of server-side encryption.</p>
     pub sse_type: std::option::Option<std::string::String>,
-    /// <p>The ARN of the KMS customer master key (CMK) that is used for the KMS
+    /// <p>The ARN of the KMS key that is used for the KMS
     /// encryption.</p>
     pub kms_master_key_arn: std::option::Option<std::string::String>,
 }
@@ -28730,7 +30602,7 @@ pub mod aws_dynamo_db_table_sse_description {
             self.sse_type = input;
             self
         }
-        /// <p>The ARN of the KMS customer master key (CMK) that is used for the KMS
+        /// <p>The ARN of the KMS key that is used for the KMS
         /// encryption.</p>
         pub fn kms_master_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_arn = Some(input.into());
@@ -28873,7 +30745,7 @@ pub struct AwsDynamoDbTableReplica {
     pub global_secondary_indexes: std::option::Option<
         std::vec::Vec<crate::model::AwsDynamoDbTableReplicaGlobalSecondaryIndex>,
     >,
-    /// <p>The identifier of the KMS customer master key (CMK) that will be used for KMS
+    /// <p>The identifier of the KMS key that will be used for KMS
     /// encryption for the replica.</p>
     pub kms_master_key_id: std::option::Option<std::string::String>,
     /// <p>Replica-specific configuration for the provisioned throughput.</p>
@@ -28939,7 +30811,7 @@ pub mod aws_dynamo_db_table_replica {
             self.global_secondary_indexes = input;
             self
         }
-        /// <p>The identifier of the KMS customer master key (CMK) that will be used for KMS
+        /// <p>The identifier of the KMS key that will be used for KMS
         /// encryption for the replica.</p>
         pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_id = Some(input.into());
@@ -31625,7 +33497,7 @@ pub struct AwsSecretsManagerSecretDetails {
     pub rotation_rules: std::option::Option<crate::model::AwsSecretsManagerSecretRotationRules>,
     /// <p>Whether the rotation occurred within the specified rotation frequency.</p>
     pub rotation_occurred_within_frequency: bool,
-    /// <p>The ARN, Key ID, or alias of the KMS customer master key (CMK) used to encrypt the
+    /// <p>The ARN, Key ID, or alias of the KMS key used to encrypt the
     /// <code>SecretString</code> or <code>SecretBinary</code> values for versions of this
     /// secret.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -31701,7 +33573,7 @@ pub mod aws_secrets_manager_secret_details {
             self.rotation_occurred_within_frequency = input;
             self
         }
-        /// <p>The ARN, Key ID, or alias of the KMS customer master key (CMK) used to encrypt the
+        /// <p>The ARN, Key ID, or alias of the KMS key used to encrypt the
         /// <code>SecretString</code> or <code>SecretBinary</code> values for versions of this
         /// secret.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -31850,8 +33722,7 @@ pub struct AwsS3ObjectDetails {
     /// <p>If the object is stored using server-side encryption, the value of the server-side
     /// encryption algorithm used when storing this object in Amazon S3.</p>
     pub server_side_encryption: std::option::Option<std::string::String>,
-    /// <p>The identifier of the KMS symmetric customer managed
-    /// customer master key (CMK) that was used for the object.</p>
+    /// <p>The identifier of the KMS symmetric customer managed key that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AwsS3ObjectDetails {
@@ -31936,8 +33807,7 @@ pub mod aws_s3_object_details {
             self.server_side_encryption = input;
             self
         }
-        /// <p>The identifier of the KMS symmetric customer managed
-        /// customer master key (CMK) that was used for the object.</p>
+        /// <p>The identifier of the KMS symmetric customer managed key that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self
@@ -32080,6 +33950,17 @@ pub struct AwsS3BucketDetails {
     /// <p>Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.</p>
     pub public_access_block_configuration:
         std::option::Option<crate::model::AwsS3AccountPublicAccessBlockDetails>,
+    /// <p>The access control list for the S3 bucket.</p>
+    pub access_control_list: std::option::Option<std::string::String>,
+    /// <p>The logging configuration for the S3 bucket.</p>
+    pub bucket_logging_configuration:
+        std::option::Option<crate::model::AwsS3BucketLoggingConfiguration>,
+    /// <p>The website configuration parameters for the S3 bucket.</p>
+    pub bucket_website_configuration:
+        std::option::Option<crate::model::AwsS3BucketWebsiteConfiguration>,
+    /// <p>The notification configuration for the S3 bucket.</p>
+    pub bucket_notification_configuration:
+        std::option::Option<crate::model::AwsS3BucketNotificationConfiguration>,
 }
 impl std::fmt::Debug for AwsS3BucketDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32099,6 +33980,19 @@ impl std::fmt::Debug for AwsS3BucketDetails {
             "public_access_block_configuration",
             &self.public_access_block_configuration,
         );
+        formatter.field("access_control_list", &self.access_control_list);
+        formatter.field(
+            "bucket_logging_configuration",
+            &self.bucket_logging_configuration,
+        );
+        formatter.field(
+            "bucket_website_configuration",
+            &self.bucket_website_configuration,
+        );
+        formatter.field(
+            "bucket_notification_configuration",
+            &self.bucket_notification_configuration,
+        );
         formatter.finish()
     }
 }
@@ -32117,6 +34011,13 @@ pub mod aws_s3_bucket_details {
             std::option::Option<crate::model::AwsS3BucketBucketLifecycleConfigurationDetails>,
         pub(crate) public_access_block_configuration:
             std::option::Option<crate::model::AwsS3AccountPublicAccessBlockDetails>,
+        pub(crate) access_control_list: std::option::Option<std::string::String>,
+        pub(crate) bucket_logging_configuration:
+            std::option::Option<crate::model::AwsS3BucketLoggingConfiguration>,
+        pub(crate) bucket_website_configuration:
+            std::option::Option<crate::model::AwsS3BucketWebsiteConfiguration>,
+        pub(crate) bucket_notification_configuration:
+            std::option::Option<crate::model::AwsS3BucketNotificationConfiguration>,
     }
     impl Builder {
         /// <p>The canonical user ID of the owner of the S3 bucket.</p>
@@ -32196,6 +34097,63 @@ pub mod aws_s3_bucket_details {
             self.public_access_block_configuration = input;
             self
         }
+        /// <p>The access control list for the S3 bucket.</p>
+        pub fn access_control_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_control_list = Some(input.into());
+            self
+        }
+        pub fn set_access_control_list(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_control_list = input;
+            self
+        }
+        /// <p>The logging configuration for the S3 bucket.</p>
+        pub fn bucket_logging_configuration(
+            mut self,
+            input: crate::model::AwsS3BucketLoggingConfiguration,
+        ) -> Self {
+            self.bucket_logging_configuration = Some(input);
+            self
+        }
+        pub fn set_bucket_logging_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AwsS3BucketLoggingConfiguration>,
+        ) -> Self {
+            self.bucket_logging_configuration = input;
+            self
+        }
+        /// <p>The website configuration parameters for the S3 bucket.</p>
+        pub fn bucket_website_configuration(
+            mut self,
+            input: crate::model::AwsS3BucketWebsiteConfiguration,
+        ) -> Self {
+            self.bucket_website_configuration = Some(input);
+            self
+        }
+        pub fn set_bucket_website_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AwsS3BucketWebsiteConfiguration>,
+        ) -> Self {
+            self.bucket_website_configuration = input;
+            self
+        }
+        /// <p>The notification configuration for the S3 bucket.</p>
+        pub fn bucket_notification_configuration(
+            mut self,
+            input: crate::model::AwsS3BucketNotificationConfiguration,
+        ) -> Self {
+            self.bucket_notification_configuration = Some(input);
+            self
+        }
+        pub fn set_bucket_notification_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AwsS3BucketNotificationConfiguration>,
+        ) -> Self {
+            self.bucket_notification_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AwsS3BucketDetails`](crate::model::AwsS3BucketDetails)
         pub fn build(self) -> crate::model::AwsS3BucketDetails {
             crate::model::AwsS3BucketDetails {
@@ -32205,6 +34163,10 @@ pub mod aws_s3_bucket_details {
                 server_side_encryption_configuration: self.server_side_encryption_configuration,
                 bucket_lifecycle_configuration: self.bucket_lifecycle_configuration,
                 public_access_block_configuration: self.public_access_block_configuration,
+                access_control_list: self.access_control_list,
+                bucket_logging_configuration: self.bucket_logging_configuration,
+                bucket_website_configuration: self.bucket_website_configuration,
+                bucket_notification_configuration: self.bucket_notification_configuration,
             }
         }
     }
@@ -32213,6 +34175,943 @@ impl AwsS3BucketDetails {
     /// Creates a new builder-style object to manufacture [`AwsS3BucketDetails`](crate::model::AwsS3BucketDetails)
     pub fn builder() -> crate::model::aws_s3_bucket_details::Builder {
         crate::model::aws_s3_bucket_details::Builder::default()
+    }
+}
+
+/// <p>The notification
+/// configuration for the S3 bucket.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsS3BucketNotificationConfiguration {
+    /// <p>Configurations for S3 bucket notifications.</p>
+    pub configurations: std::option::Option<
+        std::vec::Vec<crate::model::AwsS3BucketNotificationConfigurationDetail>,
+    >,
+}
+impl std::fmt::Debug for AwsS3BucketNotificationConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsS3BucketNotificationConfiguration");
+        formatter.field("configurations", &self.configurations);
+        formatter.finish()
+    }
+}
+/// See [`AwsS3BucketNotificationConfiguration`](crate::model::AwsS3BucketNotificationConfiguration)
+pub mod aws_s3_bucket_notification_configuration {
+    /// A builder for [`AwsS3BucketNotificationConfiguration`](crate::model::AwsS3BucketNotificationConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) configurations: std::option::Option<
+            std::vec::Vec<crate::model::AwsS3BucketNotificationConfigurationDetail>,
+        >,
+    }
+    impl Builder {
+        pub fn configurations(
+            mut self,
+            input: impl Into<crate::model::AwsS3BucketNotificationConfigurationDetail>,
+        ) -> Self {
+            let mut v = self.configurations.unwrap_or_default();
+            v.push(input.into());
+            self.configurations = Some(v);
+            self
+        }
+        pub fn set_configurations(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AwsS3BucketNotificationConfigurationDetail>,
+            >,
+        ) -> Self {
+            self.configurations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfiguration`](crate::model::AwsS3BucketNotificationConfiguration)
+        pub fn build(self) -> crate::model::AwsS3BucketNotificationConfiguration {
+            crate::model::AwsS3BucketNotificationConfiguration {
+                configurations: self.configurations,
+            }
+        }
+    }
+}
+impl AwsS3BucketNotificationConfiguration {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfiguration`](crate::model::AwsS3BucketNotificationConfiguration)
+    pub fn builder() -> crate::model::aws_s3_bucket_notification_configuration::Builder {
+        crate::model::aws_s3_bucket_notification_configuration::Builder::default()
+    }
+}
+
+/// <p>Details for an S3 bucket notification configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsS3BucketNotificationConfigurationDetail {
+    /// <p>The list of events that trigger a notification.</p>
+    pub events: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The filters that determine which S3 buckets generate notifications.</p>
+    pub filter: std::option::Option<crate::model::AwsS3BucketNotificationConfigurationFilter>,
+    /// <p>The ARN of the Lambda function, Amazon SQS queue, or Amazon SNS topic that generates the
+    /// notification.</p>
+    pub destination: std::option::Option<std::string::String>,
+    /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions,
+    /// Amazon SQS queues or Amazon SNS topics.</p>
+    pub r#type: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsS3BucketNotificationConfigurationDetail {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsS3BucketNotificationConfigurationDetail");
+        formatter.field("events", &self.events);
+        formatter.field("filter", &self.filter);
+        formatter.field("destination", &self.destination);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+/// See [`AwsS3BucketNotificationConfigurationDetail`](crate::model::AwsS3BucketNotificationConfigurationDetail)
+pub mod aws_s3_bucket_notification_configuration_detail {
+    /// A builder for [`AwsS3BucketNotificationConfigurationDetail`](crate::model::AwsS3BucketNotificationConfigurationDetail)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) events: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) filter:
+            std::option::Option<crate::model::AwsS3BucketNotificationConfigurationFilter>,
+        pub(crate) destination: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn events(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.events.unwrap_or_default();
+            v.push(input.into());
+            self.events = Some(v);
+            self
+        }
+        pub fn set_events(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.events = input;
+            self
+        }
+        /// <p>The filters that determine which S3 buckets generate notifications.</p>
+        pub fn filter(
+            mut self,
+            input: crate::model::AwsS3BucketNotificationConfigurationFilter,
+        ) -> Self {
+            self.filter = Some(input);
+            self
+        }
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::AwsS3BucketNotificationConfigurationFilter>,
+        ) -> Self {
+            self.filter = input;
+            self
+        }
+        /// <p>The ARN of the Lambda function, Amazon SQS queue, or Amazon SNS topic that generates the
+        /// notification.</p>
+        pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination = Some(input.into());
+            self
+        }
+        pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination = input;
+            self
+        }
+        /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions,
+        /// Amazon SQS queues or Amazon SNS topics.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfigurationDetail`](crate::model::AwsS3BucketNotificationConfigurationDetail)
+        pub fn build(self) -> crate::model::AwsS3BucketNotificationConfigurationDetail {
+            crate::model::AwsS3BucketNotificationConfigurationDetail {
+                events: self.events,
+                filter: self.filter,
+                destination: self.destination,
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl AwsS3BucketNotificationConfigurationDetail {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationDetail`](crate::model::AwsS3BucketNotificationConfigurationDetail)
+    pub fn builder() -> crate::model::aws_s3_bucket_notification_configuration_detail::Builder {
+        crate::model::aws_s3_bucket_notification_configuration_detail::Builder::default()
+    }
+}
+
+/// <p>Filtering information for the notifications. The
+/// filtering is based on Amazon S3 key names.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsS3BucketNotificationConfigurationFilter {
+    /// <p>Details for an Amazon S3 filter.</p>
+    pub s3_key_filter:
+        std::option::Option<crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter>,
+}
+impl std::fmt::Debug for AwsS3BucketNotificationConfigurationFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsS3BucketNotificationConfigurationFilter");
+        formatter.field("s3_key_filter", &self.s3_key_filter);
+        formatter.finish()
+    }
+}
+/// See [`AwsS3BucketNotificationConfigurationFilter`](crate::model::AwsS3BucketNotificationConfigurationFilter)
+pub mod aws_s3_bucket_notification_configuration_filter {
+    /// A builder for [`AwsS3BucketNotificationConfigurationFilter`](crate::model::AwsS3BucketNotificationConfigurationFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_key_filter:
+            std::option::Option<crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter>,
+    }
+    impl Builder {
+        /// <p>Details for an Amazon S3 filter.</p>
+        pub fn s3_key_filter(
+            mut self,
+            input: crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter,
+        ) -> Self {
+            self.s3_key_filter = Some(input);
+            self
+        }
+        pub fn set_s3_key_filter(
+            mut self,
+            input: std::option::Option<
+                crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter,
+            >,
+        ) -> Self {
+            self.s3_key_filter = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfigurationFilter`](crate::model::AwsS3BucketNotificationConfigurationFilter)
+        pub fn build(self) -> crate::model::AwsS3BucketNotificationConfigurationFilter {
+            crate::model::AwsS3BucketNotificationConfigurationFilter {
+                s3_key_filter: self.s3_key_filter,
+            }
+        }
+    }
+}
+impl AwsS3BucketNotificationConfigurationFilter {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationFilter`](crate::model::AwsS3BucketNotificationConfigurationFilter)
+    pub fn builder() -> crate::model::aws_s3_bucket_notification_configuration_filter::Builder {
+        crate::model::aws_s3_bucket_notification_configuration_filter::Builder::default()
+    }
+}
+
+/// <p>Details for an Amazon S3 filter.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsS3BucketNotificationConfigurationS3KeyFilter {
+    /// <p>The filter rules for the filter.</p>
+    pub filter_rules: std::option::Option<
+        std::vec::Vec<crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule>,
+    >,
+}
+impl std::fmt::Debug for AwsS3BucketNotificationConfigurationS3KeyFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsS3BucketNotificationConfigurationS3KeyFilter");
+        formatter.field("filter_rules", &self.filter_rules);
+        formatter.finish()
+    }
+}
+/// See [`AwsS3BucketNotificationConfigurationS3KeyFilter`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter)
+pub mod aws_s3_bucket_notification_configuration_s3_key_filter {
+    /// A builder for [`AwsS3BucketNotificationConfigurationS3KeyFilter`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filter_rules: std::option::Option<
+            std::vec::Vec<crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule>,
+        >,
+    }
+    impl Builder {
+        pub fn filter_rules(
+            mut self,
+            input: impl Into<crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule>,
+        ) -> Self {
+            let mut v = self.filter_rules.unwrap_or_default();
+            v.push(input.into());
+            self.filter_rules = Some(v);
+            self
+        }
+        pub fn set_filter_rules(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule>,
+            >,
+        ) -> Self {
+            self.filter_rules = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfigurationS3KeyFilter`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter)
+        pub fn build(self) -> crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter {
+            crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter {
+                filter_rules: self.filter_rules,
+            }
+        }
+    }
+}
+impl AwsS3BucketNotificationConfigurationS3KeyFilter {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationS3KeyFilter`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter)
+    pub fn builder() -> crate::model::aws_s3_bucket_notification_configuration_s3_key_filter::Builder
+    {
+        crate::model::aws_s3_bucket_notification_configuration_s3_key_filter::Builder::default()
+    }
+}
+
+/// <p>Details for a filter rule.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsS3BucketNotificationConfigurationS3KeyFilterRule {
+    /// <p>Indicates whether the filter is based on the prefix or suffix of the Amazon S3 key.</p>
+    pub name:
+        std::option::Option<crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRuleName>,
+    /// <p>The filter value.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsS3BucketNotificationConfigurationS3KeyFilterRule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsS3BucketNotificationConfigurationS3KeyFilterRule");
+        formatter.field("name", &self.name);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`AwsS3BucketNotificationConfigurationS3KeyFilterRule`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule)
+pub mod aws_s3_bucket_notification_configuration_s3_key_filter_rule {
+    /// A builder for [`AwsS3BucketNotificationConfigurationS3KeyFilterRule`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<
+            crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRuleName,
+        >,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Indicates whether the filter is based on the prefix or suffix of the Amazon S3 key.</p>
+        pub fn name(
+            mut self,
+            input: crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRuleName,
+        ) -> Self {
+            self.name = Some(input);
+            self
+        }
+        pub fn set_name(
+            mut self,
+            input: std::option::Option<
+                crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRuleName,
+            >,
+        ) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The filter value.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfigurationS3KeyFilterRule`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule)
+        pub fn build(self) -> crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule {
+            crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule {
+                name: self.name,
+                value: self.value,
+            }
+        }
+    }
+}
+impl AwsS3BucketNotificationConfigurationS3KeyFilterRule {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationS3KeyFilterRule`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule)
+    pub fn builder(
+    ) -> crate::model::aws_s3_bucket_notification_configuration_s3_key_filter_rule::Builder {
+        crate::model::aws_s3_bucket_notification_configuration_s3_key_filter_rule::Builder::default(
+        )
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AwsS3BucketNotificationConfigurationS3KeyFilterRuleName {
+    Prefix,
+    Suffix,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AwsS3BucketNotificationConfigurationS3KeyFilterRuleName {
+    fn from(s: &str) -> Self {
+        match s {
+            "Prefix" => AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Prefix,
+            "Suffix" => AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Suffix,
+            other => {
+                AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Unknown(other.to_owned())
+            }
+        }
+    }
+}
+impl std::str::FromStr for AwsS3BucketNotificationConfigurationS3KeyFilterRuleName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::from(s))
+    }
+}
+impl AwsS3BucketNotificationConfigurationS3KeyFilterRuleName {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Prefix => "Prefix",
+            AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Suffix => "Suffix",
+            AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Prefix", "Suffix"]
+    }
+}
+impl AsRef<str> for AwsS3BucketNotificationConfigurationS3KeyFilterRuleName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Website parameters for the S3
+/// bucket.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsS3BucketWebsiteConfiguration {
+    /// <p>The name of the error document for the website.</p>
+    pub error_document: std::option::Option<std::string::String>,
+    /// <p>The name of the index document for the website.</p>
+    pub index_document_suffix: std::option::Option<std::string::String>,
+    /// <p>The redirect behavior for requests to the website.</p>
+    pub redirect_all_requests_to:
+        std::option::Option<crate::model::AwsS3BucketWebsiteConfigurationRedirectTo>,
+    /// <p>The rules for applying redirects for requests to the website.</p>
+    pub routing_rules: std::option::Option<
+        std::vec::Vec<crate::model::AwsS3BucketWebsiteConfigurationRoutingRule>,
+    >,
+}
+impl std::fmt::Debug for AwsS3BucketWebsiteConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsS3BucketWebsiteConfiguration");
+        formatter.field("error_document", &self.error_document);
+        formatter.field("index_document_suffix", &self.index_document_suffix);
+        formatter.field("redirect_all_requests_to", &self.redirect_all_requests_to);
+        formatter.field("routing_rules", &self.routing_rules);
+        formatter.finish()
+    }
+}
+/// See [`AwsS3BucketWebsiteConfiguration`](crate::model::AwsS3BucketWebsiteConfiguration)
+pub mod aws_s3_bucket_website_configuration {
+    /// A builder for [`AwsS3BucketWebsiteConfiguration`](crate::model::AwsS3BucketWebsiteConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error_document: std::option::Option<std::string::String>,
+        pub(crate) index_document_suffix: std::option::Option<std::string::String>,
+        pub(crate) redirect_all_requests_to:
+            std::option::Option<crate::model::AwsS3BucketWebsiteConfigurationRedirectTo>,
+        pub(crate) routing_rules: std::option::Option<
+            std::vec::Vec<crate::model::AwsS3BucketWebsiteConfigurationRoutingRule>,
+        >,
+    }
+    impl Builder {
+        /// <p>The name of the error document for the website.</p>
+        pub fn error_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_document = Some(input.into());
+            self
+        }
+        pub fn set_error_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_document = input;
+            self
+        }
+        /// <p>The name of the index document for the website.</p>
+        pub fn index_document_suffix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_document_suffix = Some(input.into());
+            self
+        }
+        pub fn set_index_document_suffix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.index_document_suffix = input;
+            self
+        }
+        /// <p>The redirect behavior for requests to the website.</p>
+        pub fn redirect_all_requests_to(
+            mut self,
+            input: crate::model::AwsS3BucketWebsiteConfigurationRedirectTo,
+        ) -> Self {
+            self.redirect_all_requests_to = Some(input);
+            self
+        }
+        pub fn set_redirect_all_requests_to(
+            mut self,
+            input: std::option::Option<crate::model::AwsS3BucketWebsiteConfigurationRedirectTo>,
+        ) -> Self {
+            self.redirect_all_requests_to = input;
+            self
+        }
+        pub fn routing_rules(
+            mut self,
+            input: impl Into<crate::model::AwsS3BucketWebsiteConfigurationRoutingRule>,
+        ) -> Self {
+            let mut v = self.routing_rules.unwrap_or_default();
+            v.push(input.into());
+            self.routing_rules = Some(v);
+            self
+        }
+        pub fn set_routing_rules(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AwsS3BucketWebsiteConfigurationRoutingRule>,
+            >,
+        ) -> Self {
+            self.routing_rules = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfiguration`](crate::model::AwsS3BucketWebsiteConfiguration)
+        pub fn build(self) -> crate::model::AwsS3BucketWebsiteConfiguration {
+            crate::model::AwsS3BucketWebsiteConfiguration {
+                error_document: self.error_document,
+                index_document_suffix: self.index_document_suffix,
+                redirect_all_requests_to: self.redirect_all_requests_to,
+                routing_rules: self.routing_rules,
+            }
+        }
+    }
+}
+impl AwsS3BucketWebsiteConfiguration {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfiguration`](crate::model::AwsS3BucketWebsiteConfiguration)
+    pub fn builder() -> crate::model::aws_s3_bucket_website_configuration::Builder {
+        crate::model::aws_s3_bucket_website_configuration::Builder::default()
+    }
+}
+
+/// <p>A rule for redirecting requests
+/// to the website.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsS3BucketWebsiteConfigurationRoutingRule {
+    /// <p>Provides the condition that must be met in order to apply the routing rule.</p>
+    pub condition:
+        std::option::Option<crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition>,
+    /// <p>Provides the rules to redirect the request if the condition in <code>Condition</code> is
+    /// met.</p>
+    pub redirect:
+        std::option::Option<crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect>,
+}
+impl std::fmt::Debug for AwsS3BucketWebsiteConfigurationRoutingRule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsS3BucketWebsiteConfigurationRoutingRule");
+        formatter.field("condition", &self.condition);
+        formatter.field("redirect", &self.redirect);
+        formatter.finish()
+    }
+}
+/// See [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRule)
+pub mod aws_s3_bucket_website_configuration_routing_rule {
+    /// A builder for [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRule)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) condition:
+            std::option::Option<crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition>,
+        pub(crate) redirect:
+            std::option::Option<crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect>,
+    }
+    impl Builder {
+        /// <p>Provides the condition that must be met in order to apply the routing rule.</p>
+        pub fn condition(
+            mut self,
+            input: crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition,
+        ) -> Self {
+            self.condition = Some(input);
+            self
+        }
+        pub fn set_condition(
+            mut self,
+            input: std::option::Option<
+                crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition,
+            >,
+        ) -> Self {
+            self.condition = input;
+            self
+        }
+        /// <p>Provides the rules to redirect the request if the condition in <code>Condition</code> is
+        /// met.</p>
+        pub fn redirect(
+            mut self,
+            input: crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect,
+        ) -> Self {
+            self.redirect = Some(input);
+            self
+        }
+        pub fn set_redirect(
+            mut self,
+            input: std::option::Option<
+                crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect,
+            >,
+        ) -> Self {
+            self.redirect = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRule)
+        pub fn build(self) -> crate::model::AwsS3BucketWebsiteConfigurationRoutingRule {
+            crate::model::AwsS3BucketWebsiteConfigurationRoutingRule {
+                condition: self.condition,
+                redirect: self.redirect,
+            }
+        }
+    }
+}
+impl AwsS3BucketWebsiteConfigurationRoutingRule {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRule)
+    pub fn builder() -> crate::model::aws_s3_bucket_website_configuration_routing_rule::Builder {
+        crate::model::aws_s3_bucket_website_configuration_routing_rule::Builder::default()
+    }
+}
+
+/// <p>The rules to redirect the request if the condition in <code>Condition</code> is
+/// met.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
+    /// <p>The host name to use in the redirect request.</p>
+    pub hostname: std::option::Option<std::string::String>,
+    /// <p>The HTTP redirect code to use in the response.</p>
+    pub http_redirect_code: std::option::Option<std::string::String>,
+    /// <p>The protocol to use to redirect the request. By default, uses the protocol from the
+    /// original request.</p>
+    pub protocol: std::option::Option<std::string::String>,
+    /// <p>The object key prefix to use in the redirect request.</p>
+    /// <p>Cannot be provided if <code>ReplaceKeyWith</code> is present.</p>
+    pub replace_key_prefix_with: std::option::Option<std::string::String>,
+    /// <p>The specific object key to use in the redirect request.</p>
+    /// <p>Cannot be provided if <code>ReplaceKeyPrefixWith</code> is present.</p>
+    pub replace_key_with: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsS3BucketWebsiteConfigurationRoutingRuleRedirect");
+        formatter.field("hostname", &self.hostname);
+        formatter.field("http_redirect_code", &self.http_redirect_code);
+        formatter.field("protocol", &self.protocol);
+        formatter.field("replace_key_prefix_with", &self.replace_key_prefix_with);
+        formatter.field("replace_key_with", &self.replace_key_with);
+        formatter.finish()
+    }
+}
+/// See [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect)
+pub mod aws_s3_bucket_website_configuration_routing_rule_redirect {
+    /// A builder for [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hostname: std::option::Option<std::string::String>,
+        pub(crate) http_redirect_code: std::option::Option<std::string::String>,
+        pub(crate) protocol: std::option::Option<std::string::String>,
+        pub(crate) replace_key_prefix_with: std::option::Option<std::string::String>,
+        pub(crate) replace_key_with: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The host name to use in the redirect request.</p>
+        pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hostname = Some(input.into());
+            self
+        }
+        pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hostname = input;
+            self
+        }
+        /// <p>The HTTP redirect code to use in the response.</p>
+        pub fn http_redirect_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_redirect_code = Some(input.into());
+            self
+        }
+        pub fn set_http_redirect_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.http_redirect_code = input;
+            self
+        }
+        /// <p>The protocol to use to redirect the request. By default, uses the protocol from the
+        /// original request.</p>
+        pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
+            self.protocol = Some(input.into());
+            self
+        }
+        pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.protocol = input;
+            self
+        }
+        /// <p>The object key prefix to use in the redirect request.</p>
+        /// <p>Cannot be provided if <code>ReplaceKeyWith</code> is present.</p>
+        pub fn replace_key_prefix_with(mut self, input: impl Into<std::string::String>) -> Self {
+            self.replace_key_prefix_with = Some(input.into());
+            self
+        }
+        pub fn set_replace_key_prefix_with(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.replace_key_prefix_with = input;
+            self
+        }
+        /// <p>The specific object key to use in the redirect request.</p>
+        /// <p>Cannot be provided if <code>ReplaceKeyPrefixWith</code> is present.</p>
+        pub fn replace_key_with(mut self, input: impl Into<std::string::String>) -> Self {
+            self.replace_key_with = Some(input.into());
+            self
+        }
+        pub fn set_replace_key_with(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.replace_key_with = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect)
+        pub fn build(self) -> crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
+            crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
+                hostname: self.hostname,
+                http_redirect_code: self.http_redirect_code,
+                protocol: self.protocol,
+                replace_key_prefix_with: self.replace_key_prefix_with,
+                replace_key_with: self.replace_key_with,
+            }
+        }
+    }
+}
+impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect)
+    pub fn builder(
+    ) -> crate::model::aws_s3_bucket_website_configuration_routing_rule_redirect::Builder {
+        crate::model::aws_s3_bucket_website_configuration_routing_rule_redirect::Builder::default()
+    }
+}
+
+/// <p>The condition that must be met in order to apply the routing rule.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
+    /// <p>Indicates to redirect the request if the HTTP error code matches this value.</p>
+    pub http_error_code_returned_equals: std::option::Option<std::string::String>,
+    /// <p>Indicates to redirect the request if the key prefix matches this value.</p>
+    pub key_prefix_equals: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsS3BucketWebsiteConfigurationRoutingRuleCondition");
+        formatter.field(
+            "http_error_code_returned_equals",
+            &self.http_error_code_returned_equals,
+        );
+        formatter.field("key_prefix_equals", &self.key_prefix_equals);
+        formatter.finish()
+    }
+}
+/// See [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition)
+pub mod aws_s3_bucket_website_configuration_routing_rule_condition {
+    /// A builder for [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) http_error_code_returned_equals: std::option::Option<std::string::String>,
+        pub(crate) key_prefix_equals: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Indicates to redirect the request if the HTTP error code matches this value.</p>
+        pub fn http_error_code_returned_equals(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.http_error_code_returned_equals = Some(input.into());
+            self
+        }
+        pub fn set_http_error_code_returned_equals(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.http_error_code_returned_equals = input;
+            self
+        }
+        /// <p>Indicates to redirect the request if the key prefix matches this value.</p>
+        pub fn key_prefix_equals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_prefix_equals = Some(input.into());
+            self
+        }
+        pub fn set_key_prefix_equals(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.key_prefix_equals = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition)
+        pub fn build(self) -> crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
+            crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
+                http_error_code_returned_equals: self.http_error_code_returned_equals,
+                key_prefix_equals: self.key_prefix_equals,
+            }
+        }
+    }
+}
+impl AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition)
+    pub fn builder(
+    ) -> crate::model::aws_s3_bucket_website_configuration_routing_rule_condition::Builder {
+        crate::model::aws_s3_bucket_website_configuration_routing_rule_condition::Builder::default()
+    }
+}
+
+/// <p>The redirect behavior for requests
+/// to the website.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsS3BucketWebsiteConfigurationRedirectTo {
+    /// <p>The name of the host to redirect requests to.</p>
+    pub hostname: std::option::Option<std::string::String>,
+    /// <p>The protocol to use when redirecting requests. By default, uses the same protocol as the
+    /// original request.</p>
+    pub protocol: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsS3BucketWebsiteConfigurationRedirectTo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsS3BucketWebsiteConfigurationRedirectTo");
+        formatter.field("hostname", &self.hostname);
+        formatter.field("protocol", &self.protocol);
+        formatter.finish()
+    }
+}
+/// See [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::model::AwsS3BucketWebsiteConfigurationRedirectTo)
+pub mod aws_s3_bucket_website_configuration_redirect_to {
+    /// A builder for [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::model::AwsS3BucketWebsiteConfigurationRedirectTo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hostname: std::option::Option<std::string::String>,
+        pub(crate) protocol: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the host to redirect requests to.</p>
+        pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hostname = Some(input.into());
+            self
+        }
+        pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hostname = input;
+            self
+        }
+        /// <p>The protocol to use when redirecting requests. By default, uses the same protocol as the
+        /// original request.</p>
+        pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
+            self.protocol = Some(input.into());
+            self
+        }
+        pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.protocol = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::model::AwsS3BucketWebsiteConfigurationRedirectTo)
+        pub fn build(self) -> crate::model::AwsS3BucketWebsiteConfigurationRedirectTo {
+            crate::model::AwsS3BucketWebsiteConfigurationRedirectTo {
+                hostname: self.hostname,
+                protocol: self.protocol,
+            }
+        }
+    }
+}
+impl AwsS3BucketWebsiteConfigurationRedirectTo {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::model::AwsS3BucketWebsiteConfigurationRedirectTo)
+    pub fn builder() -> crate::model::aws_s3_bucket_website_configuration_redirect_to::Builder {
+        crate::model::aws_s3_bucket_website_configuration_redirect_to::Builder::default()
+    }
+}
+
+/// <p>Information about logging for
+/// the S3 bucket</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsS3BucketLoggingConfiguration {
+    /// <p>The name of the S3 bucket where log files for the S3 bucket are stored.</p>
+    pub destination_bucket_name: std::option::Option<std::string::String>,
+    /// <p>The prefix added to log files for the S3 bucket.</p>
+    pub log_file_prefix: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsS3BucketLoggingConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsS3BucketLoggingConfiguration");
+        formatter.field("destination_bucket_name", &self.destination_bucket_name);
+        formatter.field("log_file_prefix", &self.log_file_prefix);
+        formatter.finish()
+    }
+}
+/// See [`AwsS3BucketLoggingConfiguration`](crate::model::AwsS3BucketLoggingConfiguration)
+pub mod aws_s3_bucket_logging_configuration {
+    /// A builder for [`AwsS3BucketLoggingConfiguration`](crate::model::AwsS3BucketLoggingConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) destination_bucket_name: std::option::Option<std::string::String>,
+        pub(crate) log_file_prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the S3 bucket where log files for the S3 bucket are stored.</p>
+        pub fn destination_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination_bucket_name = Some(input.into());
+            self
+        }
+        pub fn set_destination_bucket_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.destination_bucket_name = input;
+            self
+        }
+        /// <p>The prefix added to log files for the S3 bucket.</p>
+        pub fn log_file_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_file_prefix = Some(input.into());
+            self
+        }
+        pub fn set_log_file_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_file_prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsS3BucketLoggingConfiguration`](crate::model::AwsS3BucketLoggingConfiguration)
+        pub fn build(self) -> crate::model::AwsS3BucketLoggingConfiguration {
+            crate::model::AwsS3BucketLoggingConfiguration {
+                destination_bucket_name: self.destination_bucket_name,
+                log_file_prefix: self.log_file_prefix,
+            }
+        }
+    }
+}
+impl AwsS3BucketLoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketLoggingConfiguration`](crate::model::AwsS3BucketLoggingConfiguration)
+    pub fn builder() -> crate::model::aws_s3_bucket_logging_configuration::Builder {
+        crate::model::aws_s3_bucket_logging_configuration::Builder::default()
     }
 }
 
@@ -33273,7 +36172,7 @@ impl AwsS3BucketServerSideEncryptionRule {
 pub struct AwsS3BucketServerSideEncryptionByDefault {
     /// <p>Server-side encryption algorithm to use for the default encryption.</p>
     pub sse_algorithm: std::option::Option<std::string::String>,
-    /// <p>KMS customer master key (CMK) ID to use for the default encryption.</p>
+    /// <p>KMS key ID to use for the default encryption.</p>
     pub kms_master_key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AwsS3BucketServerSideEncryptionByDefault {
@@ -33306,7 +36205,7 @@ pub mod aws_s3_bucket_server_side_encryption_by_default {
             self.sse_algorithm = input;
             self
         }
-        /// <p>KMS customer master key (CMK) ID to use for the default encryption.</p>
+        /// <p>KMS key ID to use for the default encryption.</p>
         pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_id = Some(input.into());
             self
@@ -36592,7 +39491,7 @@ pub struct AwsEc2VolumeDetails {
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The volume state.</p>
     pub status: std::option::Option<std::string::String>,
-    /// <p>The ARN of the KMS customer master key (CMK) that was
+    /// <p>The ARN of the KMS key that was
     /// used to protect the volume encryption key for the volume.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The volume attachments.</p>
@@ -36675,7 +39574,7 @@ pub mod aws_ec2_volume_details {
             self.status = input;
             self
         }
-        /// <p>The ARN of the KMS customer master key (CMK) that was
+        /// <p>The ARN of the KMS key that was
         /// used to protect the volume encryption key for the volume.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -39206,10 +42105,10 @@ impl AwsCloudFrontDistributionCacheBehavior {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsCodeBuildProjectDetails {
-    /// <p>The KMS customer master key (CMK) used to encrypt the
+    /// <p>The KMS key used to encrypt the
     /// build output artifacts.</p>
-    /// <p>You can specify either the ARN of the CMK or, if available, the
-    /// CMK alias (using the format alias/alias-name). </p>
+    /// <p>You can specify either the ARN of the KMS key or, if available, the
+    /// KMS key alias (using the format alias/alias-name). </p>
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>Information about the build environment for this build project.</p>
     pub environment: std::option::Option<crate::model::AwsCodeBuildProjectEnvironment>,
@@ -39249,10 +42148,10 @@ pub mod aws_code_build_project_details {
         pub(crate) vpc_config: std::option::Option<crate::model::AwsCodeBuildProjectVpcConfig>,
     }
     impl Builder {
-        /// <p>The KMS customer master key (CMK) used to encrypt the
+        /// <p>The KMS key used to encrypt the
         /// build output artifacts.</p>
-        /// <p>You can specify either the ARN of the CMK or, if available, the
-        /// CMK alias (using the format alias/alias-name). </p>
+        /// <p>You can specify either the ARN of the KMS key or, if available, the
+        /// KMS key alias (using the format alias/alias-name). </p>
         pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_key = Some(input.into());
             self
@@ -43436,7 +46335,7 @@ pub struct Product {
     /// </ul>
     pub integration_types: std::option::Option<std::vec::Vec<crate::model::IntegrationType>>,
     /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p>
-    /// <p>For integrations with third-party products, the Marketplace URL from which to subscribe to or purchase the product.</p>
+    /// <p>For integrations with third-party products, the Amazon Web Services Marketplace URL from which to subscribe to or purchase the product.</p>
     pub marketplace_url: std::option::Option<std::string::String>,
     /// <p>The URL to the service or product documentation about the integration with Security Hub, including how to activate the integration.</p>
     pub activation_url: std::option::Option<std::string::String>,
@@ -43545,7 +46444,7 @@ pub mod product {
             self
         }
         /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p>
-        /// <p>For integrations with third-party products, the Marketplace URL from which to subscribe to or purchase the product.</p>
+        /// <p>For integrations with third-party products, the Amazon Web Services Marketplace URL from which to subscribe to or purchase the product.</p>
         pub fn marketplace_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.marketplace_url = Some(input.into());
             self
@@ -43958,8 +46857,8 @@ impl AwsSecurityFindingIdentifier {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowUpdate {
-    /// <p>The status of the investigation into the finding. The allowed values are the
-    /// following.</p>
+    /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
+    /// <p>The allowed values are the following.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -43991,8 +46890,7 @@ pub struct WorkflowUpdate {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>SUPPRESSED</code> - The finding will not be reviewed again and will not be
-    /// acted upon.</p>
+    /// <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p>
     /// </li>
     /// </ul>
     pub status: std::option::Option<crate::model::WorkflowStatus>,
@@ -44013,8 +46911,8 @@ pub mod workflow_update {
         pub(crate) status: std::option::Option<crate::model::WorkflowStatus>,
     }
     impl Builder {
-        /// <p>The status of the investigation into the finding. The allowed values are the
-        /// following.</p>
+        /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
+        /// <p>The allowed values are the following.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -44046,8 +46944,7 @@ pub mod workflow_update {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>SUPPRESSED</code> - The finding will not be reviewed again and will not be
-        /// acted upon.</p>
+        /// <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p>
         /// </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::WorkflowStatus) -> Self {

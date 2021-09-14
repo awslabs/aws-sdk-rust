@@ -265,13 +265,13 @@ pub mod fluent_builders {
         /// <p> A section of the request body that provides information about the transcoded (target)
         /// file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the
         /// <code>Output</code> syntax. </p>
-        pub fn output(mut self, inp: crate::output::CreateJobOutput) -> Self {
+        pub fn output(mut self, inp: crate::model::CreateJobOutput) -> Self {
             self.inner = self.inner.output(inp);
             self
         }
         pub fn set_output(
             mut self,
-            input: std::option::Option<crate::output::CreateJobOutput>,
+            input: std::option::Option<crate::model::CreateJobOutput>,
         ) -> Self {
             self.inner = self.inner.set_output(input);
             self
@@ -282,13 +282,13 @@ pub mod fluent_builders {
         /// <p> A section of the request body that provides information about the transcoded (target)
         /// files. We recommend that you use the <code>Outputs</code> syntax instead of the
         /// <code>Output</code> syntax. </p>
-        pub fn outputs(mut self, inp: impl Into<crate::output::CreateJobOutput>) -> Self {
+        pub fn outputs(mut self, inp: impl Into<crate::model::CreateJobOutput>) -> Self {
             self.inner = self.inner.outputs(inp);
             self
         }
         pub fn set_outputs(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::output::CreateJobOutput>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CreateJobOutput>>,
         ) -> Self {
             self.inner = self.inner.set_outputs(input);
             self

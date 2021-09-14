@@ -12,26 +12,23 @@ pub fn parse_create_cluster_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterAlreadyExistsFault" => {
-            crate::error::CreateClusterError {
-                meta: generic,
-                kind: crate::error::CreateClusterErrorKind::ClusterAlreadyExistsFault({
+        "ClusterAlreadyExistsFault" => crate::error::CreateClusterError {
+            meta: generic,
+            kind: crate::error::CreateClusterErrorKind::ClusterAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::cluster_already_exists_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_cluster_already_exists_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::cluster_already_exists_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cluster_already_exists_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ClusterQuotaForCustomerExceededFault" => {
             crate::error::CreateClusterError {
                 meta: generic,
@@ -40,7 +37,7 @@ pub fn parse_create_cluster_error(
                     let mut tmp = {
                         #[allow(unused_mut)]let mut output = crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_cluster_quota_for_customer_exceeded_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_cluster_quota_for_customer_exceeded_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -59,7 +56,7 @@ pub fn parse_create_cluster_error(
                     let mut output =
                         crate::error::insufficient_cluster_capacity_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_insufficient_cluster_capacity_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_insufficient_cluster_capacity_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -76,12 +73,7 @@ pub fn parse_create_cluster_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_invalid_cluster_state_faultjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::CreateClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_cluster_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -99,7 +91,7 @@ pub fn parse_create_cluster_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -117,7 +109,7 @@ pub fn parse_create_cluster_error(
                     let mut output =
                         crate::error::invalid_parameter_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_group_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_group_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -135,7 +127,7 @@ pub fn parse_create_cluster_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -144,26 +136,24 @@ pub fn parse_create_cluster_error(
                 tmp
             }),
         },
-        "InvalidVPCNetworkStateFault" => {
-            crate::error::CreateClusterError {
-                meta: generic,
-                kind: crate::error::CreateClusterErrorKind::InvalidVpcNetworkStateFault({
+        "InvalidVPCNetworkStateFault" => crate::error::CreateClusterError {
+            meta: generic,
+            kind: crate::error::CreateClusterErrorKind::InvalidVpcNetworkStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_vpc_network_state_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_vpc_network_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_vpc_network_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_vpc_network_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "NodeQuotaForClusterExceededFault" => crate::error::CreateClusterError {
             meta: generic,
             kind: crate::error::CreateClusterErrorKind::NodeQuotaForClusterExceededFault({
@@ -173,7 +163,7 @@ pub fn parse_create_cluster_error(
                     let mut output =
                         crate::error::node_quota_for_cluster_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_node_quota_for_cluster_exceeded_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_node_quota_for_cluster_exceeded_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -191,7 +181,7 @@ pub fn parse_create_cluster_error(
                     let mut output =
                         crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_node_quota_for_customer_exceeded_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -200,26 +190,24 @@ pub fn parse_create_cluster_error(
                 tmp
             }),
         },
-        "ParameterGroupNotFoundFault" => {
-            crate::error::CreateClusterError {
-                meta: generic,
-                kind: crate::error::CreateClusterErrorKind::ParameterGroupNotFoundFault({
+        "ParameterGroupNotFoundFault" => crate::error::CreateClusterError {
+            meta: generic,
+            kind: crate::error::CreateClusterErrorKind::ParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::parameter_group_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_parameter_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::parameter_group_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_parameter_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceLinkedRoleNotFoundFault" => crate::error::CreateClusterError {
             meta: generic,
             kind: crate::error::CreateClusterErrorKind::ServiceLinkedRoleNotFoundFault({
@@ -229,7 +217,7 @@ pub fn parse_create_cluster_error(
                     let mut output =
                         crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -247,7 +235,7 @@ pub fn parse_create_cluster_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -256,46 +244,41 @@ pub fn parse_create_cluster_error(
                 tmp
             }),
         },
-        "SubnetGroupNotFoundFault" => {
-            crate::error::CreateClusterError {
-                meta: generic,
-                kind: crate::error::CreateClusterErrorKind::SubnetGroupNotFoundFault({
+        "SubnetGroupNotFoundFault" => crate::error::CreateClusterError {
+            meta: generic,
+            kind: crate::error::CreateClusterErrorKind::SubnetGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::subnet_group_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_subnet_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "TagQuotaPerResourceExceeded" => {
-            crate::error::CreateClusterError {
-                meta: generic,
-                kind: crate::error::CreateClusterErrorKind::TagQuotaPerResourceExceeded({
+                    let mut output = crate::error::subnet_group_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_subnet_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TagQuotaPerResourceExceeded" => crate::error::CreateClusterError {
+            meta: generic,
+            kind: crate::error::CreateClusterErrorKind::TagQuotaPerResourceExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::tag_quota_per_resource_exceeded::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_tag_quota_per_resource_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_tag_quota_per_resource_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::CreateClusterError::generic(generic),
     })
 }
@@ -308,9 +291,11 @@ pub fn parse_create_cluster_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_cluster_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_create_cluster(response.body().as_ref(), output)
-                .map_err(crate::error::CreateClusterError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_cluster(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateClusterError::unhandled)?;
         output.build()
     })
 }
@@ -342,7 +327,7 @@ pub fn parse_create_parameter_group_error(
                             crate::error::invalid_parameter_combination_exception::Builder::default(
                             );
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateParameterGroupError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateParameterGroupError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -361,7 +346,7 @@ pub fn parse_create_parameter_group_error(
                     let mut output =
                         crate::error::invalid_parameter_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_group_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateParameterGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_group_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateParameterGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -379,7 +364,7 @@ pub fn parse_create_parameter_group_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateParameterGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateParameterGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -397,7 +382,7 @@ pub fn parse_create_parameter_group_error(
                     let mut output =
                         crate::error::parameter_group_already_exists_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_parameter_group_already_exists_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateParameterGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_parameter_group_already_exists_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateParameterGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -415,7 +400,7 @@ pub fn parse_create_parameter_group_error(
                     let mut output =
                         crate::error::parameter_group_quota_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_parameter_group_quota_exceeded_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateParameterGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_parameter_group_quota_exceeded_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateParameterGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -433,7 +418,7 @@ pub fn parse_create_parameter_group_error(
                     let mut output =
                         crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateParameterGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateParameterGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -457,7 +442,7 @@ pub fn parse_create_parameter_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_parameter_group_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_parameter_group(
+        output = crate::json_deser::deser_operation_crate_operation_create_parameter_group(
             response.body().as_ref(),
             output,
         )
@@ -488,7 +473,7 @@ pub fn parse_create_subnet_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_subnet::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_subnetjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_subnetjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -510,7 +495,7 @@ pub fn parse_create_subnet_group_error(
                     let mut output =
                         crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSubnetGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSubnetGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -528,7 +513,7 @@ pub fn parse_create_subnet_group_error(
                     let mut output =
                         crate::error::subnet_group_already_exists_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_subnet_group_already_exists_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSubnetGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_subnet_group_already_exists_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSubnetGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -546,7 +531,7 @@ pub fn parse_create_subnet_group_error(
                     let mut output =
                         crate::error::subnet_group_quota_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_subnet_group_quota_exceeded_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSubnetGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_subnet_group_quota_exceeded_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSubnetGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -563,12 +548,7 @@ pub fn parse_create_subnet_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::subnet_quota_exceeded_fault::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_subnet_quota_exceeded_faultjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::CreateSubnetGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_subnet_quota_exceeded_faultjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSubnetGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -590,7 +570,7 @@ pub fn parse_create_subnet_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_subnet_group_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_subnet_group(
+        output = crate::json_deser::deser_operation_crate_operation_create_subnet_group(
             response.body().as_ref(),
             output,
         )
@@ -624,7 +604,7 @@ pub fn parse_decrease_replication_factor_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cluster_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_cluster_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicationFactorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cluster_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicationFactorError::unhandled)?;
                     output.build()
                 }
             ;
@@ -638,7 +618,7 @@ pub fn parse_decrease_replication_factor_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_cluster_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicationFactorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_cluster_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicationFactorError::unhandled)?;
                     output.build()
                 }
             ;
@@ -652,7 +632,7 @@ pub fn parse_decrease_replication_factor_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicationFactorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicationFactorError::unhandled)?;
                     output.build()
                 }
             ;
@@ -666,7 +646,7 @@ pub fn parse_decrease_replication_factor_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicationFactorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicationFactorError::unhandled)?;
                     output.build()
                 }
             ;
@@ -680,7 +660,7 @@ pub fn parse_decrease_replication_factor_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::node_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_node_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicationFactorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_node_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicationFactorError::unhandled)?;
                     output.build()
                 }
             ;
@@ -694,7 +674,7 @@ pub fn parse_decrease_replication_factor_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicationFactorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicationFactorError::unhandled)?;
                     output.build()
                 }
             ;
@@ -718,7 +698,7 @@ pub fn parse_decrease_replication_factor_response(
         #[allow(unused_mut)]
         let mut output = crate::output::decrease_replication_factor_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_decrease_replication_factor(
+        output = crate::json_deser::deser_operation_crate_operation_decrease_replication_factor(
             response.body().as_ref(),
             output,
         )
@@ -748,11 +728,7 @@ pub fn parse_delete_cluster_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cluster_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_cluster_not_found_faultjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cluster_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -769,12 +745,7 @@ pub fn parse_delete_cluster_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_invalid_cluster_state_faultjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::DeleteClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_cluster_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -792,7 +763,7 @@ pub fn parse_delete_cluster_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -810,7 +781,7 @@ pub fn parse_delete_cluster_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -828,7 +799,7 @@ pub fn parse_delete_cluster_error(
                     let mut output =
                         crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -849,9 +820,11 @@ pub fn parse_delete_cluster_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_cluster_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_delete_cluster(response.body().as_ref(), output)
-                .map_err(crate::error::DeleteClusterError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_delete_cluster(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteClusterError::unhandled)?;
         output.build()
     })
 }
@@ -883,7 +856,7 @@ pub fn parse_delete_parameter_group_error(
                             crate::error::invalid_parameter_combination_exception::Builder::default(
                             );
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteParameterGroupError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteParameterGroupError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -902,7 +875,7 @@ pub fn parse_delete_parameter_group_error(
                     let mut output =
                         crate::error::invalid_parameter_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_group_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteParameterGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_group_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteParameterGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -920,7 +893,7 @@ pub fn parse_delete_parameter_group_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteParameterGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteParameterGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -929,26 +902,24 @@ pub fn parse_delete_parameter_group_error(
                 tmp
             }),
         },
-        "ParameterGroupNotFoundFault" => {
-            crate::error::DeleteParameterGroupError {
-                meta: generic,
-                kind: crate::error::DeleteParameterGroupErrorKind::ParameterGroupNotFoundFault({
+        "ParameterGroupNotFoundFault" => crate::error::DeleteParameterGroupError {
+            meta: generic,
+            kind: crate::error::DeleteParameterGroupErrorKind::ParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::parameter_group_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_parameter_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteParameterGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::parameter_group_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_parameter_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteParameterGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceLinkedRoleNotFoundFault" => crate::error::DeleteParameterGroupError {
             meta: generic,
             kind: crate::error::DeleteParameterGroupErrorKind::ServiceLinkedRoleNotFoundFault({
@@ -958,7 +929,7 @@ pub fn parse_delete_parameter_group_error(
                     let mut output =
                         crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteParameterGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteParameterGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -982,7 +953,7 @@ pub fn parse_delete_parameter_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_parameter_group_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_delete_parameter_group(
+        output = crate::json_deser::deser_operation_crate_operation_delete_parameter_group(
             response.body().as_ref(),
             output,
         )
@@ -1014,7 +985,7 @@ pub fn parse_delete_subnet_group_error(
                     let mut output =
                         crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSubnetGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSubnetGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1031,11 +1002,7 @@ pub fn parse_delete_subnet_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::subnet_group_in_use_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_subnet_group_in_use_faultjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteSubnetGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_subnet_group_in_use_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSubnetGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1044,26 +1011,23 @@ pub fn parse_delete_subnet_group_error(
                 tmp
             }),
         },
-        "SubnetGroupNotFoundFault" => {
-            crate::error::DeleteSubnetGroupError {
-                meta: generic,
-                kind: crate::error::DeleteSubnetGroupErrorKind::SubnetGroupNotFoundFault({
+        "SubnetGroupNotFoundFault" => crate::error::DeleteSubnetGroupError {
+            meta: generic,
+            kind: crate::error::DeleteSubnetGroupErrorKind::SubnetGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::subnet_group_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_subnet_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSubnetGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::subnet_group_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_subnet_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSubnetGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeleteSubnetGroupError::generic(generic),
     })
 }
@@ -1077,7 +1041,7 @@ pub fn parse_delete_subnet_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_subnet_group_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_delete_subnet_group(
+        output = crate::json_deser::deser_operation_crate_operation_delete_subnet_group(
             response.body().as_ref(),
             output,
         )
@@ -1108,11 +1072,7 @@ pub fn parse_describe_clusters_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cluster_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_cluster_not_found_faultjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeClustersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cluster_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeClustersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1130,7 +1090,7 @@ pub fn parse_describe_clusters_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeClustersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeClustersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1148,7 +1108,7 @@ pub fn parse_describe_clusters_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeClustersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeClustersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1166,7 +1126,7 @@ pub fn parse_describe_clusters_error(
                     let mut output =
                         crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeClustersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeClustersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1188,9 +1148,11 @@ pub fn parse_describe_clusters_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_clusters_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_clusters(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeClustersError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_clusters(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeClustersError::unhandled)?;
         output.build()
     })
 }
@@ -1220,7 +1182,7 @@ pub fn parse_describe_default_parameters_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeDefaultParametersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeDefaultParametersError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1234,7 +1196,7 @@ pub fn parse_describe_default_parameters_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeDefaultParametersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeDefaultParametersError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1248,7 +1210,7 @@ pub fn parse_describe_default_parameters_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeDefaultParametersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeDefaultParametersError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1272,7 +1234,7 @@ pub fn parse_describe_default_parameters_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_default_parameters_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_default_parameters(
+        output = crate::json_deser::deser_operation_crate_operation_describe_default_parameters(
             response.body().as_ref(),
             output,
         )
@@ -1303,7 +1265,7 @@ pub fn parse_describe_events_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1321,7 +1283,7 @@ pub fn parse_describe_events_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1339,7 +1301,7 @@ pub fn parse_describe_events_error(
                     let mut output =
                         crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1360,9 +1322,11 @@ pub fn parse_describe_events_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_events_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_events(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeEventsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_events(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeEventsError::unhandled)?;
         output.build()
     })
 }
@@ -1396,7 +1360,7 @@ pub fn parse_describe_parameter_groups_error(
                         let mut tmp = {
                             #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeParameterGroupsError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeParameterGroupsError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -1415,7 +1379,7 @@ pub fn parse_describe_parameter_groups_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeParameterGroupsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeParameterGroupsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1424,28 +1388,24 @@ pub fn parse_describe_parameter_groups_error(
                 tmp
             }),
         },
-        "ParameterGroupNotFoundFault" => {
-            crate::error::DescribeParameterGroupsError {
-                meta: generic,
-                kind: crate::error::DescribeParameterGroupsErrorKind::ParameterGroupNotFoundFault(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::parameter_group_not_found_fault::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_parameter_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeParameterGroupsError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
-        }
+        "ParameterGroupNotFoundFault" => crate::error::DescribeParameterGroupsError {
+            meta: generic,
+            kind: crate::error::DescribeParameterGroupsErrorKind::ParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::parameter_group_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_parameter_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeParameterGroupsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceLinkedRoleNotFoundFault" => crate::error::DescribeParameterGroupsError {
             meta: generic,
             kind: crate::error::DescribeParameterGroupsErrorKind::ServiceLinkedRoleNotFoundFault({
@@ -1455,7 +1415,7 @@ pub fn parse_describe_parameter_groups_error(
                     let mut output =
                         crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeParameterGroupsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeParameterGroupsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1479,7 +1439,7 @@ pub fn parse_describe_parameter_groups_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_parameter_groups_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_parameter_groups(
+        output = crate::json_deser::deser_operation_crate_operation_describe_parameter_groups(
             response.body().as_ref(),
             output,
         )
@@ -1514,7 +1474,7 @@ pub fn parse_describe_parameters_error(
                             let mut tmp = {
                                 #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                                 let _ = response;
-                                output = crate::json_deser::deser_structure_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeParametersError::unhandled)?;
+                                output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeParametersError::unhandled)?;
                                 output.build()
                             };
                             if (&tmp.message).is_none() {
@@ -1534,7 +1494,7 @@ pub fn parse_describe_parameters_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeParametersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeParametersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1543,26 +1503,24 @@ pub fn parse_describe_parameters_error(
                 tmp
             }),
         },
-        "ParameterGroupNotFoundFault" => {
-            crate::error::DescribeParametersError {
-                meta: generic,
-                kind: crate::error::DescribeParametersErrorKind::ParameterGroupNotFoundFault({
+        "ParameterGroupNotFoundFault" => crate::error::DescribeParametersError {
+            meta: generic,
+            kind: crate::error::DescribeParametersErrorKind::ParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::parameter_group_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_parameter_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeParametersError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::parameter_group_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_parameter_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeParametersError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceLinkedRoleNotFoundFault" => crate::error::DescribeParametersError {
             meta: generic,
             kind: crate::error::DescribeParametersErrorKind::ServiceLinkedRoleNotFoundFault({
@@ -1572,7 +1530,7 @@ pub fn parse_describe_parameters_error(
                     let mut output =
                         crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeParametersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeParametersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1596,7 +1554,7 @@ pub fn parse_describe_parameters_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_parameters_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_parameters(
+        output = crate::json_deser::deser_operation_crate_operation_describe_parameters(
             response.body().as_ref(),
             output,
         )
@@ -1630,7 +1588,7 @@ pub fn parse_describe_subnet_groups_error(
                     let mut output =
                         crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSubnetGroupsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSubnetGroupsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1639,26 +1597,23 @@ pub fn parse_describe_subnet_groups_error(
                 tmp
             }),
         },
-        "SubnetGroupNotFoundFault" => {
-            crate::error::DescribeSubnetGroupsError {
-                meta: generic,
-                kind: crate::error::DescribeSubnetGroupsErrorKind::SubnetGroupNotFoundFault({
+        "SubnetGroupNotFoundFault" => crate::error::DescribeSubnetGroupsError {
+            meta: generic,
+            kind: crate::error::DescribeSubnetGroupsErrorKind::SubnetGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::subnet_group_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_subnet_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSubnetGroupsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::subnet_group_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_subnet_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSubnetGroupsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeSubnetGroupsError::generic(generic),
     })
 }
@@ -1674,7 +1629,7 @@ pub fn parse_describe_subnet_groups_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_subnet_groups_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_subnet_groups(
+        output = crate::json_deser::deser_operation_crate_operation_describe_subnet_groups(
             response.body().as_ref(),
             output,
         )
@@ -1708,7 +1663,7 @@ pub fn parse_increase_replication_factor_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cluster_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_cluster_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cluster_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1722,7 +1677,7 @@ pub fn parse_increase_replication_factor_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::insufficient_cluster_capacity_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_insufficient_cluster_capacity_faultjson_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_insufficient_cluster_capacity_faultjson_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1736,7 +1691,7 @@ pub fn parse_increase_replication_factor_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_cluster_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_cluster_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1750,7 +1705,7 @@ pub fn parse_increase_replication_factor_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1764,7 +1719,7 @@ pub fn parse_increase_replication_factor_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1778,7 +1733,7 @@ pub fn parse_increase_replication_factor_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_vpc_network_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_vpc_network_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1792,7 +1747,7 @@ pub fn parse_increase_replication_factor_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::node_quota_for_cluster_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_node_quota_for_cluster_exceeded_faultjson_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_node_quota_for_cluster_exceeded_faultjson_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1806,7 +1761,7 @@ pub fn parse_increase_replication_factor_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_node_quota_for_customer_exceeded_faultjson_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_faultjson_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1820,7 +1775,7 @@ pub fn parse_increase_replication_factor_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1844,7 +1799,7 @@ pub fn parse_increase_replication_factor_response(
         #[allow(unused_mut)]
         let mut output = crate::output::increase_replication_factor_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_increase_replication_factor(
+        output = crate::json_deser::deser_operation_crate_operation_increase_replication_factor(
             response.body().as_ref(),
             output,
         )
@@ -1874,11 +1829,7 @@ pub fn parse_list_tags_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cluster_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_cluster_not_found_faultjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cluster_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1887,27 +1838,25 @@ pub fn parse_list_tags_error(
                 tmp
             }),
         },
-        "InvalidARNFault" => crate::error::ListTagsError {
-            meta: generic,
-            kind: crate::error::ListTagsErrorKind::InvalidArnFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidARNFault" => {
+            crate::error::ListTagsError {
+                meta: generic,
+                kind: crate::error::ListTagsErrorKind::InvalidArnFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arn_faultjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_arn_fault::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_arn_faultjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidClusterStateFault" => crate::error::ListTagsError {
             meta: generic,
             kind: crate::error::ListTagsErrorKind::InvalidClusterStateFault({
@@ -1916,12 +1865,7 @@ pub fn parse_list_tags_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_invalid_cluster_state_faultjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::ListTagsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_cluster_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1939,7 +1883,7 @@ pub fn parse_list_tags_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1957,7 +1901,7 @@ pub fn parse_list_tags_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1975,7 +1919,7 @@ pub fn parse_list_tags_error(
                     let mut output =
                         crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1996,8 +1940,11 @@ pub fn parse_list_tags_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_tags(response.body().as_ref(), output)
-            .map_err(crate::error::ListTagsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_tags(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListTagsError::unhandled)?;
         output.build()
     })
 }
@@ -2023,11 +1970,7 @@ pub fn parse_reboot_node_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cluster_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_cluster_not_found_faultjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RebootNodeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cluster_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::RebootNodeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2044,12 +1987,7 @@ pub fn parse_reboot_node_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_invalid_cluster_state_faultjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::RebootNodeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_cluster_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::RebootNodeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2067,7 +2005,7 @@ pub fn parse_reboot_node_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RebootNodeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RebootNodeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2085,7 +2023,7 @@ pub fn parse_reboot_node_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RebootNodeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RebootNodeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2102,11 +2040,7 @@ pub fn parse_reboot_node_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::node_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_node_not_found_faultjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RebootNodeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_node_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::RebootNodeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2124,7 +2058,7 @@ pub fn parse_reboot_node_error(
                     let mut output =
                         crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::RebootNodeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::RebootNodeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2145,8 +2079,11 @@ pub fn parse_reboot_node_response(
         #[allow(unused_mut)]
         let mut output = crate::output::reboot_node_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_reboot_node(response.body().as_ref(), output)
-            .map_err(crate::error::RebootNodeError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_reboot_node(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RebootNodeError::unhandled)?;
         output.build()
     })
 }
@@ -2172,11 +2109,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cluster_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_cluster_not_found_faultjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cluster_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2185,27 +2118,25 @@ pub fn parse_tag_resource_error(
                 tmp
             }),
         },
-        "InvalidARNFault" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::InvalidArnFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidARNFault" => {
+            crate::error::TagResourceError {
+                meta: generic,
+                kind: crate::error::TagResourceErrorKind::InvalidArnFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arn_faultjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_arn_fault::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_arn_faultjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidClusterStateFault" => crate::error::TagResourceError {
             meta: generic,
             kind: crate::error::TagResourceErrorKind::InvalidClusterStateFault({
@@ -2214,12 +2145,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_invalid_cluster_state_faultjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_cluster_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2237,7 +2163,7 @@ pub fn parse_tag_resource_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2255,7 +2181,7 @@ pub fn parse_tag_resource_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2273,7 +2199,7 @@ pub fn parse_tag_resource_error(
                     let mut output =
                         crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2282,26 +2208,24 @@ pub fn parse_tag_resource_error(
                 tmp
             }),
         },
-        "TagQuotaPerResourceExceeded" => {
-            crate::error::TagResourceError {
-                meta: generic,
-                kind: crate::error::TagResourceErrorKind::TagQuotaPerResourceExceeded({
+        "TagQuotaPerResourceExceeded" => crate::error::TagResourceError {
+            meta: generic,
+            kind: crate::error::TagResourceErrorKind::TagQuotaPerResourceExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::tag_quota_per_resource_exceeded::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_tag_quota_per_resource_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_tag_quota_per_resource_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::TagResourceError::generic(generic),
     })
 }
@@ -2314,8 +2238,11 @@ pub fn parse_tag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_resource_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_tag_resource(response.body().as_ref(), output)
-            .map_err(crate::error::TagResourceError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_tag_resource(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::TagResourceError::unhandled)?;
         output.build()
     })
 }
@@ -2341,11 +2268,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cluster_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_cluster_not_found_faultjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cluster_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2354,27 +2277,25 @@ pub fn parse_untag_resource_error(
                 tmp
             }),
         },
-        "InvalidARNFault" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::InvalidArnFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidARNFault" => {
+            crate::error::UntagResourceError {
+                meta: generic,
+                kind: crate::error::UntagResourceErrorKind::InvalidArnFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_arn_faultjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_arn_fault::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_arn_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidClusterStateFault" => crate::error::UntagResourceError {
             meta: generic,
             kind: crate::error::UntagResourceErrorKind::InvalidClusterStateFault({
@@ -2383,12 +2304,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_invalid_cluster_state_faultjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_cluster_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2406,7 +2322,7 @@ pub fn parse_untag_resource_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2424,7 +2340,7 @@ pub fn parse_untag_resource_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2442,7 +2358,7 @@ pub fn parse_untag_resource_error(
                     let mut output =
                         crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2451,27 +2367,25 @@ pub fn parse_untag_resource_error(
                 tmp
             }),
         },
-        "TagNotFoundFault" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::TagNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "TagNotFoundFault" => {
+            crate::error::UntagResourceError {
+                meta: generic,
+                kind: crate::error::UntagResourceErrorKind::TagNotFoundFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::tag_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_tag_not_found_faultjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::tag_not_found_fault::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_tag_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::UntagResourceError::generic(generic),
     })
 }
@@ -2484,9 +2398,11 @@ pub fn parse_untag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_untag_resource(response.body().as_ref(), output)
-                .map_err(crate::error::UntagResourceError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_untag_resource(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UntagResourceError::unhandled)?;
         output.build()
     })
 }
@@ -2512,11 +2428,7 @@ pub fn parse_update_cluster_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cluster_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_cluster_not_found_faultjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cluster_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2533,12 +2445,7 @@ pub fn parse_update_cluster_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_invalid_cluster_state_faultjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::UpdateClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_cluster_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2556,7 +2463,7 @@ pub fn parse_update_cluster_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2574,7 +2481,7 @@ pub fn parse_update_cluster_error(
                     let mut output =
                         crate::error::invalid_parameter_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_group_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_group_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2592,7 +2499,7 @@ pub fn parse_update_cluster_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2601,26 +2508,24 @@ pub fn parse_update_cluster_error(
                 tmp
             }),
         },
-        "ParameterGroupNotFoundFault" => {
-            crate::error::UpdateClusterError {
-                meta: generic,
-                kind: crate::error::UpdateClusterErrorKind::ParameterGroupNotFoundFault({
+        "ParameterGroupNotFoundFault" => crate::error::UpdateClusterError {
+            meta: generic,
+            kind: crate::error::UpdateClusterErrorKind::ParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::parameter_group_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_parameter_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::parameter_group_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_parameter_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceLinkedRoleNotFoundFault" => crate::error::UpdateClusterError {
             meta: generic,
             kind: crate::error::UpdateClusterErrorKind::ServiceLinkedRoleNotFoundFault({
@@ -2630,7 +2535,7 @@ pub fn parse_update_cluster_error(
                     let mut output =
                         crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateClusterError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2651,9 +2556,11 @@ pub fn parse_update_cluster_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_cluster_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_update_cluster(response.body().as_ref(), output)
-                .map_err(crate::error::UpdateClusterError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_update_cluster(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateClusterError::unhandled)?;
         output.build()
     })
 }
@@ -2685,7 +2592,7 @@ pub fn parse_update_parameter_group_error(
                             crate::error::invalid_parameter_combination_exception::Builder::default(
                             );
                         let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateParameterGroupError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateParameterGroupError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2704,7 +2611,7 @@ pub fn parse_update_parameter_group_error(
                     let mut output =
                         crate::error::invalid_parameter_group_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_group_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateParameterGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_group_state_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateParameterGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2722,7 +2629,7 @@ pub fn parse_update_parameter_group_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateParameterGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateParameterGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2731,26 +2638,24 @@ pub fn parse_update_parameter_group_error(
                 tmp
             }),
         },
-        "ParameterGroupNotFoundFault" => {
-            crate::error::UpdateParameterGroupError {
-                meta: generic,
-                kind: crate::error::UpdateParameterGroupErrorKind::ParameterGroupNotFoundFault({
+        "ParameterGroupNotFoundFault" => crate::error::UpdateParameterGroupError {
+            meta: generic,
+            kind: crate::error::UpdateParameterGroupErrorKind::ParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::parameter_group_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_parameter_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateParameterGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::parameter_group_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_parameter_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateParameterGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceLinkedRoleNotFoundFault" => crate::error::UpdateParameterGroupError {
             meta: generic,
             kind: crate::error::UpdateParameterGroupErrorKind::ServiceLinkedRoleNotFoundFault({
@@ -2760,7 +2665,7 @@ pub fn parse_update_parameter_group_error(
                     let mut output =
                         crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateParameterGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateParameterGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2784,7 +2689,7 @@ pub fn parse_update_parameter_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_parameter_group_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_parameter_group(
+        output = crate::json_deser::deser_operation_crate_operation_update_parameter_group(
             response.body().as_ref(),
             output,
         )
@@ -2815,7 +2720,7 @@ pub fn parse_update_subnet_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_subnet::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_subnetjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_invalid_subnetjson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2837,7 +2742,7 @@ pub fn parse_update_subnet_group_error(
                     let mut output =
                         crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSubnetGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSubnetGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2846,26 +2751,23 @@ pub fn parse_update_subnet_group_error(
                 tmp
             }),
         },
-        "SubnetGroupNotFoundFault" => {
-            crate::error::UpdateSubnetGroupError {
-                meta: generic,
-                kind: crate::error::UpdateSubnetGroupErrorKind::SubnetGroupNotFoundFault({
+        "SubnetGroupNotFoundFault" => crate::error::UpdateSubnetGroupError {
+            meta: generic,
+            kind: crate::error::UpdateSubnetGroupErrorKind::SubnetGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::subnet_group_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_subnet_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSubnetGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::subnet_group_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_subnet_group_not_found_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSubnetGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "SubnetInUse" => crate::error::UpdateSubnetGroupError {
             meta: generic,
             kind: crate::error::UpdateSubnetGroupErrorKind::SubnetInUse({
@@ -2874,7 +2776,7 @@ pub fn parse_update_subnet_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::subnet_in_use::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_subnet_in_usejson_err(
+                    output = crate::json_deser::deser_structure_crate_error_subnet_in_usejson_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2895,12 +2797,7 @@ pub fn parse_update_subnet_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::subnet_quota_exceeded_fault::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_subnet_quota_exceeded_faultjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::UpdateSubnetGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_subnet_quota_exceeded_faultjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSubnetGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2922,7 +2819,7 @@ pub fn parse_update_subnet_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_subnet_group_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_subnet_group(
+        output = crate::json_deser::deser_operation_crate_operation_update_subnet_group(
             response.body().as_ref(),
             output,
         )

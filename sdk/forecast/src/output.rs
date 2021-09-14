@@ -656,10 +656,17 @@ pub struct GetAccuracyMetricsOutput {
     /// <p>An array of results from evaluating the predictor.</p>
     pub predictor_evaluation_results:
         std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
+    /// <note>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
+    /// Contact AWS Support or your account manager to learn more about access privileges.
+    /// </p>
+    /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code>
     /// is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
     pub auto_ml_override_strategy: std::option::Option<crate::model::AutoMlOverrideStrategy>,
+    /// <p>The accuracy metric used to optimize the predictor.</p>
+    pub optimization_metric: std::option::Option<crate::model::OptimizationMetric>,
 }
 impl std::fmt::Debug for GetAccuracyMetricsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -669,6 +676,7 @@ impl std::fmt::Debug for GetAccuracyMetricsOutput {
             &self.predictor_evaluation_results,
         );
         formatter.field("auto_ml_override_strategy", &self.auto_ml_override_strategy);
+        formatter.field("optimization_metric", &self.optimization_metric);
         formatter.finish()
     }
 }
@@ -682,6 +690,7 @@ pub mod get_accuracy_metrics_output {
             std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
         pub(crate) auto_ml_override_strategy:
             std::option::Option<crate::model::AutoMlOverrideStrategy>,
+        pub(crate) optimization_metric: std::option::Option<crate::model::OptimizationMetric>,
     }
     impl Builder {
         pub fn predictor_evaluation_results(
@@ -700,6 +709,11 @@ pub mod get_accuracy_metrics_output {
             self.predictor_evaluation_results = input;
             self
         }
+        /// <note>
+        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
+        /// Contact AWS Support or your account manager to learn more about access privileges.
+        /// </p>
+        /// </note>
         /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code>
         /// is specified, the AutoML strategy optimizes predictor accuracy.</p>
         /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -717,11 +731,24 @@ pub mod get_accuracy_metrics_output {
             self.auto_ml_override_strategy = input;
             self
         }
+        /// <p>The accuracy metric used to optimize the predictor.</p>
+        pub fn optimization_metric(mut self, input: crate::model::OptimizationMetric) -> Self {
+            self.optimization_metric = Some(input);
+            self
+        }
+        pub fn set_optimization_metric(
+            mut self,
+            input: std::option::Option<crate::model::OptimizationMetric>,
+        ) -> Self {
+            self.optimization_metric = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAccuracyMetricsOutput`](crate::output::GetAccuracyMetricsOutput)
         pub fn build(self) -> crate::output::GetAccuracyMetricsOutput {
             crate::output::GetAccuracyMetricsOutput {
                 predictor_evaluation_results: self.predictor_evaluation_results,
                 auto_ml_override_strategy: self.auto_ml_override_strategy,
+                optimization_metric: self.optimization_metric,
             }
         }
     }
@@ -1020,6 +1047,11 @@ pub struct DescribePredictorOutput {
     pub forecast_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether the predictor is set to perform AutoML.</p>
     pub perform_auto_ml: std::option::Option<bool>,
+    /// <note>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
+    /// Contact AWS Support or your account manager to learn more about access privileges.
+    /// </p>
+    /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code>
     /// is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -1113,6 +1145,8 @@ pub struct DescribePredictorOutput {
     /// </li>
     /// </ul>
     pub last_modification_time: std::option::Option<smithy_types::Instant>,
+    /// <p>The accuracy metric used to optimize the predictor.</p>
+    pub optimization_metric: std::option::Option<crate::model::OptimizationMetric>,
 }
 impl std::fmt::Debug for DescribePredictorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1145,6 +1179,7 @@ impl std::fmt::Debug for DescribePredictorOutput {
         formatter.field("message", &self.message);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modification_time", &self.last_modification_time);
+        formatter.field("optimization_metric", &self.optimization_metric);
         formatter.finish()
     }
 }
@@ -1180,6 +1215,7 @@ pub mod describe_predictor_output {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
         pub(crate) last_modification_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) optimization_metric: std::option::Option<crate::model::OptimizationMetric>,
     }
     impl Builder {
         /// <p>The ARN of the predictor.</p>
@@ -1250,6 +1286,11 @@ pub mod describe_predictor_output {
             self.perform_auto_ml = input;
             self
         }
+        /// <note>
+        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
+        /// Contact AWS Support or your account manager to learn more about access privileges.
+        /// </p>
+        /// </note>
         /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code>
         /// is specified, the AutoML strategy optimizes predictor accuracy.</p>
         /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -1505,6 +1546,18 @@ pub mod describe_predictor_output {
             self.last_modification_time = input;
             self
         }
+        /// <p>The accuracy metric used to optimize the predictor.</p>
+        pub fn optimization_metric(mut self, input: crate::model::OptimizationMetric) -> Self {
+            self.optimization_metric = Some(input);
+            self
+        }
+        pub fn set_optimization_metric(
+            mut self,
+            input: std::option::Option<crate::model::OptimizationMetric>,
+        ) -> Self {
+            self.optimization_metric = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribePredictorOutput`](crate::output::DescribePredictorOutput)
         pub fn build(self) -> crate::output::DescribePredictorOutput {
             crate::output::DescribePredictorOutput {
@@ -1530,6 +1583,7 @@ pub mod describe_predictor_output {
                 message: self.message,
                 creation_time: self.creation_time,
                 last_modification_time: self.last_modification_time,
+                optimization_metric: self.optimization_metric,
             }
         }
     }

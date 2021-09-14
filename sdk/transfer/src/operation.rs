@@ -64,7 +64,7 @@ impl smithy_http::response::ParseStrictResponse for CreateServer {
 /// <code>IdentityProviderType</code> set to <code>SERVICE_MANAGED</code>. Using parameters for
 /// <code>CreateUser</code>, you can specify the user name, set the home directory, store the
 /// user's public key, and assign the user's Amazon Web Services Identity and Access Management (IAM)
-/// role. You can also optionally add a scope-down policy, and assign metadata with tags that can
+/// role. You can also optionally add a session policy, and assign metadata with tags that can
 /// be used to group and search for users.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateUser {
@@ -87,6 +87,35 @@ impl smithy_http::response::ParseStrictResponse for CreateUser {
             crate::operation_deser::parse_create_user_error(response)
         } else {
             crate::operation_deser::parse_create_user_response(response)
+        }
+    }
+}
+
+/// <p>
+/// Allows you to create a workflow with specified steps and step details the workflow invokes after file transfer completes.
+/// After creating a workflow, you can associate the workflow created with any transfer servers by specifying the <code>workflow-details</code> field in <code>CreateServer</code> and <code>UpdateServer</code> operations.
+/// </p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateWorkflow {
+    _private: (),
+}
+impl CreateWorkflow {
+    /// Creates a new builder-style object to manufacture [`CreateWorkflowInput`](crate::input::CreateWorkflowInput)
+    pub fn builder() -> crate::input::create_workflow_input::Builder {
+        crate::input::create_workflow_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateWorkflow {
+    type Output =
+        std::result::Result<crate::output::CreateWorkflowOutput, crate::error::CreateWorkflowError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_workflow_error(response)
+        } else {
+            crate::operation_deser::parse_create_workflow_response(response)
         }
     }
 }
@@ -146,7 +175,6 @@ impl smithy_http::response::ParseStrictResponse for DeleteServer {
 }
 
 /// <p>Deletes a user's Secure Shell (SSH) public key.</p>
-/// <p>No response is returned from this operation.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSshPublicKey {
     _private: (),
@@ -204,6 +232,32 @@ impl smithy_http::response::ParseStrictResponse for DeleteUser {
     }
 }
 
+/// <p>Deletes the specified workflow.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteWorkflow {
+    _private: (),
+}
+impl DeleteWorkflow {
+    /// Creates a new builder-style object to manufacture [`DeleteWorkflowInput`](crate::input::DeleteWorkflowInput)
+    pub fn builder() -> crate::input::delete_workflow_input::Builder {
+        crate::input::delete_workflow_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteWorkflow {
+    type Output =
+        std::result::Result<crate::output::DeleteWorkflowOutput, crate::error::DeleteWorkflowError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_workflow_error(response)
+        } else {
+            crate::operation_deser::parse_delete_workflow_response(response)
+        }
+    }
+}
+
 /// <p>Describes the access that is assigned to the specific file transfer protocol-enabled
 /// server, as identified by its <code>ServerId</code> property and its
 /// <code>ExternalID</code>.</p>
@@ -230,6 +284,34 @@ impl smithy_http::response::ParseStrictResponse for DescribeAccess {
             crate::operation_deser::parse_describe_access_error(response)
         } else {
             crate::operation_deser::parse_describe_access_response(response)
+        }
+    }
+}
+
+/// <p>You can use <code>DescribeExecution</code> to check the details of the execution of the specified workflow.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeExecution {
+    _private: (),
+}
+impl DescribeExecution {
+    /// Creates a new builder-style object to manufacture [`DescribeExecutionInput`](crate::input::DescribeExecutionInput)
+    pub fn builder() -> crate::input::describe_execution_input::Builder {
+        crate::input::describe_execution_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DescribeExecution {
+    type Output = std::result::Result<
+        crate::output::DescribeExecutionOutput,
+        crate::error::DescribeExecutionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_execution_error(response)
+        } else {
+            crate::operation_deser::parse_describe_execution_response(response)
         }
     }
 }
@@ -324,6 +406,34 @@ impl smithy_http::response::ParseStrictResponse for DescribeUser {
     }
 }
 
+/// <p>Describes the specified workflow.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeWorkflow {
+    _private: (),
+}
+impl DescribeWorkflow {
+    /// Creates a new builder-style object to manufacture [`DescribeWorkflowInput`](crate::input::DescribeWorkflowInput)
+    pub fn builder() -> crate::input::describe_workflow_input::Builder {
+        crate::input::describe_workflow_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DescribeWorkflow {
+    type Output = std::result::Result<
+        crate::output::DescribeWorkflowOutput,
+        crate::error::DescribeWorkflowError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_workflow_error(response)
+        } else {
+            crate::operation_deser::parse_describe_workflow_response(response)
+        }
+    }
+}
+
 /// <p>Adds a Secure Shell (SSH) public key to a user account identified by a
 /// <code>UserName</code> value assigned to the specific file transfer protocol-enabled server,
 /// identified by <code>ServerId</code>.</p>
@@ -378,6 +488,32 @@ impl smithy_http::response::ParseStrictResponse for ListAccesses {
             crate::operation_deser::parse_list_accesses_error(response)
         } else {
             crate::operation_deser::parse_list_accesses_response(response)
+        }
+    }
+}
+
+/// <p>Lists all executions for the specified workflow.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListExecutions {
+    _private: (),
+}
+impl ListExecutions {
+    /// Creates a new builder-style object to manufacture [`ListExecutionsInput`](crate::input::ListExecutionsInput)
+    pub fn builder() -> crate::input::list_executions_input::Builder {
+        crate::input::list_executions_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListExecutions {
+    type Output =
+        std::result::Result<crate::output::ListExecutionsOutput, crate::error::ListExecutionsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_executions_error(response)
+        } else {
+            crate::operation_deser::parse_list_executions_response(response)
         }
     }
 }
@@ -493,6 +629,64 @@ impl smithy_http::response::ParseStrictResponse for ListUsers {
     }
 }
 
+/// <p>Lists all of your workflows.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListWorkflows {
+    _private: (),
+}
+impl ListWorkflows {
+    /// Creates a new builder-style object to manufacture [`ListWorkflowsInput`](crate::input::ListWorkflowsInput)
+    pub fn builder() -> crate::input::list_workflows_input::Builder {
+        crate::input::list_workflows_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListWorkflows {
+    type Output =
+        std::result::Result<crate::output::ListWorkflowsOutput, crate::error::ListWorkflowsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_workflows_error(response)
+        } else {
+            crate::operation_deser::parse_list_workflows_response(response)
+        }
+    }
+}
+
+/// <p>Sends a callback for asynchronous custom steps.</p>
+/// <p>
+/// The <code>ExecutionId</code>, <code>WorkflowId</code>, and <code>Token</code> are passed to the target resource during execution of a custom step of a workflow.
+/// You must include those with their callback as well as providing a status.
+/// </p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct SendWorkflowStepState {
+    _private: (),
+}
+impl SendWorkflowStepState {
+    /// Creates a new builder-style object to manufacture [`SendWorkflowStepStateInput`](crate::input::SendWorkflowStepStateInput)
+    pub fn builder() -> crate::input::send_workflow_step_state_input::Builder {
+        crate::input::send_workflow_step_state_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for SendWorkflowStepState {
+    type Output = std::result::Result<
+        crate::output::SendWorkflowStepStateOutput,
+        crate::error::SendWorkflowStepStateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_send_workflow_step_state_error(response)
+        } else {
+            crate::operation_deser::parse_send_workflow_step_state_response(response)
+        }
+    }
+}
+
 /// <p>Changes the state of a file transfer protocol-enabled server from <code>OFFLINE</code> to
 /// <code>ONLINE</code>. It has no impact on a server that is already <code>ONLINE</code>. An
 /// <code>ONLINE</code> server can accept and process file transfer jobs.</p>
@@ -596,6 +790,39 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
 /// authentication method as soon as you create your server. By doing so, you can troubleshoot
 /// issues with the identity provider integration to ensure that your users can successfully use
 /// the service.</p>
+/// <p>
+/// The <code>ServerId</code> and <code>UserName</code> parameters are required. The <code>ServerProtocol</code>, <code>SourceIp</code>, and <code>UserPassword</code> are all optional.
+/// </p>
+/// <note>
+/// <p>
+/// You cannot use <code>TestIdentityProvider</code> if the <code>IdentityProviderType</code> of your server is <code>SERVICE_MANAGED</code>.
+/// </p>
+/// </note>
+/// <ul>
+/// <li>
+/// <p>
+/// If you provide any incorrect values for any parameters, the <code>Response</code> field is empty.
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// If you provide a server ID for a server that uses service-managed users, you get an error:
+/// </p>
+/// <p>
+/// <code>
+/// An error occurred (InvalidRequestException) when calling the TestIdentityProvider operation: s-<i>server-ID</i> not configured for external auth
+/// </code>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// If you enter a Server ID for the <code>--server-id</code> parameter that does not identify an actual Transfer server, you receive the following error:
+/// </p>
+/// <p>
+/// <code>An error occurred (ResourceNotFoundException) when calling the TestIdentityProvider operation: Unknown server</code>
+/// </p>
+/// </li>
+/// </ul>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct TestIdentityProvider {
     _private: (),

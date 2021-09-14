@@ -206,6 +206,124 @@ impl AsRef<str> for HomeDirectoryType {
     }
 }
 
+/// <p>Container for the <code>WorkflowDetail</code> data type.
+/// It is used by actions that trigger a workflow to begin execution.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct WorkflowDetails {
+    /// <p>A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.</p>
+    pub on_upload: std::option::Option<std::vec::Vec<crate::model::WorkflowDetail>>,
+}
+impl std::fmt::Debug for WorkflowDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("WorkflowDetails");
+        formatter.field("on_upload", &self.on_upload);
+        formatter.finish()
+    }
+}
+/// See [`WorkflowDetails`](crate::model::WorkflowDetails)
+pub mod workflow_details {
+    /// A builder for [`WorkflowDetails`](crate::model::WorkflowDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) on_upload: std::option::Option<std::vec::Vec<crate::model::WorkflowDetail>>,
+    }
+    impl Builder {
+        pub fn on_upload(mut self, input: impl Into<crate::model::WorkflowDetail>) -> Self {
+            let mut v = self.on_upload.unwrap_or_default();
+            v.push(input.into());
+            self.on_upload = Some(v);
+            self
+        }
+        pub fn set_on_upload(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::WorkflowDetail>>,
+        ) -> Self {
+            self.on_upload = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WorkflowDetails`](crate::model::WorkflowDetails)
+        pub fn build(self) -> crate::model::WorkflowDetails {
+            crate::model::WorkflowDetails {
+                on_upload: self.on_upload,
+            }
+        }
+    }
+}
+impl WorkflowDetails {
+    /// Creates a new builder-style object to manufacture [`WorkflowDetails`](crate::model::WorkflowDetails)
+    pub fn builder() -> crate::model::workflow_details::Builder {
+        crate::model::workflow_details::Builder::default()
+    }
+}
+
+/// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct WorkflowDetail {
+    /// <p>A unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
+    /// <p>Includes the necessary permissions for S3, EFS, and Lambda operations that Transfer can
+    /// assume, so that all workflow steps can operate on the required resources</p>
+    pub execution_role: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for WorkflowDetail {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("WorkflowDetail");
+        formatter.field("workflow_id", &self.workflow_id);
+        formatter.field("execution_role", &self.execution_role);
+        formatter.finish()
+    }
+}
+/// See [`WorkflowDetail`](crate::model::WorkflowDetail)
+pub mod workflow_detail {
+    /// A builder for [`WorkflowDetail`](crate::model::WorkflowDetail)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
+        pub(crate) execution_role: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
+        /// <p>Includes the necessary permissions for S3, EFS, and Lambda operations that Transfer can
+        /// assume, so that all workflow steps can operate on the required resources</p>
+        pub fn execution_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_role = Some(input.into());
+            self
+        }
+        pub fn set_execution_role(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.execution_role = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WorkflowDetail`](crate::model::WorkflowDetail)
+        pub fn build(self) -> crate::model::WorkflowDetail {
+            crate::model::WorkflowDetail {
+                workflow_id: self.workflow_id,
+                execution_role: self.execution_role,
+            }
+        }
+    }
+}
+impl WorkflowDetail {
+    /// Creates a new builder-style object to manufacture [`WorkflowDetail`](crate::model::WorkflowDetail)
+    pub fn builder() -> crate::model::workflow_detail::Builder {
+        crate::model::workflow_detail::Builder::default()
+    }
+}
+
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -588,6 +706,11 @@ pub struct ProtocolDetails {
     /// <p>Replace <code>
     /// <i>0.0.0.0</i>
     /// </code> in the example above with the actual IP address you want to use.</p>
+    /// <note>
+    /// <p>
+    /// If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer server for the change to take effect. For details on using Passive IP (PASV) in a NAT environment, see <a href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring your FTPS server behind a firewall or NAT with Amazon Web Services Transfer Family</a>.
+    /// </p>
+    /// </note>
     pub passive_ip: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ProtocolDetails {
@@ -619,6 +742,11 @@ pub mod protocol_details {
         /// <p>Replace <code>
         /// <i>0.0.0.0</i>
         /// </code> in the example above with the actual IP address you want to use.</p>
+        /// <note>
+        /// <p>
+        /// If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer server for the change to take effect. For details on using Passive IP (PASV) in a NAT environment, see <a href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring your FTPS server behind a firewall or NAT with Amazon Web Services Transfer Family</a>.
+        /// </p>
+        /// </note>
         pub fn passive_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.passive_ip = Some(input.into());
             self
@@ -707,6 +835,131 @@ impl Tag {
     }
 }
 
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CustomStepStatus {
+    Failure,
+    Success,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CustomStepStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILURE" => CustomStepStatus::Failure,
+            "SUCCESS" => CustomStepStatus::Success,
+            other => CustomStepStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CustomStepStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CustomStepStatus::from(s))
+    }
+}
+impl CustomStepStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            CustomStepStatus::Failure => "FAILURE",
+            CustomStepStatus::Success => "SUCCESS",
+            CustomStepStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FAILURE", "SUCCESS"]
+    }
+}
+impl AsRef<str> for CustomStepStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Contains the ID, text description, and Amazon Resource Name (ARN) for the workflow.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListedWorkflow {
+    /// <p>A unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
+    /// <p>Specifies the text description for the workflow.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
+    pub arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListedWorkflow {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListedWorkflow");
+        formatter.field("workflow_id", &self.workflow_id);
+        formatter.field("description", &self.description);
+        formatter.field("arn", &self.arn);
+        formatter.finish()
+    }
+}
+/// See [`ListedWorkflow`](crate::model::ListedWorkflow)
+pub mod listed_workflow {
+    /// A builder for [`ListedWorkflow`](crate::model::ListedWorkflow)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
+        /// <p>Specifies the text description for the workflow.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListedWorkflow`](crate::model::ListedWorkflow)
+        pub fn build(self) -> crate::model::ListedWorkflow {
+            crate::model::ListedWorkflow {
+                workflow_id: self.workflow_id,
+                description: self.description,
+                arn: self.arn,
+            }
+        }
+    }
+}
+impl ListedWorkflow {
+    /// Creates a new builder-style object to manufacture [`ListedWorkflow`](crate::model::ListedWorkflow)
+    pub fn builder() -> crate::model::listed_workflow::Builder {
+        crate::model::listed_workflow::Builder::default()
+    }
+}
+
 /// <p>Returns properties of the user that you specify.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -719,7 +972,7 @@ pub struct ListedUser {
     pub home_directory: std::option::Option<std::string::String>,
     /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
     /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-    /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
     /// S3 or EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
@@ -790,7 +1043,7 @@ pub mod listed_user {
         }
         /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
         /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
         /// S3 or EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
@@ -1240,6 +1493,534 @@ impl AsRef<str> for Domain {
     }
 }
 
+/// <p>Returns properties of the execution that is specified.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListedExecution {
+    /// <p>A unique identifier for the execution of a workflow.</p>
+    pub execution_id: std::option::Option<std::string::String>,
+    /// <p>A structure that describes the Amazon S3 or EFS file location.
+    /// This is the file location when the execution begins: if the file is being copied,
+    /// this is the initial (as opposed to destination) file location.</p>
+    pub initial_file_location: std::option::Option<crate::model::FileLocation>,
+    /// <p>A container object for the session details associated with a workflow.</p>
+    pub service_metadata: std::option::Option<crate::model::ServiceMetadata>,
+    /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
+    pub status: std::option::Option<crate::model::ExecutionStatus>,
+}
+impl std::fmt::Debug for ListedExecution {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListedExecution");
+        formatter.field("execution_id", &self.execution_id);
+        formatter.field("initial_file_location", &self.initial_file_location);
+        formatter.field("service_metadata", &self.service_metadata);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`ListedExecution`](crate::model::ListedExecution)
+pub mod listed_execution {
+    /// A builder for [`ListedExecution`](crate::model::ListedExecution)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) execution_id: std::option::Option<std::string::String>,
+        pub(crate) initial_file_location: std::option::Option<crate::model::FileLocation>,
+        pub(crate) service_metadata: std::option::Option<crate::model::ServiceMetadata>,
+        pub(crate) status: std::option::Option<crate::model::ExecutionStatus>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the execution of a workflow.</p>
+        pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_id = Some(input.into());
+            self
+        }
+        pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_id = input;
+            self
+        }
+        /// <p>A structure that describes the Amazon S3 or EFS file location.
+        /// This is the file location when the execution begins: if the file is being copied,
+        /// this is the initial (as opposed to destination) file location.</p>
+        pub fn initial_file_location(mut self, input: crate::model::FileLocation) -> Self {
+            self.initial_file_location = Some(input);
+            self
+        }
+        pub fn set_initial_file_location(
+            mut self,
+            input: std::option::Option<crate::model::FileLocation>,
+        ) -> Self {
+            self.initial_file_location = input;
+            self
+        }
+        /// <p>A container object for the session details associated with a workflow.</p>
+        pub fn service_metadata(mut self, input: crate::model::ServiceMetadata) -> Self {
+            self.service_metadata = Some(input);
+            self
+        }
+        pub fn set_service_metadata(
+            mut self,
+            input: std::option::Option<crate::model::ServiceMetadata>,
+        ) -> Self {
+            self.service_metadata = input;
+            self
+        }
+        /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
+        pub fn status(mut self, input: crate::model::ExecutionStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ExecutionStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListedExecution`](crate::model::ListedExecution)
+        pub fn build(self) -> crate::model::ListedExecution {
+            crate::model::ListedExecution {
+                execution_id: self.execution_id,
+                initial_file_location: self.initial_file_location,
+                service_metadata: self.service_metadata,
+                status: self.status,
+            }
+        }
+    }
+}
+impl ListedExecution {
+    /// Creates a new builder-style object to manufacture [`ListedExecution`](crate::model::ListedExecution)
+    pub fn builder() -> crate::model::listed_execution::Builder {
+        crate::model::listed_execution::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ExecutionStatus {
+    Completed,
+    Exception,
+    HandlingException,
+    InProgress,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ExecutionStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "COMPLETED" => ExecutionStatus::Completed,
+            "EXCEPTION" => ExecutionStatus::Exception,
+            "HANDLING_EXCEPTION" => ExecutionStatus::HandlingException,
+            "IN_PROGRESS" => ExecutionStatus::InProgress,
+            other => ExecutionStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ExecutionStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExecutionStatus::from(s))
+    }
+}
+impl ExecutionStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExecutionStatus::Completed => "COMPLETED",
+            ExecutionStatus::Exception => "EXCEPTION",
+            ExecutionStatus::HandlingException => "HANDLING_EXCEPTION",
+            ExecutionStatus::InProgress => "IN_PROGRESS",
+            ExecutionStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "COMPLETED",
+            "EXCEPTION",
+            "HANDLING_EXCEPTION",
+            "IN_PROGRESS",
+        ]
+    }
+}
+impl AsRef<str> for ExecutionStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A container object for the session details associated with a workflow.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceMetadata {
+    /// <p>The Server ID (<code>ServerId</code>), Session ID (<code>SessionId</code>) and user (<code>UserName</code>) make up the <code>UserDetails</code>.</p>
+    pub user_details: std::option::Option<crate::model::UserDetails>,
+}
+impl std::fmt::Debug for ServiceMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServiceMetadata");
+        formatter.field("user_details", &self.user_details);
+        formatter.finish()
+    }
+}
+/// See [`ServiceMetadata`](crate::model::ServiceMetadata)
+pub mod service_metadata {
+    /// A builder for [`ServiceMetadata`](crate::model::ServiceMetadata)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_details: std::option::Option<crate::model::UserDetails>,
+    }
+    impl Builder {
+        /// <p>The Server ID (<code>ServerId</code>), Session ID (<code>SessionId</code>) and user (<code>UserName</code>) make up the <code>UserDetails</code>.</p>
+        pub fn user_details(mut self, input: crate::model::UserDetails) -> Self {
+            self.user_details = Some(input);
+            self
+        }
+        pub fn set_user_details(
+            mut self,
+            input: std::option::Option<crate::model::UserDetails>,
+        ) -> Self {
+            self.user_details = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceMetadata`](crate::model::ServiceMetadata)
+        pub fn build(self) -> crate::model::ServiceMetadata {
+            crate::model::ServiceMetadata {
+                user_details: self.user_details,
+            }
+        }
+    }
+}
+impl ServiceMetadata {
+    /// Creates a new builder-style object to manufacture [`ServiceMetadata`](crate::model::ServiceMetadata)
+    pub fn builder() -> crate::model::service_metadata::Builder {
+        crate::model::service_metadata::Builder::default()
+    }
+}
+
+/// <p>Specifies the user name, server ID, and session ID for a workflow.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UserDetails {
+    /// <p>A unique string that identifies a user account associated with a server.</p>
+    pub user_name: std::option::Option<std::string::String>,
+    /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
+    pub server_id: std::option::Option<std::string::String>,
+    /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
+    pub session_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UserDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UserDetails");
+        formatter.field("user_name", &self.user_name);
+        formatter.field("server_id", &self.server_id);
+        formatter.field("session_id", &self.session_id);
+        formatter.finish()
+    }
+}
+/// See [`UserDetails`](crate::model::UserDetails)
+pub mod user_details {
+    /// A builder for [`UserDetails`](crate::model::UserDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_name: std::option::Option<std::string::String>,
+        pub(crate) server_id: std::option::Option<std::string::String>,
+        pub(crate) session_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique string that identifies a user account associated with a server.</p>
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
+            self
+        }
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
+            self
+        }
+        /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_id = Some(input.into());
+            self
+        }
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_id = input;
+            self
+        }
+        /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_id = Some(input.into());
+            self
+        }
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UserDetails`](crate::model::UserDetails)
+        pub fn build(self) -> crate::model::UserDetails {
+            crate::model::UserDetails {
+                user_name: self.user_name,
+                server_id: self.server_id,
+                session_id: self.session_id,
+            }
+        }
+    }
+}
+impl UserDetails {
+    /// Creates a new builder-style object to manufacture [`UserDetails`](crate::model::UserDetails)
+    pub fn builder() -> crate::model::user_details::Builder {
+        crate::model::user_details::Builder::default()
+    }
+}
+
+/// <p>Specifies the Amazon S3 or EFS file details to be used in the step.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FileLocation {
+    /// <p>Specifies the S3 details for the file being used, such as bucket, Etag, and so forth.</p>
+    pub s3_file_location: std::option::Option<crate::model::S3FileLocation>,
+    /// <p>Specifies the Amazon EFS ID and the path for the file being used.</p>
+    pub efs_file_location: std::option::Option<crate::model::EfsFileLocation>,
+}
+impl std::fmt::Debug for FileLocation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FileLocation");
+        formatter.field("s3_file_location", &self.s3_file_location);
+        formatter.field("efs_file_location", &self.efs_file_location);
+        formatter.finish()
+    }
+}
+/// See [`FileLocation`](crate::model::FileLocation)
+pub mod file_location {
+    /// A builder for [`FileLocation`](crate::model::FileLocation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_file_location: std::option::Option<crate::model::S3FileLocation>,
+        pub(crate) efs_file_location: std::option::Option<crate::model::EfsFileLocation>,
+    }
+    impl Builder {
+        /// <p>Specifies the S3 details for the file being used, such as bucket, Etag, and so forth.</p>
+        pub fn s3_file_location(mut self, input: crate::model::S3FileLocation) -> Self {
+            self.s3_file_location = Some(input);
+            self
+        }
+        pub fn set_s3_file_location(
+            mut self,
+            input: std::option::Option<crate::model::S3FileLocation>,
+        ) -> Self {
+            self.s3_file_location = input;
+            self
+        }
+        /// <p>Specifies the Amazon EFS ID and the path for the file being used.</p>
+        pub fn efs_file_location(mut self, input: crate::model::EfsFileLocation) -> Self {
+            self.efs_file_location = Some(input);
+            self
+        }
+        pub fn set_efs_file_location(
+            mut self,
+            input: std::option::Option<crate::model::EfsFileLocation>,
+        ) -> Self {
+            self.efs_file_location = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FileLocation`](crate::model::FileLocation)
+        pub fn build(self) -> crate::model::FileLocation {
+            crate::model::FileLocation {
+                s3_file_location: self.s3_file_location,
+                efs_file_location: self.efs_file_location,
+            }
+        }
+    }
+}
+impl FileLocation {
+    /// Creates a new builder-style object to manufacture [`FileLocation`](crate::model::FileLocation)
+    pub fn builder() -> crate::model::file_location::Builder {
+        crate::model::file_location::Builder::default()
+    }
+}
+
+/// <p>Specifies the details for the file location for the file being used in the workflow. Only applicable if you are using Amazon EFS for storage.</p>
+/// <p>
+/// You need to provide the file system ID and the pathname.
+/// The pathname can represent either a path or a file.
+/// This is determined by whether or not you end the path value with the forward slash (/) character.
+/// If the final character is "/", then your file is copied to the folder, and its name does not change.
+/// If, rather, the final character is alphanumeric, your uploaded file is renamed to the path value. In this case, if a file with that name already exists, it is overwritten.
+/// </p>
+/// <p>For example, if your path is <code>shared-files/bob/</code>, your uploaded files are copied to the <code>shared-files/bob/</code>, folder.
+/// If your path is <code>shared-files/today</code>, each uploaded file is copied to the <code>shared-files</code> folder and named <code>today</code>:
+/// each upload overwrites the previous version of the <code>bob</code> file.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EfsFileLocation {
+    /// <p>The ID of the file system, assigned by Amazon EFS.</p>
+    pub file_system_id: std::option::Option<std::string::String>,
+    /// <p>The pathname for the folder being used by a workflow.</p>
+    pub path: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for EfsFileLocation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EfsFileLocation");
+        formatter.field("file_system_id", &self.file_system_id);
+        formatter.field("path", &self.path);
+        formatter.finish()
+    }
+}
+/// See [`EfsFileLocation`](crate::model::EfsFileLocation)
+pub mod efs_file_location {
+    /// A builder for [`EfsFileLocation`](crate::model::EfsFileLocation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_system_id: std::option::Option<std::string::String>,
+        pub(crate) path: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the file system, assigned by Amazon EFS.</p>
+        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_system_id = Some(input.into());
+            self
+        }
+        pub fn set_file_system_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.file_system_id = input;
+            self
+        }
+        /// <p>The pathname for the folder being used by a workflow.</p>
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
+            self
+        }
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EfsFileLocation`](crate::model::EfsFileLocation)
+        pub fn build(self) -> crate::model::EfsFileLocation {
+            crate::model::EfsFileLocation {
+                file_system_id: self.file_system_id,
+                path: self.path,
+            }
+        }
+    }
+}
+impl EfsFileLocation {
+    /// Creates a new builder-style object to manufacture [`EfsFileLocation`](crate::model::EfsFileLocation)
+    pub fn builder() -> crate::model::efs_file_location::Builder {
+        crate::model::efs_file_location::Builder::default()
+    }
+}
+
+/// <p>Specifies the details for the file location for the file being used in the workflow. Only applicable if you are using S3 storage.</p>
+/// <p>
+/// You need to provide the bucket and key.
+/// The key can represent either a path or a file.
+/// This is determined by whether or not you end the key value with the forward slash (/) character.
+/// If the final character is "/", then your file is copied to the folder, and its name does not change.
+/// If, rather, the final character is alphanumeric, your uploaded file is renamed to the path value. In this case, if a file with that name already exists, it is overwritten.
+/// </p>
+/// <p>For example, if your path is <code>shared-files/bob/</code>, your uploaded files are copied to the <code>shared-files/bob/</code>, folder.
+/// If your path is <code>shared-files/today</code>, each uploaded file is copied to the <code>shared-files</code> folder and named <code>today</code>:
+/// each upload overwrites the previous version of the <i>bob</i> file.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3FileLocation {
+    /// <p>Specifies the S3 bucket that contains the file being used.</p>
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p>The name assigned to the file when it was created in S3. You use the object key to retrieve the object.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>Specifies the file version.</p>
+    pub version_id: std::option::Option<std::string::String>,
+    /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata.</p>
+    pub etag: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for S3FileLocation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3FileLocation");
+        formatter.field("bucket", &self.bucket);
+        formatter.field("key", &self.key);
+        formatter.field("version_id", &self.version_id);
+        formatter.field("etag", &self.etag);
+        formatter.finish()
+    }
+}
+/// See [`S3FileLocation`](crate::model::S3FileLocation)
+pub mod s3_file_location {
+    /// A builder for [`S3FileLocation`](crate::model::S3FileLocation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) version_id: std::option::Option<std::string::String>,
+        pub(crate) etag: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the S3 bucket that contains the file being used.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// <p>The name assigned to the file when it was created in S3. You use the object key to retrieve the object.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>Specifies the file version.</p>
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
+            self
+        }
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
+            self
+        }
+        /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata.</p>
+        pub fn etag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.etag = Some(input.into());
+            self
+        }
+        pub fn set_etag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.etag = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3FileLocation`](crate::model::S3FileLocation)
+        pub fn build(self) -> crate::model::S3FileLocation {
+            crate::model::S3FileLocation {
+                bucket: self.bucket,
+                key: self.key,
+                version_id: self.version_id,
+                etag: self.etag,
+            }
+        }
+    }
+}
+impl S3FileLocation {
+    /// Creates a new builder-style object to manufacture [`S3FileLocation`](crate::model::S3FileLocation)
+    pub fn builder() -> crate::model::s3_file_location::Builder {
+        crate::model::s3_file_location::Builder::default()
+    }
+}
+
 /// <p>Lists the properties for one or more specified associated accesses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1249,7 +2030,7 @@ pub struct ListedAccess {
     pub home_directory: std::option::Option<std::string::String>,
     /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
     /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-    /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
     /// S3 or EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
@@ -1306,7 +2087,7 @@ pub mod listed_access {
         }
         /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
         /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
         /// S3 or EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
@@ -1367,6 +2148,896 @@ impl ListedAccess {
     }
 }
 
+/// <p>Describes the properties of the specified workflow</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribedWorkflow {
+    /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Specifies the text description for the workflow.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Specifies the details for the steps that are in the specified workflow.</p>
+    pub steps: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
+    /// <p>Specifies the steps (actions) to take if any errors are encountered during execution of the workflow.</p>
+    pub on_exception_steps: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
+    /// <p>A unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
+    /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl std::fmt::Debug for DescribedWorkflow {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribedWorkflow");
+        formatter.field("arn", &self.arn);
+        formatter.field("description", &self.description);
+        formatter.field("steps", &self.steps);
+        formatter.field("on_exception_steps", &self.on_exception_steps);
+        formatter.field("workflow_id", &self.workflow_id);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`DescribedWorkflow`](crate::model::DescribedWorkflow)
+pub mod described_workflow {
+    /// A builder for [`DescribedWorkflow`](crate::model::DescribedWorkflow)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) steps: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
+        pub(crate) on_exception_steps:
+            std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>Specifies the text description for the workflow.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        pub fn steps(mut self, input: impl Into<crate::model::WorkflowStep>) -> Self {
+            let mut v = self.steps.unwrap_or_default();
+            v.push(input.into());
+            self.steps = Some(v);
+            self
+        }
+        pub fn set_steps(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
+        ) -> Self {
+            self.steps = input;
+            self
+        }
+        pub fn on_exception_steps(mut self, input: impl Into<crate::model::WorkflowStep>) -> Self {
+            let mut v = self.on_exception_steps.unwrap_or_default();
+            v.push(input.into());
+            self.on_exception_steps = Some(v);
+            self
+        }
+        pub fn set_on_exception_steps(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
+        ) -> Self {
+            self.on_exception_steps = input;
+            self
+        }
+        /// <p>A unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribedWorkflow`](crate::model::DescribedWorkflow)
+        pub fn build(self) -> crate::model::DescribedWorkflow {
+            crate::model::DescribedWorkflow {
+                arn: self.arn,
+                description: self.description,
+                steps: self.steps,
+                on_exception_steps: self.on_exception_steps,
+                workflow_id: self.workflow_id,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl DescribedWorkflow {
+    /// Creates a new builder-style object to manufacture [`DescribedWorkflow`](crate::model::DescribedWorkflow)
+    pub fn builder() -> crate::model::described_workflow::Builder {
+        crate::model::described_workflow::Builder::default()
+    }
+}
+
+/// <p>The basic building block of a workflow.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct WorkflowStep {
+    /// <p>
+    /// Currently, the following step types are supported.
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Copy</i>: copy the file to another location</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Custom</i>: custom step with a lambda target</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Delete</i>: delete the file</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Tag</i>: add a tag to the file</p>
+    /// </li>
+    /// </ul>
+    pub r#type: std::option::Option<crate::model::WorkflowStepType>,
+    /// <p>Details for a step that performs a file copy.</p>
+    /// <p>
+    /// Consists of the following values:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>A description</p>
+    /// </li>
+    /// <li>
+    /// <p>An S3 or EFS location for the destination of the file copy.</p>
+    /// </li>
+    /// <li>
+    /// <p>A flag that indicates whether or not to overwrite an existing file of the same name.
+    /// The default is <code>FALSE</code>.</p>
+    /// </li>
+    /// </ul>
+    pub copy_step_details: std::option::Option<crate::model::CopyStepDetails>,
+    /// <p>Details for a step that invokes a lambda function.</p>
+    /// <p>
+    /// Consists of the lambda function name, target, and timeout (in seconds).
+    /// </p>
+    pub custom_step_details: std::option::Option<crate::model::CustomStepDetails>,
+    /// <p>You need to specify the name of the file to be deleted.</p>
+    pub delete_step_details: std::option::Option<crate::model::DeleteStepDetails>,
+    /// <p>Details for a step that creates one or more tags.</p>
+    /// <p>You specify one or more tags: each tag contains a key/value pair.</p>
+    pub tag_step_details: std::option::Option<crate::model::TagStepDetails>,
+}
+impl std::fmt::Debug for WorkflowStep {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("WorkflowStep");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("copy_step_details", &self.copy_step_details);
+        formatter.field("custom_step_details", &self.custom_step_details);
+        formatter.field("delete_step_details", &self.delete_step_details);
+        formatter.field("tag_step_details", &self.tag_step_details);
+        formatter.finish()
+    }
+}
+/// See [`WorkflowStep`](crate::model::WorkflowStep)
+pub mod workflow_step {
+    /// A builder for [`WorkflowStep`](crate::model::WorkflowStep)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::WorkflowStepType>,
+        pub(crate) copy_step_details: std::option::Option<crate::model::CopyStepDetails>,
+        pub(crate) custom_step_details: std::option::Option<crate::model::CustomStepDetails>,
+        pub(crate) delete_step_details: std::option::Option<crate::model::DeleteStepDetails>,
+        pub(crate) tag_step_details: std::option::Option<crate::model::TagStepDetails>,
+    }
+    impl Builder {
+        /// <p>
+        /// Currently, the following step types are supported.
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>Copy</i>: copy the file to another location</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>Custom</i>: custom step with a lambda target</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>Delete</i>: delete the file</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>Tag</i>: add a tag to the file</p>
+        /// </li>
+        /// </ul>
+        pub fn r#type(mut self, input: crate::model::WorkflowStepType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::WorkflowStepType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>Details for a step that performs a file copy.</p>
+        /// <p>
+        /// Consists of the following values:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>A description</p>
+        /// </li>
+        /// <li>
+        /// <p>An S3 or EFS location for the destination of the file copy.</p>
+        /// </li>
+        /// <li>
+        /// <p>A flag that indicates whether or not to overwrite an existing file of the same name.
+        /// The default is <code>FALSE</code>.</p>
+        /// </li>
+        /// </ul>
+        pub fn copy_step_details(mut self, input: crate::model::CopyStepDetails) -> Self {
+            self.copy_step_details = Some(input);
+            self
+        }
+        pub fn set_copy_step_details(
+            mut self,
+            input: std::option::Option<crate::model::CopyStepDetails>,
+        ) -> Self {
+            self.copy_step_details = input;
+            self
+        }
+        /// <p>Details for a step that invokes a lambda function.</p>
+        /// <p>
+        /// Consists of the lambda function name, target, and timeout (in seconds).
+        /// </p>
+        pub fn custom_step_details(mut self, input: crate::model::CustomStepDetails) -> Self {
+            self.custom_step_details = Some(input);
+            self
+        }
+        pub fn set_custom_step_details(
+            mut self,
+            input: std::option::Option<crate::model::CustomStepDetails>,
+        ) -> Self {
+            self.custom_step_details = input;
+            self
+        }
+        /// <p>You need to specify the name of the file to be deleted.</p>
+        pub fn delete_step_details(mut self, input: crate::model::DeleteStepDetails) -> Self {
+            self.delete_step_details = Some(input);
+            self
+        }
+        pub fn set_delete_step_details(
+            mut self,
+            input: std::option::Option<crate::model::DeleteStepDetails>,
+        ) -> Self {
+            self.delete_step_details = input;
+            self
+        }
+        /// <p>Details for a step that creates one or more tags.</p>
+        /// <p>You specify one or more tags: each tag contains a key/value pair.</p>
+        pub fn tag_step_details(mut self, input: crate::model::TagStepDetails) -> Self {
+            self.tag_step_details = Some(input);
+            self
+        }
+        pub fn set_tag_step_details(
+            mut self,
+            input: std::option::Option<crate::model::TagStepDetails>,
+        ) -> Self {
+            self.tag_step_details = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WorkflowStep`](crate::model::WorkflowStep)
+        pub fn build(self) -> crate::model::WorkflowStep {
+            crate::model::WorkflowStep {
+                r#type: self.r#type,
+                copy_step_details: self.copy_step_details,
+                custom_step_details: self.custom_step_details,
+                delete_step_details: self.delete_step_details,
+                tag_step_details: self.tag_step_details,
+            }
+        }
+    }
+}
+impl WorkflowStep {
+    /// Creates a new builder-style object to manufacture [`WorkflowStep`](crate::model::WorkflowStep)
+    pub fn builder() -> crate::model::workflow_step::Builder {
+        crate::model::workflow_step::Builder::default()
+    }
+}
+
+/// <p>Each step type has its own <code>StepDetails</code> structure.</p>
+/// <p>The key/value pairs used to tag a file during the execution of a workflow step.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagStepDetails {
+    /// <p>The name of the step, used as an identifier.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Array that contains from 1 to 10 key/value pairs.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
+}
+impl std::fmt::Debug for TagStepDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TagStepDetails");
+        formatter.field("name", &self.name);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`TagStepDetails`](crate::model::TagStepDetails)
+pub mod tag_step_details {
+    /// A builder for [`TagStepDetails`](crate::model::TagStepDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
+    }
+    impl Builder {
+        /// <p>The name of the step, used as an identifier.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::S3Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TagStepDetails`](crate::model::TagStepDetails)
+        pub fn build(self) -> crate::model::TagStepDetails {
+            crate::model::TagStepDetails {
+                name: self.name,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl TagStepDetails {
+    /// Creates a new builder-style object to manufacture [`TagStepDetails`](crate::model::TagStepDetails)
+    pub fn builder() -> crate::model::tag_step_details::Builder {
+        crate::model::tag_step_details::Builder::default()
+    }
+}
+
+/// <p>Specifies the key-value pair that are assigned to a file during the execution of a Tagging step.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3Tag {
+    /// <p>The name assigned to the tag that you create.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>The value that corresponds to the key.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for S3Tag {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3Tag");
+        formatter.field("key", &self.key);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`S3Tag`](crate::model::S3Tag)
+pub mod s3_tag {
+    /// A builder for [`S3Tag`](crate::model::S3Tag)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name assigned to the tag that you create.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>The value that corresponds to the key.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3Tag`](crate::model::S3Tag)
+        pub fn build(self) -> crate::model::S3Tag {
+            crate::model::S3Tag {
+                key: self.key,
+                value: self.value,
+            }
+        }
+    }
+}
+impl S3Tag {
+    /// Creates a new builder-style object to manufacture [`S3Tag`](crate::model::S3Tag)
+    pub fn builder() -> crate::model::s3_tag::Builder {
+        crate::model::s3_tag::Builder::default()
+    }
+}
+
+/// <p>The name of the step, used to identify the step that is being deleted.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteStepDetails {
+    /// <p>The name of the step, used as an identifier.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteStepDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteStepDetails");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`DeleteStepDetails`](crate::model::DeleteStepDetails)
+pub mod delete_step_details {
+    /// A builder for [`DeleteStepDetails`](crate::model::DeleteStepDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the step, used as an identifier.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteStepDetails`](crate::model::DeleteStepDetails)
+        pub fn build(self) -> crate::model::DeleteStepDetails {
+            crate::model::DeleteStepDetails { name: self.name }
+        }
+    }
+}
+impl DeleteStepDetails {
+    /// Creates a new builder-style object to manufacture [`DeleteStepDetails`](crate::model::DeleteStepDetails)
+    pub fn builder() -> crate::model::delete_step_details::Builder {
+        crate::model::delete_step_details::Builder::default()
+    }
+}
+
+/// <p>Each step type has its own <code>StepDetails</code> structure.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomStepDetails {
+    /// <p>The name of the step, used as an identifier.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The ARN for the lambda function that is being called.</p>
+    pub target: std::option::Option<std::string::String>,
+    /// <p>Timeout, in seconds, for the step.</p>
+    pub timeout_seconds: std::option::Option<i32>,
+}
+impl std::fmt::Debug for CustomStepDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomStepDetails");
+        formatter.field("name", &self.name);
+        formatter.field("target", &self.target);
+        formatter.field("timeout_seconds", &self.timeout_seconds);
+        formatter.finish()
+    }
+}
+/// See [`CustomStepDetails`](crate::model::CustomStepDetails)
+pub mod custom_step_details {
+    /// A builder for [`CustomStepDetails`](crate::model::CustomStepDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) target: std::option::Option<std::string::String>,
+        pub(crate) timeout_seconds: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The name of the step, used as an identifier.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The ARN for the lambda function that is being called.</p>
+        pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target = Some(input.into());
+            self
+        }
+        pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target = input;
+            self
+        }
+        /// <p>Timeout, in seconds, for the step.</p>
+        pub fn timeout_seconds(mut self, input: i32) -> Self {
+            self.timeout_seconds = Some(input);
+            self
+        }
+        pub fn set_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout_seconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomStepDetails`](crate::model::CustomStepDetails)
+        pub fn build(self) -> crate::model::CustomStepDetails {
+            crate::model::CustomStepDetails {
+                name: self.name,
+                target: self.target,
+                timeout_seconds: self.timeout_seconds,
+            }
+        }
+    }
+}
+impl CustomStepDetails {
+    /// Creates a new builder-style object to manufacture [`CustomStepDetails`](crate::model::CustomStepDetails)
+    pub fn builder() -> crate::model::custom_step_details::Builder {
+        crate::model::custom_step_details::Builder::default()
+    }
+}
+
+/// <p>Each step type has its own <code>StepDetails</code> structure.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CopyStepDetails {
+    /// <p>The name of the step, used as an identifier.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Specifies the location for the file being copied. Only applicable for the Copy type of workflow steps.</p>
+    pub destination_file_location: std::option::Option<crate::model::InputFileLocation>,
+    /// <p>A flag that indicates whether or not to overwrite an existing file of the same name.
+    /// The default is <code>FALSE</code>.</p>
+    pub overwrite_existing: std::option::Option<crate::model::OverwriteExisting>,
+}
+impl std::fmt::Debug for CopyStepDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CopyStepDetails");
+        formatter.field("name", &self.name);
+        formatter.field("destination_file_location", &self.destination_file_location);
+        formatter.field("overwrite_existing", &self.overwrite_existing);
+        formatter.finish()
+    }
+}
+/// See [`CopyStepDetails`](crate::model::CopyStepDetails)
+pub mod copy_step_details {
+    /// A builder for [`CopyStepDetails`](crate::model::CopyStepDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) destination_file_location: std::option::Option<crate::model::InputFileLocation>,
+        pub(crate) overwrite_existing: std::option::Option<crate::model::OverwriteExisting>,
+    }
+    impl Builder {
+        /// <p>The name of the step, used as an identifier.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Specifies the location for the file being copied. Only applicable for the Copy type of workflow steps.</p>
+        pub fn destination_file_location(mut self, input: crate::model::InputFileLocation) -> Self {
+            self.destination_file_location = Some(input);
+            self
+        }
+        pub fn set_destination_file_location(
+            mut self,
+            input: std::option::Option<crate::model::InputFileLocation>,
+        ) -> Self {
+            self.destination_file_location = input;
+            self
+        }
+        /// <p>A flag that indicates whether or not to overwrite an existing file of the same name.
+        /// The default is <code>FALSE</code>.</p>
+        pub fn overwrite_existing(mut self, input: crate::model::OverwriteExisting) -> Self {
+            self.overwrite_existing = Some(input);
+            self
+        }
+        pub fn set_overwrite_existing(
+            mut self,
+            input: std::option::Option<crate::model::OverwriteExisting>,
+        ) -> Self {
+            self.overwrite_existing = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CopyStepDetails`](crate::model::CopyStepDetails)
+        pub fn build(self) -> crate::model::CopyStepDetails {
+            crate::model::CopyStepDetails {
+                name: self.name,
+                destination_file_location: self.destination_file_location,
+                overwrite_existing: self.overwrite_existing,
+            }
+        }
+    }
+}
+impl CopyStepDetails {
+    /// Creates a new builder-style object to manufacture [`CopyStepDetails`](crate::model::CopyStepDetails)
+    pub fn builder() -> crate::model::copy_step_details::Builder {
+        crate::model::copy_step_details::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum OverwriteExisting {
+    False,
+    True,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for OverwriteExisting {
+    fn from(s: &str) -> Self {
+        match s {
+            "FALSE" => OverwriteExisting::False,
+            "TRUE" => OverwriteExisting::True,
+            other => OverwriteExisting::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for OverwriteExisting {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OverwriteExisting::from(s))
+    }
+}
+impl OverwriteExisting {
+    pub fn as_str(&self) -> &str {
+        match self {
+            OverwriteExisting::False => "FALSE",
+            OverwriteExisting::True => "TRUE",
+            OverwriteExisting::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FALSE", "TRUE"]
+    }
+}
+impl AsRef<str> for OverwriteExisting {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies the location for the file being copied. Only applicable for the Copy type of workflow steps.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InputFileLocation {
+    /// <p>Specifies the details for the S3 file being copied.</p>
+    pub s3_file_location: std::option::Option<crate::model::S3InputFileLocation>,
+    /// <p>Specifies the details for the Amazon EFS file being copied.</p>
+    pub efs_file_location: std::option::Option<crate::model::EfsFileLocation>,
+}
+impl std::fmt::Debug for InputFileLocation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InputFileLocation");
+        formatter.field("s3_file_location", &self.s3_file_location);
+        formatter.field("efs_file_location", &self.efs_file_location);
+        formatter.finish()
+    }
+}
+/// See [`InputFileLocation`](crate::model::InputFileLocation)
+pub mod input_file_location {
+    /// A builder for [`InputFileLocation`](crate::model::InputFileLocation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_file_location: std::option::Option<crate::model::S3InputFileLocation>,
+        pub(crate) efs_file_location: std::option::Option<crate::model::EfsFileLocation>,
+    }
+    impl Builder {
+        /// <p>Specifies the details for the S3 file being copied.</p>
+        pub fn s3_file_location(mut self, input: crate::model::S3InputFileLocation) -> Self {
+            self.s3_file_location = Some(input);
+            self
+        }
+        pub fn set_s3_file_location(
+            mut self,
+            input: std::option::Option<crate::model::S3InputFileLocation>,
+        ) -> Self {
+            self.s3_file_location = input;
+            self
+        }
+        /// <p>Specifies the details for the Amazon EFS file being copied.</p>
+        pub fn efs_file_location(mut self, input: crate::model::EfsFileLocation) -> Self {
+            self.efs_file_location = Some(input);
+            self
+        }
+        pub fn set_efs_file_location(
+            mut self,
+            input: std::option::Option<crate::model::EfsFileLocation>,
+        ) -> Self {
+            self.efs_file_location = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InputFileLocation`](crate::model::InputFileLocation)
+        pub fn build(self) -> crate::model::InputFileLocation {
+            crate::model::InputFileLocation {
+                s3_file_location: self.s3_file_location,
+                efs_file_location: self.efs_file_location,
+            }
+        }
+    }
+}
+impl InputFileLocation {
+    /// Creates a new builder-style object to manufacture [`InputFileLocation`](crate::model::InputFileLocation)
+    pub fn builder() -> crate::model::input_file_location::Builder {
+        crate::model::input_file_location::Builder::default()
+    }
+}
+
+/// <p>Specifies the details for the S3 file being copied.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3InputFileLocation {
+    /// <p>Specifies the S3 bucket that contains the file being copied.</p>
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p>The name assigned to the file when it was created in S3. You use the object key to retrieve the object.</p>
+    pub key: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for S3InputFileLocation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3InputFileLocation");
+        formatter.field("bucket", &self.bucket);
+        formatter.field("key", &self.key);
+        formatter.finish()
+    }
+}
+/// See [`S3InputFileLocation`](crate::model::S3InputFileLocation)
+pub mod s3_input_file_location {
+    /// A builder for [`S3InputFileLocation`](crate::model::S3InputFileLocation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) key: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the S3 bucket that contains the file being copied.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// <p>The name assigned to the file when it was created in S3. You use the object key to retrieve the object.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3InputFileLocation`](crate::model::S3InputFileLocation)
+        pub fn build(self) -> crate::model::S3InputFileLocation {
+            crate::model::S3InputFileLocation {
+                bucket: self.bucket,
+                key: self.key,
+            }
+        }
+    }
+}
+impl S3InputFileLocation {
+    /// Creates a new builder-style object to manufacture [`S3InputFileLocation`](crate::model::S3InputFileLocation)
+    pub fn builder() -> crate::model::s3_input_file_location::Builder {
+        crate::model::s3_input_file_location::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum WorkflowStepType {
+    Copy,
+    Custom,
+    Delete,
+    Tag,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for WorkflowStepType {
+    fn from(s: &str) -> Self {
+        match s {
+            "COPY" => WorkflowStepType::Copy,
+            "CUSTOM" => WorkflowStepType::Custom,
+            "DELETE" => WorkflowStepType::Delete,
+            "TAG" => WorkflowStepType::Tag,
+            other => WorkflowStepType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for WorkflowStepType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(WorkflowStepType::from(s))
+    }
+}
+impl WorkflowStepType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            WorkflowStepType::Copy => "COPY",
+            WorkflowStepType::Custom => "CUSTOM",
+            WorkflowStepType::Delete => "DELETE",
+            WorkflowStepType::Tag => "TAG",
+            WorkflowStepType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["COPY", "CUSTOM", "DELETE", "TAG"]
+    }
+}
+impl AsRef<str> for WorkflowStepType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Describes the properties of a user that was specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1385,7 +3056,7 @@ pub struct DescribedUser {
     /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
     /// can only be set when <code>HomeDirectoryType</code> is set to
     /// <i>LOGICAL</i>.</p>
-    /// <p>In most cases, you can use this value instead of the scope-down policy to lock your user
+    /// <p>In most cases, you can use this value instead of the session policy to lock your user
     /// down to the designated home directory ("<code>chroot</code>"). To do this, you can set
     /// <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
     /// parameter value.</p>
@@ -1393,10 +3064,10 @@ pub struct DescribedUser {
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
     /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
     /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-    /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
     /// S3 or EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
-    /// <p>A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
     /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
     /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
     pub policy: std::option::Option<std::string::String>,
@@ -1499,7 +3170,7 @@ pub mod described_user {
         }
         /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
         /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
         /// S3 or EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
@@ -1512,7 +3183,7 @@ pub mod described_user {
             self.home_directory_type = input;
             self
         }
-        /// <p>A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
         /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
         /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1795,6 +3466,8 @@ pub struct DescribedServer {
     /// <p>Specifies the number of users that are assigned to a server you specified with the
     /// <code>ServerId</code>.</p>
     pub user_count: std::option::Option<i32>,
+    /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+    pub workflow_details: std::option::Option<crate::model::WorkflowDetails>,
 }
 impl std::fmt::Debug for DescribedServer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1815,6 +3488,7 @@ impl std::fmt::Debug for DescribedServer {
         formatter.field("state", &self.state);
         formatter.field("tags", &self.tags);
         formatter.field("user_count", &self.user_count);
+        formatter.field("workflow_details", &self.workflow_details);
         formatter.finish()
     }
 }
@@ -1841,6 +3515,7 @@ pub mod described_server {
         pub(crate) state: std::option::Option<crate::model::State>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) user_count: std::option::Option<i32>,
+        pub(crate) workflow_details: std::option::Option<crate::model::WorkflowDetails>,
     }
     impl Builder {
         /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
@@ -2054,6 +3729,18 @@ pub mod described_server {
             self.user_count = input;
             self
         }
+        /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+        pub fn workflow_details(mut self, input: crate::model::WorkflowDetails) -> Self {
+            self.workflow_details = Some(input);
+            self
+        }
+        pub fn set_workflow_details(
+            mut self,
+            input: std::option::Option<crate::model::WorkflowDetails>,
+        ) -> Self {
+            self.workflow_details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribedServer`](crate::model::DescribedServer)
         pub fn build(self) -> crate::model::DescribedServer {
             crate::model::DescribedServer {
@@ -2073,6 +3760,7 @@ pub mod described_server {
                 state: self.state,
                 tags: self.tags,
                 user_count: self.user_count,
+                workflow_details: self.workflow_details,
             }
         }
     }
@@ -2228,6 +3916,559 @@ impl DescribedSecurityPolicy {
     }
 }
 
+/// <p>The details for an execution object.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribedExecution {
+    /// <p>A unique identifier for the execution of a workflow.</p>
+    pub execution_id: std::option::Option<std::string::String>,
+    /// <p>A structure that describes the Amazon S3 or EFS file location.
+    /// This is the file location when the execution begins: if the file is being copied,
+    /// this is the initial (as opposed to destination) file location.</p>
+    pub initial_file_location: std::option::Option<crate::model::FileLocation>,
+    /// <p>A container object for the session details associated with a workflow.</p>
+    pub service_metadata: std::option::Option<crate::model::ServiceMetadata>,
+    /// <p>The IAM role associated with the execution.</p>
+    pub execution_role: std::option::Option<std::string::String>,
+    /// <p>The IAM logging role associated with the execution.</p>
+    pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+    /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID
+    /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
+    /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
+    /// files and directories in your file system determine the level of access your users get when
+    /// transferring files into and out of your Amazon EFS file systems.</p>
+    pub posix_profile: std::option::Option<crate::model::PosixProfile>,
+    /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.
+    /// </p>
+    pub status: std::option::Option<crate::model::ExecutionStatus>,
+    /// <p>A structure that describes the execution results. This includes a list of the steps along with the details of each step,
+    /// error type and message (if any), and the <code>OnExceptionSteps</code> structure.</p>
+    pub results: std::option::Option<crate::model::ExecutionResults>,
+}
+impl std::fmt::Debug for DescribedExecution {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribedExecution");
+        formatter.field("execution_id", &self.execution_id);
+        formatter.field("initial_file_location", &self.initial_file_location);
+        formatter.field("service_metadata", &self.service_metadata);
+        formatter.field("execution_role", &self.execution_role);
+        formatter.field("logging_configuration", &self.logging_configuration);
+        formatter.field("posix_profile", &self.posix_profile);
+        formatter.field("status", &self.status);
+        formatter.field("results", &self.results);
+        formatter.finish()
+    }
+}
+/// See [`DescribedExecution`](crate::model::DescribedExecution)
+pub mod described_execution {
+    /// A builder for [`DescribedExecution`](crate::model::DescribedExecution)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) execution_id: std::option::Option<std::string::String>,
+        pub(crate) initial_file_location: std::option::Option<crate::model::FileLocation>,
+        pub(crate) service_metadata: std::option::Option<crate::model::ServiceMetadata>,
+        pub(crate) execution_role: std::option::Option<std::string::String>,
+        pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+        pub(crate) posix_profile: std::option::Option<crate::model::PosixProfile>,
+        pub(crate) status: std::option::Option<crate::model::ExecutionStatus>,
+        pub(crate) results: std::option::Option<crate::model::ExecutionResults>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the execution of a workflow.</p>
+        pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_id = Some(input.into());
+            self
+        }
+        pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_id = input;
+            self
+        }
+        /// <p>A structure that describes the Amazon S3 or EFS file location.
+        /// This is the file location when the execution begins: if the file is being copied,
+        /// this is the initial (as opposed to destination) file location.</p>
+        pub fn initial_file_location(mut self, input: crate::model::FileLocation) -> Self {
+            self.initial_file_location = Some(input);
+            self
+        }
+        pub fn set_initial_file_location(
+            mut self,
+            input: std::option::Option<crate::model::FileLocation>,
+        ) -> Self {
+            self.initial_file_location = input;
+            self
+        }
+        /// <p>A container object for the session details associated with a workflow.</p>
+        pub fn service_metadata(mut self, input: crate::model::ServiceMetadata) -> Self {
+            self.service_metadata = Some(input);
+            self
+        }
+        pub fn set_service_metadata(
+            mut self,
+            input: std::option::Option<crate::model::ServiceMetadata>,
+        ) -> Self {
+            self.service_metadata = input;
+            self
+        }
+        /// <p>The IAM role associated with the execution.</p>
+        pub fn execution_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_role = Some(input.into());
+            self
+        }
+        pub fn set_execution_role(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.execution_role = input;
+            self
+        }
+        /// <p>The IAM logging role associated with the execution.</p>
+        pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
+            self.logging_configuration = Some(input);
+            self
+        }
+        pub fn set_logging_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LoggingConfiguration>,
+        ) -> Self {
+            self.logging_configuration = input;
+            self
+        }
+        /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID
+        /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
+        /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
+        /// files and directories in your file system determine the level of access your users get when
+        /// transferring files into and out of your Amazon EFS file systems.</p>
+        pub fn posix_profile(mut self, input: crate::model::PosixProfile) -> Self {
+            self.posix_profile = Some(input);
+            self
+        }
+        pub fn set_posix_profile(
+            mut self,
+            input: std::option::Option<crate::model::PosixProfile>,
+        ) -> Self {
+            self.posix_profile = input;
+            self
+        }
+        /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.
+        /// </p>
+        pub fn status(mut self, input: crate::model::ExecutionStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ExecutionStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>A structure that describes the execution results. This includes a list of the steps along with the details of each step,
+        /// error type and message (if any), and the <code>OnExceptionSteps</code> structure.</p>
+        pub fn results(mut self, input: crate::model::ExecutionResults) -> Self {
+            self.results = Some(input);
+            self
+        }
+        pub fn set_results(
+            mut self,
+            input: std::option::Option<crate::model::ExecutionResults>,
+        ) -> Self {
+            self.results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribedExecution`](crate::model::DescribedExecution)
+        pub fn build(self) -> crate::model::DescribedExecution {
+            crate::model::DescribedExecution {
+                execution_id: self.execution_id,
+                initial_file_location: self.initial_file_location,
+                service_metadata: self.service_metadata,
+                execution_role: self.execution_role,
+                logging_configuration: self.logging_configuration,
+                posix_profile: self.posix_profile,
+                status: self.status,
+                results: self.results,
+            }
+        }
+    }
+}
+impl DescribedExecution {
+    /// Creates a new builder-style object to manufacture [`DescribedExecution`](crate::model::DescribedExecution)
+    pub fn builder() -> crate::model::described_execution::Builder {
+        crate::model::described_execution::Builder::default()
+    }
+}
+
+/// <p>Specifies the steps in the workflow, as well as the steps to execute in case of any errors during workflow execution.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExecutionResults {
+    /// <p>Specifies the details for the steps that are in the specified workflow.</p>
+    pub steps: std::option::Option<std::vec::Vec<crate::model::ExecutionStepResult>>,
+    /// <p>Specifies the steps (actions) to take if any errors are encountered during execution of the workflow.</p>
+    pub on_exception_steps: std::option::Option<std::vec::Vec<crate::model::ExecutionStepResult>>,
+}
+impl std::fmt::Debug for ExecutionResults {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExecutionResults");
+        formatter.field("steps", &self.steps);
+        formatter.field("on_exception_steps", &self.on_exception_steps);
+        formatter.finish()
+    }
+}
+/// See [`ExecutionResults`](crate::model::ExecutionResults)
+pub mod execution_results {
+    /// A builder for [`ExecutionResults`](crate::model::ExecutionResults)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) steps: std::option::Option<std::vec::Vec<crate::model::ExecutionStepResult>>,
+        pub(crate) on_exception_steps:
+            std::option::Option<std::vec::Vec<crate::model::ExecutionStepResult>>,
+    }
+    impl Builder {
+        pub fn steps(mut self, input: impl Into<crate::model::ExecutionStepResult>) -> Self {
+            let mut v = self.steps.unwrap_or_default();
+            v.push(input.into());
+            self.steps = Some(v);
+            self
+        }
+        pub fn set_steps(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ExecutionStepResult>>,
+        ) -> Self {
+            self.steps = input;
+            self
+        }
+        pub fn on_exception_steps(
+            mut self,
+            input: impl Into<crate::model::ExecutionStepResult>,
+        ) -> Self {
+            let mut v = self.on_exception_steps.unwrap_or_default();
+            v.push(input.into());
+            self.on_exception_steps = Some(v);
+            self
+        }
+        pub fn set_on_exception_steps(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ExecutionStepResult>>,
+        ) -> Self {
+            self.on_exception_steps = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExecutionResults`](crate::model::ExecutionResults)
+        pub fn build(self) -> crate::model::ExecutionResults {
+            crate::model::ExecutionResults {
+                steps: self.steps,
+                on_exception_steps: self.on_exception_steps,
+            }
+        }
+    }
+}
+impl ExecutionResults {
+    /// Creates a new builder-style object to manufacture [`ExecutionResults`](crate::model::ExecutionResults)
+    pub fn builder() -> crate::model::execution_results::Builder {
+        crate::model::execution_results::Builder::default()
+    }
+}
+
+/// <p>Specifies the following details for the step: error (if any), outputs (if any), and the step type.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExecutionStepResult {
+    /// <p>One of the available step types.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Copy</i>: copy the file to another location</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Custom</i>: custom step with a lambda target</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Delete</i>: delete the file</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Tag</i>: add a tag to the file</p>
+    /// </li>
+    /// </ul>
+    pub step_type: std::option::Option<crate::model::WorkflowStepType>,
+    /// <p>The values for the key/value pair applied as a tag to the file. Only applicable if the step type is <code>TAG</code>.</p>
+    pub outputs: std::option::Option<std::string::String>,
+    /// <p>Specifies the details for an error, if it occurred during execution of the specified workfow step.</p>
+    pub error: std::option::Option<crate::model::ExecutionError>,
+}
+impl std::fmt::Debug for ExecutionStepResult {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExecutionStepResult");
+        formatter.field("step_type", &self.step_type);
+        formatter.field("outputs", &self.outputs);
+        formatter.field("error", &self.error);
+        formatter.finish()
+    }
+}
+/// See [`ExecutionStepResult`](crate::model::ExecutionStepResult)
+pub mod execution_step_result {
+    /// A builder for [`ExecutionStepResult`](crate::model::ExecutionStepResult)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) step_type: std::option::Option<crate::model::WorkflowStepType>,
+        pub(crate) outputs: std::option::Option<std::string::String>,
+        pub(crate) error: std::option::Option<crate::model::ExecutionError>,
+    }
+    impl Builder {
+        /// <p>One of the available step types.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>Copy</i>: copy the file to another location</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>Custom</i>: custom step with a lambda target</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>Delete</i>: delete the file</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>Tag</i>: add a tag to the file</p>
+        /// </li>
+        /// </ul>
+        pub fn step_type(mut self, input: crate::model::WorkflowStepType) -> Self {
+            self.step_type = Some(input);
+            self
+        }
+        pub fn set_step_type(
+            mut self,
+            input: std::option::Option<crate::model::WorkflowStepType>,
+        ) -> Self {
+            self.step_type = input;
+            self
+        }
+        /// <p>The values for the key/value pair applied as a tag to the file. Only applicable if the step type is <code>TAG</code>.</p>
+        pub fn outputs(mut self, input: impl Into<std::string::String>) -> Self {
+            self.outputs = Some(input.into());
+            self
+        }
+        pub fn set_outputs(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.outputs = input;
+            self
+        }
+        /// <p>Specifies the details for an error, if it occurred during execution of the specified workfow step.</p>
+        pub fn error(mut self, input: crate::model::ExecutionError) -> Self {
+            self.error = Some(input);
+            self
+        }
+        pub fn set_error(
+            mut self,
+            input: std::option::Option<crate::model::ExecutionError>,
+        ) -> Self {
+            self.error = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExecutionStepResult`](crate::model::ExecutionStepResult)
+        pub fn build(self) -> crate::model::ExecutionStepResult {
+            crate::model::ExecutionStepResult {
+                step_type: self.step_type,
+                outputs: self.outputs,
+                error: self.error,
+            }
+        }
+    }
+}
+impl ExecutionStepResult {
+    /// Creates a new builder-style object to manufacture [`ExecutionStepResult`](crate::model::ExecutionStepResult)
+    pub fn builder() -> crate::model::execution_step_result::Builder {
+        crate::model::execution_step_result::Builder::default()
+    }
+}
+
+/// <p>Specifies the error message and type, for an error that occurs during the execution of the workflow.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExecutionError {
+    /// <p>Specifies the error type: currently, the only valid value is <code>PERMISSION_DENIED</code>, which occurs
+    /// if your policy does not contain the correct permissions to complete one or more of the steps in the workflow.</p>
+    pub r#type: std::option::Option<crate::model::ExecutionErrorType>,
+    /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ExecutionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExecutionError");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`ExecutionError`](crate::model::ExecutionError)
+pub mod execution_error {
+    /// A builder for [`ExecutionError`](crate::model::ExecutionError)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::ExecutionErrorType>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the error type: currently, the only valid value is <code>PERMISSION_DENIED</code>, which occurs
+        /// if your policy does not contain the correct permissions to complete one or more of the steps in the workflow.</p>
+        pub fn r#type(mut self, input: crate::model::ExecutionErrorType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ExecutionErrorType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExecutionError`](crate::model::ExecutionError)
+        pub fn build(self) -> crate::model::ExecutionError {
+            crate::model::ExecutionError {
+                r#type: self.r#type,
+                message: self.message,
+            }
+        }
+    }
+}
+impl ExecutionError {
+    /// Creates a new builder-style object to manufacture [`ExecutionError`](crate::model::ExecutionError)
+    pub fn builder() -> crate::model::execution_error::Builder {
+        crate::model::execution_error::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ExecutionErrorType {
+    PermissionDenied,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ExecutionErrorType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PERMISSION_DENIED" => ExecutionErrorType::PermissionDenied,
+            other => ExecutionErrorType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ExecutionErrorType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExecutionErrorType::from(s))
+    }
+}
+impl ExecutionErrorType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExecutionErrorType::PermissionDenied => "PERMISSION_DENIED",
+            ExecutionErrorType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["PERMISSION_DENIED"]
+    }
+}
+impl AsRef<str> for ExecutionErrorType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Consists of the logging role and the log group name.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LoggingConfiguration {
+    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
+    /// on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in
+    /// your CloudWatch logs.</p>
+    pub logging_role: std::option::Option<std::string::String>,
+    /// <p>The name of the CloudWatch logging group for the Amazon Web Services Transfer server to which this workflow belongs.</p>
+    pub log_group_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for LoggingConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LoggingConfiguration");
+        formatter.field("logging_role", &self.logging_role);
+        formatter.field("log_group_name", &self.log_group_name);
+        formatter.finish()
+    }
+}
+/// See [`LoggingConfiguration`](crate::model::LoggingConfiguration)
+pub mod logging_configuration {
+    /// A builder for [`LoggingConfiguration`](crate::model::LoggingConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) logging_role: std::option::Option<std::string::String>,
+        pub(crate) log_group_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
+        /// on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in
+        /// your CloudWatch logs.</p>
+        pub fn logging_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logging_role = Some(input.into());
+            self
+        }
+        pub fn set_logging_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.logging_role = input;
+            self
+        }
+        /// <p>The name of the CloudWatch logging group for the Amazon Web Services Transfer server to which this workflow belongs.</p>
+        pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_group_name = Some(input.into());
+            self
+        }
+        pub fn set_log_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_group_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::model::LoggingConfiguration)
+        pub fn build(self) -> crate::model::LoggingConfiguration {
+            crate::model::LoggingConfiguration {
+                logging_role: self.logging_role,
+                log_group_name: self.log_group_name,
+            }
+        }
+    }
+}
+impl LoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration)
+    pub fn builder() -> crate::model::logging_configuration::Builder {
+        crate::model::logging_configuration::Builder::default()
+    }
+}
+
 /// <p>Describes the properties of the access that was specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2243,7 +4484,7 @@ pub struct DescribedAccess {
     /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
     /// can only be set when <code>HomeDirectoryType</code> is set to
     /// <i>LOGICAL</i>.</p>
-    /// <p>In most cases, you can use this value instead of the scope-down policy to lock down the
+    /// <p>In most cases, you can use this value instead of the session policy to lock down the
     /// associated access to the designated home directory ("<code>chroot</code>"). To do this, you
     /// can set <code>Entry</code> to '/' and set <code>Target</code> to the
     /// <code>HomeDirectory</code> parameter value.</p>
@@ -2251,10 +4492,10 @@ pub struct DescribedAccess {
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
     /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
     /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-    /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
     /// S3 or EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
-    /// <p>A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
     /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
     /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
     pub policy: std::option::Option<std::string::String>,
@@ -2341,7 +4582,7 @@ pub mod described_access {
         }
         /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
         /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
         /// S3 or EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
@@ -2354,7 +4595,7 @@ pub mod described_access {
             self.home_directory_type = input;
             self
         }
-        /// <p>A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
         /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
         /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {

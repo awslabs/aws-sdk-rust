@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_authorization_exceptionjson_err(
+pub fn deser_structure_crate_error_authorization_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::authorization_exception::Builder,
 ) -> Result<crate::error::authorization_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_authorization_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_parameter_value_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_parameter_value_exception::Builder,
 ) -> Result<crate::error::invalid_parameter_value_exception::Builder, smithy_json::deserialize::Error>
@@ -123,7 +123,7 @@ pub fn deser_structure_invalid_parameter_value_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_rate_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_rate_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::rate_limit_exceeded_exception::Builder,
 ) -> Result<crate::error::rate_limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -162,7 +162,7 @@ pub fn deser_structure_rate_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_limit_exceeded_exception::Builder,
 ) -> Result<crate::error::resource_limit_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -202,7 +202,7 @@ pub fn deser_structure_resource_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_server_internal_exceptionjson_err(
+pub fn deser_structure_crate_error_server_internal_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::server_internal_exception::Builder,
 ) -> Result<crate::error::server_internal_exception::Builder, smithy_json::deserialize::Error> {
@@ -241,7 +241,7 @@ pub fn deser_structure_server_internal_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -280,7 +280,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_accept_grant(
+pub fn deser_operation_crate_operation_accept_grant(
     input: &[u8],
     mut builder: crate::output::accept_grant_output::Builder,
 ) -> Result<crate::output::accept_grant_output::Builder, smithy_json::deserialize::Error> {
@@ -336,7 +336,7 @@ pub fn deser_operation_accept_grant(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -375,7 +375,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -414,7 +414,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_entitlement_not_allowed_exceptionjson_err(
+pub fn deser_structure_crate_error_entitlement_not_allowed_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::entitlement_not_allowed_exception::Builder,
 ) -> Result<crate::error::entitlement_not_allowed_exception::Builder, smithy_json::deserialize::Error>
@@ -454,7 +454,7 @@ pub fn deser_structure_entitlement_not_allowed_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_no_entitlements_allowed_exceptionjson_err(
+pub fn deser_structure_crate_error_no_entitlements_allowed_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::no_entitlements_allowed_exception::Builder,
 ) -> Result<crate::error::no_entitlements_allowed_exception::Builder, smithy_json::deserialize::Error>
@@ -494,7 +494,7 @@ pub fn deser_structure_no_entitlements_allowed_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_redirect_exceptionjson_err(
+pub fn deser_structure_crate_error_redirect_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::redirect_exception::Builder,
 ) -> Result<crate::error::redirect_exception::Builder, smithy_json::deserialize::Error> {
@@ -540,7 +540,7 @@ pub fn deser_structure_redirect_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unsupported_digital_signature_method_exceptionjson_err(
+pub fn deser_structure_crate_error_unsupported_digital_signature_method_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unsupported_digital_signature_method_exception::Builder,
 ) -> Result<
@@ -582,7 +582,7 @@ pub fn deser_structure_unsupported_digital_signature_method_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_checkout_borrow_license(
+pub fn deser_operation_crate_operation_checkout_borrow_license(
     input: &[u8],
     mut builder: crate::output::checkout_borrow_license_output::Builder,
 ) -> Result<crate::output::checkout_borrow_license_output::Builder, smithy_json::deserialize::Error>
@@ -613,7 +613,7 @@ pub fn deser_operation_checkout_borrow_license(
                     }
                     "EntitlementsAllowed" => {
                         builder = builder.set_entitlements_allowed(
-                            crate::json_deser::deser_list_entitlement_data_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_entitlement_data_list(tokens)?
                         );
                     }
                     "NodeId" => {
@@ -646,7 +646,7 @@ pub fn deser_operation_checkout_borrow_license(
                     }
                     "CheckoutMetadata" => {
                         builder = builder.set_checkout_metadata(
-                            crate::json_deser::deser_list_metadata_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_metadata_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -667,7 +667,7 @@ pub fn deser_operation_checkout_borrow_license(
     Ok(builder)
 }
 
-pub fn deser_operation_checkout_license(
+pub fn deser_operation_crate_operation_checkout_license(
     input: &[u8],
     mut builder: crate::output::checkout_license_output::Builder,
 ) -> Result<crate::output::checkout_license_output::Builder, smithy_json::deserialize::Error> {
@@ -700,7 +700,7 @@ pub fn deser_operation_checkout_license(
                     }
                     "EntitlementsAllowed" => {
                         builder = builder.set_entitlements_allowed(
-                            crate::json_deser::deser_list_entitlement_data_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_entitlement_data_list(tokens)?
                         );
                     }
                     "SignedToken" => {
@@ -749,7 +749,7 @@ pub fn deser_operation_checkout_license(
     Ok(builder)
 }
 
-pub fn deser_operation_create_grant(
+pub fn deser_operation_crate_operation_create_grant(
     input: &[u8],
     mut builder: crate::output::create_grant_output::Builder,
 ) -> Result<crate::output::create_grant_output::Builder, smithy_json::deserialize::Error> {
@@ -805,7 +805,7 @@ pub fn deser_operation_create_grant(
     Ok(builder)
 }
 
-pub fn deser_operation_create_grant_version(
+pub fn deser_operation_crate_operation_create_grant_version(
     input: &[u8],
     mut builder: crate::output::create_grant_version_output::Builder,
 ) -> Result<crate::output::create_grant_version_output::Builder, smithy_json::deserialize::Error> {
@@ -861,7 +861,7 @@ pub fn deser_operation_create_grant_version(
     Ok(builder)
 }
 
-pub fn deser_operation_create_license(
+pub fn deser_operation_crate_operation_create_license(
     input: &[u8],
     mut builder: crate::output::create_license_output::Builder,
 ) -> Result<crate::output::create_license_output::Builder, smithy_json::deserialize::Error> {
@@ -917,7 +917,7 @@ pub fn deser_operation_create_license(
     Ok(builder)
 }
 
-pub fn deser_operation_create_license_configuration(
+pub fn deser_operation_crate_operation_create_license_configuration(
     input: &[u8],
     mut builder: crate::output::create_license_configuration_output::Builder,
 ) -> Result<
@@ -959,7 +959,7 @@ pub fn deser_operation_create_license_configuration(
     Ok(builder)
 }
 
-pub fn deser_operation_create_license_manager_report_generator(
+pub fn deser_operation_crate_operation_create_license_manager_report_generator(
     input: &[u8],
     mut builder: crate::output::create_license_manager_report_generator_output::Builder,
 ) -> Result<
@@ -1001,7 +1001,7 @@ pub fn deser_operation_create_license_manager_report_generator(
     Ok(builder)
 }
 
-pub fn deser_operation_create_license_version(
+pub fn deser_operation_crate_operation_create_license_version(
     input: &[u8],
     mut builder: crate::output::create_license_version_output::Builder,
 ) -> Result<crate::output::create_license_version_output::Builder, smithy_json::deserialize::Error>
@@ -1058,7 +1058,7 @@ pub fn deser_operation_create_license_version(
     Ok(builder)
 }
 
-pub fn deser_operation_create_token(
+pub fn deser_operation_crate_operation_create_token(
     input: &[u8],
     mut builder: crate::output::create_token_output::Builder,
 ) -> Result<crate::output::create_token_output::Builder, smithy_json::deserialize::Error> {
@@ -1114,7 +1114,7 @@ pub fn deser_operation_create_token(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_grant(
+pub fn deser_operation_crate_operation_delete_grant(
     input: &[u8],
     mut builder: crate::output::delete_grant_output::Builder,
 ) -> Result<crate::output::delete_grant_output::Builder, smithy_json::deserialize::Error> {
@@ -1170,7 +1170,7 @@ pub fn deser_operation_delete_grant(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_license(
+pub fn deser_operation_crate_operation_delete_license(
     input: &[u8],
     mut builder: crate::output::delete_license_output::Builder,
 ) -> Result<crate::output::delete_license_output::Builder, smithy_json::deserialize::Error> {
@@ -1220,7 +1220,7 @@ pub fn deser_operation_delete_license(
     Ok(builder)
 }
 
-pub fn deser_operation_extend_license_consumption(
+pub fn deser_operation_crate_operation_extend_license_consumption(
     input: &[u8],
     mut builder: crate::output::extend_license_consumption_output::Builder,
 ) -> Result<
@@ -1269,7 +1269,7 @@ pub fn deser_operation_extend_license_consumption(
     Ok(builder)
 }
 
-pub fn deser_operation_get_access_token(
+pub fn deser_operation_crate_operation_get_access_token(
     input: &[u8],
     mut builder: crate::output::get_access_token_output::Builder,
 ) -> Result<crate::output::get_access_token_output::Builder, smithy_json::deserialize::Error> {
@@ -1308,7 +1308,7 @@ pub fn deser_operation_get_access_token(
     Ok(builder)
 }
 
-pub fn deser_operation_get_grant(
+pub fn deser_operation_crate_operation_get_grant(
     input: &[u8],
     mut builder: crate::output::get_grant_output::Builder,
 ) -> Result<crate::output::get_grant_output::Builder, smithy_json::deserialize::Error> {
@@ -1323,8 +1323,9 @@ pub fn deser_operation_get_grant(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Grant" => {
-                        builder =
-                            builder.set_grant(crate::json_deser::deser_structure_grant(tokens)?);
+                        builder = builder.set_grant(
+                            crate::json_deser::deser_structure_crate_model_grant(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1344,7 +1345,7 @@ pub fn deser_operation_get_grant(
     Ok(builder)
 }
 
-pub fn deser_operation_get_license(
+pub fn deser_operation_crate_operation_get_license(
     input: &[u8],
     mut builder: crate::output::get_license_output::Builder,
 ) -> Result<crate::output::get_license_output::Builder, smithy_json::deserialize::Error> {
@@ -1359,8 +1360,9 @@ pub fn deser_operation_get_license(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "License" => {
-                        builder = builder
-                            .set_license(crate::json_deser::deser_structure_license(tokens)?);
+                        builder = builder.set_license(
+                            crate::json_deser::deser_structure_crate_model_license(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1380,7 +1382,7 @@ pub fn deser_operation_get_license(
     Ok(builder)
 }
 
-pub fn deser_operation_get_license_configuration(
+pub fn deser_operation_crate_operation_get_license_configuration(
     input: &[u8],
     mut builder: crate::output::get_license_configuration_output::Builder,
 ) -> Result<crate::output::get_license_configuration_output::Builder, smithy_json::deserialize::Error>
@@ -1435,8 +1437,11 @@ pub fn deser_operation_get_license_configuration(
                         );
                     }
                     "LicenseRules" => {
-                        builder = builder
-                            .set_license_rules(crate::json_deser::deser_list_string_list(tokens)?);
+                        builder = builder.set_license_rules(
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_string_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "LicenseCount" => {
                         builder = builder.set_license_count(
@@ -1471,27 +1476,29 @@ pub fn deser_operation_get_license_configuration(
                     }
                     "ConsumedLicenseSummaryList" => {
                         builder = builder.set_consumed_license_summary_list(
-                            crate::json_deser::deser_list_consumed_license_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_consumed_license_summary_list(tokens)?
                         );
                     }
                     "ManagedResourceSummaryList" => {
                         builder = builder.set_managed_resource_summary_list(
-                            crate::json_deser::deser_list_managed_resource_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_managed_resource_summary_list(tokens)?
                         );
                     }
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_tag_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "ProductInformationList" => {
                         builder = builder.set_product_information_list(
-                            crate::json_deser::deser_list_product_information_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_product_information_list(tokens)?
                         );
                     }
                     "AutomatedDiscoveryInformation" => {
                         builder = builder.set_automated_discovery_information(
-                            crate::json_deser::deser_structure_automated_discovery_information(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_automated_discovery_information(tokens)?
                         );
                     }
                     "DisassociateWhenNotFound" => {
@@ -1517,7 +1524,7 @@ pub fn deser_operation_get_license_configuration(
     Ok(builder)
 }
 
-pub fn deser_operation_get_license_manager_report_generator(
+pub fn deser_operation_crate_operation_get_license_manager_report_generator(
     input: &[u8],
     mut builder: crate::output::get_license_manager_report_generator_output::Builder,
 ) -> Result<
@@ -1536,7 +1543,9 @@ pub fn deser_operation_get_license_manager_report_generator(
                 match key.to_unescaped()?.as_ref() {
                     "ReportGenerator" => {
                         builder = builder.set_report_generator(
-                            crate::json_deser::deser_structure_report_generator(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_report_generator(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1557,7 +1566,7 @@ pub fn deser_operation_get_license_manager_report_generator(
     Ok(builder)
 }
 
-pub fn deser_operation_get_license_usage(
+pub fn deser_operation_crate_operation_get_license_usage(
     input: &[u8],
     mut builder: crate::output::get_license_usage_output::Builder,
 ) -> Result<crate::output::get_license_usage_output::Builder, smithy_json::deserialize::Error> {
@@ -1573,7 +1582,7 @@ pub fn deser_operation_get_license_usage(
                 match key.to_unescaped()?.as_ref() {
                     "LicenseUsage" => {
                         builder = builder.set_license_usage(
-                            crate::json_deser::deser_structure_license_usage(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_license_usage(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1594,7 +1603,7 @@ pub fn deser_operation_get_license_usage(
     Ok(builder)
 }
 
-pub fn deser_operation_get_service_settings(
+pub fn deser_operation_crate_operation_get_service_settings(
     input: &[u8],
     mut builder: crate::output::get_service_settings_output::Builder,
 ) -> Result<crate::output::get_service_settings_output::Builder, smithy_json::deserialize::Error> {
@@ -1624,7 +1633,7 @@ pub fn deser_operation_get_service_settings(
                     }
                     "OrganizationConfiguration" => {
                         builder = builder.set_organization_configuration(
-                            crate::json_deser::deser_structure_organization_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_organization_configuration(tokens)?
                         );
                     }
                     "EnableCrossAccountsDiscovery" => {
@@ -1657,7 +1666,7 @@ pub fn deser_operation_get_service_settings(
     Ok(builder)
 }
 
-pub fn deser_structure_filter_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_filter_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::filter_limit_exceeded_exception::Builder,
 ) -> Result<crate::error::filter_limit_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -1697,7 +1706,7 @@ pub fn deser_structure_filter_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_list_associations_for_license_configuration(
+pub fn deser_operation_crate_operation_list_associations_for_license_configuration(
     input: &[u8],
     mut builder: crate::output::list_associations_for_license_configuration_output::Builder,
 ) -> Result<
@@ -1716,7 +1725,52 @@ pub fn deser_operation_list_associations_for_license_configuration(
                 match key.to_unescaped()?.as_ref() {
                     "LicenseConfigurationAssociations" => {
                         builder = builder.set_license_configuration_associations(
-                            crate::json_deser::deser_list_license_configuration_associations(
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_license_configuration_associations(tokens)?
+                        );
+                    }
+                    "NextToken" => {
+                        builder = builder.set_next_token(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_list_distributed_grants(
+    input: &[u8],
+    mut builder: crate::output::list_distributed_grants_output::Builder,
+) -> Result<crate::output::list_distributed_grants_output::Builder, smithy_json::deserialize::Error>
+{
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "Grants" => {
+                        builder = builder.set_grants(
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_grant_list(
                                 tokens,
                             )?,
                         );
@@ -1746,51 +1800,7 @@ pub fn deser_operation_list_associations_for_license_configuration(
     Ok(builder)
 }
 
-pub fn deser_operation_list_distributed_grants(
-    input: &[u8],
-    mut builder: crate::output::list_distributed_grants_output::Builder,
-) -> Result<crate::output::list_distributed_grants_output::Builder, smithy_json::deserialize::Error>
-{
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "Grants" => {
-                        builder =
-                            builder.set_grants(crate::json_deser::deser_list_grant_list(tokens)?);
-                    }
-                    "NextToken" => {
-                        builder = builder.set_next_token(
-                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_list_failures_for_license_configuration_operations(
+pub fn deser_operation_crate_operation_list_failures_for_license_configuration_operations(
     input: &[u8],
     mut builder: crate::output::list_failures_for_license_configuration_operations_output::Builder,
 ) -> Result<
@@ -1809,7 +1819,7 @@ pub fn deser_operation_list_failures_for_license_configuration_operations(
                 match key.to_unescaped()?.as_ref() {
                     "LicenseOperationFailureList" => {
                         builder = builder.set_license_operation_failure_list(
-                            crate::json_deser::deser_list_license_operation_failure_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_license_operation_failure_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1837,7 +1847,7 @@ pub fn deser_operation_list_failures_for_license_configuration_operations(
     Ok(builder)
 }
 
-pub fn deser_operation_list_license_configurations(
+pub fn deser_operation_crate_operation_list_license_configurations(
     input: &[u8],
     mut builder: crate::output::list_license_configurations_output::Builder,
 ) -> Result<
@@ -1856,7 +1866,7 @@ pub fn deser_operation_list_license_configurations(
                 match key.to_unescaped()?.as_ref() {
                     "LicenseConfigurations" => {
                         builder = builder.set_license_configurations(
-                            crate::json_deser::deser_list_license_configurations(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_license_configurations(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1884,7 +1894,7 @@ pub fn deser_operation_list_license_configurations(
     Ok(builder)
 }
 
-pub fn deser_operation_list_license_manager_report_generators(
+pub fn deser_operation_crate_operation_list_license_manager_report_generators(
     input: &[u8],
     mut builder: crate::output::list_license_manager_report_generators_output::Builder,
 ) -> Result<
@@ -1903,7 +1913,7 @@ pub fn deser_operation_list_license_manager_report_generators(
                 match key.to_unescaped()?.as_ref() {
                     "ReportGenerators" => {
                         builder = builder.set_report_generators(
-                            crate::json_deser::deser_list_report_generator_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_report_generator_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1931,7 +1941,7 @@ pub fn deser_operation_list_license_manager_report_generators(
     Ok(builder)
 }
 
-pub fn deser_operation_list_licenses(
+pub fn deser_operation_crate_operation_list_licenses(
     input: &[u8],
     mut builder: crate::output::list_licenses_output::Builder,
 ) -> Result<crate::output::list_licenses_output::Builder, smithy_json::deserialize::Error> {
@@ -1946,8 +1956,9 @@ pub fn deser_operation_list_licenses(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Licenses" => {
-                        builder = builder
-                            .set_licenses(crate::json_deser::deser_list_license_list(tokens)?);
+                        builder = builder.set_licenses(
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_license_list(tokens)?
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -1974,7 +1985,7 @@ pub fn deser_operation_list_licenses(
     Ok(builder)
 }
 
-pub fn deser_operation_list_license_specifications_for_resource(
+pub fn deser_operation_crate_operation_list_license_specifications_for_resource(
     input: &[u8],
     mut builder: crate::output::list_license_specifications_for_resource_output::Builder,
 ) -> Result<
@@ -1993,7 +2004,7 @@ pub fn deser_operation_list_license_specifications_for_resource(
                 match key.to_unescaped()?.as_ref() {
                     "LicenseSpecifications" => {
                         builder = builder.set_license_specifications(
-                            crate::json_deser::deser_list_license_specifications(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_license_specifications(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -2021,7 +2032,7 @@ pub fn deser_operation_list_license_specifications_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_list_license_versions(
+pub fn deser_operation_crate_operation_list_license_versions(
     input: &[u8],
     mut builder: crate::output::list_license_versions_output::Builder,
 ) -> Result<crate::output::list_license_versions_output::Builder, smithy_json::deserialize::Error> {
@@ -2036,8 +2047,9 @@ pub fn deser_operation_list_license_versions(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Licenses" => {
-                        builder = builder
-                            .set_licenses(crate::json_deser::deser_list_license_list(tokens)?);
+                        builder = builder.set_licenses(
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_license_list(tokens)?
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -2064,7 +2076,7 @@ pub fn deser_operation_list_license_versions(
     Ok(builder)
 }
 
-pub fn deser_operation_list_received_grants(
+pub fn deser_operation_crate_operation_list_received_grants(
     input: &[u8],
     mut builder: crate::output::list_received_grants_output::Builder,
 ) -> Result<crate::output::list_received_grants_output::Builder, smithy_json::deserialize::Error> {
@@ -2079,8 +2091,11 @@ pub fn deser_operation_list_received_grants(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Grants" => {
-                        builder =
-                            builder.set_grants(crate::json_deser::deser_list_grant_list(tokens)?);
+                        builder = builder.set_grants(
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_grant_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -2107,7 +2122,7 @@ pub fn deser_operation_list_received_grants(
     Ok(builder)
 }
 
-pub fn deser_operation_list_received_licenses(
+pub fn deser_operation_crate_operation_list_received_licenses(
     input: &[u8],
     mut builder: crate::output::list_received_licenses_output::Builder,
 ) -> Result<crate::output::list_received_licenses_output::Builder, smithy_json::deserialize::Error>
@@ -2124,7 +2139,7 @@ pub fn deser_operation_list_received_licenses(
                 match key.to_unescaped()?.as_ref() {
                     "Licenses" => {
                         builder = builder.set_licenses(
-                            crate::json_deser::deser_list_granted_license_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_granted_license_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -2152,7 +2167,7 @@ pub fn deser_operation_list_received_licenses(
     Ok(builder)
 }
 
-pub fn deser_structure_failed_dependency_exceptionjson_err(
+pub fn deser_structure_crate_error_failed_dependency_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::failed_dependency_exception::Builder,
 ) -> Result<crate::error::failed_dependency_exception::Builder, smithy_json::deserialize::Error> {
@@ -2198,7 +2213,7 @@ pub fn deser_structure_failed_dependency_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_list_resource_inventory(
+pub fn deser_operation_crate_operation_list_resource_inventory(
     input: &[u8],
     mut builder: crate::output::list_resource_inventory_output::Builder,
 ) -> Result<crate::output::list_resource_inventory_output::Builder, smithy_json::deserialize::Error>
@@ -2215,7 +2230,7 @@ pub fn deser_operation_list_resource_inventory(
                 match key.to_unescaped()?.as_ref() {
                     "ResourceInventoryList" => {
                         builder = builder.set_resource_inventory_list(
-                            crate::json_deser::deser_list_resource_inventory_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_resource_inventory_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -2243,7 +2258,7 @@ pub fn deser_operation_list_resource_inventory(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -2259,7 +2274,11 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_tag_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -2279,7 +2298,7 @@ pub fn deser_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tokens(
+pub fn deser_operation_crate_operation_list_tokens(
     input: &[u8],
     mut builder: crate::output::list_tokens_output::Builder,
 ) -> Result<crate::output::list_tokens_output::Builder, smithy_json::deserialize::Error> {
@@ -2294,8 +2313,11 @@ pub fn deser_operation_list_tokens(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Tokens" => {
-                        builder =
-                            builder.set_tokens(crate::json_deser::deser_list_token_list(tokens)?);
+                        builder = builder.set_tokens(
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_token_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -2322,7 +2344,7 @@ pub fn deser_operation_list_tokens(
     Ok(builder)
 }
 
-pub fn deser_operation_list_usage_for_license_configuration(
+pub fn deser_operation_crate_operation_list_usage_for_license_configuration(
     input: &[u8],
     mut builder: crate::output::list_usage_for_license_configuration_output::Builder,
 ) -> Result<
@@ -2341,7 +2363,7 @@ pub fn deser_operation_list_usage_for_license_configuration(
                 match key.to_unescaped()?.as_ref() {
                     "LicenseConfigurationUsageList" => {
                         builder = builder.set_license_configuration_usage_list(
-                            crate::json_deser::deser_list_license_configuration_usage_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_license_configuration_usage_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -2369,7 +2391,7 @@ pub fn deser_operation_list_usage_for_license_configuration(
     Ok(builder)
 }
 
-pub fn deser_operation_reject_grant(
+pub fn deser_operation_crate_operation_reject_grant(
     input: &[u8],
     mut builder: crate::output::reject_grant_output::Builder,
 ) -> Result<crate::output::reject_grant_output::Builder, smithy_json::deserialize::Error> {
@@ -2425,7 +2447,7 @@ pub fn deser_operation_reject_grant(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_resource_state_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_resource_state_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_resource_state_exception::Builder,
 ) -> Result<crate::error::invalid_resource_state_exception::Builder, smithy_json::deserialize::Error>
@@ -2465,7 +2487,7 @@ pub fn deser_structure_invalid_resource_state_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_license_usage_exceptionjson_err(
+pub fn deser_structure_crate_error_license_usage_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::license_usage_exception::Builder,
 ) -> Result<crate::error::license_usage_exception::Builder, smithy_json::deserialize::Error> {
@@ -2513,7 +2535,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_entitlement_data_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_entitlement_data_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::EntitlementData>>, smithy_json::deserialize::Error>
 where
@@ -2532,7 +2554,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_entitlement_data(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_entitlement_data(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2548,7 +2573,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_metadata_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Metadata>>, smithy_json::deserialize::Error>
 where
@@ -2567,7 +2592,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_metadata(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_metadata(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2582,7 +2608,7 @@ where
     }
 }
 
-pub fn deser_structure_grant<'a, I>(
+pub fn deser_structure_crate_model_grant<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Grant>, smithy_json::deserialize::Error>
 where
@@ -2686,7 +2712,7 @@ where
                             }
                             "GrantedOperations" => {
                                 builder = builder.set_granted_operations(
-                                    crate::json_deser::deser_list_allowed_operation_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_allowed_operation_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2707,7 +2733,7 @@ where
     }
 }
 
-pub fn deser_structure_license<'a, I>(
+pub fn deser_structure_crate_model_license<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::License>, smithy_json::deserialize::Error>
 where
@@ -2763,7 +2789,9 @@ where
                             }
                             "Issuer" => {
                                 builder = builder.set_issuer(
-                                    crate::json_deser::deser_structure_issuer_details(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_issuer_details(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "HomeRegion" => {
@@ -2789,7 +2817,9 @@ where
                             }
                             "Validity" => {
                                 builder = builder.set_validity(
-                                    crate::json_deser::deser_structure_datetime_range(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_datetime_range(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "Beneficiary" => {
@@ -2803,19 +2833,17 @@ where
                             }
                             "Entitlements" => {
                                 builder = builder.set_entitlements(
-                                    crate::json_deser::deser_list_entitlement_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_entitlement_list(tokens)?
                                 );
                             }
                             "ConsumptionConfiguration" => {
                                 builder = builder.set_consumption_configuration(
-                                    crate::json_deser::deser_structure_consumption_configuration(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_consumption_configuration(tokens)?
                                 );
                             }
                             "LicenseMetadata" => {
                                 builder = builder.set_license_metadata(
-                                    crate::json_deser::deser_list_metadata_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_metadata_list(tokens)?
                                 );
                             }
                             "CreateTime" => {
@@ -2855,7 +2883,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_string_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_string_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -2893,7 +2921,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_consumed_license_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_consumed_license_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ConsumedLicenseSummary>>,
@@ -2916,7 +2944,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_consumed_license_summary(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_consumed_license_summary(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2932,7 +2961,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_managed_resource_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_managed_resource_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ManagedResourceSummary>>,
@@ -2955,7 +2984,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_managed_resource_summary(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_managed_resource_summary(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2971,7 +3001,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -2990,7 +3020,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3006,7 +3036,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_product_information_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_product_information_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ProductInformation>>, smithy_json::deserialize::Error>
 where
@@ -3025,7 +3055,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_product_information(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_product_information(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3040,7 +3073,7 @@ where
     }
 }
 
-pub fn deser_structure_automated_discovery_information<'a, I>(
+pub fn deser_structure_crate_model_automated_discovery_information<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AutomatedDiscoveryInformation>, smithy_json::deserialize::Error>
 where
@@ -3084,7 +3117,7 @@ where
     }
 }
 
-pub fn deser_structure_report_generator<'a, I>(
+pub fn deser_structure_crate_model_report_generator<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ReportGenerator>, smithy_json::deserialize::Error>
 where
@@ -3113,17 +3146,19 @@ where
                             }
                             "ReportType" => {
                                 builder = builder.set_report_type(
-                                    crate::json_deser::deser_list_report_type_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_report_type_list(tokens)?
                                 );
                             }
                             "ReportContext" => {
                                 builder = builder.set_report_context(
-                                    crate::json_deser::deser_structure_report_context(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_report_context(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "ReportFrequency" => {
                                 builder = builder.set_report_frequency(
-                                    crate::json_deser::deser_structure_report_frequency(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_report_frequency(tokens)?
                                 );
                             }
                             "LicenseManagerReportGeneratorArn" => {
@@ -3182,7 +3217,9 @@ where
                             }
                             "S3Location" => {
                                 builder = builder.set_s3_location(
-                                    crate::json_deser::deser_structure_s3_location(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_s3_location(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "CreateTime" => {
@@ -3195,8 +3232,9 @@ where
                                 );
                             }
                             "Tags" => {
-                                builder = builder
-                                    .set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
+                                builder = builder.set_tags(
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_tag_list(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -3216,7 +3254,7 @@ where
     }
 }
 
-pub fn deser_structure_license_usage<'a, I>(
+pub fn deser_structure_crate_model_license_usage<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LicenseUsage>, smithy_json::deserialize::Error>
 where
@@ -3236,7 +3274,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "EntitlementUsages" => {
                                 builder = builder.set_entitlement_usages(
-                                    crate::json_deser::deser_list_entitlement_usage_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_entitlement_usage_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3257,7 +3295,7 @@ where
     }
 }
 
-pub fn deser_structure_organization_configuration<'a, I>(
+pub fn deser_structure_crate_model_organization_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::OrganizationConfiguration>, smithy_json::deserialize::Error>
 where
@@ -3301,7 +3339,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_license_configuration_associations<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_license_configuration_associations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::LicenseConfigurationAssociation>>,
@@ -3324,9 +3362,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_license_configuration_association(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_license_configuration_association(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3342,7 +3379,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_grant_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_grant_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Grant>>, smithy_json::deserialize::Error>
 where
@@ -3361,7 +3398,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_grant(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_grant(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3377,7 +3414,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_license_operation_failure_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_license_operation_failure_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::LicenseOperationFailure>>,
@@ -3400,7 +3437,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_license_operation_failure(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_license_operation_failure(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3416,7 +3454,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_license_configurations<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_license_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::LicenseConfiguration>>,
@@ -3439,7 +3477,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_license_configuration(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_license_configuration(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3455,7 +3495,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_report_generator_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_report_generator_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ReportGenerator>>, smithy_json::deserialize::Error>
 where
@@ -3474,7 +3514,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_report_generator(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_report_generator(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3490,7 +3533,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_license_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_license_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::License>>, smithy_json::deserialize::Error>
 where
@@ -3509,7 +3552,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_license(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_license(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3525,7 +3568,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_license_specifications<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_license_specifications<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::LicenseSpecification>>,
@@ -3548,7 +3591,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_license_specification(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_license_specification(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3564,7 +3609,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_granted_license_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_granted_license_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::GrantedLicense>>, smithy_json::deserialize::Error>
 where
@@ -3583,7 +3628,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_granted_license(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_granted_license(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3599,7 +3645,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_resource_inventory_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_resource_inventory_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ResourceInventory>>, smithy_json::deserialize::Error>
 where
@@ -3618,7 +3664,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_resource_inventory(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_resource_inventory(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3634,7 +3683,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_token_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_token_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::TokenData>>, smithy_json::deserialize::Error>
 where
@@ -3653,7 +3702,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_token_data(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_token_data(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3669,7 +3719,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_license_configuration_usage_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_license_configuration_usage_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::LicenseConfigurationUsage>>,
@@ -3692,7 +3742,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_license_configuration_usage(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_license_configuration_usage(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3707,7 +3758,7 @@ where
     }
 }
 
-pub fn deser_structure_entitlement_data<'a, I>(
+pub fn deser_structure_crate_model_entitlement_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EntitlementData>, smithy_json::deserialize::Error>
 where
@@ -3774,7 +3825,7 @@ where
     }
 }
 
-pub fn deser_structure_metadata<'a, I>(
+pub fn deser_structure_crate_model_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Metadata>, smithy_json::deserialize::Error>
 where
@@ -3829,7 +3880,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_allowed_operation_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_allowed_operation_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::AllowedOperation>>, smithy_json::deserialize::Error>
 where
@@ -3869,7 +3920,7 @@ where
     }
 }
 
-pub fn deser_structure_issuer_details<'a, I>(
+pub fn deser_structure_crate_model_issuer_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::IssuerDetails>, smithy_json::deserialize::Error>
 where
@@ -3932,7 +3983,7 @@ where
     }
 }
 
-pub fn deser_structure_datetime_range<'a, I>(
+pub fn deser_structure_crate_model_datetime_range<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DatetimeRange>, smithy_json::deserialize::Error>
 where
@@ -3987,7 +4038,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_entitlement_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_entitlement_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Entitlement>>, smithy_json::deserialize::Error>
 where
@@ -4006,7 +4057,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_entitlement(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_entitlement(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4021,7 +4073,7 @@ where
     }
 }
 
-pub fn deser_structure_consumption_configuration<'a, I>(
+pub fn deser_structure_crate_model_consumption_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ConsumptionConfiguration>, smithy_json::deserialize::Error>
 where
@@ -4053,16 +4105,12 @@ where
                             }
                             "ProvisionalConfiguration" => {
                                 builder = builder.set_provisional_configuration(
-                                    crate::json_deser::deser_structure_provisional_configuration(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_provisional_configuration(tokens)?
                                 );
                             }
                             "BorrowConfiguration" => {
                                 builder = builder.set_borrow_configuration(
-                                    crate::json_deser::deser_structure_borrow_configuration(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_borrow_configuration(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4083,7 +4131,7 @@ where
     }
 }
 
-pub fn deser_structure_consumed_license_summary<'a, I>(
+pub fn deser_structure_crate_model_consumed_license_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ConsumedLicenseSummary>, smithy_json::deserialize::Error>
 where
@@ -4139,7 +4187,7 @@ where
     }
 }
 
-pub fn deser_structure_managed_resource_summary<'a, I>(
+pub fn deser_structure_crate_model_managed_resource_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ManagedResourceSummary>, smithy_json::deserialize::Error>
 where
@@ -4195,7 +4243,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where
@@ -4249,7 +4297,7 @@ where
     }
 }
 
-pub fn deser_structure_product_information<'a, I>(
+pub fn deser_structure_crate_model_product_information<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ProductInformation>, smithy_json::deserialize::Error>
 where
@@ -4278,9 +4326,7 @@ where
                             }
                             "ProductInformationFilterList" => {
                                 builder = builder.set_product_information_filter_list(
-                                    crate::json_deser::deser_list_product_information_filter_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_product_information_filter_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4302,7 +4348,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_report_type_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_report_type_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ReportType>>, smithy_json::deserialize::Error>
 where
@@ -4342,7 +4388,7 @@ where
     }
 }
 
-pub fn deser_structure_report_context<'a, I>(
+pub fn deser_structure_crate_model_report_context<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ReportContext>, smithy_json::deserialize::Error>
 where
@@ -4362,7 +4408,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "licenseConfigurationArns" => {
                                 builder = builder.set_license_configuration_arns(
-                                    crate::json_deser::deser_list_arn_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_arn_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4383,7 +4429,7 @@ where
     }
 }
 
-pub fn deser_structure_report_frequency<'a, I>(
+pub fn deser_structure_crate_model_report_frequency<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ReportFrequency>, smithy_json::deserialize::Error>
 where
@@ -4440,7 +4486,7 @@ where
     }
 }
 
-pub fn deser_structure_s3_location<'a, I>(
+pub fn deser_structure_crate_model_s3_location<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::S3Location>, smithy_json::deserialize::Error>
 where
@@ -4495,7 +4541,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_entitlement_usage_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_entitlement_usage_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::EntitlementUsage>>, smithy_json::deserialize::Error>
 where
@@ -4514,7 +4560,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_entitlement_usage(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_entitlement_usage(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4529,7 +4578,7 @@ where
     }
 }
 
-pub fn deser_structure_license_configuration_association<'a, I>(
+pub fn deser_structure_crate_model_license_configuration_association<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LicenseConfigurationAssociation>, smithy_json::deserialize::Error>
 where
@@ -4612,7 +4661,7 @@ where
     }
 }
 
-pub fn deser_structure_license_operation_failure<'a, I>(
+pub fn deser_structure_crate_model_license_operation_failure<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LicenseOperationFailure>, smithy_json::deserialize::Error>
 where
@@ -4697,7 +4746,7 @@ where
                             }
                             "MetadataList" => {
                                 builder = builder.set_metadata_list(
-                                    crate::json_deser::deser_list_metadata_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_metadata_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4718,7 +4767,7 @@ where
     }
 }
 
-pub fn deser_structure_license_configuration<'a, I>(
+pub fn deser_structure_crate_model_license_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LicenseConfiguration>, smithy_json::deserialize::Error>
 where
@@ -4787,7 +4836,7 @@ where
                             }
                             "LicenseRules" => {
                                 builder = builder.set_license_rules(
-                                    crate::json_deser::deser_list_string_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_string_list(tokens)?
                                 );
                             }
                             "LicenseCount" => {
@@ -4840,26 +4889,22 @@ where
                             }
                             "ConsumedLicenseSummaryList" => {
                                 builder = builder.set_consumed_license_summary_list(
-                                    crate::json_deser::deser_list_consumed_license_summary_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_consumed_license_summary_list(tokens)?
                                 );
                             }
                             "ManagedResourceSummaryList" => {
                                 builder = builder.set_managed_resource_summary_list(
-                                    crate::json_deser::deser_list_managed_resource_summary_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_managed_resource_summary_list(tokens)?
                                 );
                             }
                             "ProductInformationList" => {
                                 builder = builder.set_product_information_list(
-                                    crate::json_deser::deser_list_product_information_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_product_information_list(tokens)?
                                 );
                             }
                             "AutomatedDiscoveryInformation" => {
                                 builder = builder.set_automated_discovery_information(
-                                    crate::json_deser::deser_structure_automated_discovery_information(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_automated_discovery_information(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4880,7 +4925,7 @@ where
     }
 }
 
-pub fn deser_structure_license_specification<'a, I>(
+pub fn deser_structure_crate_model_license_specification<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LicenseSpecification>, smithy_json::deserialize::Error>
 where
@@ -4934,7 +4979,7 @@ where
     }
 }
 
-pub fn deser_structure_granted_license<'a, I>(
+pub fn deser_structure_crate_model_granted_license<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GrantedLicense>, smithy_json::deserialize::Error>
 where
@@ -4990,7 +5035,9 @@ where
                             }
                             "Issuer" => {
                                 builder = builder.set_issuer(
-                                    crate::json_deser::deser_structure_issuer_details(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_issuer_details(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "HomeRegion" => {
@@ -5016,7 +5063,9 @@ where
                             }
                             "Validity" => {
                                 builder = builder.set_validity(
-                                    crate::json_deser::deser_structure_datetime_range(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_datetime_range(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "Beneficiary" => {
@@ -5030,19 +5079,17 @@ where
                             }
                             "Entitlements" => {
                                 builder = builder.set_entitlements(
-                                    crate::json_deser::deser_list_entitlement_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_entitlement_list(tokens)?
                                 );
                             }
                             "ConsumptionConfiguration" => {
                                 builder = builder.set_consumption_configuration(
-                                    crate::json_deser::deser_structure_consumption_configuration(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_consumption_configuration(tokens)?
                                 );
                             }
                             "LicenseMetadata" => {
                                 builder = builder.set_license_metadata(
-                                    crate::json_deser::deser_list_metadata_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_metadata_list(tokens)?
                                 );
                             }
                             "CreateTime" => {
@@ -5065,7 +5112,7 @@ where
                             }
                             "ReceivedMetadata" => {
                                 builder = builder.set_received_metadata(
-                                    crate::json_deser::deser_structure_received_metadata(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_received_metadata(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -5086,7 +5133,7 @@ where
     }
 }
 
-pub fn deser_structure_resource_inventory<'a, I>(
+pub fn deser_structure_crate_model_resource_inventory<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResourceInventory>, smithy_json::deserialize::Error>
 where
@@ -5179,7 +5226,7 @@ where
     }
 }
 
-pub fn deser_structure_token_data<'a, I>(
+pub fn deser_structure_crate_model_token_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TokenData>, smithy_json::deserialize::Error>
 where
@@ -5235,12 +5282,13 @@ where
                             }
                             "TokenProperties" => {
                                 builder = builder.set_token_properties(
-                                    crate::json_deser::deser_list_max_size3_string_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_max_size3_string_list(tokens)?
                                 );
                             }
                             "RoleArns" => {
-                                builder = builder
-                                    .set_role_arns(crate::json_deser::deser_list_arn_list(tokens)?);
+                                builder = builder.set_role_arns(
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_arn_list(tokens)?
+                                );
                             }
                             "Status" => {
                                 builder = builder.set_status(
@@ -5269,7 +5317,7 @@ where
     }
 }
 
-pub fn deser_structure_license_configuration_usage<'a, I>(
+pub fn deser_structure_crate_model_license_configuration_usage<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LicenseConfigurationUsage>, smithy_json::deserialize::Error>
 where
@@ -5360,7 +5408,7 @@ where
     }
 }
 
-pub fn deser_structure_entitlement<'a, I>(
+pub fn deser_structure_crate_model_entitlement<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Entitlement>, smithy_json::deserialize::Error>
 where
@@ -5449,7 +5497,7 @@ where
     }
 }
 
-pub fn deser_structure_provisional_configuration<'a, I>(
+pub fn deser_structure_crate_model_provisional_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ProvisionalConfiguration>, smithy_json::deserialize::Error>
 where
@@ -5493,7 +5541,7 @@ where
     }
 }
 
-pub fn deser_structure_borrow_configuration<'a, I>(
+pub fn deser_structure_crate_model_borrow_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BorrowConfiguration>, smithy_json::deserialize::Error>
 where
@@ -5545,7 +5593,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_product_information_filter_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_product_information_filter_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ProductInformationFilter>>,
@@ -5568,7 +5616,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_product_information_filter(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_product_information_filter(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -5584,7 +5633,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_arn_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_arn_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -5621,7 +5670,7 @@ where
     }
 }
 
-pub fn deser_structure_entitlement_usage<'a, I>(
+pub fn deser_structure_crate_model_entitlement_usage<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EntitlementUsage>, smithy_json::deserialize::Error>
 where
@@ -5697,7 +5746,7 @@ where
     }
 }
 
-pub fn deser_structure_received_metadata<'a, I>(
+pub fn deser_structure_crate_model_received_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ReceivedMetadata>, smithy_json::deserialize::Error>
 where
@@ -5738,7 +5787,7 @@ where
                             }
                             "AllowedOperations" => {
                                 builder = builder.set_allowed_operations(
-                                    crate::json_deser::deser_list_allowed_operation_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_allowed_operation_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -5760,7 +5809,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_max_size3_string_list<'a, I>(
+pub fn deser_list_com_amazonaws_licensemanager_max_size3_string_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -5797,7 +5846,7 @@ where
     }
 }
 
-pub fn deser_structure_product_information_filter<'a, I>(
+pub fn deser_structure_crate_model_product_information_filter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ProductInformationFilter>, smithy_json::deserialize::Error>
 where
@@ -5826,7 +5875,7 @@ where
                             }
                             "ProductInformationFilterValue" => {
                                 builder = builder.set_product_information_filter_value(
-                                    crate::json_deser::deser_list_string_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_licensemanager_string_list(tokens)?
                                 );
                             }
                             "ProductInformationFilterComparator" => {

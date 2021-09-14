@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_quota_exceeded_exception::Builder,
 ) -> Result<crate::error::service_quota_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -201,7 +201,7 @@ pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -240,7 +240,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -279,7 +279,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_account_assignment(
+pub fn deser_operation_crate_operation_create_account_assignment(
     input: &[u8],
     mut builder: crate::output::create_account_assignment_output::Builder,
 ) -> Result<crate::output::create_account_assignment_output::Builder, smithy_json::deserialize::Error>
@@ -296,9 +296,7 @@ pub fn deser_operation_create_account_assignment(
                 match key.to_unescaped()?.as_ref() {
                     "AccountAssignmentCreationStatus" => {
                         builder = builder.set_account_assignment_creation_status(
-                            crate::json_deser::deser_structure_account_assignment_operation_status(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_account_assignment_operation_status(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -319,7 +317,7 @@ pub fn deser_operation_create_account_assignment(
     Ok(builder)
 }
 
-pub fn deser_operation_create_permission_set(
+pub fn deser_operation_crate_operation_create_permission_set(
     input: &[u8],
     mut builder: crate::output::create_permission_set_output::Builder,
 ) -> Result<crate::output::create_permission_set_output::Builder, smithy_json::deserialize::Error> {
@@ -335,7 +333,7 @@ pub fn deser_operation_create_permission_set(
                 match key.to_unescaped()?.as_ref() {
                     "PermissionSet" => {
                         builder = builder.set_permission_set(
-                            crate::json_deser::deser_structure_permission_set(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_permission_set(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -356,7 +354,7 @@ pub fn deser_operation_create_permission_set(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_account_assignment(
+pub fn deser_operation_crate_operation_delete_account_assignment(
     input: &[u8],
     mut builder: crate::output::delete_account_assignment_output::Builder,
 ) -> Result<crate::output::delete_account_assignment_output::Builder, smithy_json::deserialize::Error>
@@ -373,9 +371,7 @@ pub fn deser_operation_delete_account_assignment(
                 match key.to_unescaped()?.as_ref() {
                     "AccountAssignmentDeletionStatus" => {
                         builder = builder.set_account_assignment_deletion_status(
-                            crate::json_deser::deser_structure_account_assignment_operation_status(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_account_assignment_operation_status(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -396,7 +392,7 @@ pub fn deser_operation_delete_account_assignment(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_account_assignment_creation_status(
+pub fn deser_operation_crate_operation_describe_account_assignment_creation_status(
     input: &[u8],
     mut builder: crate::output::describe_account_assignment_creation_status_output::Builder,
 ) -> Result<
@@ -415,9 +411,7 @@ pub fn deser_operation_describe_account_assignment_creation_status(
                 match key.to_unescaped()?.as_ref() {
                     "AccountAssignmentCreationStatus" => {
                         builder = builder.set_account_assignment_creation_status(
-                            crate::json_deser::deser_structure_account_assignment_operation_status(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_account_assignment_operation_status(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -438,7 +432,7 @@ pub fn deser_operation_describe_account_assignment_creation_status(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_account_assignment_deletion_status(
+pub fn deser_operation_crate_operation_describe_account_assignment_deletion_status(
     input: &[u8],
     mut builder: crate::output::describe_account_assignment_deletion_status_output::Builder,
 ) -> Result<
@@ -457,9 +451,7 @@ pub fn deser_operation_describe_account_assignment_deletion_status(
                 match key.to_unescaped()?.as_ref() {
                     "AccountAssignmentDeletionStatus" => {
                         builder = builder.set_account_assignment_deletion_status(
-                            crate::json_deser::deser_structure_account_assignment_operation_status(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_account_assignment_operation_status(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -480,7 +472,7 @@ pub fn deser_operation_describe_account_assignment_deletion_status(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_instance_access_control_attribute_configuration(
+pub fn deser_operation_crate_operation_describe_instance_access_control_attribute_configuration(
     input: &[u8],
     mut builder: crate::output::describe_instance_access_control_attribute_configuration_output::Builder,
 ) -> Result<
@@ -515,7 +507,7 @@ pub fn deser_operation_describe_instance_access_control_attribute_configuration(
                     }
                     "InstanceAccessControlAttributeConfiguration" => {
                         builder = builder.set_instance_access_control_attribute_configuration(
-                            crate::json_deser::deser_structure_instance_access_control_attribute_configuration(tokens)?
+                            crate::json_deser::deser_structure_crate_model_instance_access_control_attribute_configuration(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -536,7 +528,7 @@ pub fn deser_operation_describe_instance_access_control_attribute_configuration(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_permission_set(
+pub fn deser_operation_crate_operation_describe_permission_set(
     input: &[u8],
     mut builder: crate::output::describe_permission_set_output::Builder,
 ) -> Result<crate::output::describe_permission_set_output::Builder, smithy_json::deserialize::Error>
@@ -553,7 +545,7 @@ pub fn deser_operation_describe_permission_set(
                 match key.to_unescaped()?.as_ref() {
                     "PermissionSet" => {
                         builder = builder.set_permission_set(
-                            crate::json_deser::deser_structure_permission_set(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_permission_set(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -574,7 +566,7 @@ pub fn deser_operation_describe_permission_set(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_permission_set_provisioning_status(
+pub fn deser_operation_crate_operation_describe_permission_set_provisioning_status(
     input: &[u8],
     mut builder: crate::output::describe_permission_set_provisioning_status_output::Builder,
 ) -> Result<
@@ -593,9 +585,7 @@ pub fn deser_operation_describe_permission_set_provisioning_status(
                 match key.to_unescaped()?.as_ref() {
                     "PermissionSetProvisioningStatus" => {
                         builder = builder.set_permission_set_provisioning_status(
-                            crate::json_deser::deser_structure_permission_set_provisioning_status(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_permission_set_provisioning_status(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -616,7 +606,7 @@ pub fn deser_operation_describe_permission_set_provisioning_status(
     Ok(builder)
 }
 
-pub fn deser_operation_get_inline_policy_for_permission_set(
+pub fn deser_operation_crate_operation_get_inline_policy_for_permission_set(
     input: &[u8],
     mut builder: crate::output::get_inline_policy_for_permission_set_output::Builder,
 ) -> Result<
@@ -658,7 +648,7 @@ pub fn deser_operation_get_inline_policy_for_permission_set(
     Ok(builder)
 }
 
-pub fn deser_operation_list_account_assignment_creation_status(
+pub fn deser_operation_crate_operation_list_account_assignment_creation_status(
     input: &[u8],
     mut builder: crate::output::list_account_assignment_creation_status_output::Builder,
 ) -> Result<
@@ -677,9 +667,7 @@ pub fn deser_operation_list_account_assignment_creation_status(
                 match key.to_unescaped()?.as_ref() {
                     "AccountAssignmentsCreationStatus" => {
                         builder = builder.set_account_assignments_creation_status(
-                            crate::json_deser::deser_list_account_assignment_operation_status_list(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_ssoadmin_account_assignment_operation_status_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -707,7 +695,7 @@ pub fn deser_operation_list_account_assignment_creation_status(
     Ok(builder)
 }
 
-pub fn deser_operation_list_account_assignment_deletion_status(
+pub fn deser_operation_crate_operation_list_account_assignment_deletion_status(
     input: &[u8],
     mut builder: crate::output::list_account_assignment_deletion_status_output::Builder,
 ) -> Result<
@@ -726,7 +714,99 @@ pub fn deser_operation_list_account_assignment_deletion_status(
                 match key.to_unescaped()?.as_ref() {
                     "AccountAssignmentsDeletionStatus" => {
                         builder = builder.set_account_assignments_deletion_status(
-                            crate::json_deser::deser_list_account_assignment_operation_status_list(
+                            crate::json_deser::deser_list_com_amazonaws_ssoadmin_account_assignment_operation_status_list(tokens)?
+                        );
+                    }
+                    "NextToken" => {
+                        builder = builder.set_next_token(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_list_account_assignments(
+    input: &[u8],
+    mut builder: crate::output::list_account_assignments_output::Builder,
+) -> Result<crate::output::list_account_assignments_output::Builder, smithy_json::deserialize::Error>
+{
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "AccountAssignments" => {
+                        builder = builder.set_account_assignments(
+                            crate::json_deser::deser_list_com_amazonaws_ssoadmin_account_assignment_list(tokens)?
+                        );
+                    }
+                    "NextToken" => {
+                        builder = builder.set_next_token(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_list_accounts_for_provisioned_permission_set(
+    input: &[u8],
+    mut builder: crate::output::list_accounts_for_provisioned_permission_set_output::Builder,
+) -> Result<
+    crate::output::list_accounts_for_provisioned_permission_set_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "AccountIds" => {
+                        builder = builder.set_account_ids(
+                            crate::json_deser::deser_list_com_amazonaws_ssoadmin_account_list(
                                 tokens,
                             )?,
                         );
@@ -756,98 +836,7 @@ pub fn deser_operation_list_account_assignment_deletion_status(
     Ok(builder)
 }
 
-pub fn deser_operation_list_account_assignments(
-    input: &[u8],
-    mut builder: crate::output::list_account_assignments_output::Builder,
-) -> Result<crate::output::list_account_assignments_output::Builder, smithy_json::deserialize::Error>
-{
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "AccountAssignments" => {
-                        builder = builder.set_account_assignments(
-                            crate::json_deser::deser_list_account_assignment_list(tokens)?,
-                        );
-                    }
-                    "NextToken" => {
-                        builder = builder.set_next_token(
-                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_list_accounts_for_provisioned_permission_set(
-    input: &[u8],
-    mut builder: crate::output::list_accounts_for_provisioned_permission_set_output::Builder,
-) -> Result<
-    crate::output::list_accounts_for_provisioned_permission_set_output::Builder,
-    smithy_json::deserialize::Error,
-> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "AccountIds" => {
-                        builder = builder
-                            .set_account_ids(crate::json_deser::deser_list_account_list(tokens)?);
-                    }
-                    "NextToken" => {
-                        builder = builder.set_next_token(
-                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_list_instances(
+pub fn deser_operation_crate_operation_list_instances(
     input: &[u8],
     mut builder: crate::output::list_instances_output::Builder,
 ) -> Result<crate::output::list_instances_output::Builder, smithy_json::deserialize::Error> {
@@ -862,8 +851,11 @@ pub fn deser_operation_list_instances(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Instances" => {
-                        builder = builder
-                            .set_instances(crate::json_deser::deser_list_instance_list(tokens)?);
+                        builder = builder.set_instances(
+                            crate::json_deser::deser_list_com_amazonaws_ssoadmin_instance_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -890,7 +882,7 @@ pub fn deser_operation_list_instances(
     Ok(builder)
 }
 
-pub fn deser_operation_list_managed_policies_in_permission_set(
+pub fn deser_operation_crate_operation_list_managed_policies_in_permission_set(
     input: &[u8],
     mut builder: crate::output::list_managed_policies_in_permission_set_output::Builder,
 ) -> Result<
@@ -909,7 +901,7 @@ pub fn deser_operation_list_managed_policies_in_permission_set(
                 match key.to_unescaped()?.as_ref() {
                     "AttachedManagedPolicies" => {
                         builder = builder.set_attached_managed_policies(
-                            crate::json_deser::deser_list_attached_managed_policy_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_ssoadmin_attached_managed_policy_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -937,7 +929,7 @@ pub fn deser_operation_list_managed_policies_in_permission_set(
     Ok(builder)
 }
 
-pub fn deser_operation_list_permission_set_provisioning_status(
+pub fn deser_operation_crate_operation_list_permission_set_provisioning_status(
     input: &[u8],
     mut builder: crate::output::list_permission_set_provisioning_status_output::Builder,
 ) -> Result<
@@ -956,9 +948,7 @@ pub fn deser_operation_list_permission_set_provisioning_status(
                 match key.to_unescaped()?.as_ref() {
                     "PermissionSetsProvisioningStatus" => {
                         builder = builder.set_permission_sets_provisioning_status(
-                            crate::json_deser::deser_list_permission_set_provisioning_status_list(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_ssoadmin_permission_set_provisioning_status_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -986,7 +976,7 @@ pub fn deser_operation_list_permission_set_provisioning_status(
     Ok(builder)
 }
 
-pub fn deser_operation_list_permission_sets(
+pub fn deser_operation_crate_operation_list_permission_sets(
     input: &[u8],
     mut builder: crate::output::list_permission_sets_output::Builder,
 ) -> Result<crate::output::list_permission_sets_output::Builder, smithy_json::deserialize::Error> {
@@ -1002,7 +992,7 @@ pub fn deser_operation_list_permission_sets(
                 match key.to_unescaped()?.as_ref() {
                     "PermissionSets" => {
                         builder = builder.set_permission_sets(
-                            crate::json_deser::deser_list_permission_set_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_ssoadmin_permission_set_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1030,7 +1020,7 @@ pub fn deser_operation_list_permission_sets(
     Ok(builder)
 }
 
-pub fn deser_operation_list_permission_sets_provisioned_to_account(
+pub fn deser_operation_crate_operation_list_permission_sets_provisioned_to_account(
     input: &[u8],
     mut builder: crate::output::list_permission_sets_provisioned_to_account_output::Builder,
 ) -> Result<
@@ -1056,7 +1046,7 @@ pub fn deser_operation_list_permission_sets_provisioned_to_account(
                     }
                     "PermissionSets" => {
                         builder = builder.set_permission_sets(
-                            crate::json_deser::deser_list_permission_set_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_ssoadmin_permission_set_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1077,7 +1067,7 @@ pub fn deser_operation_list_permission_sets_provisioned_to_account(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -1093,7 +1083,9 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_list_com_amazonaws_ssoadmin_tag_list(tokens)?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -1120,7 +1112,7 @@ pub fn deser_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_provision_permission_set(
+pub fn deser_operation_crate_operation_provision_permission_set(
     input: &[u8],
     mut builder: crate::output::provision_permission_set_output::Builder,
 ) -> Result<crate::output::provision_permission_set_output::Builder, smithy_json::deserialize::Error>
@@ -1137,9 +1129,7 @@ pub fn deser_operation_provision_permission_set(
                 match key.to_unescaped()?.as_ref() {
                     "PermissionSetProvisioningStatus" => {
                         builder = builder.set_permission_set_provisioning_status(
-                            crate::json_deser::deser_structure_permission_set_provisioning_status(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_permission_set_provisioning_status(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1168,7 +1158,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_account_assignment_operation_status<'a, I>(
+pub fn deser_structure_crate_model_account_assignment_operation_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AccountAssignmentOperationStatus>, smithy_json::deserialize::Error>
 where
@@ -1293,7 +1283,7 @@ where
     }
 }
 
-pub fn deser_structure_permission_set<'a, I>(
+pub fn deser_structure_crate_model_permission_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PermissionSet>, smithy_json::deserialize::Error>
 where
@@ -1382,7 +1372,7 @@ where
     }
 }
 
-pub fn deser_structure_instance_access_control_attribute_configuration<'a, I>(
+pub fn deser_structure_crate_model_instance_access_control_attribute_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::InstanceAccessControlAttributeConfiguration>,
@@ -1405,9 +1395,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "AccessControlAttributes" => {
                                 builder = builder.set_access_control_attributes(
-                                    crate::json_deser::deser_list_access_control_attribute_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_ssoadmin_access_control_attribute_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1428,7 +1416,7 @@ where
     }
 }
 
-pub fn deser_structure_permission_set_provisioning_status<'a, I>(
+pub fn deser_structure_crate_model_permission_set_provisioning_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PermissionSetProvisioningStatus>, smithy_json::deserialize::Error>
 where
@@ -1521,7 +1509,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_account_assignment_operation_status_list<'a, I>(
+pub fn deser_list_com_amazonaws_ssoadmin_account_assignment_operation_status_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AccountAssignmentOperationStatusMetadata>>,
@@ -1544,7 +1532,7 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_account_assignment_operation_status_metadata(tokens)?
+                            crate::json_deser::deser_structure_crate_model_account_assignment_operation_status_metadata(tokens)?
                         ;
                         if let Some(value) = value {
                             items.push(value);
@@ -1561,7 +1549,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_account_assignment_list<'a, I>(
+pub fn deser_list_com_amazonaws_ssoadmin_account_assignment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::AccountAssignment>>, smithy_json::deserialize::Error>
 where
@@ -1580,7 +1568,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_account_assignment(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_account_assignment(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1596,7 +1587,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_account_list<'a, I>(
+pub fn deser_list_com_amazonaws_ssoadmin_account_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1634,7 +1625,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_instance_list<'a, I>(
+pub fn deser_list_com_amazonaws_ssoadmin_instance_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::InstanceMetadata>>, smithy_json::deserialize::Error>
 where
@@ -1653,7 +1644,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_instance_metadata(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_instance_metadata(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1669,7 +1663,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_attached_managed_policy_list<'a, I>(
+pub fn deser_list_com_amazonaws_ssoadmin_attached_managed_policy_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AttachedManagedPolicy>>,
@@ -1692,7 +1686,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_attached_managed_policy(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_attached_managed_policy(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1708,7 +1704,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_permission_set_provisioning_status_list<'a, I>(
+pub fn deser_list_com_amazonaws_ssoadmin_permission_set_provisioning_status_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::PermissionSetProvisioningStatusMetadata>>,
@@ -1731,7 +1727,7 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_permission_set_provisioning_status_metadata(tokens)?
+                            crate::json_deser::deser_structure_crate_model_permission_set_provisioning_status_metadata(tokens)?
                         ;
                         if let Some(value) = value {
                             items.push(value);
@@ -1748,7 +1744,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_permission_set_list<'a, I>(
+pub fn deser_list_com_amazonaws_ssoadmin_permission_set_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1786,7 +1782,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_ssoadmin_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -1805,7 +1801,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1821,7 +1817,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_access_control_attribute_list<'a, I>(
+pub fn deser_list_com_amazonaws_ssoadmin_access_control_attribute_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AccessControlAttribute>>,
@@ -1844,7 +1840,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_access_control_attribute(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_access_control_attribute(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1859,7 +1856,7 @@ where
     }
 }
 
-pub fn deser_structure_account_assignment_operation_status_metadata<'a, I>(
+pub fn deser_structure_crate_model_account_assignment_operation_status_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::AccountAssignmentOperationStatusMetadata>,
@@ -1927,7 +1924,7 @@ where
     }
 }
 
-pub fn deser_structure_account_assignment<'a, I>(
+pub fn deser_structure_crate_model_account_assignment<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AccountAssignment>, smithy_json::deserialize::Error>
 where
@@ -2002,7 +1999,7 @@ where
     }
 }
 
-pub fn deser_structure_instance_metadata<'a, I>(
+pub fn deser_structure_crate_model_instance_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::InstanceMetadata>, smithy_json::deserialize::Error>
 where
@@ -2056,7 +2053,7 @@ where
     }
 }
 
-pub fn deser_structure_attached_managed_policy<'a, I>(
+pub fn deser_structure_crate_model_attached_managed_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AttachedManagedPolicy>, smithy_json::deserialize::Error>
 where
@@ -2110,7 +2107,7 @@ where
     }
 }
 
-pub fn deser_structure_permission_set_provisioning_status_metadata<'a, I>(
+pub fn deser_structure_crate_model_permission_set_provisioning_status_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::PermissionSetProvisioningStatusMetadata>,
@@ -2178,7 +2175,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where
@@ -2232,7 +2229,7 @@ where
     }
 }
 
-pub fn deser_structure_access_control_attribute<'a, I>(
+pub fn deser_structure_crate_model_access_control_attribute<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AccessControlAttribute>, smithy_json::deserialize::Error>
 where
@@ -2261,7 +2258,7 @@ where
                             }
                             "Value" => {
                                 builder = builder.set_value(
-                                    crate::json_deser::deser_structure_access_control_attribute_value(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_access_control_attribute_value(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2282,7 +2279,7 @@ where
     }
 }
 
-pub fn deser_structure_access_control_attribute_value<'a, I>(
+pub fn deser_structure_crate_model_access_control_attribute_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AccessControlAttributeValue>, smithy_json::deserialize::Error>
 where
@@ -2302,7 +2299,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Source" => {
                                 builder = builder.set_source(
-                                    crate::json_deser::deser_list_access_control_attribute_value_source_list(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_ssoadmin_access_control_attribute_value_source_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2324,7 +2321,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_access_control_attribute_value_source_list<'a, I>(
+pub fn deser_list_com_amazonaws_ssoadmin_access_control_attribute_value_source_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where

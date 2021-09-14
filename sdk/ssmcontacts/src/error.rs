@@ -3176,8 +3176,7 @@ impl std::error::Error for UpdateContactChannelError {
     }
 }
 
-/// <p>The input fails to satisfy the constraints specified by an
-/// AWS
+/// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
 /// service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3376,9 +3375,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p>Request references a resource that
-/// doesn't
-/// exist.</p>
+/// <p>Request references a resource that doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -3544,7 +3541,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>The action failed to due an encryption key error.</p>
+/// <p>The operation failed to due an encryption key error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataEncryptionException {
@@ -3695,7 +3692,7 @@ impl ConflictException {
     }
 }
 
-/// <p>You don't have sufficient access to perform this action.</p>
+/// <p>You don't have sufficient access to perform this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {

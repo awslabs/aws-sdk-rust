@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_service_unavailable_exceptionjson_err(
+pub fn deser_structure_crate_error_service_unavailable_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_unavailable_exception::Builder,
 ) -> Result<crate::error::service_unavailable_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_service_unavailable_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_bad_request_exceptionjson_err(
+pub fn deser_structure_crate_error_bad_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::bad_request_exception::Builder,
 ) -> Result<crate::error::bad_request_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_bad_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_failure_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_failure_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_failure_exception::Builder,
 ) -> Result<crate::error::internal_failure_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_internal_failure_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -208,14 +208,14 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_medical_transcript_event_payload(
+pub fn deser_structure_crate_model_medical_transcript_event_payload(
     input: &[u8],
 ) -> Result<crate::model::MedicalTranscriptEvent, smithy_json::deserialize::Error> {
     let mut tokens_owned =
         smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
             .peekable();
     let tokens = &mut tokens_owned;
-    let result = crate::json_deser::deser_structure_medical_transcript_event(tokens)?
+    let result = crate::json_deser::deser_structure_crate_model_medical_transcript_event(tokens)?
         .ok_or_else(|| smithy_json::deserialize::Error::custom("expected payload member value"));
     if tokens.next().is_some() {
         return Err(smithy_json::deserialize::Error::custom(
@@ -232,14 +232,14 @@ pub fn parse_event_stream_generic_error(
     crate::json_errors::parse_generic_error(payload, &http::HeaderMap::new())
 }
 
-pub fn deser_structure_transcript_event_payload(
+pub fn deser_structure_crate_model_transcript_event_payload(
     input: &[u8],
 ) -> Result<crate::model::TranscriptEvent, smithy_json::deserialize::Error> {
     let mut tokens_owned =
         smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
             .peekable();
     let tokens = &mut tokens_owned;
-    let result = crate::json_deser::deser_structure_transcript_event(tokens)?
+    let result = crate::json_deser::deser_structure_crate_model_transcript_event(tokens)?
         .ok_or_else(|| smithy_json::deserialize::Error::custom("expected payload member value"));
     if tokens.next().is_some() {
         return Err(smithy_json::deserialize::Error::custom(
@@ -249,7 +249,7 @@ pub fn deser_structure_transcript_event_payload(
     result
 }
 
-pub fn deser_structure_medical_transcript_event<'a, I>(
+pub fn deser_structure_crate_model_medical_transcript_event<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MedicalTranscriptEvent>, smithy_json::deserialize::Error>
 where
@@ -269,7 +269,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Transcript" => {
                                 builder = builder.set_transcript(
-                                    crate::json_deser::deser_structure_medical_transcript(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_medical_transcript(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -290,7 +290,7 @@ where
     }
 }
 
-pub fn deser_structure_transcript_event<'a, I>(
+pub fn deser_structure_crate_model_transcript_event<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TranscriptEvent>, smithy_json::deserialize::Error>
 where
@@ -310,7 +310,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Transcript" => {
                                 builder = builder.set_transcript(
-                                    crate::json_deser::deser_structure_transcript(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_transcript(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -331,7 +333,7 @@ where
     }
 }
 
-pub fn deser_structure_medical_transcript<'a, I>(
+pub fn deser_structure_crate_model_medical_transcript<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MedicalTranscript>, smithy_json::deserialize::Error>
 where
@@ -351,7 +353,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Results" => {
                                 builder = builder.set_results(
-                                    crate::json_deser::deser_list_medical_result_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_transcribestreaming_medical_result_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -372,7 +374,7 @@ where
     }
 }
 
-pub fn deser_structure_transcript<'a, I>(
+pub fn deser_structure_crate_model_transcript<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Transcript>, smithy_json::deserialize::Error>
 where
@@ -392,7 +394,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Results" => {
                                 builder = builder.set_results(
-                                    crate::json_deser::deser_list_result_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_transcribestreaming_result_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -414,7 +416,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_medical_result_list<'a, I>(
+pub fn deser_list_com_amazonaws_transcribestreaming_medical_result_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::MedicalResult>>, smithy_json::deserialize::Error>
 where
@@ -433,7 +435,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_medical_result(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_medical_result(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -449,7 +452,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_result_list<'a, I>(
+pub fn deser_list_com_amazonaws_transcribestreaming_result_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Result>>, smithy_json::deserialize::Error>
 where
@@ -468,7 +471,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_result(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_result(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -483,7 +486,7 @@ where
     }
 }
 
-pub fn deser_structure_medical_result<'a, I>(
+pub fn deser_structure_crate_model_medical_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MedicalResult>, smithy_json::deserialize::Error>
 where
@@ -535,7 +538,7 @@ where
                             }
                             "Alternatives" => {
                                 builder = builder.set_alternatives(
-                                    crate::json_deser::deser_list_medical_alternative_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_transcribestreaming_medical_alternative_list(tokens)?
                                 );
                             }
                             "ChannelId" => {
@@ -565,7 +568,7 @@ where
     }
 }
 
-pub fn deser_structure_result<'a, I>(
+pub fn deser_structure_crate_model_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Result>, smithy_json::deserialize::Error>
 where
@@ -617,7 +620,7 @@ where
                             }
                             "Alternatives" => {
                                 builder = builder.set_alternatives(
-                                    crate::json_deser::deser_list_alternative_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_transcribestreaming_alternative_list(tokens)?
                                 );
                             }
                             "ChannelId" => {
@@ -648,7 +651,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_medical_alternative_list<'a, I>(
+pub fn deser_list_com_amazonaws_transcribestreaming_medical_alternative_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::MedicalAlternative>>, smithy_json::deserialize::Error>
 where
@@ -667,7 +670,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_medical_alternative(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_medical_alternative(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -683,7 +689,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_alternative_list<'a, I>(
+pub fn deser_list_com_amazonaws_transcribestreaming_alternative_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Alternative>>, smithy_json::deserialize::Error>
 where
@@ -702,7 +708,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_alternative(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_alternative(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -717,7 +724,7 @@ where
     }
 }
 
-pub fn deser_structure_medical_alternative<'a, I>(
+pub fn deser_structure_crate_model_medical_alternative<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MedicalAlternative>, smithy_json::deserialize::Error>
 where
@@ -746,12 +753,12 @@ where
                             }
                             "Items" => {
                                 builder = builder.set_items(
-                                    crate::json_deser::deser_list_medical_item_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_transcribestreaming_medical_item_list(tokens)?
                                 );
                             }
                             "Entities" => {
                                 builder = builder.set_entities(
-                                    crate::json_deser::deser_list_medical_entity_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_transcribestreaming_medical_entity_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -772,7 +779,7 @@ where
     }
 }
 
-pub fn deser_structure_alternative<'a, I>(
+pub fn deser_structure_crate_model_alternative<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Alternative>, smithy_json::deserialize::Error>
 where
@@ -800,8 +807,9 @@ where
                                 );
                             }
                             "Items" => {
-                                builder = builder
-                                    .set_items(crate::json_deser::deser_list_item_list(tokens)?);
+                                builder = builder.set_items(
+                                    crate::json_deser::deser_list_com_amazonaws_transcribestreaming_item_list(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -822,7 +830,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_medical_item_list<'a, I>(
+pub fn deser_list_com_amazonaws_transcribestreaming_medical_item_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::MedicalItem>>, smithy_json::deserialize::Error>
 where
@@ -841,7 +849,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_medical_item(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_medical_item(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -857,7 +866,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_medical_entity_list<'a, I>(
+pub fn deser_list_com_amazonaws_transcribestreaming_medical_entity_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::MedicalEntity>>, smithy_json::deserialize::Error>
 where
@@ -876,7 +885,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_medical_entity(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_medical_entity(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -892,7 +902,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_item_list<'a, I>(
+pub fn deser_list_com_amazonaws_transcribestreaming_item_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Item>>, smithy_json::deserialize::Error>
 where
@@ -911,7 +921,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_item(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_item(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -926,7 +936,7 @@ where
     }
 }
 
-pub fn deser_structure_medical_item<'a, I>(
+pub fn deser_structure_crate_model_medical_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MedicalItem>, smithy_json::deserialize::Error>
 where
@@ -1016,7 +1026,7 @@ where
     }
 }
 
-pub fn deser_structure_medical_entity<'a, I>(
+pub fn deser_structure_crate_model_medical_entity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MedicalEntity>, smithy_json::deserialize::Error>
 where
@@ -1094,7 +1104,7 @@ where
     }
 }
 
-pub fn deser_structure_item<'a, I>(
+pub fn deser_structure_crate_model_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Item>, smithy_json::deserialize::Error>
 where

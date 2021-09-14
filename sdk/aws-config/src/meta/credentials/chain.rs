@@ -18,7 +18,7 @@ use tracing::Instrument;
 ///   the next provider will be checked.
 /// * Finally, if a provider returns any other error condition, an error will be returned immediately.
 ///
-/// ## Example
+/// # Examples
 /// ```rust
 /// use aws_config::meta::credentials::CredentialsProviderChain;
 /// use aws_types::Credentials;

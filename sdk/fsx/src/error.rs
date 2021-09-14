@@ -372,6 +372,7 @@ pub enum CreateBackupErrorKind {
     InternalServerError(crate::error::InternalServerError),
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     UnsupportedOperation(crate::error::UnsupportedOperation),
+    VolumeNotFound(crate::error::VolumeNotFound),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -385,6 +386,7 @@ impl std::fmt::Display for CreateBackupError {
             CreateBackupErrorKind::InternalServerError(_inner) => _inner.fmt(f),
             CreateBackupErrorKind::ServiceLimitExceeded(_inner) => _inner.fmt(f),
             CreateBackupErrorKind::UnsupportedOperation(_inner) => _inner.fmt(f),
+            CreateBackupErrorKind::VolumeNotFound(_inner) => _inner.fmt(f),
             CreateBackupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -457,6 +459,9 @@ impl CreateBackupError {
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(&self.kind, CreateBackupErrorKind::UnsupportedOperation(_))
     }
+    pub fn is_volume_not_found(&self) -> bool {
+        matches!(&self.kind, CreateBackupErrorKind::VolumeNotFound(_))
+    }
 }
 impl std::error::Error for CreateBackupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -468,6 +473,7 @@ impl std::error::Error for CreateBackupError {
             CreateBackupErrorKind::InternalServerError(_inner) => Some(_inner),
             CreateBackupErrorKind::ServiceLimitExceeded(_inner) => Some(_inner),
             CreateBackupErrorKind::UnsupportedOperation(_inner) => Some(_inner),
+            CreateBackupErrorKind::VolumeNotFound(_inner) => Some(_inner),
             CreateBackupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -923,6 +929,415 @@ impl std::error::Error for CreateFileSystemFromBackupError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct CreateStorageVirtualMachineError {
+    pub kind: CreateStorageVirtualMachineErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateStorageVirtualMachineErrorKind {
+    ActiveDirectoryError(crate::error::ActiveDirectoryError),
+    BadRequest(crate::error::BadRequest),
+    FileSystemNotFound(crate::error::FileSystemNotFound),
+    IncompatibleParameterError(crate::error::IncompatibleParameterError),
+    InternalServerError(crate::error::InternalServerError),
+    ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
+    UnsupportedOperation(crate::error::UnsupportedOperation),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateStorageVirtualMachineError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateStorageVirtualMachineErrorKind::ActiveDirectoryError(_inner) => _inner.fmt(f),
+            CreateStorageVirtualMachineErrorKind::BadRequest(_inner) => _inner.fmt(f),
+            CreateStorageVirtualMachineErrorKind::FileSystemNotFound(_inner) => _inner.fmt(f),
+            CreateStorageVirtualMachineErrorKind::IncompatibleParameterError(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateStorageVirtualMachineErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            CreateStorageVirtualMachineErrorKind::ServiceLimitExceeded(_inner) => _inner.fmt(f),
+            CreateStorageVirtualMachineErrorKind::UnsupportedOperation(_inner) => _inner.fmt(f),
+            CreateStorageVirtualMachineErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateStorageVirtualMachineError {
+    fn code(&self) -> Option<&str> {
+        CreateStorageVirtualMachineError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateStorageVirtualMachineError {
+    pub fn new(kind: CreateStorageVirtualMachineErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateStorageVirtualMachineErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateStorageVirtualMachineErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_active_directory_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStorageVirtualMachineErrorKind::ActiveDirectoryError(_)
+        )
+    }
+    pub fn is_bad_request(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStorageVirtualMachineErrorKind::BadRequest(_)
+        )
+    }
+    pub fn is_file_system_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStorageVirtualMachineErrorKind::FileSystemNotFound(_)
+        )
+    }
+    pub fn is_incompatible_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStorageVirtualMachineErrorKind::IncompatibleParameterError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStorageVirtualMachineErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_service_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStorageVirtualMachineErrorKind::ServiceLimitExceeded(_)
+        )
+    }
+    pub fn is_unsupported_operation(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStorageVirtualMachineErrorKind::UnsupportedOperation(_)
+        )
+    }
+}
+impl std::error::Error for CreateStorageVirtualMachineError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateStorageVirtualMachineErrorKind::ActiveDirectoryError(_inner) => Some(_inner),
+            CreateStorageVirtualMachineErrorKind::BadRequest(_inner) => Some(_inner),
+            CreateStorageVirtualMachineErrorKind::FileSystemNotFound(_inner) => Some(_inner),
+            CreateStorageVirtualMachineErrorKind::IncompatibleParameterError(_inner) => {
+                Some(_inner)
+            }
+            CreateStorageVirtualMachineErrorKind::InternalServerError(_inner) => Some(_inner),
+            CreateStorageVirtualMachineErrorKind::ServiceLimitExceeded(_inner) => Some(_inner),
+            CreateStorageVirtualMachineErrorKind::UnsupportedOperation(_inner) => Some(_inner),
+            CreateStorageVirtualMachineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateVolumeError {
+    pub kind: CreateVolumeErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateVolumeErrorKind {
+    BadRequest(crate::error::BadRequest),
+    FileSystemNotFound(crate::error::FileSystemNotFound),
+    IncompatibleParameterError(crate::error::IncompatibleParameterError),
+    InternalServerError(crate::error::InternalServerError),
+    MissingVolumeConfiguration(crate::error::MissingVolumeConfiguration),
+    ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
+    StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
+    UnsupportedOperation(crate::error::UnsupportedOperation),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateVolumeError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateVolumeErrorKind::BadRequest(_inner) => _inner.fmt(f),
+            CreateVolumeErrorKind::FileSystemNotFound(_inner) => _inner.fmt(f),
+            CreateVolumeErrorKind::IncompatibleParameterError(_inner) => _inner.fmt(f),
+            CreateVolumeErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            CreateVolumeErrorKind::MissingVolumeConfiguration(_inner) => _inner.fmt(f),
+            CreateVolumeErrorKind::ServiceLimitExceeded(_inner) => _inner.fmt(f),
+            CreateVolumeErrorKind::StorageVirtualMachineNotFound(_inner) => _inner.fmt(f),
+            CreateVolumeErrorKind::UnsupportedOperation(_inner) => _inner.fmt(f),
+            CreateVolumeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateVolumeError {
+    fn code(&self) -> Option<&str> {
+        CreateVolumeError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateVolumeError {
+    pub fn new(kind: CreateVolumeErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateVolumeErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateVolumeErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request(&self) -> bool {
+        matches!(&self.kind, CreateVolumeErrorKind::BadRequest(_))
+    }
+    pub fn is_file_system_not_found(&self) -> bool {
+        matches!(&self.kind, CreateVolumeErrorKind::FileSystemNotFound(_))
+    }
+    pub fn is_incompatible_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVolumeErrorKind::IncompatibleParameterError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, CreateVolumeErrorKind::InternalServerError(_))
+    }
+    pub fn is_missing_volume_configuration(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVolumeErrorKind::MissingVolumeConfiguration(_)
+        )
+    }
+    pub fn is_service_limit_exceeded(&self) -> bool {
+        matches!(&self.kind, CreateVolumeErrorKind::ServiceLimitExceeded(_))
+    }
+    pub fn is_storage_virtual_machine_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVolumeErrorKind::StorageVirtualMachineNotFound(_)
+        )
+    }
+    pub fn is_unsupported_operation(&self) -> bool {
+        matches!(&self.kind, CreateVolumeErrorKind::UnsupportedOperation(_))
+    }
+}
+impl std::error::Error for CreateVolumeError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateVolumeErrorKind::BadRequest(_inner) => Some(_inner),
+            CreateVolumeErrorKind::FileSystemNotFound(_inner) => Some(_inner),
+            CreateVolumeErrorKind::IncompatibleParameterError(_inner) => Some(_inner),
+            CreateVolumeErrorKind::InternalServerError(_inner) => Some(_inner),
+            CreateVolumeErrorKind::MissingVolumeConfiguration(_inner) => Some(_inner),
+            CreateVolumeErrorKind::ServiceLimitExceeded(_inner) => Some(_inner),
+            CreateVolumeErrorKind::StorageVirtualMachineNotFound(_inner) => Some(_inner),
+            CreateVolumeErrorKind::UnsupportedOperation(_inner) => Some(_inner),
+            CreateVolumeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateVolumeFromBackupError {
+    pub kind: CreateVolumeFromBackupErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateVolumeFromBackupErrorKind {
+    BackupNotFound(crate::error::BackupNotFound),
+    BadRequest(crate::error::BadRequest),
+    FileSystemNotFound(crate::error::FileSystemNotFound),
+    IncompatibleParameterError(crate::error::IncompatibleParameterError),
+    InternalServerError(crate::error::InternalServerError),
+    MissingVolumeConfiguration(crate::error::MissingVolumeConfiguration),
+    ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
+    StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateVolumeFromBackupError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateVolumeFromBackupErrorKind::BackupNotFound(_inner) => _inner.fmt(f),
+            CreateVolumeFromBackupErrorKind::BadRequest(_inner) => _inner.fmt(f),
+            CreateVolumeFromBackupErrorKind::FileSystemNotFound(_inner) => _inner.fmt(f),
+            CreateVolumeFromBackupErrorKind::IncompatibleParameterError(_inner) => _inner.fmt(f),
+            CreateVolumeFromBackupErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            CreateVolumeFromBackupErrorKind::MissingVolumeConfiguration(_inner) => _inner.fmt(f),
+            CreateVolumeFromBackupErrorKind::ServiceLimitExceeded(_inner) => _inner.fmt(f),
+            CreateVolumeFromBackupErrorKind::StorageVirtualMachineNotFound(_inner) => _inner.fmt(f),
+            CreateVolumeFromBackupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateVolumeFromBackupError {
+    fn code(&self) -> Option<&str> {
+        CreateVolumeFromBackupError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateVolumeFromBackupError {
+    pub fn new(kind: CreateVolumeFromBackupErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateVolumeFromBackupErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateVolumeFromBackupErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_backup_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVolumeFromBackupErrorKind::BackupNotFound(_)
+        )
+    }
+    pub fn is_bad_request(&self) -> bool {
+        matches!(&self.kind, CreateVolumeFromBackupErrorKind::BadRequest(_))
+    }
+    pub fn is_file_system_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVolumeFromBackupErrorKind::FileSystemNotFound(_)
+        )
+    }
+    pub fn is_incompatible_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVolumeFromBackupErrorKind::IncompatibleParameterError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVolumeFromBackupErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_missing_volume_configuration(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVolumeFromBackupErrorKind::MissingVolumeConfiguration(_)
+        )
+    }
+    pub fn is_service_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVolumeFromBackupErrorKind::ServiceLimitExceeded(_)
+        )
+    }
+    pub fn is_storage_virtual_machine_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVolumeFromBackupErrorKind::StorageVirtualMachineNotFound(_)
+        )
+    }
+}
+impl std::error::Error for CreateVolumeFromBackupError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateVolumeFromBackupErrorKind::BackupNotFound(_inner) => Some(_inner),
+            CreateVolumeFromBackupErrorKind::BadRequest(_inner) => Some(_inner),
+            CreateVolumeFromBackupErrorKind::FileSystemNotFound(_inner) => Some(_inner),
+            CreateVolumeFromBackupErrorKind::IncompatibleParameterError(_inner) => Some(_inner),
+            CreateVolumeFromBackupErrorKind::InternalServerError(_inner) => Some(_inner),
+            CreateVolumeFromBackupErrorKind::MissingVolumeConfiguration(_inner) => Some(_inner),
+            CreateVolumeFromBackupErrorKind::ServiceLimitExceeded(_inner) => Some(_inner),
+            CreateVolumeFromBackupErrorKind::StorageVirtualMachineNotFound(_inner) => Some(_inner),
+            CreateVolumeFromBackupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DeleteBackupError {
     pub kind: DeleteBackupErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -1151,6 +1566,221 @@ impl std::error::Error for DeleteFileSystemError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DeleteStorageVirtualMachineError {
+    pub kind: DeleteStorageVirtualMachineErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteStorageVirtualMachineErrorKind {
+    BadRequest(crate::error::BadRequest),
+    IncompatibleParameterError(crate::error::IncompatibleParameterError),
+    InternalServerError(crate::error::InternalServerError),
+    StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteStorageVirtualMachineError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteStorageVirtualMachineErrorKind::BadRequest(_inner) => _inner.fmt(f),
+            DeleteStorageVirtualMachineErrorKind::IncompatibleParameterError(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteStorageVirtualMachineErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            DeleteStorageVirtualMachineErrorKind::StorageVirtualMachineNotFound(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteStorageVirtualMachineErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteStorageVirtualMachineError {
+    fn code(&self) -> Option<&str> {
+        DeleteStorageVirtualMachineError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteStorageVirtualMachineError {
+    pub fn new(kind: DeleteStorageVirtualMachineErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteStorageVirtualMachineErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteStorageVirtualMachineErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteStorageVirtualMachineErrorKind::BadRequest(_)
+        )
+    }
+    pub fn is_incompatible_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteStorageVirtualMachineErrorKind::IncompatibleParameterError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteStorageVirtualMachineErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_storage_virtual_machine_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteStorageVirtualMachineErrorKind::StorageVirtualMachineNotFound(_)
+        )
+    }
+}
+impl std::error::Error for DeleteStorageVirtualMachineError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteStorageVirtualMachineErrorKind::BadRequest(_inner) => Some(_inner),
+            DeleteStorageVirtualMachineErrorKind::IncompatibleParameterError(_inner) => {
+                Some(_inner)
+            }
+            DeleteStorageVirtualMachineErrorKind::InternalServerError(_inner) => Some(_inner),
+            DeleteStorageVirtualMachineErrorKind::StorageVirtualMachineNotFound(_inner) => {
+                Some(_inner)
+            }
+            DeleteStorageVirtualMachineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteVolumeError {
+    pub kind: DeleteVolumeErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteVolumeErrorKind {
+    BadRequest(crate::error::BadRequest),
+    IncompatibleParameterError(crate::error::IncompatibleParameterError),
+    InternalServerError(crate::error::InternalServerError),
+    VolumeNotFound(crate::error::VolumeNotFound),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteVolumeError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteVolumeErrorKind::BadRequest(_inner) => _inner.fmt(f),
+            DeleteVolumeErrorKind::IncompatibleParameterError(_inner) => _inner.fmt(f),
+            DeleteVolumeErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            DeleteVolumeErrorKind::VolumeNotFound(_inner) => _inner.fmt(f),
+            DeleteVolumeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteVolumeError {
+    fn code(&self) -> Option<&str> {
+        DeleteVolumeError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteVolumeError {
+    pub fn new(kind: DeleteVolumeErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteVolumeErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteVolumeErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request(&self) -> bool {
+        matches!(&self.kind, DeleteVolumeErrorKind::BadRequest(_))
+    }
+    pub fn is_incompatible_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVolumeErrorKind::IncompatibleParameterError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, DeleteVolumeErrorKind::InternalServerError(_))
+    }
+    pub fn is_volume_not_found(&self) -> bool {
+        matches!(&self.kind, DeleteVolumeErrorKind::VolumeNotFound(_))
+    }
+}
+impl std::error::Error for DeleteVolumeError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteVolumeErrorKind::BadRequest(_inner) => Some(_inner),
+            DeleteVolumeErrorKind::IncompatibleParameterError(_inner) => Some(_inner),
+            DeleteVolumeErrorKind::InternalServerError(_inner) => Some(_inner),
+            DeleteVolumeErrorKind::VolumeNotFound(_inner) => Some(_inner),
+            DeleteVolumeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DescribeBackupsError {
     pub kind: DescribeBackupsErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -1162,6 +1792,7 @@ pub enum DescribeBackupsErrorKind {
     BadRequest(crate::error::BadRequest),
     FileSystemNotFound(crate::error::FileSystemNotFound),
     InternalServerError(crate::error::InternalServerError),
+    VolumeNotFound(crate::error::VolumeNotFound),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1172,6 +1803,7 @@ impl std::fmt::Display for DescribeBackupsError {
             DescribeBackupsErrorKind::BadRequest(_inner) => _inner.fmt(f),
             DescribeBackupsErrorKind::FileSystemNotFound(_inner) => _inner.fmt(f),
             DescribeBackupsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            DescribeBackupsErrorKind::VolumeNotFound(_inner) => _inner.fmt(f),
             DescribeBackupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1232,6 +1864,9 @@ impl DescribeBackupsError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeBackupsErrorKind::InternalServerError(_))
     }
+    pub fn is_volume_not_found(&self) -> bool {
+        matches!(&self.kind, DescribeBackupsErrorKind::VolumeNotFound(_))
+    }
 }
 impl std::error::Error for DescribeBackupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1240,6 +1875,7 @@ impl std::error::Error for DescribeBackupsError {
             DescribeBackupsErrorKind::BadRequest(_inner) => Some(_inner),
             DescribeBackupsErrorKind::FileSystemNotFound(_inner) => Some(_inner),
             DescribeBackupsErrorKind::InternalServerError(_inner) => Some(_inner),
+            DescribeBackupsErrorKind::VolumeNotFound(_inner) => Some(_inner),
             DescribeBackupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1548,6 +2184,199 @@ impl std::error::Error for DescribeFileSystemsError {
             DescribeFileSystemsErrorKind::FileSystemNotFound(_inner) => Some(_inner),
             DescribeFileSystemsErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeFileSystemsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeStorageVirtualMachinesError {
+    pub kind: DescribeStorageVirtualMachinesErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeStorageVirtualMachinesErrorKind {
+    BadRequest(crate::error::BadRequest),
+    InternalServerError(crate::error::InternalServerError),
+    StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeStorageVirtualMachinesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeStorageVirtualMachinesErrorKind::BadRequest(_inner) => _inner.fmt(f),
+            DescribeStorageVirtualMachinesErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            DescribeStorageVirtualMachinesErrorKind::StorageVirtualMachineNotFound(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeStorageVirtualMachinesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeStorageVirtualMachinesError {
+    fn code(&self) -> Option<&str> {
+        DescribeStorageVirtualMachinesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeStorageVirtualMachinesError {
+    pub fn new(kind: DescribeStorageVirtualMachinesErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeStorageVirtualMachinesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeStorageVirtualMachinesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStorageVirtualMachinesErrorKind::BadRequest(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStorageVirtualMachinesErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_storage_virtual_machine_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStorageVirtualMachinesErrorKind::StorageVirtualMachineNotFound(_)
+        )
+    }
+}
+impl std::error::Error for DescribeStorageVirtualMachinesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeStorageVirtualMachinesErrorKind::BadRequest(_inner) => Some(_inner),
+            DescribeStorageVirtualMachinesErrorKind::InternalServerError(_inner) => Some(_inner),
+            DescribeStorageVirtualMachinesErrorKind::StorageVirtualMachineNotFound(_inner) => {
+                Some(_inner)
+            }
+            DescribeStorageVirtualMachinesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeVolumesError {
+    pub kind: DescribeVolumesErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeVolumesErrorKind {
+    BadRequest(crate::error::BadRequest),
+    InternalServerError(crate::error::InternalServerError),
+    VolumeNotFound(crate::error::VolumeNotFound),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeVolumesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeVolumesErrorKind::BadRequest(_inner) => _inner.fmt(f),
+            DescribeVolumesErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            DescribeVolumesErrorKind::VolumeNotFound(_inner) => _inner.fmt(f),
+            DescribeVolumesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeVolumesError {
+    fn code(&self) -> Option<&str> {
+        DescribeVolumesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeVolumesError {
+    pub fn new(kind: DescribeVolumesErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeVolumesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeVolumesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request(&self) -> bool {
+        matches!(&self.kind, DescribeVolumesErrorKind::BadRequest(_))
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, DescribeVolumesErrorKind::InternalServerError(_))
+    }
+    pub fn is_volume_not_found(&self) -> bool {
+        matches!(&self.kind, DescribeVolumesErrorKind::VolumeNotFound(_))
+    }
+}
+impl std::error::Error for DescribeVolumesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeVolumesErrorKind::BadRequest(_inner) => Some(_inner),
+            DescribeVolumesErrorKind::InternalServerError(_inner) => Some(_inner),
+            DescribeVolumesErrorKind::VolumeNotFound(_inner) => Some(_inner),
+            DescribeVolumesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2107,6 +2936,565 @@ impl std::error::Error for UpdateFileSystemError {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateStorageVirtualMachineError {
+    pub kind: UpdateStorageVirtualMachineErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateStorageVirtualMachineErrorKind {
+    BadRequest(crate::error::BadRequest),
+    IncompatibleParameterError(crate::error::IncompatibleParameterError),
+    InternalServerError(crate::error::InternalServerError),
+    StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
+    UnsupportedOperation(crate::error::UnsupportedOperation),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateStorageVirtualMachineError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateStorageVirtualMachineErrorKind::BadRequest(_inner) => _inner.fmt(f),
+            UpdateStorageVirtualMachineErrorKind::IncompatibleParameterError(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateStorageVirtualMachineErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            UpdateStorageVirtualMachineErrorKind::StorageVirtualMachineNotFound(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateStorageVirtualMachineErrorKind::UnsupportedOperation(_inner) => _inner.fmt(f),
+            UpdateStorageVirtualMachineErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateStorageVirtualMachineError {
+    fn code(&self) -> Option<&str> {
+        UpdateStorageVirtualMachineError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateStorageVirtualMachineError {
+    pub fn new(kind: UpdateStorageVirtualMachineErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateStorageVirtualMachineErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateStorageVirtualMachineErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStorageVirtualMachineErrorKind::BadRequest(_)
+        )
+    }
+    pub fn is_incompatible_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStorageVirtualMachineErrorKind::IncompatibleParameterError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStorageVirtualMachineErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_storage_virtual_machine_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStorageVirtualMachineErrorKind::StorageVirtualMachineNotFound(_)
+        )
+    }
+    pub fn is_unsupported_operation(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStorageVirtualMachineErrorKind::UnsupportedOperation(_)
+        )
+    }
+}
+impl std::error::Error for UpdateStorageVirtualMachineError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateStorageVirtualMachineErrorKind::BadRequest(_inner) => Some(_inner),
+            UpdateStorageVirtualMachineErrorKind::IncompatibleParameterError(_inner) => {
+                Some(_inner)
+            }
+            UpdateStorageVirtualMachineErrorKind::InternalServerError(_inner) => Some(_inner),
+            UpdateStorageVirtualMachineErrorKind::StorageVirtualMachineNotFound(_inner) => {
+                Some(_inner)
+            }
+            UpdateStorageVirtualMachineErrorKind::UnsupportedOperation(_inner) => Some(_inner),
+            UpdateStorageVirtualMachineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateVolumeError {
+    pub kind: UpdateVolumeErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateVolumeErrorKind {
+    BadRequest(crate::error::BadRequest),
+    IncompatibleParameterError(crate::error::IncompatibleParameterError),
+    InternalServerError(crate::error::InternalServerError),
+    MissingVolumeConfiguration(crate::error::MissingVolumeConfiguration),
+    VolumeNotFound(crate::error::VolumeNotFound),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateVolumeError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateVolumeErrorKind::BadRequest(_inner) => _inner.fmt(f),
+            UpdateVolumeErrorKind::IncompatibleParameterError(_inner) => _inner.fmt(f),
+            UpdateVolumeErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            UpdateVolumeErrorKind::MissingVolumeConfiguration(_inner) => _inner.fmt(f),
+            UpdateVolumeErrorKind::VolumeNotFound(_inner) => _inner.fmt(f),
+            UpdateVolumeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateVolumeError {
+    fn code(&self) -> Option<&str> {
+        UpdateVolumeError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateVolumeError {
+    pub fn new(kind: UpdateVolumeErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateVolumeErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateVolumeErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request(&self) -> bool {
+        matches!(&self.kind, UpdateVolumeErrorKind::BadRequest(_))
+    }
+    pub fn is_incompatible_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateVolumeErrorKind::IncompatibleParameterError(_)
+        )
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, UpdateVolumeErrorKind::InternalServerError(_))
+    }
+    pub fn is_missing_volume_configuration(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateVolumeErrorKind::MissingVolumeConfiguration(_)
+        )
+    }
+    pub fn is_volume_not_found(&self) -> bool {
+        matches!(&self.kind, UpdateVolumeErrorKind::VolumeNotFound(_))
+    }
+}
+impl std::error::Error for UpdateVolumeError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateVolumeErrorKind::BadRequest(_inner) => Some(_inner),
+            UpdateVolumeErrorKind::IncompatibleParameterError(_inner) => Some(_inner),
+            UpdateVolumeErrorKind::InternalServerError(_inner) => Some(_inner),
+            UpdateVolumeErrorKind::MissingVolumeConfiguration(_inner) => Some(_inner),
+            UpdateVolumeErrorKind::VolumeNotFound(_inner) => Some(_inner),
+            UpdateVolumeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// <p>No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VolumeNotFound {
+    /// <p>A detailed error message.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for VolumeNotFound {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VolumeNotFound");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl VolumeNotFound {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for VolumeNotFound {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "VolumeNotFound")?;
+        if let Some(inner_1) = &self.message {
+            write!(f, ": {}", inner_1)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for VolumeNotFound {}
+/// See [`VolumeNotFound`](crate::error::VolumeNotFound)
+pub mod volume_not_found {
+    /// A builder for [`VolumeNotFound`](crate::error::VolumeNotFound)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A detailed error message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VolumeNotFound`](crate::error::VolumeNotFound)
+        pub fn build(self) -> crate::error::VolumeNotFound {
+            crate::error::VolumeNotFound {
+                message: self.message,
+            }
+        }
+    }
+}
+impl VolumeNotFound {
+    /// Creates a new builder-style object to manufacture [`VolumeNotFound`](crate::error::VolumeNotFound)
+    pub fn builder() -> crate::error::volume_not_found::Builder {
+        crate::error::volume_not_found::Builder::default()
+    }
+}
+
+/// <p>A volume configuration is required for this operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MissingVolumeConfiguration {
+    /// <p>A detailed error message.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for MissingVolumeConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MissingVolumeConfiguration");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl MissingVolumeConfiguration {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for MissingVolumeConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "MissingVolumeConfiguration")?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for MissingVolumeConfiguration {}
+/// See [`MissingVolumeConfiguration`](crate::error::MissingVolumeConfiguration)
+pub mod missing_volume_configuration {
+    /// A builder for [`MissingVolumeConfiguration`](crate::error::MissingVolumeConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A detailed error message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MissingVolumeConfiguration`](crate::error::MissingVolumeConfiguration)
+        pub fn build(self) -> crate::error::MissingVolumeConfiguration {
+            crate::error::MissingVolumeConfiguration {
+                message: self.message,
+            }
+        }
+    }
+}
+impl MissingVolumeConfiguration {
+    /// Creates a new builder-style object to manufacture [`MissingVolumeConfiguration`](crate::error::MissingVolumeConfiguration)
+    pub fn builder() -> crate::error::missing_volume_configuration::Builder {
+        crate::error::missing_volume_configuration::Builder::default()
+    }
+}
+
+/// <p>A generic error indicating a server-side failure.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InternalServerError {
+    /// <p>A detailed error message.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InternalServerError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InternalServerError");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InternalServerError {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InternalServerError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InternalServerError")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InternalServerError {}
+/// See [`InternalServerError`](crate::error::InternalServerError)
+pub mod internal_server_error {
+    /// A builder for [`InternalServerError`](crate::error::InternalServerError)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A detailed error message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InternalServerError`](crate::error::InternalServerError)
+        pub fn build(self) -> crate::error::InternalServerError {
+            crate::error::InternalServerError {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InternalServerError {
+    /// Creates a new builder-style object to manufacture [`InternalServerError`](crate::error::InternalServerError)
+    pub fn builder() -> crate::error::internal_server_error::Builder {
+        crate::error::internal_server_error::Builder::default()
+    }
+}
+
+/// <p>The error returned when a second request is received with the same client request
+/// token but different parameters settings. A client request token should always uniquely
+/// identify a single request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IncompatibleParameterError {
+    /// <p>A parameter that is incompatible with the earlier request.</p>
+    pub parameter: std::option::Option<std::string::String>,
+    /// <p>A detailed error message.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for IncompatibleParameterError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IncompatibleParameterError");
+        formatter.field("parameter", &self.parameter);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl IncompatibleParameterError {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for IncompatibleParameterError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "IncompatibleParameterError")?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for IncompatibleParameterError {}
+/// See [`IncompatibleParameterError`](crate::error::IncompatibleParameterError)
+pub mod incompatible_parameter_error {
+    /// A builder for [`IncompatibleParameterError`](crate::error::IncompatibleParameterError)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) parameter: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A parameter that is incompatible with the earlier request.</p>
+        pub fn parameter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parameter = Some(input.into());
+            self
+        }
+        pub fn set_parameter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parameter = input;
+            self
+        }
+        /// <p>A detailed error message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IncompatibleParameterError`](crate::error::IncompatibleParameterError)
+        pub fn build(self) -> crate::error::IncompatibleParameterError {
+            crate::error::IncompatibleParameterError {
+                parameter: self.parameter,
+                message: self.message,
+            }
+        }
+    }
+}
+impl IncompatibleParameterError {
+    /// Creates a new builder-style object to manufacture [`IncompatibleParameterError`](crate::error::IncompatibleParameterError)
+    pub fn builder() -> crate::error::incompatible_parameter_error::Builder {
+        crate::error::incompatible_parameter_error::Builder::default()
+    }
+}
+
+/// <p>A generic error indicating a failure with a client request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BadRequest {
+    /// <p>A detailed error message.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for BadRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BadRequest");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl BadRequest {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for BadRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "BadRequest")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for BadRequest {}
+/// See [`BadRequest`](crate::error::BadRequest)
+pub mod bad_request {
+    /// A builder for [`BadRequest`](crate::error::BadRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A detailed error message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BadRequest`](crate::error::BadRequest)
+        pub fn build(self) -> crate::error::BadRequest {
+            crate::error::BadRequest {
+                message: self.message,
+            }
+        }
+    }
+}
+impl BadRequest {
+    /// Creates a new builder-style object to manufacture [`BadRequest`](crate::error::BadRequest)
+    pub fn builder() -> crate::error::bad_request::Builder {
+        crate::error::bad_request::Builder::default()
+    }
+}
+
 /// <p>The requested operation is not supported for this resource or API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2129,8 +3517,8 @@ impl UnsupportedOperation {
 impl std::fmt::Display for UnsupportedOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedOperation")?;
-        if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -2169,9 +3557,70 @@ impl UnsupportedOperation {
     }
 }
 
+/// <p>No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StorageVirtualMachineNotFound {
+    /// <p>A detailed error message.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for StorageVirtualMachineNotFound {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StorageVirtualMachineNotFound");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl StorageVirtualMachineNotFound {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for StorageVirtualMachineNotFound {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "StorageVirtualMachineNotFound")?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for StorageVirtualMachineNotFound {}
+/// See [`StorageVirtualMachineNotFound`](crate::error::StorageVirtualMachineNotFound)
+pub mod storage_virtual_machine_not_found {
+    /// A builder for [`StorageVirtualMachineNotFound`](crate::error::StorageVirtualMachineNotFound)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A detailed error message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StorageVirtualMachineNotFound`](crate::error::StorageVirtualMachineNotFound)
+        pub fn build(self) -> crate::error::StorageVirtualMachineNotFound {
+            crate::error::StorageVirtualMachineNotFound {
+                message: self.message,
+            }
+        }
+    }
+}
+impl StorageVirtualMachineNotFound {
+    /// Creates a new builder-style object to manufacture [`StorageVirtualMachineNotFound`](crate::error::StorageVirtualMachineNotFound)
+    pub fn builder() -> crate::error::storage_virtual_machine_not_found::Builder {
+        crate::error::storage_virtual_machine_not_found::Builder::default()
+    }
+}
+
 /// <p>An error indicating that a particular service limit was exceeded. You can increase
-/// some service limits by contacting AWS Support.
-/// </p>
+/// some service limits by contacting Amazon Web Services Support.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceLimitExceeded {
@@ -2196,8 +3645,8 @@ impl ServiceLimitExceeded {
 impl std::fmt::Display for ServiceLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceLimitExceeded")?;
-        if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
@@ -2269,8 +3718,8 @@ impl MissingFileSystemConfiguration {
 impl std::fmt::Display for MissingFileSystemConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MissingFileSystemConfiguration")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
@@ -2309,146 +3758,6 @@ impl MissingFileSystemConfiguration {
     }
 }
 
-/// <p>A generic error indicating a server-side failure.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InternalServerError {
-    /// <p>A detailed error message.</p>
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InternalServerError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerError");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl InternalServerError {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InternalServerError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalServerError")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InternalServerError {}
-/// See [`InternalServerError`](crate::error::InternalServerError)
-pub mod internal_server_error {
-    /// A builder for [`InternalServerError`](crate::error::InternalServerError)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A detailed error message.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InternalServerError`](crate::error::InternalServerError)
-        pub fn build(self) -> crate::error::InternalServerError {
-            crate::error::InternalServerError {
-                message: self.message,
-            }
-        }
-    }
-}
-impl InternalServerError {
-    /// Creates a new builder-style object to manufacture [`InternalServerError`](crate::error::InternalServerError)
-    pub fn builder() -> crate::error::internal_server_error::Builder {
-        crate::error::internal_server_error::Builder::default()
-    }
-}
-
-/// <p>The error returned when a second request is received with the same client request
-/// token but different parameters settings. A client request token should always uniquely
-/// identify a single request.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct IncompatibleParameterError {
-    /// <p>A parameter that is incompatible with the earlier request.</p>
-    pub parameter: std::option::Option<std::string::String>,
-    /// <p>A detailed error message.</p>
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IncompatibleParameterError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncompatibleParameterError");
-        formatter.field("parameter", &self.parameter);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl IncompatibleParameterError {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for IncompatibleParameterError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "IncompatibleParameterError")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for IncompatibleParameterError {}
-/// See [`IncompatibleParameterError`](crate::error::IncompatibleParameterError)
-pub mod incompatible_parameter_error {
-    /// A builder for [`IncompatibleParameterError`](crate::error::IncompatibleParameterError)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) parameter: std::option::Option<std::string::String>,
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A parameter that is incompatible with the earlier request.</p>
-        pub fn parameter(mut self, input: impl Into<std::string::String>) -> Self {
-            self.parameter = Some(input.into());
-            self
-        }
-        pub fn set_parameter(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.parameter = input;
-            self
-        }
-        /// <p>A detailed error message.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`IncompatibleParameterError`](crate::error::IncompatibleParameterError)
-        pub fn build(self) -> crate::error::IncompatibleParameterError {
-            crate::error::IncompatibleParameterError {
-                parameter: self.parameter,
-                message: self.message,
-            }
-        }
-    }
-}
-impl IncompatibleParameterError {
-    /// Creates a new builder-style object to manufacture [`IncompatibleParameterError`](crate::error::IncompatibleParameterError)
-    pub fn builder() -> crate::error::incompatible_parameter_error::Builder {
-        crate::error::incompatible_parameter_error::Builder::default()
-    }
-}
-
 /// <p>No Amazon FSx file systems were found based upon supplied parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2471,8 +3780,8 @@ impl FileSystemNotFound {
 impl std::fmt::Display for FileSystemNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileSystemNotFound")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
@@ -2511,68 +3820,6 @@ impl FileSystemNotFound {
     }
 }
 
-/// <p>A generic error indicating a failure with a client request.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BadRequest {
-    /// <p>A detailed error message.</p>
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BadRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadRequest");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl BadRequest {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for BadRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "BadRequest")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for BadRequest {}
-/// See [`BadRequest`](crate::error::BadRequest)
-pub mod bad_request {
-    /// A builder for [`BadRequest`](crate::error::BadRequest)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A detailed error message.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`BadRequest`](crate::error::BadRequest)
-        pub fn build(self) -> crate::error::BadRequest {
-            crate::error::BadRequest {
-                message: self.message,
-            }
-        }
-    }
-}
-impl BadRequest {
-    /// Creates a new builder-style object to manufacture [`BadRequest`](crate::error::BadRequest)
-    pub fn builder() -> crate::error::bad_request::Builder {
-        crate::error::bad_request::Builder::default()
-    }
-}
-
 /// <p>The resource specified by the Amazon Resource Name (ARN) can't be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2598,8 +3845,8 @@ impl ResourceNotFound {
 impl std::fmt::Display for ResourceNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFound")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
@@ -2675,8 +3922,8 @@ impl ResourceDoesNotSupportTagging {
 impl std::fmt::Display for ResourceDoesNotSupportTagging {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceDoesNotSupportTagging")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
@@ -2753,8 +4000,8 @@ impl NotServiceResourceError {
 impl std::fmt::Display for NotServiceResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotServiceResourceError")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
@@ -2826,8 +4073,8 @@ impl DataRepositoryTaskNotFound {
 impl std::fmt::Display for DataRepositoryTaskNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DataRepositoryTaskNotFound")?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
@@ -2888,8 +4135,8 @@ impl BackupNotFound {
 impl std::fmt::Display for BackupNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BackupNotFound")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
@@ -2954,8 +4201,8 @@ impl BackupRestoring {
 impl std::fmt::Display for BackupRestoring {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BackupRestoring")?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
@@ -3031,8 +4278,8 @@ impl BackupInProgress {
 impl std::fmt::Display for BackupInProgress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BackupInProgress")?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -3096,8 +4343,8 @@ impl BackupBeingCopied {
 impl std::fmt::Display for BackupBeingCopied {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BackupBeingCopied")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -3147,183 +4394,6 @@ impl BackupBeingCopied {
     }
 }
 
-/// <p>An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create your file system again, using a valid value.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidPerUnitStorageThroughput {
-    /// <p>A detailed error message.</p>
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidPerUnitStorageThroughput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPerUnitStorageThroughput");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl InvalidPerUnitStorageThroughput {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidPerUnitStorageThroughput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidPerUnitStorageThroughput")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidPerUnitStorageThroughput {}
-/// See [`InvalidPerUnitStorageThroughput`](crate::error::InvalidPerUnitStorageThroughput)
-pub mod invalid_per_unit_storage_throughput {
-    /// A builder for [`InvalidPerUnitStorageThroughput`](crate::error::InvalidPerUnitStorageThroughput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A detailed error message.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InvalidPerUnitStorageThroughput`](crate::error::InvalidPerUnitStorageThroughput)
-        pub fn build(self) -> crate::error::InvalidPerUnitStorageThroughput {
-            crate::error::InvalidPerUnitStorageThroughput {
-                message: self.message,
-            }
-        }
-    }
-}
-impl InvalidPerUnitStorageThroughput {
-    /// Creates a new builder-style object to manufacture [`InvalidPerUnitStorageThroughput`](crate::error::InvalidPerUnitStorageThroughput)
-    pub fn builder() -> crate::error::invalid_per_unit_storage_throughput::Builder {
-        crate::error::invalid_per_unit_storage_throughput::Builder::default()
-    }
-}
-
-/// <p>One or more network settings specified in the request are invalid.
-/// <code>InvalidVpcId</code> means that the ID passed for the virtual private cloud
-/// (VPC) is invalid. <code>InvalidSubnetIds</code> returns the list of IDs for subnets that
-/// are either invalid or not part of the VPC specified.
-/// <code>InvalidSecurityGroupIds</code> returns the list of IDs for security groups
-/// that are either invalid or not part of the VPC specified.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidNetworkSettings {
-    /// <p>A detailed error message.</p>
-    pub message: std::option::Option<std::string::String>,
-    /// <p>The ID for a subnet. A <i>subnet</i> is a range of IP addresses in
-    /// your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and Subnets</a> in the
-    /// <i>Amazon VPC User Guide.</i>
-    /// </p>
-    pub invalid_subnet_id: std::option::Option<std::string::String>,
-    /// <p>The ID of your Amazon EC2 security group. This ID is used to control network access
-    /// to the endpoint that Amazon FSx creates on your behalf in each subnet. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
-    /// Groups for Linux Instances</a> in the <i>Amazon EC2 User
-    /// Guide</i>.</p>
-    pub invalid_security_group_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidNetworkSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidNetworkSettings");
-        formatter.field("message", &self.message);
-        formatter.field("invalid_subnet_id", &self.invalid_subnet_id);
-        formatter.field("invalid_security_group_id", &self.invalid_security_group_id);
-        formatter.finish()
-    }
-}
-impl InvalidNetworkSettings {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidNetworkSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidNetworkSettings")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidNetworkSettings {}
-/// See [`InvalidNetworkSettings`](crate::error::InvalidNetworkSettings)
-pub mod invalid_network_settings {
-    /// A builder for [`InvalidNetworkSettings`](crate::error::InvalidNetworkSettings)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) invalid_subnet_id: std::option::Option<std::string::String>,
-        pub(crate) invalid_security_group_id: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A detailed error message.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// <p>The ID for a subnet. A <i>subnet</i> is a range of IP addresses in
-        /// your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and Subnets</a> in the
-        /// <i>Amazon VPC User Guide.</i>
-        /// </p>
-        pub fn invalid_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.invalid_subnet_id = Some(input.into());
-            self
-        }
-        pub fn set_invalid_subnet_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.invalid_subnet_id = input;
-            self
-        }
-        /// <p>The ID of your Amazon EC2 security group. This ID is used to control network access
-        /// to the endpoint that Amazon FSx creates on your behalf in each subnet. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
-        /// Groups for Linux Instances</a> in the <i>Amazon EC2 User
-        /// Guide</i>.</p>
-        pub fn invalid_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.invalid_security_group_id = Some(input.into());
-            self
-        }
-        pub fn set_invalid_security_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.invalid_security_group_id = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InvalidNetworkSettings`](crate::error::InvalidNetworkSettings)
-        pub fn build(self) -> crate::error::InvalidNetworkSettings {
-            crate::error::InvalidNetworkSettings {
-                message: self.message,
-                invalid_subnet_id: self.invalid_subnet_id,
-                invalid_security_group_id: self.invalid_security_group_id,
-            }
-        }
-    }
-}
-impl InvalidNetworkSettings {
-    /// Creates a new builder-style object to manufacture [`InvalidNetworkSettings`](crate::error::InvalidNetworkSettings)
-    pub fn builder() -> crate::error::invalid_network_settings::Builder {
-        crate::error::invalid_network_settings::Builder::default()
-    }
-}
-
 /// <p>An Active Directory error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3352,8 +4422,8 @@ impl ActiveDirectoryError {
 impl std::fmt::Display for ActiveDirectoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ActiveDirectoryError")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
@@ -3420,6 +4490,181 @@ impl ActiveDirectoryError {
     }
 }
 
+/// <p>An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create your file system again, using a valid value.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidPerUnitStorageThroughput {
+    /// <p>A detailed error message.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidPerUnitStorageThroughput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidPerUnitStorageThroughput");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidPerUnitStorageThroughput {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidPerUnitStorageThroughput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidPerUnitStorageThroughput")?;
+        if let Some(inner_20) = &self.message {
+            write!(f, ": {}", inner_20)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidPerUnitStorageThroughput {}
+/// See [`InvalidPerUnitStorageThroughput`](crate::error::InvalidPerUnitStorageThroughput)
+pub mod invalid_per_unit_storage_throughput {
+    /// A builder for [`InvalidPerUnitStorageThroughput`](crate::error::InvalidPerUnitStorageThroughput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A detailed error message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidPerUnitStorageThroughput`](crate::error::InvalidPerUnitStorageThroughput)
+        pub fn build(self) -> crate::error::InvalidPerUnitStorageThroughput {
+            crate::error::InvalidPerUnitStorageThroughput {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidPerUnitStorageThroughput {
+    /// Creates a new builder-style object to manufacture [`InvalidPerUnitStorageThroughput`](crate::error::InvalidPerUnitStorageThroughput)
+    pub fn builder() -> crate::error::invalid_per_unit_storage_throughput::Builder {
+        crate::error::invalid_per_unit_storage_throughput::Builder::default()
+    }
+}
+
+/// <p>One or more network settings specified in the request are invalid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidNetworkSettings {
+    /// <p>Error message explaining what's wrong with network settings.</p>
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The subnet ID that is either invalid or not part of the VPC specified.</p>
+    pub invalid_subnet_id: std::option::Option<std::string::String>,
+    /// <p>The security group ID is either invalid or not part of the VPC specified.</p>
+    pub invalid_security_group_id: std::option::Option<std::string::String>,
+    /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
+    pub invalid_route_table_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidNetworkSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidNetworkSettings");
+        formatter.field("message", &self.message);
+        formatter.field("invalid_subnet_id", &self.invalid_subnet_id);
+        formatter.field("invalid_security_group_id", &self.invalid_security_group_id);
+        formatter.field("invalid_route_table_id", &self.invalid_route_table_id);
+        formatter.finish()
+    }
+}
+impl InvalidNetworkSettings {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidNetworkSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidNetworkSettings")?;
+        if let Some(inner_21) = &self.message {
+            write!(f, ": {}", inner_21)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidNetworkSettings {}
+/// See [`InvalidNetworkSettings`](crate::error::InvalidNetworkSettings)
+pub mod invalid_network_settings {
+    /// A builder for [`InvalidNetworkSettings`](crate::error::InvalidNetworkSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) invalid_subnet_id: std::option::Option<std::string::String>,
+        pub(crate) invalid_security_group_id: std::option::Option<std::string::String>,
+        pub(crate) invalid_route_table_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Error message explaining what's wrong with network settings.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The subnet ID that is either invalid or not part of the VPC specified.</p>
+        pub fn invalid_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.invalid_subnet_id = Some(input.into());
+            self
+        }
+        pub fn set_invalid_subnet_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.invalid_subnet_id = input;
+            self
+        }
+        /// <p>The security group ID is either invalid or not part of the VPC specified.</p>
+        pub fn invalid_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.invalid_security_group_id = Some(input.into());
+            self
+        }
+        pub fn set_invalid_security_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.invalid_security_group_id = input;
+            self
+        }
+        /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
+        pub fn invalid_route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.invalid_route_table_id = Some(input.into());
+            self
+        }
+        pub fn set_invalid_route_table_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.invalid_route_table_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidNetworkSettings`](crate::error::InvalidNetworkSettings)
+        pub fn build(self) -> crate::error::InvalidNetworkSettings {
+            crate::error::InvalidNetworkSettings {
+                message: self.message,
+                invalid_subnet_id: self.invalid_subnet_id,
+                invalid_security_group_id: self.invalid_security_group_id,
+                invalid_route_table_id: self.invalid_route_table_id,
+            }
+        }
+    }
+}
+impl InvalidNetworkSettings {
+    /// Creates a new builder-style object to manufacture [`InvalidNetworkSettings`](crate::error::InvalidNetworkSettings)
+    pub fn builder() -> crate::error::invalid_network_settings::Builder {
+        crate::error::invalid_network_settings::Builder::default()
+    }
+}
+
 /// <p>The path provided for data repository import isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3442,8 +4687,8 @@ impl InvalidImportPath {
 impl std::fmt::Display for InvalidImportPath {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidImportPath")?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+        if let Some(inner_22) = &self.message {
+            write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
@@ -3504,8 +4749,8 @@ impl InvalidExportPath {
 impl std::fmt::Display for InvalidExportPath {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidExportPath")?;
-        if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+        if let Some(inner_23) = &self.message {
+            write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
@@ -3567,8 +4812,8 @@ impl DataRepositoryTaskExecuting {
 impl std::fmt::Display for DataRepositoryTaskExecuting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DataRepositoryTaskExecuting")?;
-        if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+        if let Some(inner_24) = &self.message {
+            write!(f, ": {}", inner_24)?;
         }
         Ok(())
     }
@@ -3633,8 +4878,8 @@ impl SourceBackupUnavailable {
 impl std::fmt::Display for SourceBackupUnavailable {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SourceBackupUnavailable")?;
-        if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+        if let Some(inner_25) = &self.message {
+            write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
@@ -3684,7 +4929,7 @@ impl SourceBackupUnavailable {
     }
 }
 
-/// <p>The AWS Key Management Service (AWS KMS) key of the source backup
+/// <p>The Key Management Service (KMS) key of the source backup
 /// is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3707,8 +4952,8 @@ impl InvalidSourceKmsKey {
 impl std::fmt::Display for InvalidSourceKmsKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSourceKmsKey")?;
-        if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
@@ -3748,7 +4993,7 @@ impl InvalidSourceKmsKey {
 }
 
 /// <p>The Region provided for <code>Source Region</code> is invalid or
-/// is in a different AWS partition.</p>
+/// is in a different Amazon Web Services partition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRegion {
@@ -3770,8 +5015,8 @@ impl InvalidRegion {
 impl std::fmt::Display for InvalidRegion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRegion")?;
-        if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
@@ -3810,7 +5055,7 @@ impl InvalidRegion {
     }
 }
 
-/// <p>The AWS Key Management Service (AWS KMS) key of the destination
+/// <p>The Key Management Service (KMS) key of the destination
 /// backup is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3833,8 +5078,8 @@ impl InvalidDestinationKmsKey {
 impl std::fmt::Display for InvalidDestinationKmsKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDestinationKmsKey")?;
-        if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+        if let Some(inner_28) = &self.message {
+            write!(f, ": {}", inner_28)?;
         }
         Ok(())
     }
@@ -3900,8 +5145,8 @@ impl std::fmt::Display for IncompatibleRegionForMultiAz {
             f,
             "IncompatibleRegionForMultiAz [IncompatibleRegionForMultiAZ]"
         )?;
-        if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+        if let Some(inner_29) = &self.message {
+            write!(f, ": {}", inner_29)?;
         }
         Ok(())
     }
@@ -3962,8 +5207,8 @@ impl DataRepositoryTaskEnded {
 impl std::fmt::Display for DataRepositoryTaskEnded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DataRepositoryTaskEnded")?;
-        if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+        if let Some(inner_30) = &self.message {
+            write!(f, ": {}", inner_30)?;
         }
         Ok(())
     }

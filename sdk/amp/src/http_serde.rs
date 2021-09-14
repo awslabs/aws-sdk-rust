@@ -95,7 +95,7 @@ pub fn deser_header_describe_workspace_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_list_workspaces_internal_server_exception_retry_after_seconds(
+pub fn deser_header_list_tags_for_resource_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -111,7 +111,7 @@ pub fn deser_header_list_workspaces_internal_server_exception_retry_after_second
     }
 }
 
-pub fn deser_header_list_workspaces_throttling_exception_retry_after_seconds(
+pub fn deser_header_list_tags_for_resource_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -127,7 +127,7 @@ pub fn deser_header_list_workspaces_throttling_exception_retry_after_seconds(
     }
 }
 
-pub fn deser_header_update_workspace_alias_internal_server_exception_retry_after_seconds(
+pub fn deser_header_list_workspaces_internal_server_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -143,7 +143,7 @@ pub fn deser_header_update_workspace_alias_internal_server_exception_retry_after
     }
 }
 
-pub fn deser_header_update_workspace_alias_throttling_exception_retry_after_seconds(
+pub fn deser_header_list_workspaces_throttling_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("Retry-After").iter();
@@ -156,5 +156,101 @@ pub fn deser_header_update_workspace_alias_throttling_exception_retry_after_seco
     } else {
         let mut var_10 = var_10;
         Ok(var_10.pop())
+    }
+}
+
+pub fn deser_header_tag_resource_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_11 = smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_11.len() > 1 {
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_11.len()
+        )))
+    } else {
+        let mut var_11 = var_11;
+        Ok(var_11.pop())
+    }
+}
+
+pub fn deser_header_tag_resource_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_12 = smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_12.len() > 1 {
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_12.len()
+        )))
+    } else {
+        let mut var_12 = var_12;
+        Ok(var_12.pop())
+    }
+}
+
+pub fn deser_header_untag_resource_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_13 = smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_13.len() > 1 {
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_13.len()
+        )))
+    } else {
+        let mut var_13 = var_13;
+        Ok(var_13.pop())
+    }
+}
+
+pub fn deser_header_untag_resource_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_14 = smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_14.len() > 1 {
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_14.len()
+        )))
+    } else {
+        let mut var_14 = var_14;
+        Ok(var_14.pop())
+    }
+}
+
+pub fn deser_header_update_workspace_alias_internal_server_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_15 = smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_15.len() > 1 {
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_15.len()
+        )))
+    } else {
+        let mut var_15 = var_15;
+        Ok(var_15.pop())
+    }
+}
+
+pub fn deser_header_update_workspace_alias_throttling_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<i32>, smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Retry-After").iter();
+    let var_16 = smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_16.len() > 1 {
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_16.len()
+        )))
+    } else {
+        let mut var_16 = var_16;
+        Ok(var_16.pop())
     }
 }

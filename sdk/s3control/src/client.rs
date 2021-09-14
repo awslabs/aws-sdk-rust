@@ -83,6 +83,11 @@ where
     pub fn create_job(&self) -> fluent_builders::CreateJob<C, M, R> {
         fluent_builders::CreateJob::new(self.handle.clone())
     }
+    pub fn create_multi_region_access_point(
+        &self,
+    ) -> fluent_builders::CreateMultiRegionAccessPoint<C, M, R> {
+        fluent_builders::CreateMultiRegionAccessPoint::new(self.handle.clone())
+    }
     pub fn delete_access_point(&self) -> fluent_builders::DeleteAccessPoint<C, M, R> {
         fluent_builders::DeleteAccessPoint::new(self.handle.clone())
     }
@@ -116,6 +121,11 @@ where
     pub fn delete_job_tagging(&self) -> fluent_builders::DeleteJobTagging<C, M, R> {
         fluent_builders::DeleteJobTagging::new(self.handle.clone())
     }
+    pub fn delete_multi_region_access_point(
+        &self,
+    ) -> fluent_builders::DeleteMultiRegionAccessPoint<C, M, R> {
+        fluent_builders::DeleteMultiRegionAccessPoint::new(self.handle.clone())
+    }
     pub fn delete_public_access_block(&self) -> fluent_builders::DeletePublicAccessBlock<C, M, R> {
         fluent_builders::DeletePublicAccessBlock::new(self.handle.clone())
     }
@@ -131,6 +141,11 @@ where
     }
     pub fn describe_job(&self) -> fluent_builders::DescribeJob<C, M, R> {
         fluent_builders::DescribeJob::new(self.handle.clone())
+    }
+    pub fn describe_multi_region_access_point_operation(
+        &self,
+    ) -> fluent_builders::DescribeMultiRegionAccessPointOperation<C, M, R> {
+        fluent_builders::DescribeMultiRegionAccessPointOperation::new(self.handle.clone())
     }
     pub fn get_access_point(&self) -> fluent_builders::GetAccessPoint<C, M, R> {
         fluent_builders::GetAccessPoint::new(self.handle.clone())
@@ -180,6 +195,21 @@ where
     pub fn get_job_tagging(&self) -> fluent_builders::GetJobTagging<C, M, R> {
         fluent_builders::GetJobTagging::new(self.handle.clone())
     }
+    pub fn get_multi_region_access_point(
+        &self,
+    ) -> fluent_builders::GetMultiRegionAccessPoint<C, M, R> {
+        fluent_builders::GetMultiRegionAccessPoint::new(self.handle.clone())
+    }
+    pub fn get_multi_region_access_point_policy(
+        &self,
+    ) -> fluent_builders::GetMultiRegionAccessPointPolicy<C, M, R> {
+        fluent_builders::GetMultiRegionAccessPointPolicy::new(self.handle.clone())
+    }
+    pub fn get_multi_region_access_point_policy_status(
+        &self,
+    ) -> fluent_builders::GetMultiRegionAccessPointPolicyStatus<C, M, R> {
+        fluent_builders::GetMultiRegionAccessPointPolicyStatus::new(self.handle.clone())
+    }
     pub fn get_public_access_block(&self) -> fluent_builders::GetPublicAccessBlock<C, M, R> {
         fluent_builders::GetPublicAccessBlock::new(self.handle.clone())
     }
@@ -203,6 +233,11 @@ where
     }
     pub fn list_jobs(&self) -> fluent_builders::ListJobs<C, M, R> {
         fluent_builders::ListJobs::new(self.handle.clone())
+    }
+    pub fn list_multi_region_access_points(
+        &self,
+    ) -> fluent_builders::ListMultiRegionAccessPoints<C, M, R> {
+        fluent_builders::ListMultiRegionAccessPoints::new(self.handle.clone())
     }
     pub fn list_regional_buckets(&self) -> fluent_builders::ListRegionalBuckets<C, M, R> {
         fluent_builders::ListRegionalBuckets::new(self.handle.clone())
@@ -238,6 +273,11 @@ where
     }
     pub fn put_job_tagging(&self) -> fluent_builders::PutJobTagging<C, M, R> {
         fluent_builders::PutJobTagging::new(self.handle.clone())
+    }
+    pub fn put_multi_region_access_point_policy(
+        &self,
+    ) -> fluent_builders::PutMultiRegionAccessPointPolicy<C, M, R> {
+        fluent_builders::PutMultiRegionAccessPointPolicy::new(self.handle.clone())
     }
     pub fn put_public_access_block(&self) -> fluent_builders::PutPublicAccessBlock<C, M, R> {
         fluent_builders::PutPublicAccessBlock::new(self.handle.clone())
@@ -304,7 +344,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID for the owner of the bucket for which you want to create an access point.</p>
+        /// <p>The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -411,7 +451,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID for owner of the specified Object Lambda Access Point.</p>
+        /// <p>The Amazon Web Services account ID for owner of the specified Object Lambda Access Point.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -669,7 +709,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID that creates the job.</p>
+        /// <p>The Amazon Web Services account ID that creates the job.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -776,6 +816,83 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreateMultiRegionAccessPoint<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_multi_region_access_point_input::Builder,
+    }
+    impl<C, M, R> CreateMultiRegionAccessPoint<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateMultiRegionAccessPointOutput,
+            smithy_http::result::SdkError<crate::error::CreateMultiRegionAccessPointError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateMultiRegionAccessPointInputOperationOutputAlias,
+                crate::output::CreateMultiRegionAccessPointOutput,
+                crate::error::CreateMultiRegionAccessPointError,
+                crate::input::CreateMultiRegionAccessPointInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own
+        /// the underlying buckets.</p>
+        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(inp);
+            self
+        }
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+        /// <p>An idempotency token used to identify the request and guarantee that requests are
+        /// unique.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>A container element containing details about the Multi-Region Access Point.</p>
+        pub fn details(mut self, inp: crate::model::CreateMultiRegionAccessPointInput) -> Self {
+            self.inner = self.inner.details(inp);
+            self
+        }
+        pub fn set_details(
+            mut self,
+            input: std::option::Option<crate::model::CreateMultiRegionAccessPointInput>,
+        ) -> Self {
+            self.inner = self.inner.set_details(input);
             self
         }
     }
@@ -1276,7 +1393,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID of the Outposts bucket tag set to be removed.</p>
+        /// <p>The Amazon Web Services account ID of the Outposts bucket tag set to be removed.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -1341,7 +1458,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -1357,6 +1474,82 @@ pub mod fluent_builders {
         }
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteMultiRegionAccessPoint<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_multi_region_access_point_input::Builder,
+    }
+    impl<C, M, R> DeleteMultiRegionAccessPoint<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteMultiRegionAccessPointOutput,
+            smithy_http::result::SdkError<crate::error::DeleteMultiRegionAccessPointError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteMultiRegionAccessPointInputOperationOutputAlias,
+                crate::output::DeleteMultiRegionAccessPointOutput,
+                crate::error::DeleteMultiRegionAccessPointError,
+                crate::input::DeleteMultiRegionAccessPointInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(inp);
+            self
+        }
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+        /// <p>An idempotency token used to identify the request and guarantee that requests are
+        /// unique.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>A container element containing details about the Multi-Region Access Point.</p>
+        pub fn details(mut self, inp: crate::model::DeleteMultiRegionAccessPointInput) -> Self {
+            self.inner = self.inner.details(inp);
+            self
+        }
+        pub fn set_details(
+            mut self,
+            input: std::option::Option<crate::model::DeleteMultiRegionAccessPointInput>,
+        ) -> Self {
+            self.inner = self.inner.set_details(input);
             self
         }
     }
@@ -1404,7 +1597,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID for the account whose <code>PublicAccessBlock</code> configuration you want
+        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
         /// to remove.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
@@ -1585,7 +1778,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -1601,6 +1794,76 @@ pub mod fluent_builders {
         }
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeMultiRegionAccessPointOperation<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_multi_region_access_point_operation_input::Builder,
+    }
+    impl<C, M, R> DescribeMultiRegionAccessPointOperation<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeMultiRegionAccessPointOperationOutput,
+            smithy_http::result::SdkError<
+                crate::error::DescribeMultiRegionAccessPointOperationError,
+            >,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeMultiRegionAccessPointOperationInputOperationOutputAlias,
+                crate::output::DescribeMultiRegionAccessPointOperationOutput,
+                crate::error::DescribeMultiRegionAccessPointOperationError,
+                crate::input::DescribeMultiRegionAccessPointOperationInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(inp);
+            self
+        }
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+        /// <p>The request token associated with the request you want to know about. This request token
+        /// is returned as part of the response when you make an asynchronous request. You provide
+        /// this token to query about the status of the asynchronous action.</p>
+        pub fn request_token_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_token_arn(inp);
+            self
+        }
+        pub fn set_request_token_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_request_token_arn(input);
             self
         }
     }
@@ -2097,7 +2360,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID of the Outposts bucket.</p>
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -2162,7 +2425,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID of the Outposts bucket.</p>
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -2227,7 +2490,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID of the Outposts bucket.</p>
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -2292,7 +2555,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID of the Outposts bucket.</p>
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -2357,7 +2620,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -2373,6 +2636,204 @@ pub mod fluent_builders {
         }
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct GetMultiRegionAccessPoint<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_multi_region_access_point_input::Builder,
+    }
+    impl<C, M, R> GetMultiRegionAccessPoint<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetMultiRegionAccessPointOutput,
+            smithy_http::result::SdkError<crate::error::GetMultiRegionAccessPointError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetMultiRegionAccessPointInputOperationOutputAlias,
+                crate::output::GetMultiRegionAccessPointOutput,
+                crate::error::GetMultiRegionAccessPointError,
+                crate::input::GetMultiRegionAccessPointInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(inp);
+            self
+        }
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+        /// <p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of
+        /// the Multi-Region Access Point is different from the alias. For more information about the distinction
+        /// between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
+        /// <i>Amazon S3 User Guide</i>.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct GetMultiRegionAccessPointPolicy<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_multi_region_access_point_policy_input::Builder,
+    }
+    impl<C, M, R> GetMultiRegionAccessPointPolicy<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetMultiRegionAccessPointPolicyOutput,
+            smithy_http::result::SdkError<crate::error::GetMultiRegionAccessPointPolicyError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetMultiRegionAccessPointPolicyInputOperationOutputAlias,
+                crate::output::GetMultiRegionAccessPointPolicyOutput,
+                crate::error::GetMultiRegionAccessPointPolicyError,
+                crate::input::GetMultiRegionAccessPointPolicyInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(inp);
+            self
+        }
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+        /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
+        /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
+        /// <i>Amazon S3 User Guide</i>.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct GetMultiRegionAccessPointPolicyStatus<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_multi_region_access_point_policy_status_input::Builder,
+    }
+    impl<C, M, R> GetMultiRegionAccessPointPolicyStatus<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetMultiRegionAccessPointPolicyStatusOutput,
+            smithy_http::result::SdkError<crate::error::GetMultiRegionAccessPointPolicyStatusError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetMultiRegionAccessPointPolicyStatusInputOperationOutputAlias,
+                crate::output::GetMultiRegionAccessPointPolicyStatusOutput,
+                crate::error::GetMultiRegionAccessPointPolicyStatusError,
+                crate::input::GetMultiRegionAccessPointPolicyStatusInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(inp);
+            self
+        }
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+        /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
+        /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
+        /// <i>Amazon S3 User Guide</i>.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -2420,7 +2881,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID for the account whose <code>PublicAccessBlock</code> configuration you want
+        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
         /// to retrieve.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
@@ -2601,7 +3062,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID for owner of the bucket whose access points you want to list.</p>
+        /// <p>The Amazon Web Services account ID for owner of the bucket whose access points you want to list.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -2761,7 +3222,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -2795,6 +3256,78 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of jobs that Amazon S3 will include in the <code>List Jobs</code> response. If there are more jobs than this number, the response will include a pagination token in the <code>NextToken</code> field to enable you to retrieve the next page of results.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListMultiRegionAccessPoints<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_multi_region_access_points_input::Builder,
+    }
+    impl<C, M, R> ListMultiRegionAccessPoints<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListMultiRegionAccessPointsOutput,
+            smithy_http::result::SdkError<crate::error::ListMultiRegionAccessPointsError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListMultiRegionAccessPointsInputOperationOutputAlias,
+                crate::output::ListMultiRegionAccessPointsOutput,
+                crate::error::ListMultiRegionAccessPointsError,
+                crate::input::ListMultiRegionAccessPointsInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(inp);
+            self
+        }
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+        /// <p>Not currently used. Do not use this parameter.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Not currently used. Do not use this parameter.</p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
@@ -2848,7 +3381,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID of the Outposts bucket.</p>
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -3072,7 +3605,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID for owner of the bucket associated with the specified access point.</p>
+        /// <p>The Amazon Web Services account ID for owner of the bucket associated with the specified access point.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -3218,7 +3751,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID of the Outposts bucket.</p>
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -3296,7 +3829,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID of the Outposts bucket.</p>
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -3385,7 +3918,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID of the Outposts bucket.</p>
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -3459,7 +3992,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -3490,6 +4023,82 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct PutMultiRegionAccessPointPolicy<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::put_multi_region_access_point_policy_input::Builder,
+    }
+    impl<C, M, R> PutMultiRegionAccessPointPolicy<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutMultiRegionAccessPointPolicyOutput,
+            smithy_http::result::SdkError<crate::error::PutMultiRegionAccessPointPolicyError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::PutMultiRegionAccessPointPolicyInputOperationOutputAlias,
+                crate::output::PutMultiRegionAccessPointPolicyOutput,
+                crate::error::PutMultiRegionAccessPointPolicyError,
+                crate::input::PutMultiRegionAccessPointPolicyInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(inp);
+            self
+        }
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+        /// <p>An idempotency token used to identify the request and guarantee that requests are
+        /// unique.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>A container element containing the details of the policy for the Multi-Region Access Point.</p>
+        pub fn details(mut self, inp: crate::model::PutMultiRegionAccessPointPolicyInput) -> Self {
+            self.inner = self.inner.details(inp);
+            self
+        }
+        pub fn set_details(
+            mut self,
+            input: std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>,
+        ) -> Self {
+            self.inner = self.inner.set_details(input);
             self
         }
     }
@@ -3537,7 +4146,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID for the account whose <code>PublicAccessBlock</code> configuration you want
+        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
         /// to set.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
@@ -3547,7 +4156,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_account_id(input);
             self
         }
-        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified account.</p>
+        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
         pub fn public_access_block_configuration(
             mut self,
             inp: crate::model::PublicAccessBlockConfiguration,
@@ -3784,7 +4393,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self
@@ -3856,7 +4465,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The account ID associated with the S3 Batch Operations job.</p>
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(inp);
             self

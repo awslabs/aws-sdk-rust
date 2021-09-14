@@ -7,7 +7,7 @@
 //! When the SDK returns streaming binary data, the inner Http Body is wrapped in [ByteStream](crate::byte_stream::ByteStream). ByteStream provides misuse-resistant
 //! primitives to make it easier to handle common patterns with streaming data.
 //!
-//! ## Examples:
+//! # Examples
 //!
 //! ### Writing a ByteStream into a file:
 //! ```rust
@@ -241,7 +241,7 @@ impl ByteStream {
     ///
     /// Furthermore, a partial write MAY seek in the file and resume from the previous location.
     ///
-    /// # Example
+    /// # Examples
     /// ```rust
     /// use smithy_http::byte_stream::ByteStream;
     /// use std::path::Path;

@@ -226,6 +226,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_arn(input);
             self
         }
+        /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
+        pub fn cross_account(mut self, inp: bool) -> Self {
+            self.inner = self.inner.cross_account(inp);
+            self
+        }
+        pub fn set_cross_account(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_cross_account(input);
+            self
+        }
         /// Adds a key-value pair to `Tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -2300,6 +2309,15 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_discoverer_id(input);
+            self
+        }
+        /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
+        pub fn cross_account(mut self, inp: bool) -> Self {
+            self.inner = self.inner.cross_account(inp);
+            self
+        }
+        pub fn set_cross_account(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_cross_account(input);
             self
         }
     }

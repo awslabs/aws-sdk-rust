@@ -15472,7 +15472,7 @@ impl AccessDeniedException {
 
 /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
 /// subscription where the edition doesn't include support for that operation. Amazon
-/// QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
+/// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
 /// capability is available in every edition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -16102,9 +16102,9 @@ impl QuickSightUserNotFoundException {
 }
 
 /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight
-/// without the required pricing plan on your Amazon Web Services account;. Before you can use embedding
-/// for anonymous users, a QuickSight administrator needs to add capacity pricing to QuickSight. You
-/// can do this on the <b>Manage QuickSight</b> page. </p>
+/// without the required pricing plan on your Amazon Web Services account. Before you can use embedding
+/// for anonymous users, a Amazon QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You
+/// can do this on the <b>Manage Amazon QuickSight</b> page. </p>
 /// <p>After capacity pricing is added, you can use the
 /// <a>GetDashboardEmbedUrl</a> API operation with the
 /// <code>--identity-type ANONYMOUS</code> option.</p>

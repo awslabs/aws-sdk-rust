@@ -28,7 +28,7 @@ pub struct Builder {
 impl Builder {
     /// Set the region for the builder
     ///
-    /// # Example
+    /// # Examples
     /// ```rust
     /// use aws_types::config::Config;
     /// use aws_types::region::Region;
@@ -41,7 +41,7 @@ impl Builder {
 
     /// Set the region for the builder
     ///
-    /// # Example
+    /// # Examples
     /// ```rust
     /// fn region_override() -> Option<Region> {
     ///     // ...
@@ -62,7 +62,7 @@ impl Builder {
 
     /// Set the credentials provider for the builder
     ///
-    /// # Example
+    /// # Examples
     /// ```rust
     /// use aws_types::credentials::{ProvideCredentials, SharedCredentialsProvider};
     /// use aws_types::config::Config;
@@ -83,7 +83,7 @@ impl Builder {
 
     /// Set the credentials provider for the builder
     ///
-    /// # Example
+    /// # Examples
     /// ```rust
     /// use aws_types::credentials::{ProvideCredentials, SharedCredentialsProvider};
     /// use aws_types::config::Config;

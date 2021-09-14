@@ -733,9 +733,9 @@ pub struct GetSamplingTargetsOutput {
         std::option::Option<std::vec::Vec<crate::model::SamplingTargetDocument>>,
     /// <p>The last time a user changed the sampling rule configuration. If
     /// the sampling rule configuration changed since the service last retrieved it, the service
-    /// should call <a>GetSamplingRules</a> to get the latest version.</p>
+    /// should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
     pub last_rule_modification: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about <a>SamplingStatisticsDocument</a> that X-Ray could not
+    /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not
     /// process.</p>
     pub unprocessed_statistics:
         std::option::Option<std::vec::Vec<crate::model::UnprocessedStatistics>>,
@@ -780,7 +780,7 @@ pub mod get_sampling_targets_output {
         }
         /// <p>The last time a user changed the sampling rule configuration. If
         /// the sampling rule configuration changed since the service last retrieved it, the service
-        /// should call <a>GetSamplingRules</a> to get the latest version.</p>
+        /// should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
         pub fn last_rule_modification(mut self, input: smithy_types::Instant) -> Self {
             self.last_rule_modification = Some(input);
             self
@@ -1046,7 +1046,7 @@ pub struct GetInsightImpactGraphOutput {
     pub service_graph_start_time: std::option::Option<smithy_types::Instant>,
     /// <p>The time, in Unix seconds, at which the service graph ended.</p>
     pub service_graph_end_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The AWS instrumented services related to the insight.</p>
+    /// <p>The Amazon Web Services instrumented services related to the insight.</p>
     pub services: std::option::Option<std::vec::Vec<crate::model::InsightImpactGraphService>>,
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,

@@ -3262,7 +3262,7 @@ impl IncorrectFileSystemLifeCycleState {
 }
 
 /// <p>Returned if the specified <code>FileSystemId</code> value doesn't exist in the
-/// requester's AWS account.</p>
+/// requester's Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileSystemNotFound {
@@ -3408,7 +3408,7 @@ impl BadRequest {
 }
 
 /// <p>Returned if the specified <code>AccessPointId</code> value doesn't exist in the
-/// requester's AWS account.</p>
+/// requester's Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPointNotFound {
@@ -3553,7 +3553,7 @@ impl InvalidPolicyException {
     }
 }
 
-/// <p>Returned if the AWS Backup service is not available in the Region in which the request was made.</p>
+/// <p>Returned if the Backup service is not available in the Amazon Web Services Region in which the request was made.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -3772,7 +3772,7 @@ impl SecurityGroupLimitExceeded {
 }
 
 /// <p>Returned if there is no mount target with the specified ID found in the
-/// caller's account.</p>
+/// caller's Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MountTargetNotFound {
@@ -4353,7 +4353,7 @@ impl NoFreeAddressesInSubnet {
 }
 
 /// <p>The calling account has reached the limit for elastic network interfaces for the
-/// specific AWS Region. The client should try to delete some elastic network interfaces or
+/// specific Amazon Web Services Region. The client should try to delete some elastic network interfaces or
 /// get the account limit raised. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC Limits</a>
 /// in the <i>Amazon VPC User Guide </i> (see the Network interfaces per VPC
 /// entry in the table). </p>
@@ -4647,7 +4647,7 @@ impl AvailabilityZonesMismatch {
     }
 }
 
-/// <p>Returned if the AWS account has already created the maximum number of file systems
+/// <p>Returned if the Amazon Web Services account has already created the maximum number of file systems
 /// allowed per account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4808,7 +4808,7 @@ impl FileSystemAlreadyExists {
     }
 }
 
-/// <p>Returned if the AWS account has already created the maximum number of access points
+/// <p>Returned if the Amazon Web Services account has already created the maximum number of access points
 /// allowed per file system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

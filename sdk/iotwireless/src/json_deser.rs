@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -97,7 +97,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -136,7 +136,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -189,7 +189,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -228,7 +228,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -267,7 +267,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_associate_aws_account_with_partner_account(
+pub fn deser_operation_crate_operation_associate_aws_account_with_partner_account(
     input: &[u8],
     mut builder: crate::output::associate_aws_account_with_partner_account_output::Builder,
 ) -> Result<
@@ -293,7 +293,9 @@ pub fn deser_operation_associate_aws_account_with_partner_account(
                     }
                     "Sidewalk" => {
                         builder = builder.set_sidewalk(
-                            crate::json_deser::deser_structure_sidewalk_account_info(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_sidewalk_account_info(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -314,7 +316,7 @@ pub fn deser_operation_associate_aws_account_with_partner_account(
     Ok(builder)
 }
 
-pub fn deser_operation_associate_wireless_gateway_with_certificate(
+pub fn deser_operation_crate_operation_associate_wireless_gateway_with_certificate(
     input: &[u8],
     mut builder: crate::output::associate_wireless_gateway_with_certificate_output::Builder,
 ) -> Result<
@@ -356,7 +358,7 @@ pub fn deser_operation_associate_wireless_gateway_with_certificate(
     Ok(builder)
 }
 
-pub fn deser_operation_create_destination(
+pub fn deser_operation_crate_operation_create_destination(
     input: &[u8],
     mut builder: crate::output::create_destination_output::Builder,
 ) -> Result<crate::output::create_destination_output::Builder, smithy_json::deserialize::Error> {
@@ -402,7 +404,7 @@ pub fn deser_operation_create_destination(
     Ok(builder)
 }
 
-pub fn deser_operation_create_device_profile(
+pub fn deser_operation_crate_operation_create_device_profile(
     input: &[u8],
     mut builder: crate::output::create_device_profile_output::Builder,
 ) -> Result<crate::output::create_device_profile_output::Builder, smithy_json::deserialize::Error> {
@@ -448,7 +450,7 @@ pub fn deser_operation_create_device_profile(
     Ok(builder)
 }
 
-pub fn deser_operation_create_service_profile(
+pub fn deser_operation_crate_operation_create_service_profile(
     input: &[u8],
     mut builder: crate::output::create_service_profile_output::Builder,
 ) -> Result<crate::output::create_service_profile_output::Builder, smithy_json::deserialize::Error>
@@ -495,7 +497,7 @@ pub fn deser_operation_create_service_profile(
     Ok(builder)
 }
 
-pub fn deser_operation_create_wireless_device(
+pub fn deser_operation_crate_operation_create_wireless_device(
     input: &[u8],
     mut builder: crate::output::create_wireless_device_output::Builder,
 ) -> Result<crate::output::create_wireless_device_output::Builder, smithy_json::deserialize::Error>
@@ -542,7 +544,7 @@ pub fn deser_operation_create_wireless_device(
     Ok(builder)
 }
 
-pub fn deser_operation_create_wireless_gateway(
+pub fn deser_operation_crate_operation_create_wireless_gateway(
     input: &[u8],
     mut builder: crate::output::create_wireless_gateway_output::Builder,
 ) -> Result<crate::output::create_wireless_gateway_output::Builder, smithy_json::deserialize::Error>
@@ -589,7 +591,7 @@ pub fn deser_operation_create_wireless_gateway(
     Ok(builder)
 }
 
-pub fn deser_operation_create_wireless_gateway_task(
+pub fn deser_operation_crate_operation_create_wireless_gateway_task(
     input: &[u8],
     mut builder: crate::output::create_wireless_gateway_task_output::Builder,
 ) -> Result<
@@ -642,7 +644,7 @@ pub fn deser_operation_create_wireless_gateway_task(
     Ok(builder)
 }
 
-pub fn deser_operation_create_wireless_gateway_task_definition(
+pub fn deser_operation_crate_operation_create_wireless_gateway_task_definition(
     input: &[u8],
     mut builder: crate::output::create_wireless_gateway_task_definition_output::Builder,
 ) -> Result<
@@ -691,7 +693,7 @@ pub fn deser_operation_create_wireless_gateway_task_definition(
     Ok(builder)
 }
 
-pub fn deser_operation_get_destination(
+pub fn deser_operation_crate_operation_get_destination(
     input: &[u8],
     mut builder: crate::output::get_destination_output::Builder,
 ) -> Result<crate::output::get_destination_output::Builder, smithy_json::deserialize::Error> {
@@ -768,7 +770,7 @@ pub fn deser_operation_get_destination(
     Ok(builder)
 }
 
-pub fn deser_operation_get_device_profile(
+pub fn deser_operation_crate_operation_get_device_profile(
     input: &[u8],
     mut builder: crate::output::get_device_profile_output::Builder,
 ) -> Result<crate::output::get_device_profile_output::Builder, smithy_json::deserialize::Error> {
@@ -798,7 +800,7 @@ pub fn deser_operation_get_device_profile(
                     }
                     "LoRaWAN" => {
                         builder = builder.set_lo_ra_wan(
-                            crate::json_deser::deser_structure_lo_ra_wan_device_profile(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_lo_ra_wan_device_profile(tokens)?
                         );
                     }
                     "Name" => {
@@ -826,7 +828,7 @@ pub fn deser_operation_get_device_profile(
     Ok(builder)
 }
 
-pub fn deser_operation_get_log_levels_by_resource_types(
+pub fn deser_operation_crate_operation_get_log_levels_by_resource_types(
     input: &[u8],
     mut builder: crate::output::get_log_levels_by_resource_types_output::Builder,
 ) -> Result<
@@ -855,12 +857,12 @@ pub fn deser_operation_get_log_levels_by_resource_types(
                     }
                     "WirelessDeviceLogOptions" => {
                         builder = builder.set_wireless_device_log_options(
-                            crate::json_deser::deser_list_wireless_device_log_option_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_iotwireless_wireless_device_log_option_list(tokens)?
                         );
                     }
                     "WirelessGatewayLogOptions" => {
                         builder = builder.set_wireless_gateway_log_options(
-                            crate::json_deser::deser_list_wireless_gateway_log_option_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_iotwireless_wireless_gateway_log_option_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -881,7 +883,7 @@ pub fn deser_operation_get_log_levels_by_resource_types(
     Ok(builder)
 }
 
-pub fn deser_operation_get_partner_account(
+pub fn deser_operation_crate_operation_get_partner_account(
     input: &[u8],
     mut builder: crate::output::get_partner_account_output::Builder,
 ) -> Result<crate::output::get_partner_account_output::Builder, smithy_json::deserialize::Error> {
@@ -902,7 +904,7 @@ pub fn deser_operation_get_partner_account(
                     }
                     "Sidewalk" => {
                         builder = builder.set_sidewalk(
-                            crate::json_deser::deser_structure_sidewalk_account_info_with_fingerprint(tokens)?
+                            crate::json_deser::deser_structure_crate_model_sidewalk_account_info_with_fingerprint(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -923,7 +925,7 @@ pub fn deser_operation_get_partner_account(
     Ok(builder)
 }
 
-pub fn deser_operation_get_resource_log_level(
+pub fn deser_operation_crate_operation_get_resource_log_level(
     input: &[u8],
     mut builder: crate::output::get_resource_log_level_output::Builder,
 ) -> Result<crate::output::get_resource_log_level_output::Builder, smithy_json::deserialize::Error>
@@ -966,7 +968,7 @@ pub fn deser_operation_get_resource_log_level(
     Ok(builder)
 }
 
-pub fn deser_operation_get_service_endpoint(
+pub fn deser_operation_crate_operation_get_service_endpoint(
     input: &[u8],
     mut builder: crate::output::get_service_endpoint_output::Builder,
 ) -> Result<crate::output::get_service_endpoint_output::Builder, smithy_json::deserialize::Error> {
@@ -1023,7 +1025,7 @@ pub fn deser_operation_get_service_endpoint(
     Ok(builder)
 }
 
-pub fn deser_operation_get_service_profile(
+pub fn deser_operation_crate_operation_get_service_profile(
     input: &[u8],
     mut builder: crate::output::get_service_profile_output::Builder,
 ) -> Result<crate::output::get_service_profile_output::Builder, smithy_json::deserialize::Error> {
@@ -1053,9 +1055,7 @@ pub fn deser_operation_get_service_profile(
                     }
                     "LoRaWAN" => {
                         builder = builder.set_lo_ra_wan(
-                            crate::json_deser::deser_structure_lo_ra_wan_get_service_profile_info(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_lo_ra_wan_get_service_profile_info(tokens)?
                         );
                     }
                     "Name" => {
@@ -1083,7 +1083,7 @@ pub fn deser_operation_get_service_profile(
     Ok(builder)
 }
 
-pub fn deser_operation_get_wireless_device(
+pub fn deser_operation_crate_operation_get_wireless_device(
     input: &[u8],
     mut builder: crate::output::get_wireless_device_output::Builder,
 ) -> Result<crate::output::get_wireless_device_output::Builder, smithy_json::deserialize::Error> {
@@ -1127,7 +1127,9 @@ pub fn deser_operation_get_wireless_device(
                     }
                     "LoRaWAN" => {
                         builder = builder.set_lo_ra_wan(
-                            crate::json_deser::deser_structure_lo_ra_wan_device(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_lo_ra_wan_device(
+                                tokens,
+                            )?,
                         );
                     }
                     "Name" => {
@@ -1139,7 +1141,7 @@ pub fn deser_operation_get_wireless_device(
                     }
                     "Sidewalk" => {
                         builder = builder.set_sidewalk(
-                            crate::json_deser::deser_structure_sidewalk_device(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_sidewalk_device(tokens)?,
                         );
                     }
                     "ThingArn" => {
@@ -1184,7 +1186,7 @@ pub fn deser_operation_get_wireless_device(
     Ok(builder)
 }
 
-pub fn deser_operation_get_wireless_device_statistics(
+pub fn deser_operation_crate_operation_get_wireless_device_statistics(
     input: &[u8],
     mut builder: crate::output::get_wireless_device_statistics_output::Builder,
 ) -> Result<
@@ -1210,12 +1212,12 @@ pub fn deser_operation_get_wireless_device_statistics(
                     }
                     "LoRaWAN" => {
                         builder = builder.set_lo_ra_wan(
-                            crate::json_deser::deser_structure_lo_ra_wan_device_metadata(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_lo_ra_wan_device_metadata(tokens)?
                         );
                     }
                     "Sidewalk" => {
                         builder = builder.set_sidewalk(
-                            crate::json_deser::deser_structure_sidewalk_device_metadata(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_sidewalk_device_metadata(tokens)?
                         );
                     }
                     "WirelessDeviceId" => {
@@ -1243,7 +1245,7 @@ pub fn deser_operation_get_wireless_device_statistics(
     Ok(builder)
 }
 
-pub fn deser_operation_get_wireless_gateway(
+pub fn deser_operation_crate_operation_get_wireless_gateway(
     input: &[u8],
     mut builder: crate::output::get_wireless_gateway_output::Builder,
 ) -> Result<crate::output::get_wireless_gateway_output::Builder, smithy_json::deserialize::Error> {
@@ -1280,7 +1282,9 @@ pub fn deser_operation_get_wireless_gateway(
                     }
                     "LoRaWAN" => {
                         builder = builder.set_lo_ra_wan(
-                            crate::json_deser::deser_structure_lo_ra_wan_gateway(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_lo_ra_wan_gateway(
+                                tokens,
+                            )?,
                         );
                     }
                     "Name" => {
@@ -1322,7 +1326,7 @@ pub fn deser_operation_get_wireless_gateway(
     Ok(builder)
 }
 
-pub fn deser_operation_get_wireless_gateway_certificate(
+pub fn deser_operation_crate_operation_get_wireless_gateway_certificate(
     input: &[u8],
     mut builder: crate::output::get_wireless_gateway_certificate_output::Builder,
 ) -> Result<
@@ -1371,7 +1375,7 @@ pub fn deser_operation_get_wireless_gateway_certificate(
     Ok(builder)
 }
 
-pub fn deser_operation_get_wireless_gateway_firmware_information(
+pub fn deser_operation_crate_operation_get_wireless_gateway_firmware_information(
     input: &[u8],
     mut builder: crate::output::get_wireless_gateway_firmware_information_output::Builder,
 ) -> Result<
@@ -1390,9 +1394,7 @@ pub fn deser_operation_get_wireless_gateway_firmware_information(
                 match key.to_unescaped()?.as_ref() {
                     "LoRaWAN" => {
                         builder = builder.set_lo_ra_wan(
-                            crate::json_deser::deser_structure_lo_ra_wan_gateway_current_version(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_lo_ra_wan_gateway_current_version(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1413,7 +1415,7 @@ pub fn deser_operation_get_wireless_gateway_firmware_information(
     Ok(builder)
 }
 
-pub fn deser_operation_get_wireless_gateway_statistics(
+pub fn deser_operation_crate_operation_get_wireless_gateway_statistics(
     input: &[u8],
     mut builder: crate::output::get_wireless_gateway_statistics_output::Builder,
 ) -> Result<
@@ -1472,7 +1474,7 @@ pub fn deser_operation_get_wireless_gateway_statistics(
     Ok(builder)
 }
 
-pub fn deser_operation_get_wireless_gateway_task(
+pub fn deser_operation_crate_operation_get_wireless_gateway_task(
     input: &[u8],
     mut builder: crate::output::get_wireless_gateway_task_output::Builder,
 ) -> Result<crate::output::get_wireless_gateway_task_output::Builder, smithy_json::deserialize::Error>
@@ -1544,7 +1546,7 @@ pub fn deser_operation_get_wireless_gateway_task(
     Ok(builder)
 }
 
-pub fn deser_operation_get_wireless_gateway_task_definition(
+pub fn deser_operation_crate_operation_get_wireless_gateway_task_definition(
     input: &[u8],
     mut builder: crate::output::get_wireless_gateway_task_definition_output::Builder,
 ) -> Result<
@@ -1582,9 +1584,7 @@ pub fn deser_operation_get_wireless_gateway_task_definition(
                     }
                     "Update" => {
                         builder = builder.set_update(
-                            crate::json_deser::deser_structure_update_wireless_gateway_task_create(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_update_wireless_gateway_task_create(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1605,7 +1605,7 @@ pub fn deser_operation_get_wireless_gateway_task_definition(
     Ok(builder)
 }
 
-pub fn deser_operation_list_destinations(
+pub fn deser_operation_crate_operation_list_destinations(
     input: &[u8],
     mut builder: crate::output::list_destinations_output::Builder,
 ) -> Result<crate::output::list_destinations_output::Builder, smithy_json::deserialize::Error> {
@@ -1621,7 +1621,7 @@ pub fn deser_operation_list_destinations(
                 match key.to_unescaped()?.as_ref() {
                     "DestinationList" => {
                         builder = builder.set_destination_list(
-                            crate::json_deser::deser_list_destination_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_iotwireless_destination_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1649,7 +1649,7 @@ pub fn deser_operation_list_destinations(
     Ok(builder)
 }
 
-pub fn deser_operation_list_device_profiles(
+pub fn deser_operation_crate_operation_list_device_profiles(
     input: &[u8],
     mut builder: crate::output::list_device_profiles_output::Builder,
 ) -> Result<crate::output::list_device_profiles_output::Builder, smithy_json::deserialize::Error> {
@@ -1665,7 +1665,7 @@ pub fn deser_operation_list_device_profiles(
                 match key.to_unescaped()?.as_ref() {
                     "DeviceProfileList" => {
                         builder = builder.set_device_profile_list(
-                            crate::json_deser::deser_list_device_profile_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_iotwireless_device_profile_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1693,7 +1693,7 @@ pub fn deser_operation_list_device_profiles(
     Ok(builder)
 }
 
-pub fn deser_operation_list_partner_accounts(
+pub fn deser_operation_crate_operation_list_partner_accounts(
     input: &[u8],
     mut builder: crate::output::list_partner_accounts_output::Builder,
 ) -> Result<crate::output::list_partner_accounts_output::Builder, smithy_json::deserialize::Error> {
@@ -1716,7 +1716,7 @@ pub fn deser_operation_list_partner_accounts(
                     }
                     "Sidewalk" => {
                         builder = builder.set_sidewalk(
-                            crate::json_deser::deser_list_sidewalk_account_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_iotwireless_sidewalk_account_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1737,7 +1737,7 @@ pub fn deser_operation_list_partner_accounts(
     Ok(builder)
 }
 
-pub fn deser_operation_list_service_profiles(
+pub fn deser_operation_crate_operation_list_service_profiles(
     input: &[u8],
     mut builder: crate::output::list_service_profiles_output::Builder,
 ) -> Result<crate::output::list_service_profiles_output::Builder, smithy_json::deserialize::Error> {
@@ -1760,7 +1760,7 @@ pub fn deser_operation_list_service_profiles(
                     }
                     "ServiceProfileList" => {
                         builder = builder.set_service_profile_list(
-                            crate::json_deser::deser_list_service_profile_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_iotwireless_service_profile_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1781,7 +1781,7 @@ pub fn deser_operation_list_service_profiles(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -1797,7 +1797,11 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_list_com_amazonaws_iotwireless_tag_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1817,7 +1821,7 @@ pub fn deser_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_list_wireless_devices(
+pub fn deser_operation_crate_operation_list_wireless_devices(
     input: &[u8],
     mut builder: crate::output::list_wireless_devices_output::Builder,
 ) -> Result<crate::output::list_wireless_devices_output::Builder, smithy_json::deserialize::Error> {
@@ -1840,7 +1844,7 @@ pub fn deser_operation_list_wireless_devices(
                     }
                     "WirelessDeviceList" => {
                         builder = builder.set_wireless_device_list(
-                            crate::json_deser::deser_list_wireless_device_statistics_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_iotwireless_wireless_device_statistics_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1861,7 +1865,7 @@ pub fn deser_operation_list_wireless_devices(
     Ok(builder)
 }
 
-pub fn deser_operation_list_wireless_gateways(
+pub fn deser_operation_crate_operation_list_wireless_gateways(
     input: &[u8],
     mut builder: crate::output::list_wireless_gateways_output::Builder,
 ) -> Result<crate::output::list_wireless_gateways_output::Builder, smithy_json::deserialize::Error>
@@ -1885,7 +1889,7 @@ pub fn deser_operation_list_wireless_gateways(
                     }
                     "WirelessGatewayList" => {
                         builder = builder.set_wireless_gateway_list(
-                            crate::json_deser::deser_list_wireless_gateway_statistics_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_iotwireless_wireless_gateway_statistics_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1906,7 +1910,7 @@ pub fn deser_operation_list_wireless_gateways(
     Ok(builder)
 }
 
-pub fn deser_operation_list_wireless_gateway_task_definitions(
+pub fn deser_operation_crate_operation_list_wireless_gateway_task_definitions(
     input: &[u8],
     mut builder: crate::output::list_wireless_gateway_task_definitions_output::Builder,
 ) -> Result<
@@ -1932,9 +1936,7 @@ pub fn deser_operation_list_wireless_gateway_task_definitions(
                     }
                     "TaskDefinitions" => {
                         builder = builder.set_task_definitions(
-                            crate::json_deser::deser_list_wireless_gateway_task_definition_list(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_iotwireless_wireless_gateway_task_definition_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1955,7 +1957,7 @@ pub fn deser_operation_list_wireless_gateway_task_definitions(
     Ok(builder)
 }
 
-pub fn deser_operation_send_data_to_wireless_device(
+pub fn deser_operation_crate_operation_send_data_to_wireless_device(
     input: &[u8],
     mut builder: crate::output::send_data_to_wireless_device_output::Builder,
 ) -> Result<
@@ -1997,7 +1999,7 @@ pub fn deser_operation_send_data_to_wireless_device(
     Ok(builder)
 }
 
-pub fn deser_structure_too_many_tags_exceptionjson_err(
+pub fn deser_structure_crate_error_too_many_tags_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::too_many_tags_exception::Builder,
 ) -> Result<crate::error::too_many_tags_exception::Builder, smithy_json::deserialize::Error> {
@@ -2043,7 +2045,7 @@ pub fn deser_structure_too_many_tags_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_test_wireless_device(
+pub fn deser_operation_crate_operation_test_wireless_device(
     input: &[u8],
     mut builder: crate::output::test_wireless_device_output::Builder,
 ) -> Result<crate::output::test_wireless_device_output::Builder, smithy_json::deserialize::Error> {
@@ -2090,7 +2092,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_sidewalk_account_info<'a, I>(
+pub fn deser_structure_crate_model_sidewalk_account_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SidewalkAccountInfo>, smithy_json::deserialize::Error>
 where
@@ -2144,7 +2146,7 @@ where
     }
 }
 
-pub fn deser_structure_lo_ra_wan_device_profile<'a, I>(
+pub fn deser_structure_crate_model_lo_ra_wan_device_profile<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LoRaWanDeviceProfile>, smithy_json::deserialize::Error>
 where
@@ -2268,9 +2270,7 @@ where
                             }
                             "FactoryPresetFreqsList" => {
                                 builder = builder.set_factory_preset_freqs_list(
-                                    crate::json_deser::deser_list_factory_preset_freqs_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_iotwireless_factory_preset_freqs_list(tokens)?
                                 );
                             }
                             "MaxEirp" => {
@@ -2331,7 +2331,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_wireless_device_log_option_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_wireless_device_log_option_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::WirelessDeviceLogOption>>,
@@ -2354,7 +2354,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_wireless_device_log_option(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_wireless_device_log_option(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2370,7 +2371,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_wireless_gateway_log_option_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_wireless_gateway_log_option_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::WirelessGatewayLogOption>>,
@@ -2393,7 +2394,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_wireless_gateway_log_option(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_wireless_gateway_log_option(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2408,7 +2410,7 @@ where
     }
 }
 
-pub fn deser_structure_sidewalk_account_info_with_fingerprint<'a, I>(
+pub fn deser_structure_crate_model_sidewalk_account_info_with_fingerprint<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SidewalkAccountInfoWithFingerprint>, smithy_json::deserialize::Error>
 where
@@ -2471,7 +2473,7 @@ where
     }
 }
 
-pub fn deser_structure_lo_ra_wan_get_service_profile_info<'a, I>(
+pub fn deser_structure_crate_model_lo_ra_wan_get_service_profile_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LoRaWanGetServiceProfileInfo>, smithy_json::deserialize::Error>
 where
@@ -2655,7 +2657,7 @@ where
     }
 }
 
-pub fn deser_structure_lo_ra_wan_device<'a, I>(
+pub fn deser_structure_crate_model_lo_ra_wan_device<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LoRaWanDevice>, smithy_json::deserialize::Error>
 where
@@ -2702,22 +2704,28 @@ where
                             }
                             "OtaaV1_1" => {
                                 builder = builder.set_otaa_v1_1(
-                                    crate::json_deser::deser_structure_otaa_v11(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_otaa_v11(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "OtaaV1_0_x" => {
                                 builder = builder.set_otaa_v1_0_x(
-                                    crate::json_deser::deser_structure_otaa_v10_x(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_otaa_v10_x(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "AbpV1_1" => {
                                 builder = builder.set_abp_v1_1(
-                                    crate::json_deser::deser_structure_abp_v11(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_abp_v11(tokens)?,
                                 );
                             }
                             "AbpV1_0_x" => {
                                 builder = builder.set_abp_v1_0_x(
-                                    crate::json_deser::deser_structure_abp_v10_x(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_abp_v10_x(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2738,7 +2746,7 @@ where
     }
 }
 
-pub fn deser_structure_sidewalk_device<'a, I>(
+pub fn deser_structure_crate_model_sidewalk_device<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SidewalkDevice>, smithy_json::deserialize::Error>
 where
@@ -2785,7 +2793,7 @@ where
                             }
                             "DeviceCertificates" => {
                                 builder = builder.set_device_certificates(
-                                    crate::json_deser::deser_list_device_certificate_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_iotwireless_device_certificate_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2806,7 +2814,7 @@ where
     }
 }
 
-pub fn deser_structure_lo_ra_wan_device_metadata<'a, I>(
+pub fn deser_structure_crate_model_lo_ra_wan_device_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LoRaWanDeviceMetadata>, smithy_json::deserialize::Error>
 where
@@ -2868,9 +2876,7 @@ where
                             }
                             "Gateways" => {
                                 builder = builder.set_gateways(
-                                    crate::json_deser::deser_list_lo_ra_wan_gateway_metadata_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_iotwireless_lo_ra_wan_gateway_metadata_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2891,7 +2897,7 @@ where
     }
 }
 
-pub fn deser_structure_sidewalk_device_metadata<'a, I>(
+pub fn deser_structure_crate_model_sidewalk_device_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SidewalkDeviceMetadata>, smithy_json::deserialize::Error>
 where
@@ -2971,7 +2977,7 @@ where
     }
 }
 
-pub fn deser_structure_lo_ra_wan_gateway<'a, I>(
+pub fn deser_structure_crate_model_lo_ra_wan_gateway<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LoRaWanGateway>, smithy_json::deserialize::Error>
 where
@@ -3009,17 +3015,17 @@ where
                             }
                             "JoinEuiFilters" => {
                                 builder = builder.set_join_eui_filters(
-                                    crate::json_deser::deser_list_join_eui_filters(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_iotwireless_join_eui_filters(tokens)?
                                 );
                             }
                             "NetIdFilters" => {
                                 builder = builder.set_net_id_filters(
-                                    crate::json_deser::deser_list_net_id_filters(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_iotwireless_net_id_filters(tokens)?
                                 );
                             }
                             "SubBands" => {
                                 builder = builder.set_sub_bands(
-                                    crate::json_deser::deser_list_sub_bands(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_iotwireless_sub_bands(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3040,7 +3046,7 @@ where
     }
 }
 
-pub fn deser_structure_lo_ra_wan_gateway_current_version<'a, I>(
+pub fn deser_structure_crate_model_lo_ra_wan_gateway_current_version<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LoRaWanGatewayCurrentVersion>, smithy_json::deserialize::Error>
 where
@@ -3060,9 +3066,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "CurrentVersion" => {
                                 builder = builder.set_current_version(
-                                    crate::json_deser::deser_structure_lo_ra_wan_gateway_version(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_lo_ra_wan_gateway_version(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3083,7 +3087,7 @@ where
     }
 }
 
-pub fn deser_structure_update_wireless_gateway_task_create<'a, I>(
+pub fn deser_structure_crate_model_update_wireless_gateway_task_create<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UpdateWirelessGatewayTaskCreate>, smithy_json::deserialize::Error>
 where
@@ -3121,7 +3125,7 @@ where
                             }
                             "LoRaWAN" => {
                                 builder = builder.set_lo_ra_wan(
-                                    crate::json_deser::deser_structure_lo_ra_wan_update_gateway_task_create(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_lo_ra_wan_update_gateway_task_create(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3143,7 +3147,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_destination_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_destination_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Destinations>>, smithy_json::deserialize::Error>
 where
@@ -3162,7 +3166,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_destinations(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_destinations(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3178,7 +3183,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_device_profile_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_device_profile_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DeviceProfile>>, smithy_json::deserialize::Error>
 where
@@ -3197,7 +3202,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_device_profile(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_device_profile(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3213,7 +3219,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_sidewalk_account_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_sidewalk_account_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SidewalkAccountInfoWithFingerprint>>,
@@ -3236,7 +3242,7 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_sidewalk_account_info_with_fingerprint(tokens)?
+                            crate::json_deser::deser_structure_crate_model_sidewalk_account_info_with_fingerprint(tokens)?
                         ;
                         if let Some(value) = value {
                             items.push(value);
@@ -3253,7 +3259,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_service_profile_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_service_profile_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ServiceProfile>>, smithy_json::deserialize::Error>
 where
@@ -3272,7 +3278,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_service_profile(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_service_profile(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3288,7 +3295,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -3307,7 +3314,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3323,7 +3330,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_wireless_device_statistics_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_wireless_device_statistics_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::WirelessDeviceStatistics>>,
@@ -3346,7 +3353,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_wireless_device_statistics(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_wireless_device_statistics(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3362,7 +3370,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_wireless_gateway_statistics_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_wireless_gateway_statistics_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::WirelessGatewayStatistics>>,
@@ -3385,7 +3393,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_wireless_gateway_statistics(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_wireless_gateway_statistics(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3401,7 +3410,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_wireless_gateway_task_definition_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_wireless_gateway_task_definition_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::UpdateWirelessGatewayTaskEntry>>,
@@ -3424,9 +3433,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_update_wireless_gateway_task_entry(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_update_wireless_gateway_task_entry(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3442,7 +3450,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_factory_preset_freqs_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_factory_preset_freqs_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<i32>>, smithy_json::deserialize::Error>
 where
@@ -3478,7 +3486,7 @@ where
     }
 }
 
-pub fn deser_structure_wireless_device_log_option<'a, I>(
+pub fn deser_structure_crate_model_wireless_device_log_option<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::WirelessDeviceLogOption>, smithy_json::deserialize::Error>
 where
@@ -3523,7 +3531,7 @@ where
                             }
                             "Events" => {
                                 builder = builder.set_events(
-                                    crate::json_deser::deser_list_wireless_device_event_log_option_list(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_iotwireless_wireless_device_event_log_option_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3544,7 +3552,7 @@ where
     }
 }
 
-pub fn deser_structure_wireless_gateway_log_option<'a, I>(
+pub fn deser_structure_crate_model_wireless_gateway_log_option<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::WirelessGatewayLogOption>, smithy_json::deserialize::Error>
 where
@@ -3589,7 +3597,7 @@ where
                             }
                             "Events" => {
                                 builder = builder.set_events(
-                                    crate::json_deser::deser_list_wireless_gateway_event_log_option_list(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_iotwireless_wireless_gateway_event_log_option_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3610,7 +3618,7 @@ where
     }
 }
 
-pub fn deser_structure_otaa_v11<'a, I>(
+pub fn deser_structure_crate_model_otaa_v11<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::OtaaV11>, smithy_json::deserialize::Error>
 where
@@ -3673,7 +3681,7 @@ where
     }
 }
 
-pub fn deser_structure_otaa_v10_x<'a, I>(
+pub fn deser_structure_crate_model_otaa_v10_x<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::OtaaV10X>, smithy_json::deserialize::Error>
 where
@@ -3727,7 +3735,7 @@ where
     }
 }
 
-pub fn deser_structure_abp_v11<'a, I>(
+pub fn deser_structure_crate_model_abp_v11<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AbpV11>, smithy_json::deserialize::Error>
 where
@@ -3756,9 +3764,7 @@ where
                             }
                             "SessionKeys" => {
                                 builder = builder.set_session_keys(
-                                    crate::json_deser::deser_structure_session_keys_abp_v11(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_session_keys_abp_v11(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3779,7 +3785,7 @@ where
     }
 }
 
-pub fn deser_structure_abp_v10_x<'a, I>(
+pub fn deser_structure_crate_model_abp_v10_x<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AbpV10X>, smithy_json::deserialize::Error>
 where
@@ -3808,9 +3814,7 @@ where
                             }
                             "SessionKeys" => {
                                 builder = builder.set_session_keys(
-                                    crate::json_deser::deser_structure_session_keys_abp_v10_x(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_session_keys_abp_v10_x(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3832,7 +3836,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_device_certificate_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_device_certificate_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::CertificateList>>, smithy_json::deserialize::Error>
 where
@@ -3851,7 +3855,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_certificate_list(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_certificate_list(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3867,7 +3874,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_lo_ra_wan_gateway_metadata_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_lo_ra_wan_gateway_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::LoRaWanGatewayMetadata>>,
@@ -3890,7 +3897,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_lo_ra_wan_gateway_metadata(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_lo_ra_wan_gateway_metadata(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3906,7 +3914,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_join_eui_filters<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_join_eui_filters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
@@ -3928,7 +3936,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_list_join_eui_range(tokens)?;
+                        let value =
+                            crate::json_deser::deser_list_com_amazonaws_iotwireless_join_eui_range(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3944,7 +3955,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_net_id_filters<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_net_id_filters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -3982,7 +3993,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_sub_bands<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_sub_bands<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<i32>>, smithy_json::deserialize::Error>
 where
@@ -4018,7 +4029,7 @@ where
     }
 }
 
-pub fn deser_structure_lo_ra_wan_gateway_version<'a, I>(
+pub fn deser_structure_crate_model_lo_ra_wan_gateway_version<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LoRaWanGatewayVersion>, smithy_json::deserialize::Error>
 where
@@ -4081,7 +4092,7 @@ where
     }
 }
 
-pub fn deser_structure_lo_ra_wan_update_gateway_task_create<'a, I>(
+pub fn deser_structure_crate_model_lo_ra_wan_update_gateway_task_create<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LoRaWanUpdateGatewayTaskCreate>, smithy_json::deserialize::Error>
 where
@@ -4118,16 +4129,12 @@ where
                             }
                             "CurrentVersion" => {
                                 builder = builder.set_current_version(
-                                    crate::json_deser::deser_structure_lo_ra_wan_gateway_version(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_lo_ra_wan_gateway_version(tokens)?
                                 );
                             }
                             "UpdateVersion" => {
                                 builder = builder.set_update_version(
-                                    crate::json_deser::deser_structure_lo_ra_wan_gateway_version(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_lo_ra_wan_gateway_version(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4148,7 +4155,7 @@ where
     }
 }
 
-pub fn deser_structure_destinations<'a, I>(
+pub fn deser_structure_crate_model_destinations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Destinations>, smithy_json::deserialize::Error>
 where
@@ -4241,7 +4248,7 @@ where
     }
 }
 
-pub fn deser_structure_device_profile<'a, I>(
+pub fn deser_structure_crate_model_device_profile<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DeviceProfile>, smithy_json::deserialize::Error>
 where
@@ -4304,7 +4311,7 @@ where
     }
 }
 
-pub fn deser_structure_service_profile<'a, I>(
+pub fn deser_structure_crate_model_service_profile<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ServiceProfile>, smithy_json::deserialize::Error>
 where
@@ -4367,7 +4374,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where
@@ -4421,7 +4428,7 @@ where
     }
 }
 
-pub fn deser_structure_wireless_device_statistics<'a, I>(
+pub fn deser_structure_crate_model_wireless_device_statistics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::WirelessDeviceStatistics>, smithy_json::deserialize::Error>
 where
@@ -4499,16 +4506,12 @@ where
                             }
                             "LoRaWAN" => {
                                 builder = builder.set_lo_ra_wan(
-                                    crate::json_deser::deser_structure_lo_ra_wan_list_device(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_lo_ra_wan_list_device(tokens)?
                                 );
                             }
                             "Sidewalk" => {
                                 builder = builder.set_sidewalk(
-                                    crate::json_deser::deser_structure_sidewalk_list_device(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_sidewalk_list_device(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4529,7 +4532,7 @@ where
     }
 }
 
-pub fn deser_structure_wireless_gateway_statistics<'a, I>(
+pub fn deser_structure_crate_model_wireless_gateway_statistics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::WirelessGatewayStatistics>, smithy_json::deserialize::Error>
 where
@@ -4585,7 +4588,7 @@ where
                             }
                             "LoRaWAN" => {
                                 builder = builder.set_lo_ra_wan(
-                                    crate::json_deser::deser_structure_lo_ra_wan_gateway(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_lo_ra_wan_gateway(tokens)?
                                 );
                             }
                             "LastUplinkReceivedAt" => {
@@ -4615,7 +4618,7 @@ where
     }
 }
 
-pub fn deser_structure_update_wireless_gateway_task_entry<'a, I>(
+pub fn deser_structure_crate_model_update_wireless_gateway_task_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UpdateWirelessGatewayTaskEntry>, smithy_json::deserialize::Error>
 where
@@ -4644,7 +4647,7 @@ where
                             }
                             "LoRaWAN" => {
                                 builder = builder.set_lo_ra_wan(
-                                    crate::json_deser::deser_structure_lo_ra_wan_update_gateway_task_entry(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_lo_ra_wan_update_gateway_task_entry(tokens)?
                                 );
                             }
                             "Arn" => {
@@ -4675,7 +4678,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_wireless_device_event_log_option_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_wireless_device_event_log_option_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::WirelessDeviceEventLogOption>>,
@@ -4698,9 +4701,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_wireless_device_event_log_option(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_wireless_device_event_log_option(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4716,7 +4718,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_wireless_gateway_event_log_option_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_wireless_gateway_event_log_option_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::WirelessGatewayEventLogOption>>,
@@ -4739,9 +4741,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_wireless_gateway_event_log_option(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_wireless_gateway_event_log_option(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4756,7 +4757,7 @@ where
     }
 }
 
-pub fn deser_structure_session_keys_abp_v11<'a, I>(
+pub fn deser_structure_crate_model_session_keys_abp_v11<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SessionKeysAbpV11>, smithy_json::deserialize::Error>
 where
@@ -4828,7 +4829,7 @@ where
     }
 }
 
-pub fn deser_structure_session_keys_abp_v10_x<'a, I>(
+pub fn deser_structure_crate_model_session_keys_abp_v10_x<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SessionKeysAbpV10X>, smithy_json::deserialize::Error>
 where
@@ -4882,7 +4883,7 @@ where
     }
 }
 
-pub fn deser_structure_certificate_list<'a, I>(
+pub fn deser_structure_crate_model_certificate_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CertificateList>, smithy_json::deserialize::Error>
 where
@@ -4939,7 +4940,7 @@ where
     }
 }
 
-pub fn deser_structure_lo_ra_wan_gateway_metadata<'a, I>(
+pub fn deser_structure_crate_model_lo_ra_wan_gateway_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LoRaWanGatewayMetadata>, smithy_json::deserialize::Error>
 where
@@ -5001,7 +5002,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_join_eui_range<'a, I>(
+pub fn deser_list_com_amazonaws_iotwireless_join_eui_range<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -5038,7 +5039,7 @@ where
     }
 }
 
-pub fn deser_structure_lo_ra_wan_list_device<'a, I>(
+pub fn deser_structure_crate_model_lo_ra_wan_list_device<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LoRaWanListDevice>, smithy_json::deserialize::Error>
 where
@@ -5083,7 +5084,7 @@ where
     }
 }
 
-pub fn deser_structure_sidewalk_list_device<'a, I>(
+pub fn deser_structure_crate_model_sidewalk_list_device<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SidewalkListDevice>, smithy_json::deserialize::Error>
 where
@@ -5130,7 +5131,7 @@ where
                             }
                             "DeviceCertificates" => {
                                 builder = builder.set_device_certificates(
-                                    crate::json_deser::deser_list_device_certificate_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_iotwireless_device_certificate_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -5151,7 +5152,7 @@ where
     }
 }
 
-pub fn deser_structure_lo_ra_wan_update_gateway_task_entry<'a, I>(
+pub fn deser_structure_crate_model_lo_ra_wan_update_gateway_task_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LoRaWanUpdateGatewayTaskEntry>, smithy_json::deserialize::Error>
 where
@@ -5171,16 +5172,12 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "CurrentVersion" => {
                                 builder = builder.set_current_version(
-                                    crate::json_deser::deser_structure_lo_ra_wan_gateway_version(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_lo_ra_wan_gateway_version(tokens)?
                                 );
                             }
                             "UpdateVersion" => {
                                 builder = builder.set_update_version(
-                                    crate::json_deser::deser_structure_lo_ra_wan_gateway_version(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_lo_ra_wan_gateway_version(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -5201,7 +5198,7 @@ where
     }
 }
 
-pub fn deser_structure_wireless_device_event_log_option<'a, I>(
+pub fn deser_structure_crate_model_wireless_device_event_log_option<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::WirelessDeviceEventLogOption>, smithy_json::deserialize::Error>
 where
@@ -5262,7 +5259,7 @@ where
     }
 }
 
-pub fn deser_structure_wireless_gateway_event_log_option<'a, I>(
+pub fn deser_structure_crate_model_wireless_gateway_event_log_option<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::WirelessGatewayEventLogOption>, smithy_json::deserialize::Error>
 where

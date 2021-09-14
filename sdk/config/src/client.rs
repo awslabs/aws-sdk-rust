@@ -701,7 +701,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the AWS Config rule that you want to
+        /// <p>The name of the Config rule that you want to
         /// delete.</p>
         pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.config_rule_name(inp);
@@ -992,7 +992,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the AWS Config rule for which you want to delete
+        /// <p>The name of the Config rule for which you want to delete
         /// the evaluation results.</p>
         pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.config_rule_name(inp);
@@ -1240,7 +1240,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the AWS Config rule for which you want to delete remediation configuration.</p>
+        /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
         pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.config_rule_name(inp);
             self
@@ -1309,7 +1309,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the AWS Config rule for which you want to delete remediation exception configuration.</p>
+        /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
         pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.config_rule_name(inp);
             self
@@ -1324,7 +1324,7 @@ pub mod fluent_builders {
         /// Appends an item to `ResourceKeys`.
         ///
         /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
-        /// <p>An exception list of resource exception keys to be processed with the current request. AWS Config adds exception for each resource key. For example, AWS Config adds 3 exceptions for 3 resource keys. </p>
+        /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
         pub fn resource_keys(
             mut self,
             inp: impl Into<crate::model::RemediationExceptionResourceKey>,
@@ -1654,7 +1654,7 @@ pub mod fluent_builders {
         /// <p>The maximum number of evaluation results returned on each page.
         /// The default is
         /// maximum.
-        /// If you specify 0, AWS Config uses the default.</p>
+        /// If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -1741,7 +1741,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, AWS Config uses the default. </p>
+        /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -1805,7 +1805,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of AggregationAuthorizations returned on
-        /// each page. The default is maximum. If you specify 0, AWS Config uses
+        /// each page. The default is maximum. If you specify 0, Config uses
         /// the default.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
@@ -1873,7 +1873,7 @@ pub mod fluent_builders {
         /// Appends an item to `ConfigRuleNames`.
         ///
         /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
-        /// <p>Specify one or more AWS Config rule names to filter the results
+        /// <p>Specify one or more Config rule names to filter the results
         /// by rule.</p>
         pub fn config_rule_names(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.config_rule_names(inp);
@@ -1958,9 +1958,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The types of AWS resources for which you want compliance
+        /// <p>The types of Amazon Web Services resources for which you want compliance
         /// information (for example, <code>AWS::EC2::Instance</code>). For this
-        /// action, you can specify that the resource type is an AWS account by
+        /// action, you can specify that the resource type is an Amazon Web Services account by
         /// specifying <code>AWS::::Account</code>.</p>
         pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(inp);
@@ -1973,7 +1973,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_type(input);
             self
         }
-        /// <p>The ID of the AWS resource for which you want compliance
+        /// <p>The ID of the Amazon Web Services resource for which you want compliance
         /// information. You can specify only one resource ID. If you specify a
         /// resource ID, you must also specify a type for
         /// <code>ResourceType</code>.</p>
@@ -2003,7 +2003,7 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of evaluation results returned on each page.
         /// The default is 10. You cannot specify a number greater than 100. If
-        /// you specify 0, AWS Config uses the default.</p>
+        /// you specify 0, Config uses the default.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -2071,9 +2071,9 @@ pub mod fluent_builders {
         /// Appends an item to `ConfigRuleNames`.
         ///
         /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
-        /// <p>The name of the AWS managed Config rules for which you want
-        /// status information. If you do not specify any names, AWS Config
-        /// returns status information for all AWS managed Config rules that you
+        /// <p>The name of the Config managed rules for which you want
+        /// status information. If you do not specify any names, Config
+        /// returns status information for all Config managed rules that you
         /// use.</p>
         pub fn config_rule_names(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.config_rule_names(inp);
@@ -2102,7 +2102,7 @@ pub mod fluent_builders {
         /// <p>This parameter is required if the rule limit for your account
         /// is more than the default of 150 rules.</p>
         /// <p>For information about requesting a rule limit increase, see
-        /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config Limits</a> in the <i>AWS General
+        /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General
         /// Reference Guide</i>.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
@@ -2160,8 +2160,8 @@ pub mod fluent_builders {
         /// Appends an item to `ConfigRuleNames`.
         ///
         /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
-        /// <p>The names of the AWS Config rules for which you want details.
-        /// If you do not specify any names, AWS Config returns details for all
+        /// <p>The names of the Config rules for which you want details.
+        /// If you do not specify any names, Config returns details for all
         /// your rules.</p>
         pub fn config_rule_names(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.config_rule_names(inp);
@@ -2259,7 +2259,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of configuration aggregators returned on
-        /// each page. The default is maximum. If you specify 0, AWS Config uses
+        /// each page. The default is maximum. If you specify 0, Config uses
         /// the default.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
@@ -2374,7 +2374,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of AggregatorSourceStatus returned on each
-        /// page. The default is maximum. If you specify 0, AWS Config uses the
+        /// page. The default is maximum. If you specify 0, Config uses the
         /// default.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
@@ -2575,7 +2575,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of AWS Config rules within a conformance pack are returned on each page.</p>
+        /// <p>The maximum number of Config rules within a conformance pack are returned on each page.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -2641,7 +2641,7 @@ pub mod fluent_builders {
         /// Appends an item to `ConformancePackNames`.
         ///
         /// To override the contents of this collection use [`set_conformance_pack_names`](Self::set_conformance_pack_names).
-        /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, AWS Config returns details for all your conformance packs. </p>
+        /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs. </p>
         pub fn conformance_pack_names(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.conformance_pack_names(inp);
             self
@@ -2917,7 +2917,7 @@ pub mod fluent_builders {
         /// Appends an item to `OrganizationConfigRuleNames`.
         ///
         /// To override the contents of this collection use [`set_organization_config_rule_names`](Self::set_organization_config_rule_names).
-        /// <p>The names of organization config rules for which you want details. If you do not specify any names, AWS Config returns details for all your organization config rules.</p>
+        /// <p>The names of organization config rules for which you want details. If you do not specify any names, Config returns details for all your organization config rules.</p>
         pub fn organization_config_rule_names(
             mut self,
             inp: impl Into<std::string::String>,
@@ -2932,7 +2932,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_config_rule_names(input);
             self
         }
-        /// <p>The maximum number of organization config rules returned on each page. If you do no specify a number, AWS Config uses the default. The default is 100.</p>
+        /// <p>The maximum number of organization config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -3000,7 +3000,7 @@ pub mod fluent_builders {
         /// Appends an item to `OrganizationConfigRuleNames`.
         ///
         /// To override the contents of this collection use [`set_organization_config_rule_names`](Self::set_organization_config_rule_names).
-        /// <p>The names of organization config rules for which you want status details. If you do not specify any names, AWS Config returns details for all your organization AWS Confg rules.</p>
+        /// <p>The names of organization config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
         pub fn organization_config_rule_names(
             mut self,
             inp: impl Into<std::string::String>,
@@ -3015,7 +3015,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_config_rule_names(input);
             self
         }
-        /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, AWS Config uses the default. The default is 100.</p>
+        /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -3097,7 +3097,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of organization config packs returned on each page. If you do no specify a
-        /// number, AWS Config uses the default. The default is 100.</p>
+        /// number, Config uses the default. The default is 100.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -3167,7 +3167,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_organization_conformance_pack_names`](Self::set_organization_conformance_pack_names).
         /// <p>The names of organization conformance packs for which you want status details.
-        /// If you do not specify any names, AWS Config returns details for all your organization conformance packs. </p>
+        /// If you do not specify any names, Config returns details for all your organization conformance packs. </p>
         pub fn organization_conformance_pack_names(
             mut self,
             inp: impl Into<std::string::String>,
@@ -3183,7 +3183,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page.
-        /// If you do no specify a number, AWS Config uses the default. The default is 100. </p>
+        /// If you do no specify a number, Config uses the default. The default is 100. </p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -3247,7 +3247,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is maximum. If you specify 0, AWS Config uses the
+        /// The default is maximum. If you specify 0, Config uses the
         /// default.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
@@ -3315,7 +3315,7 @@ pub mod fluent_builders {
         /// Appends an item to `ConfigRuleNames`.
         ///
         /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
-        /// <p>A list of AWS Config rule names of remediation configurations for which you want details. </p>
+        /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
         pub fn config_rule_names(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.config_rule_names(inp);
             self
@@ -3372,7 +3372,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the AWS Config rule.</p>
+        /// <p>The name of the Config rule.</p>
         pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.config_rule_name(inp);
             self
@@ -3387,7 +3387,7 @@ pub mod fluent_builders {
         /// Appends an item to `ResourceKeys`.
         ///
         /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
-        /// <p>An exception list of resource exception keys to be processed with the current request. AWS Config adds exception for each resource key. For example, AWS Config adds 3 exceptions for 3 resource keys. </p>
+        /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
         pub fn resource_keys(
             mut self,
             inp: impl Into<crate::model::RemediationExceptionResourceKey>,
@@ -3404,7 +3404,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_keys(input);
             self
         }
-        /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, AWS Config uses the default.</p>
+        /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -3467,7 +3467,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>A list of AWS Config rule names.</p>
+        /// <p>A list of Config rule names.</p>
         pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.config_rule_name(inp);
             self
@@ -3494,7 +3494,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_keys(input);
             self
         }
-        /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, AWS Config uses the default. </p>
+        /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -3561,10 +3561,10 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_retention_configuration_names`](Self::set_retention_configuration_names).
         /// <p>A list of names of retention configurations for which you want
-        /// details. If you do not specify a name, AWS Config returns details
+        /// details. If you do not specify a name, Config returns details
         /// for all the retention configurations for that account.</p>
         /// <note>
-        /// <p>Currently, AWS Config supports only one retention
+        /// <p>Currently, Config supports only one retention
         /// configuration per region in your account.</p>
         /// </note>
         pub fn retention_configuration_names(
@@ -3654,7 +3654,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_aggregator_name(input);
             self
         }
-        /// <p>The name of the AWS Config rule for which you want compliance
+        /// <p>The name of the Config rule for which you want compliance
         /// information.</p>
         pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.config_rule_name(inp);
@@ -3689,8 +3689,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>For the
         /// <code>GetAggregateComplianceDetailsByConfigRuleRequest</code>
-        /// data type, AWS Config supports only the <code>COMPLIANT</code>
-        /// and <code>NON_COMPLIANT</code>. AWS Config does not support the
+        /// data type, Config supports only the <code>COMPLIANT</code>
+        /// and <code>NON_COMPLIANT</code>. Config does not support the
         /// <code>NOT_APPLICABLE</code> and
         /// <code>INSUFFICIENT_DATA</code> values.</p>
         /// </note>
@@ -3707,7 +3707,7 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of evaluation results returned on each page.
         /// The default is 50. You cannot specify a number greater than 100. If
-        /// you specify 0, AWS Config uses the default.</p>
+        /// you specify 0, Config uses the default.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -3818,7 +3818,7 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of evaluation results returned on each page.
         /// The default is 1000. You cannot specify a number greater than 1000.
-        /// If you specify 0, AWS Config uses the default.</p>
+        /// If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -3916,7 +3916,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>Groups the result based on AWS Account ID or AWS Region.</p>
+        /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
         pub fn group_by_key(
             mut self,
             inp: crate::model::AggregateConformancePackComplianceSummaryGroupKey,
@@ -3933,7 +3933,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_by_key(input);
             self
         }
-        /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, AWS Config uses the default.</p>
+        /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -4035,7 +4035,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_by_key(input);
             self
         }
-        /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, AWS Config uses the default.</p>
+        /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -4173,7 +4173,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the AWS Config rule for which you want compliance
+        /// <p>The name of the Config rule for which you want compliance
         /// information.</p>
         pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.config_rule_name(inp);
@@ -4206,7 +4206,7 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of evaluation results returned on each page.
         /// The default is 10. You cannot specify a number greater than 100. If
-        /// you specify 0, AWS Config uses the default.</p>
+        /// you specify 0, Config uses the default.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -4271,7 +4271,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The type of the AWS resource for which you want compliance
+        /// <p>The type of the Amazon Web Services resource for which you want compliance
         /// information.</p>
         pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(inp);
@@ -4284,7 +4284,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_type(input);
             self
         }
-        /// <p>The ID of the AWS resource for which you want compliance
+        /// <p>The ID of the Amazon Web Services resource for which you want compliance
         /// information.</p>
         pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(inp);
@@ -4419,9 +4419,9 @@ pub mod fluent_builders {
         /// <p>Specify one or more resource types to get the number of
         /// resources that are compliant and the number that are noncompliant
         /// for each resource type.</p>
-        /// <p>For this request, you can specify an AWS resource type such as
+        /// <p>For this request, you can specify an Amazon Web Services resource type such as
         /// <code>AWS::EC2::Instance</code>. You can specify that the
-        /// resource type is an AWS account by specifying
+        /// resource type is an Amazon Web Services account by specifying
         /// <code>AWS::::Account</code>.</p>
         pub fn resource_types(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_types(inp);
@@ -4503,7 +4503,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page. If you do no specify a number, AWS Config uses the default. The default is 100.</p>
+        /// <p>The maximum number of evaluation results returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -4648,14 +4648,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         /// <p>The comma-separated list that specifies the resource types that
-        /// you want AWS Config to return (for example,
+        /// you want Config to return (for example,
         /// <code>"AWS::EC2::Instance"</code>,
         /// <code>"AWS::IAM::User"</code>).</p>
-        /// <p>If a value for <code>resourceTypes</code> is not specified, AWS
-        /// Config returns all resource types that AWS Config is recording in
+        /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in
         /// the region for your account.</p>
         /// <note>
-        /// <p>If the configuration recorder is turned off, AWS Config
+        /// <p>If the configuration recorder is turned off, Config
         /// returns an empty list of <a>ResourceCount</a>
         /// objects. If the configuration recorder is not recording a
         /// specific resource type (for example, S3 buckets), that resource
@@ -4674,7 +4673,7 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of <a>ResourceCount</a> objects
         /// returned on each page. The default is 100. You cannot specify a
-        /// number greater than 100. If you specify 0, AWS Config uses the
+        /// number greater than 100. If you specify 0, Config uses the
         /// default.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
@@ -4769,7 +4768,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, AWS Config uses the default. The default is 100.</p>
+        /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -4865,7 +4864,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
-        /// If you do not specify a number, AWS Config uses the default. The default is 100. </p>
+        /// If you do not specify a number, Config uses the default. The default is 100. </p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -4991,7 +4990,7 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of configuration items returned on each
         /// page. The default is 10. You cannot specify a number greater than
-        /// 100. If you specify 0, AWS Config uses the default.</p>
+        /// 100. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -5125,7 +5124,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_aggregator_name(input);
             self
         }
-        /// <p>The type of resources that you want AWS Config to list in the response.</p>
+        /// <p>The type of resources that you want Config to list in the response.</p>
         pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
             self.inner = self.inner.resource_type(inp);
             self
@@ -5149,7 +5148,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, AWS Config uses the default.</p>
+        /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -5212,7 +5211,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The type of resources that you want AWS Config to list in the
+        /// <p>The type of resources that you want Config to list in the
         /// response.</p>
         pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
             self.inner = self.inner.resource_type(inp);
@@ -5228,9 +5227,8 @@ pub mod fluent_builders {
         /// Appends an item to `resourceIds`.
         ///
         /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
-        /// <p>The IDs of only those resources that you want AWS Config to
-        /// list in the response. If you do not specify this parameter, AWS
-        /// Config lists all resources of the specified type that it has
+        /// <p>The IDs of only those resources that you want Config to
+        /// list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has
         /// discovered.</p>
         pub fn resource_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_ids(inp);
@@ -5243,9 +5241,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_ids(input);
             self
         }
-        /// <p>The custom name of only those resources that you want AWS
-        /// Config to list in the response. If you do not specify this
-        /// parameter, AWS Config lists all resources of the specified type that
+        /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this
+        /// parameter, Config lists all resources of the specified type that
         /// it has discovered.</p>
         pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_name(inp);
@@ -5260,7 +5257,7 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of resource identifiers returned on each
         /// page. The default is 100. You cannot specify a number greater than
-        /// 100. If you specify 0, AWS Config uses the default.</p>
+        /// 100. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -5269,7 +5266,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>Specifies whether AWS Config includes deleted resources in the
+        /// <p>Specifies whether Config includes deleted resources in the
         /// results. By default, deleted resources are not included.</p>
         pub fn include_deleted_resources(mut self, inp: bool) -> Self {
             self.inner = self.inner.include_deleted_resources(inp);
@@ -5407,7 +5404,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The maximum number of tags returned on each page. The limit maximum is 50. You cannot specify a number greater than 50. If you specify 0, AWS Config uses the default. </p>
+        /// <p>The maximum number of tags returned on each page. The limit maximum is 50. You cannot specify a number greater than 50. If you specify 0, Config uses the default. </p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -5835,7 +5832,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_body(input);
             self
         }
-        /// <p>Amazon S3 bucket where AWS Config stores conformance pack templates.</p>
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
         /// <note>
         /// <p>This field is optional.</p>
         /// </note>
@@ -5990,9 +5987,9 @@ pub mod fluent_builders {
         /// Appends an item to `Evaluations`.
         ///
         /// To override the contents of this collection use [`set_evaluations`](Self::set_evaluations).
-        /// <p>The assessments that the AWS Lambda function performs. Each
-        /// evaluation identifies an AWS resource and indicates whether it
-        /// complies with the AWS Config rule that invokes the AWS Lambda
+        /// <p>The assessments that the Lambda function performs. Each
+        /// evaluation identifies an Amazon Web Services resource and indicates whether it
+        /// complies with the Config rule that invokes the Lambda
         /// function.</p>
         pub fn evaluations(mut self, inp: impl Into<crate::model::Evaluation>) -> Self {
             self.inner = self.inner.evaluations(inp);
@@ -6005,8 +6002,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_evaluations(input);
             self
         }
-        /// <p>An encrypted token that associates an evaluation with an AWS
-        /// Config rule. Identifies the rule and the event that triggered the
+        /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the
         /// evaluation.</p>
         pub fn result_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.result_token(inp);
@@ -6017,10 +6013,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>Use this parameter to specify a test run for
-        /// <code>PutEvaluations</code>. You can verify whether your AWS
-        /// Lambda function will deliver evaluation results to AWS Config. No
+        /// <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No
         /// updates occur to your existing evaluations, and evaluation results
-        /// are not sent to AWS Config.</p>
+        /// are not sent to Config.</p>
         /// <note>
         /// <p>When <code>TestMode</code> is <code>true</code>,
         /// <code>PutEvaluations</code> doesn't require a valid value
@@ -6080,7 +6075,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the AWS Config rule.</p>
+        /// <p>The name of the Config rule.</p>
         pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.config_rule_name(inp);
             self
@@ -6298,7 +6293,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_body(input);
             self
         }
-        /// <p>Amazon S3 bucket where AWS Config stores conformance pack templates.</p>
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
         /// <note>
         /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
         /// </note>
@@ -6349,7 +6344,7 @@ pub mod fluent_builders {
         /// Appends an item to `ExcludedAccounts`.
         ///
         /// To override the contents of this collection use [`set_excluded_accounts`](Self::set_excluded_accounts).
-        /// <p>A list of AWS accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
+        /// <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
         pub fn excluded_accounts(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.excluded_accounts(inp);
             self
@@ -6469,7 +6464,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the AWS Config rule for which you want to create remediation exception.</p>
+        /// <p>The name of the Config rule for which you want to create remediation exception.</p>
         pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.config_rule_name(inp);
             self
@@ -6484,7 +6479,7 @@ pub mod fluent_builders {
         /// Appends an item to `ResourceKeys`.
         ///
         /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
-        /// <p>An exception list of resource exception keys to be processed with the current request. AWS Config adds exception for each resource key. For example, AWS Config adds 3 exceptions for 3 resource keys. </p>
+        /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
         pub fn resource_keys(
             mut self,
             inp: impl Into<crate::model::RemediationExceptionResourceKey>,
@@ -6567,9 +6562,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The type of the resource. The custom resource type must be registered with AWS CloudFormation. </p>
+        /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p>
         /// <note>
-        /// <p>You cannot use the organization names “aws”, “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
+        /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
         /// </note>
         pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(inp);
@@ -6582,7 +6577,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_type(input);
             self
         }
-        /// <p>Version of the schema registered for the ResourceType in AWS CloudFormation.</p>
+        /// <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
         pub fn schema_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schema_version_id(inp);
             self
@@ -6615,7 +6610,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_name(input);
             self
         }
-        /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with AWS CloudFormation.</p>
+        /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p>
         /// <note>
         /// <p>The configuration JSON must not exceed 64 KB.</p>
         /// </note>
@@ -6696,7 +6691,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Number of days AWS Config stores your historical
+        /// <p>Number of days Config stores your historical
         /// information.</p>
         /// <note>
         /// <p>Currently, only applicable to the configuration item
@@ -6865,7 +6860,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The maximum number of query results returned on each page. AWS Config also allows the Limit request parameter.</p>
+        /// <p>The maximum number of query results returned on each page. Config also allows the Limit request parameter.</p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
@@ -7003,7 +6998,7 @@ pub mod fluent_builders {
         /// Appends an item to `ConfigRuleNames`.
         ///
         /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
-        /// <p>The list of names of AWS Config rules that you want to run
+        /// <p>The list of names of Config rules that you want to run
         /// evaluations for.</p>
         pub fn config_rule_names(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.config_rule_names(inp);
@@ -7119,7 +7114,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The list of names of AWS Config rules that you want to run remediation execution for.</p>
+        /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
         pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.config_rule_name(inp);
             self

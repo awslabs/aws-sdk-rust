@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_auth_exceptionjson_err(
+pub fn deser_structure_crate_error_auth_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::auth_exception::Builder,
 ) -> Result<crate::error::auth_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_auth_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_ec2_instance_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_ec2_instance_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::ec2_instance_not_found_exception::Builder,
 ) -> Result<crate::error::ec2_instance_not_found_exception::Builder, smithy_json::deserialize::Error>
@@ -84,7 +84,7 @@ pub fn deser_structure_ec2_instance_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_ec2_instance_type_invalid_exceptionjson_err(
+pub fn deser_structure_crate_error_ec2_instance_type_invalid_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::ec2_instance_type_invalid_exception::Builder,
 ) -> Result<
@@ -126,7 +126,7 @@ pub fn deser_structure_ec2_instance_type_invalid_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_args_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_args_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_args_exception::Builder,
 ) -> Result<crate::error::invalid_args_exception::Builder, smithy_json::deserialize::Error> {
@@ -165,7 +165,7 @@ pub fn deser_structure_invalid_args_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_serial_console_access_disabled_exceptionjson_err(
+pub fn deser_structure_crate_error_serial_console_access_disabled_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::serial_console_access_disabled_exception::Builder,
 ) -> Result<
@@ -207,7 +207,7 @@ pub fn deser_structure_serial_console_access_disabled_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_serial_console_session_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_serial_console_session_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::serial_console_session_limit_exceeded_exception::Builder,
 ) -> Result<
@@ -249,7 +249,7 @@ pub fn deser_structure_serial_console_session_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_serial_console_session_unavailable_exceptionjson_err(
+pub fn deser_structure_crate_error_serial_console_session_unavailable_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::serial_console_session_unavailable_exception::Builder,
 ) -> Result<
@@ -291,7 +291,7 @@ pub fn deser_structure_serial_console_session_unavailable_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_exceptionjson_err(
+pub fn deser_structure_crate_error_service_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_exception::Builder,
 ) -> Result<crate::error::service_exception::Builder, smithy_json::deserialize::Error> {
@@ -330,7 +330,7 @@ pub fn deser_structure_service_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -369,7 +369,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_send_serial_console_ssh_public_key(
+pub fn deser_operation_crate_operation_send_serial_console_ssh_public_key(
     input: &[u8],
     mut builder: crate::output::send_serial_console_ssh_public_key_output::Builder,
 ) -> Result<
@@ -416,7 +416,7 @@ pub fn deser_operation_send_serial_console_ssh_public_key(
     Ok(builder)
 }
 
-pub fn deser_operation_send_ssh_public_key(
+pub fn deser_operation_crate_operation_send_ssh_public_key(
     input: &[u8],
     mut builder: crate::output::send_ssh_public_key_output::Builder,
 ) -> Result<crate::output::send_ssh_public_key_output::Builder, smithy_json::deserialize::Error> {

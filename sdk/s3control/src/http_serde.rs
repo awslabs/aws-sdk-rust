@@ -14,7 +14,7 @@ pub fn deser_payload_get_public_access_block_get_public_access_block_output_publ
     crate::error::GetPublicAccessBlockError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_get_public_access_block_output_public_access_block_configuration(body).map_err(crate::error::GetPublicAccessBlockError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_s3control_synthetic_get_public_access_block_output_public_access_block_configuration(body).map_err(crate::error::GetPublicAccessBlockError::unhandled)
     }).transpose()
 }
 
@@ -25,6 +25,6 @@ pub fn deser_payload_get_storage_lens_configuration_get_storage_lens_configurati
     crate::error::GetStorageLensConfigurationError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_get_storage_lens_configuration_output_storage_lens_configuration(body).map_err(crate::error::GetStorageLensConfigurationError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_s3control_synthetic_get_storage_lens_configuration_output_storage_lens_configuration(body).map_err(crate::error::GetStorageLensConfigurationError::unhandled)
     }).transpose()
 }

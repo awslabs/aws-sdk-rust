@@ -11,7 +11,7 @@ pub mod batch_check_layer_availability_input {
         pub(crate) layer_digests: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the image layers to
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to
         /// check. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
@@ -83,10 +83,8 @@ impl BatchCheckLayerAvailabilityInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_batch_check_layer_availability(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_batch_check_layer_availability(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -149,12 +147,12 @@ impl BatchCheckLayerAvailabilityInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.BatchCheckLayerAvailability",
         );
         Ok(builder)
@@ -164,7 +162,11 @@ impl BatchCheckLayerAvailabilityInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -185,7 +187,7 @@ pub mod batch_delete_image_input {
         pub(crate) image_ids: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the image to delete.
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
@@ -255,10 +257,11 @@ impl BatchDeleteImageInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_batch_delete_image(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_batch_delete_image(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -321,12 +324,12 @@ impl BatchDeleteImageInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.BatchDeleteImage",
         );
         Ok(builder)
@@ -336,7 +339,11 @@ impl BatchDeleteImageInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -358,8 +365,8 @@ pub mod batch_get_image_input {
         pub(crate) accepted_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the images to describe.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the images to
+        /// describe. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
@@ -440,9 +447,11 @@ impl BatchGetImageInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_batch_get_image(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_batch_get_image(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -505,12 +514,12 @@ impl BatchGetImageInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.BatchGetImage",
         );
         Ok(builder)
@@ -520,7 +529,11 @@ impl BatchGetImageInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -542,7 +555,7 @@ pub mod complete_layer_upload_input {
         pub(crate) layer_digests: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry to which to upload layers.
+        /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
@@ -623,7 +636,10 @@ impl CompleteLayerUploadInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_complete_layer_upload(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_complete_layer_upload(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -689,12 +705,12 @@ impl CompleteLayerUploadInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.CompleteLayerUpload",
         );
         Ok(builder)
@@ -704,7 +720,11 @@ impl CompleteLayerUploadInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -840,9 +860,11 @@ impl CreateRepositoryInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_repository(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_repository(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -905,12 +927,12 @@ impl CreateRepositoryInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.CreateRepository",
         );
         Ok(builder)
@@ -920,7 +942,11 @@ impl CreateRepositoryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -940,7 +966,7 @@ pub mod delete_lifecycle_policy_input {
         pub(crate) repository_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repository.
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
@@ -996,7 +1022,10 @@ impl DeleteLifecyclePolicyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_lifecycle_policy(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_lifecycle_policy(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1062,12 +1091,12 @@ impl DeleteLifecyclePolicyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.DeleteLifecyclePolicy",
         );
         Ok(builder)
@@ -1077,7 +1106,11 @@ impl DeleteLifecyclePolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1125,7 +1158,10 @@ impl DeleteRegistryPolicyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_registry_policy(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_registry_policy(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1191,12 +1227,12 @@ impl DeleteRegistryPolicyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.DeleteRegistryPolicy",
         );
         Ok(builder)
@@ -1206,7 +1242,11 @@ impl DeleteRegistryPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1227,7 +1267,7 @@ pub mod delete_repository_input {
         pub(crate) force: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repository to
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to
         /// delete. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
@@ -1293,9 +1333,11 @@ impl DeleteRepositoryInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_repository(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_repository(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1358,12 +1400,12 @@ impl DeleteRepositoryInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.DeleteRepository",
         );
         Ok(builder)
@@ -1373,7 +1415,11 @@ impl DeleteRepositoryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1393,8 +1439,8 @@ pub mod delete_repository_policy_input {
         pub(crate) repository_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repository policy to
-        /// delete. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository policy
+        /// to delete. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
@@ -1450,7 +1496,10 @@ impl DeleteRepositoryPolicyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_repository_policy(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_repository_policy(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1516,12 +1565,12 @@ impl DeleteRepositoryPolicyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.DeleteRepositoryPolicy",
         );
         Ok(builder)
@@ -1531,7 +1580,11 @@ impl DeleteRepositoryPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1555,8 +1608,8 @@ pub mod describe_images_input {
         pub(crate) filter: std::option::Option<crate::model::DescribeImagesFilter>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repository in which
-        /// to describe images. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
+        /// which to describe images. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
@@ -1672,9 +1725,11 @@ impl DescribeImagesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_images(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_images(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1737,12 +1792,12 @@ impl DescribeImagesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.DescribeImages",
         );
         Ok(builder)
@@ -1752,7 +1807,11 @@ impl DescribeImagesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1775,9 +1834,8 @@ pub mod describe_image_scan_findings_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repository in
-        /// which to describe the image scan findings for. If you do not specify a registry, the
-        /// default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
+        /// which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
@@ -1879,10 +1937,8 @@ impl DescribeImageScanFindingsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_image_scan_findings(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_image_scan_findings(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1945,12 +2001,12 @@ impl DescribeImageScanFindingsInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.DescribeImageScanFindings",
         );
         Ok(builder)
@@ -1960,7 +2016,11 @@ impl DescribeImageScanFindingsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2008,9 +2068,11 @@ impl DescribeRegistryInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_registry(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_registry(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2073,12 +2135,12 @@ impl DescribeRegistryInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.DescribeRegistry",
         );
         Ok(builder)
@@ -2088,7 +2150,11 @@ impl DescribeRegistryInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2110,7 +2176,7 @@ pub mod describe_repositories_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repositories to be
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be
         /// described. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
@@ -2205,7 +2271,10 @@ impl DescribeRepositoriesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_repositories(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_repositories(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2271,12 +2340,12 @@ impl DescribeRepositoriesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.DescribeRepositories",
         );
         Ok(builder)
@@ -2286,7 +2355,11 @@ impl DescribeRepositoriesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2351,7 +2424,10 @@ impl GetAuthorizationTokenInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_authorization_token(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_authorization_token(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2417,12 +2493,12 @@ impl GetAuthorizationTokenInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.GetAuthorizationToken",
         );
         Ok(builder)
@@ -2432,7 +2508,11 @@ impl GetAuthorizationTokenInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2453,7 +2533,7 @@ pub mod get_download_url_for_layer_input {
         pub(crate) layer_digest: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the image layer to
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to
         /// download. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
@@ -2519,10 +2599,9 @@ impl GetDownloadUrlForLayerInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_download_url_for_layer(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_download_url_for_layer(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2585,12 +2664,12 @@ impl GetDownloadUrlForLayerInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.GetDownloadUrlForLayer",
         );
         Ok(builder)
@@ -2600,7 +2679,11 @@ impl GetDownloadUrlForLayerInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2620,7 +2703,7 @@ pub mod get_lifecycle_policy_input {
         pub(crate) repository_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repository.
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
@@ -2676,7 +2759,10 @@ impl GetLifecyclePolicyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_lifecycle_policy(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_lifecycle_policy(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2742,12 +2828,12 @@ impl GetLifecyclePolicyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.GetLifecyclePolicy",
         );
         Ok(builder)
@@ -2757,7 +2843,11 @@ impl GetLifecyclePolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2781,7 +2871,7 @@ pub mod get_lifecycle_policy_preview_input {
         pub(crate) filter: std::option::Option<crate::model::LifecyclePolicyPreviewFilter>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repository.
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
@@ -2902,10 +2992,8 @@ impl GetLifecyclePolicyPreviewInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_get_lifecycle_policy_preview(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_get_lifecycle_policy_preview(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2968,12 +3056,12 @@ impl GetLifecyclePolicyPreviewInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.GetLifecyclePolicyPreview",
         );
         Ok(builder)
@@ -2983,7 +3071,11 @@ impl GetLifecyclePolicyPreviewInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3031,7 +3123,10 @@ impl GetRegistryPolicyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_registry_policy(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_registry_policy(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3097,12 +3192,12 @@ impl GetRegistryPolicyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.GetRegistryPolicy",
         );
         Ok(builder)
@@ -3112,7 +3207,11 @@ impl GetRegistryPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3132,7 +3231,7 @@ pub mod get_repository_policy_input {
         pub(crate) repository_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repository.
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
@@ -3188,7 +3287,10 @@ impl GetRepositoryPolicyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_get_repository_policy(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_get_repository_policy(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3254,12 +3356,12 @@ impl GetRepositoryPolicyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.GetRepositoryPolicy",
         );
         Ok(builder)
@@ -3269,7 +3371,11 @@ impl GetRepositoryPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3289,8 +3395,8 @@ pub mod initiate_layer_upload_input {
         pub(crate) repository_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry to which you intend to upload layers.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload
+        /// layers. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
@@ -3345,7 +3451,10 @@ impl InitiateLayerUploadInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_initiate_layer_upload(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_initiate_layer_upload(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3411,12 +3520,12 @@ impl InitiateLayerUploadInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.InitiateLayerUpload",
         );
         Ok(builder)
@@ -3426,7 +3535,11 @@ impl InitiateLayerUploadInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3449,8 +3562,8 @@ pub mod list_images_input {
         pub(crate) filter: std::option::Option<crate::model::ListImagesFilter>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repository in which
-        /// to list images. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
+        /// which to list images. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
@@ -3552,8 +3665,8 @@ impl ListImagesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_list_images(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_list_images(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -3615,12 +3728,12 @@ impl ListImagesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.ListImages",
         );
         Ok(builder)
@@ -3630,7 +3743,11 @@ impl ListImagesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3692,7 +3809,10 @@ impl ListTagsForResourceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_tags_for_resource(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3758,12 +3878,12 @@ impl ListTagsForResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.ListTagsForResource",
         );
         Ok(builder)
@@ -3773,7 +3893,11 @@ impl ListTagsForResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3797,8 +3921,8 @@ pub mod put_image_input {
         pub(crate) image_digest: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repository in which
-        /// to put the image. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
+        /// which to put the image. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
@@ -3900,10 +4024,10 @@ impl PutImageInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_put_image(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body = crate::operation_ser::serialize_operation_crate_operation_put_image(&self)
+                .map_err(|err| {
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3961,12 +4085,12 @@ impl PutImageInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.PutImage",
         );
         Ok(builder)
@@ -3976,7 +4100,11 @@ impl PutImageInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3998,7 +4126,7 @@ pub mod put_image_scanning_configuration_input {
             std::option::Option<crate::model::ImageScanningConfiguration>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repository in
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
         /// which to update the image scanning configuration setting.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4076,10 +4204,8 @@ impl PutImageScanningConfigurationInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_put_image_scanning_configuration(&self)
-                    .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_put_image_scanning_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4142,12 +4268,12 @@ impl PutImageScanningConfigurationInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.PutImageScanningConfiguration",
         );
         Ok(builder)
@@ -4157,7 +4283,11 @@ impl PutImageScanningConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4178,8 +4308,8 @@ pub mod put_image_tag_mutability_input {
         pub(crate) image_tag_mutability: std::option::Option<crate::model::ImageTagMutability>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repository in which
-        /// to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
+        /// which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
@@ -4251,7 +4381,10 @@ impl PutImageTagMutabilityInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_image_tag_mutability(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_image_tag_mutability(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -4317,12 +4450,12 @@ impl PutImageTagMutabilityInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.PutImageTagMutability",
         );
         Ok(builder)
@@ -4332,7 +4465,11 @@ impl PutImageTagMutabilityInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4353,7 +4490,7 @@ pub mod put_lifecycle_policy_input {
         pub(crate) lifecycle_policy_text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repository. If you
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you
         /// do  not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
@@ -4422,7 +4559,10 @@ impl PutLifecyclePolicyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_lifecycle_policy(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_lifecycle_policy(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -4488,12 +4628,12 @@ impl PutLifecyclePolicyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.PutLifecyclePolicy",
         );
         Ok(builder)
@@ -4503,7 +4643,11 @@ impl PutLifecyclePolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4566,7 +4710,10 @@ impl PutRegistryPolicyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_put_registry_policy(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_put_registry_policy(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -4632,12 +4779,12 @@ impl PutRegistryPolicyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.PutRegistryPolicy",
         );
         Ok(builder)
@@ -4647,7 +4794,11 @@ impl PutRegistryPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4717,10 +4868,8 @@ impl PutReplicationConfigurationInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_put_replication_configuration(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_put_replication_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4783,12 +4932,12 @@ impl PutReplicationConfigurationInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.PutReplicationConfiguration",
         );
         Ok(builder)
@@ -4798,7 +4947,11 @@ impl PutReplicationConfigurationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4820,7 +4973,7 @@ pub mod set_repository_policy_input {
         pub(crate) force: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repository.
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
@@ -4843,8 +4996,8 @@ pub mod set_repository_policy_input {
             self
         }
         /// <p>The JSON repository policy text to apply to the repository. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository
-        /// Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+        /// <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository
+        /// policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
         pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_text = Some(input.into());
             self
@@ -4900,7 +5053,10 @@ impl SetRepositoryPolicyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_set_repository_policy(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_set_repository_policy(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -4966,12 +5122,12 @@ impl SetRepositoryPolicyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.SetRepositoryPolicy",
         );
         Ok(builder)
@@ -4981,7 +5137,11 @@ impl SetRepositoryPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5002,7 +5162,7 @@ pub mod start_image_scan_input {
         pub(crate) image_id: std::option::Option<crate::model::ImageIdentifier>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repository in
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
         /// which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
@@ -5071,9 +5231,11 @@ impl StartImageScanInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_start_image_scan(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_start_image_scan(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5136,12 +5298,12 @@ impl StartImageScanInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.StartImageScan",
         );
         Ok(builder)
@@ -5151,7 +5313,11 @@ impl StartImageScanInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5172,7 +5338,7 @@ pub mod start_lifecycle_policy_preview_input {
         pub(crate) lifecycle_policy_text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repository.
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
@@ -5244,10 +5410,8 @@ impl StartLifecyclePolicyPreviewInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_start_lifecycle_policy_preview(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_start_lifecycle_policy_preview(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5310,12 +5474,12 @@ impl StartLifecyclePolicyPreviewInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.StartLifecyclePolicyPreview",
         );
         Ok(builder)
@@ -5325,7 +5489,11 @@ impl StartLifecyclePolicyPreviewInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5401,9 +5569,10 @@ impl TagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_tag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5463,12 +5632,12 @@ impl TagResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.TagResource",
         );
         Ok(builder)
@@ -5478,7 +5647,11 @@ impl TagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5554,9 +5727,10 @@ impl UntagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_untag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5619,12 +5793,12 @@ impl UntagResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.UntagResource",
         );
         Ok(builder)
@@ -5634,7 +5808,11 @@ impl UntagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5658,7 +5836,7 @@ pub mod upload_layer_part_input {
         pub(crate) layer_part_blob: std::option::Option<smithy_types::Blob>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry to which you are uploading layer
+        /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer
         /// parts. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
@@ -5758,9 +5936,11 @@ impl UploadLayerPartInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_upload_layer_part(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_upload_layer_part(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -5823,12 +6003,12 @@ impl UploadLayerPartInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "AmazonEC2ContainerRegistry_V20150921.UploadLayerPart",
         );
         Ok(builder)
@@ -5838,7 +6018,11 @@ impl UploadLayerPartInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5851,7 +6035,7 @@ impl UploadLayerPartInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadLayerPartInput {
-    /// <p>The AWS account ID associated with the registry to which you are uploading layer
+    /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer
     /// parts. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to which you are uploading layer parts.</p>
@@ -5920,7 +6104,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartLifecyclePolicyPreviewInput {
-    /// <p>The AWS account ID associated with the registry that contains the repository.
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
     /// If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to be evaluated.</p>
@@ -5942,7 +6126,7 @@ impl std::fmt::Debug for StartLifecyclePolicyPreviewInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartImageScanInput {
-    /// <p>The AWS account ID associated with the registry that contains the repository in
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
     /// which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository that contains the images to scan.</p>
@@ -5963,14 +6147,14 @@ impl std::fmt::Debug for StartImageScanInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetRepositoryPolicyInput {
-    /// <p>The AWS account ID associated with the registry that contains the repository.
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
     /// If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to receive the policy.</p>
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The JSON repository policy text to apply to the repository. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository
-    /// Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+    /// <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository
+    /// policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     pub policy_text: std::option::Option<std::string::String>,
     /// <p>If the policy you are attempting to set on a repository policy would prevent you from
     /// setting another policy in the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
@@ -6021,7 +6205,7 @@ impl std::fmt::Debug for PutRegistryPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLifecyclePolicyInput {
-    /// <p>The AWS account ID associated with the registry that contains the repository. If you
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you
     /// do  not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to receive the policy.</p>
@@ -6042,8 +6226,8 @@ impl std::fmt::Debug for PutLifecyclePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutImageTagMutabilityInput {
-    /// <p>The AWS account ID associated with the registry that contains the repository in which
-    /// to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
+    /// which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository in which to update the image tag mutability
     /// settings.</p>
@@ -6067,7 +6251,7 @@ impl std::fmt::Debug for PutImageTagMutabilityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutImageScanningConfigurationInput {
-    /// <p>The AWS account ID associated with the registry that contains the repository in
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
     /// which to update the image scanning configuration setting.
     /// If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
@@ -6095,8 +6279,8 @@ impl std::fmt::Debug for PutImageScanningConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutImageInput {
-    /// <p>The AWS account ID associated with the registry that contains the repository in which
-    /// to put the image. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
+    /// which to put the image. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository in which to put the image.</p>
     pub repository_name: std::option::Option<std::string::String>,
@@ -6143,8 +6327,8 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImagesInput {
-    /// <p>The AWS account ID associated with the registry that contains the repository in which
-    /// to list images. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
+    /// which to list images. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository with image IDs to be listed.</p>
     pub repository_name: std::option::Option<std::string::String>,
@@ -6186,8 +6370,8 @@ impl std::fmt::Debug for ListImagesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateLayerUploadInput {
-    /// <p>The AWS account ID associated with the registry to which you intend to upload layers.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload
+    /// layers. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to which you intend to upload layers.</p>
     pub repository_name: std::option::Option<std::string::String>,
@@ -6204,7 +6388,7 @@ impl std::fmt::Debug for InitiateLayerUploadInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryPolicyInput {
-    /// <p>The AWS account ID associated with the registry that contains the repository.
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
     /// If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository with the policy to retrieve.</p>
@@ -6232,7 +6416,7 @@ impl std::fmt::Debug for GetRegistryPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLifecyclePolicyPreviewInput {
-    /// <p>The AWS account ID associated with the registry that contains the repository.
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
     /// If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository.</p>
@@ -6278,7 +6462,7 @@ impl std::fmt::Debug for GetLifecyclePolicyPreviewInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLifecyclePolicyInput {
-    /// <p>The AWS account ID associated with the registry that contains the repository.
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
     /// If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository.</p>
@@ -6296,7 +6480,7 @@ impl std::fmt::Debug for GetLifecyclePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDownloadUrlForLayerInput {
-    /// <p>The AWS account ID associated with the registry that contains the image layer to
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to
     /// download. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository that is associated with the image layer to download.</p>
@@ -6317,7 +6501,7 @@ impl std::fmt::Debug for GetDownloadUrlForLayerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAuthorizationTokenInput {
-    /// <p>A list of AWS account IDs that are associated with the registries for which to get
+    /// <p>A list of Amazon Web Services account IDs that are associated with the registries for which to get
     /// AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -6332,7 +6516,7 @@ impl std::fmt::Debug for GetAuthorizationTokenInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRepositoriesInput {
-    /// <p>The AWS account ID associated with the registry that contains the repositories to be
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be
     /// described. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>A list of repositories to describe. If this parameter is omitted, then all
@@ -6385,9 +6569,8 @@ impl std::fmt::Debug for DescribeRegistryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImageScanFindingsInput {
-    /// <p>The AWS account ID associated with the registry that contains the repository in
-    /// which to describe the image scan findings for. If you do not specify a registry, the
-    /// default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
+    /// which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository for the image for which to describe the scan findings.</p>
     pub repository_name: std::option::Option<std::string::String>,
@@ -6425,8 +6608,8 @@ impl std::fmt::Debug for DescribeImageScanFindingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImagesInput {
-    /// <p>The AWS account ID associated with the registry that contains the repository in which
-    /// to describe images. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
+    /// which to describe images. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository that contains the images to describe.</p>
     pub repository_name: std::option::Option<std::string::String>,
@@ -6469,8 +6652,8 @@ impl std::fmt::Debug for DescribeImagesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryPolicyInput {
-    /// <p>The AWS account ID associated with the registry that contains the repository policy to
-    /// delete. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository policy
+    /// to delete. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository that is associated with the repository policy to
     /// delete.</p>
@@ -6488,7 +6671,7 @@ impl std::fmt::Debug for DeleteRepositoryPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryInput {
-    /// <p>The AWS account ID associated with the registry that contains the repository to
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to
     /// delete. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to delete.</p>
@@ -6519,7 +6702,7 @@ impl std::fmt::Debug for DeleteRegistryPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLifecyclePolicyInput {
-    /// <p>The AWS account ID associated with the registry that contains the repository.
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
     /// If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository.</p>
@@ -6576,7 +6759,7 @@ impl std::fmt::Debug for CreateRepositoryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteLayerUploadInput {
-    /// <p>The AWS account ID associated with the registry to which to upload layers.
+    /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers.
     /// If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to associate with the image layer.</p>
@@ -6601,8 +6784,8 @@ impl std::fmt::Debug for CompleteLayerUploadInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetImageInput {
-    /// <p>The AWS account ID associated with the registry that contains the images to describe.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the images to
+    /// describe. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository that contains the images to describe.</p>
     pub repository_name: std::option::Option<std::string::String>,
@@ -6633,7 +6816,7 @@ impl std::fmt::Debug for BatchGetImageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteImageInput {
-    /// <p>The AWS account ID associated with the registry that contains the image to delete.
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete.
     /// If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository that contains the image to delete.</p>
@@ -6656,7 +6839,7 @@ impl std::fmt::Debug for BatchDeleteImageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCheckLayerAvailabilityInput {
-    /// <p>The AWS account ID associated with the registry that contains the image layers to
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to
     /// check. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository that is associated with the image layers to check.</p>

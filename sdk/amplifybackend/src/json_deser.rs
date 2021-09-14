@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_bad_request_exceptionjson_err(
+pub fn deser_structure_crate_error_bad_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::bad_request_exception::Builder,
 ) -> Result<crate::error::bad_request_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_bad_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_gateway_timeout_exceptionjson_err(
+pub fn deser_structure_crate_error_gateway_timeout_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::gateway_timeout_exception::Builder,
 ) -> Result<crate::error::gateway_timeout_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_gateway_timeout_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::not_found_exception::Builder,
 ) -> Result<crate::error::not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -129,7 +129,7 @@ pub fn deser_structure_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_too_many_requests_exceptionjson_err(
+pub fn deser_structure_crate_error_too_many_requests_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::too_many_requests_exception::Builder,
 ) -> Result<crate::error::too_many_requests_exception::Builder, smithy_json::deserialize::Error> {
@@ -175,7 +175,7 @@ pub fn deser_structure_too_many_requests_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_clone_backend(
+pub fn deser_operation_crate_operation_clone_backend(
     input: &[u8],
     mut builder: crate::output::clone_backend_output::Builder,
 ) -> Result<crate::output::clone_backend_output::Builder, smithy_json::deserialize::Error> {
@@ -249,7 +249,7 @@ pub fn deser_operation_clone_backend(
     Ok(builder)
 }
 
-pub fn deser_operation_create_backend(
+pub fn deser_operation_crate_operation_create_backend(
     input: &[u8],
     mut builder: crate::output::create_backend_output::Builder,
 ) -> Result<crate::output::create_backend_output::Builder, smithy_json::deserialize::Error> {
@@ -323,7 +323,7 @@ pub fn deser_operation_create_backend(
     Ok(builder)
 }
 
-pub fn deser_operation_create_backend_api(
+pub fn deser_operation_crate_operation_create_backend_api(
     input: &[u8],
     mut builder: crate::output::create_backend_api_output::Builder,
 ) -> Result<crate::output::create_backend_api_output::Builder, smithy_json::deserialize::Error> {
@@ -397,7 +397,7 @@ pub fn deser_operation_create_backend_api(
     Ok(builder)
 }
 
-pub fn deser_operation_create_backend_auth(
+pub fn deser_operation_crate_operation_create_backend_auth(
     input: &[u8],
     mut builder: crate::output::create_backend_auth_output::Builder,
 ) -> Result<crate::output::create_backend_auth_output::Builder, smithy_json::deserialize::Error> {
@@ -471,7 +471,7 @@ pub fn deser_operation_create_backend_auth(
     Ok(builder)
 }
 
-pub fn deser_operation_create_backend_config(
+pub fn deser_operation_crate_operation_create_backend_config(
     input: &[u8],
     mut builder: crate::output::create_backend_config_output::Builder,
 ) -> Result<crate::output::create_backend_config_output::Builder, smithy_json::deserialize::Error> {
@@ -531,7 +531,7 @@ pub fn deser_operation_create_backend_config(
     Ok(builder)
 }
 
-pub fn deser_operation_create_token(
+pub fn deser_operation_crate_operation_create_token(
     input: &[u8],
     mut builder: crate::output::create_token_output::Builder,
 ) -> Result<crate::output::create_token_output::Builder, smithy_json::deserialize::Error> {
@@ -591,7 +591,7 @@ pub fn deser_operation_create_token(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_backend(
+pub fn deser_operation_crate_operation_delete_backend(
     input: &[u8],
     mut builder: crate::output::delete_backend_output::Builder,
 ) -> Result<crate::output::delete_backend_output::Builder, smithy_json::deserialize::Error> {
@@ -665,7 +665,7 @@ pub fn deser_operation_delete_backend(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_backend_api(
+pub fn deser_operation_crate_operation_delete_backend_api(
     input: &[u8],
     mut builder: crate::output::delete_backend_api_output::Builder,
 ) -> Result<crate::output::delete_backend_api_output::Builder, smithy_json::deserialize::Error> {
@@ -739,7 +739,7 @@ pub fn deser_operation_delete_backend_api(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_backend_auth(
+pub fn deser_operation_crate_operation_delete_backend_auth(
     input: &[u8],
     mut builder: crate::output::delete_backend_auth_output::Builder,
 ) -> Result<crate::output::delete_backend_auth_output::Builder, smithy_json::deserialize::Error> {
@@ -813,7 +813,7 @@ pub fn deser_operation_delete_backend_auth(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_token(
+pub fn deser_operation_crate_operation_delete_token(
     input: &[u8],
     mut builder: crate::output::delete_token_output::Builder,
 ) -> Result<crate::output::delete_token_output::Builder, smithy_json::deserialize::Error> {
@@ -850,7 +850,7 @@ pub fn deser_operation_delete_token(
     Ok(builder)
 }
 
-pub fn deser_operation_generate_backend_api_models(
+pub fn deser_operation_crate_operation_generate_backend_api_models(
     input: &[u8],
     mut builder: crate::output::generate_backend_api_models_output::Builder,
 ) -> Result<
@@ -927,7 +927,7 @@ pub fn deser_operation_generate_backend_api_models(
     Ok(builder)
 }
 
-pub fn deser_operation_get_backend(
+pub fn deser_operation_crate_operation_get_backend(
     input: &[u8],
     mut builder: crate::output::get_backend_output::Builder,
 ) -> Result<crate::output::get_backend_output::Builder, smithy_json::deserialize::Error> {
@@ -964,7 +964,7 @@ pub fn deser_operation_get_backend(
                     }
                     "backendEnvironmentList" => {
                         builder = builder.set_backend_environment_list(
-                            crate::json_deser::deser_list_list_of__string(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_amplifybackend_list_of__string(tokens)?
                         );
                     }
                     "backendEnvironmentName" => {
@@ -999,7 +999,7 @@ pub fn deser_operation_get_backend(
     Ok(builder)
 }
 
-pub fn deser_operation_get_backend_api(
+pub fn deser_operation_crate_operation_get_backend_api(
     input: &[u8],
     mut builder: crate::output::get_backend_api_output::Builder,
 ) -> Result<crate::output::get_backend_api_output::Builder, smithy_json::deserialize::Error> {
@@ -1036,7 +1036,7 @@ pub fn deser_operation_get_backend_api(
                     }
                     "resourceConfig" => {
                         builder = builder.set_resource_config(
-                            crate::json_deser::deser_structure_backend_api_resource_config(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_backend_api_resource_config(tokens)?
                         );
                     }
                     "resourceName" => {
@@ -1064,7 +1064,7 @@ pub fn deser_operation_get_backend_api(
     Ok(builder)
 }
 
-pub fn deser_operation_get_backend_api_models(
+pub fn deser_operation_crate_operation_get_backend_api_models(
     input: &[u8],
     mut builder: crate::output::get_backend_api_models_output::Builder,
 ) -> Result<crate::output::get_backend_api_models_output::Builder, smithy_json::deserialize::Error>
@@ -1114,7 +1114,7 @@ pub fn deser_operation_get_backend_api_models(
     Ok(builder)
 }
 
-pub fn deser_operation_get_backend_auth(
+pub fn deser_operation_crate_operation_get_backend_auth(
     input: &[u8],
     mut builder: crate::output::get_backend_auth_output::Builder,
 ) -> Result<crate::output::get_backend_auth_output::Builder, smithy_json::deserialize::Error> {
@@ -1151,9 +1151,7 @@ pub fn deser_operation_get_backend_auth(
                     }
                     "resourceConfig" => {
                         builder = builder.set_resource_config(
-                            crate::json_deser::deser_structure_create_backend_auth_resource_config(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_create_backend_auth_resource_config(tokens)?
                         );
                     }
                     "resourceName" => {
@@ -1181,7 +1179,7 @@ pub fn deser_operation_get_backend_auth(
     Ok(builder)
 }
 
-pub fn deser_operation_get_backend_job(
+pub fn deser_operation_crate_operation_get_backend_job(
     input: &[u8],
     mut builder: crate::output::get_backend_job_output::Builder,
 ) -> Result<crate::output::get_backend_job_output::Builder, smithy_json::deserialize::Error> {
@@ -1269,7 +1267,7 @@ pub fn deser_operation_get_backend_job(
     Ok(builder)
 }
 
-pub fn deser_operation_get_token(
+pub fn deser_operation_crate_operation_get_token(
     input: &[u8],
     mut builder: crate::output::get_token_output::Builder,
 ) -> Result<crate::output::get_token_output::Builder, smithy_json::deserialize::Error> {
@@ -1329,7 +1327,7 @@ pub fn deser_operation_get_token(
     Ok(builder)
 }
 
-pub fn deser_operation_import_backend_auth(
+pub fn deser_operation_crate_operation_import_backend_auth(
     input: &[u8],
     mut builder: crate::output::import_backend_auth_output::Builder,
 ) -> Result<crate::output::import_backend_auth_output::Builder, smithy_json::deserialize::Error> {
@@ -1403,7 +1401,7 @@ pub fn deser_operation_import_backend_auth(
     Ok(builder)
 }
 
-pub fn deser_operation_list_backend_jobs(
+pub fn deser_operation_crate_operation_list_backend_jobs(
     input: &[u8],
     mut builder: crate::output::list_backend_jobs_output::Builder,
 ) -> Result<crate::output::list_backend_jobs_output::Builder, smithy_json::deserialize::Error> {
@@ -1419,7 +1417,7 @@ pub fn deser_operation_list_backend_jobs(
                 match key.to_unescaped()?.as_ref() {
                     "jobs" => {
                         builder = builder.set_jobs(
-                            crate::json_deser::deser_list_list_of_backend_job_resp_obj(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_amplifybackend_list_of_backend_job_resp_obj(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -1447,7 +1445,7 @@ pub fn deser_operation_list_backend_jobs(
     Ok(builder)
 }
 
-pub fn deser_operation_remove_all_backends(
+pub fn deser_operation_crate_operation_remove_all_backends(
     input: &[u8],
     mut builder: crate::output::remove_all_backends_output::Builder,
 ) -> Result<crate::output::remove_all_backends_output::Builder, smithy_json::deserialize::Error> {
@@ -1514,7 +1512,7 @@ pub fn deser_operation_remove_all_backends(
     Ok(builder)
 }
 
-pub fn deser_operation_remove_backend_config(
+pub fn deser_operation_crate_operation_remove_backend_config(
     input: &[u8],
     mut builder: crate::output::remove_backend_config_output::Builder,
 ) -> Result<crate::output::remove_backend_config_output::Builder, smithy_json::deserialize::Error> {
@@ -1553,7 +1551,7 @@ pub fn deser_operation_remove_backend_config(
     Ok(builder)
 }
 
-pub fn deser_operation_update_backend_api(
+pub fn deser_operation_crate_operation_update_backend_api(
     input: &[u8],
     mut builder: crate::output::update_backend_api_output::Builder,
 ) -> Result<crate::output::update_backend_api_output::Builder, smithy_json::deserialize::Error> {
@@ -1627,7 +1625,7 @@ pub fn deser_operation_update_backend_api(
     Ok(builder)
 }
 
-pub fn deser_operation_update_backend_auth(
+pub fn deser_operation_crate_operation_update_backend_auth(
     input: &[u8],
     mut builder: crate::output::update_backend_auth_output::Builder,
 ) -> Result<crate::output::update_backend_auth_output::Builder, smithy_json::deserialize::Error> {
@@ -1701,7 +1699,7 @@ pub fn deser_operation_update_backend_auth(
     Ok(builder)
 }
 
-pub fn deser_operation_update_backend_config(
+pub fn deser_operation_crate_operation_update_backend_config(
     input: &[u8],
     mut builder: crate::output::update_backend_config_output::Builder,
 ) -> Result<crate::output::update_backend_config_output::Builder, smithy_json::deserialize::Error> {
@@ -1738,7 +1736,7 @@ pub fn deser_operation_update_backend_config(
                     }
                     "loginAuthConfig" => {
                         builder = builder.set_login_auth_config(
-                            crate::json_deser::deser_structure_login_auth_config_req_obj(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_login_auth_config_req_obj(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1759,7 +1757,7 @@ pub fn deser_operation_update_backend_config(
     Ok(builder)
 }
 
-pub fn deser_operation_update_backend_job(
+pub fn deser_operation_crate_operation_update_backend_job(
     input: &[u8],
     mut builder: crate::output::update_backend_job_output::Builder,
 ) -> Result<crate::output::update_backend_job_output::Builder, smithy_json::deserialize::Error> {
@@ -1856,7 +1854,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_list_of__string<'a, I>(
+pub fn deser_list_com_amazonaws_amplifybackend_list_of__string<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1893,7 +1891,7 @@ where
     }
 }
 
-pub fn deser_structure_backend_api_resource_config<'a, I>(
+pub fn deser_structure_crate_model_backend_api_resource_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BackendApiResourceConfig>, smithy_json::deserialize::Error>
 where
@@ -1913,9 +1911,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "additionalAuthTypes" => {
                                 builder = builder.set_additional_auth_types(
-                                    crate::json_deser::deser_list_list_of_backend_api_auth_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_amplifybackend_list_of_backend_api_auth_type(tokens)?
                                 );
                             }
                             "apiName" => {
@@ -1929,14 +1925,12 @@ where
                             }
                             "conflictResolution" => {
                                 builder = builder.set_conflict_resolution(
-                                    crate::json_deser::deser_structure_backend_api_conflict_resolution(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_backend_api_conflict_resolution(tokens)?
                                 );
                             }
                             "defaultAuthType" => {
                                 builder = builder.set_default_auth_type(
-                                    crate::json_deser::deser_structure_backend_api_auth_type(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_backend_api_auth_type(tokens)?
                                 );
                             }
                             "service" => {
@@ -1975,7 +1969,7 @@ where
     }
 }
 
-pub fn deser_structure_create_backend_auth_resource_config<'a, I>(
+pub fn deser_structure_crate_model_create_backend_auth_resource_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CreateBackendAuthResourceConfig>, smithy_json::deserialize::Error>
 where
@@ -2007,7 +2001,7 @@ where
                             }
                             "identityPoolConfigs" => {
                                 builder = builder.set_identity_pool_configs(
-                                    crate::json_deser::deser_structure_create_backend_auth_identity_pool_config(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_create_backend_auth_identity_pool_config(tokens)?
                                 );
                             }
                             "service" => {
@@ -2024,7 +2018,7 @@ where
                             }
                             "userPoolConfigs" => {
                                 builder = builder.set_user_pool_configs(
-                                    crate::json_deser::deser_structure_create_backend_auth_user_pool_config(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_create_backend_auth_user_pool_config(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2046,7 +2040,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_list_of_backend_job_resp_obj<'a, I>(
+pub fn deser_list_com_amazonaws_amplifybackend_list_of_backend_job_resp_obj<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::BackendJobRespObj>>, smithy_json::deserialize::Error>
 where
@@ -2066,7 +2060,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_backend_job_resp_obj(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_backend_job_resp_obj(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2081,7 +2077,7 @@ where
     }
 }
 
-pub fn deser_structure_login_auth_config_req_obj<'a, I>(
+pub fn deser_structure_crate_model_login_auth_config_req_obj<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LoginAuthConfigReqObj>, smithy_json::deserialize::Error>
 where
@@ -2154,7 +2150,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_list_of_backend_api_auth_type<'a, I>(
+pub fn deser_list_com_amazonaws_amplifybackend_list_of_backend_api_auth_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::BackendApiAuthType>>, smithy_json::deserialize::Error>
 where
@@ -2174,7 +2170,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_backend_api_auth_type(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_backend_api_auth_type(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2189,7 +2187,7 @@ where
     }
 }
 
-pub fn deser_structure_backend_api_conflict_resolution<'a, I>(
+pub fn deser_structure_crate_model_backend_api_conflict_resolution<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BackendApiConflictResolution>, smithy_json::deserialize::Error>
 where
@@ -2238,7 +2236,7 @@ where
     }
 }
 
-pub fn deser_structure_backend_api_auth_type<'a, I>(
+pub fn deser_structure_crate_model_backend_api_auth_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BackendApiAuthType>, smithy_json::deserialize::Error>
 where
@@ -2270,7 +2268,7 @@ where
                             }
                             "settings" => {
                                 builder = builder.set_settings(
-                                    crate::json_deser::deser_structure_backend_api_app_sync_auth_settings(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_backend_api_app_sync_auth_settings(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2291,7 +2289,7 @@ where
     }
 }
 
-pub fn deser_structure_create_backend_auth_identity_pool_config<'a, I>(
+pub fn deser_structure_crate_model_create_backend_auth_identity_pool_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::CreateBackendAuthIdentityPoolConfig>,
@@ -2346,7 +2344,7 @@ where
     }
 }
 
-pub fn deser_structure_create_backend_auth_user_pool_config<'a, I>(
+pub fn deser_structure_crate_model_create_backend_auth_user_pool_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CreateBackendAuthUserPoolConfig>, smithy_json::deserialize::Error>
 where
@@ -2366,27 +2364,27 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "forgotPassword" => {
                                 builder = builder.set_forgot_password(
-                                    crate::json_deser::deser_structure_create_backend_auth_forgot_password_config(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_create_backend_auth_forgot_password_config(tokens)?
                                 );
                             }
                             "mfa" => {
                                 builder = builder.set_mfa(
-                                    crate::json_deser::deser_structure_create_backend_auth_mfa_config(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_create_backend_auth_mfa_config(tokens)?
                                 );
                             }
                             "oAuth" => {
                                 builder = builder.set_o_auth(
-                                    crate::json_deser::deser_structure_create_backend_auth_o_auth_config(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_create_backend_auth_o_auth_config(tokens)?
                                 );
                             }
                             "passwordPolicy" => {
                                 builder = builder.set_password_policy(
-                                    crate::json_deser::deser_structure_create_backend_auth_password_policy_config(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_create_backend_auth_password_policy_config(tokens)?
                                 );
                             }
                             "requiredSignUpAttributes" => {
                                 builder = builder.set_required_sign_up_attributes(
-                                    crate::json_deser::deser_list_list_of_required_sign_up_attributes_element(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_amplifybackend_list_of_required_sign_up_attributes_element(tokens)?
                                 );
                             }
                             "signInMethod" => {
@@ -2428,7 +2426,7 @@ where
     }
 }
 
-pub fn deser_structure_backend_job_resp_obj<'a, I>(
+pub fn deser_structure_crate_model_backend_job_resp_obj<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BackendJobRespObj>, smithy_json::deserialize::Error>
 where
@@ -2536,7 +2534,7 @@ where
     }
 }
 
-pub fn deser_structure_backend_api_app_sync_auth_settings<'a, I>(
+pub fn deser_structure_crate_model_backend_api_app_sync_auth_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BackendApiAppSyncAuthSettings>, smithy_json::deserialize::Error>
 where
@@ -2643,7 +2641,7 @@ where
     }
 }
 
-pub fn deser_structure_create_backend_auth_forgot_password_config<'a, I>(
+pub fn deser_structure_crate_model_create_backend_auth_forgot_password_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::CreateBackendAuthForgotPasswordConfig>,
@@ -2678,12 +2676,16 @@ where
                             }
                             "emailSettings" => {
                                 builder = builder.set_email_settings(
-                                    crate::json_deser::deser_structure_email_settings(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_email_settings(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "smsSettings" => {
                                 builder = builder.set_sms_settings(
-                                    crate::json_deser::deser_structure_sms_settings(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_sms_settings(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2704,7 +2706,7 @@ where
     }
 }
 
-pub fn deser_structure_create_backend_auth_mfa_config<'a, I>(
+pub fn deser_structure_crate_model_create_backend_auth_mfa_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CreateBackendAuthMfaConfig>, smithy_json::deserialize::Error>
 where
@@ -2736,7 +2738,9 @@ where
                             }
                             "settings" => {
                                 builder = builder.set_settings(
-                                    crate::json_deser::deser_structure_settings(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_settings(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2757,7 +2761,7 @@ where
     }
 }
 
-pub fn deser_structure_create_backend_auth_o_auth_config<'a, I>(
+pub fn deser_structure_crate_model_create_backend_auth_o_auth_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CreateBackendAuthOAuthConfig>, smithy_json::deserialize::Error>
 where
@@ -2798,26 +2802,22 @@ where
                             }
                             "oAuthScopes" => {
                                 builder = builder.set_o_auth_scopes(
-                                    crate::json_deser::deser_list_list_of_o_auth_scopes_element(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_amplifybackend_list_of_o_auth_scopes_element(tokens)?
                                 );
                             }
                             "redirectSignInURIs" => {
                                 builder = builder.set_redirect_sign_in_ur_is(
-                                    crate::json_deser::deser_list_list_of__string(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_amplifybackend_list_of__string(tokens)?
                                 );
                             }
                             "redirectSignOutURIs" => {
                                 builder = builder.set_redirect_sign_out_ur_is(
-                                    crate::json_deser::deser_list_list_of__string(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_amplifybackend_list_of__string(tokens)?
                                 );
                             }
                             "socialProviderSettings" => {
                                 builder = builder.set_social_provider_settings(
-                                    crate::json_deser::deser_structure_social_provider_settings(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_social_provider_settings(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2838,7 +2838,7 @@ where
     }
 }
 
-pub fn deser_structure_create_backend_auth_password_policy_config<'a, I>(
+pub fn deser_structure_crate_model_create_backend_auth_password_policy_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::CreateBackendAuthPasswordPolicyConfig>,
@@ -2861,7 +2861,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "additionalConstraints" => {
                                 builder = builder.set_additional_constraints(
-                                    crate::json_deser::deser_list_list_of_additional_constraints_element(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_amplifybackend_list_of_additional_constraints_element(tokens)?
                                 );
                             }
                             "minimumLength" => {
@@ -2891,7 +2891,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_list_of_required_sign_up_attributes_element<'a, I>(
+pub fn deser_list_com_amazonaws_amplifybackend_list_of_required_sign_up_attributes_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::RequiredSignUpAttributesElement>>,
@@ -2937,7 +2937,7 @@ where
     }
 }
 
-pub fn deser_structure_email_settings<'a, I>(
+pub fn deser_structure_crate_model_email_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EmailSettings>, smithy_json::deserialize::Error>
 where
@@ -2991,7 +2991,7 @@ where
     }
 }
 
-pub fn deser_structure_sms_settings<'a, I>(
+pub fn deser_structure_crate_model_sms_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SmsSettings>, smithy_json::deserialize::Error>
 where
@@ -3036,7 +3036,7 @@ where
     }
 }
 
-pub fn deser_structure_settings<'a, I>(
+pub fn deser_structure_crate_model_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Settings>, smithy_json::deserialize::Error>
 where
@@ -3056,9 +3056,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "mfaTypes" => {
                                 builder = builder.set_mfa_types(
-                                    crate::json_deser::deser_list_list_of_mfa_types_element(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_amplifybackend_list_of_mfa_types_element(tokens)?
                                 );
                             }
                             "smsMessage" => {
@@ -3089,7 +3087,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_list_of_o_auth_scopes_element<'a, I>(
+pub fn deser_list_com_amazonaws_amplifybackend_list_of_o_auth_scopes_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::OAuthScopesElement>>, smithy_json::deserialize::Error>
 where
@@ -3129,7 +3127,7 @@ where
     }
 }
 
-pub fn deser_structure_social_provider_settings<'a, I>(
+pub fn deser_structure_crate_model_social_provider_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SocialProviderSettings>, smithy_json::deserialize::Error>
 where
@@ -3149,22 +3147,22 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Facebook" => {
                                 builder = builder.set_facebook(
-                                    crate::json_deser::deser_structure_backend_auth_social_provider_config(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_backend_auth_social_provider_config(tokens)?
                                 );
                             }
                             "Google" => {
                                 builder = builder.set_google(
-                                    crate::json_deser::deser_structure_backend_auth_social_provider_config(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_backend_auth_social_provider_config(tokens)?
                                 );
                             }
                             "LoginWithAmazon" => {
                                 builder = builder.set_login_with_amazon(
-                                    crate::json_deser::deser_structure_backend_auth_social_provider_config(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_backend_auth_social_provider_config(tokens)?
                                 );
                             }
                             "SignInWithApple" => {
                                 builder = builder.set_sign_in_with_apple(
-                                    crate::json_deser::deser_structure_backend_auth_apple_provider_config(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_backend_auth_apple_provider_config(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3186,7 +3184,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_list_of_additional_constraints_element<'a, I>(
+pub fn deser_list_com_amazonaws_amplifybackend_list_of_additional_constraints_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AdditionalConstraintsElement>>,
@@ -3231,7 +3229,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_list_of_mfa_types_element<'a, I>(
+pub fn deser_list_com_amazonaws_amplifybackend_list_of_mfa_types_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::MfaTypesElement>>, smithy_json::deserialize::Error>
 where
@@ -3271,7 +3269,7 @@ where
     }
 }
 
-pub fn deser_structure_backend_auth_social_provider_config<'a, I>(
+pub fn deser_structure_crate_model_backend_auth_social_provider_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BackendAuthSocialProviderConfig>, smithy_json::deserialize::Error>
 where
@@ -3325,7 +3323,7 @@ where
     }
 }
 
-pub fn deser_structure_backend_auth_apple_provider_config<'a, I>(
+pub fn deser_structure_crate_model_backend_auth_apple_provider_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BackendAuthAppleProviderConfig>, smithy_json::deserialize::Error>
 where

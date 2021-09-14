@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_certificate_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_certificate_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::certificate_validation_exception::Builder,
 ) -> Result<crate::error::certificate_validation_exception::Builder, smithy_json::deserialize::Error>
@@ -45,7 +45,7 @@ pub fn deser_structure_certificate_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_request_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_request_exception::Builder,
 ) -> Result<crate::error::invalid_request_exception::Builder, smithy_json::deserialize::Error> {
@@ -84,7 +84,7 @@ pub fn deser_structure_invalid_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -123,7 +123,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_unavailable_exceptionjson_err(
+pub fn deser_structure_crate_error_service_unavailable_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_unavailable_exception::Builder,
 ) -> Result<crate::error::service_unavailable_exception::Builder, smithy_json::deserialize::Error> {
@@ -162,7 +162,7 @@ pub fn deser_structure_service_unavailable_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_terminal_state_exceptionjson_err(
+pub fn deser_structure_crate_error_terminal_state_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::terminal_state_exception::Builder,
 ) -> Result<crate::error::terminal_state_exception::Builder, smithy_json::deserialize::Error> {
@@ -201,7 +201,7 @@ pub fn deser_structure_terminal_state_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -245,7 +245,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_job_execution(
+pub fn deser_operation_crate_operation_describe_job_execution(
     input: &[u8],
     mut builder: crate::output::describe_job_execution_output::Builder,
 ) -> Result<crate::output::describe_job_execution_output::Builder, smithy_json::deserialize::Error>
@@ -262,7 +262,7 @@ pub fn deser_operation_describe_job_execution(
                 match key.to_unescaped()?.as_ref() {
                     "execution" => {
                         builder = builder.set_execution(
-                            crate::json_deser::deser_structure_job_execution(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_job_execution(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -283,7 +283,7 @@ pub fn deser_operation_describe_job_execution(
     Ok(builder)
 }
 
-pub fn deser_operation_get_pending_job_executions(
+pub fn deser_operation_crate_operation_get_pending_job_executions(
     input: &[u8],
     mut builder: crate::output::get_pending_job_executions_output::Builder,
 ) -> Result<
@@ -302,12 +302,12 @@ pub fn deser_operation_get_pending_job_executions(
                 match key.to_unescaped()?.as_ref() {
                     "inProgressJobs" => {
                         builder = builder.set_in_progress_jobs(
-                            crate::json_deser::deser_list_job_execution_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_iotjobsdataplane_job_execution_summary_list(tokens)?
                         );
                     }
                     "queuedJobs" => {
                         builder = builder.set_queued_jobs(
-                            crate::json_deser::deser_list_job_execution_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_iotjobsdataplane_job_execution_summary_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -328,7 +328,7 @@ pub fn deser_operation_get_pending_job_executions(
     Ok(builder)
 }
 
-pub fn deser_operation_start_next_pending_job_execution(
+pub fn deser_operation_crate_operation_start_next_pending_job_execution(
     input: &[u8],
     mut builder: crate::output::start_next_pending_job_execution_output::Builder,
 ) -> Result<
@@ -347,7 +347,7 @@ pub fn deser_operation_start_next_pending_job_execution(
                 match key.to_unescaped()?.as_ref() {
                     "execution" => {
                         builder = builder.set_execution(
-                            crate::json_deser::deser_structure_job_execution(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_job_execution(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -368,7 +368,7 @@ pub fn deser_operation_start_next_pending_job_execution(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_state_transition_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_state_transition_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_state_transition_exception::Builder,
 ) -> Result<
@@ -410,7 +410,7 @@ pub fn deser_structure_invalid_state_transition_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_update_job_execution(
+pub fn deser_operation_crate_operation_update_job_execution(
     input: &[u8],
     mut builder: crate::output::update_job_execution_output::Builder,
 ) -> Result<crate::output::update_job_execution_output::Builder, smithy_json::deserialize::Error> {
@@ -426,7 +426,9 @@ pub fn deser_operation_update_job_execution(
                 match key.to_unescaped()?.as_ref() {
                     "executionState" => {
                         builder = builder.set_execution_state(
-                            crate::json_deser::deser_structure_job_execution_state(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_job_execution_state(
+                                tokens,
+                            )?,
                         );
                     }
                     "jobDocument" => {
@@ -462,7 +464,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_job_execution<'a, I>(
+pub fn deser_structure_crate_model_job_execution<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::JobExecution>, smithy_json::deserialize::Error>
 where
@@ -513,7 +515,7 @@ where
                             }
                             "statusDetails" => {
                                 builder = builder.set_status_details(
-                                    crate::json_deser::deser_map_details_map(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_iotjobsdataplane_details_map(tokens)?
                                 );
                             }
                             "queuedAt" => {
@@ -592,7 +594,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_job_execution_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotjobsdataplane_job_execution_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::JobExecutionSummary>>, smithy_json::deserialize::Error>
 where
@@ -612,7 +614,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_job_execution_summary(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_job_execution_summary(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -627,7 +631,7 @@ where
     }
 }
 
-pub fn deser_structure_job_execution_state<'a, I>(
+pub fn deser_structure_crate_model_job_execution_state<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::JobExecutionState>, smithy_json::deserialize::Error>
 where
@@ -660,7 +664,7 @@ where
                             }
                             "statusDetails" => {
                                 builder = builder.set_status_details(
-                                    crate::json_deser::deser_map_details_map(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_iotjobsdataplane_details_map(tokens)?
                                 );
                             }
                             "versionNumber" => {
@@ -690,7 +694,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_details_map<'a, I>(
+pub fn deser_map_com_amazonaws_iotjobsdataplane_details_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -733,7 +737,7 @@ where
     }
 }
 
-pub fn deser_structure_job_execution_summary<'a, I>(
+pub fn deser_structure_crate_model_job_execution_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::JobExecutionSummary>, smithy_json::deserialize::Error>
 where

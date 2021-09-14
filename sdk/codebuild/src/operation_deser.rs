@@ -21,11 +21,7 @@ pub fn parse_batch_delete_builds_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchDeleteBuildsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteBuildsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -47,7 +43,7 @@ pub fn parse_batch_delete_builds_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_delete_builds_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_batch_delete_builds(
+        output = crate::json_deser::deser_operation_crate_operation_batch_delete_builds(
             response.body().as_ref(),
             output,
         )
@@ -80,11 +76,7 @@ pub fn parse_batch_get_build_batches_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchGetBuildBatchesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchGetBuildBatchesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -108,7 +100,7 @@ pub fn parse_batch_get_build_batches_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_get_build_batches_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_batch_get_build_batches(
+        output = crate::json_deser::deser_operation_crate_operation_batch_get_build_batches(
             response.body().as_ref(),
             output,
         )
@@ -138,11 +130,7 @@ pub fn parse_batch_get_builds_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchGetBuildsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchGetBuildsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -163,9 +151,11 @@ pub fn parse_batch_get_builds_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_get_builds_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_batch_get_builds(response.body().as_ref(), output)
-                .map_err(crate::error::BatchGetBuildsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_batch_get_builds(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::BatchGetBuildsError::unhandled)?;
         output.build()
     })
 }
@@ -192,11 +182,7 @@ pub fn parse_batch_get_projects_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchGetProjectsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchGetProjectsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -218,9 +204,11 @@ pub fn parse_batch_get_projects_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_get_projects_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_batch_get_projects(response.body().as_ref(), output)
-                .map_err(crate::error::BatchGetProjectsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_batch_get_projects(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::BatchGetProjectsError::unhandled)?;
         output.build()
     })
 }
@@ -249,11 +237,7 @@ pub fn parse_batch_get_report_groups_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchGetReportGroupsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchGetReportGroupsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -277,7 +261,7 @@ pub fn parse_batch_get_report_groups_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_get_report_groups_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_batch_get_report_groups(
+        output = crate::json_deser::deser_operation_crate_operation_batch_get_report_groups(
             response.body().as_ref(),
             output,
         )
@@ -307,11 +291,7 @@ pub fn parse_batch_get_reports_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchGetReportsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchGetReportsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -332,9 +312,11 @@ pub fn parse_batch_get_reports_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_get_reports_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_batch_get_reports(response.body().as_ref(), output)
-                .map_err(crate::error::BatchGetReportsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_batch_get_reports(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::BatchGetReportsError::unhandled)?;
         output.build()
     })
 }
@@ -361,7 +343,7 @@ pub fn parse_create_project_error(
                     let mut output =
                         crate::error::account_limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_account_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_account_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -378,11 +360,7 @@ pub fn parse_create_project_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateProjectError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -400,7 +378,7 @@ pub fn parse_create_project_error(
                     let mut output =
                         crate::error::resource_already_exists_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_already_exists_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -421,9 +399,11 @@ pub fn parse_create_project_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_project_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_create_project(response.body().as_ref(), output)
-                .map_err(crate::error::CreateProjectError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_project(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateProjectError::unhandled)?;
         output.build()
     })
 }
@@ -451,7 +431,7 @@ pub fn parse_create_report_group_error(
                     let mut output =
                         crate::error::account_limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_account_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateReportGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_account_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateReportGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -468,11 +448,7 @@ pub fn parse_create_report_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateReportGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateReportGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -490,7 +466,7 @@ pub fn parse_create_report_group_error(
                     let mut output =
                         crate::error::resource_already_exists_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_already_exists_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateReportGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateReportGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -512,7 +488,7 @@ pub fn parse_create_report_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_report_group_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_report_group(
+        output = crate::json_deser::deser_operation_crate_operation_create_report_group(
             response.body().as_ref(),
             output,
         )
@@ -542,11 +518,7 @@ pub fn parse_create_webhook_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateWebhookError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateWebhookError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -563,11 +535,7 @@ pub fn parse_create_webhook_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::o_auth_provider_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_o_auth_provider_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateWebhookError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_o_auth_provider_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateWebhookError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -585,7 +553,7 @@ pub fn parse_create_webhook_error(
                     let mut output =
                         crate::error::resource_already_exists_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_already_exists_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateWebhookError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateWebhookError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -594,26 +562,23 @@ pub fn parse_create_webhook_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::CreateWebhookError {
-                meta: generic,
-                kind: crate::error::CreateWebhookErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::CreateWebhookError {
+            meta: generic,
+            kind: crate::error::CreateWebhookErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateWebhookError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateWebhookError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::CreateWebhookError::generic(generic),
     })
 }
@@ -626,9 +591,11 @@ pub fn parse_create_webhook_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_webhook_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_create_webhook(response.body().as_ref(), output)
-                .map_err(crate::error::CreateWebhookError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_webhook(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateWebhookError::unhandled)?;
         output.build()
     })
 }
@@ -655,11 +622,7 @@ pub fn parse_delete_build_batch_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBuildBatchError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBuildBatchError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -681,9 +644,11 @@ pub fn parse_delete_build_batch_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_build_batch_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_delete_build_batch(response.body().as_ref(), output)
-                .map_err(crate::error::DeleteBuildBatchError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_delete_build_batch(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteBuildBatchError::unhandled)?;
         output.build()
     })
 }
@@ -709,11 +674,7 @@ pub fn parse_delete_project_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteProjectError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteProjectError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -759,11 +720,7 @@ pub fn parse_delete_report_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteReportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteReportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -810,11 +767,7 @@ pub fn parse_delete_report_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteReportGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteReportGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -864,11 +817,7 @@ pub fn parse_delete_resource_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteResourcePolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourcePolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -924,11 +873,7 @@ pub fn parse_delete_source_credentials_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteSourceCredentialsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSourceCredentialsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -937,26 +882,23 @@ pub fn parse_delete_source_credentials_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DeleteSourceCredentialsError {
-                meta: generic,
-                kind: crate::error::DeleteSourceCredentialsErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DeleteSourceCredentialsError {
+            meta: generic,
+            kind: crate::error::DeleteSourceCredentialsErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSourceCredentialsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSourceCredentialsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeleteSourceCredentialsError::generic(generic),
     })
 }
@@ -972,7 +914,7 @@ pub fn parse_delete_source_credentials_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_source_credentials_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_delete_source_credentials(
+        output = crate::json_deser::deser_operation_crate_operation_delete_source_credentials(
             response.body().as_ref(),
             output,
         )
@@ -1002,11 +944,7 @@ pub fn parse_delete_webhook_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteWebhookError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteWebhookError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1023,11 +961,7 @@ pub fn parse_delete_webhook_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::o_auth_provider_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_o_auth_provider_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteWebhookError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_o_auth_provider_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteWebhookError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1036,26 +970,23 @@ pub fn parse_delete_webhook_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DeleteWebhookError {
-                meta: generic,
-                kind: crate::error::DeleteWebhookErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DeleteWebhookError {
+            meta: generic,
+            kind: crate::error::DeleteWebhookErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteWebhookError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteWebhookError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeleteWebhookError::generic(generic),
     })
 }
@@ -1096,11 +1027,7 @@ pub fn parse_describe_code_coverages_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeCodeCoveragesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeCodeCoveragesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1124,7 +1051,7 @@ pub fn parse_describe_code_coverages_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_code_coverages_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_code_coverages(
+        output = crate::json_deser::deser_operation_crate_operation_describe_code_coverages(
             response.body().as_ref(),
             output,
         )
@@ -1155,11 +1082,7 @@ pub fn parse_describe_test_cases_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeTestCasesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTestCasesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1168,26 +1091,23 @@ pub fn parse_describe_test_cases_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DescribeTestCasesError {
-                meta: generic,
-                kind: crate::error::DescribeTestCasesErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DescribeTestCasesError {
+            meta: generic,
+            kind: crate::error::DescribeTestCasesErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTestCasesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeTestCasesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeTestCasesError::generic(generic),
     })
 }
@@ -1201,7 +1121,7 @@ pub fn parse_describe_test_cases_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_test_cases_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_test_cases(
+        output = crate::json_deser::deser_operation_crate_operation_describe_test_cases(
             response.body().as_ref(),
             output,
         )
@@ -1234,11 +1154,7 @@ pub fn parse_get_report_group_trend_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetReportGroupTrendError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetReportGroupTrendError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1247,26 +1163,23 @@ pub fn parse_get_report_group_trend_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::GetReportGroupTrendError {
-                meta: generic,
-                kind: crate::error::GetReportGroupTrendErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::GetReportGroupTrendError {
+            meta: generic,
+            kind: crate::error::GetReportGroupTrendErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetReportGroupTrendError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetReportGroupTrendError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetReportGroupTrendError::generic(generic),
     })
 }
@@ -1282,7 +1195,7 @@ pub fn parse_get_report_group_trend_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_report_group_trend_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_report_group_trend(
+        output = crate::json_deser::deser_operation_crate_operation_get_report_group_trend(
             response.body().as_ref(),
             output,
         )
@@ -1313,11 +1226,7 @@ pub fn parse_get_resource_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetResourcePolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetResourcePolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1326,26 +1235,23 @@ pub fn parse_get_resource_policy_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::GetResourcePolicyError {
-                meta: generic,
-                kind: crate::error::GetResourcePolicyErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::GetResourcePolicyError {
+            meta: generic,
+            kind: crate::error::GetResourcePolicyErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetResourcePolicyError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetResourcePolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetResourcePolicyError::generic(generic),
     })
 }
@@ -1359,7 +1265,7 @@ pub fn parse_get_resource_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_resource_policy_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_resource_policy(
+        output = crate::json_deser::deser_operation_crate_operation_get_resource_policy(
             response.body().as_ref(),
             output,
         )
@@ -1397,7 +1303,7 @@ pub fn parse_import_source_credentials_error(
                     let mut output =
                         crate::error::account_limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_account_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ImportSourceCredentialsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_account_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ImportSourceCredentialsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1414,11 +1320,7 @@ pub fn parse_import_source_credentials_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ImportSourceCredentialsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ImportSourceCredentialsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1436,7 +1338,7 @@ pub fn parse_import_source_credentials_error(
                     let mut output =
                         crate::error::resource_already_exists_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_already_exists_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ImportSourceCredentialsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ImportSourceCredentialsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1460,7 +1362,7 @@ pub fn parse_import_source_credentials_response(
         #[allow(unused_mut)]
         let mut output = crate::output::import_source_credentials_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_import_source_credentials(
+        output = crate::json_deser::deser_operation_crate_operation_import_source_credentials(
             response.body().as_ref(),
             output,
         )
@@ -1497,11 +1399,7 @@ pub fn parse_invalidate_project_cache_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::InvalidateProjectCacheError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvalidateProjectCacheError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1510,26 +1408,23 @@ pub fn parse_invalidate_project_cache_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::InvalidateProjectCacheError {
-                meta: generic,
-                kind: crate::error::InvalidateProjectCacheErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::InvalidateProjectCacheError {
+            meta: generic,
+            kind: crate::error::InvalidateProjectCacheErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvalidateProjectCacheError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvalidateProjectCacheError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::InvalidateProjectCacheError::generic(generic),
     })
 }
@@ -1571,11 +1466,7 @@ pub fn parse_list_build_batches_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBuildBatchesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuildBatchesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1597,9 +1488,11 @@ pub fn parse_list_build_batches_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_build_batches_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_build_batches(response.body().as_ref(), output)
-                .map_err(crate::error::ListBuildBatchesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_build_batches(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListBuildBatchesError::unhandled)?;
         output.build()
     })
 }
@@ -1632,11 +1525,7 @@ pub fn parse_list_build_batches_for_project_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBuildBatchesForProjectError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuildBatchesForProjectError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1645,28 +1534,23 @@ pub fn parse_list_build_batches_for_project_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ListBuildBatchesForProjectError {
-                meta: generic,
-                kind: crate::error::ListBuildBatchesForProjectErrorKind::ResourceNotFoundException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::resource_not_found_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuildBatchesForProjectError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
-        }
+        "ResourceNotFoundException" => crate::error::ListBuildBatchesForProjectError {
+            meta: generic,
+            kind: crate::error::ListBuildBatchesForProjectErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuildBatchesForProjectError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ListBuildBatchesForProjectError::generic(generic),
     })
 }
@@ -1682,7 +1566,7 @@ pub fn parse_list_build_batches_for_project_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_build_batches_for_project_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_build_batches_for_project(
+        output = crate::json_deser::deser_operation_crate_operation_list_build_batches_for_project(
             response.body().as_ref(),
             output,
         )
@@ -1712,11 +1596,7 @@ pub fn parse_list_builds_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBuildsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuildsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1737,8 +1617,11 @@ pub fn parse_list_builds_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_builds_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_builds(response.body().as_ref(), output)
-            .map_err(crate::error::ListBuildsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_builds(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListBuildsError::unhandled)?;
         output.build()
     })
 }
@@ -1767,11 +1650,7 @@ pub fn parse_list_builds_for_project_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBuildsForProjectError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuildsForProjectError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1780,26 +1659,23 @@ pub fn parse_list_builds_for_project_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ListBuildsForProjectError {
-                meta: generic,
-                kind: crate::error::ListBuildsForProjectErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::ListBuildsForProjectError {
+            meta: generic,
+            kind: crate::error::ListBuildsForProjectErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuildsForProjectError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuildsForProjectError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ListBuildsForProjectError::generic(generic),
     })
 }
@@ -1815,7 +1691,7 @@ pub fn parse_list_builds_for_project_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_builds_for_project_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_builds_for_project(
+        output = crate::json_deser::deser_operation_crate_operation_list_builds_for_project(
             response.body().as_ref(),
             output,
         )
@@ -1849,11 +1725,12 @@ pub fn parse_list_curated_environment_images_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_curated_environment_images_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_curated_environment_images(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ListCuratedEnvironmentImagesError::unhandled)?;
+        output =
+            crate::json_deser::deser_operation_crate_operation_list_curated_environment_images(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ListCuratedEnvironmentImagesError::unhandled)?;
         output.build()
     })
 }
@@ -1879,11 +1756,7 @@ pub fn parse_list_projects_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListProjectsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListProjectsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1904,8 +1777,11 @@ pub fn parse_list_projects_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_projects_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_projects(response.body().as_ref(), output)
-            .map_err(crate::error::ListProjectsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_projects(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListProjectsError::unhandled)?;
         output.build()
     })
 }
@@ -1932,11 +1808,7 @@ pub fn parse_list_report_groups_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListReportGroupsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListReportGroupsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1958,9 +1830,11 @@ pub fn parse_list_report_groups_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_report_groups_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_report_groups(response.body().as_ref(), output)
-                .map_err(crate::error::ListReportGroupsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_report_groups(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListReportGroupsError::unhandled)?;
         output.build()
     })
 }
@@ -1986,11 +1860,7 @@ pub fn parse_list_reports_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListReportsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListReportsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2011,8 +1881,11 @@ pub fn parse_list_reports_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_reports_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_reports(response.body().as_ref(), output)
-            .map_err(crate::error::ListReportsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_reports(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListReportsError::unhandled)?;
         output.build()
     })
 }
@@ -2045,11 +1918,7 @@ pub fn parse_list_reports_for_report_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListReportsForReportGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListReportsForReportGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2058,28 +1927,23 @@ pub fn parse_list_reports_for_report_group_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ListReportsForReportGroupError {
-                meta: generic,
-                kind: crate::error::ListReportsForReportGroupErrorKind::ResourceNotFoundException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::resource_not_found_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListReportsForReportGroupError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
-        }
+        "ResourceNotFoundException" => crate::error::ListReportsForReportGroupError {
+            meta: generic,
+            kind: crate::error::ListReportsForReportGroupErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListReportsForReportGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ListReportsForReportGroupError::generic(generic),
     })
 }
@@ -2095,7 +1959,7 @@ pub fn parse_list_reports_for_report_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_reports_for_report_group_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_reports_for_report_group(
+        output = crate::json_deser::deser_operation_crate_operation_list_reports_for_report_group(
             response.body().as_ref(),
             output,
         )
@@ -2128,11 +1992,7 @@ pub fn parse_list_shared_projects_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListSharedProjectsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSharedProjectsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2156,7 +2016,7 @@ pub fn parse_list_shared_projects_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_shared_projects_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_shared_projects(
+        output = crate::json_deser::deser_operation_crate_operation_list_shared_projects(
             response.body().as_ref(),
             output,
         )
@@ -2193,11 +2053,7 @@ pub fn parse_list_shared_report_groups_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListSharedReportGroupsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSharedReportGroupsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2221,7 +2077,7 @@ pub fn parse_list_shared_report_groups_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_shared_report_groups_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_shared_report_groups(
+        output = crate::json_deser::deser_operation_crate_operation_list_shared_report_groups(
             response.body().as_ref(),
             output,
         )
@@ -2254,11 +2110,7 @@ pub fn parse_list_source_credentials_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListSourceCredentialsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSourceCredentialsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2282,7 +2134,7 @@ pub fn parse_list_source_credentials_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_source_credentials_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_source_credentials(
+        output = crate::json_deser::deser_operation_crate_operation_list_source_credentials(
             response.body().as_ref(),
             output,
         )
@@ -2313,11 +2165,7 @@ pub fn parse_put_resource_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutResourcePolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutResourcePolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2326,26 +2174,23 @@ pub fn parse_put_resource_policy_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::PutResourcePolicyError {
-                meta: generic,
-                kind: crate::error::PutResourcePolicyErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::PutResourcePolicyError {
+            meta: generic,
+            kind: crate::error::PutResourcePolicyErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutResourcePolicyError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutResourcePolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::PutResourcePolicyError::generic(generic),
     })
 }
@@ -2359,7 +2204,7 @@ pub fn parse_put_resource_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_resource_policy_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_put_resource_policy(
+        output = crate::json_deser::deser_operation_crate_operation_put_resource_policy(
             response.body().as_ref(),
             output,
         )
@@ -2390,7 +2235,7 @@ pub fn parse_retry_build_error(
                     let mut output =
                         crate::error::account_limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_account_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RetryBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_account_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RetryBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2407,11 +2252,7 @@ pub fn parse_retry_build_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RetryBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RetryBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2420,26 +2261,23 @@ pub fn parse_retry_build_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::RetryBuildError {
-                meta: generic,
-                kind: crate::error::RetryBuildErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::RetryBuildError {
+            meta: generic,
+            kind: crate::error::RetryBuildErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RetryBuildError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RetryBuildError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::RetryBuildError::generic(generic),
     })
 }
@@ -2452,8 +2290,11 @@ pub fn parse_retry_build_response(
         #[allow(unused_mut)]
         let mut output = crate::output::retry_build_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_retry_build(response.body().as_ref(), output)
-            .map_err(crate::error::RetryBuildError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_retry_build(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RetryBuildError::unhandled)?;
         output.build()
     })
 }
@@ -2479,11 +2320,7 @@ pub fn parse_retry_build_batch_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RetryBuildBatchError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RetryBuildBatchError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2492,26 +2329,23 @@ pub fn parse_retry_build_batch_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::RetryBuildBatchError {
-                meta: generic,
-                kind: crate::error::RetryBuildBatchErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::RetryBuildBatchError {
+            meta: generic,
+            kind: crate::error::RetryBuildBatchErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RetryBuildBatchError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RetryBuildBatchError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::RetryBuildBatchError::generic(generic),
     })
 }
@@ -2524,9 +2358,11 @@ pub fn parse_retry_build_batch_response(
         #[allow(unused_mut)]
         let mut output = crate::output::retry_build_batch_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_retry_build_batch(response.body().as_ref(), output)
-                .map_err(crate::error::RetryBuildBatchError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_retry_build_batch(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RetryBuildBatchError::unhandled)?;
         output.build()
     })
 }
@@ -2553,7 +2389,7 @@ pub fn parse_start_build_error(
                     let mut output =
                         crate::error::account_limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_account_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_account_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2570,11 +2406,7 @@ pub fn parse_start_build_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2583,26 +2415,23 @@ pub fn parse_start_build_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::StartBuildError {
-                meta: generic,
-                kind: crate::error::StartBuildErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::StartBuildError {
+            meta: generic,
+            kind: crate::error::StartBuildErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartBuildError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartBuildError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::StartBuildError::generic(generic),
     })
 }
@@ -2615,8 +2444,11 @@ pub fn parse_start_build_response(
         #[allow(unused_mut)]
         let mut output = crate::output::start_build_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_start_build(response.body().as_ref(), output)
-            .map_err(crate::error::StartBuildError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_start_build(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StartBuildError::unhandled)?;
         output.build()
     })
 }
@@ -2642,11 +2474,7 @@ pub fn parse_start_build_batch_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartBuildBatchError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartBuildBatchError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2655,26 +2483,23 @@ pub fn parse_start_build_batch_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::StartBuildBatchError {
-                meta: generic,
-                kind: crate::error::StartBuildBatchErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::StartBuildBatchError {
+            meta: generic,
+            kind: crate::error::StartBuildBatchErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartBuildBatchError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartBuildBatchError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::StartBuildBatchError::generic(generic),
     })
 }
@@ -2687,9 +2512,11 @@ pub fn parse_start_build_batch_response(
         #[allow(unused_mut)]
         let mut output = crate::output::start_build_batch_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_start_build_batch(response.body().as_ref(), output)
-                .map_err(crate::error::StartBuildBatchError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_start_build_batch(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StartBuildBatchError::unhandled)?;
         output.build()
     })
 }
@@ -2715,11 +2542,7 @@ pub fn parse_stop_build_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StopBuildError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopBuildError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2728,26 +2551,23 @@ pub fn parse_stop_build_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::StopBuildError {
-                meta: generic,
-                kind: crate::error::StopBuildErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::StopBuildError {
+            meta: generic,
+            kind: crate::error::StopBuildErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopBuildError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopBuildError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::StopBuildError::generic(generic),
     })
 }
@@ -2760,8 +2580,11 @@ pub fn parse_stop_build_response(
         #[allow(unused_mut)]
         let mut output = crate::output::stop_build_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_stop_build(response.body().as_ref(), output)
-            .map_err(crate::error::StopBuildError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_stop_build(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StopBuildError::unhandled)?;
         output.build()
     })
 }
@@ -2787,11 +2610,7 @@ pub fn parse_stop_build_batch_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StopBuildBatchError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopBuildBatchError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2800,26 +2619,23 @@ pub fn parse_stop_build_batch_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::StopBuildBatchError {
-                meta: generic,
-                kind: crate::error::StopBuildBatchErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::StopBuildBatchError {
+            meta: generic,
+            kind: crate::error::StopBuildBatchErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopBuildBatchError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopBuildBatchError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::StopBuildBatchError::generic(generic),
     })
 }
@@ -2832,9 +2648,11 @@ pub fn parse_stop_build_batch_response(
         #[allow(unused_mut)]
         let mut output = crate::output::stop_build_batch_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_stop_build_batch(response.body().as_ref(), output)
-                .map_err(crate::error::StopBuildBatchError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_stop_build_batch(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StopBuildBatchError::unhandled)?;
         output.build()
     })
 }
@@ -2860,11 +2678,7 @@ pub fn parse_update_project_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateProjectError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateProjectError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2873,26 +2687,23 @@ pub fn parse_update_project_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::UpdateProjectError {
-                meta: generic,
-                kind: crate::error::UpdateProjectErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::UpdateProjectError {
+            meta: generic,
+            kind: crate::error::UpdateProjectErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateProjectError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateProjectError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::UpdateProjectError::generic(generic),
     })
 }
@@ -2905,9 +2716,11 @@ pub fn parse_update_project_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_project_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_update_project(response.body().as_ref(), output)
-                .map_err(crate::error::UpdateProjectError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_update_project(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateProjectError::unhandled)?;
         output.build()
     })
 }
@@ -2940,11 +2753,7 @@ pub fn parse_update_project_visibility_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateProjectVisibilityError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateProjectVisibilityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2953,26 +2762,23 @@ pub fn parse_update_project_visibility_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::UpdateProjectVisibilityError {
-                meta: generic,
-                kind: crate::error::UpdateProjectVisibilityErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::UpdateProjectVisibilityError {
+            meta: generic,
+            kind: crate::error::UpdateProjectVisibilityErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateProjectVisibilityError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateProjectVisibilityError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::UpdateProjectVisibilityError::generic(generic),
     })
 }
@@ -2988,7 +2794,7 @@ pub fn parse_update_project_visibility_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_project_visibility_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_project_visibility(
+        output = crate::json_deser::deser_operation_crate_operation_update_project_visibility(
             response.body().as_ref(),
             output,
         )
@@ -3019,11 +2825,7 @@ pub fn parse_update_report_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateReportGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateReportGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3032,26 +2834,23 @@ pub fn parse_update_report_group_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::UpdateReportGroupError {
-                meta: generic,
-                kind: crate::error::UpdateReportGroupErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::UpdateReportGroupError {
+            meta: generic,
+            kind: crate::error::UpdateReportGroupErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateReportGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateReportGroupError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::UpdateReportGroupError::generic(generic),
     })
 }
@@ -3065,7 +2864,7 @@ pub fn parse_update_report_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_report_group_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_report_group(
+        output = crate::json_deser::deser_operation_crate_operation_update_report_group(
             response.body().as_ref(),
             output,
         )
@@ -3095,11 +2894,7 @@ pub fn parse_update_webhook_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateWebhookError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateWebhookError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3116,11 +2911,7 @@ pub fn parse_update_webhook_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::o_auth_provider_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_o_auth_provider_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateWebhookError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_o_auth_provider_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateWebhookError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3129,26 +2920,23 @@ pub fn parse_update_webhook_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::UpdateWebhookError {
-                meta: generic,
-                kind: crate::error::UpdateWebhookErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::UpdateWebhookError {
+            meta: generic,
+            kind: crate::error::UpdateWebhookErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateWebhookError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateWebhookError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::UpdateWebhookError::generic(generic),
     })
 }
@@ -3161,9 +2949,11 @@ pub fn parse_update_webhook_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_webhook_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_update_webhook(response.body().as_ref(), output)
-                .map_err(crate::error::UpdateWebhookError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_update_webhook(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateWebhookError::unhandled)?;
         output.build()
     })
 }

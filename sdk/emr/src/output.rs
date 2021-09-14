@@ -283,7 +283,7 @@ impl RunJobFlowOutput {
     }
 }
 
-/// <p>This output indicates the result of removing tags from a resource.</p>
+/// <p>This output indicates the result of removing tags from the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsOutput {}

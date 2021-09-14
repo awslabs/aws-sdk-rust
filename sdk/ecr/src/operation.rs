@@ -132,7 +132,7 @@ impl smithy_http::response::ParseStrictResponse for CompleteLayerUpload {
     }
 }
 
-/// <p>Creates a repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon ECR Repositories</a> in the
+/// <p>Creates a repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon ECR repositories</a> in the
 /// <i>Amazon Elastic Container Registry User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRepository {
@@ -398,9 +398,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeRepositories {
 /// principal has access to. The authorization token is valid for 12 hours.</p>
 /// <p>The <code>authorizationToken</code> returned is a base64 encoded string that can be
 /// decoded and used in a <code>docker login</code> command to authenticate to a registry.
-/// The AWS CLI offers an <code>get-login-password</code> command that simplifies the login
+/// The CLI offers an <code>get-login-password</code> command that simplifies the login
 /// process. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth">Registry
-/// Authentication</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+/// authentication</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetAuthorizationToken {
     _private: (),
@@ -428,8 +428,8 @@ impl smithy_http::response::ParseStrictResponse for GetAuthorizationToken {
     }
 }
 
-/// <p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image layer. You
-/// can only get URLs for image layers that are referenced in an image.</p>
+/// <p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image layer. You can
+/// only get URLs for image layers that are referenced in an image.</p>
 /// <p>When an image is pulled, the GetDownloadUrlForLayer API is called once per image layer
 /// that is not already cached.</p>
 /// <note>
@@ -732,8 +732,8 @@ impl smithy_http::response::ParseStrictResponse for PutImageScanningConfiguratio
 }
 
 /// <p>Updates the image tag mutability settings for the specified repository. For more
-/// information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image Tag
-/// Mutability</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+/// information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image tag
+/// mutability</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutImageTagMutability {
     _private: (),
@@ -762,8 +762,8 @@ impl smithy_http::response::ParseStrictResponse for PutImageTagMutability {
 }
 
 /// <p>Creates or updates the lifecycle policy for the specified repository. For more
-/// information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle Policy
-/// Template</a>.</p>
+/// information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle policy
+/// template</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutLifecyclePolicy {
     _private: (),
@@ -792,7 +792,7 @@ impl smithy_http::response::ParseStrictResponse for PutLifecyclePolicy {
 }
 
 /// <p>Creates or updates the permissions policy for your registry.</p>
-/// <p>A registry policy is used to specify permissions for another AWS account and is used
+/// <p>A registry policy is used to specify permissions for another Amazon Web Services account and is used
 /// when configuring cross-account replication. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutRegistryPolicy {
@@ -825,7 +825,7 @@ impl smithy_http::response::ParseStrictResponse for PutRegistryPolicy {
 /// replication configuration for a repository can be retrieved with the <a>DescribeRegistry</a> API action. The first time the
 /// PutReplicationConfiguration API is called, a service-linked IAM role is created in
 /// your account for the replication process. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/using-service-linked-roles.html">Using
-/// Service-Linked Roles for Amazon ECR</a> in the
+/// service-linked roles for Amazon ECR</a> in the
 /// <i>Amazon Elastic Container Registry User Guide</i>.</p>
 /// <note>
 /// <p>When configuring cross-account replication, the destination account must grant the
@@ -861,7 +861,7 @@ impl smithy_http::response::ParseStrictResponse for PutReplicationConfiguration 
 
 /// <p>Applies a repository policy to the specified repository to control access permissions.
 /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html">Amazon ECR Repository
-/// Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+/// policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct SetRepositoryPolicy {
     _private: (),
@@ -889,9 +889,9 @@ impl smithy_http::response::ParseStrictResponse for SetRepositoryPolicy {
     }
 }
 
-/// <p>Starts an image vulnerability scan. An image scan can only be started once per day on
-/// an individual image. This limit includes if an image was scanned on initial push. For
-/// more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image Scanning</a> in the
+/// <p>Starts an image vulnerability scan. An image scan can only be started once per 24
+/// hours on an individual image. This limit includes if an image was scanned on initial
+/// push. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image scanning</a> in the
 /// <i>Amazon Elastic Container Registry User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StartImageScan {

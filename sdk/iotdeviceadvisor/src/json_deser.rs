@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_suite_definition(
+pub fn deser_operation_crate_operation_create_suite_definition(
     input: &[u8],
     mut builder: crate::output::create_suite_definition_output::Builder,
 ) -> Result<crate::output::create_suite_definition_output::Builder, smithy_json::deserialize::Error>
@@ -145,7 +145,7 @@ pub fn deser_operation_create_suite_definition(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -184,7 +184,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_suite_definition(
+pub fn deser_operation_crate_operation_get_suite_definition(
     input: &[u8],
     mut builder: crate::output::get_suite_definition_output::Builder,
 ) -> Result<crate::output::get_suite_definition_output::Builder, smithy_json::deserialize::Error> {
@@ -230,9 +230,7 @@ pub fn deser_operation_get_suite_definition(
                     }
                     "suiteDefinitionConfiguration" => {
                         builder = builder.set_suite_definition_configuration(
-                            crate::json_deser::deser_structure_suite_definition_configuration(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_suite_definition_configuration(tokens)?
                         );
                     }
                     "suiteDefinitionId" => {
@@ -250,7 +248,11 @@ pub fn deser_operation_get_suite_definition(
                         );
                     }
                     "tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tag_map(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_iotdeviceadvisor_tag_map(
+                                tokens,
+                            )?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -270,7 +272,7 @@ pub fn deser_operation_get_suite_definition(
     Ok(builder)
 }
 
-pub fn deser_operation_get_suite_run(
+pub fn deser_operation_crate_operation_get_suite_run(
     input: &[u8],
     mut builder: crate::output::get_suite_run_output::Builder,
 ) -> Result<crate::output::get_suite_run_output::Builder, smithy_json::deserialize::Error> {
@@ -340,7 +342,9 @@ pub fn deser_operation_get_suite_run(
                     }
                     "suiteRunConfiguration" => {
                         builder = builder.set_suite_run_configuration(
-                            crate::json_deser::deser_structure_suite_run_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_suite_run_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     "suiteRunId" => {
@@ -351,11 +355,15 @@ pub fn deser_operation_get_suite_run(
                         );
                     }
                     "tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tag_map(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_iotdeviceadvisor_tag_map(
+                                tokens,
+                            )?,
+                        );
                     }
                     "testResult" => {
                         builder = builder.set_test_result(
-                            crate::json_deser::deser_structure_test_result(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_test_result(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -376,7 +384,7 @@ pub fn deser_operation_get_suite_run(
     Ok(builder)
 }
 
-pub fn deser_operation_get_suite_run_report(
+pub fn deser_operation_crate_operation_get_suite_run_report(
     input: &[u8],
     mut builder: crate::output::get_suite_run_report_output::Builder,
 ) -> Result<crate::output::get_suite_run_report_output::Builder, smithy_json::deserialize::Error> {
@@ -415,7 +423,7 @@ pub fn deser_operation_get_suite_run_report(
     Ok(builder)
 }
 
-pub fn deser_operation_list_suite_definitions(
+pub fn deser_operation_crate_operation_list_suite_definitions(
     input: &[u8],
     mut builder: crate::output::list_suite_definitions_output::Builder,
 ) -> Result<crate::output::list_suite_definitions_output::Builder, smithy_json::deserialize::Error>
@@ -439,9 +447,7 @@ pub fn deser_operation_list_suite_definitions(
                     }
                     "suiteDefinitionInformationList" => {
                         builder = builder.set_suite_definition_information_list(
-                            crate::json_deser::deser_list_suite_definition_information_list(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_iotdeviceadvisor_suite_definition_information_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -462,7 +468,7 @@ pub fn deser_operation_list_suite_definitions(
     Ok(builder)
 }
 
-pub fn deser_operation_list_suite_runs(
+pub fn deser_operation_crate_operation_list_suite_runs(
     input: &[u8],
     mut builder: crate::output::list_suite_runs_output::Builder,
 ) -> Result<crate::output::list_suite_runs_output::Builder, smithy_json::deserialize::Error> {
@@ -485,7 +491,7 @@ pub fn deser_operation_list_suite_runs(
                     }
                     "suiteRunsList" => {
                         builder = builder.set_suite_runs_list(
-                            crate::json_deser::deser_list_suite_runs_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_iotdeviceadvisor_suite_runs_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -506,7 +512,7 @@ pub fn deser_operation_list_suite_runs(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -522,7 +528,11 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tag_map(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_iotdeviceadvisor_tag_map(
+                                tokens,
+                            )?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -542,7 +552,7 @@ pub fn deser_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -581,7 +591,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_start_suite_run(
+pub fn deser_operation_crate_operation_start_suite_run(
     input: &[u8],
     mut builder: crate::output::start_suite_run_output::Builder,
 ) -> Result<crate::output::start_suite_run_output::Builder, smithy_json::deserialize::Error> {
@@ -635,7 +645,7 @@ pub fn deser_operation_start_suite_run(
     Ok(builder)
 }
 
-pub fn deser_operation_update_suite_definition(
+pub fn deser_operation_crate_operation_update_suite_definition(
     input: &[u8],
     mut builder: crate::output::update_suite_definition_output::Builder,
 ) -> Result<crate::output::update_suite_definition_output::Builder, smithy_json::deserialize::Error>
@@ -720,7 +730,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_suite_definition_configuration<'a, I>(
+pub fn deser_structure_crate_model_suite_definition_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SuiteDefinitionConfiguration>, smithy_json::deserialize::Error>
 where
@@ -749,7 +759,7 @@ where
                             }
                             "devices" => {
                                 builder = builder.set_devices(
-                                    crate::json_deser::deser_list_device_under_test_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_iotdeviceadvisor_device_under_test_list(tokens)?
                                 );
                             }
                             "intendedForQualification" => {
@@ -796,7 +806,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_tag_map<'a, I>(
+pub fn deser_map_com_amazonaws_iotdeviceadvisor_tag_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -839,7 +849,7 @@ where
     }
 }
 
-pub fn deser_structure_suite_run_configuration<'a, I>(
+pub fn deser_structure_crate_model_suite_run_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SuiteRunConfiguration>, smithy_json::deserialize::Error>
 where
@@ -859,12 +869,12 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "primaryDevice" => {
                                 builder = builder.set_primary_device(
-                                    crate::json_deser::deser_structure_device_under_test(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_device_under_test(tokens)?
                                 );
                             }
                             "selectedTestList" => {
                                 builder = builder.set_selected_test_list(
-                                    crate::json_deser::deser_list_selected_test_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_iotdeviceadvisor_selected_test_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -885,7 +895,7 @@ where
     }
 }
 
-pub fn deser_structure_test_result<'a, I>(
+pub fn deser_structure_crate_model_test_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TestResult>, smithy_json::deserialize::Error>
 where
@@ -905,7 +915,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "groups" => {
                                 builder = builder.set_groups(
-                                    crate::json_deser::deser_list_group_result_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_iotdeviceadvisor_group_result_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -927,7 +937,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_suite_definition_information_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotdeviceadvisor_suite_definition_information_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SuiteDefinitionInformation>>,
@@ -950,9 +960,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_suite_definition_information(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_suite_definition_information(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -968,7 +977,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_suite_runs_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotdeviceadvisor_suite_runs_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::SuiteRunInformation>>, smithy_json::deserialize::Error>
 where
@@ -988,7 +997,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_suite_run_information(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_suite_run_information(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1004,7 +1015,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_device_under_test_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotdeviceadvisor_device_under_test_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DeviceUnderTest>>, smithy_json::deserialize::Error>
 where
@@ -1023,7 +1034,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_device_under_test(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_device_under_test(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1038,7 +1052,7 @@ where
     }
 }
 
-pub fn deser_structure_device_under_test<'a, I>(
+pub fn deser_structure_crate_model_device_under_test<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DeviceUnderTest>, smithy_json::deserialize::Error>
 where
@@ -1093,7 +1107,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_selected_test_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotdeviceadvisor_selected_test_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1131,7 +1145,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_group_result_list<'a, I>(
+pub fn deser_list_com_amazonaws_iotdeviceadvisor_group_result_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::GroupResult>>, smithy_json::deserialize::Error>
 where
@@ -1150,7 +1164,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_group_result(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_group_result(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1165,7 +1180,7 @@ where
     }
 }
 
-pub fn deser_structure_suite_definition_information<'a, I>(
+pub fn deser_structure_crate_model_suite_definition_information<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SuiteDefinitionInformation>, smithy_json::deserialize::Error>
 where
@@ -1203,7 +1218,7 @@ where
                             }
                             "defaultDevices" => {
                                 builder = builder.set_default_devices(
-                                    crate::json_deser::deser_list_device_under_test_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_iotdeviceadvisor_device_under_test_list(tokens)?
                                 );
                             }
                             "intendedForQualification" => {
@@ -1239,7 +1254,7 @@ where
     }
 }
 
-pub fn deser_structure_suite_run_information<'a, I>(
+pub fn deser_structure_crate_model_suite_run_information<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SuiteRunInformation>, smithy_json::deserialize::Error>
 where
@@ -1363,7 +1378,7 @@ where
     }
 }
 
-pub fn deser_structure_group_result<'a, I>(
+pub fn deser_structure_crate_model_group_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GroupResult>, smithy_json::deserialize::Error>
 where
@@ -1401,7 +1416,7 @@ where
                             }
                             "tests" => {
                                 builder = builder.set_tests(
-                                    crate::json_deser::deser_list_test_case_runs(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_iotdeviceadvisor_test_case_runs(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1423,7 +1438,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_test_case_runs<'a, I>(
+pub fn deser_list_com_amazonaws_iotdeviceadvisor_test_case_runs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::TestCaseRun>>, smithy_json::deserialize::Error>
 where
@@ -1442,7 +1457,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_test_case_run(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_test_case_run(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1457,7 +1473,7 @@ where
     }
 }
 
-pub fn deser_structure_test_case_run<'a, I>(
+pub fn deser_structure_crate_model_test_case_run<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TestCaseRun>, smithy_json::deserialize::Error>
 where

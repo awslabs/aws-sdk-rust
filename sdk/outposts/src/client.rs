@@ -69,6 +69,9 @@ where
     M: smithy_client::bounds::SmithyMiddleware<C>,
     R: smithy_client::retry::NewRequestPolicy,
 {
+    pub fn create_order(&self) -> fluent_builders::CreateOrder<C, M, R> {
+        fluent_builders::CreateOrder::new(self.handle.clone())
+    }
     pub fn create_outpost(&self) -> fluent_builders::CreateOutpost<C, M, R> {
         fluent_builders::CreateOutpost::new(self.handle.clone())
     }
@@ -101,6 +104,104 @@ where
     }
 }
 pub mod fluent_builders {
+    #[derive(std::fmt::Debug)]
+    pub struct CreateOrder<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_order_input::Builder,
+    }
+    impl<C, M, R> CreateOrder<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateOrderOutput,
+            smithy_http::result::SdkError<crate::error::CreateOrderError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateOrderInputOperationOutputAlias,
+                crate::output::CreateOrderOutput,
+                crate::error::CreateOrderError,
+                crate::input::CreateOrderInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>
+        /// The ID or the Amazon Resource Name (ARN) of the Outpost.
+        /// </p>
+        pub fn outpost_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.outpost_identifier(inp);
+            self
+        }
+        pub fn set_outpost_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_outpost_identifier(input);
+            self
+        }
+        /// Appends an item to `LineItems`.
+        ///
+        /// To override the contents of this collection use [`set_line_items`](Self::set_line_items).
+        /// <p>The line items that make up the order.</p>
+        pub fn line_items(mut self, inp: impl Into<crate::model::LineItemRequest>) -> Self {
+            self.inner = self.inner.line_items(inp);
+            self
+        }
+        pub fn set_line_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LineItemRequest>>,
+        ) -> Self {
+            self.inner = self.inner.set_line_items(input);
+            self
+        }
+        /// <p>The payment option for the order.</p>
+        pub fn payment_option(mut self, inp: crate::model::PaymentOption) -> Self {
+            self.inner = self.inner.payment_option(inp);
+            self
+        }
+        pub fn set_payment_option(
+            mut self,
+            input: std::option::Option<crate::model::PaymentOption>,
+        ) -> Self {
+            self.inner = self.inner.set_payment_option(input);
+            self
+        }
+        /// <p>The payment terms for the order.</p>
+        pub fn payment_term(mut self, inp: crate::model::PaymentTerm) -> Self {
+            self.inner = self.inner.payment_term(inp);
+            self
+        }
+        pub fn set_payment_term(
+            mut self,
+            input: std::option::Option<crate::model::PaymentTerm>,
+        ) -> Self {
+            self.inner = self.inner.set_payment_term(input);
+            self
+        }
+    }
     #[derive(std::fmt::Debug)]
     pub struct CreateOutpost<
         C = smithy_client::erase::DynConnector,
@@ -262,7 +363,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Outpost.</p>
+        /// <p>
+        /// The ID of the Outpost.
+        /// </p>
         pub fn outpost_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_id(inp);
             self
@@ -370,7 +473,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Outpost.</p>
+        /// <p>
+        /// The ID of the Outpost.
+        /// </p>
         pub fn outpost_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_id(inp);
             self
@@ -424,7 +529,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Outpost.</p>
+        /// <p>
+        /// The ID of the Outpost.
+        /// </p>
         pub fn outpost_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_id(inp);
             self

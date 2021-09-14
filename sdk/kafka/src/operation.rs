@@ -823,3 +823,29 @@ impl smithy_http::response::ParseStrictResponse for UpdateMonitoring {
         }
     }
 }
+
+/// <p>Updates the security settings for the cluster. You can use this operation to specify encryption and authentication on existing clusters.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateSecurity {
+    _private: (),
+}
+impl UpdateSecurity {
+    /// Creates a new builder-style object to manufacture [`UpdateSecurityInput`](crate::input::UpdateSecurityInput)
+    pub fn builder() -> crate::input::update_security_input::Builder {
+        crate::input::update_security_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for UpdateSecurity {
+    type Output =
+        std::result::Result<crate::output::UpdateSecurityOutput, crate::error::UpdateSecurityError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_security_error(response)
+        } else {
+            crate::operation_deser::parse_update_security_response(response)
+        }
+    }
+}

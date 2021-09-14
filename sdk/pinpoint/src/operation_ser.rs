@@ -6,12 +6,8 @@ pub fn ser_payload_create_app_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_create_app_input_create_application_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_app_input_create_application_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -22,12 +18,8 @@ pub fn ser_payload_create_campaign_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_create_campaign_input_write_campaign_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_campaign_input_write_campaign_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -38,12 +30,8 @@ pub fn ser_payload_create_email_template_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_create_email_template_input_email_template_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_email_template_input_email_template_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -54,10 +42,8 @@ pub fn ser_payload_create_export_job_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_create_export_job_input_export_job_request(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_export_job_input_export_job_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -68,10 +54,8 @@ pub fn ser_payload_create_import_job_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_create_import_job_input_import_job_request(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_import_job_input_import_job_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -82,10 +66,8 @@ pub fn ser_payload_create_journey_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_create_journey_input_write_journey_request(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_journey_input_write_journey_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -97,7 +79,7 @@ pub fn ser_payload_create_push_template_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_create_push_template_input_push_notification_template_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_push_template_input_push_notification_template_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -109,7 +91,7 @@ pub fn ser_payload_create_recommender_configuration_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_create_recommender_configuration_input_create_recommender_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_recommender_configuration_input_create_recommender_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -120,10 +102,8 @@ pub fn ser_payload_create_segment_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_create_segment_input_write_segment_request(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_segment_input_write_segment_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -134,12 +114,8 @@ pub fn ser_payload_create_sms_template_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_create_sms_template_input_sms_template_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_sms_template_input_sms_template_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -150,12 +126,8 @@ pub fn ser_payload_create_voice_template_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_create_voice_template_input_voice_template_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_voice_template_input_voice_template_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -166,12 +138,8 @@ pub fn ser_payload_phone_number_validate_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_phone_number_validate_input_number_validate_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_phone_number_validate_input_number_validate_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -182,10 +150,8 @@ pub fn ser_payload_put_events_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_put_events_input_events_request(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_put_events_input_events_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -196,10 +162,8 @@ pub fn ser_payload_put_event_stream_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_put_event_stream_input_write_event_stream(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_put_event_stream_input_write_event_stream(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -210,12 +174,8 @@ pub fn ser_payload_remove_attributes_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_remove_attributes_input_update_attributes_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_remove_attributes_input_update_attributes_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -226,10 +186,8 @@ pub fn ser_payload_send_messages_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_send_messages_input_message_request(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_send_messages_input_message_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -241,7 +199,7 @@ pub fn ser_payload_send_users_messages_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_send_users_messages_input_send_users_message_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_send_users_messages_input_send_users_message_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -252,10 +210,8 @@ pub fn ser_payload_tag_resource_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_tag_resource_input_tags_model(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_tag_resource_input_tags_model(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -266,12 +222,8 @@ pub fn ser_payload_update_adm_channel_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_adm_channel_input_adm_channel_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_adm_channel_input_adm_channel_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -282,12 +234,8 @@ pub fn ser_payload_update_apns_channel_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_apns_channel_input_apns_channel_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_apns_channel_input_apns_channel_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -299,7 +247,7 @@ pub fn ser_payload_update_apns_sandbox_channel_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_apns_sandbox_channel_input_apns_sandbox_channel_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_apns_sandbox_channel_input_apns_sandbox_channel_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -311,7 +259,7 @@ pub fn ser_payload_update_apns_voip_channel_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_apns_voip_channel_input_apns_voip_channel_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_apns_voip_channel_input_apns_voip_channel_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -323,7 +271,7 @@ pub fn ser_payload_update_apns_voip_sandbox_channel_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_apns_voip_sandbox_channel_input_apns_voip_sandbox_channel_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_apns_voip_sandbox_channel_input_apns_voip_sandbox_channel_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -335,7 +283,7 @@ pub fn ser_payload_update_application_settings_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_application_settings_input_write_application_settings_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_application_settings_input_write_application_settings_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -346,12 +294,8 @@ pub fn ser_payload_update_baidu_channel_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_baidu_channel_input_baidu_channel_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_baidu_channel_input_baidu_channel_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -362,12 +306,8 @@ pub fn ser_payload_update_campaign_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_campaign_input_write_campaign_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_campaign_input_write_campaign_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -378,12 +318,8 @@ pub fn ser_payload_update_email_channel_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_email_channel_input_email_channel_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_email_channel_input_email_channel_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -394,12 +330,8 @@ pub fn ser_payload_update_email_template_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_email_template_input_email_template_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_email_template_input_email_template_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -410,10 +342,8 @@ pub fn ser_payload_update_endpoint_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_endpoint_input_endpoint_request(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_endpoint_input_endpoint_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -424,12 +354,8 @@ pub fn ser_payload_update_endpoints_batch_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_endpoints_batch_input_endpoint_batch_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_endpoints_batch_input_endpoint_batch_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -440,12 +366,8 @@ pub fn ser_payload_update_gcm_channel_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_gcm_channel_input_gcm_channel_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_gcm_channel_input_gcm_channel_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -456,10 +378,8 @@ pub fn ser_payload_update_journey_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_journey_input_write_journey_request(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_journey_input_write_journey_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -470,12 +390,8 @@ pub fn ser_payload_update_journey_state_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_journey_state_input_journey_state_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_journey_state_input_journey_state_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -487,7 +403,7 @@ pub fn ser_payload_update_push_template_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_push_template_input_push_notification_template_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_push_template_input_push_notification_template_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -499,7 +415,7 @@ pub fn ser_payload_update_recommender_configuration_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_recommender_configuration_input_update_recommender_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_recommender_configuration_input_update_recommender_configuration(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -510,10 +426,8 @@ pub fn ser_payload_update_segment_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_segment_input_write_segment_request(&payload)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_segment_input_write_segment_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -524,12 +438,8 @@ pub fn ser_payload_update_sms_channel_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_sms_channel_input_sms_channel_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_sms_channel_input_sms_channel_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -540,12 +450,8 @@ pub fn ser_payload_update_sms_template_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_sms_template_input_sms_template_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_sms_template_input_sms_template_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -557,7 +463,7 @@ pub fn ser_payload_update_template_active_version_input(
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
     #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_template_active_version_input_template_active_version_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_template_active_version_input_template_active_version_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -568,12 +474,8 @@ pub fn ser_payload_update_voice_channel_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_voice_channel_input_voice_channel_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_voice_channel_input_voice_channel_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
@@ -584,421 +486,441 @@ pub fn ser_payload_update_voice_template_input(
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
     };
-    #[allow(clippy::useless_conversion)]
-    Ok(smithy_http::body::SdkBody::from(
-        crate::operation_ser::serialize_member_update_voice_template_input_voice_template_request(
-            &payload,
-        )
-        .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?,
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_voice_template_input_voice_template_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
 }
 
-pub fn serialize_member_create_app_input_create_application_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_create_app_input_create_application_request(
     input: &crate::model::CreateApplicationRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_create_application_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_create_application_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_create_campaign_input_write_campaign_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_create_campaign_input_write_campaign_request(
     input: &crate::model::WriteCampaignRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_write_campaign_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_write_campaign_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_create_email_template_input_email_template_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_create_email_template_input_email_template_request(
     input: &crate::model::EmailTemplateRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_email_template_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_email_template_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_create_export_job_input_export_job_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_create_export_job_input_export_job_request(
     input: &crate::model::ExportJobRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_export_job_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_export_job_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_create_import_job_input_import_job_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_create_import_job_input_import_job_request(
     input: &crate::model::ImportJobRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_import_job_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_import_job_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_create_journey_input_write_journey_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_create_journey_input_write_journey_request(
     input: &crate::model::WriteJourneyRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_write_journey_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_write_journey_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_create_push_template_input_push_notification_template_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_create_push_template_input_push_notification_template_request(
     input: &crate::model::PushNotificationTemplateRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_push_notification_template_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_push_notification_template_request(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_create_recommender_configuration_input_create_recommender_configuration(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_create_recommender_configuration_input_create_recommender_configuration(
     input: &crate::model::CreateRecommenderConfigurationShape,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_create_recommender_configuration_shape(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_create_recommender_configuration_shape(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_create_segment_input_write_segment_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_create_segment_input_write_segment_request(
     input: &crate::model::WriteSegmentRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_write_segment_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_write_segment_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_create_sms_template_input_sms_template_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_create_sms_template_input_sms_template_request(
     input: &crate::model::SmsTemplateRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_sms_template_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_sms_template_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_create_voice_template_input_voice_template_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_create_voice_template_input_voice_template_request(
     input: &crate::model::VoiceTemplateRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_voice_template_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_voice_template_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_phone_number_validate_input_number_validate_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_phone_number_validate_input_number_validate_request(
     input: &crate::model::NumberValidateRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_number_validate_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_number_validate_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_put_events_input_events_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_put_events_input_events_request(
     input: &crate::model::EventsRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_events_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_events_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_put_event_stream_input_write_event_stream(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_put_event_stream_input_write_event_stream(
     input: &crate::model::WriteEventStream,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_write_event_stream(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_write_event_stream(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_remove_attributes_input_update_attributes_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_remove_attributes_input_update_attributes_request(
     input: &crate::model::UpdateAttributesRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_update_attributes_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_update_attributes_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_send_messages_input_message_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_send_messages_input_message_request(
     input: &crate::model::MessageRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_message_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_message_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_send_users_messages_input_send_users_message_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_send_users_messages_input_send_users_message_request(
     input: &crate::model::SendUsersMessageRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_send_users_message_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_send_users_message_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_tag_resource_input_tags_model(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_tag_resource_input_tags_model(
     input: &crate::model::TagsModel,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_tags_model(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_tags_model(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_adm_channel_input_adm_channel_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_adm_channel_input_adm_channel_request(
     input: &crate::model::AdmChannelRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_adm_channel_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_adm_channel_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_apns_channel_input_apns_channel_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_apns_channel_input_apns_channel_request(
     input: &crate::model::ApnsChannelRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_apns_channel_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_apns_channel_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_apns_sandbox_channel_input_apns_sandbox_channel_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_apns_sandbox_channel_input_apns_sandbox_channel_request(
     input: &crate::model::ApnsSandboxChannelRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_apns_sandbox_channel_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_apns_sandbox_channel_request(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_apns_voip_channel_input_apns_voip_channel_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_apns_voip_channel_input_apns_voip_channel_request(
     input: &crate::model::ApnsVoipChannelRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_apns_voip_channel_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_apns_voip_channel_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_apns_voip_sandbox_channel_input_apns_voip_sandbox_channel_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_apns_voip_sandbox_channel_input_apns_voip_sandbox_channel_request(
     input: &crate::model::ApnsVoipSandboxChannelRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_apns_voip_sandbox_channel_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_apns_voip_sandbox_channel_request(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_application_settings_input_write_application_settings_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_application_settings_input_write_application_settings_request(
     input: &crate::model::WriteApplicationSettingsRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_write_application_settings_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_write_application_settings_request(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_baidu_channel_input_baidu_channel_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_baidu_channel_input_baidu_channel_request(
     input: &crate::model::BaiduChannelRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_baidu_channel_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_baidu_channel_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_campaign_input_write_campaign_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_campaign_input_write_campaign_request(
     input: &crate::model::WriteCampaignRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_write_campaign_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_write_campaign_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_email_channel_input_email_channel_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_email_channel_input_email_channel_request(
     input: &crate::model::EmailChannelRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_email_channel_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_email_channel_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_email_template_input_email_template_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_email_template_input_email_template_request(
     input: &crate::model::EmailTemplateRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_email_template_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_email_template_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_endpoint_input_endpoint_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_endpoint_input_endpoint_request(
     input: &crate::model::EndpointRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_endpoint_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_endpoint_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_endpoints_batch_input_endpoint_batch_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_endpoints_batch_input_endpoint_batch_request(
     input: &crate::model::EndpointBatchRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_endpoint_batch_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_endpoint_batch_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_gcm_channel_input_gcm_channel_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_gcm_channel_input_gcm_channel_request(
     input: &crate::model::GcmChannelRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_gcm_channel_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_gcm_channel_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_journey_input_write_journey_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_journey_input_write_journey_request(
     input: &crate::model::WriteJourneyRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_write_journey_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_write_journey_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_journey_state_input_journey_state_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_journey_state_input_journey_state_request(
     input: &crate::model::JourneyStateRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_journey_state_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_journey_state_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_push_template_input_push_notification_template_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_push_template_input_push_notification_template_request(
     input: &crate::model::PushNotificationTemplateRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_push_notification_template_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_push_notification_template_request(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_recommender_configuration_input_update_recommender_configuration(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_recommender_configuration_input_update_recommender_configuration(
     input: &crate::model::UpdateRecommenderConfigurationShape,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_update_recommender_configuration_shape(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_update_recommender_configuration_shape(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_segment_input_write_segment_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_segment_input_write_segment_request(
     input: &crate::model::WriteSegmentRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_write_segment_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_write_segment_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_sms_channel_input_sms_channel_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_sms_channel_input_sms_channel_request(
     input: &crate::model::SmsChannelRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_sms_channel_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_sms_channel_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_sms_template_input_sms_template_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_sms_template_input_sms_template_request(
     input: &crate::model::SmsTemplateRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_sms_template_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_sms_template_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_template_active_version_input_template_active_version_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_template_active_version_input_template_active_version_request(
     input: &crate::model::TemplateActiveVersionRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_template_active_version_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_template_active_version_request(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_voice_channel_input_voice_channel_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_voice_channel_input_voice_channel_request(
     input: &crate::model::VoiceChannelRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_voice_channel_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_voice_channel_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
 
-pub fn serialize_member_update_voice_template_input_voice_template_request(
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_voice_template_input_voice_template_request(
     input: &crate::model::VoiceTemplateRequest,
 ) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_voice_template_request(&mut object, input);
+    crate::json_ser::serialize_structure_crate_model_voice_template_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }

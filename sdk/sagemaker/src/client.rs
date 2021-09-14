@@ -205,6 +205,11 @@ where
     pub fn create_project(&self) -> fluent_builders::CreateProject<C, M, R> {
         fluent_builders::CreateProject::new(self.handle.clone())
     }
+    pub fn create_studio_lifecycle_config(
+        &self,
+    ) -> fluent_builders::CreateStudioLifecycleConfig<C, M, R> {
+        fluent_builders::CreateStudioLifecycleConfig::new(self.handle.clone())
+    }
     pub fn create_training_job(&self) -> fluent_builders::CreateTrainingJob<C, M, R> {
         fluent_builders::CreateTrainingJob::new(self.handle.clone())
     }
@@ -330,6 +335,11 @@ where
     }
     pub fn delete_project(&self) -> fluent_builders::DeleteProject<C, M, R> {
         fluent_builders::DeleteProject::new(self.handle.clone())
+    }
+    pub fn delete_studio_lifecycle_config(
+        &self,
+    ) -> fluent_builders::DeleteStudioLifecycleConfig<C, M, R> {
+        fluent_builders::DeleteStudioLifecycleConfig::new(self.handle.clone())
     }
     pub fn delete_tags(&self) -> fluent_builders::DeleteTags<C, M, R> {
         fluent_builders::DeleteTags::new(self.handle.clone())
@@ -487,6 +497,11 @@ where
     }
     pub fn describe_project(&self) -> fluent_builders::DescribeProject<C, M, R> {
         fluent_builders::DescribeProject::new(self.handle.clone())
+    }
+    pub fn describe_studio_lifecycle_config(
+        &self,
+    ) -> fluent_builders::DescribeStudioLifecycleConfig<C, M, R> {
+        fluent_builders::DescribeStudioLifecycleConfig::new(self.handle.clone())
     }
     pub fn describe_subscribed_workteam(
         &self,
@@ -693,6 +708,11 @@ where
     }
     pub fn list_projects(&self) -> fluent_builders::ListProjects<C, M, R> {
         fluent_builders::ListProjects::new(self.handle.clone())
+    }
+    pub fn list_studio_lifecycle_configs(
+        &self,
+    ) -> fluent_builders::ListStudioLifecycleConfigs<C, M, R> {
+        fluent_builders::ListStudioLifecycleConfigs::new(self.handle.clone())
     }
     pub fn list_subscribed_workteams(&self) -> fluent_builders::ListSubscribedWorkteams<C, M, R> {
         fluent_builders::ListSubscribedWorkteams::new(self.handle.clone())
@@ -6467,6 +6487,108 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct CreateStudioLifecycleConfig<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_studio_lifecycle_config_input::Builder,
+    }
+    impl<C, M, R> CreateStudioLifecycleConfig<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateStudioLifecycleConfigOutput,
+            smithy_http::result::SdkError<crate::error::CreateStudioLifecycleConfigError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateStudioLifecycleConfigInputOperationOutputAlias,
+                crate::output::CreateStudioLifecycleConfigOutput,
+                crate::error::CreateStudioLifecycleConfigError,
+                crate::input::CreateStudioLifecycleConfigInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the Studio Lifecycle Configuration to create.</p>
+        pub fn studio_lifecycle_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_lifecycle_config_name(inp);
+            self
+        }
+        pub fn set_studio_lifecycle_config_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_studio_lifecycle_config_name(input);
+            self
+        }
+        /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
+        pub fn studio_lifecycle_config_content(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.studio_lifecycle_config_content(inp);
+            self
+        }
+        pub fn set_studio_lifecycle_config_content(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_studio_lifecycle_config_content(input);
+            self
+        }
+        /// <p>The App type that the Lifecycle Configuration is attached to.</p>
+        pub fn studio_lifecycle_config_app_type(
+            mut self,
+            inp: crate::model::StudioLifecycleConfigAppType,
+        ) -> Self {
+            self.inner = self.inner.studio_lifecycle_config_app_type(inp);
+            self
+        }
+        pub fn set_studio_lifecycle_config_app_type(
+            mut self,
+            input: std::option::Option<crate::model::StudioLifecycleConfigAppType>,
+        ) -> Self {
+            self.inner = self.inner.set_studio_lifecycle_config_app_type(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API. </p>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct CreateTrainingJob<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -9721,6 +9843,63 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DeleteStudioLifecycleConfig<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_studio_lifecycle_config_input::Builder,
+    }
+    impl<C, M, R> DeleteStudioLifecycleConfig<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteStudioLifecycleConfigOutput,
+            smithy_http::result::SdkError<crate::error::DeleteStudioLifecycleConfigError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteStudioLifecycleConfigInputOperationOutputAlias,
+                crate::output::DeleteStudioLifecycleConfigOutput,
+                crate::error::DeleteStudioLifecycleConfigError,
+                crate::input::DeleteStudioLifecycleConfigInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
+        pub fn studio_lifecycle_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_lifecycle_config_name(inp);
+            self
+        }
+        pub fn set_studio_lifecycle_config_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_studio_lifecycle_config_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DeleteTags<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -12378,6 +12557,63 @@ pub mod fluent_builders {
         }
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeStudioLifecycleConfig<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_studio_lifecycle_config_input::Builder,
+    }
+    impl<C, M, R> DescribeStudioLifecycleConfig<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeStudioLifecycleConfigOutput,
+            smithy_http::result::SdkError<crate::error::DescribeStudioLifecycleConfigError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeStudioLifecycleConfigInputOperationOutputAlias,
+                crate::output::DescribeStudioLifecycleConfigOutput,
+                crate::error::DescribeStudioLifecycleConfigError,
+                crate::input::DescribeStudioLifecycleConfigInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
+        pub fn studio_lifecycle_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_lifecycle_config_name(inp);
+            self
+        }
+        pub fn set_studio_lifecycle_config_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_studio_lifecycle_config_name(input);
             self
         }
     }
@@ -19307,6 +19543,165 @@ pub mod fluent_builders {
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::ProjectSortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListStudioLifecycleConfigs<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_studio_lifecycle_configs_input::Builder,
+    }
+    impl<C, M, R> ListStudioLifecycleConfigs<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListStudioLifecycleConfigsOutput,
+            smithy_http::result::SdkError<crate::error::ListStudioLifecycleConfigsError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListStudioLifecycleConfigsInputOperationOutputAlias,
+                crate::output::ListStudioLifecycleConfigsOutput,
+                crate::error::ListStudioLifecycleConfigsError,
+                crate::input::ListStudioLifecycleConfigsInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The maximum number of Studio Lifecycle Configurations to return in the response. The default value is 10.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>If the previous call to ListStudioLifecycleConfigs didn't return the full set of Lifecycle Configurations, the call returns a token for getting the next set of Lifecycle Configurations.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>A string in the Lifecycle Configuration name. This filter returns only Lifecycle Configurations whose name contains the specified string.</p>
+        pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(inp);
+            self
+        }
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_contains(input);
+            self
+        }
+        /// <p>A parameter to search for the App Type to which the Lifecycle Configuration is attached.</p>
+        pub fn app_type_equals(mut self, inp: crate::model::StudioLifecycleConfigAppType) -> Self {
+            self.inner = self.inner.app_type_equals(inp);
+            self
+        }
+        pub fn set_app_type_equals(
+            mut self,
+            input: std::option::Option<crate::model::StudioLifecycleConfigAppType>,
+        ) -> Self {
+            self.inner = self.inner.set_app_type_equals(input);
+            self
+        }
+        /// <p>A filter that returns only Lifecycle Configurations created on or before the specified time.</p>
+        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(inp);
+            self
+        }
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.inner = self.inner.set_creation_time_before(input);
+            self
+        }
+        /// <p>A filter that returns only Lifecycle Configurations created on or after the specified time.</p>
+        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(inp);
+            self
+        }
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.inner = self.inner.set_creation_time_after(input);
+            self
+        }
+        /// <p>A filter that returns only Lifecycle Configurations modified before the specified time.</p>
+        pub fn modified_time_before(mut self, inp: smithy_types::Instant) -> Self {
+            self.inner = self.inner.modified_time_before(inp);
+            self
+        }
+        pub fn set_modified_time_before(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.inner = self.inner.set_modified_time_before(input);
+            self
+        }
+        /// <p>A filter that returns only Lifecycle Configurations modified after the specified time.</p>
+        pub fn modified_time_after(mut self, inp: smithy_types::Instant) -> Self {
+            self.inner = self.inner.modified_time_after(inp);
+            self
+        }
+        pub fn set_modified_time_after(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.inner = self.inner.set_modified_time_after(input);
+            self
+        }
+        /// <p>The property used to sort results. The default value is CreationTime.</p>
+        pub fn sort_by(mut self, inp: crate::model::StudioLifecycleConfigSortKey) -> Self {
+            self.inner = self.inner.sort_by(inp);
+            self
+        }
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::StudioLifecycleConfigSortKey>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by(input);
+            self
+        }
+        /// <p>The sort order. The default value is Descending.</p>
+        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(inp);
+            self
+        }
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
         ) -> Self {
             self.inner = self.inner.set_sort_order(input);
             self

@@ -6,7 +6,7 @@ pub fn parse_http_generic_error(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_base_exception_xml_err(
+pub fn deser_structure_crate_error_base_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::base_exception::Builder,
 ) -> Result<crate::error::base_exception::Builder, smithy_xml::decode::XmlError> {
@@ -52,7 +52,7 @@ pub fn deser_structure_base_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_internal_exception_xml_err(
+pub fn deser_structure_crate_error_internal_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::internal_exception::Builder,
 ) -> Result<crate::error::internal_exception::Builder, smithy_xml::decode::XmlError> {
@@ -98,7 +98,7 @@ pub fn deser_structure_internal_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_resource_not_found_exception_xml_err(
+pub fn deser_structure_crate_error_resource_not_found_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_xml::decode::XmlError> {
@@ -144,7 +144,7 @@ pub fn deser_structure_resource_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_build_suggesters(
+pub fn deser_operation_crate_operation_build_suggesters(
     inp: &[u8],
     mut builder: crate::output::build_suggesters_output::Builder,
 ) -> Result<crate::output::build_suggesters_output::Builder, smithy_xml::decode::XmlError> {
@@ -170,10 +170,10 @@ pub fn deser_operation_build_suggesters(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("FieldNames") /* FieldNames com.amazonaws.cloudsearch#BuildSuggestersOutput$FieldNames */ =>  {
+            s if s.matches("FieldNames") /* FieldNames com.amazonaws.cloudsearch.synthetic#BuildSuggestersOutput$FieldNames */ =>  {
                 let var_7 =
                     Some(
-                        crate::xml_deser::deser_list_field_name_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudsearch_field_name_list(&mut tag)
                         ?
                     )
                 ;
@@ -192,7 +192,7 @@ pub fn deser_operation_build_suggesters(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_limit_exceeded_exception_xml_err(
+pub fn deser_structure_crate_error_limit_exceeded_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_xml::decode::XmlError> {
@@ -238,7 +238,7 @@ pub fn deser_structure_limit_exceeded_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_resource_already_exists_exception_xml_err(
+pub fn deser_structure_crate_error_resource_already_exists_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::resource_already_exists_exception::Builder,
 ) -> Result<crate::error::resource_already_exists_exception::Builder, smithy_xml::decode::XmlError>
@@ -285,7 +285,7 @@ pub fn deser_structure_resource_already_exists_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_validation_exception_xml_err(
+pub fn deser_structure_crate_error_validation_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_xml::decode::XmlError> {
@@ -331,7 +331,7 @@ pub fn deser_structure_validation_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_create_domain(
+pub fn deser_operation_crate_operation_create_domain(
     inp: &[u8],
     mut builder: crate::output::create_domain_output::Builder,
 ) -> Result<crate::output::create_domain_output::Builder, smithy_xml::decode::XmlError> {
@@ -357,10 +357,10 @@ pub fn deser_operation_create_domain(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DomainStatus") /* DomainStatus com.amazonaws.cloudsearch#CreateDomainOutput$DomainStatus */ =>  {
+            s if s.matches("DomainStatus") /* DomainStatus com.amazonaws.cloudsearch.synthetic#CreateDomainOutput$DomainStatus */ =>  {
                 let var_14 =
                     Some(
-                        crate::xml_deser::deser_structure_domain_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_domain_status(&mut tag)
                         ?
                     )
                 ;
@@ -379,7 +379,7 @@ pub fn deser_operation_create_domain(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_type_exception_xml_err(
+pub fn deser_structure_crate_error_invalid_type_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_type_exception::Builder,
 ) -> Result<crate::error::invalid_type_exception::Builder, smithy_xml::decode::XmlError> {
@@ -425,7 +425,7 @@ pub fn deser_structure_invalid_type_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_define_analysis_scheme(
+pub fn deser_operation_crate_operation_define_analysis_scheme(
     inp: &[u8],
     mut builder: crate::output::define_analysis_scheme_output::Builder,
 ) -> Result<crate::output::define_analysis_scheme_output::Builder, smithy_xml::decode::XmlError> {
@@ -451,10 +451,10 @@ pub fn deser_operation_define_analysis_scheme(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("AnalysisScheme") /* AnalysisScheme com.amazonaws.cloudsearch#DefineAnalysisSchemeOutput$AnalysisScheme */ =>  {
+            s if s.matches("AnalysisScheme") /* AnalysisScheme com.amazonaws.cloudsearch.synthetic#DefineAnalysisSchemeOutput$AnalysisScheme */ =>  {
                 let var_17 =
                     Some(
-                        crate::xml_deser::deser_structure_analysis_scheme_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_analysis_scheme_status(&mut tag)
                         ?
                     )
                 ;
@@ -473,7 +473,7 @@ pub fn deser_operation_define_analysis_scheme(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_define_expression(
+pub fn deser_operation_crate_operation_define_expression(
     inp: &[u8],
     mut builder: crate::output::define_expression_output::Builder,
 ) -> Result<crate::output::define_expression_output::Builder, smithy_xml::decode::XmlError> {
@@ -499,10 +499,10 @@ pub fn deser_operation_define_expression(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Expression") /* Expression com.amazonaws.cloudsearch#DefineExpressionOutput$Expression */ =>  {
+            s if s.matches("Expression") /* Expression com.amazonaws.cloudsearch.synthetic#DefineExpressionOutput$Expression */ =>  {
                 let var_18 =
                     Some(
-                        crate::xml_deser::deser_structure_expression_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_expression_status(&mut tag)
                         ?
                     )
                 ;
@@ -521,7 +521,7 @@ pub fn deser_operation_define_expression(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_define_index_field(
+pub fn deser_operation_crate_operation_define_index_field(
     inp: &[u8],
     mut builder: crate::output::define_index_field_output::Builder,
 ) -> Result<crate::output::define_index_field_output::Builder, smithy_xml::decode::XmlError> {
@@ -547,10 +547,10 @@ pub fn deser_operation_define_index_field(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("IndexField") /* IndexField com.amazonaws.cloudsearch#DefineIndexFieldOutput$IndexField */ =>  {
+            s if s.matches("IndexField") /* IndexField com.amazonaws.cloudsearch.synthetic#DefineIndexFieldOutput$IndexField */ =>  {
                 let var_19 =
                     Some(
-                        crate::xml_deser::deser_structure_index_field_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_index_field_status(&mut tag)
                         ?
                     )
                 ;
@@ -569,7 +569,7 @@ pub fn deser_operation_define_index_field(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_define_suggester(
+pub fn deser_operation_crate_operation_define_suggester(
     inp: &[u8],
     mut builder: crate::output::define_suggester_output::Builder,
 ) -> Result<crate::output::define_suggester_output::Builder, smithy_xml::decode::XmlError> {
@@ -595,10 +595,10 @@ pub fn deser_operation_define_suggester(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Suggester") /* Suggester com.amazonaws.cloudsearch#DefineSuggesterOutput$Suggester */ =>  {
+            s if s.matches("Suggester") /* Suggester com.amazonaws.cloudsearch.synthetic#DefineSuggesterOutput$Suggester */ =>  {
                 let var_20 =
                     Some(
-                        crate::xml_deser::deser_structure_suggester_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_suggester_status(&mut tag)
                         ?
                     )
                 ;
@@ -617,7 +617,7 @@ pub fn deser_operation_define_suggester(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_delete_analysis_scheme(
+pub fn deser_operation_crate_operation_delete_analysis_scheme(
     inp: &[u8],
     mut builder: crate::output::delete_analysis_scheme_output::Builder,
 ) -> Result<crate::output::delete_analysis_scheme_output::Builder, smithy_xml::decode::XmlError> {
@@ -643,10 +643,10 @@ pub fn deser_operation_delete_analysis_scheme(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("AnalysisScheme") /* AnalysisScheme com.amazonaws.cloudsearch#DeleteAnalysisSchemeOutput$AnalysisScheme */ =>  {
+            s if s.matches("AnalysisScheme") /* AnalysisScheme com.amazonaws.cloudsearch.synthetic#DeleteAnalysisSchemeOutput$AnalysisScheme */ =>  {
                 let var_21 =
                     Some(
-                        crate::xml_deser::deser_structure_analysis_scheme_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_analysis_scheme_status(&mut tag)
                         ?
                     )
                 ;
@@ -665,7 +665,7 @@ pub fn deser_operation_delete_analysis_scheme(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_delete_domain(
+pub fn deser_operation_crate_operation_delete_domain(
     inp: &[u8],
     mut builder: crate::output::delete_domain_output::Builder,
 ) -> Result<crate::output::delete_domain_output::Builder, smithy_xml::decode::XmlError> {
@@ -691,10 +691,10 @@ pub fn deser_operation_delete_domain(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DomainStatus") /* DomainStatus com.amazonaws.cloudsearch#DeleteDomainOutput$DomainStatus */ =>  {
+            s if s.matches("DomainStatus") /* DomainStatus com.amazonaws.cloudsearch.synthetic#DeleteDomainOutput$DomainStatus */ =>  {
                 let var_22 =
                     Some(
-                        crate::xml_deser::deser_structure_domain_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_domain_status(&mut tag)
                         ?
                     )
                 ;
@@ -713,7 +713,7 @@ pub fn deser_operation_delete_domain(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_delete_expression(
+pub fn deser_operation_crate_operation_delete_expression(
     inp: &[u8],
     mut builder: crate::output::delete_expression_output::Builder,
 ) -> Result<crate::output::delete_expression_output::Builder, smithy_xml::decode::XmlError> {
@@ -739,10 +739,10 @@ pub fn deser_operation_delete_expression(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Expression") /* Expression com.amazonaws.cloudsearch#DeleteExpressionOutput$Expression */ =>  {
+            s if s.matches("Expression") /* Expression com.amazonaws.cloudsearch.synthetic#DeleteExpressionOutput$Expression */ =>  {
                 let var_23 =
                     Some(
-                        crate::xml_deser::deser_structure_expression_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_expression_status(&mut tag)
                         ?
                     )
                 ;
@@ -761,7 +761,7 @@ pub fn deser_operation_delete_expression(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_delete_index_field(
+pub fn deser_operation_crate_operation_delete_index_field(
     inp: &[u8],
     mut builder: crate::output::delete_index_field_output::Builder,
 ) -> Result<crate::output::delete_index_field_output::Builder, smithy_xml::decode::XmlError> {
@@ -787,10 +787,10 @@ pub fn deser_operation_delete_index_field(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("IndexField") /* IndexField com.amazonaws.cloudsearch#DeleteIndexFieldOutput$IndexField */ =>  {
+            s if s.matches("IndexField") /* IndexField com.amazonaws.cloudsearch.synthetic#DeleteIndexFieldOutput$IndexField */ =>  {
                 let var_24 =
                     Some(
-                        crate::xml_deser::deser_structure_index_field_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_index_field_status(&mut tag)
                         ?
                     )
                 ;
@@ -809,7 +809,7 @@ pub fn deser_operation_delete_index_field(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_delete_suggester(
+pub fn deser_operation_crate_operation_delete_suggester(
     inp: &[u8],
     mut builder: crate::output::delete_suggester_output::Builder,
 ) -> Result<crate::output::delete_suggester_output::Builder, smithy_xml::decode::XmlError> {
@@ -835,10 +835,10 @@ pub fn deser_operation_delete_suggester(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Suggester") /* Suggester com.amazonaws.cloudsearch#DeleteSuggesterOutput$Suggester */ =>  {
+            s if s.matches("Suggester") /* Suggester com.amazonaws.cloudsearch.synthetic#DeleteSuggesterOutput$Suggester */ =>  {
                 let var_25 =
                     Some(
-                        crate::xml_deser::deser_structure_suggester_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_suggester_status(&mut tag)
                         ?
                     )
                 ;
@@ -857,7 +857,7 @@ pub fn deser_operation_delete_suggester(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_analysis_schemes(
+pub fn deser_operation_crate_operation_describe_analysis_schemes(
     inp: &[u8],
     mut builder: crate::output::describe_analysis_schemes_output::Builder,
 ) -> Result<crate::output::describe_analysis_schemes_output::Builder, smithy_xml::decode::XmlError>
@@ -884,10 +884,10 @@ pub fn deser_operation_describe_analysis_schemes(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("AnalysisSchemes") /* AnalysisSchemes com.amazonaws.cloudsearch#DescribeAnalysisSchemesOutput$AnalysisSchemes */ =>  {
+            s if s.matches("AnalysisSchemes") /* AnalysisSchemes com.amazonaws.cloudsearch.synthetic#DescribeAnalysisSchemesOutput$AnalysisSchemes */ =>  {
                 let var_26 =
                     Some(
-                        crate::xml_deser::deser_list_analysis_scheme_status_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudsearch_analysis_scheme_status_list(&mut tag)
                         ?
                     )
                 ;
@@ -906,7 +906,7 @@ pub fn deser_operation_describe_analysis_schemes(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_disabled_operation_exception_xml_err(
+pub fn deser_structure_crate_error_disabled_operation_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::disabled_operation_exception::Builder,
 ) -> Result<crate::error::disabled_operation_exception::Builder, smithy_xml::decode::XmlError> {
@@ -952,7 +952,7 @@ pub fn deser_structure_disabled_operation_exception_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_availability_options(
+pub fn deser_operation_crate_operation_describe_availability_options(
     inp: &[u8],
     mut builder: crate::output::describe_availability_options_output::Builder,
 ) -> Result<
@@ -981,10 +981,10 @@ pub fn deser_operation_describe_availability_options(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("AvailabilityOptions") /* AvailabilityOptions com.amazonaws.cloudsearch#DescribeAvailabilityOptionsOutput$AvailabilityOptions */ =>  {
+            s if s.matches("AvailabilityOptions") /* AvailabilityOptions com.amazonaws.cloudsearch.synthetic#DescribeAvailabilityOptionsOutput$AvailabilityOptions */ =>  {
                 let var_29 =
                     Some(
-                        crate::xml_deser::deser_structure_availability_options_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_availability_options_status(&mut tag)
                         ?
                     )
                 ;
@@ -1003,7 +1003,7 @@ pub fn deser_operation_describe_availability_options(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_domain_endpoint_options(
+pub fn deser_operation_crate_operation_describe_domain_endpoint_options(
     inp: &[u8],
     mut builder: crate::output::describe_domain_endpoint_options_output::Builder,
 ) -> Result<
@@ -1032,10 +1032,10 @@ pub fn deser_operation_describe_domain_endpoint_options(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DomainEndpointOptions") /* DomainEndpointOptions com.amazonaws.cloudsearch#DescribeDomainEndpointOptionsOutput$DomainEndpointOptions */ =>  {
+            s if s.matches("DomainEndpointOptions") /* DomainEndpointOptions com.amazonaws.cloudsearch.synthetic#DescribeDomainEndpointOptionsOutput$DomainEndpointOptions */ =>  {
                 let var_30 =
                     Some(
-                        crate::xml_deser::deser_structure_domain_endpoint_options_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_domain_endpoint_options_status(&mut tag)
                         ?
                     )
                 ;
@@ -1054,7 +1054,7 @@ pub fn deser_operation_describe_domain_endpoint_options(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_domains(
+pub fn deser_operation_crate_operation_describe_domains(
     inp: &[u8],
     mut builder: crate::output::describe_domains_output::Builder,
 ) -> Result<crate::output::describe_domains_output::Builder, smithy_xml::decode::XmlError> {
@@ -1080,10 +1080,10 @@ pub fn deser_operation_describe_domains(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DomainStatusList") /* DomainStatusList com.amazonaws.cloudsearch#DescribeDomainsOutput$DomainStatusList */ =>  {
+            s if s.matches("DomainStatusList") /* DomainStatusList com.amazonaws.cloudsearch.synthetic#DescribeDomainsOutput$DomainStatusList */ =>  {
                 let var_31 =
                     Some(
-                        crate::xml_deser::deser_list_domain_status_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudsearch_domain_status_list(&mut tag)
                         ?
                     )
                 ;
@@ -1102,7 +1102,7 @@ pub fn deser_operation_describe_domains(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_expressions(
+pub fn deser_operation_crate_operation_describe_expressions(
     inp: &[u8],
     mut builder: crate::output::describe_expressions_output::Builder,
 ) -> Result<crate::output::describe_expressions_output::Builder, smithy_xml::decode::XmlError> {
@@ -1128,10 +1128,10 @@ pub fn deser_operation_describe_expressions(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Expressions") /* Expressions com.amazonaws.cloudsearch#DescribeExpressionsOutput$Expressions */ =>  {
+            s if s.matches("Expressions") /* Expressions com.amazonaws.cloudsearch.synthetic#DescribeExpressionsOutput$Expressions */ =>  {
                 let var_32 =
                     Some(
-                        crate::xml_deser::deser_list_expression_status_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudsearch_expression_status_list(&mut tag)
                         ?
                     )
                 ;
@@ -1150,7 +1150,7 @@ pub fn deser_operation_describe_expressions(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_index_fields(
+pub fn deser_operation_crate_operation_describe_index_fields(
     inp: &[u8],
     mut builder: crate::output::describe_index_fields_output::Builder,
 ) -> Result<crate::output::describe_index_fields_output::Builder, smithy_xml::decode::XmlError> {
@@ -1176,10 +1176,10 @@ pub fn deser_operation_describe_index_fields(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("IndexFields") /* IndexFields com.amazonaws.cloudsearch#DescribeIndexFieldsOutput$IndexFields */ =>  {
+            s if s.matches("IndexFields") /* IndexFields com.amazonaws.cloudsearch.synthetic#DescribeIndexFieldsOutput$IndexFields */ =>  {
                 let var_33 =
                     Some(
-                        crate::xml_deser::deser_list_index_field_status_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudsearch_index_field_status_list(&mut tag)
                         ?
                     )
                 ;
@@ -1198,7 +1198,7 @@ pub fn deser_operation_describe_index_fields(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_scaling_parameters(
+pub fn deser_operation_crate_operation_describe_scaling_parameters(
     inp: &[u8],
     mut builder: crate::output::describe_scaling_parameters_output::Builder,
 ) -> Result<crate::output::describe_scaling_parameters_output::Builder, smithy_xml::decode::XmlError>
@@ -1225,10 +1225,10 @@ pub fn deser_operation_describe_scaling_parameters(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ScalingParameters") /* ScalingParameters com.amazonaws.cloudsearch#DescribeScalingParametersOutput$ScalingParameters */ =>  {
+            s if s.matches("ScalingParameters") /* ScalingParameters com.amazonaws.cloudsearch.synthetic#DescribeScalingParametersOutput$ScalingParameters */ =>  {
                 let var_34 =
                     Some(
-                        crate::xml_deser::deser_structure_scaling_parameters_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_scaling_parameters_status(&mut tag)
                         ?
                     )
                 ;
@@ -1247,7 +1247,7 @@ pub fn deser_operation_describe_scaling_parameters(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_service_access_policies(
+pub fn deser_operation_crate_operation_describe_service_access_policies(
     inp: &[u8],
     mut builder: crate::output::describe_service_access_policies_output::Builder,
 ) -> Result<
@@ -1276,10 +1276,10 @@ pub fn deser_operation_describe_service_access_policies(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("AccessPolicies") /* AccessPolicies com.amazonaws.cloudsearch#DescribeServiceAccessPoliciesOutput$AccessPolicies */ =>  {
+            s if s.matches("AccessPolicies") /* AccessPolicies com.amazonaws.cloudsearch.synthetic#DescribeServiceAccessPoliciesOutput$AccessPolicies */ =>  {
                 let var_35 =
                     Some(
-                        crate::xml_deser::deser_structure_access_policies_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_access_policies_status(&mut tag)
                         ?
                     )
                 ;
@@ -1298,7 +1298,7 @@ pub fn deser_operation_describe_service_access_policies(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_suggesters(
+pub fn deser_operation_crate_operation_describe_suggesters(
     inp: &[u8],
     mut builder: crate::output::describe_suggesters_output::Builder,
 ) -> Result<crate::output::describe_suggesters_output::Builder, smithy_xml::decode::XmlError> {
@@ -1324,10 +1324,10 @@ pub fn deser_operation_describe_suggesters(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Suggesters") /* Suggesters com.amazonaws.cloudsearch#DescribeSuggestersOutput$Suggesters */ =>  {
+            s if s.matches("Suggesters") /* Suggesters com.amazonaws.cloudsearch.synthetic#DescribeSuggestersOutput$Suggesters */ =>  {
                 let var_36 =
                     Some(
-                        crate::xml_deser::deser_list_suggester_status_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudsearch_suggester_status_list(&mut tag)
                         ?
                     )
                 ;
@@ -1346,7 +1346,7 @@ pub fn deser_operation_describe_suggesters(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_index_documents(
+pub fn deser_operation_crate_operation_index_documents(
     inp: &[u8],
     mut builder: crate::output::index_documents_output::Builder,
 ) -> Result<crate::output::index_documents_output::Builder, smithy_xml::decode::XmlError> {
@@ -1372,10 +1372,10 @@ pub fn deser_operation_index_documents(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("FieldNames") /* FieldNames com.amazonaws.cloudsearch#IndexDocumentsOutput$FieldNames */ =>  {
+            s if s.matches("FieldNames") /* FieldNames com.amazonaws.cloudsearch.synthetic#IndexDocumentsOutput$FieldNames */ =>  {
                 let var_37 =
                     Some(
-                        crate::xml_deser::deser_list_field_name_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_cloudsearch_field_name_list(&mut tag)
                         ?
                     )
                 ;
@@ -1394,7 +1394,7 @@ pub fn deser_operation_index_documents(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_list_domain_names(
+pub fn deser_operation_crate_operation_list_domain_names(
     inp: &[u8],
     mut builder: crate::output::list_domain_names_output::Builder,
 ) -> Result<crate::output::list_domain_names_output::Builder, smithy_xml::decode::XmlError> {
@@ -1420,10 +1420,10 @@ pub fn deser_operation_list_domain_names(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DomainNames") /* DomainNames com.amazonaws.cloudsearch#ListDomainNamesOutput$DomainNames */ =>  {
+            s if s.matches("DomainNames") /* DomainNames com.amazonaws.cloudsearch.synthetic#ListDomainNamesOutput$DomainNames */ =>  {
                 let var_38 =
                     Some(
-                        crate::xml_deser::deser_map_domain_name_map(&mut tag)
+                        crate::xml_deser::deser_map_com_amazonaws_cloudsearch_domain_name_map(&mut tag)
                         ?
                     )
                 ;
@@ -1442,7 +1442,7 @@ pub fn deser_operation_list_domain_names(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_update_availability_options(
+pub fn deser_operation_crate_operation_update_availability_options(
     inp: &[u8],
     mut builder: crate::output::update_availability_options_output::Builder,
 ) -> Result<crate::output::update_availability_options_output::Builder, smithy_xml::decode::XmlError>
@@ -1469,10 +1469,10 @@ pub fn deser_operation_update_availability_options(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("AvailabilityOptions") /* AvailabilityOptions com.amazonaws.cloudsearch#UpdateAvailabilityOptionsOutput$AvailabilityOptions */ =>  {
+            s if s.matches("AvailabilityOptions") /* AvailabilityOptions com.amazonaws.cloudsearch.synthetic#UpdateAvailabilityOptionsOutput$AvailabilityOptions */ =>  {
                 let var_39 =
                     Some(
-                        crate::xml_deser::deser_structure_availability_options_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_availability_options_status(&mut tag)
                         ?
                     )
                 ;
@@ -1491,7 +1491,7 @@ pub fn deser_operation_update_availability_options(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_update_domain_endpoint_options(
+pub fn deser_operation_crate_operation_update_domain_endpoint_options(
     inp: &[u8],
     mut builder: crate::output::update_domain_endpoint_options_output::Builder,
 ) -> Result<
@@ -1520,10 +1520,10 @@ pub fn deser_operation_update_domain_endpoint_options(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("DomainEndpointOptions") /* DomainEndpointOptions com.amazonaws.cloudsearch#UpdateDomainEndpointOptionsOutput$DomainEndpointOptions */ =>  {
+            s if s.matches("DomainEndpointOptions") /* DomainEndpointOptions com.amazonaws.cloudsearch.synthetic#UpdateDomainEndpointOptionsOutput$DomainEndpointOptions */ =>  {
                 let var_40 =
                     Some(
-                        crate::xml_deser::deser_structure_domain_endpoint_options_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_domain_endpoint_options_status(&mut tag)
                         ?
                     )
                 ;
@@ -1542,7 +1542,7 @@ pub fn deser_operation_update_domain_endpoint_options(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_update_scaling_parameters(
+pub fn deser_operation_crate_operation_update_scaling_parameters(
     inp: &[u8],
     mut builder: crate::output::update_scaling_parameters_output::Builder,
 ) -> Result<crate::output::update_scaling_parameters_output::Builder, smithy_xml::decode::XmlError>
@@ -1569,10 +1569,10 @@ pub fn deser_operation_update_scaling_parameters(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ScalingParameters") /* ScalingParameters com.amazonaws.cloudsearch#UpdateScalingParametersOutput$ScalingParameters */ =>  {
+            s if s.matches("ScalingParameters") /* ScalingParameters com.amazonaws.cloudsearch.synthetic#UpdateScalingParametersOutput$ScalingParameters */ =>  {
                 let var_41 =
                     Some(
-                        crate::xml_deser::deser_structure_scaling_parameters_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_scaling_parameters_status(&mut tag)
                         ?
                     )
                 ;
@@ -1591,7 +1591,7 @@ pub fn deser_operation_update_scaling_parameters(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_update_service_access_policies(
+pub fn deser_operation_crate_operation_update_service_access_policies(
     inp: &[u8],
     mut builder: crate::output::update_service_access_policies_output::Builder,
 ) -> Result<
@@ -1620,10 +1620,10 @@ pub fn deser_operation_update_service_access_policies(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("AccessPolicies") /* AccessPolicies com.amazonaws.cloudsearch#UpdateServiceAccessPoliciesOutput$AccessPolicies */ =>  {
+            s if s.matches("AccessPolicies") /* AccessPolicies com.amazonaws.cloudsearch.synthetic#UpdateServiceAccessPoliciesOutput$AccessPolicies */ =>  {
                 let var_42 =
                     Some(
-                        crate::xml_deser::deser_structure_access_policies_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_access_policies_status(&mut tag)
                         ?
                     )
                 ;
@@ -1641,7 +1641,7 @@ pub fn deser_operation_update_service_access_policies(
     Ok(builder)
 }
 
-pub fn deser_list_field_name_list(
+pub fn deser_list_com_amazonaws_cloudsearch_field_name_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -1663,7 +1663,7 @@ pub fn deser_list_field_name_list(
     Ok(out)
 }
 
-pub fn deser_structure_domain_status(
+pub fn deser_structure_crate_model_domain_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DomainStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -1742,7 +1742,7 @@ pub fn deser_structure_domain_status(
             s if s.matches("DocService") /* DocService com.amazonaws.cloudsearch#DomainStatus$DocService */ =>  {
                 let var_48 =
                     Some(
-                        crate::xml_deser::deser_structure_service_endpoint(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_service_endpoint(&mut tag)
                         ?
                     )
                 ;
@@ -1752,7 +1752,7 @@ pub fn deser_structure_domain_status(
             s if s.matches("SearchService") /* SearchService com.amazonaws.cloudsearch#DomainStatus$SearchService */ =>  {
                 let var_49 =
                     Some(
-                        crate::xml_deser::deser_structure_service_endpoint(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_service_endpoint(&mut tag)
                         ?
                     )
                 ;
@@ -1835,7 +1835,7 @@ pub fn deser_structure_domain_status(
             s if s.matches("Limits") /* Limits com.amazonaws.cloudsearch#DomainStatus$Limits */ =>  {
                 let var_55 =
                     Some(
-                        crate::xml_deser::deser_structure_limits(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_limits(&mut tag)
                         ?
                     )
                 ;
@@ -1848,7 +1848,7 @@ pub fn deser_structure_domain_status(
     Ok(builder.build())
 }
 
-pub fn deser_structure_analysis_scheme_status(
+pub fn deser_structure_crate_model_analysis_scheme_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AnalysisSchemeStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -1858,7 +1858,7 @@ pub fn deser_structure_analysis_scheme_status(
             s if s.matches("Options") /* Options com.amazonaws.cloudsearch#AnalysisSchemeStatus$Options */ =>  {
                 let var_56 =
                     Some(
-                        crate::xml_deser::deser_structure_analysis_scheme(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_analysis_scheme(&mut tag)
                         ?
                     )
                 ;
@@ -1868,7 +1868,7 @@ pub fn deser_structure_analysis_scheme_status(
             s if s.matches("Status") /* Status com.amazonaws.cloudsearch#AnalysisSchemeStatus$Status */ =>  {
                 let var_57 =
                     Some(
-                        crate::xml_deser::deser_structure_option_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_option_status(&mut tag)
                         ?
                     )
                 ;
@@ -1881,7 +1881,7 @@ pub fn deser_structure_analysis_scheme_status(
     Ok(builder.build())
 }
 
-pub fn deser_structure_expression_status(
+pub fn deser_structure_crate_model_expression_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ExpressionStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -1891,7 +1891,7 @@ pub fn deser_structure_expression_status(
             s if s.matches("Options") /* Options com.amazonaws.cloudsearch#ExpressionStatus$Options */ =>  {
                 let var_58 =
                     Some(
-                        crate::xml_deser::deser_structure_expression(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_expression(&mut tag)
                         ?
                     )
                 ;
@@ -1901,7 +1901,7 @@ pub fn deser_structure_expression_status(
             s if s.matches("Status") /* Status com.amazonaws.cloudsearch#ExpressionStatus$Status */ =>  {
                 let var_59 =
                     Some(
-                        crate::xml_deser::deser_structure_option_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_option_status(&mut tag)
                         ?
                     )
                 ;
@@ -1914,7 +1914,7 @@ pub fn deser_structure_expression_status(
     Ok(builder.build())
 }
 
-pub fn deser_structure_index_field_status(
+pub fn deser_structure_crate_model_index_field_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::IndexFieldStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -1924,7 +1924,7 @@ pub fn deser_structure_index_field_status(
             s if s.matches("Options") /* Options com.amazonaws.cloudsearch#IndexFieldStatus$Options */ =>  {
                 let var_60 =
                     Some(
-                        crate::xml_deser::deser_structure_index_field(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_index_field(&mut tag)
                         ?
                     )
                 ;
@@ -1934,7 +1934,7 @@ pub fn deser_structure_index_field_status(
             s if s.matches("Status") /* Status com.amazonaws.cloudsearch#IndexFieldStatus$Status */ =>  {
                 let var_61 =
                     Some(
-                        crate::xml_deser::deser_structure_option_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_option_status(&mut tag)
                         ?
                     )
                 ;
@@ -1947,7 +1947,7 @@ pub fn deser_structure_index_field_status(
     Ok(builder.build())
 }
 
-pub fn deser_structure_suggester_status(
+pub fn deser_structure_crate_model_suggester_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::SuggesterStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -1957,7 +1957,7 @@ pub fn deser_structure_suggester_status(
             s if s.matches("Options") /* Options com.amazonaws.cloudsearch#SuggesterStatus$Options */ =>  {
                 let var_62 =
                     Some(
-                        crate::xml_deser::deser_structure_suggester(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_suggester(&mut tag)
                         ?
                     )
                 ;
@@ -1967,7 +1967,7 @@ pub fn deser_structure_suggester_status(
             s if s.matches("Status") /* Status com.amazonaws.cloudsearch#SuggesterStatus$Status */ =>  {
                 let var_63 =
                     Some(
-                        crate::xml_deser::deser_structure_option_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_option_status(&mut tag)
                         ?
                     )
                 ;
@@ -1980,7 +1980,7 @@ pub fn deser_structure_suggester_status(
     Ok(builder.build())
 }
 
-pub fn deser_list_analysis_scheme_status_list(
+pub fn deser_list_com_amazonaws_cloudsearch_analysis_scheme_status_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::AnalysisSchemeStatus>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -1988,7 +1988,7 @@ pub fn deser_list_analysis_scheme_status_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudsearch#AnalysisSchemeStatusList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_analysis_scheme_status(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_analysis_scheme_status(&mut tag)
                     ?
                 );
             }
@@ -1999,7 +1999,7 @@ pub fn deser_list_analysis_scheme_status_list(
     Ok(out)
 }
 
-pub fn deser_structure_availability_options_status(
+pub fn deser_structure_crate_model_availability_options_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AvailabilityOptionsStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2024,7 +2024,7 @@ pub fn deser_structure_availability_options_status(
             s if s.matches("Status") /* Status com.amazonaws.cloudsearch#AvailabilityOptionsStatus$Status */ =>  {
                 let var_65 =
                     Some(
-                        crate::xml_deser::deser_structure_option_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_option_status(&mut tag)
                         ?
                     )
                 ;
@@ -2037,7 +2037,7 @@ pub fn deser_structure_availability_options_status(
     Ok(builder.build())
 }
 
-pub fn deser_structure_domain_endpoint_options_status(
+pub fn deser_structure_crate_model_domain_endpoint_options_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DomainEndpointOptionsStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2047,7 +2047,7 @@ pub fn deser_structure_domain_endpoint_options_status(
             s if s.matches("Options") /* Options com.amazonaws.cloudsearch#DomainEndpointOptionsStatus$Options */ =>  {
                 let var_66 =
                     Some(
-                        crate::xml_deser::deser_structure_domain_endpoint_options(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_domain_endpoint_options(&mut tag)
                         ?
                     )
                 ;
@@ -2057,7 +2057,7 @@ pub fn deser_structure_domain_endpoint_options_status(
             s if s.matches("Status") /* Status com.amazonaws.cloudsearch#DomainEndpointOptionsStatus$Status */ =>  {
                 let var_67 =
                     Some(
-                        crate::xml_deser::deser_structure_option_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_option_status(&mut tag)
                         ?
                     )
                 ;
@@ -2070,7 +2070,7 @@ pub fn deser_structure_domain_endpoint_options_status(
     Ok(builder.build())
 }
 
-pub fn deser_list_domain_status_list(
+pub fn deser_list_com_amazonaws_cloudsearch_domain_status_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::DomainStatus>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2078,7 +2078,7 @@ pub fn deser_list_domain_status_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudsearch#DomainStatusList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_domain_status(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_domain_status(&mut tag)
                     ?
                 );
             }
@@ -2089,7 +2089,7 @@ pub fn deser_list_domain_status_list(
     Ok(out)
 }
 
-pub fn deser_list_expression_status_list(
+pub fn deser_list_com_amazonaws_cloudsearch_expression_status_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ExpressionStatus>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2097,7 +2097,7 @@ pub fn deser_list_expression_status_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudsearch#ExpressionStatusList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_expression_status(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_expression_status(&mut tag)
                     ?
                 );
             }
@@ -2108,7 +2108,7 @@ pub fn deser_list_expression_status_list(
     Ok(out)
 }
 
-pub fn deser_list_index_field_status_list(
+pub fn deser_list_com_amazonaws_cloudsearch_index_field_status_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::IndexFieldStatus>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2116,7 +2116,7 @@ pub fn deser_list_index_field_status_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudsearch#IndexFieldStatusList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_index_field_status(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_index_field_status(&mut tag)
                     ?
                 );
             }
@@ -2127,7 +2127,7 @@ pub fn deser_list_index_field_status_list(
     Ok(out)
 }
 
-pub fn deser_structure_scaling_parameters_status(
+pub fn deser_structure_crate_model_scaling_parameters_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ScalingParametersStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2137,7 +2137,7 @@ pub fn deser_structure_scaling_parameters_status(
             s if s.matches("Options") /* Options com.amazonaws.cloudsearch#ScalingParametersStatus$Options */ =>  {
                 let var_68 =
                     Some(
-                        crate::xml_deser::deser_structure_scaling_parameters(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_scaling_parameters(&mut tag)
                         ?
                     )
                 ;
@@ -2147,7 +2147,7 @@ pub fn deser_structure_scaling_parameters_status(
             s if s.matches("Status") /* Status com.amazonaws.cloudsearch#ScalingParametersStatus$Status */ =>  {
                 let var_69 =
                     Some(
-                        crate::xml_deser::deser_structure_option_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_option_status(&mut tag)
                         ?
                     )
                 ;
@@ -2160,7 +2160,7 @@ pub fn deser_structure_scaling_parameters_status(
     Ok(builder.build())
 }
 
-pub fn deser_structure_access_policies_status(
+pub fn deser_structure_crate_model_access_policies_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AccessPoliciesStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2183,7 +2183,7 @@ pub fn deser_structure_access_policies_status(
             s if s.matches("Status") /* Status com.amazonaws.cloudsearch#AccessPoliciesStatus$Status */ =>  {
                 let var_71 =
                     Some(
-                        crate::xml_deser::deser_structure_option_status(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_option_status(&mut tag)
                         ?
                     )
                 ;
@@ -2196,7 +2196,7 @@ pub fn deser_structure_access_policies_status(
     Ok(builder.build())
 }
 
-pub fn deser_list_suggester_status_list(
+pub fn deser_list_com_amazonaws_cloudsearch_suggester_status_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::SuggesterStatus>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2204,7 +2204,7 @@ pub fn deser_list_suggester_status_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.cloudsearch#SuggesterStatusList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_suggester_status(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_suggester_status(&mut tag)
                     ?
                 );
             }
@@ -2215,7 +2215,7 @@ pub fn deser_list_suggester_status_list(
     Ok(out)
 }
 
-pub fn deser_map_domain_name_map(
+pub fn deser_map_com_amazonaws_cloudsearch_domain_name_map(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::collections::HashMap<std::string::String, std::string::String>,
@@ -2225,7 +2225,9 @@ pub fn deser_map_domain_name_map(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("entry") => {
-                crate::xml_deser::deser_map_domain_name_map_entry(&mut tag, &mut out)?;
+                crate::xml_deser::deser_map_com_amazonaws_cloudsearch_domain_name_map_entry(
+                    &mut tag, &mut out,
+                )?;
             }
             _ => {}
         }
@@ -2233,7 +2235,7 @@ pub fn deser_map_domain_name_map(
     Ok(out)
 }
 
-pub fn deser_structure_service_endpoint(
+pub fn deser_structure_crate_model_service_endpoint(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ServiceEndpoint, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2259,7 +2261,7 @@ pub fn deser_structure_service_endpoint(
     Ok(builder.build())
 }
 
-pub fn deser_structure_limits(
+pub fn deser_structure_crate_model_limits(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Limits, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2302,7 +2304,7 @@ pub fn deser_structure_limits(
     Ok(builder.build())
 }
 
-pub fn deser_structure_analysis_scheme(
+pub fn deser_structure_crate_model_analysis_scheme(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AnalysisScheme, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2339,7 +2341,7 @@ pub fn deser_structure_analysis_scheme(
             s if s.matches("AnalysisOptions") /* AnalysisOptions com.amazonaws.cloudsearch#AnalysisScheme$AnalysisOptions */ =>  {
                 let var_77 =
                     Some(
-                        crate::xml_deser::deser_structure_analysis_options(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_analysis_options(&mut tag)
                         ?
                     )
                 ;
@@ -2352,7 +2354,7 @@ pub fn deser_structure_analysis_scheme(
     Ok(builder.build())
 }
 
-pub fn deser_structure_option_status(
+pub fn deser_structure_crate_model_option_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::OptionStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2437,7 +2439,7 @@ pub fn deser_structure_option_status(
     Ok(builder.build())
 }
 
-pub fn deser_structure_expression(
+pub fn deser_structure_crate_model_expression(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Expression, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2476,7 +2478,7 @@ pub fn deser_structure_expression(
     Ok(builder.build())
 }
 
-pub fn deser_structure_index_field(
+pub fn deser_structure_crate_model_index_field(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::IndexField, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2513,7 +2515,7 @@ pub fn deser_structure_index_field(
             s if s.matches("IntOptions") /* IntOptions com.amazonaws.cloudsearch#IndexField$IntOptions */ =>  {
                 let var_87 =
                     Some(
-                        crate::xml_deser::deser_structure_int_options(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_int_options(&mut tag)
                         ?
                     )
                 ;
@@ -2523,7 +2525,7 @@ pub fn deser_structure_index_field(
             s if s.matches("DoubleOptions") /* DoubleOptions com.amazonaws.cloudsearch#IndexField$DoubleOptions */ =>  {
                 let var_88 =
                     Some(
-                        crate::xml_deser::deser_structure_double_options(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_double_options(&mut tag)
                         ?
                     )
                 ;
@@ -2533,7 +2535,7 @@ pub fn deser_structure_index_field(
             s if s.matches("LiteralOptions") /* LiteralOptions com.amazonaws.cloudsearch#IndexField$LiteralOptions */ =>  {
                 let var_89 =
                     Some(
-                        crate::xml_deser::deser_structure_literal_options(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_literal_options(&mut tag)
                         ?
                     )
                 ;
@@ -2543,7 +2545,7 @@ pub fn deser_structure_index_field(
             s if s.matches("TextOptions") /* TextOptions com.amazonaws.cloudsearch#IndexField$TextOptions */ =>  {
                 let var_90 =
                     Some(
-                        crate::xml_deser::deser_structure_text_options(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_text_options(&mut tag)
                         ?
                     )
                 ;
@@ -2553,7 +2555,7 @@ pub fn deser_structure_index_field(
             s if s.matches("DateOptions") /* DateOptions com.amazonaws.cloudsearch#IndexField$DateOptions */ =>  {
                 let var_91 =
                     Some(
-                        crate::xml_deser::deser_structure_date_options(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_date_options(&mut tag)
                         ?
                     )
                 ;
@@ -2563,7 +2565,7 @@ pub fn deser_structure_index_field(
             s if s.matches("LatLonOptions") /* LatLonOptions com.amazonaws.cloudsearch#IndexField$LatLonOptions */ =>  {
                 let var_92 =
                     Some(
-                        crate::xml_deser::deser_structure_lat_lon_options(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_lat_lon_options(&mut tag)
                         ?
                     )
                 ;
@@ -2573,7 +2575,7 @@ pub fn deser_structure_index_field(
             s if s.matches("IntArrayOptions") /* IntArrayOptions com.amazonaws.cloudsearch#IndexField$IntArrayOptions */ =>  {
                 let var_93 =
                     Some(
-                        crate::xml_deser::deser_structure_int_array_options(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_int_array_options(&mut tag)
                         ?
                     )
                 ;
@@ -2583,7 +2585,7 @@ pub fn deser_structure_index_field(
             s if s.matches("DoubleArrayOptions") /* DoubleArrayOptions com.amazonaws.cloudsearch#IndexField$DoubleArrayOptions */ =>  {
                 let var_94 =
                     Some(
-                        crate::xml_deser::deser_structure_double_array_options(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_double_array_options(&mut tag)
                         ?
                     )
                 ;
@@ -2593,7 +2595,7 @@ pub fn deser_structure_index_field(
             s if s.matches("LiteralArrayOptions") /* LiteralArrayOptions com.amazonaws.cloudsearch#IndexField$LiteralArrayOptions */ =>  {
                 let var_95 =
                     Some(
-                        crate::xml_deser::deser_structure_literal_array_options(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_literal_array_options(&mut tag)
                         ?
                     )
                 ;
@@ -2603,7 +2605,7 @@ pub fn deser_structure_index_field(
             s if s.matches("TextArrayOptions") /* TextArrayOptions com.amazonaws.cloudsearch#IndexField$TextArrayOptions */ =>  {
                 let var_96 =
                     Some(
-                        crate::xml_deser::deser_structure_text_array_options(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_text_array_options(&mut tag)
                         ?
                     )
                 ;
@@ -2613,7 +2615,7 @@ pub fn deser_structure_index_field(
             s if s.matches("DateArrayOptions") /* DateArrayOptions com.amazonaws.cloudsearch#IndexField$DateArrayOptions */ =>  {
                 let var_97 =
                     Some(
-                        crate::xml_deser::deser_structure_date_array_options(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_date_array_options(&mut tag)
                         ?
                     )
                 ;
@@ -2626,7 +2628,7 @@ pub fn deser_structure_index_field(
     Ok(builder.build())
 }
 
-pub fn deser_structure_suggester(
+pub fn deser_structure_crate_model_suggester(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Suggester, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2649,7 +2651,7 @@ pub fn deser_structure_suggester(
             s if s.matches("DocumentSuggesterOptions") /* DocumentSuggesterOptions com.amazonaws.cloudsearch#Suggester$DocumentSuggesterOptions */ =>  {
                 let var_99 =
                     Some(
-                        crate::xml_deser::deser_structure_document_suggester_options(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_document_suggester_options(&mut tag)
                         ?
                     )
                 ;
@@ -2662,7 +2664,7 @@ pub fn deser_structure_suggester(
     Ok(builder.build())
 }
 
-pub fn deser_structure_domain_endpoint_options(
+pub fn deser_structure_crate_model_domain_endpoint_options(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DomainEndpointOptions, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2704,7 +2706,7 @@ pub fn deser_structure_domain_endpoint_options(
     Ok(builder.build())
 }
 
-pub fn deser_structure_scaling_parameters(
+pub fn deser_structure_crate_model_scaling_parameters(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ScalingParameters, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2761,7 +2763,7 @@ pub fn deser_structure_scaling_parameters(
     Ok(builder.build())
 }
 
-pub fn deser_map_domain_name_map_entry(
+pub fn deser_map_com_amazonaws_cloudsearch_domain_name_map_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
     out: &mut std::collections::HashMap<std::string::String, std::string::String>,
 ) -> Result<(), smithy_xml::decode::XmlError> {
@@ -2798,7 +2800,7 @@ pub fn deser_map_domain_name_map_entry(
     Ok(())
 }
 
-pub fn deser_structure_analysis_options(
+pub fn deser_structure_crate_model_analysis_options(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AnalysisOptions, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2877,7 +2879,7 @@ pub fn deser_structure_analysis_options(
     Ok(builder.build())
 }
 
-pub fn deser_structure_int_options(
+pub fn deser_structure_crate_model_int_options(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::IntOptions, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2978,7 +2980,7 @@ pub fn deser_structure_int_options(
     Ok(builder.build())
 }
 
-pub fn deser_structure_double_options(
+pub fn deser_structure_crate_model_double_options(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DoubleOptions, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3079,7 +3081,7 @@ pub fn deser_structure_double_options(
     Ok(builder.build())
 }
 
-pub fn deser_structure_literal_options(
+pub fn deser_structure_crate_model_literal_options(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LiteralOptions, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3178,7 +3180,7 @@ pub fn deser_structure_literal_options(
     Ok(builder.build())
 }
 
-pub fn deser_structure_text_options(
+pub fn deser_structure_crate_model_text_options(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TextOptions, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3275,7 +3277,7 @@ pub fn deser_structure_text_options(
     Ok(builder.build())
 }
 
-pub fn deser_structure_date_options(
+pub fn deser_structure_crate_model_date_options(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DateOptions, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3374,7 +3376,7 @@ pub fn deser_structure_date_options(
     Ok(builder.build())
 }
 
-pub fn deser_structure_lat_lon_options(
+pub fn deser_structure_crate_model_lat_lon_options(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LatLonOptions, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3473,7 +3475,7 @@ pub fn deser_structure_lat_lon_options(
     Ok(builder.build())
 }
 
-pub fn deser_structure_int_array_options(
+pub fn deser_structure_crate_model_int_array_options(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::IntArrayOptions, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3559,7 +3561,7 @@ pub fn deser_structure_int_array_options(
     Ok(builder.build())
 }
 
-pub fn deser_structure_double_array_options(
+pub fn deser_structure_crate_model_double_array_options(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DoubleArrayOptions, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3645,7 +3647,7 @@ pub fn deser_structure_double_array_options(
     Ok(builder.build())
 }
 
-pub fn deser_structure_literal_array_options(
+pub fn deser_structure_crate_model_literal_array_options(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LiteralArrayOptions, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3729,7 +3731,7 @@ pub fn deser_structure_literal_array_options(
     Ok(builder.build())
 }
 
-pub fn deser_structure_text_array_options(
+pub fn deser_structure_crate_model_text_array_options(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TextArrayOptions, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3811,7 +3813,7 @@ pub fn deser_structure_text_array_options(
     Ok(builder.build())
 }
 
-pub fn deser_structure_date_array_options(
+pub fn deser_structure_crate_model_date_array_options(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DateArrayOptions, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3895,7 +3897,7 @@ pub fn deser_structure_date_array_options(
     Ok(builder.build())
 }
 
-pub fn deser_structure_document_suggester_options(
+pub fn deser_structure_crate_model_document_suggester_options(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DocumentSuggesterOptions, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]

@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_dry_run_operationjson_err(
+pub fn deser_structure_crate_error_dry_run_operationjson_err(
     input: &[u8],
     mut builder: crate::error::dry_run_operation::Builder,
 ) -> Result<crate::error::dry_run_operation::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_dry_run_operationjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_server_errorjson_err(
+pub fn deser_structure_crate_error_internal_server_errorjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_error::Builder,
 ) -> Result<crate::error::internal_server_error::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_internal_server_errorjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_input_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_input_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_input_exception::Builder,
 ) -> Result<crate::error::invalid_input_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_invalid_input_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_unavailable_exceptionjson_err(
+pub fn deser_structure_crate_error_service_unavailable_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_unavailable_exception::Builder,
 ) -> Result<crate::error::service_unavailable_exception::Builder, smithy_json::deserialize::Error> {
@@ -200,7 +200,7 @@ pub fn deser_structure_service_unavailable_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -245,7 +245,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_home_region_control(
+pub fn deser_operation_crate_operation_create_home_region_control(
     input: &[u8],
     mut builder: crate::output::create_home_region_control_output::Builder,
 ) -> Result<
@@ -264,7 +264,9 @@ pub fn deser_operation_create_home_region_control(
                 match key.to_unescaped()?.as_ref() {
                     "HomeRegionControl" => {
                         builder = builder.set_home_region_control(
-                            crate::json_deser::deser_structure_home_region_control(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_home_region_control(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -285,7 +287,7 @@ pub fn deser_operation_create_home_region_control(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_home_region_controls(
+pub fn deser_operation_crate_operation_describe_home_region_controls(
     input: &[u8],
     mut builder: crate::output::describe_home_region_controls_output::Builder,
 ) -> Result<
@@ -304,7 +306,7 @@ pub fn deser_operation_describe_home_region_controls(
                 match key.to_unescaped()?.as_ref() {
                     "HomeRegionControls" => {
                         builder = builder.set_home_region_controls(
-                            crate::json_deser::deser_list_home_region_controls(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_migrationhubconfig_home_region_controls(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -332,7 +334,7 @@ pub fn deser_operation_describe_home_region_controls(
     Ok(builder)
 }
 
-pub fn deser_operation_get_home_region(
+pub fn deser_operation_crate_operation_get_home_region(
     input: &[u8],
     mut builder: crate::output::get_home_region_output::Builder,
 ) -> Result<crate::output::get_home_region_output::Builder, smithy_json::deserialize::Error> {
@@ -379,7 +381,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_home_region_control<'a, I>(
+pub fn deser_structure_crate_model_home_region_control<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::HomeRegionControl>, smithy_json::deserialize::Error>
 where
@@ -416,8 +418,9 @@ where
                                 );
                             }
                             "Target" => {
-                                builder = builder
-                                    .set_target(crate::json_deser::deser_structure_target(tokens)?);
+                                builder = builder.set_target(
+                                    crate::json_deser::deser_structure_crate_model_target(tokens)?,
+                                );
                             }
                             "RequestedTime" => {
                                 builder = builder.set_requested_time(
@@ -446,7 +449,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_home_region_controls<'a, I>(
+pub fn deser_list_com_amazonaws_migrationhubconfig_home_region_controls<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::HomeRegionControl>>, smithy_json::deserialize::Error>
 where
@@ -465,7 +468,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_home_region_control(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_home_region_control(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -480,7 +486,7 @@ where
     }
 }
 
-pub fn deser_structure_target<'a, I>(
+pub fn deser_structure_crate_model_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Target>, smithy_json::deserialize::Error>
 where

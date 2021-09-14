@@ -52,7 +52,7 @@ impl ProviderConfig {
     /// a `ProviderConfig` without these fields set, use [`ProviderConfig::empty`].
     ///
     ///
-    /// # Example
+    /// # Examples
     /// ```rust
     /// use aws_config::provider_config::ProviderConfig;
     /// use aws_sdk_sts::Region;
@@ -80,7 +80,7 @@ impl ProviderConfig {
 
     /// Create a default provider config with the region region automatically loaded from the default chain.
     ///
-    /// # Example
+    /// # Examples
     /// ```rust
     /// # async fn test() {
     /// use aws_config::provider_config::ProviderConfig;

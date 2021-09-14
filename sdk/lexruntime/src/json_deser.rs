@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_bad_request_exceptionjson_err(
+pub fn deser_structure_crate_error_bad_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::bad_request_exception::Builder,
 ) -> Result<crate::error::bad_request_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_bad_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_failure_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_failure_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_failure_exception::Builder,
 ) -> Result<crate::error::internal_failure_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_internal_failure_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -168,7 +168,7 @@ pub fn deser_structure_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::not_found_exception::Builder,
 ) -> Result<crate::error::not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -207,7 +207,7 @@ pub fn deser_structure_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_session(
+pub fn deser_operation_crate_operation_delete_session(
     input: &[u8],
     mut builder: crate::output::delete_session_output::Builder,
 ) -> Result<crate::output::delete_session_output::Builder, smithy_json::deserialize::Error> {
@@ -267,7 +267,7 @@ pub fn deser_operation_delete_session(
     Ok(builder)
 }
 
-pub fn deser_operation_get_session(
+pub fn deser_operation_crate_operation_get_session(
     input: &[u8],
     mut builder: crate::output::get_session_output::Builder,
 ) -> Result<crate::output::get_session_output::Builder, smithy_json::deserialize::Error> {
@@ -283,22 +283,22 @@ pub fn deser_operation_get_session(
                 match key.to_unescaped()?.as_ref() {
                     "activeContexts" => {
                         builder = builder.set_active_contexts(
-                            crate::json_deser::deser_list_active_contexts_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_lexruntimeservice_active_contexts_list(tokens)?
                         );
                     }
                     "dialogAction" => {
                         builder = builder.set_dialog_action(
-                            crate::json_deser::deser_structure_dialog_action(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_dialog_action(tokens)?,
                         );
                     }
                     "recentIntentSummaryView" => {
                         builder = builder.set_recent_intent_summary_view(
-                            crate::json_deser::deser_list_intent_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_lexruntimeservice_intent_summary_list(tokens)?
                         );
                     }
                     "sessionAttributes" => {
                         builder = builder.set_session_attributes(
-                            crate::json_deser::deser_map_string_map(tokens)?,
+                            crate::json_deser::deser_map_com_amazonaws_lexruntimeservice_string_map(tokens)?
                         );
                     }
                     "sessionId" => {
@@ -326,7 +326,7 @@ pub fn deser_operation_get_session(
     Ok(builder)
 }
 
-pub fn deser_structure_bad_gateway_exceptionjson_err(
+pub fn deser_structure_crate_error_bad_gateway_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::bad_gateway_exception::Builder,
 ) -> Result<crate::error::bad_gateway_exception::Builder, smithy_json::deserialize::Error> {
@@ -365,7 +365,7 @@ pub fn deser_structure_bad_gateway_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_dependency_failed_exceptionjson_err(
+pub fn deser_structure_crate_error_dependency_failed_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::dependency_failed_exception::Builder,
 ) -> Result<crate::error::dependency_failed_exception::Builder, smithy_json::deserialize::Error> {
@@ -404,7 +404,7 @@ pub fn deser_structure_dependency_failed_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_loop_detected_exceptionjson_err(
+pub fn deser_structure_crate_error_loop_detected_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::loop_detected_exception::Builder,
 ) -> Result<crate::error::loop_detected_exception::Builder, smithy_json::deserialize::Error> {
@@ -443,7 +443,7 @@ pub fn deser_structure_loop_detected_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_not_acceptable_exceptionjson_err(
+pub fn deser_structure_crate_error_not_acceptable_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::not_acceptable_exception::Builder,
 ) -> Result<crate::error::not_acceptable_exception::Builder, smithy_json::deserialize::Error> {
@@ -482,7 +482,7 @@ pub fn deser_structure_not_acceptable_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_request_timeout_exceptionjson_err(
+pub fn deser_structure_crate_error_request_timeout_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::request_timeout_exception::Builder,
 ) -> Result<crate::error::request_timeout_exception::Builder, smithy_json::deserialize::Error> {
@@ -521,7 +521,7 @@ pub fn deser_structure_request_timeout_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unsupported_media_type_exceptionjson_err(
+pub fn deser_structure_crate_error_unsupported_media_type_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unsupported_media_type_exception::Builder,
 ) -> Result<crate::error::unsupported_media_type_exception::Builder, smithy_json::deserialize::Error>
@@ -561,7 +561,7 @@ pub fn deser_structure_unsupported_media_type_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_post_text(
+pub fn deser_operation_crate_operation_post_text(
     input: &[u8],
     mut builder: crate::output::post_text_output::Builder,
 ) -> Result<crate::output::post_text_output::Builder, smithy_json::deserialize::Error> {
@@ -577,12 +577,12 @@ pub fn deser_operation_post_text(
                 match key.to_unescaped()?.as_ref() {
                     "activeContexts" => {
                         builder = builder.set_active_contexts(
-                            crate::json_deser::deser_list_active_contexts_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_lexruntimeservice_active_contexts_list(tokens)?
                         );
                     }
                     "alternativeIntents" => {
                         builder = builder.set_alternative_intents(
-                            crate::json_deser::deser_list_intent_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_lexruntimeservice_intent_list(tokens)?
                         );
                     }
                     "botVersion" => {
@@ -628,22 +628,26 @@ pub fn deser_operation_post_text(
                     }
                     "nluIntentConfidence" => {
                         builder = builder.set_nlu_intent_confidence(
-                            crate::json_deser::deser_structure_intent_confidence(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_intent_confidence(
+                                tokens,
+                            )?,
                         );
                     }
                     "responseCard" => {
                         builder = builder.set_response_card(
-                            crate::json_deser::deser_structure_response_card(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_response_card(tokens)?,
                         );
                     }
                     "sentimentResponse" => {
                         builder = builder.set_sentiment_response(
-                            crate::json_deser::deser_structure_sentiment_response(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_sentiment_response(
+                                tokens,
+                            )?,
                         );
                     }
                     "sessionAttributes" => {
                         builder = builder.set_session_attributes(
-                            crate::json_deser::deser_map_string_map(tokens)?,
+                            crate::json_deser::deser_map_com_amazonaws_lexruntimeservice_string_map(tokens)?
                         );
                     }
                     "sessionId" => {
@@ -661,8 +665,9 @@ pub fn deser_operation_post_text(
                         );
                     }
                     "slots" => {
-                        builder =
-                            builder.set_slots(crate::json_deser::deser_map_string_map(tokens)?);
+                        builder = builder.set_slots(
+                            crate::json_deser::deser_map_com_amazonaws_lexruntimeservice_string_map(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -691,7 +696,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_active_contexts_list<'a, I>(
+pub fn deser_list_com_amazonaws_lexruntimeservice_active_contexts_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ActiveContext>>, smithy_json::deserialize::Error>
 where
@@ -710,7 +715,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_active_context(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_active_context(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -725,7 +731,7 @@ where
     }
 }
 
-pub fn deser_structure_dialog_action<'a, I>(
+pub fn deser_structure_crate_model_dialog_action<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DialogAction>, smithy_json::deserialize::Error>
 where
@@ -766,8 +772,9 @@ where
                                 );
                             }
                             "slots" => {
-                                builder = builder
-                                    .set_slots(crate::json_deser::deser_map_string_map(tokens)?);
+                                builder = builder.set_slots(
+                                    crate::json_deser::deser_map_com_amazonaws_lexruntimeservice_string_map(tokens)?
+                                );
                             }
                             "slotToElicit" => {
                                 builder = builder.set_slot_to_elicit(
@@ -832,7 +839,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_intent_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_lexruntimeservice_intent_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::IntentSummary>>, smithy_json::deserialize::Error>
 where
@@ -851,7 +858,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_intent_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_intent_summary(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -867,7 +875,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_string_map<'a, I>(
+pub fn deser_map_com_amazonaws_lexruntimeservice_string_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -911,7 +919,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_intent_list<'a, I>(
+pub fn deser_list_com_amazonaws_lexruntimeservice_intent_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::PredictedIntent>>, smithy_json::deserialize::Error>
 where
@@ -930,7 +938,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_predicted_intent(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_predicted_intent(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -945,7 +956,7 @@ where
     }
 }
 
-pub fn deser_structure_intent_confidence<'a, I>(
+pub fn deser_structure_crate_model_intent_confidence<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::IntentConfidence>, smithy_json::deserialize::Error>
 where
@@ -989,7 +1000,7 @@ where
     }
 }
 
-pub fn deser_structure_response_card<'a, I>(
+pub fn deser_structure_crate_model_response_card<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResponseCard>, smithy_json::deserialize::Error>
 where
@@ -1030,7 +1041,7 @@ where
                             }
                             "genericAttachments" => {
                                 builder = builder.set_generic_attachments(
-                                    crate::json_deser::deser_list_generic_attachment_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_lexruntimeservice_generic_attachment_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1051,7 +1062,7 @@ where
     }
 }
 
-pub fn deser_structure_sentiment_response<'a, I>(
+pub fn deser_structure_crate_model_sentiment_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SentimentResponse>, smithy_json::deserialize::Error>
 where
@@ -1105,7 +1116,7 @@ where
     }
 }
 
-pub fn deser_structure_active_context<'a, I>(
+pub fn deser_structure_crate_model_active_context<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ActiveContext>, smithy_json::deserialize::Error>
 where
@@ -1134,16 +1145,12 @@ where
                             }
                             "timeToLive" => {
                                 builder = builder.set_time_to_live(
-                                    crate::json_deser::deser_structure_active_context_time_to_live(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_active_context_time_to_live(tokens)?
                                 );
                             }
                             "parameters" => {
                                 builder = builder.set_parameters(
-                                    crate::json_deser::deser_map_active_context_parameters_map(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_map_com_amazonaws_lexruntimeservice_active_context_parameters_map(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1164,7 +1171,7 @@ where
     }
 }
 
-pub fn deser_structure_intent_summary<'a, I>(
+pub fn deser_structure_crate_model_intent_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::IntentSummary>, smithy_json::deserialize::Error>
 where
@@ -1201,8 +1208,9 @@ where
                                 );
                             }
                             "slots" => {
-                                builder = builder
-                                    .set_slots(crate::json_deser::deser_map_string_map(tokens)?);
+                                builder = builder.set_slots(
+                                    crate::json_deser::deser_map_com_amazonaws_lexruntimeservice_string_map(tokens)?
+                                );
                             }
                             "confirmationStatus" => {
                                 builder = builder.set_confirmation_status(
@@ -1270,7 +1278,7 @@ where
     }
 }
 
-pub fn deser_structure_predicted_intent<'a, I>(
+pub fn deser_structure_crate_model_predicted_intent<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PredictedIntent>, smithy_json::deserialize::Error>
 where
@@ -1299,12 +1307,13 @@ where
                             }
                             "nluIntentConfidence" => {
                                 builder = builder.set_nlu_intent_confidence(
-                                    crate::json_deser::deser_structure_intent_confidence(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_intent_confidence(tokens)?
                                 );
                             }
                             "slots" => {
-                                builder = builder
-                                    .set_slots(crate::json_deser::deser_map_string_map(tokens)?);
+                                builder = builder.set_slots(
+                                    crate::json_deser::deser_map_com_amazonaws_lexruntimeservice_string_map(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -1325,7 +1334,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_generic_attachment_list<'a, I>(
+pub fn deser_list_com_amazonaws_lexruntimeservice_generic_attachment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::GenericAttachment>>, smithy_json::deserialize::Error>
 where
@@ -1344,7 +1353,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_generic_attachment(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_generic_attachment(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1359,7 +1371,7 @@ where
     }
 }
 
-pub fn deser_structure_active_context_time_to_live<'a, I>(
+pub fn deser_structure_crate_model_active_context_time_to_live<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ActiveContextTimeToLive>, smithy_json::deserialize::Error>
 where
@@ -1412,7 +1424,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_active_context_parameters_map<'a, I>(
+pub fn deser_map_com_amazonaws_lexruntimeservice_active_context_parameters_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1455,7 +1467,7 @@ where
     }
 }
 
-pub fn deser_structure_generic_attachment<'a, I>(
+pub fn deser_structure_crate_model_generic_attachment<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GenericAttachment>, smithy_json::deserialize::Error>
 where
@@ -1511,7 +1523,7 @@ where
                             }
                             "buttons" => {
                                 builder = builder.set_buttons(
-                                    crate::json_deser::deser_list_list_of_buttons(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_lexruntimeservice_list_of_buttons(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1533,7 +1545,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_list_of_buttons<'a, I>(
+pub fn deser_list_com_amazonaws_lexruntimeservice_list_of_buttons<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Button>>, smithy_json::deserialize::Error>
 where
@@ -1552,7 +1564,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_button(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_button(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1567,7 +1579,7 @@ where
     }
 }
 
-pub fn deser_structure_button<'a, I>(
+pub fn deser_structure_crate_model_button<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Button>, smithy_json::deserialize::Error>
 where

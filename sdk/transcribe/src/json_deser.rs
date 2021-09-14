@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_bad_request_exceptionjson_err(
+pub fn deser_structure_crate_error_bad_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::bad_request_exception::Builder,
 ) -> Result<crate::error::bad_request_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_bad_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_failure_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_failure_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_failure_exception::Builder,
 ) -> Result<crate::error::internal_failure_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_internal_failure_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_call_analytics_category(
+pub fn deser_operation_crate_operation_create_call_analytics_category(
     input: &[u8],
     mut builder: crate::output::create_call_analytics_category_output::Builder,
 ) -> Result<
@@ -180,7 +180,9 @@ pub fn deser_operation_create_call_analytics_category(
                 match key.to_unescaped()?.as_ref() {
                     "CategoryProperties" => {
                         builder = builder.set_category_properties(
-                            crate::json_deser::deser_structure_category_properties(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_category_properties(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -201,7 +203,7 @@ pub fn deser_operation_create_call_analytics_category(
     Ok(builder)
 }
 
-pub fn deser_operation_create_language_model(
+pub fn deser_operation_crate_operation_create_language_model(
     input: &[u8],
     mut builder: crate::output::create_language_model_output::Builder,
 ) -> Result<crate::output::create_language_model_output::Builder, smithy_json::deserialize::Error> {
@@ -244,7 +246,9 @@ pub fn deser_operation_create_language_model(
                     }
                     "InputDataConfig" => {
                         builder = builder.set_input_data_config(
-                            crate::json_deser::deser_structure_input_data_config(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_input_data_config(
+                                tokens,
+                            )?,
                         );
                     }
                     "ModelStatus" => {
@@ -275,7 +279,7 @@ pub fn deser_operation_create_language_model(
     Ok(builder)
 }
 
-pub fn deser_operation_create_medical_vocabulary(
+pub fn deser_operation_crate_operation_create_medical_vocabulary(
     input: &[u8],
     mut builder: crate::output::create_medical_vocabulary_output::Builder,
 ) -> Result<crate::output::create_medical_vocabulary_output::Builder, smithy_json::deserialize::Error>
@@ -350,7 +354,7 @@ pub fn deser_operation_create_medical_vocabulary(
     Ok(builder)
 }
 
-pub fn deser_operation_create_vocabulary(
+pub fn deser_operation_crate_operation_create_vocabulary(
     input: &[u8],
     mut builder: crate::output::create_vocabulary_output::Builder,
 ) -> Result<crate::output::create_vocabulary_output::Builder, smithy_json::deserialize::Error> {
@@ -424,7 +428,7 @@ pub fn deser_operation_create_vocabulary(
     Ok(builder)
 }
 
-pub fn deser_operation_create_vocabulary_filter(
+pub fn deser_operation_crate_operation_create_vocabulary_filter(
     input: &[u8],
     mut builder: crate::output::create_vocabulary_filter_output::Builder,
 ) -> Result<crate::output::create_vocabulary_filter_output::Builder, smithy_json::deserialize::Error>
@@ -482,7 +486,7 @@ pub fn deser_operation_create_vocabulary_filter(
     Ok(builder)
 }
 
-pub fn deser_structure_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::not_found_exception::Builder,
 ) -> Result<crate::error::not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -521,7 +525,7 @@ pub fn deser_structure_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_language_model(
+pub fn deser_operation_crate_operation_describe_language_model(
     input: &[u8],
     mut builder: crate::output::describe_language_model_output::Builder,
 ) -> Result<crate::output::describe_language_model_output::Builder, smithy_json::deserialize::Error>
@@ -538,7 +542,7 @@ pub fn deser_operation_describe_language_model(
                 match key.to_unescaped()?.as_ref() {
                     "LanguageModel" => {
                         builder = builder.set_language_model(
-                            crate::json_deser::deser_structure_language_model(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_language_model(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -559,7 +563,7 @@ pub fn deser_operation_describe_language_model(
     Ok(builder)
 }
 
-pub fn deser_operation_get_call_analytics_category(
+pub fn deser_operation_crate_operation_get_call_analytics_category(
     input: &[u8],
     mut builder: crate::output::get_call_analytics_category_output::Builder,
 ) -> Result<
@@ -578,7 +582,9 @@ pub fn deser_operation_get_call_analytics_category(
                 match key.to_unescaped()?.as_ref() {
                     "CategoryProperties" => {
                         builder = builder.set_category_properties(
-                            crate::json_deser::deser_structure_category_properties(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_category_properties(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -599,7 +605,7 @@ pub fn deser_operation_get_call_analytics_category(
     Ok(builder)
 }
 
-pub fn deser_operation_get_call_analytics_job(
+pub fn deser_operation_crate_operation_get_call_analytics_job(
     input: &[u8],
     mut builder: crate::output::get_call_analytics_job_output::Builder,
 ) -> Result<crate::output::get_call_analytics_job_output::Builder, smithy_json::deserialize::Error>
@@ -616,7 +622,9 @@ pub fn deser_operation_get_call_analytics_job(
                 match key.to_unescaped()?.as_ref() {
                     "CallAnalyticsJob" => {
                         builder = builder.set_call_analytics_job(
-                            crate::json_deser::deser_structure_call_analytics_job(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_call_analytics_job(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -637,7 +645,7 @@ pub fn deser_operation_get_call_analytics_job(
     Ok(builder)
 }
 
-pub fn deser_operation_get_medical_transcription_job(
+pub fn deser_operation_crate_operation_get_medical_transcription_job(
     input: &[u8],
     mut builder: crate::output::get_medical_transcription_job_output::Builder,
 ) -> Result<
@@ -656,7 +664,7 @@ pub fn deser_operation_get_medical_transcription_job(
                 match key.to_unescaped()?.as_ref() {
                     "MedicalTranscriptionJob" => {
                         builder = builder.set_medical_transcription_job(
-                            crate::json_deser::deser_structure_medical_transcription_job(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_medical_transcription_job(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -677,7 +685,7 @@ pub fn deser_operation_get_medical_transcription_job(
     Ok(builder)
 }
 
-pub fn deser_operation_get_medical_vocabulary(
+pub fn deser_operation_crate_operation_get_medical_vocabulary(
     input: &[u8],
     mut builder: crate::output::get_medical_vocabulary_output::Builder,
 ) -> Result<crate::output::get_medical_vocabulary_output::Builder, smithy_json::deserialize::Error>
@@ -759,7 +767,7 @@ pub fn deser_operation_get_medical_vocabulary(
     Ok(builder)
 }
 
-pub fn deser_operation_get_transcription_job(
+pub fn deser_operation_crate_operation_get_transcription_job(
     input: &[u8],
     mut builder: crate::output::get_transcription_job_output::Builder,
 ) -> Result<crate::output::get_transcription_job_output::Builder, smithy_json::deserialize::Error> {
@@ -775,7 +783,9 @@ pub fn deser_operation_get_transcription_job(
                 match key.to_unescaped()?.as_ref() {
                     "TranscriptionJob" => {
                         builder = builder.set_transcription_job(
-                            crate::json_deser::deser_structure_transcription_job(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_transcription_job(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -796,7 +806,7 @@ pub fn deser_operation_get_transcription_job(
     Ok(builder)
 }
 
-pub fn deser_operation_get_vocabulary(
+pub fn deser_operation_crate_operation_get_vocabulary(
     input: &[u8],
     mut builder: crate::output::get_vocabulary_output::Builder,
 ) -> Result<crate::output::get_vocabulary_output::Builder, smithy_json::deserialize::Error> {
@@ -877,7 +887,7 @@ pub fn deser_operation_get_vocabulary(
     Ok(builder)
 }
 
-pub fn deser_operation_get_vocabulary_filter(
+pub fn deser_operation_crate_operation_get_vocabulary_filter(
     input: &[u8],
     mut builder: crate::output::get_vocabulary_filter_output::Builder,
 ) -> Result<crate::output::get_vocabulary_filter_output::Builder, smithy_json::deserialize::Error> {
@@ -941,7 +951,7 @@ pub fn deser_operation_get_vocabulary_filter(
     Ok(builder)
 }
 
-pub fn deser_operation_list_call_analytics_categories(
+pub fn deser_operation_crate_operation_list_call_analytics_categories(
     input: &[u8],
     mut builder: crate::output::list_call_analytics_categories_output::Builder,
 ) -> Result<
@@ -967,7 +977,7 @@ pub fn deser_operation_list_call_analytics_categories(
                     }
                     "Categories" => {
                         builder = builder.set_categories(
-                            crate::json_deser::deser_list_category_properties_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_transcribe_category_properties_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -988,7 +998,7 @@ pub fn deser_operation_list_call_analytics_categories(
     Ok(builder)
 }
 
-pub fn deser_operation_list_call_analytics_jobs(
+pub fn deser_operation_crate_operation_list_call_analytics_jobs(
     input: &[u8],
     mut builder: crate::output::list_call_analytics_jobs_output::Builder,
 ) -> Result<crate::output::list_call_analytics_jobs_output::Builder, smithy_json::deserialize::Error>
@@ -1023,7 +1033,7 @@ pub fn deser_operation_list_call_analytics_jobs(
                     }
                     "CallAnalyticsJobSummaries" => {
                         builder = builder.set_call_analytics_job_summaries(
-                            crate::json_deser::deser_list_call_analytics_job_summaries(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_transcribe_call_analytics_job_summaries(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1044,7 +1054,7 @@ pub fn deser_operation_list_call_analytics_jobs(
     Ok(builder)
 }
 
-pub fn deser_operation_list_language_models(
+pub fn deser_operation_crate_operation_list_language_models(
     input: &[u8],
     mut builder: crate::output::list_language_models_output::Builder,
 ) -> Result<crate::output::list_language_models_output::Builder, smithy_json::deserialize::Error> {
@@ -1066,7 +1076,9 @@ pub fn deser_operation_list_language_models(
                         );
                     }
                     "Models" => {
-                        builder = builder.set_models(crate::json_deser::deser_list_models(tokens)?);
+                        builder = builder.set_models(
+                            crate::json_deser::deser_list_com_amazonaws_transcribe_models(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1086,7 +1098,7 @@ pub fn deser_operation_list_language_models(
     Ok(builder)
 }
 
-pub fn deser_operation_list_medical_transcription_jobs(
+pub fn deser_operation_crate_operation_list_medical_transcription_jobs(
     input: &[u8],
     mut builder: crate::output::list_medical_transcription_jobs_output::Builder,
 ) -> Result<
@@ -1123,9 +1135,7 @@ pub fn deser_operation_list_medical_transcription_jobs(
                     }
                     "MedicalTranscriptionJobSummaries" => {
                         builder = builder.set_medical_transcription_job_summaries(
-                            crate::json_deser::deser_list_medical_transcription_job_summaries(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_transcribe_medical_transcription_job_summaries(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1146,7 +1156,7 @@ pub fn deser_operation_list_medical_transcription_jobs(
     Ok(builder)
 }
 
-pub fn deser_operation_list_medical_vocabularies(
+pub fn deser_operation_crate_operation_list_medical_vocabularies(
     input: &[u8],
     mut builder: crate::output::list_medical_vocabularies_output::Builder,
 ) -> Result<crate::output::list_medical_vocabularies_output::Builder, smithy_json::deserialize::Error>
@@ -1179,8 +1189,11 @@ pub fn deser_operation_list_medical_vocabularies(
                         );
                     }
                     "Vocabularies" => {
-                        builder = builder
-                            .set_vocabularies(crate::json_deser::deser_list_vocabularies(tokens)?);
+                        builder = builder.set_vocabularies(
+                            crate::json_deser::deser_list_com_amazonaws_transcribe_vocabularies(
+                                tokens,
+                            )?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1200,7 +1213,7 @@ pub fn deser_operation_list_medical_vocabularies(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -1223,7 +1236,11 @@ pub fn deser_operation_list_tags_for_resource(
                         );
                     }
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_list_com_amazonaws_transcribe_tag_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1243,7 +1260,7 @@ pub fn deser_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_list_transcription_jobs(
+pub fn deser_operation_crate_operation_list_transcription_jobs(
     input: &[u8],
     mut builder: crate::output::list_transcription_jobs_output::Builder,
 ) -> Result<crate::output::list_transcription_jobs_output::Builder, smithy_json::deserialize::Error>
@@ -1278,7 +1295,7 @@ pub fn deser_operation_list_transcription_jobs(
                     }
                     "TranscriptionJobSummaries" => {
                         builder = builder.set_transcription_job_summaries(
-                            crate::json_deser::deser_list_transcription_job_summaries(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_transcribe_transcription_job_summaries(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1299,7 +1316,7 @@ pub fn deser_operation_list_transcription_jobs(
     Ok(builder)
 }
 
-pub fn deser_operation_list_vocabularies(
+pub fn deser_operation_crate_operation_list_vocabularies(
     input: &[u8],
     mut builder: crate::output::list_vocabularies_output::Builder,
 ) -> Result<crate::output::list_vocabularies_output::Builder, smithy_json::deserialize::Error> {
@@ -1331,8 +1348,11 @@ pub fn deser_operation_list_vocabularies(
                         );
                     }
                     "Vocabularies" => {
-                        builder = builder
-                            .set_vocabularies(crate::json_deser::deser_list_vocabularies(tokens)?);
+                        builder = builder.set_vocabularies(
+                            crate::json_deser::deser_list_com_amazonaws_transcribe_vocabularies(
+                                tokens,
+                            )?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1352,7 +1372,7 @@ pub fn deser_operation_list_vocabularies(
     Ok(builder)
 }
 
-pub fn deser_operation_list_vocabulary_filters(
+pub fn deser_operation_crate_operation_list_vocabulary_filters(
     input: &[u8],
     mut builder: crate::output::list_vocabulary_filters_output::Builder,
 ) -> Result<crate::output::list_vocabulary_filters_output::Builder, smithy_json::deserialize::Error>
@@ -1376,7 +1396,7 @@ pub fn deser_operation_list_vocabulary_filters(
                     }
                     "VocabularyFilters" => {
                         builder = builder.set_vocabulary_filters(
-                            crate::json_deser::deser_list_vocabulary_filters(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_transcribe_vocabulary_filters(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1397,7 +1417,7 @@ pub fn deser_operation_list_vocabulary_filters(
     Ok(builder)
 }
 
-pub fn deser_operation_start_call_analytics_job(
+pub fn deser_operation_crate_operation_start_call_analytics_job(
     input: &[u8],
     mut builder: crate::output::start_call_analytics_job_output::Builder,
 ) -> Result<crate::output::start_call_analytics_job_output::Builder, smithy_json::deserialize::Error>
@@ -1414,7 +1434,9 @@ pub fn deser_operation_start_call_analytics_job(
                 match key.to_unescaped()?.as_ref() {
                     "CallAnalyticsJob" => {
                         builder = builder.set_call_analytics_job(
-                            crate::json_deser::deser_structure_call_analytics_job(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_call_analytics_job(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1435,7 +1457,7 @@ pub fn deser_operation_start_call_analytics_job(
     Ok(builder)
 }
 
-pub fn deser_operation_start_medical_transcription_job(
+pub fn deser_operation_crate_operation_start_medical_transcription_job(
     input: &[u8],
     mut builder: crate::output::start_medical_transcription_job_output::Builder,
 ) -> Result<
@@ -1454,7 +1476,7 @@ pub fn deser_operation_start_medical_transcription_job(
                 match key.to_unescaped()?.as_ref() {
                     "MedicalTranscriptionJob" => {
                         builder = builder.set_medical_transcription_job(
-                            crate::json_deser::deser_structure_medical_transcription_job(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_medical_transcription_job(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1475,7 +1497,7 @@ pub fn deser_operation_start_medical_transcription_job(
     Ok(builder)
 }
 
-pub fn deser_operation_start_transcription_job(
+pub fn deser_operation_crate_operation_start_transcription_job(
     input: &[u8],
     mut builder: crate::output::start_transcription_job_output::Builder,
 ) -> Result<crate::output::start_transcription_job_output::Builder, smithy_json::deserialize::Error>
@@ -1492,7 +1514,9 @@ pub fn deser_operation_start_transcription_job(
                 match key.to_unescaped()?.as_ref() {
                     "TranscriptionJob" => {
                         builder = builder.set_transcription_job(
-                            crate::json_deser::deser_structure_transcription_job(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_transcription_job(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1513,7 +1537,7 @@ pub fn deser_operation_start_transcription_job(
     Ok(builder)
 }
 
-pub fn deser_operation_update_call_analytics_category(
+pub fn deser_operation_crate_operation_update_call_analytics_category(
     input: &[u8],
     mut builder: crate::output::update_call_analytics_category_output::Builder,
 ) -> Result<
@@ -1532,7 +1556,9 @@ pub fn deser_operation_update_call_analytics_category(
                 match key.to_unescaped()?.as_ref() {
                     "CategoryProperties" => {
                         builder = builder.set_category_properties(
-                            crate::json_deser::deser_structure_category_properties(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_category_properties(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1553,7 +1579,7 @@ pub fn deser_operation_update_call_analytics_category(
     Ok(builder)
 }
 
-pub fn deser_operation_update_medical_vocabulary(
+pub fn deser_operation_crate_operation_update_medical_vocabulary(
     input: &[u8],
     mut builder: crate::output::update_medical_vocabulary_output::Builder,
 ) -> Result<crate::output::update_medical_vocabulary_output::Builder, smithy_json::deserialize::Error>
@@ -1621,7 +1647,7 @@ pub fn deser_operation_update_medical_vocabulary(
     Ok(builder)
 }
 
-pub fn deser_operation_update_vocabulary(
+pub fn deser_operation_crate_operation_update_vocabulary(
     input: &[u8],
     mut builder: crate::output::update_vocabulary_output::Builder,
 ) -> Result<crate::output::update_vocabulary_output::Builder, smithy_json::deserialize::Error> {
@@ -1688,7 +1714,7 @@ pub fn deser_operation_update_vocabulary(
     Ok(builder)
 }
 
-pub fn deser_operation_update_vocabulary_filter(
+pub fn deser_operation_crate_operation_update_vocabulary_filter(
     input: &[u8],
     mut builder: crate::output::update_vocabulary_filter_output::Builder,
 ) -> Result<crate::output::update_vocabulary_filter_output::Builder, smithy_json::deserialize::Error>
@@ -1754,7 +1780,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_category_properties<'a, I>(
+pub fn deser_structure_crate_model_category_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CategoryProperties>, smithy_json::deserialize::Error>
 where
@@ -1782,8 +1808,9 @@ where
                                 );
                             }
                             "Rules" => {
-                                builder = builder
-                                    .set_rules(crate::json_deser::deser_list_rule_list(tokens)?);
+                                builder = builder.set_rules(
+                                    crate::json_deser::deser_list_com_amazonaws_transcribe_rule_list(tokens)?
+                                );
                             }
                             "CreateTime" => {
                                 builder = builder.set_create_time(
@@ -1819,7 +1846,7 @@ where
     }
 }
 
-pub fn deser_structure_input_data_config<'a, I>(
+pub fn deser_structure_crate_model_input_data_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::InputDataConfig>, smithy_json::deserialize::Error>
 where
@@ -1882,7 +1909,7 @@ where
     }
 }
 
-pub fn deser_structure_language_model<'a, I>(
+pub fn deser_structure_crate_model_language_model<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LanguageModel>, smithy_json::deserialize::Error>
 where
@@ -1980,7 +2007,7 @@ where
                             }
                             "InputDataConfig" => {
                                 builder = builder.set_input_data_config(
-                                    crate::json_deser::deser_structure_input_data_config(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_input_data_config(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2001,7 +2028,7 @@ where
     }
 }
 
-pub fn deser_structure_call_analytics_job<'a, I>(
+pub fn deser_structure_crate_model_call_analytics_job<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CallAnalyticsJob>, smithy_json::deserialize::Error>
 where
@@ -2074,12 +2101,15 @@ where
                                 );
                             }
                             "Media" => {
-                                builder = builder
-                                    .set_media(crate::json_deser::deser_structure_media(tokens)?);
+                                builder = builder.set_media(
+                                    crate::json_deser::deser_structure_crate_model_media(tokens)?,
+                                );
                             }
                             "Transcript" => {
                                 builder = builder.set_transcript(
-                                    crate::json_deser::deser_structure_transcript(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_transcript(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "StartTime" => {
@@ -2134,14 +2164,12 @@ where
                             }
                             "Settings" => {
                                 builder = builder.set_settings(
-                                    crate::json_deser::deser_structure_call_analytics_job_settings(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_call_analytics_job_settings(tokens)?
                                 );
                             }
                             "ChannelDefinitions" => {
                                 builder = builder.set_channel_definitions(
-                                    crate::json_deser::deser_list_channel_definitions(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_transcribe_channel_definitions(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2162,7 +2190,7 @@ where
     }
 }
 
-pub fn deser_structure_medical_transcription_job<'a, I>(
+pub fn deser_structure_crate_model_medical_transcription_job<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MedicalTranscriptionJob>, smithy_json::deserialize::Error>
 where
@@ -2235,12 +2263,13 @@ where
                                 );
                             }
                             "Media" => {
-                                builder = builder
-                                    .set_media(crate::json_deser::deser_structure_media(tokens)?);
+                                builder = builder.set_media(
+                                    crate::json_deser::deser_structure_crate_model_media(tokens)?,
+                                );
                             }
                             "Transcript" => {
                                 builder = builder.set_transcript(
-                                    crate::json_deser::deser_structure_medical_transcript(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_medical_transcript(tokens)?
                                 );
                             }
                             "StartTime" => {
@@ -2278,7 +2307,7 @@ where
                             }
                             "Settings" => {
                                 builder = builder.set_settings(
-                                    crate::json_deser::deser_structure_medical_transcription_setting(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_medical_transcription_setting(tokens)?
                                 );
                             }
                             "ContentIdentificationType" => {
@@ -2321,8 +2350,9 @@ where
                                 );
                             }
                             "Tags" => {
-                                builder = builder
-                                    .set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
+                                builder = builder.set_tags(
+                                    crate::json_deser::deser_list_com_amazonaws_transcribe_tag_list(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -2342,7 +2372,7 @@ where
     }
 }
 
-pub fn deser_structure_transcription_job<'a, I>(
+pub fn deser_structure_crate_model_transcription_job<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TranscriptionJob>, smithy_json::deserialize::Error>
 where
@@ -2415,12 +2445,15 @@ where
                                 );
                             }
                             "Media" => {
-                                builder = builder
-                                    .set_media(crate::json_deser::deser_structure_media(tokens)?);
+                                builder = builder.set_media(
+                                    crate::json_deser::deser_structure_crate_model_media(tokens)?,
+                                );
                             }
                             "Transcript" => {
                                 builder = builder.set_transcript(
-                                    crate::json_deser::deser_structure_transcript(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_transcript(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "StartTime" => {
@@ -2458,24 +2491,26 @@ where
                             }
                             "Settings" => {
                                 builder = builder.set_settings(
-                                    crate::json_deser::deser_structure_settings(tokens)?,
-                                );
-                            }
-                            "ModelSettings" => {
-                                builder = builder.set_model_settings(
-                                    crate::json_deser::deser_structure_model_settings(tokens)?,
-                                );
-                            }
-                            "JobExecutionSettings" => {
-                                builder = builder.set_job_execution_settings(
-                                    crate::json_deser::deser_structure_job_execution_settings(
+                                    crate::json_deser::deser_structure_crate_model_settings(
                                         tokens,
                                     )?,
                                 );
                             }
+                            "ModelSettings" => {
+                                builder = builder.set_model_settings(
+                                    crate::json_deser::deser_structure_crate_model_model_settings(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "JobExecutionSettings" => {
+                                builder = builder.set_job_execution_settings(
+                                    crate::json_deser::deser_structure_crate_model_job_execution_settings(tokens)?
+                                );
+                            }
                             "ContentRedaction" => {
                                 builder = builder.set_content_redaction(
-                                    crate::json_deser::deser_structure_content_redaction(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_content_redaction(tokens)?
                                 );
                             }
                             "IdentifyLanguage" => {
@@ -2487,7 +2522,7 @@ where
                             }
                             "LanguageOptions" => {
                                 builder = builder.set_language_options(
-                                    crate::json_deser::deser_list_language_options(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_transcribe_language_options(tokens)?
                                 );
                             }
                             "IdentifiedLanguageScore" => {
@@ -2499,8 +2534,9 @@ where
                                 );
                             }
                             "Tags" => {
-                                builder = builder
-                                    .set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
+                                builder = builder.set_tags(
+                                    crate::json_deser::deser_list_com_amazonaws_transcribe_tag_list(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -2521,7 +2557,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_category_properties_list<'a, I>(
+pub fn deser_list_com_amazonaws_transcribe_category_properties_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::CategoryProperties>>, smithy_json::deserialize::Error>
 where
@@ -2540,7 +2576,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_category_properties(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_category_properties(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2556,7 +2595,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_call_analytics_job_summaries<'a, I>(
+pub fn deser_list_com_amazonaws_transcribe_call_analytics_job_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::CallAnalyticsJobSummary>>,
@@ -2579,7 +2618,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_call_analytics_job_summary(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_call_analytics_job_summary(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2595,7 +2635,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_models<'a, I>(
+pub fn deser_list_com_amazonaws_transcribe_models<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::LanguageModel>>, smithy_json::deserialize::Error>
 where
@@ -2614,7 +2654,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_language_model(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_language_model(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2630,7 +2671,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_medical_transcription_job_summaries<'a, I>(
+pub fn deser_list_com_amazonaws_transcribe_medical_transcription_job_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::MedicalTranscriptionJobSummary>>,
@@ -2653,9 +2694,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_medical_transcription_job_summary(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_medical_transcription_job_summary(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2671,7 +2711,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_vocabularies<'a, I>(
+pub fn deser_list_com_amazonaws_transcribe_vocabularies<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::VocabularyInfo>>, smithy_json::deserialize::Error>
 where
@@ -2690,7 +2730,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_vocabulary_info(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_vocabulary_info(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2706,7 +2747,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_transcribe_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -2725,7 +2766,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2741,7 +2782,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_transcription_job_summaries<'a, I>(
+pub fn deser_list_com_amazonaws_transcribe_transcription_job_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::TranscriptionJobSummary>>,
@@ -2764,7 +2805,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_transcription_job_summary(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_transcription_job_summary(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2780,7 +2822,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_vocabulary_filters<'a, I>(
+pub fn deser_list_com_amazonaws_transcribe_vocabulary_filters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::VocabularyFilterInfo>>,
@@ -2803,7 +2845,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_vocabulary_filter_info(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_vocabulary_filter_info(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2819,7 +2863,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_rule_list<'a, I>(
+pub fn deser_list_com_amazonaws_transcribe_rule_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Rule>>, smithy_json::deserialize::Error>
 where
@@ -2838,7 +2882,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_union_rule(tokens)?;
+                        let value = crate::json_deser::deser_union_crate_model_rule(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2853,7 +2897,7 @@ where
     }
 }
 
-pub fn deser_structure_media<'a, I>(
+pub fn deser_structure_crate_model_media<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Media>, smithy_json::deserialize::Error>
 where
@@ -2907,7 +2951,7 @@ where
     }
 }
 
-pub fn deser_structure_transcript<'a, I>(
+pub fn deser_structure_crate_model_transcript<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Transcript>, smithy_json::deserialize::Error>
 where
@@ -2961,7 +3005,7 @@ where
     }
 }
 
-pub fn deser_structure_call_analytics_job_settings<'a, I>(
+pub fn deser_structure_crate_model_call_analytics_job_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CallAnalyticsJobSettings>, smithy_json::deserialize::Error>
 where
@@ -3021,12 +3065,12 @@ where
                             }
                             "ContentRedaction" => {
                                 builder = builder.set_content_redaction(
-                                    crate::json_deser::deser_structure_content_redaction(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_content_redaction(tokens)?
                                 );
                             }
                             "LanguageOptions" => {
                                 builder = builder.set_language_options(
-                                    crate::json_deser::deser_list_language_options(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_transcribe_language_options(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3048,7 +3092,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_channel_definitions<'a, I>(
+pub fn deser_list_com_amazonaws_transcribe_channel_definitions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ChannelDefinition>>, smithy_json::deserialize::Error>
 where
@@ -3067,7 +3111,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_channel_definition(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_channel_definition(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3082,7 +3129,7 @@ where
     }
 }
 
-pub fn deser_structure_medical_transcript<'a, I>(
+pub fn deser_structure_crate_model_medical_transcript<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MedicalTranscript>, smithy_json::deserialize::Error>
 where
@@ -3127,7 +3174,7 @@ where
     }
 }
 
-pub fn deser_structure_medical_transcription_setting<'a, I>(
+pub fn deser_structure_crate_model_medical_transcription_setting<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MedicalTranscriptionSetting>, smithy_json::deserialize::Error>
 where
@@ -3209,7 +3256,7 @@ where
     }
 }
 
-pub fn deser_structure_settings<'a, I>(
+pub fn deser_structure_crate_model_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Settings>, smithy_json::deserialize::Error>
 where
@@ -3313,7 +3360,7 @@ where
     }
 }
 
-pub fn deser_structure_model_settings<'a, I>(
+pub fn deser_structure_crate_model_model_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ModelSettings>, smithy_json::deserialize::Error>
 where
@@ -3358,7 +3405,7 @@ where
     }
 }
 
-pub fn deser_structure_job_execution_settings<'a, I>(
+pub fn deser_structure_crate_model_job_execution_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::JobExecutionSettings>, smithy_json::deserialize::Error>
 where
@@ -3410,7 +3457,7 @@ where
     }
 }
 
-pub fn deser_structure_content_redaction<'a, I>(
+pub fn deser_structure_crate_model_content_redaction<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ContentRedaction>, smithy_json::deserialize::Error>
 where
@@ -3472,7 +3519,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_language_options<'a, I>(
+pub fn deser_list_com_amazonaws_transcribe_language_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::LanguageCode>>, smithy_json::deserialize::Error>
 where
@@ -3512,7 +3559,7 @@ where
     }
 }
 
-pub fn deser_structure_call_analytics_job_summary<'a, I>(
+pub fn deser_structure_crate_model_call_analytics_job_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CallAnalyticsJobSummary>, smithy_json::deserialize::Error>
 where
@@ -3615,7 +3662,7 @@ where
     }
 }
 
-pub fn deser_structure_medical_transcription_job_summary<'a, I>(
+pub fn deser_structure_crate_model_medical_transcription_job_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MedicalTranscriptionJobSummary>, smithy_json::deserialize::Error>
 where
@@ -3770,7 +3817,7 @@ where
     }
 }
 
-pub fn deser_structure_vocabulary_info<'a, I>(
+pub fn deser_structure_crate_model_vocabulary_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::VocabularyInfo>, smithy_json::deserialize::Error>
 where
@@ -3848,7 +3895,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where
@@ -3902,7 +3949,7 @@ where
     }
 }
 
-pub fn deser_structure_transcription_job_summary<'a, I>(
+pub fn deser_structure_crate_model_transcription_job_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TranscriptionJobSummary>, smithy_json::deserialize::Error>
 where
@@ -4002,12 +4049,14 @@ where
                             }
                             "ContentRedaction" => {
                                 builder = builder.set_content_redaction(
-                                    crate::json_deser::deser_structure_content_redaction(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_content_redaction(tokens)?
                                 );
                             }
                             "ModelSettings" => {
                                 builder = builder.set_model_settings(
-                                    crate::json_deser::deser_structure_model_settings(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_model_settings(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "IdentifyLanguage" => {
@@ -4043,7 +4092,7 @@ where
     }
 }
 
-pub fn deser_structure_vocabulary_filter_info<'a, I>(
+pub fn deser_structure_crate_model_vocabulary_filter_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::VocabularyFilterInfo>, smithy_json::deserialize::Error>
 where
@@ -4108,7 +4157,7 @@ where
     }
 }
 
-pub fn deser_union_rule<'a, I>(
+pub fn deser_union_crate_model_rule<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Rule>, smithy_json::deserialize::Error>
 where
@@ -4119,58 +4168,52 @@ where
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
-        Some(smithy_json::deserialize::Token::StartObject { .. }) => loop {
-            match tokens.next().transpose()? {
-                Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-                Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                    if variant.is_some() {
-                        return Err(smithy_json::deserialize::Error::custom(
-                            "encountered mixed variants in union",
-                        ));
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        if variant.is_some() {
+                            return Err(smithy_json::deserialize::Error::custom(
+                                "encountered mixed variants in union",
+                            ));
+                        }
+                        variant = match key.to_unescaped()?.as_ref() {
+                            "NonTalkTimeFilter" => {
+                                Some(crate::model::Rule::NonTalkTimeFilter(
+                                    crate::json_deser::deser_structure_crate_model_non_talk_time_filter(tokens)?
+                                    .ok_or_else(|| smithy_json::deserialize::Error::custom("value for 'NonTalkTimeFilter' cannot be null"))?
+                                ))
+                            }
+                            "InterruptionFilter" => {
+                                Some(crate::model::Rule::InterruptionFilter(
+                                    crate::json_deser::deser_structure_crate_model_interruption_filter(tokens)?
+                                    .ok_or_else(|| smithy_json::deserialize::Error::custom("value for 'InterruptionFilter' cannot be null"))?
+                                ))
+                            }
+                            "TranscriptFilter" => {
+                                Some(crate::model::Rule::TranscriptFilter(
+                                    crate::json_deser::deser_structure_crate_model_transcript_filter(tokens)?
+                                    .ok_or_else(|| smithy_json::deserialize::Error::custom("value for 'TranscriptFilter' cannot be null"))?
+                                ))
+                            }
+                            "SentimentFilter" => {
+                                Some(crate::model::Rule::SentimentFilter(
+                                    crate::json_deser::deser_structure_crate_model_sentiment_filter(tokens)?
+                                    .ok_or_else(|| smithy_json::deserialize::Error::custom("value for 'SentimentFilter' cannot be null"))?
+                                ))
+                            }
+                            _ => None
+                        };
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
-                        "NonTalkTimeFilter" => Some(crate::model::Rule::NonTalkTimeFilter(
-                            crate::json_deser::deser_structure_non_talk_time_filter(tokens)?
-                                .ok_or_else(|| {
-                                    smithy_json::deserialize::Error::custom(
-                                        "value for 'NonTalkTimeFilter' cannot be null",
-                                    )
-                                })?,
-                        )),
-                        "InterruptionFilter" => Some(crate::model::Rule::InterruptionFilter(
-                            crate::json_deser::deser_structure_interruption_filter(tokens)?
-                                .ok_or_else(|| {
-                                    smithy_json::deserialize::Error::custom(
-                                        "value for 'InterruptionFilter' cannot be null",
-                                    )
-                                })?,
-                        )),
-                        "TranscriptFilter" => Some(crate::model::Rule::TranscriptFilter(
-                            crate::json_deser::deser_structure_transcript_filter(tokens)?
-                                .ok_or_else(|| {
-                                    smithy_json::deserialize::Error::custom(
-                                        "value for 'TranscriptFilter' cannot be null",
-                                    )
-                                })?,
-                        )),
-                        "SentimentFilter" => Some(crate::model::Rule::SentimentFilter(
-                            crate::json_deser::deser_structure_sentiment_filter(tokens)?
-                                .ok_or_else(|| {
-                                    smithy_json::deserialize::Error::custom(
-                                        "value for 'SentimentFilter' cannot be null",
-                                    )
-                                })?,
-                        )),
-                        _ => None,
-                    };
-                }
-                _ => {
-                    return Err(smithy_json::deserialize::Error::custom(
-                        "expected object key or end object",
-                    ))
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
                 }
             }
-        },
+        }
         _ => {
             return Err(smithy_json::deserialize::Error::custom(
                 "expected start object or null",
@@ -4180,7 +4223,7 @@ where
     Ok(variant)
 }
 
-pub fn deser_structure_channel_definition<'a, I>(
+pub fn deser_structure_crate_model_channel_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ChannelDefinition>, smithy_json::deserialize::Error>
 where
@@ -4237,7 +4280,7 @@ where
     }
 }
 
-pub fn deser_structure_non_talk_time_filter<'a, I>(
+pub fn deser_structure_crate_model_non_talk_time_filter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::NonTalkTimeFilter>, smithy_json::deserialize::Error>
 where
@@ -4265,12 +4308,12 @@ where
                             }
                             "AbsoluteTimeRange" => {
                                 builder = builder.set_absolute_time_range(
-                                    crate::json_deser::deser_structure_absolute_time_range(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_absolute_time_range(tokens)?
                                 );
                             }
                             "RelativeTimeRange" => {
                                 builder = builder.set_relative_time_range(
-                                    crate::json_deser::deser_structure_relative_time_range(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_relative_time_range(tokens)?
                                 );
                             }
                             "Negate" => {
@@ -4298,7 +4341,7 @@ where
     }
 }
 
-pub fn deser_structure_interruption_filter<'a, I>(
+pub fn deser_structure_crate_model_interruption_filter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::InterruptionFilter>, smithy_json::deserialize::Error>
 where
@@ -4339,12 +4382,12 @@ where
                             }
                             "AbsoluteTimeRange" => {
                                 builder = builder.set_absolute_time_range(
-                                    crate::json_deser::deser_structure_absolute_time_range(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_absolute_time_range(tokens)?
                                 );
                             }
                             "RelativeTimeRange" => {
                                 builder = builder.set_relative_time_range(
-                                    crate::json_deser::deser_structure_relative_time_range(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_relative_time_range(tokens)?
                                 );
                             }
                             "Negate" => {
@@ -4372,7 +4415,7 @@ where
     }
 }
 
-pub fn deser_structure_transcript_filter<'a, I>(
+pub fn deser_structure_crate_model_transcript_filter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TranscriptFilter>, smithy_json::deserialize::Error>
 where
@@ -4405,12 +4448,12 @@ where
                             }
                             "AbsoluteTimeRange" => {
                                 builder = builder.set_absolute_time_range(
-                                    crate::json_deser::deser_structure_absolute_time_range(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_absolute_time_range(tokens)?
                                 );
                             }
                             "RelativeTimeRange" => {
                                 builder = builder.set_relative_time_range(
-                                    crate::json_deser::deser_structure_relative_time_range(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_relative_time_range(tokens)?
                                 );
                             }
                             "ParticipantRole" => {
@@ -4435,7 +4478,7 @@ where
                             }
                             "Targets" => {
                                 builder = builder.set_targets(
-                                    crate::json_deser::deser_list_string_target_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_transcribe_string_target_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4456,7 +4499,7 @@ where
     }
 }
 
-pub fn deser_structure_sentiment_filter<'a, I>(
+pub fn deser_structure_crate_model_sentiment_filter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SentimentFilter>, smithy_json::deserialize::Error>
 where
@@ -4476,17 +4519,17 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Sentiments" => {
                                 builder = builder.set_sentiments(
-                                    crate::json_deser::deser_list_sentiment_value_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_transcribe_sentiment_value_list(tokens)?
                                 );
                             }
                             "AbsoluteTimeRange" => {
                                 builder = builder.set_absolute_time_range(
-                                    crate::json_deser::deser_structure_absolute_time_range(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_absolute_time_range(tokens)?
                                 );
                             }
                             "RelativeTimeRange" => {
                                 builder = builder.set_relative_time_range(
-                                    crate::json_deser::deser_structure_relative_time_range(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_relative_time_range(tokens)?
                                 );
                             }
                             "ParticipantRole" => {
@@ -4527,7 +4570,7 @@ where
     }
 }
 
-pub fn deser_structure_absolute_time_range<'a, I>(
+pub fn deser_structure_crate_model_absolute_time_range<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AbsoluteTimeRange>, smithy_json::deserialize::Error>
 where
@@ -4595,7 +4638,7 @@ where
     }
 }
 
-pub fn deser_structure_relative_time_range<'a, I>(
+pub fn deser_structure_crate_model_relative_time_range<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RelativeTimeRange>, smithy_json::deserialize::Error>
 where
@@ -4664,7 +4707,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_string_target_list<'a, I>(
+pub fn deser_list_com_amazonaws_transcribe_string_target_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -4702,7 +4745,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_sentiment_value_list<'a, I>(
+pub fn deser_list_com_amazonaws_transcribe_sentiment_value_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::SentimentValue>>, smithy_json::deserialize::Error>
 where

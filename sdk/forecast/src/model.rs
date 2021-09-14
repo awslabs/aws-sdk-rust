@@ -2054,6 +2054,71 @@ impl DatasetGroupSummary {
     std::fmt::Debug,
     std::hash::Hash,
 )]
+pub enum OptimizationMetric {
+    AverageWeightedQuantileLoss,
+    Mape,
+    Mase,
+    Rmse,
+    Wape,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for OptimizationMetric {
+    fn from(s: &str) -> Self {
+        match s {
+            "AverageWeightedQuantileLoss" => OptimizationMetric::AverageWeightedQuantileLoss,
+            "MAPE" => OptimizationMetric::Mape,
+            "MASE" => OptimizationMetric::Mase,
+            "RMSE" => OptimizationMetric::Rmse,
+            "WAPE" => OptimizationMetric::Wape,
+            other => OptimizationMetric::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for OptimizationMetric {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OptimizationMetric::from(s))
+    }
+}
+impl OptimizationMetric {
+    pub fn as_str(&self) -> &str {
+        match self {
+            OptimizationMetric::AverageWeightedQuantileLoss => "AverageWeightedQuantileLoss",
+            OptimizationMetric::Mape => "MAPE",
+            OptimizationMetric::Mase => "MASE",
+            OptimizationMetric::Rmse => "RMSE",
+            OptimizationMetric::Wape => "WAPE",
+            OptimizationMetric::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AverageWeightedQuantileLoss",
+            "MAPE",
+            "MASE",
+            "RMSE",
+            "WAPE",
+        ]
+    }
+}
+impl AsRef<str> for OptimizationMetric {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum AutoMlOverrideStrategy {
     LatencyOptimized,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -2091,16 +2156,15 @@ impl AsRef<str> for AutoMlOverrideStrategy {
     }
 }
 
-/// <p>The results of evaluating an algorithm. Returned as part of the
-/// <a>GetAccuracyMetrics</a> response.</p>
+/// <p>The results of evaluating an algorithm. Returned as part of the <a>GetAccuracyMetrics</a> response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluationResult {
     /// <p>The Amazon Resource Name (ARN) of the algorithm that was evaluated.</p>
     pub algorithm_arn: std::option::Option<std::string::String>,
     /// <p>The array of test windows used for evaluating the algorithm. The
-    /// <code>NumberOfBacktestWindows</code> from the <a>EvaluationParameters</a>
-    /// object determines the number of windows in the array.</p>
+    /// <code>NumberOfBacktestWindows</code> from the <a>EvaluationParameters</a> object
+    /// determines the number of windows in the array.</p>
     pub test_windows: std::option::Option<std::vec::Vec<crate::model::WindowSummary>>,
 }
 impl std::fmt::Debug for EvaluationResult {
@@ -2162,11 +2226,10 @@ impl EvaluationResult {
     }
 }
 
-/// <p>The metrics for a time range within the evaluation portion of a dataset. This object
-/// is part of the <a>EvaluationResult</a> object.</p>
-/// <p>The <code>TestWindowStart</code> and <code>TestWindowEnd</code> parameters are
-/// determined by the <code>BackTestWindowOffset</code> parameter of the
-/// <a>EvaluationParameters</a> object.</p>
+/// <p>The metrics for a time range within the evaluation portion of a dataset. This object is
+/// part of the <a>EvaluationResult</a> object.</p>
+/// <p>The <code>TestWindowStart</code> and <code>TestWindowEnd</code> parameters are determined
+/// by the <code>BackTestWindowOffset</code> parameter of the <a>EvaluationParameters</a> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WindowSummary {
@@ -2298,8 +2361,8 @@ impl WindowSummary {
     }
 }
 
-/// <p>Provides metrics that are used to evaluate the performance of a predictor. This object
-/// is part of the <a>WindowSummary</a> object.</p>
+/// <p>Provides metrics that are used to evaluate the performance of a predictor. This object is
+/// part of the <a>WindowSummary</a> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Metrics {
@@ -2309,11 +2372,12 @@ pub struct Metrics {
     /// regions of equal probability. The distribution in this case is the loss function.</p>
     pub weighted_quantile_losses:
         std::option::Option<std::vec::Vec<crate::model::WeightedQuantileLoss>>,
-    /// <p>
-    /// Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted
-    /// average percentage error (WAPE).
-    /// </p>
+    /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean
+    /// square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE),
+    /// and weighted average percentage error (WAPE). </p>
     pub error_metrics: std::option::Option<std::vec::Vec<crate::model::ErrorMetric>>,
+    /// <p>The average value of all weighted quantile losses.</p>
+    pub average_weighted_quantile_loss: std::option::Option<f64>,
 }
 impl std::fmt::Debug for Metrics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2321,6 +2385,10 @@ impl std::fmt::Debug for Metrics {
         formatter.field("rmse", &self.rmse);
         formatter.field("weighted_quantile_losses", &self.weighted_quantile_losses);
         formatter.field("error_metrics", &self.error_metrics);
+        formatter.field(
+            "average_weighted_quantile_loss",
+            &self.average_weighted_quantile_loss,
+        );
         formatter.finish()
     }
 }
@@ -2334,6 +2402,7 @@ pub mod metrics {
         pub(crate) weighted_quantile_losses:
             std::option::Option<std::vec::Vec<crate::model::WeightedQuantileLoss>>,
         pub(crate) error_metrics: std::option::Option<std::vec::Vec<crate::model::ErrorMetric>>,
+        pub(crate) average_weighted_quantile_loss: std::option::Option<f64>,
     }
     impl Builder {
         /// <p>The root-mean-square error (RMSE).</p>
@@ -2374,12 +2443,25 @@ pub mod metrics {
             self.error_metrics = input;
             self
         }
+        /// <p>The average value of all weighted quantile losses.</p>
+        pub fn average_weighted_quantile_loss(mut self, input: f64) -> Self {
+            self.average_weighted_quantile_loss = Some(input);
+            self
+        }
+        pub fn set_average_weighted_quantile_loss(
+            mut self,
+            input: std::option::Option<f64>,
+        ) -> Self {
+            self.average_weighted_quantile_loss = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Metrics`](crate::model::Metrics)
         pub fn build(self) -> crate::model::Metrics {
             crate::model::Metrics {
                 rmse: self.rmse,
                 weighted_quantile_losses: self.weighted_quantile_losses,
                 error_metrics: self.error_metrics,
+                average_weighted_quantile_loss: self.average_weighted_quantile_loss,
             }
         }
     }
@@ -2391,25 +2473,21 @@ impl Metrics {
     }
 }
 
-/// <p>
-/// Provides detailed error metrics to evaluate the performance of a predictor. This object is
-/// part of the <a>Metrics</a> object.
-/// </p>
+/// <p> Provides detailed error metrics to evaluate the performance of a predictor. This object
+/// is part of the <a>Metrics</a> object. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorMetric {
-    /// <p>
-    /// The Forecast type used to compute WAPE and RMSE.
-    /// </p>
+    /// <p> The Forecast type used to compute WAPE, MAPE, MASE, and RMSE. </p>
     pub forecast_type: std::option::Option<std::string::String>,
-    /// <p>
-    /// The weighted absolute percentage error (WAPE).
-    /// </p>
+    /// <p> The weighted absolute percentage error (WAPE). </p>
     pub wape: std::option::Option<f64>,
-    /// <p>
-    /// The root-mean-square error (RMSE).
-    /// </p>
+    /// <p> The root-mean-square error (RMSE). </p>
     pub rmse: std::option::Option<f64>,
+    /// <p>The Mean Absolute Scaled Error (MASE)</p>
+    pub mase: std::option::Option<f64>,
+    /// <p>The Mean Absolute Percentage Error (MAPE)</p>
+    pub mape: std::option::Option<f64>,
 }
 impl std::fmt::Debug for ErrorMetric {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2417,6 +2495,8 @@ impl std::fmt::Debug for ErrorMetric {
         formatter.field("forecast_type", &self.forecast_type);
         formatter.field("wape", &self.wape);
         formatter.field("rmse", &self.rmse);
+        formatter.field("mase", &self.mase);
+        formatter.field("mape", &self.mape);
         formatter.finish()
     }
 }
@@ -2429,11 +2509,11 @@ pub mod error_metric {
         pub(crate) forecast_type: std::option::Option<std::string::String>,
         pub(crate) wape: std::option::Option<f64>,
         pub(crate) rmse: std::option::Option<f64>,
+        pub(crate) mase: std::option::Option<f64>,
+        pub(crate) mape: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>
-        /// The Forecast type used to compute WAPE and RMSE.
-        /// </p>
+        /// <p> The Forecast type used to compute WAPE, MAPE, MASE, and RMSE. </p>
         pub fn forecast_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.forecast_type = Some(input.into());
             self
@@ -2445,9 +2525,7 @@ pub mod error_metric {
             self.forecast_type = input;
             self
         }
-        /// <p>
-        /// The weighted absolute percentage error (WAPE).
-        /// </p>
+        /// <p> The weighted absolute percentage error (WAPE). </p>
         pub fn wape(mut self, input: f64) -> Self {
             self.wape = Some(input);
             self
@@ -2456,9 +2534,7 @@ pub mod error_metric {
             self.wape = input;
             self
         }
-        /// <p>
-        /// The root-mean-square error (RMSE).
-        /// </p>
+        /// <p> The root-mean-square error (RMSE). </p>
         pub fn rmse(mut self, input: f64) -> Self {
             self.rmse = Some(input);
             self
@@ -2467,12 +2543,32 @@ pub mod error_metric {
             self.rmse = input;
             self
         }
+        /// <p>The Mean Absolute Scaled Error (MASE)</p>
+        pub fn mase(mut self, input: f64) -> Self {
+            self.mase = Some(input);
+            self
+        }
+        pub fn set_mase(mut self, input: std::option::Option<f64>) -> Self {
+            self.mase = input;
+            self
+        }
+        /// <p>The Mean Absolute Percentage Error (MAPE)</p>
+        pub fn mape(mut self, input: f64) -> Self {
+            self.mape = Some(input);
+            self
+        }
+        pub fn set_mape(mut self, input: std::option::Option<f64>) -> Self {
+            self.mape = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ErrorMetric`](crate::model::ErrorMetric)
         pub fn build(self) -> crate::model::ErrorMetric {
             crate::model::ErrorMetric {
                 forecast_type: self.forecast_type,
                 wape: self.wape,
                 rmse: self.rmse,
+                mase: self.mase,
+                mape: self.mape,
             }
         }
     }
@@ -2484,14 +2580,13 @@ impl ErrorMetric {
     }
 }
 
-/// <p>The weighted loss value for a quantile. This object is part of the
-/// <a>Metrics</a> object.</p>
+/// <p>The weighted loss value for a quantile. This object is part of the <a>Metrics</a> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WeightedQuantileLoss {
     /// <p>The quantile. Quantiles divide a probability distribution into regions of equal
-    /// probability. For example, if the distribution was divided into 5 regions of equal
-    /// probability, the quantiles would be 0.2, 0.4, 0.6, and 0.8.</p>
+    /// probability. For example, if the distribution was divided into 5 regions of equal probability,
+    /// the quantiles would be 0.2, 0.4, 0.6, and 0.8.</p>
     pub quantile: std::option::Option<f64>,
     /// <p>The difference between the predicted value and the actual value over the quantile,
     /// weighted (normalized) by dividing by the sum over all quantiles.</p>
@@ -2516,8 +2611,8 @@ pub mod weighted_quantile_loss {
     }
     impl Builder {
         /// <p>The quantile. Quantiles divide a probability distribution into regions of equal
-        /// probability. For example, if the distribution was divided into 5 regions of equal
-        /// probability, the quantiles would be 0.2, 0.4, 0.6, and 0.8.</p>
+        /// probability. For example, if the distribution was divided into 5 regions of equal probability,
+        /// the quantiles would be 0.2, 0.4, 0.6, and 0.8.</p>
         pub fn quantile(mut self, input: f64) -> Self {
             self.quantile = Some(input);
             self

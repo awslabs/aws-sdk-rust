@@ -405,6 +405,36 @@ impl smithy_http::response::ParseStrictResponse for DeleteApplicationInputProces
     }
 }
 
+/// <p>Deletes the output destination configuration from your SQL-based Kinesis Data Analytics application's configuration.
+/// Kinesis Data Analytics will no longer write data from
+/// the corresponding in-application stream to the external output destination.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteApplicationOutput {
+    _private: (),
+}
+impl DeleteApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationOutputInput`](crate::input::DeleteApplicationOutputInput)
+    pub fn builder() -> crate::input::delete_application_output_input::Builder {
+        crate::input::delete_application_output_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteApplicationOutput {
+    type Output = std::result::Result<
+        crate::output::DeleteApplicationOutputOutput,
+        crate::error::DeleteApplicationOutputError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_application_output_error(response)
+        } else {
+            crate::operation_deser::parse_delete_application_output_response(response)
+        }
+    }
+}
+
 /// <p>Deletes a reference data source configuration from the specified SQL-based Kinesis Data Analytics application's configuration.</p>
 /// <p>If the application is running, Kinesis Data Analytics immediately removes the in-application table
 /// that you created using the <a>AddApplicationReferenceDataSource</a> operation.  </p>

@@ -12,7 +12,7 @@
 //! Typically, this is used when creating a manual async trait. In this case, it's critical that the
 //! lifetime is captured to enable interop with the async-trait macro.
 //!
-//! # Example
+//! # Examples
 //!
 //! ```rust
 //! mod future {

@@ -2366,6 +2366,150 @@ impl EventType {
     }
 }
 
+/// <p>The fraud prediction scores from Amazon SageMaker model.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExternalModelOutputs {
+    /// <p>The Amazon SageMaker model.</p>
+    pub external_model: std::option::Option<crate::model::ExternalModelSummary>,
+    /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
+    pub outputs:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl std::fmt::Debug for ExternalModelOutputs {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExternalModelOutputs");
+        formatter.field("external_model", &self.external_model);
+        formatter.field("outputs", &self.outputs);
+        formatter.finish()
+    }
+}
+/// See [`ExternalModelOutputs`](crate::model::ExternalModelOutputs)
+pub mod external_model_outputs {
+    /// A builder for [`ExternalModelOutputs`](crate::model::ExternalModelOutputs)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) external_model: std::option::Option<crate::model::ExternalModelSummary>,
+        pub(crate) outputs: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The Amazon SageMaker model.</p>
+        pub fn external_model(mut self, input: crate::model::ExternalModelSummary) -> Self {
+            self.external_model = Some(input);
+            self
+        }
+        pub fn set_external_model(
+            mut self,
+            input: std::option::Option<crate::model::ExternalModelSummary>,
+        ) -> Self {
+            self.external_model = input;
+            self
+        }
+        pub fn outputs(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.outputs.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.outputs = Some(hash_map);
+            self
+        }
+        pub fn set_outputs(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.outputs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExternalModelOutputs`](crate::model::ExternalModelOutputs)
+        pub fn build(self) -> crate::model::ExternalModelOutputs {
+            crate::model::ExternalModelOutputs {
+                external_model: self.external_model,
+                outputs: self.outputs,
+            }
+        }
+    }
+}
+impl ExternalModelOutputs {
+    /// Creates a new builder-style object to manufacture [`ExternalModelOutputs`](crate::model::ExternalModelOutputs)
+    pub fn builder() -> crate::model::external_model_outputs::Builder {
+        crate::model::external_model_outputs::Builder::default()
+    }
+}
+
+/// <p>The Amazon SageMaker model.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExternalModelSummary {
+    /// <p>The endpoint of the Amazon SageMaker model.</p>
+    pub model_endpoint: std::option::Option<std::string::String>,
+    /// <p>The source of the model.</p>
+    pub model_source: std::option::Option<crate::model::ModelSource>,
+}
+impl std::fmt::Debug for ExternalModelSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExternalModelSummary");
+        formatter.field("model_endpoint", &self.model_endpoint);
+        formatter.field("model_source", &self.model_source);
+        formatter.finish()
+    }
+}
+/// See [`ExternalModelSummary`](crate::model::ExternalModelSummary)
+pub mod external_model_summary {
+    /// A builder for [`ExternalModelSummary`](crate::model::ExternalModelSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_endpoint: std::option::Option<std::string::String>,
+        pub(crate) model_source: std::option::Option<crate::model::ModelSource>,
+    }
+    impl Builder {
+        /// <p>The endpoint of the Amazon SageMaker model.</p>
+        pub fn model_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_endpoint = Some(input.into());
+            self
+        }
+        pub fn set_model_endpoint(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_endpoint = input;
+            self
+        }
+        /// <p>The source of the model.</p>
+        pub fn model_source(mut self, input: crate::model::ModelSource) -> Self {
+            self.model_source = Some(input);
+            self
+        }
+        pub fn set_model_source(
+            mut self,
+            input: std::option::Option<crate::model::ModelSource>,
+        ) -> Self {
+            self.model_source = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExternalModelSummary`](crate::model::ExternalModelSummary)
+        pub fn build(self) -> crate::model::ExternalModelSummary {
+            crate::model::ExternalModelSummary {
+                model_endpoint: self.model_endpoint,
+                model_source: self.model_source,
+            }
+        }
+    }
+}
+impl ExternalModelSummary {
+    /// Creates a new builder-style object to manufacture [`ExternalModelSummary`](crate::model::ExternalModelSummary)
+    pub fn builder() -> crate::model::external_model_summary::Builder {
+        crate::model::external_model_summary::Builder::default()
+    }
+}
+
 /// <p>The rule results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

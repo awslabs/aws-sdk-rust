@@ -1986,8 +1986,9 @@ impl AsRef<str> for RedactionType {
 pub struct JobExecutionSettings {
     /// <p>Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is exceeded. When the
     /// <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when the number of executing
-    /// jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a <code>LimitExceededException</code>
-    /// exception.</p>
+    /// jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a
+    /// <code>LimitExceededException</code> exception.</p>
+    /// <p>Note that job queuing is enabled by default for call analytics jobs.</p>
     /// <p>If you specify the <code>AllowDeferredExecution</code> field, you must specify the
     /// <code>DataAccessRoleArn</code> field.</p>
     pub allow_deferred_execution: std::option::Option<bool>,
@@ -2018,8 +2019,9 @@ pub mod job_execution_settings {
     impl Builder {
         /// <p>Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is exceeded. When the
         /// <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when the number of executing
-        /// jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a <code>LimitExceededException</code>
-        /// exception.</p>
+        /// jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a
+        /// <code>LimitExceededException</code> exception.</p>
+        /// <p>Note that job queuing is enabled by default for call analytics jobs.</p>
         /// <p>If you specify the <code>AllowDeferredExecution</code> field, you must specify the
         /// <code>DataAccessRoleArn</code> field.</p>
         pub fn allow_deferred_execution(mut self, input: bool) -> Self {

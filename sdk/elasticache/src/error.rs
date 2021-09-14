@@ -11199,7 +11199,7 @@ impl ServiceUpdateNotFoundFault {
     }
 }
 
-/// <p></p>
+/// <p>The default user assigned to the user group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultUserAssociatedToUserGroupFault {

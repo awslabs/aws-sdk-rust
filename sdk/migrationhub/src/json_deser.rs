@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_dry_run_operationjson_err(
+pub fn deser_structure_crate_error_dry_run_operationjson_err(
     input: &[u8],
     mut builder: crate::error::dry_run_operation::Builder,
 ) -> Result<crate::error::dry_run_operation::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_dry_run_operationjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_home_region_not_set_exceptionjson_err(
+pub fn deser_structure_crate_error_home_region_not_set_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::home_region_not_set_exception::Builder,
 ) -> Result<crate::error::home_region_not_set_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_home_region_not_set_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_server_errorjson_err(
+pub fn deser_structure_crate_error_internal_server_errorjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_error::Builder,
 ) -> Result<crate::error::internal_server_error::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_internal_server_errorjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_input_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_input_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_input_exception::Builder,
 ) -> Result<crate::error::invalid_input_exception::Builder, smithy_json::deserialize::Error> {
@@ -200,7 +200,7 @@ pub fn deser_structure_invalid_input_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -239,7 +239,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_unavailable_exceptionjson_err(
+pub fn deser_structure_crate_error_service_unavailable_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_unavailable_exception::Builder,
 ) -> Result<crate::error::service_unavailable_exception::Builder, smithy_json::deserialize::Error> {
@@ -278,7 +278,7 @@ pub fn deser_structure_service_unavailable_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -323,7 +323,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unauthorized_operationjson_err(
+pub fn deser_structure_crate_error_unauthorized_operationjson_err(
     input: &[u8],
     mut builder: crate::error::unauthorized_operation::Builder,
 ) -> Result<crate::error::unauthorized_operation::Builder, smithy_json::deserialize::Error> {
@@ -362,7 +362,7 @@ pub fn deser_structure_unauthorized_operationjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_policy_error_exceptionjson_err(
+pub fn deser_structure_crate_error_policy_error_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::policy_error_exception::Builder,
 ) -> Result<crate::error::policy_error_exception::Builder, smithy_json::deserialize::Error> {
@@ -401,7 +401,7 @@ pub fn deser_structure_policy_error_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_application_state(
+pub fn deser_operation_crate_operation_describe_application_state(
     input: &[u8],
     mut builder: crate::output::describe_application_state_output::Builder,
 ) -> Result<
@@ -454,7 +454,7 @@ pub fn deser_operation_describe_application_state(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_migration_task(
+pub fn deser_operation_crate_operation_describe_migration_task(
     input: &[u8],
     mut builder: crate::output::describe_migration_task_output::Builder,
 ) -> Result<crate::output::describe_migration_task_output::Builder, smithy_json::deserialize::Error>
@@ -471,7 +471,7 @@ pub fn deser_operation_describe_migration_task(
                 match key.to_unescaped()?.as_ref() {
                     "MigrationTask" => {
                         builder = builder.set_migration_task(
-                            crate::json_deser::deser_structure_migration_task(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_migration_task(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -492,7 +492,7 @@ pub fn deser_operation_describe_migration_task(
     Ok(builder)
 }
 
-pub fn deser_operation_list_application_states(
+pub fn deser_operation_crate_operation_list_application_states(
     input: &[u8],
     mut builder: crate::output::list_application_states_output::Builder,
 ) -> Result<crate::output::list_application_states_output::Builder, smithy_json::deserialize::Error>
@@ -509,7 +509,7 @@ pub fn deser_operation_list_application_states(
                 match key.to_unescaped()?.as_ref() {
                     "ApplicationStateList" => {
                         builder = builder.set_application_state_list(
-                            crate::json_deser::deser_list_application_state_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_migrationhub_application_state_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -537,7 +537,7 @@ pub fn deser_operation_list_application_states(
     Ok(builder)
 }
 
-pub fn deser_operation_list_created_artifacts(
+pub fn deser_operation_crate_operation_list_created_artifacts(
     input: &[u8],
     mut builder: crate::output::list_created_artifacts_output::Builder,
 ) -> Result<crate::output::list_created_artifacts_output::Builder, smithy_json::deserialize::Error>
@@ -561,7 +561,7 @@ pub fn deser_operation_list_created_artifacts(
                     }
                     "CreatedArtifactList" => {
                         builder = builder.set_created_artifact_list(
-                            crate::json_deser::deser_list_created_artifact_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_migrationhub_created_artifact_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -582,7 +582,7 @@ pub fn deser_operation_list_created_artifacts(
     Ok(builder)
 }
 
-pub fn deser_operation_list_discovered_resources(
+pub fn deser_operation_crate_operation_list_discovered_resources(
     input: &[u8],
     mut builder: crate::output::list_discovered_resources_output::Builder,
 ) -> Result<crate::output::list_discovered_resources_output::Builder, smithy_json::deserialize::Error>
@@ -606,7 +606,7 @@ pub fn deser_operation_list_discovered_resources(
                     }
                     "DiscoveredResourceList" => {
                         builder = builder.set_discovered_resource_list(
-                            crate::json_deser::deser_list_discovered_resource_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_migrationhub_discovered_resource_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -627,7 +627,7 @@ pub fn deser_operation_list_discovered_resources(
     Ok(builder)
 }
 
-pub fn deser_operation_list_migration_tasks(
+pub fn deser_operation_crate_operation_list_migration_tasks(
     input: &[u8],
     mut builder: crate::output::list_migration_tasks_output::Builder,
 ) -> Result<crate::output::list_migration_tasks_output::Builder, smithy_json::deserialize::Error> {
@@ -650,7 +650,7 @@ pub fn deser_operation_list_migration_tasks(
                     }
                     "MigrationTaskSummaryList" => {
                         builder = builder.set_migration_task_summary_list(
-                            crate::json_deser::deser_list_migration_task_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_migrationhub_migration_task_summary_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -671,7 +671,7 @@ pub fn deser_operation_list_migration_tasks(
     Ok(builder)
 }
 
-pub fn deser_operation_list_progress_update_streams(
+pub fn deser_operation_crate_operation_list_progress_update_streams(
     input: &[u8],
     mut builder: crate::output::list_progress_update_streams_output::Builder,
 ) -> Result<
@@ -690,9 +690,7 @@ pub fn deser_operation_list_progress_update_streams(
                 match key.to_unescaped()?.as_ref() {
                     "ProgressUpdateStreamSummaryList" => {
                         builder = builder.set_progress_update_stream_summary_list(
-                            crate::json_deser::deser_list_progress_update_stream_summary_list(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_migrationhub_progress_update_stream_summary_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -728,7 +726,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_migration_task<'a, I>(
+pub fn deser_structure_crate_model_migration_task<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MigrationTask>, smithy_json::deserialize::Error>
 where
@@ -765,8 +763,9 @@ where
                                 );
                             }
                             "Task" => {
-                                builder = builder
-                                    .set_task(crate::json_deser::deser_structure_task(tokens)?);
+                                builder = builder.set_task(
+                                    crate::json_deser::deser_structure_crate_model_task(tokens)?,
+                                );
                             }
                             "UpdateDateTime" => {
                                 builder = builder.set_update_date_time(
@@ -778,9 +777,7 @@ where
                             }
                             "ResourceAttributeList" => {
                                 builder = builder.set_resource_attribute_list(
-                                    crate::json_deser::deser_list_latest_resource_attribute_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_migrationhub_latest_resource_attribute_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -802,7 +799,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_application_state_list<'a, I>(
+pub fn deser_list_com_amazonaws_migrationhub_application_state_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ApplicationState>>, smithy_json::deserialize::Error>
 where
@@ -821,7 +818,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_application_state(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_application_state(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -837,7 +837,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_created_artifact_list<'a, I>(
+pub fn deser_list_com_amazonaws_migrationhub_created_artifact_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::CreatedArtifact>>, smithy_json::deserialize::Error>
 where
@@ -856,7 +856,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_created_artifact(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_created_artifact(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -872,7 +875,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_discovered_resource_list<'a, I>(
+pub fn deser_list_com_amazonaws_migrationhub_discovered_resource_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DiscoveredResource>>, smithy_json::deserialize::Error>
 where
@@ -891,7 +894,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_discovered_resource(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_discovered_resource(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -907,7 +913,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_migration_task_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_migrationhub_migration_task_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::MigrationTaskSummary>>,
@@ -930,7 +936,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_migration_task_summary(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_migration_task_summary(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -946,7 +954,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_progress_update_stream_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_migrationhub_progress_update_stream_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ProgressUpdateStreamSummary>>,
@@ -969,9 +977,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_progress_update_stream_summary(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_progress_update_stream_summary(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -986,7 +993,7 @@ where
     }
 }
 
-pub fn deser_structure_task<'a, I>(
+pub fn deser_structure_crate_model_task<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Task>, smithy_json::deserialize::Error>
 where
@@ -1052,7 +1059,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_latest_resource_attribute_list<'a, I>(
+pub fn deser_list_com_amazonaws_migrationhub_latest_resource_attribute_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ResourceAttribute>>, smithy_json::deserialize::Error>
 where
@@ -1071,7 +1078,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_resource_attribute(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_resource_attribute(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1086,7 +1096,7 @@ where
     }
 }
 
-pub fn deser_structure_application_state<'a, I>(
+pub fn deser_structure_crate_model_application_state<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ApplicationState>, smithy_json::deserialize::Error>
 where
@@ -1152,7 +1162,7 @@ where
     }
 }
 
-pub fn deser_structure_created_artifact<'a, I>(
+pub fn deser_structure_crate_model_created_artifact<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CreatedArtifact>, smithy_json::deserialize::Error>
 where
@@ -1206,7 +1216,7 @@ where
     }
 }
 
-pub fn deser_structure_discovered_resource<'a, I>(
+pub fn deser_structure_crate_model_discovered_resource<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DiscoveredResource>, smithy_json::deserialize::Error>
 where
@@ -1260,7 +1270,7 @@ where
     }
 }
 
-pub fn deser_structure_migration_task_summary<'a, I>(
+pub fn deser_structure_crate_model_migration_task_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MigrationTaskSummary>, smithy_json::deserialize::Error>
 where
@@ -1351,7 +1361,7 @@ where
     }
 }
 
-pub fn deser_structure_progress_update_stream_summary<'a, I>(
+pub fn deser_structure_crate_model_progress_update_stream_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ProgressUpdateStreamSummary>, smithy_json::deserialize::Error>
 where
@@ -1396,7 +1406,7 @@ where
     }
 }
 
-pub fn deser_structure_resource_attribute<'a, I>(
+pub fn deser_structure_crate_model_resource_attribute<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResourceAttribute>, smithy_json::deserialize::Error>
 where

@@ -113,13 +113,6 @@ impl smithy_http::response::ParseStrictResponse for AssociateTrialComponent {
 /// Generally, an action involves at least one input or output artifact. For more information, see
 /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker
 /// ML Lineage Tracking</a>.</p>
-/// <note>
-/// <p>
-/// <code>CreateAction</code> can only be invoked from within an SageMaker managed
-/// environment. This includes SageMaker training jobs, processing jobs, transform jobs, and SageMaker
-/// notebooks. A call to <code>CreateAction</code> from outside one of these
-/// environments results in an error.</p>
-/// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAction {
     _private: (),
@@ -237,13 +230,6 @@ impl smithy_http::response::ParseStrictResponse for CreateAppImageConfig {
 /// the ECR registry path of an image. For more information, see
 /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker
 /// ML Lineage Tracking</a>.</p>
-/// <note>
-/// <p>
-/// <code>CreateArtifact</code> can only be invoked from within an SageMaker managed
-/// environment. This includes SageMaker training jobs, processing jobs, transform jobs, and SageMaker
-/// notebooks. A call to <code>CreateArtifact</code> from outside one of these
-/// environments results in an error.</p>
-/// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateArtifact {
     _private: (),
@@ -398,13 +384,6 @@ impl smithy_http::response::ParseStrictResponse for CreateCompilationJob {
 /// an endpoint and a model package. For more information, see
 /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker
 /// ML Lineage Tracking</a>.</p>
-/// <note>
-/// <p>
-/// <code>CreateContext</code> can only be invoked from within an SageMaker managed
-/// environment. This includes SageMaker training jobs, processing jobs, transform jobs, and SageMaker
-/// notebooks. A call to <code>CreateContext</code> from outside one of these
-/// environments results in an error.</p>
-/// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateContext {
     _private: (),
@@ -702,11 +681,6 @@ impl smithy_http::response::ParseStrictResponse for CreateEndpoint {
 /// you want to host two models, A and B, and you assign traffic weight 2 for model A and 1
 /// for model B. Amazon SageMaker distributes two-thirds of the traffic to Model A, and one-third to
 /// model B. </p>
-/// <p>For an example that calls this method when deploying a model to Amazon SageMaker hosting services,
-/// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy the
-/// Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for Python (Boto
-/// 3)).</a>
-/// </p>
 /// <note>
 /// <p>When you call <a>CreateEndpoint</a>, a load call is made to DynamoDB to
 /// verify that your endpoint configuration exists. When you read data from a DynamoDB
@@ -1552,6 +1526,34 @@ impl smithy_http::response::ParseStrictResponse for CreateProject {
             crate::operation_deser::parse_create_project_error(response)
         } else {
             crate::operation_deser::parse_create_project_response(response)
+        }
+    }
+}
+
+/// <p>Creates a new Studio Lifecycle Configuration.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateStudioLifecycleConfig {
+    _private: (),
+}
+impl CreateStudioLifecycleConfig {
+    /// Creates a new builder-style object to manufacture [`CreateStudioLifecycleConfigInput`](crate::input::CreateStudioLifecycleConfigInput)
+    pub fn builder() -> crate::input::create_studio_lifecycle_config_input::Builder {
+        crate::input::create_studio_lifecycle_config_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateStudioLifecycleConfig {
+    type Output = std::result::Result<
+        crate::output::CreateStudioLifecycleConfigOutput,
+        crate::error::CreateStudioLifecycleConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_studio_lifecycle_config_error(response)
+        } else {
+            crate::operation_deser::parse_create_studio_lifecycle_config_response(response)
         }
     }
 }
@@ -2788,6 +2790,34 @@ impl smithy_http::response::ParseStrictResponse for DeleteProject {
             crate::operation_deser::parse_delete_project_error(response)
         } else {
             crate::operation_deser::parse_delete_project_response(response)
+        }
+    }
+}
+
+/// <p>Deletes the Studio Lifecycle Configuration. In order to delete the Lifecycle Configuration, there must be no running apps using the Lifecycle Configuration. You must also remove the Lifecycle Configuration from UserSettings in all Domains and UserProfiles.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteStudioLifecycleConfig {
+    _private: (),
+}
+impl DeleteStudioLifecycleConfig {
+    /// Creates a new builder-style object to manufacture [`DeleteStudioLifecycleConfigInput`](crate::input::DeleteStudioLifecycleConfigInput)
+    pub fn builder() -> crate::input::delete_studio_lifecycle_config_input::Builder {
+        crate::input::delete_studio_lifecycle_config_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteStudioLifecycleConfig {
+    type Output = std::result::Result<
+        crate::output::DeleteStudioLifecycleConfigOutput,
+        crate::error::DeleteStudioLifecycleConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_studio_lifecycle_config_error(response)
+        } else {
+            crate::operation_deser::parse_delete_studio_lifecycle_config_response(response)
         }
     }
 }
@@ -4079,6 +4109,34 @@ impl smithy_http::response::ParseStrictResponse for DescribeProject {
             crate::operation_deser::parse_describe_project_error(response)
         } else {
             crate::operation_deser::parse_describe_project_response(response)
+        }
+    }
+}
+
+/// <p>Describes the Studio Lifecycle Configuration.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeStudioLifecycleConfig {
+    _private: (),
+}
+impl DescribeStudioLifecycleConfig {
+    /// Creates a new builder-style object to manufacture [`DescribeStudioLifecycleConfigInput`](crate::input::DescribeStudioLifecycleConfigInput)
+    pub fn builder() -> crate::input::describe_studio_lifecycle_config_input::Builder {
+        crate::input::describe_studio_lifecycle_config_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DescribeStudioLifecycleConfig {
+    type Output = std::result::Result<
+        crate::output::DescribeStudioLifecycleConfigOutput,
+        crate::error::DescribeStudioLifecycleConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_studio_lifecycle_config_error(response)
+        } else {
+            crate::operation_deser::parse_describe_studio_lifecycle_config_response(response)
         }
     }
 }
@@ -5725,6 +5783,34 @@ impl smithy_http::response::ParseStrictResponse for ListProjects {
             crate::operation_deser::parse_list_projects_error(response)
         } else {
             crate::operation_deser::parse_list_projects_response(response)
+        }
+    }
+}
+
+/// <p>Lists the Studio Lifecycle Configurations in your Amazon Web Services Account.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListStudioLifecycleConfigs {
+    _private: (),
+}
+impl ListStudioLifecycleConfigs {
+    /// Creates a new builder-style object to manufacture [`ListStudioLifecycleConfigsInput`](crate::input::ListStudioLifecycleConfigsInput)
+    pub fn builder() -> crate::input::list_studio_lifecycle_configs_input::Builder {
+        crate::input::list_studio_lifecycle_configs_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListStudioLifecycleConfigs {
+    type Output = std::result::Result<
+        crate::output::ListStudioLifecycleConfigsOutput,
+        crate::error::ListStudioLifecycleConfigsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_studio_lifecycle_configs_error(response)
+        } else {
+            crate::operation_deser::parse_list_studio_lifecycle_configs_response(response)
         }
     }
 }

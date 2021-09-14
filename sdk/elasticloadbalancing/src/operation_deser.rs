@@ -12,26 +12,24 @@ pub fn parse_add_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LoadBalancerNotFound" => {
-            crate::error::AddTagsError {
-                meta: generic,
-                kind: crate::error::AddTagsErrorKind::AccessPointNotFoundException({
+        "LoadBalancerNotFound" => crate::error::AddTagsError {
+            meta: generic,
+            kind: crate::error::AddTagsErrorKind::AccessPointNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::access_point_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::access_point_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "DuplicateTagKeys" => crate::error::AddTagsError {
             meta: generic,
             kind: crate::error::AddTagsErrorKind::DuplicateTagKeysException({
@@ -40,12 +38,7 @@ pub fn parse_add_tags_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::duplicate_tag_keys_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_duplicate_tag_keys_exception_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::AddTagsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_duplicate_tag_keys_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -62,11 +55,7 @@ pub fn parse_add_tags_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_tags_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddTagsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_tags_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -114,7 +103,7 @@ pub fn parse_apply_security_groups_to_load_balancer_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ApplySecurityGroupsToLoadBalancerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ApplySecurityGroupsToLoadBalancerError::unhandled)?;
                     output.build()
                 }
             ;
@@ -128,7 +117,7 @@ pub fn parse_apply_security_groups_to_load_balancer_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ApplySecurityGroupsToLoadBalancerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ApplySecurityGroupsToLoadBalancerError::unhandled)?;
                     output.build()
                 }
             ;
@@ -142,7 +131,7 @@ pub fn parse_apply_security_groups_to_load_balancer_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_security_group_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_security_group_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ApplySecurityGroupsToLoadBalancerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_security_group_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ApplySecurityGroupsToLoadBalancerError::unhandled)?;
                     output.build()
                 }
             ;
@@ -167,11 +156,7 @@ pub fn parse_apply_security_groups_to_load_balancer_response(
         let mut output =
             crate::output::apply_security_groups_to_load_balancer_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_apply_security_groups_to_load_balancer(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ApplySecurityGroupsToLoadBalancerError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_apply_security_groups_to_load_balancer(response.body().as_ref(), output).map_err(crate::error::ApplySecurityGroupsToLoadBalancerError::unhandled)?;
         output.build()
     })
 }
@@ -201,7 +186,7 @@ pub fn parse_attach_load_balancer_to_subnets_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -215,7 +200,7 @@ pub fn parse_attach_load_balancer_to_subnets_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -229,7 +214,7 @@ pub fn parse_attach_load_balancer_to_subnets_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_subnet_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_subnet_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -243,7 +228,7 @@ pub fn parse_attach_load_balancer_to_subnets_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::subnet_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_subnet_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_subnet_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -267,7 +252,7 @@ pub fn parse_attach_load_balancer_to_subnets_response(
         #[allow(unused_mut)]
         let mut output = crate::output::attach_load_balancer_to_subnets_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_attach_load_balancer_to_subnets(
+        output = crate::xml_deser::deser_operation_crate_operation_attach_load_balancer_to_subnets(
             response.body().as_ref(),
             output,
         )
@@ -292,26 +277,24 @@ pub fn parse_configure_health_check_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LoadBalancerNotFound" => {
-            crate::error::ConfigureHealthCheckError {
-                meta: generic,
-                kind: crate::error::ConfigureHealthCheckErrorKind::AccessPointNotFoundException({
+        "LoadBalancerNotFound" => crate::error::ConfigureHealthCheckError {
+            meta: generic,
+            kind: crate::error::ConfigureHealthCheckErrorKind::AccessPointNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::access_point_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ConfigureHealthCheckError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::access_point_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ConfigureHealthCheckError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ConfigureHealthCheckError::generic(generic),
     })
 }
@@ -327,7 +310,7 @@ pub fn parse_configure_health_check_response(
         #[allow(unused_mut)]
         let mut output = crate::output::configure_health_check_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_configure_health_check(
+        output = crate::xml_deser::deser_operation_crate_operation_configure_health_check(
             response.body().as_ref(),
             output,
         )
@@ -357,7 +340,7 @@ pub fn parse_create_app_cookie_stickiness_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAppCookieStickinessPolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAppCookieStickinessPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -371,7 +354,7 @@ pub fn parse_create_app_cookie_stickiness_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::duplicate_policy_name_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_duplicate_policy_name_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAppCookieStickinessPolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_duplicate_policy_name_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAppCookieStickinessPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -385,7 +368,7 @@ pub fn parse_create_app_cookie_stickiness_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAppCookieStickinessPolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAppCookieStickinessPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -399,7 +382,7 @@ pub fn parse_create_app_cookie_stickiness_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_policies_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_policies_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAppCookieStickinessPolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_policies_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAppCookieStickinessPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -449,7 +432,7 @@ pub fn parse_create_lb_cookie_stickiness_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLBCookieStickinessPolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLBCookieStickinessPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -463,7 +446,7 @@ pub fn parse_create_lb_cookie_stickiness_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::duplicate_policy_name_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_duplicate_policy_name_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLBCookieStickinessPolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_duplicate_policy_name_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLBCookieStickinessPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -477,7 +460,7 @@ pub fn parse_create_lb_cookie_stickiness_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLBCookieStickinessPolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLBCookieStickinessPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -491,7 +474,7 @@ pub fn parse_create_lb_cookie_stickiness_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_policies_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_policies_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLBCookieStickinessPolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_policies_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLBCookieStickinessPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -536,26 +519,24 @@ pub fn parse_create_load_balancer_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CertificateNotFound" => {
-            crate::error::CreateLoadBalancerError {
-                meta: generic,
-                kind: crate::error::CreateLoadBalancerErrorKind::CertificateNotFoundException({
+        "CertificateNotFound" => crate::error::CreateLoadBalancerError {
+            meta: generic,
+            kind: crate::error::CreateLoadBalancerErrorKind::CertificateNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::certificate_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_certificate_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::certificate_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_certificate_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "DuplicateLoadBalancerName" => crate::error::CreateLoadBalancerError {
             meta: generic,
             kind: crate::error::CreateLoadBalancerErrorKind::DuplicateAccessPointNameException({
@@ -565,7 +546,7 @@ pub fn parse_create_load_balancer_error(
                     let mut output =
                         crate::error::duplicate_access_point_name_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_duplicate_access_point_name_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_duplicate_access_point_name_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -582,12 +563,7 @@ pub fn parse_create_load_balancer_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::duplicate_tag_keys_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_duplicate_tag_keys_exception_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::CreateLoadBalancerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_duplicate_tag_keys_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -606,7 +582,7 @@ pub fn parse_create_load_balancer_error(
                             let mut tmp = {
                                 #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                                 let _ = response;
-                                output = crate::xml_deser::deser_structure_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
+                                output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                                 output.build()
                             };
                             if (&tmp.message).is_none() {
@@ -625,11 +601,7 @@ pub fn parse_create_load_balancer_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_scheme_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_scheme_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLoadBalancerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_scheme_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -638,26 +610,24 @@ pub fn parse_create_load_balancer_error(
                 tmp
             }),
         },
-        "InvalidSecurityGroup" => {
-            crate::error::CreateLoadBalancerError {
-                meta: generic,
-                kind: crate::error::CreateLoadBalancerErrorKind::InvalidSecurityGroupException({
+        "InvalidSecurityGroup" => crate::error::CreateLoadBalancerError {
+            meta: generic,
+            kind: crate::error::CreateLoadBalancerErrorKind::InvalidSecurityGroupException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_security_group_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_invalid_security_group_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_security_group_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_security_group_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidSubnet" => crate::error::CreateLoadBalancerError {
             meta: generic,
             kind: crate::error::CreateLoadBalancerErrorKind::InvalidSubnetException({
@@ -666,11 +636,7 @@ pub fn parse_create_load_balancer_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_subnet_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_subnet_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLoadBalancerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -688,7 +654,7 @@ pub fn parse_create_load_balancer_error(
                     let mut output =
                         crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_operation_not_permitted_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_not_permitted_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -705,11 +671,7 @@ pub fn parse_create_load_balancer_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::subnet_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_subnet_not_found_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLoadBalancerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_subnet_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -718,26 +680,24 @@ pub fn parse_create_load_balancer_error(
                 tmp
             }),
         },
-        "TooManyLoadBalancers" => {
-            crate::error::CreateLoadBalancerError {
-                meta: generic,
-                kind: crate::error::CreateLoadBalancerErrorKind::TooManyAccessPointsException({
+        "TooManyLoadBalancers" => crate::error::CreateLoadBalancerError {
+            meta: generic,
+            kind: crate::error::CreateLoadBalancerErrorKind::TooManyAccessPointsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::too_many_access_points_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_too_many_access_points_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::too_many_access_points_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_access_points_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TooManyTags" => crate::error::CreateLoadBalancerError {
             meta: generic,
             kind: crate::error::CreateLoadBalancerErrorKind::TooManyTagsException({
@@ -746,11 +706,7 @@ pub fn parse_create_load_balancer_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_tags_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLoadBalancerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_tags_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -759,26 +715,24 @@ pub fn parse_create_load_balancer_error(
                 tmp
             }),
         },
-        "UnsupportedProtocol" => {
-            crate::error::CreateLoadBalancerError {
-                meta: generic,
-                kind: crate::error::CreateLoadBalancerErrorKind::UnsupportedProtocolException({
+        "UnsupportedProtocol" => crate::error::CreateLoadBalancerError {
+            meta: generic,
+            kind: crate::error::CreateLoadBalancerErrorKind::UnsupportedProtocolException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::unsupported_protocol_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_unsupported_protocol_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::unsupported_protocol_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_unsupported_protocol_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::CreateLoadBalancerError::generic(generic),
     })
 }
@@ -794,7 +748,7 @@ pub fn parse_create_load_balancer_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_load_balancer_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_load_balancer(
+        output = crate::xml_deser::deser_operation_crate_operation_create_load_balancer(
             response.body().as_ref(),
             output,
         )
@@ -828,7 +782,7 @@ pub fn parse_create_load_balancer_listeners_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerListenersError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerListenersError::unhandled)?;
                     output.build()
                 }
             ;
@@ -842,7 +796,7 @@ pub fn parse_create_load_balancer_listeners_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::certificate_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_certificate_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerListenersError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_certificate_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerListenersError::unhandled)?;
                     output.build()
                 }
             ;
@@ -856,7 +810,7 @@ pub fn parse_create_load_balancer_listeners_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::duplicate_listener_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_duplicate_listener_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerListenersError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_duplicate_listener_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerListenersError::unhandled)?;
                     output.build()
                 }
             ;
@@ -870,7 +824,7 @@ pub fn parse_create_load_balancer_listeners_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerListenersError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerListenersError::unhandled)?;
                     output.build()
                 }
             ;
@@ -884,7 +838,7 @@ pub fn parse_create_load_balancer_listeners_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::unsupported_protocol_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_unsupported_protocol_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerListenersError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_unsupported_protocol_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerListenersError::unhandled)?;
                     output.build()
                 }
             ;
@@ -937,7 +891,7 @@ pub fn parse_create_load_balancer_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -951,7 +905,7 @@ pub fn parse_create_load_balancer_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::duplicate_policy_name_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_duplicate_policy_name_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_duplicate_policy_name_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -965,7 +919,7 @@ pub fn parse_create_load_balancer_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -979,7 +933,7 @@ pub fn parse_create_load_balancer_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::policy_type_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_policy_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_policy_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -993,7 +947,7 @@ pub fn parse_create_load_balancer_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_policies_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_policies_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_policies_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1078,7 +1032,7 @@ pub fn parse_delete_load_balancer_listeners_error(
                         let mut output =
                             crate::error::access_point_not_found_exception::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoadBalancerListenersError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoadBalancerListenersError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1132,7 +1086,7 @@ pub fn parse_delete_load_balancer_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoadBalancerPolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoadBalancerPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1146,7 +1100,7 @@ pub fn parse_delete_load_balancer_policy_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoadBalancerPolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoadBalancerPolicyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1197,7 +1151,7 @@ pub fn parse_deregister_instances_from_load_balancer_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeregisterInstancesFromLoadBalancerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeregisterInstancesFromLoadBalancerError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1211,7 +1165,7 @@ pub fn parse_deregister_instances_from_load_balancer_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_end_point_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_end_point_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeregisterInstancesFromLoadBalancerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_end_point_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeregisterInstancesFromLoadBalancerError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1236,11 +1190,7 @@ pub fn parse_deregister_instances_from_load_balancer_response(
         let mut output =
             crate::output::deregister_instances_from_load_balancer_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_deregister_instances_from_load_balancer(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DeregisterInstancesFromLoadBalancerError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_deregister_instances_from_load_balancer(response.body().as_ref(), output).map_err(crate::error::DeregisterInstancesFromLoadBalancerError::unhandled)?;
         output.build()
     })
 }
@@ -1268,7 +1218,7 @@ pub fn parse_describe_account_limits_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_account_limits_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_account_limits(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_account_limits(
             response.body().as_ref(),
             output,
         )
@@ -1297,28 +1247,24 @@ pub fn parse_describe_instance_health_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LoadBalancerNotFound" => {
-            crate::error::DescribeInstanceHealthError {
-                meta: generic,
-                kind: crate::error::DescribeInstanceHealthErrorKind::AccessPointNotFoundException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::access_point_not_found_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstanceHealthError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
-        }
+        "LoadBalancerNotFound" => crate::error::DescribeInstanceHealthError {
+            meta: generic,
+            kind: crate::error::DescribeInstanceHealthErrorKind::AccessPointNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::access_point_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstanceHealthError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidInstance" => crate::error::DescribeInstanceHealthError {
             meta: generic,
             kind: crate::error::DescribeInstanceHealthErrorKind::InvalidEndPointException({
@@ -1327,11 +1273,7 @@ pub fn parse_describe_instance_health_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_end_point_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_end_point_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeInstanceHealthError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_end_point_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstanceHealthError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1355,7 +1297,7 @@ pub fn parse_describe_instance_health_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_instance_health_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_instance_health(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_instance_health(
             response.body().as_ref(),
             output,
         )
@@ -1385,7 +1327,7 @@ pub fn parse_describe_load_balancer_attributes_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerAttributesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerAttributesError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1399,7 +1341,7 @@ pub fn parse_describe_load_balancer_attributes_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::load_balancer_attribute_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_load_balancer_attribute_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerAttributesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_load_balancer_attribute_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerAttributesError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1424,11 +1366,12 @@ pub fn parse_describe_load_balancer_attributes_response(
         let mut output =
             crate::output::describe_load_balancer_attributes_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_load_balancer_attributes(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeLoadBalancerAttributesError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_load_balancer_attributes(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeLoadBalancerAttributesError::unhandled)?;
         output.build()
     })
 }
@@ -1463,7 +1406,7 @@ pub fn parse_describe_load_balancer_policies_error(
                         let mut output =
                             crate::error::access_point_not_found_exception::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerPoliciesError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerPoliciesError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1481,11 +1424,7 @@ pub fn parse_describe_load_balancer_policies_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::policy_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_policy_not_found_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeLoadBalancerPoliciesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_policy_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerPoliciesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1509,7 +1448,7 @@ pub fn parse_describe_load_balancer_policies_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_load_balancer_policies_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_load_balancer_policies(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_load_balancer_policies(
             response.body().as_ref(),
             output,
         )
@@ -1545,7 +1484,7 @@ pub fn parse_describe_load_balancer_policy_types_error(
                             let mut output =
                                 crate::error::policy_type_not_found_exception::Builder::default();
                             let _ = response;
-                            output = crate::xml_deser::deser_structure_policy_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerPolicyTypesError::unhandled)?;
+                            output = crate::xml_deser::deser_structure_crate_error_policy_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerPolicyTypesError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -1571,11 +1510,12 @@ pub fn parse_describe_load_balancer_policy_types_response(
         let mut output =
             crate::output::describe_load_balancer_policy_types_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_load_balancer_policy_types(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeLoadBalancerPolicyTypesError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_load_balancer_policy_types(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeLoadBalancerPolicyTypesError::unhandled)?;
         output.build()
     })
 }
@@ -1596,46 +1536,42 @@ pub fn parse_describe_load_balancers_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LoadBalancerNotFound" => {
-            crate::error::DescribeLoadBalancersError {
-                meta: generic,
-                kind: crate::error::DescribeLoadBalancersErrorKind::AccessPointNotFoundException({
+        "LoadBalancerNotFound" => crate::error::DescribeLoadBalancersError {
+            meta: generic,
+            kind: crate::error::DescribeLoadBalancersErrorKind::AccessPointNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::access_point_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "DependencyThrottle" => {
-            crate::error::DescribeLoadBalancersError {
-                meta: generic,
-                kind: crate::error::DescribeLoadBalancersErrorKind::DependencyThrottleException({
+                    let mut output =
+                        crate::error::access_point_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "DependencyThrottle" => crate::error::DescribeLoadBalancersError {
+            meta: generic,
+            kind: crate::error::DescribeLoadBalancersErrorKind::DependencyThrottleException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::dependency_throttle_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_dependency_throttle_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::dependency_throttle_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_dependency_throttle_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeLoadBalancersError::generic(generic),
     })
 }
@@ -1651,7 +1587,7 @@ pub fn parse_describe_load_balancers_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_load_balancers_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_load_balancers(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_load_balancers(
             response.body().as_ref(),
             output,
         )
@@ -1673,26 +1609,24 @@ pub fn parse_describe_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LoadBalancerNotFound" => {
-            crate::error::DescribeTagsError {
-                meta: generic,
-                kind: crate::error::DescribeTagsErrorKind::AccessPointNotFoundException({
+        "LoadBalancerNotFound" => crate::error::DescribeTagsError {
+            meta: generic,
+            kind: crate::error::DescribeTagsErrorKind::AccessPointNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::access_point_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::access_point_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeTagsError::generic(generic),
     })
 }
@@ -1705,8 +1639,11 @@ pub fn parse_describe_tags_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_tags_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_tags(response.body().as_ref(), output)
-            .map_err(crate::error::DescribeTagsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_tags(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeTagsError::unhandled)?;
         output.build()
     })
 }
@@ -1736,7 +1673,7 @@ pub fn parse_detach_load_balancer_from_subnets_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachLoadBalancerFromSubnetsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachLoadBalancerFromSubnetsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1750,7 +1687,7 @@ pub fn parse_detach_load_balancer_from_subnets_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachLoadBalancerFromSubnetsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachLoadBalancerFromSubnetsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1775,11 +1712,12 @@ pub fn parse_detach_load_balancer_from_subnets_response(
         let mut output =
             crate::output::detach_load_balancer_from_subnets_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_detach_load_balancer_from_subnets(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DetachLoadBalancerFromSubnetsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_detach_load_balancer_from_subnets(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DetachLoadBalancerFromSubnetsError::unhandled)?;
         output.build()
     })
 }
@@ -1809,7 +1747,7 @@ pub fn parse_disable_availability_zones_for_load_balancer_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableAvailabilityZonesForLoadBalancerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableAvailabilityZonesForLoadBalancerError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1823,7 +1761,7 @@ pub fn parse_disable_availability_zones_for_load_balancer_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableAvailabilityZonesForLoadBalancerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableAvailabilityZonesForLoadBalancerError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1848,11 +1786,7 @@ pub fn parse_disable_availability_zones_for_load_balancer_response(
         let mut output =
             crate::output::disable_availability_zones_for_load_balancer_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_disable_availability_zones_for_load_balancer(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DisableAvailabilityZonesForLoadBalancerError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_disable_availability_zones_for_load_balancer(response.body().as_ref(), output).map_err(crate::error::DisableAvailabilityZonesForLoadBalancerError::unhandled)?;
         output.build()
     })
 }
@@ -1882,7 +1816,7 @@ pub fn parse_enable_availability_zones_for_load_balancer_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableAvailabilityZonesForLoadBalancerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableAvailabilityZonesForLoadBalancerError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1907,11 +1841,7 @@ pub fn parse_enable_availability_zones_for_load_balancer_response(
         let mut output =
             crate::output::enable_availability_zones_for_load_balancer_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_enable_availability_zones_for_load_balancer(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::EnableAvailabilityZonesForLoadBalancerError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_enable_availability_zones_for_load_balancer(response.body().as_ref(), output).map_err(crate::error::EnableAvailabilityZonesForLoadBalancerError::unhandled)?;
         output.build()
     })
 }
@@ -1941,7 +1871,7 @@ pub fn parse_modify_load_balancer_attributes_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyLoadBalancerAttributesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyLoadBalancerAttributesError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1955,7 +1885,7 @@ pub fn parse_modify_load_balancer_attributes_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyLoadBalancerAttributesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyLoadBalancerAttributesError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1969,7 +1899,7 @@ pub fn parse_modify_load_balancer_attributes_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::load_balancer_attribute_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_load_balancer_attribute_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyLoadBalancerAttributesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_load_balancer_attribute_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyLoadBalancerAttributesError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1993,7 +1923,7 @@ pub fn parse_modify_load_balancer_attributes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_load_balancer_attributes_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_modify_load_balancer_attributes(
+        output = crate::xml_deser::deser_operation_crate_operation_modify_load_balancer_attributes(
             response.body().as_ref(),
             output,
         )
@@ -2025,7 +1955,7 @@ pub fn parse_register_instances_with_load_balancer_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterInstancesWithLoadBalancerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterInstancesWithLoadBalancerError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2039,7 +1969,7 @@ pub fn parse_register_instances_with_load_balancer_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_end_point_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_end_point_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterInstancesWithLoadBalancerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_end_point_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterInstancesWithLoadBalancerError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2064,11 +1994,7 @@ pub fn parse_register_instances_with_load_balancer_response(
         let mut output =
             crate::output::register_instances_with_load_balancer_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_register_instances_with_load_balancer(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::RegisterInstancesWithLoadBalancerError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_register_instances_with_load_balancer(response.body().as_ref(), output).map_err(crate::error::RegisterInstancesWithLoadBalancerError::unhandled)?;
         output.build()
     })
 }
@@ -2086,26 +2012,24 @@ pub fn parse_remove_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LoadBalancerNotFound" => {
-            crate::error::RemoveTagsError {
-                meta: generic,
-                kind: crate::error::RemoveTagsErrorKind::AccessPointNotFoundException({
+        "LoadBalancerNotFound" => crate::error::RemoveTagsError {
+            meta: generic,
+            kind: crate::error::RemoveTagsErrorKind::AccessPointNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::access_point_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::access_point_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::RemoveTagsError::generic(generic),
     })
 }
@@ -2147,7 +2071,7 @@ pub fn parse_set_load_balancer_listener_ssl_certificate_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerListenerSSLCertificateError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerListenerSSLCertificateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2161,7 +2085,7 @@ pub fn parse_set_load_balancer_listener_ssl_certificate_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::certificate_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_certificate_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerListenerSSLCertificateError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_certificate_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerListenerSSLCertificateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2175,7 +2099,7 @@ pub fn parse_set_load_balancer_listener_ssl_certificate_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerListenerSSLCertificateError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerListenerSSLCertificateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2189,7 +2113,7 @@ pub fn parse_set_load_balancer_listener_ssl_certificate_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::listener_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_listener_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerListenerSSLCertificateError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_listener_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerListenerSSLCertificateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2203,7 +2127,7 @@ pub fn parse_set_load_balancer_listener_ssl_certificate_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::unsupported_protocol_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_unsupported_protocol_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerListenerSSLCertificateError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_unsupported_protocol_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerListenerSSLCertificateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2257,7 +2181,7 @@ pub fn parse_set_load_balancer_policies_for_backend_server_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesForBackendServerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesForBackendServerError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2271,7 +2195,7 @@ pub fn parse_set_load_balancer_policies_for_backend_server_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesForBackendServerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesForBackendServerError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2285,7 +2209,7 @@ pub fn parse_set_load_balancer_policies_for_backend_server_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::policy_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_policy_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesForBackendServerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_policy_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesForBackendServerError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2337,7 +2261,7 @@ pub fn parse_set_load_balancer_policies_of_listener_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesOfListenerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesOfListenerError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2351,7 +2275,7 @@ pub fn parse_set_load_balancer_policies_of_listener_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesOfListenerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesOfListenerError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2365,7 +2289,7 @@ pub fn parse_set_load_balancer_policies_of_listener_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::listener_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_listener_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesOfListenerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_listener_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesOfListenerError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2379,7 +2303,7 @@ pub fn parse_set_load_balancer_policies_of_listener_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::policy_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_policy_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesOfListenerError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_policy_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesOfListenerError::unhandled)?;
                     output.build()
                 }
             ;

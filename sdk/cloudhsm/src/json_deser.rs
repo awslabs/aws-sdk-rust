@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_cloud_hsm_internal_exceptionjson_err(
+pub fn deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::cloud_hsm_internal_exception::Builder,
 ) -> Result<crate::error::cloud_hsm_internal_exception::Builder, smithy_json::deserialize::Error> {
@@ -49,7 +49,7 @@ pub fn deser_structure_cloud_hsm_internal_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_cloud_hsm_service_exceptionjson_err(
+pub fn deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::cloud_hsm_service_exception::Builder,
 ) -> Result<crate::error::cloud_hsm_service_exception::Builder, smithy_json::deserialize::Error> {
@@ -93,7 +93,7 @@ pub fn deser_structure_cloud_hsm_service_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_request_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_request_exception::Builder,
 ) -> Result<crate::error::invalid_request_exception::Builder, smithy_json::deserialize::Error> {
@@ -137,7 +137,7 @@ pub fn deser_structure_invalid_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_add_tags_to_resource(
+pub fn deser_operation_crate_operation_add_tags_to_resource(
     input: &[u8],
     mut builder: crate::output::add_tags_to_resource_output::Builder,
 ) -> Result<crate::output::add_tags_to_resource_output::Builder, smithy_json::deserialize::Error> {
@@ -176,7 +176,7 @@ pub fn deser_operation_add_tags_to_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_create_hapg(
+pub fn deser_operation_crate_operation_create_hapg(
     input: &[u8],
     mut builder: crate::output::create_hapg_output::Builder,
 ) -> Result<crate::output::create_hapg_output::Builder, smithy_json::deserialize::Error> {
@@ -215,7 +215,7 @@ pub fn deser_operation_create_hapg(
     Ok(builder)
 }
 
-pub fn deser_operation_create_hsm(
+pub fn deser_operation_crate_operation_create_hsm(
     input: &[u8],
     mut builder: crate::output::create_hsm_output::Builder,
 ) -> Result<crate::output::create_hsm_output::Builder, smithy_json::deserialize::Error> {
@@ -254,7 +254,7 @@ pub fn deser_operation_create_hsm(
     Ok(builder)
 }
 
-pub fn deser_operation_create_luna_client(
+pub fn deser_operation_crate_operation_create_luna_client(
     input: &[u8],
     mut builder: crate::output::create_luna_client_output::Builder,
 ) -> Result<crate::output::create_luna_client_output::Builder, smithy_json::deserialize::Error> {
@@ -293,7 +293,7 @@ pub fn deser_operation_create_luna_client(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_hapg(
+pub fn deser_operation_crate_operation_delete_hapg(
     input: &[u8],
     mut builder: crate::output::delete_hapg_output::Builder,
 ) -> Result<crate::output::delete_hapg_output::Builder, smithy_json::deserialize::Error> {
@@ -332,7 +332,7 @@ pub fn deser_operation_delete_hapg(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_hsm(
+pub fn deser_operation_crate_operation_delete_hsm(
     input: &[u8],
     mut builder: crate::output::delete_hsm_output::Builder,
 ) -> Result<crate::output::delete_hsm_output::Builder, smithy_json::deserialize::Error> {
@@ -371,7 +371,7 @@ pub fn deser_operation_delete_hsm(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_luna_client(
+pub fn deser_operation_crate_operation_delete_luna_client(
     input: &[u8],
     mut builder: crate::output::delete_luna_client_output::Builder,
 ) -> Result<crate::output::delete_luna_client_output::Builder, smithy_json::deserialize::Error> {
@@ -410,7 +410,7 @@ pub fn deser_operation_delete_luna_client(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_hapg(
+pub fn deser_operation_crate_operation_describe_hapg(
     input: &[u8],
     mut builder: crate::output::describe_hapg_output::Builder,
 ) -> Result<crate::output::describe_hapg_output::Builder, smithy_json::deserialize::Error> {
@@ -440,17 +440,17 @@ pub fn deser_operation_describe_hapg(
                     }
                     "HsmsLastActionFailed" => {
                         builder = builder.set_hsms_last_action_failed(
-                            crate::json_deser::deser_list_hsm_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cloudhsm_hsm_list(tokens)?,
                         );
                     }
                     "HsmsPendingDeletion" => {
                         builder = builder.set_hsms_pending_deletion(
-                            crate::json_deser::deser_list_hsm_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cloudhsm_hsm_list(tokens)?,
                         );
                     }
                     "HsmsPendingRegistration" => {
                         builder = builder.set_hsms_pending_registration(
-                            crate::json_deser::deser_list_hsm_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cloudhsm_hsm_list(tokens)?,
                         );
                     }
                     "Label" => {
@@ -469,7 +469,7 @@ pub fn deser_operation_describe_hapg(
                     }
                     "PartitionSerialList" => {
                         builder = builder.set_partition_serial_list(
-                            crate::json_deser::deser_list_partition_serial_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_cloudhsm_partition_serial_list(tokens)?
                         );
                     }
                     "State" => {
@@ -501,7 +501,7 @@ pub fn deser_operation_describe_hapg(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_hsm(
+pub fn deser_operation_crate_operation_describe_hsm(
     input: &[u8],
     mut builder: crate::output::describe_hsm_output::Builder,
 ) -> Result<crate::output::describe_hsm_output::Builder, smithy_json::deserialize::Error> {
@@ -662,8 +662,11 @@ pub fn deser_operation_describe_hsm(
                         );
                     }
                     "Partitions" => {
-                        builder = builder
-                            .set_partitions(crate::json_deser::deser_list_partition_list(tokens)?);
+                        builder = builder.set_partitions(
+                            crate::json_deser::deser_list_com_amazonaws_cloudhsm_partition_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -683,7 +686,7 @@ pub fn deser_operation_describe_hsm(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_luna_client(
+pub fn deser_operation_crate_operation_describe_luna_client(
     input: &[u8],
     mut builder: crate::output::describe_luna_client_output::Builder,
 ) -> Result<crate::output::describe_luna_client_output::Builder, smithy_json::deserialize::Error> {
@@ -750,7 +753,7 @@ pub fn deser_operation_describe_luna_client(
     Ok(builder)
 }
 
-pub fn deser_operation_get_config(
+pub fn deser_operation_crate_operation_get_config(
     input: &[u8],
     mut builder: crate::output::get_config_output::Builder,
 ) -> Result<crate::output::get_config_output::Builder, smithy_json::deserialize::Error> {
@@ -803,7 +806,7 @@ pub fn deser_operation_get_config(
     Ok(builder)
 }
 
-pub fn deser_operation_list_available_zones(
+pub fn deser_operation_crate_operation_list_available_zones(
     input: &[u8],
     mut builder: crate::output::list_available_zones_output::Builder,
 ) -> Result<crate::output::list_available_zones_output::Builder, smithy_json::deserialize::Error> {
@@ -818,8 +821,9 @@ pub fn deser_operation_list_available_zones(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "AZList" => {
-                        builder =
-                            builder.set_az_list(crate::json_deser::deser_list_az_list(tokens)?);
+                        builder = builder.set_az_list(
+                            crate::json_deser::deser_list_com_amazonaws_cloudhsm_az_list(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -839,7 +843,7 @@ pub fn deser_operation_list_available_zones(
     Ok(builder)
 }
 
-pub fn deser_operation_list_hapgs(
+pub fn deser_operation_crate_operation_list_hapgs(
     input: &[u8],
     mut builder: crate::output::list_hapgs_output::Builder,
 ) -> Result<crate::output::list_hapgs_output::Builder, smithy_json::deserialize::Error> {
@@ -854,8 +858,9 @@ pub fn deser_operation_list_hapgs(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "HapgList" => {
-                        builder =
-                            builder.set_hapg_list(crate::json_deser::deser_list_hapg_list(tokens)?);
+                        builder = builder.set_hapg_list(
+                            crate::json_deser::deser_list_com_amazonaws_cloudhsm_hapg_list(tokens)?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -882,7 +887,7 @@ pub fn deser_operation_list_hapgs(
     Ok(builder)
 }
 
-pub fn deser_operation_list_hsms(
+pub fn deser_operation_crate_operation_list_hsms(
     input: &[u8],
     mut builder: crate::output::list_hsms_output::Builder,
 ) -> Result<crate::output::list_hsms_output::Builder, smithy_json::deserialize::Error> {
@@ -897,8 +902,9 @@ pub fn deser_operation_list_hsms(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "HsmList" => {
-                        builder =
-                            builder.set_hsm_list(crate::json_deser::deser_list_hsm_list(tokens)?);
+                        builder = builder.set_hsm_list(
+                            crate::json_deser::deser_list_com_amazonaws_cloudhsm_hsm_list(tokens)?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -925,7 +931,7 @@ pub fn deser_operation_list_hsms(
     Ok(builder)
 }
 
-pub fn deser_operation_list_luna_clients(
+pub fn deser_operation_crate_operation_list_luna_clients(
     input: &[u8],
     mut builder: crate::output::list_luna_clients_output::Builder,
 ) -> Result<crate::output::list_luna_clients_output::Builder, smithy_json::deserialize::Error> {
@@ -940,8 +946,11 @@ pub fn deser_operation_list_luna_clients(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "ClientList" => {
-                        builder = builder
-                            .set_client_list(crate::json_deser::deser_list_client_list(tokens)?);
+                        builder = builder.set_client_list(
+                            crate::json_deser::deser_list_com_amazonaws_cloudhsm_client_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -968,7 +977,7 @@ pub fn deser_operation_list_luna_clients(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -984,8 +993,9 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "TagList" => {
-                        builder =
-                            builder.set_tag_list(crate::json_deser::deser_list_tag_list(tokens)?);
+                        builder = builder.set_tag_list(
+                            crate::json_deser::deser_list_com_amazonaws_cloudhsm_tag_list(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1005,7 +1015,7 @@ pub fn deser_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_modify_hapg(
+pub fn deser_operation_crate_operation_modify_hapg(
     input: &[u8],
     mut builder: crate::output::modify_hapg_output::Builder,
 ) -> Result<crate::output::modify_hapg_output::Builder, smithy_json::deserialize::Error> {
@@ -1044,7 +1054,7 @@ pub fn deser_operation_modify_hapg(
     Ok(builder)
 }
 
-pub fn deser_operation_modify_hsm(
+pub fn deser_operation_crate_operation_modify_hsm(
     input: &[u8],
     mut builder: crate::output::modify_hsm_output::Builder,
 ) -> Result<crate::output::modify_hsm_output::Builder, smithy_json::deserialize::Error> {
@@ -1083,7 +1093,7 @@ pub fn deser_operation_modify_hsm(
     Ok(builder)
 }
 
-pub fn deser_operation_modify_luna_client(
+pub fn deser_operation_crate_operation_modify_luna_client(
     input: &[u8],
     mut builder: crate::output::modify_luna_client_output::Builder,
 ) -> Result<crate::output::modify_luna_client_output::Builder, smithy_json::deserialize::Error> {
@@ -1122,7 +1132,7 @@ pub fn deser_operation_modify_luna_client(
     Ok(builder)
 }
 
-pub fn deser_operation_remove_tags_from_resource(
+pub fn deser_operation_crate_operation_remove_tags_from_resource(
     input: &[u8],
     mut builder: crate::output::remove_tags_from_resource_output::Builder,
 ) -> Result<crate::output::remove_tags_from_resource_output::Builder, smithy_json::deserialize::Error>
@@ -1171,7 +1181,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_hsm_list<'a, I>(
+pub fn deser_list_com_amazonaws_cloudhsm_hsm_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1209,7 +1219,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_partition_serial_list<'a, I>(
+pub fn deser_list_com_amazonaws_cloudhsm_partition_serial_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1247,7 +1257,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_partition_list<'a, I>(
+pub fn deser_list_com_amazonaws_cloudhsm_partition_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1285,7 +1295,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_az_list<'a, I>(
+pub fn deser_list_com_amazonaws_cloudhsm_az_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1323,7 +1333,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_hapg_list<'a, I>(
+pub fn deser_list_com_amazonaws_cloudhsm_hapg_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1361,7 +1371,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_client_list<'a, I>(
+pub fn deser_list_com_amazonaws_cloudhsm_client_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1399,7 +1409,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_cloudhsm_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -1418,7 +1428,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1433,7 +1443,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where

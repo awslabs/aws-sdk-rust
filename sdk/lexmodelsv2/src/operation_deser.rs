@@ -12,59 +12,16 @@ pub fn parse_build_bot_locale_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::BuildBotLocaleError {
-            meta: generic,
-            kind: crate::error::BuildBotLocaleErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BuildBotLocaleError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::BuildBotLocaleError {
-            meta: generic,
-            kind: crate::error::BuildBotLocaleErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BuildBotLocaleError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::BuildBotLocaleError {
                 meta: generic,
-                kind: crate::error::BuildBotLocaleErrorKind::PreconditionFailedException({
+                kind: crate::error::BuildBotLocaleErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BuildBotLocaleError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BuildBotLocaleError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -74,6 +31,41 @@ pub fn parse_build_bot_locale_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::BuildBotLocaleError {
+            meta: generic,
+            kind: crate::error::BuildBotLocaleErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BuildBotLocaleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::BuildBotLocaleError {
+            meta: generic,
+            kind: crate::error::BuildBotLocaleErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BuildBotLocaleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::BuildBotLocaleError {
             meta: generic,
             kind: crate::error::BuildBotLocaleErrorKind::ServiceQuotaExceededException({
@@ -83,7 +75,7 @@ pub fn parse_build_bot_locale_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BuildBotLocaleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BuildBotLocaleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -100,11 +92,7 @@ pub fn parse_build_bot_locale_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BuildBotLocaleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BuildBotLocaleError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_build_bot_locale_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::BuildBotLocaleError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -125,11 +113,7 @@ pub fn parse_build_bot_locale_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BuildBotLocaleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BuildBotLocaleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -150,9 +134,11 @@ pub fn parse_build_bot_locale_response(
         #[allow(unused_mut)]
         let mut output = crate::output::build_bot_locale_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_build_bot_locale(response.body().as_ref(), output)
-                .map_err(crate::error::BuildBotLocaleError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_build_bot_locale(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::BuildBotLocaleError::unhandled)?;
         output.build()
     })
 }
@@ -170,59 +156,16 @@ pub fn parse_create_bot_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::CreateBotError {
-            meta: generic,
-            kind: crate::error::CreateBotErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBotError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::CreateBotError {
-            meta: generic,
-            kind: crate::error::CreateBotErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBotError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::CreateBotError {
                 meta: generic,
-                kind: crate::error::CreateBotErrorKind::PreconditionFailedException({
+                kind: crate::error::CreateBotErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -232,6 +175,41 @@ pub fn parse_create_bot_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::CreateBotError {
+            meta: generic,
+            kind: crate::error::CreateBotErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::CreateBotError {
+            meta: generic,
+            kind: crate::error::CreateBotErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::CreateBotError {
             meta: generic,
             kind: crate::error::CreateBotErrorKind::ServiceQuotaExceededException({
@@ -241,7 +219,7 @@ pub fn parse_create_bot_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -258,11 +236,7 @@ pub fn parse_create_bot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_bot_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::CreateBotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -283,11 +257,7 @@ pub fn parse_create_bot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -308,8 +278,11 @@ pub fn parse_create_bot_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_bot_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_bot(response.body().as_ref(), output)
-            .map_err(crate::error::CreateBotError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_bot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateBotError::unhandled)?;
         output.build()
     })
 }
@@ -327,59 +300,16 @@ pub fn parse_create_bot_alias_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::CreateBotAliasError {
-            meta: generic,
-            kind: crate::error::CreateBotAliasErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBotAliasError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::CreateBotAliasError {
-            meta: generic,
-            kind: crate::error::CreateBotAliasErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBotAliasError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::CreateBotAliasError {
                 meta: generic,
-                kind: crate::error::CreateBotAliasErrorKind::PreconditionFailedException({
+                kind: crate::error::CreateBotAliasErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotAliasError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotAliasError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -389,6 +319,41 @@ pub fn parse_create_bot_alias_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::CreateBotAliasError {
+            meta: generic,
+            kind: crate::error::CreateBotAliasErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotAliasError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::CreateBotAliasError {
+            meta: generic,
+            kind: crate::error::CreateBotAliasErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotAliasError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::CreateBotAliasError {
             meta: generic,
             kind: crate::error::CreateBotAliasErrorKind::ServiceQuotaExceededException({
@@ -398,7 +363,7 @@ pub fn parse_create_bot_alias_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -415,11 +380,7 @@ pub fn parse_create_bot_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBotAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotAliasError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_bot_alias_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::CreateBotAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -440,11 +401,7 @@ pub fn parse_create_bot_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBotAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -465,9 +422,11 @@ pub fn parse_create_bot_alias_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_bot_alias_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_create_bot_alias(response.body().as_ref(), output)
-                .map_err(crate::error::CreateBotAliasError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_bot_alias(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateBotAliasError::unhandled)?;
         output.build()
     })
 }
@@ -485,59 +444,16 @@ pub fn parse_create_bot_locale_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::CreateBotLocaleError {
-            meta: generic,
-            kind: crate::error::CreateBotLocaleErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBotLocaleError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::CreateBotLocaleError {
-            meta: generic,
-            kind: crate::error::CreateBotLocaleErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBotLocaleError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::CreateBotLocaleError {
                 meta: generic,
-                kind: crate::error::CreateBotLocaleErrorKind::PreconditionFailedException({
+                kind: crate::error::CreateBotLocaleErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotLocaleError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotLocaleError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -547,6 +463,41 @@ pub fn parse_create_bot_locale_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::CreateBotLocaleError {
+            meta: generic,
+            kind: crate::error::CreateBotLocaleErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotLocaleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::CreateBotLocaleError {
+            meta: generic,
+            kind: crate::error::CreateBotLocaleErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotLocaleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::CreateBotLocaleError {
             meta: generic,
             kind: crate::error::CreateBotLocaleErrorKind::ServiceQuotaExceededException({
@@ -556,7 +507,7 @@ pub fn parse_create_bot_locale_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotLocaleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotLocaleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -573,11 +524,7 @@ pub fn parse_create_bot_locale_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBotLocaleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotLocaleError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_bot_locale_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::CreateBotLocaleError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -598,11 +545,7 @@ pub fn parse_create_bot_locale_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBotLocaleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotLocaleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -623,9 +566,11 @@ pub fn parse_create_bot_locale_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_bot_locale_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_create_bot_locale(response.body().as_ref(), output)
-                .map_err(crate::error::CreateBotLocaleError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_bot_locale(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateBotLocaleError::unhandled)?;
         output.build()
     })
 }
@@ -644,59 +589,16 @@ pub fn parse_create_bot_version_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::CreateBotVersionError {
-            meta: generic,
-            kind: crate::error::CreateBotVersionErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBotVersionError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::CreateBotVersionError {
-            meta: generic,
-            kind: crate::error::CreateBotVersionErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBotVersionError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::CreateBotVersionError {
                 meta: generic,
-                kind: crate::error::CreateBotVersionErrorKind::PreconditionFailedException({
+                kind: crate::error::CreateBotVersionErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotVersionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotVersionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -706,6 +608,41 @@ pub fn parse_create_bot_version_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::CreateBotVersionError {
+            meta: generic,
+            kind: crate::error::CreateBotVersionErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::CreateBotVersionError {
+            meta: generic,
+            kind: crate::error::CreateBotVersionErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::CreateBotVersionError {
             meta: generic,
             kind: crate::error::CreateBotVersionErrorKind::ServiceQuotaExceededException({
@@ -715,7 +652,7 @@ pub fn parse_create_bot_version_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -732,11 +669,7 @@ pub fn parse_create_bot_version_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBotVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotVersionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_bot_version_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::CreateBotVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -757,11 +690,7 @@ pub fn parse_create_bot_version_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBotVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBotVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -783,9 +712,11 @@ pub fn parse_create_bot_version_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_bot_version_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_create_bot_version(response.body().as_ref(), output)
-                .map_err(crate::error::CreateBotVersionError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_bot_version(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateBotVersionError::unhandled)?;
         output.build()
     })
 }
@@ -803,59 +734,16 @@ pub fn parse_create_export_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::CreateExportError {
-            meta: generic,
-            kind: crate::error::CreateExportErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateExportError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::CreateExportError {
-            meta: generic,
-            kind: crate::error::CreateExportErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateExportError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFoundException" => {
+        "ConflictException" => {
             crate::error::CreateExportError {
                 meta: generic,
-                kind: crate::error::CreateExportErrorKind::ResourceNotFoundException({
+                kind: crate::error::CreateExportErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateExportError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateExportError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -865,6 +753,40 @@ pub fn parse_create_export_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::CreateExportError {
+            meta: generic,
+            kind: crate::error::CreateExportErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateExportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::CreateExportError {
+            meta: generic,
+            kind: crate::error::CreateExportErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateExportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::CreateExportError {
             meta: generic,
             kind: crate::error::CreateExportErrorKind::ServiceQuotaExceededException({
@@ -874,7 +796,7 @@ pub fn parse_create_export_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateExportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateExportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -891,11 +813,7 @@ pub fn parse_create_export_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateExportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateExportError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_export_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::CreateExportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -916,11 +834,7 @@ pub fn parse_create_export_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateExportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateExportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -941,8 +855,11 @@ pub fn parse_create_export_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_export_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_export(response.body().as_ref(), output)
-            .map_err(crate::error::CreateExportError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_export(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateExportError::unhandled)?;
         output.build()
     })
 }
@@ -960,59 +877,16 @@ pub fn parse_create_intent_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::CreateIntentError {
-            meta: generic,
-            kind: crate::error::CreateIntentErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateIntentError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::CreateIntentError {
-            meta: generic,
-            kind: crate::error::CreateIntentErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateIntentError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::CreateIntentError {
                 meta: generic,
-                kind: crate::error::CreateIntentErrorKind::PreconditionFailedException({
+                kind: crate::error::CreateIntentErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateIntentError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateIntentError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1022,6 +896,41 @@ pub fn parse_create_intent_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::CreateIntentError {
+            meta: generic,
+            kind: crate::error::CreateIntentErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateIntentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::CreateIntentError {
+            meta: generic,
+            kind: crate::error::CreateIntentErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateIntentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::CreateIntentError {
             meta: generic,
             kind: crate::error::CreateIntentErrorKind::ServiceQuotaExceededException({
@@ -1031,7 +940,7 @@ pub fn parse_create_intent_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateIntentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateIntentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1048,11 +957,7 @@ pub fn parse_create_intent_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateIntentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateIntentError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_intent_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::CreateIntentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -1073,11 +978,7 @@ pub fn parse_create_intent_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateIntentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateIntentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1098,8 +999,11 @@ pub fn parse_create_intent_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_intent_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_intent(response.body().as_ref(), output)
-            .map_err(crate::error::CreateIntentError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_intent(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateIntentError::unhandled)?;
         output.build()
     })
 }
@@ -1128,11 +1032,7 @@ pub fn parse_create_resource_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateResourcePolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1141,46 +1041,41 @@ pub fn parse_create_resource_policy_error(
                 tmp
             }),
         },
-        "PreconditionFailedException" => {
-            crate::error::CreateResourcePolicyError {
-                meta: generic,
-                kind: crate::error::CreateResourcePolicyErrorKind::PreconditionFailedException({
+        "PreconditionFailedException" => crate::error::CreateResourcePolicyError {
+            meta: generic,
+            kind: crate::error::CreateResourcePolicyErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "ResourceNotFoundException" => {
-            crate::error::CreateResourcePolicyError {
-                meta: generic,
-                kind: crate::error::CreateResourcePolicyErrorKind::ResourceNotFoundException({
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::CreateResourcePolicyError {
+            meta: generic,
+            kind: crate::error::CreateResourcePolicyErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::CreateResourcePolicyError {
             meta: generic,
             kind: crate::error::CreateResourcePolicyErrorKind::ServiceQuotaExceededException({
@@ -1190,7 +1085,7 @@ pub fn parse_create_resource_policy_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1207,11 +1102,7 @@ pub fn parse_create_resource_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateResourcePolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_resource_policy_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::CreateResourcePolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -1232,11 +1123,7 @@ pub fn parse_create_resource_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateResourcePolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1260,7 +1147,7 @@ pub fn parse_create_resource_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_resource_policy_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_resource_policy(
+        output = crate::json_deser::deser_operation_crate_operation_create_resource_policy(
             response.body().as_ref(),
             output,
         )
@@ -1289,27 +1176,25 @@ pub fn parse_create_resource_policy_statement_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::CreateResourcePolicyStatementError {
-            meta: generic,
-            kind: crate::error::CreateResourcePolicyStatementErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConflictException" => {
+            crate::error::CreateResourcePolicyStatementError {
+                meta: generic,
+                kind: crate::error::CreateResourcePolicyStatementErrorKind::ConflictException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateResourcePolicyStatementError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyStatementError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalServerException" => crate::error::CreateResourcePolicyStatementError {
             meta: generic,
             kind: crate::error::CreateResourcePolicyStatementErrorKind::InternalServerException({
@@ -1318,11 +1203,7 @@ pub fn parse_create_resource_policy_statement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateResourcePolicyStatementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyStatementError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1341,7 +1222,7 @@ pub fn parse_create_resource_policy_statement_error(
                         let mut output =
                             crate::error::precondition_failed_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyStatementError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyStatementError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1361,7 +1242,7 @@ pub fn parse_create_resource_policy_statement_error(
                         let mut output =
                             crate::error::resource_not_found_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyStatementError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyStatementError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1382,7 +1263,7 @@ pub fn parse_create_resource_policy_statement_error(
                             let mut output =
                                 crate::error::service_quota_exceeded_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyStatementError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyStatementError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -1400,11 +1281,7 @@ pub fn parse_create_resource_policy_statement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateResourcePolicyStatementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyStatementError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_resource_policy_statement_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::CreateResourcePolicyStatementError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -1425,11 +1302,7 @@ pub fn parse_create_resource_policy_statement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateResourcePolicyStatementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyStatementError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1453,11 +1326,12 @@ pub fn parse_create_resource_policy_statement_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_resource_policy_statement_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_resource_policy_statement(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::CreateResourcePolicyStatementError::unhandled)?;
+        output =
+            crate::json_deser::deser_operation_crate_operation_create_resource_policy_statement(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::CreateResourcePolicyStatementError::unhandled)?;
         output.build()
     })
 }
@@ -1475,59 +1349,16 @@ pub fn parse_create_slot_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::CreateSlotError {
-            meta: generic,
-            kind: crate::error::CreateSlotErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateSlotError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::CreateSlotError {
-            meta: generic,
-            kind: crate::error::CreateSlotErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateSlotError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::CreateSlotError {
                 meta: generic,
-                kind: crate::error::CreateSlotErrorKind::PreconditionFailedException({
+                kind: crate::error::CreateSlotErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSlotError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSlotError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1537,6 +1368,41 @@ pub fn parse_create_slot_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::CreateSlotError {
+            meta: generic,
+            kind: crate::error::CreateSlotErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSlotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::CreateSlotError {
+            meta: generic,
+            kind: crate::error::CreateSlotErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSlotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::CreateSlotError {
             meta: generic,
             kind: crate::error::CreateSlotErrorKind::ServiceQuotaExceededException({
@@ -1546,7 +1412,7 @@ pub fn parse_create_slot_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSlotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSlotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1563,11 +1429,7 @@ pub fn parse_create_slot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateSlotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSlotError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_slot_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::CreateSlotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -1588,11 +1450,7 @@ pub fn parse_create_slot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateSlotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSlotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1613,8 +1471,11 @@ pub fn parse_create_slot_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_slot_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_slot(response.body().as_ref(), output)
-            .map_err(crate::error::CreateSlotError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_slot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateSlotError::unhandled)?;
         output.build()
     })
 }
@@ -1632,59 +1493,16 @@ pub fn parse_create_slot_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::CreateSlotTypeError {
-            meta: generic,
-            kind: crate::error::CreateSlotTypeErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateSlotTypeError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::CreateSlotTypeError {
-            meta: generic,
-            kind: crate::error::CreateSlotTypeErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateSlotTypeError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::CreateSlotTypeError {
                 meta: generic,
-                kind: crate::error::CreateSlotTypeErrorKind::PreconditionFailedException({
+                kind: crate::error::CreateSlotTypeErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSlotTypeError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSlotTypeError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1694,6 +1512,41 @@ pub fn parse_create_slot_type_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::CreateSlotTypeError {
+            meta: generic,
+            kind: crate::error::CreateSlotTypeErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSlotTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::CreateSlotTypeError {
+            meta: generic,
+            kind: crate::error::CreateSlotTypeErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSlotTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::CreateSlotTypeError {
             meta: generic,
             kind: crate::error::CreateSlotTypeErrorKind::ServiceQuotaExceededException({
@@ -1703,7 +1556,7 @@ pub fn parse_create_slot_type_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSlotTypeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSlotTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1720,11 +1573,7 @@ pub fn parse_create_slot_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateSlotTypeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSlotTypeError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_slot_type_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::CreateSlotTypeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -1745,11 +1594,7 @@ pub fn parse_create_slot_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateSlotTypeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateSlotTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1770,9 +1615,11 @@ pub fn parse_create_slot_type_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_slot_type_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_create_slot_type(response.body().as_ref(), output)
-                .map_err(crate::error::CreateSlotTypeError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_slot_type(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateSlotTypeError::unhandled)?;
         output.build()
     })
 }
@@ -1790,59 +1637,16 @@ pub fn parse_create_upload_url_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::CreateUploadUrlError {
-            meta: generic,
-            kind: crate::error::CreateUploadUrlErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateUploadUrlError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::CreateUploadUrlError {
-            meta: generic,
-            kind: crate::error::CreateUploadUrlErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateUploadUrlError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFoundException" => {
+        "ConflictException" => {
             crate::error::CreateUploadUrlError {
                 meta: generic,
-                kind: crate::error::CreateUploadUrlErrorKind::ResourceNotFoundException({
+                kind: crate::error::CreateUploadUrlErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateUploadUrlError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateUploadUrlError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1852,6 +1656,40 @@ pub fn parse_create_upload_url_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::CreateUploadUrlError {
+            meta: generic,
+            kind: crate::error::CreateUploadUrlErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateUploadUrlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::CreateUploadUrlError {
+            meta: generic,
+            kind: crate::error::CreateUploadUrlErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateUploadUrlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::CreateUploadUrlError {
             meta: generic,
             kind: crate::error::CreateUploadUrlErrorKind::ThrottlingException({
@@ -1860,11 +1698,7 @@ pub fn parse_create_upload_url_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateUploadUrlError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateUploadUrlError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_upload_url_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::CreateUploadUrlError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -1885,11 +1719,7 @@ pub fn parse_create_upload_url_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateUploadUrlError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateUploadUrlError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1910,9 +1740,11 @@ pub fn parse_create_upload_url_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_upload_url_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_create_upload_url(response.body().as_ref(), output)
-                .map_err(crate::error::CreateUploadUrlError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_upload_url(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateUploadUrlError::unhandled)?;
         output.build()
     })
 }
@@ -1930,59 +1762,16 @@ pub fn parse_delete_bot_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::DeleteBotError {
-            meta: generic,
-            kind: crate::error::DeleteBotErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBotError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::DeleteBotError {
-            meta: generic,
-            kind: crate::error::DeleteBotErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBotError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::DeleteBotError {
                 meta: generic,
-                kind: crate::error::DeleteBotErrorKind::PreconditionFailedException({
+                kind: crate::error::DeleteBotErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1992,6 +1781,41 @@ pub fn parse_delete_bot_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::DeleteBotError {
+            meta: generic,
+            kind: crate::error::DeleteBotErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::DeleteBotError {
+            meta: generic,
+            kind: crate::error::DeleteBotErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::DeleteBotError {
             meta: generic,
             kind: crate::error::DeleteBotErrorKind::ServiceQuotaExceededException({
@@ -2001,7 +1825,7 @@ pub fn parse_delete_bot_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2018,11 +1842,7 @@ pub fn parse_delete_bot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_bot_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteBotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -2043,11 +1863,7 @@ pub fn parse_delete_bot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2068,8 +1884,11 @@ pub fn parse_delete_bot_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bot_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_delete_bot(response.body().as_ref(), output)
-            .map_err(crate::error::DeleteBotError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_delete_bot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteBotError::unhandled)?;
         output.build()
     })
 }
@@ -2087,59 +1906,16 @@ pub fn parse_delete_bot_alias_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::DeleteBotAliasError {
-            meta: generic,
-            kind: crate::error::DeleteBotAliasErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBotAliasError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::DeleteBotAliasError {
-            meta: generic,
-            kind: crate::error::DeleteBotAliasErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBotAliasError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::DeleteBotAliasError {
                 meta: generic,
-                kind: crate::error::DeleteBotAliasErrorKind::PreconditionFailedException({
+                kind: crate::error::DeleteBotAliasErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotAliasError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotAliasError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2149,6 +1925,41 @@ pub fn parse_delete_bot_alias_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::DeleteBotAliasError {
+            meta: generic,
+            kind: crate::error::DeleteBotAliasErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotAliasError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::DeleteBotAliasError {
+            meta: generic,
+            kind: crate::error::DeleteBotAliasErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotAliasError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::DeleteBotAliasError {
             meta: generic,
             kind: crate::error::DeleteBotAliasErrorKind::ServiceQuotaExceededException({
@@ -2158,7 +1969,7 @@ pub fn parse_delete_bot_alias_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2175,11 +1986,7 @@ pub fn parse_delete_bot_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBotAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotAliasError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_bot_alias_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteBotAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -2200,11 +2007,7 @@ pub fn parse_delete_bot_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBotAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2225,9 +2028,11 @@ pub fn parse_delete_bot_alias_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bot_alias_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_delete_bot_alias(response.body().as_ref(), output)
-                .map_err(crate::error::DeleteBotAliasError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_delete_bot_alias(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteBotAliasError::unhandled)?;
         output.build()
     })
 }
@@ -2245,59 +2050,16 @@ pub fn parse_delete_bot_locale_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::DeleteBotLocaleError {
-            meta: generic,
-            kind: crate::error::DeleteBotLocaleErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBotLocaleError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::DeleteBotLocaleError {
-            meta: generic,
-            kind: crate::error::DeleteBotLocaleErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBotLocaleError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::DeleteBotLocaleError {
                 meta: generic,
-                kind: crate::error::DeleteBotLocaleErrorKind::PreconditionFailedException({
+                kind: crate::error::DeleteBotLocaleErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotLocaleError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotLocaleError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2307,6 +2069,41 @@ pub fn parse_delete_bot_locale_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::DeleteBotLocaleError {
+            meta: generic,
+            kind: crate::error::DeleteBotLocaleErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotLocaleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::DeleteBotLocaleError {
+            meta: generic,
+            kind: crate::error::DeleteBotLocaleErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotLocaleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::DeleteBotLocaleError {
             meta: generic,
             kind: crate::error::DeleteBotLocaleErrorKind::ServiceQuotaExceededException({
@@ -2316,7 +2113,7 @@ pub fn parse_delete_bot_locale_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotLocaleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotLocaleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2333,11 +2130,7 @@ pub fn parse_delete_bot_locale_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBotLocaleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotLocaleError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_bot_locale_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteBotLocaleError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -2358,11 +2151,7 @@ pub fn parse_delete_bot_locale_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBotLocaleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotLocaleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2383,9 +2172,11 @@ pub fn parse_delete_bot_locale_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bot_locale_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_delete_bot_locale(response.body().as_ref(), output)
-                .map_err(crate::error::DeleteBotLocaleError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_delete_bot_locale(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteBotLocaleError::unhandled)?;
         output.build()
     })
 }
@@ -2404,59 +2195,16 @@ pub fn parse_delete_bot_version_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::DeleteBotVersionError {
-            meta: generic,
-            kind: crate::error::DeleteBotVersionErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBotVersionError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::DeleteBotVersionError {
-            meta: generic,
-            kind: crate::error::DeleteBotVersionErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBotVersionError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::DeleteBotVersionError {
                 meta: generic,
-                kind: crate::error::DeleteBotVersionErrorKind::PreconditionFailedException({
+                kind: crate::error::DeleteBotVersionErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotVersionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotVersionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2466,6 +2214,41 @@ pub fn parse_delete_bot_version_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::DeleteBotVersionError {
+            meta: generic,
+            kind: crate::error::DeleteBotVersionErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::DeleteBotVersionError {
+            meta: generic,
+            kind: crate::error::DeleteBotVersionErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::DeleteBotVersionError {
             meta: generic,
             kind: crate::error::DeleteBotVersionErrorKind::ServiceQuotaExceededException({
@@ -2475,7 +2258,7 @@ pub fn parse_delete_bot_version_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2492,11 +2275,7 @@ pub fn parse_delete_bot_version_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBotVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotVersionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_bot_version_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteBotVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -2517,11 +2296,7 @@ pub fn parse_delete_bot_version_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteBotVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2543,9 +2318,11 @@ pub fn parse_delete_bot_version_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bot_version_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_delete_bot_version(response.body().as_ref(), output)
-                .map_err(crate::error::DeleteBotVersionError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_delete_bot_version(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteBotVersionError::unhandled)?;
         output.build()
     })
 }
@@ -2571,11 +2348,7 @@ pub fn parse_delete_export_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteExportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteExportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2584,26 +2357,24 @@ pub fn parse_delete_export_error(
                 tmp
             }),
         },
-        "PreconditionFailedException" => {
-            crate::error::DeleteExportError {
-                meta: generic,
-                kind: crate::error::DeleteExportErrorKind::PreconditionFailedException({
+        "PreconditionFailedException" => crate::error::DeleteExportError {
+            meta: generic,
+            kind: crate::error::DeleteExportErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteExportError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteExportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::DeleteExportError {
             meta: generic,
             kind: crate::error::DeleteExportErrorKind::ServiceQuotaExceededException({
@@ -2613,7 +2384,7 @@ pub fn parse_delete_export_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteExportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteExportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2630,11 +2401,7 @@ pub fn parse_delete_export_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteExportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteExportError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_export_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteExportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -2655,11 +2422,7 @@ pub fn parse_delete_export_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteExportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteExportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2680,8 +2443,11 @@ pub fn parse_delete_export_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_export_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_delete_export(response.body().as_ref(), output)
-            .map_err(crate::error::DeleteExportError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_delete_export(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteExportError::unhandled)?;
         output.build()
     })
 }
@@ -2707,11 +2473,7 @@ pub fn parse_delete_import_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteImportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2720,26 +2482,24 @@ pub fn parse_delete_import_error(
                 tmp
             }),
         },
-        "PreconditionFailedException" => {
-            crate::error::DeleteImportError {
-                meta: generic,
-                kind: crate::error::DeleteImportErrorKind::PreconditionFailedException({
+        "PreconditionFailedException" => crate::error::DeleteImportError {
+            meta: generic,
+            kind: crate::error::DeleteImportErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::DeleteImportError {
             meta: generic,
             kind: crate::error::DeleteImportErrorKind::ServiceQuotaExceededException({
@@ -2749,7 +2509,7 @@ pub fn parse_delete_import_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2766,11 +2526,7 @@ pub fn parse_delete_import_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteImportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_import_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteImportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -2791,11 +2547,7 @@ pub fn parse_delete_import_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteImportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2816,8 +2568,11 @@ pub fn parse_delete_import_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_import_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_delete_import(response.body().as_ref(), output)
-            .map_err(crate::error::DeleteImportError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_delete_import(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteImportError::unhandled)?;
         output.build()
     })
 }
@@ -2835,59 +2590,16 @@ pub fn parse_delete_intent_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::DeleteIntentError {
-            meta: generic,
-            kind: crate::error::DeleteIntentErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteIntentError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::DeleteIntentError {
-            meta: generic,
-            kind: crate::error::DeleteIntentErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteIntentError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::DeleteIntentError {
                 meta: generic,
-                kind: crate::error::DeleteIntentErrorKind::PreconditionFailedException({
+                kind: crate::error::DeleteIntentErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteIntentError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteIntentError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2897,6 +2609,41 @@ pub fn parse_delete_intent_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::DeleteIntentError {
+            meta: generic,
+            kind: crate::error::DeleteIntentErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteIntentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::DeleteIntentError {
+            meta: generic,
+            kind: crate::error::DeleteIntentErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteIntentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::DeleteIntentError {
             meta: generic,
             kind: crate::error::DeleteIntentErrorKind::ServiceQuotaExceededException({
@@ -2906,7 +2653,7 @@ pub fn parse_delete_intent_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteIntentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteIntentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2923,11 +2670,7 @@ pub fn parse_delete_intent_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteIntentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteIntentError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_intent_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteIntentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -2948,11 +2691,7 @@ pub fn parse_delete_intent_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteIntentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteIntentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3001,11 +2740,7 @@ pub fn parse_delete_resource_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteResourcePolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourcePolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3014,46 +2749,41 @@ pub fn parse_delete_resource_policy_error(
                 tmp
             }),
         },
-        "PreconditionFailedException" => {
-            crate::error::DeleteResourcePolicyError {
-                meta: generic,
-                kind: crate::error::DeleteResourcePolicyErrorKind::PreconditionFailedException({
+        "PreconditionFailedException" => crate::error::DeleteResourcePolicyError {
+            meta: generic,
+            kind: crate::error::DeleteResourcePolicyErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourcePolicyError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "ResourceNotFoundException" => {
-            crate::error::DeleteResourcePolicyError {
-                meta: generic,
-                kind: crate::error::DeleteResourcePolicyErrorKind::ResourceNotFoundException({
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourcePolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DeleteResourcePolicyError {
+            meta: generic,
+            kind: crate::error::DeleteResourcePolicyErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourcePolicyError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourcePolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::DeleteResourcePolicyError {
             meta: generic,
             kind: crate::error::DeleteResourcePolicyErrorKind::ThrottlingException({
@@ -3062,11 +2792,7 @@ pub fn parse_delete_resource_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteResourcePolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourcePolicyError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_resource_policy_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteResourcePolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -3094,7 +2820,7 @@ pub fn parse_delete_resource_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_resource_policy_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_delete_resource_policy(
+        output = crate::json_deser::deser_operation_crate_operation_delete_resource_policy(
             response.body().as_ref(),
             output,
         )
@@ -3131,11 +2857,7 @@ pub fn parse_delete_resource_policy_statement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteResourcePolicyStatementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourcePolicyStatementError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3154,7 +2876,7 @@ pub fn parse_delete_resource_policy_statement_error(
                         let mut output =
                             crate::error::precondition_failed_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourcePolicyStatementError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourcePolicyStatementError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -3174,7 +2896,7 @@ pub fn parse_delete_resource_policy_statement_error(
                         let mut output =
                             crate::error::resource_not_found_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourcePolicyStatementError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourcePolicyStatementError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -3192,11 +2914,7 @@ pub fn parse_delete_resource_policy_statement_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteResourcePolicyStatementError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourcePolicyStatementError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_resource_policy_statement_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteResourcePolicyStatementError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -3224,11 +2942,12 @@ pub fn parse_delete_resource_policy_statement_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_resource_policy_statement_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_delete_resource_policy_statement(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DeleteResourcePolicyStatementError::unhandled)?;
+        output =
+            crate::json_deser::deser_operation_crate_operation_delete_resource_policy_statement(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DeleteResourcePolicyStatementError::unhandled)?;
         output.build()
     })
 }
@@ -3246,59 +2965,16 @@ pub fn parse_delete_slot_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::DeleteSlotError {
-            meta: generic,
-            kind: crate::error::DeleteSlotErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteSlotError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::DeleteSlotError {
-            meta: generic,
-            kind: crate::error::DeleteSlotErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteSlotError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::DeleteSlotError {
                 meta: generic,
-                kind: crate::error::DeleteSlotErrorKind::PreconditionFailedException({
+                kind: crate::error::DeleteSlotErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSlotError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSlotError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -3308,6 +2984,41 @@ pub fn parse_delete_slot_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::DeleteSlotError {
+            meta: generic,
+            kind: crate::error::DeleteSlotErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSlotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::DeleteSlotError {
+            meta: generic,
+            kind: crate::error::DeleteSlotErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSlotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::DeleteSlotError {
             meta: generic,
             kind: crate::error::DeleteSlotErrorKind::ServiceQuotaExceededException({
@@ -3317,7 +3028,7 @@ pub fn parse_delete_slot_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSlotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSlotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3334,11 +3045,7 @@ pub fn parse_delete_slot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteSlotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSlotError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_slot_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteSlotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -3359,11 +3066,7 @@ pub fn parse_delete_slot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteSlotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSlotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3401,59 +3104,16 @@ pub fn parse_delete_slot_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::DeleteSlotTypeError {
-            meta: generic,
-            kind: crate::error::DeleteSlotTypeErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteSlotTypeError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::DeleteSlotTypeError {
-            meta: generic,
-            kind: crate::error::DeleteSlotTypeErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteSlotTypeError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::DeleteSlotTypeError {
                 meta: generic,
-                kind: crate::error::DeleteSlotTypeErrorKind::PreconditionFailedException({
+                kind: crate::error::DeleteSlotTypeErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSlotTypeError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSlotTypeError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -3463,6 +3123,41 @@ pub fn parse_delete_slot_type_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::DeleteSlotTypeError {
+            meta: generic,
+            kind: crate::error::DeleteSlotTypeErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSlotTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::DeleteSlotTypeError {
+            meta: generic,
+            kind: crate::error::DeleteSlotTypeErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSlotTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::DeleteSlotTypeError {
             meta: generic,
             kind: crate::error::DeleteSlotTypeErrorKind::ServiceQuotaExceededException({
@@ -3472,7 +3167,7 @@ pub fn parse_delete_slot_type_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSlotTypeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSlotTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3489,11 +3184,7 @@ pub fn parse_delete_slot_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteSlotTypeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSlotTypeError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_slot_type_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteSlotTypeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -3514,11 +3205,7 @@ pub fn parse_delete_slot_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteSlotTypeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteSlotTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3564,11 +3251,7 @@ pub fn parse_describe_bot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeBotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3577,26 +3260,23 @@ pub fn parse_describe_bot_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DescribeBotError {
-                meta: generic,
-                kind: crate::error::DescribeBotErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DescribeBotError {
+            meta: generic,
+            kind: crate::error::DescribeBotErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::DescribeBotError {
             meta: generic,
             kind: crate::error::DescribeBotErrorKind::ServiceQuotaExceededException({
@@ -3606,7 +3286,7 @@ pub fn parse_describe_bot_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3623,11 +3303,7 @@ pub fn parse_describe_bot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeBotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_bot_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeBotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -3648,11 +3324,7 @@ pub fn parse_describe_bot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeBotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3673,8 +3345,11 @@ pub fn parse_describe_bot_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_bot_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_bot(response.body().as_ref(), output)
-            .map_err(crate::error::DescribeBotError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_bot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeBotError::unhandled)?;
         output.build()
     })
 }
@@ -3701,11 +3376,7 @@ pub fn parse_describe_bot_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeBotAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3714,26 +3385,23 @@ pub fn parse_describe_bot_alias_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DescribeBotAliasError {
-                meta: generic,
-                kind: crate::error::DescribeBotAliasErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DescribeBotAliasError {
+            meta: generic,
+            kind: crate::error::DescribeBotAliasErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotAliasError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotAliasError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::DescribeBotAliasError {
             meta: generic,
             kind: crate::error::DescribeBotAliasErrorKind::ServiceQuotaExceededException({
@@ -3743,7 +3411,7 @@ pub fn parse_describe_bot_alias_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3760,11 +3428,7 @@ pub fn parse_describe_bot_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeBotAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotAliasError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_bot_alias_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeBotAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -3785,11 +3449,7 @@ pub fn parse_describe_bot_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeBotAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3811,9 +3471,11 @@ pub fn parse_describe_bot_alias_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_bot_alias_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_bot_alias(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeBotAliasError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_bot_alias(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeBotAliasError::unhandled)?;
         output.build()
     })
 }
@@ -3840,11 +3502,7 @@ pub fn parse_describe_bot_locale_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeBotLocaleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotLocaleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3853,26 +3511,23 @@ pub fn parse_describe_bot_locale_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DescribeBotLocaleError {
-                meta: generic,
-                kind: crate::error::DescribeBotLocaleErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DescribeBotLocaleError {
+            meta: generic,
+            kind: crate::error::DescribeBotLocaleErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotLocaleError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotLocaleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::DescribeBotLocaleError {
             meta: generic,
             kind: crate::error::DescribeBotLocaleErrorKind::ServiceQuotaExceededException({
@@ -3882,7 +3537,7 @@ pub fn parse_describe_bot_locale_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotLocaleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotLocaleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3899,11 +3554,7 @@ pub fn parse_describe_bot_locale_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeBotLocaleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotLocaleError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_bot_locale_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeBotLocaleError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -3924,11 +3575,7 @@ pub fn parse_describe_bot_locale_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeBotLocaleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotLocaleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3950,7 +3597,7 @@ pub fn parse_describe_bot_locale_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_bot_locale_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_bot_locale(
+        output = crate::json_deser::deser_operation_crate_operation_describe_bot_locale(
             response.body().as_ref(),
             output,
         )
@@ -3983,11 +3630,7 @@ pub fn parse_describe_bot_version_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeBotVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3996,26 +3639,23 @@ pub fn parse_describe_bot_version_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DescribeBotVersionError {
-                meta: generic,
-                kind: crate::error::DescribeBotVersionErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DescribeBotVersionError {
+            meta: generic,
+            kind: crate::error::DescribeBotVersionErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotVersionError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotVersionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::DescribeBotVersionError {
             meta: generic,
             kind: crate::error::DescribeBotVersionErrorKind::ServiceQuotaExceededException({
@@ -4025,7 +3665,7 @@ pub fn parse_describe_bot_version_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4042,11 +3682,7 @@ pub fn parse_describe_bot_version_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeBotVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotVersionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_bot_version_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeBotVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -4067,11 +3703,7 @@ pub fn parse_describe_bot_version_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeBotVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4095,7 +3727,7 @@ pub fn parse_describe_bot_version_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_bot_version_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_bot_version(
+        output = crate::json_deser::deser_operation_crate_operation_describe_bot_version(
             response.body().as_ref(),
             output,
         )
@@ -4125,11 +3757,7 @@ pub fn parse_describe_export_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeExportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeExportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4138,26 +3766,23 @@ pub fn parse_describe_export_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DescribeExportError {
-                meta: generic,
-                kind: crate::error::DescribeExportErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DescribeExportError {
+            meta: generic,
+            kind: crate::error::DescribeExportErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeExportError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeExportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::DescribeExportError {
             meta: generic,
             kind: crate::error::DescribeExportErrorKind::ThrottlingException({
@@ -4166,11 +3791,7 @@ pub fn parse_describe_export_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeExportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeExportError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_export_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeExportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -4191,11 +3812,7 @@ pub fn parse_describe_export_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeExportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeExportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4216,9 +3833,11 @@ pub fn parse_describe_export_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_export_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_export(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeExportError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_export(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeExportError::unhandled)?;
         output.build()
     })
 }
@@ -4244,11 +3863,7 @@ pub fn parse_describe_import_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeImportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeImportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4257,26 +3872,23 @@ pub fn parse_describe_import_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DescribeImportError {
-                meta: generic,
-                kind: crate::error::DescribeImportErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DescribeImportError {
+            meta: generic,
+            kind: crate::error::DescribeImportErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeImportError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::DescribeImportError {
             meta: generic,
             kind: crate::error::DescribeImportErrorKind::ThrottlingException({
@@ -4285,11 +3897,7 @@ pub fn parse_describe_import_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeImportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeImportError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_import_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeImportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -4310,11 +3918,7 @@ pub fn parse_describe_import_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeImportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeImportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4335,9 +3939,11 @@ pub fn parse_describe_import_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_import_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_import(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeImportError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_import(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeImportError::unhandled)?;
         output.build()
     })
 }
@@ -4363,11 +3969,7 @@ pub fn parse_describe_intent_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeIntentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeIntentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4376,26 +3978,23 @@ pub fn parse_describe_intent_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DescribeIntentError {
-                meta: generic,
-                kind: crate::error::DescribeIntentErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DescribeIntentError {
+            meta: generic,
+            kind: crate::error::DescribeIntentErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeIntentError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeIntentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::DescribeIntentError {
             meta: generic,
             kind: crate::error::DescribeIntentErrorKind::ServiceQuotaExceededException({
@@ -4405,7 +4004,7 @@ pub fn parse_describe_intent_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeIntentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeIntentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4422,11 +4021,7 @@ pub fn parse_describe_intent_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeIntentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeIntentError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_intent_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeIntentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -4447,11 +4042,7 @@ pub fn parse_describe_intent_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeIntentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeIntentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4472,9 +4063,11 @@ pub fn parse_describe_intent_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_intent_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_intent(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeIntentError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_intent(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeIntentError::unhandled)?;
         output.build()
     })
 }
@@ -4507,11 +4100,7 @@ pub fn parse_describe_resource_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeResourcePolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeResourcePolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4520,26 +4109,23 @@ pub fn parse_describe_resource_policy_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DescribeResourcePolicyError {
-                meta: generic,
-                kind: crate::error::DescribeResourcePolicyErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DescribeResourcePolicyError {
+            meta: generic,
+            kind: crate::error::DescribeResourcePolicyErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeResourcePolicyError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeResourcePolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::DescribeResourcePolicyError {
             meta: generic,
             kind: crate::error::DescribeResourcePolicyErrorKind::ThrottlingException({
@@ -4548,11 +4134,7 @@ pub fn parse_describe_resource_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeResourcePolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeResourcePolicyError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_resource_policy_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeResourcePolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -4580,7 +4162,7 @@ pub fn parse_describe_resource_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_resource_policy_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_resource_policy(
+        output = crate::json_deser::deser_operation_crate_operation_describe_resource_policy(
             response.body().as_ref(),
             output,
         )
@@ -4610,11 +4192,7 @@ pub fn parse_describe_slot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeSlotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSlotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4623,26 +4201,23 @@ pub fn parse_describe_slot_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DescribeSlotError {
-                meta: generic,
-                kind: crate::error::DescribeSlotErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DescribeSlotError {
+            meta: generic,
+            kind: crate::error::DescribeSlotErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSlotError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSlotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::DescribeSlotError {
             meta: generic,
             kind: crate::error::DescribeSlotErrorKind::ServiceQuotaExceededException({
@@ -4652,7 +4227,7 @@ pub fn parse_describe_slot_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSlotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSlotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4669,11 +4244,7 @@ pub fn parse_describe_slot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeSlotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSlotError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_slot_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeSlotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -4694,11 +4265,7 @@ pub fn parse_describe_slot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeSlotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSlotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4719,8 +4286,11 @@ pub fn parse_describe_slot_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_slot_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_slot(response.body().as_ref(), output)
-            .map_err(crate::error::DescribeSlotError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_slot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeSlotError::unhandled)?;
         output.build()
     })
 }
@@ -4747,11 +4317,7 @@ pub fn parse_describe_slot_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeSlotTypeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSlotTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4760,26 +4326,23 @@ pub fn parse_describe_slot_type_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DescribeSlotTypeError {
-                meta: generic,
-                kind: crate::error::DescribeSlotTypeErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DescribeSlotTypeError {
+            meta: generic,
+            kind: crate::error::DescribeSlotTypeErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSlotTypeError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSlotTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::DescribeSlotTypeError {
             meta: generic,
             kind: crate::error::DescribeSlotTypeErrorKind::ServiceQuotaExceededException({
@@ -4789,7 +4352,7 @@ pub fn parse_describe_slot_type_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSlotTypeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSlotTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4806,11 +4369,7 @@ pub fn parse_describe_slot_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeSlotTypeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSlotTypeError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_slot_type_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeSlotTypeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -4831,11 +4390,7 @@ pub fn parse_describe_slot_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeSlotTypeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeSlotTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4857,9 +4412,11 @@ pub fn parse_describe_slot_type_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_slot_type_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_slot_type(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeSlotTypeError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_slot_type(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeSlotTypeError::unhandled)?;
         output.build()
     })
 }
@@ -4885,11 +4442,7 @@ pub fn parse_list_bot_aliases_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBotAliasesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotAliasesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4907,7 +4460,7 @@ pub fn parse_list_bot_aliases_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotAliasesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotAliasesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4924,11 +4477,7 @@ pub fn parse_list_bot_aliases_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBotAliasesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotAliasesError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_bot_aliases_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListBotAliasesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -4949,11 +4498,7 @@ pub fn parse_list_bot_aliases_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBotAliasesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotAliasesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4974,9 +4519,11 @@ pub fn parse_list_bot_aliases_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_bot_aliases_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_bot_aliases(response.body().as_ref(), output)
-                .map_err(crate::error::ListBotAliasesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_bot_aliases(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListBotAliasesError::unhandled)?;
         output.build()
     })
 }
@@ -5002,11 +4549,7 @@ pub fn parse_list_bot_locales_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBotLocalesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotLocalesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5024,7 +4567,7 @@ pub fn parse_list_bot_locales_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotLocalesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotLocalesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5041,11 +4584,7 @@ pub fn parse_list_bot_locales_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBotLocalesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotLocalesError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_bot_locales_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListBotLocalesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -5066,11 +4605,7 @@ pub fn parse_list_bot_locales_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBotLocalesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotLocalesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5091,9 +4626,11 @@ pub fn parse_list_bot_locales_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_bot_locales_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_bot_locales(response.body().as_ref(), output)
-                .map_err(crate::error::ListBotLocalesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_bot_locales(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListBotLocalesError::unhandled)?;
         output.build()
     })
 }
@@ -5119,11 +4656,7 @@ pub fn parse_list_bots_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBotsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5141,7 +4674,7 @@ pub fn parse_list_bots_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5158,11 +4691,7 @@ pub fn parse_list_bots_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBotsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_bots_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListBotsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -5183,11 +4712,7 @@ pub fn parse_list_bots_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBotsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5208,8 +4733,11 @@ pub fn parse_list_bots_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_bots_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_bots(response.body().as_ref(), output)
-            .map_err(crate::error::ListBotsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_bots(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListBotsError::unhandled)?;
         output.build()
     })
 }
@@ -5235,11 +4763,7 @@ pub fn parse_list_bot_versions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBotVersionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotVersionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5257,7 +4781,7 @@ pub fn parse_list_bot_versions_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotVersionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotVersionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5274,11 +4798,7 @@ pub fn parse_list_bot_versions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBotVersionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotVersionsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_bot_versions_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListBotVersionsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -5299,11 +4819,7 @@ pub fn parse_list_bot_versions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBotVersionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBotVersionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5324,9 +4840,11 @@ pub fn parse_list_bot_versions_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_bot_versions_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_bot_versions(response.body().as_ref(), output)
-                .map_err(crate::error::ListBotVersionsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_bot_versions(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListBotVersionsError::unhandled)?;
         output.build()
     })
 }
@@ -5355,11 +4873,7 @@ pub fn parse_list_built_in_intents_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBuiltInIntentsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuiltInIntentsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5377,7 +4891,7 @@ pub fn parse_list_built_in_intents_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuiltInIntentsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuiltInIntentsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5394,11 +4908,7 @@ pub fn parse_list_built_in_intents_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBuiltInIntentsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuiltInIntentsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_built_in_intents_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListBuiltInIntentsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -5419,11 +4929,7 @@ pub fn parse_list_built_in_intents_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBuiltInIntentsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuiltInIntentsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5447,7 +4953,7 @@ pub fn parse_list_built_in_intents_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_built_in_intents_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_built_in_intents(
+        output = crate::json_deser::deser_operation_crate_operation_list_built_in_intents(
             response.body().as_ref(),
             output,
         )
@@ -5480,11 +4986,7 @@ pub fn parse_list_built_in_slot_types_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBuiltInSlotTypesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuiltInSlotTypesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5502,7 +5004,7 @@ pub fn parse_list_built_in_slot_types_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuiltInSlotTypesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuiltInSlotTypesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5519,11 +5021,7 @@ pub fn parse_list_built_in_slot_types_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBuiltInSlotTypesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuiltInSlotTypesError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_built_in_slot_types_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListBuiltInSlotTypesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -5544,11 +5042,7 @@ pub fn parse_list_built_in_slot_types_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBuiltInSlotTypesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListBuiltInSlotTypesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5572,7 +5066,7 @@ pub fn parse_list_built_in_slot_types_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_built_in_slot_types_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_built_in_slot_types(
+        output = crate::json_deser::deser_operation_crate_operation_list_built_in_slot_types(
             response.body().as_ref(),
             output,
         )
@@ -5602,11 +5096,7 @@ pub fn parse_list_exports_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListExportsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListExportsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5623,11 +5113,7 @@ pub fn parse_list_exports_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListExportsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListExportsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_exports_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListExportsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -5648,11 +5134,7 @@ pub fn parse_list_exports_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListExportsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListExportsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5673,8 +5155,11 @@ pub fn parse_list_exports_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_exports_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_exports(response.body().as_ref(), output)
-            .map_err(crate::error::ListExportsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_exports(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListExportsError::unhandled)?;
         output.build()
     })
 }
@@ -5700,11 +5185,7 @@ pub fn parse_list_imports_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListImportsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListImportsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5721,11 +5202,7 @@ pub fn parse_list_imports_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListImportsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListImportsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_imports_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListImportsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -5746,11 +5223,7 @@ pub fn parse_list_imports_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListImportsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListImportsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5771,8 +5244,11 @@ pub fn parse_list_imports_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_imports_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_imports(response.body().as_ref(), output)
-            .map_err(crate::error::ListImportsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_imports(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListImportsError::unhandled)?;
         output.build()
     })
 }
@@ -5798,11 +5274,7 @@ pub fn parse_list_intents_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListIntentsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListIntentsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5820,7 +5292,7 @@ pub fn parse_list_intents_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListIntentsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListIntentsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5837,11 +5309,7 @@ pub fn parse_list_intents_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListIntentsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListIntentsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_intents_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListIntentsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -5862,11 +5330,7 @@ pub fn parse_list_intents_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListIntentsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListIntentsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5887,8 +5351,11 @@ pub fn parse_list_intents_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_intents_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_intents(response.body().as_ref(), output)
-            .map_err(crate::error::ListIntentsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_intents(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListIntentsError::unhandled)?;
         output.build()
     })
 }
@@ -5914,11 +5381,7 @@ pub fn parse_list_slots_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListSlotsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSlotsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5936,7 +5399,7 @@ pub fn parse_list_slots_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSlotsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSlotsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5953,11 +5416,7 @@ pub fn parse_list_slots_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListSlotsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSlotsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_slots_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListSlotsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -5978,11 +5437,7 @@ pub fn parse_list_slots_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListSlotsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSlotsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6003,8 +5458,11 @@ pub fn parse_list_slots_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_slots_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_slots(response.body().as_ref(), output)
-            .map_err(crate::error::ListSlotsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_slots(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListSlotsError::unhandled)?;
         output.build()
     })
 }
@@ -6030,11 +5488,7 @@ pub fn parse_list_slot_types_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListSlotTypesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSlotTypesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6052,7 +5506,7 @@ pub fn parse_list_slot_types_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSlotTypesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSlotTypesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6069,11 +5523,7 @@ pub fn parse_list_slot_types_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListSlotTypesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSlotTypesError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_slot_types_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListSlotTypesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -6094,11 +5544,7 @@ pub fn parse_list_slot_types_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListSlotTypesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListSlotTypesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6119,9 +5565,11 @@ pub fn parse_list_slot_types_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_slot_types_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_slot_types(response.body().as_ref(), output)
-                .map_err(crate::error::ListSlotTypesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_slot_types(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListSlotTypesError::unhandled)?;
         output.build()
     })
 }
@@ -6150,11 +5598,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6163,26 +5607,23 @@ pub fn parse_list_tags_for_resource_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ListTagsForResourceError {
-                meta: generic,
-                kind: crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::ListTagsForResourceError {
+            meta: generic,
+            kind: crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::ListTagsForResourceError {
             meta: generic,
             kind: crate::error::ListTagsForResourceErrorKind::ThrottlingException({
@@ -6191,11 +5632,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_tags_for_resource_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListTagsForResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -6216,11 +5653,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6244,7 +5677,7 @@ pub fn parse_list_tags_for_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_for_resource_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_tags_for_resource(
+        output = crate::json_deser::deser_operation_crate_operation_list_tags_for_resource(
             response.body().as_ref(),
             output,
         )
@@ -6266,59 +5699,16 @@ pub fn parse_start_import_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::StartImportError {
-            meta: generic,
-            kind: crate::error::StartImportErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartImportError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::StartImportError {
-            meta: generic,
-            kind: crate::error::StartImportErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartImportError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFoundException" => {
+        "ConflictException" => {
             crate::error::StartImportError {
                 meta: generic,
-                kind: crate::error::StartImportErrorKind::ResourceNotFoundException({
+                kind: crate::error::StartImportErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6328,6 +5718,40 @@ pub fn parse_start_import_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::StartImportError {
+            meta: generic,
+            kind: crate::error::StartImportErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::StartImportError {
+            meta: generic,
+            kind: crate::error::StartImportErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::StartImportError {
             meta: generic,
             kind: crate::error::StartImportErrorKind::ServiceQuotaExceededException({
@@ -6337,7 +5761,7 @@ pub fn parse_start_import_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6354,11 +5778,7 @@ pub fn parse_start_import_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartImportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_start_import_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::StartImportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -6379,11 +5799,7 @@ pub fn parse_start_import_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartImportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6404,8 +5820,11 @@ pub fn parse_start_import_response(
         #[allow(unused_mut)]
         let mut output = crate::output::start_import_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_start_import(response.body().as_ref(), output)
-            .map_err(crate::error::StartImportError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_start_import(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StartImportError::unhandled)?;
         output.build()
     })
 }
@@ -6431,11 +5850,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6444,26 +5859,23 @@ pub fn parse_tag_resource_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::TagResourceError {
-                meta: generic,
-                kind: crate::error::TagResourceErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::TagResourceError {
+            meta: generic,
+            kind: crate::error::TagResourceErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::TagResourceError {
             meta: generic,
             kind: crate::error::TagResourceErrorKind::ThrottlingException({
@@ -6472,11 +5884,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_tag_resource_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::TagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -6497,11 +5905,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6547,11 +5951,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6560,26 +5960,23 @@ pub fn parse_untag_resource_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::UntagResourceError {
-                meta: generic,
-                kind: crate::error::UntagResourceErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::UntagResourceError {
+            meta: generic,
+            kind: crate::error::UntagResourceErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::UntagResourceError {
             meta: generic,
             kind: crate::error::UntagResourceErrorKind::ThrottlingException({
@@ -6588,11 +5985,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_untag_resource_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UntagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -6613,11 +6006,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6655,59 +6044,16 @@ pub fn parse_update_bot_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::UpdateBotError {
-            meta: generic,
-            kind: crate::error::UpdateBotErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateBotError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::UpdateBotError {
-            meta: generic,
-            kind: crate::error::UpdateBotErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateBotError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::UpdateBotError {
                 meta: generic,
-                kind: crate::error::UpdateBotErrorKind::PreconditionFailedException({
+                kind: crate::error::UpdateBotErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6717,6 +6063,41 @@ pub fn parse_update_bot_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::UpdateBotError {
+            meta: generic,
+            kind: crate::error::UpdateBotErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::UpdateBotError {
+            meta: generic,
+            kind: crate::error::UpdateBotErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::UpdateBotError {
             meta: generic,
             kind: crate::error::UpdateBotErrorKind::ServiceQuotaExceededException({
@@ -6726,7 +6107,7 @@ pub fn parse_update_bot_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6743,11 +6124,7 @@ pub fn parse_update_bot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateBotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_bot_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UpdateBotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -6768,11 +6145,7 @@ pub fn parse_update_bot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateBotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6793,8 +6166,11 @@ pub fn parse_update_bot_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_bot_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_bot(response.body().as_ref(), output)
-            .map_err(crate::error::UpdateBotError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_update_bot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateBotError::unhandled)?;
         output.build()
     })
 }
@@ -6812,59 +6188,16 @@ pub fn parse_update_bot_alias_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::UpdateBotAliasError {
-            meta: generic,
-            kind: crate::error::UpdateBotAliasErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateBotAliasError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::UpdateBotAliasError {
-            meta: generic,
-            kind: crate::error::UpdateBotAliasErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateBotAliasError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::UpdateBotAliasError {
                 meta: generic,
-                kind: crate::error::UpdateBotAliasErrorKind::PreconditionFailedException({
+                kind: crate::error::UpdateBotAliasErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotAliasError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotAliasError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6874,6 +6207,41 @@ pub fn parse_update_bot_alias_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::UpdateBotAliasError {
+            meta: generic,
+            kind: crate::error::UpdateBotAliasErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotAliasError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::UpdateBotAliasError {
+            meta: generic,
+            kind: crate::error::UpdateBotAliasErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotAliasError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::UpdateBotAliasError {
             meta: generic,
             kind: crate::error::UpdateBotAliasErrorKind::ServiceQuotaExceededException({
@@ -6883,7 +6251,7 @@ pub fn parse_update_bot_alias_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6900,11 +6268,7 @@ pub fn parse_update_bot_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateBotAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotAliasError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_bot_alias_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UpdateBotAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -6925,11 +6289,7 @@ pub fn parse_update_bot_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateBotAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6950,9 +6310,11 @@ pub fn parse_update_bot_alias_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_bot_alias_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_update_bot_alias(response.body().as_ref(), output)
-                .map_err(crate::error::UpdateBotAliasError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_update_bot_alias(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateBotAliasError::unhandled)?;
         output.build()
     })
 }
@@ -6970,59 +6332,16 @@ pub fn parse_update_bot_locale_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::UpdateBotLocaleError {
-            meta: generic,
-            kind: crate::error::UpdateBotLocaleErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateBotLocaleError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::UpdateBotLocaleError {
-            meta: generic,
-            kind: crate::error::UpdateBotLocaleErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateBotLocaleError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::UpdateBotLocaleError {
                 meta: generic,
-                kind: crate::error::UpdateBotLocaleErrorKind::PreconditionFailedException({
+                kind: crate::error::UpdateBotLocaleErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotLocaleError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotLocaleError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -7032,6 +6351,41 @@ pub fn parse_update_bot_locale_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::UpdateBotLocaleError {
+            meta: generic,
+            kind: crate::error::UpdateBotLocaleErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotLocaleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::UpdateBotLocaleError {
+            meta: generic,
+            kind: crate::error::UpdateBotLocaleErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotLocaleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::UpdateBotLocaleError {
             meta: generic,
             kind: crate::error::UpdateBotLocaleErrorKind::ServiceQuotaExceededException({
@@ -7041,7 +6395,7 @@ pub fn parse_update_bot_locale_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotLocaleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotLocaleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7058,11 +6412,7 @@ pub fn parse_update_bot_locale_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateBotLocaleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotLocaleError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_bot_locale_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UpdateBotLocaleError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -7083,11 +6433,7 @@ pub fn parse_update_bot_locale_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateBotLocaleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotLocaleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7108,9 +6454,11 @@ pub fn parse_update_bot_locale_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_bot_locale_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_update_bot_locale(response.body().as_ref(), output)
-                .map_err(crate::error::UpdateBotLocaleError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_update_bot_locale(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateBotLocaleError::unhandled)?;
         output.build()
     })
 }
@@ -7128,59 +6476,16 @@ pub fn parse_update_export_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::UpdateExportError {
-            meta: generic,
-            kind: crate::error::UpdateExportErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateExportError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::UpdateExportError {
-            meta: generic,
-            kind: crate::error::UpdateExportErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateExportError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFoundException" => {
+        "ConflictException" => {
             crate::error::UpdateExportError {
                 meta: generic,
-                kind: crate::error::UpdateExportErrorKind::ResourceNotFoundException({
+                kind: crate::error::UpdateExportErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateExportError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateExportError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -7190,6 +6495,40 @@ pub fn parse_update_export_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::UpdateExportError {
+            meta: generic,
+            kind: crate::error::UpdateExportErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateExportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::UpdateExportError {
+            meta: generic,
+            kind: crate::error::UpdateExportErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateExportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::UpdateExportError {
             meta: generic,
             kind: crate::error::UpdateExportErrorKind::ServiceQuotaExceededException({
@@ -7199,7 +6538,7 @@ pub fn parse_update_export_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateExportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateExportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7216,11 +6555,7 @@ pub fn parse_update_export_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateExportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateExportError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_export_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UpdateExportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -7241,11 +6576,7 @@ pub fn parse_update_export_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateExportError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateExportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7266,8 +6597,11 @@ pub fn parse_update_export_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_export_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_export(response.body().as_ref(), output)
-            .map_err(crate::error::UpdateExportError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_update_export(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateExportError::unhandled)?;
         output.build()
     })
 }
@@ -7285,59 +6619,16 @@ pub fn parse_update_intent_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::UpdateIntentError {
-            meta: generic,
-            kind: crate::error::UpdateIntentErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateIntentError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::UpdateIntentError {
-            meta: generic,
-            kind: crate::error::UpdateIntentErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateIntentError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::UpdateIntentError {
                 meta: generic,
-                kind: crate::error::UpdateIntentErrorKind::PreconditionFailedException({
+                kind: crate::error::UpdateIntentErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateIntentError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateIntentError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -7347,6 +6638,41 @@ pub fn parse_update_intent_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::UpdateIntentError {
+            meta: generic,
+            kind: crate::error::UpdateIntentErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateIntentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::UpdateIntentError {
+            meta: generic,
+            kind: crate::error::UpdateIntentErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateIntentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::UpdateIntentError {
             meta: generic,
             kind: crate::error::UpdateIntentErrorKind::ServiceQuotaExceededException({
@@ -7356,7 +6682,7 @@ pub fn parse_update_intent_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateIntentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateIntentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7373,11 +6699,7 @@ pub fn parse_update_intent_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateIntentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateIntentError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_intent_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UpdateIntentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -7398,11 +6720,7 @@ pub fn parse_update_intent_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateIntentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateIntentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7423,8 +6741,11 @@ pub fn parse_update_intent_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_intent_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_intent(response.body().as_ref(), output)
-            .map_err(crate::error::UpdateIntentError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_update_intent(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateIntentError::unhandled)?;
         output.build()
     })
 }
@@ -7453,11 +6774,7 @@ pub fn parse_update_resource_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateResourcePolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourcePolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7466,46 +6783,41 @@ pub fn parse_update_resource_policy_error(
                 tmp
             }),
         },
-        "PreconditionFailedException" => {
-            crate::error::UpdateResourcePolicyError {
-                meta: generic,
-                kind: crate::error::UpdateResourcePolicyErrorKind::PreconditionFailedException({
+        "PreconditionFailedException" => crate::error::UpdateResourcePolicyError {
+            meta: generic,
+            kind: crate::error::UpdateResourcePolicyErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourcePolicyError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "ResourceNotFoundException" => {
-            crate::error::UpdateResourcePolicyError {
-                meta: generic,
-                kind: crate::error::UpdateResourcePolicyErrorKind::ResourceNotFoundException({
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourcePolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::UpdateResourcePolicyError {
+            meta: generic,
+            kind: crate::error::UpdateResourcePolicyErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourcePolicyError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourcePolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::UpdateResourcePolicyError {
             meta: generic,
             kind: crate::error::UpdateResourcePolicyErrorKind::ServiceQuotaExceededException({
@@ -7515,7 +6827,7 @@ pub fn parse_update_resource_policy_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourcePolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourcePolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7532,11 +6844,7 @@ pub fn parse_update_resource_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateResourcePolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourcePolicyError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_resource_policy_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UpdateResourcePolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -7557,11 +6865,7 @@ pub fn parse_update_resource_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateResourcePolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourcePolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7585,7 +6889,7 @@ pub fn parse_update_resource_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_resource_policy_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_resource_policy(
+        output = crate::json_deser::deser_operation_crate_operation_update_resource_policy(
             response.body().as_ref(),
             output,
         )
@@ -7607,59 +6911,16 @@ pub fn parse_update_slot_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::UpdateSlotError {
-            meta: generic,
-            kind: crate::error::UpdateSlotErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateSlotError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::UpdateSlotError {
-            meta: generic,
-            kind: crate::error::UpdateSlotErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateSlotError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::UpdateSlotError {
                 meta: generic,
-                kind: crate::error::UpdateSlotErrorKind::PreconditionFailedException({
+                kind: crate::error::UpdateSlotErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSlotError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSlotError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -7669,6 +6930,41 @@ pub fn parse_update_slot_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::UpdateSlotError {
+            meta: generic,
+            kind: crate::error::UpdateSlotErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSlotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::UpdateSlotError {
+            meta: generic,
+            kind: crate::error::UpdateSlotErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSlotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::UpdateSlotError {
             meta: generic,
             kind: crate::error::UpdateSlotErrorKind::ServiceQuotaExceededException({
@@ -7678,7 +6974,7 @@ pub fn parse_update_slot_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSlotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSlotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7695,11 +6991,7 @@ pub fn parse_update_slot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateSlotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSlotError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_slot_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UpdateSlotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -7720,11 +7012,7 @@ pub fn parse_update_slot_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateSlotError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSlotError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7745,8 +7033,11 @@ pub fn parse_update_slot_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_slot_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_slot(response.body().as_ref(), output)
-            .map_err(crate::error::UpdateSlotError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_update_slot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateSlotError::unhandled)?;
         output.build()
     })
 }
@@ -7764,59 +7055,16 @@ pub fn parse_update_slot_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::UpdateSlotTypeError {
-            meta: generic,
-            kind: crate::error::UpdateSlotTypeErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateSlotTypeError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServerException" => crate::error::UpdateSlotTypeError {
-            meta: generic,
-            kind: crate::error::UpdateSlotTypeErrorKind::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateSlotTypeError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PreconditionFailedException" => {
+        "ConflictException" => {
             crate::error::UpdateSlotTypeError {
                 meta: generic,
-                kind: crate::error::UpdateSlotTypeErrorKind::PreconditionFailedException({
+                kind: crate::error::UpdateSlotTypeErrorKind::ConflictException({
                     #[allow(unused_mut)]
                     let mut tmp = {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
+                        let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSlotTypeError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSlotTypeError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -7826,6 +7074,41 @@ pub fn parse_update_slot_type_error(
                 }),
             }
         }
+        "InternalServerException" => crate::error::UpdateSlotTypeError {
+            meta: generic,
+            kind: crate::error::UpdateSlotTypeErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSlotTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::UpdateSlotTypeError {
+            meta: generic,
+            kind: crate::error::UpdateSlotTypeErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSlotTypeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::UpdateSlotTypeError {
             meta: generic,
             kind: crate::error::UpdateSlotTypeErrorKind::ServiceQuotaExceededException({
@@ -7835,7 +7118,7 @@ pub fn parse_update_slot_type_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSlotTypeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSlotTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7852,11 +7135,7 @@ pub fn parse_update_slot_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateSlotTypeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSlotTypeError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_slot_type_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UpdateSlotTypeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -7877,11 +7156,7 @@ pub fn parse_update_slot_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateSlotTypeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateSlotTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7902,9 +7177,11 @@ pub fn parse_update_slot_type_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_slot_type_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_update_slot_type(response.body().as_ref(), output)
-                .map_err(crate::error::UpdateSlotTypeError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_update_slot_type(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateSlotTypeError::unhandled)?;
         output.build()
     })
 }

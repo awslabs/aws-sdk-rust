@@ -27,11 +27,7 @@ pub fn parse_add_notification_channel_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddNotificationChannelError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddNotificationChannelError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -40,27 +36,25 @@ pub fn parse_add_notification_channel_error(
                 tmp
             }),
         },
-        "ConflictException" => crate::error::AddNotificationChannelError {
-            meta: generic,
-            kind: crate::error::AddNotificationChannelErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConflictException" => {
+            crate::error::AddNotificationChannelError {
+                meta: generic,
+                kind: crate::error::AddNotificationChannelErrorKind::ConflictException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddNotificationChannelError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddNotificationChannelError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalServerException" => crate::error::AddNotificationChannelError {
             meta: generic,
             kind: crate::error::AddNotificationChannelErrorKind::InternalServerException({
@@ -69,11 +63,7 @@ pub fn parse_add_notification_channel_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddNotificationChannelError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddNotificationChannelError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_add_notification_channel_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::AddNotificationChannelError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -86,26 +76,23 @@ pub fn parse_add_notification_channel_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::AddNotificationChannelError {
-                meta: generic,
-                kind: crate::error::AddNotificationChannelErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::AddNotificationChannelError {
+            meta: generic,
+            kind: crate::error::AddNotificationChannelErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddNotificationChannelError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddNotificationChannelError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceQuotaExceededException" => crate::error::AddNotificationChannelError {
             meta: generic,
             kind: crate::error::AddNotificationChannelErrorKind::ServiceQuotaExceededException({
@@ -115,7 +102,7 @@ pub fn parse_add_notification_channel_error(
                     let mut output =
                         crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddNotificationChannelError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddNotificationChannelError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -132,11 +119,7 @@ pub fn parse_add_notification_channel_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddNotificationChannelError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddNotificationChannelError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_add_notification_channel_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::AddNotificationChannelError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -157,11 +140,7 @@ pub fn parse_add_notification_channel_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddNotificationChannelError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddNotificationChannelError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -185,7 +164,7 @@ pub fn parse_add_notification_channel_response(
         #[allow(unused_mut)]
         let mut output = crate::output::add_notification_channel_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_add_notification_channel(
+        output = crate::json_deser::deser_operation_crate_operation_add_notification_channel(
             response.body().as_ref(),
             output,
         )
@@ -218,11 +197,7 @@ pub fn parse_describe_account_health_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAccountHealthError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountHealthError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -239,11 +214,7 @@ pub fn parse_describe_account_health_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAccountHealthError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountHealthError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_account_health_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeAccountHealthError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -264,11 +235,7 @@ pub fn parse_describe_account_health_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAccountHealthError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountHealthError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_account_health_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeAccountHealthError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -289,11 +256,7 @@ pub fn parse_describe_account_health_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAccountHealthError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountHealthError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -317,7 +280,7 @@ pub fn parse_describe_account_health_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_account_health_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_account_health(
+        output = crate::json_deser::deser_operation_crate_operation_describe_account_health(
             response.body().as_ref(),
             output,
         )
@@ -354,11 +317,7 @@ pub fn parse_describe_account_overview_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAccountOverviewError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountOverviewError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -375,11 +334,7 @@ pub fn parse_describe_account_overview_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAccountOverviewError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountOverviewError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_account_overview_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeAccountOverviewError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -400,11 +355,7 @@ pub fn parse_describe_account_overview_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAccountOverviewError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountOverviewError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_account_overview_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeAccountOverviewError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -425,11 +376,7 @@ pub fn parse_describe_account_overview_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAccountOverviewError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountOverviewError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -453,7 +400,7 @@ pub fn parse_describe_account_overview_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_account_overview_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_account_overview(
+        output = crate::json_deser::deser_operation_crate_operation_describe_account_overview(
             response.body().as_ref(),
             output,
         )
@@ -483,11 +430,7 @@ pub fn parse_describe_anomaly_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAnomalyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnomalyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -504,11 +447,7 @@ pub fn parse_describe_anomaly_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAnomalyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnomalyError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_anomaly_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeAnomalyError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -521,26 +460,23 @@ pub fn parse_describe_anomaly_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DescribeAnomalyError {
-                meta: generic,
-                kind: crate::error::DescribeAnomalyErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DescribeAnomalyError {
+            meta: generic,
+            kind: crate::error::DescribeAnomalyErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnomalyError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnomalyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::DescribeAnomalyError {
             meta: generic,
             kind: crate::error::DescribeAnomalyErrorKind::ThrottlingException({
@@ -549,11 +485,7 @@ pub fn parse_describe_anomaly_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAnomalyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnomalyError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_anomaly_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeAnomalyError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -574,11 +506,7 @@ pub fn parse_describe_anomaly_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAnomalyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnomalyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -599,9 +527,11 @@ pub fn parse_describe_anomaly_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_anomaly_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_anomaly(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeAnomalyError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_anomaly(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeAnomalyError::unhandled)?;
         output.build()
     })
 }
@@ -628,11 +558,7 @@ pub fn parse_describe_feedback_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeFeedbackError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFeedbackError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -649,11 +575,7 @@ pub fn parse_describe_feedback_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeFeedbackError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFeedbackError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_feedback_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeFeedbackError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -666,26 +588,23 @@ pub fn parse_describe_feedback_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DescribeFeedbackError {
-                meta: generic,
-                kind: crate::error::DescribeFeedbackErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DescribeFeedbackError {
+            meta: generic,
+            kind: crate::error::DescribeFeedbackErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFeedbackError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFeedbackError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::DescribeFeedbackError {
             meta: generic,
             kind: crate::error::DescribeFeedbackErrorKind::ThrottlingException({
@@ -694,11 +613,7 @@ pub fn parse_describe_feedback_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeFeedbackError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFeedbackError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_feedback_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeFeedbackError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -719,11 +634,7 @@ pub fn parse_describe_feedback_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeFeedbackError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFeedbackError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -745,9 +656,11 @@ pub fn parse_describe_feedback_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_feedback_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_feedback(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeFeedbackError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_feedback(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeFeedbackError::unhandled)?;
         output.build()
     })
 }
@@ -773,11 +686,7 @@ pub fn parse_describe_insight_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeInsightError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeInsightError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -794,11 +703,7 @@ pub fn parse_describe_insight_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeInsightError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeInsightError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_insight_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeInsightError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -811,26 +716,23 @@ pub fn parse_describe_insight_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DescribeInsightError {
-                meta: generic,
-                kind: crate::error::DescribeInsightErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DescribeInsightError {
+            meta: generic,
+            kind: crate::error::DescribeInsightErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeInsightError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeInsightError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::DescribeInsightError {
             meta: generic,
             kind: crate::error::DescribeInsightErrorKind::ThrottlingException({
@@ -839,11 +741,7 @@ pub fn parse_describe_insight_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeInsightError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeInsightError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_insight_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeInsightError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -864,11 +762,7 @@ pub fn parse_describe_insight_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeInsightError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeInsightError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -889,9 +783,11 @@ pub fn parse_describe_insight_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_insight_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_insight(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeInsightError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_insight(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeInsightError::unhandled)?;
         output.build()
     })
 }
@@ -922,11 +818,7 @@ pub fn parse_describe_resource_collection_health_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeResourceCollectionHealthError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeResourceCollectionHealthError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -935,33 +827,30 @@ pub fn parse_describe_resource_collection_health_error(
                 tmp
             }),
         },
-        "InternalServerException" => {
-            crate::error::DescribeResourceCollectionHealthError {
-                meta: generic,
-                kind:
-                    crate::error::DescribeResourceCollectionHealthErrorKind::InternalServerException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]
-                                let mut output =
-                                    crate::error::internal_server_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeResourceCollectionHealthError::unhandled)?;
-                                output = output.set_retry_after_seconds(
+        "InternalServerException" => crate::error::DescribeResourceCollectionHealthError {
+            meta: generic,
+            kind: crate::error::DescribeResourceCollectionHealthErrorKind::InternalServerException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::internal_server_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeResourceCollectionHealthError::unhandled)?;
+                        output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_resource_collection_health_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeResourceCollectionHealthError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
                     );
-                                output.build()
-                            };
-                            if (&tmp.message).is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "ThrottlingException" => crate::error::DescribeResourceCollectionHealthError {
             meta: generic,
             kind: crate::error::DescribeResourceCollectionHealthErrorKind::ThrottlingException({
@@ -970,11 +859,7 @@ pub fn parse_describe_resource_collection_health_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeResourceCollectionHealthError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeResourceCollectionHealthError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_resource_collection_health_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeResourceCollectionHealthError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -995,11 +880,7 @@ pub fn parse_describe_resource_collection_health_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeResourceCollectionHealthError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeResourceCollectionHealthError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1024,11 +905,12 @@ pub fn parse_describe_resource_collection_health_response(
         let mut output =
             crate::output::describe_resource_collection_health_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_resource_collection_health(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeResourceCollectionHealthError::unhandled)?;
+        output =
+            crate::json_deser::deser_operation_crate_operation_describe_resource_collection_health(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeResourceCollectionHealthError::unhandled)?;
         output.build()
     })
 }
@@ -1061,11 +943,7 @@ pub fn parse_describe_service_integration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeServiceIntegrationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceIntegrationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1082,11 +960,7 @@ pub fn parse_describe_service_integration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeServiceIntegrationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceIntegrationError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_service_integration_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeServiceIntegrationError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -1107,11 +981,7 @@ pub fn parse_describe_service_integration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeServiceIntegrationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceIntegrationError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_service_integration_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DescribeServiceIntegrationError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -1132,11 +1002,7 @@ pub fn parse_describe_service_integration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeServiceIntegrationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceIntegrationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1160,7 +1026,7 @@ pub fn parse_describe_service_integration_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_service_integration_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_describe_service_integration(
+        output = crate::json_deser::deser_operation_crate_operation_describe_service_integration(
             response.body().as_ref(),
             output,
         )
@@ -1191,11 +1057,7 @@ pub fn parse_get_cost_estimation_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetCostEstimationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetCostEstimationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1212,11 +1074,7 @@ pub fn parse_get_cost_estimation_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetCostEstimationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetCostEstimationError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_cost_estimation_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::GetCostEstimationError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -1229,26 +1087,23 @@ pub fn parse_get_cost_estimation_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::GetCostEstimationError {
-                meta: generic,
-                kind: crate::error::GetCostEstimationErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::GetCostEstimationError {
+            meta: generic,
+            kind: crate::error::GetCostEstimationErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetCostEstimationError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetCostEstimationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::GetCostEstimationError {
             meta: generic,
             kind: crate::error::GetCostEstimationErrorKind::ThrottlingException({
@@ -1257,11 +1112,7 @@ pub fn parse_get_cost_estimation_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetCostEstimationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetCostEstimationError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_cost_estimation_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::GetCostEstimationError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -1282,11 +1133,7 @@ pub fn parse_get_cost_estimation_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetCostEstimationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetCostEstimationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1308,7 +1155,7 @@ pub fn parse_get_cost_estimation_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_cost_estimation_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_cost_estimation(
+        output = crate::json_deser::deser_operation_crate_operation_get_cost_estimation(
             response.body().as_ref(),
             output,
         )
@@ -1341,11 +1188,7 @@ pub fn parse_get_resource_collection_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetResourceCollectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetResourceCollectionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1362,11 +1205,7 @@ pub fn parse_get_resource_collection_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetResourceCollectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetResourceCollectionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_resource_collection_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::GetResourceCollectionError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -1379,26 +1218,23 @@ pub fn parse_get_resource_collection_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::GetResourceCollectionError {
-                meta: generic,
-                kind: crate::error::GetResourceCollectionErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::GetResourceCollectionError {
+            meta: generic,
+            kind: crate::error::GetResourceCollectionErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetResourceCollectionError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetResourceCollectionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::GetResourceCollectionError {
             meta: generic,
             kind: crate::error::GetResourceCollectionErrorKind::ThrottlingException({
@@ -1407,11 +1243,7 @@ pub fn parse_get_resource_collection_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetResourceCollectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetResourceCollectionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_resource_collection_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::GetResourceCollectionError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -1432,11 +1264,7 @@ pub fn parse_get_resource_collection_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetResourceCollectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetResourceCollectionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1460,7 +1288,7 @@ pub fn parse_get_resource_collection_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_resource_collection_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_resource_collection(
+        output = crate::json_deser::deser_operation_crate_operation_get_resource_collection(
             response.body().as_ref(),
             output,
         )
@@ -1497,11 +1325,7 @@ pub fn parse_list_anomalies_for_insight_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListAnomaliesForInsightError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAnomaliesForInsightError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1518,11 +1342,7 @@ pub fn parse_list_anomalies_for_insight_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListAnomaliesForInsightError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAnomaliesForInsightError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_anomalies_for_insight_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListAnomaliesForInsightError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -1535,26 +1355,23 @@ pub fn parse_list_anomalies_for_insight_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ListAnomaliesForInsightError {
-                meta: generic,
-                kind: crate::error::ListAnomaliesForInsightErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::ListAnomaliesForInsightError {
+            meta: generic,
+            kind: crate::error::ListAnomaliesForInsightErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAnomaliesForInsightError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAnomaliesForInsightError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::ListAnomaliesForInsightError {
             meta: generic,
             kind: crate::error::ListAnomaliesForInsightErrorKind::ThrottlingException({
@@ -1563,11 +1380,7 @@ pub fn parse_list_anomalies_for_insight_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListAnomaliesForInsightError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAnomaliesForInsightError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_anomalies_for_insight_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListAnomaliesForInsightError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -1588,11 +1401,7 @@ pub fn parse_list_anomalies_for_insight_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListAnomaliesForInsightError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAnomaliesForInsightError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1616,7 +1425,7 @@ pub fn parse_list_anomalies_for_insight_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_anomalies_for_insight_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_anomalies_for_insight(
+        output = crate::json_deser::deser_operation_crate_operation_list_anomalies_for_insight(
             response.body().as_ref(),
             output,
         )
@@ -1646,11 +1455,7 @@ pub fn parse_list_events_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListEventsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListEventsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1667,11 +1472,7 @@ pub fn parse_list_events_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListEventsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListEventsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_events_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListEventsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -1684,26 +1485,23 @@ pub fn parse_list_events_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ListEventsError {
-                meta: generic,
-                kind: crate::error::ListEventsErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::ListEventsError {
+            meta: generic,
+            kind: crate::error::ListEventsErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListEventsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListEventsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::ListEventsError {
             meta: generic,
             kind: crate::error::ListEventsErrorKind::ThrottlingException({
@@ -1712,11 +1510,7 @@ pub fn parse_list_events_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListEventsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListEventsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_events_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListEventsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -1737,11 +1531,7 @@ pub fn parse_list_events_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListEventsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListEventsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1762,8 +1552,11 @@ pub fn parse_list_events_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_events_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_events(response.body().as_ref(), output)
-            .map_err(crate::error::ListEventsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_events(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListEventsError::unhandled)?;
         output.build()
     })
 }
@@ -1789,11 +1582,7 @@ pub fn parse_list_insights_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListInsightsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListInsightsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1810,11 +1599,7 @@ pub fn parse_list_insights_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListInsightsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListInsightsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_insights_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListInsightsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -1835,11 +1620,7 @@ pub fn parse_list_insights_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListInsightsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListInsightsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_insights_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListInsightsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -1860,11 +1641,7 @@ pub fn parse_list_insights_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListInsightsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListInsightsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1885,8 +1662,11 @@ pub fn parse_list_insights_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_insights_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_insights(response.body().as_ref(), output)
-            .map_err(crate::error::ListInsightsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_insights(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListInsightsError::unhandled)?;
         output.build()
     })
 }
@@ -1919,11 +1699,7 @@ pub fn parse_list_notification_channels_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListNotificationChannelsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListNotificationChannelsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1940,11 +1716,7 @@ pub fn parse_list_notification_channels_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListNotificationChannelsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListNotificationChannelsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_notification_channels_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListNotificationChannelsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -1965,11 +1737,7 @@ pub fn parse_list_notification_channels_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListNotificationChannelsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListNotificationChannelsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_notification_channels_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListNotificationChannelsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -1990,11 +1758,7 @@ pub fn parse_list_notification_channels_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListNotificationChannelsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListNotificationChannelsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2018,7 +1782,7 @@ pub fn parse_list_notification_channels_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_notification_channels_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_notification_channels(
+        output = crate::json_deser::deser_operation_crate_operation_list_notification_channels(
             response.body().as_ref(),
             output,
         )
@@ -2051,11 +1815,7 @@ pub fn parse_list_recommendations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRecommendationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2072,11 +1832,7 @@ pub fn parse_list_recommendations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRecommendationsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_recommendations_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListRecommendationsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -2089,26 +1845,23 @@ pub fn parse_list_recommendations_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ListRecommendationsError {
-                meta: generic,
-                kind: crate::error::ListRecommendationsErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::ListRecommendationsError {
+            meta: generic,
+            kind: crate::error::ListRecommendationsErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRecommendationsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRecommendationsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::ListRecommendationsError {
             meta: generic,
             kind: crate::error::ListRecommendationsErrorKind::ThrottlingException({
@@ -2117,11 +1870,7 @@ pub fn parse_list_recommendations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRecommendationsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_recommendations_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListRecommendationsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -2142,11 +1891,7 @@ pub fn parse_list_recommendations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRecommendationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2170,7 +1915,7 @@ pub fn parse_list_recommendations_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_recommendations_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_recommendations(
+        output = crate::json_deser::deser_operation_crate_operation_list_recommendations(
             response.body().as_ref(),
             output,
         )
@@ -2200,11 +1945,7 @@ pub fn parse_put_feedback_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutFeedbackError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFeedbackError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2213,27 +1954,25 @@ pub fn parse_put_feedback_error(
                 tmp
             }),
         },
-        "ConflictException" => crate::error::PutFeedbackError {
-            meta: generic,
-            kind: crate::error::PutFeedbackErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConflictException" => {
+            crate::error::PutFeedbackError {
+                meta: generic,
+                kind: crate::error::PutFeedbackErrorKind::ConflictException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutFeedbackError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFeedbackError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalServerException" => crate::error::PutFeedbackError {
             meta: generic,
             kind: crate::error::PutFeedbackErrorKind::InternalServerException({
@@ -2242,11 +1981,7 @@ pub fn parse_put_feedback_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutFeedbackError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFeedbackError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_put_feedback_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::PutFeedbackError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -2259,26 +1994,23 @@ pub fn parse_put_feedback_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::PutFeedbackError {
-                meta: generic,
-                kind: crate::error::PutFeedbackErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::PutFeedbackError {
+            meta: generic,
+            kind: crate::error::PutFeedbackErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFeedbackError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFeedbackError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::PutFeedbackError {
             meta: generic,
             kind: crate::error::PutFeedbackErrorKind::ThrottlingException({
@@ -2287,11 +2019,7 @@ pub fn parse_put_feedback_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutFeedbackError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFeedbackError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_put_feedback_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::PutFeedbackError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -2312,11 +2040,7 @@ pub fn parse_put_feedback_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutFeedbackError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFeedbackError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2369,11 +2093,7 @@ pub fn parse_remove_notification_channel_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RemoveNotificationChannelError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveNotificationChannelError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2382,27 +2102,25 @@ pub fn parse_remove_notification_channel_error(
                 tmp
             }),
         },
-        "ConflictException" => crate::error::RemoveNotificationChannelError {
-            meta: generic,
-            kind: crate::error::RemoveNotificationChannelErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConflictException" => {
+            crate::error::RemoveNotificationChannelError {
+                meta: generic,
+                kind: crate::error::RemoveNotificationChannelErrorKind::ConflictException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RemoveNotificationChannelError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveNotificationChannelError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalServerException" => crate::error::RemoveNotificationChannelError {
             meta: generic,
             kind: crate::error::RemoveNotificationChannelErrorKind::InternalServerException({
@@ -2411,11 +2129,7 @@ pub fn parse_remove_notification_channel_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RemoveNotificationChannelError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveNotificationChannelError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_remove_notification_channel_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::RemoveNotificationChannelError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -2428,28 +2142,23 @@ pub fn parse_remove_notification_channel_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::RemoveNotificationChannelError {
-                meta: generic,
-                kind: crate::error::RemoveNotificationChannelErrorKind::ResourceNotFoundException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::resource_not_found_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveNotificationChannelError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
-        }
+        "ResourceNotFoundException" => crate::error::RemoveNotificationChannelError {
+            meta: generic,
+            kind: crate::error::RemoveNotificationChannelErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveNotificationChannelError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::RemoveNotificationChannelError {
             meta: generic,
             kind: crate::error::RemoveNotificationChannelErrorKind::ThrottlingException({
@@ -2458,11 +2167,7 @@ pub fn parse_remove_notification_channel_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RemoveNotificationChannelError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveNotificationChannelError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_remove_notification_channel_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::RemoveNotificationChannelError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -2483,11 +2188,7 @@ pub fn parse_remove_notification_channel_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RemoveNotificationChannelError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveNotificationChannelError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2536,11 +2237,7 @@ pub fn parse_search_insights_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SearchInsightsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SearchInsightsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2557,11 +2254,7 @@ pub fn parse_search_insights_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SearchInsightsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SearchInsightsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_search_insights_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::SearchInsightsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -2582,11 +2275,7 @@ pub fn parse_search_insights_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SearchInsightsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SearchInsightsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_search_insights_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::SearchInsightsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -2607,11 +2296,7 @@ pub fn parse_search_insights_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SearchInsightsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SearchInsightsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2632,9 +2317,11 @@ pub fn parse_search_insights_response(
         #[allow(unused_mut)]
         let mut output = crate::output::search_insights_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_search_insights(response.body().as_ref(), output)
-                .map_err(crate::error::SearchInsightsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_search_insights(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::SearchInsightsError::unhandled)?;
         output.build()
     })
 }
@@ -2663,11 +2350,7 @@ pub fn parse_start_cost_estimation_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartCostEstimationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartCostEstimationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2676,27 +2359,25 @@ pub fn parse_start_cost_estimation_error(
                 tmp
             }),
         },
-        "ConflictException" => crate::error::StartCostEstimationError {
-            meta: generic,
-            kind: crate::error::StartCostEstimationErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConflictException" => {
+            crate::error::StartCostEstimationError {
+                meta: generic,
+                kind: crate::error::StartCostEstimationErrorKind::ConflictException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartCostEstimationError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartCostEstimationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalServerException" => crate::error::StartCostEstimationError {
             meta: generic,
             kind: crate::error::StartCostEstimationErrorKind::InternalServerException({
@@ -2705,11 +2386,7 @@ pub fn parse_start_cost_estimation_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartCostEstimationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartCostEstimationError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_start_cost_estimation_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::StartCostEstimationError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -2722,26 +2399,23 @@ pub fn parse_start_cost_estimation_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::StartCostEstimationError {
-                meta: generic,
-                kind: crate::error::StartCostEstimationErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::StartCostEstimationError {
+            meta: generic,
+            kind: crate::error::StartCostEstimationErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartCostEstimationError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartCostEstimationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::StartCostEstimationError {
             meta: generic,
             kind: crate::error::StartCostEstimationErrorKind::ThrottlingException({
@@ -2750,11 +2424,7 @@ pub fn parse_start_cost_estimation_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartCostEstimationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartCostEstimationError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_start_cost_estimation_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::StartCostEstimationError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -2775,11 +2445,7 @@ pub fn parse_start_cost_estimation_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartCostEstimationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartCostEstimationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2835,11 +2501,7 @@ pub fn parse_update_resource_collection_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateResourceCollectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourceCollectionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2848,27 +2510,25 @@ pub fn parse_update_resource_collection_error(
                 tmp
             }),
         },
-        "ConflictException" => crate::error::UpdateResourceCollectionError {
-            meta: generic,
-            kind: crate::error::UpdateResourceCollectionErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConflictException" => {
+            crate::error::UpdateResourceCollectionError {
+                meta: generic,
+                kind: crate::error::UpdateResourceCollectionErrorKind::ConflictException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateResourceCollectionError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourceCollectionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalServerException" => crate::error::UpdateResourceCollectionError {
             meta: generic,
             kind: crate::error::UpdateResourceCollectionErrorKind::InternalServerException({
@@ -2877,11 +2537,7 @@ pub fn parse_update_resource_collection_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateResourceCollectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourceCollectionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_resource_collection_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UpdateResourceCollectionError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -2902,11 +2558,7 @@ pub fn parse_update_resource_collection_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateResourceCollectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourceCollectionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_resource_collection_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UpdateResourceCollectionError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -2927,11 +2579,7 @@ pub fn parse_update_resource_collection_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateResourceCollectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourceCollectionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2987,11 +2635,7 @@ pub fn parse_update_service_integration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateServiceIntegrationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceIntegrationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3000,27 +2644,25 @@ pub fn parse_update_service_integration_error(
                 tmp
             }),
         },
-        "ConflictException" => crate::error::UpdateServiceIntegrationError {
-            meta: generic,
-            kind: crate::error::UpdateServiceIntegrationErrorKind::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConflictException" => {
+            crate::error::UpdateServiceIntegrationError {
+                meta: generic,
+                kind: crate::error::UpdateServiceIntegrationErrorKind::ConflictException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateServiceIntegrationError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceIntegrationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalServerException" => crate::error::UpdateServiceIntegrationError {
             meta: generic,
             kind: crate::error::UpdateServiceIntegrationErrorKind::InternalServerException({
@@ -3029,11 +2671,7 @@ pub fn parse_update_service_integration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateServiceIntegrationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceIntegrationError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_service_integration_internal_server_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UpdateServiceIntegrationError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -3054,11 +2692,7 @@ pub fn parse_update_service_integration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateServiceIntegrationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceIntegrationError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_service_integration_throttling_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UpdateServiceIntegrationError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
@@ -3079,11 +2713,7 @@ pub fn parse_update_service_integration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateServiceIntegrationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceIntegrationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

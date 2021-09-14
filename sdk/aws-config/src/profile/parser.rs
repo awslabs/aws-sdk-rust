@@ -17,13 +17,16 @@ pub use self::parse::ProfileParseError;
 
 /// Read & parse AWS config files
 ///
-/// Loads and parses profile files according to the spec:
+/// Loads AWS config file from the filesystem, parses them, and converts them into a [`ProfileSet`](ProfileSet).
+///
+/// Although the basic behavior is straightforward, there are number of nuances to maintain backwards
+/// compatibility with other SDKs enumerated below.
 ///
 /// ## Location of Profile Files
-/// * The location of the config file will be loaded from `$AWS_CONFIG_FILE` with a fallback to
-///   `~/.aws/config`
-/// * The location of the credentials file will be loaded from `$AWS_SHARED_CREDENTIALS_FILE` with a
-///   fallback to `~/.aws/credentials`
+/// * The location of the config file will be loaded from the `AWS_CONFIG_FILE` environment variable
+/// with a fallback to `~/.aws/config`
+/// * The location of the credentials file will be loaded from the `AWS_SHARED_CREDENTIALS_FILE`
+/// environment variable with a fallback to `~/.aws/credentials`
 ///
 /// ## Home directory resolution
 /// Home directory resolution is implemented to match the behavior of the CLI & Python. `~` is only
@@ -33,15 +36,15 @@ pub use self::parse::ProfileParseError;
 ///   resolve to the home directory.
 ///
 /// When determining the home directory, the following environment variables are checked:
-/// - `$HOME` on all platforms
-/// - `$USERPROFILE` on Windows
-/// - `$HOMEDRIVE$HOMEPATH` on Windows
+/// - `HOME` on all platforms
+/// - `USERPROFILE` on Windows
+/// - The concatenation of `HOMEDRIVE` and `HOMEPATH` on Windows (`$HOMEDRIVE$HOMEPATH`)
 ///
 /// ## Profile file syntax
 ///
-/// Profile files have a general form similar to INI but with a number of quirks and edge cases. These
-/// behaviors are largely to match existing parser implementations and these cases are documented in `test-data/profile-parser-tests.json`
-/// in this repo.
+/// Profile files have a form similar to `.ini` but with a several edge cases. These behaviors exist
+/// to match existing parser implementations, ensuring consistent behavior across AWS SDKs. These
+/// cases fully enumerated in `test-data/profile-parser-tests.json`.
 ///
 /// ### The config file `~/.aws/config`
 /// ```ini
@@ -76,11 +79,12 @@ pub struct ProfileSet {
 }
 
 impl ProfileSet {
+    #[doc(hidden)]
     /// Create a new Profile set directly from a HashMap
     ///
     /// This method creates a ProfileSet directly from a hashmap with no normalization.
     ///
-    /// ## Note
+    /// ## Warning
     ///
     /// This is probably not what you want! In general, [`load`](load) should be used instead
     /// because it will perform input normalization. However, for tests which operate on the
@@ -113,7 +117,7 @@ impl ProfileSet {
             .and_then(|profile| profile.get(key))
     }
 
-    /// Retrieve a named profile from the profile set
+    /// Retrieves a named profile from the profile set
     pub fn get_profile(&self, profile_name: &str) -> Option<&Profile> {
         self.profiles.get(profile_name)
     }
@@ -214,9 +218,9 @@ mod test {
     use std::fs;
     use tracing_test::traced_test;
 
-    /// Run all tests from profile-parser-tests.json
+    /// Run all tests from `test-data/profile-parser-tests.json`
     ///
-    /// These represent the bulk of the test cases and reach effectively 100% coverage
+    /// These represent the bulk of the test cases and reach 100% coverage of the parser.
     #[test]
     #[traced_test]
     fn run_tests() -> Result<(), Box<dyn Error>> {

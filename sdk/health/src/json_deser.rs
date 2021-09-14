@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_invalid_pagination_tokenjson_err(
+pub fn deser_structure_crate_error_invalid_pagination_tokenjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_pagination_token::Builder,
 ) -> Result<crate::error::invalid_pagination_token::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_invalid_pagination_tokenjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_affected_accounts_for_organization(
+pub fn deser_operation_crate_operation_describe_affected_accounts_for_organization(
     input: &[u8],
     mut builder: crate::output::describe_affected_accounts_for_organization_output::Builder,
 ) -> Result<
@@ -63,7 +63,7 @@ pub fn deser_operation_describe_affected_accounts_for_organization(
                 match key.to_unescaped()?.as_ref() {
                     "affectedAccounts" => {
                         builder = builder.set_affected_accounts(
-                            crate::json_deser::deser_list_affected_accounts_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_health_affected_accounts_list(tokens)?
                         );
                     }
                     "eventScopeCode" => {
@@ -101,7 +101,7 @@ pub fn deser_operation_describe_affected_accounts_for_organization(
     Ok(builder)
 }
 
-pub fn deser_structure_unsupported_localejson_err(
+pub fn deser_structure_crate_error_unsupported_localejson_err(
     input: &[u8],
     mut builder: crate::error::unsupported_locale::Builder,
 ) -> Result<crate::error::unsupported_locale::Builder, smithy_json::deserialize::Error> {
@@ -140,7 +140,7 @@ pub fn deser_structure_unsupported_localejson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_affected_entities(
+pub fn deser_operation_crate_operation_describe_affected_entities(
     input: &[u8],
     mut builder: crate::output::describe_affected_entities_output::Builder,
 ) -> Result<
@@ -158,8 +158,9 @@ pub fn deser_operation_describe_affected_entities(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "entities" => {
-                        builder = builder
-                            .set_entities(crate::json_deser::deser_list_entity_list(tokens)?);
+                        builder = builder.set_entities(
+                            crate::json_deser::deser_list_com_amazonaws_health_entity_list(tokens)?,
+                        );
                     }
                     "nextToken" => {
                         builder = builder.set_next_token(
@@ -186,7 +187,7 @@ pub fn deser_operation_describe_affected_entities(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_affected_entities_for_organization(
+pub fn deser_operation_crate_operation_describe_affected_entities_for_organization(
     input: &[u8],
     mut builder: crate::output::describe_affected_entities_for_organization_output::Builder,
 ) -> Result<
@@ -204,12 +205,13 @@ pub fn deser_operation_describe_affected_entities_for_organization(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "entities" => {
-                        builder = builder
-                            .set_entities(crate::json_deser::deser_list_entity_list(tokens)?);
+                        builder = builder.set_entities(
+                            crate::json_deser::deser_list_com_amazonaws_health_entity_list(tokens)?,
+                        );
                     }
                     "failedSet" => {
                         builder = builder.set_failed_set(
-                            crate::json_deser::deser_list_describe_affected_entities_for_organization_failed_set(tokens)?
+                            crate::json_deser::deser_list_com_amazonaws_health_describe_affected_entities_for_organization_failed_set(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -237,7 +239,7 @@ pub fn deser_operation_describe_affected_entities_for_organization(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_entity_aggregates(
+pub fn deser_operation_crate_operation_describe_entity_aggregates(
     input: &[u8],
     mut builder: crate::output::describe_entity_aggregates_output::Builder,
 ) -> Result<
@@ -256,7 +258,7 @@ pub fn deser_operation_describe_entity_aggregates(
                 match key.to_unescaped()?.as_ref() {
                     "entityAggregates" => {
                         builder = builder.set_entity_aggregates(
-                            crate::json_deser::deser_list_entity_aggregate_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_health_entity_aggregate_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -277,7 +279,7 @@ pub fn deser_operation_describe_entity_aggregates(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_event_aggregates(
+pub fn deser_operation_crate_operation_describe_event_aggregates(
     input: &[u8],
     mut builder: crate::output::describe_event_aggregates_output::Builder,
 ) -> Result<crate::output::describe_event_aggregates_output::Builder, smithy_json::deserialize::Error>
@@ -294,7 +296,7 @@ pub fn deser_operation_describe_event_aggregates(
                 match key.to_unescaped()?.as_ref() {
                     "eventAggregates" => {
                         builder = builder.set_event_aggregates(
-                            crate::json_deser::deser_list_event_aggregate_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_health_event_aggregate_list(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -322,7 +324,7 @@ pub fn deser_operation_describe_event_aggregates(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_event_details(
+pub fn deser_operation_crate_operation_describe_event_details(
     input: &[u8],
     mut builder: crate::output::describe_event_details_output::Builder,
 ) -> Result<crate::output::describe_event_details_output::Builder, smithy_json::deserialize::Error>
@@ -339,16 +341,12 @@ pub fn deser_operation_describe_event_details(
                 match key.to_unescaped()?.as_ref() {
                     "successfulSet" => {
                         builder = builder.set_successful_set(
-                            crate::json_deser::deser_list_describe_event_details_successful_set(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_health_describe_event_details_successful_set(tokens)?
                         );
                     }
                     "failedSet" => {
                         builder = builder.set_failed_set(
-                            crate::json_deser::deser_list_describe_event_details_failed_set(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_health_describe_event_details_failed_set(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -369,7 +367,7 @@ pub fn deser_operation_describe_event_details(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_event_details_for_organization(
+pub fn deser_operation_crate_operation_describe_event_details_for_organization(
     input: &[u8],
     mut builder: crate::output::describe_event_details_for_organization_output::Builder,
 ) -> Result<
@@ -388,12 +386,12 @@ pub fn deser_operation_describe_event_details_for_organization(
                 match key.to_unescaped()?.as_ref() {
                     "successfulSet" => {
                         builder = builder.set_successful_set(
-                            crate::json_deser::deser_list_describe_event_details_for_organization_successful_set(tokens)?
+                            crate::json_deser::deser_list_com_amazonaws_health_describe_event_details_for_organization_successful_set(tokens)?
                         );
                     }
                     "failedSet" => {
                         builder = builder.set_failed_set(
-                            crate::json_deser::deser_list_describe_event_details_for_organization_failed_set(tokens)?
+                            crate::json_deser::deser_list_com_amazonaws_health_describe_event_details_for_organization_failed_set(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -414,7 +412,7 @@ pub fn deser_operation_describe_event_details_for_organization(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_events(
+pub fn deser_operation_crate_operation_describe_events(
     input: &[u8],
     mut builder: crate::output::describe_events_output::Builder,
 ) -> Result<crate::output::describe_events_output::Builder, smithy_json::deserialize::Error> {
@@ -429,8 +427,9 @@ pub fn deser_operation_describe_events(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "events" => {
-                        builder =
-                            builder.set_events(crate::json_deser::deser_list_event_list(tokens)?);
+                        builder = builder.set_events(
+                            crate::json_deser::deser_list_com_amazonaws_health_event_list(tokens)?,
+                        );
                     }
                     "nextToken" => {
                         builder = builder.set_next_token(
@@ -457,7 +456,7 @@ pub fn deser_operation_describe_events(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_events_for_organization(
+pub fn deser_operation_crate_operation_describe_events_for_organization(
     input: &[u8],
     mut builder: crate::output::describe_events_for_organization_output::Builder,
 ) -> Result<
@@ -476,7 +475,7 @@ pub fn deser_operation_describe_events_for_organization(
                 match key.to_unescaped()?.as_ref() {
                     "events" => {
                         builder = builder.set_events(
-                            crate::json_deser::deser_list_organization_event_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_health_organization_event_list(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -504,7 +503,7 @@ pub fn deser_operation_describe_events_for_organization(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_event_types(
+pub fn deser_operation_crate_operation_describe_event_types(
     input: &[u8],
     mut builder: crate::output::describe_event_types_output::Builder,
 ) -> Result<crate::output::describe_event_types_output::Builder, smithy_json::deserialize::Error> {
@@ -520,7 +519,9 @@ pub fn deser_operation_describe_event_types(
                 match key.to_unescaped()?.as_ref() {
                     "eventTypes" => {
                         builder = builder.set_event_types(
-                            crate::json_deser::deser_list_event_type_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_health_event_type_list(
+                                tokens,
+                            )?,
                         );
                     }
                     "nextToken" => {
@@ -548,7 +549,7 @@ pub fn deser_operation_describe_event_types(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_health_service_status_for_organization(
+pub fn deser_operation_crate_operation_describe_health_service_status_for_organization(
     input: &[u8],
     mut builder: crate::output::describe_health_service_status_for_organization_output::Builder,
 ) -> Result<
@@ -590,7 +591,7 @@ pub fn deser_operation_describe_health_service_status_for_organization(
     Ok(builder)
 }
 
-pub fn deser_structure_concurrent_modification_exceptionjson_err(
+pub fn deser_structure_crate_error_concurrent_modification_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::concurrent_modification_exception::Builder,
 ) -> Result<crate::error::concurrent_modification_exception::Builder, smithy_json::deserialize::Error>
@@ -639,7 +640,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_affected_accounts_list<'a, I>(
+pub fn deser_list_com_amazonaws_health_affected_accounts_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -677,7 +678,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_entity_list<'a, I>(
+pub fn deser_list_com_amazonaws_health_entity_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::AffectedEntity>>, smithy_json::deserialize::Error>
 where
@@ -696,7 +697,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_affected_entity(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_affected_entity(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -712,7 +714,10 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_describe_affected_entities_for_organization_failed_set<'a, I>(
+pub fn deser_list_com_amazonaws_health_describe_affected_entities_for_organization_failed_set<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::OrganizationAffectedEntitiesErrorItem>>,
@@ -735,7 +740,7 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_organization_affected_entities_error_item(tokens)?
+                            crate::json_deser::deser_structure_crate_model_organization_affected_entities_error_item(tokens)?
                         ;
                         if let Some(value) = value {
                             items.push(value);
@@ -752,7 +757,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_entity_aggregate_list<'a, I>(
+pub fn deser_list_com_amazonaws_health_entity_aggregate_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::EntityAggregate>>, smithy_json::deserialize::Error>
 where
@@ -771,7 +776,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_entity_aggregate(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_entity_aggregate(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -787,7 +795,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_event_aggregate_list<'a, I>(
+pub fn deser_list_com_amazonaws_health_event_aggregate_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::EventAggregate>>, smithy_json::deserialize::Error>
 where
@@ -806,7 +814,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_event_aggregate(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_event_aggregate(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -822,7 +831,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_describe_event_details_successful_set<'a, I>(
+pub fn deser_list_com_amazonaws_health_describe_event_details_successful_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::EventDetails>>, smithy_json::deserialize::Error>
 where
@@ -841,7 +850,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_event_details(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_event_details(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -857,7 +867,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_describe_event_details_failed_set<'a, I>(
+pub fn deser_list_com_amazonaws_health_describe_event_details_failed_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::EventDetailsErrorItem>>,
@@ -880,7 +890,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_event_details_error_item(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_event_details_error_item(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -896,7 +907,10 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_describe_event_details_for_organization_successful_set<'a, I>(
+pub fn deser_list_com_amazonaws_health_describe_event_details_for_organization_successful_set<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::OrganizationEventDetails>>,
@@ -919,7 +933,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_organization_event_details(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_organization_event_details(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -935,7 +950,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_describe_event_details_for_organization_failed_set<'a, I>(
+pub fn deser_list_com_amazonaws_health_describe_event_details_for_organization_failed_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::OrganizationEventDetailsErrorItem>>,
@@ -958,7 +973,7 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_organization_event_details_error_item(tokens)?
+                            crate::json_deser::deser_structure_crate_model_organization_event_details_error_item(tokens)?
                         ;
                         if let Some(value) = value {
                             items.push(value);
@@ -975,7 +990,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_event_list<'a, I>(
+pub fn deser_list_com_amazonaws_health_event_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Event>>, smithy_json::deserialize::Error>
 where
@@ -994,7 +1009,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_event(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_event(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1010,7 +1025,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_organization_event_list<'a, I>(
+pub fn deser_list_com_amazonaws_health_organization_event_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::OrganizationEvent>>, smithy_json::deserialize::Error>
 where
@@ -1029,7 +1044,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_organization_event(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_organization_event(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1045,7 +1063,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_event_type_list<'a, I>(
+pub fn deser_list_com_amazonaws_health_event_type_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::EventType>>, smithy_json::deserialize::Error>
 where
@@ -1064,7 +1082,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_event_type(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_event_type(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1079,7 +1098,7 @@ where
     }
 }
 
-pub fn deser_structure_affected_entity<'a, I>(
+pub fn deser_structure_crate_model_affected_entity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AffectedEntity>, smithy_json::deserialize::Error>
 where
@@ -1164,8 +1183,11 @@ where
                                 );
                             }
                             "tags" => {
-                                builder =
-                                    builder.set_tags(crate::json_deser::deser_map_tag_set(tokens)?);
+                                builder = builder.set_tags(
+                                    crate::json_deser::deser_map_com_amazonaws_health_tag_set(
+                                        tokens,
+                                    )?,
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -1185,7 +1207,7 @@ where
     }
 }
 
-pub fn deser_structure_organization_affected_entities_error_item<'a, I>(
+pub fn deser_structure_crate_model_organization_affected_entities_error_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::OrganizationAffectedEntitiesErrorItem>,
@@ -1260,7 +1282,7 @@ where
     }
 }
 
-pub fn deser_structure_entity_aggregate<'a, I>(
+pub fn deser_structure_crate_model_entity_aggregate<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EntityAggregate>, smithy_json::deserialize::Error>
 where
@@ -1313,7 +1335,7 @@ where
     }
 }
 
-pub fn deser_structure_event_aggregate<'a, I>(
+pub fn deser_structure_crate_model_event_aggregate<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EventAggregate>, smithy_json::deserialize::Error>
 where
@@ -1366,7 +1388,7 @@ where
     }
 }
 
-pub fn deser_structure_event_details<'a, I>(
+pub fn deser_structure_crate_model_event_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EventDetails>, smithy_json::deserialize::Error>
 where
@@ -1385,17 +1407,18 @@ where
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
                             "event" => {
-                                builder = builder
-                                    .set_event(crate::json_deser::deser_structure_event(tokens)?);
+                                builder = builder.set_event(
+                                    crate::json_deser::deser_structure_crate_model_event(tokens)?,
+                                );
                             }
                             "eventDescription" => {
                                 builder = builder.set_event_description(
-                                    crate::json_deser::deser_structure_event_description(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_event_description(tokens)?
                                 );
                             }
                             "eventMetadata" => {
                                 builder = builder.set_event_metadata(
-                                    crate::json_deser::deser_map_event_metadata(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_health_event_metadata(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1416,7 +1439,7 @@ where
     }
 }
 
-pub fn deser_structure_event_details_error_item<'a, I>(
+pub fn deser_structure_crate_model_event_details_error_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EventDetailsErrorItem>, smithy_json::deserialize::Error>
 where
@@ -1479,7 +1502,7 @@ where
     }
 }
 
-pub fn deser_structure_organization_event_details<'a, I>(
+pub fn deser_structure_crate_model_organization_event_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::OrganizationEventDetails>, smithy_json::deserialize::Error>
 where
@@ -1507,17 +1530,18 @@ where
                                 );
                             }
                             "event" => {
-                                builder = builder
-                                    .set_event(crate::json_deser::deser_structure_event(tokens)?);
+                                builder = builder.set_event(
+                                    crate::json_deser::deser_structure_crate_model_event(tokens)?,
+                                );
                             }
                             "eventDescription" => {
                                 builder = builder.set_event_description(
-                                    crate::json_deser::deser_structure_event_description(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_event_description(tokens)?
                                 );
                             }
                             "eventMetadata" => {
                                 builder = builder.set_event_metadata(
-                                    crate::json_deser::deser_map_event_metadata(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_health_event_metadata(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1538,7 +1562,7 @@ where
     }
 }
 
-pub fn deser_structure_organization_event_details_error_item<'a, I>(
+pub fn deser_structure_crate_model_organization_event_details_error_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::OrganizationEventDetailsErrorItem>, smithy_json::deserialize::Error>
 where
@@ -1610,7 +1634,7 @@ where
     }
 }
 
-pub fn deser_structure_event<'a, I>(
+pub fn deser_structure_crate_model_event<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Event>, smithy_json::deserialize::Error>
 where
@@ -1753,7 +1777,7 @@ where
     }
 }
 
-pub fn deser_structure_organization_event<'a, I>(
+pub fn deser_structure_crate_model_organization_event<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::OrganizationEvent>, smithy_json::deserialize::Error>
 where
@@ -1887,7 +1911,7 @@ where
     }
 }
 
-pub fn deser_structure_event_type<'a, I>(
+pub fn deser_structure_crate_model_event_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EventType>, smithy_json::deserialize::Error>
 where
@@ -1955,7 +1979,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_tag_set<'a, I>(
+pub fn deser_map_com_amazonaws_health_tag_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1998,7 +2022,7 @@ where
     }
 }
 
-pub fn deser_structure_event_description<'a, I>(
+pub fn deser_structure_crate_model_event_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EventDescription>, smithy_json::deserialize::Error>
 where
@@ -2044,7 +2068,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_event_metadata<'a, I>(
+pub fn deser_map_com_amazonaws_health_event_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,

@@ -1194,6 +1194,129 @@ impl std::error::Error for DeleteApplicationInputProcessingConfigurationError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DeleteApplicationOutputError {
+    pub kind: DeleteApplicationOutputErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteApplicationOutputErrorKind {
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    InvalidArgumentException(crate::error::InvalidArgumentException),
+    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteApplicationOutputError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteApplicationOutputErrorKind::ConcurrentModificationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteApplicationOutputErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
+            DeleteApplicationOutputErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            DeleteApplicationOutputErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteApplicationOutputErrorKind::UnsupportedOperationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteApplicationOutputErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteApplicationOutputError {
+    fn code(&self) -> Option<&str> {
+        DeleteApplicationOutputError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteApplicationOutputError {
+    pub fn new(kind: DeleteApplicationOutputErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteApplicationOutputErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteApplicationOutputErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteApplicationOutputErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteApplicationOutputErrorKind::InvalidArgumentException(_)
+        )
+    }
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteApplicationOutputErrorKind::ResourceInUseException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteApplicationOutputErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteApplicationOutputErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteApplicationOutputError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteApplicationOutputErrorKind::ConcurrentModificationException(_inner) => {
+                Some(_inner)
+            }
+            DeleteApplicationOutputErrorKind::InvalidArgumentException(_inner) => Some(_inner),
+            DeleteApplicationOutputErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            DeleteApplicationOutputErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteApplicationOutputErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            DeleteApplicationOutputErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DeleteApplicationReferenceDataSourceError {
     pub kind: DeleteApplicationReferenceDataSourceErrorKind,
     pub(crate) meta: smithy_types::Error,

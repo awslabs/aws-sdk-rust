@@ -11,7 +11,7 @@ pub mod cancel_ingestion_input {
         pub(crate) ingestion_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -186,8 +186,11 @@ impl CancelIngestionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -195,7 +198,11 @@ impl CancelIngestionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -217,7 +224,7 @@ pub mod create_account_customization_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account; that you want to customize QuickSight for.</p>
+        /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -229,7 +236,7 @@ pub mod create_account_customization_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The QuickSight namespace that you want to add customizations to.</p>
+        /// <p>The Amazon QuickSight namespace that you want to add customizations to.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
@@ -238,8 +245,8 @@ pub mod create_account_customization_input {
             self.namespace = input;
             self
         }
-        /// <p>The QuickSight customizations you're adding in the current Amazon Web Services Region;. You can add
-        /// these to an Amazon Web Services account; and a QuickSight namespace. </p>
+        /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region;. You can add
+        /// these to an Amazon Web Services account and a Amazon QuickSight namespace. </p>
         /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code>
         /// to the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
         /// "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by
@@ -308,10 +315,8 @@ impl CreateAccountCustomizationInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_account_customization(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_account_customization(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -398,8 +403,11 @@ impl CreateAccountCustomizationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -407,7 +415,11 @@ impl CreateAccountCustomizationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -434,7 +446,7 @@ pub mod create_analysis_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; where you are creating an analysis.</p>
+        /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -457,7 +469,7 @@ pub mod create_analysis_input {
             self
         }
         /// <p>A descriptive name for the analysis that you're creating. This name displays for the
-        /// analysis in the QuickSight console. </p>
+        /// analysis in the Amazon QuickSight console. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -506,7 +518,7 @@ pub mod create_analysis_input {
             self
         }
         /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme
-        /// in the QuickSight console, make sure that you have access to it.</p>
+        /// in the Amazon QuickSight console, make sure that you have access to it.</p>
         pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.theme_arn = Some(input.into());
             self
@@ -568,9 +580,11 @@ impl CreateAnalysisInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_analysis(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_analysis(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -665,8 +679,11 @@ impl CreateAnalysisInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -674,7 +691,11 @@ impl CreateAnalysisInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -704,7 +725,7 @@ pub mod create_dashboard_input {
         pub(crate) theme_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; where you want to create the dashboard.</p>
+        /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -716,7 +737,7 @@ pub mod create_dashboard_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the dashboard, also added to the IAM policy.</p>
+        /// <p>The ID for the dashboard, also added to the IAMpolicy.</p>
         pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.dashboard_id = Some(input.into());
             self
@@ -767,8 +788,8 @@ pub mod create_dashboard_input {
         /// entity. If you need to create a dashboard from an analysis, first convert the analysis
         /// to a template by using the <a>CreateTemplate</a> API operation. For
         /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
-        /// template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account; and any
-        /// QuickSight-supported Amazon Web Services Region;. </p>
+        /// template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any
+        /// Amazon QuickSight-supported Amazon Web Services Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
         /// list the replacement datasets for the placeholders listed in the original. The schema in
         /// each dataset must match its placeholder. </p>
@@ -814,7 +835,7 @@ pub mod create_dashboard_input {
         /// <p>
         /// <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
         /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-        /// set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
+        /// set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the
         /// published dashboard, which can be used for ad hoc (one-time) filtering. This
         /// option is <code>ENABLED</code> by default. </p>
         /// </li>
@@ -848,7 +869,7 @@ pub mod create_dashboard_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
         /// you add a value for this field, it overrides the value that is used in the source
-        /// entity. The theme ARN must exist in the same Amazon Web Services account; where you create the
+        /// entity. The theme ARN must exist in the same Amazon Web Services account where you create the
         /// dashboard.</p>
         pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.theme_arn = Some(input.into());
@@ -900,9 +921,11 @@ impl CreateDashboardInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_dashboard(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_dashboard(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -997,8 +1020,11 @@ impl CreateDashboardInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1006,7 +1032,11 @@ impl CreateDashboardInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1045,9 +1075,11 @@ pub mod create_data_set_input {
         pub(crate) column_level_permission_rules:
             std::option::Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) data_set_usage_configuration:
+            std::option::Option<crate::model::DataSetUsageConfiguration>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -1059,7 +1091,7 @@ pub mod create_data_set_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>An ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>An ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -1231,6 +1263,21 @@ pub mod create_data_set_input {
             self.tags = input;
             self
         }
+        /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
+        pub fn data_set_usage_configuration(
+            mut self,
+            input: crate::model::DataSetUsageConfiguration,
+        ) -> Self {
+            self.data_set_usage_configuration = Some(input);
+            self
+        }
+        pub fn set_data_set_usage_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DataSetUsageConfiguration>,
+        ) -> Self {
+            self.data_set_usage_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDataSetInput`](crate::input::CreateDataSetInput)
         pub fn build(
             self,
@@ -1250,6 +1297,7 @@ pub mod create_data_set_input {
                 row_level_permission_tag_configuration: self.row_level_permission_tag_configuration,
                 column_level_permission_rules: self.column_level_permission_rules,
                 tags: self.tags,
+                data_set_usage_configuration: self.data_set_usage_configuration,
             })
         }
     }
@@ -1274,9 +1322,11 @@ impl CreateDataSetInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_data_set(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_data_set(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1357,8 +1407,11 @@ impl CreateDataSetInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1366,7 +1419,11 @@ impl CreateDataSetInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1396,7 +1453,7 @@ pub mod create_data_source_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -1408,7 +1465,7 @@ pub mod create_data_source_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;. </p>
+        /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account. </p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -1429,13 +1486,9 @@ pub mod create_data_source_input {
             self.name = input;
             self
         }
-        /// <p>The type of the data source. Currently, the supported types for this operation are:
-        /// <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3,
-        /// SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>.
-        /// Use <code>ListDataSources</code> to return a
-        /// list of all data sources.</p>
-        /// <p>
-        /// <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed Elasticsearch Service.</p>
+        /// <p>The type of the data source. To return a
+        /// list of all data sources, use <code>ListDataSources</code>.</p>
+        /// <p>Use <code>AMAZON_ELASTICSEARCH</code> for Amazon Elasticsearch Service.</p>
         pub fn r#type(mut self, input: crate::model::DataSourceType) -> Self {
             self.r#type = Some(input);
             self
@@ -1447,7 +1500,7 @@ pub mod create_data_source_input {
             self.r#type = input;
             self
         }
-        /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+        /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
         pub fn data_source_parameters(mut self, input: crate::model::DataSourceParameters) -> Self {
             self.data_source_parameters = Some(input);
             self
@@ -1459,7 +1512,7 @@ pub mod create_data_source_input {
             self.data_source_parameters = input;
             self
         }
-        /// <p>The credentials QuickSight that uses to connect to your underlying source. Currently, only
+        /// <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only
         /// credentials based on user name and password are supported.</p>
         pub fn credentials(mut self, input: crate::model::DataSourceCredentials) -> Self {
             self.credentials = Some(input);
@@ -1485,7 +1538,7 @@ pub mod create_data_source_input {
             self.permissions = input;
             self
         }
-        /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to
+        /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to
         /// your underlying source.</p>
         pub fn vpc_connection_properties(
             mut self,
@@ -1501,7 +1554,7 @@ pub mod create_data_source_input {
             self.vpc_connection_properties = input;
             self
         }
-        /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.</p>
+        /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
         pub fn ssl_properties(mut self, input: crate::model::SslProperties) -> Self {
             self.ssl_properties = Some(input);
             self
@@ -1568,10 +1621,11 @@ impl CreateDataSourceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_data_source(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_data_source(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1652,8 +1706,11 @@ impl CreateDataSourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1661,7 +1718,11 @@ impl CreateDataSourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1807,9 +1868,10 @@ impl CreateFolderInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_folder(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_folder(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1906,8 +1968,11 @@ impl CreateFolderInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1915,7 +1980,11 @@ impl CreateFolderInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2144,8 +2213,11 @@ impl CreateFolderMembershipInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2153,7 +2225,11 @@ impl CreateFolderMembershipInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2193,8 +2269,8 @@ pub mod create_group_input {
             self.description = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -2250,9 +2326,10 @@ impl CreateGroupInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_group(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_group(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2349,8 +2426,11 @@ impl CreateGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2358,7 +2438,11 @@ impl CreateGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2398,8 +2482,8 @@ pub mod create_group_membership_input {
             self.group_name = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -2577,8 +2661,11 @@ impl CreateGroupMembershipInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2586,7 +2673,11 @@ impl CreateGroupMembershipInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2612,7 +2703,7 @@ pub mod create_iam_policy_assignment_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; where you want to assign an IAM policy to QuickSight users or
+        /// <p>The ID of the Amazon Web Services account where you want to assign an IAMpolicy to Amazon QuickSight users or
         /// groups.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -2625,7 +2716,7 @@ pub mod create_iam_policy_assignment_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account;.</p>
+        /// <p>The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account.</p>
         pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.assignment_name = Some(input.into());
             self
@@ -2665,7 +2756,7 @@ pub mod create_iam_policy_assignment_input {
             self.assignment_status = input;
             self
         }
-        /// <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+        /// <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
         /// specified in this assignment.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
@@ -2743,10 +2834,8 @@ impl CreateIamPolicyAssignmentInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_iam_policy_assignment(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_iam_policy_assignment(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2843,8 +2932,11 @@ impl CreateIamPolicyAssignmentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2852,7 +2944,11 @@ impl CreateIamPolicyAssignmentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2891,7 +2987,7 @@ pub mod create_ingestion_input {
             self.ingestion_id = input;
             self
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -3051,8 +3147,11 @@ impl CreateIngestionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3060,7 +3159,11 @@ impl CreateIngestionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3082,7 +3185,7 @@ pub mod create_namespace_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account; that you want to create the QuickSight namespace in.</p>
+        /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -3165,9 +3268,11 @@ impl CreateNamespaceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_namespace(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_namespace(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3248,8 +3353,11 @@ impl CreateNamespaceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3257,7 +3365,11 @@ impl CreateNamespaceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3283,8 +3395,7 @@ pub mod create_template_input {
         pub(crate) version_description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -3297,7 +3408,7 @@ pub mod create_template_input {
             self
         }
         /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in
-        /// each Amazon Web Services account;.</p>
+        /// each Amazon Web Services account.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_id = Some(input.into());
             self
@@ -3334,7 +3445,7 @@ pub mod create_template_input {
         /// analysis. Both of these require an Amazon Resource Name (ARN). For
         /// <code>SourceTemplate</code>, specify the ARN of the source template. For
         /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-        /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Amazon Web Services Region;. </p>
+        /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
         /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
         /// in the original. The schema in each dataset must match its placeholder. </p>
@@ -3416,9 +3527,11 @@ impl CreateTemplateInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_template(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_template(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3515,8 +3628,11 @@ impl CreateTemplateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3524,7 +3640,11 @@ impl CreateTemplateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3546,7 +3666,7 @@ pub mod create_template_alias_input {
         pub(crate) template_version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the template that you creating an alias for.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the template that you creating an alias for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -3623,7 +3743,10 @@ impl CreateTemplateAliasInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_template_alias(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_template_alias(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3739,8 +3862,11 @@ impl CreateTemplateAliasInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3748,7 +3874,11 @@ impl CreateTemplateAliasInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3775,7 +3905,7 @@ pub mod create_theme_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; where you want to store the new theme. </p>
+        /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -3787,8 +3917,8 @@ pub mod create_theme_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region; in
-        /// each Amazon Web Services account;.</p>
+        /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in
+        /// each Amazon Web Services account.</p>
         pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.theme_id = Some(input.into());
             self
@@ -3809,7 +3939,7 @@ pub mod create_theme_input {
         /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of
         /// the starting themes defined by Amazon QuickSight. For a list of the starting themes, use
         /// <code>ListThemes</code> or choose <b>Themes</b> from
-        /// within a QuickSight analysis. </p>
+        /// within a Amazon QuickSight analysis. </p>
         pub fn base_theme_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.base_theme_id = Some(input.into());
             self
@@ -3913,9 +4043,10 @@ impl CreateThemeInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_theme(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_theme(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4012,8 +4143,11 @@ impl CreateThemeInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4021,7 +4155,11 @@ impl CreateThemeInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4043,7 +4181,7 @@ pub mod create_theme_alias_input {
         pub(crate) theme_version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the theme for the new theme alias.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme for the new theme alias.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -4120,10 +4258,11 @@ impl CreateThemeAliasInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_create_theme_alias(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_theme_alias(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4236,8 +4375,11 @@ impl CreateThemeAliasInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4245,7 +4387,11 @@ impl CreateThemeAliasInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4265,7 +4411,7 @@ pub mod delete_account_customization_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account; that you want to delete QuickSight customizations from in
+        /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in
         /// this Amazon Web Services Region;.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -4278,7 +4424,7 @@ pub mod delete_account_customization_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The QuickSight namespace that you're deleting the customizations from.</p>
+        /// <p>The Amazon QuickSight namespace that you're deleting the customizations from.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
@@ -4410,8 +4556,11 @@ impl DeleteAccountCustomizationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4419,7 +4568,11 @@ impl DeleteAccountCustomizationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4441,7 +4594,7 @@ pub mod delete_analysis_input {
         pub(crate) force_delete_without_recovery: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; where you want to delete an analysis.</p>
+        /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -4462,7 +4615,7 @@ pub mod delete_analysis_input {
             self.analysis_id = input;
             self
         }
-        /// <p>A value that specifies the number of days that QuickSight waits before it deletes the
+        /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the
         /// analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code>
         /// option in the same API call. The default value is 30.</p>
         pub fn recovery_window_in_days(mut self, input: i64) -> Self {
@@ -4639,8 +4792,11 @@ impl DeleteAnalysisInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4648,7 +4804,11 @@ impl DeleteAnalysisInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4669,7 +4829,7 @@ pub mod delete_dashboard_input {
         pub(crate) version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
         /// deleting.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -4843,8 +5003,11 @@ impl DeleteDashboardInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4852,7 +5015,11 @@ impl DeleteDashboardInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4872,7 +5039,7 @@ pub mod delete_data_set_input {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -4884,7 +5051,7 @@ pub mod delete_data_set_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -5022,8 +5189,11 @@ impl DeleteDataSetInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5031,7 +5201,11 @@ impl DeleteDataSetInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5051,7 +5225,7 @@ pub mod delete_data_source_input {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -5063,7 +5237,7 @@ pub mod delete_data_source_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -5206,8 +5380,11 @@ impl DeleteDataSourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5215,7 +5392,11 @@ impl DeleteDataSourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5385,8 +5566,11 @@ impl DeleteFolderInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5394,7 +5578,11 @@ impl DeleteFolderInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5624,8 +5812,11 @@ impl DeleteFolderMembershipInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5633,7 +5824,11 @@ impl DeleteFolderMembershipInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5663,8 +5858,8 @@ pub mod delete_group_input {
             self.group_name = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -5831,8 +6026,11 @@ impl DeleteGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5840,7 +6038,11 @@ impl DeleteGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -5880,8 +6082,8 @@ pub mod delete_group_membership_input {
             self.group_name = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -6059,8 +6261,11 @@ impl DeleteGroupMembershipInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6068,7 +6273,11 @@ impl DeleteGroupMembershipInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6089,7 +6298,7 @@ pub mod delete_iam_policy_assignment_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account; ID where you want to delete the IAM policy assignment.</p>
+        /// <p>The Amazon Web Services account ID where you want to delete the IAMpolicy assignment.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -6264,8 +6473,11 @@ impl DeleteIamPolicyAssignmentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6273,7 +6485,11 @@ impl DeleteIamPolicyAssignmentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6293,7 +6509,7 @@ pub mod delete_namespace_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account; that you want to delete the QuickSight namespace from.</p>
+        /// <p>The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -6445,8 +6661,11 @@ impl DeleteNamespaceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6454,7 +6673,11 @@ impl DeleteNamespaceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6475,7 +6698,7 @@ pub mod delete_template_input {
         pub(crate) version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the template that you're deleting.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the template that you're deleting.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -6649,8 +6872,11 @@ impl DeleteTemplateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6658,7 +6884,11 @@ impl DeleteTemplateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6679,7 +6909,7 @@ pub mod delete_template_alias_input {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the item to delete.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the item to delete.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -6860,8 +7090,11 @@ impl DeleteTemplateAliasInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6869,7 +7102,11 @@ impl DeleteTemplateAliasInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -6890,7 +7127,7 @@ pub mod delete_theme_input {
         pub(crate) version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the theme that you're deleting.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme that you're deleting.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -7063,8 +7300,11 @@ impl DeleteThemeInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7072,7 +7312,11 @@ impl DeleteThemeInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7093,7 +7337,7 @@ pub mod delete_theme_alias_input {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the theme alias to delete.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme alias to delete.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -7271,8 +7515,11 @@ impl DeleteThemeAliasInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7280,7 +7527,11 @@ impl DeleteThemeAliasInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7310,8 +7561,8 @@ pub mod delete_user_input {
             self.user_name = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -7478,8 +7729,11 @@ impl DeleteUserInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7487,7 +7741,11 @@ impl DeleteUserInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7517,8 +7775,8 @@ pub mod delete_user_by_principal_id_input {
             self.principal_id = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -7688,8 +7946,11 @@ impl DeleteUserByPrincipalIdInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7697,7 +7958,11 @@ impl DeleteUserByPrincipalIdInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7718,7 +7983,7 @@ pub mod describe_account_customization_input {
         pub(crate) resolved: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account; that you want to describe QuickSight customizations
+        /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations
         /// for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -7731,7 +7996,7 @@ pub mod describe_account_customization_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The QuickSight namespace that you want to describe QuickSight customizations
+        /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations
         /// for.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
@@ -7742,8 +8007,8 @@ pub mod describe_account_customization_input {
             self
         }
         /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view
-        /// of QuickSight customizations is returned. You can add this flag to your command to use
-        /// the same view that QuickSight uses to identify which customizations to apply to the
+        /// of Amazon QuickSight customizations is returned. You can add this flag to your command to use
+        /// the same view that Amazon QuickSight uses to identify which customizations to apply to the
         /// console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations
         /// that are configured at different levels. </p>
         pub fn resolved(mut self, input: bool) -> Self {
@@ -7884,8 +8149,11 @@ impl DescribeAccountCustomizationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7893,7 +8161,11 @@ impl DescribeAccountCustomizationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -7912,7 +8184,7 @@ pub mod describe_account_settings_input {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account; that contains the settings that you want to list.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -8039,8 +8311,11 @@ impl DescribeAccountSettingsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8048,7 +8323,11 @@ impl DescribeAccountSettingsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8068,8 +8347,8 @@ pub mod describe_analysis_input {
         pub(crate) analysis_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the analysis. You must be using the
-        /// Amazon Web Services account; that the analysis is in.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the
+        /// Amazon Web Services account that the analysis is in.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -8222,8 +8501,11 @@ impl DescribeAnalysisInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8231,7 +8513,11 @@ impl DescribeAnalysisInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8251,8 +8537,8 @@ pub mod describe_analysis_permissions_input {
         pub(crate) analysis_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the analysis whose permissions you're
-        /// describing. You must be using the Amazon Web Services account; that the analysis is in.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
+        /// describing. You must be using the Amazon Web Services account that the analysis is in.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -8406,8 +8692,11 @@ impl DescribeAnalysisPermissionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8415,7 +8704,11 @@ impl DescribeAnalysisPermissionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8437,7 +8730,7 @@ pub mod describe_dashboard_input {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
         /// describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -8624,8 +8917,11 @@ impl DescribeDashboardInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8633,7 +8929,11 @@ impl DescribeDashboardInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8653,7 +8953,7 @@ pub mod describe_dashboard_permissions_input {
         pub(crate) dashboard_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're describing
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing
         /// permissions for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -8666,7 +8966,7 @@ pub mod describe_dashboard_permissions_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the dashboard, also added to the IAM policy.</p>
+        /// <p>The ID for the dashboard, also added to the IAMpolicy.</p>
         pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.dashboard_id = Some(input.into());
             self
@@ -8807,8 +9107,11 @@ impl DescribeDashboardPermissionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8816,7 +9119,11 @@ impl DescribeDashboardPermissionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -8836,7 +9143,7 @@ pub mod describe_data_set_input {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -8848,7 +9155,7 @@ pub mod describe_data_set_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -8988,8 +9295,11 @@ impl DescribeDataSetInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8997,7 +9307,11 @@ impl DescribeDataSetInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9017,7 +9331,7 @@ pub mod describe_data_set_permissions_input {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -9029,7 +9343,7 @@ pub mod describe_data_set_permissions_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -9170,8 +9484,11 @@ impl DescribeDataSetPermissionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9179,7 +9496,11 @@ impl DescribeDataSetPermissionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9199,7 +9520,7 @@ pub mod describe_data_source_input {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -9211,7 +9532,7 @@ pub mod describe_data_source_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -9354,8 +9675,11 @@ impl DescribeDataSourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9363,7 +9687,11 @@ impl DescribeDataSourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9383,7 +9711,7 @@ pub mod describe_data_source_permissions_input {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -9395,7 +9723,7 @@ pub mod describe_data_source_permissions_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -9539,8 +9867,11 @@ impl DescribeDataSourcePermissionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9548,7 +9879,11 @@ impl DescribeDataSourcePermissionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9720,8 +10055,11 @@ impl DescribeFolderInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9729,7 +10067,11 @@ impl DescribeFolderInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -9902,8 +10244,11 @@ impl DescribeFolderPermissionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9911,7 +10256,11 @@ impl DescribeFolderPermissionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10084,8 +10433,11 @@ impl DescribeFolderResolvedPermissionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10093,7 +10445,11 @@ impl DescribeFolderResolvedPermissionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10123,8 +10479,8 @@ pub mod describe_group_input {
             self.group_name = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -10291,8 +10647,11 @@ impl DescribeGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10300,7 +10659,11 @@ impl DescribeGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10321,7 +10684,7 @@ pub mod describe_iam_policy_assignment_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the assignment that you want to describe.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the assignment that you want to describe.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -10496,8 +10859,11 @@ impl DescribeIamPolicyAssignmentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10505,7 +10871,11 @@ impl DescribeIamPolicyAssignmentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10526,7 +10896,7 @@ pub mod describe_ingestion_input {
         pub(crate) ingestion_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -10704,8 +11074,11 @@ impl DescribeIngestionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10713,7 +11086,11 @@ impl DescribeIngestionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10733,7 +11110,7 @@ pub mod describe_namespace_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account; that contains the QuickSight namespace that you want to describe.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespace that you want to describe.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -10885,8 +11262,11 @@ impl DescribeNamespaceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10894,7 +11274,11 @@ impl DescribeNamespaceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -10916,7 +11300,7 @@ pub mod describe_template_input {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the template that you're describing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -11105,8 +11489,11 @@ impl DescribeTemplateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -11114,7 +11501,11 @@ impl DescribeTemplateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11135,7 +11526,7 @@ pub mod describe_template_alias_input {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the template alias that you're
+        /// <p>The ID of the Amazon Web Services account that contains the template alias that you're
         /// describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -11317,8 +11708,11 @@ impl DescribeTemplateAliasInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -11326,7 +11720,11 @@ impl DescribeTemplateAliasInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11346,7 +11744,7 @@ pub mod describe_template_permissions_input {
         pub(crate) template_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the template that you're describing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -11499,8 +11897,11 @@ impl DescribeTemplatePermissionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -11508,7 +11909,11 @@ impl DescribeTemplatePermissionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11530,7 +11935,7 @@ pub mod describe_theme_input {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the theme that you're describing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -11717,8 +12122,11 @@ impl DescribeThemeInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -11726,7 +12134,11 @@ impl DescribeThemeInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11747,7 +12159,7 @@ pub mod describe_theme_alias_input {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the theme alias that you're
+        /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're
         /// describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -11926,8 +12338,11 @@ impl DescribeThemeAliasInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -11935,7 +12350,11 @@ impl DescribeThemeAliasInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -11955,7 +12374,7 @@ pub mod describe_theme_permissions_input {
         pub(crate) theme_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the theme that you're describing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -12108,8 +12527,11 @@ impl DescribeThemePermissionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -12117,7 +12539,11 @@ impl DescribeThemePermissionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12147,8 +12573,8 @@ pub mod describe_user_input {
             self.user_name = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -12315,8 +12741,11 @@ impl DescribeUserInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -12324,7 +12753,11 @@ impl DescribeUserInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12461,12 +12894,8 @@ impl GenerateEmbedUrlForAnonymousUserInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_generate_embed_url_for_anonymous_user(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_generate_embed_url_for_anonymous_user(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -12547,8 +12976,11 @@ impl GenerateEmbedUrlForAnonymousUserInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -12556,7 +12988,11 @@ impl GenerateEmbedUrlForAnonymousUserInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12664,12 +13100,8 @@ impl GenerateEmbedUrlForRegisteredUserInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_generate_embed_url_for_registered_user(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_generate_embed_url_for_registered_user(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -12750,8 +13182,11 @@ impl GenerateEmbedUrlForRegisteredUserInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -12759,7 +13194,11 @@ impl GenerateEmbedUrlForRegisteredUserInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -12788,7 +13227,7 @@ pub mod get_dashboard_embed_url_input {
             std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account; that contains the dashboard that you're embedding.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -12853,9 +13292,9 @@ pub mod get_dashboard_embed_url_input {
         }
         /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence
         /// applies to the sheet and the parameter settings. These are control settings that the
-        /// dashboard subscriber (QuickSight reader) chooses while viewing the dashboard. If this is
+        /// dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is
         /// set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same
-        /// dashboard URL. The state is stored in QuickSight, not in a browser cookie. If this is
+        /// dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is
         /// set to FALSE, the state of the user session is not persisted. The default is
         /// <code>FALSE</code>.</p>
         pub fn state_persistence_enabled(mut self, input: bool) -> Self {
@@ -12877,11 +13316,11 @@ pub mod get_dashboard_embed_url_input {
         /// <p>Invited nonfederated users</p>
         /// </li>
         /// <li>
-        /// <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using
-        /// SAML, OpenID Connect, or IAM federation.</p>
+        /// <p>IAMusers and IAMrole-based sessions authenticated through Federated Single Sign-On using
+        /// SAML, OpenID Connect, or IAMfederation.</p>
         /// </li>
         /// </ul>
-        /// <p>Omit this parameter for users in the third group – IAM users and IAM
+        /// <p>Omit this parameter for users in the third group – IAMusers and IAM
         /// role-based sessions.</p>
         pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_arn = Some(input.into());
@@ -12891,7 +13330,8 @@ pub mod get_dashboard_embed_url_input {
             self.user_arn = input;
             self
         }
-        /// <p>The Amazon QuickSight namespace that the user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
+        /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request.
+        /// If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
@@ -13097,8 +13537,11 @@ impl GetDashboardEmbedUrlInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -13106,7 +13549,11 @@ impl GetDashboardEmbedUrlInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13128,7 +13575,7 @@ pub mod get_session_embed_url_input {
         pub(crate) user_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account; associated with your QuickSight subscription.</p>
+        /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -13166,12 +13613,12 @@ pub mod get_session_embed_url_input {
         /// <li>
         /// <p>
         /// <code>/dashboards/<i>DashboardId</i>
-        /// </code> - where <code>DashboardId</code> is the actual ID key from the QuickSight console URL of the dashboard</p>
+        /// </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>/analyses/<i>AnalysisId</i>
-        /// </code> - where <code>AnalysisId</code> is the actual ID key from the QuickSight console URL of the analysis</p>
+        /// </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p>
         /// </li>
         /// </ul>
         pub fn entry_point(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13350,8 +13797,11 @@ impl GetSessionEmbedUrlInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -13359,7 +13809,11 @@ impl GetSessionEmbedUrlInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13380,7 +13834,7 @@ pub mod list_analyses_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the analyses.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analyses.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -13537,8 +13991,11 @@ impl ListAnalysesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -13546,7 +14003,11 @@ impl ListAnalysesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13567,7 +14028,7 @@ pub mod list_dashboards_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the dashboards that you're
+        /// <p>The ID of the Amazon Web Services account that contains the dashboards that you're
         /// listing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -13727,8 +14188,11 @@ impl ListDashboardsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -13736,7 +14200,11 @@ impl ListDashboardsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13758,7 +14226,7 @@ pub mod list_dashboard_versions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're listing versions
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions
         /// for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -13944,8 +14412,11 @@ impl ListDashboardVersionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -13953,7 +14424,11 @@ impl ListDashboardVersionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -13974,7 +14449,7 @@ pub mod list_data_sets_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -14131,8 +14606,11 @@ impl ListDataSetsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14140,7 +14618,11 @@ impl ListDataSetsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14161,7 +14643,7 @@ pub mod list_data_sources_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -14320,8 +14802,11 @@ impl ListDataSourcesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14329,7 +14814,11 @@ impl ListDataSourcesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14536,8 +15025,11 @@ impl ListFolderMembersInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14545,7 +15037,11 @@ impl ListFolderMembersInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14723,8 +15219,11 @@ impl ListFoldersInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14732,7 +15231,11 @@ impl ListFoldersInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14782,8 +15285,8 @@ pub mod list_group_memberships_input {
             self.max_results = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -14967,8 +15470,11 @@ impl ListGroupMembershipsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14976,7 +15482,11 @@ impl ListGroupMembershipsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -14998,8 +15508,8 @@ pub mod list_groups_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -15182,8 +15692,11 @@ impl ListGroupsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -15191,7 +15704,11 @@ impl ListGroupsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -15214,7 +15731,7 @@ pub mod list_iam_policy_assignments_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains these IAM policy assignments.</p>
+        /// <p>The ID of the Amazon Web Services account that contains these IAMpolicy assignments.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -15303,10 +15820,9 @@ impl ListIamPolicyAssignmentsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_iam_policy_assignments(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_iam_policy_assignments(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -15416,8 +15932,11 @@ impl ListIamPolicyAssignmentsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -15425,7 +15944,11 @@ impl ListIamPolicyAssignmentsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -15448,7 +15971,7 @@ pub mod list_iam_policy_assignments_for_user_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the assignments.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the assignments.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -15653,8 +16176,11 @@ impl ListIamPolicyAssignmentsForUserInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -15662,7 +16188,11 @@ impl ListIamPolicyAssignmentsForUserInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -15702,7 +16232,7 @@ pub mod list_ingestions_input {
             self.next_token = input;
             self
         }
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -15869,8 +16399,11 @@ impl ListIngestionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -15878,7 +16411,11 @@ impl ListIngestionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -15899,7 +16436,7 @@ pub mod list_namespaces_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account; that contains the QuickSight namespaces that you want to list.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespaces that you want to list.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -16058,8 +16595,11 @@ impl ListNamespacesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -16067,7 +16607,11 @@ impl ListNamespacesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -16209,8 +16753,11 @@ impl ListTagsForResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -16218,7 +16765,11 @@ impl ListTagsForResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -16240,7 +16791,7 @@ pub mod list_template_aliases_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the template aliases that you're listing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the template aliases that you're listing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -16425,8 +16976,11 @@ impl ListTemplateAliasesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -16434,7 +16988,11 @@ impl ListTemplateAliasesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -16455,7 +17013,7 @@ pub mod list_templates_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the templates that you're listing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -16612,8 +17170,11 @@ impl ListTemplatesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -16621,7 +17182,11 @@ impl ListTemplatesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -16643,7 +17208,7 @@ pub mod list_template_versions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the templates that you're listing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -16828,8 +17393,11 @@ impl ListTemplateVersionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -16837,7 +17405,11 @@ impl ListTemplateVersionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -16859,7 +17431,7 @@ pub mod list_theme_aliases_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the theme aliases that you're listing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme aliases that you're listing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -17044,8 +17616,11 @@ impl ListThemeAliasesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17053,7 +17628,11 @@ impl ListThemeAliasesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17075,7 +17654,7 @@ pub mod list_themes_input {
         pub(crate) r#type: std::option::Option<crate::model::ThemeType>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the themes that you're listing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -17259,8 +17838,11 @@ impl ListThemesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17268,7 +17850,11 @@ impl ListThemesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17290,7 +17876,7 @@ pub mod list_theme_versions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the themes that you're listing.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -17475,8 +18061,11 @@ impl ListThemeVersionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17484,7 +18073,11 @@ impl ListThemeVersionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17516,7 +18109,7 @@ pub mod list_user_groups_input {
             self.user_name = input;
             self
         }
-        /// <p>The Amazon Web Services account; ID that the user is in. Currently, you use the ID for the Amazon Web Services account;
+        /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account
         /// that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -17719,8 +18312,11 @@ impl ListUserGroupsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17728,7 +18324,11 @@ impl ListUserGroupsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17750,8 +18350,8 @@ pub mod list_users_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -17932,8 +18532,11 @@ impl ListUsersInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17941,7 +18544,11 @@ impl ListUsersInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -17977,7 +18584,7 @@ pub mod register_user_input {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
+        /// <code>IAM</code>: A user whose identity maps to an existing IAMuser or role.
         /// </p>
         /// </li>
         /// <li>
@@ -18042,7 +18649,7 @@ pub mod register_user_input {
             self.user_role = input;
             self
         }
-        /// <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight. </p>
+        /// <p>The ARN of the IAMuser or role that you are registering with Amazon QuickSight. </p>
         pub fn iam_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_arn = Some(input.into());
             self
@@ -18052,10 +18659,10 @@ pub mod register_user_input {
             self
         }
         /// <p>You need to use this parameter only when you register one or more users using an assumed
-        /// IAM role. You don't need to provide the session name for other scenarios, for example when
-        /// you are registering an IAM user or an Amazon QuickSight user. You can register multiple
-        /// users using the same IAM role if each user has a different session name. For more
-        /// information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
+        /// IAMrole. You don't need to provide the session name for other scenarios, for example when
+        /// you are registering an IAMuser or an Amazon QuickSight user. You can register multiple
+        /// users using the same IAMrole if each user has a different session name. For more
+        /// information on assuming IAMroles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
         /// <code>assume-role</code>
         /// </a> in the <i>AWS CLI Reference.</i>
         /// </p>
@@ -18067,8 +18674,8 @@ pub mod register_user_input {
             self.session_name = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -18120,13 +18727,13 @@ pub mod register_user_input {
         /// <a>UpdateUser</a>
         /// </code> instead.</p>
         /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
-        /// you need to create the profile names for custom permission sets by using the QuickSight
+        /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
         /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
-        /// permissions to a QuickSight user. </p>
-        /// <p>QuickSight custom permissions are applied through IAM policies. Therefore, they
-        /// override the permissions typically granted by assigning QuickSight users to one of the
-        /// default security cohorts in QuickSight (admin, author, reader).</p>
-        /// <p>This feature is available only to QuickSight Enterprise edition subscriptions.</p>
+        /// permissions to a Amazon QuickSight user. </p>
+        /// <p>Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they
+        /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
+        /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+        /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
         pub fn custom_permissions_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_permissions_name = Some(input.into());
             self
@@ -18138,7 +18745,7 @@ pub mod register_user_input {
             self.custom_permissions_name = input;
             self
         }
-        /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated AWS Identity and Access Management (IAM) role. The type of supported external login provider can be one of the following.</p>
+        /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -18164,7 +18771,7 @@ pub mod register_user_input {
             self
         }
         /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate
-        /// into QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should
+        /// into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should
         /// only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
         pub fn custom_federation_provider_url(
             mut self,
@@ -18236,9 +18843,10 @@ impl RegisterUserInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_register_user(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_register_user(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -18335,8 +18943,11 @@ impl RegisterUserInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -18344,7 +18955,11 @@ impl RegisterUserInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -18364,7 +18979,7 @@ pub mod restore_analysis_input {
         pub(crate) analysis_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the analysis.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analysis.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -18516,8 +19131,11 @@ impl RestoreAnalysisInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -18525,7 +19143,11 @@ impl RestoreAnalysisInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -18547,7 +19169,7 @@ pub mod search_analyses_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the analyses that you're searching
+        /// <p>The ID of the Amazon Web Services account that contains the analyses that you're searching
         /// for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -18627,9 +19249,11 @@ impl SearchAnalysesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_search_analyses(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_search_analyses(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -18710,8 +19334,11 @@ impl SearchAnalysesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -18719,7 +19346,11 @@ impl SearchAnalysesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -18741,7 +19372,7 @@ pub mod search_dashboards_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the user whose dashboards you're searching
+        /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching
         /// for. </p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -18821,9 +19452,11 @@ impl SearchDashboardsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_search_dashboards(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_search_dashboards(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -18904,8 +19537,11 @@ impl SearchDashboardsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -18913,7 +19549,11 @@ impl SearchDashboardsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -19013,9 +19653,10 @@ impl SearchFoldersInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_search_folders(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_search_folders(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -19096,8 +19737,11 @@ impl SearchFoldersInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -19105,7 +19749,11 @@ impl SearchFoldersInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -19180,9 +19828,10 @@ impl TagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_tag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -19263,8 +19912,11 @@ impl TagResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -19272,7 +19924,11 @@ impl TagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -19436,8 +20092,11 @@ impl UntagResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -19445,7 +20104,11 @@ impl UntagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -19466,7 +20129,7 @@ pub mod update_account_customization_input {
         pub(crate) account_customization: std::option::Option<crate::model::AccountCustomization>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account; that you want to update QuickSight customizations
+        /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations
         /// for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -19479,7 +20142,7 @@ pub mod update_account_customization_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The namespace that you want to update QuickSight customizations for.</p>
+        /// <p>The namespace that you want to update Amazon QuickSight customizations for.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
@@ -19488,7 +20151,7 @@ pub mod update_account_customization_input {
             self.namespace = input;
             self
         }
-        /// <p>The QuickSight customizations you're updating in the current Amazon Web Services Region;. </p>
+        /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region;. </p>
         pub fn account_customization(mut self, input: crate::model::AccountCustomization) -> Self {
             self.account_customization = Some(input);
             self
@@ -19537,10 +20200,8 @@ impl UpdateAccountCustomizationInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_account_customization(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_account_customization(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -19628,8 +20289,11 @@ impl UpdateAccountCustomizationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -19637,7 +20301,11 @@ impl UpdateAccountCustomizationInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -19658,7 +20326,7 @@ pub mod update_account_settings_input {
         pub(crate) notification_email: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the Amazon Web Services account; that contains the QuickSight settings that you want to
+        /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to
         /// list.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -19671,9 +20339,9 @@ pub mod update_account_settings_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The default namespace for this Amazon Web Services account;. Currently, the default is
+        /// <p>The default namespace for this Amazon Web Services account. Currently, the default is
         /// <code>default</code>. Identity and Access Management (IAM) users that register
-        /// for the first time with QuickSight provide an email that becomes associated with the
+        /// for the first time with Amazon QuickSight provide an email that becomes associated with the
         /// default namespace.</p>
         pub fn default_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_namespace = Some(input.into());
@@ -19686,8 +20354,8 @@ pub mod update_account_settings_input {
             self.default_namespace = input;
             self
         }
-        /// <p>The email address that you want QuickSight to send notifications to regarding your
-        /// Amazon Web Services account; or QuickSight subscription.</p>
+        /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your
+        /// Amazon Web Services account or Amazon QuickSight subscription.</p>
         pub fn notification_email(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_email = Some(input.into());
             self
@@ -19734,7 +20402,10 @@ impl UpdateAccountSettingsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_account_settings(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_account_settings(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -19818,8 +20489,11 @@ impl UpdateAccountSettingsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -19827,7 +20501,11 @@ impl UpdateAccountSettingsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -19851,7 +20529,7 @@ pub mod update_analysis_input {
         pub(crate) theme_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the analysis that you're updating.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -19874,7 +20552,7 @@ pub mod update_analysis_input {
             self
         }
         /// <p>A descriptive name for the analysis that you're updating. This name displays for the
-        /// analysis in the QuickSight console.</p>
+        /// analysis in the Amazon QuickSight console.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -19910,7 +20588,7 @@ pub mod update_analysis_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're
-        /// creating. To see the theme in the QuickSight console, make sure that you have access to
+        /// creating. To see the theme in the Amazon QuickSight console, make sure that you have access to
         /// it.</p>
         pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.theme_arn = Some(input.into());
@@ -19958,9 +20636,11 @@ impl UpdateAnalysisInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_analysis(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_analysis(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -20057,8 +20737,11 @@ impl UpdateAnalysisInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -20066,7 +20749,11 @@ impl UpdateAnalysisInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -20090,8 +20777,8 @@ pub mod update_analysis_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the analysis whose permissions you're
-        /// updating. You must be using the Amazon Web Services account; that the analysis is in.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
+        /// updating. You must be using the Amazon Web Services account that the analysis is in.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -20182,10 +20869,9 @@ impl UpdateAnalysisPermissionsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_analysis_permissions(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_analysis_permissions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -20282,8 +20968,11 @@ impl UpdateAnalysisPermissionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -20291,7 +20980,11 @@ impl UpdateAnalysisPermissionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -20318,7 +21011,7 @@ pub mod update_dashboard_input {
         pub(crate) theme_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
         /// updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -20355,8 +21048,8 @@ pub mod update_dashboard_input {
         /// entity. If you need to update a dashboard from an analysis, first convert the analysis
         /// to a template by using the <a>CreateTemplate</a> API operation. For
         /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
-        /// template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and any
-        /// QuickSight-supported Amazon Web Services Region;. </p>
+        /// template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any
+        /// Amazon QuickSight-supported Amazon Web Services Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
         /// list the replacement datasets for the placeholders listed in the original. The schema in
         /// each dataset must match its placeholder. </p>
@@ -20403,7 +21096,7 @@ pub mod update_dashboard_input {
         /// <p>
         /// <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
         /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-        /// set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
+        /// set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the
         /// published dashboard, which can be used for ad hoc (one-time) filtering. This
         /// option is <code>ENABLED</code> by default. </p>
         /// </li>
@@ -20437,7 +21130,7 @@ pub mod update_dashboard_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
         /// you add a value for this field, it overrides the value that was originally associated
-        /// with the entity. The theme ARN must exist in the same Amazon Web Services account; where you create the
+        /// with the entity. The theme ARN must exist in the same Amazon Web Services account where you create the
         /// dashboard.</p>
         pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.theme_arn = Some(input.into());
@@ -20487,9 +21180,11 @@ impl UpdateDashboardInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_dashboard(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_dashboard(&self)
+                    .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -20586,8 +21281,11 @@ impl UpdateDashboardInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -20595,7 +21293,11 @@ impl UpdateDashboardInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -20619,7 +21321,7 @@ pub mod update_dashboard_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the dashboard whose permissions you're
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're
         /// updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -20711,10 +21413,8 @@ impl UpdateDashboardPermissionsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_dashboard_permissions(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_dashboard_permissions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -20811,8 +21511,11 @@ impl UpdateDashboardPermissionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -20820,7 +21523,11 @@ impl UpdateDashboardPermissionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -20841,7 +21548,7 @@ pub mod update_dashboard_published_version_input {
         pub(crate) version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
+        /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
         /// updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -21022,8 +21729,11 @@ impl UpdateDashboardPublishedVersionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -21031,7 +21741,11 @@ impl UpdateDashboardPublishedVersionInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -21067,9 +21781,11 @@ pub mod update_data_set_input {
             std::option::Option<crate::model::RowLevelPermissionTagConfiguration>,
         pub(crate) column_level_permission_rules:
             std::option::Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
+        pub(crate) data_set_usage_configuration:
+            std::option::Option<crate::model::DataSetUsageConfiguration>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -21082,7 +21798,7 @@ pub mod update_data_set_input {
             self
         }
         /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region; for each
-        /// Amazon Web Services account;.</p>
+        /// Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -21228,6 +21944,21 @@ pub mod update_data_set_input {
             self.column_level_permission_rules = input;
             self
         }
+        /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
+        pub fn data_set_usage_configuration(
+            mut self,
+            input: crate::model::DataSetUsageConfiguration,
+        ) -> Self {
+            self.data_set_usage_configuration = Some(input);
+            self
+        }
+        pub fn set_data_set_usage_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DataSetUsageConfiguration>,
+        ) -> Self {
+            self.data_set_usage_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDataSetInput`](crate::input::UpdateDataSetInput)
         pub fn build(
             self,
@@ -21245,6 +21976,7 @@ pub mod update_data_set_input {
                 row_level_permission_data_set: self.row_level_permission_data_set,
                 row_level_permission_tag_configuration: self.row_level_permission_tag_configuration,
                 column_level_permission_rules: self.column_level_permission_rules,
+                data_set_usage_configuration: self.data_set_usage_configuration,
             })
         }
     }
@@ -21269,9 +22001,11 @@ impl UpdateDataSetInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_data_set(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_data_set(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -21368,8 +22102,11 @@ impl UpdateDataSetInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -21377,7 +22114,11 @@ impl UpdateDataSetInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -21401,7 +22142,7 @@ pub mod update_data_set_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -21414,7 +22155,7 @@ pub mod update_data_set_permissions_input {
             self
         }
         /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
-        /// Amazon Web Services Region; for each Amazon Web Services account;.</p>
+        /// Amazon Web Services Region; for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -21492,10 +22233,9 @@ impl UpdateDataSetPermissionsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_data_set_permissions(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_data_set_permissions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -21592,8 +22332,11 @@ impl UpdateDataSetPermissionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -21601,7 +22344,11 @@ impl UpdateDataSetPermissionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -21627,7 +22374,7 @@ pub mod update_data_source_input {
         pub(crate) ssl_properties: std::option::Option<crate::model::SslProperties>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -21639,7 +22386,7 @@ pub mod update_data_source_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;. </p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account. </p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -21660,7 +22407,7 @@ pub mod update_data_source_input {
             self.name = input;
             self
         }
-        /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+        /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
         pub fn data_source_parameters(mut self, input: crate::model::DataSourceParameters) -> Self {
             self.data_source_parameters = Some(input);
             self
@@ -21672,7 +22419,7 @@ pub mod update_data_source_input {
             self.data_source_parameters = input;
             self
         }
-        /// <p>The credentials that QuickSight that uses to connect to your underlying source. Currently,
+        /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently,
         /// only credentials based on user name and password are supported.</p>
         pub fn credentials(mut self, input: crate::model::DataSourceCredentials) -> Self {
             self.credentials = Some(input);
@@ -21685,7 +22432,7 @@ pub mod update_data_source_input {
             self.credentials = input;
             self
         }
-        /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to
+        /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to
         /// your underlying source.</p>
         pub fn vpc_connection_properties(
             mut self,
@@ -21701,7 +22448,7 @@ pub mod update_data_source_input {
             self.vpc_connection_properties = input;
             self
         }
-        /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying
+        /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying
         /// source.</p>
         pub fn ssl_properties(mut self, input: crate::model::SslProperties) -> Self {
             self.ssl_properties = Some(input);
@@ -21753,10 +22500,11 @@ impl UpdateDataSourceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_data_source(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_data_source(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -21853,8 +22601,11 @@ impl UpdateDataSourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -21862,7 +22613,11 @@ impl UpdateDataSourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -21886,7 +22641,7 @@ pub mod update_data_source_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account; ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -21898,7 +22653,7 @@ pub mod update_data_source_permissions_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;. </p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account. </p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -21980,10 +22735,8 @@ impl UpdateDataSourcePermissionsInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_data_source_permissions(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_data_source_permissions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -22080,8 +22833,11 @@ impl UpdateDataSourcePermissionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -22089,7 +22845,11 @@ impl UpdateDataSourcePermissionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -22174,9 +22934,10 @@ impl UpdateFolderInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_folder(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_folder(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -22273,8 +23034,11 @@ impl UpdateFolderInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -22282,7 +23046,11 @@ impl UpdateFolderInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -22396,10 +23164,9 @@ impl UpdateFolderPermissionsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_folder_permissions(&self)
-                .map_err(|err| {
-                smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_folder_permissions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -22496,8 +23263,11 @@ impl UpdateFolderPermissionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -22505,7 +23275,11 @@ impl UpdateFolderPermissionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -22545,8 +23319,8 @@ pub mod update_group_input {
             self.description = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -22602,9 +23376,10 @@ impl UpdateGroupInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_group(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_group(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -22717,8 +23492,11 @@ impl UpdateGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -22726,7 +23504,11 @@ impl UpdateGroupInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -22752,7 +23534,7 @@ pub mod update_iam_policy_assignment_input {
         >,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the IAM policy assignment. </p>
+        /// <p>The ID of the Amazon Web Services account that contains the IAMpolicy assignment. </p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -22764,7 +23546,7 @@ pub mod update_iam_policy_assignment_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account;.</p>
+        /// <p>The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account.</p>
         pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.assignment_name = Some(input.into());
             self
@@ -22813,7 +23595,7 @@ pub mod update_iam_policy_assignment_input {
             self.assignment_status = input;
             self
         }
-        /// <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+        /// <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
         /// specified in this assignment.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
@@ -22882,10 +23664,8 @@ impl UpdateIamPolicyAssignmentInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_iam_policy_assignment(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_iam_policy_assignment(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -22991,8 +23771,11 @@ impl UpdateIamPolicyAssignmentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23000,7 +23783,11 @@ impl UpdateIamPolicyAssignmentInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -23023,7 +23810,7 @@ pub mod update_template_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the template that you're updating.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the template that you're updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -23050,7 +23837,7 @@ pub mod update_template_input {
         /// analysis. Both of these require an Amazon Resource Name (ARN). For
         /// <code>SourceTemplate</code>, specify the ARN of the source template. For
         /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-        /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Amazon Web Services Region;. </p>
+        /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
         /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
         /// in the original. The schema in each dataset must match its placeholder. </p>
@@ -23126,9 +23913,11 @@ impl UpdateTemplateInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_template(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_template(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -23225,8 +24014,11 @@ impl UpdateTemplateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23234,7 +24026,11 @@ impl UpdateTemplateInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -23256,7 +24052,7 @@ pub mod update_template_alias_input {
         pub(crate) template_version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the template alias that you're updating.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the template alias that you're updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -23334,7 +24130,10 @@ impl UpdateTemplateAliasInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_template_alias(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_template_alias(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -23450,8 +24249,11 @@ impl UpdateTemplateAliasInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23459,7 +24261,11 @@ impl UpdateTemplateAliasInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -23483,7 +24289,7 @@ pub mod update_template_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the template.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the template.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -23573,10 +24379,9 @@ impl UpdateTemplatePermissionsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_template_permissions(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_template_permissions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -23673,8 +24478,11 @@ impl UpdateTemplatePermissionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23682,7 +24490,11 @@ impl UpdateTemplatePermissionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -23706,7 +24518,7 @@ pub mod update_theme_input {
         pub(crate) configuration: std::option::Option<crate::model::ThemeConfiguration>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the theme that you're updating.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme that you're updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -23812,9 +24624,10 @@ impl UpdateThemeInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_theme(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_theme(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -23911,8 +24724,11 @@ impl UpdateThemeInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23920,7 +24736,11 @@ impl UpdateThemeInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -23942,7 +24762,7 @@ pub mod update_theme_alias_input {
         pub(crate) theme_version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the theme alias that you're updating.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -24017,10 +24837,11 @@ impl UpdateThemeAliasInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_theme_alias(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_theme_alias(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -24133,8 +24954,11 @@ impl UpdateThemeAliasInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -24142,7 +24966,11 @@ impl UpdateThemeAliasInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -24166,7 +24994,7 @@ pub mod update_theme_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon Web Services account; that contains the theme.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the theme.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -24255,7 +25083,10 @@ impl UpdateThemePermissionsInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_update_theme_permissions(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_update_theme_permissions(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -24355,8 +25186,11 @@ impl UpdateThemePermissionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -24364,7 +25198,11 @@ impl UpdateThemePermissionsInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -24402,8 +25240,8 @@ pub mod update_user_input {
             self.user_name = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
-        /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+        /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+        /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -24451,7 +25289,7 @@ pub mod update_user_input {
         /// settings.</p>
         /// </li>
         /// </ul>
-        /// <p>The name of the QuickSight role is invisible to the user except for the console
+        /// <p>The name of the Amazon QuickSight role is invisible to the user except for the console
         /// screens dealing with permissions.</p>
         pub fn role(mut self, input: crate::model::UserRole) -> Self {
             self.role = Some(input);
@@ -24479,13 +25317,13 @@ pub mod update_user_input {
         /// </li>
         /// </ul>
         /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
-        /// you need to create the profile names for custom permission sets by using the QuickSight
+        /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
         /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
-        /// permissions to a QuickSight user. </p>
-        /// <p>QuickSight custom permissions are applied through IAM policies. Therefore, they
-        /// override the permissions typically granted by assigning QuickSight users to one of the
-        /// default security cohorts in QuickSight (admin, author, reader).</p>
-        /// <p>This feature is available only to QuickSight Enterprise edition subscriptions.</p>
+        /// permissions to a Amazon QuickSight user. </p>
+        /// <p>Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they
+        /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
+        /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+        /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
         pub fn custom_permissions_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_permissions_name = Some(input.into());
             self
@@ -24509,7 +25347,7 @@ pub mod update_user_input {
             self.unapply_custom_permissions = input;
             self
         }
-        /// <p>The type of supported external login provider that provides identity to let a user federate into QuickSight with an associated AWS Identity and Access Management (IAM) role. The type of supported external login provider can be one of the following.</p>
+        /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -24541,7 +25379,7 @@ pub mod update_user_input {
             self
         }
         /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate
-        /// into QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should
+        /// into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should
         /// only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
         pub fn custom_federation_provider_url(
             mut self,
@@ -24610,8 +25448,8 @@ impl UpdateUserInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_update_user(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_update_user(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -24726,8 +25564,11 @@ impl UpdateUserInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder =
-            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/json",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -24735,7 +25576,11 @@ impl UpdateUserInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -24750,8 +25595,8 @@ impl UpdateUserInput {
 pub struct UpdateUserInput {
     /// <p>The Amazon QuickSight user name that you want to update.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
-    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -24775,7 +25620,7 @@ pub struct UpdateUserInput {
     /// settings.</p>
     /// </li>
     /// </ul>
-    /// <p>The name of the QuickSight role is invisible to the user except for the console
+    /// <p>The name of the Amazon QuickSight role is invisible to the user except for the console
     /// screens dealing with permissions.</p>
     pub role: std::option::Option<crate::model::UserRole>,
     /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to
@@ -24796,20 +25641,20 @@ pub struct UpdateUserInput {
     /// </li>
     /// </ul>
     /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
-    /// you need to create the profile names for custom permission sets by using the QuickSight
+    /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
     /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
-    /// permissions to a QuickSight user. </p>
-    /// <p>QuickSight custom permissions are applied through IAM policies. Therefore, they
-    /// override the permissions typically granted by assigning QuickSight users to one of the
-    /// default security cohorts in QuickSight (admin, author, reader).</p>
-    /// <p>This feature is available only to QuickSight Enterprise edition subscriptions.</p>
+    /// permissions to a Amazon QuickSight user. </p>
+    /// <p>Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they
+    /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
+    /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+    /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
     pub custom_permissions_name: std::option::Option<std::string::String>,
     /// <p>A flag that you use to indicate that you want to remove all custom permissions
     /// from this user. Using this parameter resets the user to the state
     /// it was in before a custom permissions profile was applied. This parameter defaults to
     /// NULL and it doesn't accept any other value.</p>
     pub unapply_custom_permissions: bool,
-    /// <p>The type of supported external login provider that provides identity to let a user federate into QuickSight with an associated AWS Identity and Access Management (IAM) role. The type of supported external login provider can be one of the following.</p>
+    /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -24828,7 +25673,7 @@ pub struct UpdateUserInput {
     /// </ul>
     pub external_login_federation_provider_type: std::option::Option<std::string::String>,
     /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate
-    /// into QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should
+    /// into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should
     /// only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
     pub custom_federation_provider_url: std::option::Option<std::string::String>,
     /// <p>The identity ID for a user in the external login provider.</p>
@@ -24863,7 +25708,7 @@ impl std::fmt::Debug for UpdateUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThemePermissionsInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the theme.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the theme.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -24886,7 +25731,7 @@ impl std::fmt::Debug for UpdateThemePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThemeAliasInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the theme alias that you're updating.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -24909,7 +25754,7 @@ impl std::fmt::Debug for UpdateThemeAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThemeInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the theme that you're updating.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the theme that you're updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -24941,7 +25786,7 @@ impl std::fmt::Debug for UpdateThemeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTemplatePermissionsInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the template.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the template.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -24964,7 +25809,7 @@ impl std::fmt::Debug for UpdateTemplatePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTemplateAliasInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the template alias that you're updating.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the template alias that you're updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -24990,7 +25835,7 @@ impl std::fmt::Debug for UpdateTemplateAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTemplateInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the template that you're updating.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the template that you're updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -25000,7 +25845,7 @@ pub struct UpdateTemplateInput {
     /// analysis. Both of these require an Amazon Resource Name (ARN). For
     /// <code>SourceTemplate</code>, specify the ARN of the source template. For
     /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-    /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Amazon Web Services Region;. </p>
+    /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
     /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
     /// in the original. The schema in each dataset must match its placeholder. </p>
@@ -25028,9 +25873,9 @@ impl std::fmt::Debug for UpdateTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIamPolicyAssignmentInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the IAM policy assignment. </p>
+    /// <p>The ID of the Amazon Web Services account that contains the IAMpolicy assignment. </p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account;.</p>
+    /// <p>The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account.</p>
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The namespace of the assignment.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -25052,10 +25897,10 @@ pub struct UpdateIamPolicyAssignmentInput {
     /// </li>
     /// </ul>
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
-    /// <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+    /// <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
     /// specified in this assignment.</p>
     pub policy_arn: std::option::Option<std::string::String>,
-    /// <p>The QuickSight users, groups, or both that you want to assign the policy to.</p>
+    /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
     pub identities: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -25080,8 +25925,8 @@ pub struct UpdateGroupInput {
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The description for the group that you want to update.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -25143,9 +25988,9 @@ impl std::fmt::Debug for UpdateFolderInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSourcePermissionsInput {
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;. </p>
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account. </p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A list of resource permissions that you want to grant on the data source.</p>
     pub grant_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -25166,21 +26011,21 @@ impl std::fmt::Debug for UpdateDataSourcePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSourceInput {
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;. </p>
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account. </p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A display name for the data source.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+    /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
     pub data_source_parameters: std::option::Option<crate::model::DataSourceParameters>,
-    /// <p>The credentials that QuickSight that uses to connect to your underlying source. Currently,
+    /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently,
     /// only credentials based on user name and password are supported.</p>
     pub credentials: std::option::Option<crate::model::DataSourceCredentials>,
-    /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to
+    /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to
     /// your underlying source.</p>
     pub vpc_connection_properties: std::option::Option<crate::model::VpcConnectionProperties>,
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying
     /// source.</p>
     pub ssl_properties: std::option::Option<crate::model::SslProperties>,
 }
@@ -25201,10 +26046,10 @@ impl std::fmt::Debug for UpdateDataSourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSetPermissionsInput {
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
-    /// Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The resource permissions that you want to grant to the dataset.</p>
     pub grant_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -25225,10 +26070,10 @@ impl std::fmt::Debug for UpdateDataSetPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSetInput {
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region; for each
-    /// Amazon Web Services account;.</p>
+    /// Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The display name for the dataset.</p>
     pub name: std::option::Option<std::string::String>,
@@ -25242,7 +26087,7 @@ pub struct UpdateDataSetInput {
     >,
     /// <p>Indicates whether you want to import the data into SPICE.</p>
     pub import_mode: std::option::Option<crate::model::DataSetImportMode>,
-    /// <p>Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
     pub column_groups: std::option::Option<std::vec::Vec<crate::model::ColumnGroup>>,
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
     pub field_folders: std::option::Option<
@@ -25258,6 +26103,8 @@ pub struct UpdateDataSetInput {
     /// </code>.</p>
     pub column_level_permission_rules:
         std::option::Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
+    /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
+    pub data_set_usage_configuration: std::option::Option<crate::model::DataSetUsageConfiguration>,
 }
 impl std::fmt::Debug for UpdateDataSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25282,6 +26129,10 @@ impl std::fmt::Debug for UpdateDataSetInput {
             "column_level_permission_rules",
             &self.column_level_permission_rules,
         );
+        formatter.field(
+            "data_set_usage_configuration",
+            &self.data_set_usage_configuration,
+        );
         formatter.finish()
     }
 }
@@ -25289,7 +26140,7 @@ impl std::fmt::Debug for UpdateDataSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDashboardPublishedVersionInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
     /// updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
@@ -25310,7 +26161,7 @@ impl std::fmt::Debug for UpdateDashboardPublishedVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDashboardPermissionsInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the dashboard whose permissions you're
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're
     /// updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
@@ -25334,7 +26185,7 @@ impl std::fmt::Debug for UpdateDashboardPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDashboardInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
     /// updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
@@ -25347,8 +26198,8 @@ pub struct UpdateDashboardInput {
     /// entity. If you need to update a dashboard from an analysis, first convert the analysis
     /// to a template by using the <a>CreateTemplate</a> API operation. For
     /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
-    /// template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and any
-    /// QuickSight-supported Amazon Web Services Region;. </p>
+    /// template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any
+    /// Amazon QuickSight-supported Amazon Web Services Region;. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
     /// list the replacement datasets for the placeholders listed in the original. The schema in
     /// each dataset must match its placeholder. </p>
@@ -25365,7 +26216,7 @@ pub struct UpdateDashboardInput {
     /// <p>
     /// <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
     /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-    /// set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
+    /// set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the
     /// published dashboard, which can be used for ad hoc (one-time) filtering. This
     /// option is <code>ENABLED</code> by default. </p>
     /// </li>
@@ -25386,7 +26237,7 @@ pub struct UpdateDashboardInput {
     pub dashboard_publish_options: std::option::Option<crate::model::DashboardPublishOptions>,
     /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
     /// you add a value for this field, it overrides the value that was originally associated
-    /// with the entity. The theme ARN must exist in the same Amazon Web Services account; where you create the
+    /// with the entity. The theme ARN must exist in the same Amazon Web Services account where you create the
     /// dashboard.</p>
     pub theme_arn: std::option::Option<std::string::String>,
 }
@@ -25408,8 +26259,8 @@ impl std::fmt::Debug for UpdateDashboardInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnalysisPermissionsInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the analysis whose permissions you're
-    /// updating. You must be using the Amazon Web Services account; that the analysis is in.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
+    /// updating. You must be using the Amazon Web Services account that the analysis is in.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis whose permissions you're updating. The ID is part of the
     /// analysis URL.</p>
@@ -25435,13 +26286,13 @@ impl std::fmt::Debug for UpdateAnalysisPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnalysisInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the analysis that you're updating.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the
     /// analysis.</p>
     pub analysis_id: std::option::Option<std::string::String>,
     /// <p>A descriptive name for the analysis that you're updating. This name displays for the
-    /// analysis in the QuickSight console.</p>
+    /// analysis in the Amazon QuickSight console.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The parameter names and override values that you want to use. An analysis can have
     /// any parameter type, and some parameters might accept multiple values. </p>
@@ -25450,7 +26301,7 @@ pub struct UpdateAnalysisInput {
     /// contains details that describe a source template and one or more datasets.</p>
     pub source_entity: std::option::Option<crate::model::AnalysisSourceEntity>,
     /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're
-    /// creating. To see the theme in the QuickSight console, make sure that you have access to
+    /// creating. To see the theme in the Amazon QuickSight console, make sure that you have access to
     /// it.</p>
     pub theme_arn: std::option::Option<std::string::String>,
 }
@@ -25470,16 +26321,16 @@ impl std::fmt::Debug for UpdateAnalysisInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountSettingsInput {
-    /// <p>The ID for the Amazon Web Services account; that contains the QuickSight settings that you want to
+    /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to
     /// list.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The default namespace for this Amazon Web Services account;. Currently, the default is
+    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is
     /// <code>default</code>. Identity and Access Management (IAM) users that register
-    /// for the first time with QuickSight provide an email that becomes associated with the
+    /// for the first time with Amazon QuickSight provide an email that becomes associated with the
     /// default namespace.</p>
     pub default_namespace: std::option::Option<std::string::String>,
-    /// <p>The email address that you want QuickSight to send notifications to regarding your
-    /// Amazon Web Services account; or QuickSight subscription.</p>
+    /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your
+    /// Amazon Web Services account or Amazon QuickSight subscription.</p>
     pub notification_email: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateAccountSettingsInput {
@@ -25495,12 +26346,12 @@ impl std::fmt::Debug for UpdateAccountSettingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountCustomizationInput {
-    /// <p>The ID for the Amazon Web Services account; that you want to update QuickSight customizations
+    /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations
     /// for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The namespace that you want to update QuickSight customizations for.</p>
+    /// <p>The namespace that you want to update Amazon QuickSight customizations for.</p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The QuickSight customizations you're updating in the current Amazon Web Services Region;. </p>
+    /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region;. </p>
     pub account_customization: std::option::Option<crate::model::AccountCustomization>,
 }
 impl std::fmt::Debug for UpdateAccountCustomizationInput {
@@ -25573,7 +26424,7 @@ impl std::fmt::Debug for SearchFoldersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchDashboardsInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the user whose dashboards you're searching
+    /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching
     /// for. </p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The filters to apply to the search. Currently, you can search only by user name, for
@@ -25600,7 +26451,7 @@ impl std::fmt::Debug for SearchDashboardsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchAnalysesInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the analyses that you're searching
+    /// <p>The ID of the Amazon Web Services account that contains the analyses that you're searching
     /// for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The structure for the search filters that you want to apply to your search. </p>
@@ -25624,7 +26475,7 @@ impl std::fmt::Debug for SearchAnalysesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreAnalysisInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the analysis.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the analysis.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis that you're restoring.</p>
     pub analysis_id: std::option::Option<std::string::String>,
@@ -25646,7 +26497,7 @@ pub struct RegisterUserInput {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
+    /// <code>IAM</code>: A user whose identity maps to an existing IAMuser or role.
     /// </p>
     /// </li>
     /// <li>
@@ -25687,19 +26538,19 @@ pub struct RegisterUserInput {
     /// </li>
     /// </ul>
     pub user_role: std::option::Option<crate::model::UserRole>,
-    /// <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight. </p>
+    /// <p>The ARN of the IAMuser or role that you are registering with Amazon QuickSight. </p>
     pub iam_arn: std::option::Option<std::string::String>,
     /// <p>You need to use this parameter only when you register one or more users using an assumed
-    /// IAM role. You don't need to provide the session name for other scenarios, for example when
-    /// you are registering an IAM user or an Amazon QuickSight user. You can register multiple
-    /// users using the same IAM role if each user has a different session name. For more
-    /// information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
+    /// IAMrole. You don't need to provide the session name for other scenarios, for example when
+    /// you are registering an IAMuser or an Amazon QuickSight user. You can register multiple
+    /// users using the same IAMrole if each user has a different session name. For more
+    /// information on assuming IAMroles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
     /// <code>assume-role</code>
     /// </a> in the <i>AWS CLI Reference.</i>
     /// </p>
     pub session_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
-    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -25727,15 +26578,15 @@ pub struct RegisterUserInput {
     /// <a>UpdateUser</a>
     /// </code> instead.</p>
     /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
-    /// you need to create the profile names for custom permission sets by using the QuickSight
+    /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
     /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
-    /// permissions to a QuickSight user. </p>
-    /// <p>QuickSight custom permissions are applied through IAM policies. Therefore, they
-    /// override the permissions typically granted by assigning QuickSight users to one of the
-    /// default security cohorts in QuickSight (admin, author, reader).</p>
-    /// <p>This feature is available only to QuickSight Enterprise edition subscriptions.</p>
+    /// permissions to a Amazon QuickSight user. </p>
+    /// <p>Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they
+    /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
+    /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+    /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
     pub custom_permissions_name: std::option::Option<std::string::String>,
-    /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated AWS Identity and Access Management (IAM) role. The type of supported external login provider can be one of the following.</p>
+    /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -25748,7 +26599,7 @@ pub struct RegisterUserInput {
     /// </ul>
     pub external_login_federation_provider_type: std::option::Option<std::string::String>,
     /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate
-    /// into QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should
+    /// into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should
     /// only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
     pub custom_federation_provider_url: std::option::Option<std::string::String>,
     /// <p>The identity ID for a user in the external login provider.</p>
@@ -25782,8 +26633,8 @@ impl std::fmt::Debug for RegisterUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersInput {
-    /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
-    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -25808,7 +26659,7 @@ impl std::fmt::Debug for ListUsersInput {
 pub struct ListUserGroupsInput {
     /// <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account; ID that the user is in. Currently, you use the ID for the Amazon Web Services account;
+    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account
     /// that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
@@ -25833,7 +26684,7 @@ impl std::fmt::Debug for ListUserGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThemeVersionsInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the themes that you're listing.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -25856,7 +26707,7 @@ impl std::fmt::Debug for ListThemeVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThemesInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the themes that you're listing.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -25893,7 +26744,7 @@ impl std::fmt::Debug for ListThemesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThemeAliasesInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the theme aliases that you're listing.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the theme aliases that you're listing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -25916,7 +26767,7 @@ impl std::fmt::Debug for ListThemeAliasesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplateVersionsInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the templates that you're listing.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -25939,7 +26790,7 @@ impl std::fmt::Debug for ListTemplateVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplatesInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the templates that you're listing.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -25959,7 +26810,7 @@ impl std::fmt::Debug for ListTemplatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplateAliasesInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the template aliases that you're listing.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the template aliases that you're listing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -25996,7 +26847,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNamespacesInput {
-    /// <p>The ID for the Amazon Web Services account; that contains the QuickSight namespaces that you want to list.</p>
+    /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespaces that you want to list.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -26020,7 +26871,7 @@ pub struct ListIngestionsInput {
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
@@ -26039,7 +26890,7 @@ impl std::fmt::Debug for ListIngestionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIamPolicyAssignmentsForUserInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the assignments.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the assignments.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The name of the user.</p>
     pub user_name: std::option::Option<std::string::String>,
@@ -26065,7 +26916,7 @@ impl std::fmt::Debug for ListIamPolicyAssignmentsForUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIamPolicyAssignmentsInput {
-    /// <p>The ID of the Amazon Web Services account; that contains these IAM policy assignments.</p>
+    /// <p>The ID of the Amazon Web Services account that contains these IAMpolicy assignments.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The status of the assignments.</p>
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
@@ -26091,8 +26942,8 @@ impl std::fmt::Debug for ListIamPolicyAssignmentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsInput {
-    /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -26121,8 +26972,8 @@ pub struct ListGroupMembershipsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return from this request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -26185,7 +27036,7 @@ impl std::fmt::Debug for ListFolderMembersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSourcesInput {
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -26205,7 +27056,7 @@ impl std::fmt::Debug for ListDataSourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSetsInput {
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -26225,7 +27076,7 @@ impl std::fmt::Debug for ListDataSetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDashboardVersionsInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're listing versions
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions
     /// for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
@@ -26249,7 +27100,7 @@ impl std::fmt::Debug for ListDashboardVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDashboardsInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the dashboards that you're
+    /// <p>The ID of the Amazon Web Services account that contains the dashboards that you're
     /// listing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -26270,7 +27121,7 @@ impl std::fmt::Debug for ListDashboardsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnalysesInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the analyses.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the analyses.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -26290,7 +27141,7 @@ impl std::fmt::Debug for ListAnalysesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSessionEmbedUrlInput {
-    /// <p>The ID for the Amazon Web Services account; associated with your QuickSight subscription.</p>
+    /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The URL you use to access the embedded session. The entry point URL is constrained to
     /// the following paths:</p>
@@ -26318,12 +27169,12 @@ pub struct GetSessionEmbedUrlInput {
     /// <li>
     /// <p>
     /// <code>/dashboards/<i>DashboardId</i>
-    /// </code> - where <code>DashboardId</code> is the actual ID key from the QuickSight console URL of the dashboard</p>
+    /// </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>/analyses/<i>AnalysisId</i>
-    /// </code> - where <code>AnalysisId</code> is the actual ID key from the QuickSight console URL of the analysis</p>
+    /// </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p>
     /// </li>
     /// </ul>
     pub entry_point: std::option::Option<std::string::String>,
@@ -26366,7 +27217,7 @@ impl std::fmt::Debug for GetSessionEmbedUrlInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDashboardEmbedUrlInput {
-    /// <p>The ID for the Amazon Web Services account; that contains the dashboard that you're embedding.</p>
+    /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM)
     /// policy.</p>
@@ -26383,9 +27234,9 @@ pub struct GetDashboardEmbedUrlInput {
     pub reset_disabled: bool,
     /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence
     /// applies to the sheet and the parameter settings. These are control settings that the
-    /// dashboard subscriber (QuickSight reader) chooses while viewing the dashboard. If this is
+    /// dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is
     /// set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same
-    /// dashboard URL. The state is stored in QuickSight, not in a browser cookie. If this is
+    /// dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is
     /// set to FALSE, the state of the user session is not persisted. The default is
     /// <code>FALSE</code>.</p>
     pub state_persistence_enabled: bool,
@@ -26400,19 +27251,20 @@ pub struct GetDashboardEmbedUrlInput {
     /// <p>Invited nonfederated users</p>
     /// </li>
     /// <li>
-    /// <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using
-    /// SAML, OpenID Connect, or IAM federation.</p>
+    /// <p>IAMusers and IAMrole-based sessions authenticated through Federated Single Sign-On using
+    /// SAML, OpenID Connect, or IAMfederation.</p>
     /// </li>
     /// </ul>
-    /// <p>Omit this parameter for users in the third group – IAM users and IAM
+    /// <p>Omit this parameter for users in the third group – IAMusers and IAM
     /// role-based sessions.</p>
     pub user_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon QuickSight namespace that the user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
+    /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request.
+    /// If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
     /// <p>A list of one or more dashboard IDs that you want to add to a session that includes
     /// anonymous users. The <code>IdentityType</code> parameter must be set to
     /// <code>ANONYMOUS</code> for this to work, because other identity types authenticate
-    /// as QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1
+    /// as Amazon QuickSight or IAMusers. For example, if you set "<code>--dashboard-id dash_id1
     /// --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
     /// can access all three dashboards. </p>
     pub additional_dashboard_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -26504,8 +27356,8 @@ impl std::fmt::Debug for GenerateEmbedUrlForAnonymousUserInput {
 pub struct DescribeUserInput {
     /// <p>The name of the user that you want to describe.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
-    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -26523,7 +27375,7 @@ impl std::fmt::Debug for DescribeUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeThemePermissionsInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the theme that you're describing.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme that you want to describe permissions for.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -26540,7 +27392,7 @@ impl std::fmt::Debug for DescribeThemePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeThemeAliasInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the theme alias that you're
+    /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're
     /// describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme.</p>
@@ -26561,7 +27413,7 @@ impl std::fmt::Debug for DescribeThemeAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeThemeInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the theme that you're describing.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -26588,7 +27440,7 @@ impl std::fmt::Debug for DescribeThemeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTemplatePermissionsInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the template that you're describing.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -26605,7 +27457,7 @@ impl std::fmt::Debug for DescribeTemplatePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTemplateAliasInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the template alias that you're
+    /// <p>The ID of the Amazon Web Services account that contains the template alias that you're
     /// describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
@@ -26629,7 +27481,7 @@ impl std::fmt::Debug for DescribeTemplateAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTemplateInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the template that you're describing.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -26656,7 +27508,7 @@ impl std::fmt::Debug for DescribeTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNamespaceInput {
-    /// <p>The ID for the Amazon Web Services account; that contains the QuickSight namespace that you want to describe.</p>
+    /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespace that you want to describe.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace that you want to describe.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -26673,7 +27525,7 @@ impl std::fmt::Debug for DescribeNamespaceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIngestionInput {
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the dataset used in the ingestion.</p>
     pub data_set_id: std::option::Option<std::string::String>,
@@ -26693,7 +27545,7 @@ impl std::fmt::Debug for DescribeIngestionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIamPolicyAssignmentInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the assignment that you want to describe.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the assignment that you want to describe.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The name of the assignment, also called a rule.</p>
     pub assignment_name: std::option::Option<std::string::String>,
@@ -26715,8 +27567,8 @@ impl std::fmt::Debug for DescribeIamPolicyAssignmentInput {
 pub struct DescribeGroupInput {
     /// <p>The name of the group that you want to describe.</p>
     pub group_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -26785,9 +27637,9 @@ impl std::fmt::Debug for DescribeFolderInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSourcePermissionsInput {
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDataSourcePermissionsInput {
@@ -26802,9 +27654,9 @@ impl std::fmt::Debug for DescribeDataSourcePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSourceInput {
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDataSourceInput {
@@ -26819,9 +27671,9 @@ impl std::fmt::Debug for DescribeDataSourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSetPermissionsInput {
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDataSetPermissionsInput {
@@ -26836,9 +27688,9 @@ impl std::fmt::Debug for DescribeDataSetPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDataSetInput {
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDataSetInput {
@@ -26853,10 +27705,10 @@ impl std::fmt::Debug for DescribeDataSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDashboardPermissionsInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're describing
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing
     /// permissions for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the dashboard, also added to the IAM policy.</p>
+    /// <p>The ID for the dashboard, also added to the IAMpolicy.</p>
     pub dashboard_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDashboardPermissionsInput {
@@ -26871,7 +27723,7 @@ impl std::fmt::Debug for DescribeDashboardPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDashboardInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
     /// describing.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
@@ -26896,8 +27748,8 @@ impl std::fmt::Debug for DescribeDashboardInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnalysisPermissionsInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the analysis whose permissions you're
-    /// describing. You must be using the Amazon Web Services account; that the analysis is in.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
+    /// describing. You must be using the Amazon Web Services account that the analysis is in.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis whose permissions you're describing. The ID is part of the
     /// analysis URL.</p>
@@ -26915,8 +27767,8 @@ impl std::fmt::Debug for DescribeAnalysisPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnalysisInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the analysis. You must be using the
-    /// Amazon Web Services account; that the analysis is in.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the
+    /// Amazon Web Services account that the analysis is in.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the
     /// analysis.</p>
@@ -26934,7 +27786,7 @@ impl std::fmt::Debug for DescribeAnalysisInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountSettingsInput {
-    /// <p>The ID for the Amazon Web Services account; that contains the settings that you want to list.</p>
+    /// <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeAccountSettingsInput {
@@ -26948,15 +27800,15 @@ impl std::fmt::Debug for DescribeAccountSettingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountCustomizationInput {
-    /// <p>The ID for the Amazon Web Services account; that you want to describe QuickSight customizations
+    /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations
     /// for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The QuickSight namespace that you want to describe QuickSight customizations
+    /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations
     /// for.</p>
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view
-    /// of QuickSight customizations is returned. You can add this flag to your command to use
-    /// the same view that QuickSight uses to identify which customizations to apply to the
+    /// of Amazon QuickSight customizations is returned. You can add this flag to your command to use
+    /// the same view that Amazon QuickSight uses to identify which customizations to apply to the
     /// console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations
     /// that are configured at different levels. </p>
     pub resolved: bool,
@@ -26977,8 +27829,8 @@ impl std::fmt::Debug for DescribeAccountCustomizationInput {
 pub struct DeleteUserByPrincipalIdInput {
     /// <p>The principal ID of the user.</p>
     pub principal_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
-    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -26998,8 +27850,8 @@ impl std::fmt::Debug for DeleteUserByPrincipalIdInput {
 pub struct DeleteUserInput {
     /// <p>The name of the user that you want to delete.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account; that the user is in. Currently, you use the ID for the
-    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -27017,7 +27869,7 @@ impl std::fmt::Debug for DeleteUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteThemeAliasInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the theme alias to delete.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the theme alias to delete.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme that the specified alias is for.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -27037,7 +27889,7 @@ impl std::fmt::Debug for DeleteThemeAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteThemeInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the theme that you're deleting.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the theme that you're deleting.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>An ID for the theme that you want to delete.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -27060,7 +27912,7 @@ impl std::fmt::Debug for DeleteThemeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTemplateAliasInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the item to delete.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the item to delete.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template that the specified alias is for.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -27083,7 +27935,7 @@ impl std::fmt::Debug for DeleteTemplateAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTemplateInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the template that you're deleting.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the template that you're deleting.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>An ID for the template you want to delete.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -27105,7 +27957,7 @@ impl std::fmt::Debug for DeleteTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNamespaceInput {
-    /// <p>The ID for the Amazon Web Services account; that you want to delete the QuickSight namespace from.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace that you want to delete.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -27122,7 +27974,7 @@ impl std::fmt::Debug for DeleteNamespaceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIamPolicyAssignmentInput {
-    /// <p>The Amazon Web Services account; ID where you want to delete the IAM policy assignment.</p>
+    /// <p>The Amazon Web Services account ID where you want to delete the IAMpolicy assignment.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The name of the assignment. </p>
     pub assignment_name: std::option::Option<std::string::String>,
@@ -27146,8 +27998,8 @@ pub struct DeleteGroupMembershipInput {
     pub member_name: std::option::Option<std::string::String>,
     /// <p>The name of the group that you want to delete the user from.</p>
     pub group_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -27168,8 +28020,8 @@ impl std::fmt::Debug for DeleteGroupMembershipInput {
 pub struct DeleteGroupInput {
     /// <p>The name of the group that you want to delete.</p>
     pub group_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -27228,9 +28080,9 @@ impl std::fmt::Debug for DeleteFolderInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataSourceInput {
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteDataSourceInput {
@@ -27245,9 +28097,9 @@ impl std::fmt::Debug for DeleteDataSourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataSetInput {
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteDataSetInput {
@@ -27262,7 +28114,7 @@ impl std::fmt::Debug for DeleteDataSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDashboardInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the dashboard that you're
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
     /// deleting.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
@@ -27284,11 +28136,11 @@ impl std::fmt::Debug for DeleteDashboardInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAnalysisInput {
-    /// <p>The ID of the Amazon Web Services account; where you want to delete an analysis.</p>
+    /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis that you're deleting.</p>
     pub analysis_id: std::option::Option<std::string::String>,
-    /// <p>A value that specifies the number of days that QuickSight waits before it deletes the
+    /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the
     /// analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code>
     /// option in the same API call. The default value is 30.</p>
     pub recovery_window_in_days: std::option::Option<i64>,
@@ -27314,10 +28166,10 @@ impl std::fmt::Debug for DeleteAnalysisInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccountCustomizationInput {
-    /// <p>The ID for the Amazon Web Services account; that you want to delete QuickSight customizations from in
+    /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in
     /// this Amazon Web Services Region;.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The QuickSight namespace that you're deleting the customizations from.</p>
+    /// <p>The Amazon QuickSight namespace that you're deleting the customizations from.</p>
     pub namespace: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteAccountCustomizationInput {
@@ -27332,7 +28184,7 @@ impl std::fmt::Debug for DeleteAccountCustomizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThemeAliasInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the theme for the new theme alias.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the theme for the new theme alias.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>An ID for the theme alias.</p>
     pub theme_id: std::option::Option<std::string::String>,
@@ -27357,17 +28209,17 @@ impl std::fmt::Debug for CreateThemeAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThemeInput {
-    /// <p>The ID of the Amazon Web Services account; where you want to store the new theme. </p>
+    /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region; in
-    /// each Amazon Web Services account;.</p>
+    /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in
+    /// each Amazon Web Services account.</p>
     pub theme_id: std::option::Option<std::string::String>,
     /// <p>A display name for the theme.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of
     /// the starting themes defined by Amazon QuickSight. For a list of the starting themes, use
     /// <code>ListThemes</code> or choose <b>Themes</b> from
-    /// within a QuickSight analysis. </p>
+    /// within a Amazon QuickSight analysis. </p>
     pub base_theme_id: std::option::Option<std::string::String>,
     /// <p>A description of the first version of the theme that you're creating. Every time
     /// <code>UpdateTheme</code> is called, a new version is created. Each version of the
@@ -27401,7 +28253,7 @@ impl std::fmt::Debug for CreateThemeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTemplateAliasInput {
-    /// <p>The ID of the Amazon Web Services account; that contains the template that you creating an alias for.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the template that you creating an alias for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>An ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -27426,11 +28278,10 @@ impl std::fmt::Debug for CreateTemplateAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTemplateInput {
-    /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in
-    /// each Amazon Web Services account;.</p>
+    /// each Amazon Web Services account.</p>
     pub template_id: std::option::Option<std::string::String>,
     /// <p>A display name for the template.</p>
     pub name: std::option::Option<std::string::String>,
@@ -27442,7 +28293,7 @@ pub struct CreateTemplateInput {
     /// analysis. Both of these require an Amazon Resource Name (ARN). For
     /// <code>SourceTemplate</code>, specify the ARN of the source template. For
     /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-    /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Amazon Web Services Region;. </p>
+    /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
     /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
     /// in the original. The schema in each dataset must match its placeholder. </p>
@@ -27472,7 +28323,7 @@ impl std::fmt::Debug for CreateTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNamespaceInput {
-    /// <p>The ID for the Amazon Web Services account; that you want to create the QuickSight namespace in.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The name that you want to use to describe the new namespace.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -27500,7 +28351,7 @@ pub struct CreateIngestionInput {
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>An ID for the ingestion.</p>
     pub ingestion_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateIngestionInput {
@@ -27516,10 +28367,10 @@ impl std::fmt::Debug for CreateIngestionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIamPolicyAssignmentInput {
-    /// <p>The ID of the Amazon Web Services account; where you want to assign an IAM policy to QuickSight users or
+    /// <p>The ID of the Amazon Web Services account where you want to assign an IAMpolicy to Amazon QuickSight users or
     /// groups.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account;.</p>
+    /// <p>The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account.</p>
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
@@ -27539,10 +28390,10 @@ pub struct CreateIamPolicyAssignmentInput {
     /// </li>
     /// </ul>
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
-    /// <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+    /// <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
     /// specified in this assignment.</p>
     pub policy_arn: std::option::Option<std::string::String>,
-    /// <p>The QuickSight users, groups, or both that you want to assign the policy to.</p>
+    /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
     pub identities: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -27569,8 +28420,8 @@ pub struct CreateGroupMembershipInput {
     pub member_name: std::option::Option<std::string::String>,
     /// <p>The name of the group that you want to add the user to.</p>
     pub group_name: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -27594,8 +28445,8 @@ pub struct CreateGroupInput {
     pub group_name: std::option::Option<std::string::String>,
     /// <p>A description for the group that you want to create.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
-    /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -27672,31 +28523,27 @@ impl std::fmt::Debug for CreateFolderInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceInput {
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;. </p>
+    /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account. </p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A display name for the data source.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of the data source. Currently, the supported types for this operation are:
-    /// <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3,
-    /// SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>.
-    /// Use <code>ListDataSources</code> to return a
-    /// list of all data sources.</p>
-    /// <p>
-    /// <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed Elasticsearch Service.</p>
+    /// <p>The type of the data source. To return a
+    /// list of all data sources, use <code>ListDataSources</code>.</p>
+    /// <p>Use <code>AMAZON_ELASTICSEARCH</code> for Amazon Elasticsearch Service.</p>
     pub r#type: std::option::Option<crate::model::DataSourceType>,
-    /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+    /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
     pub data_source_parameters: std::option::Option<crate::model::DataSourceParameters>,
-    /// <p>The credentials QuickSight that uses to connect to your underlying source. Currently, only
+    /// <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only
     /// credentials based on user name and password are supported.</p>
     pub credentials: std::option::Option<crate::model::DataSourceCredentials>,
     /// <p>A list of resource permissions on the data source.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-    /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to
+    /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to
     /// your underlying source.</p>
     pub vpc_connection_properties: std::option::Option<crate::model::VpcConnectionProperties>,
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
     pub ssl_properties: std::option::Option<crate::model::SslProperties>,
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the data source.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -27721,9 +28568,9 @@ impl std::fmt::Debug for CreateDataSourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSetInput {
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>An ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
+    /// <p>An ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The display name for the dataset.</p>
     pub name: std::option::Option<std::string::String>,
@@ -27737,7 +28584,7 @@ pub struct CreateDataSetInput {
     >,
     /// <p>Indicates whether you want to import the data into SPICE.</p>
     pub import_mode: std::option::Option<crate::model::DataSetImportMode>,
-    /// <p>Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
     pub column_groups: std::option::Option<std::vec::Vec<crate::model::ColumnGroup>>,
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
     pub field_folders: std::option::Option<
@@ -27757,6 +28604,8 @@ pub struct CreateDataSetInput {
         std::option::Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
+    pub data_set_usage_configuration: std::option::Option<crate::model::DataSetUsageConfiguration>,
 }
 impl std::fmt::Debug for CreateDataSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27783,6 +28632,10 @@ impl std::fmt::Debug for CreateDataSetInput {
             &self.column_level_permission_rules,
         );
         formatter.field("tags", &self.tags);
+        formatter.field(
+            "data_set_usage_configuration",
+            &self.data_set_usage_configuration,
+        );
         formatter.finish()
     }
 }
@@ -27790,9 +28643,9 @@ impl std::fmt::Debug for CreateDataSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDashboardInput {
-    /// <p>The ID of the Amazon Web Services account; where you want to create the dashboard.</p>
+    /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the dashboard, also added to the IAM policy.</p>
+    /// <p>The ID for the dashboard, also added to the IAMpolicy.</p>
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>The display name of the dashboard.</p>
     pub name: std::option::Option<std::string::String>,
@@ -27801,7 +28654,7 @@ pub struct CreateDashboardInput {
     /// might accept multiple values. </p>
     pub parameters: std::option::Option<crate::model::Parameters>,
     /// <p>A structure that contains the permissions of the dashboard. You can use this structure
-    /// for granting permissions by providing a list of IAM action information for each
+    /// for granting permissions by providing a list of IAMaction information for each
     /// principal ARN. </p>
     /// <p>To specify no permissions, omit the permissions list.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -27811,8 +28664,8 @@ pub struct CreateDashboardInput {
     /// entity. If you need to create a dashboard from an analysis, first convert the analysis
     /// to a template by using the <a>CreateTemplate</a> API operation. For
     /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
-    /// template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account; and any
-    /// QuickSight-supported Amazon Web Services Region;. </p>
+    /// template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any
+    /// Amazon QuickSight-supported Amazon Web Services Region;. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
     /// list the replacement datasets for the placeholders listed in the original. The schema in
     /// each dataset must match its placeholder. </p>
@@ -27828,7 +28681,7 @@ pub struct CreateDashboardInput {
     /// <p>
     /// <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
     /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-    /// set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
+    /// set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the
     /// published dashboard, which can be used for ad hoc (one-time) filtering. This
     /// option is <code>ENABLED</code> by default. </p>
     /// </li>
@@ -27849,7 +28702,7 @@ pub struct CreateDashboardInput {
     pub dashboard_publish_options: std::option::Option<crate::model::DashboardPublishOptions>,
     /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
     /// you add a value for this field, it overrides the value that is used in the source
-    /// entity. The theme ARN must exist in the same Amazon Web Services account; where you create the
+    /// entity. The theme ARN must exist in the same Amazon Web Services account where you create the
     /// dashboard.</p>
     pub theme_arn: std::option::Option<std::string::String>,
 }
@@ -27873,13 +28726,13 @@ impl std::fmt::Debug for CreateDashboardInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAnalysisInput {
-    /// <p>The ID of the Amazon Web Services account; where you are creating an analysis.</p>
+    /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the
     /// analysis.</p>
     pub analysis_id: std::option::Option<std::string::String>,
     /// <p>A descriptive name for the analysis that you're creating. This name displays for the
-    /// analysis in the QuickSight console. </p>
+    /// analysis in the Amazon QuickSight console. </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The parameter names and override values that you want to use. An analysis can have
     /// any parameter type, and some parameters might accept multiple values. </p>
@@ -27894,7 +28747,7 @@ pub struct CreateAnalysisInput {
     /// contains details that describe a source template and one or more datasets.</p>
     pub source_entity: std::option::Option<crate::model::AnalysisSourceEntity>,
     /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme
-    /// in the QuickSight console, make sure that you have access to it.</p>
+    /// in the Amazon QuickSight console, make sure that you have access to it.</p>
     pub theme_arn: std::option::Option<std::string::String>,
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
     /// analysis.</p>
@@ -27918,12 +28771,12 @@ impl std::fmt::Debug for CreateAnalysisInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccountCustomizationInput {
-    /// <p>The ID for the Amazon Web Services account; that you want to customize QuickSight for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The QuickSight namespace that you want to add customizations to.</p>
+    /// <p>The Amazon QuickSight namespace that you want to add customizations to.</p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The QuickSight customizations you're adding in the current Amazon Web Services Region;. You can add
-    /// these to an Amazon Web Services account; and a QuickSight namespace. </p>
+    /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region;. You can add
+    /// these to an Amazon Web Services account and a Amazon QuickSight namespace. </p>
     /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code>
     /// to the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
     /// "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by
@@ -27948,7 +28801,7 @@ impl std::fmt::Debug for CreateAccountCustomizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelIngestionInput {
-    /// <p>The Amazon Web Services account; ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the dataset used in the ingestion.</p>
     pub data_set_id: std::option::Option<std::string::String>,

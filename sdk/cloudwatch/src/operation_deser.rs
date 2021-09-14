@@ -12,27 +12,25 @@ pub fn parse_delete_alarms_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFound" => crate::error::DeleteAlarmsError {
-            meta: generic,
-            kind: crate::error::DeleteAlarmsErrorKind::ResourceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ResourceNotFound" => {
+            crate::error::DeleteAlarmsError {
+                meta: generic,
+                kind: crate::error::DeleteAlarmsErrorKind::ResourceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_not_found_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteAlarmsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_resource_not_found_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAlarmsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DeleteAlarmsError::generic(generic),
     })
 }
@@ -73,11 +71,7 @@ pub fn parse_delete_anomaly_detector_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -95,7 +89,7 @@ pub fn parse_delete_anomaly_detector_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -114,7 +108,7 @@ pub fn parse_delete_anomaly_detector_error(
                         let mut output =
                             crate::error::missing_required_parameter_exception::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -132,12 +126,7 @@ pub fn parse_delete_anomaly_detector_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -187,11 +176,7 @@ pub fn parse_delete_dashboards_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::dashboard_not_found_error::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_dashboard_not_found_error_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteDashboardsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_dashboard_not_found_error_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDashboardsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -208,11 +193,7 @@ pub fn parse_delete_dashboards_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteDashboardsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDashboardsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -230,7 +211,7 @@ pub fn parse_delete_dashboards_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDashboardsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDashboardsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -281,7 +262,7 @@ pub fn parse_delete_insight_rules_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteInsightRulesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteInsightRulesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -299,7 +280,7 @@ pub fn parse_delete_insight_rules_error(
                     let mut output =
                         crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteInsightRulesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteInsightRulesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -323,7 +304,7 @@ pub fn parse_delete_insight_rules_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_insight_rules_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_insight_rules(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_insight_rules(
             response.body().as_ref(),
             output,
         )
@@ -356,11 +337,7 @@ pub fn parse_delete_metric_stream_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteMetricStreamError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMetricStreamError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -378,7 +355,7 @@ pub fn parse_delete_metric_stream_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMetricStreamError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMetricStreamError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -396,7 +373,7 @@ pub fn parse_delete_metric_stream_error(
                     let mut output =
                         crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMetricStreamError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMetricStreamError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -440,27 +417,25 @@ pub fn parse_describe_alarm_history_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => crate::error::DescribeAlarmHistoryError {
-            meta: generic,
-            kind: crate::error::DescribeAlarmHistoryErrorKind::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextToken" => {
+            crate::error::DescribeAlarmHistoryError {
+                meta: generic,
+                kind: crate::error::DescribeAlarmHistoryErrorKind::InvalidNextToken({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAlarmHistoryError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAlarmHistoryError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DescribeAlarmHistoryError::generic(generic),
     })
 }
@@ -476,7 +451,7 @@ pub fn parse_describe_alarm_history_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_alarm_history_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_alarm_history(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_alarm_history(
             response.body().as_ref(),
             output,
         )
@@ -498,27 +473,25 @@ pub fn parse_describe_alarms_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => crate::error::DescribeAlarmsError {
-            meta: generic,
-            kind: crate::error::DescribeAlarmsErrorKind::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextToken" => {
+            crate::error::DescribeAlarmsError {
+                meta: generic,
+                kind: crate::error::DescribeAlarmsErrorKind::InvalidNextToken({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAlarmsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAlarmsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DescribeAlarmsError::generic(generic),
     })
 }
@@ -531,9 +504,11 @@ pub fn parse_describe_alarms_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_alarms_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_alarms(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeAlarmsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_alarms(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeAlarmsError::unhandled)?;
         output.build()
     })
 }
@@ -561,7 +536,7 @@ pub fn parse_describe_alarms_for_metric_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_alarms_for_metric_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_alarms_for_metric(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_alarms_for_metric(
             response.body().as_ref(),
             output,
         )
@@ -598,11 +573,7 @@ pub fn parse_describe_anomaly_detectors_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAnomalyDetectorsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnomalyDetectorsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -611,27 +582,25 @@ pub fn parse_describe_anomaly_detectors_error(
                 tmp
             }),
         },
-        "InvalidNextToken" => crate::error::DescribeAnomalyDetectorsError {
-            meta: generic,
-            kind: crate::error::DescribeAnomalyDetectorsErrorKind::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextToken" => {
+            crate::error::DescribeAnomalyDetectorsError {
+                meta: generic,
+                kind: crate::error::DescribeAnomalyDetectorsErrorKind::InvalidNextToken({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAnomalyDetectorsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnomalyDetectorsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidParameterValue" => crate::error::DescribeAnomalyDetectorsError {
             meta: generic,
             kind: crate::error::DescribeAnomalyDetectorsErrorKind::InvalidParameterValueException(
@@ -642,7 +611,7 @@ pub fn parse_describe_anomaly_detectors_error(
                         let mut output =
                             crate::error::invalid_parameter_value_exception::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnomalyDetectorsError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnomalyDetectorsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -667,7 +636,7 @@ pub fn parse_describe_anomaly_detectors_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_anomaly_detectors_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_anomaly_detectors(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_anomaly_detectors(
             response.body().as_ref(),
             output,
         )
@@ -692,27 +661,25 @@ pub fn parse_describe_insight_rules_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => crate::error::DescribeInsightRulesError {
-            meta: generic,
-            kind: crate::error::DescribeInsightRulesErrorKind::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextToken" => {
+            crate::error::DescribeInsightRulesError {
+                meta: generic,
+                kind: crate::error::DescribeInsightRulesErrorKind::InvalidNextToken({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeInsightRulesError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInsightRulesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DescribeInsightRulesError::generic(generic),
     })
 }
@@ -728,7 +695,7 @@ pub fn parse_describe_insight_rules_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_insight_rules_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_insight_rules(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_insight_rules(
             response.body().as_ref(),
             output,
         )
@@ -789,7 +756,7 @@ pub fn parse_disable_insight_rules_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableInsightRulesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableInsightRulesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -807,7 +774,7 @@ pub fn parse_disable_insight_rules_error(
                     let mut output =
                         crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableInsightRulesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableInsightRulesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -831,7 +798,7 @@ pub fn parse_disable_insight_rules_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disable_insight_rules_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_disable_insight_rules(
+        output = crate::xml_deser::deser_operation_crate_operation_disable_insight_rules(
             response.body().as_ref(),
             output,
         )
@@ -892,7 +859,7 @@ pub fn parse_enable_insight_rules_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableInsightRulesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableInsightRulesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -909,11 +876,7 @@ pub fn parse_enable_insight_rules_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::EnableInsightRulesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableInsightRulesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -931,7 +894,7 @@ pub fn parse_enable_insight_rules_error(
                     let mut output =
                         crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableInsightRulesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableInsightRulesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -955,7 +918,7 @@ pub fn parse_enable_insight_rules_response(
         #[allow(unused_mut)]
         let mut output = crate::output::enable_insight_rules_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_enable_insight_rules(
+        output = crate::xml_deser::deser_operation_crate_operation_enable_insight_rules(
             response.body().as_ref(),
             output,
         )
@@ -985,11 +948,7 @@ pub fn parse_get_dashboard_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::dashboard_not_found_error::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_dashboard_not_found_error_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetDashboardError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_dashboard_not_found_error_xml_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1006,11 +965,7 @@ pub fn parse_get_dashboard_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetDashboardError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1028,7 +983,7 @@ pub fn parse_get_dashboard_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1049,8 +1004,11 @@ pub fn parse_get_dashboard_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_dashboard_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_dashboard(response.body().as_ref(), output)
-            .map_err(crate::error::GetDashboardError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_dashboard(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetDashboardError::unhandled)?;
         output.build()
     })
 }
@@ -1080,7 +1038,7 @@ pub fn parse_get_insight_rule_report_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetInsightRuleReportError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetInsightRuleReportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1098,7 +1056,7 @@ pub fn parse_get_insight_rule_report_error(
                     let mut output =
                         crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetInsightRuleReportError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetInsightRuleReportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1115,12 +1073,7 @@ pub fn parse_get_insight_rule_report_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::GetInsightRuleReportError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetInsightRuleReportError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1144,7 +1097,7 @@ pub fn parse_get_insight_rule_report_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_insight_rule_report_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_insight_rule_report(
+        output = crate::xml_deser::deser_operation_crate_operation_get_insight_rule_report(
             response.body().as_ref(),
             output,
         )
@@ -1166,27 +1119,25 @@ pub fn parse_get_metric_data_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => crate::error::GetMetricDataError {
-            meta: generic,
-            kind: crate::error::GetMetricDataErrorKind::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextToken" => {
+            crate::error::GetMetricDataError {
+                meta: generic,
+                kind: crate::error::GetMetricDataErrorKind::InvalidNextToken({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetMetricDataError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricDataError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::GetMetricDataError::generic(generic),
     })
 }
@@ -1199,9 +1150,11 @@ pub fn parse_get_metric_data_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_metric_data_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_get_metric_data(response.body().as_ref(), output)
-                .map_err(crate::error::GetMetricDataError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_metric_data(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetMetricDataError::unhandled)?;
         output.build()
     })
 }
@@ -1230,11 +1183,7 @@ pub fn parse_get_metric_statistics_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetMetricStatisticsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStatisticsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1253,7 +1202,7 @@ pub fn parse_get_metric_statistics_error(
                             let mut tmp = {
                                 #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                                 let _ = response;
-                                output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStatisticsError::unhandled)?;
+                                output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStatisticsError::unhandled)?;
                                 output.build()
                             };
                             if (&tmp.message).is_none() {
@@ -1273,7 +1222,7 @@ pub fn parse_get_metric_statistics_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStatisticsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStatisticsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1291,7 +1240,7 @@ pub fn parse_get_metric_statistics_error(
                     let mut output =
                         crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStatisticsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStatisticsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1315,7 +1264,7 @@ pub fn parse_get_metric_statistics_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_metric_statistics_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_metric_statistics(
+        output = crate::xml_deser::deser_operation_crate_operation_get_metric_statistics(
             response.body().as_ref(),
             output,
         )
@@ -1345,11 +1294,7 @@ pub fn parse_get_metric_stream_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetMetricStreamError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStreamError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1367,7 +1312,7 @@ pub fn parse_get_metric_stream_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStreamError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStreamError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1385,7 +1330,7 @@ pub fn parse_get_metric_stream_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStreamError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStreamError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1403,7 +1348,7 @@ pub fn parse_get_metric_stream_error(
                     let mut output =
                         crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStreamError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStreamError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1420,12 +1365,7 @@ pub fn parse_get_metric_stream_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::GetMetricStreamError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStreamError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1446,9 +1386,11 @@ pub fn parse_get_metric_stream_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_metric_stream_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_get_metric_stream(response.body().as_ref(), output)
-                .map_err(crate::error::GetMetricStreamError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_metric_stream(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetMetricStreamError::unhandled)?;
         output.build()
     })
 }
@@ -1476,7 +1418,7 @@ pub fn parse_get_metric_widget_image_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_metric_widget_image_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_metric_widget_image(
+        output = crate::xml_deser::deser_operation_crate_operation_get_metric_widget_image(
             response.body().as_ref(),
             output,
         )
@@ -1506,11 +1448,7 @@ pub fn parse_list_dashboards_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListDashboardsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDashboardsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1528,7 +1466,7 @@ pub fn parse_list_dashboards_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDashboardsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDashboardsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1549,9 +1487,11 @@ pub fn parse_list_dashboards_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_dashboards_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_list_dashboards(response.body().as_ref(), output)
-                .map_err(crate::error::ListDashboardsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_list_dashboards(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListDashboardsError::unhandled)?;
         output.build()
     })
 }
@@ -1577,11 +1517,7 @@ pub fn parse_list_metrics_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListMetricsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1599,7 +1535,7 @@ pub fn parse_list_metrics_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1620,8 +1556,11 @@ pub fn parse_list_metrics_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_metrics_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_metrics(response.body().as_ref(), output)
-            .map_err(crate::error::ListMetricsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_list_metrics(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListMetricsError::unhandled)?;
         output.build()
     })
 }
@@ -1648,11 +1587,7 @@ pub fn parse_list_metric_streams_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListMetricStreamsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricStreamsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1661,27 +1596,25 @@ pub fn parse_list_metric_streams_error(
                 tmp
             }),
         },
-        "InvalidNextToken" => crate::error::ListMetricStreamsError {
-            meta: generic,
-            kind: crate::error::ListMetricStreamsErrorKind::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextToken" => {
+            crate::error::ListMetricStreamsError {
+                meta: generic,
+                kind: crate::error::ListMetricStreamsErrorKind::InvalidNextToken({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListMetricStreamsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricStreamsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InvalidParameterValue" => crate::error::ListMetricStreamsError {
             meta: generic,
             kind: crate::error::ListMetricStreamsErrorKind::InvalidParameterValueException({
@@ -1691,7 +1624,7 @@ pub fn parse_list_metric_streams_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricStreamsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricStreamsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1709,7 +1642,7 @@ pub fn parse_list_metric_streams_error(
                     let mut output =
                         crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricStreamsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricStreamsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1731,9 +1664,11 @@ pub fn parse_list_metric_streams_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_metric_streams_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_list_metric_streams(response.body().as_ref(), output)
-                .map_err(crate::error::ListMetricStreamsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_list_metric_streams(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListMetricStreamsError::unhandled)?;
         output.build()
     })
 }
@@ -1762,11 +1697,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1784,7 +1715,7 @@ pub fn parse_list_tags_for_resource_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1801,12 +1732,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1830,7 +1756,7 @@ pub fn parse_list_tags_for_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_for_resource_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_tags_for_resource(
+        output = crate::xml_deser::deser_operation_crate_operation_list_tags_for_resource(
             response.body().as_ref(),
             output,
         )
@@ -1863,11 +1789,7 @@ pub fn parse_put_anomaly_detector_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1885,7 +1807,7 @@ pub fn parse_put_anomaly_detector_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1902,11 +1824,7 @@ pub fn parse_put_anomaly_detector_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1924,7 +1842,7 @@ pub fn parse_put_anomaly_detector_error(
                     let mut output =
                         crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1966,27 +1884,25 @@ pub fn parse_put_composite_alarm_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::PutCompositeAlarmError {
-            meta: generic,
-            kind: crate::error::PutCompositeAlarmErrorKind::LimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "LimitExceeded" => {
+            crate::error::PutCompositeAlarmError {
+                meta: generic,
+                kind: crate::error::PutCompositeAlarmErrorKind::LimitExceededFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutCompositeAlarmError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutCompositeAlarmError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::PutCompositeAlarmError::generic(generic),
     })
 }
@@ -2017,26 +1933,24 @@ pub fn parse_put_dashboard_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterInput" => {
-            crate::error::PutDashboardError {
-                meta: generic,
-                kind: crate::error::PutDashboardErrorKind::DashboardInvalidInputError({
+        "InvalidParameterInput" => crate::error::PutDashboardError {
+            meta: generic,
+            kind: crate::error::PutDashboardErrorKind::DashboardInvalidInputError({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::dashboard_invalid_input_error::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_dashboard_invalid_input_error_xml_err(response.body().as_ref(), output).map_err(crate::error::PutDashboardError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::dashboard_invalid_input_error::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_dashboard_invalid_input_error_xml_err(response.body().as_ref(), output).map_err(crate::error::PutDashboardError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceError" => crate::error::PutDashboardError {
             meta: generic,
             kind: crate::error::PutDashboardErrorKind::InternalServiceFault({
@@ -2045,11 +1959,7 @@ pub fn parse_put_dashboard_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutDashboardError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutDashboardError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2070,8 +1980,11 @@ pub fn parse_put_dashboard_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_dashboard_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_put_dashboard(response.body().as_ref(), output)
-            .map_err(crate::error::PutDashboardError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_put_dashboard(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::PutDashboardError::unhandled)?;
         output.build()
     })
 }
@@ -2098,7 +2011,7 @@ pub fn parse_put_insight_rule_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutInsightRuleError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutInsightRuleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2115,11 +2028,7 @@ pub fn parse_put_insight_rule_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutInsightRuleError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutInsightRuleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2137,7 +2046,7 @@ pub fn parse_put_insight_rule_error(
                     let mut output =
                         crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutInsightRuleError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutInsightRuleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2175,27 +2084,25 @@ pub fn parse_put_metric_alarm_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::PutMetricAlarmError {
-            meta: generic,
-            kind: crate::error::PutMetricAlarmErrorKind::LimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "LimitExceeded" => {
+            crate::error::PutMetricAlarmError {
+                meta: generic,
+                kind: crate::error::PutMetricAlarmErrorKind::LimitExceededFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutMetricAlarmError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricAlarmError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::PutMetricAlarmError::generic(generic),
     })
 }
@@ -2233,11 +2140,7 @@ pub fn parse_put_metric_data_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutMetricDataError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricDataError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2255,7 +2158,7 @@ pub fn parse_put_metric_data_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricDataError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricDataError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2273,7 +2176,7 @@ pub fn parse_put_metric_data_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricDataError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricDataError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2291,7 +2194,7 @@ pub fn parse_put_metric_data_error(
                     let mut output =
                         crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricDataError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricDataError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2338,7 +2241,7 @@ pub fn parse_put_metric_stream_error(
                     let mut output =
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2355,11 +2258,7 @@ pub fn parse_put_metric_stream_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutMetricStreamError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2377,7 +2276,7 @@ pub fn parse_put_metric_stream_error(
                     let mut output =
                         crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2395,7 +2294,7 @@ pub fn parse_put_metric_stream_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2413,7 +2312,7 @@ pub fn parse_put_metric_stream_error(
                     let mut output =
                         crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2434,9 +2333,11 @@ pub fn parse_put_metric_stream_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_metric_stream_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_put_metric_stream(response.body().as_ref(), output)
-                .map_err(crate::error::PutMetricStreamError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_put_metric_stream(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::PutMetricStreamError::unhandled)?;
         output.build()
     })
 }
@@ -2454,48 +2355,44 @@ pub fn parse_set_alarm_state_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidFormat" => crate::error::SetAlarmStateError {
-            meta: generic,
-            kind: crate::error::SetAlarmStateErrorKind::InvalidFormatFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidFormat" => {
+            crate::error::SetAlarmStateError {
+                meta: generic,
+                kind: crate::error::SetAlarmStateErrorKind::InvalidFormatFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_format_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_format_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetAlarmStateError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFound" => crate::error::SetAlarmStateError {
-            meta: generic,
-            kind: crate::error::SetAlarmStateErrorKind::ResourceNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_format_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_format_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetAlarmStateError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceNotFound" => {
+            crate::error::SetAlarmStateError {
+                meta: generic,
+                kind: crate::error::SetAlarmStateErrorKind::ResourceNotFound({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_not_found_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetAlarmStateError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_resource_not_found_xml_err(response.body().as_ref(), output).map_err(crate::error::SetAlarmStateError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::SetAlarmStateError::generic(generic),
     })
 }
@@ -2536,11 +2433,7 @@ pub fn parse_start_metric_streams_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartMetricStreamsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMetricStreamsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2558,7 +2451,7 @@ pub fn parse_start_metric_streams_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMetricStreamsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMetricStreamsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2576,7 +2469,7 @@ pub fn parse_start_metric_streams_error(
                     let mut output =
                         crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMetricStreamsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMetricStreamsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2626,11 +2519,7 @@ pub fn parse_stop_metric_streams_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StopMetricStreamsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopMetricStreamsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2648,7 +2537,7 @@ pub fn parse_stop_metric_streams_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StopMetricStreamsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StopMetricStreamsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2666,7 +2555,7 @@ pub fn parse_stop_metric_streams_error(
                     let mut output =
                         crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StopMetricStreamsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StopMetricStreamsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2714,7 +2603,7 @@ pub fn parse_tag_resource_error(
                     let mut output =
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2731,11 +2620,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2753,7 +2638,7 @@ pub fn parse_tag_resource_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2770,12 +2655,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2822,7 +2702,7 @@ pub fn parse_untag_resource_error(
                     let mut output =
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2839,11 +2719,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2861,7 +2737,7 @@ pub fn parse_untag_resource_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2878,12 +2754,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

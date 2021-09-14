@@ -848,8 +848,10 @@ pub struct DescribeModelOutput {
     pub last_updated_time: std::option::Option<smithy_types::Instant>,
     /// <p>Indicates the time and date at which the ML model was created. </p>
     pub created_at: std::option::Option<smithy_types::Instant>,
-    /// <p>Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt model data by Amazon Lookout for Equipment. </p>
+    /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
     pub server_side_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
+    pub off_condition: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -889,6 +891,7 @@ impl std::fmt::Debug for DescribeModelOutput {
         formatter.field("last_updated_time", &self.last_updated_time);
         formatter.field("created_at", &self.created_at);
         formatter.field("server_side_kms_key_id", &self.server_side_kms_key_id);
+        formatter.field("off_condition", &self.off_condition);
         formatter.finish()
     }
 }
@@ -920,6 +923,7 @@ pub mod describe_model_output {
         pub(crate) last_updated_time: std::option::Option<smithy_types::Instant>,
         pub(crate) created_at: std::option::Option<smithy_types::Instant>,
         pub(crate) server_side_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) off_condition: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the ML model being described. </p>
@@ -1154,7 +1158,7 @@ pub mod describe_model_output {
             self.created_at = input;
             self
         }
-        /// <p>Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt model data by Amazon Lookout for Equipment. </p>
+        /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
         pub fn server_side_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_side_kms_key_id = Some(input.into());
             self
@@ -1164,6 +1168,18 @@ pub mod describe_model_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.server_side_kms_key_id = input;
+            self
+        }
+        /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
+        pub fn off_condition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.off_condition = Some(input.into());
+            self
+        }
+        pub fn set_off_condition(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.off_condition = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeModelOutput`](crate::output::DescribeModelOutput)
@@ -1189,6 +1205,7 @@ pub mod describe_model_output {
                 last_updated_time: self.last_updated_time,
                 created_at: self.created_at,
                 server_side_kms_key_id: self.server_side_kms_key_id,
+                off_condition: self.off_condition,
             }
         }
     }
@@ -1240,7 +1257,7 @@ pub struct DescribeInferenceSchedulerOutput {
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for
     /// the inference scheduler being described. </p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+    /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
     pub server_side_kms_key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeInferenceSchedulerOutput {
@@ -1433,7 +1450,7 @@ pub mod describe_inference_scheduler_output {
             self.role_arn = input;
             self
         }
-        /// <p>Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+        /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
         pub fn server_side_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_side_kms_key_id = Some(input.into());
             self
@@ -1488,7 +1505,7 @@ pub struct DescribeDatasetOutput {
     /// <p>A JSON description of the data that is in each time series dataset, including names,
     /// column names, and data types. </p>
     pub schema: std::option::Option<std::string::String>,
-    /// <p>Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt dataset data by Amazon Lookout for Equipment. </p>
+    /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
     pub server_side_kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
     pub ingestion_input_configuration:
@@ -1589,7 +1606,7 @@ pub mod describe_dataset_output {
             self.schema = input;
             self
         }
-        /// <p>Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt dataset data by Amazon Lookout for Equipment. </p>
+        /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
         pub fn server_side_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_side_kms_key_id = Some(input.into());
             self

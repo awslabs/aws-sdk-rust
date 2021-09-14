@@ -97,12 +97,9 @@ pub fn deser_payload_copy_object_copy_object_output_copy_object_result(
     std::option::Option<crate::model::CopyObjectResult>,
     crate::error::CopyObjectError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_copy_object_output_copy_object_result(body)
-                .map_err(crate::error::CopyObjectError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_s3_synthetic_copy_object_output_copy_object_result(body).map_err(crate::error::CopyObjectError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_copy_object_copy_object_output_copy_source_version_id(
@@ -360,7 +357,7 @@ pub fn deser_payload_get_bucket_analytics_configuration_get_bucket_analytics_con
     crate::error::GetBucketAnalyticsConfigurationError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_get_bucket_analytics_configuration_output_analytics_configuration(body).map_err(crate::error::GetBucketAnalyticsConfigurationError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_s3_synthetic_get_bucket_analytics_configuration_output_analytics_configuration(body).map_err(crate::error::GetBucketAnalyticsConfigurationError::unhandled)
     }).transpose()
 }
 
@@ -371,7 +368,7 @@ pub fn deser_payload_get_bucket_encryption_get_bucket_encryption_output_server_s
     crate::error::GetBucketEncryptionError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_get_bucket_encryption_output_server_side_encryption_configuration(body).map_err(crate::error::GetBucketEncryptionError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_s3_synthetic_get_bucket_encryption_output_server_side_encryption_configuration(body).map_err(crate::error::GetBucketEncryptionError::unhandled)
     }).transpose()
 }
 
@@ -382,7 +379,7 @@ pub fn deser_payload_get_bucket_intelligent_tiering_configuration_get_bucket_int
     crate::error::GetBucketIntelligentTieringConfigurationError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_get_bucket_intelligent_tiering_configuration_output_intelligent_tiering_configuration(body).map_err(crate::error::GetBucketIntelligentTieringConfigurationError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_s3_synthetic_get_bucket_intelligent_tiering_configuration_output_intelligent_tiering_configuration(body).map_err(crate::error::GetBucketIntelligentTieringConfigurationError::unhandled)
     }).transpose()
 }
 
@@ -393,7 +390,7 @@ pub fn deser_payload_get_bucket_inventory_configuration_get_bucket_inventory_con
     crate::error::GetBucketInventoryConfigurationError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_get_bucket_inventory_configuration_output_inventory_configuration(body).map_err(crate::error::GetBucketInventoryConfigurationError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_s3_synthetic_get_bucket_inventory_configuration_output_inventory_configuration(body).map_err(crate::error::GetBucketInventoryConfigurationError::unhandled)
     }).transpose()
 }
 
@@ -404,7 +401,7 @@ pub fn deser_payload_get_bucket_metrics_configuration_get_bucket_metrics_configu
     crate::error::GetBucketMetricsConfigurationError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_get_bucket_metrics_configuration_output_metrics_configuration(body).map_err(crate::error::GetBucketMetricsConfigurationError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_s3_synthetic_get_bucket_metrics_configuration_output_metrics_configuration(body).map_err(crate::error::GetBucketMetricsConfigurationError::unhandled)
     }).transpose()
 }
 
@@ -414,14 +411,9 @@ pub fn deser_payload_get_bucket_ownership_controls_get_bucket_ownership_controls
     std::option::Option<crate::model::OwnershipControls>,
     crate::error::GetBucketOwnershipControlsError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_get_bucket_ownership_controls_output_ownership_controls(
-                body,
-            )
-            .map_err(crate::error::GetBucketOwnershipControlsError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_s3_synthetic_get_bucket_ownership_controls_output_ownership_controls(body).map_err(crate::error::GetBucketOwnershipControlsError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_get_bucket_policy_get_bucket_policy_output_policy(
@@ -443,12 +435,9 @@ pub fn deser_payload_get_bucket_policy_status_get_bucket_policy_status_output_po
     std::option::Option<crate::model::PolicyStatus>,
     crate::error::GetBucketPolicyStatusError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_get_bucket_policy_status_output_policy_status(body)
-                .map_err(crate::error::GetBucketPolicyStatusError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_s3_synthetic_get_bucket_policy_status_output_policy_status(body).map_err(crate::error::GetBucketPolicyStatusError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_get_bucket_replication_get_bucket_replication_output_replication_configuration(
@@ -457,14 +446,9 @@ pub fn deser_payload_get_bucket_replication_get_bucket_replication_output_replic
     std::option::Option<crate::model::ReplicationConfiguration>,
     crate::error::GetBucketReplicationError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_get_bucket_replication_output_replication_configuration(
-                body,
-            )
-            .map_err(crate::error::GetBucketReplicationError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_s3_synthetic_get_bucket_replication_output_replication_configuration(body).map_err(crate::error::GetBucketReplicationError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_get_object_get_object_output_accept_ranges(
@@ -850,12 +834,9 @@ pub fn deser_payload_get_object_legal_hold_get_object_legal_hold_output_legal_ho
     std::option::Option<crate::model::ObjectLockLegalHold>,
     crate::error::GetObjectLegalHoldError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_get_object_legal_hold_output_legal_hold(body)
-                .map_err(crate::error::GetObjectLegalHoldError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_s3_synthetic_get_object_legal_hold_output_legal_hold(body).map_err(crate::error::GetObjectLegalHoldError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_payload_get_object_lock_configuration_get_object_lock_configuration_output_object_lock_configuration(
@@ -865,7 +846,7 @@ pub fn deser_payload_get_object_lock_configuration_get_object_lock_configuration
     crate::error::GetObjectLockConfigurationError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_get_object_lock_configuration_output_object_lock_configuration(body).map_err(crate::error::GetObjectLockConfigurationError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_s3_synthetic_get_object_lock_configuration_output_object_lock_configuration(body).map_err(crate::error::GetObjectLockConfigurationError::unhandled)
     }).transpose()
 }
 
@@ -875,12 +856,9 @@ pub fn deser_payload_get_object_retention_get_object_retention_output_retention(
     std::option::Option<crate::model::ObjectLockRetention>,
     crate::error::GetObjectRetentionError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_get_object_retention_output_retention(body)
-                .map_err(crate::error::GetObjectRetentionError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_s3_synthetic_get_object_retention_output_retention(body).map_err(crate::error::GetObjectRetentionError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_get_object_tagging_get_object_tagging_output_version_id(
@@ -917,7 +895,7 @@ pub fn deser_payload_get_public_access_block_get_public_access_block_output_publ
     crate::error::GetPublicAccessBlockError,
 > {
     (!body.is_empty()).then(||{
-        crate::xml_deser::deser_member_get_public_access_block_output_public_access_block_configuration(body).map_err(crate::error::GetPublicAccessBlockError::unhandled)
+        crate::xml_deser::deser_member_com_amazonaws_s3_synthetic_get_public_access_block_output_public_access_block_configuration(body).map_err(crate::error::GetPublicAccessBlockError::unhandled)
     }).transpose()
 }
 
@@ -1584,12 +1562,9 @@ pub fn deser_payload_upload_part_copy_upload_part_copy_output_copy_part_result(
     std::option::Option<crate::model::CopyPartResult>,
     crate::error::UploadPartCopyError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::xml_deser::deser_member_upload_part_copy_output_copy_part_result(body)
-                .map_err(crate::error::UploadPartCopyError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::xml_deser::deser_member_com_amazonaws_s3_synthetic_upload_part_copy_output_copy_part_result(body).map_err(crate::error::UploadPartCopyError::unhandled)
+    }).transpose()
 }
 
 pub fn deser_header_upload_part_copy_upload_part_copy_output_copy_source_version_id(

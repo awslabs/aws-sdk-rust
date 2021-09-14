@@ -4157,8 +4157,8 @@ impl InvalidClientTokenException {
     }
 }
 
-/// <p>A client token input parameter was reused with an operation, but at least one of
-/// the other input parameters is different from the previous call to the operation.</p>
+/// <p>A client token input parameter was reused with an operation, but at least one of the
+/// other input parameters is different from the previous call to the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotentParameterMismatchException {

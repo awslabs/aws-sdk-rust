@@ -21,11 +21,7 @@ pub fn parse_activate_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ActivatePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ActivatePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -42,11 +38,7 @@ pub fn parse_activate_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ActivatePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ActivatePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -63,11 +55,7 @@ pub fn parse_activate_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::pipeline_deleted_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_pipeline_deleted_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ActivatePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_deleted_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ActivatePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -76,26 +64,23 @@ pub fn parse_activate_pipeline_error(
                 tmp
             }),
         },
-        "PipelineNotFoundException" => {
-            crate::error::ActivatePipelineError {
-                meta: generic,
-                kind: crate::error::ActivatePipelineErrorKind::PipelineNotFoundException({
+        "PipelineNotFoundException" => crate::error::ActivatePipelineError {
+            meta: generic,
+            kind: crate::error::ActivatePipelineErrorKind::PipelineNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::pipeline_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ActivatePipelineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::pipeline_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ActivatePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ActivatePipelineError::generic(generic),
     })
 }
@@ -134,11 +119,7 @@ pub fn parse_add_tags_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddTagsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -155,11 +136,7 @@ pub fn parse_add_tags_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddTagsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -176,11 +153,7 @@ pub fn parse_add_tags_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::pipeline_deleted_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_pipeline_deleted_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AddTagsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_deleted_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -189,26 +162,23 @@ pub fn parse_add_tags_error(
                 tmp
             }),
         },
-        "PipelineNotFoundException" => {
-            crate::error::AddTagsError {
-                meta: generic,
-                kind: crate::error::AddTagsErrorKind::PipelineNotFoundException({
+        "PipelineNotFoundException" => crate::error::AddTagsError {
+            meta: generic,
+            kind: crate::error::AddTagsErrorKind::PipelineNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::pipeline_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::pipeline_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::AddTagsError::generic(generic),
     })
 }
@@ -246,11 +216,7 @@ pub fn parse_create_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -267,11 +233,7 @@ pub fn parse_create_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -292,9 +254,11 @@ pub fn parse_create_pipeline_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_pipeline_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_create_pipeline(response.body().as_ref(), output)
-                .map_err(crate::error::CreatePipelineError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_pipeline(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreatePipelineError::unhandled)?;
         output.build()
     })
 }
@@ -323,11 +287,7 @@ pub fn parse_deactivate_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeactivatePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DeactivatePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -344,11 +304,7 @@ pub fn parse_deactivate_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeactivatePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeactivatePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -365,11 +321,7 @@ pub fn parse_deactivate_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::pipeline_deleted_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_pipeline_deleted_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeactivatePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_deleted_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeactivatePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -378,26 +330,23 @@ pub fn parse_deactivate_pipeline_error(
                 tmp
             }),
         },
-        "PipelineNotFoundException" => {
-            crate::error::DeactivatePipelineError {
-                meta: generic,
-                kind: crate::error::DeactivatePipelineErrorKind::PipelineNotFoundException({
+        "PipelineNotFoundException" => crate::error::DeactivatePipelineError {
+            meta: generic,
+            kind: crate::error::DeactivatePipelineErrorKind::PipelineNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::pipeline_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeactivatePipelineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::pipeline_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeactivatePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeactivatePipelineError::generic(generic),
     })
 }
@@ -438,11 +387,7 @@ pub fn parse_delete_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeletePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -459,11 +404,7 @@ pub fn parse_delete_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeletePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -472,26 +413,23 @@ pub fn parse_delete_pipeline_error(
                 tmp
             }),
         },
-        "PipelineNotFoundException" => {
-            crate::error::DeletePipelineError {
-                meta: generic,
-                kind: crate::error::DeletePipelineErrorKind::PipelineNotFoundException({
+        "PipelineNotFoundException" => crate::error::DeletePipelineError {
+            meta: generic,
+            kind: crate::error::DeletePipelineErrorKind::PipelineNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::pipeline_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePipelineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::pipeline_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeletePipelineError::generic(generic),
     })
 }
@@ -529,11 +467,7 @@ pub fn parse_describe_objects_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeObjectsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeObjectsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -550,11 +484,7 @@ pub fn parse_describe_objects_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeObjectsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeObjectsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -571,11 +501,7 @@ pub fn parse_describe_objects_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::pipeline_deleted_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_pipeline_deleted_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeObjectsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_deleted_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeObjectsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -584,26 +510,23 @@ pub fn parse_describe_objects_error(
                 tmp
             }),
         },
-        "PipelineNotFoundException" => {
-            crate::error::DescribeObjectsError {
-                meta: generic,
-                kind: crate::error::DescribeObjectsErrorKind::PipelineNotFoundException({
+        "PipelineNotFoundException" => crate::error::DescribeObjectsError {
+            meta: generic,
+            kind: crate::error::DescribeObjectsErrorKind::PipelineNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::pipeline_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeObjectsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::pipeline_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeObjectsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeObjectsError::generic(generic),
     })
 }
@@ -616,9 +539,11 @@ pub fn parse_describe_objects_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_objects_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_objects(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeObjectsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_objects(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeObjectsError::unhandled)?;
         output.build()
     })
 }
@@ -645,11 +570,7 @@ pub fn parse_describe_pipelines_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribePipelinesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribePipelinesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -666,11 +587,7 @@ pub fn parse_describe_pipelines_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribePipelinesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribePipelinesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -687,11 +604,7 @@ pub fn parse_describe_pipelines_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::pipeline_deleted_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_pipeline_deleted_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribePipelinesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_deleted_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribePipelinesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -700,26 +613,23 @@ pub fn parse_describe_pipelines_error(
                 tmp
             }),
         },
-        "PipelineNotFoundException" => {
-            crate::error::DescribePipelinesError {
-                meta: generic,
-                kind: crate::error::DescribePipelinesErrorKind::PipelineNotFoundException({
+        "PipelineNotFoundException" => crate::error::DescribePipelinesError {
+            meta: generic,
+            kind: crate::error::DescribePipelinesErrorKind::PipelineNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::pipeline_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribePipelinesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::pipeline_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribePipelinesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribePipelinesError::generic(generic),
     })
 }
@@ -733,9 +643,11 @@ pub fn parse_describe_pipelines_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_pipelines_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_describe_pipelines(response.body().as_ref(), output)
-                .map_err(crate::error::DescribePipelinesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_describe_pipelines(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribePipelinesError::unhandled)?;
         output.build()
     })
 }
@@ -764,11 +676,7 @@ pub fn parse_evaluate_expression_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::EvaluateExpressionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::EvaluateExpressionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -785,11 +693,7 @@ pub fn parse_evaluate_expression_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::EvaluateExpressionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::EvaluateExpressionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -806,11 +710,7 @@ pub fn parse_evaluate_expression_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::pipeline_deleted_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_pipeline_deleted_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::EvaluateExpressionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_deleted_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::EvaluateExpressionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -819,26 +719,23 @@ pub fn parse_evaluate_expression_error(
                 tmp
             }),
         },
-        "PipelineNotFoundException" => {
-            crate::error::EvaluateExpressionError {
-                meta: generic,
-                kind: crate::error::EvaluateExpressionErrorKind::PipelineNotFoundException({
+        "PipelineNotFoundException" => crate::error::EvaluateExpressionError {
+            meta: generic,
+            kind: crate::error::EvaluateExpressionErrorKind::PipelineNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::pipeline_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::EvaluateExpressionError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::pipeline_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::EvaluateExpressionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TaskNotFoundException" => crate::error::EvaluateExpressionError {
             meta: generic,
             kind: crate::error::EvaluateExpressionErrorKind::TaskNotFoundException({
@@ -847,11 +744,7 @@ pub fn parse_evaluate_expression_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::task_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_task_not_found_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::EvaluateExpressionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_task_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::EvaluateExpressionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -875,7 +768,7 @@ pub fn parse_evaluate_expression_response(
         #[allow(unused_mut)]
         let mut output = crate::output::evaluate_expression_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_evaluate_expression(
+        output = crate::json_deser::deser_operation_crate_operation_evaluate_expression(
             response.body().as_ref(),
             output,
         )
@@ -908,11 +801,7 @@ pub fn parse_get_pipeline_definition_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetPipelineDefinitionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::GetPipelineDefinitionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -929,11 +818,7 @@ pub fn parse_get_pipeline_definition_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetPipelineDefinitionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetPipelineDefinitionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -950,11 +835,7 @@ pub fn parse_get_pipeline_definition_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::pipeline_deleted_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_pipeline_deleted_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetPipelineDefinitionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_deleted_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetPipelineDefinitionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -963,26 +844,23 @@ pub fn parse_get_pipeline_definition_error(
                 tmp
             }),
         },
-        "PipelineNotFoundException" => {
-            crate::error::GetPipelineDefinitionError {
-                meta: generic,
-                kind: crate::error::GetPipelineDefinitionErrorKind::PipelineNotFoundException({
+        "PipelineNotFoundException" => crate::error::GetPipelineDefinitionError {
+            meta: generic,
+            kind: crate::error::GetPipelineDefinitionErrorKind::PipelineNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::pipeline_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetPipelineDefinitionError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::pipeline_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetPipelineDefinitionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetPipelineDefinitionError::generic(generic),
     })
 }
@@ -998,7 +876,7 @@ pub fn parse_get_pipeline_definition_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_pipeline_definition_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_pipeline_definition(
+        output = crate::json_deser::deser_operation_crate_operation_get_pipeline_definition(
             response.body().as_ref(),
             output,
         )
@@ -1028,11 +906,7 @@ pub fn parse_list_pipelines_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListPipelinesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ListPipelinesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1049,11 +923,7 @@ pub fn parse_list_pipelines_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListPipelinesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListPipelinesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1074,9 +944,11 @@ pub fn parse_list_pipelines_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_pipelines_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_pipelines(response.body().as_ref(), output)
-                .map_err(crate::error::ListPipelinesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_pipelines(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListPipelinesError::unhandled)?;
         output.build()
     })
 }
@@ -1102,11 +974,7 @@ pub fn parse_poll_for_task_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PollForTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::PollForTaskError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1123,11 +991,7 @@ pub fn parse_poll_for_task_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PollForTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PollForTaskError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1144,11 +1008,7 @@ pub fn parse_poll_for_task_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::task_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_task_not_found_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PollForTaskError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_task_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PollForTaskError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1169,8 +1029,11 @@ pub fn parse_poll_for_task_response(
         #[allow(unused_mut)]
         let mut output = crate::output::poll_for_task_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_poll_for_task(response.body().as_ref(), output)
-            .map_err(crate::error::PollForTaskError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_poll_for_task(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::PollForTaskError::unhandled)?;
         output.build()
     })
 }
@@ -1199,11 +1062,7 @@ pub fn parse_put_pipeline_definition_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutPipelineDefinitionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::PutPipelineDefinitionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1220,11 +1079,7 @@ pub fn parse_put_pipeline_definition_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutPipelineDefinitionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutPipelineDefinitionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1241,11 +1096,7 @@ pub fn parse_put_pipeline_definition_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::pipeline_deleted_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_pipeline_deleted_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutPipelineDefinitionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_deleted_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutPipelineDefinitionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1254,26 +1105,23 @@ pub fn parse_put_pipeline_definition_error(
                 tmp
             }),
         },
-        "PipelineNotFoundException" => {
-            crate::error::PutPipelineDefinitionError {
-                meta: generic,
-                kind: crate::error::PutPipelineDefinitionErrorKind::PipelineNotFoundException({
+        "PipelineNotFoundException" => crate::error::PutPipelineDefinitionError {
+            meta: generic,
+            kind: crate::error::PutPipelineDefinitionErrorKind::PipelineNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::pipeline_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutPipelineDefinitionError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::pipeline_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutPipelineDefinitionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::PutPipelineDefinitionError::generic(generic),
     })
 }
@@ -1289,7 +1137,7 @@ pub fn parse_put_pipeline_definition_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_pipeline_definition_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_put_pipeline_definition(
+        output = crate::json_deser::deser_operation_crate_operation_put_pipeline_definition(
             response.body().as_ref(),
             output,
         )
@@ -1319,11 +1167,7 @@ pub fn parse_query_objects_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::QueryObjectsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::QueryObjectsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1340,11 +1184,7 @@ pub fn parse_query_objects_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::QueryObjectsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::QueryObjectsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1361,11 +1201,7 @@ pub fn parse_query_objects_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::pipeline_deleted_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_pipeline_deleted_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::QueryObjectsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_deleted_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::QueryObjectsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1374,26 +1210,23 @@ pub fn parse_query_objects_error(
                 tmp
             }),
         },
-        "PipelineNotFoundException" => {
-            crate::error::QueryObjectsError {
-                meta: generic,
-                kind: crate::error::QueryObjectsErrorKind::PipelineNotFoundException({
+        "PipelineNotFoundException" => crate::error::QueryObjectsError {
+            meta: generic,
+            kind: crate::error::QueryObjectsErrorKind::PipelineNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::pipeline_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::QueryObjectsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::pipeline_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::QueryObjectsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::QueryObjectsError::generic(generic),
     })
 }
@@ -1406,8 +1239,11 @@ pub fn parse_query_objects_response(
         #[allow(unused_mut)]
         let mut output = crate::output::query_objects_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_query_objects(response.body().as_ref(), output)
-            .map_err(crate::error::QueryObjectsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_query_objects(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::QueryObjectsError::unhandled)?;
         output.build()
     })
 }
@@ -1433,11 +1269,7 @@ pub fn parse_remove_tags_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RemoveTagsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1454,11 +1286,7 @@ pub fn parse_remove_tags_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RemoveTagsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1475,11 +1303,7 @@ pub fn parse_remove_tags_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::pipeline_deleted_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_pipeline_deleted_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RemoveTagsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_deleted_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1488,26 +1312,23 @@ pub fn parse_remove_tags_error(
                 tmp
             }),
         },
-        "PipelineNotFoundException" => {
-            crate::error::RemoveTagsError {
-                meta: generic,
-                kind: crate::error::RemoveTagsErrorKind::PipelineNotFoundException({
+        "PipelineNotFoundException" => crate::error::RemoveTagsError {
+            meta: generic,
+            kind: crate::error::RemoveTagsErrorKind::PipelineNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::pipeline_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::pipeline_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::RemoveTagsError::generic(generic),
     })
 }
@@ -1548,11 +1369,7 @@ pub fn parse_report_task_progress_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ReportTaskProgressError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ReportTaskProgressError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1569,11 +1386,7 @@ pub fn parse_report_task_progress_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ReportTaskProgressError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReportTaskProgressError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1590,11 +1403,7 @@ pub fn parse_report_task_progress_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::pipeline_deleted_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_pipeline_deleted_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ReportTaskProgressError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_deleted_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReportTaskProgressError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1603,26 +1412,23 @@ pub fn parse_report_task_progress_error(
                 tmp
             }),
         },
-        "PipelineNotFoundException" => {
-            crate::error::ReportTaskProgressError {
-                meta: generic,
-                kind: crate::error::ReportTaskProgressErrorKind::PipelineNotFoundException({
+        "PipelineNotFoundException" => crate::error::ReportTaskProgressError {
+            meta: generic,
+            kind: crate::error::ReportTaskProgressErrorKind::PipelineNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::pipeline_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReportTaskProgressError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::pipeline_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReportTaskProgressError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TaskNotFoundException" => crate::error::ReportTaskProgressError {
             meta: generic,
             kind: crate::error::ReportTaskProgressErrorKind::TaskNotFoundException({
@@ -1631,11 +1437,7 @@ pub fn parse_report_task_progress_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::task_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_task_not_found_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ReportTaskProgressError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_task_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReportTaskProgressError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1659,7 +1461,7 @@ pub fn parse_report_task_progress_response(
         #[allow(unused_mut)]
         let mut output = crate::output::report_task_progress_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_report_task_progress(
+        output = crate::json_deser::deser_operation_crate_operation_report_task_progress(
             response.body().as_ref(),
             output,
         )
@@ -1696,11 +1498,7 @@ pub fn parse_report_task_runner_heartbeat_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ReportTaskRunnerHeartbeatError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ReportTaskRunnerHeartbeatError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1717,11 +1515,7 @@ pub fn parse_report_task_runner_heartbeat_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ReportTaskRunnerHeartbeatError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReportTaskRunnerHeartbeatError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1745,7 +1539,7 @@ pub fn parse_report_task_runner_heartbeat_response(
         #[allow(unused_mut)]
         let mut output = crate::output::report_task_runner_heartbeat_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_report_task_runner_heartbeat(
+        output = crate::json_deser::deser_operation_crate_operation_report_task_runner_heartbeat(
             response.body().as_ref(),
             output,
         )
@@ -1775,11 +1569,7 @@ pub fn parse_set_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::SetStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1796,11 +1586,7 @@ pub fn parse_set_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SetStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1817,11 +1603,7 @@ pub fn parse_set_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::pipeline_deleted_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_pipeline_deleted_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_deleted_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SetStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1830,26 +1612,23 @@ pub fn parse_set_status_error(
                 tmp
             }),
         },
-        "PipelineNotFoundException" => {
-            crate::error::SetStatusError {
-                meta: generic,
-                kind: crate::error::SetStatusErrorKind::PipelineNotFoundException({
+        "PipelineNotFoundException" => crate::error::SetStatusError {
+            meta: generic,
+            kind: crate::error::SetStatusErrorKind::PipelineNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::pipeline_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SetStatusError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::pipeline_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SetStatusError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::SetStatusError::generic(generic),
     })
 }
@@ -1887,11 +1666,7 @@ pub fn parse_set_task_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetTaskStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::SetTaskStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1908,11 +1683,7 @@ pub fn parse_set_task_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetTaskStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SetTaskStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1929,11 +1700,7 @@ pub fn parse_set_task_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::pipeline_deleted_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_pipeline_deleted_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetTaskStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_deleted_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SetTaskStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1942,26 +1709,23 @@ pub fn parse_set_task_status_error(
                 tmp
             }),
         },
-        "PipelineNotFoundException" => {
-            crate::error::SetTaskStatusError {
-                meta: generic,
-                kind: crate::error::SetTaskStatusErrorKind::PipelineNotFoundException({
+        "PipelineNotFoundException" => crate::error::SetTaskStatusError {
+            meta: generic,
+            kind: crate::error::SetTaskStatusErrorKind::PipelineNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::pipeline_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SetTaskStatusError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::pipeline_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SetTaskStatusError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TaskNotFoundException" => crate::error::SetTaskStatusError {
             meta: generic,
             kind: crate::error::SetTaskStatusErrorKind::TaskNotFoundException({
@@ -1970,11 +1734,7 @@ pub fn parse_set_task_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::task_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_task_not_found_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetTaskStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_task_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SetTaskStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2027,11 +1787,7 @@ pub fn parse_validate_pipeline_definition_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_errorjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ValidatePipelineDefinitionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_errorjson_err(response.body().as_ref(), output).map_err(crate::error::ValidatePipelineDefinitionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2048,11 +1804,7 @@ pub fn parse_validate_pipeline_definition_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ValidatePipelineDefinitionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ValidatePipelineDefinitionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2069,11 +1821,7 @@ pub fn parse_validate_pipeline_definition_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::pipeline_deleted_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_pipeline_deleted_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ValidatePipelineDefinitionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_deleted_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ValidatePipelineDefinitionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2082,28 +1830,23 @@ pub fn parse_validate_pipeline_definition_error(
                 tmp
             }),
         },
-        "PipelineNotFoundException" => {
-            crate::error::ValidatePipelineDefinitionError {
-                meta: generic,
-                kind: crate::error::ValidatePipelineDefinitionErrorKind::PipelineNotFoundException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::pipeline_not_found_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ValidatePipelineDefinitionError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
-        }
+        "PipelineNotFoundException" => crate::error::ValidatePipelineDefinitionError {
+            meta: generic,
+            kind: crate::error::ValidatePipelineDefinitionErrorKind::PipelineNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pipeline_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pipeline_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ValidatePipelineDefinitionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ValidatePipelineDefinitionError::generic(generic),
     })
 }
@@ -2119,7 +1862,7 @@ pub fn parse_validate_pipeline_definition_response(
         #[allow(unused_mut)]
         let mut output = crate::output::validate_pipeline_definition_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_validate_pipeline_definition(
+        output = crate::json_deser::deser_operation_crate_operation_validate_pipeline_definition(
             response.body().as_ref(),
             output,
         )

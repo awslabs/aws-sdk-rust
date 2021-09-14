@@ -6,7 +6,7 @@ pub fn parse_http_generic_error(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_resource_contention_fault_xml_err(
+pub fn deser_structure_crate_error_resource_contention_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::resource_contention_fault::Builder,
 ) -> Result<crate::error::resource_contention_fault::Builder, smithy_xml::decode::XmlError> {
@@ -39,7 +39,7 @@ pub fn deser_structure_resource_contention_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_service_linked_role_failure_xml_err(
+pub fn deser_structure_crate_error_service_linked_role_failure_xml_err(
     inp: &[u8],
     mut builder: crate::error::service_linked_role_failure::Builder,
 ) -> Result<crate::error::service_linked_role_failure::Builder, smithy_xml::decode::XmlError> {
@@ -72,7 +72,7 @@ pub fn deser_structure_service_linked_role_failure_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_batch_delete_scheduled_action(
+pub fn deser_operation_crate_operation_batch_delete_scheduled_action(
     inp: &[u8],
     mut builder: crate::output::batch_delete_scheduled_action_output::Builder,
 ) -> Result<
@@ -101,10 +101,10 @@ pub fn deser_operation_batch_delete_scheduled_action(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("FailedScheduledActions") /* FailedScheduledActions com.amazonaws.autoscaling#BatchDeleteScheduledActionOutput$FailedScheduledActions */ =>  {
+            s if s.matches("FailedScheduledActions") /* FailedScheduledActions com.amazonaws.autoscaling.synthetic#BatchDeleteScheduledActionOutput$FailedScheduledActions */ =>  {
                 let var_3 =
                     Some(
-                        crate::xml_deser::deser_list_failed_scheduled_update_group_action_requests(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_failed_scheduled_update_group_action_requests(&mut tag)
                         ?
                     )
                 ;
@@ -123,7 +123,7 @@ pub fn deser_operation_batch_delete_scheduled_action(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_already_exists_fault_xml_err(
+pub fn deser_structure_crate_error_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::already_exists_fault::Builder,
 ) -> Result<crate::error::already_exists_fault::Builder, smithy_xml::decode::XmlError> {
@@ -156,7 +156,7 @@ pub fn deser_structure_already_exists_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_limit_exceeded_fault_xml_err(
+pub fn deser_structure_crate_error_limit_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::limit_exceeded_fault::Builder,
 ) -> Result<crate::error::limit_exceeded_fault::Builder, smithy_xml::decode::XmlError> {
@@ -189,7 +189,7 @@ pub fn deser_structure_limit_exceeded_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_batch_put_scheduled_update_group_action(
+pub fn deser_operation_crate_operation_batch_put_scheduled_update_group_action(
     inp: &[u8],
     mut builder: crate::output::batch_put_scheduled_update_group_action_output::Builder,
 ) -> Result<
@@ -218,10 +218,10 @@ pub fn deser_operation_batch_put_scheduled_update_group_action(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("FailedScheduledUpdateGroupActions") /* FailedScheduledUpdateGroupActions com.amazonaws.autoscaling#BatchPutScheduledUpdateGroupActionOutput$FailedScheduledUpdateGroupActions */ =>  {
+            s if s.matches("FailedScheduledUpdateGroupActions") /* FailedScheduledUpdateGroupActions com.amazonaws.autoscaling.synthetic#BatchPutScheduledUpdateGroupActionOutput$FailedScheduledUpdateGroupActions */ =>  {
                 let var_6 =
                     Some(
-                        crate::xml_deser::deser_list_failed_scheduled_update_group_action_requests(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_failed_scheduled_update_group_action_requests(&mut tag)
                         ?
                     )
                 ;
@@ -240,7 +240,7 @@ pub fn deser_operation_batch_put_scheduled_update_group_action(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_active_instance_refresh_not_found_fault_xml_err(
+pub fn deser_structure_crate_error_active_instance_refresh_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::active_instance_refresh_not_found_fault::Builder,
 ) -> Result<
@@ -276,7 +276,7 @@ pub fn deser_structure_active_instance_refresh_not_found_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_cancel_instance_refresh(
+pub fn deser_operation_crate_operation_cancel_instance_refresh(
     inp: &[u8],
     mut builder: crate::output::cancel_instance_refresh_output::Builder,
 ) -> Result<crate::output::cancel_instance_refresh_output::Builder, smithy_xml::decode::XmlError> {
@@ -302,7 +302,7 @@ pub fn deser_operation_cancel_instance_refresh(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("InstanceRefreshId") /* InstanceRefreshId com.amazonaws.autoscaling#CancelInstanceRefreshOutput$InstanceRefreshId */ =>  {
+            s if s.matches("InstanceRefreshId") /* InstanceRefreshId com.amazonaws.autoscaling.synthetic#CancelInstanceRefreshOutput$InstanceRefreshId */ =>  {
                 let var_8 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -327,7 +327,7 @@ pub fn deser_operation_cancel_instance_refresh(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_resource_in_use_fault_xml_err(
+pub fn deser_structure_crate_error_resource_in_use_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::resource_in_use_fault::Builder,
 ) -> Result<crate::error::resource_in_use_fault::Builder, smithy_xml::decode::XmlError> {
@@ -360,7 +360,7 @@ pub fn deser_structure_resource_in_use_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_scaling_activity_in_progress_fault_xml_err(
+pub fn deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::scaling_activity_in_progress_fault::Builder,
 ) -> Result<crate::error::scaling_activity_in_progress_fault::Builder, smithy_xml::decode::XmlError>
@@ -394,7 +394,7 @@ pub fn deser_structure_scaling_activity_in_progress_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_account_limits(
+pub fn deser_operation_crate_operation_describe_account_limits(
     inp: &[u8],
     mut builder: crate::output::describe_account_limits_output::Builder,
 ) -> Result<crate::output::describe_account_limits_output::Builder, smithy_xml::decode::XmlError> {
@@ -420,7 +420,7 @@ pub fn deser_operation_describe_account_limits(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("MaxNumberOfAutoScalingGroups") /* MaxNumberOfAutoScalingGroups com.amazonaws.autoscaling#DescribeAccountLimitsOutput$MaxNumberOfAutoScalingGroups */ =>  {
+            s if s.matches("MaxNumberOfAutoScalingGroups") /* MaxNumberOfAutoScalingGroups com.amazonaws.autoscaling.synthetic#DescribeAccountLimitsOutput$MaxNumberOfAutoScalingGroups */ =>  {
                 let var_11 =
                     Some(
                          {
@@ -435,7 +435,7 @@ pub fn deser_operation_describe_account_limits(
                 builder = builder.set_max_number_of_auto_scaling_groups(var_11);
             }
             ,
-            s if s.matches("MaxNumberOfLaunchConfigurations") /* MaxNumberOfLaunchConfigurations com.amazonaws.autoscaling#DescribeAccountLimitsOutput$MaxNumberOfLaunchConfigurations */ =>  {
+            s if s.matches("MaxNumberOfLaunchConfigurations") /* MaxNumberOfLaunchConfigurations com.amazonaws.autoscaling.synthetic#DescribeAccountLimitsOutput$MaxNumberOfLaunchConfigurations */ =>  {
                 let var_12 =
                     Some(
                          {
@@ -450,7 +450,7 @@ pub fn deser_operation_describe_account_limits(
                 builder = builder.set_max_number_of_launch_configurations(var_12);
             }
             ,
-            s if s.matches("NumberOfAutoScalingGroups") /* NumberOfAutoScalingGroups com.amazonaws.autoscaling#DescribeAccountLimitsOutput$NumberOfAutoScalingGroups */ =>  {
+            s if s.matches("NumberOfAutoScalingGroups") /* NumberOfAutoScalingGroups com.amazonaws.autoscaling.synthetic#DescribeAccountLimitsOutput$NumberOfAutoScalingGroups */ =>  {
                 let var_13 =
                     Some(
                          {
@@ -465,7 +465,7 @@ pub fn deser_operation_describe_account_limits(
                 builder = builder.set_number_of_auto_scaling_groups(var_13);
             }
             ,
-            s if s.matches("NumberOfLaunchConfigurations") /* NumberOfLaunchConfigurations com.amazonaws.autoscaling#DescribeAccountLimitsOutput$NumberOfLaunchConfigurations */ =>  {
+            s if s.matches("NumberOfLaunchConfigurations") /* NumberOfLaunchConfigurations com.amazonaws.autoscaling.synthetic#DescribeAccountLimitsOutput$NumberOfLaunchConfigurations */ =>  {
                 let var_14 =
                     Some(
                          {
@@ -492,7 +492,7 @@ pub fn deser_operation_describe_account_limits(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_adjustment_types(
+pub fn deser_operation_crate_operation_describe_adjustment_types(
     inp: &[u8],
     mut builder: crate::output::describe_adjustment_types_output::Builder,
 ) -> Result<crate::output::describe_adjustment_types_output::Builder, smithy_xml::decode::XmlError>
@@ -519,10 +519,10 @@ pub fn deser_operation_describe_adjustment_types(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("AdjustmentTypes") /* AdjustmentTypes com.amazonaws.autoscaling#DescribeAdjustmentTypesOutput$AdjustmentTypes */ =>  {
+            s if s.matches("AdjustmentTypes") /* AdjustmentTypes com.amazonaws.autoscaling.synthetic#DescribeAdjustmentTypesOutput$AdjustmentTypes */ =>  {
                 let var_15 =
                     Some(
-                        crate::xml_deser::deser_list_adjustment_types(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_adjustment_types(&mut tag)
                         ?
                     )
                 ;
@@ -541,7 +541,7 @@ pub fn deser_operation_describe_adjustment_types(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_next_token_xml_err(
+pub fn deser_structure_crate_error_invalid_next_token_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_next_token::Builder,
 ) -> Result<crate::error::invalid_next_token::Builder, smithy_xml::decode::XmlError> {
@@ -574,7 +574,7 @@ pub fn deser_structure_invalid_next_token_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_auto_scaling_groups(
+pub fn deser_operation_crate_operation_describe_auto_scaling_groups(
     inp: &[u8],
     mut builder: crate::output::describe_auto_scaling_groups_output::Builder,
 ) -> Result<crate::output::describe_auto_scaling_groups_output::Builder, smithy_xml::decode::XmlError>
@@ -601,17 +601,17 @@ pub fn deser_operation_describe_auto_scaling_groups(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("AutoScalingGroups") /* AutoScalingGroups com.amazonaws.autoscaling#DescribeAutoScalingGroupsOutput$AutoScalingGroups */ =>  {
+            s if s.matches("AutoScalingGroups") /* AutoScalingGroups com.amazonaws.autoscaling.synthetic#DescribeAutoScalingGroupsOutput$AutoScalingGroups */ =>  {
                 let var_17 =
                     Some(
-                        crate::xml_deser::deser_list_auto_scaling_groups(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_auto_scaling_groups(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_auto_scaling_groups(var_17);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling#DescribeAutoScalingGroupsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling.synthetic#DescribeAutoScalingGroupsOutput$NextToken */ =>  {
                 let var_18 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -636,7 +636,7 @@ pub fn deser_operation_describe_auto_scaling_groups(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_auto_scaling_instances(
+pub fn deser_operation_crate_operation_describe_auto_scaling_instances(
     inp: &[u8],
     mut builder: crate::output::describe_auto_scaling_instances_output::Builder,
 ) -> Result<
@@ -665,17 +665,17 @@ pub fn deser_operation_describe_auto_scaling_instances(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("AutoScalingInstances") /* AutoScalingInstances com.amazonaws.autoscaling#DescribeAutoScalingInstancesOutput$AutoScalingInstances */ =>  {
+            s if s.matches("AutoScalingInstances") /* AutoScalingInstances com.amazonaws.autoscaling.synthetic#DescribeAutoScalingInstancesOutput$AutoScalingInstances */ =>  {
                 let var_19 =
                     Some(
-                        crate::xml_deser::deser_list_auto_scaling_instances(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_auto_scaling_instances(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_auto_scaling_instances(var_19);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling#DescribeAutoScalingInstancesOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling.synthetic#DescribeAutoScalingInstancesOutput$NextToken */ =>  {
                 let var_20 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -700,7 +700,7 @@ pub fn deser_operation_describe_auto_scaling_instances(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_auto_scaling_notification_types(
+pub fn deser_operation_crate_operation_describe_auto_scaling_notification_types(
     inp: &[u8],
     mut builder: crate::output::describe_auto_scaling_notification_types_output::Builder,
 ) -> Result<
@@ -729,10 +729,10 @@ pub fn deser_operation_describe_auto_scaling_notification_types(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("AutoScalingNotificationTypes") /* AutoScalingNotificationTypes com.amazonaws.autoscaling#DescribeAutoScalingNotificationTypesOutput$AutoScalingNotificationTypes */ =>  {
+            s if s.matches("AutoScalingNotificationTypes") /* AutoScalingNotificationTypes com.amazonaws.autoscaling.synthetic#DescribeAutoScalingNotificationTypesOutput$AutoScalingNotificationTypes */ =>  {
                 let var_21 =
                     Some(
-                        crate::xml_deser::deser_list_auto_scaling_notification_types(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_auto_scaling_notification_types(&mut tag)
                         ?
                     )
                 ;
@@ -751,7 +751,7 @@ pub fn deser_operation_describe_auto_scaling_notification_types(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_instance_refreshes(
+pub fn deser_operation_crate_operation_describe_instance_refreshes(
     inp: &[u8],
     mut builder: crate::output::describe_instance_refreshes_output::Builder,
 ) -> Result<crate::output::describe_instance_refreshes_output::Builder, smithy_xml::decode::XmlError>
@@ -778,17 +778,17 @@ pub fn deser_operation_describe_instance_refreshes(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("InstanceRefreshes") /* InstanceRefreshes com.amazonaws.autoscaling#DescribeInstanceRefreshesOutput$InstanceRefreshes */ =>  {
+            s if s.matches("InstanceRefreshes") /* InstanceRefreshes com.amazonaws.autoscaling.synthetic#DescribeInstanceRefreshesOutput$InstanceRefreshes */ =>  {
                 let var_22 =
                     Some(
-                        crate::xml_deser::deser_list_instance_refreshes(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_instance_refreshes(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_instance_refreshes(var_22);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling#DescribeInstanceRefreshesOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling.synthetic#DescribeInstanceRefreshesOutput$NextToken */ =>  {
                 let var_23 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -813,7 +813,7 @@ pub fn deser_operation_describe_instance_refreshes(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_launch_configurations(
+pub fn deser_operation_crate_operation_describe_launch_configurations(
     inp: &[u8],
     mut builder: crate::output::describe_launch_configurations_output::Builder,
 ) -> Result<
@@ -842,17 +842,17 @@ pub fn deser_operation_describe_launch_configurations(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("LaunchConfigurations") /* LaunchConfigurations com.amazonaws.autoscaling#DescribeLaunchConfigurationsOutput$LaunchConfigurations */ =>  {
+            s if s.matches("LaunchConfigurations") /* LaunchConfigurations com.amazonaws.autoscaling.synthetic#DescribeLaunchConfigurationsOutput$LaunchConfigurations */ =>  {
                 let var_24 =
                     Some(
-                        crate::xml_deser::deser_list_launch_configurations(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_launch_configurations(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_launch_configurations(var_24);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling#DescribeLaunchConfigurationsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling.synthetic#DescribeLaunchConfigurationsOutput$NextToken */ =>  {
                 let var_25 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -877,7 +877,7 @@ pub fn deser_operation_describe_launch_configurations(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_lifecycle_hooks(
+pub fn deser_operation_crate_operation_describe_lifecycle_hooks(
     inp: &[u8],
     mut builder: crate::output::describe_lifecycle_hooks_output::Builder,
 ) -> Result<crate::output::describe_lifecycle_hooks_output::Builder, smithy_xml::decode::XmlError> {
@@ -903,10 +903,10 @@ pub fn deser_operation_describe_lifecycle_hooks(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("LifecycleHooks") /* LifecycleHooks com.amazonaws.autoscaling#DescribeLifecycleHooksOutput$LifecycleHooks */ =>  {
+            s if s.matches("LifecycleHooks") /* LifecycleHooks com.amazonaws.autoscaling.synthetic#DescribeLifecycleHooksOutput$LifecycleHooks */ =>  {
                 let var_26 =
                     Some(
-                        crate::xml_deser::deser_list_lifecycle_hooks(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_lifecycle_hooks(&mut tag)
                         ?
                     )
                 ;
@@ -925,7 +925,7 @@ pub fn deser_operation_describe_lifecycle_hooks(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_lifecycle_hook_types(
+pub fn deser_operation_crate_operation_describe_lifecycle_hook_types(
     inp: &[u8],
     mut builder: crate::output::describe_lifecycle_hook_types_output::Builder,
 ) -> Result<
@@ -954,10 +954,10 @@ pub fn deser_operation_describe_lifecycle_hook_types(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("LifecycleHookTypes") /* LifecycleHookTypes com.amazonaws.autoscaling#DescribeLifecycleHookTypesOutput$LifecycleHookTypes */ =>  {
+            s if s.matches("LifecycleHookTypes") /* LifecycleHookTypes com.amazonaws.autoscaling.synthetic#DescribeLifecycleHookTypesOutput$LifecycleHookTypes */ =>  {
                 let var_27 =
                     Some(
-                        crate::xml_deser::deser_list_auto_scaling_notification_types(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_auto_scaling_notification_types(&mut tag)
                         ?
                     )
                 ;
@@ -976,7 +976,7 @@ pub fn deser_operation_describe_lifecycle_hook_types(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_load_balancers(
+pub fn deser_operation_crate_operation_describe_load_balancers(
     inp: &[u8],
     mut builder: crate::output::describe_load_balancers_output::Builder,
 ) -> Result<crate::output::describe_load_balancers_output::Builder, smithy_xml::decode::XmlError> {
@@ -1002,17 +1002,17 @@ pub fn deser_operation_describe_load_balancers(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("LoadBalancers") /* LoadBalancers com.amazonaws.autoscaling#DescribeLoadBalancersOutput$LoadBalancers */ =>  {
+            s if s.matches("LoadBalancers") /* LoadBalancers com.amazonaws.autoscaling.synthetic#DescribeLoadBalancersOutput$LoadBalancers */ =>  {
                 let var_28 =
                     Some(
-                        crate::xml_deser::deser_list_load_balancer_states(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_load_balancer_states(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_load_balancers(var_28);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling#DescribeLoadBalancersOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling.synthetic#DescribeLoadBalancersOutput$NextToken */ =>  {
                 let var_29 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1037,7 +1037,7 @@ pub fn deser_operation_describe_load_balancers(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_load_balancer_target_groups(
+pub fn deser_operation_crate_operation_describe_load_balancer_target_groups(
     inp: &[u8],
     mut builder: crate::output::describe_load_balancer_target_groups_output::Builder,
 ) -> Result<
@@ -1066,17 +1066,17 @@ pub fn deser_operation_describe_load_balancer_target_groups(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("LoadBalancerTargetGroups") /* LoadBalancerTargetGroups com.amazonaws.autoscaling#DescribeLoadBalancerTargetGroupsOutput$LoadBalancerTargetGroups */ =>  {
+            s if s.matches("LoadBalancerTargetGroups") /* LoadBalancerTargetGroups com.amazonaws.autoscaling.synthetic#DescribeLoadBalancerTargetGroupsOutput$LoadBalancerTargetGroups */ =>  {
                 let var_30 =
                     Some(
-                        crate::xml_deser::deser_list_load_balancer_target_group_states(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_load_balancer_target_group_states(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_load_balancer_target_groups(var_30);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling#DescribeLoadBalancerTargetGroupsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling.synthetic#DescribeLoadBalancerTargetGroupsOutput$NextToken */ =>  {
                 let var_31 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1101,7 +1101,7 @@ pub fn deser_operation_describe_load_balancer_target_groups(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_metric_collection_types(
+pub fn deser_operation_crate_operation_describe_metric_collection_types(
     inp: &[u8],
     mut builder: crate::output::describe_metric_collection_types_output::Builder,
 ) -> Result<
@@ -1130,20 +1130,20 @@ pub fn deser_operation_describe_metric_collection_types(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Metrics") /* Metrics com.amazonaws.autoscaling#DescribeMetricCollectionTypesOutput$Metrics */ =>  {
+            s if s.matches("Metrics") /* Metrics com.amazonaws.autoscaling.synthetic#DescribeMetricCollectionTypesOutput$Metrics */ =>  {
                 let var_32 =
                     Some(
-                        crate::xml_deser::deser_list_metric_collection_types(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_metric_collection_types(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_metrics(var_32);
             }
             ,
-            s if s.matches("Granularities") /* Granularities com.amazonaws.autoscaling#DescribeMetricCollectionTypesOutput$Granularities */ =>  {
+            s if s.matches("Granularities") /* Granularities com.amazonaws.autoscaling.synthetic#DescribeMetricCollectionTypesOutput$Granularities */ =>  {
                 let var_33 =
                     Some(
-                        crate::xml_deser::deser_list_metric_granularity_types(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_metric_granularity_types(&mut tag)
                         ?
                     )
                 ;
@@ -1162,7 +1162,7 @@ pub fn deser_operation_describe_metric_collection_types(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_notification_configurations(
+pub fn deser_operation_crate_operation_describe_notification_configurations(
     inp: &[u8],
     mut builder: crate::output::describe_notification_configurations_output::Builder,
 ) -> Result<
@@ -1191,17 +1191,17 @@ pub fn deser_operation_describe_notification_configurations(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("NotificationConfigurations") /* NotificationConfigurations com.amazonaws.autoscaling#DescribeNotificationConfigurationsOutput$NotificationConfigurations */ =>  {
+            s if s.matches("NotificationConfigurations") /* NotificationConfigurations com.amazonaws.autoscaling.synthetic#DescribeNotificationConfigurationsOutput$NotificationConfigurations */ =>  {
                 let var_34 =
                     Some(
-                        crate::xml_deser::deser_list_notification_configurations(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_notification_configurations(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_notification_configurations(var_34);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling#DescribeNotificationConfigurationsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling.synthetic#DescribeNotificationConfigurationsOutput$NextToken */ =>  {
                 let var_35 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1226,7 +1226,7 @@ pub fn deser_operation_describe_notification_configurations(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_policies(
+pub fn deser_operation_crate_operation_describe_policies(
     inp: &[u8],
     mut builder: crate::output::describe_policies_output::Builder,
 ) -> Result<crate::output::describe_policies_output::Builder, smithy_xml::decode::XmlError> {
@@ -1252,17 +1252,17 @@ pub fn deser_operation_describe_policies(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ScalingPolicies") /* ScalingPolicies com.amazonaws.autoscaling#DescribePoliciesOutput$ScalingPolicies */ =>  {
+            s if s.matches("ScalingPolicies") /* ScalingPolicies com.amazonaws.autoscaling.synthetic#DescribePoliciesOutput$ScalingPolicies */ =>  {
                 let var_36 =
                     Some(
-                        crate::xml_deser::deser_list_scaling_policies(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_scaling_policies(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_scaling_policies(var_36);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling#DescribePoliciesOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling.synthetic#DescribePoliciesOutput$NextToken */ =>  {
                 let var_37 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1287,7 +1287,7 @@ pub fn deser_operation_describe_policies(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_scaling_activities(
+pub fn deser_operation_crate_operation_describe_scaling_activities(
     inp: &[u8],
     mut builder: crate::output::describe_scaling_activities_output::Builder,
 ) -> Result<crate::output::describe_scaling_activities_output::Builder, smithy_xml::decode::XmlError>
@@ -1314,17 +1314,17 @@ pub fn deser_operation_describe_scaling_activities(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Activities") /* Activities com.amazonaws.autoscaling#DescribeScalingActivitiesOutput$Activities */ =>  {
+            s if s.matches("Activities") /* Activities com.amazonaws.autoscaling.synthetic#DescribeScalingActivitiesOutput$Activities */ =>  {
                 let var_38 =
                     Some(
-                        crate::xml_deser::deser_list_activities(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_activities(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_activities(var_38);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling#DescribeScalingActivitiesOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling.synthetic#DescribeScalingActivitiesOutput$NextToken */ =>  {
                 let var_39 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1349,7 +1349,7 @@ pub fn deser_operation_describe_scaling_activities(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_scaling_process_types(
+pub fn deser_operation_crate_operation_describe_scaling_process_types(
     inp: &[u8],
     mut builder: crate::output::describe_scaling_process_types_output::Builder,
 ) -> Result<
@@ -1378,10 +1378,10 @@ pub fn deser_operation_describe_scaling_process_types(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Processes") /* Processes com.amazonaws.autoscaling#DescribeScalingProcessTypesOutput$Processes */ =>  {
+            s if s.matches("Processes") /* Processes com.amazonaws.autoscaling.synthetic#DescribeScalingProcessTypesOutput$Processes */ =>  {
                 let var_40 =
                     Some(
-                        crate::xml_deser::deser_list_processes(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_processes(&mut tag)
                         ?
                     )
                 ;
@@ -1400,7 +1400,7 @@ pub fn deser_operation_describe_scaling_process_types(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_scheduled_actions(
+pub fn deser_operation_crate_operation_describe_scheduled_actions(
     inp: &[u8],
     mut builder: crate::output::describe_scheduled_actions_output::Builder,
 ) -> Result<crate::output::describe_scheduled_actions_output::Builder, smithy_xml::decode::XmlError>
@@ -1427,17 +1427,17 @@ pub fn deser_operation_describe_scheduled_actions(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("ScheduledUpdateGroupActions") /* ScheduledUpdateGroupActions com.amazonaws.autoscaling#DescribeScheduledActionsOutput$ScheduledUpdateGroupActions */ =>  {
+            s if s.matches("ScheduledUpdateGroupActions") /* ScheduledUpdateGroupActions com.amazonaws.autoscaling.synthetic#DescribeScheduledActionsOutput$ScheduledUpdateGroupActions */ =>  {
                 let var_41 =
                     Some(
-                        crate::xml_deser::deser_list_scheduled_update_group_actions(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_scheduled_update_group_actions(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_scheduled_update_group_actions(var_41);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling#DescribeScheduledActionsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling.synthetic#DescribeScheduledActionsOutput$NextToken */ =>  {
                 let var_42 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1462,7 +1462,7 @@ pub fn deser_operation_describe_scheduled_actions(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_tags(
+pub fn deser_operation_crate_operation_describe_tags(
     inp: &[u8],
     mut builder: crate::output::describe_tags_output::Builder,
 ) -> Result<crate::output::describe_tags_output::Builder, smithy_xml::decode::XmlError> {
@@ -1488,17 +1488,17 @@ pub fn deser_operation_describe_tags(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Tags") /* Tags com.amazonaws.autoscaling#DescribeTagsOutput$Tags */ =>  {
+            s if s.matches("Tags") /* Tags com.amazonaws.autoscaling.synthetic#DescribeTagsOutput$Tags */ =>  {
                 let var_43 =
                     Some(
-                        crate::xml_deser::deser_list_tag_description_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_tag_description_list(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_tags(var_43);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling#DescribeTagsOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling.synthetic#DescribeTagsOutput$NextToken */ =>  {
                 let var_44 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1523,7 +1523,7 @@ pub fn deser_operation_describe_tags(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_termination_policy_types(
+pub fn deser_operation_crate_operation_describe_termination_policy_types(
     inp: &[u8],
     mut builder: crate::output::describe_termination_policy_types_output::Builder,
 ) -> Result<
@@ -1552,10 +1552,10 @@ pub fn deser_operation_describe_termination_policy_types(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("TerminationPolicyTypes") /* TerminationPolicyTypes com.amazonaws.autoscaling#DescribeTerminationPolicyTypesOutput$TerminationPolicyTypes */ =>  {
+            s if s.matches("TerminationPolicyTypes") /* TerminationPolicyTypes com.amazonaws.autoscaling.synthetic#DescribeTerminationPolicyTypesOutput$TerminationPolicyTypes */ =>  {
                 let var_45 =
                     Some(
-                        crate::xml_deser::deser_list_termination_policies(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_termination_policies(&mut tag)
                         ?
                     )
                 ;
@@ -1574,7 +1574,7 @@ pub fn deser_operation_describe_termination_policy_types(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_describe_warm_pool(
+pub fn deser_operation_crate_operation_describe_warm_pool(
     inp: &[u8],
     mut builder: crate::output::describe_warm_pool_output::Builder,
 ) -> Result<crate::output::describe_warm_pool_output::Builder, smithy_xml::decode::XmlError> {
@@ -1600,27 +1600,27 @@ pub fn deser_operation_describe_warm_pool(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("WarmPoolConfiguration") /* WarmPoolConfiguration com.amazonaws.autoscaling#DescribeWarmPoolOutput$WarmPoolConfiguration */ =>  {
+            s if s.matches("WarmPoolConfiguration") /* WarmPoolConfiguration com.amazonaws.autoscaling.synthetic#DescribeWarmPoolOutput$WarmPoolConfiguration */ =>  {
                 let var_46 =
                     Some(
-                        crate::xml_deser::deser_structure_warm_pool_configuration(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_warm_pool_configuration(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_warm_pool_configuration(var_46);
             }
             ,
-            s if s.matches("Instances") /* Instances com.amazonaws.autoscaling#DescribeWarmPoolOutput$Instances */ =>  {
+            s if s.matches("Instances") /* Instances com.amazonaws.autoscaling.synthetic#DescribeWarmPoolOutput$Instances */ =>  {
                 let var_47 =
                     Some(
-                        crate::xml_deser::deser_list_instances(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_instances(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_instances(var_47);
             }
             ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling#DescribeWarmPoolOutput$NextToken */ =>  {
+            s if s.matches("NextToken") /* NextToken com.amazonaws.autoscaling.synthetic#DescribeWarmPoolOutput$NextToken */ =>  {
                 let var_48 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1645,7 +1645,7 @@ pub fn deser_operation_describe_warm_pool(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_detach_instances(
+pub fn deser_operation_crate_operation_detach_instances(
     inp: &[u8],
     mut builder: crate::output::detach_instances_output::Builder,
 ) -> Result<crate::output::detach_instances_output::Builder, smithy_xml::decode::XmlError> {
@@ -1671,10 +1671,10 @@ pub fn deser_operation_detach_instances(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Activities") /* Activities com.amazonaws.autoscaling#DetachInstancesOutput$Activities */ =>  {
+            s if s.matches("Activities") /* Activities com.amazonaws.autoscaling.synthetic#DetachInstancesOutput$Activities */ =>  {
                 let var_49 =
                     Some(
-                        crate::xml_deser::deser_list_activities(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_activities(&mut tag)
                         ?
                     )
                 ;
@@ -1693,7 +1693,7 @@ pub fn deser_operation_detach_instances(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_enter_standby(
+pub fn deser_operation_crate_operation_enter_standby(
     inp: &[u8],
     mut builder: crate::output::enter_standby_output::Builder,
 ) -> Result<crate::output::enter_standby_output::Builder, smithy_xml::decode::XmlError> {
@@ -1719,10 +1719,10 @@ pub fn deser_operation_enter_standby(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Activities") /* Activities com.amazonaws.autoscaling#EnterStandbyOutput$Activities */ =>  {
+            s if s.matches("Activities") /* Activities com.amazonaws.autoscaling.synthetic#EnterStandbyOutput$Activities */ =>  {
                 let var_50 =
                     Some(
-                        crate::xml_deser::deser_list_activities(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_activities(&mut tag)
                         ?
                     )
                 ;
@@ -1741,7 +1741,7 @@ pub fn deser_operation_enter_standby(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_exit_standby(
+pub fn deser_operation_crate_operation_exit_standby(
     inp: &[u8],
     mut builder: crate::output::exit_standby_output::Builder,
 ) -> Result<crate::output::exit_standby_output::Builder, smithy_xml::decode::XmlError> {
@@ -1767,10 +1767,10 @@ pub fn deser_operation_exit_standby(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Activities") /* Activities com.amazonaws.autoscaling#ExitStandbyOutput$Activities */ =>  {
+            s if s.matches("Activities") /* Activities com.amazonaws.autoscaling.synthetic#ExitStandbyOutput$Activities */ =>  {
                 let var_51 =
                     Some(
-                        crate::xml_deser::deser_list_activities(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_activities(&mut tag)
                         ?
                     )
                 ;
@@ -1789,7 +1789,7 @@ pub fn deser_operation_exit_standby(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_get_predictive_scaling_forecast(
+pub fn deser_operation_crate_operation_get_predictive_scaling_forecast(
     inp: &[u8],
     mut builder: crate::output::get_predictive_scaling_forecast_output::Builder,
 ) -> Result<
@@ -1818,27 +1818,27 @@ pub fn deser_operation_get_predictive_scaling_forecast(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("LoadForecast") /* LoadForecast com.amazonaws.autoscaling#GetPredictiveScalingForecastOutput$LoadForecast */ =>  {
+            s if s.matches("LoadForecast") /* LoadForecast com.amazonaws.autoscaling.synthetic#GetPredictiveScalingForecastOutput$LoadForecast */ =>  {
                 let var_52 =
                     Some(
-                        crate::xml_deser::deser_list_load_forecasts(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_load_forecasts(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_load_forecast(var_52);
             }
             ,
-            s if s.matches("CapacityForecast") /* CapacityForecast com.amazonaws.autoscaling#GetPredictiveScalingForecastOutput$CapacityForecast */ =>  {
+            s if s.matches("CapacityForecast") /* CapacityForecast com.amazonaws.autoscaling.synthetic#GetPredictiveScalingForecastOutput$CapacityForecast */ =>  {
                 let var_53 =
                     Some(
-                        crate::xml_deser::deser_structure_capacity_forecast(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_capacity_forecast(&mut tag)
                         ?
                     )
                 ;
                 builder = builder.set_capacity_forecast(var_53);
             }
             ,
-            s if s.matches("UpdateTime") /* UpdateTime com.amazonaws.autoscaling#GetPredictiveScalingForecastOutput$UpdateTime */ =>  {
+            s if s.matches("UpdateTime") /* UpdateTime com.amazonaws.autoscaling.synthetic#GetPredictiveScalingForecastOutput$UpdateTime */ =>  {
                 let var_54 =
                     Some(
                         smithy_types::Instant::from_str(
@@ -1864,7 +1864,7 @@ pub fn deser_operation_get_predictive_scaling_forecast(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_put_scaling_policy(
+pub fn deser_operation_crate_operation_put_scaling_policy(
     inp: &[u8],
     mut builder: crate::output::put_scaling_policy_output::Builder,
 ) -> Result<crate::output::put_scaling_policy_output::Builder, smithy_xml::decode::XmlError> {
@@ -1890,7 +1890,7 @@ pub fn deser_operation_put_scaling_policy(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("PolicyARN") /* PolicyARN com.amazonaws.autoscaling#PutScalingPolicyOutput$PolicyARN */ =>  {
+            s if s.matches("PolicyARN") /* PolicyARN com.amazonaws.autoscaling.synthetic#PutScalingPolicyOutput$PolicyARN */ =>  {
                 let var_55 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -1903,10 +1903,10 @@ pub fn deser_operation_put_scaling_policy(
                 builder = builder.set_policy_arn(var_55);
             }
             ,
-            s if s.matches("Alarms") /* Alarms com.amazonaws.autoscaling#PutScalingPolicyOutput$Alarms */ =>  {
+            s if s.matches("Alarms") /* Alarms com.amazonaws.autoscaling.synthetic#PutScalingPolicyOutput$Alarms */ =>  {
                 let var_56 =
                     Some(
-                        crate::xml_deser::deser_list_alarms(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_alarms(&mut tag)
                         ?
                     )
                 ;
@@ -1925,7 +1925,7 @@ pub fn deser_operation_put_scaling_policy(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_instance_refresh_in_progress_fault_xml_err(
+pub fn deser_structure_crate_error_instance_refresh_in_progress_fault_xml_err(
     inp: &[u8],
     mut builder: crate::error::instance_refresh_in_progress_fault::Builder,
 ) -> Result<crate::error::instance_refresh_in_progress_fault::Builder, smithy_xml::decode::XmlError>
@@ -1959,7 +1959,7 @@ pub fn deser_structure_instance_refresh_in_progress_fault_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_start_instance_refresh(
+pub fn deser_operation_crate_operation_start_instance_refresh(
     inp: &[u8],
     mut builder: crate::output::start_instance_refresh_output::Builder,
 ) -> Result<crate::output::start_instance_refresh_output::Builder, smithy_xml::decode::XmlError> {
@@ -1985,7 +1985,7 @@ pub fn deser_operation_start_instance_refresh(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("InstanceRefreshId") /* InstanceRefreshId com.amazonaws.autoscaling#StartInstanceRefreshOutput$InstanceRefreshId */ =>  {
+            s if s.matches("InstanceRefreshId") /* InstanceRefreshId com.amazonaws.autoscaling.synthetic#StartInstanceRefreshOutput$InstanceRefreshId */ =>  {
                 let var_58 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -2010,7 +2010,7 @@ pub fn deser_operation_start_instance_refresh(
 }
 
 #[allow(unused_mut)]
-pub fn deser_operation_terminate_instance_in_auto_scaling_group(
+pub fn deser_operation_crate_operation_terminate_instance_in_auto_scaling_group(
     inp: &[u8],
     mut builder: crate::output::terminate_instance_in_auto_scaling_group_output::Builder,
 ) -> Result<
@@ -2039,10 +2039,10 @@ pub fn deser_operation_terminate_instance_in_auto_scaling_group(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Activity") /* Activity com.amazonaws.autoscaling#TerminateInstanceInAutoScalingGroupOutput$Activity */ =>  {
+            s if s.matches("Activity") /* Activity com.amazonaws.autoscaling.synthetic#TerminateInstanceInAutoScalingGroupOutput$Activity */ =>  {
                 let var_59 =
                     Some(
-                        crate::xml_deser::deser_structure_activity(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_activity(&mut tag)
                         ?
                     )
                 ;
@@ -2060,7 +2060,7 @@ pub fn deser_operation_terminate_instance_in_auto_scaling_group(
     Ok(builder)
 }
 
-pub fn deser_list_failed_scheduled_update_group_action_requests(
+pub fn deser_list_com_amazonaws_autoscaling_failed_scheduled_update_group_action_requests(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::vec::Vec<crate::model::FailedScheduledUpdateGroupActionRequest>,
@@ -2071,7 +2071,7 @@ pub fn deser_list_failed_scheduled_update_group_action_requests(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#FailedScheduledUpdateGroupActionRequests$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_failed_scheduled_update_group_action_request(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_failed_scheduled_update_group_action_request(&mut tag)
                     ?
                 );
             }
@@ -2082,7 +2082,7 @@ pub fn deser_list_failed_scheduled_update_group_action_requests(
     Ok(out)
 }
 
-pub fn deser_list_adjustment_types(
+pub fn deser_list_com_amazonaws_autoscaling_adjustment_types(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::AdjustmentType>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2090,7 +2090,7 @@ pub fn deser_list_adjustment_types(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#AdjustmentTypes$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_adjustment_type(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_adjustment_type(&mut tag)
                     ?
                 );
             }
@@ -2101,7 +2101,7 @@ pub fn deser_list_adjustment_types(
     Ok(out)
 }
 
-pub fn deser_list_auto_scaling_groups(
+pub fn deser_list_com_amazonaws_autoscaling_auto_scaling_groups(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::AutoScalingGroup>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2109,7 +2109,7 @@ pub fn deser_list_auto_scaling_groups(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#AutoScalingGroups$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_auto_scaling_group(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_auto_scaling_group(&mut tag)
                     ?
                 );
             }
@@ -2120,7 +2120,7 @@ pub fn deser_list_auto_scaling_groups(
     Ok(out)
 }
 
-pub fn deser_list_auto_scaling_instances(
+pub fn deser_list_com_amazonaws_autoscaling_auto_scaling_instances(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::AutoScalingInstanceDetails>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2128,7 +2128,7 @@ pub fn deser_list_auto_scaling_instances(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#AutoScalingInstances$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_auto_scaling_instance_details(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_auto_scaling_instance_details(&mut tag)
                     ?
                 );
             }
@@ -2139,7 +2139,7 @@ pub fn deser_list_auto_scaling_instances(
     Ok(out)
 }
 
-pub fn deser_list_auto_scaling_notification_types(
+pub fn deser_list_com_amazonaws_autoscaling_auto_scaling_notification_types(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2161,7 +2161,7 @@ pub fn deser_list_auto_scaling_notification_types(
     Ok(out)
 }
 
-pub fn deser_list_instance_refreshes(
+pub fn deser_list_com_amazonaws_autoscaling_instance_refreshes(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::InstanceRefresh>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2169,7 +2169,7 @@ pub fn deser_list_instance_refreshes(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#InstanceRefreshes$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_instance_refresh(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_instance_refresh(&mut tag)
                     ?
                 );
             }
@@ -2180,7 +2180,7 @@ pub fn deser_list_instance_refreshes(
     Ok(out)
 }
 
-pub fn deser_list_launch_configurations(
+pub fn deser_list_com_amazonaws_autoscaling_launch_configurations(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::LaunchConfiguration>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2188,7 +2188,7 @@ pub fn deser_list_launch_configurations(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#LaunchConfigurations$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_launch_configuration(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_launch_configuration(&mut tag)
                     ?
                 );
             }
@@ -2199,7 +2199,7 @@ pub fn deser_list_launch_configurations(
     Ok(out)
 }
 
-pub fn deser_list_lifecycle_hooks(
+pub fn deser_list_com_amazonaws_autoscaling_lifecycle_hooks(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::LifecycleHook>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2207,7 +2207,7 @@ pub fn deser_list_lifecycle_hooks(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#LifecycleHooks$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_lifecycle_hook(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_lifecycle_hook(&mut tag)
                     ?
                 );
             }
@@ -2218,7 +2218,7 @@ pub fn deser_list_lifecycle_hooks(
     Ok(out)
 }
 
-pub fn deser_list_load_balancer_states(
+pub fn deser_list_com_amazonaws_autoscaling_load_balancer_states(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::LoadBalancerState>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2226,7 +2226,7 @@ pub fn deser_list_load_balancer_states(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#LoadBalancerStates$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_load_balancer_state(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_load_balancer_state(&mut tag)
                     ?
                 );
             }
@@ -2237,7 +2237,7 @@ pub fn deser_list_load_balancer_states(
     Ok(out)
 }
 
-pub fn deser_list_load_balancer_target_group_states(
+pub fn deser_list_com_amazonaws_autoscaling_load_balancer_target_group_states(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::LoadBalancerTargetGroupState>, smithy_xml::decode::XmlError>
 {
@@ -2246,7 +2246,7 @@ pub fn deser_list_load_balancer_target_group_states(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#LoadBalancerTargetGroupStates$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_load_balancer_target_group_state(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_load_balancer_target_group_state(&mut tag)
                     ?
                 );
             }
@@ -2257,7 +2257,7 @@ pub fn deser_list_load_balancer_target_group_states(
     Ok(out)
 }
 
-pub fn deser_list_metric_collection_types(
+pub fn deser_list_com_amazonaws_autoscaling_metric_collection_types(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::MetricCollectionType>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2265,7 +2265,7 @@ pub fn deser_list_metric_collection_types(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#MetricCollectionTypes$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_metric_collection_type(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_metric_collection_type(&mut tag)
                     ?
                 );
             }
@@ -2276,7 +2276,7 @@ pub fn deser_list_metric_collection_types(
     Ok(out)
 }
 
-pub fn deser_list_metric_granularity_types(
+pub fn deser_list_com_amazonaws_autoscaling_metric_granularity_types(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::MetricGranularityType>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2284,7 +2284,7 @@ pub fn deser_list_metric_granularity_types(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#MetricGranularityTypes$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_metric_granularity_type(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_metric_granularity_type(&mut tag)
                     ?
                 );
             }
@@ -2295,7 +2295,7 @@ pub fn deser_list_metric_granularity_types(
     Ok(out)
 }
 
-pub fn deser_list_notification_configurations(
+pub fn deser_list_com_amazonaws_autoscaling_notification_configurations(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::NotificationConfiguration>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2303,7 +2303,7 @@ pub fn deser_list_notification_configurations(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#NotificationConfigurations$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_notification_configuration(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_notification_configuration(&mut tag)
                     ?
                 );
             }
@@ -2314,7 +2314,7 @@ pub fn deser_list_notification_configurations(
     Ok(out)
 }
 
-pub fn deser_list_scaling_policies(
+pub fn deser_list_com_amazonaws_autoscaling_scaling_policies(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ScalingPolicy>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2322,7 +2322,7 @@ pub fn deser_list_scaling_policies(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#ScalingPolicies$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_scaling_policy(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_scaling_policy(&mut tag)
                     ?
                 );
             }
@@ -2333,7 +2333,7 @@ pub fn deser_list_scaling_policies(
     Ok(out)
 }
 
-pub fn deser_list_activities(
+pub fn deser_list_com_amazonaws_autoscaling_activities(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Activity>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2341,7 +2341,7 @@ pub fn deser_list_activities(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#Activities$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_activity(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_activity(&mut tag)
                     ?
                 );
             }
@@ -2352,7 +2352,7 @@ pub fn deser_list_activities(
     Ok(out)
 }
 
-pub fn deser_list_processes(
+pub fn deser_list_com_amazonaws_autoscaling_processes(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ProcessType>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2360,7 +2360,7 @@ pub fn deser_list_processes(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#Processes$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_process_type(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_process_type(&mut tag)
                     ?
                 );
             }
@@ -2371,7 +2371,7 @@ pub fn deser_list_processes(
     Ok(out)
 }
 
-pub fn deser_list_scheduled_update_group_actions(
+pub fn deser_list_com_amazonaws_autoscaling_scheduled_update_group_actions(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::ScheduledUpdateGroupAction>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2379,7 +2379,7 @@ pub fn deser_list_scheduled_update_group_actions(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#ScheduledUpdateGroupActions$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_scheduled_update_group_action(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_scheduled_update_group_action(&mut tag)
                     ?
                 );
             }
@@ -2390,7 +2390,7 @@ pub fn deser_list_scheduled_update_group_actions(
     Ok(out)
 }
 
-pub fn deser_list_tag_description_list(
+pub fn deser_list_com_amazonaws_autoscaling_tag_description_list(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::TagDescription>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2398,7 +2398,7 @@ pub fn deser_list_tag_description_list(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#TagDescriptionList$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_tag_description(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_tag_description(&mut tag)
                     ?
                 );
             }
@@ -2409,7 +2409,7 @@ pub fn deser_list_tag_description_list(
     Ok(out)
 }
 
-pub fn deser_list_termination_policies(
+pub fn deser_list_com_amazonaws_autoscaling_termination_policies(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2431,7 +2431,7 @@ pub fn deser_list_termination_policies(
     Ok(out)
 }
 
-pub fn deser_structure_warm_pool_configuration(
+pub fn deser_structure_crate_model_warm_pool_configuration(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::WarmPoolConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2502,7 +2502,7 @@ pub fn deser_structure_warm_pool_configuration(
     Ok(builder.build())
 }
 
-pub fn deser_list_instances(
+pub fn deser_list_com_amazonaws_autoscaling_instances(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Instance>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2510,7 +2510,7 @@ pub fn deser_list_instances(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#Instances$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_instance(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_instance(&mut tag)
                     ?
                 );
             }
@@ -2521,7 +2521,7 @@ pub fn deser_list_instances(
     Ok(out)
 }
 
-pub fn deser_list_load_forecasts(
+pub fn deser_list_com_amazonaws_autoscaling_load_forecasts(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::LoadForecast>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2529,7 +2529,7 @@ pub fn deser_list_load_forecasts(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#LoadForecasts$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_load_forecast(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_load_forecast(&mut tag)
                     ?
                 );
             }
@@ -2540,7 +2540,7 @@ pub fn deser_list_load_forecasts(
     Ok(out)
 }
 
-pub fn deser_structure_capacity_forecast(
+pub fn deser_structure_crate_model_capacity_forecast(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CapacityForecast, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2550,7 +2550,7 @@ pub fn deser_structure_capacity_forecast(
             s if s.matches("Timestamps") /* Timestamps com.amazonaws.autoscaling#CapacityForecast$Timestamps */ =>  {
                 let var_64 =
                     Some(
-                        crate::xml_deser::deser_list_predictive_scaling_forecast_timestamps(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_predictive_scaling_forecast_timestamps(&mut tag)
                         ?
                     )
                 ;
@@ -2560,7 +2560,7 @@ pub fn deser_structure_capacity_forecast(
             s if s.matches("Values") /* Values com.amazonaws.autoscaling#CapacityForecast$Values */ =>  {
                 let var_65 =
                     Some(
-                        crate::xml_deser::deser_list_predictive_scaling_forecast_values(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_predictive_scaling_forecast_values(&mut tag)
                         ?
                     )
                 ;
@@ -2573,7 +2573,7 @@ pub fn deser_structure_capacity_forecast(
     Ok(builder.build())
 }
 
-pub fn deser_list_alarms(
+pub fn deser_list_com_amazonaws_autoscaling_alarms(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::Alarm>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -2581,7 +2581,7 @@ pub fn deser_list_alarms(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#Alarms$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_alarm(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_alarm(&mut tag)
                     ?
                 );
             }
@@ -2592,7 +2592,7 @@ pub fn deser_list_alarms(
     Ok(out)
 }
 
-pub fn deser_structure_activity(
+pub fn deser_structure_crate_model_activity(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Activity, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2766,7 +2766,7 @@ pub fn deser_structure_activity(
     Ok(builder.build())
 }
 
-pub fn deser_structure_failed_scheduled_update_group_action_request(
+pub fn deser_structure_crate_model_failed_scheduled_update_group_action_request(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::FailedScheduledUpdateGroupActionRequest, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2818,7 +2818,7 @@ pub fn deser_structure_failed_scheduled_update_group_action_request(
     Ok(builder.build())
 }
 
-pub fn deser_structure_adjustment_type(
+pub fn deser_structure_crate_model_adjustment_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AdjustmentType, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2844,7 +2844,7 @@ pub fn deser_structure_adjustment_type(
     Ok(builder.build())
 }
 
-pub fn deser_structure_auto_scaling_group(
+pub fn deser_structure_crate_model_auto_scaling_group(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AutoScalingGroup, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -2893,7 +2893,7 @@ pub fn deser_structure_auto_scaling_group(
             s if s.matches("LaunchTemplate") /* LaunchTemplate com.amazonaws.autoscaling#AutoScalingGroup$LaunchTemplate */ =>  {
                 let var_85 =
                     Some(
-                        crate::xml_deser::deser_structure_launch_template_specification(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_launch_template_specification(&mut tag)
                         ?
                     )
                 ;
@@ -2903,7 +2903,7 @@ pub fn deser_structure_auto_scaling_group(
             s if s.matches("MixedInstancesPolicy") /* MixedInstancesPolicy com.amazonaws.autoscaling#AutoScalingGroup$MixedInstancesPolicy */ =>  {
                 let var_86 =
                     Some(
-                        crate::xml_deser::deser_structure_mixed_instances_policy(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_mixed_instances_policy(&mut tag)
                         ?
                     )
                 ;
@@ -2988,7 +2988,7 @@ pub fn deser_structure_auto_scaling_group(
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.autoscaling#AutoScalingGroup$AvailabilityZones */ =>  {
                 let var_92 =
                     Some(
-                        crate::xml_deser::deser_list_availability_zones(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_availability_zones(&mut tag)
                         ?
                     )
                 ;
@@ -2998,7 +2998,7 @@ pub fn deser_structure_auto_scaling_group(
             s if s.matches("LoadBalancerNames") /* LoadBalancerNames com.amazonaws.autoscaling#AutoScalingGroup$LoadBalancerNames */ =>  {
                 let var_93 =
                     Some(
-                        crate::xml_deser::deser_list_load_balancer_names(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_load_balancer_names(&mut tag)
                         ?
                     )
                 ;
@@ -3008,7 +3008,7 @@ pub fn deser_structure_auto_scaling_group(
             s if s.matches("TargetGroupARNs") /* TargetGroupARNs com.amazonaws.autoscaling#AutoScalingGroup$TargetGroupARNs */ =>  {
                 let var_94 =
                     Some(
-                        crate::xml_deser::deser_list_target_group_ar_ns(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_target_group_ar_ns(&mut tag)
                         ?
                     )
                 ;
@@ -3046,7 +3046,7 @@ pub fn deser_structure_auto_scaling_group(
             s if s.matches("Instances") /* Instances com.amazonaws.autoscaling#AutoScalingGroup$Instances */ =>  {
                 let var_97 =
                     Some(
-                        crate::xml_deser::deser_list_instances(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_instances(&mut tag)
                         ?
                     )
                 ;
@@ -3070,7 +3070,7 @@ pub fn deser_structure_auto_scaling_group(
             s if s.matches("SuspendedProcesses") /* SuspendedProcesses com.amazonaws.autoscaling#AutoScalingGroup$SuspendedProcesses */ =>  {
                 let var_99 =
                     Some(
-                        crate::xml_deser::deser_list_suspended_processes(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_suspended_processes(&mut tag)
                         ?
                     )
                 ;
@@ -3106,7 +3106,7 @@ pub fn deser_structure_auto_scaling_group(
             s if s.matches("EnabledMetrics") /* EnabledMetrics com.amazonaws.autoscaling#AutoScalingGroup$EnabledMetrics */ =>  {
                 let var_102 =
                     Some(
-                        crate::xml_deser::deser_list_enabled_metrics(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_enabled_metrics(&mut tag)
                         ?
                     )
                 ;
@@ -3129,7 +3129,7 @@ pub fn deser_structure_auto_scaling_group(
             s if s.matches("Tags") /* Tags com.amazonaws.autoscaling#AutoScalingGroup$Tags */ =>  {
                 let var_104 =
                     Some(
-                        crate::xml_deser::deser_list_tag_description_list(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_tag_description_list(&mut tag)
                         ?
                     )
                 ;
@@ -3139,7 +3139,7 @@ pub fn deser_structure_auto_scaling_group(
             s if s.matches("TerminationPolicies") /* TerminationPolicies com.amazonaws.autoscaling#AutoScalingGroup$TerminationPolicies */ =>  {
                 let var_105 =
                     Some(
-                        crate::xml_deser::deser_list_termination_policies(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_termination_policies(&mut tag)
                         ?
                     )
                 ;
@@ -3207,7 +3207,7 @@ pub fn deser_structure_auto_scaling_group(
             s if s.matches("WarmPoolConfiguration") /* WarmPoolConfiguration com.amazonaws.autoscaling#AutoScalingGroup$WarmPoolConfiguration */ =>  {
                 let var_110 =
                     Some(
-                        crate::xml_deser::deser_structure_warm_pool_configuration(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_warm_pool_configuration(&mut tag)
                         ?
                     )
                 ;
@@ -3248,7 +3248,7 @@ pub fn deser_structure_auto_scaling_group(
     Ok(builder.build())
 }
 
-pub fn deser_structure_auto_scaling_instance_details(
+pub fn deser_structure_crate_model_auto_scaling_instance_details(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::AutoScalingInstanceDetails, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3349,7 +3349,7 @@ pub fn deser_structure_auto_scaling_instance_details(
             s if s.matches("LaunchTemplate") /* LaunchTemplate com.amazonaws.autoscaling#AutoScalingInstanceDetails$LaunchTemplate */ =>  {
                 let var_120 =
                     Some(
-                        crate::xml_deser::deser_structure_launch_template_specification(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_launch_template_specification(&mut tag)
                         ?
                     )
                 ;
@@ -3390,7 +3390,7 @@ pub fn deser_structure_auto_scaling_instance_details(
     Ok(builder.build())
 }
 
-pub fn deser_structure_instance_refresh(
+pub fn deser_structure_crate_model_instance_refresh(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::InstanceRefresh, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3511,7 +3511,7 @@ pub fn deser_structure_instance_refresh(
             s if s.matches("ProgressDetails") /* ProgressDetails com.amazonaws.autoscaling#InstanceRefresh$ProgressDetails */ =>  {
                 let var_131 =
                     Some(
-                        crate::xml_deser::deser_structure_instance_refresh_progress_details(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_instance_refresh_progress_details(&mut tag)
                         ?
                     )
                 ;
@@ -3521,7 +3521,7 @@ pub fn deser_structure_instance_refresh(
             s if s.matches("Preferences") /* Preferences com.amazonaws.autoscaling#InstanceRefresh$Preferences */ =>  {
                 let var_132 =
                     Some(
-                        crate::xml_deser::deser_structure_refresh_preferences(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_refresh_preferences(&mut tag)
                         ?
                     )
                 ;
@@ -3531,7 +3531,7 @@ pub fn deser_structure_instance_refresh(
             s if s.matches("DesiredConfiguration") /* DesiredConfiguration com.amazonaws.autoscaling#InstanceRefresh$DesiredConfiguration */ =>  {
                 let var_133 =
                     Some(
-                        crate::xml_deser::deser_structure_desired_configuration(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_desired_configuration(&mut tag)
                         ?
                     )
                 ;
@@ -3544,7 +3544,7 @@ pub fn deser_structure_instance_refresh(
     Ok(builder.build())
 }
 
-pub fn deser_structure_launch_configuration(
+pub fn deser_structure_crate_model_launch_configuration(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LaunchConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3606,7 +3606,7 @@ pub fn deser_structure_launch_configuration(
             s if s.matches("SecurityGroups") /* SecurityGroups com.amazonaws.autoscaling#LaunchConfiguration$SecurityGroups */ =>  {
                 let var_138 =
                     Some(
-                        crate::xml_deser::deser_list_security_groups(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_security_groups(&mut tag)
                         ?
                     )
                 ;
@@ -3629,7 +3629,7 @@ pub fn deser_structure_launch_configuration(
             s if s.matches("ClassicLinkVPCSecurityGroups") /* ClassicLinkVPCSecurityGroups com.amazonaws.autoscaling#LaunchConfiguration$ClassicLinkVPCSecurityGroups */ =>  {
                 let var_140 =
                     Some(
-                        crate::xml_deser::deser_list_classic_link_vpc_security_groups(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_classic_link_vpc_security_groups(&mut tag)
                         ?
                     )
                 ;
@@ -3691,7 +3691,7 @@ pub fn deser_structure_launch_configuration(
             s if s.matches("BlockDeviceMappings") /* BlockDeviceMappings com.amazonaws.autoscaling#LaunchConfiguration$BlockDeviceMappings */ =>  {
                 let var_145 =
                     Some(
-                        crate::xml_deser::deser_list_block_device_mappings(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_block_device_mappings(&mut tag)
                         ?
                     )
                 ;
@@ -3701,7 +3701,7 @@ pub fn deser_structure_launch_configuration(
             s if s.matches("InstanceMonitoring") /* InstanceMonitoring com.amazonaws.autoscaling#LaunchConfiguration$InstanceMonitoring */ =>  {
                 let var_146 =
                     Some(
-                        crate::xml_deser::deser_structure_instance_monitoring(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_instance_monitoring(&mut tag)
                         ?
                     )
                 ;
@@ -3794,7 +3794,7 @@ pub fn deser_structure_launch_configuration(
             s if s.matches("MetadataOptions") /* MetadataOptions com.amazonaws.autoscaling#LaunchConfiguration$MetadataOptions */ =>  {
                 let var_153 =
                     Some(
-                        crate::xml_deser::deser_structure_instance_metadata_options(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_instance_metadata_options(&mut tag)
                         ?
                     )
                 ;
@@ -3807,7 +3807,7 @@ pub fn deser_structure_launch_configuration(
     Ok(builder.build())
 }
 
-pub fn deser_structure_lifecycle_hook(
+pub fn deser_structure_crate_model_lifecycle_hook(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LifecycleHook, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3941,7 +3941,7 @@ pub fn deser_structure_lifecycle_hook(
     Ok(builder.build())
 }
 
-pub fn deser_structure_load_balancer_state(
+pub fn deser_structure_crate_model_load_balancer_state(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LoadBalancerState, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -3980,7 +3980,7 @@ pub fn deser_structure_load_balancer_state(
     Ok(builder.build())
 }
 
-pub fn deser_structure_load_balancer_target_group_state(
+pub fn deser_structure_crate_model_load_balancer_target_group_state(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LoadBalancerTargetGroupState, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4019,7 +4019,7 @@ pub fn deser_structure_load_balancer_target_group_state(
     Ok(builder.build())
 }
 
-pub fn deser_structure_metric_collection_type(
+pub fn deser_structure_crate_model_metric_collection_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::MetricCollectionType, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4045,7 +4045,7 @@ pub fn deser_structure_metric_collection_type(
     Ok(builder.build())
 }
 
-pub fn deser_structure_metric_granularity_type(
+pub fn deser_structure_crate_model_metric_granularity_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::MetricGranularityType, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4071,7 +4071,7 @@ pub fn deser_structure_metric_granularity_type(
     Ok(builder.build())
 }
 
-pub fn deser_structure_notification_configuration(
+pub fn deser_structure_crate_model_notification_configuration(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::NotificationConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4123,7 +4123,7 @@ pub fn deser_structure_notification_configuration(
     Ok(builder.build())
 }
 
-pub fn deser_structure_scaling_policy(
+pub fn deser_structure_crate_model_scaling_policy(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ScalingPolicy, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4258,7 +4258,7 @@ pub fn deser_structure_scaling_policy(
             s if s.matches("StepAdjustments") /* StepAdjustments com.amazonaws.autoscaling#ScalingPolicy$StepAdjustments */ =>  {
                 let var_181 =
                     Some(
-                        crate::xml_deser::deser_list_step_adjustments(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_step_adjustments(&mut tag)
                         ?
                     )
                 ;
@@ -4296,7 +4296,7 @@ pub fn deser_structure_scaling_policy(
             s if s.matches("Alarms") /* Alarms com.amazonaws.autoscaling#ScalingPolicy$Alarms */ =>  {
                 let var_184 =
                     Some(
-                        crate::xml_deser::deser_list_alarms(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_alarms(&mut tag)
                         ?
                     )
                 ;
@@ -4306,7 +4306,7 @@ pub fn deser_structure_scaling_policy(
             s if s.matches("TargetTrackingConfiguration") /* TargetTrackingConfiguration com.amazonaws.autoscaling#ScalingPolicy$TargetTrackingConfiguration */ =>  {
                 let var_185 =
                     Some(
-                        crate::xml_deser::deser_structure_target_tracking_configuration(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_target_tracking_configuration(&mut tag)
                         ?
                     )
                 ;
@@ -4331,7 +4331,7 @@ pub fn deser_structure_scaling_policy(
             s if s.matches("PredictiveScalingConfiguration") /* PredictiveScalingConfiguration com.amazonaws.autoscaling#ScalingPolicy$PredictiveScalingConfiguration */ =>  {
                 let var_187 =
                     Some(
-                        crate::xml_deser::deser_structure_predictive_scaling_configuration(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_predictive_scaling_configuration(&mut tag)
                         ?
                     )
                 ;
@@ -4344,7 +4344,7 @@ pub fn deser_structure_scaling_policy(
     Ok(builder.build())
 }
 
-pub fn deser_structure_process_type(
+pub fn deser_structure_crate_model_process_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ProcessType, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4370,7 +4370,7 @@ pub fn deser_structure_process_type(
     Ok(builder.build())
 }
 
-pub fn deser_structure_scheduled_update_group_action(
+pub fn deser_structure_crate_model_scheduled_update_group_action(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::ScheduledUpdateGroupAction, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4535,7 +4535,7 @@ pub fn deser_structure_scheduled_update_group_action(
     Ok(builder.build())
 }
 
-pub fn deser_structure_tag_description(
+pub fn deser_structure_crate_model_tag_description(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TagDescription, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4615,7 +4615,7 @@ pub fn deser_structure_tag_description(
     Ok(builder.build())
 }
 
-pub fn deser_structure_instance(
+pub fn deser_structure_crate_model_instance(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Instance, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4704,7 +4704,7 @@ pub fn deser_structure_instance(
             s if s.matches("LaunchTemplate") /* LaunchTemplate com.amazonaws.autoscaling#Instance$LaunchTemplate */ =>  {
                 let var_211 =
                     Some(
-                        crate::xml_deser::deser_structure_launch_template_specification(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_launch_template_specification(&mut tag)
                         ?
                     )
                 ;
@@ -4745,7 +4745,7 @@ pub fn deser_structure_instance(
     Ok(builder.build())
 }
 
-pub fn deser_structure_load_forecast(
+pub fn deser_structure_crate_model_load_forecast(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LoadForecast, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4755,7 +4755,7 @@ pub fn deser_structure_load_forecast(
             s if s.matches("Timestamps") /* Timestamps com.amazonaws.autoscaling#LoadForecast$Timestamps */ =>  {
                 let var_214 =
                     Some(
-                        crate::xml_deser::deser_list_predictive_scaling_forecast_timestamps(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_predictive_scaling_forecast_timestamps(&mut tag)
                         ?
                     )
                 ;
@@ -4765,7 +4765,7 @@ pub fn deser_structure_load_forecast(
             s if s.matches("Values") /* Values com.amazonaws.autoscaling#LoadForecast$Values */ =>  {
                 let var_215 =
                     Some(
-                        crate::xml_deser::deser_list_predictive_scaling_forecast_values(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_predictive_scaling_forecast_values(&mut tag)
                         ?
                     )
                 ;
@@ -4775,7 +4775,7 @@ pub fn deser_structure_load_forecast(
             s if s.matches("MetricSpecification") /* MetricSpecification com.amazonaws.autoscaling#LoadForecast$MetricSpecification */ =>  {
                 let var_216 =
                     Some(
-                        crate::xml_deser::deser_structure_predictive_scaling_metric_specification(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_predictive_scaling_metric_specification(&mut tag)
                         ?
                     )
                 ;
@@ -4788,7 +4788,7 @@ pub fn deser_structure_load_forecast(
     Ok(builder.build())
 }
 
-pub fn deser_list_predictive_scaling_forecast_timestamps(
+pub fn deser_list_com_amazonaws_autoscaling_predictive_scaling_forecast_timestamps(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<smithy_types::Instant>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4811,7 +4811,7 @@ pub fn deser_list_predictive_scaling_forecast_timestamps(
     Ok(out)
 }
 
-pub fn deser_list_predictive_scaling_forecast_values(
+pub fn deser_list_com_amazonaws_autoscaling_predictive_scaling_forecast_values(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<f64>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4835,7 +4835,7 @@ pub fn deser_list_predictive_scaling_forecast_values(
     Ok(out)
 }
 
-pub fn deser_structure_alarm(
+pub fn deser_structure_crate_model_alarm(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Alarm, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4874,7 +4874,7 @@ pub fn deser_structure_alarm(
     Ok(builder.build())
 }
 
-pub fn deser_structure_launch_template_specification(
+pub fn deser_structure_crate_model_launch_template_specification(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LaunchTemplateSpecification, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4926,7 +4926,7 @@ pub fn deser_structure_launch_template_specification(
     Ok(builder.build())
 }
 
-pub fn deser_structure_mixed_instances_policy(
+pub fn deser_structure_crate_model_mixed_instances_policy(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::MixedInstancesPolicy, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -4936,7 +4936,7 @@ pub fn deser_structure_mixed_instances_policy(
             s if s.matches("LaunchTemplate") /* LaunchTemplate com.amazonaws.autoscaling#MixedInstancesPolicy$LaunchTemplate */ =>  {
                 let var_222 =
                     Some(
-                        crate::xml_deser::deser_structure_launch_template(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_launch_template(&mut tag)
                         ?
                     )
                 ;
@@ -4946,7 +4946,7 @@ pub fn deser_structure_mixed_instances_policy(
             s if s.matches("InstancesDistribution") /* InstancesDistribution com.amazonaws.autoscaling#MixedInstancesPolicy$InstancesDistribution */ =>  {
                 let var_223 =
                     Some(
-                        crate::xml_deser::deser_structure_instances_distribution(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_instances_distribution(&mut tag)
                         ?
                     )
                 ;
@@ -4959,7 +4959,7 @@ pub fn deser_structure_mixed_instances_policy(
     Ok(builder.build())
 }
 
-pub fn deser_list_availability_zones(
+pub fn deser_list_com_amazonaws_autoscaling_availability_zones(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -4981,7 +4981,7 @@ pub fn deser_list_availability_zones(
     Ok(out)
 }
 
-pub fn deser_list_load_balancer_names(
+pub fn deser_list_com_amazonaws_autoscaling_load_balancer_names(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5003,7 +5003,7 @@ pub fn deser_list_load_balancer_names(
     Ok(out)
 }
 
-pub fn deser_list_target_group_ar_ns(
+pub fn deser_list_com_amazonaws_autoscaling_target_group_ar_ns(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5025,7 +5025,7 @@ pub fn deser_list_target_group_ar_ns(
     Ok(out)
 }
 
-pub fn deser_list_suspended_processes(
+pub fn deser_list_com_amazonaws_autoscaling_suspended_processes(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::SuspendedProcess>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5033,7 +5033,7 @@ pub fn deser_list_suspended_processes(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#SuspendedProcesses$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_suspended_process(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_suspended_process(&mut tag)
                     ?
                 );
             }
@@ -5044,7 +5044,7 @@ pub fn deser_list_suspended_processes(
     Ok(out)
 }
 
-pub fn deser_list_enabled_metrics(
+pub fn deser_list_com_amazonaws_autoscaling_enabled_metrics(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::EnabledMetric>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5052,7 +5052,7 @@ pub fn deser_list_enabled_metrics(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#EnabledMetrics$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_enabled_metric(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_enabled_metric(&mut tag)
                     ?
                 );
             }
@@ -5063,7 +5063,7 @@ pub fn deser_list_enabled_metrics(
     Ok(out)
 }
 
-pub fn deser_structure_instance_refresh_progress_details(
+pub fn deser_structure_crate_model_instance_refresh_progress_details(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::InstanceRefreshProgressDetails, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5073,7 +5073,7 @@ pub fn deser_structure_instance_refresh_progress_details(
             s if s.matches("LivePoolProgress") /* LivePoolProgress com.amazonaws.autoscaling#InstanceRefreshProgressDetails$LivePoolProgress */ =>  {
                 let var_224 =
                     Some(
-                        crate::xml_deser::deser_structure_instance_refresh_live_pool_progress(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_instance_refresh_live_pool_progress(&mut tag)
                         ?
                     )
                 ;
@@ -5083,7 +5083,7 @@ pub fn deser_structure_instance_refresh_progress_details(
             s if s.matches("WarmPoolProgress") /* WarmPoolProgress com.amazonaws.autoscaling#InstanceRefreshProgressDetails$WarmPoolProgress */ =>  {
                 let var_225 =
                     Some(
-                        crate::xml_deser::deser_structure_instance_refresh_warm_pool_progress(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_instance_refresh_warm_pool_progress(&mut tag)
                         ?
                     )
                 ;
@@ -5096,7 +5096,7 @@ pub fn deser_structure_instance_refresh_progress_details(
     Ok(builder.build())
 }
 
-pub fn deser_structure_refresh_preferences(
+pub fn deser_structure_crate_model_refresh_preferences(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::RefreshPreferences, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5136,7 +5136,7 @@ pub fn deser_structure_refresh_preferences(
             s if s.matches("CheckpointPercentages") /* CheckpointPercentages com.amazonaws.autoscaling#RefreshPreferences$CheckpointPercentages */ =>  {
                 let var_228 =
                     Some(
-                        crate::xml_deser::deser_list_checkpoint_percentages(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_checkpoint_percentages(&mut tag)
                         ?
                     )
                 ;
@@ -5179,7 +5179,7 @@ pub fn deser_structure_refresh_preferences(
     Ok(builder.build())
 }
 
-pub fn deser_structure_desired_configuration(
+pub fn deser_structure_crate_model_desired_configuration(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::DesiredConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5189,7 +5189,7 @@ pub fn deser_structure_desired_configuration(
             s if s.matches("LaunchTemplate") /* LaunchTemplate com.amazonaws.autoscaling#DesiredConfiguration$LaunchTemplate */ =>  {
                 let var_231 =
                     Some(
-                        crate::xml_deser::deser_structure_launch_template_specification(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_launch_template_specification(&mut tag)
                         ?
                     )
                 ;
@@ -5199,7 +5199,7 @@ pub fn deser_structure_desired_configuration(
             s if s.matches("MixedInstancesPolicy") /* MixedInstancesPolicy com.amazonaws.autoscaling#DesiredConfiguration$MixedInstancesPolicy */ =>  {
                 let var_232 =
                     Some(
-                        crate::xml_deser::deser_structure_mixed_instances_policy(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_mixed_instances_policy(&mut tag)
                         ?
                     )
                 ;
@@ -5212,7 +5212,7 @@ pub fn deser_structure_desired_configuration(
     Ok(builder.build())
 }
 
-pub fn deser_list_security_groups(
+pub fn deser_list_com_amazonaws_autoscaling_security_groups(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5234,7 +5234,7 @@ pub fn deser_list_security_groups(
     Ok(out)
 }
 
-pub fn deser_list_classic_link_vpc_security_groups(
+pub fn deser_list_com_amazonaws_autoscaling_classic_link_vpc_security_groups(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<std::string::String>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5256,7 +5256,7 @@ pub fn deser_list_classic_link_vpc_security_groups(
     Ok(out)
 }
 
-pub fn deser_list_block_device_mappings(
+pub fn deser_list_com_amazonaws_autoscaling_block_device_mappings(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::BlockDeviceMapping>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5264,7 +5264,7 @@ pub fn deser_list_block_device_mappings(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#BlockDeviceMappings$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_block_device_mapping(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_block_device_mapping(&mut tag)
                     ?
                 );
             }
@@ -5275,7 +5275,7 @@ pub fn deser_list_block_device_mappings(
     Ok(out)
 }
 
-pub fn deser_structure_instance_monitoring(
+pub fn deser_structure_crate_model_instance_monitoring(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::InstanceMonitoring, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5303,7 +5303,7 @@ pub fn deser_structure_instance_monitoring(
     Ok(builder.build())
 }
 
-pub fn deser_structure_instance_metadata_options(
+pub fn deser_structure_crate_model_instance_metadata_options(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::InstanceMetadataOptions, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5359,7 +5359,7 @@ pub fn deser_structure_instance_metadata_options(
     Ok(builder.build())
 }
 
-pub fn deser_list_step_adjustments(
+pub fn deser_list_com_amazonaws_autoscaling_step_adjustments(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::StepAdjustment>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5367,7 +5367,7 @@ pub fn deser_list_step_adjustments(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#StepAdjustments$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_step_adjustment(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_step_adjustment(&mut tag)
                     ?
                 );
             }
@@ -5378,7 +5378,7 @@ pub fn deser_list_step_adjustments(
     Ok(out)
 }
 
-pub fn deser_structure_target_tracking_configuration(
+pub fn deser_structure_crate_model_target_tracking_configuration(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::TargetTrackingConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5388,7 +5388,7 @@ pub fn deser_structure_target_tracking_configuration(
             s if s.matches("PredefinedMetricSpecification") /* PredefinedMetricSpecification com.amazonaws.autoscaling#TargetTrackingConfiguration$PredefinedMetricSpecification */ =>  {
                 let var_237 =
                     Some(
-                        crate::xml_deser::deser_structure_predefined_metric_specification(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_predefined_metric_specification(&mut tag)
                         ?
                     )
                 ;
@@ -5398,7 +5398,7 @@ pub fn deser_structure_target_tracking_configuration(
             s if s.matches("CustomizedMetricSpecification") /* CustomizedMetricSpecification com.amazonaws.autoscaling#TargetTrackingConfiguration$CustomizedMetricSpecification */ =>  {
                 let var_238 =
                     Some(
-                        crate::xml_deser::deser_structure_customized_metric_specification(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_customized_metric_specification(&mut tag)
                         ?
                     )
                 ;
@@ -5441,7 +5441,7 @@ pub fn deser_structure_target_tracking_configuration(
     Ok(builder.build())
 }
 
-pub fn deser_structure_predictive_scaling_configuration(
+pub fn deser_structure_crate_model_predictive_scaling_configuration(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PredictiveScalingConfiguration, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5451,7 +5451,7 @@ pub fn deser_structure_predictive_scaling_configuration(
             s if s.matches("MetricSpecifications") /* MetricSpecifications com.amazonaws.autoscaling#PredictiveScalingConfiguration$MetricSpecifications */ =>  {
                 let var_241 =
                     Some(
-                        crate::xml_deser::deser_list_predictive_scaling_metric_specifications(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_predictive_scaling_metric_specifications(&mut tag)
                         ?
                     )
                 ;
@@ -5522,7 +5522,7 @@ pub fn deser_structure_predictive_scaling_configuration(
     Ok(builder.build())
 }
 
-pub fn deser_structure_predictive_scaling_metric_specification(
+pub fn deser_structure_crate_model_predictive_scaling_metric_specification(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PredictiveScalingMetricSpecification, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5547,7 +5547,7 @@ pub fn deser_structure_predictive_scaling_metric_specification(
             s if s.matches("PredefinedMetricPairSpecification") /* PredefinedMetricPairSpecification com.amazonaws.autoscaling#PredictiveScalingMetricSpecification$PredefinedMetricPairSpecification */ =>  {
                 let var_247 =
                     Some(
-                        crate::xml_deser::deser_structure_predictive_scaling_predefined_metric_pair(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_predictive_scaling_predefined_metric_pair(&mut tag)
                         ?
                     )
                 ;
@@ -5557,7 +5557,7 @@ pub fn deser_structure_predictive_scaling_metric_specification(
             s if s.matches("PredefinedScalingMetricSpecification") /* PredefinedScalingMetricSpecification com.amazonaws.autoscaling#PredictiveScalingMetricSpecification$PredefinedScalingMetricSpecification */ =>  {
                 let var_248 =
                     Some(
-                        crate::xml_deser::deser_structure_predictive_scaling_predefined_scaling_metric(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_predictive_scaling_predefined_scaling_metric(&mut tag)
                         ?
                     )
                 ;
@@ -5567,7 +5567,7 @@ pub fn deser_structure_predictive_scaling_metric_specification(
             s if s.matches("PredefinedLoadMetricSpecification") /* PredefinedLoadMetricSpecification com.amazonaws.autoscaling#PredictiveScalingMetricSpecification$PredefinedLoadMetricSpecification */ =>  {
                 let var_249 =
                     Some(
-                        crate::xml_deser::deser_structure_predictive_scaling_predefined_load_metric(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_predictive_scaling_predefined_load_metric(&mut tag)
                         ?
                     )
                 ;
@@ -5580,7 +5580,7 @@ pub fn deser_structure_predictive_scaling_metric_specification(
     Ok(builder.build())
 }
 
-pub fn deser_structure_launch_template(
+pub fn deser_structure_crate_model_launch_template(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LaunchTemplate, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5590,7 +5590,7 @@ pub fn deser_structure_launch_template(
             s if s.matches("LaunchTemplateSpecification") /* LaunchTemplateSpecification com.amazonaws.autoscaling#LaunchTemplate$LaunchTemplateSpecification */ =>  {
                 let var_250 =
                     Some(
-                        crate::xml_deser::deser_structure_launch_template_specification(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_launch_template_specification(&mut tag)
                         ?
                     )
                 ;
@@ -5600,7 +5600,7 @@ pub fn deser_structure_launch_template(
             s if s.matches("Overrides") /* Overrides com.amazonaws.autoscaling#LaunchTemplate$Overrides */ =>  {
                 let var_251 =
                     Some(
-                        crate::xml_deser::deser_list_overrides(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_overrides(&mut tag)
                         ?
                     )
                 ;
@@ -5613,7 +5613,7 @@ pub fn deser_structure_launch_template(
     Ok(builder.build())
 }
 
-pub fn deser_structure_instances_distribution(
+pub fn deser_structure_crate_model_instances_distribution(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::InstancesDistribution, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5710,7 +5710,7 @@ pub fn deser_structure_instances_distribution(
     Ok(builder.build())
 }
 
-pub fn deser_structure_suspended_process(
+pub fn deser_structure_crate_model_suspended_process(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::SuspendedProcess, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5749,7 +5749,7 @@ pub fn deser_structure_suspended_process(
     Ok(builder.build())
 }
 
-pub fn deser_structure_enabled_metric(
+pub fn deser_structure_crate_model_enabled_metric(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::EnabledMetric, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5788,7 +5788,7 @@ pub fn deser_structure_enabled_metric(
     Ok(builder.build())
 }
 
-pub fn deser_structure_instance_refresh_live_pool_progress(
+pub fn deser_structure_crate_model_instance_refresh_live_pool_progress(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::InstanceRefreshLivePoolProgress, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5831,7 +5831,7 @@ pub fn deser_structure_instance_refresh_live_pool_progress(
     Ok(builder.build())
 }
 
-pub fn deser_structure_instance_refresh_warm_pool_progress(
+pub fn deser_structure_crate_model_instance_refresh_warm_pool_progress(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::InstanceRefreshWarmPoolProgress, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5874,7 +5874,7 @@ pub fn deser_structure_instance_refresh_warm_pool_progress(
     Ok(builder.build())
 }
 
-pub fn deser_list_checkpoint_percentages(
+pub fn deser_list_com_amazonaws_autoscaling_checkpoint_percentages(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<i32>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -5898,7 +5898,7 @@ pub fn deser_list_checkpoint_percentages(
     Ok(out)
 }
 
-pub fn deser_structure_block_device_mapping(
+pub fn deser_structure_crate_model_block_device_mapping(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::BlockDeviceMapping, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -5934,7 +5934,7 @@ pub fn deser_structure_block_device_mapping(
             s if s.matches("Ebs") /* Ebs com.amazonaws.autoscaling#BlockDeviceMapping$Ebs */ =>  {
                 let var_268 =
                     Some(
-                        crate::xml_deser::deser_structure_ebs(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_ebs(&mut tag)
                         ?
                     )
                 ;
@@ -5962,7 +5962,7 @@ pub fn deser_structure_block_device_mapping(
     Ok(builder.build())
 }
 
-pub fn deser_structure_step_adjustment(
+pub fn deser_structure_crate_model_step_adjustment(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::StepAdjustment, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6020,7 +6020,7 @@ pub fn deser_structure_step_adjustment(
     Ok(builder.build())
 }
 
-pub fn deser_structure_predefined_metric_specification(
+pub fn deser_structure_crate_model_predefined_metric_specification(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PredefinedMetricSpecification, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6060,7 +6060,7 @@ pub fn deser_structure_predefined_metric_specification(
     Ok(builder.build())
 }
 
-pub fn deser_structure_customized_metric_specification(
+pub fn deser_structure_crate_model_customized_metric_specification(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::CustomizedMetricSpecification, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6096,7 +6096,7 @@ pub fn deser_structure_customized_metric_specification(
             s if s.matches("Dimensions") /* Dimensions com.amazonaws.autoscaling#CustomizedMetricSpecification$Dimensions */ =>  {
                 let var_277 =
                     Some(
-                        crate::xml_deser::deser_list_metric_dimensions(&mut tag)
+                        crate::xml_deser::deser_list_com_amazonaws_autoscaling_metric_dimensions(&mut tag)
                         ?
                     )
                 ;
@@ -6136,7 +6136,7 @@ pub fn deser_structure_customized_metric_specification(
     Ok(builder.build())
 }
 
-pub fn deser_list_predictive_scaling_metric_specifications(
+pub fn deser_list_com_amazonaws_autoscaling_predictive_scaling_metric_specifications(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<
     std::vec::Vec<crate::model::PredictiveScalingMetricSpecification>,
@@ -6147,7 +6147,7 @@ pub fn deser_list_predictive_scaling_metric_specifications(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#PredictiveScalingMetricSpecifications$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_predictive_scaling_metric_specification(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_predictive_scaling_metric_specification(&mut tag)
                     ?
                 );
             }
@@ -6158,7 +6158,7 @@ pub fn deser_list_predictive_scaling_metric_specifications(
     Ok(out)
 }
 
-pub fn deser_structure_predictive_scaling_predefined_metric_pair(
+pub fn deser_structure_crate_model_predictive_scaling_predefined_metric_pair(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PredictiveScalingPredefinedMetricPair, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6198,7 +6198,7 @@ pub fn deser_structure_predictive_scaling_predefined_metric_pair(
     Ok(builder.build())
 }
 
-pub fn deser_structure_predictive_scaling_predefined_scaling_metric(
+pub fn deser_structure_crate_model_predictive_scaling_predefined_scaling_metric(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PredictiveScalingPredefinedScalingMetric, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6238,7 +6238,7 @@ pub fn deser_structure_predictive_scaling_predefined_scaling_metric(
     Ok(builder.build())
 }
 
-pub fn deser_structure_predictive_scaling_predefined_load_metric(
+pub fn deser_structure_crate_model_predictive_scaling_predefined_load_metric(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::PredictiveScalingPredefinedLoadMetric, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6278,7 +6278,7 @@ pub fn deser_structure_predictive_scaling_predefined_load_metric(
     Ok(builder.build())
 }
 
-pub fn deser_list_overrides(
+pub fn deser_list_com_amazonaws_autoscaling_overrides(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::LaunchTemplateOverrides>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6286,7 +6286,7 @@ pub fn deser_list_overrides(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#Overrides$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_launch_template_overrides(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_launch_template_overrides(&mut tag)
                     ?
                 );
             }
@@ -6297,7 +6297,7 @@ pub fn deser_list_overrides(
     Ok(out)
 }
 
-pub fn deser_structure_ebs(
+pub fn deser_structure_crate_model_ebs(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::Ebs, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6411,7 +6411,7 @@ pub fn deser_structure_ebs(
     Ok(builder.build())
 }
 
-pub fn deser_list_metric_dimensions(
+pub fn deser_list_com_amazonaws_autoscaling_metric_dimensions(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<std::vec::Vec<crate::model::MetricDimension>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
@@ -6419,7 +6419,7 @@ pub fn deser_list_metric_dimensions(
         match tag.start_el() {
             s if s.matches("member") /* member com.amazonaws.autoscaling#MetricDimensions$member */ =>  {
                 out.push(
-                    crate::xml_deser::deser_structure_metric_dimension(&mut tag)
+                    crate::xml_deser::deser_structure_crate_model_metric_dimension(&mut tag)
                     ?
                 );
             }
@@ -6430,7 +6430,7 @@ pub fn deser_list_metric_dimensions(
     Ok(out)
 }
 
-pub fn deser_structure_launch_template_overrides(
+pub fn deser_structure_crate_model_launch_template_overrides(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::LaunchTemplateOverrides, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
@@ -6466,7 +6466,7 @@ pub fn deser_structure_launch_template_overrides(
             s if s.matches("LaunchTemplateSpecification") /* LaunchTemplateSpecification com.amazonaws.autoscaling#LaunchTemplateOverrides$LaunchTemplateSpecification */ =>  {
                 let var_295 =
                     Some(
-                        crate::xml_deser::deser_structure_launch_template_specification(&mut tag)
+                        crate::xml_deser::deser_structure_crate_model_launch_template_specification(&mut tag)
                         ?
                     )
                 ;
@@ -6479,7 +6479,7 @@ pub fn deser_structure_launch_template_overrides(
     Ok(builder.build())
 }
 
-pub fn deser_structure_metric_dimension(
+pub fn deser_structure_crate_model_metric_dimension(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::model::MetricDimension, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]

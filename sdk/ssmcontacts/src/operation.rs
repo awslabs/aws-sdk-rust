@@ -25,8 +25,7 @@ impl smithy_http::response::ParseStrictResponse for AcceptPage {
     }
 }
 
-/// <p>Activates a contact's contact channel. Incident Manager can't engage a contact until
-/// the
+/// <p>Activates a contact's contact channel. Incident Manager can't engage a contact until the
 /// contact channel has been activated.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ActivateContactChannel {
@@ -561,7 +560,7 @@ impl smithy_http::response::ParseStrictResponse for PutContactPolicy {
 }
 
 /// <p>Sends an activation code to a contact channel. The contact can use this code to activate
-/// the contact channel in the console or with the <code>ActivateChannel</code> action.
+/// the contact channel in the console or with the <code>ActivateChannel</code> operation.
 /// Incident Manager can't engage a contact channel until it has been activated.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct SendActivationCode {

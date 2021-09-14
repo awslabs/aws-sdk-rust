@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_cloud_hsm_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_cloud_hsm_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::cloud_hsm_access_denied_exception::Builder,
 ) -> Result<crate::error::cloud_hsm_access_denied_exception::Builder, smithy_json::deserialize::Error>
@@ -45,7 +45,7 @@ pub fn deser_structure_cloud_hsm_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_cloud_hsm_internal_failure_exceptionjson_err(
+pub fn deser_structure_crate_error_cloud_hsm_internal_failure_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::cloud_hsm_internal_failure_exception::Builder,
 ) -> Result<
@@ -87,7 +87,7 @@ pub fn deser_structure_cloud_hsm_internal_failure_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_cloud_hsm_invalid_request_exceptionjson_err(
+pub fn deser_structure_crate_error_cloud_hsm_invalid_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::cloud_hsm_invalid_request_exception::Builder,
 ) -> Result<
@@ -129,7 +129,7 @@ pub fn deser_structure_cloud_hsm_invalid_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_cloud_hsm_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_cloud_hsm_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::cloud_hsm_resource_not_found_exception::Builder,
 ) -> Result<
@@ -171,7 +171,7 @@ pub fn deser_structure_cloud_hsm_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_cloud_hsm_service_exceptionjson_err(
+pub fn deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::cloud_hsm_service_exception::Builder,
 ) -> Result<crate::error::cloud_hsm_service_exception::Builder, smithy_json::deserialize::Error> {
@@ -210,7 +210,7 @@ pub fn deser_structure_cloud_hsm_service_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_cloud_hsm_tag_exceptionjson_err(
+pub fn deser_structure_crate_error_cloud_hsm_tag_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::cloud_hsm_tag_exception::Builder,
 ) -> Result<crate::error::cloud_hsm_tag_exception::Builder, smithy_json::deserialize::Error> {
@@ -249,7 +249,7 @@ pub fn deser_structure_cloud_hsm_tag_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_copy_backup_to_region(
+pub fn deser_operation_crate_operation_copy_backup_to_region(
     input: &[u8],
     mut builder: crate::output::copy_backup_to_region_output::Builder,
 ) -> Result<crate::output::copy_backup_to_region_output::Builder, smithy_json::deserialize::Error> {
@@ -265,7 +265,9 @@ pub fn deser_operation_copy_backup_to_region(
                 match key.to_unescaped()?.as_ref() {
                     "DestinationBackup" => {
                         builder = builder.set_destination_backup(
-                            crate::json_deser::deser_structure_destination_backup(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_destination_backup(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -286,7 +288,7 @@ pub fn deser_operation_copy_backup_to_region(
     Ok(builder)
 }
 
-pub fn deser_operation_create_cluster(
+pub fn deser_operation_crate_operation_create_cluster(
     input: &[u8],
     mut builder: crate::output::create_cluster_output::Builder,
 ) -> Result<crate::output::create_cluster_output::Builder, smithy_json::deserialize::Error> {
@@ -301,8 +303,9 @@ pub fn deser_operation_create_cluster(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Cluster" => {
-                        builder = builder
-                            .set_cluster(crate::json_deser::deser_structure_cluster(tokens)?);
+                        builder = builder.set_cluster(
+                            crate::json_deser::deser_structure_crate_model_cluster(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -322,7 +325,7 @@ pub fn deser_operation_create_cluster(
     Ok(builder)
 }
 
-pub fn deser_operation_create_hsm(
+pub fn deser_operation_crate_operation_create_hsm(
     input: &[u8],
     mut builder: crate::output::create_hsm_output::Builder,
 ) -> Result<crate::output::create_hsm_output::Builder, smithy_json::deserialize::Error> {
@@ -337,7 +340,8 @@ pub fn deser_operation_create_hsm(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Hsm" => {
-                        builder = builder.set_hsm(crate::json_deser::deser_structure_hsm(tokens)?);
+                        builder = builder
+                            .set_hsm(crate::json_deser::deser_structure_crate_model_hsm(tokens)?);
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -357,7 +361,7 @@ pub fn deser_operation_create_hsm(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_backup(
+pub fn deser_operation_crate_operation_delete_backup(
     input: &[u8],
     mut builder: crate::output::delete_backup_output::Builder,
 ) -> Result<crate::output::delete_backup_output::Builder, smithy_json::deserialize::Error> {
@@ -372,8 +376,9 @@ pub fn deser_operation_delete_backup(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Backup" => {
-                        builder =
-                            builder.set_backup(crate::json_deser::deser_structure_backup(tokens)?);
+                        builder = builder.set_backup(
+                            crate::json_deser::deser_structure_crate_model_backup(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -393,7 +398,7 @@ pub fn deser_operation_delete_backup(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_cluster(
+pub fn deser_operation_crate_operation_delete_cluster(
     input: &[u8],
     mut builder: crate::output::delete_cluster_output::Builder,
 ) -> Result<crate::output::delete_cluster_output::Builder, smithy_json::deserialize::Error> {
@@ -408,8 +413,9 @@ pub fn deser_operation_delete_cluster(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Cluster" => {
-                        builder = builder
-                            .set_cluster(crate::json_deser::deser_structure_cluster(tokens)?);
+                        builder = builder.set_cluster(
+                            crate::json_deser::deser_structure_crate_model_cluster(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -429,7 +435,7 @@ pub fn deser_operation_delete_cluster(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_hsm(
+pub fn deser_operation_crate_operation_delete_hsm(
     input: &[u8],
     mut builder: crate::output::delete_hsm_output::Builder,
 ) -> Result<crate::output::delete_hsm_output::Builder, smithy_json::deserialize::Error> {
@@ -468,7 +474,7 @@ pub fn deser_operation_delete_hsm(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_backups(
+pub fn deser_operation_crate_operation_describe_backups(
     input: &[u8],
     mut builder: crate::output::describe_backups_output::Builder,
 ) -> Result<crate::output::describe_backups_output::Builder, smithy_json::deserialize::Error> {
@@ -483,8 +489,9 @@ pub fn deser_operation_describe_backups(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Backups" => {
-                        builder =
-                            builder.set_backups(crate::json_deser::deser_list_backups(tokens)?);
+                        builder = builder.set_backups(
+                            crate::json_deser::deser_list_com_amazonaws_cloudhsmv2_backups(tokens)?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -511,7 +518,7 @@ pub fn deser_operation_describe_backups(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_clusters(
+pub fn deser_operation_crate_operation_describe_clusters(
     input: &[u8],
     mut builder: crate::output::describe_clusters_output::Builder,
 ) -> Result<crate::output::describe_clusters_output::Builder, smithy_json::deserialize::Error> {
@@ -526,8 +533,11 @@ pub fn deser_operation_describe_clusters(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Clusters" => {
-                        builder =
-                            builder.set_clusters(crate::json_deser::deser_list_clusters(tokens)?);
+                        builder = builder.set_clusters(
+                            crate::json_deser::deser_list_com_amazonaws_cloudhsmv2_clusters(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -554,7 +564,7 @@ pub fn deser_operation_describe_clusters(
     Ok(builder)
 }
 
-pub fn deser_operation_initialize_cluster(
+pub fn deser_operation_crate_operation_initialize_cluster(
     input: &[u8],
     mut builder: crate::output::initialize_cluster_output::Builder,
 ) -> Result<crate::output::initialize_cluster_output::Builder, smithy_json::deserialize::Error> {
@@ -603,7 +613,7 @@ pub fn deser_operation_initialize_cluster(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags(
+pub fn deser_operation_crate_operation_list_tags(
     input: &[u8],
     mut builder: crate::output::list_tags_output::Builder,
 ) -> Result<crate::output::list_tags_output::Builder, smithy_json::deserialize::Error> {
@@ -618,8 +628,11 @@ pub fn deser_operation_list_tags(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "TagList" => {
-                        builder =
-                            builder.set_tag_list(crate::json_deser::deser_list_tag_list(tokens)?);
+                        builder = builder.set_tag_list(
+                            crate::json_deser::deser_list_com_amazonaws_cloudhsmv2_tag_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -646,7 +659,7 @@ pub fn deser_operation_list_tags(
     Ok(builder)
 }
 
-pub fn deser_operation_modify_backup_attributes(
+pub fn deser_operation_crate_operation_modify_backup_attributes(
     input: &[u8],
     mut builder: crate::output::modify_backup_attributes_output::Builder,
 ) -> Result<crate::output::modify_backup_attributes_output::Builder, smithy_json::deserialize::Error>
@@ -662,8 +675,9 @@ pub fn deser_operation_modify_backup_attributes(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Backup" => {
-                        builder =
-                            builder.set_backup(crate::json_deser::deser_structure_backup(tokens)?);
+                        builder = builder.set_backup(
+                            crate::json_deser::deser_structure_crate_model_backup(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -683,7 +697,7 @@ pub fn deser_operation_modify_backup_attributes(
     Ok(builder)
 }
 
-pub fn deser_operation_modify_cluster(
+pub fn deser_operation_crate_operation_modify_cluster(
     input: &[u8],
     mut builder: crate::output::modify_cluster_output::Builder,
 ) -> Result<crate::output::modify_cluster_output::Builder, smithy_json::deserialize::Error> {
@@ -698,8 +712,9 @@ pub fn deser_operation_modify_cluster(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Cluster" => {
-                        builder = builder
-                            .set_cluster(crate::json_deser::deser_structure_cluster(tokens)?);
+                        builder = builder.set_cluster(
+                            crate::json_deser::deser_structure_crate_model_cluster(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -719,7 +734,7 @@ pub fn deser_operation_modify_cluster(
     Ok(builder)
 }
 
-pub fn deser_operation_restore_backup(
+pub fn deser_operation_crate_operation_restore_backup(
     input: &[u8],
     mut builder: crate::output::restore_backup_output::Builder,
 ) -> Result<crate::output::restore_backup_output::Builder, smithy_json::deserialize::Error> {
@@ -734,8 +749,9 @@ pub fn deser_operation_restore_backup(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Backup" => {
-                        builder =
-                            builder.set_backup(crate::json_deser::deser_structure_backup(tokens)?);
+                        builder = builder.set_backup(
+                            crate::json_deser::deser_structure_crate_model_backup(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -763,7 +779,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_destination_backup<'a, I>(
+pub fn deser_structure_crate_model_destination_backup<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DestinationBackup>, smithy_json::deserialize::Error>
 where
@@ -834,7 +850,7 @@ where
     }
 }
 
-pub fn deser_structure_cluster<'a, I>(
+pub fn deser_structure_crate_model_cluster<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Cluster>, smithy_json::deserialize::Error>
 where
@@ -866,9 +882,7 @@ where
                             }
                             "BackupRetentionPolicy" => {
                                 builder = builder.set_backup_retention_policy(
-                                    crate::json_deser::deser_structure_backup_retention_policy(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_backup_retention_policy(tokens)?
                                 );
                             }
                             "ClusterId" => {
@@ -889,8 +903,11 @@ where
                                 );
                             }
                             "Hsms" => {
-                                builder =
-                                    builder.set_hsms(crate::json_deser::deser_list_hsms(tokens)?);
+                                builder = builder.set_hsms(
+                                    crate::json_deser::deser_list_com_amazonaws_cloudhsmv2_hsms(
+                                        tokens,
+                                    )?,
+                                );
                             }
                             "HsmType" => {
                                 builder = builder.set_hsm_type(
@@ -951,7 +968,7 @@ where
                             }
                             "SubnetMapping" => {
                                 builder = builder.set_subnet_mapping(
-                                    crate::json_deser::deser_map_external_subnet_mapping(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_cloudhsmv2_external_subnet_mapping(tokens)?
                                 );
                             }
                             "VpcId" => {
@@ -965,12 +982,15 @@ where
                             }
                             "Certificates" => {
                                 builder = builder.set_certificates(
-                                    crate::json_deser::deser_structure_certificates(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_certificates(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "TagList" => {
-                                builder = builder
-                                    .set_tag_list(crate::json_deser::deser_list_tag_list(tokens)?);
+                                builder = builder.set_tag_list(
+                                    crate::json_deser::deser_list_com_amazonaws_cloudhsmv2_tag_list(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -990,7 +1010,7 @@ where
     }
 }
 
-pub fn deser_structure_hsm<'a, I>(
+pub fn deser_structure_crate_model_hsm<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Hsm>, smithy_json::deserialize::Error>
 where
@@ -1101,7 +1121,7 @@ where
     }
 }
 
-pub fn deser_structure_backup<'a, I>(
+pub fn deser_structure_crate_model_backup<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Backup>, smithy_json::deserialize::Error>
 where
@@ -1208,8 +1228,9 @@ where
                                 );
                             }
                             "TagList" => {
-                                builder = builder
-                                    .set_tag_list(crate::json_deser::deser_list_tag_list(tokens)?);
+                                builder = builder.set_tag_list(
+                                    crate::json_deser::deser_list_com_amazonaws_cloudhsmv2_tag_list(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -1230,7 +1251,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_backups<'a, I>(
+pub fn deser_list_com_amazonaws_cloudhsmv2_backups<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Backup>>, smithy_json::deserialize::Error>
 where
@@ -1249,7 +1270,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_backup(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_backup(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1265,7 +1286,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_clusters<'a, I>(
+pub fn deser_list_com_amazonaws_cloudhsmv2_clusters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Cluster>>, smithy_json::deserialize::Error>
 where
@@ -1284,7 +1305,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_cluster(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_cluster(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1300,7 +1321,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_cloudhsmv2_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -1319,7 +1340,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1334,7 +1355,7 @@ where
     }
 }
 
-pub fn deser_structure_backup_retention_policy<'a, I>(
+pub fn deser_structure_crate_model_backup_retention_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BackupRetentionPolicy>, smithy_json::deserialize::Error>
 where
@@ -1393,7 +1414,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_hsms<'a, I>(
+pub fn deser_list_com_amazonaws_cloudhsmv2_hsms<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Hsm>>, smithy_json::deserialize::Error>
 where
@@ -1412,7 +1433,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_hsm(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_hsm(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1428,7 +1449,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_external_subnet_mapping<'a, I>(
+pub fn deser_map_com_amazonaws_cloudhsmv2_external_subnet_mapping<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1471,7 +1492,7 @@ where
     }
 }
 
-pub fn deser_structure_certificates<'a, I>(
+pub fn deser_structure_crate_model_certificates<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Certificates>, smithy_json::deserialize::Error>
 where
@@ -1552,7 +1573,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where

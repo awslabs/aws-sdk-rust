@@ -1531,6 +1531,69 @@ impl PublicAccessBlockConfiguration {
     }
 }
 
+/// <p>A container for the information associated with a
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPoint.html">PutMultiRegionAccessPoint</a>
+/// request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutMultiRegionAccessPointPolicyInput {
+    /// <p>The name of the Multi-Region Access Point associated with the request.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The policy details for the <code>PutMultiRegionAccessPoint</code> request.</p>
+    pub policy: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for PutMultiRegionAccessPointPolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutMultiRegionAccessPointPolicyInput");
+        formatter.field("name", &self.name);
+        formatter.field("policy", &self.policy);
+        formatter.finish()
+    }
+}
+/// See [`PutMultiRegionAccessPointPolicyInput`](crate::model::PutMultiRegionAccessPointPolicyInput)
+pub mod put_multi_region_access_point_policy_input {
+    /// A builder for [`PutMultiRegionAccessPointPolicyInput`](crate::model::PutMultiRegionAccessPointPolicyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) policy: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Multi-Region Access Point associated with the request.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The policy details for the <code>PutMultiRegionAccessPoint</code> request.</p>
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
+            self
+        }
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutMultiRegionAccessPointPolicyInput`](crate::model::PutMultiRegionAccessPointPolicyInput)
+        pub fn build(self) -> crate::model::PutMultiRegionAccessPointPolicyInput {
+            crate::model::PutMultiRegionAccessPointPolicyInput {
+                name: self.name,
+                policy: self.policy,
+            }
+        }
+    }
+}
+impl PutMultiRegionAccessPointPolicyInput {
+    /// Creates a new builder-style object to manufacture [`PutMultiRegionAccessPointPolicyInput`](crate::model::PutMultiRegionAccessPointPolicyInput)
+    pub fn builder() -> crate::model::put_multi_region_access_point_policy_input::Builder {
+        crate::model::put_multi_region_access_point_policy_input::Builder::default()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3108,6 +3171,293 @@ impl RegionalBucket {
     }
 }
 
+/// <p>A collection of statuses for a Multi-Region Access Point in the various Regions it supports.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MultiRegionAccessPointReport {
+    /// <p>The name of the Multi-Region Access Point.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The alias for the Multi-Region Access Point. For more information about the distinction between the
+    /// name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
+    /// Multi-Region Access Points</a>.</p>
+    pub alias: std::option::Option<std::string::String>,
+    /// <p>When the Multi-Region Access Point create request was received.</p>
+    pub created_at: std::option::Option<smithy_types::Instant>,
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account.
+    /// You can enable the configuration options in any combination. For more information about
+    /// when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    pub public_access_block: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+    /// <p>The current status of the Multi-Region Access Point.</p>
+    /// <p>
+    /// <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while
+    /// the request is propogating and being completed. If a Multi-Region Access Point has a status of
+    /// <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete
+    /// the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a
+    /// delete request to finish the deletion of the Multi-Region Access Point.</p>
+    pub status: std::option::Option<crate::model::MultiRegionAccessPointStatus>,
+    /// <p>A collection of the Regions and buckets associated with the Multi-Region Access Point.</p>
+    pub regions: std::option::Option<std::vec::Vec<crate::model::RegionReport>>,
+}
+impl std::fmt::Debug for MultiRegionAccessPointReport {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MultiRegionAccessPointReport");
+        formatter.field("name", &self.name);
+        formatter.field("alias", &self.alias);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("public_access_block", &self.public_access_block);
+        formatter.field("status", &self.status);
+        formatter.field("regions", &self.regions);
+        formatter.finish()
+    }
+}
+/// See [`MultiRegionAccessPointReport`](crate::model::MultiRegionAccessPointReport)
+pub mod multi_region_access_point_report {
+    /// A builder for [`MultiRegionAccessPointReport`](crate::model::MultiRegionAccessPointReport)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) alias: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) public_access_block:
+            std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+        pub(crate) status: std::option::Option<crate::model::MultiRegionAccessPointStatus>,
+        pub(crate) regions: std::option::Option<std::vec::Vec<crate::model::RegionReport>>,
+    }
+    impl Builder {
+        /// <p>The name of the Multi-Region Access Point.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The alias for the Multi-Region Access Point. For more information about the distinction between the
+        /// name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
+        /// Multi-Region Access Points</a>.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
+        /// <p>When the Multi-Region Access Point create request was received.</p>
+        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account.
+        /// You can enable the configuration options in any combination. For more information about
+        /// when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>This is not supported for Amazon S3 on Outposts.</p>
+        pub fn public_access_block(
+            mut self,
+            input: crate::model::PublicAccessBlockConfiguration,
+        ) -> Self {
+            self.public_access_block = Some(input);
+            self
+        }
+        pub fn set_public_access_block(
+            mut self,
+            input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+        ) -> Self {
+            self.public_access_block = input;
+            self
+        }
+        /// <p>The current status of the Multi-Region Access Point.</p>
+        /// <p>
+        /// <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while
+        /// the request is propogating and being completed. If a Multi-Region Access Point has a status of
+        /// <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete
+        /// the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a
+        /// delete request to finish the deletion of the Multi-Region Access Point.</p>
+        pub fn status(mut self, input: crate::model::MultiRegionAccessPointStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::MultiRegionAccessPointStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        pub fn regions(mut self, input: impl Into<crate::model::RegionReport>) -> Self {
+            let mut v = self.regions.unwrap_or_default();
+            v.push(input.into());
+            self.regions = Some(v);
+            self
+        }
+        pub fn set_regions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RegionReport>>,
+        ) -> Self {
+            self.regions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MultiRegionAccessPointReport`](crate::model::MultiRegionAccessPointReport)
+        pub fn build(self) -> crate::model::MultiRegionAccessPointReport {
+            crate::model::MultiRegionAccessPointReport {
+                name: self.name,
+                alias: self.alias,
+                created_at: self.created_at,
+                public_access_block: self.public_access_block,
+                status: self.status,
+                regions: self.regions,
+            }
+        }
+    }
+}
+impl MultiRegionAccessPointReport {
+    /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointReport`](crate::model::MultiRegionAccessPointReport)
+    pub fn builder() -> crate::model::multi_region_access_point_report::Builder {
+        crate::model::multi_region_access_point_report::Builder::default()
+    }
+}
+
+/// <p>A combination of a bucket and Region that's part of a Multi-Region Access Point.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegionReport {
+    /// <p>The name of the bucket.</p>
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p>The name of the Region.</p>
+    pub region: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RegionReport {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RegionReport");
+        formatter.field("bucket", &self.bucket);
+        formatter.field("region", &self.region);
+        formatter.finish()
+    }
+}
+/// See [`RegionReport`](crate::model::RegionReport)
+pub mod region_report {
+    /// A builder for [`RegionReport`](crate::model::RegionReport)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) region: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the bucket.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// <p>The name of the Region.</p>
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
+            self
+        }
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegionReport`](crate::model::RegionReport)
+        pub fn build(self) -> crate::model::RegionReport {
+            crate::model::RegionReport {
+                bucket: self.bucket,
+                region: self.region,
+            }
+        }
+    }
+}
+impl RegionReport {
+    /// Creates a new builder-style object to manufacture [`RegionReport`](crate::model::RegionReport)
+    pub fn builder() -> crate::model::region_report::Builder {
+        crate::model::region_report::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MultiRegionAccessPointStatus {
+    Creating,
+    Deleting,
+    InconsistentAcrossRegions,
+    PartiallyCreated,
+    PartiallyDeleted,
+    Ready,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MultiRegionAccessPointStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "CREATING" => MultiRegionAccessPointStatus::Creating,
+            "DELETING" => MultiRegionAccessPointStatus::Deleting,
+            "INCONSISTENT_ACROSS_REGIONS" => {
+                MultiRegionAccessPointStatus::InconsistentAcrossRegions
+            }
+            "PARTIALLY_CREATED" => MultiRegionAccessPointStatus::PartiallyCreated,
+            "PARTIALLY_DELETED" => MultiRegionAccessPointStatus::PartiallyDeleted,
+            "READY" => MultiRegionAccessPointStatus::Ready,
+            other => MultiRegionAccessPointStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MultiRegionAccessPointStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MultiRegionAccessPointStatus::from(s))
+    }
+}
+impl MultiRegionAccessPointStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            MultiRegionAccessPointStatus::Creating => "CREATING",
+            MultiRegionAccessPointStatus::Deleting => "DELETING",
+            MultiRegionAccessPointStatus::InconsistentAcrossRegions => {
+                "INCONSISTENT_ACROSS_REGIONS"
+            }
+            MultiRegionAccessPointStatus::PartiallyCreated => "PARTIALLY_CREATED",
+            MultiRegionAccessPointStatus::PartiallyDeleted => "PARTIALLY_DELETED",
+            MultiRegionAccessPointStatus::Ready => "READY",
+            MultiRegionAccessPointStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CREATING",
+            "DELETING",
+            "INCONSISTENT_ACROSS_REGIONS",
+            "PARTIALLY_CREATED",
+            "PARTIALLY_DELETED",
+            "READY",
+        ]
+    }
+}
+impl AsRef<str> for MultiRegionAccessPointStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Contains the configuration and status information for a single job retrieved as part of a job list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3775,6 +4125,984 @@ impl PolicyStatus {
     /// Creates a new builder-style object to manufacture [`PolicyStatus`](crate::model::PolicyStatus)
     pub fn builder() -> crate::model::policy_status::Builder {
         crate::model::policy_status::Builder::default()
+    }
+}
+
+/// <p>The Multi-Region Access Point access control policy.</p>
+/// <p>When you update the policy, the update is first listed as the proposed policy. After the
+/// update is finished and all Regions have been updated, the proposed policy is listed as
+/// the established policy. If both policies have the same version number, the proposed
+/// policy is the established policy.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MultiRegionAccessPointPolicyDocument {
+    /// <p>The last established policy for the Multi-Region Access Point.</p>
+    pub established: std::option::Option<crate::model::EstablishedMultiRegionAccessPointPolicy>,
+    /// <p>The proposed policy for the Multi-Region Access Point.</p>
+    pub proposed: std::option::Option<crate::model::ProposedMultiRegionAccessPointPolicy>,
+}
+impl std::fmt::Debug for MultiRegionAccessPointPolicyDocument {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MultiRegionAccessPointPolicyDocument");
+        formatter.field("established", &self.established);
+        formatter.field("proposed", &self.proposed);
+        formatter.finish()
+    }
+}
+/// See [`MultiRegionAccessPointPolicyDocument`](crate::model::MultiRegionAccessPointPolicyDocument)
+pub mod multi_region_access_point_policy_document {
+    /// A builder for [`MultiRegionAccessPointPolicyDocument`](crate::model::MultiRegionAccessPointPolicyDocument)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) established:
+            std::option::Option<crate::model::EstablishedMultiRegionAccessPointPolicy>,
+        pub(crate) proposed:
+            std::option::Option<crate::model::ProposedMultiRegionAccessPointPolicy>,
+    }
+    impl Builder {
+        /// <p>The last established policy for the Multi-Region Access Point.</p>
+        pub fn established(
+            mut self,
+            input: crate::model::EstablishedMultiRegionAccessPointPolicy,
+        ) -> Self {
+            self.established = Some(input);
+            self
+        }
+        pub fn set_established(
+            mut self,
+            input: std::option::Option<crate::model::EstablishedMultiRegionAccessPointPolicy>,
+        ) -> Self {
+            self.established = input;
+            self
+        }
+        /// <p>The proposed policy for the Multi-Region Access Point.</p>
+        pub fn proposed(
+            mut self,
+            input: crate::model::ProposedMultiRegionAccessPointPolicy,
+        ) -> Self {
+            self.proposed = Some(input);
+            self
+        }
+        pub fn set_proposed(
+            mut self,
+            input: std::option::Option<crate::model::ProposedMultiRegionAccessPointPolicy>,
+        ) -> Self {
+            self.proposed = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MultiRegionAccessPointPolicyDocument`](crate::model::MultiRegionAccessPointPolicyDocument)
+        pub fn build(self) -> crate::model::MultiRegionAccessPointPolicyDocument {
+            crate::model::MultiRegionAccessPointPolicyDocument {
+                established: self.established,
+                proposed: self.proposed,
+            }
+        }
+    }
+}
+impl MultiRegionAccessPointPolicyDocument {
+    /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointPolicyDocument`](crate::model::MultiRegionAccessPointPolicyDocument)
+    pub fn builder() -> crate::model::multi_region_access_point_policy_document::Builder {
+        crate::model::multi_region_access_point_policy_document::Builder::default()
+    }
+}
+
+/// <p>The proposed access control policy for the Multi-Region Access Point.</p>
+/// <p>When you update the policy, the update is first listed as the proposed policy. After the
+/// update is finished and all Regions have been updated, the proposed policy is listed as
+/// the established policy. If both policies have the same version number, the proposed
+/// policy is the established policy.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ProposedMultiRegionAccessPointPolicy {
+    /// <p>The details of the proposed policy.</p>
+    pub policy: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ProposedMultiRegionAccessPointPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ProposedMultiRegionAccessPointPolicy");
+        formatter.field("policy", &self.policy);
+        formatter.finish()
+    }
+}
+/// See [`ProposedMultiRegionAccessPointPolicy`](crate::model::ProposedMultiRegionAccessPointPolicy)
+pub mod proposed_multi_region_access_point_policy {
+    /// A builder for [`ProposedMultiRegionAccessPointPolicy`](crate::model::ProposedMultiRegionAccessPointPolicy)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The details of the proposed policy.</p>
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
+            self
+        }
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ProposedMultiRegionAccessPointPolicy`](crate::model::ProposedMultiRegionAccessPointPolicy)
+        pub fn build(self) -> crate::model::ProposedMultiRegionAccessPointPolicy {
+            crate::model::ProposedMultiRegionAccessPointPolicy {
+                policy: self.policy,
+            }
+        }
+    }
+}
+impl ProposedMultiRegionAccessPointPolicy {
+    /// Creates a new builder-style object to manufacture [`ProposedMultiRegionAccessPointPolicy`](crate::model::ProposedMultiRegionAccessPointPolicy)
+    pub fn builder() -> crate::model::proposed_multi_region_access_point_policy::Builder {
+        crate::model::proposed_multi_region_access_point_policy::Builder::default()
+    }
+}
+
+/// <p>The last established access control policy for a Multi-Region Access Point.</p>
+/// <p>When you update the policy, the update is first listed as the proposed policy. After the
+/// update is finished and all Regions have been updated, the proposed policy is listed as
+/// the established policy. If both policies have the same version number, the proposed
+/// policy is the established policy.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EstablishedMultiRegionAccessPointPolicy {
+    /// <p>The details of the last established policy.</p>
+    pub policy: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for EstablishedMultiRegionAccessPointPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EstablishedMultiRegionAccessPointPolicy");
+        formatter.field("policy", &self.policy);
+        formatter.finish()
+    }
+}
+/// See [`EstablishedMultiRegionAccessPointPolicy`](crate::model::EstablishedMultiRegionAccessPointPolicy)
+pub mod established_multi_region_access_point_policy {
+    /// A builder for [`EstablishedMultiRegionAccessPointPolicy`](crate::model::EstablishedMultiRegionAccessPointPolicy)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The details of the last established policy.</p>
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
+            self
+        }
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EstablishedMultiRegionAccessPointPolicy`](crate::model::EstablishedMultiRegionAccessPointPolicy)
+        pub fn build(self) -> crate::model::EstablishedMultiRegionAccessPointPolicy {
+            crate::model::EstablishedMultiRegionAccessPointPolicy {
+                policy: self.policy,
+            }
+        }
+    }
+}
+impl EstablishedMultiRegionAccessPointPolicy {
+    /// Creates a new builder-style object to manufacture [`EstablishedMultiRegionAccessPointPolicy`](crate::model::EstablishedMultiRegionAccessPointPolicy)
+    pub fn builder() -> crate::model::established_multi_region_access_point_policy::Builder {
+        crate::model::established_multi_region_access_point_policy::Builder::default()
+    }
+}
+
+/// <p>A container for the information about an asynchronous operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AsyncOperation {
+    /// <p>The time that the request was sent to the service.</p>
+    pub creation_time: std::option::Option<smithy_types::Instant>,
+    /// <p>The specific operation for the asynchronous request.</p>
+    pub operation: std::option::Option<crate::model::AsyncOperationName>,
+    /// <p>The request token associated with the request.</p>
+    pub request_token_arn: std::option::Option<std::string::String>,
+    /// <p>The parameters associated with the request.</p>
+    pub request_parameters: std::option::Option<crate::model::AsyncRequestParameters>,
+    /// <p>The current status of the request.</p>
+    pub request_status: std::option::Option<std::string::String>,
+    /// <p>The details of the response.</p>
+    pub response_details: std::option::Option<crate::model::AsyncResponseDetails>,
+}
+impl std::fmt::Debug for AsyncOperation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AsyncOperation");
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("operation", &self.operation);
+        formatter.field("request_token_arn", &self.request_token_arn);
+        formatter.field("request_parameters", &self.request_parameters);
+        formatter.field("request_status", &self.request_status);
+        formatter.field("response_details", &self.response_details);
+        formatter.finish()
+    }
+}
+/// See [`AsyncOperation`](crate::model::AsyncOperation)
+pub mod async_operation {
+    /// A builder for [`AsyncOperation`](crate::model::AsyncOperation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) operation: std::option::Option<crate::model::AsyncOperationName>,
+        pub(crate) request_token_arn: std::option::Option<std::string::String>,
+        pub(crate) request_parameters: std::option::Option<crate::model::AsyncRequestParameters>,
+        pub(crate) request_status: std::option::Option<std::string::String>,
+        pub(crate) response_details: std::option::Option<crate::model::AsyncResponseDetails>,
+    }
+    impl Builder {
+        /// <p>The time that the request was sent to the service.</p>
+        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The specific operation for the asynchronous request.</p>
+        pub fn operation(mut self, input: crate::model::AsyncOperationName) -> Self {
+            self.operation = Some(input);
+            self
+        }
+        pub fn set_operation(
+            mut self,
+            input: std::option::Option<crate::model::AsyncOperationName>,
+        ) -> Self {
+            self.operation = input;
+            self
+        }
+        /// <p>The request token associated with the request.</p>
+        pub fn request_token_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_token_arn = Some(input.into());
+            self
+        }
+        pub fn set_request_token_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_token_arn = input;
+            self
+        }
+        /// <p>The parameters associated with the request.</p>
+        pub fn request_parameters(mut self, input: crate::model::AsyncRequestParameters) -> Self {
+            self.request_parameters = Some(input);
+            self
+        }
+        pub fn set_request_parameters(
+            mut self,
+            input: std::option::Option<crate::model::AsyncRequestParameters>,
+        ) -> Self {
+            self.request_parameters = input;
+            self
+        }
+        /// <p>The current status of the request.</p>
+        pub fn request_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_status = Some(input.into());
+            self
+        }
+        pub fn set_request_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_status = input;
+            self
+        }
+        /// <p>The details of the response.</p>
+        pub fn response_details(mut self, input: crate::model::AsyncResponseDetails) -> Self {
+            self.response_details = Some(input);
+            self
+        }
+        pub fn set_response_details(
+            mut self,
+            input: std::option::Option<crate::model::AsyncResponseDetails>,
+        ) -> Self {
+            self.response_details = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AsyncOperation`](crate::model::AsyncOperation)
+        pub fn build(self) -> crate::model::AsyncOperation {
+            crate::model::AsyncOperation {
+                creation_time: self.creation_time,
+                operation: self.operation,
+                request_token_arn: self.request_token_arn,
+                request_parameters: self.request_parameters,
+                request_status: self.request_status,
+                response_details: self.response_details,
+            }
+        }
+    }
+}
+impl AsyncOperation {
+    /// Creates a new builder-style object to manufacture [`AsyncOperation`](crate::model::AsyncOperation)
+    pub fn builder() -> crate::model::async_operation::Builder {
+        crate::model::async_operation::Builder::default()
+    }
+}
+
+/// <p>A container for the response details that are returned when querying about an
+/// asynchronous request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AsyncResponseDetails {
+    /// <p>The details for the Multi-Region Access Point.</p>
+    pub multi_region_access_point_details:
+        std::option::Option<crate::model::MultiRegionAccessPointsAsyncResponse>,
+    /// <p>Error details for an asynchronous request.</p>
+    pub error_details: std::option::Option<crate::model::AsyncErrorDetails>,
+}
+impl std::fmt::Debug for AsyncResponseDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AsyncResponseDetails");
+        formatter.field(
+            "multi_region_access_point_details",
+            &self.multi_region_access_point_details,
+        );
+        formatter.field("error_details", &self.error_details);
+        formatter.finish()
+    }
+}
+/// See [`AsyncResponseDetails`](crate::model::AsyncResponseDetails)
+pub mod async_response_details {
+    /// A builder for [`AsyncResponseDetails`](crate::model::AsyncResponseDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) multi_region_access_point_details:
+            std::option::Option<crate::model::MultiRegionAccessPointsAsyncResponse>,
+        pub(crate) error_details: std::option::Option<crate::model::AsyncErrorDetails>,
+    }
+    impl Builder {
+        /// <p>The details for the Multi-Region Access Point.</p>
+        pub fn multi_region_access_point_details(
+            mut self,
+            input: crate::model::MultiRegionAccessPointsAsyncResponse,
+        ) -> Self {
+            self.multi_region_access_point_details = Some(input);
+            self
+        }
+        pub fn set_multi_region_access_point_details(
+            mut self,
+            input: std::option::Option<crate::model::MultiRegionAccessPointsAsyncResponse>,
+        ) -> Self {
+            self.multi_region_access_point_details = input;
+            self
+        }
+        /// <p>Error details for an asynchronous request.</p>
+        pub fn error_details(mut self, input: crate::model::AsyncErrorDetails) -> Self {
+            self.error_details = Some(input);
+            self
+        }
+        pub fn set_error_details(
+            mut self,
+            input: std::option::Option<crate::model::AsyncErrorDetails>,
+        ) -> Self {
+            self.error_details = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AsyncResponseDetails`](crate::model::AsyncResponseDetails)
+        pub fn build(self) -> crate::model::AsyncResponseDetails {
+            crate::model::AsyncResponseDetails {
+                multi_region_access_point_details: self.multi_region_access_point_details,
+                error_details: self.error_details,
+            }
+        }
+    }
+}
+impl AsyncResponseDetails {
+    /// Creates a new builder-style object to manufacture [`AsyncResponseDetails`](crate::model::AsyncResponseDetails)
+    pub fn builder() -> crate::model::async_response_details::Builder {
+        crate::model::async_response_details::Builder::default()
+    }
+}
+
+/// <p>Error details for the failed asynchronous operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AsyncErrorDetails {
+    /// <p>A string that uniquely identifies the error condition.</p>
+    pub code: std::option::Option<std::string::String>,
+    /// <p>A generic descritpion of the error condition in English.</p>
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The identifier of the resource associated with the error.</p>
+    pub resource: std::option::Option<std::string::String>,
+    /// <p>The ID of the request associated with the error.</p>
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AsyncErrorDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AsyncErrorDetails");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.field("resource", &self.resource);
+        formatter.field("request_id", &self.request_id);
+        formatter.finish()
+    }
+}
+/// See [`AsyncErrorDetails`](crate::model::AsyncErrorDetails)
+pub mod async_error_details {
+    /// A builder for [`AsyncErrorDetails`](crate::model::AsyncErrorDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) resource: std::option::Option<std::string::String>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A string that uniquely identifies the error condition.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>A generic descritpion of the error condition in English.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The identifier of the resource associated with the error.</p>
+        pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource = Some(input.into());
+            self
+        }
+        pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource = input;
+            self
+        }
+        /// <p>The ID of the request associated with the error.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AsyncErrorDetails`](crate::model::AsyncErrorDetails)
+        pub fn build(self) -> crate::model::AsyncErrorDetails {
+            crate::model::AsyncErrorDetails {
+                code: self.code,
+                message: self.message,
+                resource: self.resource,
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl AsyncErrorDetails {
+    /// Creates a new builder-style object to manufacture [`AsyncErrorDetails`](crate::model::AsyncErrorDetails)
+    pub fn builder() -> crate::model::async_error_details::Builder {
+        crate::model::async_error_details::Builder::default()
+    }
+}
+
+/// <p>The Multi-Region Access Point details that are returned when querying about an asynchronous request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MultiRegionAccessPointsAsyncResponse {
+    /// <p>A collection of status information for the different Regions that a Multi-Region Access Point
+    /// supports.</p>
+    pub regions:
+        std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointRegionalResponse>>,
+}
+impl std::fmt::Debug for MultiRegionAccessPointsAsyncResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MultiRegionAccessPointsAsyncResponse");
+        formatter.field("regions", &self.regions);
+        formatter.finish()
+    }
+}
+/// See [`MultiRegionAccessPointsAsyncResponse`](crate::model::MultiRegionAccessPointsAsyncResponse)
+pub mod multi_region_access_points_async_response {
+    /// A builder for [`MultiRegionAccessPointsAsyncResponse`](crate::model::MultiRegionAccessPointsAsyncResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) regions: std::option::Option<
+            std::vec::Vec<crate::model::MultiRegionAccessPointRegionalResponse>,
+        >,
+    }
+    impl Builder {
+        pub fn regions(
+            mut self,
+            input: impl Into<crate::model::MultiRegionAccessPointRegionalResponse>,
+        ) -> Self {
+            let mut v = self.regions.unwrap_or_default();
+            v.push(input.into());
+            self.regions = Some(v);
+            self
+        }
+        pub fn set_regions(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::MultiRegionAccessPointRegionalResponse>,
+            >,
+        ) -> Self {
+            self.regions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MultiRegionAccessPointsAsyncResponse`](crate::model::MultiRegionAccessPointsAsyncResponse)
+        pub fn build(self) -> crate::model::MultiRegionAccessPointsAsyncResponse {
+            crate::model::MultiRegionAccessPointsAsyncResponse {
+                regions: self.regions,
+            }
+        }
+    }
+}
+impl MultiRegionAccessPointsAsyncResponse {
+    /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointsAsyncResponse`](crate::model::MultiRegionAccessPointsAsyncResponse)
+    pub fn builder() -> crate::model::multi_region_access_points_async_response::Builder {
+        crate::model::multi_region_access_points_async_response::Builder::default()
+    }
+}
+
+/// <p>Status information for a single Multi-Region Access Point Region.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MultiRegionAccessPointRegionalResponse {
+    /// <p>The name of the Region in the Multi-Region Access Point.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The current status of the Multi-Region Access Point in this Region.</p>
+    pub request_status: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for MultiRegionAccessPointRegionalResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MultiRegionAccessPointRegionalResponse");
+        formatter.field("name", &self.name);
+        formatter.field("request_status", &self.request_status);
+        formatter.finish()
+    }
+}
+/// See [`MultiRegionAccessPointRegionalResponse`](crate::model::MultiRegionAccessPointRegionalResponse)
+pub mod multi_region_access_point_regional_response {
+    /// A builder for [`MultiRegionAccessPointRegionalResponse`](crate::model::MultiRegionAccessPointRegionalResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) request_status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Region in the Multi-Region Access Point.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The current status of the Multi-Region Access Point in this Region.</p>
+        pub fn request_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_status = Some(input.into());
+            self
+        }
+        pub fn set_request_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.request_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MultiRegionAccessPointRegionalResponse`](crate::model::MultiRegionAccessPointRegionalResponse)
+        pub fn build(self) -> crate::model::MultiRegionAccessPointRegionalResponse {
+            crate::model::MultiRegionAccessPointRegionalResponse {
+                name: self.name,
+                request_status: self.request_status,
+            }
+        }
+    }
+}
+impl MultiRegionAccessPointRegionalResponse {
+    /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointRegionalResponse`](crate::model::MultiRegionAccessPointRegionalResponse)
+    pub fn builder() -> crate::model::multi_region_access_point_regional_response::Builder {
+        crate::model::multi_region_access_point_regional_response::Builder::default()
+    }
+}
+
+/// <p>A container for the request parameters associated with an asynchronous request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AsyncRequestParameters {
+    /// <p>A container of the parameters for a
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+    /// request.</p>
+    pub create_multi_region_access_point_request:
+        std::option::Option<crate::model::CreateMultiRegionAccessPointInput>,
+    /// <p>A container of the parameters for a
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+    /// request.</p>
+    pub delete_multi_region_access_point_request:
+        std::option::Option<crate::model::DeleteMultiRegionAccessPointInput>,
+    /// <p>A container of the parameters for a
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPoint.html">PutMultiRegionAccessPoint</a>
+    /// request.</p>
+    pub put_multi_region_access_point_policy_request:
+        std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>,
+}
+impl std::fmt::Debug for AsyncRequestParameters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AsyncRequestParameters");
+        formatter.field(
+            "create_multi_region_access_point_request",
+            &self.create_multi_region_access_point_request,
+        );
+        formatter.field(
+            "delete_multi_region_access_point_request",
+            &self.delete_multi_region_access_point_request,
+        );
+        formatter.field(
+            "put_multi_region_access_point_policy_request",
+            &self.put_multi_region_access_point_policy_request,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AsyncRequestParameters`](crate::model::AsyncRequestParameters)
+pub mod async_request_parameters {
+    /// A builder for [`AsyncRequestParameters`](crate::model::AsyncRequestParameters)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) create_multi_region_access_point_request:
+            std::option::Option<crate::model::CreateMultiRegionAccessPointInput>,
+        pub(crate) delete_multi_region_access_point_request:
+            std::option::Option<crate::model::DeleteMultiRegionAccessPointInput>,
+        pub(crate) put_multi_region_access_point_policy_request:
+            std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>,
+    }
+    impl Builder {
+        /// <p>A container of the parameters for a
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+        /// request.</p>
+        pub fn create_multi_region_access_point_request(
+            mut self,
+            input: crate::model::CreateMultiRegionAccessPointInput,
+        ) -> Self {
+            self.create_multi_region_access_point_request = Some(input);
+            self
+        }
+        pub fn set_create_multi_region_access_point_request(
+            mut self,
+            input: std::option::Option<crate::model::CreateMultiRegionAccessPointInput>,
+        ) -> Self {
+            self.create_multi_region_access_point_request = input;
+            self
+        }
+        /// <p>A container of the parameters for a
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+        /// request.</p>
+        pub fn delete_multi_region_access_point_request(
+            mut self,
+            input: crate::model::DeleteMultiRegionAccessPointInput,
+        ) -> Self {
+            self.delete_multi_region_access_point_request = Some(input);
+            self
+        }
+        pub fn set_delete_multi_region_access_point_request(
+            mut self,
+            input: std::option::Option<crate::model::DeleteMultiRegionAccessPointInput>,
+        ) -> Self {
+            self.delete_multi_region_access_point_request = input;
+            self
+        }
+        /// <p>A container of the parameters for a
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPoint.html">PutMultiRegionAccessPoint</a>
+        /// request.</p>
+        pub fn put_multi_region_access_point_policy_request(
+            mut self,
+            input: crate::model::PutMultiRegionAccessPointPolicyInput,
+        ) -> Self {
+            self.put_multi_region_access_point_policy_request = Some(input);
+            self
+        }
+        pub fn set_put_multi_region_access_point_policy_request(
+            mut self,
+            input: std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>,
+        ) -> Self {
+            self.put_multi_region_access_point_policy_request = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AsyncRequestParameters`](crate::model::AsyncRequestParameters)
+        pub fn build(self) -> crate::model::AsyncRequestParameters {
+            crate::model::AsyncRequestParameters {
+                create_multi_region_access_point_request: self
+                    .create_multi_region_access_point_request,
+                delete_multi_region_access_point_request: self
+                    .delete_multi_region_access_point_request,
+                put_multi_region_access_point_policy_request: self
+                    .put_multi_region_access_point_policy_request,
+            }
+        }
+    }
+}
+impl AsyncRequestParameters {
+    /// Creates a new builder-style object to manufacture [`AsyncRequestParameters`](crate::model::AsyncRequestParameters)
+    pub fn builder() -> crate::model::async_request_parameters::Builder {
+        crate::model::async_request_parameters::Builder::default()
+    }
+}
+
+/// <p>A container for the information associated with a
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+/// request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteMultiRegionAccessPointInput {
+    /// <p>The name of the Multi-Region Access Point associated with this request.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteMultiRegionAccessPointInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteMultiRegionAccessPointInput");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`DeleteMultiRegionAccessPointInput`](crate::model::DeleteMultiRegionAccessPointInput)
+pub mod delete_multi_region_access_point_input {
+    /// A builder for [`DeleteMultiRegionAccessPointInput`](crate::model::DeleteMultiRegionAccessPointInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Multi-Region Access Point associated with this request.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteMultiRegionAccessPointInput`](crate::model::DeleteMultiRegionAccessPointInput)
+        pub fn build(self) -> crate::model::DeleteMultiRegionAccessPointInput {
+            crate::model::DeleteMultiRegionAccessPointInput { name: self.name }
+        }
+    }
+}
+impl DeleteMultiRegionAccessPointInput {
+    /// Creates a new builder-style object to manufacture [`DeleteMultiRegionAccessPointInput`](crate::model::DeleteMultiRegionAccessPointInput)
+    pub fn builder() -> crate::model::delete_multi_region_access_point_input::Builder {
+        crate::model::delete_multi_region_access_point_input::Builder::default()
+    }
+}
+
+/// <p>A container for the information associated with a
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+/// request.
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateMultiRegionAccessPointInput {
+    /// <p>The name of the Multi-Region Access Point associated with this request.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account.
+    /// You can enable the configuration options in any combination. For more information about
+    /// when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    pub public_access_block: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+    /// <p>The buckets in different Regions that are associated with the Multi-Region Access Point.</p>
+    pub regions: std::option::Option<std::vec::Vec<crate::model::Region>>,
+}
+impl std::fmt::Debug for CreateMultiRegionAccessPointInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateMultiRegionAccessPointInput");
+        formatter.field("name", &self.name);
+        formatter.field("public_access_block", &self.public_access_block);
+        formatter.field("regions", &self.regions);
+        formatter.finish()
+    }
+}
+/// See [`CreateMultiRegionAccessPointInput`](crate::model::CreateMultiRegionAccessPointInput)
+pub mod create_multi_region_access_point_input {
+    /// A builder for [`CreateMultiRegionAccessPointInput`](crate::model::CreateMultiRegionAccessPointInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) public_access_block:
+            std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+        pub(crate) regions: std::option::Option<std::vec::Vec<crate::model::Region>>,
+    }
+    impl Builder {
+        /// <p>The name of the Multi-Region Access Point associated with this request.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account.
+        /// You can enable the configuration options in any combination. For more information about
+        /// when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>This is not supported for Amazon S3 on Outposts.</p>
+        pub fn public_access_block(
+            mut self,
+            input: crate::model::PublicAccessBlockConfiguration,
+        ) -> Self {
+            self.public_access_block = Some(input);
+            self
+        }
+        pub fn set_public_access_block(
+            mut self,
+            input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+        ) -> Self {
+            self.public_access_block = input;
+            self
+        }
+        pub fn regions(mut self, input: impl Into<crate::model::Region>) -> Self {
+            let mut v = self.regions.unwrap_or_default();
+            v.push(input.into());
+            self.regions = Some(v);
+            self
+        }
+        pub fn set_regions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Region>>,
+        ) -> Self {
+            self.regions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateMultiRegionAccessPointInput`](crate::model::CreateMultiRegionAccessPointInput)
+        pub fn build(self) -> crate::model::CreateMultiRegionAccessPointInput {
+            crate::model::CreateMultiRegionAccessPointInput {
+                name: self.name,
+                public_access_block: self.public_access_block,
+                regions: self.regions,
+            }
+        }
+    }
+}
+impl CreateMultiRegionAccessPointInput {
+    /// Creates a new builder-style object to manufacture [`CreateMultiRegionAccessPointInput`](crate::model::CreateMultiRegionAccessPointInput)
+    pub fn builder() -> crate::model::create_multi_region_access_point_input::Builder {
+        crate::model::create_multi_region_access_point_input::Builder::default()
+    }
+}
+
+/// <p>A Region that supports a Multi-Region Access Point as well as the associated bucket for the Region.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Region {
+    /// <p>The name of the associated bucket for the Region.</p>
+    pub bucket: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Region {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Region");
+        formatter.field("bucket", &self.bucket);
+        formatter.finish()
+    }
+}
+/// See [`Region`](crate::model::Region)
+pub mod region {
+    /// A builder for [`Region`](crate::model::Region)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the associated bucket for the Region.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Region`](crate::model::Region)
+        pub fn build(self) -> crate::model::Region {
+            crate::model::Region {
+                bucket: self.bucket,
+            }
+        }
+    }
+}
+impl Region {
+    /// Creates a new builder-style object to manufacture [`Region`](crate::model::Region)
+    pub fn builder() -> crate::model::region::Builder {
+        crate::model::region::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AsyncOperationName {
+    CreateMultiRegionAccessPoint,
+    DeleteMultiRegionAccessPoint,
+    PutMultiRegionAccessPointPolicy,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AsyncOperationName {
+    fn from(s: &str) -> Self {
+        match s {
+            "CreateMultiRegionAccessPoint" => AsyncOperationName::CreateMultiRegionAccessPoint,
+            "DeleteMultiRegionAccessPoint" => AsyncOperationName::DeleteMultiRegionAccessPoint,
+            "PutMultiRegionAccessPointPolicy" => {
+                AsyncOperationName::PutMultiRegionAccessPointPolicy
+            }
+            other => AsyncOperationName::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AsyncOperationName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AsyncOperationName::from(s))
+    }
+}
+impl AsyncOperationName {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AsyncOperationName::CreateMultiRegionAccessPoint => "CreateMultiRegionAccessPoint",
+            AsyncOperationName::DeleteMultiRegionAccessPoint => "DeleteMultiRegionAccessPoint",
+            AsyncOperationName::PutMultiRegionAccessPointPolicy => {
+                "PutMultiRegionAccessPointPolicy"
+            }
+            AsyncOperationName::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CreateMultiRegionAccessPoint",
+            "DeleteMultiRegionAccessPoint",
+            "PutMultiRegionAccessPointPolicy",
+        ]
+    }
+}
+impl AsRef<str> for AsyncOperationName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

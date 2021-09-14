@@ -3375,6 +3375,87 @@ impl std::error::Error for CreateProjectError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct CreateStudioLifecycleConfigError {
+    pub kind: CreateStudioLifecycleConfigErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateStudioLifecycleConfigErrorKind {
+    ResourceInUse(crate::error::ResourceInUse),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateStudioLifecycleConfigError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateStudioLifecycleConfigErrorKind::ResourceInUse(_inner) => _inner.fmt(f),
+            CreateStudioLifecycleConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateStudioLifecycleConfigError {
+    fn code(&self) -> Option<&str> {
+        CreateStudioLifecycleConfigError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateStudioLifecycleConfigError {
+    pub fn new(kind: CreateStudioLifecycleConfigErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateStudioLifecycleConfigErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateStudioLifecycleConfigErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStudioLifecycleConfigErrorKind::ResourceInUse(_)
+        )
+    }
+}
+impl std::error::Error for CreateStudioLifecycleConfigError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateStudioLifecycleConfigErrorKind::ResourceInUse(_inner) => Some(_inner),
+            CreateStudioLifecycleConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct CreateTrainingJobError {
     pub kind: CreateTrainingJobErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -6407,6 +6488,96 @@ impl std::error::Error for DeleteProjectError {
         match &self.kind {
             DeleteProjectErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteStudioLifecycleConfigError {
+    pub kind: DeleteStudioLifecycleConfigErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteStudioLifecycleConfigErrorKind {
+    ResourceInUse(crate::error::ResourceInUse),
+    ResourceNotFound(crate::error::ResourceNotFound),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteStudioLifecycleConfigError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteStudioLifecycleConfigErrorKind::ResourceInUse(_inner) => _inner.fmt(f),
+            DeleteStudioLifecycleConfigErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            DeleteStudioLifecycleConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteStudioLifecycleConfigError {
+    fn code(&self) -> Option<&str> {
+        DeleteStudioLifecycleConfigError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteStudioLifecycleConfigError {
+    pub fn new(kind: DeleteStudioLifecycleConfigErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteStudioLifecycleConfigErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteStudioLifecycleConfigErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteStudioLifecycleConfigErrorKind::ResourceInUse(_)
+        )
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteStudioLifecycleConfigErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for DeleteStudioLifecycleConfigError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteStudioLifecycleConfigErrorKind::ResourceInUse(_inner) => Some(_inner),
+            DeleteStudioLifecycleConfigErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            DeleteStudioLifecycleConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -9931,6 +10102,87 @@ impl std::error::Error for DescribeProjectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeStudioLifecycleConfigError {
+    pub kind: DescribeStudioLifecycleConfigErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeStudioLifecycleConfigErrorKind {
+    ResourceNotFound(crate::error::ResourceNotFound),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeStudioLifecycleConfigError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeStudioLifecycleConfigErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            DescribeStudioLifecycleConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeStudioLifecycleConfigError {
+    fn code(&self) -> Option<&str> {
+        DescribeStudioLifecycleConfigError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeStudioLifecycleConfigError {
+    pub fn new(kind: DescribeStudioLifecycleConfigErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeStudioLifecycleConfigErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeStudioLifecycleConfigErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStudioLifecycleConfigErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for DescribeStudioLifecycleConfigError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeStudioLifecycleConfigErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            DescribeStudioLifecycleConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -14261,6 +14513,87 @@ impl std::error::Error for ListProjectsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListProjectsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListStudioLifecycleConfigsError {
+    pub kind: ListStudioLifecycleConfigsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListStudioLifecycleConfigsErrorKind {
+    ResourceInUse(crate::error::ResourceInUse),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListStudioLifecycleConfigsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListStudioLifecycleConfigsErrorKind::ResourceInUse(_inner) => _inner.fmt(f),
+            ListStudioLifecycleConfigsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListStudioLifecycleConfigsError {
+    fn code(&self) -> Option<&str> {
+        ListStudioLifecycleConfigsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListStudioLifecycleConfigsError {
+    pub fn new(kind: ListStudioLifecycleConfigsErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListStudioLifecycleConfigsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListStudioLifecycleConfigsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStudioLifecycleConfigsErrorKind::ResourceInUse(_)
+        )
+    }
+}
+impl std::error::Error for ListStudioLifecycleConfigsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListStudioLifecycleConfigsErrorKind::ResourceInUse(_inner) => Some(_inner),
+            ListStudioLifecycleConfigsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

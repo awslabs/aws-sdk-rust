@@ -98,6 +98,9 @@ where
     pub fn get_application(&self) -> fluent_builders::GetApplication<C, M, R> {
         fluent_builders::GetApplication::new(self.handle.clone())
     }
+    pub fn get_associated_resource(&self) -> fluent_builders::GetAssociatedResource<C, M, R> {
+        fluent_builders::GetAssociatedResource::new(self.handle.clone())
+    }
     pub fn get_attribute_group(&self) -> fluent_builders::GetAttributeGroup<C, M, R> {
         fluent_builders::GetAttributeGroup::new(self.handle.clone())
     }
@@ -784,6 +787,81 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct GetAssociatedResource<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_associated_resource_input::Builder,
+    }
+    impl<C, M, R> GetAssociatedResource<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetAssociatedResourceOutput,
+            smithy_http::result::SdkError<crate::error::GetAssociatedResourceError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetAssociatedResourceInputOperationOutputAlias,
+                crate::output::GetAssociatedResourceOutput,
+                crate::error::GetAssociatedResourceError,
+                crate::input::GetAssociatedResourceInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name or ID of the application.</p>
+        pub fn application(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(inp);
+            self
+        }
+        pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_application(input);
+            self
+        }
+        /// <p>The type of resource associated with the application.</p>
+        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(inp);
+            self
+        }
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::ResourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+        /// <p>The name or ID of the resource associated with the application.</p>
+        pub fn resource(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(inp);
+            self
+        }
+        pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct GetAttributeGroup<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -1220,7 +1298,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_type(input);
             self
         }
-        /// <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an AWS CloudFormation stack, or an Amazon S3 bucket.</p>
+        /// <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
         pub fn resource(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource(inp);
             self

@@ -473,7 +473,7 @@ pub struct ModifyUserGroupOutput {
     pub engine: std::option::Option<std::string::String>,
     /// <p>The list of user IDs that belong to the user group.</p>
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of updates being applied to the user groups.</p>
+    /// <p>A list of updates being applied to the user group.</p>
     pub pending_changes: std::option::Option<crate::model::UserGroupPendingChanges>,
     /// <p>A list of replication groups that the user group can access.</p>
     pub replication_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -551,7 +551,7 @@ pub mod modify_user_group_output {
             self.user_ids = input;
             self
         }
-        /// <p>A list of updates being applied to the user groups.</p>
+        /// <p>A list of updates being applied to the user group.</p>
         pub fn pending_changes(mut self, input: crate::model::UserGroupPendingChanges) -> Self {
             self.pending_changes = Some(input);
             self
@@ -2671,7 +2671,7 @@ pub struct DeleteUserGroupOutput {
     pub engine: std::option::Option<std::string::String>,
     /// <p>The list of user IDs that belong to the user group.</p>
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of updates being applied to the user groups.</p>
+    /// <p>A list of updates being applied to the user group.</p>
     pub pending_changes: std::option::Option<crate::model::UserGroupPendingChanges>,
     /// <p>A list of replication groups that the user group can access.</p>
     pub replication_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2749,7 +2749,7 @@ pub mod delete_user_group_output {
             self.user_ids = input;
             self
         }
-        /// <p>A list of updates being applied to the user groups.</p>
+        /// <p>A list of updates being applied to the user group.</p>
         pub fn pending_changes(mut self, input: crate::model::UserGroupPendingChanges) -> Self {
             self.pending_changes = Some(input);
             self
@@ -3384,7 +3384,7 @@ pub struct CreateUserGroupOutput {
     pub engine: std::option::Option<std::string::String>,
     /// <p>The list of user IDs that belong to the user group.</p>
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of updates being applied to the user groups.</p>
+    /// <p>A list of updates being applied to the user group.</p>
     pub pending_changes: std::option::Option<crate::model::UserGroupPendingChanges>,
     /// <p>A list of replication groups that the user group can access.</p>
     pub replication_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3462,7 +3462,7 @@ pub mod create_user_group_output {
             self.user_ids = input;
             self
         }
-        /// <p>A list of updates being applied to the user groups.</p>
+        /// <p>A list of updates being applied to the user group.</p>
         pub fn pending_changes(mut self, input: crate::model::UserGroupPendingChanges) -> Self {
             self.pending_changes = Some(input);
             self

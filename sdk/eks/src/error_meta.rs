@@ -327,6 +327,36 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::DeregisterClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeregisterClusterError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeregisterClusterErrorKind::ClientException(inner) => {
+                    Error::ClientException(inner)
+                }
+                crate::error::DeregisterClusterErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
+                }
+                crate::error::DeregisterClusterErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeregisterClusterErrorKind::ServerException(inner) => {
+                    Error::ServerException(inner)
+                }
+                crate::error::DeregisterClusterErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::DeregisterClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::DescribeAddonError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -719,6 +749,34 @@ where
                     Error::ServerException(inner)
                 }
                 crate::error::ListUpdatesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::RegisterClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RegisterClusterError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::RegisterClusterErrorKind::ClientException(inner) => {
+                    Error::ClientException(inner)
+                }
+                crate::error::RegisterClusterErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::RegisterClusterErrorKind::ResourceLimitExceededException(inner) => {
+                    Error::ResourceLimitExceededException(inner)
+                }
+                crate::error::RegisterClusterErrorKind::ServerException(inner) => {
+                    Error::ServerException(inner)
+                }
+                crate::error::RegisterClusterErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::RegisterClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

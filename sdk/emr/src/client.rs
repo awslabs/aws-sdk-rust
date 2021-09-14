@@ -509,8 +509,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon EMR resource identifier to which tags will be added. This value must be a
-        /// cluster identifier.</p>
+        /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a
+        /// cluster identifier or an Amazon EMR Studio ID.</p>
         pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(inp);
             self
@@ -522,7 +522,7 @@ pub mod fluent_builders {
         /// Appends an item to `Tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        /// <p>A list of tags to associate with a cluster and propagate to EC2 instances. Tags are
+        /// <p>A list of tags to associate with a resource. Tags are
         /// user-defined key-value pairs that consist of a required key string with a maximum of 128
         /// characters, and an optional value string with a maximum of 256 characters.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
@@ -754,8 +754,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Specifies whether the Studio authenticates users using single sign-on (SSO) or IAM.
-        /// Amazon EMR Studio currently only supports SSO authentication.</p>
+        /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
         pub fn auth_mode(mut self, inp: crate::model::AuthMode) -> Self {
             self.inner = self.inner.auth_mode(inp);
             self
@@ -791,7 +790,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subnet_ids(input);
             self
         }
-        /// <p>The IAM role that will be assumed by the Amazon EMR Studio. The service role provides a
+        /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a
         /// way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
         pub fn service_role(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_role(inp);
@@ -801,8 +800,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_role(input);
             self
         }
-        /// <p>The IAM user role that will be assumed by users and groups logged in to an Amazon EMR Studio. The
-        /// permissions attached to this IAM role can be scoped down for each user or group using
+        /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The
+        /// permissions attached to the <code>UserRole</code> can be scoped down for each user or group using
         /// session policies.</p>
         pub fn user_role(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_role(inp);
@@ -850,6 +849,30 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_default_s3_location(input);
+            self
+        }
+        /// <p>The authentication endpoint of your identity provider (IdP). Specify this value when you use IAM authentication and want to let federated users log in to a Studio with the Studio URL and credentials from your IdP. Amazon EMR Studio redirects users to this endpoint to enter credentials.</p>
+        pub fn idp_auth_url(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idp_auth_url(inp);
+            self
+        }
+        pub fn set_idp_auth_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_idp_auth_url(input);
+            self
+        }
+        /// <p>The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter. For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value when you use IAM authentication and want to let federated users log in to a Studio using the Studio URL. The <code>RelayState</code> parameter differs by IdP.</p>
+        pub fn idp_relay_state_parameter_name(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.idp_relay_state_parameter_name(inp);
+            self
+        }
+        pub fn set_idp_relay_state_parameter_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_idp_relay_state_parameter_name(input);
             self
         }
         /// Appends an item to `Tags`.
@@ -3499,8 +3522,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon EMR resource identifier from which tags will be removed. This value must be a
-        /// cluster identifier.</p>
+        /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a
+        /// cluster identifier or an Amazon EMR Studio ID.</p>
         pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(inp);
             self
@@ -3512,7 +3535,7 @@ pub mod fluent_builders {
         /// Appends an item to `TagKeys`.
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        /// <p>A list of tag keys to remove from a resource.</p>
+        /// <p>A list of tag keys to remove from the resource.</p>
         pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(inp);
             self
@@ -3830,7 +3853,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_flow_role(input);
             self
         }
-        /// <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon Web Services resources on
+        /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on
         /// your behalf.</p>
         pub fn service_role(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_role(inp);

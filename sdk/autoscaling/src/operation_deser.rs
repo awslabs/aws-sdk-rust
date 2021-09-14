@@ -20,11 +20,7 @@ pub fn parse_attach_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AttachInstancesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -41,11 +37,7 @@ pub fn parse_attach_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_linked_role_failure::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_service_linked_role_failure_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AttachInstancesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -94,11 +86,7 @@ pub fn parse_attach_load_balancers_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AttachLoadBalancersError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -115,11 +103,7 @@ pub fn parse_attach_load_balancers_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_linked_role_failure::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_service_linked_role_failure_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AttachLoadBalancersError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -171,11 +155,7 @@ pub fn parse_attach_load_balancer_target_groups_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AttachLoadBalancerTargetGroupsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerTargetGroupsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -184,29 +164,26 @@ pub fn parse_attach_load_balancer_target_groups_error(
                 tmp
             }),
         },
-        "ServiceLinkedRoleFailure" => {
-            crate::error::AttachLoadBalancerTargetGroupsError {
-                meta: generic,
-                kind:
-                    crate::error::AttachLoadBalancerTargetGroupsErrorKind::ServiceLinkedRoleFailure(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]
-                                let mut output =
-                                    crate::error::service_linked_role_failure::Builder::default();
-                                let _ = response;
-                                output = crate::xml_deser::deser_structure_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerTargetGroupsError::unhandled)?;
-                                output.build()
-                            };
-                            if (&tmp.message).is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "ServiceLinkedRoleFailure" => crate::error::AttachLoadBalancerTargetGroupsError {
+            meta: generic,
+            kind: crate::error::AttachLoadBalancerTargetGroupsErrorKind::ServiceLinkedRoleFailure(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_linked_role_failure::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerTargetGroupsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         _ => crate::error::AttachLoadBalancerTargetGroupsError::generic(generic),
     })
 }
@@ -255,11 +232,7 @@ pub fn parse_batch_delete_scheduled_action_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::BatchDeleteScheduledActionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteScheduledActionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -283,7 +256,7 @@ pub fn parse_batch_delete_scheduled_action_response(
         #[allow(unused_mut)]
         let mut output = crate::output::batch_delete_scheduled_action_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_batch_delete_scheduled_action(
+        output = crate::xml_deser::deser_operation_crate_operation_batch_delete_scheduled_action(
             response.body().as_ref(),
             output,
         )
@@ -320,7 +293,7 @@ pub fn parse_batch_put_scheduled_update_group_action_error(
                             #[allow(unused_mut)]
                             let mut output = crate::error::already_exists_fault::Builder::default();
                             let _ = response;
-                            output = crate::xml_deser::deser_structure_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchPutScheduledUpdateGroupActionError::unhandled)?;
+                            output = crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchPutScheduledUpdateGroupActionError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -341,7 +314,7 @@ pub fn parse_batch_put_scheduled_update_group_action_error(
                             #[allow(unused_mut)]
                             let mut output = crate::error::limit_exceeded_fault::Builder::default();
                             let _ = response;
-                            output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchPutScheduledUpdateGroupActionError::unhandled)?;
+                            output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchPutScheduledUpdateGroupActionError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -363,7 +336,7 @@ pub fn parse_batch_put_scheduled_update_group_action_error(
                             let mut output =
                                 crate::error::resource_contention_fault::Builder::default();
                             let _ = response;
-                            output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchPutScheduledUpdateGroupActionError::unhandled)?;
+                            output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchPutScheduledUpdateGroupActionError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -389,11 +362,7 @@ pub fn parse_batch_put_scheduled_update_group_action_response(
         let mut output =
             crate::output::batch_put_scheduled_update_group_action_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_batch_put_scheduled_update_group_action(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::BatchPutScheduledUpdateGroupActionError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_batch_put_scheduled_update_group_action(response.body().as_ref(), output).map_err(crate::error::BatchPutScheduledUpdateGroupActionError::unhandled)?;
         output.build()
     })
 }
@@ -424,7 +393,7 @@ pub fn parse_cancel_instance_refresh_error(
                             let mut tmp = {
                                 #[allow(unused_mut)]let mut output = crate::error::active_instance_refresh_not_found_fault::Builder::default();
                                 let _ = response;
-                                output = crate::xml_deser::deser_structure_active_instance_refresh_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
+                                output = crate::xml_deser::deser_structure_crate_error_active_instance_refresh_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
                                 output.build()
                             };
                             if (&tmp.message).is_none() {
@@ -435,27 +404,25 @@ pub fn parse_cancel_instance_refresh_error(
                     ),
             }
         }
-        "LimitExceeded" => crate::error::CancelInstanceRefreshError {
-            meta: generic,
-            kind: crate::error::CancelInstanceRefreshErrorKind::LimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "LimitExceeded" => {
+            crate::error::CancelInstanceRefreshError {
+                meta: generic,
+                kind: crate::error::CancelInstanceRefreshErrorKind::LimitExceededFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::CancelInstanceRefreshError {
             meta: generic,
             kind: crate::error::CancelInstanceRefreshErrorKind::ResourceContentionFault({
@@ -464,11 +431,7 @@ pub fn parse_cancel_instance_refresh_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -492,7 +455,7 @@ pub fn parse_cancel_instance_refresh_response(
         #[allow(unused_mut)]
         let mut output = crate::output::cancel_instance_refresh_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_cancel_instance_refresh(
+        output = crate::xml_deser::deser_operation_crate_operation_cancel_instance_refresh(
             response.body().as_ref(),
             output,
         )
@@ -529,11 +492,7 @@ pub fn parse_complete_lifecycle_action_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CompleteLifecycleActionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CompleteLifecycleActionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -581,48 +540,44 @@ pub fn parse_create_auto_scaling_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExists" => crate::error::CreateAutoScalingGroupError {
-            meta: generic,
-            kind: crate::error::CreateAutoScalingGroupErrorKind::AlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AlreadyExists" => {
+            crate::error::CreateAutoScalingGroupError {
+                meta: generic,
+                kind: crate::error::CreateAutoScalingGroupErrorKind::AlreadyExistsFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::already_exists_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_already_exists_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreateAutoScalingGroupError {
-            meta: generic,
-            kind: crate::error::CreateAutoScalingGroupErrorKind::LimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::already_exists_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "LimitExceeded" => {
+            crate::error::CreateAutoScalingGroupError {
+                meta: generic,
+                kind: crate::error::CreateAutoScalingGroupErrorKind::LimitExceededFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::CreateAutoScalingGroupError {
             meta: generic,
             kind: crate::error::CreateAutoScalingGroupErrorKind::ResourceContentionFault({
@@ -631,11 +586,7 @@ pub fn parse_create_auto_scaling_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -652,11 +603,7 @@ pub fn parse_create_auto_scaling_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_linked_role_failure::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_service_linked_role_failure_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -704,48 +651,44 @@ pub fn parse_create_launch_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExists" => crate::error::CreateLaunchConfigurationError {
-            meta: generic,
-            kind: crate::error::CreateLaunchConfigurationErrorKind::AlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AlreadyExists" => {
+            crate::error::CreateLaunchConfigurationError {
+                meta: generic,
+                kind: crate::error::CreateLaunchConfigurationErrorKind::AlreadyExistsFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::already_exists_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_already_exists_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLaunchConfigurationError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreateLaunchConfigurationError {
-            meta: generic,
-            kind: crate::error::CreateLaunchConfigurationErrorKind::LimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::already_exists_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLaunchConfigurationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "LimitExceeded" => {
+            crate::error::CreateLaunchConfigurationError {
+                meta: generic,
+                kind: crate::error::CreateLaunchConfigurationErrorKind::LimitExceededFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLaunchConfigurationError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLaunchConfigurationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::CreateLaunchConfigurationError {
             meta: generic,
             kind: crate::error::CreateLaunchConfigurationErrorKind::ResourceContentionFault({
@@ -754,11 +697,7 @@ pub fn parse_create_launch_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateLaunchConfigurationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLaunchConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -802,48 +741,44 @@ pub fn parse_create_or_update_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExists" => crate::error::CreateOrUpdateTagsError {
-            meta: generic,
-            kind: crate::error::CreateOrUpdateTagsErrorKind::AlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AlreadyExists" => {
+            crate::error::CreateOrUpdateTagsError {
+                meta: generic,
+                kind: crate::error::CreateOrUpdateTagsErrorKind::AlreadyExistsFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::already_exists_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_already_exists_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreateOrUpdateTagsError {
-            meta: generic,
-            kind: crate::error::CreateOrUpdateTagsErrorKind::LimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::already_exists_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "LimitExceeded" => {
+            crate::error::CreateOrUpdateTagsError {
+                meta: generic,
+                kind: crate::error::CreateOrUpdateTagsErrorKind::LimitExceededFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::CreateOrUpdateTagsError {
             meta: generic,
             kind: crate::error::CreateOrUpdateTagsErrorKind::ResourceContentionFault({
@@ -852,11 +787,7 @@ pub fn parse_create_or_update_tags_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -873,11 +804,7 @@ pub fn parse_create_or_update_tags_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_in_use_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -933,11 +860,7 @@ pub fn parse_delete_auto_scaling_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteAutoScalingGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAutoScalingGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -954,11 +877,7 @@ pub fn parse_delete_auto_scaling_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_in_use_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteAutoScalingGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAutoScalingGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -976,7 +895,7 @@ pub fn parse_delete_auto_scaling_group_error(
                     let mut output =
                         crate::error::scaling_activity_in_progress_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAutoScalingGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAutoScalingGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1032,11 +951,7 @@ pub fn parse_delete_launch_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteLaunchConfigurationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLaunchConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1053,11 +968,7 @@ pub fn parse_delete_launch_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_in_use_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteLaunchConfigurationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLaunchConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1109,11 +1020,7 @@ pub fn parse_delete_lifecycle_hook_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteLifecycleHookError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLifecycleHookError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1157,29 +1064,26 @@ pub fn parse_delete_notification_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => {
-            crate::error::DeleteNotificationConfigurationError {
-                meta: generic,
-                kind:
-                    crate::error::DeleteNotificationConfigurationErrorKind::ResourceContentionFault(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]
-                                let mut output =
-                                    crate::error::resource_contention_fault::Builder::default();
-                                let _ = response;
-                                output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteNotificationConfigurationError::unhandled)?;
-                                output.build()
-                            };
-                            if (&tmp.message).is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "ResourceContention" => crate::error::DeleteNotificationConfigurationError {
+            meta: generic,
+            kind: crate::error::DeleteNotificationConfigurationErrorKind::ResourceContentionFault(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_contention_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteNotificationConfigurationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         _ => crate::error::DeleteNotificationConfigurationError::generic(generic),
     })
 }
@@ -1221,11 +1125,7 @@ pub fn parse_delete_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeletePolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1242,11 +1142,7 @@ pub fn parse_delete_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_linked_role_failure::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_service_linked_role_failure_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeletePolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1295,11 +1191,7 @@ pub fn parse_delete_scheduled_action_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteScheduledActionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteScheduledActionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1348,11 +1240,7 @@ pub fn parse_delete_tags_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteTagsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1369,11 +1257,7 @@ pub fn parse_delete_tags_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_in_use_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteTagsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1411,27 +1295,25 @@ pub fn parse_delete_warm_pool_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::DeleteWarmPoolError {
-            meta: generic,
-            kind: crate::error::DeleteWarmPoolErrorKind::LimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "LimitExceeded" => {
+            crate::error::DeleteWarmPoolError {
+                meta: generic,
+                kind: crate::error::DeleteWarmPoolErrorKind::LimitExceededFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteWarmPoolError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteWarmPoolError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::DeleteWarmPoolError {
             meta: generic,
             kind: crate::error::DeleteWarmPoolErrorKind::ResourceContentionFault({
@@ -1440,11 +1322,7 @@ pub fn parse_delete_warm_pool_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteWarmPoolError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteWarmPoolError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1461,11 +1339,7 @@ pub fn parse_delete_warm_pool_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_in_use_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteWarmPoolError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteWarmPoolError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1483,7 +1357,7 @@ pub fn parse_delete_warm_pool_error(
                     let mut output =
                         crate::error::scaling_activity_in_progress_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteWarmPoolError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteWarmPoolError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1532,11 +1406,7 @@ pub fn parse_describe_account_limits_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAccountLimitsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountLimitsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1560,7 +1430,7 @@ pub fn parse_describe_account_limits_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_account_limits_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_account_limits(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_account_limits(
             response.body().as_ref(),
             output,
         )
@@ -1597,11 +1467,7 @@ pub fn parse_describe_adjustment_types_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAdjustmentTypesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAdjustmentTypesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1625,7 +1491,7 @@ pub fn parse_describe_adjustment_types_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_adjustment_types_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_adjustment_types(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_adjustment_types(
             response.body().as_ref(),
             output,
         )
@@ -1654,27 +1520,25 @@ pub fn parse_describe_auto_scaling_groups_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => crate::error::DescribeAutoScalingGroupsError {
-            meta: generic,
-            kind: crate::error::DescribeAutoScalingGroupsErrorKind::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextToken" => {
+            crate::error::DescribeAutoScalingGroupsError {
+                meta: generic,
+                kind: crate::error::DescribeAutoScalingGroupsErrorKind::InvalidNextToken({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAutoScalingGroupsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingGroupsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::DescribeAutoScalingGroupsError {
             meta: generic,
             kind: crate::error::DescribeAutoScalingGroupsErrorKind::ResourceContentionFault({
@@ -1683,11 +1547,7 @@ pub fn parse_describe_auto_scaling_groups_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAutoScalingGroupsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingGroupsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1711,7 +1571,7 @@ pub fn parse_describe_auto_scaling_groups_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_auto_scaling_groups_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_auto_scaling_groups(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_auto_scaling_groups(
             response.body().as_ref(),
             output,
         )
@@ -1740,27 +1600,25 @@ pub fn parse_describe_auto_scaling_instances_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => crate::error::DescribeAutoScalingInstancesError {
-            meta: generic,
-            kind: crate::error::DescribeAutoScalingInstancesErrorKind::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextToken" => {
+            crate::error::DescribeAutoScalingInstancesError {
+                meta: generic,
+                kind: crate::error::DescribeAutoScalingInstancesErrorKind::InvalidNextToken({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAutoScalingInstancesError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingInstancesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::DescribeAutoScalingInstancesError {
             meta: generic,
             kind: crate::error::DescribeAutoScalingInstancesErrorKind::ResourceContentionFault({
@@ -1769,11 +1627,7 @@ pub fn parse_describe_auto_scaling_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeAutoScalingInstancesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1797,7 +1651,7 @@ pub fn parse_describe_auto_scaling_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_auto_scaling_instances_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_auto_scaling_instances(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_auto_scaling_instances(
             response.body().as_ref(),
             output,
         )
@@ -1835,7 +1689,7 @@ pub fn parse_describe_auto_scaling_notification_types_error(
                             let mut output =
                                 crate::error::resource_contention_fault::Builder::default();
                             let _ = response;
-                            output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingNotificationTypesError::unhandled)?;
+                            output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingNotificationTypesError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -1861,11 +1715,7 @@ pub fn parse_describe_auto_scaling_notification_types_response(
         let mut output =
             crate::output::describe_auto_scaling_notification_types_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_auto_scaling_notification_types(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeAutoScalingNotificationTypesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_auto_scaling_notification_types(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingNotificationTypesError::unhandled)?;
         output.build()
     })
 }
@@ -1890,27 +1740,25 @@ pub fn parse_describe_instance_refreshes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => crate::error::DescribeInstanceRefreshesError {
-            meta: generic,
-            kind: crate::error::DescribeInstanceRefreshesErrorKind::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextToken" => {
+            crate::error::DescribeInstanceRefreshesError {
+                meta: generic,
+                kind: crate::error::DescribeInstanceRefreshesErrorKind::InvalidNextToken({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeInstanceRefreshesError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstanceRefreshesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::DescribeInstanceRefreshesError {
             meta: generic,
             kind: crate::error::DescribeInstanceRefreshesErrorKind::ResourceContentionFault({
@@ -1919,11 +1767,7 @@ pub fn parse_describe_instance_refreshes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeInstanceRefreshesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstanceRefreshesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1947,7 +1791,7 @@ pub fn parse_describe_instance_refreshes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_instance_refreshes_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_instance_refreshes(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_instance_refreshes(
             response.body().as_ref(),
             output,
         )
@@ -1976,27 +1820,25 @@ pub fn parse_describe_launch_configurations_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => crate::error::DescribeLaunchConfigurationsError {
-            meta: generic,
-            kind: crate::error::DescribeLaunchConfigurationsErrorKind::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextToken" => {
+            crate::error::DescribeLaunchConfigurationsError {
+                meta: generic,
+                kind: crate::error::DescribeLaunchConfigurationsErrorKind::InvalidNextToken({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeLaunchConfigurationsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLaunchConfigurationsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::DescribeLaunchConfigurationsError {
             meta: generic,
             kind: crate::error::DescribeLaunchConfigurationsErrorKind::ResourceContentionFault({
@@ -2005,11 +1847,7 @@ pub fn parse_describe_launch_configurations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeLaunchConfigurationsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLaunchConfigurationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2033,7 +1871,7 @@ pub fn parse_describe_launch_configurations_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_launch_configurations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_launch_configurations(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_launch_configurations(
             response.body().as_ref(),
             output,
         )
@@ -2070,11 +1908,7 @@ pub fn parse_describe_lifecycle_hooks_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeLifecycleHooksError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLifecycleHooksError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2098,7 +1932,7 @@ pub fn parse_describe_lifecycle_hooks_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_lifecycle_hooks_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_lifecycle_hooks(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_lifecycle_hooks(
             response.body().as_ref(),
             output,
         )
@@ -2135,11 +1969,7 @@ pub fn parse_describe_lifecycle_hook_types_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeLifecycleHookTypesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLifecycleHookTypesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2163,7 +1993,7 @@ pub fn parse_describe_lifecycle_hook_types_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_lifecycle_hook_types_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_lifecycle_hook_types(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_lifecycle_hook_types(
             response.body().as_ref(),
             output,
         )
@@ -2196,11 +2026,7 @@ pub fn parse_describe_load_balancers_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2224,7 +2050,7 @@ pub fn parse_describe_load_balancers_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_load_balancers_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_load_balancers(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_load_balancers(
             response.body().as_ref(),
             output,
         )
@@ -2251,29 +2077,26 @@ pub fn parse_describe_load_balancer_target_groups_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => {
-            crate::error::DescribeLoadBalancerTargetGroupsError {
-                meta: generic,
-                kind:
-                    crate::error::DescribeLoadBalancerTargetGroupsErrorKind::ResourceContentionFault(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]
-                                let mut output =
-                                    crate::error::resource_contention_fault::Builder::default();
-                                let _ = response;
-                                output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerTargetGroupsError::unhandled)?;
-                                output.build()
-                            };
-                            if (&tmp.message).is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "ResourceContention" => crate::error::DescribeLoadBalancerTargetGroupsError {
+            meta: generic,
+            kind: crate::error::DescribeLoadBalancerTargetGroupsErrorKind::ResourceContentionFault(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_contention_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerTargetGroupsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         _ => crate::error::DescribeLoadBalancerTargetGroupsError::generic(generic),
     })
 }
@@ -2290,11 +2113,12 @@ pub fn parse_describe_load_balancer_target_groups_response(
         let mut output =
             crate::output::describe_load_balancer_target_groups_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_load_balancer_target_groups(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeLoadBalancerTargetGroupsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_load_balancer_target_groups(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeLoadBalancerTargetGroupsError::unhandled)?;
         output.build()
     })
 }
@@ -2327,11 +2151,7 @@ pub fn parse_describe_metric_collection_types_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeMetricCollectionTypesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeMetricCollectionTypesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2355,11 +2175,12 @@ pub fn parse_describe_metric_collection_types_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_metric_collection_types_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_metric_collection_types(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeMetricCollectionTypesError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_metric_collection_types(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeMetricCollectionTypesError::unhandled)?;
         output.build()
     })
 }
@@ -2382,27 +2203,27 @@ pub fn parse_describe_notification_configurations_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => crate::error::DescribeNotificationConfigurationsError {
-            meta: generic,
-            kind: crate::error::DescribeNotificationConfigurationsErrorKind::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeNotificationConfigurationsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+        "InvalidNextToken" => {
+            crate::error::DescribeNotificationConfigurationsError {
+                meta: generic,
+                kind: crate::error::DescribeNotificationConfigurationsErrorKind::InvalidNextToken(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output = crate::error::invalid_next_token::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeNotificationConfigurationsError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
         "ResourceContention" => crate::error::DescribeNotificationConfigurationsError {
             meta: generic,
             kind:
@@ -2414,7 +2235,7 @@ pub fn parse_describe_notification_configurations_error(
                             let mut output =
                                 crate::error::resource_contention_fault::Builder::default();
                             let _ = response;
-                            output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeNotificationConfigurationsError::unhandled)?;
+                            output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeNotificationConfigurationsError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -2440,11 +2261,12 @@ pub fn parse_describe_notification_configurations_response(
         let mut output =
             crate::output::describe_notification_configurations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_notification_configurations(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeNotificationConfigurationsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_notification_configurations(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeNotificationConfigurationsError::unhandled)?;
         output.build()
     })
 }
@@ -2463,27 +2285,25 @@ pub fn parse_describe_policies_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => crate::error::DescribePoliciesError {
-            meta: generic,
-            kind: crate::error::DescribePoliciesErrorKind::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextToken" => {
+            crate::error::DescribePoliciesError {
+                meta: generic,
+                kind: crate::error::DescribePoliciesErrorKind::InvalidNextToken({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribePoliciesError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePoliciesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::DescribePoliciesError {
             meta: generic,
             kind: crate::error::DescribePoliciesErrorKind::ResourceContentionFault({
@@ -2492,11 +2312,7 @@ pub fn parse_describe_policies_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribePoliciesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePoliciesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2513,11 +2329,7 @@ pub fn parse_describe_policies_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_linked_role_failure::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_service_linked_role_failure_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribePoliciesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePoliciesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2539,9 +2351,11 @@ pub fn parse_describe_policies_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_policies_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_policies(response.body().as_ref(), output)
-                .map_err(crate::error::DescribePoliciesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_policies(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribePoliciesError::unhandled)?;
         output.build()
     })
 }
@@ -2566,27 +2380,25 @@ pub fn parse_describe_scaling_activities_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => crate::error::DescribeScalingActivitiesError {
-            meta: generic,
-            kind: crate::error::DescribeScalingActivitiesErrorKind::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextToken" => {
+            crate::error::DescribeScalingActivitiesError {
+                meta: generic,
+                kind: crate::error::DescribeScalingActivitiesErrorKind::InvalidNextToken({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::DescribeScalingActivitiesError {
             meta: generic,
             kind: crate::error::DescribeScalingActivitiesErrorKind::ResourceContentionFault({
@@ -2595,11 +2407,7 @@ pub fn parse_describe_scaling_activities_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2623,7 +2431,7 @@ pub fn parse_describe_scaling_activities_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_scaling_activities_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_scaling_activities(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_scaling_activities(
             response.body().as_ref(),
             output,
         )
@@ -2660,11 +2468,7 @@ pub fn parse_describe_scaling_process_types_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeScalingProcessTypesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingProcessTypesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2688,7 +2492,7 @@ pub fn parse_describe_scaling_process_types_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_scaling_process_types_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_scaling_process_types(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_scaling_process_types(
             response.body().as_ref(),
             output,
         )
@@ -2717,27 +2521,25 @@ pub fn parse_describe_scheduled_actions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => crate::error::DescribeScheduledActionsError {
-            meta: generic,
-            kind: crate::error::DescribeScheduledActionsErrorKind::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextToken" => {
+            crate::error::DescribeScheduledActionsError {
+                meta: generic,
+                kind: crate::error::DescribeScheduledActionsErrorKind::InvalidNextToken({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::DescribeScheduledActionsError {
             meta: generic,
             kind: crate::error::DescribeScheduledActionsErrorKind::ResourceContentionFault({
@@ -2746,11 +2548,7 @@ pub fn parse_describe_scheduled_actions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2774,7 +2572,7 @@ pub fn parse_describe_scheduled_actions_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_scheduled_actions_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_scheduled_actions(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_scheduled_actions(
             response.body().as_ref(),
             output,
         )
@@ -2796,27 +2594,25 @@ pub fn parse_describe_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => crate::error::DescribeTagsError {
-            meta: generic,
-            kind: crate::error::DescribeTagsErrorKind::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextToken" => {
+            crate::error::DescribeTagsError {
+                meta: generic,
+                kind: crate::error::DescribeTagsErrorKind::InvalidNextToken({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeTagsError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::DescribeTagsError {
             meta: generic,
             kind: crate::error::DescribeTagsErrorKind::ResourceContentionFault({
@@ -2825,11 +2621,7 @@ pub fn parse_describe_tags_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeTagsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2850,8 +2642,11 @@ pub fn parse_describe_tags_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_tags_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_tags(response.body().as_ref(), output)
-            .map_err(crate::error::DescribeTagsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_tags(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeTagsError::unhandled)?;
         output.build()
     })
 }
@@ -2880,11 +2675,7 @@ pub fn parse_describe_termination_policy_types_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeTerminationPolicyTypesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTerminationPolicyTypesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2909,11 +2700,12 @@ pub fn parse_describe_termination_policy_types_response(
         let mut output =
             crate::output::describe_termination_policy_types_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_termination_policy_types(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeTerminationPolicyTypesError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_termination_policy_types(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeTerminationPolicyTypesError::unhandled)?;
         output.build()
     })
 }
@@ -2932,48 +2724,44 @@ pub fn parse_describe_warm_pool_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => crate::error::DescribeWarmPoolError {
-            meta: generic,
-            kind: crate::error::DescribeWarmPoolErrorKind::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextToken" => {
+            crate::error::DescribeWarmPoolError {
+                meta: generic,
+                kind: crate::error::DescribeWarmPoolErrorKind::InvalidNextToken({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeWarmPoolError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::DescribeWarmPoolError {
-            meta: generic,
-            kind: crate::error::DescribeWarmPoolErrorKind::LimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeWarmPoolError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "LimitExceeded" => {
+            crate::error::DescribeWarmPoolError {
+                meta: generic,
+                kind: crate::error::DescribeWarmPoolErrorKind::LimitExceededFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeWarmPoolError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeWarmPoolError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::DescribeWarmPoolError {
             meta: generic,
             kind: crate::error::DescribeWarmPoolErrorKind::ResourceContentionFault({
@@ -2982,11 +2770,7 @@ pub fn parse_describe_warm_pool_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeWarmPoolError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeWarmPoolError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3008,9 +2792,11 @@ pub fn parse_describe_warm_pool_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_warm_pool_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_warm_pool(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeWarmPoolError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_warm_pool(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeWarmPoolError::unhandled)?;
         output.build()
     })
 }
@@ -3036,11 +2822,7 @@ pub fn parse_detach_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DetachInstancesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3061,9 +2843,11 @@ pub fn parse_detach_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::detach_instances_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_detach_instances(response.body().as_ref(), output)
-                .map_err(crate::error::DetachInstancesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_detach_instances(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DetachInstancesError::unhandled)?;
         output.build()
     })
 }
@@ -3092,11 +2876,7 @@ pub fn parse_detach_load_balancers_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DetachLoadBalancersError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachLoadBalancersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3148,11 +2928,7 @@ pub fn parse_detach_load_balancer_target_groups_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DetachLoadBalancerTargetGroupsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachLoadBalancerTargetGroupsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3209,11 +2985,7 @@ pub fn parse_disable_metrics_collection_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DisableMetricsCollectionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableMetricsCollectionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3269,11 +3041,7 @@ pub fn parse_enable_metrics_collection_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::EnableMetricsCollectionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableMetricsCollectionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3322,11 +3090,7 @@ pub fn parse_enter_standby_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::EnterStandbyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnterStandbyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3347,8 +3111,11 @@ pub fn parse_enter_standby_response(
         #[allow(unused_mut)]
         let mut output = crate::output::enter_standby_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_enter_standby(response.body().as_ref(), output)
-            .map_err(crate::error::EnterStandbyError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_enter_standby(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::EnterStandbyError::unhandled)?;
         output.build()
     })
 }
@@ -3374,11 +3141,7 @@ pub fn parse_execute_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ExecutePolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ExecutePolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3396,7 +3159,7 @@ pub fn parse_execute_policy_error(
                     let mut output =
                         crate::error::scaling_activity_in_progress_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ExecutePolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ExecutePolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3442,11 +3205,7 @@ pub fn parse_exit_standby_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ExitStandbyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ExitStandbyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3467,8 +3226,11 @@ pub fn parse_exit_standby_response(
         #[allow(unused_mut)]
         let mut output = crate::output::exit_standby_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_exit_standby(response.body().as_ref(), output)
-            .map_err(crate::error::ExitStandbyError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_exit_standby(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ExitStandbyError::unhandled)?;
         output.build()
     })
 }
@@ -3501,11 +3263,7 @@ pub fn parse_get_predictive_scaling_forecast_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetPredictiveScalingForecastError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPredictiveScalingForecastError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3529,7 +3287,7 @@ pub fn parse_get_predictive_scaling_forecast_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_predictive_scaling_forecast_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_predictive_scaling_forecast(
+        output = crate::xml_deser::deser_operation_crate_operation_get_predictive_scaling_forecast(
             response.body().as_ref(),
             output,
         )
@@ -3552,27 +3310,25 @@ pub fn parse_put_lifecycle_hook_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::PutLifecycleHookError {
-            meta: generic,
-            kind: crate::error::PutLifecycleHookErrorKind::LimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "LimitExceeded" => {
+            crate::error::PutLifecycleHookError {
+                meta: generic,
+                kind: crate::error::PutLifecycleHookErrorKind::LimitExceededFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutLifecycleHookError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutLifecycleHookError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::PutLifecycleHookError {
             meta: generic,
             kind: crate::error::PutLifecycleHookErrorKind::ResourceContentionFault({
@@ -3581,11 +3337,7 @@ pub fn parse_put_lifecycle_hook_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutLifecycleHookError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutLifecycleHookError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3631,27 +3383,25 @@ pub fn parse_put_notification_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::PutNotificationConfigurationError {
-            meta: generic,
-            kind: crate::error::PutNotificationConfigurationErrorKind::LimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "LimitExceeded" => {
+            crate::error::PutNotificationConfigurationError {
+                meta: generic,
+                kind: crate::error::PutNotificationConfigurationErrorKind::LimitExceededFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutNotificationConfigurationError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutNotificationConfigurationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::PutNotificationConfigurationError {
             meta: generic,
             kind: crate::error::PutNotificationConfigurationErrorKind::ResourceContentionFault({
@@ -3660,11 +3410,7 @@ pub fn parse_put_notification_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutNotificationConfigurationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutNotificationConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3681,11 +3427,7 @@ pub fn parse_put_notification_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_linked_role_failure::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_service_linked_role_failure_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutNotificationConfigurationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::PutNotificationConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3727,27 +3469,25 @@ pub fn parse_put_scaling_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::PutScalingPolicyError {
-            meta: generic,
-            kind: crate::error::PutScalingPolicyErrorKind::LimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "LimitExceeded" => {
+            crate::error::PutScalingPolicyError {
+                meta: generic,
+                kind: crate::error::PutScalingPolicyErrorKind::LimitExceededFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutScalingPolicyError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::PutScalingPolicyError {
             meta: generic,
             kind: crate::error::PutScalingPolicyErrorKind::ResourceContentionFault({
@@ -3756,11 +3496,7 @@ pub fn parse_put_scaling_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutScalingPolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3777,11 +3513,7 @@ pub fn parse_put_scaling_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_linked_role_failure::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_service_linked_role_failure_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutScalingPolicyError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3803,9 +3535,11 @@ pub fn parse_put_scaling_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_scaling_policy_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_put_scaling_policy(response.body().as_ref(), output)
-                .map_err(crate::error::PutScalingPolicyError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_put_scaling_policy(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::PutScalingPolicyError::unhandled)?;
         output.build()
     })
 }
@@ -3830,48 +3564,44 @@ pub fn parse_put_scheduled_update_group_action_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExists" => crate::error::PutScheduledUpdateGroupActionError {
-            meta: generic,
-            kind: crate::error::PutScheduledUpdateGroupActionErrorKind::AlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AlreadyExists" => {
+            crate::error::PutScheduledUpdateGroupActionError {
+                meta: generic,
+                kind: crate::error::PutScheduledUpdateGroupActionErrorKind::AlreadyExistsFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::already_exists_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_already_exists_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutScheduledUpdateGroupActionError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::PutScheduledUpdateGroupActionError {
-            meta: generic,
-            kind: crate::error::PutScheduledUpdateGroupActionErrorKind::LimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::already_exists_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScheduledUpdateGroupActionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "LimitExceeded" => {
+            crate::error::PutScheduledUpdateGroupActionError {
+                meta: generic,
+                kind: crate::error::PutScheduledUpdateGroupActionErrorKind::LimitExceededFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutScheduledUpdateGroupActionError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScheduledUpdateGroupActionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::PutScheduledUpdateGroupActionError {
             meta: generic,
             kind: crate::error::PutScheduledUpdateGroupActionErrorKind::ResourceContentionFault({
@@ -3880,11 +3610,7 @@ pub fn parse_put_scheduled_update_group_action_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutScheduledUpdateGroupActionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScheduledUpdateGroupActionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3926,27 +3652,25 @@ pub fn parse_put_warm_pool_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::PutWarmPoolError {
-            meta: generic,
-            kind: crate::error::PutWarmPoolErrorKind::LimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "LimitExceeded" => {
+            crate::error::PutWarmPoolError {
+                meta: generic,
+                kind: crate::error::PutWarmPoolErrorKind::LimitExceededFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutWarmPoolError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutWarmPoolError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::PutWarmPoolError {
             meta: generic,
             kind: crate::error::PutWarmPoolErrorKind::ResourceContentionFault({
@@ -3955,11 +3679,7 @@ pub fn parse_put_warm_pool_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutWarmPoolError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutWarmPoolError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4008,11 +3728,7 @@ pub fn parse_record_lifecycle_action_heartbeat_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RecordLifecycleActionHeartbeatError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RecordLifecycleActionHeartbeatError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4062,11 +3778,7 @@ pub fn parse_resume_processes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ResumeProcessesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResumeProcessesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4083,11 +3795,7 @@ pub fn parse_resume_processes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_in_use_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ResumeProcessesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResumeProcessesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4136,11 +3844,7 @@ pub fn parse_set_desired_capacity_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetDesiredCapacityError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetDesiredCapacityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4158,7 +3862,7 @@ pub fn parse_set_desired_capacity_error(
                     let mut output =
                         crate::error::scaling_activity_in_progress_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetDesiredCapacityError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetDesiredCapacityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4208,11 +3912,7 @@ pub fn parse_set_instance_health_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetInstanceHealthError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetInstanceHealthError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4254,27 +3954,25 @@ pub fn parse_set_instance_protection_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::SetInstanceProtectionError {
-            meta: generic,
-            kind: crate::error::SetInstanceProtectionErrorKind::LimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "LimitExceeded" => {
+            crate::error::SetInstanceProtectionError {
+                meta: generic,
+                kind: crate::error::SetInstanceProtectionErrorKind::LimitExceededFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetInstanceProtectionError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetInstanceProtectionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::SetInstanceProtectionError {
             meta: generic,
             kind: crate::error::SetInstanceProtectionErrorKind::ResourceContentionFault({
@@ -4283,11 +3981,7 @@ pub fn parse_set_instance_protection_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetInstanceProtectionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetInstanceProtectionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4340,7 +4034,7 @@ pub fn parse_start_instance_refresh_error(
                     let mut output =
                         crate::error::instance_refresh_in_progress_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_instance_refresh_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartInstanceRefreshError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_instance_refresh_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartInstanceRefreshError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4349,27 +4043,25 @@ pub fn parse_start_instance_refresh_error(
                 tmp
             }),
         },
-        "LimitExceeded" => crate::error::StartInstanceRefreshError {
-            meta: generic,
-            kind: crate::error::StartInstanceRefreshErrorKind::LimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "LimitExceeded" => {
+            crate::error::StartInstanceRefreshError {
+                meta: generic,
+                kind: crate::error::StartInstanceRefreshErrorKind::LimitExceededFault({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartInstanceRefreshError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartInstanceRefreshError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::StartInstanceRefreshError {
             meta: generic,
             kind: crate::error::StartInstanceRefreshErrorKind::ResourceContentionFault({
@@ -4378,11 +4070,7 @@ pub fn parse_start_instance_refresh_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartInstanceRefreshError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartInstanceRefreshError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4406,7 +4094,7 @@ pub fn parse_start_instance_refresh_response(
         #[allow(unused_mut)]
         let mut output = crate::output::start_instance_refresh_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_start_instance_refresh(
+        output = crate::xml_deser::deser_operation_crate_operation_start_instance_refresh(
             response.body().as_ref(),
             output,
         )
@@ -4437,11 +4125,7 @@ pub fn parse_suspend_processes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SuspendProcessesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SuspendProcessesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4458,11 +4142,7 @@ pub fn parse_suspend_processes_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_in_use_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SuspendProcessesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SuspendProcessesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4511,7 +4191,7 @@ pub fn parse_terminate_instance_in_auto_scaling_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TerminateInstanceInAutoScalingGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TerminateInstanceInAutoScalingGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4525,7 +4205,7 @@ pub fn parse_terminate_instance_in_auto_scaling_group_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::scaling_activity_in_progress_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TerminateInstanceInAutoScalingGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TerminateInstanceInAutoScalingGroupError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4550,11 +4230,7 @@ pub fn parse_terminate_instance_in_auto_scaling_group_response(
         let mut output =
             crate::output::terminate_instance_in_auto_scaling_group_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_terminate_instance_in_auto_scaling_group(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::TerminateInstanceInAutoScalingGroupError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_terminate_instance_in_auto_scaling_group(response.body().as_ref(), output).map_err(crate::error::TerminateInstanceInAutoScalingGroupError::unhandled)?;
         output.build()
     })
 }
@@ -4587,11 +4263,7 @@ pub fn parse_update_auto_scaling_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_resource_contention_fault_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateAutoScalingGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAutoScalingGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4609,7 +4281,7 @@ pub fn parse_update_auto_scaling_group_error(
                     let mut output =
                         crate::error::scaling_activity_in_progress_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAutoScalingGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAutoScalingGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4626,11 +4298,7 @@ pub fn parse_update_auto_scaling_group_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_linked_role_failure::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_service_linked_role_failure_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateAutoScalingGroupError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAutoScalingGroupError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

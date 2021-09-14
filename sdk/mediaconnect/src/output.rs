@@ -61,45 +61,61 @@ impl UpdateFlowSourceOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateFlowOutput {
-    /// The settings for a flow, including its source, outputs, and entitlements.
-    pub flow: std::option::Option<crate::model::Flow>,
+pub struct UpdateFlowOutputOutput {
+    /// The ARN of the flow that is associated with the updated output.
+    pub flow_arn: std::option::Option<std::string::String>,
+    /// The new settings of the output that you updated.
+    pub output: std::option::Option<crate::model::Output>,
 }
-impl std::fmt::Debug for UpdateFlowOutput {
+impl std::fmt::Debug for UpdateFlowOutputOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFlowOutput");
-        formatter.field("flow", &self.flow);
+        let mut formatter = f.debug_struct("UpdateFlowOutputOutput");
+        formatter.field("flow_arn", &self.flow_arn);
+        formatter.field("output", &self.output);
         formatter.finish()
     }
 }
-/// See [`UpdateFlowOutput`](crate::output::UpdateFlowOutput)
-pub mod update_flow_output {
-    /// A builder for [`UpdateFlowOutput`](crate::output::UpdateFlowOutput)
+/// See [`UpdateFlowOutputOutput`](crate::output::UpdateFlowOutputOutput)
+pub mod update_flow_output_output {
+    /// A builder for [`UpdateFlowOutputOutput`](crate::output::UpdateFlowOutputOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) flow: std::option::Option<crate::model::Flow>,
+        pub(crate) flow_arn: std::option::Option<std::string::String>,
+        pub(crate) output: std::option::Option<crate::model::Output>,
     }
     impl Builder {
-        /// The settings for a flow, including its source, outputs, and entitlements.
-        pub fn flow(mut self, input: crate::model::Flow) -> Self {
-            self.flow = Some(input);
+        /// The ARN of the flow that is associated with the updated output.
+        pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.flow_arn = Some(input.into());
             self
         }
-        pub fn set_flow(mut self, input: std::option::Option<crate::model::Flow>) -> Self {
-            self.flow = input;
+        pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.flow_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateFlowOutput`](crate::output::UpdateFlowOutput)
-        pub fn build(self) -> crate::output::UpdateFlowOutput {
-            crate::output::UpdateFlowOutput { flow: self.flow }
+        /// The new settings of the output that you updated.
+        pub fn output(mut self, input: crate::model::Output) -> Self {
+            self.output = Some(input);
+            self
+        }
+        pub fn set_output(mut self, input: std::option::Option<crate::model::Output>) -> Self {
+            self.output = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateFlowOutputOutput`](crate::output::UpdateFlowOutputOutput)
+        pub fn build(self) -> crate::output::UpdateFlowOutputOutput {
+            crate::output::UpdateFlowOutputOutput {
+                flow_arn: self.flow_arn,
+                output: self.output,
+            }
         }
     }
 }
-impl UpdateFlowOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFlowOutput`](crate::output::UpdateFlowOutput)
-    pub fn builder() -> crate::output::update_flow_output::Builder {
-        crate::output::update_flow_output::Builder::default()
+impl UpdateFlowOutputOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFlowOutputOutput`](crate::output::UpdateFlowOutputOutput)
+    pub fn builder() -> crate::output::update_flow_output_output::Builder {
+        crate::output::update_flow_output_output::Builder::default()
     }
 }
 
@@ -226,6 +242,50 @@ impl UpdateFlowEntitlementOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowEntitlementOutput`](crate::output::UpdateFlowEntitlementOutput)
     pub fn builder() -> crate::output::update_flow_entitlement_output::Builder {
         crate::output::update_flow_entitlement_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFlowOutput {
+    /// The settings for a flow, including its source, outputs, and entitlements.
+    pub flow: std::option::Option<crate::model::Flow>,
+}
+impl std::fmt::Debug for UpdateFlowOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFlowOutput");
+        formatter.field("flow", &self.flow);
+        formatter.finish()
+    }
+}
+/// See [`UpdateFlowOutput`](crate::output::UpdateFlowOutput)
+pub mod update_flow_output {
+    /// A builder for [`UpdateFlowOutput`](crate::output::UpdateFlowOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) flow: std::option::Option<crate::model::Flow>,
+    }
+    impl Builder {
+        /// The settings for a flow, including its source, outputs, and entitlements.
+        pub fn flow(mut self, input: crate::model::Flow) -> Self {
+            self.flow = Some(input);
+            self
+        }
+        pub fn set_flow(mut self, input: std::option::Option<crate::model::Flow>) -> Self {
+            self.flow = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateFlowOutput`](crate::output::UpdateFlowOutput)
+        pub fn build(self) -> crate::output::UpdateFlowOutput {
+            crate::output::UpdateFlowOutput { flow: self.flow }
+        }
+    }
+}
+impl UpdateFlowOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFlowOutput`](crate::output::UpdateFlowOutput)
+    pub fn builder() -> crate::output::update_flow_output::Builder {
+        crate::output::update_flow_output::Builder::default()
     }
 }
 

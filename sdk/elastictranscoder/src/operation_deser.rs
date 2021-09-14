@@ -20,11 +20,7 @@ pub fn parse_cancel_job_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CancelJobError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CancelJobError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -33,26 +29,24 @@ pub fn parse_cancel_job_error(
                 tmp
             }),
         },
-        "IncompatibleVersionException" => {
-            crate::error::CancelJobError {
-                meta: generic,
-                kind: crate::error::CancelJobErrorKind::IncompatibleVersionException({
+        "IncompatibleVersionException" => crate::error::CancelJobError {
+            meta: generic,
+            kind: crate::error::CancelJobErrorKind::IncompatibleVersionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::incompatible_version_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CancelJobError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::incompatible_version_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CancelJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceException" => crate::error::CancelJobError {
             meta: generic,
             kind: crate::error::CancelJobErrorKind::InternalServiceException({
@@ -61,11 +55,7 @@ pub fn parse_cancel_job_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CancelJobError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CancelJobError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -82,11 +72,7 @@ pub fn parse_cancel_job_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_in_use_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CancelJobError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CancelJobError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -95,26 +81,23 @@ pub fn parse_cancel_job_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::CancelJobError {
-                meta: generic,
-                kind: crate::error::CancelJobErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::CancelJobError {
+            meta: generic,
+            kind: crate::error::CancelJobErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CancelJobError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CancelJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::CancelJobError {
             meta: generic,
             kind: crate::error::CancelJobErrorKind::ValidationException({
@@ -123,11 +106,7 @@ pub fn parse_cancel_job_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CancelJobError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CancelJobError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -173,11 +152,7 @@ pub fn parse_create_job_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateJobError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -186,26 +161,24 @@ pub fn parse_create_job_error(
                 tmp
             }),
         },
-        "IncompatibleVersionException" => {
-            crate::error::CreateJobError {
-                meta: generic,
-                kind: crate::error::CreateJobErrorKind::IncompatibleVersionException({
+        "IncompatibleVersionException" => crate::error::CreateJobError {
+            meta: generic,
+            kind: crate::error::CreateJobErrorKind::IncompatibleVersionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::incompatible_version_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::incompatible_version_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceException" => crate::error::CreateJobError {
             meta: generic,
             kind: crate::error::CreateJobErrorKind::InternalServiceException({
@@ -214,11 +187,7 @@ pub fn parse_create_job_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateJobError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -235,11 +204,7 @@ pub fn parse_create_job_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateJobError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -248,26 +213,23 @@ pub fn parse_create_job_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::CreateJobError {
-                meta: generic,
-                kind: crate::error::CreateJobErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::CreateJobError {
+            meta: generic,
+            kind: crate::error::CreateJobErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::CreateJobError {
             meta: generic,
             kind: crate::error::CreateJobErrorKind::ValidationException({
@@ -276,11 +238,7 @@ pub fn parse_create_job_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateJobError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -301,8 +259,11 @@ pub fn parse_create_job_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_job_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_job(response.body().as_ref(), output)
-            .map_err(crate::error::CreateJobError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_job(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateJobError::unhandled)?;
         output.build()
     })
 }
@@ -328,11 +289,7 @@ pub fn parse_create_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -341,26 +298,24 @@ pub fn parse_create_pipeline_error(
                 tmp
             }),
         },
-        "IncompatibleVersionException" => {
-            crate::error::CreatePipelineError {
-                meta: generic,
-                kind: crate::error::CreatePipelineErrorKind::IncompatibleVersionException({
+        "IncompatibleVersionException" => crate::error::CreatePipelineError {
+            meta: generic,
+            kind: crate::error::CreatePipelineErrorKind::IncompatibleVersionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::incompatible_version_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePipelineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::incompatible_version_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceException" => crate::error::CreatePipelineError {
             meta: generic,
             kind: crate::error::CreatePipelineErrorKind::InternalServiceException({
@@ -369,11 +324,7 @@ pub fn parse_create_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -390,11 +341,7 @@ pub fn parse_create_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -403,26 +350,23 @@ pub fn parse_create_pipeline_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::CreatePipelineError {
-                meta: generic,
-                kind: crate::error::CreatePipelineErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::CreatePipelineError {
+            meta: generic,
+            kind: crate::error::CreatePipelineErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePipelineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::CreatePipelineError {
             meta: generic,
             kind: crate::error::CreatePipelineErrorKind::ValidationException({
@@ -431,11 +375,7 @@ pub fn parse_create_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -456,9 +396,11 @@ pub fn parse_create_pipeline_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_pipeline_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_create_pipeline(response.body().as_ref(), output)
-                .map_err(crate::error::CreatePipelineError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_pipeline(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreatePipelineError::unhandled)?;
         output.build()
     })
 }
@@ -484,11 +426,7 @@ pub fn parse_create_preset_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePresetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePresetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -497,26 +435,24 @@ pub fn parse_create_preset_error(
                 tmp
             }),
         },
-        "IncompatibleVersionException" => {
-            crate::error::CreatePresetError {
-                meta: generic,
-                kind: crate::error::CreatePresetErrorKind::IncompatibleVersionException({
+        "IncompatibleVersionException" => crate::error::CreatePresetError {
+            meta: generic,
+            kind: crate::error::CreatePresetErrorKind::IncompatibleVersionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::incompatible_version_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePresetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::incompatible_version_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePresetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceException" => crate::error::CreatePresetError {
             meta: generic,
             kind: crate::error::CreatePresetErrorKind::InternalServiceException({
@@ -525,11 +461,7 @@ pub fn parse_create_preset_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePresetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePresetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -546,11 +478,7 @@ pub fn parse_create_preset_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePresetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePresetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -567,11 +495,7 @@ pub fn parse_create_preset_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePresetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreatePresetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -592,8 +516,11 @@ pub fn parse_create_preset_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_preset_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_create_preset(response.body().as_ref(), output)
-            .map_err(crate::error::CreatePresetError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_create_preset(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreatePresetError::unhandled)?;
         output.build()
     })
 }
@@ -619,11 +546,7 @@ pub fn parse_delete_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeletePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -632,26 +555,24 @@ pub fn parse_delete_pipeline_error(
                 tmp
             }),
         },
-        "IncompatibleVersionException" => {
-            crate::error::DeletePipelineError {
-                meta: generic,
-                kind: crate::error::DeletePipelineErrorKind::IncompatibleVersionException({
+        "IncompatibleVersionException" => crate::error::DeletePipelineError {
+            meta: generic,
+            kind: crate::error::DeletePipelineErrorKind::IncompatibleVersionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::incompatible_version_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePipelineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::incompatible_version_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceException" => crate::error::DeletePipelineError {
             meta: generic,
             kind: crate::error::DeletePipelineErrorKind::InternalServiceException({
@@ -660,11 +581,7 @@ pub fn parse_delete_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeletePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -681,11 +598,7 @@ pub fn parse_delete_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_in_use_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeletePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -694,26 +607,23 @@ pub fn parse_delete_pipeline_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DeletePipelineError {
-                meta: generic,
-                kind: crate::error::DeletePipelineErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DeletePipelineError {
+            meta: generic,
+            kind: crate::error::DeletePipelineErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePipelineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::DeletePipelineError {
             meta: generic,
             kind: crate::error::DeletePipelineErrorKind::ValidationException({
@@ -722,11 +632,7 @@ pub fn parse_delete_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeletePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -772,11 +678,7 @@ pub fn parse_delete_preset_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeletePresetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePresetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -785,26 +687,24 @@ pub fn parse_delete_preset_error(
                 tmp
             }),
         },
-        "IncompatibleVersionException" => {
-            crate::error::DeletePresetError {
-                meta: generic,
-                kind: crate::error::DeletePresetErrorKind::IncompatibleVersionException({
+        "IncompatibleVersionException" => crate::error::DeletePresetError {
+            meta: generic,
+            kind: crate::error::DeletePresetErrorKind::IncompatibleVersionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::incompatible_version_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePresetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::incompatible_version_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePresetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceException" => crate::error::DeletePresetError {
             meta: generic,
             kind: crate::error::DeletePresetErrorKind::InternalServiceException({
@@ -813,11 +713,7 @@ pub fn parse_delete_preset_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeletePresetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePresetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -826,26 +722,23 @@ pub fn parse_delete_preset_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::DeletePresetError {
-                meta: generic,
-                kind: crate::error::DeletePresetErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::DeletePresetError {
+            meta: generic,
+            kind: crate::error::DeletePresetErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePresetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePresetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::DeletePresetError {
             meta: generic,
             kind: crate::error::DeletePresetErrorKind::ValidationException({
@@ -854,11 +747,7 @@ pub fn parse_delete_preset_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeletePresetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeletePresetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -907,11 +796,7 @@ pub fn parse_list_jobs_by_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListJobsByPipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByPipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -920,26 +805,24 @@ pub fn parse_list_jobs_by_pipeline_error(
                 tmp
             }),
         },
-        "IncompatibleVersionException" => {
-            crate::error::ListJobsByPipelineError {
-                meta: generic,
-                kind: crate::error::ListJobsByPipelineErrorKind::IncompatibleVersionException({
+        "IncompatibleVersionException" => crate::error::ListJobsByPipelineError {
+            meta: generic,
+            kind: crate::error::ListJobsByPipelineErrorKind::IncompatibleVersionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::incompatible_version_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByPipelineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::incompatible_version_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByPipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceException" => crate::error::ListJobsByPipelineError {
             meta: generic,
             kind: crate::error::ListJobsByPipelineErrorKind::InternalServiceException({
@@ -948,11 +831,7 @@ pub fn parse_list_jobs_by_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListJobsByPipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByPipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -961,26 +840,23 @@ pub fn parse_list_jobs_by_pipeline_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ListJobsByPipelineError {
-                meta: generic,
-                kind: crate::error::ListJobsByPipelineErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::ListJobsByPipelineError {
+            meta: generic,
+            kind: crate::error::ListJobsByPipelineErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByPipelineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByPipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::ListJobsByPipelineError {
             meta: generic,
             kind: crate::error::ListJobsByPipelineErrorKind::ValidationException({
@@ -989,11 +865,7 @@ pub fn parse_list_jobs_by_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListJobsByPipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByPipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1017,7 +889,7 @@ pub fn parse_list_jobs_by_pipeline_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_jobs_by_pipeline_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_jobs_by_pipeline(
+        output = crate::json_deser::deser_operation_crate_operation_list_jobs_by_pipeline(
             response.body().as_ref(),
             output,
         )
@@ -1048,11 +920,7 @@ pub fn parse_list_jobs_by_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListJobsByStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1061,26 +929,24 @@ pub fn parse_list_jobs_by_status_error(
                 tmp
             }),
         },
-        "IncompatibleVersionException" => {
-            crate::error::ListJobsByStatusError {
-                meta: generic,
-                kind: crate::error::ListJobsByStatusErrorKind::IncompatibleVersionException({
+        "IncompatibleVersionException" => crate::error::ListJobsByStatusError {
+            meta: generic,
+            kind: crate::error::ListJobsByStatusErrorKind::IncompatibleVersionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::incompatible_version_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByStatusError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::incompatible_version_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByStatusError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceException" => crate::error::ListJobsByStatusError {
             meta: generic,
             kind: crate::error::ListJobsByStatusErrorKind::InternalServiceException({
@@ -1089,11 +955,7 @@ pub fn parse_list_jobs_by_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListJobsByStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1102,26 +964,23 @@ pub fn parse_list_jobs_by_status_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ListJobsByStatusError {
-                meta: generic,
-                kind: crate::error::ListJobsByStatusErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::ListJobsByStatusError {
+            meta: generic,
+            kind: crate::error::ListJobsByStatusErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByStatusError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByStatusError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::ListJobsByStatusError {
             meta: generic,
             kind: crate::error::ListJobsByStatusErrorKind::ValidationException({
@@ -1130,11 +989,7 @@ pub fn parse_list_jobs_by_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListJobsByStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1156,7 +1011,7 @@ pub fn parse_list_jobs_by_status_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_jobs_by_status_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_jobs_by_status(
+        output = crate::json_deser::deser_operation_crate_operation_list_jobs_by_status(
             response.body().as_ref(),
             output,
         )
@@ -1186,11 +1041,7 @@ pub fn parse_list_pipelines_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListPipelinesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListPipelinesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1199,26 +1050,24 @@ pub fn parse_list_pipelines_error(
                 tmp
             }),
         },
-        "IncompatibleVersionException" => {
-            crate::error::ListPipelinesError {
-                meta: generic,
-                kind: crate::error::ListPipelinesErrorKind::IncompatibleVersionException({
+        "IncompatibleVersionException" => crate::error::ListPipelinesError {
+            meta: generic,
+            kind: crate::error::ListPipelinesErrorKind::IncompatibleVersionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::incompatible_version_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListPipelinesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::incompatible_version_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListPipelinesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceException" => crate::error::ListPipelinesError {
             meta: generic,
             kind: crate::error::ListPipelinesErrorKind::InternalServiceException({
@@ -1227,11 +1076,7 @@ pub fn parse_list_pipelines_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListPipelinesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListPipelinesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1248,11 +1093,7 @@ pub fn parse_list_pipelines_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListPipelinesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListPipelinesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1273,9 +1114,11 @@ pub fn parse_list_pipelines_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_pipelines_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_pipelines(response.body().as_ref(), output)
-                .map_err(crate::error::ListPipelinesError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_pipelines(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListPipelinesError::unhandled)?;
         output.build()
     })
 }
@@ -1301,11 +1144,7 @@ pub fn parse_list_presets_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListPresetsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListPresetsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1314,26 +1153,24 @@ pub fn parse_list_presets_error(
                 tmp
             }),
         },
-        "IncompatibleVersionException" => {
-            crate::error::ListPresetsError {
-                meta: generic,
-                kind: crate::error::ListPresetsErrorKind::IncompatibleVersionException({
+        "IncompatibleVersionException" => crate::error::ListPresetsError {
+            meta: generic,
+            kind: crate::error::ListPresetsErrorKind::IncompatibleVersionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::incompatible_version_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListPresetsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::incompatible_version_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListPresetsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceException" => crate::error::ListPresetsError {
             meta: generic,
             kind: crate::error::ListPresetsErrorKind::InternalServiceException({
@@ -1342,11 +1179,7 @@ pub fn parse_list_presets_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListPresetsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListPresetsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1363,11 +1196,7 @@ pub fn parse_list_presets_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListPresetsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListPresetsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1388,8 +1217,11 @@ pub fn parse_list_presets_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_presets_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_list_presets(response.body().as_ref(), output)
-            .map_err(crate::error::ListPresetsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_presets(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListPresetsError::unhandled)?;
         output.build()
     })
 }
@@ -1415,11 +1247,7 @@ pub fn parse_read_job_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ReadJobError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadJobError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1428,26 +1256,24 @@ pub fn parse_read_job_error(
                 tmp
             }),
         },
-        "IncompatibleVersionException" => {
-            crate::error::ReadJobError {
-                meta: generic,
-                kind: crate::error::ReadJobErrorKind::IncompatibleVersionException({
+        "IncompatibleVersionException" => crate::error::ReadJobError {
+            meta: generic,
+            kind: crate::error::ReadJobErrorKind::IncompatibleVersionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::incompatible_version_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadJobError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::incompatible_version_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceException" => crate::error::ReadJobError {
             meta: generic,
             kind: crate::error::ReadJobErrorKind::InternalServiceException({
@@ -1456,11 +1282,7 @@ pub fn parse_read_job_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ReadJobError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadJobError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1469,26 +1291,23 @@ pub fn parse_read_job_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ReadJobError {
-                meta: generic,
-                kind: crate::error::ReadJobErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::ReadJobError {
+            meta: generic,
+            kind: crate::error::ReadJobErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadJobError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::ReadJobError {
             meta: generic,
             kind: crate::error::ReadJobErrorKind::ValidationException({
@@ -1497,11 +1316,7 @@ pub fn parse_read_job_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ReadJobError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadJobError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1522,8 +1337,11 @@ pub fn parse_read_job_response(
         #[allow(unused_mut)]
         let mut output = crate::output::read_job_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_read_job(response.body().as_ref(), output)
-            .map_err(crate::error::ReadJobError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_read_job(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ReadJobError::unhandled)?;
         output.build()
     })
 }
@@ -1549,11 +1367,7 @@ pub fn parse_read_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ReadPipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadPipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1562,26 +1376,24 @@ pub fn parse_read_pipeline_error(
                 tmp
             }),
         },
-        "IncompatibleVersionException" => {
-            crate::error::ReadPipelineError {
-                meta: generic,
-                kind: crate::error::ReadPipelineErrorKind::IncompatibleVersionException({
+        "IncompatibleVersionException" => crate::error::ReadPipelineError {
+            meta: generic,
+            kind: crate::error::ReadPipelineErrorKind::IncompatibleVersionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::incompatible_version_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadPipelineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::incompatible_version_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadPipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceException" => crate::error::ReadPipelineError {
             meta: generic,
             kind: crate::error::ReadPipelineErrorKind::InternalServiceException({
@@ -1590,11 +1402,7 @@ pub fn parse_read_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ReadPipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadPipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1603,26 +1411,23 @@ pub fn parse_read_pipeline_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ReadPipelineError {
-                meta: generic,
-                kind: crate::error::ReadPipelineErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::ReadPipelineError {
+            meta: generic,
+            kind: crate::error::ReadPipelineErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadPipelineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadPipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::ReadPipelineError {
             meta: generic,
             kind: crate::error::ReadPipelineErrorKind::ValidationException({
@@ -1631,11 +1436,7 @@ pub fn parse_read_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ReadPipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadPipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1656,8 +1457,11 @@ pub fn parse_read_pipeline_response(
         #[allow(unused_mut)]
         let mut output = crate::output::read_pipeline_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_read_pipeline(response.body().as_ref(), output)
-            .map_err(crate::error::ReadPipelineError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_read_pipeline(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ReadPipelineError::unhandled)?;
         output.build()
     })
 }
@@ -1683,11 +1487,7 @@ pub fn parse_read_preset_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ReadPresetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadPresetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1696,26 +1496,24 @@ pub fn parse_read_preset_error(
                 tmp
             }),
         },
-        "IncompatibleVersionException" => {
-            crate::error::ReadPresetError {
-                meta: generic,
-                kind: crate::error::ReadPresetErrorKind::IncompatibleVersionException({
+        "IncompatibleVersionException" => crate::error::ReadPresetError {
+            meta: generic,
+            kind: crate::error::ReadPresetErrorKind::IncompatibleVersionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::incompatible_version_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadPresetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::incompatible_version_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadPresetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceException" => crate::error::ReadPresetError {
             meta: generic,
             kind: crate::error::ReadPresetErrorKind::InternalServiceException({
@@ -1724,11 +1522,7 @@ pub fn parse_read_preset_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ReadPresetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadPresetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1737,26 +1531,23 @@ pub fn parse_read_preset_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ReadPresetError {
-                meta: generic,
-                kind: crate::error::ReadPresetErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::ReadPresetError {
+            meta: generic,
+            kind: crate::error::ReadPresetErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadPresetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadPresetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::ReadPresetError {
             meta: generic,
             kind: crate::error::ReadPresetErrorKind::ValidationException({
@@ -1765,11 +1556,7 @@ pub fn parse_read_preset_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ReadPresetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ReadPresetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1790,8 +1577,11 @@ pub fn parse_read_preset_response(
         #[allow(unused_mut)]
         let mut output = crate::output::read_preset_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_read_preset(response.body().as_ref(), output)
-            .map_err(crate::error::ReadPresetError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_read_preset(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ReadPresetError::unhandled)?;
         output.build()
     })
 }
@@ -1817,11 +1607,7 @@ pub fn parse_test_role_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TestRoleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TestRoleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1830,26 +1616,24 @@ pub fn parse_test_role_error(
                 tmp
             }),
         },
-        "IncompatibleVersionException" => {
-            crate::error::TestRoleError {
-                meta: generic,
-                kind: crate::error::TestRoleErrorKind::IncompatibleVersionException({
+        "IncompatibleVersionException" => crate::error::TestRoleError {
+            meta: generic,
+            kind: crate::error::TestRoleErrorKind::IncompatibleVersionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::incompatible_version_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TestRoleError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::incompatible_version_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TestRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceException" => crate::error::TestRoleError {
             meta: generic,
             kind: crate::error::TestRoleErrorKind::InternalServiceException({
@@ -1858,11 +1642,7 @@ pub fn parse_test_role_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TestRoleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TestRoleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1871,26 +1651,23 @@ pub fn parse_test_role_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::TestRoleError {
-                meta: generic,
-                kind: crate::error::TestRoleErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::TestRoleError {
+            meta: generic,
+            kind: crate::error::TestRoleErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TestRoleError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TestRoleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::TestRoleError {
             meta: generic,
             kind: crate::error::TestRoleErrorKind::ValidationException({
@@ -1899,11 +1676,7 @@ pub fn parse_test_role_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TestRoleError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TestRoleError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1924,8 +1697,11 @@ pub fn parse_test_role_response(
         #[allow(unused_mut)]
         let mut output = crate::output::test_role_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_test_role(response.body().as_ref(), output)
-            .map_err(crate::error::TestRoleError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_test_role(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::TestRoleError::unhandled)?;
         output.build()
     })
 }
@@ -1951,11 +1727,7 @@ pub fn parse_update_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdatePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1964,26 +1736,24 @@ pub fn parse_update_pipeline_error(
                 tmp
             }),
         },
-        "IncompatibleVersionException" => {
-            crate::error::UpdatePipelineError {
-                meta: generic,
-                kind: crate::error::UpdatePipelineErrorKind::IncompatibleVersionException({
+        "IncompatibleVersionException" => crate::error::UpdatePipelineError {
+            meta: generic,
+            kind: crate::error::UpdatePipelineErrorKind::IncompatibleVersionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::incompatible_version_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::incompatible_version_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceException" => crate::error::UpdatePipelineError {
             meta: generic,
             kind: crate::error::UpdatePipelineErrorKind::InternalServiceException({
@@ -1992,11 +1762,7 @@ pub fn parse_update_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdatePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2013,11 +1779,7 @@ pub fn parse_update_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_in_use_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdatePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2026,26 +1788,23 @@ pub fn parse_update_pipeline_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::UpdatePipelineError {
-                meta: generic,
-                kind: crate::error::UpdatePipelineErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::UpdatePipelineError {
+            meta: generic,
+            kind: crate::error::UpdatePipelineErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::UpdatePipelineError {
             meta: generic,
             kind: crate::error::UpdatePipelineErrorKind::ValidationException({
@@ -2054,11 +1813,7 @@ pub fn parse_update_pipeline_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdatePipelineError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2079,9 +1834,11 @@ pub fn parse_update_pipeline_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_pipeline_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_update_pipeline(response.body().as_ref(), output)
-                .map_err(crate::error::UpdatePipelineError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_update_pipeline(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdatePipelineError::unhandled)?;
         output.build()
     })
 }
@@ -2114,11 +1871,7 @@ pub fn parse_update_pipeline_notifications_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdatePipelineNotificationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineNotificationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2137,7 +1890,7 @@ pub fn parse_update_pipeline_notifications_error(
                         let mut output =
                             crate::error::incompatible_version_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineNotificationsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineNotificationsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2155,11 +1908,7 @@ pub fn parse_update_pipeline_notifications_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdatePipelineNotificationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineNotificationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2176,11 +1925,7 @@ pub fn parse_update_pipeline_notifications_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_in_use_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdatePipelineNotificationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineNotificationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2189,28 +1934,23 @@ pub fn parse_update_pipeline_notifications_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::UpdatePipelineNotificationsError {
-                meta: generic,
-                kind: crate::error::UpdatePipelineNotificationsErrorKind::ResourceNotFoundException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::resource_not_found_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineNotificationsError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
-        }
+        "ResourceNotFoundException" => crate::error::UpdatePipelineNotificationsError {
+            meta: generic,
+            kind: crate::error::UpdatePipelineNotificationsErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineNotificationsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::UpdatePipelineNotificationsError {
             meta: generic,
             kind: crate::error::UpdatePipelineNotificationsErrorKind::ValidationException({
@@ -2219,11 +1959,7 @@ pub fn parse_update_pipeline_notifications_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdatePipelineNotificationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineNotificationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2247,7 +1983,7 @@ pub fn parse_update_pipeline_notifications_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_pipeline_notifications_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_pipeline_notifications(
+        output = crate::json_deser::deser_operation_crate_operation_update_pipeline_notifications(
             response.body().as_ref(),
             output,
         )
@@ -2280,11 +2016,7 @@ pub fn parse_update_pipeline_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdatePipelineStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2293,26 +2025,24 @@ pub fn parse_update_pipeline_status_error(
                 tmp
             }),
         },
-        "IncompatibleVersionException" => {
-            crate::error::UpdatePipelineStatusError {
-                meta: generic,
-                kind: crate::error::UpdatePipelineStatusErrorKind::IncompatibleVersionException({
+        "IncompatibleVersionException" => crate::error::UpdatePipelineStatusError {
+            meta: generic,
+            kind: crate::error::UpdatePipelineStatusErrorKind::IncompatibleVersionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::incompatible_version_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineStatusError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::incompatible_version_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineStatusError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceException" => crate::error::UpdatePipelineStatusError {
             meta: generic,
             kind: crate::error::UpdatePipelineStatusErrorKind::InternalServiceException({
@@ -2321,11 +2051,7 @@ pub fn parse_update_pipeline_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdatePipelineStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2342,11 +2068,7 @@ pub fn parse_update_pipeline_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_in_use_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdatePipelineStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2355,26 +2077,23 @@ pub fn parse_update_pipeline_status_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::UpdatePipelineStatusError {
-                meta: generic,
-                kind: crate::error::UpdatePipelineStatusErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::UpdatePipelineStatusError {
+            meta: generic,
+            kind: crate::error::UpdatePipelineStatusErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineStatusError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineStatusError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::UpdatePipelineStatusError {
             meta: generic,
             kind: crate::error::UpdatePipelineStatusErrorKind::ValidationException({
@@ -2383,11 +2102,7 @@ pub fn parse_update_pipeline_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_validation_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdatePipelineStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdatePipelineStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2411,7 +2126,7 @@ pub fn parse_update_pipeline_status_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_pipeline_status_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_update_pipeline_status(
+        output = crate::json_deser::deser_operation_crate_operation_update_pipeline_status(
             response.body().as_ref(),
             output,
         )

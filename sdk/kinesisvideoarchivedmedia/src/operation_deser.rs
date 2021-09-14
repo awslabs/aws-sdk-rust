@@ -38,26 +38,24 @@ pub fn parse_get_clip_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClientLimitExceededException" => {
-            crate::error::GetClipError {
-                meta: generic,
-                kind: crate::error::GetClipErrorKind::ClientLimitExceededException({
+        "ClientLimitExceededException" => crate::error::GetClipError {
+            meta: generic,
+            kind: crate::error::GetClipErrorKind::ClientLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::client_limit_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_client_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetClipError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::client_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_client_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetClipError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidArgumentException" => crate::error::GetClipError {
             meta: generic,
             kind: crate::error::GetClipErrorKind::InvalidArgumentException({
@@ -66,11 +64,7 @@ pub fn parse_get_clip_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_argument_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetClipError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetClipError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -88,7 +82,7 @@ pub fn parse_get_clip_error(
                     let mut output =
                         crate::error::invalid_codec_private_data_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_codec_private_data_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetClipError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_codec_private_data_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetClipError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -97,26 +91,24 @@ pub fn parse_get_clip_error(
                 tmp
             }),
         },
-        "InvalidMediaFrameException" => {
-            crate::error::GetClipError {
-                meta: generic,
-                kind: crate::error::GetClipErrorKind::InvalidMediaFrameException({
+        "InvalidMediaFrameException" => crate::error::GetClipError {
+            meta: generic,
+            kind: crate::error::GetClipErrorKind::InvalidMediaFrameException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_media_frame_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_invalid_media_frame_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetClipError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_media_frame_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_media_frame_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetClipError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "MissingCodecPrivateDataException" => crate::error::GetClipError {
             meta: generic,
             kind: crate::error::GetClipErrorKind::MissingCodecPrivateDataException({
@@ -126,7 +118,7 @@ pub fn parse_get_clip_error(
                     let mut output =
                         crate::error::missing_codec_private_data_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_missing_codec_private_data_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetClipError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_missing_codec_private_data_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetClipError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -143,12 +135,7 @@ pub fn parse_get_clip_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_data_retention_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_no_data_retention_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::GetClipError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_data_retention_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetClipError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -165,11 +152,7 @@ pub fn parse_get_clip_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_not_authorized_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetClipError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_not_authorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetClipError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -178,26 +161,23 @@ pub fn parse_get_clip_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::GetClipError {
-                meta: generic,
-                kind: crate::error::GetClipErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::GetClipError {
+            meta: generic,
+            kind: crate::error::GetClipErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetClipError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetClipError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnsupportedStreamMediaTypeException" => crate::error::GetClipError {
             meta: generic,
             kind: crate::error::GetClipErrorKind::UnsupportedStreamMediaTypeException({
@@ -207,7 +187,7 @@ pub fn parse_get_clip_error(
                     let mut output =
                         crate::error::unsupported_stream_media_type_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_stream_media_type_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetClipError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_stream_media_type_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetClipError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -245,7 +225,7 @@ pub fn parse_get_dash_streaming_session_url_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::client_limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_client_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_client_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
                     output.build()
                 }
             ;
@@ -259,7 +239,7 @@ pub fn parse_get_dash_streaming_session_url_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
                     output.build()
                 }
             ;
@@ -273,7 +253,7 @@ pub fn parse_get_dash_streaming_session_url_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_codec_private_data_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_codec_private_data_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_codec_private_data_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
                     output.build()
                 }
             ;
@@ -287,7 +267,7 @@ pub fn parse_get_dash_streaming_session_url_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::missing_codec_private_data_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_missing_codec_private_data_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_missing_codec_private_data_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
                     output.build()
                 }
             ;
@@ -301,7 +281,7 @@ pub fn parse_get_dash_streaming_session_url_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::no_data_retention_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_no_data_retention_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_data_retention_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
                     output.build()
                 }
             ;
@@ -315,7 +295,7 @@ pub fn parse_get_dash_streaming_session_url_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_not_authorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_not_authorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
                     output.build()
                 }
             ;
@@ -329,7 +309,7 @@ pub fn parse_get_dash_streaming_session_url_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
                     output.build()
                 }
             ;
@@ -343,7 +323,7 @@ pub fn parse_get_dash_streaming_session_url_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::unsupported_stream_media_type_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_stream_media_type_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_stream_media_type_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
                     output.build()
                 }
             ;
@@ -367,7 +347,7 @@ pub fn parse_get_dash_streaming_session_url_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_dash_streaming_session_url_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_dash_streaming_session_url(
+        output = crate::json_deser::deser_operation_crate_operation_get_dash_streaming_session_url(
             response.body().as_ref(),
             output,
         )
@@ -401,7 +381,7 @@ pub fn parse_get_hls_streaming_session_url_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::client_limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_client_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_client_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
                     output.build()
                 }
             ;
@@ -415,7 +395,7 @@ pub fn parse_get_hls_streaming_session_url_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
                     output.build()
                 }
             ;
@@ -429,7 +409,7 @@ pub fn parse_get_hls_streaming_session_url_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_codec_private_data_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_codec_private_data_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_codec_private_data_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
                     output.build()
                 }
             ;
@@ -443,7 +423,7 @@ pub fn parse_get_hls_streaming_session_url_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::missing_codec_private_data_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_missing_codec_private_data_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_missing_codec_private_data_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
                     output.build()
                 }
             ;
@@ -457,7 +437,7 @@ pub fn parse_get_hls_streaming_session_url_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::no_data_retention_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_no_data_retention_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_data_retention_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
                     output.build()
                 }
             ;
@@ -471,7 +451,7 @@ pub fn parse_get_hls_streaming_session_url_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_not_authorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_not_authorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
                     output.build()
                 }
             ;
@@ -485,7 +465,7 @@ pub fn parse_get_hls_streaming_session_url_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
                     output.build()
                 }
             ;
@@ -499,7 +479,7 @@ pub fn parse_get_hls_streaming_session_url_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::unsupported_stream_media_type_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_unsupported_stream_media_type_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_stream_media_type_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
                     output.build()
                 }
             ;
@@ -523,7 +503,7 @@ pub fn parse_get_hls_streaming_session_url_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_hls_streaming_session_url_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_get_hls_streaming_session_url(
+        output = crate::json_deser::deser_operation_crate_operation_get_hls_streaming_session_url(
             response.body().as_ref(),
             output,
         )
@@ -575,28 +555,24 @@ pub fn parse_get_media_for_fragment_list_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClientLimitExceededException" => {
-            crate::error::GetMediaForFragmentListError {
-                meta: generic,
-                kind: crate::error::GetMediaForFragmentListErrorKind::ClientLimitExceededException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::client_limit_exceeded_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_client_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMediaForFragmentListError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
-        }
+        "ClientLimitExceededException" => crate::error::GetMediaForFragmentListError {
+            meta: generic,
+            kind: crate::error::GetMediaForFragmentListErrorKind::ClientLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::client_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_client_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMediaForFragmentListError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidArgumentException" => crate::error::GetMediaForFragmentListError {
             meta: generic,
             kind: crate::error::GetMediaForFragmentListErrorKind::InvalidArgumentException({
@@ -605,11 +581,7 @@ pub fn parse_get_media_for_fragment_list_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_argument_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetMediaForFragmentListError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMediaForFragmentListError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -626,11 +598,7 @@ pub fn parse_get_media_for_fragment_list_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_not_authorized_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetMediaForFragmentListError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_not_authorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMediaForFragmentListError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -639,26 +607,23 @@ pub fn parse_get_media_for_fragment_list_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::GetMediaForFragmentListError {
-                meta: generic,
-                kind: crate::error::GetMediaForFragmentListErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::GetMediaForFragmentListError {
+            meta: generic,
+            kind: crate::error::GetMediaForFragmentListErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMediaForFragmentListError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMediaForFragmentListError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetMediaForFragmentListError::generic(generic),
     })
 }
@@ -676,26 +641,24 @@ pub fn parse_list_fragments_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClientLimitExceededException" => {
-            crate::error::ListFragmentsError {
-                meta: generic,
-                kind: crate::error::ListFragmentsErrorKind::ClientLimitExceededException({
+        "ClientLimitExceededException" => crate::error::ListFragmentsError {
+            meta: generic,
+            kind: crate::error::ListFragmentsErrorKind::ClientLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::client_limit_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_client_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFragmentsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::client_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_client_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFragmentsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidArgumentException" => crate::error::ListFragmentsError {
             meta: generic,
             kind: crate::error::ListFragmentsErrorKind::InvalidArgumentException({
@@ -704,11 +667,7 @@ pub fn parse_list_fragments_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_argument_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListFragmentsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFragmentsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -725,11 +684,7 @@ pub fn parse_list_fragments_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_not_authorized_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListFragmentsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_not_authorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFragmentsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -738,26 +693,23 @@ pub fn parse_list_fragments_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::ListFragmentsError {
-                meta: generic,
-                kind: crate::error::ListFragmentsErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::ListFragmentsError {
+            meta: generic,
+            kind: crate::error::ListFragmentsErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFragmentsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFragmentsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ListFragmentsError::generic(generic),
     })
 }
@@ -770,9 +722,11 @@ pub fn parse_list_fragments_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_fragments_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_list_fragments(response.body().as_ref(), output)
-                .map_err(crate::error::ListFragmentsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_list_fragments(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListFragmentsError::unhandled)?;
         output.build()
     })
 }

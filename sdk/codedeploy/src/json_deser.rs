@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_instance_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_instance_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::instance_limit_exceeded_exception::Builder,
 ) -> Result<crate::error::instance_limit_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -45,7 +45,7 @@ pub fn deser_structure_instance_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_instance_name_required_exceptionjson_err(
+pub fn deser_structure_crate_error_instance_name_required_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::instance_name_required_exception::Builder,
 ) -> Result<crate::error::instance_name_required_exception::Builder, smithy_json::deserialize::Error>
@@ -85,7 +85,7 @@ pub fn deser_structure_instance_name_required_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_instance_not_registered_exceptionjson_err(
+pub fn deser_structure_crate_error_instance_not_registered_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::instance_not_registered_exception::Builder,
 ) -> Result<crate::error::instance_not_registered_exception::Builder, smithy_json::deserialize::Error>
@@ -125,7 +125,7 @@ pub fn deser_structure_instance_not_registered_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_instance_name_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_instance_name_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_instance_name_exception::Builder,
 ) -> Result<crate::error::invalid_instance_name_exception::Builder, smithy_json::deserialize::Error>
@@ -165,7 +165,7 @@ pub fn deser_structure_invalid_instance_name_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_tag_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_tag_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_tag_exception::Builder,
 ) -> Result<crate::error::invalid_tag_exception::Builder, smithy_json::deserialize::Error> {
@@ -204,7 +204,7 @@ pub fn deser_structure_invalid_tag_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_tag_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_tag_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::tag_limit_exceeded_exception::Builder,
 ) -> Result<crate::error::tag_limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -243,7 +243,7 @@ pub fn deser_structure_tag_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_tag_required_exceptionjson_err(
+pub fn deser_structure_crate_error_tag_required_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::tag_required_exception::Builder,
 ) -> Result<crate::error::tag_required_exception::Builder, smithy_json::deserialize::Error> {
@@ -282,7 +282,7 @@ pub fn deser_structure_tag_required_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_application_does_not_exist_exceptionjson_err(
+pub fn deser_structure_crate_error_application_does_not_exist_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::application_does_not_exist_exception::Builder,
 ) -> Result<
@@ -324,7 +324,7 @@ pub fn deser_structure_application_does_not_exist_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_application_name_required_exceptionjson_err(
+pub fn deser_structure_crate_error_application_name_required_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::application_name_required_exception::Builder,
 ) -> Result<
@@ -366,7 +366,7 @@ pub fn deser_structure_application_name_required_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_batch_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_batch_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::batch_limit_exceeded_exception::Builder,
 ) -> Result<crate::error::batch_limit_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -406,7 +406,7 @@ pub fn deser_structure_batch_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_application_name_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_application_name_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_application_name_exception::Builder,
 ) -> Result<
@@ -448,7 +448,7 @@ pub fn deser_structure_invalid_application_name_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_revision_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_revision_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_revision_exception::Builder,
 ) -> Result<crate::error::invalid_revision_exception::Builder, smithy_json::deserialize::Error> {
@@ -487,7 +487,7 @@ pub fn deser_structure_invalid_revision_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_revision_required_exceptionjson_err(
+pub fn deser_structure_crate_error_revision_required_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::revision_required_exception::Builder,
 ) -> Result<crate::error::revision_required_exception::Builder, smithy_json::deserialize::Error> {
@@ -526,7 +526,7 @@ pub fn deser_structure_revision_required_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_get_application_revisions(
+pub fn deser_operation_crate_operation_batch_get_application_revisions(
     input: &[u8],
     mut builder: crate::output::batch_get_application_revisions_output::Builder,
 ) -> Result<
@@ -559,7 +559,7 @@ pub fn deser_operation_batch_get_application_revisions(
                     }
                     "revisions" => {
                         builder = builder.set_revisions(
-                            crate::json_deser::deser_list_revision_info_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_revision_info_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -580,7 +580,7 @@ pub fn deser_operation_batch_get_application_revisions(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_get_applications(
+pub fn deser_operation_crate_operation_batch_get_applications(
     input: &[u8],
     mut builder: crate::output::batch_get_applications_output::Builder,
 ) -> Result<crate::output::batch_get_applications_output::Builder, smithy_json::deserialize::Error>
@@ -597,7 +597,7 @@ pub fn deser_operation_batch_get_applications(
                 match key.to_unescaped()?.as_ref() {
                     "applicationsInfo" => {
                         builder = builder.set_applications_info(
-                            crate::json_deser::deser_list_applications_info_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_applications_info_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -618,7 +618,7 @@ pub fn deser_operation_batch_get_applications(
     Ok(builder)
 }
 
-pub fn deser_structure_deployment_config_does_not_exist_exceptionjson_err(
+pub fn deser_structure_crate_error_deployment_config_does_not_exist_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deployment_config_does_not_exist_exception::Builder,
 ) -> Result<
@@ -660,7 +660,7 @@ pub fn deser_structure_deployment_config_does_not_exist_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_deployment_group_name_required_exceptionjson_err(
+pub fn deser_structure_crate_error_deployment_group_name_required_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deployment_group_name_required_exception::Builder,
 ) -> Result<
@@ -702,7 +702,7 @@ pub fn deser_structure_deployment_group_name_required_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_deployment_group_name_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_deployment_group_name_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_deployment_group_name_exception::Builder,
 ) -> Result<
@@ -744,7 +744,7 @@ pub fn deser_structure_invalid_deployment_group_name_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_get_deployment_groups(
+pub fn deser_operation_crate_operation_batch_get_deployment_groups(
     input: &[u8],
     mut builder: crate::output::batch_get_deployment_groups_output::Builder,
 ) -> Result<
@@ -763,7 +763,7 @@ pub fn deser_operation_batch_get_deployment_groups(
                 match key.to_unescaped()?.as_ref() {
                     "deploymentGroupsInfo" => {
                         builder = builder.set_deployment_groups_info(
-                            crate::json_deser::deser_list_deployment_group_info_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_deployment_group_info_list(tokens)?
                         );
                     }
                     "errorMessage" => {
@@ -791,7 +791,7 @@ pub fn deser_operation_batch_get_deployment_groups(
     Ok(builder)
 }
 
-pub fn deser_structure_deployment_does_not_exist_exceptionjson_err(
+pub fn deser_structure_crate_error_deployment_does_not_exist_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deployment_does_not_exist_exception::Builder,
 ) -> Result<
@@ -833,7 +833,7 @@ pub fn deser_structure_deployment_does_not_exist_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_deployment_id_required_exceptionjson_err(
+pub fn deser_structure_crate_error_deployment_id_required_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deployment_id_required_exception::Builder,
 ) -> Result<crate::error::deployment_id_required_exception::Builder, smithy_json::deserialize::Error>
@@ -873,7 +873,7 @@ pub fn deser_structure_deployment_id_required_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_instance_id_required_exceptionjson_err(
+pub fn deser_structure_crate_error_instance_id_required_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::instance_id_required_exception::Builder,
 ) -> Result<crate::error::instance_id_required_exception::Builder, smithy_json::deserialize::Error>
@@ -913,7 +913,7 @@ pub fn deser_structure_instance_id_required_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_compute_platform_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_compute_platform_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_compute_platform_exception::Builder,
 ) -> Result<
@@ -955,7 +955,7 @@ pub fn deser_structure_invalid_compute_platform_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_deployment_id_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_deployment_id_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_deployment_id_exception::Builder,
 ) -> Result<crate::error::invalid_deployment_id_exception::Builder, smithy_json::deserialize::Error>
@@ -995,7 +995,7 @@ pub fn deser_structure_invalid_deployment_id_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_get_deployment_instances(
+pub fn deser_operation_crate_operation_batch_get_deployment_instances(
     input: &[u8],
     mut builder: crate::output::batch_get_deployment_instances_output::Builder,
 ) -> Result<
@@ -1014,7 +1014,7 @@ pub fn deser_operation_batch_get_deployment_instances(
                 match key.to_unescaped()?.as_ref() {
                     "instancesSummary" => {
                         builder = builder.set_instances_summary(
-                            crate::json_deser::deser_list_instance_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_instance_summary_list(tokens)?
                         );
                     }
                     "errorMessage" => {
@@ -1042,7 +1042,7 @@ pub fn deser_operation_batch_get_deployment_instances(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_get_deployments(
+pub fn deser_operation_crate_operation_batch_get_deployments(
     input: &[u8],
     mut builder: crate::output::batch_get_deployments_output::Builder,
 ) -> Result<crate::output::batch_get_deployments_output::Builder, smithy_json::deserialize::Error> {
@@ -1058,7 +1058,7 @@ pub fn deser_operation_batch_get_deployments(
                 match key.to_unescaped()?.as_ref() {
                     "deploymentsInfo" => {
                         builder = builder.set_deployments_info(
-                            crate::json_deser::deser_list_deployments_info_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_deployments_info_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1079,7 +1079,7 @@ pub fn deser_operation_batch_get_deployments(
     Ok(builder)
 }
 
-pub fn deser_structure_deployment_not_started_exceptionjson_err(
+pub fn deser_structure_crate_error_deployment_not_started_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deployment_not_started_exception::Builder,
 ) -> Result<crate::error::deployment_not_started_exception::Builder, smithy_json::deserialize::Error>
@@ -1119,7 +1119,7 @@ pub fn deser_structure_deployment_not_started_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_deployment_target_does_not_exist_exceptionjson_err(
+pub fn deser_structure_crate_error_deployment_target_does_not_exist_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deployment_target_does_not_exist_exception::Builder,
 ) -> Result<
@@ -1161,7 +1161,7 @@ pub fn deser_structure_deployment_target_does_not_exist_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_deployment_target_id_required_exceptionjson_err(
+pub fn deser_structure_crate_error_deployment_target_id_required_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deployment_target_id_required_exception::Builder,
 ) -> Result<
@@ -1203,7 +1203,7 @@ pub fn deser_structure_deployment_target_id_required_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_deployment_target_list_size_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_deployment_target_list_size_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deployment_target_list_size_exceeded_exception::Builder,
 ) -> Result<
@@ -1245,7 +1245,7 @@ pub fn deser_structure_deployment_target_list_size_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_instance_does_not_exist_exceptionjson_err(
+pub fn deser_structure_crate_error_instance_does_not_exist_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::instance_does_not_exist_exception::Builder,
 ) -> Result<crate::error::instance_does_not_exist_exception::Builder, smithy_json::deserialize::Error>
@@ -1285,7 +1285,7 @@ pub fn deser_structure_instance_does_not_exist_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_deployment_target_id_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_deployment_target_id_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_deployment_target_id_exception::Builder,
 ) -> Result<
@@ -1327,7 +1327,7 @@ pub fn deser_structure_invalid_deployment_target_id_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_get_deployment_targets(
+pub fn deser_operation_crate_operation_batch_get_deployment_targets(
     input: &[u8],
     mut builder: crate::output::batch_get_deployment_targets_output::Builder,
 ) -> Result<
@@ -1346,7 +1346,7 @@ pub fn deser_operation_batch_get_deployment_targets(
                 match key.to_unescaped()?.as_ref() {
                     "deploymentTargets" => {
                         builder = builder.set_deployment_targets(
-                            crate::json_deser::deser_list_deployment_target_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_deployment_target_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1367,7 +1367,7 @@ pub fn deser_operation_batch_get_deployment_targets(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_get_on_premises_instances(
+pub fn deser_operation_crate_operation_batch_get_on_premises_instances(
     input: &[u8],
     mut builder: crate::output::batch_get_on_premises_instances_output::Builder,
 ) -> Result<
@@ -1386,7 +1386,7 @@ pub fn deser_operation_batch_get_on_premises_instances(
                 match key.to_unescaped()?.as_ref() {
                     "instanceInfos" => {
                         builder = builder.set_instance_infos(
-                            crate::json_deser::deser_list_instance_info_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_instance_info_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1407,7 +1407,7 @@ pub fn deser_operation_batch_get_on_premises_instances(
     Ok(builder)
 }
 
-pub fn deser_structure_deployment_already_completed_exceptionjson_err(
+pub fn deser_structure_crate_error_deployment_already_completed_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deployment_already_completed_exception::Builder,
 ) -> Result<
@@ -1449,7 +1449,7 @@ pub fn deser_structure_deployment_already_completed_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_deployment_is_not_in_ready_state_exceptionjson_err(
+pub fn deser_structure_crate_error_deployment_is_not_in_ready_state_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deployment_is_not_in_ready_state_exception::Builder,
 ) -> Result<
@@ -1491,7 +1491,7 @@ pub fn deser_structure_deployment_is_not_in_ready_state_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_deployment_status_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_deployment_status_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_deployment_status_exception::Builder,
 ) -> Result<
@@ -1533,7 +1533,7 @@ pub fn deser_structure_invalid_deployment_status_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_deployment_wait_type_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_deployment_wait_type_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_deployment_wait_type_exception::Builder,
 ) -> Result<
@@ -1575,7 +1575,7 @@ pub fn deser_structure_invalid_deployment_wait_type_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unsupported_action_for_deployment_type_exceptionjson_err(
+pub fn deser_structure_crate_error_unsupported_action_for_deployment_type_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::unsupported_action_for_deployment_type_exception::Builder,
 ) -> Result<
@@ -1617,7 +1617,7 @@ pub fn deser_structure_unsupported_action_for_deployment_type_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_application_already_exists_exceptionjson_err(
+pub fn deser_structure_crate_error_application_already_exists_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::application_already_exists_exception::Builder,
 ) -> Result<
@@ -1659,7 +1659,7 @@ pub fn deser_structure_application_already_exists_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_application_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_application_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::application_limit_exceeded_exception::Builder,
 ) -> Result<
@@ -1701,7 +1701,7 @@ pub fn deser_structure_application_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_tags_to_add_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_tags_to_add_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_tags_to_add_exception::Builder,
 ) -> Result<crate::error::invalid_tags_to_add_exception::Builder, smithy_json::deserialize::Error> {
@@ -1740,7 +1740,7 @@ pub fn deser_structure_invalid_tags_to_add_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_application(
+pub fn deser_operation_crate_operation_create_application(
     input: &[u8],
     mut builder: crate::output::create_application_output::Builder,
 ) -> Result<crate::output::create_application_output::Builder, smithy_json::deserialize::Error> {
@@ -1779,7 +1779,7 @@ pub fn deser_operation_create_application(
     Ok(builder)
 }
 
-pub fn deser_structure_deployment_group_does_not_exist_exceptionjson_err(
+pub fn deser_structure_crate_error_deployment_group_does_not_exist_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deployment_group_does_not_exist_exception::Builder,
 ) -> Result<
@@ -1821,7 +1821,7 @@ pub fn deser_structure_deployment_group_does_not_exist_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_deployment_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_deployment_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deployment_limit_exceeded_exception::Builder,
 ) -> Result<
@@ -1863,7 +1863,7 @@ pub fn deser_structure_deployment_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_description_too_long_exceptionjson_err(
+pub fn deser_structure_crate_error_description_too_long_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::description_too_long_exception::Builder,
 ) -> Result<crate::error::description_too_long_exception::Builder, smithy_json::deserialize::Error>
@@ -1903,7 +1903,7 @@ pub fn deser_structure_description_too_long_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_auto_rollback_config_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_auto_rollback_config_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_auto_rollback_config_exception::Builder,
 ) -> Result<
@@ -1945,7 +1945,7 @@ pub fn deser_structure_invalid_auto_rollback_config_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_auto_scaling_group_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_auto_scaling_group_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_auto_scaling_group_exception::Builder,
 ) -> Result<
@@ -1987,7 +1987,7 @@ pub fn deser_structure_invalid_auto_scaling_group_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_deployment_config_name_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_deployment_config_name_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_deployment_config_name_exception::Builder,
 ) -> Result<
@@ -2029,7 +2029,7 @@ pub fn deser_structure_invalid_deployment_config_name_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_file_exists_behavior_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_file_exists_behavior_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_file_exists_behavior_exception::Builder,
 ) -> Result<
@@ -2071,7 +2071,7 @@ pub fn deser_structure_invalid_file_exists_behavior_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_git_hub_account_token_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_git_hub_account_token_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_git_hub_account_token_exception::Builder,
 ) -> Result<
@@ -2113,7 +2113,7 @@ pub fn deser_structure_invalid_git_hub_account_token_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_ignore_application_stop_failures_value_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_ignore_application_stop_failures_value_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_ignore_application_stop_failures_value_exception::Builder,
 ) -> Result<
@@ -2155,7 +2155,7 @@ pub fn deser_structure_invalid_ignore_application_stop_failures_value_exceptionj
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_load_balancer_info_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_load_balancer_info_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_load_balancer_info_exception::Builder,
 ) -> Result<
@@ -2197,7 +2197,7 @@ pub fn deser_structure_invalid_load_balancer_info_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_role_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_role_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_role_exception::Builder,
 ) -> Result<crate::error::invalid_role_exception::Builder, smithy_json::deserialize::Error> {
@@ -2236,7 +2236,7 @@ pub fn deser_structure_invalid_role_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_target_instances_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_target_instances_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_target_instances_exception::Builder,
 ) -> Result<
@@ -2278,7 +2278,7 @@ pub fn deser_structure_invalid_target_instances_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_traffic_routing_configuration_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_traffic_routing_configuration_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_traffic_routing_configuration_exception::Builder,
 ) -> Result<
@@ -2320,7 +2320,7 @@ pub fn deser_structure_invalid_traffic_routing_configuration_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_update_outdated_instances_only_value_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_update_outdated_instances_only_value_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_update_outdated_instances_only_value_exception::Builder,
 ) -> Result<
@@ -2362,7 +2362,7 @@ pub fn deser_structure_invalid_update_outdated_instances_only_value_exceptionjso
     Ok(builder)
 }
 
-pub fn deser_structure_revision_does_not_exist_exceptionjson_err(
+pub fn deser_structure_crate_error_revision_does_not_exist_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::revision_does_not_exist_exception::Builder,
 ) -> Result<crate::error::revision_does_not_exist_exception::Builder, smithy_json::deserialize::Error>
@@ -2402,7 +2402,7 @@ pub fn deser_structure_revision_does_not_exist_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -2441,7 +2441,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_deployment(
+pub fn deser_operation_crate_operation_create_deployment(
     input: &[u8],
     mut builder: crate::output::create_deployment_output::Builder,
 ) -> Result<crate::output::create_deployment_output::Builder, smithy_json::deserialize::Error> {
@@ -2480,7 +2480,7 @@ pub fn deser_operation_create_deployment(
     Ok(builder)
 }
 
-pub fn deser_structure_deployment_config_already_exists_exceptionjson_err(
+pub fn deser_structure_crate_error_deployment_config_already_exists_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deployment_config_already_exists_exception::Builder,
 ) -> Result<
@@ -2522,7 +2522,7 @@ pub fn deser_structure_deployment_config_already_exists_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_deployment_config_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_deployment_config_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deployment_config_limit_exceeded_exception::Builder,
 ) -> Result<
@@ -2564,7 +2564,7 @@ pub fn deser_structure_deployment_config_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_deployment_config_name_required_exceptionjson_err(
+pub fn deser_structure_crate_error_deployment_config_name_required_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deployment_config_name_required_exception::Builder,
 ) -> Result<
@@ -2606,7 +2606,7 @@ pub fn deser_structure_deployment_config_name_required_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_minimum_healthy_host_value_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_minimum_healthy_host_value_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_minimum_healthy_host_value_exception::Builder,
 ) -> Result<
@@ -2648,7 +2648,7 @@ pub fn deser_structure_invalid_minimum_healthy_host_value_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_deployment_config(
+pub fn deser_operation_crate_operation_create_deployment_config(
     input: &[u8],
     mut builder: crate::output::create_deployment_config_output::Builder,
 ) -> Result<crate::output::create_deployment_config_output::Builder, smithy_json::deserialize::Error>
@@ -2688,7 +2688,7 @@ pub fn deser_operation_create_deployment_config(
     Ok(builder)
 }
 
-pub fn deser_structure_alarms_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_alarms_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::alarms_limit_exceeded_exception::Builder,
 ) -> Result<crate::error::alarms_limit_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -2728,7 +2728,7 @@ pub fn deser_structure_alarms_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_deployment_group_already_exists_exceptionjson_err(
+pub fn deser_structure_crate_error_deployment_group_already_exists_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deployment_group_already_exists_exception::Builder,
 ) -> Result<
@@ -2770,7 +2770,7 @@ pub fn deser_structure_deployment_group_already_exists_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_deployment_group_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_deployment_group_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deployment_group_limit_exceeded_exception::Builder,
 ) -> Result<
@@ -2812,7 +2812,7 @@ pub fn deser_structure_deployment_group_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_ecs_service_mapping_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_ecs_service_mapping_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::ecs_service_mapping_limit_exceeded_exception::Builder,
 ) -> Result<
@@ -2854,7 +2854,7 @@ pub fn deser_structure_ecs_service_mapping_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_alarm_config_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_alarm_config_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_alarm_config_exception::Builder,
 ) -> Result<crate::error::invalid_alarm_config_exception::Builder, smithy_json::deserialize::Error>
@@ -2894,7 +2894,7 @@ pub fn deser_structure_invalid_alarm_config_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_blue_green_deployment_configuration_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_blue_green_deployment_configuration_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_blue_green_deployment_configuration_exception::Builder,
 ) -> Result<
@@ -2936,7 +2936,7 @@ pub fn deser_structure_invalid_blue_green_deployment_configuration_exceptionjson
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_deployment_style_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_deployment_style_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_deployment_style_exception::Builder,
 ) -> Result<
@@ -2978,7 +2978,7 @@ pub fn deser_structure_invalid_deployment_style_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_ec2_tag_combination_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_ec2_tag_combination_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_ec2_tag_combination_exception::Builder,
 ) -> Result<
@@ -3020,7 +3020,7 @@ pub fn deser_structure_invalid_ec2_tag_combination_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_ec2_tag_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_ec2_tag_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_ec2_tag_exception::Builder,
 ) -> Result<crate::error::invalid_ec2_tag_exception::Builder, smithy_json::deserialize::Error> {
@@ -3059,7 +3059,7 @@ pub fn deser_structure_invalid_ec2_tag_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_ecs_service_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_ecs_service_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_ecs_service_exception::Builder,
 ) -> Result<crate::error::invalid_ecs_service_exception::Builder, smithy_json::deserialize::Error> {
@@ -3098,7 +3098,7 @@ pub fn deser_structure_invalid_ecs_service_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_input_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_input_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_input_exception::Builder,
 ) -> Result<crate::error::invalid_input_exception::Builder, smithy_json::deserialize::Error> {
@@ -3137,7 +3137,7 @@ pub fn deser_structure_invalid_input_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_on_premises_tag_combination_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_on_premises_tag_combination_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_on_premises_tag_combination_exception::Builder,
 ) -> Result<
@@ -3179,7 +3179,7 @@ pub fn deser_structure_invalid_on_premises_tag_combination_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_target_group_pair_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_target_group_pair_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_target_group_pair_exception::Builder,
 ) -> Result<
@@ -3221,7 +3221,7 @@ pub fn deser_structure_invalid_target_group_pair_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_trigger_config_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_trigger_config_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_trigger_config_exception::Builder,
 ) -> Result<crate::error::invalid_trigger_config_exception::Builder, smithy_json::deserialize::Error>
@@ -3261,7 +3261,7 @@ pub fn deser_structure_invalid_trigger_config_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_lifecycle_hook_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_lifecycle_hook_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::lifecycle_hook_limit_exceeded_exception::Builder,
 ) -> Result<
@@ -3303,7 +3303,7 @@ pub fn deser_structure_lifecycle_hook_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_role_required_exceptionjson_err(
+pub fn deser_structure_crate_error_role_required_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::role_required_exception::Builder,
 ) -> Result<crate::error::role_required_exception::Builder, smithy_json::deserialize::Error> {
@@ -3342,7 +3342,7 @@ pub fn deser_structure_role_required_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_tag_set_list_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_tag_set_list_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::tag_set_list_limit_exceeded_exception::Builder,
 ) -> Result<
@@ -3384,7 +3384,7 @@ pub fn deser_structure_tag_set_list_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_trigger_targets_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_trigger_targets_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::trigger_targets_limit_exceeded_exception::Builder,
 ) -> Result<
@@ -3426,7 +3426,7 @@ pub fn deser_structure_trigger_targets_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_deployment_group(
+pub fn deser_operation_crate_operation_create_deployment_group(
     input: &[u8],
     mut builder: crate::output::create_deployment_group_output::Builder,
 ) -> Result<crate::output::create_deployment_group_output::Builder, smithy_json::deserialize::Error>
@@ -3466,7 +3466,7 @@ pub fn deser_operation_create_deployment_group(
     Ok(builder)
 }
 
-pub fn deser_structure_deployment_config_in_use_exceptionjson_err(
+pub fn deser_structure_crate_error_deployment_config_in_use_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::deployment_config_in_use_exception::Builder,
 ) -> Result<
@@ -3508,7 +3508,7 @@ pub fn deser_structure_deployment_config_in_use_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_operation_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_operation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_operation_exception::Builder,
 ) -> Result<crate::error::invalid_operation_exception::Builder, smithy_json::deserialize::Error> {
@@ -3547,7 +3547,7 @@ pub fn deser_structure_invalid_operation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_deployment_group(
+pub fn deser_operation_crate_operation_delete_deployment_group(
     input: &[u8],
     mut builder: crate::output::delete_deployment_group_output::Builder,
 ) -> Result<crate::output::delete_deployment_group_output::Builder, smithy_json::deserialize::Error>
@@ -3564,7 +3564,7 @@ pub fn deser_operation_delete_deployment_group(
                 match key.to_unescaped()?.as_ref() {
                     "hooksNotCleanedUp" => {
                         builder = builder.set_hooks_not_cleaned_up(
-                            crate::json_deser::deser_list_auto_scaling_group_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_auto_scaling_group_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3585,7 +3585,7 @@ pub fn deser_operation_delete_deployment_group(
     Ok(builder)
 }
 
-pub fn deser_structure_git_hub_account_token_does_not_exist_exceptionjson_err(
+pub fn deser_structure_crate_error_git_hub_account_token_does_not_exist_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::git_hub_account_token_does_not_exist_exception::Builder,
 ) -> Result<
@@ -3627,7 +3627,7 @@ pub fn deser_structure_git_hub_account_token_does_not_exist_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_git_hub_account_token_name_required_exceptionjson_err(
+pub fn deser_structure_crate_error_git_hub_account_token_name_required_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::git_hub_account_token_name_required_exception::Builder,
 ) -> Result<
@@ -3669,7 +3669,7 @@ pub fn deser_structure_git_hub_account_token_name_required_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_git_hub_account_token_name_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_git_hub_account_token_name_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_git_hub_account_token_name_exception::Builder,
 ) -> Result<
@@ -3711,7 +3711,7 @@ pub fn deser_structure_invalid_git_hub_account_token_name_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_operation_not_supported_exceptionjson_err(
+pub fn deser_structure_crate_error_operation_not_supported_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::operation_not_supported_exception::Builder,
 ) -> Result<crate::error::operation_not_supported_exception::Builder, smithy_json::deserialize::Error>
@@ -3751,7 +3751,7 @@ pub fn deser_structure_operation_not_supported_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_validation_exception::Builder,
 ) -> Result<crate::error::resource_validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -3790,7 +3790,7 @@ pub fn deser_structure_resource_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_git_hub_account_token(
+pub fn deser_operation_crate_operation_delete_git_hub_account_token(
     input: &[u8],
     mut builder: crate::output::delete_git_hub_account_token_output::Builder,
 ) -> Result<
@@ -3832,7 +3832,7 @@ pub fn deser_operation_delete_git_hub_account_token(
     Ok(builder)
 }
 
-pub fn deser_operation_get_application(
+pub fn deser_operation_crate_operation_get_application(
     input: &[u8],
     mut builder: crate::output::get_application_output::Builder,
 ) -> Result<crate::output::get_application_output::Builder, smithy_json::deserialize::Error> {
@@ -3848,7 +3848,9 @@ pub fn deser_operation_get_application(
                 match key.to_unescaped()?.as_ref() {
                     "application" => {
                         builder = builder.set_application(
-                            crate::json_deser::deser_structure_application_info(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_application_info(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3869,7 +3871,7 @@ pub fn deser_operation_get_application(
     Ok(builder)
 }
 
-pub fn deser_operation_get_application_revision(
+pub fn deser_operation_crate_operation_get_application_revision(
     input: &[u8],
     mut builder: crate::output::get_application_revision_output::Builder,
 ) -> Result<crate::output::get_application_revision_output::Builder, smithy_json::deserialize::Error>
@@ -3893,12 +3895,16 @@ pub fn deser_operation_get_application_revision(
                     }
                     "revision" => {
                         builder = builder.set_revision(
-                            crate::json_deser::deser_structure_revision_location(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_revision_location(
+                                tokens,
+                            )?,
                         );
                     }
                     "revisionInfo" => {
                         builder = builder.set_revision_info(
-                            crate::json_deser::deser_structure_generic_revision_info(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_generic_revision_info(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3919,7 +3925,7 @@ pub fn deser_operation_get_application_revision(
     Ok(builder)
 }
 
-pub fn deser_operation_get_deployment(
+pub fn deser_operation_crate_operation_get_deployment(
     input: &[u8],
     mut builder: crate::output::get_deployment_output::Builder,
 ) -> Result<crate::output::get_deployment_output::Builder, smithy_json::deserialize::Error> {
@@ -3935,7 +3941,7 @@ pub fn deser_operation_get_deployment(
                 match key.to_unescaped()?.as_ref() {
                     "deploymentInfo" => {
                         builder = builder.set_deployment_info(
-                            crate::json_deser::deser_structure_deployment_info(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_deployment_info(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3956,7 +3962,7 @@ pub fn deser_operation_get_deployment(
     Ok(builder)
 }
 
-pub fn deser_operation_get_deployment_config(
+pub fn deser_operation_crate_operation_get_deployment_config(
     input: &[u8],
     mut builder: crate::output::get_deployment_config_output::Builder,
 ) -> Result<crate::output::get_deployment_config_output::Builder, smithy_json::deserialize::Error> {
@@ -3972,7 +3978,9 @@ pub fn deser_operation_get_deployment_config(
                 match key.to_unescaped()?.as_ref() {
                     "deploymentConfigInfo" => {
                         builder = builder.set_deployment_config_info(
-                            crate::json_deser::deser_structure_deployment_config_info(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_deployment_config_info(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3993,7 +4001,7 @@ pub fn deser_operation_get_deployment_config(
     Ok(builder)
 }
 
-pub fn deser_operation_get_deployment_group(
+pub fn deser_operation_crate_operation_get_deployment_group(
     input: &[u8],
     mut builder: crate::output::get_deployment_group_output::Builder,
 ) -> Result<crate::output::get_deployment_group_output::Builder, smithy_json::deserialize::Error> {
@@ -4009,7 +4017,9 @@ pub fn deser_operation_get_deployment_group(
                 match key.to_unescaped()?.as_ref() {
                     "deploymentGroupInfo" => {
                         builder = builder.set_deployment_group_info(
-                            crate::json_deser::deser_structure_deployment_group_info(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_deployment_group_info(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4030,7 +4040,7 @@ pub fn deser_operation_get_deployment_group(
     Ok(builder)
 }
 
-pub fn deser_operation_get_deployment_instance(
+pub fn deser_operation_crate_operation_get_deployment_instance(
     input: &[u8],
     mut builder: crate::output::get_deployment_instance_output::Builder,
 ) -> Result<crate::output::get_deployment_instance_output::Builder, smithy_json::deserialize::Error>
@@ -4047,7 +4057,9 @@ pub fn deser_operation_get_deployment_instance(
                 match key.to_unescaped()?.as_ref() {
                     "instanceSummary" => {
                         builder = builder.set_instance_summary(
-                            crate::json_deser::deser_structure_instance_summary(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_instance_summary(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4068,7 +4080,7 @@ pub fn deser_operation_get_deployment_instance(
     Ok(builder)
 }
 
-pub fn deser_operation_get_deployment_target(
+pub fn deser_operation_crate_operation_get_deployment_target(
     input: &[u8],
     mut builder: crate::output::get_deployment_target_output::Builder,
 ) -> Result<crate::output::get_deployment_target_output::Builder, smithy_json::deserialize::Error> {
@@ -4084,7 +4096,9 @@ pub fn deser_operation_get_deployment_target(
                 match key.to_unescaped()?.as_ref() {
                     "deploymentTarget" => {
                         builder = builder.set_deployment_target(
-                            crate::json_deser::deser_structure_deployment_target(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_deployment_target(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4105,7 +4119,7 @@ pub fn deser_operation_get_deployment_target(
     Ok(builder)
 }
 
-pub fn deser_operation_get_on_premises_instance(
+pub fn deser_operation_crate_operation_get_on_premises_instance(
     input: &[u8],
     mut builder: crate::output::get_on_premises_instance_output::Builder,
 ) -> Result<crate::output::get_on_premises_instance_output::Builder, smithy_json::deserialize::Error>
@@ -4122,7 +4136,7 @@ pub fn deser_operation_get_on_premises_instance(
                 match key.to_unescaped()?.as_ref() {
                     "instanceInfo" => {
                         builder = builder.set_instance_info(
-                            crate::json_deser::deser_structure_instance_info(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_instance_info(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4143,7 +4157,7 @@ pub fn deser_operation_get_on_premises_instance(
     Ok(builder)
 }
 
-pub fn deser_structure_bucket_name_filter_required_exceptionjson_err(
+pub fn deser_structure_crate_error_bucket_name_filter_required_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::bucket_name_filter_required_exception::Builder,
 ) -> Result<
@@ -4185,7 +4199,7 @@ pub fn deser_structure_bucket_name_filter_required_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_bucket_name_filter_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_bucket_name_filter_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_bucket_name_filter_exception::Builder,
 ) -> Result<
@@ -4227,7 +4241,7 @@ pub fn deser_structure_invalid_bucket_name_filter_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_deployed_state_filter_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_deployed_state_filter_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_deployed_state_filter_exception::Builder,
 ) -> Result<
@@ -4269,7 +4283,7 @@ pub fn deser_structure_invalid_deployed_state_filter_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_key_prefix_filter_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_key_prefix_filter_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_key_prefix_filter_exception::Builder,
 ) -> Result<
@@ -4311,7 +4325,7 @@ pub fn deser_structure_invalid_key_prefix_filter_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_next_token_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_next_token_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_next_token_exception::Builder,
 ) -> Result<crate::error::invalid_next_token_exception::Builder, smithy_json::deserialize::Error> {
@@ -4350,7 +4364,7 @@ pub fn deser_structure_invalid_next_token_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_sort_by_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_sort_by_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_sort_by_exception::Builder,
 ) -> Result<crate::error::invalid_sort_by_exception::Builder, smithy_json::deserialize::Error> {
@@ -4389,7 +4403,7 @@ pub fn deser_structure_invalid_sort_by_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_sort_order_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_sort_order_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_sort_order_exception::Builder,
 ) -> Result<crate::error::invalid_sort_order_exception::Builder, smithy_json::deserialize::Error> {
@@ -4428,7 +4442,7 @@ pub fn deser_structure_invalid_sort_order_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_list_application_revisions(
+pub fn deser_operation_crate_operation_list_application_revisions(
     input: &[u8],
     mut builder: crate::output::list_application_revisions_output::Builder,
 ) -> Result<
@@ -4447,7 +4461,7 @@ pub fn deser_operation_list_application_revisions(
                 match key.to_unescaped()?.as_ref() {
                     "revisions" => {
                         builder = builder.set_revisions(
-                            crate::json_deser::deser_list_revision_location_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_revision_location_list(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -4475,7 +4489,7 @@ pub fn deser_operation_list_application_revisions(
     Ok(builder)
 }
 
-pub fn deser_operation_list_applications(
+pub fn deser_operation_crate_operation_list_applications(
     input: &[u8],
     mut builder: crate::output::list_applications_output::Builder,
 ) -> Result<crate::output::list_applications_output::Builder, smithy_json::deserialize::Error> {
@@ -4491,7 +4505,7 @@ pub fn deser_operation_list_applications(
                 match key.to_unescaped()?.as_ref() {
                     "applications" => {
                         builder = builder.set_applications(
-                            crate::json_deser::deser_list_applications_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_applications_list(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -4519,7 +4533,7 @@ pub fn deser_operation_list_applications(
     Ok(builder)
 }
 
-pub fn deser_operation_list_deployment_configs(
+pub fn deser_operation_crate_operation_list_deployment_configs(
     input: &[u8],
     mut builder: crate::output::list_deployment_configs_output::Builder,
 ) -> Result<crate::output::list_deployment_configs_output::Builder, smithy_json::deserialize::Error>
@@ -4536,7 +4550,7 @@ pub fn deser_operation_list_deployment_configs(
                 match key.to_unescaped()?.as_ref() {
                     "deploymentConfigsList" => {
                         builder = builder.set_deployment_configs_list(
-                            crate::json_deser::deser_list_deployment_configs_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_deployment_configs_list(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -4564,7 +4578,7 @@ pub fn deser_operation_list_deployment_configs(
     Ok(builder)
 }
 
-pub fn deser_operation_list_deployment_groups(
+pub fn deser_operation_crate_operation_list_deployment_groups(
     input: &[u8],
     mut builder: crate::output::list_deployment_groups_output::Builder,
 ) -> Result<crate::output::list_deployment_groups_output::Builder, smithy_json::deserialize::Error>
@@ -4588,7 +4602,7 @@ pub fn deser_operation_list_deployment_groups(
                     }
                     "deploymentGroups" => {
                         builder = builder.set_deployment_groups(
-                            crate::json_deser::deser_list_deployment_groups_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_deployment_groups_list(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -4616,7 +4630,7 @@ pub fn deser_operation_list_deployment_groups(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_deployment_instance_type_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_deployment_instance_type_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_deployment_instance_type_exception::Builder,
 ) -> Result<
@@ -4658,7 +4672,7 @@ pub fn deser_structure_invalid_deployment_instance_type_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_instance_status_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_instance_status_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_instance_status_exception::Builder,
 ) -> Result<crate::error::invalid_instance_status_exception::Builder, smithy_json::deserialize::Error>
@@ -4698,7 +4712,7 @@ pub fn deser_structure_invalid_instance_status_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_instance_type_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_instance_type_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_instance_type_exception::Builder,
 ) -> Result<crate::error::invalid_instance_type_exception::Builder, smithy_json::deserialize::Error>
@@ -4738,7 +4752,7 @@ pub fn deser_structure_invalid_instance_type_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_target_filter_name_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_target_filter_name_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_target_filter_name_exception::Builder,
 ) -> Result<
@@ -4780,7 +4794,7 @@ pub fn deser_structure_invalid_target_filter_name_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_list_deployment_instances(
+pub fn deser_operation_crate_operation_list_deployment_instances(
     input: &[u8],
     mut builder: crate::output::list_deployment_instances_output::Builder,
 ) -> Result<crate::output::list_deployment_instances_output::Builder, smithy_json::deserialize::Error>
@@ -4797,7 +4811,9 @@ pub fn deser_operation_list_deployment_instances(
                 match key.to_unescaped()?.as_ref() {
                     "instancesList" => {
                         builder = builder.set_instances_list(
-                            crate::json_deser::deser_list_instances_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_instances_list(
+                                tokens,
+                            )?,
                         );
                     }
                     "nextToken" => {
@@ -4825,7 +4841,7 @@ pub fn deser_operation_list_deployment_instances(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_external_id_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_external_id_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_external_id_exception::Builder,
 ) -> Result<crate::error::invalid_external_id_exception::Builder, smithy_json::deserialize::Error> {
@@ -4864,7 +4880,7 @@ pub fn deser_structure_invalid_external_id_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_time_range_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_time_range_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_time_range_exception::Builder,
 ) -> Result<crate::error::invalid_time_range_exception::Builder, smithy_json::deserialize::Error> {
@@ -4903,7 +4919,7 @@ pub fn deser_structure_invalid_time_range_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_list_deployments(
+pub fn deser_operation_crate_operation_list_deployments(
     input: &[u8],
     mut builder: crate::output::list_deployments_output::Builder,
 ) -> Result<crate::output::list_deployments_output::Builder, smithy_json::deserialize::Error> {
@@ -4919,7 +4935,7 @@ pub fn deser_operation_list_deployments(
                 match key.to_unescaped()?.as_ref() {
                     "deployments" => {
                         builder = builder.set_deployments(
-                            crate::json_deser::deser_list_deployments_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_deployments_list(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -4947,7 +4963,7 @@ pub fn deser_operation_list_deployments(
     Ok(builder)
 }
 
-pub fn deser_operation_list_deployment_targets(
+pub fn deser_operation_crate_operation_list_deployment_targets(
     input: &[u8],
     mut builder: crate::output::list_deployment_targets_output::Builder,
 ) -> Result<crate::output::list_deployment_targets_output::Builder, smithy_json::deserialize::Error>
@@ -4963,8 +4979,11 @@ pub fn deser_operation_list_deployment_targets(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "targetIds" => {
-                        builder = builder
-                            .set_target_ids(crate::json_deser::deser_list_target_id_list(tokens)?);
+                        builder = builder.set_target_ids(
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_target_id_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "nextToken" => {
                         builder = builder.set_next_token(
@@ -4991,7 +5010,7 @@ pub fn deser_operation_list_deployment_targets(
     Ok(builder)
 }
 
-pub fn deser_operation_list_git_hub_account_token_names(
+pub fn deser_operation_crate_operation_list_git_hub_account_token_names(
     input: &[u8],
     mut builder: crate::output::list_git_hub_account_token_names_output::Builder,
 ) -> Result<
@@ -5010,7 +5029,7 @@ pub fn deser_operation_list_git_hub_account_token_names(
                 match key.to_unescaped()?.as_ref() {
                     "tokenNameList" => {
                         builder = builder.set_token_name_list(
-                            crate::json_deser::deser_list_git_hub_account_token_name_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_git_hub_account_token_name_list(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -5038,7 +5057,7 @@ pub fn deser_operation_list_git_hub_account_token_names(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_registration_status_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_registration_status_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_registration_status_exception::Builder,
 ) -> Result<
@@ -5080,7 +5099,7 @@ pub fn deser_structure_invalid_registration_status_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_tag_filter_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_tag_filter_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_tag_filter_exception::Builder,
 ) -> Result<crate::error::invalid_tag_filter_exception::Builder, smithy_json::deserialize::Error> {
@@ -5119,7 +5138,7 @@ pub fn deser_structure_invalid_tag_filter_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_list_on_premises_instances(
+pub fn deser_operation_crate_operation_list_on_premises_instances(
     input: &[u8],
     mut builder: crate::output::list_on_premises_instances_output::Builder,
 ) -> Result<
@@ -5138,7 +5157,7 @@ pub fn deser_operation_list_on_premises_instances(
                 match key.to_unescaped()?.as_ref() {
                     "instanceNames" => {
                         builder = builder.set_instance_names(
-                            crate::json_deser::deser_list_instance_name_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_instance_name_list(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -5166,7 +5185,7 @@ pub fn deser_operation_list_on_premises_instances(
     Ok(builder)
 }
 
-pub fn deser_structure_arn_not_supported_exceptionjson_err(
+pub fn deser_structure_crate_error_arn_not_supported_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::arn_not_supported_exception::Builder,
 ) -> Result<crate::error::arn_not_supported_exception::Builder, smithy_json::deserialize::Error> {
@@ -5205,7 +5224,7 @@ pub fn deser_structure_arn_not_supported_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_arn_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_arn_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_arn_exception::Builder,
 ) -> Result<crate::error::invalid_arn_exception::Builder, smithy_json::deserialize::Error> {
@@ -5244,7 +5263,7 @@ pub fn deser_structure_invalid_arn_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_arn_required_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_arn_required_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_arn_required_exception::Builder,
 ) -> Result<crate::error::resource_arn_required_exception::Builder, smithy_json::deserialize::Error>
@@ -5284,7 +5303,7 @@ pub fn deser_structure_resource_arn_required_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -5300,7 +5319,11 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_tag_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -5327,7 +5350,7 @@ pub fn deser_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_lifecycle_event_hook_execution_id_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_lifecycle_event_hook_execution_id_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_lifecycle_event_hook_execution_id_exception::Builder,
 ) -> Result<
@@ -5369,7 +5392,7 @@ pub fn deser_structure_invalid_lifecycle_event_hook_execution_id_exceptionjson_e
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_lifecycle_event_hook_execution_status_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_lifecycle_event_hook_execution_status_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_lifecycle_event_hook_execution_status_exception::Builder,
 ) -> Result<
@@ -5411,7 +5434,7 @@ pub fn deser_structure_invalid_lifecycle_event_hook_execution_status_exceptionjs
     Ok(builder)
 }
 
-pub fn deser_structure_lifecycle_event_already_completed_exceptionjson_err(
+pub fn deser_structure_crate_error_lifecycle_event_already_completed_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::lifecycle_event_already_completed_exception::Builder,
 ) -> Result<
@@ -5453,7 +5476,7 @@ pub fn deser_structure_lifecycle_event_already_completed_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_put_lifecycle_event_hook_execution_status(
+pub fn deser_operation_crate_operation_put_lifecycle_event_hook_execution_status(
     input: &[u8],
     mut builder: crate::output::put_lifecycle_event_hook_execution_status_output::Builder,
 ) -> Result<
@@ -5495,7 +5518,7 @@ pub fn deser_operation_put_lifecycle_event_hook_execution_status(
     Ok(builder)
 }
 
-pub fn deser_structure_iam_arn_required_exceptionjson_err(
+pub fn deser_structure_crate_error_iam_arn_required_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::iam_arn_required_exception::Builder,
 ) -> Result<crate::error::iam_arn_required_exception::Builder, smithy_json::deserialize::Error> {
@@ -5534,7 +5557,7 @@ pub fn deser_structure_iam_arn_required_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_iam_session_arn_already_registered_exceptionjson_err(
+pub fn deser_structure_crate_error_iam_session_arn_already_registered_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::iam_session_arn_already_registered_exception::Builder,
 ) -> Result<
@@ -5576,7 +5599,7 @@ pub fn deser_structure_iam_session_arn_already_registered_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_iam_user_arn_already_registered_exceptionjson_err(
+pub fn deser_structure_crate_error_iam_user_arn_already_registered_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::iam_user_arn_already_registered_exception::Builder,
 ) -> Result<
@@ -5618,7 +5641,7 @@ pub fn deser_structure_iam_user_arn_already_registered_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_iam_user_arn_required_exceptionjson_err(
+pub fn deser_structure_crate_error_iam_user_arn_required_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::iam_user_arn_required_exception::Builder,
 ) -> Result<crate::error::iam_user_arn_required_exception::Builder, smithy_json::deserialize::Error>
@@ -5658,7 +5681,7 @@ pub fn deser_structure_iam_user_arn_required_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_instance_name_already_registered_exceptionjson_err(
+pub fn deser_structure_crate_error_instance_name_already_registered_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::instance_name_already_registered_exception::Builder,
 ) -> Result<
@@ -5700,7 +5723,7 @@ pub fn deser_structure_instance_name_already_registered_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_iam_session_arn_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_iam_session_arn_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_iam_session_arn_exception::Builder,
 ) -> Result<crate::error::invalid_iam_session_arn_exception::Builder, smithy_json::deserialize::Error>
@@ -5740,7 +5763,7 @@ pub fn deser_structure_invalid_iam_session_arn_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_iam_user_arn_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_iam_user_arn_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_iam_user_arn_exception::Builder,
 ) -> Result<crate::error::invalid_iam_user_arn_exception::Builder, smithy_json::deserialize::Error>
@@ -5780,7 +5803,7 @@ pub fn deser_structure_invalid_iam_user_arn_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_multiple_iam_arns_provided_exceptionjson_err(
+pub fn deser_structure_crate_error_multiple_iam_arns_provided_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::multiple_iam_arns_provided_exception::Builder,
 ) -> Result<
@@ -5822,7 +5845,7 @@ pub fn deser_structure_multiple_iam_arns_provided_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_stop_deployment(
+pub fn deser_operation_crate_operation_stop_deployment(
     input: &[u8],
     mut builder: crate::output::stop_deployment_output::Builder,
 ) -> Result<crate::output::stop_deployment_output::Builder, smithy_json::deserialize::Error> {
@@ -5871,7 +5894,7 @@ pub fn deser_operation_stop_deployment(
     Ok(builder)
 }
 
-pub fn deser_operation_update_deployment_group(
+pub fn deser_operation_crate_operation_update_deployment_group(
     input: &[u8],
     mut builder: crate::output::update_deployment_group_output::Builder,
 ) -> Result<crate::output::update_deployment_group_output::Builder, smithy_json::deserialize::Error>
@@ -5888,7 +5911,7 @@ pub fn deser_operation_update_deployment_group(
                 match key.to_unescaped()?.as_ref() {
                     "hooksNotCleanedUp" => {
                         builder = builder.set_hooks_not_cleaned_up(
-                            crate::json_deser::deser_list_auto_scaling_group_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_auto_scaling_group_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -5918,7 +5941,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_revision_info_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_revision_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::RevisionInfo>>, smithy_json::deserialize::Error>
 where
@@ -5937,7 +5960,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_revision_info(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_revision_info(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -5953,7 +5977,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_applications_info_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_applications_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ApplicationInfo>>, smithy_json::deserialize::Error>
 where
@@ -5972,7 +5996,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_application_info(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_application_info(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -5988,7 +6015,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_deployment_group_info_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_deployment_group_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DeploymentGroupInfo>>, smithy_json::deserialize::Error>
 where
@@ -6008,7 +6035,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_deployment_group_info(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_deployment_group_info(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6024,7 +6053,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_instance_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_instance_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::InstanceSummary>>, smithy_json::deserialize::Error>
 where
@@ -6043,7 +6072,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_instance_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_instance_summary(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6059,7 +6091,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_deployments_info_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_deployments_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DeploymentInfo>>, smithy_json::deserialize::Error>
 where
@@ -6078,7 +6110,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_deployment_info(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_deployment_info(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6094,7 +6127,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_deployment_target_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_deployment_target_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DeploymentTarget>>, smithy_json::deserialize::Error>
 where
@@ -6113,7 +6146,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_deployment_target(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_deployment_target(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6129,7 +6165,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_instance_info_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_instance_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::InstanceInfo>>, smithy_json::deserialize::Error>
 where
@@ -6148,7 +6184,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_instance_info(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_instance_info(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6164,7 +6201,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_auto_scaling_group_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_auto_scaling_group_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::AutoScalingGroup>>, smithy_json::deserialize::Error>
 where
@@ -6183,7 +6220,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_auto_scaling_group(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_auto_scaling_group(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -6198,7 +6238,7 @@ where
     }
 }
 
-pub fn deser_structure_application_info<'a, I>(
+pub fn deser_structure_crate_model_application_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ApplicationInfo>, smithy_json::deserialize::Error>
 where
@@ -6289,7 +6329,7 @@ where
     }
 }
 
-pub fn deser_structure_revision_location<'a, I>(
+pub fn deser_structure_crate_model_revision_location<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RevisionLocation>, smithy_json::deserialize::Error>
 where
@@ -6322,22 +6362,26 @@ where
                             }
                             "s3Location" => {
                                 builder = builder.set_s3_location(
-                                    crate::json_deser::deser_structure_s3_location(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_s3_location(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "gitHubLocation" => {
                                 builder = builder.set_git_hub_location(
-                                    crate::json_deser::deser_structure_git_hub_location(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_git_hub_location(tokens)?
                                 );
                             }
                             "string" => {
                                 builder = builder.set_string(
-                                    crate::json_deser::deser_structure_raw_string(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_raw_string(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "appSpecContent" => {
                                 builder = builder.set_app_spec_content(
-                                    crate::json_deser::deser_structure_app_spec_content(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_app_spec_content(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -6358,7 +6402,7 @@ where
     }
 }
 
-pub fn deser_structure_generic_revision_info<'a, I>(
+pub fn deser_structure_crate_model_generic_revision_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GenericRevisionInfo>, smithy_json::deserialize::Error>
 where
@@ -6387,7 +6431,7 @@ where
                             }
                             "deploymentGroups" => {
                                 builder = builder.set_deployment_groups(
-                                    crate::json_deser::deser_list_deployment_groups_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_deployment_groups_list(tokens)?
                                 );
                             }
                             "firstUsedTime" => {
@@ -6432,7 +6476,7 @@ where
     }
 }
 
-pub fn deser_structure_deployment_info<'a, I>(
+pub fn deser_structure_crate_model_deployment_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DeploymentInfo>, smithy_json::deserialize::Error>
 where
@@ -6488,12 +6532,12 @@ where
                             }
                             "previousRevision" => {
                                 builder = builder.set_previous_revision(
-                                    crate::json_deser::deser_structure_revision_location(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_revision_location(tokens)?
                                 );
                             }
                             "revision" => {
                                 builder = builder.set_revision(
-                                    crate::json_deser::deser_structure_revision_location(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_revision_location(tokens)?
                                 );
                             }
                             "status" => {
@@ -6511,7 +6555,7 @@ where
                             }
                             "errorInformation" => {
                                 builder = builder.set_error_information(
-                                    crate::json_deser::deser_structure_error_information(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_error_information(tokens)?
                                 );
                             }
                             "createTime" => {
@@ -6540,7 +6584,7 @@ where
                             }
                             "deploymentOverview" => {
                                 builder = builder.set_deployment_overview(
-                                    crate::json_deser::deser_structure_deployment_overview(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_deployment_overview(tokens)?
                                 );
                             }
                             "description" => {
@@ -6574,9 +6618,7 @@ where
                             }
                             "autoRollbackConfiguration" => {
                                 builder = builder.set_auto_rollback_configuration(
-                                    crate::json_deser::deser_structure_auto_rollback_configuration(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_auto_rollback_configuration(tokens)?
                                 );
                             }
                             "updateOutdatedInstancesOnly" => {
@@ -6588,17 +6630,19 @@ where
                             }
                             "rollbackInfo" => {
                                 builder = builder.set_rollback_info(
-                                    crate::json_deser::deser_structure_rollback_info(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_rollback_info(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "deploymentStyle" => {
                                 builder = builder.set_deployment_style(
-                                    crate::json_deser::deser_structure_deployment_style(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_deployment_style(tokens)?
                                 );
                             }
                             "targetInstances" => {
                                 builder = builder.set_target_instances(
-                                    crate::json_deser::deser_structure_target_instances(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_target_instances(tokens)?
                                 );
                             }
                             "instanceTerminationWaitTimeStarted" => {
@@ -6610,12 +6654,12 @@ where
                             }
                             "blueGreenDeploymentConfiguration" => {
                                 builder = builder.set_blue_green_deployment_configuration(
-                                    crate::json_deser::deser_structure_blue_green_deployment_configuration(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_blue_green_deployment_configuration(tokens)?
                                 );
                             }
                             "loadBalancerInfo" => {
                                 builder = builder.set_load_balancer_info(
-                                    crate::json_deser::deser_structure_load_balancer_info(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_load_balancer_info(tokens)?
                                 );
                             }
                             "additionalDeploymentStatusInfo" => {
@@ -6642,9 +6686,7 @@ where
                             }
                             "deploymentStatusMessages" => {
                                 builder = builder.set_deployment_status_messages(
-                                    crate::json_deser::deser_list_deployment_status_message_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_deployment_status_message_list(tokens)?
                                 );
                             }
                             "computePlatform" => {
@@ -6671,7 +6713,7 @@ where
                             }
                             "relatedDeployments" => {
                                 builder = builder.set_related_deployments(
-                                    crate::json_deser::deser_structure_related_deployments(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_related_deployments(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -6692,7 +6734,7 @@ where
     }
 }
 
-pub fn deser_structure_deployment_config_info<'a, I>(
+pub fn deser_structure_crate_model_deployment_config_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DeploymentConfigInfo>, smithy_json::deserialize::Error>
 where
@@ -6730,9 +6772,7 @@ where
                             }
                             "minimumHealthyHosts" => {
                                 builder = builder.set_minimum_healthy_hosts(
-                                    crate::json_deser::deser_structure_minimum_healthy_hosts(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_minimum_healthy_hosts(tokens)?
                                 );
                             }
                             "createTime" => {
@@ -6758,9 +6798,7 @@ where
                             }
                             "trafficRoutingConfig" => {
                                 builder = builder.set_traffic_routing_config(
-                                    crate::json_deser::deser_structure_traffic_routing_config(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_traffic_routing_config(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -6781,7 +6819,7 @@ where
     }
 }
 
-pub fn deser_structure_deployment_group_info<'a, I>(
+pub fn deser_structure_crate_model_deployment_group_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DeploymentGroupInfo>, smithy_json::deserialize::Error>
 where
@@ -6837,17 +6875,17 @@ where
                             }
                             "ec2TagFilters" => {
                                 builder = builder.set_ec2_tag_filters(
-                                    crate::json_deser::deser_list_ec2_tag_filter_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_ec2_tag_filter_list(tokens)?
                                 );
                             }
                             "onPremisesInstanceTagFilters" => {
                                 builder = builder.set_on_premises_instance_tag_filters(
-                                    crate::json_deser::deser_list_tag_filter_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_tag_filter_list(tokens)?
                                 );
                             }
                             "autoScalingGroups" => {
                                 builder = builder.set_auto_scaling_groups(
-                                    crate::json_deser::deser_list_auto_scaling_group_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_auto_scaling_group_list(tokens)?
                                 );
                             }
                             "serviceRoleArn" => {
@@ -6861,29 +6899,27 @@ where
                             }
                             "targetRevision" => {
                                 builder = builder.set_target_revision(
-                                    crate::json_deser::deser_structure_revision_location(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_revision_location(tokens)?
                                 );
                             }
                             "triggerConfigurations" => {
                                 builder = builder.set_trigger_configurations(
-                                    crate::json_deser::deser_list_trigger_config_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_trigger_config_list(tokens)?
                                 );
                             }
                             "alarmConfiguration" => {
                                 builder = builder.set_alarm_configuration(
-                                    crate::json_deser::deser_structure_alarm_configuration(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_alarm_configuration(tokens)?
                                 );
                             }
                             "autoRollbackConfiguration" => {
                                 builder = builder.set_auto_rollback_configuration(
-                                    crate::json_deser::deser_structure_auto_rollback_configuration(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_auto_rollback_configuration(tokens)?
                                 );
                             }
                             "deploymentStyle" => {
                                 builder = builder.set_deployment_style(
-                                    crate::json_deser::deser_structure_deployment_style(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_deployment_style(tokens)?
                                 );
                             }
                             "outdatedInstancesStrategy" => {
@@ -6903,36 +6939,34 @@ where
                             }
                             "blueGreenDeploymentConfiguration" => {
                                 builder = builder.set_blue_green_deployment_configuration(
-                                    crate::json_deser::deser_structure_blue_green_deployment_configuration(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_blue_green_deployment_configuration(tokens)?
                                 );
                             }
                             "loadBalancerInfo" => {
                                 builder = builder.set_load_balancer_info(
-                                    crate::json_deser::deser_structure_load_balancer_info(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_load_balancer_info(tokens)?
                                 );
                             }
                             "lastSuccessfulDeployment" => {
                                 builder = builder.set_last_successful_deployment(
-                                    crate::json_deser::deser_structure_last_deployment_info(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_last_deployment_info(tokens)?
                                 );
                             }
                             "lastAttemptedDeployment" => {
                                 builder = builder.set_last_attempted_deployment(
-                                    crate::json_deser::deser_structure_last_deployment_info(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_last_deployment_info(tokens)?
                                 );
                             }
                             "ec2TagSet" => {
                                 builder = builder.set_ec2_tag_set(
-                                    crate::json_deser::deser_structure_ec2_tag_set(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_ec2_tag_set(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "onPremisesTagSet" => {
                                 builder = builder.set_on_premises_tag_set(
-                                    crate::json_deser::deser_structure_on_premises_tag_set(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_on_premises_tag_set(tokens)?
                                 );
                             }
                             "computePlatform" => {
@@ -6950,7 +6984,7 @@ where
                             }
                             "ecsServices" => {
                                 builder = builder.set_ecs_services(
-                                    crate::json_deser::deser_list_ecs_service_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_ecs_service_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -6971,7 +7005,7 @@ where
     }
 }
 
-pub fn deser_structure_instance_summary<'a, I>(
+pub fn deser_structure_crate_model_instance_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::InstanceSummary>, smithy_json::deserialize::Error>
 where
@@ -7029,7 +7063,7 @@ where
                             }
                             "lifecycleEvents" => {
                                 builder = builder.set_lifecycle_events(
-                                    crate::json_deser::deser_list_lifecycle_event_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_lifecycle_event_list(tokens)?
                                 );
                             }
                             "instanceType" => {
@@ -7062,7 +7096,7 @@ where
     }
 }
 
-pub fn deser_structure_deployment_target<'a, I>(
+pub fn deser_structure_crate_model_deployment_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DeploymentTarget>, smithy_json::deserialize::Error>
 where
@@ -7095,24 +7129,28 @@ where
                             }
                             "instanceTarget" => {
                                 builder = builder.set_instance_target(
-                                    crate::json_deser::deser_structure_instance_target(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_instance_target(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "lambdaTarget" => {
                                 builder = builder.set_lambda_target(
-                                    crate::json_deser::deser_structure_lambda_target(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_lambda_target(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "ecsTarget" => {
                                 builder = builder.set_ecs_target(
-                                    crate::json_deser::deser_structure_ecs_target(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_ecs_target(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "cloudFormationTarget" => {
                                 builder = builder.set_cloud_formation_target(
-                                    crate::json_deser::deser_structure_cloud_formation_target(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_cloud_formation_target(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -7133,7 +7171,7 @@ where
     }
 }
 
-pub fn deser_structure_instance_info<'a, I>(
+pub fn deser_structure_crate_model_instance_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::InstanceInfo>, smithy_json::deserialize::Error>
 where
@@ -7204,8 +7242,9 @@ where
                                 );
                             }
                             "tags" => {
-                                builder = builder
-                                    .set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
+                                builder = builder.set_tags(
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_tag_list(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -7226,7 +7265,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_revision_location_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_revision_location_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::RevisionLocation>>, smithy_json::deserialize::Error>
 where
@@ -7245,7 +7284,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_revision_location(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_revision_location(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -7261,7 +7303,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_applications_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_applications_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -7299,7 +7341,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_deployment_configs_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_deployment_configs_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -7337,7 +7379,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_deployment_groups_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_deployment_groups_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -7375,7 +7417,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_instances_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_instances_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -7413,7 +7455,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_deployments_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_deployments_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -7451,7 +7493,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_target_id_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_target_id_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -7489,7 +7531,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_git_hub_account_token_name_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_git_hub_account_token_name_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -7527,7 +7569,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_instance_name_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_instance_name_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -7565,7 +7607,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -7584,7 +7626,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -7599,7 +7641,7 @@ where
     }
 }
 
-pub fn deser_structure_revision_info<'a, I>(
+pub fn deser_structure_crate_model_revision_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RevisionInfo>, smithy_json::deserialize::Error>
 where
@@ -7619,14 +7661,12 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "revisionLocation" => {
                                 builder = builder.set_revision_location(
-                                    crate::json_deser::deser_structure_revision_location(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_revision_location(tokens)?
                                 );
                             }
                             "genericRevisionInfo" => {
                                 builder = builder.set_generic_revision_info(
-                                    crate::json_deser::deser_structure_generic_revision_info(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_generic_revision_info(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -7647,7 +7687,7 @@ where
     }
 }
 
-pub fn deser_structure_auto_scaling_group<'a, I>(
+pub fn deser_structure_crate_model_auto_scaling_group<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AutoScalingGroup>, smithy_json::deserialize::Error>
 where
@@ -7701,7 +7741,7 @@ where
     }
 }
 
-pub fn deser_structure_s3_location<'a, I>(
+pub fn deser_structure_crate_model_s3_location<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::S3Location>, smithy_json::deserialize::Error>
 where
@@ -7785,7 +7825,7 @@ where
     }
 }
 
-pub fn deser_structure_git_hub_location<'a, I>(
+pub fn deser_structure_crate_model_git_hub_location<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GitHubLocation>, smithy_json::deserialize::Error>
 where
@@ -7839,7 +7879,7 @@ where
     }
 }
 
-pub fn deser_structure_raw_string<'a, I>(
+pub fn deser_structure_crate_model_raw_string<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RawString>, smithy_json::deserialize::Error>
 where
@@ -7893,7 +7933,7 @@ where
     }
 }
 
-pub fn deser_structure_app_spec_content<'a, I>(
+pub fn deser_structure_crate_model_app_spec_content<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AppSpecContent>, smithy_json::deserialize::Error>
 where
@@ -7947,7 +7987,7 @@ where
     }
 }
 
-pub fn deser_structure_error_information<'a, I>(
+pub fn deser_structure_crate_model_error_information<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ErrorInformation>, smithy_json::deserialize::Error>
 where
@@ -8004,7 +8044,7 @@ where
     }
 }
 
-pub fn deser_structure_deployment_overview<'a, I>(
+pub fn deser_structure_crate_model_deployment_overview<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DeploymentOverview>, smithy_json::deserialize::Error>
 where
@@ -8088,7 +8128,7 @@ where
     }
 }
 
-pub fn deser_structure_auto_rollback_configuration<'a, I>(
+pub fn deser_structure_crate_model_auto_rollback_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AutoRollbackConfiguration>, smithy_json::deserialize::Error>
 where
@@ -8115,9 +8155,7 @@ where
                             }
                             "events" => {
                                 builder = builder.set_events(
-                                    crate::json_deser::deser_list_auto_rollback_events_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_auto_rollback_events_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -8138,7 +8176,7 @@ where
     }
 }
 
-pub fn deser_structure_rollback_info<'a, I>(
+pub fn deser_structure_crate_model_rollback_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RollbackInfo>, smithy_json::deserialize::Error>
 where
@@ -8201,7 +8239,7 @@ where
     }
 }
 
-pub fn deser_structure_deployment_style<'a, I>(
+pub fn deser_structure_crate_model_deployment_style<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DeploymentStyle>, smithy_json::deserialize::Error>
 where
@@ -8262,7 +8300,7 @@ where
     }
 }
 
-pub fn deser_structure_target_instances<'a, I>(
+pub fn deser_structure_crate_model_target_instances<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TargetInstances>, smithy_json::deserialize::Error>
 where
@@ -8282,19 +8320,19 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "tagFilters" => {
                                 builder = builder.set_tag_filters(
-                                    crate::json_deser::deser_list_ec2_tag_filter_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_ec2_tag_filter_list(tokens)?
                                 );
                             }
                             "autoScalingGroups" => {
                                 builder = builder.set_auto_scaling_groups(
-                                    crate::json_deser::deser_list_auto_scaling_group_name_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_auto_scaling_group_name_list(tokens)?
                                 );
                             }
                             "ec2TagSet" => {
                                 builder = builder.set_ec2_tag_set(
-                                    crate::json_deser::deser_structure_ec2_tag_set(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_ec2_tag_set(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -8315,7 +8353,7 @@ where
     }
 }
 
-pub fn deser_structure_blue_green_deployment_configuration<'a, I>(
+pub fn deser_structure_crate_model_blue_green_deployment_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BlueGreenDeploymentConfiguration>, smithy_json::deserialize::Error>
 where
@@ -8335,19 +8373,17 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "terminateBlueInstancesOnDeploymentSuccess" => {
                                 builder = builder.set_terminate_blue_instances_on_deployment_success(
-                                    crate::json_deser::deser_structure_blue_instance_termination_option(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_blue_instance_termination_option(tokens)?
                                 );
                             }
                             "deploymentReadyOption" => {
                                 builder = builder.set_deployment_ready_option(
-                                    crate::json_deser::deser_structure_deployment_ready_option(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_deployment_ready_option(tokens)?
                                 );
                             }
                             "greenFleetProvisioningOption" => {
                                 builder = builder.set_green_fleet_provisioning_option(
-                                    crate::json_deser::deser_structure_green_fleet_provisioning_option(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_green_fleet_provisioning_option(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -8368,7 +8404,7 @@ where
     }
 }
 
-pub fn deser_structure_load_balancer_info<'a, I>(
+pub fn deser_structure_crate_model_load_balancer_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LoadBalancerInfo>, smithy_json::deserialize::Error>
 where
@@ -8388,19 +8424,17 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "elbInfoList" => {
                                 builder = builder.set_elb_info_list(
-                                    crate::json_deser::deser_list_elb_info_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_elb_info_list(tokens)?
                                 );
                             }
                             "targetGroupInfoList" => {
                                 builder = builder.set_target_group_info_list(
-                                    crate::json_deser::deser_list_target_group_info_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_target_group_info_list(tokens)?
                                 );
                             }
                             "targetGroupPairInfoList" => {
                                 builder = builder.set_target_group_pair_info_list(
-                                    crate::json_deser::deser_list_target_group_pair_info_list(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_target_group_pair_info_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -8422,7 +8456,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_deployment_status_message_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_deployment_status_message_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -8459,7 +8493,7 @@ where
     }
 }
 
-pub fn deser_structure_related_deployments<'a, I>(
+pub fn deser_structure_crate_model_related_deployments<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RelatedDeployments>, smithy_json::deserialize::Error>
 where
@@ -8488,10 +8522,9 @@ where
                                     );
                             }
                             "autoUpdateOutdatedInstancesDeploymentIds" => {
-                                builder = builder
-                                    .set_auto_update_outdated_instances_deployment_ids(
-                                        crate::json_deser::deser_list_deployments_list(tokens)?,
-                                    );
+                                builder = builder.set_auto_update_outdated_instances_deployment_ids(
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_deployments_list(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -8511,7 +8544,7 @@ where
     }
 }
 
-pub fn deser_structure_minimum_healthy_hosts<'a, I>(
+pub fn deser_structure_crate_model_minimum_healthy_hosts<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MinimumHealthyHosts>, smithy_json::deserialize::Error>
 where
@@ -8568,7 +8601,7 @@ where
     }
 }
 
-pub fn deser_structure_traffic_routing_config<'a, I>(
+pub fn deser_structure_crate_model_traffic_routing_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TrafficRoutingConfig>, smithy_json::deserialize::Error>
 where
@@ -8601,12 +8634,12 @@ where
                             }
                             "timeBasedCanary" => {
                                 builder = builder.set_time_based_canary(
-                                    crate::json_deser::deser_structure_time_based_canary(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_time_based_canary(tokens)?
                                 );
                             }
                             "timeBasedLinear" => {
                                 builder = builder.set_time_based_linear(
-                                    crate::json_deser::deser_structure_time_based_linear(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_time_based_linear(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -8628,7 +8661,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_ec2_tag_filter_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_ec2_tag_filter_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Ec2TagFilter>>, smithy_json::deserialize::Error>
 where
@@ -8647,7 +8680,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_ec2_tag_filter(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_ec2_tag_filter(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -8663,7 +8697,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_filter_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_tag_filter_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::TagFilter>>, smithy_json::deserialize::Error>
 where
@@ -8682,7 +8716,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag_filter(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_tag_filter(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -8698,7 +8733,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_trigger_config_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_trigger_config_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::TriggerConfig>>, smithy_json::deserialize::Error>
 where
@@ -8717,7 +8752,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_trigger_config(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_trigger_config(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -8732,7 +8768,7 @@ where
     }
 }
 
-pub fn deser_structure_alarm_configuration<'a, I>(
+pub fn deser_structure_crate_model_alarm_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AlarmConfiguration>, smithy_json::deserialize::Error>
 where
@@ -8765,8 +8801,9 @@ where
                                 );
                             }
                             "alarms" => {
-                                builder = builder
-                                    .set_alarms(crate::json_deser::deser_list_alarm_list(tokens)?);
+                                builder = builder.set_alarms(
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_alarm_list(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -8786,7 +8823,7 @@ where
     }
 }
 
-pub fn deser_structure_last_deployment_info<'a, I>(
+pub fn deser_structure_crate_model_last_deployment_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LastDeploymentInfo>, smithy_json::deserialize::Error>
 where
@@ -8860,7 +8897,7 @@ where
     }
 }
 
-pub fn deser_structure_ec2_tag_set<'a, I>(
+pub fn deser_structure_crate_model_ec2_tag_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Ec2TagSet>, smithy_json::deserialize::Error>
 where
@@ -8880,7 +8917,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "ec2TagSetList" => {
                                 builder = builder.set_ec2_tag_set_list(
-                                    crate::json_deser::deser_list_ec2_tag_set_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_ec2_tag_set_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -8901,7 +8938,7 @@ where
     }
 }
 
-pub fn deser_structure_on_premises_tag_set<'a, I>(
+pub fn deser_structure_crate_model_on_premises_tag_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::OnPremisesTagSet>, smithy_json::deserialize::Error>
 where
@@ -8921,7 +8958,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "onPremisesTagSetList" => {
                                 builder = builder.set_on_premises_tag_set_list(
-                                    crate::json_deser::deser_list_on_premises_tag_set_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_on_premises_tag_set_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -8943,7 +8980,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_ecs_service_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_ecs_service_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::EcsService>>, smithy_json::deserialize::Error>
 where
@@ -8962,7 +8999,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_ecs_service(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_ecs_service(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -8978,7 +9016,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_lifecycle_event_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_lifecycle_event_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::LifecycleEvent>>, smithy_json::deserialize::Error>
 where
@@ -8997,7 +9035,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_lifecycle_event(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_lifecycle_event(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -9012,7 +9051,7 @@ where
     }
 }
 
-pub fn deser_structure_instance_target<'a, I>(
+pub fn deser_structure_crate_model_instance_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::InstanceTarget>, smithy_json::deserialize::Error>
 where
@@ -9079,7 +9118,7 @@ where
                             }
                             "lifecycleEvents" => {
                                 builder = builder.set_lifecycle_events(
-                                    crate::json_deser::deser_list_lifecycle_event_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_lifecycle_event_list(tokens)?
                                 );
                             }
                             "instanceLabel" => {
@@ -9112,7 +9151,7 @@ where
     }
 }
 
-pub fn deser_structure_lambda_target<'a, I>(
+pub fn deser_structure_crate_model_lambda_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LambdaTarget>, smithy_json::deserialize::Error>
 where
@@ -9179,14 +9218,12 @@ where
                             }
                             "lifecycleEvents" => {
                                 builder = builder.set_lifecycle_events(
-                                    crate::json_deser::deser_list_lifecycle_event_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_lifecycle_event_list(tokens)?
                                 );
                             }
                             "lambdaFunctionInfo" => {
                                 builder = builder.set_lambda_function_info(
-                                    crate::json_deser::deser_structure_lambda_function_info(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_lambda_function_info(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -9207,7 +9244,7 @@ where
     }
 }
 
-pub fn deser_structure_ecs_target<'a, I>(
+pub fn deser_structure_crate_model_ecs_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EcsTarget>, smithy_json::deserialize::Error>
 where
@@ -9262,7 +9299,7 @@ where
                             }
                             "lifecycleEvents" => {
                                 builder = builder.set_lifecycle_events(
-                                    crate::json_deser::deser_list_lifecycle_event_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_lifecycle_event_list(tokens)?
                                 );
                             }
                             "status" => {
@@ -9279,7 +9316,7 @@ where
                             }
                             "taskSetsInfo" => {
                                 builder = builder.set_task_sets_info(
-                                    crate::json_deser::deser_list_ecs_task_set_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_ecs_task_set_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -9300,7 +9337,7 @@ where
     }
 }
 
-pub fn deser_structure_cloud_formation_target<'a, I>(
+pub fn deser_structure_crate_model_cloud_formation_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CloudFormationTarget>, smithy_json::deserialize::Error>
 where
@@ -9346,7 +9383,7 @@ where
                             }
                             "lifecycleEvents" => {
                                 builder = builder.set_lifecycle_events(
-                                    crate::json_deser::deser_list_lifecycle_event_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_lifecycle_event_list(tokens)?
                                 );
                             }
                             "status" => {
@@ -9396,7 +9433,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where
@@ -9451,7 +9488,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_auto_rollback_events_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_auto_rollback_events_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::AutoRollbackEvent>>, smithy_json::deserialize::Error>
 where
@@ -9492,7 +9529,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_auto_scaling_group_name_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_auto_scaling_group_name_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -9529,7 +9566,7 @@ where
     }
 }
 
-pub fn deser_structure_blue_instance_termination_option<'a, I>(
+pub fn deser_structure_crate_model_blue_instance_termination_option<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BlueInstanceTerminationOption>, smithy_json::deserialize::Error>
 where
@@ -9585,7 +9622,7 @@ where
     }
 }
 
-pub fn deser_structure_deployment_ready_option<'a, I>(
+pub fn deser_structure_crate_model_deployment_ready_option<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DeploymentReadyOption>, smithy_json::deserialize::Error>
 where
@@ -9642,7 +9679,7 @@ where
     }
 }
 
-pub fn deser_structure_green_fleet_provisioning_option<'a, I>(
+pub fn deser_structure_crate_model_green_fleet_provisioning_option<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GreenFleetProvisioningOption>, smithy_json::deserialize::Error>
 where
@@ -9694,7 +9731,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_elb_info_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_elb_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ElbInfo>>, smithy_json::deserialize::Error>
 where
@@ -9713,7 +9750,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_elb_info(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_elb_info(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -9729,7 +9767,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_target_group_info_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_target_group_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::TargetGroupInfo>>, smithy_json::deserialize::Error>
 where
@@ -9748,7 +9786,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_target_group_info(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_target_group_info(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -9764,7 +9805,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_target_group_pair_info_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_target_group_pair_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::TargetGroupPairInfo>>, smithy_json::deserialize::Error>
 where
@@ -9784,7 +9825,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_target_group_pair_info(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_target_group_pair_info(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -9799,7 +9842,7 @@ where
     }
 }
 
-pub fn deser_structure_time_based_canary<'a, I>(
+pub fn deser_structure_crate_model_time_based_canary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TimeBasedCanary>, smithy_json::deserialize::Error>
 where
@@ -9851,7 +9894,7 @@ where
     }
 }
 
-pub fn deser_structure_time_based_linear<'a, I>(
+pub fn deser_structure_crate_model_time_based_linear<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TimeBasedLinear>, smithy_json::deserialize::Error>
 where
@@ -9903,7 +9946,7 @@ where
     }
 }
 
-pub fn deser_structure_ec2_tag_filter<'a, I>(
+pub fn deser_structure_crate_model_ec2_tag_filter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Ec2TagFilter>, smithy_json::deserialize::Error>
 where
@@ -9970,7 +10013,7 @@ where
     }
 }
 
-pub fn deser_structure_tag_filter<'a, I>(
+pub fn deser_structure_crate_model_tag_filter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TagFilter>, smithy_json::deserialize::Error>
 where
@@ -10036,7 +10079,7 @@ where
     }
 }
 
-pub fn deser_structure_trigger_config<'a, I>(
+pub fn deser_structure_crate_model_trigger_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TriggerConfig>, smithy_json::deserialize::Error>
 where
@@ -10074,7 +10117,7 @@ where
                             }
                             "triggerEvents" => {
                                 builder = builder.set_trigger_events(
-                                    crate::json_deser::deser_list_trigger_event_type_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_trigger_event_type_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -10096,7 +10139,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_alarm_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_alarm_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Alarm>>, smithy_json::deserialize::Error>
 where
@@ -10115,7 +10158,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_alarm(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_alarm(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -10131,7 +10174,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_ec2_tag_set_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_ec2_tag_set_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<std::vec::Vec<crate::model::Ec2TagFilter>>>,
@@ -10153,7 +10196,9 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_list_ec2_tag_filter_list(tokens)?;
+                        let value =
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_ec2_tag_filter_list(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -10169,7 +10214,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_on_premises_tag_set_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_on_premises_tag_set_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<std::vec::Vec<crate::model::TagFilter>>>,
@@ -10191,7 +10236,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_list_tag_filter_list(tokens)?;
+                        let value =
+                            crate::json_deser::deser_list_com_amazonaws_codedeploy_tag_filter_list(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -10206,7 +10254,7 @@ where
     }
 }
 
-pub fn deser_structure_ecs_service<'a, I>(
+pub fn deser_structure_crate_model_ecs_service<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EcsService>, smithy_json::deserialize::Error>
 where
@@ -10260,7 +10308,7 @@ where
     }
 }
 
-pub fn deser_structure_lifecycle_event<'a, I>(
+pub fn deser_structure_crate_model_lifecycle_event<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LifecycleEvent>, smithy_json::deserialize::Error>
 where
@@ -10289,7 +10337,9 @@ where
                             }
                             "diagnostics" => {
                                 builder = builder.set_diagnostics(
-                                    crate::json_deser::deser_structure_diagnostics(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_diagnostics(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "startTime" => {
@@ -10339,7 +10389,7 @@ where
     }
 }
 
-pub fn deser_structure_lambda_function_info<'a, I>(
+pub fn deser_structure_crate_model_lambda_function_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LambdaFunctionInfo>, smithy_json::deserialize::Error>
 where
@@ -10420,7 +10470,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_ecs_task_set_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_ecs_task_set_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::EcsTaskSet>>, smithy_json::deserialize::Error>
 where
@@ -10439,7 +10489,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_ecs_task_set(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_ecs_task_set(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -10454,7 +10505,7 @@ where
     }
 }
 
-pub fn deser_structure_elb_info<'a, I>(
+pub fn deser_structure_crate_model_elb_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ElbInfo>, smithy_json::deserialize::Error>
 where
@@ -10499,7 +10550,7 @@ where
     }
 }
 
-pub fn deser_structure_target_group_info<'a, I>(
+pub fn deser_structure_crate_model_target_group_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TargetGroupInfo>, smithy_json::deserialize::Error>
 where
@@ -10544,7 +10595,7 @@ where
     }
 }
 
-pub fn deser_structure_target_group_pair_info<'a, I>(
+pub fn deser_structure_crate_model_target_group_pair_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TargetGroupPairInfo>, smithy_json::deserialize::Error>
 where
@@ -10564,17 +10615,21 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "targetGroups" => {
                                 builder = builder.set_target_groups(
-                                    crate::json_deser::deser_list_target_group_info_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_target_group_info_list(tokens)?
                                 );
                             }
                             "prodTrafficRoute" => {
                                 builder = builder.set_prod_traffic_route(
-                                    crate::json_deser::deser_structure_traffic_route(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_traffic_route(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "testTrafficRoute" => {
                                 builder = builder.set_test_traffic_route(
-                                    crate::json_deser::deser_structure_traffic_route(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_traffic_route(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -10596,7 +10651,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_trigger_event_type_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_trigger_event_type_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::TriggerEventType>>, smithy_json::deserialize::Error>
 where
@@ -10636,7 +10691,7 @@ where
     }
 }
 
-pub fn deser_structure_alarm<'a, I>(
+pub fn deser_structure_crate_model_alarm<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Alarm>, smithy_json::deserialize::Error>
 where
@@ -10681,7 +10736,7 @@ where
     }
 }
 
-pub fn deser_structure_diagnostics<'a, I>(
+pub fn deser_structure_crate_model_diagnostics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Diagnostics>, smithy_json::deserialize::Error>
 where
@@ -10757,7 +10812,7 @@ where
     }
 }
 
-pub fn deser_structure_ecs_task_set<'a, I>(
+pub fn deser_structure_crate_model_ecs_task_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EcsTaskSet>, smithy_json::deserialize::Error>
 where
@@ -10827,7 +10882,7 @@ where
                             }
                             "targetGroup" => {
                                 builder = builder.set_target_group(
-                                    crate::json_deser::deser_structure_target_group_info(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_target_group_info(tokens)?
                                 );
                             }
                             "taskSetLabel" => {
@@ -10860,7 +10915,7 @@ where
     }
 }
 
-pub fn deser_structure_traffic_route<'a, I>(
+pub fn deser_structure_crate_model_traffic_route<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TrafficRoute>, smithy_json::deserialize::Error>
 where
@@ -10880,7 +10935,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "listenerArns" => {
                                 builder = builder.set_listener_arns(
-                                    crate::json_deser::deser_list_listener_arn_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_codedeploy_listener_arn_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -10902,7 +10957,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_listener_arn_list<'a, I>(
+pub fn deser_list_com_amazonaws_codedeploy_listener_arn_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where

@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_internal_error_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_error_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_error_exception::Builder,
 ) -> Result<crate::error::internal_error_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_internal_error_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_report_definition(
+pub fn deser_operation_crate_operation_delete_report_definition(
     input: &[u8],
     mut builder: crate::output::delete_report_definition_output::Builder,
 ) -> Result<crate::output::delete_report_definition_output::Builder, smithy_json::deserialize::Error>
@@ -123,7 +123,7 @@ pub fn deser_operation_delete_report_definition(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_report_definitions(
+pub fn deser_operation_crate_operation_describe_report_definitions(
     input: &[u8],
     mut builder: crate::output::describe_report_definitions_output::Builder,
 ) -> Result<
@@ -142,7 +142,7 @@ pub fn deser_operation_describe_report_definitions(
                 match key.to_unescaped()?.as_ref() {
                     "ReportDefinitions" => {
                         builder = builder.set_report_definitions(
-                            crate::json_deser::deser_list_report_definition_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_costandusagereportservice_report_definition_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -170,7 +170,7 @@ pub fn deser_operation_describe_report_definitions(
     Ok(builder)
 }
 
-pub fn deser_structure_duplicate_report_name_exceptionjson_err(
+pub fn deser_structure_crate_error_duplicate_report_name_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::duplicate_report_name_exception::Builder,
 ) -> Result<crate::error::duplicate_report_name_exception::Builder, smithy_json::deserialize::Error>
@@ -210,7 +210,7 @@ pub fn deser_structure_duplicate_report_name_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_report_limit_reached_exceptionjson_err(
+pub fn deser_structure_crate_error_report_limit_reached_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::report_limit_reached_exception::Builder,
 ) -> Result<crate::error::report_limit_reached_exception::Builder, smithy_json::deserialize::Error>
@@ -259,7 +259,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_report_definition_list<'a, I>(
+pub fn deser_list_com_amazonaws_costandusagereportservice_report_definition_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ReportDefinition>>, smithy_json::deserialize::Error>
 where
@@ -278,7 +278,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_report_definition(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_report_definition(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -293,7 +296,7 @@ where
     }
 }
 
-pub fn deser_structure_report_definition<'a, I>(
+pub fn deser_structure_crate_model_report_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ReportDefinition>, smithy_json::deserialize::Error>
 where
@@ -359,7 +362,7 @@ where
                             }
                             "AdditionalSchemaElements" => {
                                 builder = builder.set_additional_schema_elements(
-                                    crate::json_deser::deser_list_schema_element_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_costandusagereportservice_schema_element_list(tokens)?
                                 );
                             }
                             "S3Bucket" => {
@@ -394,7 +397,7 @@ where
                             }
                             "AdditionalArtifacts" => {
                                 builder = builder.set_additional_artifacts(
-                                    crate::json_deser::deser_list_additional_artifact_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_costandusagereportservice_additional_artifact_list(tokens)?
                                 );
                             }
                             "RefreshClosedReports" => {
@@ -445,7 +448,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_schema_element_list<'a, I>(
+pub fn deser_list_com_amazonaws_costandusagereportservice_schema_element_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::SchemaElement>>, smithy_json::deserialize::Error>
 where
@@ -486,7 +489,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_additional_artifact_list<'a, I>(
+pub fn deser_list_com_amazonaws_costandusagereportservice_additional_artifact_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::AdditionalArtifact>>, smithy_json::deserialize::Error>
 where

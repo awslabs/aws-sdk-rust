@@ -32,7 +32,7 @@ pub mod create_access_input {
         }
         /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
         /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
         /// S3 or EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
@@ -61,15 +61,16 @@ pub mod create_access_input {
             self.home_directory_mappings = input;
             self
         }
-        /// <p>A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
         /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
         /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
         /// <note>
-        /// <p>This only applies when domain of <code>ServerId</code> is S3.
-        /// Amazon EFS does not use scope-down policies.</p>
-        /// <p>For scope-down policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
-        /// <p>For an example of a scope-down policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/scope-down-policy.html">Example
-        /// scope-down policy</a>.</p>
+        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
+        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+        /// it in the <code>Policy</code> argument.</p>      
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
+        /// session policy</a>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API
         /// Reference</i>.</p>
         /// </note>
@@ -175,9 +176,10 @@ impl CreateAccessInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_access(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_access(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -240,12 +242,12 @@ impl CreateAccessInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.CreateAccess",
         );
         Ok(builder)
@@ -255,7 +257,11 @@ impl CreateAccessInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -283,6 +289,7 @@ pub mod create_server_input {
         pub(crate) protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
         pub(crate) security_policy_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) workflow_details: std::option::Option<crate::model::WorkflowDetails>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required
@@ -490,6 +497,18 @@ pub mod create_server_input {
             self.tags = input;
             self
         }
+        /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+        pub fn workflow_details(mut self, input: crate::model::WorkflowDetails) -> Self {
+            self.workflow_details = Some(input);
+            self
+        }
+        pub fn set_workflow_details(
+            mut self,
+            input: std::option::Option<crate::model::WorkflowDetails>,
+        ) -> Self {
+            self.workflow_details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateServerInput`](crate::input::CreateServerInput)
         pub fn build(
             self,
@@ -507,6 +526,7 @@ pub mod create_server_input {
                 protocols: self.protocols,
                 security_policy_name: self.security_policy_name,
                 tags: self.tags,
+                workflow_details: self.workflow_details,
             })
         }
     }
@@ -532,9 +552,10 @@ impl CreateServerInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_create_server(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_create_server(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -597,12 +618,12 @@ impl CreateServerInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.CreateServer",
         );
         Ok(builder)
@@ -612,7 +633,11 @@ impl CreateServerInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -656,7 +681,7 @@ pub mod create_user_input {
         }
         /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
         /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
         /// S3 or EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
@@ -685,15 +710,15 @@ pub mod create_user_input {
             self.home_directory_mappings = input;
             self
         }
-        /// <p>A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
         /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
         /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
         /// <note>
-        /// <p>This only applies when domain of ServerId is S3. EFS does not use scope down policy.</p>
-        /// <p>For scope-down policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
+        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
         /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
         /// it in the <code>Policy</code> argument.</p>
-        /// <p>For an example of a scope-down policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/scope-down-policy.html">Example scope-down
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session
         /// policy</a>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
         /// Security Token Service API Reference</i>.</p>
@@ -770,8 +795,7 @@ pub mod create_user_input {
             self.tags = input;
             self
         }
-        /// <p>A unique string that identifies a user and is associated with a as specified by the
-        /// <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
+        /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
         /// long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen
         /// '-', period '.', and at sign '@'. The user name can't start
         /// with a hyphen, period, or at sign.</p>
@@ -823,8 +847,8 @@ impl CreateUserInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_create_user(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -889,12 +913,12 @@ impl CreateUserInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.CreateUser",
         );
         Ok(builder)
@@ -904,13 +928,210 @@ impl CreateUserInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`CreateUserInput`](crate::input::CreateUserInput)
     pub fn builder() -> crate::input::create_user_input::Builder {
         crate::input::create_user_input::Builder::default()
+    }
+}
+
+/// See [`CreateWorkflowInput`](crate::input::CreateWorkflowInput)
+pub mod create_workflow_input {
+    /// A builder for [`CreateWorkflowInput`](crate::input::CreateWorkflowInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) steps: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
+        pub(crate) on_exception_steps:
+            std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>A textual description for the workflow.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        pub fn steps(mut self, input: impl Into<crate::model::WorkflowStep>) -> Self {
+            let mut v = self.steps.unwrap_or_default();
+            v.push(input.into());
+            self.steps = Some(v);
+            self
+        }
+        pub fn set_steps(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
+        ) -> Self {
+            self.steps = input;
+            self
+        }
+        pub fn on_exception_steps(mut self, input: impl Into<crate::model::WorkflowStep>) -> Self {
+            let mut v = self.on_exception_steps.unwrap_or_default();
+            v.push(input.into());
+            self.on_exception_steps = Some(v);
+            self
+        }
+        pub fn set_on_exception_steps(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
+        ) -> Self {
+            self.on_exception_steps = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateWorkflowInput`](crate::input::CreateWorkflowInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateWorkflowInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateWorkflowInput {
+                description: self.description,
+                steps: self.steps,
+                on_exception_steps: self.on_exception_steps,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateWorkflowInputOperationOutputAlias = crate::operation::CreateWorkflow;
+#[doc(hidden)]
+pub type CreateWorkflowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateWorkflowInput {
+    /// Consumes the builder and constructs an Operation<[`CreateWorkflow`](crate::operation::CreateWorkflow)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateWorkflow,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_create_workflow(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::CreateWorkflow::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "CreateWorkflow",
+                "transfer",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "TransferService.CreateWorkflow",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateWorkflowInput`](crate::input::CreateWorkflowInput)
+    pub fn builder() -> crate::input::create_workflow_input::Builder {
+        crate::input::create_workflow_input::Builder::default()
     }
 }
 
@@ -984,9 +1205,10 @@ impl DeleteAccessInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_access(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_access(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1049,12 +1271,12 @@ impl DeleteAccessInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.DeleteAccess",
         );
         Ok(builder)
@@ -1064,7 +1286,11 @@ impl DeleteAccessInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1124,9 +1350,10 @@ impl DeleteServerInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_delete_server(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_delete_server(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1189,12 +1416,12 @@ impl DeleteServerInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.DeleteServer",
         );
         Ok(builder)
@@ -1204,7 +1431,11 @@ impl DeleteServerInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1291,7 +1522,10 @@ impl DeleteSshPublicKeyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_delete_ssh_public_key(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_ssh_public_key(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1357,12 +1591,12 @@ impl DeleteSshPublicKeyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.DeleteSshPublicKey",
         );
         Ok(builder)
@@ -1372,7 +1606,11 @@ impl DeleteSshPublicKeyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1443,8 +1681,8 @@ impl DeleteUserInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_delete_user(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_delete_user(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -1509,12 +1747,12 @@ impl DeleteUserInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.DeleteUser",
         );
         Ok(builder)
@@ -1524,13 +1762,164 @@ impl DeleteUserInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteUserInput`](crate::input::DeleteUserInput)
     pub fn builder() -> crate::input::delete_user_input::Builder {
         crate::input::delete_user_input::Builder::default()
+    }
+}
+
+/// See [`DeleteWorkflowInput`](crate::input::DeleteWorkflowInput)
+pub mod delete_workflow_input {
+    /// A builder for [`DeleteWorkflowInput`](crate::input::DeleteWorkflowInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteWorkflowInput`](crate::input::DeleteWorkflowInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteWorkflowInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteWorkflowInput {
+                workflow_id: self.workflow_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteWorkflowInputOperationOutputAlias = crate::operation::DeleteWorkflow;
+#[doc(hidden)]
+pub type DeleteWorkflowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteWorkflowInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteWorkflow`](crate::operation::DeleteWorkflow)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteWorkflow,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_delete_workflow(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DeleteWorkflow::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DeleteWorkflow",
+                "transfer",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "TransferService.DeleteWorkflow",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteWorkflowInput`](crate::input::DeleteWorkflowInput)
+    pub fn builder() -> crate::input::delete_workflow_input::Builder {
+        crate::input::delete_workflow_input::Builder::default()
     }
 }
 
@@ -1605,9 +1994,11 @@ impl DescribeAccessInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_access(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_access(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1670,12 +2061,12 @@ impl DescribeAccessInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.DescribeAccess",
         );
         Ok(builder)
@@ -1685,13 +2076,175 @@ impl DescribeAccessInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeAccessInput`](crate::input::DescribeAccessInput)
     pub fn builder() -> crate::input::describe_access_input::Builder {
         crate::input::describe_access_input::Builder::default()
+    }
+}
+
+/// See [`DescribeExecutionInput`](crate::input::DescribeExecutionInput)
+pub mod describe_execution_input {
+    /// A builder for [`DescribeExecutionInput`](crate::input::DescribeExecutionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) execution_id: std::option::Option<std::string::String>,
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the execution of a workflow.</p>
+        pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_id = Some(input.into());
+            self
+        }
+        pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_id = input;
+            self
+        }
+        /// <p>A unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeExecutionInput`](crate::input::DescribeExecutionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeExecutionInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeExecutionInput {
+                execution_id: self.execution_id,
+                workflow_id: self.workflow_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeExecutionInputOperationOutputAlias = crate::operation::DescribeExecution;
+#[doc(hidden)]
+pub type DescribeExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeExecutionInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeExecution`](crate::operation::DescribeExecution)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DescribeExecution,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_execution(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DescribeExecution::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DescribeExecution",
+                "transfer",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "TransferService.DescribeExecution",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeExecutionInput`](crate::input::DescribeExecutionInput)
+    pub fn builder() -> crate::input::describe_execution_input::Builder {
+        crate::input::describe_execution_input::Builder::default()
     }
 }
 
@@ -1749,7 +2302,10 @@ impl DescribeSecurityPolicyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_security_policy(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_security_policy(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -1815,12 +2371,12 @@ impl DescribeSecurityPolicyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.DescribeSecurityPolicy",
         );
         Ok(builder)
@@ -1830,7 +2386,11 @@ impl DescribeSecurityPolicyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -1891,9 +2451,11 @@ impl DescribeServerInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_describe_server(&self).map_err(
-                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
-            )?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_server(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -1956,12 +2518,12 @@ impl DescribeServerInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.DescribeServer",
         );
         Ok(builder)
@@ -1971,7 +2533,11 @@ impl DescribeServerInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2043,9 +2609,10 @@ impl DescribeUserInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_describe_user(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_describe_user(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2108,12 +2675,12 @@ impl DescribeUserInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.DescribeUser",
         );
         Ok(builder)
@@ -2123,13 +2690,164 @@ impl DescribeUserInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeUserInput`](crate::input::DescribeUserInput)
     pub fn builder() -> crate::input::describe_user_input::Builder {
         crate::input::describe_user_input::Builder::default()
+    }
+}
+
+/// See [`DescribeWorkflowInput`](crate::input::DescribeWorkflowInput)
+pub mod describe_workflow_input {
+    /// A builder for [`DescribeWorkflowInput`](crate::input::DescribeWorkflowInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeWorkflowInput`](crate::input::DescribeWorkflowInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeWorkflowInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeWorkflowInput {
+                workflow_id: self.workflow_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeWorkflowInputOperationOutputAlias = crate::operation::DescribeWorkflow;
+#[doc(hidden)]
+pub type DescribeWorkflowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeWorkflowInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeWorkflow`](crate::operation::DescribeWorkflow)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DescribeWorkflow,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_describe_workflow(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DescribeWorkflow::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DescribeWorkflow",
+                "transfer",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "TransferService.DescribeWorkflow",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeWorkflowInput`](crate::input::DescribeWorkflowInput)
+    pub fn builder() -> crate::input::describe_workflow_input::Builder {
+        crate::input::describe_workflow_input::Builder::default()
     }
 }
 
@@ -2209,7 +2927,10 @@ impl ImportSshPublicKeyInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_import_ssh_public_key(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_import_ssh_public_key(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2275,12 +2996,12 @@ impl ImportSshPublicKeyInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.ImportSshPublicKey",
         );
         Ok(builder)
@@ -2290,7 +3011,11 @@ impl ImportSshPublicKeyInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2375,9 +3100,10 @@ impl ListAccessesInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_accesses(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_accesses(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2440,12 +3166,12 @@ impl ListAccessesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.ListAccesses",
         );
         Ok(builder)
@@ -2455,13 +3181,207 @@ impl ListAccessesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListAccessesInput`](crate::input::ListAccessesInput)
     pub fn builder() -> crate::input::list_accesses_input::Builder {
         crate::input::list_accesses_input::Builder::default()
+    }
+}
+
+/// See [`ListExecutionsInput`](crate::input::ListExecutionsInput)
+pub mod list_executions_input {
+    /// A builder for [`ListExecutionsInput`](crate::input::ListExecutionsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the aximum number of executions to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>
+        /// <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output.
+        /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
+        /// continue listing additional executions.</p>
+        /// <p>
+        /// This is useful for pagination, for instance.
+        /// If you have 100 executions for a workflow, you might only want to list first 10. If so, callthe API by specifing the <code>max-results</code>:
+        /// </p>
+        /// <p>
+        /// <code>aws transfer list-executions --max-results 10</code>
+        /// </p>
+        /// <p>
+        /// This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution.
+        /// You can now call the API again, suppling the <code>NextToken</code> value you received:
+        /// </p>
+        /// <p>
+        /// <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code>
+        /// </p>
+        /// <p>
+        /// This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details
+        /// for all 100 executions have been returned.
+        /// </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>A unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListExecutionsInput`](crate::input::ListExecutionsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListExecutionsInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListExecutionsInput {
+                max_results: self.max_results,
+                next_token: self.next_token,
+                workflow_id: self.workflow_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListExecutionsInputOperationOutputAlias = crate::operation::ListExecutions;
+#[doc(hidden)]
+pub type ListExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListExecutionsInput {
+    /// Consumes the builder and constructs an Operation<[`ListExecutions`](crate::operation::ListExecutions)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListExecutions,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_executions(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListExecutions::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListExecutions",
+                "transfer",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "TransferService.ListExecutions",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListExecutionsInput`](crate::input::ListExecutionsInput)
+    pub fn builder() -> crate::input::list_executions_input::Builder {
+        crate::input::list_executions_input::Builder::default()
     }
 }
 
@@ -2531,7 +3451,10 @@ impl ListSecurityPoliciesInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_security_policies(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_security_policies(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2597,12 +3520,12 @@ impl ListSecurityPoliciesInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.ListSecurityPolicies",
         );
         Ok(builder)
@@ -2612,7 +3535,11 @@ impl ListSecurityPoliciesInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2687,9 +3614,10 @@ impl ListServersInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_list_servers(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_list_servers(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -2752,12 +3680,12 @@ impl ListServersInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.ListServers",
         );
         Ok(builder)
@@ -2767,7 +3695,11 @@ impl ListServersInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -2854,7 +3786,10 @@ impl ListTagsForResourceInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_list_tags_for_resource(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -2920,12 +3855,12 @@ impl ListTagsForResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.ListTagsForResource",
         );
         Ok(builder)
@@ -2935,7 +3870,11 @@ impl ListTagsForResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3020,8 +3959,8 @@ impl ListUsersInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_list_users(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_list_users(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -3084,12 +4023,12 @@ impl ListUsersInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.ListUsers",
         );
         Ok(builder)
@@ -3099,13 +4038,361 @@ impl ListUsersInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListUsersInput`](crate::input::ListUsersInput)
     pub fn builder() -> crate::input::list_users_input::Builder {
         crate::input::list_users_input::Builder::default()
+    }
+}
+
+/// See [`ListWorkflowsInput`](crate::input::ListWorkflowsInput)
+pub mod list_workflows_input {
+    /// A builder for [`ListWorkflowsInput`](crate::input::ListWorkflowsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specifies the maximum number of workflows to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>
+        /// <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output.
+        /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
+        /// continue listing additional workflows.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListWorkflowsInput`](crate::input::ListWorkflowsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::ListWorkflowsInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListWorkflowsInput {
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListWorkflowsInputOperationOutputAlias = crate::operation::ListWorkflows;
+#[doc(hidden)]
+pub type ListWorkflowsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListWorkflowsInput {
+    /// Consumes the builder and constructs an Operation<[`ListWorkflows`](crate::operation::ListWorkflows)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListWorkflows,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_list_workflows(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListWorkflows::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListWorkflows",
+                "transfer",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "TransferService.ListWorkflows",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListWorkflowsInput`](crate::input::ListWorkflowsInput)
+    pub fn builder() -> crate::input::list_workflows_input::Builder {
+        crate::input::list_workflows_input::Builder::default()
+    }
+}
+
+/// See [`SendWorkflowStepStateInput`](crate::input::SendWorkflowStepStateInput)
+pub mod send_workflow_step_state_input {
+    /// A builder for [`SendWorkflowStepStateInput`](crate::input::SendWorkflowStepStateInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
+        pub(crate) execution_id: std::option::Option<std::string::String>,
+        pub(crate) token: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::CustomStepStatus>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
+        /// <p>A unique identifier for the execution of a workflow.</p>
+        pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.execution_id = Some(input.into());
+            self
+        }
+        pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_id = input;
+            self
+        }
+        /// <p>Used to distinguish between multiple callbacks for multiple Lambda steps within the same execution.</p>
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.token = Some(input.into());
+            self
+        }
+        pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.token = input;
+            self
+        }
+        /// <p>Indicates whether the specified step succeeded or failed.</p>
+        pub fn status(mut self, input: crate::model::CustomStepStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::CustomStepStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SendWorkflowStepStateInput`](crate::input::SendWorkflowStepStateInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::SendWorkflowStepStateInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::SendWorkflowStepStateInput {
+                workflow_id: self.workflow_id,
+                execution_id: self.execution_id,
+                token: self.token,
+                status: self.status,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type SendWorkflowStepStateInputOperationOutputAlias = crate::operation::SendWorkflowStepState;
+#[doc(hidden)]
+pub type SendWorkflowStepStateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl SendWorkflowStepStateInput {
+    /// Consumes the builder and constructs an Operation<[`SendWorkflowStepState`](crate::operation::SendWorkflowStepState)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::SendWorkflowStepState,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_send_workflow_step_state(
+                    &self,
+                )
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::SendWorkflowStepState::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "SendWorkflowStepState",
+                "transfer",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("content-type"),
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            http::header::HeaderName::from_static("x-amz-target"),
+            "TransferService.SendWorkflowStepState",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`SendWorkflowStepStateInput`](crate::input::SendWorkflowStepStateInput)
+    pub fn builder() -> crate::input::send_workflow_step_state_input::Builder {
+        crate::input::send_workflow_step_state_input::Builder::default()
     }
 }
 
@@ -3159,9 +4446,10 @@ impl StartServerInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_start_server(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_start_server(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3224,12 +4512,12 @@ impl StartServerInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.StartServer",
         );
         Ok(builder)
@@ -3239,7 +4527,11 @@ impl StartServerInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3298,8 +4590,8 @@ impl StopServerInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_stop_server(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_stop_server(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -3364,12 +4656,12 @@ impl StopServerInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.StopServer",
         );
         Ok(builder)
@@ -3379,7 +4671,11 @@ impl StopServerInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3455,9 +4751,10 @@ impl TagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_tag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3520,12 +4817,12 @@ impl TagResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.TagResource",
         );
         Ok(builder)
@@ -3535,7 +4832,11 @@ impl TagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3659,7 +4960,10 @@ impl TestIdentityProviderInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_test_identity_provider(&self)
+            let body =
+                crate::operation_ser::serialize_operation_crate_operation_test_identity_provider(
+                    &self,
+                )
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
@@ -3725,12 +5029,12 @@ impl TestIdentityProviderInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.TestIdentityProvider",
         );
         Ok(builder)
@@ -3740,7 +5044,11 @@ impl TestIdentityProviderInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3816,9 +5124,10 @@ impl UntagResourceInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_untag_resource(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -3881,12 +5190,12 @@ impl UntagResourceInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.UntagResource",
         );
         Ok(builder)
@@ -3896,7 +5205,11 @@ impl UntagResourceInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -3938,7 +5251,7 @@ pub mod update_access_input {
         }
         /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
         /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
         /// S3 or EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
@@ -3967,15 +5280,16 @@ pub mod update_access_input {
             self.home_directory_mappings = input;
             self
         }
-        /// <p>A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
         /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
         /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
         /// <note>
-        /// <p>This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope
-        /// down policy.</p>
-        /// <p>For scope-down policies, Amazon Web ServicesTransfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
-        /// <p>For an example of a scope-down policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/scope-down-policy.html">Example
-        /// scope-down policy</a>.</p>
+        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
+        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+        /// it in the <code>Policy</code> argument.</p>
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
+        /// session policy</a>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API
         /// Reference</i>.</p>
         /// </note>
@@ -4081,9 +5395,10 @@ impl UpdateAccessInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_access(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_access(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4146,12 +5461,12 @@ impl UpdateAccessInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.UpdateAccess",
         );
         Ok(builder)
@@ -4161,7 +5476,11 @@ impl UpdateAccessInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4188,6 +5507,7 @@ pub mod update_server_input {
         pub(crate) protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
         pub(crate) security_policy_name: std::option::Option<std::string::String>,
         pub(crate) server_id: std::option::Option<std::string::String>,
+        pub(crate) workflow_details: std::option::Option<crate::model::WorkflowDetails>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required
@@ -4372,6 +5692,18 @@ pub mod update_server_input {
             self.server_id = input;
             self
         }
+        /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+        pub fn workflow_details(mut self, input: crate::model::WorkflowDetails) -> Self {
+            self.workflow_details = Some(input);
+            self
+        }
+        pub fn set_workflow_details(
+            mut self,
+            input: std::option::Option<crate::model::WorkflowDetails>,
+        ) -> Self {
+            self.workflow_details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateServerInput`](crate::input::UpdateServerInput)
         pub fn build(
             self,
@@ -4388,6 +5720,7 @@ pub mod update_server_input {
                 protocols: self.protocols,
                 security_policy_name: self.security_policy_name,
                 server_id: self.server_id,
+                workflow_details: self.workflow_details,
             })
         }
     }
@@ -4413,9 +5746,10 @@ impl UpdateServerInput {
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
-                crate::operation_ser::serialize_operation_update_server(&self).map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+                crate::operation_ser::serialize_operation_crate_operation_update_server(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
             let mut request = smithy_http::operation::Request::from_parts(
@@ -4478,12 +5812,12 @@ impl UpdateServerInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.UpdateServer",
         );
         Ok(builder)
@@ -4493,7 +5827,11 @@ impl UpdateServerInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4535,7 +5873,7 @@ pub mod update_user_input {
         }
         /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
         /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
         /// S3 or EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
@@ -4564,15 +5902,15 @@ pub mod update_user_input {
             self.home_directory_mappings = input;
             self
         }
-        /// <p>A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
         /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
         /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
         /// <note>
-        /// <p>This only applies when domain of <code>ServerId</code> is S3.
-        /// Amazon EFS does not use scope-down policies.</p>
-        /// <p>For scope-down policies, Amazon Web ServicesTransfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy.
-        /// You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
-        /// <p>For an example of a scope-down policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating a scope-down
+        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
+        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+        /// it in the <code>Policy</code> argument.</p>
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session
         /// policy</a>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
         /// Security Token Service API Reference</i>.</p>
@@ -4674,8 +6012,8 @@ impl UpdateUserInput {
         Ok({
             let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_update_user(&self).map_err(|err| {
+            let body = crate::operation_ser::serialize_operation_crate_operation_update_user(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
             let request = Self::assemble(request, body);
@@ -4740,12 +6078,12 @@ impl UpdateUserInput {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "content-type",
+            http::header::HeaderName::from_static("content-type"),
             "application/x-amz-json-1.1",
         );
         builder = smithy_http::header::set_header_if_absent(
             builder,
-            "x-amz-target",
+            http::header::HeaderName::from_static("x-amz-target"),
             "TransferService.UpdateUser",
         );
         Ok(builder)
@@ -4755,7 +6093,11 @@ impl UpdateUserInput {
         body: smithy_http::body::SdkBody,
     ) -> http::request::Request<smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
         }
         builder.body(body).expect("should be valid request")
     }
@@ -4773,7 +6115,7 @@ pub struct UpdateUserInput {
     pub home_directory: std::option::Option<std::string::String>,
     /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
     /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-    /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
     /// S3 or EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
     /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
@@ -4789,7 +6131,7 @@ pub struct UpdateUserInput {
     /// <code>[ { "Entry": "your-personal-report.pdf", "Target":
     /// "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code>
     /// </p>
-    /// <p>In most cases, you can use this value instead of the scope-down policy to lock down your
+    /// <p>In most cases, you can use this value instead of the session policy to lock down your
     /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
     /// <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
     /// parameter value.</p>
@@ -4807,15 +6149,15 @@ pub struct UpdateUserInput {
     /// </note>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
-    /// <p>A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
     /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
     /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
     /// <note>
-    /// <p>This only applies when domain of <code>ServerId</code> is S3.
-    /// Amazon EFS does not use scope-down policies.</p>
-    /// <p>For scope-down policies, Amazon Web ServicesTransfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy.
-    /// You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
-    /// <p>For an example of a scope-down policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating a scope-down
+    /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
+    /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+    /// it in the <code>Policy</code> argument.</p>
+    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session
     /// policy</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
     /// Security Token Service API Reference</i>.</p>
@@ -4975,6 +6317,8 @@ pub struct UpdateServerInput {
     /// <p>A system-assigned unique identifier for a server instance that the user account is
     /// assigned to.</p>
     pub server_id: std::option::Option<std::string::String>,
+    /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+    pub workflow_details: std::option::Option<crate::model::WorkflowDetails>,
 }
 impl std::fmt::Debug for UpdateServerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4989,6 +6333,7 @@ impl std::fmt::Debug for UpdateServerInput {
         formatter.field("protocols", &self.protocols);
         formatter.field("security_policy_name", &self.security_policy_name);
         formatter.field("server_id", &self.server_id);
+        formatter.field("workflow_details", &self.workflow_details);
         formatter.finish()
     }
 }
@@ -5001,7 +6346,7 @@ pub struct UpdateAccessInput {
     pub home_directory: std::option::Option<std::string::String>,
     /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
     /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-    /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
     /// S3 or EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
     /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
@@ -5016,7 +6361,7 @@ pub struct UpdateAccessInput {
     /// <p>
     /// <code>[ { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code>
     /// </p>
-    /// <p>In most cases, you can use this value instead of the scope-down policy to lock down your
+    /// <p>In most cases, you can use this value instead of the session policy to lock down your
     /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
     /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
     /// <code>HomeDirectory</code> parameter value.</p>
@@ -5034,15 +6379,16 @@ pub struct UpdateAccessInput {
     /// </note>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
-    /// <p>A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
     /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
     /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
     /// <note>
-    /// <p>This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope
-    /// down policy.</p>
-    /// <p>For scope-down policies, Amazon Web ServicesTransfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
-    /// <p>For an example of a scope-down policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/scope-down-policy.html">Example
-    /// scope-down policy</a>.</p>
+    /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
+    /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+    /// it in the <code>Policy</code> argument.</p>
+    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
+    /// session policy</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API
     /// Reference</i>.</p>
     /// </note>
@@ -5194,6 +6540,49 @@ impl std::fmt::Debug for StartServerInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SendWorkflowStepStateInput {
+    /// <p>A unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the execution of a workflow.</p>
+    pub execution_id: std::option::Option<std::string::String>,
+    /// <p>Used to distinguish between multiple callbacks for multiple Lambda steps within the same execution.</p>
+    pub token: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the specified step succeeded or failed.</p>
+    pub status: std::option::Option<crate::model::CustomStepStatus>,
+}
+impl std::fmt::Debug for SendWorkflowStepStateInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SendWorkflowStepStateInput");
+        formatter.field("workflow_id", &self.workflow_id);
+        formatter.field("execution_id", &self.execution_id);
+        formatter.field("token", &self.token);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListWorkflowsInput {
+    /// <p>Specifies the maximum number of workflows to return.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>
+    /// <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output.
+    /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
+    /// continue listing additional workflows.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListWorkflowsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListWorkflowsInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersInput {
     /// <p>Specifies the number of users to return as a response to the <code>ListUsers</code>
     /// request.</p>
@@ -5284,6 +6673,47 @@ impl std::fmt::Debug for ListSecurityPoliciesInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListExecutionsInput {
+    /// <p>Specifies the aximum number of executions to return.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>
+    /// <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output.
+    /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
+    /// continue listing additional executions.</p>
+    /// <p>
+    /// This is useful for pagination, for instance.
+    /// If you have 100 executions for a workflow, you might only want to list first 10. If so, callthe API by specifing the <code>max-results</code>:
+    /// </p>
+    /// <p>
+    /// <code>aws transfer list-executions --max-results 10</code>
+    /// </p>
+    /// <p>
+    /// This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution.
+    /// You can now call the API again, suppling the <code>NextToken</code> value you received:
+    /// </p>
+    /// <p>
+    /// <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code>
+    /// </p>
+    /// <p>
+    /// This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details
+    /// for all 100 executions have been returned.
+    /// </p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListExecutionsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListExecutionsInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("workflow_id", &self.workflow_id);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessesInput {
     /// <p>Specifies the maximum number of access SIDs to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -5321,6 +6751,20 @@ impl std::fmt::Debug for ImportSshPublicKeyInput {
         formatter.field("server_id", &self.server_id);
         formatter.field("ssh_public_key_body", &self.ssh_public_key_body);
         formatter.field("user_name", &self.user_name);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeWorkflowInput {
+    /// <p>A unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeWorkflowInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeWorkflowInput");
+        formatter.field("workflow_id", &self.workflow_id);
         formatter.finish()
     }
 }
@@ -5373,6 +6817,23 @@ impl std::fmt::Debug for DescribeSecurityPolicyInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeExecutionInput {
+    /// <p>A unique identifier for the execution of a workflow.</p>
+    pub execution_id: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeExecutionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeExecutionInput");
+        formatter.field("execution_id", &self.execution_id);
+        formatter.field("workflow_id", &self.workflow_id);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccessInput {
     /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
     pub server_id: std::option::Option<std::string::String>,
@@ -5393,6 +6854,20 @@ impl std::fmt::Debug for DescribeAccessInput {
         let mut formatter = f.debug_struct("DescribeAccessInput");
         formatter.field("server_id", &self.server_id);
         formatter.field("external_id", &self.external_id);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteWorkflowInput {
+    /// <p>A unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteWorkflowInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteWorkflowInput");
+        formatter.field("workflow_id", &self.workflow_id);
         formatter.finish()
     }
 }
@@ -5478,13 +6953,61 @@ impl std::fmt::Debug for DeleteAccessInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateWorkflowInput {
+    /// <p>A textual description for the workflow.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Specifies the details for the steps that are in the specified workflow.</p>
+    /// <p>
+    /// The <code>TYPE</code> specifies which of the following actions is being taken for this step.
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Copy</i>: copy the file to another location</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Custom</i>: custom step with a lambda target</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Delete</i>: delete the file</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Tag</i>: add a tag to the file</p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path.
+    /// </p>
+    pub steps: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
+    /// <p>Specifies the steps (actions) to take if any errors are encountered during execution of the workflow.</p>
+    pub on_exception_steps: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
+    /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached
+    /// to workflows for any purpose.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl std::fmt::Debug for CreateWorkflowInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateWorkflowInput");
+        formatter.field("description", &self.description);
+        formatter.field("steps", &self.steps);
+        formatter.field("on_exception_steps", &self.on_exception_steps);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserInput {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
     pub home_directory: std::option::Option<std::string::String>,
     /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
     /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-    /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
     /// S3 or EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
     /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
@@ -5500,7 +7023,7 @@ pub struct CreateUserInput {
     /// <code>[ { "Entry": "your-personal-report.pdf", "Target":
     /// "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code>
     /// </p>
-    /// <p>In most cases, you can use this value instead of the scope-down policy to lock your user
+    /// <p>In most cases, you can use this value instead of the session policy to lock your user
     /// down to the designated home directory ("<code>chroot</code>"). To do this, you can set
     /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory
     /// parameter value.</p>
@@ -5518,15 +7041,15 @@ pub struct CreateUserInput {
     /// </note>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
-    /// <p>A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
     /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
     /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
     /// <note>
-    /// <p>This only applies when domain of ServerId is S3. EFS does not use scope down policy.</p>
-    /// <p>For scope-down policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
+    /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
     /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
     /// it in the <code>Policy</code> argument.</p>
-    /// <p>For an example of a scope-down policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/scope-down-policy.html">Example scope-down
+    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session
     /// policy</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
     /// Security Token Service API Reference</i>.</p>
@@ -5552,8 +7075,7 @@ pub struct CreateUserInput {
     /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached
     /// to users for any purpose.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A unique string that identifies a user and is associated with a as specified by the
-    /// <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
+    /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
     /// long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen
     /// '-', period '.', and at sign '@'. The user name can't start
     /// with a hyphen, period, or at sign.</p>
@@ -5711,6 +7233,8 @@ pub struct CreateServerInput {
     pub security_policy_name: std::option::Option<std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for servers.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+    pub workflow_details: std::option::Option<crate::model::WorkflowDetails>,
 }
 impl std::fmt::Debug for CreateServerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5726,6 +7250,7 @@ impl std::fmt::Debug for CreateServerInput {
         formatter.field("protocols", &self.protocols);
         formatter.field("security_policy_name", &self.security_policy_name);
         formatter.field("tags", &self.tags);
+        formatter.field("workflow_details", &self.workflow_details);
         formatter.finish()
     }
 }
@@ -5738,7 +7263,7 @@ pub struct CreateAccessInput {
     pub home_directory: std::option::Option<std::string::String>,
     /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
     /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-    /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
     /// S3 or EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
     /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
@@ -5753,7 +7278,7 @@ pub struct CreateAccessInput {
     /// <p>
     /// <code>[ { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code>
     /// </p>
-    /// <p>In most cases, you can use this value instead of the scope-down policy to lock down your
+    /// <p>In most cases, you can use this value instead of the session policy to lock down your
     /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
     /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
     /// <code>HomeDirectory</code> parameter value.</p>
@@ -5771,15 +7296,16 @@ pub struct CreateAccessInput {
     /// </note>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
-    /// <p>A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
     /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
     /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
     /// <note>
-    /// <p>This only applies when domain of <code>ServerId</code> is S3.
-    /// Amazon EFS does not use scope-down policies.</p>
-    /// <p>For scope-down policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
-    /// <p>For an example of a scope-down policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/scope-down-policy.html">Example
-    /// scope-down policy</a>.</p>
+    /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
+    /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+    /// it in the <code>Policy</code> argument.</p>      
+    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
+    /// session policy</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API
     /// Reference</i>.</p>
     /// </note>

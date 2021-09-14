@@ -9683,7 +9683,7 @@ impl NoSuchConfigurationRecorderException {
     }
 }
 
-/// <p>You specified an AWS Config rule without a remediation configuration.</p>
+/// <p>You specified an Config rule without a remediation configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchRemediationConfigurationException {
@@ -9811,10 +9811,10 @@ impl InvalidParameterValueException {
 /// <p>Indicates one of the following errors:</p>
 /// <ul>
 /// <li>
-/// <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS Config lacks permissions to perform the config:Put* action.</p>
+/// <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p>
 /// </li>
 /// <li>
-/// <p>For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p>
+/// <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p>
 /// </li>
 /// <li>
 /// <p>For PutOrganizationConfigRule, organization config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p>
@@ -9958,13 +9958,13 @@ impl NoAvailableDeliveryChannelException {
 /// <p>You see this exception in the following cases: </p>
 /// <ul>
 /// <li>
-/// <p>For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.</p>
+/// <p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p>
 /// </li>
 /// <li>
 /// <p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p>
 /// </li>
 /// <li>
-/// <p>For DeleteConfigRule, a remediation action is associated with the rule and AWS Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p>
+/// <p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p>
 /// </li>
 /// <li>
 /// <p>For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again later.</p>
@@ -10040,7 +10040,7 @@ impl ResourceInUseException {
     }
 }
 
-/// <p>One or more AWS Config rules in the request are invalid. Verify
+/// <p>One or more Config rules in the request are invalid. Verify
 /// that the rule names are correct and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -10733,7 +10733,7 @@ impl OrganizationConformancePackTemplateValidationException {
     }
 }
 
-/// <p>AWS Config resource cannot be created because your organization does not have all features enabled.</p>
+/// <p>Config resource cannot be created because your organization does not have all features enabled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationAllFeaturesNotEnabledException {
@@ -10801,19 +10801,19 @@ impl OrganizationAllFeaturesNotEnabledException {
 /// <p>No permission to call <code>EnableAWSServiceAccess</code> API</p>
 /// </li>
 /// <li>
-/// <p>The configuration aggregator cannot be updated because your AWS Organization management account or the delegated administrator role changed.
-/// Delete this aggregator and create a new one with the current AWS Organization.</p>
+/// <p>The configuration aggregator cannot be updated because your Amazon Web Services Organization management account or the delegated administrator role changed.
+/// Delete this aggregator and create a new one with the current Amazon Web Services Organization.</p>
 /// </li>
 /// <li>
-/// <p>The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot aggregate data with current AWS Organization.
-/// Delete this aggregator and create a new one with the current AWS Organization.</p>
+/// <p>The configuration aggregator is associated with a previous Amazon Web Services Organization and Config cannot aggregate data with current Amazon Web Services Organization.
+/// Delete this aggregator and create a new one with the current Amazon Web Services Organization.</p>
 /// </li>
 /// <li>
-/// <p>You are not a registered delegated administrator for AWS Config with permissions to call <code>ListDelegatedAdministrators</code> API.
-/// Ensure that the management account registers delagated administrator for AWS Config service principle name before the delegated administrator creates an aggregator.</p>
+/// <p>You are not a registered delegated administrator for Config with permissions to call <code>ListDelegatedAdministrators</code> API.
+/// Ensure that the management account registers delagated administrator for Config service principle name before the delegated administrator creates an aggregator.</p>
 /// </li>
 /// </ul>  
-/// <p>For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config throws an exception if APIs are called from member accounts. All APIs must be called from organization master account.</p>
+/// <p>For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an exception if APIs are called from member accounts. All APIs must be called from organization master account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationAccessDeniedException {
@@ -10937,7 +10937,7 @@ impl NoAvailableOrganizationException {
     }
 }
 
-/// <p>You have reached the limit (6) of the number of organization conformance packs in an account (6 conformance pack with 25 AWS Config rules per pack per account).</p>
+/// <p>You have reached the limit (6) of the number of organization conformance packs in an account (6 conformance pack with 25 Config rules per pack per account).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxNumberOfOrganizationConformancePacksExceededException {
@@ -11572,7 +11572,7 @@ impl InvalidDeliveryChannelNameException {
     }
 }
 
-/// <p>Your Amazon S3 bucket policy does not permit AWS Config to
+/// <p>Your Amazon S3 bucket policy does not permit Config to
 /// write to it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -11635,7 +11635,7 @@ impl InsufficientDeliveryPolicyException {
     }
 }
 
-/// <p>You have reached the limit (6) of the number of conformance packs in an account (6 conformance pack with 25 AWS Config rules per pack).</p>
+/// <p>You have reached the limit (6) of the number of conformance packs in an account (6 conformance pack with 25 Config rules per pack).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxNumberOfConformancePacksExceededException {
@@ -11885,7 +11885,7 @@ impl InvalidRoleException {
     }
 }
 
-/// <p>AWS Config throws an exception if the recording group does not contain a valid list of resource types. Invalid values might also be incorrectly formatted.</p>
+/// <p>Config throws an exception if the recording group does not contain a valid list of resource types. Invalid values might also be incorrectly formatted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRecordingGroupException {
@@ -12010,7 +12010,7 @@ impl InvalidConfigurationRecorderNameException {
     }
 }
 
-/// <p>Failed to add the AWS Config rule because the account already
+/// <p>Failed to add the Config rule because the account already
 /// contains the maximum number of 150 rules. Consider deleting any
 /// deactivated rules before you add new rules.</p>
 #[non_exhaustive]
@@ -12200,7 +12200,7 @@ impl InvalidTimeRangeException {
     }
 }
 
-/// <p>AWS Config organization conformance pack that you passed in the filter does not exist.</p>
+/// <p>Config organization conformance pack that you passed in the filter does not exist.</p>
 /// <p>For DeleteOrganizationConformancePack, you tried to delete an organization conformance pack that does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -12387,7 +12387,7 @@ impl NoSuchConformancePackException {
     }
 }
 
-/// <p>AWS Config rule that you passed in the filter does not exist.</p>
+/// <p>Config rule that you passed in the filter does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchConfigRuleInConformancePackException {
@@ -12698,7 +12698,7 @@ impl NoSuchRemediationExceptionException {
     }
 }
 
-/// <p>Remediation action is in progress. You can either cancel execution in AWS Systems Manager or wait and try again later. </p>
+/// <p>Remediation action is in progress. You can either cancel execution in Amazon Web Services Systems Manager or wait and try again later. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemediationInProgressException {

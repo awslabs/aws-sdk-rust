@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_internal_server_errorjson_err(
+pub fn deser_structure_crate_error_internal_server_errorjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_error::Builder,
 ) -> Result<crate::error::internal_server_error::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_internal_server_errorjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_stream(
+pub fn deser_operation_crate_operation_describe_stream(
     input: &[u8],
     mut builder: crate::output::describe_stream_output::Builder,
 ) -> Result<crate::output::describe_stream_output::Builder, smithy_json::deserialize::Error> {
@@ -99,7 +99,9 @@ pub fn deser_operation_describe_stream(
                 match key.to_unescaped()?.as_ref() {
                     "StreamDescription" => {
                         builder = builder.set_stream_description(
-                            crate::json_deser::deser_structure_stream_description(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_stream_description(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -120,7 +122,7 @@ pub fn deser_operation_describe_stream(
     Ok(builder)
 }
 
-pub fn deser_structure_expired_iterator_exceptionjson_err(
+pub fn deser_structure_crate_error_expired_iterator_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::expired_iterator_exception::Builder,
 ) -> Result<crate::error::expired_iterator_exception::Builder, smithy_json::deserialize::Error> {
@@ -159,7 +161,7 @@ pub fn deser_structure_expired_iterator_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -198,7 +200,7 @@ pub fn deser_structure_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_trimmed_data_access_exceptionjson_err(
+pub fn deser_structure_crate_error_trimmed_data_access_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::trimmed_data_access_exception::Builder,
 ) -> Result<crate::error::trimmed_data_access_exception::Builder, smithy_json::deserialize::Error> {
@@ -237,7 +239,7 @@ pub fn deser_structure_trimmed_data_access_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_records(
+pub fn deser_operation_crate_operation_get_records(
     input: &[u8],
     mut builder: crate::output::get_records_output::Builder,
 ) -> Result<crate::output::get_records_output::Builder, smithy_json::deserialize::Error> {
@@ -252,8 +254,9 @@ pub fn deser_operation_get_records(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Records" => {
-                        builder =
-                            builder.set_records(crate::json_deser::deser_list_record_list(tokens)?);
+                        builder = builder.set_records(
+                            crate::json_deser::deser_list_com_amazonaws_dynamodbstreams_record_list(tokens)?
+                        );
                     }
                     "NextShardIterator" => {
                         builder = builder.set_next_shard_iterator(
@@ -280,7 +283,7 @@ pub fn deser_operation_get_records(
     Ok(builder)
 }
 
-pub fn deser_operation_get_shard_iterator(
+pub fn deser_operation_crate_operation_get_shard_iterator(
     input: &[u8],
     mut builder: crate::output::get_shard_iterator_output::Builder,
 ) -> Result<crate::output::get_shard_iterator_output::Builder, smithy_json::deserialize::Error> {
@@ -319,7 +322,7 @@ pub fn deser_operation_get_shard_iterator(
     Ok(builder)
 }
 
-pub fn deser_operation_list_streams(
+pub fn deser_operation_crate_operation_list_streams(
     input: &[u8],
     mut builder: crate::output::list_streams_output::Builder,
 ) -> Result<crate::output::list_streams_output::Builder, smithy_json::deserialize::Error> {
@@ -334,8 +337,9 @@ pub fn deser_operation_list_streams(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Streams" => {
-                        builder =
-                            builder.set_streams(crate::json_deser::deser_list_stream_list(tokens)?);
+                        builder = builder.set_streams(
+                            crate::json_deser::deser_list_com_amazonaws_dynamodbstreams_stream_list(tokens)?
+                        );
                     }
                     "LastEvaluatedStreamArn" => {
                         builder = builder.set_last_evaluated_stream_arn(
@@ -370,7 +374,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_stream_description<'a, I>(
+pub fn deser_structure_crate_model_stream_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::StreamDescription>, smithy_json::deserialize::Error>
 where
@@ -449,12 +453,12 @@ where
                             }
                             "KeySchema" => {
                                 builder = builder.set_key_schema(
-                                    crate::json_deser::deser_list_key_schema(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_dynamodbstreams_key_schema(tokens)?
                                 );
                             }
                             "Shards" => {
                                 builder = builder.set_shards(
-                                    crate::json_deser::deser_list_shard_description_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_dynamodbstreams_shard_description_list(tokens)?
                                 );
                             }
                             "LastEvaluatedShardId" => {
@@ -485,7 +489,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_record_list<'a, I>(
+pub fn deser_list_com_amazonaws_dynamodbstreams_record_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Record>>, smithy_json::deserialize::Error>
 where
@@ -504,7 +508,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_record(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_record(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -520,7 +524,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_stream_list<'a, I>(
+pub fn deser_list_com_amazonaws_dynamodbstreams_stream_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Stream>>, smithy_json::deserialize::Error>
 where
@@ -539,7 +543,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_stream(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_stream(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -555,7 +559,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_key_schema<'a, I>(
+pub fn deser_list_com_amazonaws_dynamodbstreams_key_schema<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::KeySchemaElement>>, smithy_json::deserialize::Error>
 where
@@ -574,7 +578,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_key_schema_element(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_key_schema_element(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -590,7 +597,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_shard_description_list<'a, I>(
+pub fn deser_list_com_amazonaws_dynamodbstreams_shard_description_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Shard>>, smithy_json::deserialize::Error>
 where
@@ -609,7 +616,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_shard(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_shard(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -624,7 +631,7 @@ where
     }
 }
 
-pub fn deser_structure_record<'a, I>(
+pub fn deser_structure_crate_model_record<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Record>, smithy_json::deserialize::Error>
 where
@@ -692,12 +699,16 @@ where
                             }
                             "dynamodb" => {
                                 builder = builder.set_dynamodb(
-                                    crate::json_deser::deser_structure_stream_record(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_stream_record(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "userIdentity" => {
                                 builder = builder.set_user_identity(
-                                    crate::json_deser::deser_structure_identity(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_identity(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -718,7 +729,7 @@ where
     }
 }
 
-pub fn deser_structure_stream<'a, I>(
+pub fn deser_structure_crate_model_stream<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Stream>, smithy_json::deserialize::Error>
 where
@@ -781,7 +792,7 @@ where
     }
 }
 
-pub fn deser_structure_key_schema_element<'a, I>(
+pub fn deser_structure_crate_model_key_schema_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::KeySchemaElement>, smithy_json::deserialize::Error>
 where
@@ -838,7 +849,7 @@ where
     }
 }
 
-pub fn deser_structure_shard<'a, I>(
+pub fn deser_structure_crate_model_shard<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Shard>, smithy_json::deserialize::Error>
 where
@@ -867,9 +878,7 @@ where
                             }
                             "SequenceNumberRange" => {
                                 builder = builder.set_sequence_number_range(
-                                    crate::json_deser::deser_structure_sequence_number_range(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_sequence_number_range(tokens)?
                                 );
                             }
                             "ParentShardId" => {
@@ -899,7 +908,7 @@ where
     }
 }
 
-pub fn deser_structure_stream_record<'a, I>(
+pub fn deser_structure_crate_model_stream_record<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::StreamRecord>, smithy_json::deserialize::Error>
 where
@@ -926,17 +935,18 @@ where
                                 );
                             }
                             "Keys" => {
-                                builder = builder
-                                    .set_keys(crate::json_deser::deser_map_attribute_map(tokens)?);
+                                builder = builder.set_keys(
+                                    crate::json_deser::deser_map_com_amazonaws_dynamodbstreams_attribute_map(tokens)?
+                                );
                             }
                             "NewImage" => {
                                 builder = builder.set_new_image(
-                                    crate::json_deser::deser_map_attribute_map(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_dynamodbstreams_attribute_map(tokens)?
                                 );
                             }
                             "OldImage" => {
                                 builder = builder.set_old_image(
-                                    crate::json_deser::deser_map_attribute_map(tokens)?,
+                                    crate::json_deser::deser_map_com_amazonaws_dynamodbstreams_attribute_map(tokens)?
                                 );
                             }
                             "SequenceNumber" => {
@@ -986,7 +996,7 @@ where
     }
 }
 
-pub fn deser_structure_identity<'a, I>(
+pub fn deser_structure_crate_model_identity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Identity>, smithy_json::deserialize::Error>
 where
@@ -1040,7 +1050,7 @@ where
     }
 }
 
-pub fn deser_structure_sequence_number_range<'a, I>(
+pub fn deser_structure_crate_model_sequence_number_range<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SequenceNumberRange>, smithy_json::deserialize::Error>
 where
@@ -1095,7 +1105,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_attribute_map<'a, I>(
+pub fn deser_map_com_amazonaws_dynamodbstreams_attribute_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
@@ -1115,7 +1125,8 @@ where
                     Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key.to_unescaped().map(|u| u.into_owned())?;
-                        let value = crate::json_deser::deser_union_attribute_value(tokens)?;
+                        let value =
+                            crate::json_deser::deser_union_crate_model_attribute_value(tokens)?;
                         if let Some(value) = value {
                             map.insert(key, value);
                         }
@@ -1135,7 +1146,7 @@ where
     }
 }
 
-pub fn deser_union_attribute_value<'a, I>(
+pub fn deser_union_crate_model_attribute_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AttributeValue>, smithy_json::deserialize::Error>
 where
@@ -1156,77 +1167,76 @@ where
                         ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                        "S" => Some(crate::model::AttributeValue::S(
-                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?
-                                .unwrap_or_default(),
-                        )),
-                        "N" => Some(crate::model::AttributeValue::N(
-                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?
-                                .unwrap_or_default(),
-                        )),
-                        "B" => Some(crate::model::AttributeValue::B(
-                            smithy_json::deserialize::token::expect_blob_or_null(tokens.next())?
-                                .ok_or_else(|| {
-                                    smithy_json::deserialize::Error::custom(
-                                        "value for 'B' cannot be null",
-                                    )
-                                })?,
-                        )),
-                        "SS" => Some(crate::model::AttributeValue::Ss(
-                            crate::json_deser::deser_list_string_set_attribute_value(tokens)?
-                                .ok_or_else(|| {
-                                    smithy_json::deserialize::Error::custom(
-                                        "value for 'SS' cannot be null",
-                                    )
-                                })?,
-                        )),
-                        "NS" => Some(crate::model::AttributeValue::Ns(
-                            crate::json_deser::deser_list_number_set_attribute_value(tokens)?
-                                .ok_or_else(|| {
-                                    smithy_json::deserialize::Error::custom(
-                                        "value for 'NS' cannot be null",
-                                    )
-                                })?,
-                        )),
-                        "BS" => Some(crate::model::AttributeValue::Bs(
-                            crate::json_deser::deser_list_binary_set_attribute_value(tokens)?
-                                .ok_or_else(|| {
-                                    smithy_json::deserialize::Error::custom(
-                                        "value for 'BS' cannot be null",
-                                    )
-                                })?,
-                        )),
-                        "M" => Some(crate::model::AttributeValue::M(
-                            crate::json_deser::deser_map_map_attribute_value(tokens)?.ok_or_else(
-                                || {
-                                    smithy_json::deserialize::Error::custom(
-                                        "value for 'M' cannot be null",
-                                    )
-                                },
-                            )?,
-                        )),
-                        "L" => Some(crate::model::AttributeValue::L(
-                            crate::json_deser::deser_list_list_attribute_value(tokens)?
-                                .ok_or_else(|| {
-                                    smithy_json::deserialize::Error::custom(
-                                        "value for 'L' cannot be null",
-                                    )
-                                })?,
-                        )),
-                        "NULL" => Some(crate::model::AttributeValue::Null(
-                            smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?
-                                .unwrap_or_default(),
-                        )),
-                        "BOOL" => Some(crate::model::AttributeValue::Bool(
-                            smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?
-                                .unwrap_or_default(),
-                        )),
-                        _ => None,
-                    };
+                            "S" => {
+                                Some(crate::model::AttributeValue::S(
+                                    smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
+                                        s.to_unescaped().map(|u|
+                                            u.into_owned()
+                                        )
+                                    ).transpose()?
+                                    .unwrap_or_default()
+                                ))
+                            }
+                            "N" => {
+                                Some(crate::model::AttributeValue::N(
+                                    smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
+                                        s.to_unescaped().map(|u|
+                                            u.into_owned()
+                                        )
+                                    ).transpose()?
+                                    .unwrap_or_default()
+                                ))
+                            }
+                            "B" => {
+                                Some(crate::model::AttributeValue::B(
+                                    smithy_json::deserialize::token::expect_blob_or_null(tokens.next())?
+                                    .ok_or_else(|| smithy_json::deserialize::Error::custom("value for 'B' cannot be null"))?
+                                ))
+                            }
+                            "SS" => {
+                                Some(crate::model::AttributeValue::Ss(
+                                    crate::json_deser::deser_list_com_amazonaws_dynamodbstreams_string_set_attribute_value(tokens)?
+                                    .ok_or_else(|| smithy_json::deserialize::Error::custom("value for 'SS' cannot be null"))?
+                                ))
+                            }
+                            "NS" => {
+                                Some(crate::model::AttributeValue::Ns(
+                                    crate::json_deser::deser_list_com_amazonaws_dynamodbstreams_number_set_attribute_value(tokens)?
+                                    .ok_or_else(|| smithy_json::deserialize::Error::custom("value for 'NS' cannot be null"))?
+                                ))
+                            }
+                            "BS" => {
+                                Some(crate::model::AttributeValue::Bs(
+                                    crate::json_deser::deser_list_com_amazonaws_dynamodbstreams_binary_set_attribute_value(tokens)?
+                                    .ok_or_else(|| smithy_json::deserialize::Error::custom("value for 'BS' cannot be null"))?
+                                ))
+                            }
+                            "M" => {
+                                Some(crate::model::AttributeValue::M(
+                                    crate::json_deser::deser_map_com_amazonaws_dynamodbstreams_map_attribute_value(tokens)?
+                                    .ok_or_else(|| smithy_json::deserialize::Error::custom("value for 'M' cannot be null"))?
+                                ))
+                            }
+                            "L" => {
+                                Some(crate::model::AttributeValue::L(
+                                    crate::json_deser::deser_list_com_amazonaws_dynamodbstreams_list_attribute_value(tokens)?
+                                    .ok_or_else(|| smithy_json::deserialize::Error::custom("value for 'L' cannot be null"))?
+                                ))
+                            }
+                            "NULL" => {
+                                Some(crate::model::AttributeValue::Null(
+                                    smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?
+                                    .unwrap_or_default()
+                                ))
+                            }
+                            "BOOL" => {
+                                Some(crate::model::AttributeValue::Bool(
+                                    smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?
+                                    .unwrap_or_default()
+                                ))
+                            }
+                            _ => None
+                        };
                 }
                 _ => {
                     return Err(smithy_json::deserialize::Error::custom(
@@ -1245,7 +1255,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_string_set_attribute_value<'a, I>(
+pub fn deser_list_com_amazonaws_dynamodbstreams_string_set_attribute_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1283,7 +1293,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_number_set_attribute_value<'a, I>(
+pub fn deser_list_com_amazonaws_dynamodbstreams_number_set_attribute_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1321,7 +1331,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_binary_set_attribute_value<'a, I>(
+pub fn deser_list_com_amazonaws_dynamodbstreams_binary_set_attribute_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<smithy_types::Blob>>, smithy_json::deserialize::Error>
 where
@@ -1357,7 +1367,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_map_attribute_value<'a, I>(
+pub fn deser_map_com_amazonaws_dynamodbstreams_map_attribute_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
@@ -1377,7 +1387,8 @@ where
                     Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key.to_unescaped().map(|u| u.into_owned())?;
-                        let value = crate::json_deser::deser_union_attribute_value(tokens)?;
+                        let value =
+                            crate::json_deser::deser_union_crate_model_attribute_value(tokens)?;
                         if let Some(value) = value {
                             map.insert(key, value);
                         }
@@ -1398,7 +1409,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_list_attribute_value<'a, I>(
+pub fn deser_list_com_amazonaws_dynamodbstreams_list_attribute_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::AttributeValue>>, smithy_json::deserialize::Error>
 where
@@ -1417,7 +1428,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_union_attribute_value(tokens)?;
+                        let value =
+                            crate::json_deser::deser_union_crate_model_attribute_value(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }

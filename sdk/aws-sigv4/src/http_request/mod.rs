@@ -129,6 +129,7 @@ pub fn calculate_signing_headers<'a, B>(
     } = params;
     let (creq, extra_headers) =
         CanonicalRequest::from(request, body, settings, *date_time, *security_token)?;
+    tracing::trace!(canonical_request = %creq);
 
     // Step 2: https://docs.aws.amazon.com/en_pv/general/latest/gr/sigv4-create-string-to-sign.html.
     let encoded_creq = &sha256_hex_string(creq.to_string().as_bytes());

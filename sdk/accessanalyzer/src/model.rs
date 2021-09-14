@@ -143,15 +143,15 @@ pub struct AnalyzerSummary {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors
     /// supported resources and generates new findings. The analyzer is <code>Disabled</code> when
-    /// a user action, such as removing trusted access for AWS IAM Access Analyzer from AWS Organizations,
-    /// causes the analyzer to stop generating new findings. The status is <code>Creating</code>
-    /// when the analyzer creation is in progress and <code>Failed</code> when the analyzer
-    /// creation has failed. </p>
+    /// a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes
+    /// the analyzer to stop generating new findings. The status is <code>Creating</code> when the
+    /// analyzer creation is in progress and <code>Failed</code> when the analyzer creation has
+    /// failed. </p>
     pub status: std::option::Option<crate::model::AnalyzerStatus>,
     /// <p>The <code>statusReason</code> provides more details about the current status of the
     /// analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status
     /// is returned. For an analyzer with organization as the type, this failure can be due to an
-    /// issue with creating the service-linked roles required in the member accounts of the AWS
+    /// issue with creating the service-linked roles required in the member accounts of the Amazon Web Services
     /// organization.</p>
     pub status_reason: std::option::Option<crate::model::StatusReason>,
 }
@@ -271,10 +271,10 @@ pub mod analyzer_summary {
         }
         /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors
         /// supported resources and generates new findings. The analyzer is <code>Disabled</code> when
-        /// a user action, such as removing trusted access for AWS IAM Access Analyzer from AWS Organizations,
-        /// causes the analyzer to stop generating new findings. The status is <code>Creating</code>
-        /// when the analyzer creation is in progress and <code>Failed</code> when the analyzer
-        /// creation has failed. </p>
+        /// a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes
+        /// the analyzer to stop generating new findings. The status is <code>Creating</code> when the
+        /// analyzer creation is in progress and <code>Failed</code> when the analyzer creation has
+        /// failed. </p>
         pub fn status(mut self, input: crate::model::AnalyzerStatus) -> Self {
             self.status = Some(input);
             self
@@ -289,7 +289,7 @@ pub mod analyzer_summary {
         /// <p>The <code>statusReason</code> provides more details about the current status of the
         /// analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status
         /// is returned. For an analyzer with organization as the type, this failure can be due to an
-        /// issue with creating the service-linked roles required in the member accounts of the AWS
+        /// issue with creating the service-linked roles required in the member accounts of the Amazon Web Services
         /// organization.</p>
         pub fn status_reason(mut self, input: crate::model::StatusReason) -> Self {
             self.status_reason = Some(input);
@@ -328,7 +328,7 @@ impl AnalyzerSummary {
 /// <p>Provides more details about the current status of the analyzer. For example, if the
 /// creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer
 /// with organization as the type, this failure can be due to an issue with creating the
-/// service-linked roles required in the member accounts of the AWS organization.</p>
+/// service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatusReason {
@@ -1522,13 +1522,13 @@ impl AsRef<str> for FindingStatusUpdate {
 pub struct CloudTrailDetails {
     /// <p>A <code>Trail</code> object that contains settings for a trail.</p>
     pub trails: std::option::Option<std::vec::Vec<crate::model::Trail>>,
-    /// <p>The ARN of the service role that Access Analyzer uses to access your CloudTrail trail and
+    /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and
     /// service last accessed information.</p>
     pub access_role: std::option::Option<std::string::String>,
-    /// <p>The start of the time range for which Access Analyzer reviews your CloudTrail events. Events
+    /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events
     /// with a timestamp before this time are not considered to generate a policy.</p>
     pub start_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The end of the time range for which Access Analyzer reviews your CloudTrail events. Events with
+    /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with
     /// a timestamp after this time are not considered to generate a policy. If this is not
     /// included in the request, the default value is the current time.</p>
     pub end_time: std::option::Option<smithy_types::Instant>,
@@ -1568,7 +1568,7 @@ pub mod cloud_trail_details {
             self.trails = input;
             self
         }
-        /// <p>The ARN of the service role that Access Analyzer uses to access your CloudTrail trail and
+        /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and
         /// service last accessed information.</p>
         pub fn access_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_role = Some(input.into());
@@ -1578,7 +1578,7 @@ pub mod cloud_trail_details {
             self.access_role = input;
             self
         }
-        /// <p>The start of the time range for which Access Analyzer reviews your CloudTrail events. Events
+        /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events
         /// with a timestamp before this time are not considered to generate a policy.</p>
         pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
             self.start_time = Some(input);
@@ -1588,7 +1588,7 @@ pub mod cloud_trail_details {
             self.start_time = input;
             self
         }
-        /// <p>The end of the time range for which Access Analyzer reviews your CloudTrail events. Events with
+        /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with
         /// a timestamp after this time are not considered to generate a policy. If this is not
         /// included in the request, the default value is the current time.</p>
         pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
@@ -1627,7 +1627,7 @@ pub struct Trail {
     /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Possible values are <code>true</code> or <code>false</code>. If set to
-    /// <code>true</code>, Access Analyzer retrieves CloudTrail data from all regions to analyze and
+    /// <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and
     /// generate a policy.</p>
     pub all_regions: std::option::Option<bool>,
 }
@@ -1678,7 +1678,7 @@ pub mod trail {
             self
         }
         /// <p>Possible values are <code>true</code> or <code>false</code>. If set to
-        /// <code>true</code>, Access Analyzer retrieves CloudTrail data from all regions to analyze and
+        /// <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and
         /// generate a policy.</p>
         pub fn all_regions(mut self, input: bool) -> Self {
             self.all_regions = Some(input);
@@ -1958,7 +1958,7 @@ pub struct FindingSummary {
     pub updated_at: std::option::Option<smithy_types::Instant>,
     /// <p>The status of the finding.</p>
     pub status: std::option::Option<crate::model::FindingStatus>,
-    /// <p>The AWS account ID that owns the resource.</p>
+    /// <p>The Amazon Web Services account ID that owns the resource.</p>
     pub resource_owner_account: std::option::Option<std::string::String>,
     /// <p>The error that resulted in an Error finding.</p>
     pub error: std::option::Option<std::string::String>,
@@ -2146,7 +2146,7 @@ pub mod finding_summary {
             self.status = input;
             self
         }
-        /// <p>The AWS account ID that owns the resource.</p>
+        /// <p>The Amazon Web Services account ID that owns the resource.</p>
         pub fn resource_owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner_account = Some(input.into());
             self
@@ -2283,7 +2283,8 @@ impl FindingSource {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindingSourceDetail {
-    /// <p>The ARN of the access point that generated the finding.</p>
+    /// <p>The ARN of the access point that generated the finding. The ARN format depends on
+    /// whether the ARN represents an access point or a multi-region access point.</p>
     pub access_point_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FindingSourceDetail {
@@ -2302,7 +2303,8 @@ pub mod finding_source_detail {
         pub(crate) access_point_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the access point that generated the finding.</p>
+        /// <p>The ARN of the access point that generated the finding. The ARN format depends on
+        /// whether the ARN represents an access point or a multi-region access point.</p>
         pub fn access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_point_arn = Some(input.into());
             self
@@ -2628,7 +2630,7 @@ impl AsRef<str> for OrderBy {
 pub struct AnalyzedResourceSummary {
     /// <p>The ARN of the analyzed resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID that owns the resource.</p>
+    /// <p>The Amazon Web Services account ID that owns the resource.</p>
     pub resource_owner_account: std::option::Option<std::string::String>,
     /// <p>The type of resource that was analyzed.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
@@ -2662,7 +2664,7 @@ pub mod analyzed_resource_summary {
             self.resource_arn = input;
             self
         }
-        /// <p>The AWS account ID that owns the resource.</p>
+        /// <p>The Amazon Web Services account ID that owns the resource.</p>
         pub fn resource_owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner_account = Some(input.into());
             self
@@ -3010,7 +3012,8 @@ pub struct AccessPreviewFinding {
     /// list of access preview findings and is not related to the finding ID in Access
     /// Analyzer.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The existing ID of the finding in Access Analyzer, provided only for existing findings.</p>
+    /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing
+    /// findings.</p>
     pub existing_finding_id: std::option::Option<std::string::String>,
     /// <p>The existing status of the finding, provided only for existing findings.</p>
     pub existing_finding_status: std::option::Option<crate::model::FindingStatus>,
@@ -3034,7 +3037,7 @@ pub struct AccessPreviewFinding {
     /// <p>The time at which the access preview finding was created.</p>
     pub created_at: std::option::Option<smithy_types::Instant>,
     /// <p>Provides context on how the access preview finding compares to existing access
-    /// identified in Access Analyzer.</p>
+    /// identified in IAM Access Analyzer.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -3061,7 +3064,7 @@ pub struct AccessPreviewFinding {
     /// <code>Active</code> finding would become <code>Resolved</code> as a result of the
     /// proposed permissions change.</p>
     pub status: std::option::Option<crate::model::FindingStatus>,
-    /// <p>The AWS account ID that owns the resource. For most AWS resources, the owning
+    /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning
     /// account is the account in which the resource was created.</p>
     pub resource_owner_account: std::option::Option<std::string::String>,
     /// <p>An error.</p>
@@ -3129,7 +3132,8 @@ pub mod access_preview_finding {
             self.id = input;
             self
         }
-        /// <p>The existing ID of the finding in Access Analyzer, provided only for existing findings.</p>
+        /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing
+        /// findings.</p>
         pub fn existing_finding_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.existing_finding_id = Some(input.into());
             self
@@ -3246,7 +3250,7 @@ pub mod access_preview_finding {
             self
         }
         /// <p>Provides context on how the access preview finding compares to existing access
-        /// identified in Access Analyzer.</p>
+        /// identified in IAM Access Analyzer.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -3293,7 +3297,7 @@ pub mod access_preview_finding {
             self.status = input;
             self
         }
-        /// <p>The AWS account ID that owns the resource. For most AWS resources, the owning
+        /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning
         /// account is the account in which the resource was created.</p>
         pub fn resource_owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner_account = Some(input.into());
@@ -3538,9 +3542,9 @@ impl GeneratedPolicy {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeneratedPolicyProperties {
-    /// <p>This value is set to <code>true</code> if the generated policy contains all possible actions for a
-    /// service that Access Analyzer identified from the CloudTrail trail that you specified, and
-    /// <code>false</code> otherwise.</p>
+    /// <p>This value is set to <code>true</code> if the generated policy contains all possible
+    /// actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified,
+    /// and <code>false</code> otherwise.</p>
     pub is_complete: std::option::Option<bool>,
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
     pub principal_arn: std::option::Option<std::string::String>,
@@ -3567,9 +3571,9 @@ pub mod generated_policy_properties {
         pub(crate) cloud_trail_properties: std::option::Option<crate::model::CloudTrailProperties>,
     }
     impl Builder {
-        /// <p>This value is set to <code>true</code> if the generated policy contains all possible actions for a
-        /// service that Access Analyzer identified from the CloudTrail trail that you specified, and
-        /// <code>false</code> otherwise.</p>
+        /// <p>This value is set to <code>true</code> if the generated policy contains all possible
+        /// actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified,
+        /// and <code>false</code> otherwise.</p>
         pub fn is_complete(mut self, input: bool) -> Self {
             self.is_complete = Some(input);
             self
@@ -3626,10 +3630,10 @@ pub struct CloudTrailProperties {
     /// <p>A <code>TrailProperties</code> object that contains settings for trail
     /// properties.</p>
     pub trail_properties: std::option::Option<std::vec::Vec<crate::model::TrailProperties>>,
-    /// <p>The start of the time range for which Access Analyzer reviews your CloudTrail events. Events
+    /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events
     /// with a timestamp before this time are not considered to generate a policy.</p>
     pub start_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The end of the time range for which Access Analyzer reviews your CloudTrail events. Events with
+    /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with
     /// a timestamp after this time are not considered to generate a policy. If this is not
     /// included in the request, the default value is the current time.</p>
     pub end_time: std::option::Option<smithy_types::Instant>,
@@ -3668,7 +3672,7 @@ pub mod cloud_trail_properties {
             self.trail_properties = input;
             self
         }
-        /// <p>The start of the time range for which Access Analyzer reviews your CloudTrail events. Events
+        /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events
         /// with a timestamp before this time are not considered to generate a policy.</p>
         pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
             self.start_time = Some(input);
@@ -3678,7 +3682,7 @@ pub mod cloud_trail_properties {
             self.start_time = input;
             self
         }
-        /// <p>The end of the time range for which Access Analyzer reviews your CloudTrail events. Events with
+        /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with
         /// a timestamp after this time are not considered to generate a policy. If this is not
         /// included in the request, the default value is the current time.</p>
         pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
@@ -3716,7 +3720,7 @@ pub struct TrailProperties {
     /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Possible values are <code>true</code> or <code>false</code>. If set to
-    /// <code>true</code>, Access Analyzer retrieves CloudTrail data from all regions to analyze and
+    /// <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and
     /// generate a policy.</p>
     pub all_regions: std::option::Option<bool>,
 }
@@ -3767,7 +3771,7 @@ pub mod trail_properties {
             self
         }
         /// <p>Possible values are <code>true</code> or <code>false</code>. If set to
-        /// <code>true</code>, Access Analyzer retrieves CloudTrail data from all regions to analyze and
+        /// <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and
         /// generate a policy.</p>
         pub fn all_regions(mut self, input: bool) -> Self {
             self.all_regions = Some(input);
@@ -3809,7 +3813,7 @@ pub struct JobDetails {
     pub started_on: std::option::Option<smithy_types::Instant>,
     /// <p>A timestamp of when the job was completed.</p>
     pub completed_on: std::option::Option<smithy_types::Instant>,
-    /// <p>Contains the details about the policy generation error.</p>
+    /// <p>The job error for the policy generation request.</p>
     pub job_error: std::option::Option<crate::model::JobError>,
 }
 impl std::fmt::Debug for JobDetails {
@@ -3878,7 +3882,7 @@ pub mod job_details {
             self.completed_on = input;
             self
         }
-        /// <p>Contains the details about the policy generation error.</p>
+        /// <p>The job error for the policy generation request.</p>
         pub fn job_error(mut self, input: crate::model::JobError) -> Self {
             self.job_error = Some(input);
             self
@@ -4060,7 +4064,7 @@ pub struct Finding {
     pub updated_at: std::option::Option<smithy_types::Instant>,
     /// <p>The current status of the finding.</p>
     pub status: std::option::Option<crate::model::FindingStatus>,
-    /// <p>The AWS account ID that owns the resource.</p>
+    /// <p>The Amazon Web Services account ID that owns the resource.</p>
     pub resource_owner_account: std::option::Option<std::string::String>,
     /// <p>An error.</p>
     pub error: std::option::Option<std::string::String>,
@@ -4247,7 +4251,7 @@ pub mod finding {
             self.status = input;
             self
         }
-        /// <p>The AWS account ID that owns the resource.</p>
+        /// <p>The Amazon Web Services account ID that owns the resource.</p>
         pub fn resource_owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner_account = Some(input.into());
             self
@@ -4334,7 +4338,7 @@ pub struct AnalyzedResource {
     pub shared_via: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The current status of the finding generated from the analyzed resource.</p>
     pub status: std::option::Option<crate::model::FindingStatus>,
-    /// <p>The AWS account ID that owns the resource.</p>
+    /// <p>The Amazon Web Services account ID that owns the resource.</p>
     pub resource_owner_account: std::option::Option<std::string::String>,
     /// <p>An error message.</p>
     pub error: std::option::Option<std::string::String>,
@@ -4474,7 +4478,7 @@ pub mod analyzed_resource {
             self.status = input;
             self
         }
-        /// <p>The AWS account ID that owns the resource.</p>
+        /// <p>The Amazon Web Services account ID that owns the resource.</p>
         pub fn resource_owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner_account = Some(input.into());
             self
@@ -4704,7 +4708,7 @@ pub enum Configuration {
     S3Bucket(crate::model::S3BucketConfiguration),
     /// <p>The access control configuration is for a Secrets Manager secret.</p>
     SecretsManagerSecret(crate::model::SecretsManagerSecretConfiguration),
-    /// <p>The access control configuration is for an SQS queue. </p>
+    /// <p>The access control configuration is for an Amazon SQS queue. </p>
     SqsQueue(crate::model::SqsQueueConfiguration),
 }
 impl Configuration {
@@ -4762,19 +4766,19 @@ impl Configuration {
     }
 }
 
-/// <p>The proposed access control configuration for an SQS queue. You can propose a
-/// configuration for a new SQS queue or an existing SQS queue that you own by specifying the
-/// SQS policy. If the configuration is for an existing SQS queue and you do not specify the
-/// SQS policy, the access preview uses the existing SQS policy for the queue. If the access
-/// preview is for a new resource and you do not specify the policy, the access preview assumes
-/// an SQS queue without a policy. To propose deletion of an existing SQS queue policy, you can
-/// specify an empty string for the SQS policy. For more information about SQS policy limits,
-/// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-policies.html">Quotas related
+/// <p>The proposed access control configuration for an Amazon SQS queue. You can propose a
+/// configuration for a new Amazon SQS queue or an existing Amazon SQS queue that you own by specifying
+/// the Amazon SQS policy. If the configuration is for an existing Amazon SQS queue and you do not
+/// specify the Amazon SQS policy, the access preview uses the existing Amazon SQS policy for the queue.
+/// If the access preview is for a new resource and you do not specify the policy, the access
+/// preview assumes an Amazon SQS queue without a policy. To propose deletion of an existing Amazon SQS
+/// queue policy, you can specify an empty string for the Amazon SQS policy. For more information
+/// about Amazon SQS policy limits, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-policies.html">Quotas related
 /// to policies</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqsQueueConfiguration {
-    /// <p> The proposed resource policy for the SQS queue. </p>
+    /// <p> The proposed resource policy for the Amazon SQS queue. </p>
     pub queue_policy: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SqsQueueConfiguration {
@@ -4793,7 +4797,7 @@ pub mod sqs_queue_configuration {
         pub(crate) queue_policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The proposed resource policy for the SQS queue. </p>
+        /// <p> The proposed resource policy for the Amazon SQS queue. </p>
         pub fn queue_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.queue_policy = Some(input.into());
             self
@@ -4819,13 +4823,13 @@ impl SqsQueueConfiguration {
 
 /// <p>Proposed access control configuration for an Amazon S3 bucket. You can propose a
 /// configuration for a new Amazon S3 bucket or an existing Amazon S3 bucket that you own by specifying
-/// the Amazon S3 bucket policy, bucket ACLs, bucket BPA settings, and Amazon S3 access points attached
-/// to the bucket. If the configuration is for an existing Amazon S3 bucket and you do not specify
-/// the Amazon S3 bucket policy, the access preview uses the existing policy attached to the bucket.
-/// If the access preview is for a new resource and you do not specify the Amazon S3 bucket policy,
-/// the access preview assumes a bucket without a policy. To propose deletion of an existing
-/// bucket policy, you can specify an empty string. For more information about bucket policy
-/// limits, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html">Bucket Policy
+/// the Amazon S3 bucket policy, bucket ACLs, bucket BPA settings, Amazon S3 access points, and
+/// multi-region access points attached to the bucket. If the configuration is for an existing
+/// Amazon S3 bucket and you do not specify the Amazon S3 bucket policy, the access preview uses the
+/// existing policy attached to the bucket. If the access preview is for a new resource and you
+/// do not specify the Amazon S3 bucket policy, the access preview assumes a bucket without a
+/// policy. To propose deletion of an existing bucket policy, you can specify an empty string.
+/// For more information about bucket policy limits, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html">Bucket Policy
 /// Examples</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4841,7 +4845,8 @@ pub struct S3BucketConfiguration {
     /// <p>The proposed block public access configuration for the Amazon S3 bucket.</p>
     pub bucket_public_access_block:
         std::option::Option<crate::model::S3PublicAccessBlockConfiguration>,
-    /// <p>The configuration of Amazon S3 access points for the bucket.</p>
+    /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket.
+    /// You can propose up to 10 new access points per bucket.</p>
     pub access_points: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::S3AccessPointConfiguration>,
     >,
@@ -4961,26 +4966,28 @@ impl S3BucketConfiguration {
     }
 }
 
-/// <p>The configuration for an Amazon S3 access point for the bucket. You can propose up to 10
-/// access points per bucket. If the proposed Amazon S3 access point configuration is for an
-/// existing bucket, the access preview uses the proposed access point configuration in place
-/// of the existing access points. To propose an access point without a policy, you can provide
-/// an empty string as the access point policy. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating access points</a>. For more information about access point policy limits,
+/// <p>The configuration for an Amazon S3 access point or multi-region access point for the bucket.
+/// You can propose up to 10 access points or multi-region access points per bucket. If the
+/// proposed Amazon S3 access point configuration is for an existing bucket, the access preview uses
+/// the proposed access point configuration in place of the existing access points. To propose
+/// an access point without a policy, you can provide an empty string as the access point
+/// policy. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating access points</a>. For more information about access point policy limits,
 /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points-restrictions-limitations.html">Access points
 /// restrictions and limitations</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3AccessPointConfiguration {
-    /// <p>The access point policy.</p>
+    /// <p>The access point or multi-region access point policy.</p>
     pub access_point_policy: std::option::Option<std::string::String>,
-    /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 Access
-    /// Point.</p>
+    /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access
+    /// point or multi-region access point.</p>
     pub public_access_block: std::option::Option<crate::model::S3PublicAccessBlockConfiguration>,
     /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this
-    /// Amazon S3 access point. If the access preview is for a new resource and neither is specified,
-    /// the access preview uses <code>Internet</code> for the network origin. If the access preview
-    /// is for an existing resource and neither is specified, the access preview uses the exiting
-    /// network origin.</p>
+    /// Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access
+    /// points. If the access preview is for a new resource and neither is specified, the access
+    /// preview uses <code>Internet</code> for the network origin. If the access preview is for an
+    /// existing resource and neither is specified, the access preview uses the exiting network
+    /// origin.</p>
     pub network_origin: std::option::Option<crate::model::NetworkOriginConfiguration>,
 }
 impl std::fmt::Debug for S3AccessPointConfiguration {
@@ -5004,7 +5011,7 @@ pub mod s3_access_point_configuration {
         pub(crate) network_origin: std::option::Option<crate::model::NetworkOriginConfiguration>,
     }
     impl Builder {
-        /// <p>The access point policy.</p>
+        /// <p>The access point or multi-region access point policy.</p>
         pub fn access_point_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_point_policy = Some(input.into());
             self
@@ -5016,8 +5023,8 @@ pub mod s3_access_point_configuration {
             self.access_point_policy = input;
             self
         }
-        /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 Access
-        /// Point.</p>
+        /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access
+        /// point or multi-region access point.</p>
         pub fn public_access_block(
             mut self,
             input: crate::model::S3PublicAccessBlockConfiguration,
@@ -5033,10 +5040,11 @@ pub mod s3_access_point_configuration {
             self
         }
         /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this
-        /// Amazon S3 access point. If the access preview is for a new resource and neither is specified,
-        /// the access preview uses <code>Internet</code> for the network origin. If the access preview
-        /// is for an existing resource and neither is specified, the access preview uses the exiting
-        /// network origin.</p>
+        /// Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access
+        /// points. If the access preview is for a new resource and neither is specified, the access
+        /// preview uses <code>Internet</code> for the network origin. If the access preview is for an
+        /// existing resource and neither is specified, the access preview uses the exiting network
+        /// origin.</p>
         pub fn network_origin(mut self, input: crate::model::NetworkOriginConfiguration) -> Self {
             self.network_origin = Some(input);
             self
@@ -5068,11 +5076,12 @@ impl S3AccessPointConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum NetworkOriginConfiguration {
-    /// <p>The configuration for the Amazon S3 access point with an <code>Internet</code> origin.</p>
+    /// <p>The configuration for the Amazon S3 access point or multi-region access point with an
+    /// <code>Internet</code> origin.</p>
     InternetConfiguration(crate::model::InternetConfiguration),
-    /// <p> The proposed virtual private cloud (VPC) configuration for the Amazon S3 access point. For
-    /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html">VpcConfiguration</a>.
-    /// </p>
+    /// <p>The proposed virtual private cloud (VPC) configuration for the Amazon S3 access point. VPC
+    /// configuration does not apply to multi-region access points. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html">VpcConfiguration</a>. </p>
     VpcConfiguration(crate::model::VpcConfiguration),
 }
 impl NetworkOriginConfiguration {
@@ -5102,8 +5111,8 @@ impl NetworkOriginConfiguration {
     }
 }
 
-/// <p>This configuration sets the Amazon S3 access point network origin to
-/// <code>Internet</code>.</p>
+/// <p>This configuration sets the network origin for the Amazon S3 access point or multi-region
+/// access point to <code>Internet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternetConfiguration {}
@@ -5133,9 +5142,9 @@ impl InternetConfiguration {
     }
 }
 
-/// <p> The proposed virtual private cloud (VPC) configuration for the Amazon S3 access point. For
-/// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html">VpcConfiguration</a>.
-/// </p>
+/// <p>The proposed virtual private cloud (VPC) configuration for the Amazon S3 access point. VPC
+/// configuration does not apply to multi-region access points. For more information, see
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html">VpcConfiguration</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcConfiguration {
@@ -5188,9 +5197,9 @@ impl VpcConfiguration {
 /// proposed configuration is for an existing Amazon S3 bucket and the configuration is not
 /// specified, the access preview uses the existing setting. If the proposed configuration is
 /// for a new bucket and the configuration is not specified, the access preview uses
-/// <code>false</code>. If the proposed configuration is for a new access point and the
-/// access point BPA configuration is not specified, the access preview uses <code>true</code>.
-/// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html">PublicAccessBlockConfiguration</a>. </p>
+/// <code>false</code>. If the proposed configuration is for a new access point or
+/// multi-region access point and the access point BPA configuration is not specified, the
+/// access preview uses <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html">PublicAccessBlockConfiguration</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3PublicAccessBlockConfiguration {
@@ -5322,7 +5331,7 @@ impl S3BucketAclGrantConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AclGrantee {
-    /// <p>The value specified is the canonical user ID of an AWS account.</p>
+    /// <p>The value specified is the canonical user ID of an Amazon Web Services account.</p>
     Id(std::string::String),
     /// <p>Used for granting permissions to a predefined group.</p>
     Uri(std::string::String),
@@ -5416,15 +5425,15 @@ impl AsRef<str> for AclPermission {
 /// existing policy for the secret. If the access preview is for a new resource and you do not
 /// specify the policy, the access preview assumes a secret without a policy. To propose
 /// deletion of an existing policy, you can specify an empty string. If the proposed
-/// configuration is for a new secret and you do not specify the KMS key ID, the access preview
-/// uses the default CMK of the AWS account. If you specify an empty string for the KMS key
-/// ID, the access preview uses the default CMK of the AWS account. For more information
-/// about secret policy limits, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html">Quotas for AWS Secrets
-/// Manager.</a>.</p>
+/// configuration is for a new secret and you do not specify the KMS key ID, the access
+/// preview uses the default CMK of the Amazon Web Services account. If you specify an empty string for the
+/// KMS key ID, the access preview uses the default CMK of the Amazon Web Services account. For more
+/// information about secret policy limits, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html">Quotas for
+/// Secrets Manager.</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecretsManagerSecretConfiguration {
-    /// <p>The proposed ARN, key ID, or alias of the AWS KMS customer master key (CMK).</p>
+    /// <p>The proposed ARN, key ID, or alias of the KMS customer master key (CMK).</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The proposed resource policy defining who can access or manage the secret.</p>
     pub secret_policy: std::option::Option<std::string::String>,
@@ -5447,7 +5456,7 @@ pub mod secrets_manager_secret_configuration {
         pub(crate) secret_policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The proposed ARN, key ID, or alias of the AWS KMS customer master key (CMK).</p>
+        /// <p>The proposed ARN, key ID, or alias of the KMS customer master key (CMK).</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -5484,21 +5493,21 @@ impl SecretsManagerSecretConfiguration {
     }
 }
 
-/// <p>Proposed access control configuration for a KMS key. You can propose a configuration for
-/// a new KMS key or an existing KMS key that you own by specifying the key policy and KMS
-/// grant configuration. If the configuration is for an existing key and you do not specify the
-/// key policy, the access preview uses the existing policy for the key. If the access preview
-/// is for a new resource and you do not specify the key policy, then the access preview uses
-/// the default key policy. The proposed key policy cannot be an empty string. For more
-/// information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key
+/// <p>Proposed access control configuration for a KMS key. You can propose a configuration
+/// for a new KMS key or an existing KMS key that you own by specifying the key policy and
+/// KMS grant configuration. If the configuration is for an existing key and you do not
+/// specify the key policy, the access preview uses the existing policy for the key. If the
+/// access preview is for a new resource and you do not specify the key policy, then the access
+/// preview uses the default key policy. The proposed key policy cannot be an empty string. For
+/// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key
 /// policy</a>. For more information about key policy limits, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource
 /// quotas</a>.</p>
 /// <p/>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKeyConfiguration {
-    /// <p>Resource policy configuration for the KMS key. The only valid value for the name of the
-    /// key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key
+    /// <p>Resource policy configuration for the KMS key. The only valid value for the name of
+    /// the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key
     /// policy</a>.</p>
     pub key_policies:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -5592,8 +5601,8 @@ pub struct KmsGrantConfiguration {
     /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
     /// context</a>.</p>
     pub constraints: std::option::Option<crate::model::KmsGrantConstraints>,
-    /// <p> The AWS account under which the grant was issued. The account is used to propose KMS
-    /// grants issued by accounts other than the owner of the key.</p>
+    /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose
+    /// KMS grants issued by accounts other than the owner of the key.</p>
     pub issuing_account: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for KmsGrantConfiguration {
@@ -5673,8 +5682,8 @@ pub mod kms_grant_configuration {
             self.constraints = input;
             self
         }
-        /// <p> The AWS account under which the grant was issued. The account is used to propose KMS
-        /// grants issued by accounts other than the owner of the key.</p>
+        /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose
+        /// KMS grants issued by accounts other than the owner of the key.</p>
         pub fn issuing_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.issuing_account = Some(input.into());
             self

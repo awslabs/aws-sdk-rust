@@ -224,6 +224,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_name(input);
             self
         }
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses an LINEAR PlaybackMode.</p>
+        pub fn filler_slate(mut self, inp: crate::model::SlateSource) -> Self {
+            self.inner = self.inner.filler_slate(inp);
+            self
+        }
+        pub fn set_filler_slate(
+            mut self,
+            input: std::option::Option<crate::model::SlateSource>,
+        ) -> Self {
+            self.inner = self.inner.set_filler_slate(input);
+            self
+        }
         /// Appends an item to `Outputs`.
         ///
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
@@ -239,7 +251,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_outputs(input);
             self
         }
-        /// <p>The type of playback mode for this channel. The only supported value is LOOP.</p>
+        /// <p>The type of playback mode to use for this channel.</p> <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p> <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
         pub fn playback_mode(mut self, inp: crate::model::PlaybackMode) -> Self {
             self.inner = self.inner.playback_mode(inp);
             self

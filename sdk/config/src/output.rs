@@ -182,8 +182,7 @@ impl StartConfigurationRecorderOutput {
     }
 }
 
-/// <p>The output when you start the evaluation for the specified AWS
-/// Config rule.</p>
+/// <p>The output when you start the evaluation for the specified Config rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartConfigRulesEvaluationOutput {}
@@ -1192,8 +1191,7 @@ impl ListStoredQueriesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDiscoveredResourcesOutput {
-    /// <p>The details that identify a resource that is discovered by AWS
-    /// Config, including the resource type, ID, and (if available) the
+    /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the
     /// custom resource name.</p>
     pub resource_identifiers: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifier>>,
     /// <p>The string that you use in a subsequent request to get the next
@@ -1610,16 +1608,16 @@ impl GetOrganizationConfigRuleDetailedStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDiscoveredResourceCountsOutput {
-    /// <p>The total number of resources that AWS Config is recording in
+    /// <p>The total number of resources that Config is recording in
     /// the region for your account. If you specify resource types in the
-    /// request, AWS Config returns only the total number of resources for
+    /// request, Config returns only the total number of resources for
     /// those resource types.</p>
     /// <p class="title">
     /// <b>Example</b>
     /// </p>
     /// <ol>
     /// <li>
-    /// <p>AWS Config is recording three resource types in the US
+    /// <p>Config is recording three resource types in the US
     /// East (Ohio) Region for your account: 25 EC2 instances, 20
     /// IAM users, and 15 S3 buckets, for a total of 60
     /// resources.</p>
@@ -1632,7 +1630,7 @@ pub struct GetDiscoveredResourceCountsOutput {
     /// request.</p>
     /// </li>
     /// <li>
-    /// <p>AWS Config returns 25 for
+    /// <p>Config returns 25 for
     /// <code>totalDiscoveredResources</code>.</p>
     /// </li>
     /// </ol>
@@ -1667,16 +1665,16 @@ pub mod get_discovered_resource_counts_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The total number of resources that AWS Config is recording in
+        /// <p>The total number of resources that Config is recording in
         /// the region for your account. If you specify resource types in the
-        /// request, AWS Config returns only the total number of resources for
+        /// request, Config returns only the total number of resources for
         /// those resource types.</p>
         /// <p class="title">
         /// <b>Example</b>
         /// </p>
         /// <ol>
         /// <li>
-        /// <p>AWS Config is recording three resource types in the US
+        /// <p>Config is recording three resource types in the US
         /// East (Ohio) Region for your account: 25 EC2 instances, 20
         /// IAM users, and 15 S3 buckets, for a total of 60
         /// resources.</p>
@@ -1689,7 +1687,7 @@ pub mod get_discovered_resource_counts_output {
         /// request.</p>
         /// </li>
         /// <li>
-        /// <p>AWS Config returns 25 for
+        /// <p>Config returns 25 for
         /// <code>totalDiscoveredResources</code>.</p>
         /// </li>
         /// </ol>
@@ -1982,7 +1980,7 @@ impl GetComplianceSummaryByResourceTypeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceSummaryByConfigRuleOutput {
-    /// <p>The number of AWS Config rules that are compliant and the
+    /// <p>The number of Config rules that are compliant and the
     /// number that are noncompliant, up to a maximum of 25 for
     /// each.</p>
     pub compliance_summary: std::option::Option<crate::model::ComplianceSummary>,
@@ -2003,7 +2001,7 @@ pub mod get_compliance_summary_by_config_rule_output {
         pub(crate) compliance_summary: std::option::Option<crate::model::ComplianceSummary>,
     }
     impl Builder {
-        /// <p>The number of AWS Config rules that are compliant and the
+        /// <p>The number of Config rules that are compliant and the
         /// number that are noncompliant, up to a maximum of 25 for
         /// each.</p>
         pub fn compliance_summary(mut self, input: crate::model::ComplianceSummary) -> Self {
@@ -2036,8 +2034,7 @@ impl GetComplianceSummaryByConfigRuleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceDetailsByResourceOutput {
-    /// <p>Indicates whether the specified AWS resource complies each AWS
-    /// Config rule.</p>
+    /// <p>Indicates whether the specified Amazon Web Services resource complies each Config rule.</p>
     pub evaluation_results: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
     /// <p>The string that you use in a subsequent request to get the next
     /// page of results in a paginated response.</p>
@@ -2108,8 +2105,8 @@ impl GetComplianceDetailsByResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceDetailsByConfigRuleOutput {
-    /// <p>Indicates whether the AWS resource complies with the specified
-    /// AWS Config rule.</p>
+    /// <p>Indicates whether the Amazon Web Services resource complies with the specified
+    /// Config rule.</p>
     pub evaluation_results: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
     /// <p>The string that you use in a subsequent request to get the next
     /// page of results in a paginated response.</p>
@@ -2331,7 +2328,7 @@ pub struct GetAggregateConformancePackComplianceSummaryOutput {
     /// <p>Returns a list of <code>AggregateConformancePackComplianceSummary</code> object.</p>
     pub aggregate_conformance_pack_compliance_summaries:
         std::option::Option<std::vec::Vec<crate::model::AggregateConformancePackComplianceSummary>>,
-    /// <p>Groups the result based on AWS Account ID or AWS Region.</p>
+    /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     pub group_by_key: std::option::Option<std::string::String>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -2381,7 +2378,7 @@ pub mod get_aggregate_conformance_pack_compliance_summary_output {
             self.aggregate_conformance_pack_compliance_summaries = input;
             self
         }
-        /// <p>Groups the result based on AWS Account ID or AWS Region.</p>
+        /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
         pub fn group_by_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_by_key = Some(input.into());
             self
@@ -3835,7 +3832,7 @@ impl DescribeConfigurationAggregatorsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigRulesOutput {
-    /// <p>The details about your AWS Config rules.</p>
+    /// <p>The details about your Config rules.</p>
     pub config_rules: std::option::Option<std::vec::Vec<crate::model::ConfigRule>>,
     /// <p>The string that you use in a subsequent request to get the next
     /// page of results in a paginated response.</p>
@@ -3902,8 +3899,7 @@ impl DescribeConfigRulesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigRuleEvaluationStatusOutput {
-    /// <p>Status information about your AWS managed Config
-    /// rules.</p>
+    /// <p>Status information about your Config managed rules.</p>
     pub config_rules_evaluation_status:
         std::option::Option<std::vec::Vec<crate::model::ConfigRuleEvaluationStatus>>,
     /// <p>The string that you use in a subsequent request to get the next
@@ -3978,8 +3974,8 @@ impl DescribeConfigRuleEvaluationStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComplianceByResourceOutput {
-    /// <p>Indicates whether the specified AWS resource complies with all
-    /// of the AWS Config rules that evaluate it.</p>
+    /// <p>Indicates whether the specified Amazon Web Services resource complies with all
+    /// of the Config rules that evaluate it.</p>
     pub compliance_by_resources:
         std::option::Option<std::vec::Vec<crate::model::ComplianceByResource>>,
     /// <p>The string that you use in a subsequent request to get the next
@@ -4051,7 +4047,7 @@ impl DescribeComplianceByResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComplianceByConfigRuleOutput {
-    /// <p>Indicates whether each of the specified AWS Config rules is
+    /// <p>Indicates whether each of the specified Config rules is
     /// compliant.</p>
     pub compliance_by_config_rules:
         std::option::Option<std::vec::Vec<crate::model::ComplianceByConfigRule>>,
@@ -4669,7 +4665,7 @@ impl DeleteOrganizationConfigRuleOutput {
 }
 
 /// <p>The output when you delete the evaluation results for the
-/// specified AWS Config rule.</p>
+/// specified Config rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEvaluationResultsOutput {}

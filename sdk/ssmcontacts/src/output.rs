@@ -1477,7 +1477,7 @@ impl DeactivateContactChannelOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactChannelOutput {
-    /// <p>The ARN of the contact channel.</p>
+    /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     pub contact_channel_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateContactChannelOutput {
@@ -1496,7 +1496,7 @@ pub mod create_contact_channel_output {
         pub(crate) contact_channel_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the contact channel.</p>
+        /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
         pub fn contact_channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_channel_arn = Some(input.into());
             self

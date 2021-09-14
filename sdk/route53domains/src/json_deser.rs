@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_domain_limit_exceededjson_err(
+pub fn deser_structure_crate_error_domain_limit_exceededjson_err(
     input: &[u8],
     mut builder: crate::error::domain_limit_exceeded::Builder,
 ) -> Result<crate::error::domain_limit_exceeded::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_domain_limit_exceededjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_inputjson_err(
+pub fn deser_structure_crate_error_invalid_inputjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_input::Builder,
 ) -> Result<crate::error::invalid_input::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_invalid_inputjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_operation_limit_exceededjson_err(
+pub fn deser_structure_crate_error_operation_limit_exceededjson_err(
     input: &[u8],
     mut builder: crate::error::operation_limit_exceeded::Builder,
 ) -> Result<crate::error::operation_limit_exceeded::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_operation_limit_exceededjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_accept_domain_transfer_from_another_aws_account(
+pub fn deser_operation_crate_operation_accept_domain_transfer_from_another_aws_account(
     input: &[u8],
     mut builder: crate::output::accept_domain_transfer_from_another_aws_account_output::Builder,
 ) -> Result<
@@ -164,7 +164,7 @@ pub fn deser_operation_accept_domain_transfer_from_another_aws_account(
     Ok(builder)
 }
 
-pub fn deser_operation_cancel_domain_transfer_to_another_aws_account(
+pub fn deser_operation_crate_operation_cancel_domain_transfer_to_another_aws_account(
     input: &[u8],
     mut builder: crate::output::cancel_domain_transfer_to_another_aws_account_output::Builder,
 ) -> Result<
@@ -206,7 +206,7 @@ pub fn deser_operation_cancel_domain_transfer_to_another_aws_account(
     Ok(builder)
 }
 
-pub fn deser_structure_unsupported_tldjson_err(
+pub fn deser_structure_crate_error_unsupported_tldjson_err(
     input: &[u8],
     mut builder: crate::error::unsupported_tld::Builder,
 ) -> Result<crate::error::unsupported_tld::Builder, smithy_json::deserialize::Error> {
@@ -245,7 +245,7 @@ pub fn deser_structure_unsupported_tldjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_check_domain_availability(
+pub fn deser_operation_crate_operation_check_domain_availability(
     input: &[u8],
     mut builder: crate::output::check_domain_availability_output::Builder,
 ) -> Result<crate::output::check_domain_availability_output::Builder, smithy_json::deserialize::Error>
@@ -288,7 +288,7 @@ pub fn deser_operation_check_domain_availability(
     Ok(builder)
 }
 
-pub fn deser_operation_check_domain_transferability(
+pub fn deser_operation_crate_operation_check_domain_transferability(
     input: &[u8],
     mut builder: crate::output::check_domain_transferability_output::Builder,
 ) -> Result<
@@ -307,7 +307,9 @@ pub fn deser_operation_check_domain_transferability(
                 match key.to_unescaped()?.as_ref() {
                     "Transferability" => {
                         builder = builder.set_transferability(
-                            crate::json_deser::deser_structure_domain_transferability(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_domain_transferability(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -328,7 +330,7 @@ pub fn deser_operation_check_domain_transferability(
     Ok(builder)
 }
 
-pub fn deser_structure_duplicate_requestjson_err(
+pub fn deser_structure_crate_error_duplicate_requestjson_err(
     input: &[u8],
     mut builder: crate::error::duplicate_request::Builder,
 ) -> Result<crate::error::duplicate_request::Builder, smithy_json::deserialize::Error> {
@@ -367,7 +369,7 @@ pub fn deser_structure_duplicate_requestjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_tld_rules_violationjson_err(
+pub fn deser_structure_crate_error_tld_rules_violationjson_err(
     input: &[u8],
     mut builder: crate::error::tld_rules_violation::Builder,
 ) -> Result<crate::error::tld_rules_violation::Builder, smithy_json::deserialize::Error> {
@@ -406,7 +408,7 @@ pub fn deser_structure_tld_rules_violationjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_disable_domain_transfer_lock(
+pub fn deser_operation_crate_operation_disable_domain_transfer_lock(
     input: &[u8],
     mut builder: crate::output::disable_domain_transfer_lock_output::Builder,
 ) -> Result<
@@ -448,7 +450,7 @@ pub fn deser_operation_disable_domain_transfer_lock(
     Ok(builder)
 }
 
-pub fn deser_operation_enable_domain_transfer_lock(
+pub fn deser_operation_crate_operation_enable_domain_transfer_lock(
     input: &[u8],
     mut builder: crate::output::enable_domain_transfer_lock_output::Builder,
 ) -> Result<
@@ -490,7 +492,7 @@ pub fn deser_operation_enable_domain_transfer_lock(
     Ok(builder)
 }
 
-pub fn deser_operation_get_contact_reachability_status(
+pub fn deser_operation_crate_operation_get_contact_reachability_status(
     input: &[u8],
     mut builder: crate::output::get_contact_reachability_status_output::Builder,
 ) -> Result<
@@ -542,7 +544,7 @@ pub fn deser_operation_get_contact_reachability_status(
     Ok(builder)
 }
 
-pub fn deser_operation_get_domain_detail(
+pub fn deser_operation_crate_operation_get_domain_detail(
     input: &[u8],
     mut builder: crate::output::get_domain_detail_output::Builder,
 ) -> Result<crate::output::get_domain_detail_output::Builder, smithy_json::deserialize::Error> {
@@ -565,7 +567,7 @@ pub fn deser_operation_get_domain_detail(
                     }
                     "Nameservers" => {
                         builder = builder.set_nameservers(
-                            crate::json_deser::deser_list_nameserver_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53domains_nameserver_list(tokens)?
                         );
                     }
                     "AutoRenew" => {
@@ -575,17 +577,17 @@ pub fn deser_operation_get_domain_detail(
                     }
                     "AdminContact" => {
                         builder = builder.set_admin_contact(
-                            crate::json_deser::deser_structure_contact_detail(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_contact_detail(tokens)?,
                         );
                     }
                     "RegistrantContact" => {
                         builder = builder.set_registrant_contact(
-                            crate::json_deser::deser_structure_contact_detail(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_contact_detail(tokens)?,
                         );
                     }
                     "TechContact" => {
                         builder = builder.set_tech_contact(
-                            crate::json_deser::deser_structure_contact_detail(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_contact_detail(tokens)?,
                         );
                     }
                     "AdminPrivacy" => {
@@ -685,7 +687,7 @@ pub fn deser_operation_get_domain_detail(
                     }
                     "StatusList" => {
                         builder = builder.set_status_list(
-                            crate::json_deser::deser_list_domain_status_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53domains_domain_status_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -706,7 +708,7 @@ pub fn deser_operation_get_domain_detail(
     Ok(builder)
 }
 
-pub fn deser_operation_get_domain_suggestions(
+pub fn deser_operation_crate_operation_get_domain_suggestions(
     input: &[u8],
     mut builder: crate::output::get_domain_suggestions_output::Builder,
 ) -> Result<crate::output::get_domain_suggestions_output::Builder, smithy_json::deserialize::Error>
@@ -723,7 +725,7 @@ pub fn deser_operation_get_domain_suggestions(
                 match key.to_unescaped()?.as_ref() {
                     "SuggestionsList" => {
                         builder = builder.set_suggestions_list(
-                            crate::json_deser::deser_list_domain_suggestions_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53domains_domain_suggestions_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -744,7 +746,7 @@ pub fn deser_operation_get_domain_suggestions(
     Ok(builder)
 }
 
-pub fn deser_operation_get_operation_detail(
+pub fn deser_operation_crate_operation_get_operation_detail(
     input: &[u8],
     mut builder: crate::output::get_operation_detail_output::Builder,
 ) -> Result<crate::output::get_operation_detail_output::Builder, smithy_json::deserialize::Error> {
@@ -825,7 +827,7 @@ pub fn deser_operation_get_operation_detail(
     Ok(builder)
 }
 
-pub fn deser_operation_list_domains(
+pub fn deser_operation_crate_operation_list_domains(
     input: &[u8],
     mut builder: crate::output::list_domains_output::Builder,
 ) -> Result<crate::output::list_domains_output::Builder, smithy_json::deserialize::Error> {
@@ -841,7 +843,7 @@ pub fn deser_operation_list_domains(
                 match key.to_unescaped()?.as_ref() {
                     "Domains" => {
                         builder = builder.set_domains(
-                            crate::json_deser::deser_list_domain_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53domains_domain_summary_list(tokens)?
                         );
                     }
                     "NextPageMarker" => {
@@ -869,7 +871,7 @@ pub fn deser_operation_list_domains(
     Ok(builder)
 }
 
-pub fn deser_operation_list_operations(
+pub fn deser_operation_crate_operation_list_operations(
     input: &[u8],
     mut builder: crate::output::list_operations_output::Builder,
 ) -> Result<crate::output::list_operations_output::Builder, smithy_json::deserialize::Error> {
@@ -885,7 +887,7 @@ pub fn deser_operation_list_operations(
                 match key.to_unescaped()?.as_ref() {
                     "Operations" => {
                         builder = builder.set_operations(
-                            crate::json_deser::deser_list_operation_summary_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53domains_operation_summary_list(tokens)?
                         );
                     }
                     "NextPageMarker" => {
@@ -913,7 +915,7 @@ pub fn deser_operation_list_operations(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_domain(
+pub fn deser_operation_crate_operation_list_tags_for_domain(
     input: &[u8],
     mut builder: crate::output::list_tags_for_domain_output::Builder,
 ) -> Result<crate::output::list_tags_for_domain_output::Builder, smithy_json::deserialize::Error> {
@@ -928,8 +930,11 @@ pub fn deser_operation_list_tags_for_domain(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "TagList" => {
-                        builder =
-                            builder.set_tag_list(crate::json_deser::deser_list_tag_list(tokens)?);
+                        builder = builder.set_tag_list(
+                            crate::json_deser::deser_list_com_amazonaws_route53domains_tag_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -949,7 +954,7 @@ pub fn deser_operation_list_tags_for_domain(
     Ok(builder)
 }
 
-pub fn deser_operation_register_domain(
+pub fn deser_operation_crate_operation_register_domain(
     input: &[u8],
     mut builder: crate::output::register_domain_output::Builder,
 ) -> Result<crate::output::register_domain_output::Builder, smithy_json::deserialize::Error> {
@@ -988,7 +993,7 @@ pub fn deser_operation_register_domain(
     Ok(builder)
 }
 
-pub fn deser_operation_reject_domain_transfer_from_another_aws_account(
+pub fn deser_operation_crate_operation_reject_domain_transfer_from_another_aws_account(
     input: &[u8],
     mut builder: crate::output::reject_domain_transfer_from_another_aws_account_output::Builder,
 ) -> Result<
@@ -1030,7 +1035,7 @@ pub fn deser_operation_reject_domain_transfer_from_another_aws_account(
     Ok(builder)
 }
 
-pub fn deser_operation_renew_domain(
+pub fn deser_operation_crate_operation_renew_domain(
     input: &[u8],
     mut builder: crate::output::renew_domain_output::Builder,
 ) -> Result<crate::output::renew_domain_output::Builder, smithy_json::deserialize::Error> {
@@ -1069,7 +1074,7 @@ pub fn deser_operation_renew_domain(
     Ok(builder)
 }
 
-pub fn deser_operation_resend_contact_reachability_email(
+pub fn deser_operation_crate_operation_resend_contact_reachability_email(
     input: &[u8],
     mut builder: crate::output::resend_contact_reachability_email_output::Builder,
 ) -> Result<
@@ -1123,7 +1128,7 @@ pub fn deser_operation_resend_contact_reachability_email(
     Ok(builder)
 }
 
-pub fn deser_operation_retrieve_domain_auth_code(
+pub fn deser_operation_crate_operation_retrieve_domain_auth_code(
     input: &[u8],
     mut builder: crate::output::retrieve_domain_auth_code_output::Builder,
 ) -> Result<crate::output::retrieve_domain_auth_code_output::Builder, smithy_json::deserialize::Error>
@@ -1163,7 +1168,7 @@ pub fn deser_operation_retrieve_domain_auth_code(
     Ok(builder)
 }
 
-pub fn deser_operation_transfer_domain(
+pub fn deser_operation_crate_operation_transfer_domain(
     input: &[u8],
     mut builder: crate::output::transfer_domain_output::Builder,
 ) -> Result<crate::output::transfer_domain_output::Builder, smithy_json::deserialize::Error> {
@@ -1202,7 +1207,7 @@ pub fn deser_operation_transfer_domain(
     Ok(builder)
 }
 
-pub fn deser_operation_transfer_domain_to_another_aws_account(
+pub fn deser_operation_crate_operation_transfer_domain_to_another_aws_account(
     input: &[u8],
     mut builder: crate::output::transfer_domain_to_another_aws_account_output::Builder,
 ) -> Result<
@@ -1251,7 +1256,7 @@ pub fn deser_operation_transfer_domain_to_another_aws_account(
     Ok(builder)
 }
 
-pub fn deser_operation_update_domain_contact(
+pub fn deser_operation_crate_operation_update_domain_contact(
     input: &[u8],
     mut builder: crate::output::update_domain_contact_output::Builder,
 ) -> Result<crate::output::update_domain_contact_output::Builder, smithy_json::deserialize::Error> {
@@ -1290,7 +1295,7 @@ pub fn deser_operation_update_domain_contact(
     Ok(builder)
 }
 
-pub fn deser_operation_update_domain_contact_privacy(
+pub fn deser_operation_crate_operation_update_domain_contact_privacy(
     input: &[u8],
     mut builder: crate::output::update_domain_contact_privacy_output::Builder,
 ) -> Result<
@@ -1332,7 +1337,7 @@ pub fn deser_operation_update_domain_contact_privacy(
     Ok(builder)
 }
 
-pub fn deser_operation_update_domain_nameservers(
+pub fn deser_operation_crate_operation_update_domain_nameservers(
     input: &[u8],
     mut builder: crate::output::update_domain_nameservers_output::Builder,
 ) -> Result<crate::output::update_domain_nameservers_output::Builder, smithy_json::deserialize::Error>
@@ -1372,7 +1377,7 @@ pub fn deser_operation_update_domain_nameservers(
     Ok(builder)
 }
 
-pub fn deser_operation_view_billing(
+pub fn deser_operation_crate_operation_view_billing(
     input: &[u8],
     mut builder: crate::output::view_billing_output::Builder,
 ) -> Result<crate::output::view_billing_output::Builder, smithy_json::deserialize::Error> {
@@ -1395,7 +1400,7 @@ pub fn deser_operation_view_billing(
                     }
                     "BillingRecords" => {
                         builder = builder.set_billing_records(
-                            crate::json_deser::deser_list_billing_records(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_route53domains_billing_records(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1424,7 +1429,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_domain_transferability<'a, I>(
+pub fn deser_structure_crate_model_domain_transferability<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DomainTransferability>, smithy_json::deserialize::Error>
 where
@@ -1473,7 +1478,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_nameserver_list<'a, I>(
+pub fn deser_list_com_amazonaws_route53domains_nameserver_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Nameserver>>, smithy_json::deserialize::Error>
 where
@@ -1492,7 +1497,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_nameserver(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_nameserver(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1507,7 +1513,7 @@ where
     }
 }
 
-pub fn deser_structure_contact_detail<'a, I>(
+pub fn deser_structure_crate_model_contact_detail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ContactDetail>, smithy_json::deserialize::Error>
 where
@@ -1650,7 +1656,7 @@ where
                             }
                             "ExtraParams" => {
                                 builder = builder.set_extra_params(
-                                    crate::json_deser::deser_list_extra_param_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_route53domains_extra_param_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1672,7 +1678,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_domain_status_list<'a, I>(
+pub fn deser_list_com_amazonaws_route53domains_domain_status_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -1710,7 +1716,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_domain_suggestions_list<'a, I>(
+pub fn deser_list_com_amazonaws_route53domains_domain_suggestions_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DomainSuggestion>>, smithy_json::deserialize::Error>
 where
@@ -1729,7 +1735,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_domain_suggestion(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_domain_suggestion(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1745,7 +1754,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_domain_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_route53domains_domain_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DomainSummary>>, smithy_json::deserialize::Error>
 where
@@ -1764,7 +1773,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_domain_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_domain_summary(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1780,7 +1790,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_operation_summary_list<'a, I>(
+pub fn deser_list_com_amazonaws_route53domains_operation_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::OperationSummary>>, smithy_json::deserialize::Error>
 where
@@ -1799,7 +1809,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_operation_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_operation_summary(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1815,7 +1828,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_route53domains_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -1834,7 +1847,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1850,7 +1863,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_billing_records<'a, I>(
+pub fn deser_list_com_amazonaws_route53domains_billing_records<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::BillingRecord>>, smithy_json::deserialize::Error>
 where
@@ -1869,7 +1882,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_billing_record(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_billing_record(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1884,7 +1898,7 @@ where
     }
 }
 
-pub fn deser_structure_nameserver<'a, I>(
+pub fn deser_structure_crate_model_nameserver<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Nameserver>, smithy_json::deserialize::Error>
 where
@@ -1913,7 +1927,7 @@ where
                             }
                             "GlueIps" => {
                                 builder = builder.set_glue_ips(
-                                    crate::json_deser::deser_list_glue_ip_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_route53domains_glue_ip_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1935,7 +1949,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_extra_param_list<'a, I>(
+pub fn deser_list_com_amazonaws_route53domains_extra_param_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ExtraParam>>, smithy_json::deserialize::Error>
 where
@@ -1954,7 +1968,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_extra_param(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_extra_param(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1969,7 +1984,7 @@ where
     }
 }
 
-pub fn deser_structure_domain_suggestion<'a, I>(
+pub fn deser_structure_crate_model_domain_suggestion<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DomainSuggestion>, smithy_json::deserialize::Error>
 where
@@ -2023,7 +2038,7 @@ where
     }
 }
 
-pub fn deser_structure_domain_summary<'a, I>(
+pub fn deser_structure_crate_model_domain_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DomainSummary>, smithy_json::deserialize::Error>
 where
@@ -2090,7 +2105,7 @@ where
     }
 }
 
-pub fn deser_structure_operation_summary<'a, I>(
+pub fn deser_structure_crate_model_operation_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::OperationSummary>, smithy_json::deserialize::Error>
 where
@@ -2168,7 +2183,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where
@@ -2222,7 +2237,7 @@ where
     }
 }
 
-pub fn deser_structure_billing_record<'a, I>(
+pub fn deser_structure_crate_model_billing_record<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BillingRecord>, smithy_json::deserialize::Error>
 where
@@ -2305,7 +2320,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_glue_ip_list<'a, I>(
+pub fn deser_list_com_amazonaws_route53domains_glue_ip_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -2342,7 +2357,7 @@ where
     }
 }
 
-pub fn deser_structure_extra_param<'a, I>(
+pub fn deser_structure_crate_model_extra_param<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ExtraParam>, smithy_json::deserialize::Error>
 where

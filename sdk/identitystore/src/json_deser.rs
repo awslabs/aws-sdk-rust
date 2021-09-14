@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -51,7 +51,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -97,7 +97,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -160,7 +160,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -206,7 +206,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -252,7 +252,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_group(
+pub fn deser_operation_crate_operation_describe_group(
     input: &[u8],
     mut builder: crate::output::describe_group_output::Builder,
 ) -> Result<crate::output::describe_group_output::Builder, smithy_json::deserialize::Error> {
@@ -298,7 +298,7 @@ pub fn deser_operation_describe_group(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_user(
+pub fn deser_operation_crate_operation_describe_user(
     input: &[u8],
     mut builder: crate::output::describe_user_output::Builder,
 ) -> Result<crate::output::describe_user_output::Builder, smithy_json::deserialize::Error> {
@@ -344,7 +344,7 @@ pub fn deser_operation_describe_user(
     Ok(builder)
 }
 
-pub fn deser_operation_list_groups(
+pub fn deser_operation_crate_operation_list_groups(
     input: &[u8],
     mut builder: crate::output::list_groups_output::Builder,
 ) -> Result<crate::output::list_groups_output::Builder, smithy_json::deserialize::Error> {
@@ -359,7 +359,11 @@ pub fn deser_operation_list_groups(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Groups" => {
-                        builder = builder.set_groups(crate::json_deser::deser_list_groups(tokens)?);
+                        builder = builder.set_groups(
+                            crate::json_deser::deser_list_com_amazonaws_identitystore_groups(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -386,7 +390,7 @@ pub fn deser_operation_list_groups(
     Ok(builder)
 }
 
-pub fn deser_operation_list_users(
+pub fn deser_operation_crate_operation_list_users(
     input: &[u8],
     mut builder: crate::output::list_users_output::Builder,
 ) -> Result<crate::output::list_users_output::Builder, smithy_json::deserialize::Error> {
@@ -401,7 +405,11 @@ pub fn deser_operation_list_users(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Users" => {
-                        builder = builder.set_users(crate::json_deser::deser_list_users(tokens)?);
+                        builder = builder.set_users(
+                            crate::json_deser::deser_list_com_amazonaws_identitystore_users(
+                                tokens,
+                            )?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -437,7 +445,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_groups<'a, I>(
+pub fn deser_list_com_amazonaws_identitystore_groups<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Group>>, smithy_json::deserialize::Error>
 where
@@ -456,7 +464,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_group(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_group(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -472,7 +480,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_users<'a, I>(
+pub fn deser_list_com_amazonaws_identitystore_users<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::User>>, smithy_json::deserialize::Error>
 where
@@ -491,7 +499,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_user(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_user(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -506,7 +514,7 @@ where
     }
 }
 
-pub fn deser_structure_group<'a, I>(
+pub fn deser_structure_crate_model_group<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Group>, smithy_json::deserialize::Error>
 where
@@ -560,7 +568,7 @@ where
     }
 }
 
-pub fn deser_structure_user<'a, I>(
+pub fn deser_structure_crate_model_user<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::User>, smithy_json::deserialize::Error>
 where

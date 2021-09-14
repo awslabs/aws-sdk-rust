@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_parameter_value_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_parameter_value_exception::Builder,
 ) -> Result<crate::error::invalid_parameter_value_exception::Builder, smithy_json::deserialize::Error>
@@ -123,7 +123,7 @@ pub fn deser_structure_invalid_parameter_value_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_missing_authentication_tokenjson_err(
+pub fn deser_structure_crate_error_missing_authentication_tokenjson_err(
     input: &[u8],
     mut builder: crate::error::missing_authentication_token::Builder,
 ) -> Result<crate::error::missing_authentication_token::Builder, smithy_json::deserialize::Error> {
@@ -162,7 +162,7 @@ pub fn deser_structure_missing_authentication_tokenjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_opt_in_required_exceptionjson_err(
+pub fn deser_structure_crate_error_opt_in_required_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::opt_in_required_exception::Builder,
 ) -> Result<crate::error::opt_in_required_exception::Builder, smithy_json::deserialize::Error> {
@@ -201,7 +201,7 @@ pub fn deser_structure_opt_in_required_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -240,7 +240,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_unavailable_exceptionjson_err(
+pub fn deser_structure_crate_error_service_unavailable_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_unavailable_exception::Builder,
 ) -> Result<crate::error::service_unavailable_exception::Builder, smithy_json::deserialize::Error> {
@@ -279,7 +279,7 @@ pub fn deser_structure_service_unavailable_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -318,7 +318,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_recommendation_export_jobs(
+pub fn deser_operation_crate_operation_describe_recommendation_export_jobs(
     input: &[u8],
     mut builder: crate::output::describe_recommendation_export_jobs_output::Builder,
 ) -> Result<
@@ -337,7 +337,7 @@ pub fn deser_operation_describe_recommendation_export_jobs(
                 match key.to_unescaped()?.as_ref() {
                     "recommendationExportJobs" => {
                         builder = builder.set_recommendation_export_jobs(
-                            crate::json_deser::deser_list_recommendation_export_jobs(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_computeoptimizer_recommendation_export_jobs(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -365,7 +365,7 @@ pub fn deser_operation_describe_recommendation_export_jobs(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -404,7 +404,7 @@ pub fn deser_structure_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_export_auto_scaling_group_recommendations(
+pub fn deser_operation_crate_operation_export_auto_scaling_group_recommendations(
     input: &[u8],
     mut builder: crate::output::export_auto_scaling_group_recommendations_output::Builder,
 ) -> Result<
@@ -430,7 +430,7 @@ pub fn deser_operation_export_auto_scaling_group_recommendations(
                     }
                     "s3Destination" => {
                         builder = builder.set_s3_destination(
-                            crate::json_deser::deser_structure_s3_destination(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_s3_destination(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -451,7 +451,7 @@ pub fn deser_operation_export_auto_scaling_group_recommendations(
     Ok(builder)
 }
 
-pub fn deser_operation_export_ebs_volume_recommendations(
+pub fn deser_operation_crate_operation_export_ebs_volume_recommendations(
     input: &[u8],
     mut builder: crate::output::export_ebs_volume_recommendations_output::Builder,
 ) -> Result<
@@ -477,7 +477,7 @@ pub fn deser_operation_export_ebs_volume_recommendations(
                     }
                     "s3Destination" => {
                         builder = builder.set_s3_destination(
-                            crate::json_deser::deser_structure_s3_destination(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_s3_destination(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -498,7 +498,7 @@ pub fn deser_operation_export_ebs_volume_recommendations(
     Ok(builder)
 }
 
-pub fn deser_operation_export_ec2_instance_recommendations(
+pub fn deser_operation_crate_operation_export_ec2_instance_recommendations(
     input: &[u8],
     mut builder: crate::output::export_ec2_instance_recommendations_output::Builder,
 ) -> Result<
@@ -524,7 +524,7 @@ pub fn deser_operation_export_ec2_instance_recommendations(
                     }
                     "s3Destination" => {
                         builder = builder.set_s3_destination(
-                            crate::json_deser::deser_structure_s3_destination(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_s3_destination(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -545,7 +545,7 @@ pub fn deser_operation_export_ec2_instance_recommendations(
     Ok(builder)
 }
 
-pub fn deser_operation_export_lambda_function_recommendations(
+pub fn deser_operation_crate_operation_export_lambda_function_recommendations(
     input: &[u8],
     mut builder: crate::output::export_lambda_function_recommendations_output::Builder,
 ) -> Result<
@@ -571,7 +571,7 @@ pub fn deser_operation_export_lambda_function_recommendations(
                     }
                     "s3Destination" => {
                         builder = builder.set_s3_destination(
-                            crate::json_deser::deser_structure_s3_destination(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_s3_destination(tokens)?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -592,7 +592,7 @@ pub fn deser_operation_export_lambda_function_recommendations(
     Ok(builder)
 }
 
-pub fn deser_operation_get_auto_scaling_group_recommendations(
+pub fn deser_operation_crate_operation_get_auto_scaling_group_recommendations(
     input: &[u8],
     mut builder: crate::output::get_auto_scaling_group_recommendations_output::Builder,
 ) -> Result<
@@ -618,14 +618,12 @@ pub fn deser_operation_get_auto_scaling_group_recommendations(
                     }
                     "autoScalingGroupRecommendations" => {
                         builder = builder.set_auto_scaling_group_recommendations(
-                            crate::json_deser::deser_list_auto_scaling_group_recommendations(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_computeoptimizer_auto_scaling_group_recommendations(tokens)?
                         );
                     }
                     "errors" => {
                         builder = builder.set_errors(
-                            crate::json_deser::deser_list_get_recommendation_errors(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_computeoptimizer_get_recommendation_errors(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -646,7 +644,7 @@ pub fn deser_operation_get_auto_scaling_group_recommendations(
     Ok(builder)
 }
 
-pub fn deser_operation_get_ebs_volume_recommendations(
+pub fn deser_operation_crate_operation_get_ebs_volume_recommendations(
     input: &[u8],
     mut builder: crate::output::get_ebs_volume_recommendations_output::Builder,
 ) -> Result<
@@ -672,12 +670,12 @@ pub fn deser_operation_get_ebs_volume_recommendations(
                     }
                     "volumeRecommendations" => {
                         builder = builder.set_volume_recommendations(
-                            crate::json_deser::deser_list_volume_recommendations(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_computeoptimizer_volume_recommendations(tokens)?
                         );
                     }
                     "errors" => {
                         builder = builder.set_errors(
-                            crate::json_deser::deser_list_get_recommendation_errors(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_computeoptimizer_get_recommendation_errors(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -698,7 +696,7 @@ pub fn deser_operation_get_ebs_volume_recommendations(
     Ok(builder)
 }
 
-pub fn deser_operation_get_ec2_instance_recommendations(
+pub fn deser_operation_crate_operation_get_ec2_instance_recommendations(
     input: &[u8],
     mut builder: crate::output::get_ec2_instance_recommendations_output::Builder,
 ) -> Result<
@@ -724,12 +722,12 @@ pub fn deser_operation_get_ec2_instance_recommendations(
                     }
                     "instanceRecommendations" => {
                         builder = builder.set_instance_recommendations(
-                            crate::json_deser::deser_list_instance_recommendations(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_computeoptimizer_instance_recommendations(tokens)?
                         );
                     }
                     "errors" => {
                         builder = builder.set_errors(
-                            crate::json_deser::deser_list_get_recommendation_errors(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_computeoptimizer_get_recommendation_errors(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -750,7 +748,7 @@ pub fn deser_operation_get_ec2_instance_recommendations(
     Ok(builder)
 }
 
-pub fn deser_operation_get_ec2_recommendation_projected_metrics(
+pub fn deser_operation_crate_operation_get_ec2_recommendation_projected_metrics(
     input: &[u8],
     mut builder: crate::output::get_ec2_recommendation_projected_metrics_output::Builder,
 ) -> Result<
@@ -769,9 +767,7 @@ pub fn deser_operation_get_ec2_recommendation_projected_metrics(
                 match key.to_unescaped()?.as_ref() {
                     "recommendedOptionProjectedMetrics" => {
                         builder = builder.set_recommended_option_projected_metrics(
-                            crate::json_deser::deser_list_recommended_option_projected_metrics(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_computeoptimizer_recommended_option_projected_metrics(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -792,7 +788,7 @@ pub fn deser_operation_get_ec2_recommendation_projected_metrics(
     Ok(builder)
 }
 
-pub fn deser_operation_get_enrollment_status(
+pub fn deser_operation_crate_operation_get_enrollment_status(
     input: &[u8],
     mut builder: crate::output::get_enrollment_status_output::Builder,
 ) -> Result<crate::output::get_enrollment_status_output::Builder, smithy_json::deserialize::Error> {
@@ -860,7 +856,7 @@ pub fn deser_operation_get_enrollment_status(
     Ok(builder)
 }
 
-pub fn deser_operation_get_enrollment_statuses_for_organization(
+pub fn deser_operation_crate_operation_get_enrollment_statuses_for_organization(
     input: &[u8],
     mut builder: crate::output::get_enrollment_statuses_for_organization_output::Builder,
 ) -> Result<
@@ -879,7 +875,7 @@ pub fn deser_operation_get_enrollment_statuses_for_organization(
                 match key.to_unescaped()?.as_ref() {
                     "accountEnrollmentStatuses" => {
                         builder = builder.set_account_enrollment_statuses(
-                            crate::json_deser::deser_list_account_enrollment_statuses(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_computeoptimizer_account_enrollment_statuses(tokens)?
                         );
                     }
                     "nextToken" => {
@@ -907,7 +903,7 @@ pub fn deser_operation_get_enrollment_statuses_for_organization(
     Ok(builder)
 }
 
-pub fn deser_operation_get_lambda_function_recommendations(
+pub fn deser_operation_crate_operation_get_lambda_function_recommendations(
     input: &[u8],
     mut builder: crate::output::get_lambda_function_recommendations_output::Builder,
 ) -> Result<
@@ -933,7 +929,7 @@ pub fn deser_operation_get_lambda_function_recommendations(
                     }
                     "lambdaFunctionRecommendations" => {
                         builder = builder.set_lambda_function_recommendations(
-                            crate::json_deser::deser_list_lambda_function_recommendations(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_computeoptimizer_lambda_function_recommendations(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -954,7 +950,7 @@ pub fn deser_operation_get_lambda_function_recommendations(
     Ok(builder)
 }
 
-pub fn deser_operation_get_recommendation_summaries(
+pub fn deser_operation_crate_operation_get_recommendation_summaries(
     input: &[u8],
     mut builder: crate::output::get_recommendation_summaries_output::Builder,
 ) -> Result<
@@ -980,7 +976,7 @@ pub fn deser_operation_get_recommendation_summaries(
                     }
                     "recommendationSummaries" => {
                         builder = builder.set_recommendation_summaries(
-                            crate::json_deser::deser_list_recommendation_summaries(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_computeoptimizer_recommendation_summaries(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1001,7 +997,7 @@ pub fn deser_operation_get_recommendation_summaries(
     Ok(builder)
 }
 
-pub fn deser_operation_update_enrollment_status(
+pub fn deser_operation_crate_operation_update_enrollment_status(
     input: &[u8],
     mut builder: crate::output::update_enrollment_status_output::Builder,
 ) -> Result<crate::output::update_enrollment_status_output::Builder, smithy_json::deserialize::Error>
@@ -1060,7 +1056,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_recommendation_export_jobs<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_recommendation_export_jobs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::RecommendationExportJob>>,
@@ -1083,7 +1079,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_recommendation_export_job(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_recommendation_export_job(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1098,7 +1095,7 @@ where
     }
 }
 
-pub fn deser_structure_s3_destination<'a, I>(
+pub fn deser_structure_crate_model_s3_destination<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::S3Destination>, smithy_json::deserialize::Error>
 where
@@ -1162,7 +1159,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_auto_scaling_group_recommendations<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_auto_scaling_group_recommendations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AutoScalingGroupRecommendation>>,
@@ -1185,9 +1182,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_auto_scaling_group_recommendation(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_auto_scaling_group_recommendation(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1203,7 +1199,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_get_recommendation_errors<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_get_recommendation_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::GetRecommendationError>>,
@@ -1226,7 +1222,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_get_recommendation_error(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_get_recommendation_error(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1242,7 +1239,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_volume_recommendations<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_volume_recommendations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::VolumeRecommendation>>,
@@ -1265,7 +1262,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_volume_recommendation(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_volume_recommendation(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1281,7 +1280,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_instance_recommendations<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_instance_recommendations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::InstanceRecommendation>>,
@@ -1304,7 +1303,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_instance_recommendation(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_instance_recommendation(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1320,7 +1321,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_recommended_option_projected_metrics<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_recommended_option_projected_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::RecommendedOptionProjectedMetric>>,
@@ -1343,9 +1344,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_recommended_option_projected_metric(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_recommended_option_projected_metric(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1361,7 +1361,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_account_enrollment_statuses<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_account_enrollment_statuses<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AccountEnrollmentStatus>>,
@@ -1384,7 +1384,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_account_enrollment_status(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_account_enrollment_status(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1400,7 +1401,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_lambda_function_recommendations<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_lambda_function_recommendations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::LambdaFunctionRecommendation>>,
@@ -1423,9 +1424,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_lambda_function_recommendation(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_lambda_function_recommendation(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1441,7 +1441,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_recommendation_summaries<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_recommendation_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::RecommendationSummary>>,
@@ -1464,7 +1464,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_recommendation_summary(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_recommendation_summary(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1479,7 +1481,7 @@ where
     }
 }
 
-pub fn deser_structure_recommendation_export_job<'a, I>(
+pub fn deser_structure_crate_model_recommendation_export_job<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RecommendationExportJob>, smithy_json::deserialize::Error>
 where
@@ -1508,7 +1510,7 @@ where
                             }
                             "destination" => {
                                 builder = builder.set_destination(
-                                    crate::json_deser::deser_structure_export_destination(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_export_destination(tokens)?
                                 );
                             }
                             "resourceType" => {
@@ -1578,7 +1580,7 @@ where
     }
 }
 
-pub fn deser_structure_auto_scaling_group_recommendation<'a, I>(
+pub fn deser_structure_crate_model_auto_scaling_group_recommendation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AutoScalingGroupRecommendation>, smithy_json::deserialize::Error>
 where
@@ -1637,7 +1639,7 @@ where
                             }
                             "utilizationMetrics" => {
                                 builder = builder.set_utilization_metrics(
-                                    crate::json_deser::deser_list_utilization_metrics(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_utilization_metrics(tokens)?
                                 );
                             }
                             "lookBackPeriodInDays" => {
@@ -1650,12 +1652,12 @@ where
                             }
                             "currentConfiguration" => {
                                 builder = builder.set_current_configuration(
-                                    crate::json_deser::deser_structure_auto_scaling_group_configuration(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_auto_scaling_group_configuration(tokens)?
                                 );
                             }
                             "recommendationOptions" => {
                                 builder = builder.set_recommendation_options(
-                                    crate::json_deser::deser_list_auto_scaling_group_recommendation_options(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_auto_scaling_group_recommendation_options(tokens)?
                                 );
                             }
                             "lastRefreshTimestamp" => {
@@ -1684,7 +1686,7 @@ where
     }
 }
 
-pub fn deser_structure_get_recommendation_error<'a, I>(
+pub fn deser_structure_crate_model_get_recommendation_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GetRecommendationError>, smithy_json::deserialize::Error>
 where
@@ -1747,7 +1749,7 @@ where
     }
 }
 
-pub fn deser_structure_volume_recommendation<'a, I>(
+pub fn deser_structure_crate_model_volume_recommendation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::VolumeRecommendation>, smithy_json::deserialize::Error>
 where
@@ -1785,9 +1787,7 @@ where
                             }
                             "currentConfiguration" => {
                                 builder = builder.set_current_configuration(
-                                    crate::json_deser::deser_structure_volume_configuration(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_volume_configuration(tokens)?
                                 );
                             }
                             "finding" => {
@@ -1804,7 +1804,7 @@ where
                             }
                             "utilizationMetrics" => {
                                 builder = builder.set_utilization_metrics(
-                                    crate::json_deser::deser_list_ebs_utilization_metrics(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_ebs_utilization_metrics(tokens)?
                                 );
                             }
                             "lookBackPeriodInDays" => {
@@ -1817,9 +1817,7 @@ where
                             }
                             "volumeRecommendationOptions" => {
                                 builder = builder.set_volume_recommendation_options(
-                                    crate::json_deser::deser_list_volume_recommendation_options(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_volume_recommendation_options(tokens)?
                                 );
                             }
                             "lastRefreshTimestamp" => {
@@ -1848,7 +1846,7 @@ where
     }
 }
 
-pub fn deser_structure_instance_recommendation<'a, I>(
+pub fn deser_structure_crate_model_instance_recommendation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::InstanceRecommendation>, smithy_json::deserialize::Error>
 where
@@ -1916,12 +1914,12 @@ where
                             }
                             "findingReasonCodes" => {
                                 builder = builder.set_finding_reason_codes(
-                                    crate::json_deser::deser_list_instance_recommendation_finding_reason_codes(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_instance_recommendation_finding_reason_codes(tokens)?
                                 );
                             }
                             "utilizationMetrics" => {
                                 builder = builder.set_utilization_metrics(
-                                    crate::json_deser::deser_list_utilization_metrics(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_utilization_metrics(tokens)?
                                 );
                             }
                             "lookBackPeriodInDays" => {
@@ -1934,12 +1932,12 @@ where
                             }
                             "recommendationOptions" => {
                                 builder = builder.set_recommendation_options(
-                                    crate::json_deser::deser_list_recommendation_options(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_recommendation_options(tokens)?
                                 );
                             }
                             "recommendationSources" => {
                                 builder = builder.set_recommendation_sources(
-                                    crate::json_deser::deser_list_recommendation_sources(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_recommendation_sources(tokens)?
                                 );
                             }
                             "lastRefreshTimestamp" => {
@@ -1968,7 +1966,7 @@ where
     }
 }
 
-pub fn deser_structure_recommended_option_projected_metric<'a, I>(
+pub fn deser_structure_crate_model_recommended_option_projected_metric<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RecommendedOptionProjectedMetric>, smithy_json::deserialize::Error>
 where
@@ -2005,7 +2003,7 @@ where
                             }
                             "projectedMetrics" => {
                                 builder = builder.set_projected_metrics(
-                                    crate::json_deser::deser_list_projected_metrics(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_projected_metrics(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2026,7 +2024,7 @@ where
     }
 }
 
-pub fn deser_structure_account_enrollment_status<'a, I>(
+pub fn deser_structure_crate_model_account_enrollment_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AccountEnrollmentStatus>, smithy_json::deserialize::Error>
 where
@@ -2100,7 +2098,7 @@ where
     }
 }
 
-pub fn deser_structure_lambda_function_recommendation<'a, I>(
+pub fn deser_structure_crate_model_lambda_function_recommendation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LambdaFunctionRecommendation>, smithy_json::deserialize::Error>
 where
@@ -2163,7 +2161,7 @@ where
                             }
                             "utilizationMetrics" => {
                                 builder = builder.set_utilization_metrics(
-                                    crate::json_deser::deser_list_lambda_function_utilization_metrics(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_lambda_function_utilization_metrics(tokens)?
                                 );
                             }
                             "lookbackPeriodInDays" => {
@@ -2199,12 +2197,12 @@ where
                             }
                             "findingReasonCodes" => {
                                 builder = builder.set_finding_reason_codes(
-                                    crate::json_deser::deser_list_lambda_function_recommendation_finding_reason_codes(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_lambda_function_recommendation_finding_reason_codes(tokens)?
                                 );
                             }
                             "memorySizeRecommendationOptions" => {
                                 builder = builder.set_memory_size_recommendation_options(
-                                    crate::json_deser::deser_list_lambda_function_memory_recommendation_options(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_lambda_function_memory_recommendation_options(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2225,7 +2223,7 @@ where
     }
 }
 
-pub fn deser_structure_recommendation_summary<'a, I>(
+pub fn deser_structure_crate_model_recommendation_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RecommendationSummary>, smithy_json::deserialize::Error>
 where
@@ -2245,7 +2243,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "summaries" => {
                                 builder = builder.set_summaries(
-                                    crate::json_deser::deser_list_summaries(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_summaries(tokens)?
                                 );
                             }
                             "recommendationResourceType" => {
@@ -2288,7 +2286,7 @@ where
     }
 }
 
-pub fn deser_structure_export_destination<'a, I>(
+pub fn deser_structure_crate_model_export_destination<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ExportDestination>, smithy_json::deserialize::Error>
 where
@@ -2308,7 +2306,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "s3" => {
                                 builder = builder.set_s3(
-                                    crate::json_deser::deser_structure_s3_destination(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_s3_destination(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2330,7 +2330,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_utilization_metrics<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_utilization_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::UtilizationMetric>>, smithy_json::deserialize::Error>
 where
@@ -2349,7 +2349,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_utilization_metric(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_utilization_metric(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2364,7 +2367,7 @@ where
     }
 }
 
-pub fn deser_structure_auto_scaling_group_configuration<'a, I>(
+pub fn deser_structure_crate_model_auto_scaling_group_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::AutoScalingGroupConfiguration>, smithy_json::deserialize::Error>
 where
@@ -2434,7 +2437,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_auto_scaling_group_recommendation_options<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_auto_scaling_group_recommendation_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::AutoScalingGroupRecommendationOption>>,
@@ -2457,7 +2460,7 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_auto_scaling_group_recommendation_option(tokens)?
+                            crate::json_deser::deser_structure_crate_model_auto_scaling_group_recommendation_option(tokens)?
                         ;
                         if let Some(value) = value {
                             items.push(value);
@@ -2473,7 +2476,7 @@ where
     }
 }
 
-pub fn deser_structure_volume_configuration<'a, I>(
+pub fn deser_structure_crate_model_volume_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::VolumeConfiguration>, smithy_json::deserialize::Error>
 where
@@ -2559,7 +2562,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_ebs_utilization_metrics<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_ebs_utilization_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::EbsUtilizationMetric>>,
@@ -2582,7 +2585,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_ebs_utilization_metric(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_ebs_utilization_metric(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2598,7 +2603,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_volume_recommendation_options<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_volume_recommendation_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::VolumeRecommendationOption>>,
@@ -2621,9 +2626,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_volume_recommendation_option(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_volume_recommendation_option(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2639,7 +2643,10 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_instance_recommendation_finding_reason_codes<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_instance_recommendation_finding_reason_codes<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::InstanceRecommendationFindingReasonCode>>,
@@ -2686,7 +2693,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_recommendation_options<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_recommendation_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::InstanceRecommendationOption>>,
@@ -2709,9 +2716,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_instance_recommendation_option(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_instance_recommendation_option(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2727,7 +2733,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_recommendation_sources<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_recommendation_sources<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::RecommendationSource>>,
@@ -2750,7 +2756,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_recommendation_source(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_recommendation_source(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2766,7 +2774,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_projected_metrics<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_projected_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ProjectedMetric>>, smithy_json::deserialize::Error>
 where
@@ -2785,7 +2793,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_projected_metric(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_projected_metric(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2801,7 +2812,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_lambda_function_utilization_metrics<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_lambda_function_utilization_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::LambdaFunctionUtilizationMetric>>,
@@ -2824,9 +2835,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_lambda_function_utilization_metric(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_lambda_function_utilization_metric(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2842,7 +2852,10 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_lambda_function_recommendation_finding_reason_codes<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_lambda_function_recommendation_finding_reason_codes<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::LambdaFunctionRecommendationFindingReasonCode>>,
@@ -2890,7 +2903,10 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_lambda_function_memory_recommendation_options<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_lambda_function_memory_recommendation_options<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::LambdaFunctionMemoryRecommendationOption>>,
@@ -2913,7 +2929,7 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_lambda_function_memory_recommendation_option(tokens)?
+                            crate::json_deser::deser_structure_crate_model_lambda_function_memory_recommendation_option(tokens)?
                         ;
                         if let Some(value) = value {
                             items.push(value);
@@ -2930,7 +2946,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_summaries<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Summary>>, smithy_json::deserialize::Error>
 where
@@ -2949,7 +2965,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_summary(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_summary(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2964,7 +2980,7 @@ where
     }
 }
 
-pub fn deser_structure_utilization_metric<'a, I>(
+pub fn deser_structure_crate_model_utilization_metric<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UtilizationMetric>, smithy_json::deserialize::Error>
 where
@@ -3033,7 +3049,7 @@ where
     }
 }
 
-pub fn deser_structure_auto_scaling_group_recommendation_option<'a, I>(
+pub fn deser_structure_crate_model_auto_scaling_group_recommendation_option<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::AutoScalingGroupRecommendationOption>,
@@ -3056,14 +3072,12 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "configuration" => {
                                 builder = builder.set_configuration(
-                                    crate::json_deser::deser_structure_auto_scaling_group_configuration(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_auto_scaling_group_configuration(tokens)?
                                 );
                             }
                             "projectedUtilizationMetrics" => {
                                 builder = builder.set_projected_utilization_metrics(
-                                    crate::json_deser::deser_list_projected_utilization_metrics(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_projected_utilization_metrics(tokens)?
                                 );
                             }
                             "performanceRisk" => {
@@ -3100,7 +3114,7 @@ where
     }
 }
 
-pub fn deser_structure_ebs_utilization_metric<'a, I>(
+pub fn deser_structure_crate_model_ebs_utilization_metric<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EbsUtilizationMetric>, smithy_json::deserialize::Error>
 where
@@ -3169,7 +3183,7 @@ where
     }
 }
 
-pub fn deser_structure_volume_recommendation_option<'a, I>(
+pub fn deser_structure_crate_model_volume_recommendation_option<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::VolumeRecommendationOption>, smithy_json::deserialize::Error>
 where
@@ -3189,9 +3203,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "configuration" => {
                                 builder = builder.set_configuration(
-                                    crate::json_deser::deser_structure_volume_configuration(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_structure_crate_model_volume_configuration(tokens)?
                                 );
                             }
                             "performanceRisk" => {
@@ -3228,7 +3240,7 @@ where
     }
 }
 
-pub fn deser_structure_instance_recommendation_option<'a, I>(
+pub fn deser_structure_crate_model_instance_recommendation_option<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::InstanceRecommendationOption>, smithy_json::deserialize::Error>
 where
@@ -3257,14 +3269,12 @@ where
                             }
                             "projectedUtilizationMetrics" => {
                                 builder = builder.set_projected_utilization_metrics(
-                                    crate::json_deser::deser_list_projected_utilization_metrics(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_projected_utilization_metrics(tokens)?
                                 );
                             }
                             "platformDifferences" => {
                                 builder = builder.set_platform_differences(
-                                    crate::json_deser::deser_list_platform_differences(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_platform_differences(tokens)?
                                 );
                             }
                             "performanceRisk" => {
@@ -3301,7 +3311,7 @@ where
     }
 }
 
-pub fn deser_structure_recommendation_source<'a, I>(
+pub fn deser_structure_crate_model_recommendation_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RecommendationSource>, smithy_json::deserialize::Error>
 where
@@ -3359,7 +3369,7 @@ where
     }
 }
 
-pub fn deser_structure_projected_metric<'a, I>(
+pub fn deser_structure_crate_model_projected_metric<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ProjectedMetric>, smithy_json::deserialize::Error>
 where
@@ -3391,12 +3401,12 @@ where
                             }
                             "timestamps" => {
                                 builder = builder.set_timestamps(
-                                    crate::json_deser::deser_list_timestamps(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_timestamps(tokens)?
                                 );
                             }
                             "values" => {
                                 builder = builder.set_values(
-                                    crate::json_deser::deser_list_metric_values(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_metric_values(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3417,7 +3427,7 @@ where
     }
 }
 
-pub fn deser_structure_lambda_function_utilization_metric<'a, I>(
+pub fn deser_structure_crate_model_lambda_function_utilization_metric<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LambdaFunctionUtilizationMetric>, smithy_json::deserialize::Error>
 where
@@ -3489,7 +3499,7 @@ where
     }
 }
 
-pub fn deser_structure_lambda_function_memory_recommendation_option<'a, I>(
+pub fn deser_structure_crate_model_lambda_function_memory_recommendation_option<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::LambdaFunctionMemoryRecommendationOption>,
@@ -3528,7 +3538,7 @@ where
                             }
                             "projectedUtilizationMetrics" => {
                                 builder = builder.set_projected_utilization_metrics(
-                                    crate::json_deser::deser_list_lambda_function_memory_projected_metrics(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_lambda_function_memory_projected_metrics(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3549,7 +3559,7 @@ where
     }
 }
 
-pub fn deser_structure_summary<'a, I>(
+pub fn deser_structure_crate_model_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Summary>, smithy_json::deserialize::Error>
 where
@@ -3589,7 +3599,7 @@ where
                             }
                             "reasonCodeSummaries" => {
                                 builder = builder.set_reason_code_summaries(
-                                    crate::json_deser::deser_list_reason_code_summaries(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_computeoptimizer_reason_code_summaries(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3611,7 +3621,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_projected_utilization_metrics<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_projected_utilization_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::UtilizationMetric>>, smithy_json::deserialize::Error>
 where
@@ -3630,7 +3640,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_utilization_metric(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_utilization_metric(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3646,7 +3659,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_platform_differences<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_platform_differences<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::PlatformDifference>>, smithy_json::deserialize::Error>
 where
@@ -3687,7 +3700,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_timestamps<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_timestamps<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<smithy_types::Instant>>, smithy_json::deserialize::Error>
 where
@@ -3725,7 +3738,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_metric_values<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_metric_values<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<f64>>, smithy_json::deserialize::Error>
 where
@@ -3762,7 +3775,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_lambda_function_memory_projected_metrics<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_lambda_function_memory_projected_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::LambdaFunctionMemoryProjectedMetric>>,
@@ -3785,7 +3798,7 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_lambda_function_memory_projected_metric(tokens)?
+                            crate::json_deser::deser_structure_crate_model_lambda_function_memory_projected_metric(tokens)?
                         ;
                         if let Some(value) = value {
                             items.push(value);
@@ -3802,7 +3815,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_reason_code_summaries<'a, I>(
+pub fn deser_list_com_amazonaws_computeoptimizer_reason_code_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ReasonCodeSummary>>, smithy_json::deserialize::Error>
 where
@@ -3821,7 +3834,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_reason_code_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_reason_code_summary(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3836,7 +3852,7 @@ where
     }
 }
 
-pub fn deser_structure_lambda_function_memory_projected_metric<'a, I>(
+pub fn deser_structure_crate_model_lambda_function_memory_projected_metric<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::LambdaFunctionMemoryProjectedMetric>,
@@ -3913,7 +3929,7 @@ where
     }
 }
 
-pub fn deser_structure_reason_code_summary<'a, I>(
+pub fn deser_structure_crate_model_reason_code_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ReasonCodeSummary>, smithy_json::deserialize::Error>
 where

@@ -28,6 +28,7 @@ pub enum QueueAttributeName {
     Policy,
     QueueArn,
     ReceiveMessageWaitTimeSeconds,
+    RedriveAllowPolicy,
     RedrivePolicy,
     VisibilityTimeout,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -58,6 +59,7 @@ impl std::convert::From<&str> for QueueAttributeName {
             "Policy" => QueueAttributeName::Policy,
             "QueueArn" => QueueAttributeName::QueueArn,
             "ReceiveMessageWaitTimeSeconds" => QueueAttributeName::ReceiveMessageWaitTimeSeconds,
+            "RedriveAllowPolicy" => QueueAttributeName::RedriveAllowPolicy,
             "RedrivePolicy" => QueueAttributeName::RedrivePolicy,
             "VisibilityTimeout" => QueueAttributeName::VisibilityTimeout,
             other => QueueAttributeName::Unknown(other.to_owned()),
@@ -96,6 +98,7 @@ impl QueueAttributeName {
             QueueAttributeName::Policy => "Policy",
             QueueAttributeName::QueueArn => "QueueArn",
             QueueAttributeName::ReceiveMessageWaitTimeSeconds => "ReceiveMessageWaitTimeSeconds",
+            QueueAttributeName::RedriveAllowPolicy => "RedriveAllowPolicy",
             QueueAttributeName::RedrivePolicy => "RedrivePolicy",
             QueueAttributeName::VisibilityTimeout => "VisibilityTimeout",
             QueueAttributeName::Unknown(s) => s.as_ref(),
@@ -121,6 +124,7 @@ impl QueueAttributeName {
             "Policy",
             "QueueArn",
             "ReceiveMessageWaitTimeSeconds",
+            "RedriveAllowPolicy",
             "RedrivePolicy",
             "VisibilityTimeout",
         ]

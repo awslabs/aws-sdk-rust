@@ -382,6 +382,105 @@ impl StartServerOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SendWorkflowStepStateOutput {}
+impl std::fmt::Debug for SendWorkflowStepStateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SendWorkflowStepStateOutput");
+        formatter.finish()
+    }
+}
+/// See [`SendWorkflowStepStateOutput`](crate::output::SendWorkflowStepStateOutput)
+pub mod send_workflow_step_state_output {
+    /// A builder for [`SendWorkflowStepStateOutput`](crate::output::SendWorkflowStepStateOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`SendWorkflowStepStateOutput`](crate::output::SendWorkflowStepStateOutput)
+        pub fn build(self) -> crate::output::SendWorkflowStepStateOutput {
+            crate::output::SendWorkflowStepStateOutput {}
+        }
+    }
+}
+impl SendWorkflowStepStateOutput {
+    /// Creates a new builder-style object to manufacture [`SendWorkflowStepStateOutput`](crate::output::SendWorkflowStepStateOutput)
+    pub fn builder() -> crate::output::send_workflow_step_state_output::Builder {
+        crate::output::send_workflow_step_state_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListWorkflowsOutput {
+    /// <p>
+    /// <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output.
+    /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
+    /// continue listing additional workflows.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
+    pub workflows: std::option::Option<std::vec::Vec<crate::model::ListedWorkflow>>,
+}
+impl std::fmt::Debug for ListWorkflowsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListWorkflowsOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("workflows", &self.workflows);
+        formatter.finish()
+    }
+}
+/// See [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput)
+pub mod list_workflows_output {
+    /// A builder for [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) workflows: std::option::Option<std::vec::Vec<crate::model::ListedWorkflow>>,
+    }
+    impl Builder {
+        /// <p>
+        /// <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output.
+        /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
+        /// continue listing additional workflows.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        pub fn workflows(mut self, input: impl Into<crate::model::ListedWorkflow>) -> Self {
+            let mut v = self.workflows.unwrap_or_default();
+            v.push(input.into());
+            self.workflows = Some(v);
+            self
+        }
+        pub fn set_workflows(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ListedWorkflow>>,
+        ) -> Self {
+            self.workflows = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput)
+        pub fn build(self) -> crate::output::ListWorkflowsOutput {
+            crate::output::ListWorkflowsOutput {
+                next_token: self.next_token,
+                workflows: self.workflows,
+            }
+        }
+    }
+}
+impl ListWorkflowsOutput {
+    /// Creates a new builder-style object to manufacture [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput)
+    pub fn builder() -> crate::output::list_workflows_output::Builder {
+        crate::output::list_workflows_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersOutput {
     /// <p>When you can get additional results from the <code>ListUsers</code> call, a
     /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
@@ -688,6 +787,112 @@ impl ListSecurityPoliciesOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListExecutionsOutput {
+    /// <p>
+    /// <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output.
+    /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
+    /// continue listing additional executions.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
+    /// <p>Returns the details for each execution.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>NextToken</b>: returned from a call to several APIs,
+    /// you can use pass it to a subsequent command to continue listing additional executions.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>StartTime</b>: timestamp indicating when the execution began.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Executions</b>: details of the execution, including the execution ID, initial file location,
+    /// and Service metadata.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Status</b>: one of the following values:
+    /// <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub executions: std::option::Option<std::vec::Vec<crate::model::ListedExecution>>,
+}
+impl std::fmt::Debug for ListExecutionsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListExecutionsOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("workflow_id", &self.workflow_id);
+        formatter.field("executions", &self.executions);
+        formatter.finish()
+    }
+}
+/// See [`ListExecutionsOutput`](crate::output::ListExecutionsOutput)
+pub mod list_executions_output {
+    /// A builder for [`ListExecutionsOutput`](crate::output::ListExecutionsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
+        pub(crate) executions: std::option::Option<std::vec::Vec<crate::model::ListedExecution>>,
+    }
+    impl Builder {
+        /// <p>
+        /// <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output.
+        /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
+        /// continue listing additional executions.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>A unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
+        pub fn executions(mut self, input: impl Into<crate::model::ListedExecution>) -> Self {
+            let mut v = self.executions.unwrap_or_default();
+            v.push(input.into());
+            self.executions = Some(v);
+            self
+        }
+        pub fn set_executions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ListedExecution>>,
+        ) -> Self {
+            self.executions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListExecutionsOutput`](crate::output::ListExecutionsOutput)
+        pub fn build(self) -> crate::output::ListExecutionsOutput {
+            crate::output::ListExecutionsOutput {
+                next_token: self.next_token,
+                workflow_id: self.workflow_id,
+                executions: self.executions,
+            }
+        }
+    }
+}
+impl ListExecutionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListExecutionsOutput`](crate::output::ListExecutionsOutput)
+    pub fn builder() -> crate::output::list_executions_output::Builder {
+        crate::output::list_executions_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessesOutput {
     /// <p>When you can get additional results from the <code>ListAccesses</code> call, a
     /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
@@ -848,6 +1053,55 @@ impl ImportSshPublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`ImportSshPublicKeyOutput`](crate::output::ImportSshPublicKeyOutput)
     pub fn builder() -> crate::output::import_ssh_public_key_output::Builder {
         crate::output::import_ssh_public_key_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeWorkflowOutput {
+    /// <p>The structure that contains the details of the workflow.</p>
+    pub workflow: std::option::Option<crate::model::DescribedWorkflow>,
+}
+impl std::fmt::Debug for DescribeWorkflowOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeWorkflowOutput");
+        formatter.field("workflow", &self.workflow);
+        formatter.finish()
+    }
+}
+/// See [`DescribeWorkflowOutput`](crate::output::DescribeWorkflowOutput)
+pub mod describe_workflow_output {
+    /// A builder for [`DescribeWorkflowOutput`](crate::output::DescribeWorkflowOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) workflow: std::option::Option<crate::model::DescribedWorkflow>,
+    }
+    impl Builder {
+        /// <p>The structure that contains the details of the workflow.</p>
+        pub fn workflow(mut self, input: crate::model::DescribedWorkflow) -> Self {
+            self.workflow = Some(input);
+            self
+        }
+        pub fn set_workflow(
+            mut self,
+            input: std::option::Option<crate::model::DescribedWorkflow>,
+        ) -> Self {
+            self.workflow = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeWorkflowOutput`](crate::output::DescribeWorkflowOutput)
+        pub fn build(self) -> crate::output::DescribeWorkflowOutput {
+            crate::output::DescribeWorkflowOutput {
+                workflow: self.workflow,
+            }
+        }
+    }
+}
+impl DescribeWorkflowOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeWorkflowOutput`](crate::output::DescribeWorkflowOutput)
+    pub fn builder() -> crate::output::describe_workflow_output::Builder {
+        crate::output::describe_workflow_output::Builder::default()
     }
 }
 
@@ -1015,6 +1269,69 @@ impl DescribeSecurityPolicyOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeExecutionOutput {
+    /// <p>A unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
+    /// <p>The structure that contains the details of the workflow' execution.</p>
+    pub execution: std::option::Option<crate::model::DescribedExecution>,
+}
+impl std::fmt::Debug for DescribeExecutionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeExecutionOutput");
+        formatter.field("workflow_id", &self.workflow_id);
+        formatter.field("execution", &self.execution);
+        formatter.finish()
+    }
+}
+/// See [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput)
+pub mod describe_execution_output {
+    /// A builder for [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
+        pub(crate) execution: std::option::Option<crate::model::DescribedExecution>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
+        /// <p>The structure that contains the details of the workflow' execution.</p>
+        pub fn execution(mut self, input: crate::model::DescribedExecution) -> Self {
+            self.execution = Some(input);
+            self
+        }
+        pub fn set_execution(
+            mut self,
+            input: std::option::Option<crate::model::DescribedExecution>,
+        ) -> Self {
+            self.execution = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput)
+        pub fn build(self) -> crate::output::DescribeExecutionOutput {
+            crate::output::DescribeExecutionOutput {
+                workflow_id: self.workflow_id,
+                execution: self.execution,
+            }
+        }
+    }
+}
+impl DescribeExecutionOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput)
+    pub fn builder() -> crate::output::describe_execution_output::Builder {
+        crate::output::describe_execution_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccessOutput {
     /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
     pub server_id: std::option::Option<std::string::String>,
@@ -1073,6 +1390,35 @@ impl DescribeAccessOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccessOutput`](crate::output::DescribeAccessOutput)
     pub fn builder() -> crate::output::describe_access_output::Builder {
         crate::output::describe_access_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteWorkflowOutput {}
+impl std::fmt::Debug for DeleteWorkflowOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteWorkflowOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput)
+pub mod delete_workflow_output {
+    /// A builder for [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput)
+        pub fn build(self) -> crate::output::DeleteWorkflowOutput {
+            crate::output::DeleteWorkflowOutput {}
+        }
+    }
+}
+impl DeleteWorkflowOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput)
+    pub fn builder() -> crate::output::delete_workflow_output::Builder {
+        crate::output::delete_workflow_output::Builder::default()
     }
 }
 
@@ -1189,6 +1535,52 @@ impl DeleteAccessOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessOutput`](crate::output::DeleteAccessOutput)
     pub fn builder() -> crate::output::delete_access_output::Builder {
         crate::output::delete_access_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateWorkflowOutput {
+    /// <p>A unique identifier for the workflow.</p>
+    pub workflow_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CreateWorkflowOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateWorkflowOutput");
+        formatter.field("workflow_id", &self.workflow_id);
+        formatter.finish()
+    }
+}
+/// See [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput)
+pub mod create_workflow_output {
+    /// A builder for [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) workflow_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workflow_id = Some(input.into());
+            self
+        }
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput)
+        pub fn build(self) -> crate::output::CreateWorkflowOutput {
+            crate::output::CreateWorkflowOutput {
+                workflow_id: self.workflow_id,
+            }
+        }
+    }
+}
+impl CreateWorkflowOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput)
+    pub fn builder() -> crate::output::create_workflow_output::Builder {
+        crate::output::create_workflow_output::Builder::default()
     }
 }
 

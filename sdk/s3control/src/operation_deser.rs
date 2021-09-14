@@ -18,9 +18,11 @@ pub fn parse_create_access_point_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_access_point_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_access_point(response.body().as_ref(), output)
-                .map_err(crate::error::CreateAccessPointError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_access_point(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateAccessPointError::unhandled)?;
         output.build()
     })
 }
@@ -49,11 +51,7 @@ pub fn parse_create_access_point_for_object_lambda_response(
         let mut output =
             crate::output::create_access_point_for_object_lambda_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_access_point_for_object_lambda(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::CreateAccessPointForObjectLambdaError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_access_point_for_object_lambda(response.body().as_ref(), output).map_err(crate::error::CreateAccessPointForObjectLambdaError::unhandled)?;
         output.build()
     })
 }
@@ -79,11 +77,7 @@ pub fn parse_create_bucket_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bucket_already_exists::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_bucket_already_exists_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBucketError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_bucket_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateBucketError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -100,11 +94,7 @@ pub fn parse_create_bucket_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bucket_already_owned_by_you::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_bucket_already_owned_by_you_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateBucketError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_bucket_already_owned_by_you_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateBucketError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -125,8 +115,11 @@ pub fn parse_create_bucket_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_bucket_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_bucket(response.body().as_ref(), output)
-            .map_err(crate::error::CreateBucketError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_bucket(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateBucketError::unhandled)?;
         output = output.set_location(
             crate::http_serde::deser_header_create_bucket_create_bucket_output_location(
                 response.headers(),
@@ -162,11 +155,7 @@ pub fn parse_create_job_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_bad_request_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateJobError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_bad_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -183,11 +172,7 @@ pub fn parse_create_job_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::idempotency_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_idempotency_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateJobError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_idempotency_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -204,11 +189,7 @@ pub fn parse_create_job_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateJobError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -225,11 +206,7 @@ pub fn parse_create_job_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_requests_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateJobError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -250,8 +227,46 @@ pub fn parse_create_job_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_job_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_job(response.body().as_ref(), output)
-            .map_err(crate::error::CreateJobError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_job(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateJobError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_multi_region_access_point_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateMultiRegionAccessPointOutput,
+    crate::error::CreateMultiRegionAccessPointError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateMultiRegionAccessPointError::unhandled)?;
+    Err(crate::error::CreateMultiRegionAccessPointError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_multi_region_access_point_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateMultiRegionAccessPointOutput,
+    crate::error::CreateMultiRegionAccessPointError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_multi_region_access_point_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_create_multi_region_access_point(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::CreateMultiRegionAccessPointError::unhandled)?;
         output.build()
     })
 }
@@ -487,11 +502,7 @@ pub fn parse_delete_job_tagging_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteJobTaggingError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteJobTaggingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -500,27 +511,25 @@ pub fn parse_delete_job_tagging_error(
                 tmp
             }),
         },
-        "NotFoundException" => crate::error::DeleteJobTaggingError {
-            meta: generic,
-            kind: crate::error::DeleteJobTaggingErrorKind::NotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "NotFoundException" => {
+            crate::error::DeleteJobTaggingError {
+                meta: generic,
+                kind: crate::error::DeleteJobTaggingErrorKind::NotFoundException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteJobTaggingError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteJobTaggingError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "TooManyRequestsException" => crate::error::DeleteJobTaggingError {
             meta: generic,
             kind: crate::error::DeleteJobTaggingErrorKind::TooManyRequestsException({
@@ -529,11 +538,7 @@ pub fn parse_delete_job_tagging_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_requests_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteJobTaggingError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteJobTaggingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -555,6 +560,41 @@ pub fn parse_delete_job_tagging_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_job_tagging_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_multi_region_access_point_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteMultiRegionAccessPointOutput,
+    crate::error::DeleteMultiRegionAccessPointError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteMultiRegionAccessPointError::unhandled)?;
+    Err(crate::error::DeleteMultiRegionAccessPointError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_multi_region_access_point_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteMultiRegionAccessPointOutput,
+    crate::error::DeleteMultiRegionAccessPointError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_multi_region_access_point_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_delete_multi_region_access_point(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DeleteMultiRegionAccessPointError::unhandled)?;
         output.build()
     })
 }
@@ -665,11 +705,7 @@ pub fn parse_describe_job_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_bad_request_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeJobError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_bad_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -686,11 +722,7 @@ pub fn parse_describe_job_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeJobError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -699,27 +731,25 @@ pub fn parse_describe_job_error(
                 tmp
             }),
         },
-        "NotFoundException" => crate::error::DescribeJobError {
-            meta: generic,
-            kind: crate::error::DescribeJobErrorKind::NotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "NotFoundException" => {
+            crate::error::DescribeJobError {
+                meta: generic,
+                kind: crate::error::DescribeJobErrorKind::NotFoundException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeJobError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "TooManyRequestsException" => crate::error::DescribeJobError {
             meta: generic,
             kind: crate::error::DescribeJobErrorKind::TooManyRequestsException({
@@ -728,11 +758,7 @@ pub fn parse_describe_job_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_requests_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeJobError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -753,8 +779,40 @@ pub fn parse_describe_job_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_job_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_job(response.body().as_ref(), output)
-            .map_err(crate::error::DescribeJobError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_job(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeJobError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_multi_region_access_point_operation_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeMultiRegionAccessPointOperationOutput,
+    crate::error::DescribeMultiRegionAccessPointOperationError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeMultiRegionAccessPointOperationError::unhandled)?;
+    Err(crate::error::DescribeMultiRegionAccessPointOperationError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_multi_region_access_point_operation_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeMultiRegionAccessPointOperationOutput,
+    crate::error::DescribeMultiRegionAccessPointOperationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_multi_region_access_point_operation_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_multi_region_access_point_operation(response.body().as_ref(), output).map_err(crate::error::DescribeMultiRegionAccessPointOperationError::unhandled)?;
         output.build()
     })
 }
@@ -776,9 +834,11 @@ pub fn parse_get_access_point_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_access_point_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_get_access_point(response.body().as_ref(), output)
-                .map_err(crate::error::GetAccessPointError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_access_point(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetAccessPointError::unhandled)?;
         output.build()
     })
 }
@@ -805,12 +865,7 @@ pub fn parse_get_access_point_configuration_for_object_lambda_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::get_access_point_configuration_for_object_lambda_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_get_access_point_configuration_for_object_lambda(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::GetAccessPointConfigurationForObjectLambdaError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_access_point_configuration_for_object_lambda(response.body().as_ref(), output).map_err(crate::error::GetAccessPointConfigurationForObjectLambdaError::unhandled)?;
         output.build()
     })
 }
@@ -841,11 +896,12 @@ pub fn parse_get_access_point_for_object_lambda_response(
         let mut output =
             crate::output::get_access_point_for_object_lambda_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_access_point_for_object_lambda(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::GetAccessPointForObjectLambdaError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_get_access_point_for_object_lambda(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetAccessPointForObjectLambdaError::unhandled)?;
         output.build()
     })
 }
@@ -873,7 +929,7 @@ pub fn parse_get_access_point_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_access_point_policy_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_access_point_policy(
+        output = crate::xml_deser::deser_operation_crate_operation_get_access_point_policy(
             response.body().as_ref(),
             output,
         )
@@ -906,11 +962,7 @@ pub fn parse_get_access_point_policy_for_object_lambda_response(
         let mut output =
             crate::output::get_access_point_policy_for_object_lambda_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_access_point_policy_for_object_lambda(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::GetAccessPointPolicyForObjectLambdaError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_access_point_policy_for_object_lambda(response.body().as_ref(), output).map_err(crate::error::GetAccessPointPolicyForObjectLambdaError::unhandled)?;
         output.build()
     })
 }
@@ -940,7 +992,7 @@ pub fn parse_get_access_point_policy_status_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_access_point_policy_status_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_access_point_policy_status(
+        output = crate::xml_deser::deser_operation_crate_operation_get_access_point_policy_status(
             response.body().as_ref(),
             output,
         )
@@ -971,12 +1023,7 @@ pub fn parse_get_access_point_policy_status_for_object_lambda_response(
     Ok({
         #[allow(unused_mut)]let mut output = crate::output::get_access_point_policy_status_for_object_lambda_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_get_access_point_policy_status_for_object_lambda(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::GetAccessPointPolicyStatusForObjectLambdaError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_access_point_policy_status_for_object_lambda(response.body().as_ref(), output).map_err(crate::error::GetAccessPointPolicyStatusForObjectLambdaError::unhandled)?;
         output.build()
     })
 }
@@ -998,8 +1045,11 @@ pub fn parse_get_bucket_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_bucket(response.body().as_ref(), output)
-            .map_err(crate::error::GetBucketError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_bucket(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetBucketError::unhandled)?;
         output.build()
     })
 }
@@ -1030,11 +1080,12 @@ pub fn parse_get_bucket_lifecycle_configuration_response(
         let mut output =
             crate::output::get_bucket_lifecycle_configuration_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_bucket_lifecycle_configuration(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::GetBucketLifecycleConfigurationError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_get_bucket_lifecycle_configuration(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetBucketLifecycleConfigurationError::unhandled)?;
         output.build()
     })
 }
@@ -1056,9 +1107,11 @@ pub fn parse_get_bucket_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_policy_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_get_bucket_policy(response.body().as_ref(), output)
-                .map_err(crate::error::GetBucketPolicyError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_bucket_policy(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetBucketPolicyError::unhandled)?;
         output.build()
     })
 }
@@ -1082,9 +1135,11 @@ pub fn parse_get_bucket_tagging_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_tagging_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_get_bucket_tagging(response.body().as_ref(), output)
-                .map_err(crate::error::GetBucketTaggingError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_bucket_tagging(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetBucketTaggingError::unhandled)?;
         output.build()
     })
 }
@@ -1110,11 +1165,7 @@ pub fn parse_get_job_tagging_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetJobTaggingError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetJobTaggingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1123,27 +1174,25 @@ pub fn parse_get_job_tagging_error(
                 tmp
             }),
         },
-        "NotFoundException" => crate::error::GetJobTaggingError {
-            meta: generic,
-            kind: crate::error::GetJobTaggingErrorKind::NotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "NotFoundException" => {
+            crate::error::GetJobTaggingError {
+                meta: generic,
+                kind: crate::error::GetJobTaggingErrorKind::NotFoundException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetJobTaggingError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetJobTaggingError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "TooManyRequestsException" => crate::error::GetJobTaggingError {
             meta: generic,
             kind: crate::error::GetJobTaggingErrorKind::TooManyRequestsException({
@@ -1152,11 +1201,7 @@ pub fn parse_get_job_tagging_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_requests_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetJobTaggingError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetJobTaggingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1177,9 +1222,110 @@ pub fn parse_get_job_tagging_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_job_tagging_output::Builder::default();
         let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_job_tagging(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetJobTaggingError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_multi_region_access_point_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetMultiRegionAccessPointOutput,
+    crate::error::GetMultiRegionAccessPointError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetMultiRegionAccessPointError::unhandled)?;
+    Err(crate::error::GetMultiRegionAccessPointError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_multi_region_access_point_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetMultiRegionAccessPointOutput,
+    crate::error::GetMultiRegionAccessPointError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_multi_region_access_point_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_multi_region_access_point(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetMultiRegionAccessPointError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_multi_region_access_point_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetMultiRegionAccessPointPolicyOutput,
+    crate::error::GetMultiRegionAccessPointPolicyError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetMultiRegionAccessPointPolicyError::unhandled)?;
+    Err(crate::error::GetMultiRegionAccessPointPolicyError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_multi_region_access_point_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetMultiRegionAccessPointPolicyOutput,
+    crate::error::GetMultiRegionAccessPointPolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_multi_region_access_point_policy_output::Builder::default();
+        let _ = response;
         output =
-            crate::xml_deser::deser_operation_get_job_tagging(response.body().as_ref(), output)
-                .map_err(crate::error::GetJobTaggingError::unhandled)?;
+            crate::xml_deser::deser_operation_crate_operation_get_multi_region_access_point_policy(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetMultiRegionAccessPointPolicyError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_multi_region_access_point_policy_status_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetMultiRegionAccessPointPolicyStatusOutput,
+    crate::error::GetMultiRegionAccessPointPolicyStatusError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetMultiRegionAccessPointPolicyStatusError::unhandled)?;
+    Err(crate::error::GetMultiRegionAccessPointPolicyStatusError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_multi_region_access_point_policy_status_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetMultiRegionAccessPointPolicyStatusOutput,
+    crate::error::GetMultiRegionAccessPointPolicyStatusError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_multi_region_access_point_policy_status_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_multi_region_access_point_policy_status(response.body().as_ref(), output).map_err(crate::error::GetMultiRegionAccessPointPolicyStatusError::unhandled)?;
         output.build()
     })
 }
@@ -1208,7 +1354,7 @@ pub fn parse_get_public_access_block_error(
                     let mut tmp = {
                         #[allow(unused_mut)]let mut output = crate::error::no_such_public_access_block_configuration::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_no_such_public_access_block_configuration_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPublicAccessBlockError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_no_such_public_access_block_configuration_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPublicAccessBlockError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1296,11 +1442,7 @@ pub fn parse_get_storage_lens_configuration_tagging_response(
         let mut output =
             crate::output::get_storage_lens_configuration_tagging_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_storage_lens_configuration_tagging(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::GetStorageLensConfigurationTaggingError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_storage_lens_configuration_tagging(response.body().as_ref(), output).map_err(crate::error::GetStorageLensConfigurationTaggingError::unhandled)?;
         output.build()
     })
 }
@@ -1324,9 +1466,11 @@ pub fn parse_list_access_points_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_access_points_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_list_access_points(response.body().as_ref(), output)
-                .map_err(crate::error::ListAccessPointsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_list_access_points(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListAccessPointsError::unhandled)?;
         output.build()
     })
 }
@@ -1357,11 +1501,12 @@ pub fn parse_list_access_points_for_object_lambda_response(
         let mut output =
             crate::output::list_access_points_for_object_lambda_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_access_points_for_object_lambda(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ListAccessPointsForObjectLambdaError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_list_access_points_for_object_lambda(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ListAccessPointsForObjectLambdaError::unhandled)?;
         output.build()
     })
 }
@@ -1387,11 +1532,7 @@ pub fn parse_list_jobs_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListJobsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListJobsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1408,12 +1549,7 @@ pub fn parse_list_jobs_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_invalid_next_token_exception_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::ListJobsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListJobsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1430,11 +1566,7 @@ pub fn parse_list_jobs_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_request_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListJobsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListJobsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1455,8 +1587,45 @@ pub fn parse_list_jobs_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_jobs_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_jobs(response.body().as_ref(), output)
-            .map_err(crate::error::ListJobsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_list_jobs(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListJobsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_multi_region_access_points_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListMultiRegionAccessPointsOutput,
+    crate::error::ListMultiRegionAccessPointsError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListMultiRegionAccessPointsError::unhandled)?;
+    Err(crate::error::ListMultiRegionAccessPointsError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_multi_region_access_points_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListMultiRegionAccessPointsOutput,
+    crate::error::ListMultiRegionAccessPointsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_multi_region_access_points_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_list_multi_region_access_points(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListMultiRegionAccessPointsError::unhandled)?;
         output.build()
     })
 }
@@ -1484,7 +1653,7 @@ pub fn parse_list_regional_buckets_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_regional_buckets_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_regional_buckets(
+        output = crate::xml_deser::deser_operation_crate_operation_list_regional_buckets(
             response.body().as_ref(),
             output,
         )
@@ -1518,11 +1687,12 @@ pub fn parse_list_storage_lens_configurations_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_storage_lens_configurations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_storage_lens_configurations(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ListStorageLensConfigurationsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_list_storage_lens_configurations(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ListStorageLensConfigurationsError::unhandled)?;
         output.build()
     })
 }
@@ -1703,11 +1873,7 @@ pub fn parse_put_job_tagging_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutJobTaggingError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutJobTaggingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1716,27 +1882,25 @@ pub fn parse_put_job_tagging_error(
                 tmp
             }),
         },
-        "NotFoundException" => crate::error::PutJobTaggingError {
-            meta: generic,
-            kind: crate::error::PutJobTaggingErrorKind::NotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "NotFoundException" => {
+            crate::error::PutJobTaggingError {
+                meta: generic,
+                kind: crate::error::PutJobTaggingErrorKind::NotFoundException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutJobTaggingError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutJobTaggingError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "TooManyRequestsException" => crate::error::PutJobTaggingError {
             meta: generic,
             kind: crate::error::PutJobTaggingErrorKind::TooManyRequestsException({
@@ -1745,11 +1909,7 @@ pub fn parse_put_job_tagging_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_requests_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutJobTaggingError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutJobTaggingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1766,11 +1926,7 @@ pub fn parse_put_job_tagging_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_tags_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutJobTaggingError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_tags_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutJobTaggingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1791,6 +1947,42 @@ pub fn parse_put_job_tagging_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_job_tagging_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_multi_region_access_point_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutMultiRegionAccessPointPolicyOutput,
+    crate::error::PutMultiRegionAccessPointPolicyError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::PutMultiRegionAccessPointPolicyError::unhandled)?;
+    Err(crate::error::PutMultiRegionAccessPointPolicyError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_multi_region_access_point_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutMultiRegionAccessPointPolicyOutput,
+    crate::error::PutMultiRegionAccessPointPolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::put_multi_region_access_point_policy_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_put_multi_region_access_point_policy(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::PutMultiRegionAccessPointPolicyError::unhandled)?;
         output.build()
     })
 }
@@ -1901,11 +2093,7 @@ pub fn parse_update_job_priority_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_bad_request_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateJobPriorityError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_bad_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobPriorityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1922,11 +2110,7 @@ pub fn parse_update_job_priority_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateJobPriorityError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobPriorityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1935,27 +2119,25 @@ pub fn parse_update_job_priority_error(
                 tmp
             }),
         },
-        "NotFoundException" => crate::error::UpdateJobPriorityError {
-            meta: generic,
-            kind: crate::error::UpdateJobPriorityErrorKind::NotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "NotFoundException" => {
+            crate::error::UpdateJobPriorityError {
+                meta: generic,
+                kind: crate::error::UpdateJobPriorityErrorKind::NotFoundException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateJobPriorityError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobPriorityError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "TooManyRequestsException" => crate::error::UpdateJobPriorityError {
             meta: generic,
             kind: crate::error::UpdateJobPriorityErrorKind::TooManyRequestsException({
@@ -1964,11 +2146,7 @@ pub fn parse_update_job_priority_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_requests_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateJobPriorityError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobPriorityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1990,9 +2168,11 @@ pub fn parse_update_job_priority_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_job_priority_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_update_job_priority(response.body().as_ref(), output)
-                .map_err(crate::error::UpdateJobPriorityError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_update_job_priority(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateJobPriorityError::unhandled)?;
         output.build()
     })
 }
@@ -2018,11 +2198,7 @@ pub fn parse_update_job_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_bad_request_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateJobStatusError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_bad_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2039,11 +2215,7 @@ pub fn parse_update_job_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_service_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateJobStatusError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2052,48 +2224,44 @@ pub fn parse_update_job_status_error(
                 tmp
             }),
         },
-        "JobStatusException" => crate::error::UpdateJobStatusError {
-            meta: generic,
-            kind: crate::error::UpdateJobStatusErrorKind::JobStatusException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "JobStatusException" => {
+            crate::error::UpdateJobStatusError {
+                meta: generic,
+                kind: crate::error::UpdateJobStatusErrorKind::JobStatusException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::job_status_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_job_status_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateJobStatusError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::UpdateJobStatusError {
-            meta: generic,
-            kind: crate::error::UpdateJobStatusErrorKind::NotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::job_status_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_job_status_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobStatusError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "NotFoundException" => {
+            crate::error::UpdateJobStatusError {
+                meta: generic,
+                kind: crate::error::UpdateJobStatusErrorKind::NotFoundException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateJobStatusError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobStatusError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "TooManyRequestsException" => crate::error::UpdateJobStatusError {
             meta: generic,
             kind: crate::error::UpdateJobStatusErrorKind::TooManyRequestsException({
@@ -2102,11 +2270,7 @@ pub fn parse_update_job_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_too_many_requests_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateJobStatusError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2127,9 +2291,11 @@ pub fn parse_update_job_status_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_job_status_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_update_job_status(response.body().as_ref(), output)
-                .map_err(crate::error::UpdateJobStatusError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_update_job_status(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateJobStatusError::unhandled)?;
         output.build()
     })
 }

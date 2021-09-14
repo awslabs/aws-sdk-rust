@@ -5,15 +5,26 @@
 
 //! Load Credentials from Web Identity Tokens
 //!
-//! WebIdentity tokens can be loaded via environment variables, or via profiles:
+//! Web identity tokens can be loaded from file. The path may be set in one of three ways:
+//! 1. [Environment Variables](#environment-variable-configuration)
+//! 2. [AWS profile](#aws-profile-configuration) defined in `~/.aws/config`
+//! 3. Static configuration via [`static_configuration`](Builder::static_configuration)
 //!
-//! ## Via Environment Variables
+//! **Note:** [WebIdentityTokenCredentialsProvider] is part of the [default provider chain](crate::default_provider).
+//! Unless you need specific behavior or configuration overrides, it is recommended to use the
+//! default chain instead of using this provider directly. This client should be considered a "low level"
+//! client as it does not include caching or profile-file resolution when used in isolation.
+//!
+//! ## Environment Variable Configuration
 //! WebIdentityTokenCredentialProvider will load the following environment variables:
 //! - `AWS_WEB_IDENTITY_TOKEN_FILE`: **required**, location to find the token file containing a JWT token
 //! - `AWS_ROLE_ARN`: **required**, role ARN to assume
 //! - `AWS_IAM_ROLE_SESSION_NAME`: **optional**: Session name to use when assuming the role
 //!
-//! ## Via Shared Config Profiles
+//! ## AWS Profile Configuration
+//! **Note:** Configuration of the web identity token provider via a shared profile is only supported
+//! when using the [`ProfileFileCredentialsProvider`](crate::profile::credentials).
+//!
 //! Web identity token credentials can be loaded from `~/.aws/config` in two ways:
 //! 1. Directly:
 //!   ```ini
@@ -34,19 +45,21 @@
 //!   web_identity_token_file = /token.jwt
 //!   ```
 //!
-//! # Example
-//! Web Identity Token providers are part of the [default chain](crate::default_provider::credentials),
-//! however, you can construct one explicitly if you don't want to use the default provider chain:
+//! # Examples
+//! Web Identity Token providers are part of the [default chain](crate::default_provider::credentials).
+//! However, they may be directly constructed if you don't want to use the default provider chain.
+//! Unless overridden with [`static_configuration`](Builder::static_configuration), the provider will
+//! load configuration from environment variables.
 //!
-/// ```rust
-/// # async fn test() {
-/// use aws_config::web_identity_token::WebIdentityTokenCredentialsProvider;
-/// use aws_config::provider_config::ProviderConfig;
-/// let provider = WebIdentityTokenCredentialsProvider::builder()
-///     .configure(&ProviderConfig::with_default_region().await)
-///     .build();
-/// # }
-/// ```
+//! ```rust
+//! # async fn test() {
+//! use aws_config::web_identity_token::WebIdentityTokenCredentialsProvider;
+//! use aws_config::provider_config::ProviderConfig;
+//! let provider = WebIdentityTokenCredentialsProvider::builder()
+//!     .configure(&ProviderConfig::with_default_region().await)
+//!     .build();
+//! # }
+//! ```
 use aws_sdk_sts::Region;
 use aws_types::os_shim_internal::{Env, Fs};
 
@@ -164,7 +177,7 @@ pub struct Builder {
 impl Builder {
     /// Configure generic options of the [WebIdentityTokenCredentialsProvider]
     ///
-    /// # Example
+    /// # Examples
     /// ```rust
     /// # async fn test() {
     /// use aws_config::web_identity_token::WebIdentityTokenCredentialsProvider;

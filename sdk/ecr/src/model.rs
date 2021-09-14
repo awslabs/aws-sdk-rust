@@ -524,7 +524,7 @@ pub struct ImageScanningConfiguration {
     /// <p>The setting that determines whether images are scanned after being pushed to a
     /// repository. If set to <code>true</code>, images will be scanned after being pushed. If
     /// this parameter is not specified, it will default to <code>false</code> and images will
-    /// not be scanned unless a scan is manually started with the <a>StartImageScan</a> API.</p>
+    /// not be scanned unless a scan is manually started with the <a href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html">API_StartImageScan</a> API.</p>
     pub scan_on_push: bool,
 }
 impl std::fmt::Debug for ImageScanningConfiguration {
@@ -546,7 +546,7 @@ pub mod image_scanning_configuration {
         /// <p>The setting that determines whether images are scanned after being pushed to a
         /// repository. If set to <code>true</code>, images will be scanned after being pushed. If
         /// this parameter is not specified, it will default to <code>false</code> and images will
-        /// not be scanned unless a scan is manually started with the <a>StartImageScan</a> API.</p>
+        /// not be scanned unless a scan is manually started with the <a href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html">API_StartImageScan</a> API.</p>
         pub fn scan_on_push(mut self, input: bool) -> Self {
             self.scan_on_push = Some(input);
             self
@@ -574,7 +574,7 @@ impl ImageScanningConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Image {
-    /// <p>The AWS account ID associated with the registry containing the image.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry containing the image.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository associated with the image.</p>
     pub repository_name: std::option::Option<std::string::String>,
@@ -609,7 +609,7 @@ pub mod image {
         pub(crate) image_manifest_media_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry containing the image.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry containing the image.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
@@ -1204,10 +1204,10 @@ impl AuthorizationData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Repository {
     /// <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-    /// repository, AWS account ID of the repository owner, repository namespace, and repository name.
+    /// repository, Amazon Web Services account ID of the repository owner, repository namespace, and repository name.
     /// For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
     pub repository_arn: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID associated with the registry that contains the repository.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository.</p>
     pub repository_name: std::option::Option<std::string::String>,
@@ -1260,7 +1260,7 @@ pub mod repository {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-        /// repository, AWS account ID of the repository owner, repository namespace, and repository name.
+        /// repository, Amazon Web Services account ID of the repository owner, repository namespace, and repository name.
         /// For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
         pub fn repository_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_arn = Some(input.into());
@@ -1273,7 +1273,7 @@ pub mod repository {
             self.repository_arn = input;
             self
         }
-        /// <p>The AWS account ID associated with the registry that contains the repository.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
@@ -1388,30 +1388,30 @@ impl Repository {
 /// keys which encrypts your data at rest using an AES-256 encryption algorithm. This does
 /// not require any action on your part.</p>
 /// <p>For more control over the encryption of the contents of your repository, you can use
-/// server-side encryption with customer master keys (CMKs) stored in AWS Key Management Service (AWS KMS) to
-/// encrypt your images. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html">Amazon ECR encryption at
+/// server-side encryption with Key Management Service key stored in Key Management Service (KMS) to encrypt your
+/// images. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html">Amazon ECR encryption at
 /// rest</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionConfiguration {
     /// <p>The encryption type to use.</p>
     /// <p>If you use the <code>KMS</code> encryption type, the contents of the repository will
-    /// be encrypted using server-side encryption with customer master keys (CMKs) stored in
-    /// AWS KMS. When you use AWS KMS to encrypt your data, you can either use the default AWS
-    /// managed CMK for Amazon ECR, or specify your own CMK, which you already created. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting Data Using Server-Side
-    /// Encryption with CMKs Stored in AWS Key Management Service (SSE-KMS)</a> in the
+    /// be encrypted using server-side encryption with Key Management Service key stored in KMS. When you
+    /// use KMS to encrypt your data, you can either use the default Amazon Web Services managed KMS key
+    /// for Amazon ECR, or specify your own KMS key, which you already created. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting data using server-side
+    /// encryption with an KMS key stored in Key Management Service (SSE-KMS)</a> in the
     /// <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p>
     /// <p>If you use the <code>AES256</code> encryption type, Amazon ECR uses server-side encryption
     /// with Amazon S3-managed encryption keys which encrypts the images in the repository using an
-    /// AES-256 encryption algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting Data Using
-    /// Server-Side Encryption with Amazon S3-Managed Encryption Keys (SSE-S3)</a> in
-    /// the <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p>
+    /// AES-256 encryption algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting data using
+    /// server-side encryption with Amazon S3-managed encryption keys (SSE-S3)</a> in the
+    /// <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>If you use the <code>KMS</code> encryption type, specify the CMK to use for
-    /// encryption. The alias, key ID, or full ARN of the CMK can be specified. The key must
-    /// exist in the same Region as the repository. If no key is specified, the default AWS
-    /// managed CMK for Amazon ECR will be used.</p>
+    /// <p>If you use the <code>KMS</code> encryption type, specify the KMS key to use for
+    /// encryption. The alias, key ID, or full ARN of the KMS key can be specified. The key
+    /// must exist in the same Region as the repository. If no key is specified, the default
+    /// Amazon Web Services managed KMS key for Amazon ECR will be used.</p>
     pub kms_key: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EncryptionConfiguration {
@@ -1434,17 +1434,17 @@ pub mod encryption_configuration {
     impl Builder {
         /// <p>The encryption type to use.</p>
         /// <p>If you use the <code>KMS</code> encryption type, the contents of the repository will
-        /// be encrypted using server-side encryption with customer master keys (CMKs) stored in
-        /// AWS KMS. When you use AWS KMS to encrypt your data, you can either use the default AWS
-        /// managed CMK for Amazon ECR, or specify your own CMK, which you already created. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting Data Using Server-Side
-        /// Encryption with CMKs Stored in AWS Key Management Service (SSE-KMS)</a> in the
+        /// be encrypted using server-side encryption with Key Management Service key stored in KMS. When you
+        /// use KMS to encrypt your data, you can either use the default Amazon Web Services managed KMS key
+        /// for Amazon ECR, or specify your own KMS key, which you already created. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting data using server-side
+        /// encryption with an KMS key stored in Key Management Service (SSE-KMS)</a> in the
         /// <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p>
         /// <p>If you use the <code>AES256</code> encryption type, Amazon ECR uses server-side encryption
         /// with Amazon S3-managed encryption keys which encrypts the images in the repository using an
-        /// AES-256 encryption algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting Data Using
-        /// Server-Side Encryption with Amazon S3-Managed Encryption Keys (SSE-S3)</a> in
-        /// the <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p>
+        /// AES-256 encryption algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting data using
+        /// server-side encryption with Amazon S3-managed encryption keys (SSE-S3)</a> in the
+        /// <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p>
         pub fn encryption_type(mut self, input: crate::model::EncryptionType) -> Self {
             self.encryption_type = Some(input);
             self
@@ -1456,10 +1456,10 @@ pub mod encryption_configuration {
             self.encryption_type = input;
             self
         }
-        /// <p>If you use the <code>KMS</code> encryption type, specify the CMK to use for
-        /// encryption. The alias, key ID, or full ARN of the CMK can be specified. The key must
-        /// exist in the same Region as the repository. If no key is specified, the default AWS
-        /// managed CMK for Amazon ECR will be used.</p>
+        /// <p>If you use the <code>KMS</code> encryption type, specify the KMS key to use for
+        /// encryption. The alias, key ID, or full ARN of the KMS key can be specified. The key
+        /// must exist in the same Region as the repository. If no key is specified, the default
+        /// Amazon Web Services managed KMS key for Amazon ECR will be used.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
             self
@@ -1893,7 +1893,7 @@ impl Attribute {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageDetail {
-    /// <p>The AWS account ID associated with the registry to which this image belongs.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry to which this image belongs.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to which this image belongs.</p>
     pub repository_name: std::option::Option<std::string::String>,
@@ -1961,7 +1961,7 @@ pub mod image_detail {
         pub(crate) artifact_media_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry to which this image belongs.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to which this image belongs.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self

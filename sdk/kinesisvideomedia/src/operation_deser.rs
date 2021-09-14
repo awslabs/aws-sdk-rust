@@ -40,26 +40,24 @@ pub fn parse_get_media_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClientLimitExceededException" => {
-            crate::error::GetMediaError {
-                meta: generic,
-                kind: crate::error::GetMediaErrorKind::ClientLimitExceededException({
+        "ClientLimitExceededException" => crate::error::GetMediaError {
+            meta: generic,
+            kind: crate::error::GetMediaErrorKind::ClientLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::client_limit_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_client_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMediaError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::client_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_client_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMediaError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ConnectionLimitExceededException" => crate::error::GetMediaError {
             meta: generic,
             kind: crate::error::GetMediaErrorKind::ConnectionLimitExceededException({
@@ -69,7 +67,7 @@ pub fn parse_get_media_error(
                     let mut output =
                         crate::error::connection_limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_connection_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMediaError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_connection_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMediaError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -86,11 +84,7 @@ pub fn parse_get_media_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_argument_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetMediaError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMediaError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -107,11 +101,7 @@ pub fn parse_get_media_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_endpoint_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_invalid_endpoint_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetMediaError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_endpoint_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMediaError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -128,11 +118,7 @@ pub fn parse_get_media_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_not_authorized_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetMediaError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_not_authorized_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMediaError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -141,26 +127,23 @@ pub fn parse_get_media_error(
                 tmp
             }),
         },
-        "ResourceNotFoundException" => {
-            crate::error::GetMediaError {
-                meta: generic,
-                kind: crate::error::GetMediaErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::GetMediaError {
+            meta: generic,
+            kind: crate::error::GetMediaErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMediaError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMediaError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetMediaError::generic(generic),
     })
 }

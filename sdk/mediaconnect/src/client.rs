@@ -153,6 +153,9 @@ where
     pub fn update_flow_media_stream(&self) -> fluent_builders::UpdateFlowMediaStream<C, M, R> {
         fluent_builders::UpdateFlowMediaStream::new(self.handle.clone())
     }
+    pub fn update_flow_output(&self) -> fluent_builders::UpdateFlowOutput<C, M, R> {
+        fluent_builders::UpdateFlowOutput::new(self.handle.clone())
+    }
     pub fn update_flow_source(&self) -> fluent_builders::UpdateFlowSource<C, M, R> {
         fluent_builders::UpdateFlowSource::new(self.handle.clone())
     }
@@ -2149,6 +2152,212 @@ pub mod fluent_builders {
         }
         pub fn set_video_format(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_video_format(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateFlowOutput<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_flow_output_input::Builder,
+    }
+    impl<C, M, R> UpdateFlowOutput<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateFlowOutputOutput,
+            smithy_http::result::SdkError<crate::error::UpdateFlowOutputError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateFlowOutputInputOperationOutputAlias,
+                crate::output::UpdateFlowOutputOutput,
+                crate::error::UpdateFlowOutputError,
+                crate::input::UpdateFlowOutputInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `CidrAllowList`.
+        ///
+        /// To override the contents of this collection use [`set_cidr_allow_list`](Self::set_cidr_allow_list).
+        /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+        pub fn cidr_allow_list(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr_allow_list(inp);
+            self
+        }
+        pub fn set_cidr_allow_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_cidr_allow_list(input);
+            self
+        }
+        /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// The IP address where you want to send the output.
+        pub fn destination(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination(inp);
+            self
+        }
+        pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_destination(input);
+            self
+        }
+        /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+        pub fn encryption(mut self, inp: crate::model::UpdateEncryption) -> Self {
+            self.inner = self.inner.encryption(inp);
+            self
+        }
+        pub fn set_encryption(
+            mut self,
+            input: std::option::Option<crate::model::UpdateEncryption>,
+        ) -> Self {
+            self.inner = self.inner.set_encryption(input);
+            self
+        }
+        /// The flow that is associated with the output that you want to update.
+        pub fn flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_arn(inp);
+            self
+        }
+        pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_flow_arn(input);
+            self
+        }
+        /// The maximum latency in milliseconds for Zixi-based streams.
+        pub fn max_latency(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_latency(inp);
+            self
+        }
+        pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_latency(input);
+            self
+        }
+        /// Appends an item to `MediaStreamOutputConfigurations`.
+        ///
+        /// To override the contents of this collection use [`set_media_stream_output_configurations`](Self::set_media_stream_output_configurations).
+        /// The media streams that are associated with the output, and the parameters for those associations.
+        pub fn media_stream_output_configurations(
+            mut self,
+            inp: impl Into<crate::model::MediaStreamOutputConfigurationRequest>,
+        ) -> Self {
+            self.inner = self.inner.media_stream_output_configurations(inp);
+            self
+        }
+        pub fn set_media_stream_output_configurations(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::MediaStreamOutputConfigurationRequest>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_media_stream_output_configurations(input);
+            self
+        }
+        /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+        pub fn min_latency(mut self, inp: i32) -> Self {
+            self.inner = self.inner.min_latency(inp);
+            self
+        }
+        pub fn set_min_latency(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_min_latency(input);
+            self
+        }
+        /// The ARN of the output that you want to update.
+        pub fn output_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_arn(inp);
+            self
+        }
+        pub fn set_output_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_output_arn(input);
+            self
+        }
+        /// The port to use when content is distributed to this output.
+        pub fn port(mut self, inp: i32) -> Self {
+            self.inner = self.inner.port(inp);
+            self
+        }
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_port(input);
+            self
+        }
+        /// The protocol to use for the output.
+        pub fn protocol(mut self, inp: crate::model::Protocol) -> Self {
+            self.inner = self.inner.protocol(inp);
+            self
+        }
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
+            self.inner = self.inner.set_protocol(input);
+            self
+        }
+        /// The remote ID for the Zixi-pull stream.
+        pub fn remote_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.remote_id(inp);
+            self
+        }
+        pub fn set_remote_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_remote_id(input);
+            self
+        }
+        /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+        pub fn smoothing_latency(mut self, inp: i32) -> Self {
+            self.inner = self.inner.smoothing_latency(inp);
+            self
+        }
+        pub fn set_smoothing_latency(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_smoothing_latency(input);
+            self
+        }
+        /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_id(inp);
+            self
+        }
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_id(input);
+            self
+        }
+        /// The name of the VPC interface attachment to use for this output.
+        pub fn vpc_interface_attachment(
+            mut self,
+            inp: crate::model::VpcInterfaceAttachment,
+        ) -> Self {
+            self.inner = self.inner.vpc_interface_attachment(inp);
+            self
+        }
+        pub fn set_vpc_interface_attachment(
+            mut self,
+            input: std::option::Option<crate::model::VpcInterfaceAttachment>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_interface_attachment(input);
             self
         }
     }

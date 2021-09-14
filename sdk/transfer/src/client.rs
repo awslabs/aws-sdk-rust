@@ -78,6 +78,9 @@ where
     pub fn create_user(&self) -> fluent_builders::CreateUser<C, M, R> {
         fluent_builders::CreateUser::new(self.handle.clone())
     }
+    pub fn create_workflow(&self) -> fluent_builders::CreateWorkflow<C, M, R> {
+        fluent_builders::CreateWorkflow::new(self.handle.clone())
+    }
     pub fn delete_access(&self) -> fluent_builders::DeleteAccess<C, M, R> {
         fluent_builders::DeleteAccess::new(self.handle.clone())
     }
@@ -90,8 +93,14 @@ where
     pub fn delete_user(&self) -> fluent_builders::DeleteUser<C, M, R> {
         fluent_builders::DeleteUser::new(self.handle.clone())
     }
+    pub fn delete_workflow(&self) -> fluent_builders::DeleteWorkflow<C, M, R> {
+        fluent_builders::DeleteWorkflow::new(self.handle.clone())
+    }
     pub fn describe_access(&self) -> fluent_builders::DescribeAccess<C, M, R> {
         fluent_builders::DescribeAccess::new(self.handle.clone())
+    }
+    pub fn describe_execution(&self) -> fluent_builders::DescribeExecution<C, M, R> {
+        fluent_builders::DescribeExecution::new(self.handle.clone())
     }
     pub fn describe_security_policy(&self) -> fluent_builders::DescribeSecurityPolicy<C, M, R> {
         fluent_builders::DescribeSecurityPolicy::new(self.handle.clone())
@@ -102,11 +111,17 @@ where
     pub fn describe_user(&self) -> fluent_builders::DescribeUser<C, M, R> {
         fluent_builders::DescribeUser::new(self.handle.clone())
     }
+    pub fn describe_workflow(&self) -> fluent_builders::DescribeWorkflow<C, M, R> {
+        fluent_builders::DescribeWorkflow::new(self.handle.clone())
+    }
     pub fn import_ssh_public_key(&self) -> fluent_builders::ImportSshPublicKey<C, M, R> {
         fluent_builders::ImportSshPublicKey::new(self.handle.clone())
     }
     pub fn list_accesses(&self) -> fluent_builders::ListAccesses<C, M, R> {
         fluent_builders::ListAccesses::new(self.handle.clone())
+    }
+    pub fn list_executions(&self) -> fluent_builders::ListExecutions<C, M, R> {
+        fluent_builders::ListExecutions::new(self.handle.clone())
     }
     pub fn list_security_policies(&self) -> fluent_builders::ListSecurityPolicies<C, M, R> {
         fluent_builders::ListSecurityPolicies::new(self.handle.clone())
@@ -119,6 +134,12 @@ where
     }
     pub fn list_users(&self) -> fluent_builders::ListUsers<C, M, R> {
         fluent_builders::ListUsers::new(self.handle.clone())
+    }
+    pub fn list_workflows(&self) -> fluent_builders::ListWorkflows<C, M, R> {
+        fluent_builders::ListWorkflows::new(self.handle.clone())
+    }
+    pub fn send_workflow_step_state(&self) -> fluent_builders::SendWorkflowStepState<C, M, R> {
+        fluent_builders::SendWorkflowStepState::new(self.handle.clone())
     }
     pub fn start_server(&self) -> fluent_builders::StartServer<C, M, R> {
         fluent_builders::StartServer::new(self.handle.clone())
@@ -205,7 +226,7 @@ pub mod fluent_builders {
         }
         /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
         /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
         /// S3 or EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, inp: crate::model::HomeDirectoryType) -> Self {
             self.inner = self.inner.home_directory_type(inp);
@@ -233,7 +254,7 @@ pub mod fluent_builders {
         /// <p>
         /// <code>[ { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code>
         /// </p>
-        /// <p>In most cases, you can use this value instead of the scope-down policy to lock down your
+        /// <p>In most cases, you can use this value instead of the session policy to lock down your
         /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
         /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
         /// <code>HomeDirectory</code> parameter value.</p>
@@ -263,15 +284,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_home_directory_mappings(input);
             self
         }
-        /// <p>A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
         /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
         /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
         /// <note>
-        /// <p>This only applies when domain of <code>ServerId</code> is S3.
-        /// Amazon EFS does not use scope-down policies.</p>
-        /// <p>For scope-down policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
-        /// <p>For an example of a scope-down policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/scope-down-policy.html">Example
-        /// scope-down policy</a>.</p>
+        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
+        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+        /// it in the <code>Policy</code> argument.</p>      
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
+        /// session policy</a>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API
         /// Reference</i>.</p>
         /// </note>
@@ -622,6 +644,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+        pub fn workflow_details(mut self, inp: crate::model::WorkflowDetails) -> Self {
+            self.inner = self.inner.workflow_details(inp);
+            self
+        }
+        pub fn set_workflow_details(
+            mut self,
+            input: std::option::Option<crate::model::WorkflowDetails>,
+        ) -> Self {
+            self.inner = self.inner.set_workflow_details(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct CreateUser<
@@ -682,7 +716,7 @@ pub mod fluent_builders {
         }
         /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
         /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
         /// S3 or EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, inp: crate::model::HomeDirectoryType) -> Self {
             self.inner = self.inner.home_directory_type(inp);
@@ -711,7 +745,7 @@ pub mod fluent_builders {
         /// <code>[ { "Entry": "your-personal-report.pdf", "Target":
         /// "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code>
         /// </p>
-        /// <p>In most cases, you can use this value instead of the scope-down policy to lock your user
+        /// <p>In most cases, you can use this value instead of the session policy to lock your user
         /// down to the designated home directory ("<code>chroot</code>"). To do this, you can set
         /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory
         /// parameter value.</p>
@@ -741,15 +775,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_home_directory_mappings(input);
             self
         }
-        /// <p>A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
         /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
         /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
         /// <note>
-        /// <p>This only applies when domain of ServerId is S3. EFS does not use scope down policy.</p>
-        /// <p>For scope-down policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
+        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
         /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
         /// it in the <code>Policy</code> argument.</p>
-        /// <p>For an example of a scope-down policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/scope-down-policy.html">Example scope-down
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session
         /// policy</a>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
         /// Security Token Service API Reference</i>.</p>
@@ -829,8 +863,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique string that identifies a user and is associated with a as specified by the
-        /// <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
+        /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
         /// long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen
         /// '-', period '.', and at sign '@'. The user name can't start
         /// with a hyphen, period, or at sign.</p>
@@ -840,6 +873,130 @@ pub mod fluent_builders {
         }
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreateWorkflow<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_workflow_input::Builder,
+    }
+    impl<C, M, R> CreateWorkflow<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateWorkflowOutput,
+            smithy_http::result::SdkError<crate::error::CreateWorkflowError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateWorkflowInputOperationOutputAlias,
+                crate::output::CreateWorkflowOutput,
+                crate::error::CreateWorkflowError,
+                crate::input::CreateWorkflowInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A textual description for the workflow.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Appends an item to `Steps`.
+        ///
+        /// To override the contents of this collection use [`set_steps`](Self::set_steps).
+        /// <p>Specifies the details for the steps that are in the specified workflow.</p>
+        /// <p>
+        /// The <code>TYPE</code> specifies which of the following actions is being taken for this step.
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>Copy</i>: copy the file to another location</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>Custom</i>: custom step with a lambda target</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>Delete</i>: delete the file</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>Tag</i>: add a tag to the file</p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path.
+        /// </p>
+        pub fn steps(mut self, inp: impl Into<crate::model::WorkflowStep>) -> Self {
+            self.inner = self.inner.steps(inp);
+            self
+        }
+        pub fn set_steps(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
+        ) -> Self {
+            self.inner = self.inner.set_steps(input);
+            self
+        }
+        /// Appends an item to `OnExceptionSteps`.
+        ///
+        /// To override the contents of this collection use [`set_on_exception_steps`](Self::set_on_exception_steps).
+        /// <p>Specifies the steps (actions) to take if any errors are encountered during execution of the workflow.</p>
+        pub fn on_exception_steps(mut self, inp: impl Into<crate::model::WorkflowStep>) -> Self {
+            self.inner = self.inner.on_exception_steps(inp);
+            self
+        }
+        pub fn set_on_exception_steps(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
+        ) -> Self {
+            self.inner = self.inner.set_on_exception_steps(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached
+        /// to workflows for any purpose.</p>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1110,6 +1267,60 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DeleteWorkflow<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_workflow_input::Builder,
+    }
+    impl<C, M, R> DeleteWorkflow<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteWorkflowOutput,
+            smithy_http::result::SdkError<crate::error::DeleteWorkflowError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteWorkflowInputOperationOutputAlias,
+                crate::output::DeleteWorkflowOutput,
+                crate::error::DeleteWorkflowError,
+                crate::input::DeleteWorkflowInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(inp);
+            self
+        }
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workflow_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DescribeAccess<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -1178,6 +1389,69 @@ pub mod fluent_builders {
         }
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_external_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeExecution<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_execution_input::Builder,
+    }
+    impl<C, M, R> DescribeExecution<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeExecutionOutput,
+            smithy_http::result::SdkError<crate::error::DescribeExecutionError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeExecutionInputOperationOutputAlias,
+                crate::output::DescribeExecutionOutput,
+                crate::error::DescribeExecutionError,
+                crate::input::DescribeExecutionInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the execution of a workflow.</p>
+        pub fn execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_id(inp);
+            self
+        }
+        pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_execution_id(input);
+            self
+        }
+        /// <p>A unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(inp);
+            self
+        }
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workflow_id(input);
             self
         }
     }
@@ -1357,6 +1631,60 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DescribeWorkflow<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_workflow_input::Builder,
+    }
+    impl<C, M, R> DescribeWorkflow<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeWorkflowOutput,
+            smithy_http::result::SdkError<crate::error::DescribeWorkflowError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeWorkflowInputOperationOutputAlias,
+                crate::output::DescribeWorkflowOutput,
+                crate::error::DescribeWorkflowError,
+                crate::input::DescribeWorkflowInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(inp);
+            self
+        }
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workflow_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct ImportSshPublicKey<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -1503,6 +1831,99 @@ pub mod fluent_builders {
         }
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_server_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListExecutions<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_executions_input::Builder,
+    }
+    impl<C, M, R> ListExecutions<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListExecutionsOutput,
+            smithy_http::result::SdkError<crate::error::ListExecutionsError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListExecutionsInputOperationOutputAlias,
+                crate::output::ListExecutionsOutput,
+                crate::error::ListExecutionsError,
+                crate::input::ListExecutionsInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Specifies the aximum number of executions to return.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>
+        /// <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output.
+        /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
+        /// continue listing additional executions.</p>
+        /// <p>
+        /// This is useful for pagination, for instance.
+        /// If you have 100 executions for a workflow, you might only want to list first 10. If so, callthe API by specifing the <code>max-results</code>:
+        /// </p>
+        /// <p>
+        /// <code>aws transfer list-executions --max-results 10</code>
+        /// </p>
+        /// <p>
+        /// This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution.
+        /// You can now call the API again, suppling the <code>NextToken</code> value you received:
+        /// </p>
+        /// <p>
+        /// <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code>
+        /// </p>
+        /// <p>
+        /// This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details
+        /// for all 100 executions have been returned.
+        /// </p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>A unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(inp);
+            self
+        }
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workflow_id(input);
             self
         }
     }
@@ -1789,6 +2210,156 @@ pub mod fluent_builders {
         }
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_server_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListWorkflows<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_workflows_input::Builder,
+    }
+    impl<C, M, R> ListWorkflows<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListWorkflowsOutput,
+            smithy_http::result::SdkError<crate::error::ListWorkflowsError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListWorkflowsInputOperationOutputAlias,
+                crate::output::ListWorkflowsOutput,
+                crate::error::ListWorkflowsError,
+                crate::input::ListWorkflowsInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Specifies the maximum number of workflows to return.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>
+        /// <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output.
+        /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
+        /// continue listing additional workflows.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct SendWorkflowStepState<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::send_workflow_step_state_input::Builder,
+    }
+    impl<C, M, R> SendWorkflowStepState<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SendWorkflowStepStateOutput,
+            smithy_http::result::SdkError<crate::error::SendWorkflowStepStateError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::SendWorkflowStepStateInputOperationOutputAlias,
+                crate::output::SendWorkflowStepStateOutput,
+                crate::error::SendWorkflowStepStateError,
+                crate::input::SendWorkflowStepStateInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the workflow.</p>
+        pub fn workflow_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(inp);
+            self
+        }
+        pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workflow_id(input);
+            self
+        }
+        /// <p>A unique identifier for the execution of a workflow.</p>
+        pub fn execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_id(inp);
+            self
+        }
+        pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_execution_id(input);
+            self
+        }
+        /// <p>Used to distinguish between multiple callbacks for multiple Lambda steps within the same execution.</p>
+        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(inp);
+            self
+        }
+        pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_token(input);
+            self
+        }
+        /// <p>Indicates whether the specified step succeeded or failed.</p>
+        pub fn status(mut self, inp: crate::model::CustomStepStatus) -> Self {
+            self.inner = self.inner.status(inp);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::CustomStepStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_status(input);
             self
         }
     }
@@ -2210,7 +2781,7 @@ pub mod fluent_builders {
         }
         /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
         /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
         /// S3 or EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, inp: crate::model::HomeDirectoryType) -> Self {
             self.inner = self.inner.home_directory_type(inp);
@@ -2238,7 +2809,7 @@ pub mod fluent_builders {
         /// <p>
         /// <code>[ { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code>
         /// </p>
-        /// <p>In most cases, you can use this value instead of the scope-down policy to lock down your
+        /// <p>In most cases, you can use this value instead of the session policy to lock down your
         /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
         /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
         /// <code>HomeDirectory</code> parameter value.</p>
@@ -2268,15 +2839,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_home_directory_mappings(input);
             self
         }
-        /// <p>A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
         /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
         /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
         /// <note>
-        /// <p>This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope
-        /// down policy.</p>
-        /// <p>For scope-down policies, Amazon Web ServicesTransfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
-        /// <p>For an example of a scope-down policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/scope-down-policy.html">Example
-        /// scope-down policy</a>.</p>
+        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
+        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+        /// it in the <code>Policy</code> argument.</p>
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
+        /// session policy</a>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API
         /// Reference</i>.</p>
         /// </note>
@@ -2597,6 +3169,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_server_id(input);
             self
         }
+        /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+        pub fn workflow_details(mut self, inp: crate::model::WorkflowDetails) -> Self {
+            self.inner = self.inner.workflow_details(inp);
+            self
+        }
+        pub fn set_workflow_details(
+            mut self,
+            input: std::option::Option<crate::model::WorkflowDetails>,
+        ) -> Self {
+            self.inner = self.inner.set_workflow_details(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct UpdateUser<
@@ -2657,7 +3241,7 @@ pub mod fluent_builders {
         }
         /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
         /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
         /// S3 or EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, inp: crate::model::HomeDirectoryType) -> Self {
             self.inner = self.inner.home_directory_type(inp);
@@ -2686,7 +3270,7 @@ pub mod fluent_builders {
         /// <code>[ { "Entry": "your-personal-report.pdf", "Target":
         /// "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code>
         /// </p>
-        /// <p>In most cases, you can use this value instead of the scope-down policy to lock down your
+        /// <p>In most cases, you can use this value instead of the session policy to lock down your
         /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
         /// <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
         /// parameter value.</p>
@@ -2716,15 +3300,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_home_directory_mappings(input);
             self
         }
-        /// <p>A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
         /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
         /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
         /// <note>
-        /// <p>This only applies when domain of <code>ServerId</code> is S3.
-        /// Amazon EFS does not use scope-down policies.</p>
-        /// <p>For scope-down policies, Amazon Web ServicesTransfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy.
-        /// You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
-        /// <p>For an example of a scope-down policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating a scope-down
+        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
+        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+        /// it in the <code>Policy</code> argument.</p>
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session
         /// policy</a>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
         /// Security Token Service API Reference</i>.</p>

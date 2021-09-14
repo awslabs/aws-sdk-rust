@@ -6,22 +6,22 @@ pub fn ser_payload_post_content_input(
     Ok(smithy_http::body::SdkBody::from(payload.into_inner()))
 }
 
-pub fn serialize_operation_post_text(
+pub fn serialize_operation_crate_operation_post_text(
     input: &crate::input::PostTextInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_post_text_input(&mut object, input);
+    crate::json_ser::serialize_structure_crate_input_post_text_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
-pub fn serialize_operation_put_session(
+pub fn serialize_operation_crate_operation_put_session(
     input: &crate::input::PutSessionInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::json_ser::serialize_structure_put_session_input(&mut object, input);
+    crate::json_ser::serialize_structure_crate_input_put_session_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }

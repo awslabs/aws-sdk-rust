@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_request_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_request_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_request_exception::Builder,
 ) -> Result<crate::error::invalid_request_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_invalid_request_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_too_many_requests_exceptionjson_err(
+pub fn deser_structure_crate_error_too_many_requests_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::too_many_requests_exception::Builder,
 ) -> Result<crate::error::too_many_requests_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_too_many_requests_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_entities_detection_v2_job(
+pub fn deser_operation_crate_operation_describe_entities_detection_v2_job(
     input: &[u8],
     mut builder: crate::output::describe_entities_detection_v2_job_output::Builder,
 ) -> Result<
@@ -180,7 +180,7 @@ pub fn deser_operation_describe_entities_detection_v2_job(
                 match key.to_unescaped()?.as_ref() {
                     "ComprehendMedicalAsyncJobProperties" => {
                         builder = builder.set_comprehend_medical_async_job_properties(
-                            crate::json_deser::deser_structure_comprehend_medical_async_job_properties(tokens)?
+                            crate::json_deser::deser_structure_crate_model_comprehend_medical_async_job_properties(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -201,7 +201,7 @@ pub fn deser_operation_describe_entities_detection_v2_job(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_icd10_cm_inference_job(
+pub fn deser_operation_crate_operation_describe_icd10_cm_inference_job(
     input: &[u8],
     mut builder: crate::output::describe_icd10_cm_inference_job_output::Builder,
 ) -> Result<
@@ -220,7 +220,7 @@ pub fn deser_operation_describe_icd10_cm_inference_job(
                 match key.to_unescaped()?.as_ref() {
                     "ComprehendMedicalAsyncJobProperties" => {
                         builder = builder.set_comprehend_medical_async_job_properties(
-                            crate::json_deser::deser_structure_comprehend_medical_async_job_properties(tokens)?
+                            crate::json_deser::deser_structure_crate_model_comprehend_medical_async_job_properties(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -241,7 +241,7 @@ pub fn deser_operation_describe_icd10_cm_inference_job(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_phi_detection_job(
+pub fn deser_operation_crate_operation_describe_phi_detection_job(
     input: &[u8],
     mut builder: crate::output::describe_phi_detection_job_output::Builder,
 ) -> Result<
@@ -260,7 +260,7 @@ pub fn deser_operation_describe_phi_detection_job(
                 match key.to_unescaped()?.as_ref() {
                     "ComprehendMedicalAsyncJobProperties" => {
                         builder = builder.set_comprehend_medical_async_job_properties(
-                            crate::json_deser::deser_structure_comprehend_medical_async_job_properties(tokens)?
+                            crate::json_deser::deser_structure_crate_model_comprehend_medical_async_job_properties(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -281,7 +281,7 @@ pub fn deser_operation_describe_phi_detection_job(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_rx_norm_inference_job(
+pub fn deser_operation_crate_operation_describe_rx_norm_inference_job(
     input: &[u8],
     mut builder: crate::output::describe_rx_norm_inference_job_output::Builder,
 ) -> Result<
@@ -300,7 +300,7 @@ pub fn deser_operation_describe_rx_norm_inference_job(
                 match key.to_unescaped()?.as_ref() {
                     "ComprehendMedicalAsyncJobProperties" => {
                         builder = builder.set_comprehend_medical_async_job_properties(
-                            crate::json_deser::deser_structure_comprehend_medical_async_job_properties(tokens)?
+                            crate::json_deser::deser_structure_crate_model_comprehend_medical_async_job_properties(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -321,7 +321,7 @@ pub fn deser_operation_describe_rx_norm_inference_job(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_encoding_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_encoding_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_encoding_exception::Builder,
 ) -> Result<crate::error::invalid_encoding_exception::Builder, smithy_json::deserialize::Error> {
@@ -360,7 +360,7 @@ pub fn deser_structure_invalid_encoding_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_unavailable_exceptionjson_err(
+pub fn deser_structure_crate_error_service_unavailable_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_unavailable_exception::Builder,
 ) -> Result<crate::error::service_unavailable_exception::Builder, smithy_json::deserialize::Error> {
@@ -399,7 +399,7 @@ pub fn deser_structure_service_unavailable_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_text_size_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_text_size_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::text_size_limit_exceeded_exception::Builder,
 ) -> Result<
@@ -441,7 +441,7 @@ pub fn deser_structure_text_size_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_detect_entities(
+pub fn deser_operation_crate_operation_detect_entities(
     input: &[u8],
     mut builder: crate::output::detect_entities_output::Builder,
 ) -> Result<crate::output::detect_entities_output::Builder, smithy_json::deserialize::Error> {
@@ -456,12 +456,13 @@ pub fn deser_operation_detect_entities(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Entities" => {
-                        builder = builder
-                            .set_entities(crate::json_deser::deser_list_entity_list(tokens)?);
+                        builder = builder.set_entities(
+                            crate::json_deser::deser_list_com_amazonaws_comprehendmedical_entity_list(tokens)?
+                        );
                     }
                     "UnmappedAttributes" => {
                         builder = builder.set_unmapped_attributes(
-                            crate::json_deser::deser_list_unmapped_attribute_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_comprehendmedical_unmapped_attribute_list(tokens)?
                         );
                     }
                     "PaginationToken" => {
@@ -496,7 +497,7 @@ pub fn deser_operation_detect_entities(
     Ok(builder)
 }
 
-pub fn deser_operation_detect_entities_v2(
+pub fn deser_operation_crate_operation_detect_entities_v2(
     input: &[u8],
     mut builder: crate::output::detect_entities_v2_output::Builder,
 ) -> Result<crate::output::detect_entities_v2_output::Builder, smithy_json::deserialize::Error> {
@@ -511,12 +512,13 @@ pub fn deser_operation_detect_entities_v2(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Entities" => {
-                        builder = builder
-                            .set_entities(crate::json_deser::deser_list_entity_list(tokens)?);
+                        builder = builder.set_entities(
+                            crate::json_deser::deser_list_com_amazonaws_comprehendmedical_entity_list(tokens)?
+                        );
                     }
                     "UnmappedAttributes" => {
                         builder = builder.set_unmapped_attributes(
-                            crate::json_deser::deser_list_unmapped_attribute_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_comprehendmedical_unmapped_attribute_list(tokens)?
                         );
                     }
                     "PaginationToken" => {
@@ -551,7 +553,7 @@ pub fn deser_operation_detect_entities_v2(
     Ok(builder)
 }
 
-pub fn deser_operation_detect_phi(
+pub fn deser_operation_crate_operation_detect_phi(
     input: &[u8],
     mut builder: crate::output::detect_phi_output::Builder,
 ) -> Result<crate::output::detect_phi_output::Builder, smithy_json::deserialize::Error> {
@@ -566,8 +568,9 @@ pub fn deser_operation_detect_phi(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Entities" => {
-                        builder = builder
-                            .set_entities(crate::json_deser::deser_list_entity_list(tokens)?);
+                        builder = builder.set_entities(
+                            crate::json_deser::deser_list_com_amazonaws_comprehendmedical_entity_list(tokens)?
+                        );
                     }
                     "PaginationToken" => {
                         builder = builder.set_pagination_token(
@@ -601,7 +604,7 @@ pub fn deser_operation_detect_phi(
     Ok(builder)
 }
 
-pub fn deser_operation_infer_icd10_cm(
+pub fn deser_operation_crate_operation_infer_icd10_cm(
     input: &[u8],
     mut builder: crate::output::infer_icd10_cm_output::Builder,
 ) -> Result<crate::output::infer_icd10_cm_output::Builder, smithy_json::deserialize::Error> {
@@ -617,7 +620,7 @@ pub fn deser_operation_infer_icd10_cm(
                 match key.to_unescaped()?.as_ref() {
                     "Entities" => {
                         builder = builder.set_entities(
-                            crate::json_deser::deser_list_icd10_cm_entity_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_comprehendmedical_icd10_cm_entity_list(tokens)?
                         );
                     }
                     "PaginationToken" => {
@@ -652,7 +655,7 @@ pub fn deser_operation_infer_icd10_cm(
     Ok(builder)
 }
 
-pub fn deser_operation_infer_rx_norm(
+pub fn deser_operation_crate_operation_infer_rx_norm(
     input: &[u8],
     mut builder: crate::output::infer_rx_norm_output::Builder,
 ) -> Result<crate::output::infer_rx_norm_output::Builder, smithy_json::deserialize::Error> {
@@ -668,7 +671,7 @@ pub fn deser_operation_infer_rx_norm(
                 match key.to_unescaped()?.as_ref() {
                     "Entities" => {
                         builder = builder.set_entities(
-                            crate::json_deser::deser_list_rx_norm_entity_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_comprehendmedical_rx_norm_entity_list(tokens)?
                         );
                     }
                     "PaginationToken" => {
@@ -703,7 +706,7 @@ pub fn deser_operation_infer_rx_norm(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -742,7 +745,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_list_entities_detection_v2_jobs(
+pub fn deser_operation_crate_operation_list_entities_detection_v2_jobs(
     input: &[u8],
     mut builder: crate::output::list_entities_detection_v2_jobs_output::Builder,
 ) -> Result<
@@ -761,7 +764,7 @@ pub fn deser_operation_list_entities_detection_v2_jobs(
                 match key.to_unescaped()?.as_ref() {
                     "ComprehendMedicalAsyncJobPropertiesList" => {
                         builder = builder.set_comprehend_medical_async_job_properties_list(
-                            crate::json_deser::deser_list_comprehend_medical_async_job_properties_list(tokens)?
+                            crate::json_deser::deser_list_com_amazonaws_comprehendmedical_comprehend_medical_async_job_properties_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -789,7 +792,7 @@ pub fn deser_operation_list_entities_detection_v2_jobs(
     Ok(builder)
 }
 
-pub fn deser_operation_list_icd10_cm_inference_jobs(
+pub fn deser_operation_crate_operation_list_icd10_cm_inference_jobs(
     input: &[u8],
     mut builder: crate::output::list_icd10_cm_inference_jobs_output::Builder,
 ) -> Result<
@@ -808,7 +811,7 @@ pub fn deser_operation_list_icd10_cm_inference_jobs(
                 match key.to_unescaped()?.as_ref() {
                     "ComprehendMedicalAsyncJobPropertiesList" => {
                         builder = builder.set_comprehend_medical_async_job_properties_list(
-                            crate::json_deser::deser_list_comprehend_medical_async_job_properties_list(tokens)?
+                            crate::json_deser::deser_list_com_amazonaws_comprehendmedical_comprehend_medical_async_job_properties_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -836,7 +839,7 @@ pub fn deser_operation_list_icd10_cm_inference_jobs(
     Ok(builder)
 }
 
-pub fn deser_operation_list_phi_detection_jobs(
+pub fn deser_operation_crate_operation_list_phi_detection_jobs(
     input: &[u8],
     mut builder: crate::output::list_phi_detection_jobs_output::Builder,
 ) -> Result<crate::output::list_phi_detection_jobs_output::Builder, smithy_json::deserialize::Error>
@@ -853,7 +856,7 @@ pub fn deser_operation_list_phi_detection_jobs(
                 match key.to_unescaped()?.as_ref() {
                     "ComprehendMedicalAsyncJobPropertiesList" => {
                         builder = builder.set_comprehend_medical_async_job_properties_list(
-                            crate::json_deser::deser_list_comprehend_medical_async_job_properties_list(tokens)?
+                            crate::json_deser::deser_list_com_amazonaws_comprehendmedical_comprehend_medical_async_job_properties_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -881,7 +884,7 @@ pub fn deser_operation_list_phi_detection_jobs(
     Ok(builder)
 }
 
-pub fn deser_operation_list_rx_norm_inference_jobs(
+pub fn deser_operation_crate_operation_list_rx_norm_inference_jobs(
     input: &[u8],
     mut builder: crate::output::list_rx_norm_inference_jobs_output::Builder,
 ) -> Result<
@@ -900,7 +903,7 @@ pub fn deser_operation_list_rx_norm_inference_jobs(
                 match key.to_unescaped()?.as_ref() {
                     "ComprehendMedicalAsyncJobPropertiesList" => {
                         builder = builder.set_comprehend_medical_async_job_properties_list(
-                            crate::json_deser::deser_list_comprehend_medical_async_job_properties_list(tokens)?
+                            crate::json_deser::deser_list_com_amazonaws_comprehendmedical_comprehend_medical_async_job_properties_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -928,7 +931,7 @@ pub fn deser_operation_list_rx_norm_inference_jobs(
     Ok(builder)
 }
 
-pub fn deser_operation_start_entities_detection_v2_job(
+pub fn deser_operation_crate_operation_start_entities_detection_v2_job(
     input: &[u8],
     mut builder: crate::output::start_entities_detection_v2_job_output::Builder,
 ) -> Result<
@@ -970,7 +973,7 @@ pub fn deser_operation_start_entities_detection_v2_job(
     Ok(builder)
 }
 
-pub fn deser_operation_start_icd10_cm_inference_job(
+pub fn deser_operation_crate_operation_start_icd10_cm_inference_job(
     input: &[u8],
     mut builder: crate::output::start_icd10_cm_inference_job_output::Builder,
 ) -> Result<
@@ -1012,7 +1015,7 @@ pub fn deser_operation_start_icd10_cm_inference_job(
     Ok(builder)
 }
 
-pub fn deser_operation_start_phi_detection_job(
+pub fn deser_operation_crate_operation_start_phi_detection_job(
     input: &[u8],
     mut builder: crate::output::start_phi_detection_job_output::Builder,
 ) -> Result<crate::output::start_phi_detection_job_output::Builder, smithy_json::deserialize::Error>
@@ -1052,7 +1055,7 @@ pub fn deser_operation_start_phi_detection_job(
     Ok(builder)
 }
 
-pub fn deser_operation_start_rx_norm_inference_job(
+pub fn deser_operation_crate_operation_start_rx_norm_inference_job(
     input: &[u8],
     mut builder: crate::output::start_rx_norm_inference_job_output::Builder,
 ) -> Result<
@@ -1094,7 +1097,7 @@ pub fn deser_operation_start_rx_norm_inference_job(
     Ok(builder)
 }
 
-pub fn deser_operation_stop_entities_detection_v2_job(
+pub fn deser_operation_crate_operation_stop_entities_detection_v2_job(
     input: &[u8],
     mut builder: crate::output::stop_entities_detection_v2_job_output::Builder,
 ) -> Result<
@@ -1136,7 +1139,7 @@ pub fn deser_operation_stop_entities_detection_v2_job(
     Ok(builder)
 }
 
-pub fn deser_operation_stop_icd10_cm_inference_job(
+pub fn deser_operation_crate_operation_stop_icd10_cm_inference_job(
     input: &[u8],
     mut builder: crate::output::stop_icd10_cm_inference_job_output::Builder,
 ) -> Result<
@@ -1178,7 +1181,7 @@ pub fn deser_operation_stop_icd10_cm_inference_job(
     Ok(builder)
 }
 
-pub fn deser_operation_stop_phi_detection_job(
+pub fn deser_operation_crate_operation_stop_phi_detection_job(
     input: &[u8],
     mut builder: crate::output::stop_phi_detection_job_output::Builder,
 ) -> Result<crate::output::stop_phi_detection_job_output::Builder, smithy_json::deserialize::Error>
@@ -1218,7 +1221,7 @@ pub fn deser_operation_stop_phi_detection_job(
     Ok(builder)
 }
 
-pub fn deser_operation_stop_rx_norm_inference_job(
+pub fn deser_operation_crate_operation_stop_rx_norm_inference_job(
     input: &[u8],
     mut builder: crate::output::stop_rx_norm_inference_job_output::Builder,
 ) -> Result<
@@ -1268,7 +1271,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_comprehend_medical_async_job_properties<'a, I>(
+pub fn deser_structure_crate_model_comprehend_medical_async_job_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ComprehendMedicalAsyncJobProperties>,
@@ -1354,12 +1357,12 @@ where
                             }
                             "InputDataConfig" => {
                                 builder = builder.set_input_data_config(
-                                    crate::json_deser::deser_structure_input_data_config(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_input_data_config(tokens)?
                                 );
                             }
                             "OutputDataConfig" => {
                                 builder = builder.set_output_data_config(
-                                    crate::json_deser::deser_structure_output_data_config(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_output_data_config(tokens)?
                                 );
                             }
                             "LanguageCode" => {
@@ -1429,7 +1432,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_entity_list<'a, I>(
+pub fn deser_list_com_amazonaws_comprehendmedical_entity_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Entity>>, smithy_json::deserialize::Error>
 where
@@ -1448,7 +1451,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_entity(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_entity(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1464,7 +1467,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_unmapped_attribute_list<'a, I>(
+pub fn deser_list_com_amazonaws_comprehendmedical_unmapped_attribute_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::UnmappedAttribute>>, smithy_json::deserialize::Error>
 where
@@ -1483,7 +1486,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_unmapped_attribute(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_unmapped_attribute(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1499,7 +1505,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_icd10_cm_entity_list<'a, I>(
+pub fn deser_list_com_amazonaws_comprehendmedical_icd10_cm_entity_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Icd10CmEntity>>, smithy_json::deserialize::Error>
 where
@@ -1518,7 +1524,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_icd10_cm_entity(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_icd10_cm_entity(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1534,7 +1541,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_rx_norm_entity_list<'a, I>(
+pub fn deser_list_com_amazonaws_comprehendmedical_rx_norm_entity_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::RxNormEntity>>, smithy_json::deserialize::Error>
 where
@@ -1553,7 +1560,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_rx_norm_entity(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_rx_norm_entity(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1569,7 +1577,10 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_comprehend_medical_async_job_properties_list<'a, I>(
+pub fn deser_list_com_amazonaws_comprehendmedical_comprehend_medical_async_job_properties_list<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
@@ -1592,7 +1603,7 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_comprehend_medical_async_job_properties(tokens)?
+                            crate::json_deser::deser_structure_crate_model_comprehend_medical_async_job_properties(tokens)?
                         ;
                         if let Some(value) = value {
                             items.push(value);
@@ -1608,7 +1619,7 @@ where
     }
 }
 
-pub fn deser_structure_input_data_config<'a, I>(
+pub fn deser_structure_crate_model_input_data_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::InputDataConfig>, smithy_json::deserialize::Error>
 where
@@ -1662,7 +1673,7 @@ where
     }
 }
 
-pub fn deser_structure_output_data_config<'a, I>(
+pub fn deser_structure_crate_model_output_data_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::OutputDataConfig>, smithy_json::deserialize::Error>
 where
@@ -1716,7 +1727,7 @@ where
     }
 }
 
-pub fn deser_structure_entity<'a, I>(
+pub fn deser_structure_crate_model_entity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Entity>, smithy_json::deserialize::Error>
 where
@@ -1800,12 +1811,13 @@ where
                                 );
                             }
                             "Traits" => {
-                                builder = builder
-                                    .set_traits(crate::json_deser::deser_list_trait_list(tokens)?);
+                                builder = builder.set_traits(
+                                    crate::json_deser::deser_list_com_amazonaws_comprehendmedical_trait_list(tokens)?
+                                );
                             }
                             "Attributes" => {
                                 builder = builder.set_attributes(
-                                    crate::json_deser::deser_list_attribute_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_comprehendmedical_attribute_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1826,7 +1838,7 @@ where
     }
 }
 
-pub fn deser_structure_unmapped_attribute<'a, I>(
+pub fn deser_structure_crate_model_unmapped_attribute<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::UnmappedAttribute>, smithy_json::deserialize::Error>
 where
@@ -1858,7 +1870,9 @@ where
                             }
                             "Attribute" => {
                                 builder = builder.set_attribute(
-                                    crate::json_deser::deser_structure_attribute(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_attribute(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1879,7 +1893,7 @@ where
     }
 }
 
-pub fn deser_structure_icd10_cm_entity<'a, I>(
+pub fn deser_structure_crate_model_icd10_cm_entity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Icd10CmEntity>, smithy_json::deserialize::Error>
 where
@@ -1966,17 +1980,17 @@ where
                             }
                             "Attributes" => {
                                 builder = builder.set_attributes(
-                                    crate::json_deser::deser_list_icd10_cm_attribute_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_comprehendmedical_icd10_cm_attribute_list(tokens)?
                                 );
                             }
                             "Traits" => {
                                 builder = builder.set_traits(
-                                    crate::json_deser::deser_list_icd10_cm_trait_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_comprehendmedical_icd10_cm_trait_list(tokens)?
                                 );
                             }
                             "ICD10CMConcepts" => {
                                 builder = builder.set_icd10_cm_concepts(
-                                    crate::json_deser::deser_list_icd10_cm_concept_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_comprehendmedical_icd10_cm_concept_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1997,7 +2011,7 @@ where
     }
 }
 
-pub fn deser_structure_rx_norm_entity<'a, I>(
+pub fn deser_structure_crate_model_rx_norm_entity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RxNormEntity>, smithy_json::deserialize::Error>
 where
@@ -2084,17 +2098,17 @@ where
                             }
                             "Attributes" => {
                                 builder = builder.set_attributes(
-                                    crate::json_deser::deser_list_rx_norm_attribute_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_comprehendmedical_rx_norm_attribute_list(tokens)?
                                 );
                             }
                             "Traits" => {
                                 builder = builder.set_traits(
-                                    crate::json_deser::deser_list_rx_norm_trait_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_comprehendmedical_rx_norm_trait_list(tokens)?
                                 );
                             }
                             "RxNormConcepts" => {
                                 builder = builder.set_rx_norm_concepts(
-                                    crate::json_deser::deser_list_rx_norm_concept_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_comprehendmedical_rx_norm_concept_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2116,7 +2130,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_trait_list<'a, I>(
+pub fn deser_list_com_amazonaws_comprehendmedical_trait_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Trait>>, smithy_json::deserialize::Error>
 where
@@ -2135,7 +2149,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_trait(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_trait(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2151,7 +2165,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_attribute_list<'a, I>(
+pub fn deser_list_com_amazonaws_comprehendmedical_attribute_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Attribute>>, smithy_json::deserialize::Error>
 where
@@ -2170,7 +2184,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_attribute(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_attribute(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2185,7 +2200,7 @@ where
     }
 }
 
-pub fn deser_structure_attribute<'a, I>(
+pub fn deser_structure_crate_model_attribute<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Attribute>, smithy_json::deserialize::Error>
 where
@@ -2290,8 +2305,9 @@ where
                                 );
                             }
                             "Traits" => {
-                                builder = builder
-                                    .set_traits(crate::json_deser::deser_list_trait_list(tokens)?);
+                                builder = builder.set_traits(
+                                    crate::json_deser::deser_list_com_amazonaws_comprehendmedical_trait_list(tokens)?
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -2312,7 +2328,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_icd10_cm_attribute_list<'a, I>(
+pub fn deser_list_com_amazonaws_comprehendmedical_icd10_cm_attribute_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Icd10CmAttribute>>, smithy_json::deserialize::Error>
 where
@@ -2331,7 +2347,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_icd10_cm_attribute(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_icd10_cm_attribute(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2347,7 +2366,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_icd10_cm_trait_list<'a, I>(
+pub fn deser_list_com_amazonaws_comprehendmedical_icd10_cm_trait_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Icd10CmTrait>>, smithy_json::deserialize::Error>
 where
@@ -2366,7 +2385,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_icd10_cm_trait(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_icd10_cm_trait(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2382,7 +2402,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_icd10_cm_concept_list<'a, I>(
+pub fn deser_list_com_amazonaws_comprehendmedical_icd10_cm_concept_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Icd10CmConcept>>, smithy_json::deserialize::Error>
 where
@@ -2401,7 +2421,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_icd10_cm_concept(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_icd10_cm_concept(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2417,7 +2440,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_rx_norm_attribute_list<'a, I>(
+pub fn deser_list_com_amazonaws_comprehendmedical_rx_norm_attribute_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::RxNormAttribute>>, smithy_json::deserialize::Error>
 where
@@ -2436,7 +2459,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_rx_norm_attribute(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_rx_norm_attribute(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2452,7 +2478,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_rx_norm_trait_list<'a, I>(
+pub fn deser_list_com_amazonaws_comprehendmedical_rx_norm_trait_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::RxNormTrait>>, smithy_json::deserialize::Error>
 where
@@ -2471,7 +2497,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_rx_norm_trait(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_rx_norm_trait(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2487,7 +2514,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_rx_norm_concept_list<'a, I>(
+pub fn deser_list_com_amazonaws_comprehendmedical_rx_norm_concept_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::RxNormConcept>>, smithy_json::deserialize::Error>
 where
@@ -2506,7 +2533,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_rx_norm_concept(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_rx_norm_concept(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2521,7 +2549,7 @@ where
     }
 }
 
-pub fn deser_structure_trait<'a, I>(
+pub fn deser_structure_crate_model_trait<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Trait>, smithy_json::deserialize::Error>
 where
@@ -2577,7 +2605,7 @@ where
     }
 }
 
-pub fn deser_structure_icd10_cm_attribute<'a, I>(
+pub fn deser_structure_crate_model_icd10_cm_attribute<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Icd10CmAttribute>, smithy_json::deserialize::Error>
 where
@@ -2659,7 +2687,7 @@ where
                             }
                             "Traits" => {
                                 builder = builder.set_traits(
-                                    crate::json_deser::deser_list_icd10_cm_trait_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_comprehendmedical_icd10_cm_trait_list(tokens)?
                                 );
                             }
                             "Category" => {
@@ -2706,7 +2734,7 @@ where
     }
 }
 
-pub fn deser_structure_icd10_cm_trait<'a, I>(
+pub fn deser_structure_crate_model_icd10_cm_trait<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Icd10CmTrait>, smithy_json::deserialize::Error>
 where
@@ -2763,7 +2791,7 @@ where
     }
 }
 
-pub fn deser_structure_icd10_cm_concept<'a, I>(
+pub fn deser_structure_crate_model_icd10_cm_concept<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Icd10CmConcept>, smithy_json::deserialize::Error>
 where
@@ -2825,7 +2853,7 @@ where
     }
 }
 
-pub fn deser_structure_rx_norm_attribute<'a, I>(
+pub fn deser_structure_crate_model_rx_norm_attribute<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RxNormAttribute>, smithy_json::deserialize::Error>
 where
@@ -2907,7 +2935,7 @@ where
                             }
                             "Traits" => {
                                 builder = builder.set_traits(
-                                    crate::json_deser::deser_list_rx_norm_trait_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_comprehendmedical_rx_norm_trait_list(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2928,7 +2956,7 @@ where
     }
 }
 
-pub fn deser_structure_rx_norm_trait<'a, I>(
+pub fn deser_structure_crate_model_rx_norm_trait<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RxNormTrait>, smithy_json::deserialize::Error>
 where
@@ -2985,7 +3013,7 @@ where
     }
 }
 
-pub fn deser_structure_rx_norm_concept<'a, I>(
+pub fn deser_structure_crate_model_rx_norm_concept<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RxNormConcept>, smithy_json::deserialize::Error>
 where

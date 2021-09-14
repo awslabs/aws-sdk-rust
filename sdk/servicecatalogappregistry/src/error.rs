@@ -903,6 +903,105 @@ impl std::error::Error for GetApplicationError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct GetAssociatedResourceError {
+    pub kind: GetAssociatedResourceErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetAssociatedResourceErrorKind {
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetAssociatedResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetAssociatedResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetAssociatedResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetAssociatedResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetAssociatedResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetAssociatedResourceError {
+    fn code(&self) -> Option<&str> {
+        GetAssociatedResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetAssociatedResourceError {
+    pub fn new(kind: GetAssociatedResourceErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetAssociatedResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetAssociatedResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAssociatedResourceErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAssociatedResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAssociatedResourceErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetAssociatedResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetAssociatedResourceErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetAssociatedResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetAssociatedResourceErrorKind::ValidationException(_inner) => Some(_inner),
+            GetAssociatedResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct GetAttributeGroupError {
     pub kind: GetAttributeGroupErrorKind,
     pub(crate) meta: smithy_types::Error,

@@ -12,27 +12,25 @@ pub fn parse_search_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "SearchException" => crate::error::SearchError {
-            meta: generic,
-            kind: crate::error::SearchErrorKind::SearchException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "SearchException" => {
+            crate::error::SearchError {
+                meta: generic,
+                kind: crate::error::SearchErrorKind::SearchException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::search_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_search_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SearchError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::search_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_search_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SearchError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::SearchError::generic(generic),
     })
 }
@@ -45,8 +43,11 @@ pub fn parse_search_response(
         #[allow(unused_mut)]
         let mut output = crate::output::search_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_search(response.body().as_ref(), output)
-            .map_err(crate::error::SearchError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_search(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::SearchError::unhandled)?;
         output.build()
     })
 }
@@ -64,27 +65,25 @@ pub fn parse_suggest_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "SearchException" => crate::error::SuggestError {
-            meta: generic,
-            kind: crate::error::SuggestErrorKind::SearchException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "SearchException" => {
+            crate::error::SuggestError {
+                meta: generic,
+                kind: crate::error::SuggestErrorKind::SearchException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::search_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_search_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SuggestError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::search_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_search_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SuggestError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::SuggestError::generic(generic),
     })
 }
@@ -97,8 +96,11 @@ pub fn parse_suggest_response(
         #[allow(unused_mut)]
         let mut output = crate::output::suggest_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::deser_operation_suggest(response.body().as_ref(), output)
-            .map_err(crate::error::SuggestError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_suggest(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::SuggestError::unhandled)?;
         output.build()
     })
 }
@@ -124,11 +126,7 @@ pub fn parse_upload_documents_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::document_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_document_service_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UploadDocumentsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_document_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UploadDocumentsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -149,9 +147,11 @@ pub fn parse_upload_documents_response(
         #[allow(unused_mut)]
         let mut output = crate::output::upload_documents_output::Builder::default();
         let _ = response;
-        output =
-            crate::json_deser::deser_operation_upload_documents(response.body().as_ref(), output)
-                .map_err(crate::error::UploadDocumentsError::unhandled)?;
+        output = crate::json_deser::deser_operation_crate_operation_upload_documents(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UploadDocumentsError::unhandled)?;
         output.build()
     })
 }

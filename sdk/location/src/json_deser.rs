@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_conflict_exceptionjson_err(
+pub fn deser_structure_crate_error_conflict_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::conflict_exception::Builder,
 ) -> Result<crate::error::conflict_exception::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_conflict_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_internal_server_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_server_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_server_exception::Builder,
 ) -> Result<crate::error::internal_server_exception::Builder, smithy_json::deserialize::Error> {
@@ -122,7 +122,7 @@ pub fn deser_structure_internal_server_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -161,7 +161,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_service_quota_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_quota_exceeded_exception::Builder,
 ) -> Result<crate::error::service_quota_exceeded_exception::Builder, smithy_json::deserialize::Error>
@@ -201,7 +201,7 @@ pub fn deser_structure_service_quota_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -240,7 +240,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -274,7 +274,7 @@ pub fn deser_structure_validation_exceptionjson_err(
                     }
                     "fieldList" => {
                         builder = builder.set_field_list(
-                            crate::json_deser::deser_list_validation_exception_field_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_location_validation_exception_field_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -295,7 +295,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_delete_device_position_history(
+pub fn deser_operation_crate_operation_batch_delete_device_position_history(
     input: &[u8],
     mut builder: crate::output::batch_delete_device_position_history_output::Builder,
 ) -> Result<
@@ -314,7 +314,7 @@ pub fn deser_operation_batch_delete_device_position_history(
                 match key.to_unescaped()?.as_ref() {
                     "Errors" => {
                         builder = builder.set_errors(
-                            crate::json_deser::deser_list_batch_delete_device_position_history_error_list(tokens)?
+                            crate::json_deser::deser_list_com_amazonaws_location_batch_delete_device_position_history_error_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -335,7 +335,7 @@ pub fn deser_operation_batch_delete_device_position_history(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_delete_geofence(
+pub fn deser_operation_crate_operation_batch_delete_geofence(
     input: &[u8],
     mut builder: crate::output::batch_delete_geofence_output::Builder,
 ) -> Result<crate::output::batch_delete_geofence_output::Builder, smithy_json::deserialize::Error> {
@@ -351,7 +351,7 @@ pub fn deser_operation_batch_delete_geofence(
                 match key.to_unescaped()?.as_ref() {
                     "Errors" => {
                         builder = builder.set_errors(
-                            crate::json_deser::deser_list_batch_delete_geofence_error_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_location_batch_delete_geofence_error_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -372,7 +372,7 @@ pub fn deser_operation_batch_delete_geofence(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_evaluate_geofences(
+pub fn deser_operation_crate_operation_batch_evaluate_geofences(
     input: &[u8],
     mut builder: crate::output::batch_evaluate_geofences_output::Builder,
 ) -> Result<crate::output::batch_evaluate_geofences_output::Builder, smithy_json::deserialize::Error>
@@ -389,9 +389,7 @@ pub fn deser_operation_batch_evaluate_geofences(
                 match key.to_unescaped()?.as_ref() {
                     "Errors" => {
                         builder = builder.set_errors(
-                            crate::json_deser::deser_list_batch_evaluate_geofences_error_list(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_location_batch_evaluate_geofences_error_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -412,7 +410,7 @@ pub fn deser_operation_batch_evaluate_geofences(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_get_device_position(
+pub fn deser_operation_crate_operation_batch_get_device_position(
     input: &[u8],
     mut builder: crate::output::batch_get_device_position_output::Builder,
 ) -> Result<crate::output::batch_get_device_position_output::Builder, smithy_json::deserialize::Error>
@@ -429,14 +427,12 @@ pub fn deser_operation_batch_get_device_position(
                 match key.to_unescaped()?.as_ref() {
                     "DevicePositions" => {
                         builder = builder.set_device_positions(
-                            crate::json_deser::deser_list_device_position_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_location_device_position_list(tokens)?
                         );
                     }
                     "Errors" => {
                         builder = builder.set_errors(
-                            crate::json_deser::deser_list_batch_get_device_position_error_list(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_location_batch_get_device_position_error_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -457,7 +453,7 @@ pub fn deser_operation_batch_get_device_position(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_put_geofence(
+pub fn deser_operation_crate_operation_batch_put_geofence(
     input: &[u8],
     mut builder: crate::output::batch_put_geofence_output::Builder,
 ) -> Result<crate::output::batch_put_geofence_output::Builder, smithy_json::deserialize::Error> {
@@ -473,12 +469,12 @@ pub fn deser_operation_batch_put_geofence(
                 match key.to_unescaped()?.as_ref() {
                     "Errors" => {
                         builder = builder.set_errors(
-                            crate::json_deser::deser_list_batch_put_geofence_error_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_location_batch_put_geofence_error_list(tokens)?
                         );
                     }
                     "Successes" => {
                         builder = builder.set_successes(
-                            crate::json_deser::deser_list_batch_put_geofence_success_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_location_batch_put_geofence_success_list(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -499,7 +495,7 @@ pub fn deser_operation_batch_put_geofence(
     Ok(builder)
 }
 
-pub fn deser_operation_batch_update_device_position(
+pub fn deser_operation_crate_operation_batch_update_device_position(
     input: &[u8],
     mut builder: crate::output::batch_update_device_position_output::Builder,
 ) -> Result<
@@ -518,7 +514,49 @@ pub fn deser_operation_batch_update_device_position(
                 match key.to_unescaped()?.as_ref() {
                     "Errors" => {
                         builder = builder.set_errors(
-                            crate::json_deser::deser_list_batch_update_device_position_error_list(
+                            crate::json_deser::deser_list_com_amazonaws_location_batch_update_device_position_error_list(tokens)?
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_calculate_route(
+    input: &[u8],
+    mut builder: crate::output::calculate_route_output::Builder,
+) -> Result<crate::output::calculate_route_output::Builder, smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "Legs" => {
+                        builder = builder.set_legs(
+                            crate::json_deser::deser_list_com_amazonaws_location_leg_list(tokens)?,
+                        );
+                    }
+                    "Summary" => {
+                        builder = builder.set_summary(
+                            crate::json_deser::deser_structure_crate_model_calculate_route_summary(
                                 tokens,
                             )?,
                         );
@@ -541,47 +579,7 @@ pub fn deser_operation_batch_update_device_position(
     Ok(builder)
 }
 
-pub fn deser_operation_calculate_route(
-    input: &[u8],
-    mut builder: crate::output::calculate_route_output::Builder,
-) -> Result<crate::output::calculate_route_output::Builder, smithy_json::deserialize::Error> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "Legs" => {
-                        builder = builder.set_legs(crate::json_deser::deser_list_leg_list(tokens)?);
-                    }
-                    "Summary" => {
-                        builder = builder.set_summary(
-                            crate::json_deser::deser_structure_calculate_route_summary(tokens)?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_operation_create_geofence_collection(
+pub fn deser_operation_crate_operation_create_geofence_collection(
     input: &[u8],
     mut builder: crate::output::create_geofence_collection_output::Builder,
 ) -> Result<
@@ -638,7 +636,7 @@ pub fn deser_operation_create_geofence_collection(
     Ok(builder)
 }
 
-pub fn deser_operation_create_map(
+pub fn deser_operation_crate_operation_create_map(
     input: &[u8],
     mut builder: crate::output::create_map_output::Builder,
 ) -> Result<crate::output::create_map_output::Builder, smithy_json::deserialize::Error> {
@@ -692,7 +690,7 @@ pub fn deser_operation_create_map(
     Ok(builder)
 }
 
-pub fn deser_operation_create_place_index(
+pub fn deser_operation_crate_operation_create_place_index(
     input: &[u8],
     mut builder: crate::output::create_place_index_output::Builder,
 ) -> Result<crate::output::create_place_index_output::Builder, smithy_json::deserialize::Error> {
@@ -746,7 +744,7 @@ pub fn deser_operation_create_place_index(
     Ok(builder)
 }
 
-pub fn deser_operation_create_route_calculator(
+pub fn deser_operation_crate_operation_create_route_calculator(
     input: &[u8],
     mut builder: crate::output::create_route_calculator_output::Builder,
 ) -> Result<crate::output::create_route_calculator_output::Builder, smithy_json::deserialize::Error>
@@ -801,7 +799,7 @@ pub fn deser_operation_create_route_calculator(
     Ok(builder)
 }
 
-pub fn deser_operation_create_tracker(
+pub fn deser_operation_crate_operation_create_tracker(
     input: &[u8],
     mut builder: crate::output::create_tracker_output::Builder,
 ) -> Result<crate::output::create_tracker_output::Builder, smithy_json::deserialize::Error> {
@@ -855,7 +853,7 @@ pub fn deser_operation_create_tracker(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_geofence_collection(
+pub fn deser_operation_crate_operation_describe_geofence_collection(
     input: &[u8],
     mut builder: crate::output::describe_geofence_collection_output::Builder,
 ) -> Result<
@@ -926,7 +924,9 @@ pub fn deser_operation_describe_geofence_collection(
                         );
                     }
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tag_map(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_location_tag_map(tokens)?,
+                        );
                     }
                     "UpdateTime" => {
                         builder = builder.set_update_time(
@@ -954,7 +954,7 @@ pub fn deser_operation_describe_geofence_collection(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_map(
+pub fn deser_operation_crate_operation_describe_map(
     input: &[u8],
     mut builder: crate::output::describe_map_output::Builder,
 ) -> Result<crate::output::describe_map_output::Builder, smithy_json::deserialize::Error> {
@@ -970,7 +970,9 @@ pub fn deser_operation_describe_map(
                 match key.to_unescaped()?.as_ref() {
                     "Configuration" => {
                         builder = builder.set_configuration(
-                            crate::json_deser::deser_structure_map_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_map_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     "CreateTime" => {
@@ -1020,7 +1022,9 @@ pub fn deser_operation_describe_map(
                         );
                     }
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tag_map(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_location_tag_map(tokens)?,
+                        );
                     }
                     "UpdateTime" => {
                         builder = builder.set_update_time(
@@ -1048,7 +1052,7 @@ pub fn deser_operation_describe_map(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_place_index(
+pub fn deser_operation_crate_operation_describe_place_index(
     input: &[u8],
     mut builder: crate::output::describe_place_index_output::Builder,
 ) -> Result<crate::output::describe_place_index_output::Builder, smithy_json::deserialize::Error> {
@@ -1079,7 +1083,7 @@ pub fn deser_operation_describe_place_index(
                     }
                     "DataSourceConfiguration" => {
                         builder = builder.set_data_source_configuration(
-                            crate::json_deser::deser_structure_data_source_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_data_source_configuration(tokens)?
                         );
                     }
                     "Description" => {
@@ -1114,7 +1118,9 @@ pub fn deser_operation_describe_place_index(
                         );
                     }
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tag_map(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_location_tag_map(tokens)?,
+                        );
                     }
                     "UpdateTime" => {
                         builder = builder.set_update_time(
@@ -1142,7 +1148,7 @@ pub fn deser_operation_describe_place_index(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_route_calculator(
+pub fn deser_operation_crate_operation_describe_route_calculator(
     input: &[u8],
     mut builder: crate::output::describe_route_calculator_output::Builder,
 ) -> Result<crate::output::describe_route_calculator_output::Builder, smithy_json::deserialize::Error>
@@ -1204,7 +1210,9 @@ pub fn deser_operation_describe_route_calculator(
                         );
                     }
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tag_map(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_location_tag_map(tokens)?,
+                        );
                     }
                     "UpdateTime" => {
                         builder = builder.set_update_time(
@@ -1232,7 +1240,7 @@ pub fn deser_operation_describe_route_calculator(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_tracker(
+pub fn deser_operation_crate_operation_describe_tracker(
     input: &[u8],
     mut builder: crate::output::describe_tracker_output::Builder,
 ) -> Result<crate::output::describe_tracker_output::Builder, smithy_json::deserialize::Error> {
@@ -1286,7 +1294,9 @@ pub fn deser_operation_describe_tracker(
                         );
                     }
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tag_map(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_location_tag_map(tokens)?,
+                        );
                     }
                     "TrackerArn" => {
                         builder = builder.set_tracker_arn(
@@ -1328,7 +1338,7 @@ pub fn deser_operation_describe_tracker(
     Ok(builder)
 }
 
-pub fn deser_operation_get_device_position(
+pub fn deser_operation_crate_operation_get_device_position(
     input: &[u8],
     mut builder: crate::output::get_device_position_output::Builder,
 ) -> Result<crate::output::get_device_position_output::Builder, smithy_json::deserialize::Error> {
@@ -1350,8 +1360,9 @@ pub fn deser_operation_get_device_position(
                         );
                     }
                     "Position" => {
-                        builder =
-                            builder.set_position(crate::json_deser::deser_list_position(tokens)?);
+                        builder = builder.set_position(
+                            crate::json_deser::deser_list_com_amazonaws_location_position(tokens)?,
+                        );
                     }
                     "ReceivedTime" => {
                         builder = builder.set_received_time(
@@ -1387,7 +1398,7 @@ pub fn deser_operation_get_device_position(
     Ok(builder)
 }
 
-pub fn deser_operation_get_device_position_history(
+pub fn deser_operation_crate_operation_get_device_position_history(
     input: &[u8],
     mut builder: crate::output::get_device_position_history_output::Builder,
 ) -> Result<
@@ -1406,7 +1417,7 @@ pub fn deser_operation_get_device_position_history(
                 match key.to_unescaped()?.as_ref() {
                     "DevicePositions" => {
                         builder = builder.set_device_positions(
-                            crate::json_deser::deser_list_device_position_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_location_device_position_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1434,7 +1445,7 @@ pub fn deser_operation_get_device_position_history(
     Ok(builder)
 }
 
-pub fn deser_operation_get_geofence(
+pub fn deser_operation_crate_operation_get_geofence(
     input: &[u8],
     mut builder: crate::output::get_geofence_output::Builder,
 ) -> Result<crate::output::get_geofence_output::Builder, smithy_json::deserialize::Error> {
@@ -1465,7 +1476,9 @@ pub fn deser_operation_get_geofence(
                     }
                     "Geometry" => {
                         builder = builder.set_geometry(
-                            crate::json_deser::deser_structure_geofence_geometry(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_geofence_geometry(
+                                tokens,
+                            )?,
                         );
                     }
                     "Status" => {
@@ -1501,7 +1514,7 @@ pub fn deser_operation_get_geofence(
     Ok(builder)
 }
 
-pub fn deser_operation_list_device_positions(
+pub fn deser_operation_crate_operation_list_device_positions(
     input: &[u8],
     mut builder: crate::output::list_device_positions_output::Builder,
 ) -> Result<crate::output::list_device_positions_output::Builder, smithy_json::deserialize::Error> {
@@ -1517,7 +1530,7 @@ pub fn deser_operation_list_device_positions(
                 match key.to_unescaped()?.as_ref() {
                     "Entries" => {
                         builder = builder.set_entries(
-                            crate::json_deser::deser_list_list_device_positions_response_entry_list(tokens)?
+                            crate::json_deser::deser_list_com_amazonaws_location_list_device_positions_response_entry_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1545,7 +1558,7 @@ pub fn deser_operation_list_device_positions(
     Ok(builder)
 }
 
-pub fn deser_operation_list_geofence_collections(
+pub fn deser_operation_crate_operation_list_geofence_collections(
     input: &[u8],
     mut builder: crate::output::list_geofence_collections_output::Builder,
 ) -> Result<crate::output::list_geofence_collections_output::Builder, smithy_json::deserialize::Error>
@@ -1562,7 +1575,7 @@ pub fn deser_operation_list_geofence_collections(
                 match key.to_unescaped()?.as_ref() {
                     "Entries" => {
                         builder = builder.set_entries(
-                            crate::json_deser::deser_list_list_geofence_collections_response_entry_list(tokens)?
+                            crate::json_deser::deser_list_com_amazonaws_location_list_geofence_collections_response_entry_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1590,7 +1603,7 @@ pub fn deser_operation_list_geofence_collections(
     Ok(builder)
 }
 
-pub fn deser_operation_list_geofences(
+pub fn deser_operation_crate_operation_list_geofences(
     input: &[u8],
     mut builder: crate::output::list_geofences_output::Builder,
 ) -> Result<crate::output::list_geofences_output::Builder, smithy_json::deserialize::Error> {
@@ -1606,9 +1619,7 @@ pub fn deser_operation_list_geofences(
                 match key.to_unescaped()?.as_ref() {
                     "Entries" => {
                         builder = builder.set_entries(
-                            crate::json_deser::deser_list_list_geofence_response_entry_list(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_location_list_geofence_response_entry_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1636,7 +1647,7 @@ pub fn deser_operation_list_geofences(
     Ok(builder)
 }
 
-pub fn deser_operation_list_maps(
+pub fn deser_operation_crate_operation_list_maps(
     input: &[u8],
     mut builder: crate::output::list_maps_output::Builder,
 ) -> Result<crate::output::list_maps_output::Builder, smithy_json::deserialize::Error> {
@@ -1652,7 +1663,7 @@ pub fn deser_operation_list_maps(
                 match key.to_unescaped()?.as_ref() {
                     "Entries" => {
                         builder = builder.set_entries(
-                            crate::json_deser::deser_list_list_maps_response_entry_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_location_list_maps_response_entry_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1680,7 +1691,7 @@ pub fn deser_operation_list_maps(
     Ok(builder)
 }
 
-pub fn deser_operation_list_place_indexes(
+pub fn deser_operation_crate_operation_list_place_indexes(
     input: &[u8],
     mut builder: crate::output::list_place_indexes_output::Builder,
 ) -> Result<crate::output::list_place_indexes_output::Builder, smithy_json::deserialize::Error> {
@@ -1696,9 +1707,7 @@ pub fn deser_operation_list_place_indexes(
                 match key.to_unescaped()?.as_ref() {
                     "Entries" => {
                         builder = builder.set_entries(
-                            crate::json_deser::deser_list_list_place_indexes_response_entry_list(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_location_list_place_indexes_response_entry_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1726,7 +1735,7 @@ pub fn deser_operation_list_place_indexes(
     Ok(builder)
 }
 
-pub fn deser_operation_list_route_calculators(
+pub fn deser_operation_crate_operation_list_route_calculators(
     input: &[u8],
     mut builder: crate::output::list_route_calculators_output::Builder,
 ) -> Result<crate::output::list_route_calculators_output::Builder, smithy_json::deserialize::Error>
@@ -1743,7 +1752,7 @@ pub fn deser_operation_list_route_calculators(
                 match key.to_unescaped()?.as_ref() {
                     "Entries" => {
                         builder = builder.set_entries(
-                            crate::json_deser::deser_list_list_route_calculators_response_entry_list(tokens)?
+                            crate::json_deser::deser_list_com_amazonaws_location_list_route_calculators_response_entry_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1771,7 +1780,7 @@ pub fn deser_operation_list_route_calculators(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -1787,7 +1796,9 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tag_map(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_location_tag_map(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1807,7 +1818,7 @@ pub fn deser_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tracker_consumers(
+pub fn deser_operation_crate_operation_list_tracker_consumers(
     input: &[u8],
     mut builder: crate::output::list_tracker_consumers_output::Builder,
 ) -> Result<crate::output::list_tracker_consumers_output::Builder, smithy_json::deserialize::Error>
@@ -1823,8 +1834,9 @@ pub fn deser_operation_list_tracker_consumers(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "ConsumerArns" => {
-                        builder = builder
-                            .set_consumer_arns(crate::json_deser::deser_list_arn_list(tokens)?);
+                        builder = builder.set_consumer_arns(
+                            crate::json_deser::deser_list_com_amazonaws_location_arn_list(tokens)?,
+                        );
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
@@ -1851,7 +1863,7 @@ pub fn deser_operation_list_tracker_consumers(
     Ok(builder)
 }
 
-pub fn deser_operation_list_trackers(
+pub fn deser_operation_crate_operation_list_trackers(
     input: &[u8],
     mut builder: crate::output::list_trackers_output::Builder,
 ) -> Result<crate::output::list_trackers_output::Builder, smithy_json::deserialize::Error> {
@@ -1867,9 +1879,7 @@ pub fn deser_operation_list_trackers(
                 match key.to_unescaped()?.as_ref() {
                     "Entries" => {
                         builder = builder.set_entries(
-                            crate::json_deser::deser_list_list_trackers_response_entry_list(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_list_com_amazonaws_location_list_trackers_response_entry_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -1897,7 +1907,7 @@ pub fn deser_operation_list_trackers(
     Ok(builder)
 }
 
-pub fn deser_operation_put_geofence(
+pub fn deser_operation_crate_operation_put_geofence(
     input: &[u8],
     mut builder: crate::output::put_geofence_output::Builder,
 ) -> Result<crate::output::put_geofence_output::Builder, smithy_json::deserialize::Error> {
@@ -1952,7 +1962,7 @@ pub fn deser_operation_put_geofence(
     Ok(builder)
 }
 
-pub fn deser_operation_search_place_index_for_position(
+pub fn deser_operation_crate_operation_search_place_index_for_position(
     input: &[u8],
     mut builder: crate::output::search_place_index_for_position_output::Builder,
 ) -> Result<
@@ -1971,12 +1981,12 @@ pub fn deser_operation_search_place_index_for_position(
                 match key.to_unescaped()?.as_ref() {
                     "Results" => {
                         builder = builder.set_results(
-                            crate::json_deser::deser_list_search_for_position_result_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_location_search_for_position_result_list(tokens)?
                         );
                     }
                     "Summary" => {
                         builder = builder.set_summary(
-                            crate::json_deser::deser_structure_search_place_index_for_position_summary(tokens)?
+                            crate::json_deser::deser_structure_crate_model_search_place_index_for_position_summary(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1997,7 +2007,7 @@ pub fn deser_operation_search_place_index_for_position(
     Ok(builder)
 }
 
-pub fn deser_operation_search_place_index_for_text(
+pub fn deser_operation_crate_operation_search_place_index_for_text(
     input: &[u8],
     mut builder: crate::output::search_place_index_for_text_output::Builder,
 ) -> Result<
@@ -2016,14 +2026,12 @@ pub fn deser_operation_search_place_index_for_text(
                 match key.to_unescaped()?.as_ref() {
                     "Results" => {
                         builder = builder.set_results(
-                            crate::json_deser::deser_list_search_for_text_result_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_location_search_for_text_result_list(tokens)?
                         );
                     }
                     "Summary" => {
                         builder = builder.set_summary(
-                            crate::json_deser::deser_structure_search_place_index_for_text_summary(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_search_place_index_for_text_summary(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2044,7 +2052,7 @@ pub fn deser_operation_search_place_index_for_text(
     Ok(builder)
 }
 
-pub fn deser_operation_update_geofence_collection(
+pub fn deser_operation_crate_operation_update_geofence_collection(
     input: &[u8],
     mut builder: crate::output::update_geofence_collection_output::Builder,
 ) -> Result<
@@ -2101,7 +2109,7 @@ pub fn deser_operation_update_geofence_collection(
     Ok(builder)
 }
 
-pub fn deser_operation_update_map(
+pub fn deser_operation_crate_operation_update_map(
     input: &[u8],
     mut builder: crate::output::update_map_output::Builder,
 ) -> Result<crate::output::update_map_output::Builder, smithy_json::deserialize::Error> {
@@ -2155,7 +2163,7 @@ pub fn deser_operation_update_map(
     Ok(builder)
 }
 
-pub fn deser_operation_update_place_index(
+pub fn deser_operation_crate_operation_update_place_index(
     input: &[u8],
     mut builder: crate::output::update_place_index_output::Builder,
 ) -> Result<crate::output::update_place_index_output::Builder, smithy_json::deserialize::Error> {
@@ -2209,7 +2217,7 @@ pub fn deser_operation_update_place_index(
     Ok(builder)
 }
 
-pub fn deser_operation_update_route_calculator(
+pub fn deser_operation_crate_operation_update_route_calculator(
     input: &[u8],
     mut builder: crate::output::update_route_calculator_output::Builder,
 ) -> Result<crate::output::update_route_calculator_output::Builder, smithy_json::deserialize::Error>
@@ -2264,7 +2272,7 @@ pub fn deser_operation_update_route_calculator(
     Ok(builder)
 }
 
-pub fn deser_operation_update_tracker(
+pub fn deser_operation_crate_operation_update_tracker(
     input: &[u8],
     mut builder: crate::output::update_tracker_output::Builder,
 ) -> Result<crate::output::update_tracker_output::Builder, smithy_json::deserialize::Error> {
@@ -2327,7 +2335,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_validation_exception_field_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_validation_exception_field_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
@@ -2350,7 +2358,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_validation_exception_field(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_validation_exception_field(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2366,7 +2375,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_batch_delete_device_position_history_error_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_batch_delete_device_position_history_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::BatchDeleteDevicePositionHistoryError>>,
@@ -2389,7 +2398,7 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_batch_delete_device_position_history_error(tokens)?
+                            crate::json_deser::deser_structure_crate_model_batch_delete_device_position_history_error(tokens)?
                         ;
                         if let Some(value) = value {
                             items.push(value);
@@ -2406,7 +2415,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_batch_delete_geofence_error_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_batch_delete_geofence_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::BatchDeleteGeofenceError>>,
@@ -2429,7 +2438,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_batch_delete_geofence_error(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_batch_delete_geofence_error(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2445,7 +2455,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_batch_evaluate_geofences_error_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_batch_evaluate_geofences_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::BatchEvaluateGeofencesError>>,
@@ -2468,9 +2478,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_batch_evaluate_geofences_error(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_batch_evaluate_geofences_error(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2486,7 +2495,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_device_position_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_device_position_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DevicePosition>>, smithy_json::deserialize::Error>
 where
@@ -2505,7 +2514,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_device_position(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_device_position(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2521,7 +2531,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_batch_get_device_position_error_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_batch_get_device_position_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::BatchGetDevicePositionError>>,
@@ -2544,9 +2554,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_batch_get_device_position_error(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_batch_get_device_position_error(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2562,7 +2571,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_batch_put_geofence_error_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_batch_put_geofence_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::BatchPutGeofenceError>>,
@@ -2585,7 +2594,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_batch_put_geofence_error(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_batch_put_geofence_error(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2601,7 +2611,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_batch_put_geofence_success_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_batch_put_geofence_success_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::BatchPutGeofenceSuccess>>,
@@ -2624,7 +2634,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_batch_put_geofence_success(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_batch_put_geofence_success(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2640,7 +2651,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_batch_update_device_position_error_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_batch_update_device_position_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::BatchUpdateDevicePositionError>>,
@@ -2663,9 +2674,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_batch_update_device_position_error(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_batch_update_device_position_error(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2681,7 +2691,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_leg_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_leg_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Leg>>, smithy_json::deserialize::Error>
 where
@@ -2700,7 +2710,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_leg(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_leg(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2715,7 +2725,7 @@ where
     }
 }
 
-pub fn deser_structure_calculate_route_summary<'a, I>(
+pub fn deser_structure_crate_model_calculate_route_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CalculateRouteSummary>, smithy_json::deserialize::Error>
 where
@@ -2735,7 +2745,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "RouteBBox" => {
                                 builder = builder.set_route_b_box(
-                                    crate::json_deser::deser_list_bounding_box(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_location_bounding_box(tokens)?
                                 );
                             }
                             "DataSource" => {
@@ -2794,7 +2804,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_tag_map<'a, I>(
+pub fn deser_map_com_amazonaws_location_tag_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2837,7 +2847,7 @@ where
     }
 }
 
-pub fn deser_structure_map_configuration<'a, I>(
+pub fn deser_structure_crate_model_map_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MapConfiguration>, smithy_json::deserialize::Error>
 where
@@ -2882,7 +2892,7 @@ where
     }
 }
 
-pub fn deser_structure_data_source_configuration<'a, I>(
+pub fn deser_structure_crate_model_data_source_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DataSourceConfiguration>, smithy_json::deserialize::Error>
 where
@@ -2931,7 +2941,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_position<'a, I>(
+pub fn deser_list_com_amazonaws_location_position<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<f64>>, smithy_json::deserialize::Error>
 where
@@ -2967,7 +2977,7 @@ where
     }
 }
 
-pub fn deser_structure_geofence_geometry<'a, I>(
+pub fn deser_structure_crate_model_geofence_geometry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::GeofenceGeometry>, smithy_json::deserialize::Error>
 where
@@ -2987,7 +2997,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Polygon" => {
                                 builder = builder.set_polygon(
-                                    crate::json_deser::deser_list_linear_rings(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_location_linear_rings(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3009,7 +3019,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_list_device_positions_response_entry_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_list_device_positions_response_entry_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ListDevicePositionsResponseEntry>>,
@@ -3032,7 +3042,7 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_list_device_positions_response_entry(tokens)?
+                            crate::json_deser::deser_structure_crate_model_list_device_positions_response_entry(tokens)?
                         ;
                         if let Some(value) = value {
                             items.push(value);
@@ -3049,7 +3059,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_list_geofence_collections_response_entry_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_list_geofence_collections_response_entry_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ListGeofenceCollectionsResponseEntry>>,
@@ -3072,7 +3082,7 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_list_geofence_collections_response_entry(tokens)?
+                            crate::json_deser::deser_structure_crate_model_list_geofence_collections_response_entry(tokens)?
                         ;
                         if let Some(value) = value {
                             items.push(value);
@@ -3089,7 +3099,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_list_geofence_response_entry_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_list_geofence_response_entry_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ListGeofenceResponseEntry>>,
@@ -3112,9 +3122,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_list_geofence_response_entry(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_list_geofence_response_entry(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3130,7 +3139,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_list_maps_response_entry_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_list_maps_response_entry_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ListMapsResponseEntry>>,
@@ -3153,7 +3162,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_list_maps_response_entry(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_list_maps_response_entry(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3169,7 +3179,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_list_place_indexes_response_entry_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_list_place_indexes_response_entry_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ListPlaceIndexesResponseEntry>>,
@@ -3192,9 +3202,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_list_place_indexes_response_entry(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_list_place_indexes_response_entry(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3210,7 +3219,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_list_route_calculators_response_entry_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_list_route_calculators_response_entry_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ListRouteCalculatorsResponseEntry>>,
@@ -3233,7 +3242,7 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_list_route_calculators_response_entry(tokens)?
+                            crate::json_deser::deser_structure_crate_model_list_route_calculators_response_entry(tokens)?
                         ;
                         if let Some(value) = value {
                             items.push(value);
@@ -3250,7 +3259,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_arn_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_arn_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -3288,7 +3297,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_list_trackers_response_entry_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_list_trackers_response_entry_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ListTrackersResponseEntry>>,
@@ -3311,9 +3320,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_list_trackers_response_entry(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_list_trackers_response_entry(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3329,7 +3337,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_search_for_position_result_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_search_for_position_result_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::SearchForPositionResult>>,
@@ -3352,7 +3360,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_search_for_position_result(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_search_for_position_result(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3367,7 +3376,7 @@ where
     }
 }
 
-pub fn deser_structure_search_place_index_for_position_summary<'a, I>(
+pub fn deser_structure_crate_model_search_place_index_for_position_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SearchPlaceIndexForPositionSummary>, smithy_json::deserialize::Error>
 where
@@ -3386,8 +3395,11 @@ where
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
                             "Position" => {
-                                builder = builder
-                                    .set_position(crate::json_deser::deser_list_position(tokens)?);
+                                builder = builder.set_position(
+                                    crate::json_deser::deser_list_com_amazonaws_location_position(
+                                        tokens,
+                                    )?,
+                                );
                             }
                             "MaxResults" => {
                                 builder = builder.set_max_results(
@@ -3425,7 +3437,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_search_for_text_result_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_search_for_text_result_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::SearchForTextResult>>, smithy_json::deserialize::Error>
 where
@@ -3445,7 +3457,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_search_for_text_result(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_search_for_text_result(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3460,7 +3474,7 @@ where
     }
 }
 
-pub fn deser_structure_search_place_index_for_text_summary<'a, I>(
+pub fn deser_structure_crate_model_search_place_index_for_text_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SearchPlaceIndexForTextSummary>, smithy_json::deserialize::Error>
 where
@@ -3489,17 +3503,19 @@ where
                             }
                             "BiasPosition" => {
                                 builder = builder.set_bias_position(
-                                    crate::json_deser::deser_list_position(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_location_position(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "FilterBBox" => {
                                 builder = builder.set_filter_b_box(
-                                    crate::json_deser::deser_list_bounding_box(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_location_bounding_box(tokens)?
                                 );
                             }
                             "FilterCountries" => {
                                 builder = builder.set_filter_countries(
-                                    crate::json_deser::deser_list_country_code_list(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_location_country_code_list(tokens)?
                                 );
                             }
                             "MaxResults" => {
@@ -3512,7 +3528,7 @@ where
                             }
                             "ResultBBox" => {
                                 builder = builder.set_result_b_box(
-                                    crate::json_deser::deser_list_bounding_box(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_location_bounding_box(tokens)?
                                 );
                             }
                             "DataSource" => {
@@ -3542,7 +3558,7 @@ where
     }
 }
 
-pub fn deser_structure_validation_exception_field<'a, I>(
+pub fn deser_structure_crate_model_validation_exception_field<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ValidationExceptionField>, smithy_json::deserialize::Error>
 where
@@ -3596,7 +3612,7 @@ where
     }
 }
 
-pub fn deser_structure_batch_delete_device_position_history_error<'a, I>(
+pub fn deser_structure_crate_model_batch_delete_device_position_history_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::BatchDeleteDevicePositionHistoryError>,
@@ -3628,7 +3644,7 @@ where
                             }
                             "Error" => {
                                 builder = builder.set_error(
-                                    crate::json_deser::deser_structure_batch_item_error(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_batch_item_error(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3649,7 +3665,7 @@ where
     }
 }
 
-pub fn deser_structure_batch_delete_geofence_error<'a, I>(
+pub fn deser_structure_crate_model_batch_delete_geofence_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BatchDeleteGeofenceError>, smithy_json::deserialize::Error>
 where
@@ -3678,7 +3694,7 @@ where
                             }
                             "Error" => {
                                 builder = builder.set_error(
-                                    crate::json_deser::deser_structure_batch_item_error(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_batch_item_error(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3699,7 +3715,7 @@ where
     }
 }
 
-pub fn deser_structure_batch_evaluate_geofences_error<'a, I>(
+pub fn deser_structure_crate_model_batch_evaluate_geofences_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BatchEvaluateGeofencesError>, smithy_json::deserialize::Error>
 where
@@ -3736,7 +3752,7 @@ where
                             }
                             "Error" => {
                                 builder = builder.set_error(
-                                    crate::json_deser::deser_structure_batch_item_error(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_batch_item_error(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3757,7 +3773,7 @@ where
     }
 }
 
-pub fn deser_structure_device_position<'a, I>(
+pub fn deser_structure_crate_model_device_position<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DevicePosition>, smithy_json::deserialize::Error>
 where
@@ -3801,8 +3817,11 @@ where
                                 );
                             }
                             "Position" => {
-                                builder = builder
-                                    .set_position(crate::json_deser::deser_list_position(tokens)?);
+                                builder = builder.set_position(
+                                    crate::json_deser::deser_list_com_amazonaws_location_position(
+                                        tokens,
+                                    )?,
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -3822,7 +3841,7 @@ where
     }
 }
 
-pub fn deser_structure_batch_get_device_position_error<'a, I>(
+pub fn deser_structure_crate_model_batch_get_device_position_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BatchGetDevicePositionError>, smithy_json::deserialize::Error>
 where
@@ -3851,7 +3870,7 @@ where
                             }
                             "Error" => {
                                 builder = builder.set_error(
-                                    crate::json_deser::deser_structure_batch_item_error(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_batch_item_error(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3872,7 +3891,7 @@ where
     }
 }
 
-pub fn deser_structure_batch_put_geofence_error<'a, I>(
+pub fn deser_structure_crate_model_batch_put_geofence_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BatchPutGeofenceError>, smithy_json::deserialize::Error>
 where
@@ -3901,7 +3920,7 @@ where
                             }
                             "Error" => {
                                 builder = builder.set_error(
-                                    crate::json_deser::deser_structure_batch_item_error(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_batch_item_error(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3922,7 +3941,7 @@ where
     }
 }
 
-pub fn deser_structure_batch_put_geofence_success<'a, I>(
+pub fn deser_structure_crate_model_batch_put_geofence_success<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BatchPutGeofenceSuccess>, smithy_json::deserialize::Error>
 where
@@ -3983,7 +4002,7 @@ where
     }
 }
 
-pub fn deser_structure_batch_update_device_position_error<'a, I>(
+pub fn deser_structure_crate_model_batch_update_device_position_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BatchUpdateDevicePositionError>, smithy_json::deserialize::Error>
 where
@@ -4020,7 +4039,7 @@ where
                             }
                             "Error" => {
                                 builder = builder.set_error(
-                                    crate::json_deser::deser_structure_batch_item_error(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_batch_item_error(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4041,7 +4060,7 @@ where
     }
 }
 
-pub fn deser_structure_leg<'a, I>(
+pub fn deser_structure_crate_model_leg<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Leg>, smithy_json::deserialize::Error>
 where
@@ -4061,12 +4080,16 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "StartPosition" => {
                                 builder = builder.set_start_position(
-                                    crate::json_deser::deser_list_position(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_location_position(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "EndPosition" => {
                                 builder = builder.set_end_position(
-                                    crate::json_deser::deser_list_position(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_location_position(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "Distance" => {
@@ -4087,12 +4110,17 @@ where
                             }
                             "Geometry" => {
                                 builder = builder.set_geometry(
-                                    crate::json_deser::deser_structure_leg_geometry(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_leg_geometry(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "Steps" => {
-                                builder = builder
-                                    .set_steps(crate::json_deser::deser_list_step_list(tokens)?);
+                                builder = builder.set_steps(
+                                    crate::json_deser::deser_list_com_amazonaws_location_step_list(
+                                        tokens,
+                                    )?,
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -4113,7 +4141,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_bounding_box<'a, I>(
+pub fn deser_list_com_amazonaws_location_bounding_box<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<f64>>, smithy_json::deserialize::Error>
 where
@@ -4150,7 +4178,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_linear_rings<'a, I>(
+pub fn deser_list_com_amazonaws_location_linear_rings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>, smithy_json::deserialize::Error>
 where
@@ -4169,7 +4197,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_list_linear_ring(tokens)?;
+                        let value =
+                            crate::json_deser::deser_list_com_amazonaws_location_linear_ring(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -4184,7 +4215,7 @@ where
     }
 }
 
-pub fn deser_structure_list_device_positions_response_entry<'a, I>(
+pub fn deser_structure_crate_model_list_device_positions_response_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ListDevicePositionsResponseEntry>, smithy_json::deserialize::Error>
 where
@@ -4220,8 +4251,11 @@ where
                                 );
                             }
                             "Position" => {
-                                builder = builder
-                                    .set_position(crate::json_deser::deser_list_position(tokens)?);
+                                builder = builder.set_position(
+                                    crate::json_deser::deser_list_com_amazonaws_location_position(
+                                        tokens,
+                                    )?,
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -4241,7 +4275,7 @@ where
     }
 }
 
-pub fn deser_structure_list_geofence_collections_response_entry<'a, I>(
+pub fn deser_structure_crate_model_list_geofence_collections_response_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ListGeofenceCollectionsResponseEntry>,
@@ -4335,7 +4369,7 @@ where
     }
 }
 
-pub fn deser_structure_list_geofence_response_entry<'a, I>(
+pub fn deser_structure_crate_model_list_geofence_response_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ListGeofenceResponseEntry>, smithy_json::deserialize::Error>
 where
@@ -4364,7 +4398,7 @@ where
                             }
                             "Geometry" => {
                                 builder = builder.set_geometry(
-                                    crate::json_deser::deser_structure_geofence_geometry(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_geofence_geometry(tokens)?
                                 );
                             }
                             "Status" => {
@@ -4410,7 +4444,7 @@ where
     }
 }
 
-pub fn deser_structure_list_maps_response_entry<'a, I>(
+pub fn deser_structure_crate_model_list_maps_response_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ListMapsResponseEntry>, smithy_json::deserialize::Error>
 where
@@ -4501,7 +4535,7 @@ where
     }
 }
 
-pub fn deser_structure_list_place_indexes_response_entry<'a, I>(
+pub fn deser_structure_crate_model_list_place_indexes_response_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ListPlaceIndexesResponseEntry>, smithy_json::deserialize::Error>
 where
@@ -4592,7 +4626,7 @@ where
     }
 }
 
-pub fn deser_structure_list_route_calculators_response_entry<'a, I>(
+pub fn deser_structure_crate_model_list_route_calculators_response_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ListRouteCalculatorsResponseEntry>, smithy_json::deserialize::Error>
 where
@@ -4683,7 +4717,7 @@ where
     }
 }
 
-pub fn deser_structure_list_trackers_response_entry<'a, I>(
+pub fn deser_structure_crate_model_list_trackers_response_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ListTrackersResponseEntry>, smithy_json::deserialize::Error>
 where
@@ -4774,7 +4808,7 @@ where
     }
 }
 
-pub fn deser_structure_search_for_position_result<'a, I>(
+pub fn deser_structure_crate_model_search_for_position_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SearchForPositionResult>, smithy_json::deserialize::Error>
 where
@@ -4793,8 +4827,9 @@ where
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
                             "Place" => {
-                                builder = builder
-                                    .set_place(crate::json_deser::deser_structure_place(tokens)?);
+                                builder = builder.set_place(
+                                    crate::json_deser::deser_structure_crate_model_place(tokens)?,
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -4814,7 +4849,7 @@ where
     }
 }
 
-pub fn deser_structure_search_for_text_result<'a, I>(
+pub fn deser_structure_crate_model_search_for_text_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SearchForTextResult>, smithy_json::deserialize::Error>
 where
@@ -4833,8 +4868,9 @@ where
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
                             "Place" => {
-                                builder = builder
-                                    .set_place(crate::json_deser::deser_structure_place(tokens)?);
+                                builder = builder.set_place(
+                                    crate::json_deser::deser_structure_crate_model_place(tokens)?,
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
@@ -4855,7 +4891,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_country_code_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_country_code_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -4892,7 +4928,7 @@ where
     }
 }
 
-pub fn deser_structure_batch_item_error<'a, I>(
+pub fn deser_structure_crate_model_batch_item_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::BatchItemError>, smithy_json::deserialize::Error>
 where
@@ -4950,7 +4986,7 @@ where
     }
 }
 
-pub fn deser_structure_leg_geometry<'a, I>(
+pub fn deser_structure_crate_model_leg_geometry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::LegGeometry>, smithy_json::deserialize::Error>
 where
@@ -4970,7 +5006,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "LineString" => {
                                 builder = builder.set_line_string(
-                                    crate::json_deser::deser_list_line_string(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_location_line_string(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4992,7 +5028,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_step_list<'a, I>(
+pub fn deser_list_com_amazonaws_location_step_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Step>>, smithy_json::deserialize::Error>
 where
@@ -5011,7 +5047,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_step(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_step(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -5027,7 +5063,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_linear_ring<'a, I>(
+pub fn deser_list_com_amazonaws_location_linear_ring<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::vec::Vec<f64>>>, smithy_json::deserialize::Error>
 where
@@ -5046,7 +5082,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_list_position(tokens)?;
+                        let value =
+                            crate::json_deser::deser_list_com_amazonaws_location_position(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -5061,7 +5098,7 @@ where
     }
 }
 
-pub fn deser_structure_place<'a, I>(
+pub fn deser_structure_crate_model_place<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Place>, smithy_json::deserialize::Error>
 where
@@ -5090,7 +5127,9 @@ where
                             }
                             "Geometry" => {
                                 builder = builder.set_geometry(
-                                    crate::json_deser::deser_structure_place_geometry(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_place_geometry(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "AddressNumber" => {
@@ -5184,7 +5223,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_line_string<'a, I>(
+pub fn deser_list_com_amazonaws_location_line_string<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::vec::Vec<f64>>>, smithy_json::deserialize::Error>
 where
@@ -5203,7 +5242,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_list_position(tokens)?;
+                        let value =
+                            crate::json_deser::deser_list_com_amazonaws_location_position(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -5218,7 +5258,7 @@ where
     }
 }
 
-pub fn deser_structure_step<'a, I>(
+pub fn deser_structure_crate_model_step<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Step>, smithy_json::deserialize::Error>
 where
@@ -5238,12 +5278,16 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "StartPosition" => {
                                 builder = builder.set_start_position(
-                                    crate::json_deser::deser_list_position(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_location_position(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "EndPosition" => {
                                 builder = builder.set_end_position(
-                                    crate::json_deser::deser_list_position(tokens)?,
+                                    crate::json_deser::deser_list_com_amazonaws_location_position(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "Distance" => {
@@ -5288,7 +5332,7 @@ where
     }
 }
 
-pub fn deser_structure_place_geometry<'a, I>(
+pub fn deser_structure_crate_model_place_geometry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PlaceGeometry>, smithy_json::deserialize::Error>
 where
@@ -5307,8 +5351,11 @@ where
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
                             "Point" => {
-                                builder = builder
-                                    .set_point(crate::json_deser::deser_list_position(tokens)?);
+                                builder = builder.set_point(
+                                    crate::json_deser::deser_list_com_amazonaws_location_position(
+                                        tokens,
+                                    )?,
+                                );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }

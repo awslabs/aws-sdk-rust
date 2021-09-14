@@ -20,11 +20,7 @@ pub fn parse_activate_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cfn_registry_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cfn_registry_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ActivateTypeError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ActivateTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -41,11 +37,7 @@ pub fn parse_activate_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::type_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_type_not_found_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ActivateTypeError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ActivateTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -66,8 +58,11 @@ pub fn parse_activate_type_response(
         #[allow(unused_mut)]
         let mut output = crate::output::activate_type_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_activate_type(response.body().as_ref(), output)
-            .map_err(crate::error::ActivateTypeError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_activate_type(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ActivateTypeError::unhandled)?;
         output.build()
     })
 }
@@ -93,7 +88,7 @@ pub fn parse_batch_describe_type_configurations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::cfn_registry_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeTypeConfigurationsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeTypeConfigurationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -107,7 +102,7 @@ pub fn parse_batch_describe_type_configurations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::type_configuration_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_type_configuration_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeTypeConfigurationsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_type_configuration_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeTypeConfigurationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -132,11 +127,12 @@ pub fn parse_batch_describe_type_configurations_response(
         let mut output =
             crate::output::batch_describe_type_configurations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_batch_describe_type_configurations(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::BatchDescribeTypeConfigurationsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_batch_describe_type_configurations(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::BatchDescribeTypeConfigurationsError::unhandled)?;
         output.build()
     })
 }
@@ -155,26 +151,24 @@ pub fn parse_cancel_update_stack_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "TokenAlreadyExistsException" => {
-            crate::error::CancelUpdateStackError {
-                meta: generic,
-                kind: crate::error::CancelUpdateStackErrorKind::TokenAlreadyExistsException({
+        "TokenAlreadyExistsException" => crate::error::CancelUpdateStackError {
+            meta: generic,
+            kind: crate::error::CancelUpdateStackErrorKind::TokenAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::token_already_exists_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_token_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelUpdateStackError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::token_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_token_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelUpdateStackError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::CancelUpdateStackError::generic(generic),
     })
 }
@@ -212,26 +206,24 @@ pub fn parse_continue_update_rollback_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "TokenAlreadyExistsException" => {
-            crate::error::ContinueUpdateRollbackError {
-                meta: generic,
-                kind: crate::error::ContinueUpdateRollbackErrorKind::TokenAlreadyExistsException({
+        "TokenAlreadyExistsException" => crate::error::ContinueUpdateRollbackError {
+            meta: generic,
+            kind: crate::error::ContinueUpdateRollbackErrorKind::TokenAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::token_already_exists_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_token_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ContinueUpdateRollbackError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::token_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_token_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ContinueUpdateRollbackError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ContinueUpdateRollbackError::generic(generic),
     })
 }
@@ -272,11 +264,7 @@ pub fn parse_create_change_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::already_exists_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_already_exists_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateChangeSetError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateChangeSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -294,7 +282,7 @@ pub fn parse_create_change_set_error(
                     let mut output =
                         crate::error::insufficient_capabilities_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_capabilities_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateChangeSetError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_capabilities_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateChangeSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -311,11 +299,7 @@ pub fn parse_create_change_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateChangeSetError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateChangeSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -336,9 +320,11 @@ pub fn parse_create_change_set_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_change_set_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_change_set(response.body().as_ref(), output)
-                .map_err(crate::error::CreateChangeSetError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_change_set(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateChangeSetError::unhandled)?;
         output.build()
     })
 }
@@ -364,11 +350,7 @@ pub fn parse_create_stack_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::already_exists_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_already_exists_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateStackError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -386,7 +368,7 @@ pub fn parse_create_stack_error(
                     let mut output =
                         crate::error::insufficient_capabilities_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_capabilities_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_capabilities_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -403,11 +385,7 @@ pub fn parse_create_stack_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateStackError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -416,26 +394,24 @@ pub fn parse_create_stack_error(
                 tmp
             }),
         },
-        "TokenAlreadyExistsException" => {
-            crate::error::CreateStackError {
-                meta: generic,
-                kind: crate::error::CreateStackErrorKind::TokenAlreadyExistsException({
+        "TokenAlreadyExistsException" => crate::error::CreateStackError {
+            meta: generic,
+            kind: crate::error::CreateStackErrorKind::TokenAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::token_already_exists_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_token_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::token_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_token_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::CreateStackError::generic(generic),
     })
 }
@@ -448,8 +424,11 @@ pub fn parse_create_stack_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_stack_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_stack(response.body().as_ref(), output)
-            .map_err(crate::error::CreateStackError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_stack(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateStackError::unhandled)?;
         output.build()
     })
 }
@@ -478,11 +457,7 @@ pub fn parse_create_stack_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_operation_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_operation_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateStackInstancesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -499,11 +474,7 @@ pub fn parse_create_stack_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateStackInstancesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -521,7 +492,7 @@ pub fn parse_create_stack_instances_error(
                     let mut output =
                         crate::error::operation_id_already_exists_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_operation_id_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackInstancesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_id_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -530,46 +501,42 @@ pub fn parse_create_stack_instances_error(
                 tmp
             }),
         },
-        "OperationInProgressException" => {
-            crate::error::CreateStackInstancesError {
-                meta: generic,
-                kind: crate::error::CreateStackInstancesErrorKind::OperationInProgressException({
+        "OperationInProgressException" => crate::error::CreateStackInstancesError {
+            meta: generic,
+            kind: crate::error::CreateStackInstancesErrorKind::OperationInProgressException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::operation_in_progress_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackInstancesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "StackSetNotFoundException" => {
-            crate::error::CreateStackInstancesError {
-                meta: generic,
-                kind: crate::error::CreateStackInstancesErrorKind::StackSetNotFoundException({
+                    let mut output =
+                        crate::error::operation_in_progress_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackInstancesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "StackSetNotFoundException" => crate::error::CreateStackInstancesError {
+            meta: generic,
+            kind: crate::error::CreateStackInstancesErrorKind::StackSetNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::stack_set_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackInstancesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::stack_set_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackInstancesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "StaleRequestException" => crate::error::CreateStackInstancesError {
             meta: generic,
             kind: crate::error::CreateStackInstancesErrorKind::StaleRequestException({
@@ -578,11 +545,7 @@ pub fn parse_create_stack_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::stale_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_stale_request_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateStackInstancesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_stale_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -606,7 +569,7 @@ pub fn parse_create_stack_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_stack_instances_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_create_stack_instances(
+        output = crate::xml_deser::deser_operation_crate_operation_create_stack_instances(
             response.body().as_ref(),
             output,
         )
@@ -628,39 +591,16 @@ pub fn parse_create_stack_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CreatedButModifiedException" => {
-            crate::error::CreateStackSetError {
-                meta: generic,
-                kind: crate::error::CreateStackSetErrorKind::CreatedButModifiedException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::created_but_modified_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_created_but_modified_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackSetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "LimitExceededException" => crate::error::CreateStackSetError {
+        "CreatedButModifiedException" => crate::error::CreateStackSetError {
             meta: generic,
-            kind: crate::error::CreateStackSetErrorKind::LimitExceededException({
+            kind: crate::error::CreateStackSetErrorKind::CreatedButModifiedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let mut output =
+                        crate::error::created_but_modified_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateStackSetError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_created_but_modified_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -669,26 +609,41 @@ pub fn parse_create_stack_set_error(
                 tmp
             }),
         },
-        "NameAlreadyExistsException" => {
-            crate::error::CreateStackSetError {
-                meta: generic,
-                kind: crate::error::CreateStackSetErrorKind::NameAlreadyExistsException({
+        "LimitExceededException" => crate::error::CreateStackSetError {
+            meta: generic,
+            kind: crate::error::CreateStackSetErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::name_already_exists_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_name_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackSetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackSetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NameAlreadyExistsException" => crate::error::CreateStackSetError {
+            meta: generic,
+            kind: crate::error::CreateStackSetErrorKind::NameAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::name_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_name_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackSetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::CreateStackSetError::generic(generic),
     })
 }
@@ -701,9 +656,11 @@ pub fn parse_create_stack_set_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_stack_set_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_create_stack_set(response.body().as_ref(), output)
-                .map_err(crate::error::CreateStackSetError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_create_stack_set(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateStackSetError::unhandled)?;
         output.build()
     })
 }
@@ -729,11 +686,7 @@ pub fn parse_deactivate_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cfn_registry_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cfn_registry_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeactivateTypeError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeactivateTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -750,11 +703,7 @@ pub fn parse_deactivate_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::type_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_type_not_found_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeactivateTypeError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeactivateTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -801,7 +750,7 @@ pub fn parse_delete_change_set_error(
                     let mut output =
                         crate::error::invalid_change_set_status_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_change_set_status_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteChangeSetError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_change_set_status_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteChangeSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -839,26 +788,24 @@ pub fn parse_delete_stack_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "TokenAlreadyExistsException" => {
-            crate::error::DeleteStackError {
-                meta: generic,
-                kind: crate::error::DeleteStackErrorKind::TokenAlreadyExistsException({
+        "TokenAlreadyExistsException" => crate::error::DeleteStackError {
+            meta: generic,
+            kind: crate::error::DeleteStackErrorKind::TokenAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::token_already_exists_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_token_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::token_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_token_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeleteStackError::generic(generic),
     })
 }
@@ -899,11 +846,7 @@ pub fn parse_delete_stack_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_operation_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_operation_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteStackInstancesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -921,7 +864,7 @@ pub fn parse_delete_stack_instances_error(
                     let mut output =
                         crate::error::operation_id_already_exists_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_operation_id_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackInstancesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_id_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -930,46 +873,42 @@ pub fn parse_delete_stack_instances_error(
                 tmp
             }),
         },
-        "OperationInProgressException" => {
-            crate::error::DeleteStackInstancesError {
-                meta: generic,
-                kind: crate::error::DeleteStackInstancesErrorKind::OperationInProgressException({
+        "OperationInProgressException" => crate::error::DeleteStackInstancesError {
+            meta: generic,
+            kind: crate::error::DeleteStackInstancesErrorKind::OperationInProgressException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::operation_in_progress_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackInstancesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "StackSetNotFoundException" => {
-            crate::error::DeleteStackInstancesError {
-                meta: generic,
-                kind: crate::error::DeleteStackInstancesErrorKind::StackSetNotFoundException({
+                    let mut output =
+                        crate::error::operation_in_progress_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackInstancesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "StackSetNotFoundException" => crate::error::DeleteStackInstancesError {
+            meta: generic,
+            kind: crate::error::DeleteStackInstancesErrorKind::StackSetNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::stack_set_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackInstancesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::stack_set_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackInstancesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "StaleRequestException" => crate::error::DeleteStackInstancesError {
             meta: generic,
             kind: crate::error::DeleteStackInstancesErrorKind::StaleRequestException({
@@ -978,11 +917,7 @@ pub fn parse_delete_stack_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::stale_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_stale_request_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteStackInstancesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_stale_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1006,7 +941,7 @@ pub fn parse_delete_stack_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_stack_instances_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_delete_stack_instances(
+        output = crate::xml_deser::deser_operation_crate_operation_delete_stack_instances(
             response.body().as_ref(),
             output,
         )
@@ -1028,46 +963,42 @@ pub fn parse_delete_stack_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationInProgressException" => {
-            crate::error::DeleteStackSetError {
-                meta: generic,
-                kind: crate::error::DeleteStackSetErrorKind::OperationInProgressException({
+        "OperationInProgressException" => crate::error::DeleteStackSetError {
+            meta: generic,
+            kind: crate::error::DeleteStackSetErrorKind::OperationInProgressException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::operation_in_progress_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackSetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "StackSetNotEmptyException" => {
-            crate::error::DeleteStackSetError {
-                meta: generic,
-                kind: crate::error::DeleteStackSetErrorKind::StackSetNotEmptyException({
+                    let mut output =
+                        crate::error::operation_in_progress_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackSetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "StackSetNotEmptyException" => crate::error::DeleteStackSetError {
+            meta: generic,
+            kind: crate::error::DeleteStackSetErrorKind::StackSetNotEmptyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::stack_set_not_empty_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_stack_set_not_empty_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackSetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::stack_set_not_empty_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_set_not_empty_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackSetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeleteStackSetError::generic(generic),
     })
 }
@@ -1105,11 +1036,7 @@ pub fn parse_deregister_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cfn_registry_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cfn_registry_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeregisterTypeError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeregisterTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1126,11 +1053,7 @@ pub fn parse_deregister_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::type_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_type_not_found_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeregisterTypeError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeregisterTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1178,7 +1101,7 @@ pub fn parse_describe_account_limits_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_account_limits_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_account_limits(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_account_limits(
             response.body().as_ref(),
             output,
         )
@@ -1201,26 +1124,24 @@ pub fn parse_describe_change_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ChangeSetNotFound" => {
-            crate::error::DescribeChangeSetError {
-                meta: generic,
-                kind: crate::error::DescribeChangeSetErrorKind::ChangeSetNotFoundException({
+        "ChangeSetNotFound" => crate::error::DescribeChangeSetError {
+            meta: generic,
+            kind: crate::error::DescribeChangeSetErrorKind::ChangeSetNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::change_set_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_change_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeChangeSetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::change_set_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_change_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeChangeSetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeChangeSetError::generic(generic),
     })
 }
@@ -1234,9 +1155,11 @@ pub fn parse_describe_change_set_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_change_set_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_change_set(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeChangeSetError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_change_set(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeChangeSetError::unhandled)?;
         output.build()
     })
 }
@@ -1263,11 +1186,7 @@ pub fn parse_describe_publisher_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cfn_registry_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cfn_registry_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribePublisherError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePublisherError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1289,9 +1208,11 @@ pub fn parse_describe_publisher_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_publisher_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_publisher(response.body().as_ref(), output)
-                .map_err(crate::error::DescribePublisherError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_publisher(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribePublisherError::unhandled)?;
         output.build()
     })
 }
@@ -1320,11 +1241,7 @@ pub fn parse_describe_stack_drift_detection_status_response(
         let mut output =
             crate::output::describe_stack_drift_detection_status_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_stack_drift_detection_status(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::DescribeStackDriftDetectionStatusError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_stack_drift_detection_status(response.body().as_ref(), output).map_err(crate::error::DescribeStackDriftDetectionStatusError::unhandled)?;
         output.build()
     })
 }
@@ -1352,7 +1269,7 @@ pub fn parse_describe_stack_events_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_stack_events_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_stack_events(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_stack_events(
             response.body().as_ref(),
             output,
         )
@@ -1386,7 +1303,7 @@ pub fn parse_describe_stack_instance_error(
                     let mut output =
                         crate::error::stack_instance_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_stack_instance_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeStackInstanceError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_instance_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeStackInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1395,26 +1312,24 @@ pub fn parse_describe_stack_instance_error(
                 tmp
             }),
         },
-        "StackSetNotFoundException" => {
-            crate::error::DescribeStackInstanceError {
-                meta: generic,
-                kind: crate::error::DescribeStackInstanceErrorKind::StackSetNotFoundException({
+        "StackSetNotFoundException" => crate::error::DescribeStackInstanceError {
+            meta: generic,
+            kind: crate::error::DescribeStackInstanceErrorKind::StackSetNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::stack_set_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeStackInstanceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::stack_set_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeStackInstanceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeStackInstanceError::generic(generic),
     })
 }
@@ -1430,7 +1345,7 @@ pub fn parse_describe_stack_instance_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_stack_instance_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_stack_instance(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_stack_instance(
             response.body().as_ref(),
             output,
         )
@@ -1462,7 +1377,7 @@ pub fn parse_describe_stack_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_stack_resource_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_stack_resource(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_stack_resource(
             response.body().as_ref(),
             output,
         )
@@ -1496,7 +1411,7 @@ pub fn parse_describe_stack_resource_drifts_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_stack_resource_drifts_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_stack_resource_drifts(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_stack_resource_drifts(
             response.body().as_ref(),
             output,
         )
@@ -1528,7 +1443,7 @@ pub fn parse_describe_stack_resources_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_stack_resources_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_stack_resources(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_stack_resources(
             response.body().as_ref(),
             output,
         )
@@ -1554,9 +1469,11 @@ pub fn parse_describe_stacks_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_stacks_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_stacks(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeStacksError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_stacks(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeStacksError::unhandled)?;
         output.build()
     })
 }
@@ -1575,26 +1492,24 @@ pub fn parse_describe_stack_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "StackSetNotFoundException" => {
-            crate::error::DescribeStackSetError {
-                meta: generic,
-                kind: crate::error::DescribeStackSetErrorKind::StackSetNotFoundException({
+        "StackSetNotFoundException" => crate::error::DescribeStackSetError {
+            meta: generic,
+            kind: crate::error::DescribeStackSetErrorKind::StackSetNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::stack_set_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeStackSetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::stack_set_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeStackSetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeStackSetError::generic(generic),
     })
 }
@@ -1608,9 +1523,11 @@ pub fn parse_describe_stack_set_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_stack_set_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_describe_stack_set(response.body().as_ref(), output)
-                .map_err(crate::error::DescribeStackSetError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_stack_set(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeStackSetError::unhandled)?;
         output.build()
     })
 }
@@ -1635,50 +1552,42 @@ pub fn parse_describe_stack_set_operation_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotFoundException" => {
-            crate::error::DescribeStackSetOperationError {
-                meta: generic,
-                kind: crate::error::DescribeStackSetOperationErrorKind::OperationNotFoundException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::operation_not_found_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_operation_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeStackSetOperationError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
-        }
-        "StackSetNotFoundException" => {
-            crate::error::DescribeStackSetOperationError {
-                meta: generic,
-                kind: crate::error::DescribeStackSetOperationErrorKind::StackSetNotFoundException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::stack_set_not_found_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeStackSetOperationError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
-        }
+        "OperationNotFoundException" => crate::error::DescribeStackSetOperationError {
+            meta: generic,
+            kind: crate::error::DescribeStackSetOperationErrorKind::OperationNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeStackSetOperationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "StackSetNotFoundException" => crate::error::DescribeStackSetOperationError {
+            meta: generic,
+            kind: crate::error::DescribeStackSetOperationErrorKind::StackSetNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::stack_set_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeStackSetOperationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeStackSetOperationError::generic(generic),
     })
 }
@@ -1694,7 +1603,7 @@ pub fn parse_describe_stack_set_operation_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_stack_set_operation_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_stack_set_operation(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_stack_set_operation(
             response.body().as_ref(),
             output,
         )
@@ -1724,11 +1633,7 @@ pub fn parse_describe_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cfn_registry_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cfn_registry_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeTypeError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1745,11 +1650,7 @@ pub fn parse_describe_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::type_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_type_not_found_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeTypeError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1770,8 +1671,11 @@ pub fn parse_describe_type_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_type_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_type(response.body().as_ref(), output)
-            .map_err(crate::error::DescribeTypeError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_type(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeTypeError::unhandled)?;
         output.build()
     })
 }
@@ -1804,11 +1708,7 @@ pub fn parse_describe_type_registration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cfn_registry_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cfn_registry_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeTypeRegistrationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTypeRegistrationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1832,7 +1732,7 @@ pub fn parse_describe_type_registration_response(
         #[allow(unused_mut)]
         let mut output = crate::output::describe_type_registration_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_describe_type_registration(
+        output = crate::xml_deser::deser_operation_crate_operation_describe_type_registration(
             response.body().as_ref(),
             output,
         )
@@ -1860,9 +1760,11 @@ pub fn parse_detect_stack_drift_response(
         #[allow(unused_mut)]
         let mut output = crate::output::detect_stack_drift_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_detect_stack_drift(response.body().as_ref(), output)
-                .map_err(crate::error::DetectStackDriftError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_detect_stack_drift(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DetectStackDriftError::unhandled)?;
         output.build()
     })
 }
@@ -1892,7 +1794,7 @@ pub fn parse_detect_stack_resource_drift_response(
         #[allow(unused_mut)]
         let mut output = crate::output::detect_stack_resource_drift_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_detect_stack_resource_drift(
+        output = crate::xml_deser::deser_operation_crate_operation_detect_stack_resource_drift(
             response.body().as_ref(),
             output,
         )
@@ -1925,11 +1827,7 @@ pub fn parse_detect_stack_set_drift_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_operation_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_operation_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DetectStackSetDriftError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetectStackSetDriftError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1938,46 +1836,42 @@ pub fn parse_detect_stack_set_drift_error(
                 tmp
             }),
         },
-        "OperationInProgressException" => {
-            crate::error::DetectStackSetDriftError {
-                meta: generic,
-                kind: crate::error::DetectStackSetDriftErrorKind::OperationInProgressException({
+        "OperationInProgressException" => crate::error::DetectStackSetDriftError {
+            meta: generic,
+            kind: crate::error::DetectStackSetDriftErrorKind::OperationInProgressException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::operation_in_progress_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetectStackSetDriftError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "StackSetNotFoundException" => {
-            crate::error::DetectStackSetDriftError {
-                meta: generic,
-                kind: crate::error::DetectStackSetDriftErrorKind::StackSetNotFoundException({
+                    let mut output =
+                        crate::error::operation_in_progress_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetectStackSetDriftError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "StackSetNotFoundException" => crate::error::DetectStackSetDriftError {
+            meta: generic,
+            kind: crate::error::DetectStackSetDriftErrorKind::StackSetNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::stack_set_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetectStackSetDriftError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::stack_set_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetectStackSetDriftError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DetectStackSetDriftError::generic(generic),
     })
 }
@@ -1993,7 +1887,7 @@ pub fn parse_detect_stack_set_drift_response(
         #[allow(unused_mut)]
         let mut output = crate::output::detect_stack_set_drift_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_detect_stack_set_drift(
+        output = crate::xml_deser::deser_operation_crate_operation_detect_stack_set_drift(
             response.body().as_ref(),
             output,
         )
@@ -2025,7 +1919,7 @@ pub fn parse_estimate_template_cost_response(
         #[allow(unused_mut)]
         let mut output = crate::output::estimate_template_cost_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_estimate_template_cost(
+        output = crate::xml_deser::deser_operation_crate_operation_estimate_template_cost(
             response.body().as_ref(),
             output,
         )
@@ -2048,26 +1942,24 @@ pub fn parse_execute_change_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ChangeSetNotFound" => {
-            crate::error::ExecuteChangeSetError {
-                meta: generic,
-                kind: crate::error::ExecuteChangeSetErrorKind::ChangeSetNotFoundException({
+        "ChangeSetNotFound" => crate::error::ExecuteChangeSetError {
+            meta: generic,
+            kind: crate::error::ExecuteChangeSetErrorKind::ChangeSetNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::change_set_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_change_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ExecuteChangeSetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::change_set_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_change_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ExecuteChangeSetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InsufficientCapabilitiesException" => crate::error::ExecuteChangeSetError {
             meta: generic,
             kind: crate::error::ExecuteChangeSetErrorKind::InsufficientCapabilitiesException({
@@ -2077,7 +1969,7 @@ pub fn parse_execute_change_set_error(
                     let mut output =
                         crate::error::insufficient_capabilities_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_capabilities_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ExecuteChangeSetError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_capabilities_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ExecuteChangeSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2095,7 +1987,7 @@ pub fn parse_execute_change_set_error(
                     let mut output =
                         crate::error::invalid_change_set_status_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_change_set_status_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ExecuteChangeSetError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_change_set_status_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ExecuteChangeSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2104,26 +1996,24 @@ pub fn parse_execute_change_set_error(
                 tmp
             }),
         },
-        "TokenAlreadyExistsException" => {
-            crate::error::ExecuteChangeSetError {
-                meta: generic,
-                kind: crate::error::ExecuteChangeSetErrorKind::TokenAlreadyExistsException({
+        "TokenAlreadyExistsException" => crate::error::ExecuteChangeSetError {
+            meta: generic,
+            kind: crate::error::ExecuteChangeSetErrorKind::TokenAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::token_already_exists_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_token_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ExecuteChangeSetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::token_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_token_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ExecuteChangeSetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ExecuteChangeSetError::generic(generic),
     })
 }
@@ -2158,9 +2048,11 @@ pub fn parse_get_stack_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_stack_policy_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_get_stack_policy(response.body().as_ref(), output)
-                .map_err(crate::error::GetStackPolicyError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_stack_policy(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetStackPolicyError::unhandled)?;
         output.build()
     })
 }
@@ -2178,26 +2070,24 @@ pub fn parse_get_template_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ChangeSetNotFound" => {
-            crate::error::GetTemplateError {
-                meta: generic,
-                kind: crate::error::GetTemplateErrorKind::ChangeSetNotFoundException({
+        "ChangeSetNotFound" => crate::error::GetTemplateError {
+            meta: generic,
+            kind: crate::error::GetTemplateErrorKind::ChangeSetNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::change_set_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_change_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetTemplateError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::change_set_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_change_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetTemplateError::generic(generic),
     })
 }
@@ -2210,8 +2100,11 @@ pub fn parse_get_template_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_template_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_template(response.body().as_ref(), output)
-            .map_err(crate::error::GetTemplateError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_get_template(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetTemplateError::unhandled)?;
         output.build()
     })
 }
@@ -2232,26 +2125,24 @@ pub fn parse_get_template_summary_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "StackSetNotFoundException" => {
-            crate::error::GetTemplateSummaryError {
-                meta: generic,
-                kind: crate::error::GetTemplateSummaryErrorKind::StackSetNotFoundException({
+        "StackSetNotFoundException" => crate::error::GetTemplateSummaryError {
+            meta: generic,
+            kind: crate::error::GetTemplateSummaryErrorKind::StackSetNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::stack_set_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetTemplateSummaryError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::stack_set_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetTemplateSummaryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetTemplateSummaryError::generic(generic),
     })
 }
@@ -2267,7 +2158,7 @@ pub fn parse_get_template_summary_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_template_summary_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_get_template_summary(
+        output = crate::xml_deser::deser_operation_crate_operation_get_template_summary(
             response.body().as_ref(),
             output,
         )
@@ -2304,11 +2195,7 @@ pub fn parse_import_stacks_to_stack_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_operation_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_operation_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2325,11 +2212,7 @@ pub fn parse_import_stacks_to_stack_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_limit_exceeded_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2348,7 +2231,7 @@ pub fn parse_import_stacks_to_stack_set_error(
                         let mut output =
                             crate::error::operation_id_already_exists_exception::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_operation_id_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_operation_id_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2358,41 +2241,16 @@ pub fn parse_import_stacks_to_stack_set_error(
                 },
             ),
         },
-        "OperationInProgressException" => {
-            crate::error::ImportStacksToStackSetError {
-                meta: generic,
-                kind: crate::error::ImportStacksToStackSetErrorKind::OperationInProgressException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::operation_in_progress_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
-        }
-        "StackNotFoundException" => crate::error::ImportStacksToStackSetError {
+        "OperationInProgressException" => crate::error::ImportStacksToStackSetError {
             meta: generic,
-            kind: crate::error::ImportStacksToStackSetErrorKind::StackNotFoundException({
+            kind: crate::error::ImportStacksToStackSetErrorKind::OperationInProgressException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::stack_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::error::operation_in_progress_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_stack_not_found_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2401,26 +2259,41 @@ pub fn parse_import_stacks_to_stack_set_error(
                 tmp
             }),
         },
-        "StackSetNotFoundException" => {
-            crate::error::ImportStacksToStackSetError {
-                meta: generic,
-                kind: crate::error::ImportStacksToStackSetErrorKind::StackSetNotFoundException({
+        "StackNotFoundException" => crate::error::ImportStacksToStackSetError {
+            meta: generic,
+            kind: crate::error::ImportStacksToStackSetErrorKind::StackNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::stack_set_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::stack_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "StackSetNotFoundException" => crate::error::ImportStacksToStackSetError {
+            meta: generic,
+            kind: crate::error::ImportStacksToStackSetErrorKind::StackSetNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::stack_set_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "StaleRequestException" => crate::error::ImportStacksToStackSetError {
             meta: generic,
             kind: crate::error::ImportStacksToStackSetErrorKind::StaleRequestException({
@@ -2429,11 +2302,7 @@ pub fn parse_import_stacks_to_stack_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::stale_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_stale_request_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_stale_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2457,7 +2326,7 @@ pub fn parse_import_stacks_to_stack_set_response(
         #[allow(unused_mut)]
         let mut output = crate::output::import_stacks_to_stack_set_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_import_stacks_to_stack_set(
+        output = crate::xml_deser::deser_operation_crate_operation_import_stacks_to_stack_set(
             response.body().as_ref(),
             output,
         )
@@ -2483,9 +2352,11 @@ pub fn parse_list_change_sets_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_change_sets_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_list_change_sets(response.body().as_ref(), output)
-                .map_err(crate::error::ListChangeSetsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_list_change_sets(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListChangeSetsError::unhandled)?;
         output.build()
     })
 }
@@ -2507,8 +2378,11 @@ pub fn parse_list_exports_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_exports_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_exports(response.body().as_ref(), output)
-            .map_err(crate::error::ListExportsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_list_exports(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListExportsError::unhandled)?;
         output.build()
     })
 }
@@ -2530,8 +2404,11 @@ pub fn parse_list_imports_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_imports_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_imports(response.body().as_ref(), output)
-            .map_err(crate::error::ListImportsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_list_imports(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListImportsError::unhandled)?;
         output.build()
     })
 }
@@ -2552,26 +2429,24 @@ pub fn parse_list_stack_instances_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "StackSetNotFoundException" => {
-            crate::error::ListStackInstancesError {
-                meta: generic,
-                kind: crate::error::ListStackInstancesErrorKind::StackSetNotFoundException({
+        "StackSetNotFoundException" => crate::error::ListStackInstancesError {
+            meta: generic,
+            kind: crate::error::ListStackInstancesErrorKind::StackSetNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::stack_set_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListStackInstancesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::stack_set_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListStackInstancesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ListStackInstancesError::generic(generic),
     })
 }
@@ -2587,7 +2462,7 @@ pub fn parse_list_stack_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_stack_instances_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_stack_instances(
+        output = crate::xml_deser::deser_operation_crate_operation_list_stack_instances(
             response.body().as_ref(),
             output,
         )
@@ -2619,7 +2494,7 @@ pub fn parse_list_stack_resources_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_stack_resources_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_stack_resources(
+        output = crate::xml_deser::deser_operation_crate_operation_list_stack_resources(
             response.body().as_ref(),
             output,
         )
@@ -2645,8 +2520,11 @@ pub fn parse_list_stacks_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_stacks_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_stacks(response.body().as_ref(), output)
-            .map_err(crate::error::ListStacksError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_list_stacks(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListStacksError::unhandled)?;
         output.build()
     })
 }
@@ -2681,7 +2559,7 @@ pub fn parse_list_stack_set_operation_results_error(
                         let mut output =
                             crate::error::operation_not_found_exception::Builder::default();
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_operation_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListStackSetOperationResultsError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_operation_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListStackSetOperationResultsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2691,29 +2569,24 @@ pub fn parse_list_stack_set_operation_results_error(
                 },
             ),
         },
-        "StackSetNotFoundException" => {
-            crate::error::ListStackSetOperationResultsError {
-                meta: generic,
-                kind:
-                    crate::error::ListStackSetOperationResultsErrorKind::StackSetNotFoundException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]
-                                let mut output =
-                                    crate::error::stack_set_not_found_exception::Builder::default();
-                                let _ = response;
-                                output = crate::xml_deser::deser_structure_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListStackSetOperationResultsError::unhandled)?;
-                                output.build()
-                            };
-                            if (&tmp.message).is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "StackSetNotFoundException" => crate::error::ListStackSetOperationResultsError {
+            meta: generic,
+            kind: crate::error::ListStackSetOperationResultsErrorKind::StackSetNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::stack_set_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListStackSetOperationResultsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ListStackSetOperationResultsError::generic(generic),
     })
 }
@@ -2729,11 +2602,12 @@ pub fn parse_list_stack_set_operation_results_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_stack_set_operation_results_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_stack_set_operation_results(
-            response.body().as_ref(),
-            output,
-        )
-        .map_err(crate::error::ListStackSetOperationResultsError::unhandled)?;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_list_stack_set_operation_results(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ListStackSetOperationResultsError::unhandled)?;
         output.build()
     })
 }
@@ -2758,26 +2632,24 @@ pub fn parse_list_stack_set_operations_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "StackSetNotFoundException" => {
-            crate::error::ListStackSetOperationsError {
-                meta: generic,
-                kind: crate::error::ListStackSetOperationsErrorKind::StackSetNotFoundException({
+        "StackSetNotFoundException" => crate::error::ListStackSetOperationsError {
+            meta: generic,
+            kind: crate::error::ListStackSetOperationsErrorKind::StackSetNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::stack_set_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListStackSetOperationsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::stack_set_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListStackSetOperationsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ListStackSetOperationsError::generic(generic),
     })
 }
@@ -2793,7 +2665,7 @@ pub fn parse_list_stack_set_operations_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_stack_set_operations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_stack_set_operations(
+        output = crate::xml_deser::deser_operation_crate_operation_list_stack_set_operations(
             response.body().as_ref(),
             output,
         )
@@ -2819,9 +2691,11 @@ pub fn parse_list_stack_sets_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_stack_sets_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_list_stack_sets(response.body().as_ref(), output)
-                .map_err(crate::error::ListStackSetsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_list_stack_sets(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListStackSetsError::unhandled)?;
         output.build()
     })
 }
@@ -2850,11 +2724,7 @@ pub fn parse_list_type_registrations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cfn_registry_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cfn_registry_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTypeRegistrationsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTypeRegistrationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2878,7 +2748,7 @@ pub fn parse_list_type_registrations_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_type_registrations_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_type_registrations(
+        output = crate::xml_deser::deser_operation_crate_operation_list_type_registrations(
             response.body().as_ref(),
             output,
         )
@@ -2908,11 +2778,7 @@ pub fn parse_list_types_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cfn_registry_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cfn_registry_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTypesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTypesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2933,8 +2799,11 @@ pub fn parse_list_types_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_types_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_list_types(response.body().as_ref(), output)
-            .map_err(crate::error::ListTypesError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_list_types(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListTypesError::unhandled)?;
         output.build()
     })
 }
@@ -2961,11 +2830,7 @@ pub fn parse_list_type_versions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cfn_registry_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cfn_registry_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTypeVersionsError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTypeVersionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2987,9 +2852,11 @@ pub fn parse_list_type_versions_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_type_versions_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_list_type_versions(response.body().as_ref(), output)
-                .map_err(crate::error::ListTypeVersionsError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_list_type_versions(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListTypeVersionsError::unhandled)?;
         output.build()
     })
 }
@@ -3015,11 +2882,7 @@ pub fn parse_publish_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cfn_registry_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cfn_registry_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PublishTypeError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3036,11 +2899,7 @@ pub fn parse_publish_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::type_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_type_not_found_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PublishTypeError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3061,8 +2920,11 @@ pub fn parse_publish_type_response(
         #[allow(unused_mut)]
         let mut output = crate::output::publish_type_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_publish_type(response.body().as_ref(), output)
-            .map_err(crate::error::PublishTypeError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_publish_type(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::PublishTypeError::unhandled)?;
         output.build()
     })
 }
@@ -3092,7 +2954,7 @@ pub fn parse_record_handler_progress_error(
                     let mut output =
                         crate::error::invalid_state_transition_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_state_transition_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RecordHandlerProgressError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_state_transition_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RecordHandlerProgressError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3112,7 +2974,7 @@ pub fn parse_record_handler_progress_error(
                             crate::error::operation_status_check_failed_exception::Builder::default(
                             );
                         let _ = response;
-                        output = crate::xml_deser::deser_structure_operation_status_check_failed_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RecordHandlerProgressError::unhandled)?;
+                        output = crate::xml_deser::deser_structure_crate_error_operation_status_check_failed_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RecordHandlerProgressError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -3163,11 +3025,7 @@ pub fn parse_register_publisher_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cfn_registry_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cfn_registry_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RegisterPublisherError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterPublisherError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3189,9 +3047,11 @@ pub fn parse_register_publisher_response(
         #[allow(unused_mut)]
         let mut output = crate::output::register_publisher_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_register_publisher(response.body().as_ref(), output)
-                .map_err(crate::error::RegisterPublisherError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_register_publisher(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RegisterPublisherError::unhandled)?;
         output.build()
     })
 }
@@ -3217,11 +3077,7 @@ pub fn parse_register_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cfn_registry_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cfn_registry_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RegisterTypeError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3242,8 +3098,11 @@ pub fn parse_register_type_response(
         #[allow(unused_mut)]
         let mut output = crate::output::register_type_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_register_type(response.body().as_ref(), output)
-            .map_err(crate::error::RegisterTypeError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_register_type(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RegisterTypeError::unhandled)?;
         output.build()
     })
 }
@@ -3261,26 +3120,24 @@ pub fn parse_rollback_stack_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "TokenAlreadyExistsException" => {
-            crate::error::RollbackStackError {
-                meta: generic,
-                kind: crate::error::RollbackStackErrorKind::TokenAlreadyExistsException({
+        "TokenAlreadyExistsException" => crate::error::RollbackStackError {
+            meta: generic,
+            kind: crate::error::RollbackStackErrorKind::TokenAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::token_already_exists_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_token_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RollbackStackError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::token_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_token_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RollbackStackError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::RollbackStackError::generic(generic),
     })
 }
@@ -3293,8 +3150,11 @@ pub fn parse_rollback_stack_response(
         #[allow(unused_mut)]
         let mut output = crate::output::rollback_stack_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_rollback_stack(response.body().as_ref(), output)
-            .map_err(crate::error::RollbackStackError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_rollback_stack(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RollbackStackError::unhandled)?;
         output.build()
     })
 }
@@ -3344,11 +3204,7 @@ pub fn parse_set_type_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cfn_registry_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cfn_registry_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetTypeConfigurationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetTypeConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3365,11 +3221,7 @@ pub fn parse_set_type_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::type_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_type_not_found_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetTypeConfigurationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetTypeConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3393,7 +3245,7 @@ pub fn parse_set_type_configuration_response(
         #[allow(unused_mut)]
         let mut output = crate::output::set_type_configuration_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_set_type_configuration(
+        output = crate::xml_deser::deser_operation_crate_operation_set_type_configuration(
             response.body().as_ref(),
             output,
         )
@@ -3426,11 +3278,7 @@ pub fn parse_set_type_default_version_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cfn_registry_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cfn_registry_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetTypeDefaultVersionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetTypeDefaultVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3447,11 +3295,7 @@ pub fn parse_set_type_default_version_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::type_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_type_not_found_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetTypeDefaultVersionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetTypeDefaultVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3524,11 +3368,7 @@ pub fn parse_stop_stack_set_operation_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_operation_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_operation_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StopStackSetOperationError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StopStackSetOperationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3537,46 +3377,42 @@ pub fn parse_stop_stack_set_operation_error(
                 tmp
             }),
         },
-        "OperationNotFoundException" => {
-            crate::error::StopStackSetOperationError {
-                meta: generic,
-                kind: crate::error::StopStackSetOperationErrorKind::OperationNotFoundException({
+        "OperationNotFoundException" => crate::error::StopStackSetOperationError {
+            meta: generic,
+            kind: crate::error::StopStackSetOperationErrorKind::OperationNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::operation_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_operation_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StopStackSetOperationError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "StackSetNotFoundException" => {
-            crate::error::StopStackSetOperationError {
-                meta: generic,
-                kind: crate::error::StopStackSetOperationErrorKind::StackSetNotFoundException({
+                    let mut output =
+                        crate::error::operation_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StopStackSetOperationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "StackSetNotFoundException" => crate::error::StopStackSetOperationError {
+            meta: generic,
+            kind: crate::error::StopStackSetOperationErrorKind::StackSetNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::stack_set_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StopStackSetOperationError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::stack_set_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StopStackSetOperationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::StopStackSetOperationError::generic(generic),
     })
 }
@@ -3617,11 +3453,7 @@ pub fn parse_test_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cfn_registry_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_cfn_registry_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TestTypeError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3638,11 +3470,7 @@ pub fn parse_test_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::type_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_type_not_found_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TestTypeError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestTypeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3663,8 +3491,11 @@ pub fn parse_test_type_response(
         #[allow(unused_mut)]
         let mut output = crate::output::test_type_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_test_type(response.body().as_ref(), output)
-            .map_err(crate::error::TestTypeError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_test_type(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::TestTypeError::unhandled)?;
         output.build()
     })
 }
@@ -3691,7 +3522,7 @@ pub fn parse_update_stack_error(
                     let mut output =
                         crate::error::insufficient_capabilities_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_insufficient_capabilities_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_capabilities_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3700,26 +3531,24 @@ pub fn parse_update_stack_error(
                 tmp
             }),
         },
-        "TokenAlreadyExistsException" => {
-            crate::error::UpdateStackError {
-                meta: generic,
-                kind: crate::error::UpdateStackErrorKind::TokenAlreadyExistsException({
+        "TokenAlreadyExistsException" => crate::error::UpdateStackError {
+            meta: generic,
+            kind: crate::error::UpdateStackErrorKind::TokenAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::token_already_exists_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_token_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::token_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_token_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::UpdateStackError::generic(generic),
     })
 }
@@ -3732,8 +3561,11 @@ pub fn parse_update_stack_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_stack_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_update_stack(response.body().as_ref(), output)
-            .map_err(crate::error::UpdateStackError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_update_stack(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateStackError::unhandled)?;
         output.build()
     })
 }
@@ -3762,11 +3594,7 @@ pub fn parse_update_stack_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_operation_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_operation_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateStackInstancesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3784,7 +3612,7 @@ pub fn parse_update_stack_instances_error(
                     let mut output =
                         crate::error::operation_id_already_exists_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_operation_id_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackInstancesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_id_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3793,26 +3621,24 @@ pub fn parse_update_stack_instances_error(
                 tmp
             }),
         },
-        "OperationInProgressException" => {
-            crate::error::UpdateStackInstancesError {
-                meta: generic,
-                kind: crate::error::UpdateStackInstancesErrorKind::OperationInProgressException({
+        "OperationInProgressException" => crate::error::UpdateStackInstancesError {
+            meta: generic,
+            kind: crate::error::UpdateStackInstancesErrorKind::OperationInProgressException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::operation_in_progress_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackInstancesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::operation_in_progress_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackInstancesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "StackInstanceNotFoundException" => crate::error::UpdateStackInstancesError {
             meta: generic,
             kind: crate::error::UpdateStackInstancesErrorKind::StackInstanceNotFoundException({
@@ -3822,7 +3648,7 @@ pub fn parse_update_stack_instances_error(
                     let mut output =
                         crate::error::stack_instance_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_stack_instance_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackInstancesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_instance_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3831,26 +3657,24 @@ pub fn parse_update_stack_instances_error(
                 tmp
             }),
         },
-        "StackSetNotFoundException" => {
-            crate::error::UpdateStackInstancesError {
-                meta: generic,
-                kind: crate::error::UpdateStackInstancesErrorKind::StackSetNotFoundException({
+        "StackSetNotFoundException" => crate::error::UpdateStackInstancesError {
+            meta: generic,
+            kind: crate::error::UpdateStackInstancesErrorKind::StackSetNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::stack_set_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackInstancesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::stack_set_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackInstancesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "StaleRequestException" => crate::error::UpdateStackInstancesError {
             meta: generic,
             kind: crate::error::UpdateStackInstancesErrorKind::StaleRequestException({
@@ -3859,11 +3683,7 @@ pub fn parse_update_stack_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::stale_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_stale_request_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateStackInstancesError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_stale_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3887,7 +3707,7 @@ pub fn parse_update_stack_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_stack_instances_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_update_stack_instances(
+        output = crate::xml_deser::deser_operation_crate_operation_update_stack_instances(
             response.body().as_ref(),
             output,
         )
@@ -3917,11 +3737,7 @@ pub fn parse_update_stack_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_operation_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_operation_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateStackSetError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3939,7 +3755,7 @@ pub fn parse_update_stack_set_error(
                     let mut output =
                         crate::error::operation_id_already_exists_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_operation_id_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackSetError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_id_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3948,26 +3764,24 @@ pub fn parse_update_stack_set_error(
                 tmp
             }),
         },
-        "OperationInProgressException" => {
-            crate::error::UpdateStackSetError {
-                meta: generic,
-                kind: crate::error::UpdateStackSetErrorKind::OperationInProgressException({
+        "OperationInProgressException" => crate::error::UpdateStackSetError {
+            meta: generic,
+            kind: crate::error::UpdateStackSetErrorKind::OperationInProgressException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::operation_in_progress_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackSetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::operation_in_progress_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackSetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "StackInstanceNotFoundException" => crate::error::UpdateStackSetError {
             meta: generic,
             kind: crate::error::UpdateStackSetErrorKind::StackInstanceNotFoundException({
@@ -3977,7 +3791,7 @@ pub fn parse_update_stack_set_error(
                     let mut output =
                         crate::error::stack_instance_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_stack_instance_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackSetError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_instance_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3986,26 +3800,24 @@ pub fn parse_update_stack_set_error(
                 tmp
             }),
         },
-        "StackSetNotFoundException" => {
-            crate::error::UpdateStackSetError {
-                meta: generic,
-                kind: crate::error::UpdateStackSetErrorKind::StackSetNotFoundException({
+        "StackSetNotFoundException" => crate::error::UpdateStackSetError {
+            meta: generic,
+            kind: crate::error::UpdateStackSetErrorKind::StackSetNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::stack_set_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackSetError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::stack_set_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackSetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "StaleRequestException" => crate::error::UpdateStackSetError {
             meta: generic,
             kind: crate::error::UpdateStackSetErrorKind::StaleRequestException({
@@ -4014,11 +3826,7 @@ pub fn parse_update_stack_set_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::stale_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_stale_request_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateStackSetError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_stale_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStackSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4039,9 +3847,11 @@ pub fn parse_update_stack_set_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_stack_set_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_update_stack_set(response.body().as_ref(), output)
-                .map_err(crate::error::UpdateStackSetError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_update_stack_set(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateStackSetError::unhandled)?;
         output.build()
     })
 }
@@ -4071,7 +3881,7 @@ pub fn parse_update_termination_protection_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_termination_protection_output::Builder::default();
         let _ = response;
-        output = crate::xml_deser::deser_operation_update_termination_protection(
+        output = crate::xml_deser::deser_operation_crate_operation_update_termination_protection(
             response.body().as_ref(),
             output,
         )
@@ -4099,9 +3909,11 @@ pub fn parse_validate_template_response(
         #[allow(unused_mut)]
         let mut output = crate::output::validate_template_output::Builder::default();
         let _ = response;
-        output =
-            crate::xml_deser::deser_operation_validate_template(response.body().as_ref(), output)
-                .map_err(crate::error::ValidateTemplateError::unhandled)?;
+        output = crate::xml_deser::deser_operation_crate_operation_validate_template(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ValidateTemplateError::unhandled)?;
         output.build()
     })
 }

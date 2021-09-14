@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_internal_service_error_exceptionjson_err(
+pub fn deser_structure_crate_error_internal_service_error_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::internal_service_error_exception::Builder,
 ) -> Result<crate::error::internal_service_error_exception::Builder, smithy_json::deserialize::Error>
@@ -45,7 +45,7 @@ pub fn deser_structure_internal_service_error_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_parameter_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_parameter_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_parameter_exception::Builder,
 ) -> Result<crate::error::invalid_parameter_exception::Builder, smithy_json::deserialize::Error> {
@@ -84,7 +84,7 @@ pub fn deser_structure_invalid_parameter_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_throttling_exceptionjson_err(
+pub fn deser_structure_crate_error_throttling_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_json::deserialize::Error> {
@@ -123,7 +123,7 @@ pub fn deser_structure_throttling_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_entitlements(
+pub fn deser_operation_crate_operation_get_entitlements(
     input: &[u8],
     mut builder: crate::output::get_entitlements_output::Builder,
 ) -> Result<crate::output::get_entitlements_output::Builder, smithy_json::deserialize::Error> {
@@ -139,7 +139,7 @@ pub fn deser_operation_get_entitlements(
                 match key.to_unescaped()?.as_ref() {
                     "Entitlements" => {
                         builder = builder.set_entitlements(
-                            crate::json_deser::deser_list_entitlement_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_marketplaceentitlementservice_entitlement_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -176,7 +176,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_entitlement_list<'a, I>(
+pub fn deser_list_com_amazonaws_marketplaceentitlementservice_entitlement_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Entitlement>>, smithy_json::deserialize::Error>
 where
@@ -195,7 +195,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_entitlement(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_entitlement(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -210,7 +211,7 @@ where
     }
 }
 
-pub fn deser_structure_entitlement<'a, I>(
+pub fn deser_structure_crate_model_entitlement<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Entitlement>, smithy_json::deserialize::Error>
 where
@@ -257,7 +258,9 @@ where
                             }
                             "Value" => {
                                 builder = builder.set_value(
-                                    crate::json_deser::deser_union_entitlement_value(tokens)?,
+                                    crate::json_deser::deser_union_crate_model_entitlement_value(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "ExpirationDate" => {
@@ -286,7 +289,7 @@ where
     }
 }
 
-pub fn deser_union_entitlement_value<'a, I>(
+pub fn deser_union_crate_model_entitlement_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EntitlementValue>, smithy_json::deserialize::Error>
 where

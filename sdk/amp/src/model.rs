@@ -136,6 +136,9 @@ pub struct WorkspaceSummary {
     pub status: std::option::Option<crate::model::WorkspaceStatus>,
     /// The time when the workspace was created.
     pub created_at: std::option::Option<smithy_types::Instant>,
+    /// The tags of this workspace.
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl std::fmt::Debug for WorkspaceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -145,6 +148,7 @@ impl std::fmt::Debug for WorkspaceSummary {
         formatter.field("arn", &self.arn);
         formatter.field("status", &self.status);
         formatter.field("created_at", &self.created_at);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -159,6 +163,9 @@ pub mod workspace_summary {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::WorkspaceStatus>,
         pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// Unique string identifying this workspace.
@@ -209,6 +216,25 @@ pub mod workspace_summary {
             self.created_at = input;
             self
         }
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WorkspaceSummary`](crate::model::WorkspaceSummary)
         pub fn build(self) -> crate::model::WorkspaceSummary {
             crate::model::WorkspaceSummary {
@@ -217,6 +243,7 @@ pub mod workspace_summary {
                 arn: self.arn,
                 status: self.status,
                 created_at: self.created_at,
+                tags: self.tags,
             }
         }
     }
@@ -365,6 +392,9 @@ pub struct WorkspaceDescription {
     pub prometheus_endpoint: std::option::Option<std::string::String>,
     /// The time when the workspace was created.
     pub created_at: std::option::Option<smithy_types::Instant>,
+    /// The tags of this workspace.
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl std::fmt::Debug for WorkspaceDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -375,6 +405,7 @@ impl std::fmt::Debug for WorkspaceDescription {
         formatter.field("status", &self.status);
         formatter.field("prometheus_endpoint", &self.prometheus_endpoint);
         formatter.field("created_at", &self.created_at);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -390,6 +421,9 @@ pub mod workspace_description {
         pub(crate) status: std::option::Option<crate::model::WorkspaceStatus>,
         pub(crate) prometheus_endpoint: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// Unique string identifying this workspace.
@@ -452,6 +486,25 @@ pub mod workspace_description {
             self.created_at = input;
             self
         }
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WorkspaceDescription`](crate::model::WorkspaceDescription)
         pub fn build(self) -> crate::model::WorkspaceDescription {
             crate::model::WorkspaceDescription {
@@ -461,6 +514,7 @@ pub mod workspace_description {
                 status: self.status,
                 prometheus_endpoint: self.prometheus_endpoint,
                 created_at: self.created_at,
+                tags: self.tags,
             }
         }
     }

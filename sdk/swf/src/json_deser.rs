@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_operation_not_permitted_faultjson_err(
+pub fn deser_structure_crate_error_operation_not_permitted_faultjson_err(
     input: &[u8],
     mut builder: crate::error::operation_not_permitted_fault::Builder,
 ) -> Result<crate::error::operation_not_permitted_fault::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_operation_not_permitted_faultjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_unknown_resource_faultjson_err(
+pub fn deser_structure_crate_error_unknown_resource_faultjson_err(
     input: &[u8],
     mut builder: crate::error::unknown_resource_fault::Builder,
 ) -> Result<crate::error::unknown_resource_fault::Builder, smithy_json::deserialize::Error> {
@@ -83,7 +83,7 @@ pub fn deser_structure_unknown_resource_faultjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_count_closed_workflow_executions(
+pub fn deser_operation_crate_operation_count_closed_workflow_executions(
     input: &[u8],
     mut builder: crate::output::count_closed_workflow_executions_output::Builder,
 ) -> Result<
@@ -129,7 +129,7 @@ pub fn deser_operation_count_closed_workflow_executions(
     Ok(builder)
 }
 
-pub fn deser_operation_count_open_workflow_executions(
+pub fn deser_operation_crate_operation_count_open_workflow_executions(
     input: &[u8],
     mut builder: crate::output::count_open_workflow_executions_output::Builder,
 ) -> Result<
@@ -175,7 +175,7 @@ pub fn deser_operation_count_open_workflow_executions(
     Ok(builder)
 }
 
-pub fn deser_operation_count_pending_activity_tasks(
+pub fn deser_operation_crate_operation_count_pending_activity_tasks(
     input: &[u8],
     mut builder: crate::output::count_pending_activity_tasks_output::Builder,
 ) -> Result<
@@ -221,7 +221,7 @@ pub fn deser_operation_count_pending_activity_tasks(
     Ok(builder)
 }
 
-pub fn deser_operation_count_pending_decision_tasks(
+pub fn deser_operation_crate_operation_count_pending_decision_tasks(
     input: &[u8],
     mut builder: crate::output::count_pending_decision_tasks_output::Builder,
 ) -> Result<
@@ -267,7 +267,7 @@ pub fn deser_operation_count_pending_decision_tasks(
     Ok(builder)
 }
 
-pub fn deser_structure_type_deprecated_faultjson_err(
+pub fn deser_structure_crate_error_type_deprecated_faultjson_err(
     input: &[u8],
     mut builder: crate::error::type_deprecated_fault::Builder,
 ) -> Result<crate::error::type_deprecated_fault::Builder, smithy_json::deserialize::Error> {
@@ -306,7 +306,7 @@ pub fn deser_structure_type_deprecated_faultjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_domain_deprecated_faultjson_err(
+pub fn deser_structure_crate_error_domain_deprecated_faultjson_err(
     input: &[u8],
     mut builder: crate::error::domain_deprecated_fault::Builder,
 ) -> Result<crate::error::domain_deprecated_fault::Builder, smithy_json::deserialize::Error> {
@@ -345,7 +345,7 @@ pub fn deser_structure_domain_deprecated_faultjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_activity_type(
+pub fn deser_operation_crate_operation_describe_activity_type(
     input: &[u8],
     mut builder: crate::output::describe_activity_type_output::Builder,
 ) -> Result<crate::output::describe_activity_type_output::Builder, smithy_json::deserialize::Error>
@@ -362,12 +362,14 @@ pub fn deser_operation_describe_activity_type(
                 match key.to_unescaped()?.as_ref() {
                     "typeInfo" => {
                         builder = builder.set_type_info(
-                            crate::json_deser::deser_structure_activity_type_info(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_activity_type_info(
+                                tokens,
+                            )?,
                         );
                     }
                     "configuration" => {
                         builder = builder.set_configuration(
-                            crate::json_deser::deser_structure_activity_type_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_activity_type_configuration(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -388,7 +390,7 @@ pub fn deser_operation_describe_activity_type(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_domain(
+pub fn deser_operation_crate_operation_describe_domain(
     input: &[u8],
     mut builder: crate::output::describe_domain_output::Builder,
 ) -> Result<crate::output::describe_domain_output::Builder, smithy_json::deserialize::Error> {
@@ -404,12 +406,14 @@ pub fn deser_operation_describe_domain(
                 match key.to_unescaped()?.as_ref() {
                     "domainInfo" => {
                         builder = builder.set_domain_info(
-                            crate::json_deser::deser_structure_domain_info(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_domain_info(tokens)?,
                         );
                     }
                     "configuration" => {
                         builder = builder.set_configuration(
-                            crate::json_deser::deser_structure_domain_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_domain_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -430,7 +434,7 @@ pub fn deser_operation_describe_domain(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_workflow_execution(
+pub fn deser_operation_crate_operation_describe_workflow_execution(
     input: &[u8],
     mut builder: crate::output::describe_workflow_execution_output::Builder,
 ) -> Result<
@@ -449,21 +453,19 @@ pub fn deser_operation_describe_workflow_execution(
                 match key.to_unescaped()?.as_ref() {
                     "executionInfo" => {
                         builder = builder.set_execution_info(
-                            crate::json_deser::deser_structure_workflow_execution_info(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_workflow_execution_info(
+                                tokens,
+                            )?,
                         );
                     }
                     "executionConfiguration" => {
                         builder = builder.set_execution_configuration(
-                            crate::json_deser::deser_structure_workflow_execution_configuration(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_workflow_execution_configuration(tokens)?
                         );
                     }
                     "openCounts" => {
                         builder = builder.set_open_counts(
-                            crate::json_deser::deser_structure_workflow_execution_open_counts(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_workflow_execution_open_counts(tokens)?
                         );
                     }
                     "latestActivityTaskTimestamp" => {
@@ -499,7 +501,7 @@ pub fn deser_operation_describe_workflow_execution(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_workflow_type(
+pub fn deser_operation_crate_operation_describe_workflow_type(
     input: &[u8],
     mut builder: crate::output::describe_workflow_type_output::Builder,
 ) -> Result<crate::output::describe_workflow_type_output::Builder, smithy_json::deserialize::Error>
@@ -516,12 +518,14 @@ pub fn deser_operation_describe_workflow_type(
                 match key.to_unescaped()?.as_ref() {
                     "typeInfo" => {
                         builder = builder.set_type_info(
-                            crate::json_deser::deser_structure_workflow_type_info(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_workflow_type_info(
+                                tokens,
+                            )?,
                         );
                     }
                     "configuration" => {
                         builder = builder.set_configuration(
-                            crate::json_deser::deser_structure_workflow_type_configuration(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_workflow_type_configuration(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -542,7 +546,7 @@ pub fn deser_operation_describe_workflow_type(
     Ok(builder)
 }
 
-pub fn deser_operation_get_workflow_execution_history(
+pub fn deser_operation_crate_operation_get_workflow_execution_history(
     input: &[u8],
     mut builder: crate::output::get_workflow_execution_history_output::Builder,
 ) -> Result<
@@ -560,8 +564,11 @@ pub fn deser_operation_get_workflow_execution_history(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "events" => {
-                        builder = builder
-                            .set_events(crate::json_deser::deser_list_history_event_list(tokens)?);
+                        builder = builder.set_events(
+                            crate::json_deser::deser_list_com_amazonaws_swf_history_event_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "nextPageToken" => {
                         builder = builder.set_next_page_token(
@@ -588,7 +595,7 @@ pub fn deser_operation_get_workflow_execution_history(
     Ok(builder)
 }
 
-pub fn deser_operation_list_activity_types(
+pub fn deser_operation_crate_operation_list_activity_types(
     input: &[u8],
     mut builder: crate::output::list_activity_types_output::Builder,
 ) -> Result<crate::output::list_activity_types_output::Builder, smithy_json::deserialize::Error> {
@@ -604,7 +611,7 @@ pub fn deser_operation_list_activity_types(
                 match key.to_unescaped()?.as_ref() {
                     "typeInfos" => {
                         builder = builder.set_type_infos(
-                            crate::json_deser::deser_list_activity_type_info_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_swf_activity_type_info_list(tokens)?
                         );
                     }
                     "nextPageToken" => {
@@ -632,7 +639,7 @@ pub fn deser_operation_list_activity_types(
     Ok(builder)
 }
 
-pub fn deser_operation_list_closed_workflow_executions(
+pub fn deser_operation_crate_operation_list_closed_workflow_executions(
     input: &[u8],
     mut builder: crate::output::list_closed_workflow_executions_output::Builder,
 ) -> Result<
@@ -651,7 +658,7 @@ pub fn deser_operation_list_closed_workflow_executions(
                 match key.to_unescaped()?.as_ref() {
                     "executionInfos" => {
                         builder = builder.set_execution_infos(
-                            crate::json_deser::deser_list_workflow_execution_info_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_swf_workflow_execution_info_list(tokens)?
                         );
                     }
                     "nextPageToken" => {
@@ -679,7 +686,7 @@ pub fn deser_operation_list_closed_workflow_executions(
     Ok(builder)
 }
 
-pub fn deser_operation_list_domains(
+pub fn deser_operation_crate_operation_list_domains(
     input: &[u8],
     mut builder: crate::output::list_domains_output::Builder,
 ) -> Result<crate::output::list_domains_output::Builder, smithy_json::deserialize::Error> {
@@ -695,7 +702,9 @@ pub fn deser_operation_list_domains(
                 match key.to_unescaped()?.as_ref() {
                     "domainInfos" => {
                         builder = builder.set_domain_infos(
-                            crate::json_deser::deser_list_domain_info_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_swf_domain_info_list(
+                                tokens,
+                            )?,
                         );
                     }
                     "nextPageToken" => {
@@ -723,7 +732,7 @@ pub fn deser_operation_list_domains(
     Ok(builder)
 }
 
-pub fn deser_operation_list_open_workflow_executions(
+pub fn deser_operation_crate_operation_list_open_workflow_executions(
     input: &[u8],
     mut builder: crate::output::list_open_workflow_executions_output::Builder,
 ) -> Result<
@@ -742,7 +751,7 @@ pub fn deser_operation_list_open_workflow_executions(
                 match key.to_unescaped()?.as_ref() {
                     "executionInfos" => {
                         builder = builder.set_execution_infos(
-                            crate::json_deser::deser_list_workflow_execution_info_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_swf_workflow_execution_info_list(tokens)?
                         );
                     }
                     "nextPageToken" => {
@@ -770,7 +779,7 @@ pub fn deser_operation_list_open_workflow_executions(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_faultjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_faultjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_fault::Builder,
 ) -> Result<crate::error::limit_exceeded_fault::Builder, smithy_json::deserialize::Error> {
@@ -809,7 +818,7 @@ pub fn deser_structure_limit_exceeded_faultjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -825,8 +834,11 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "tags" => {
-                        builder = builder
-                            .set_tags(crate::json_deser::deser_list_resource_tag_list(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_list_com_amazonaws_swf_resource_tag_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -846,7 +858,7 @@ pub fn deser_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_list_workflow_types(
+pub fn deser_operation_crate_operation_list_workflow_types(
     input: &[u8],
     mut builder: crate::output::list_workflow_types_output::Builder,
 ) -> Result<crate::output::list_workflow_types_output::Builder, smithy_json::deserialize::Error> {
@@ -862,7 +874,7 @@ pub fn deser_operation_list_workflow_types(
                 match key.to_unescaped()?.as_ref() {
                     "typeInfos" => {
                         builder = builder.set_type_infos(
-                            crate::json_deser::deser_list_workflow_type_info_list(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_swf_workflow_type_info_list(tokens)?
                         );
                     }
                     "nextPageToken" => {
@@ -890,7 +902,7 @@ pub fn deser_operation_list_workflow_types(
     Ok(builder)
 }
 
-pub fn deser_operation_poll_for_activity_task(
+pub fn deser_operation_crate_operation_poll_for_activity_task(
     input: &[u8],
     mut builder: crate::output::poll_for_activity_task_output::Builder,
 ) -> Result<crate::output::poll_for_activity_task_output::Builder, smithy_json::deserialize::Error>
@@ -927,12 +939,14 @@ pub fn deser_operation_poll_for_activity_task(
                     }
                     "workflowExecution" => {
                         builder = builder.set_workflow_execution(
-                            crate::json_deser::deser_structure_workflow_execution(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_workflow_execution(
+                                tokens,
+                            )?,
                         );
                     }
                     "activityType" => {
                         builder = builder.set_activity_type(
-                            crate::json_deser::deser_structure_activity_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_activity_type(tokens)?,
                         );
                     }
                     "input" => {
@@ -960,7 +974,7 @@ pub fn deser_operation_poll_for_activity_task(
     Ok(builder)
 }
 
-pub fn deser_operation_poll_for_decision_task(
+pub fn deser_operation_crate_operation_poll_for_decision_task(
     input: &[u8],
     mut builder: crate::output::poll_for_decision_task_output::Builder,
 ) -> Result<crate::output::poll_for_decision_task_output::Builder, smithy_json::deserialize::Error>
@@ -990,17 +1004,22 @@ pub fn deser_operation_poll_for_decision_task(
                     }
                     "workflowExecution" => {
                         builder = builder.set_workflow_execution(
-                            crate::json_deser::deser_structure_workflow_execution(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_workflow_execution(
+                                tokens,
+                            )?,
                         );
                     }
                     "workflowType" => {
                         builder = builder.set_workflow_type(
-                            crate::json_deser::deser_structure_workflow_type(tokens)?,
+                            crate::json_deser::deser_structure_crate_model_workflow_type(tokens)?,
                         );
                     }
                     "events" => {
-                        builder = builder
-                            .set_events(crate::json_deser::deser_list_history_event_list(tokens)?);
+                        builder = builder.set_events(
+                            crate::json_deser::deser_list_com_amazonaws_swf_history_event_list(
+                                tokens,
+                            )?,
+                        );
                     }
                     "nextPageToken" => {
                         builder = builder.set_next_page_token(
@@ -1033,7 +1052,7 @@ pub fn deser_operation_poll_for_decision_task(
     Ok(builder)
 }
 
-pub fn deser_operation_record_activity_task_heartbeat(
+pub fn deser_operation_crate_operation_record_activity_task_heartbeat(
     input: &[u8],
     mut builder: crate::output::record_activity_task_heartbeat_output::Builder,
 ) -> Result<
@@ -1073,7 +1092,7 @@ pub fn deser_operation_record_activity_task_heartbeat(
     Ok(builder)
 }
 
-pub fn deser_structure_type_already_exists_faultjson_err(
+pub fn deser_structure_crate_error_type_already_exists_faultjson_err(
     input: &[u8],
     mut builder: crate::error::type_already_exists_fault::Builder,
 ) -> Result<crate::error::type_already_exists_fault::Builder, smithy_json::deserialize::Error> {
@@ -1112,7 +1131,7 @@ pub fn deser_structure_type_already_exists_faultjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_domain_already_exists_faultjson_err(
+pub fn deser_structure_crate_error_domain_already_exists_faultjson_err(
     input: &[u8],
     mut builder: crate::error::domain_already_exists_fault::Builder,
 ) -> Result<crate::error::domain_already_exists_fault::Builder, smithy_json::deserialize::Error> {
@@ -1151,7 +1170,7 @@ pub fn deser_structure_domain_already_exists_faultjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_too_many_tags_faultjson_err(
+pub fn deser_structure_crate_error_too_many_tags_faultjson_err(
     input: &[u8],
     mut builder: crate::error::too_many_tags_fault::Builder,
 ) -> Result<crate::error::too_many_tags_fault::Builder, smithy_json::deserialize::Error> {
@@ -1190,7 +1209,7 @@ pub fn deser_structure_too_many_tags_faultjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_default_undefined_faultjson_err(
+pub fn deser_structure_crate_error_default_undefined_faultjson_err(
     input: &[u8],
     mut builder: crate::error::default_undefined_fault::Builder,
 ) -> Result<crate::error::default_undefined_fault::Builder, smithy_json::deserialize::Error> {
@@ -1229,7 +1248,7 @@ pub fn deser_structure_default_undefined_faultjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_workflow_execution_already_started_faultjson_err(
+pub fn deser_structure_crate_error_workflow_execution_already_started_faultjson_err(
     input: &[u8],
     mut builder: crate::error::workflow_execution_already_started_fault::Builder,
 ) -> Result<
@@ -1271,7 +1290,7 @@ pub fn deser_structure_workflow_execution_already_started_faultjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_start_workflow_execution(
+pub fn deser_operation_crate_operation_start_workflow_execution(
     input: &[u8],
     mut builder: crate::output::start_workflow_execution_output::Builder,
 ) -> Result<crate::output::start_workflow_execution_output::Builder, smithy_json::deserialize::Error>
@@ -1319,7 +1338,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_activity_type_info<'a, I>(
+pub fn deser_structure_crate_model_activity_type_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ActivityTypeInfo>, smithy_json::deserialize::Error>
 where
@@ -1339,7 +1358,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "activityType" => {
                                 builder = builder.set_activity_type(
-                                    crate::json_deser::deser_structure_activity_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_activity_type(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "status" => {
@@ -1398,7 +1419,7 @@ where
     }
 }
 
-pub fn deser_structure_activity_type_configuration<'a, I>(
+pub fn deser_structure_crate_model_activity_type_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ActivityTypeConfiguration>, smithy_json::deserialize::Error>
 where
@@ -1436,7 +1457,9 @@ where
                             }
                             "defaultTaskList" => {
                                 builder = builder.set_default_task_list(
-                                    crate::json_deser::deser_structure_task_list(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_task_list(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "defaultTaskPriority" => {
@@ -1484,7 +1507,7 @@ where
     }
 }
 
-pub fn deser_structure_domain_info<'a, I>(
+pub fn deser_structure_crate_model_domain_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DomainInfo>, smithy_json::deserialize::Error>
 where
@@ -1560,7 +1583,7 @@ where
     }
 }
 
-pub fn deser_structure_domain_configuration<'a, I>(
+pub fn deser_structure_crate_model_domain_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DomainConfiguration>, smithy_json::deserialize::Error>
 where
@@ -1605,7 +1628,7 @@ where
     }
 }
 
-pub fn deser_structure_workflow_execution_info<'a, I>(
+pub fn deser_structure_crate_model_workflow_execution_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::WorkflowExecutionInfo>, smithy_json::deserialize::Error>
 where
@@ -1625,12 +1648,14 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "execution" => {
                                 builder = builder.set_execution(
-                                    crate::json_deser::deser_structure_workflow_execution(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution(tokens)?
                                 );
                             }
                             "workflowType" => {
                                 builder = builder.set_workflow_type(
-                                    crate::json_deser::deser_structure_workflow_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_type(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "startTimestamp" => {
@@ -1676,12 +1701,15 @@ where
                             }
                             "parent" => {
                                 builder = builder.set_parent(
-                                    crate::json_deser::deser_structure_workflow_execution(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution(tokens)?
                                 );
                             }
                             "tagList" => {
-                                builder = builder
-                                    .set_tag_list(crate::json_deser::deser_list_tag_list(tokens)?);
+                                builder = builder.set_tag_list(
+                                    crate::json_deser::deser_list_com_amazonaws_swf_tag_list(
+                                        tokens,
+                                    )?,
+                                );
                             }
                             "cancelRequested" => {
                                 builder = builder.set_cancel_requested(
@@ -1708,7 +1736,7 @@ where
     }
 }
 
-pub fn deser_structure_workflow_execution_configuration<'a, I>(
+pub fn deser_structure_crate_model_workflow_execution_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::WorkflowExecutionConfiguration>, smithy_json::deserialize::Error>
 where
@@ -1746,7 +1774,9 @@ where
                             }
                             "taskList" => {
                                 builder = builder.set_task_list(
-                                    crate::json_deser::deser_structure_task_list(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_task_list(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "taskPriority" => {
@@ -1797,7 +1827,7 @@ where
     }
 }
 
-pub fn deser_structure_workflow_execution_open_counts<'a, I>(
+pub fn deser_structure_crate_model_workflow_execution_open_counts<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::WorkflowExecutionOpenCounts>, smithy_json::deserialize::Error>
 where
@@ -1873,7 +1903,7 @@ where
     }
 }
 
-pub fn deser_structure_workflow_type_info<'a, I>(
+pub fn deser_structure_crate_model_workflow_type_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::WorkflowTypeInfo>, smithy_json::deserialize::Error>
 where
@@ -1893,7 +1923,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "workflowType" => {
                                 builder = builder.set_workflow_type(
-                                    crate::json_deser::deser_structure_workflow_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_type(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "status" => {
@@ -1952,7 +1984,7 @@ where
     }
 }
 
-pub fn deser_structure_workflow_type_configuration<'a, I>(
+pub fn deser_structure_crate_model_workflow_type_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::WorkflowTypeConfiguration>, smithy_json::deserialize::Error>
 where
@@ -1990,7 +2022,9 @@ where
                             }
                             "defaultTaskList" => {
                                 builder = builder.set_default_task_list(
-                                    crate::json_deser::deser_structure_task_list(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_task_list(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "defaultTaskPriority" => {
@@ -2042,7 +2076,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_history_event_list<'a, I>(
+pub fn deser_list_com_amazonaws_swf_history_event_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::HistoryEvent>>, smithy_json::deserialize::Error>
 where
@@ -2061,7 +2095,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_history_event(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_history_event(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2077,7 +2112,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_activity_type_info_list<'a, I>(
+pub fn deser_list_com_amazonaws_swf_activity_type_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ActivityTypeInfo>>, smithy_json::deserialize::Error>
 where
@@ -2096,7 +2131,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_activity_type_info(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_activity_type_info(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2112,7 +2150,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_workflow_execution_info_list<'a, I>(
+pub fn deser_list_com_amazonaws_swf_workflow_execution_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::WorkflowExecutionInfo>>,
@@ -2135,7 +2173,9 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_workflow_execution_info(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_workflow_execution_info(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2151,7 +2191,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_domain_info_list<'a, I>(
+pub fn deser_list_com_amazonaws_swf_domain_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::DomainInfo>>, smithy_json::deserialize::Error>
 where
@@ -2170,7 +2210,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_domain_info(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_domain_info(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2186,7 +2227,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_resource_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_swf_resource_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ResourceTag>>, smithy_json::deserialize::Error>
 where
@@ -2205,7 +2246,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_resource_tag(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_resource_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2221,7 +2263,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_workflow_type_info_list<'a, I>(
+pub fn deser_list_com_amazonaws_swf_workflow_type_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::WorkflowTypeInfo>>, smithy_json::deserialize::Error>
 where
@@ -2240,7 +2282,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_workflow_type_info(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_workflow_type_info(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -2255,7 +2300,7 @@ where
     }
 }
 
-pub fn deser_structure_workflow_execution<'a, I>(
+pub fn deser_structure_crate_model_workflow_execution<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::WorkflowExecution>, smithy_json::deserialize::Error>
 where
@@ -2309,7 +2354,7 @@ where
     }
 }
 
-pub fn deser_structure_activity_type<'a, I>(
+pub fn deser_structure_crate_model_activity_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ActivityType>, smithy_json::deserialize::Error>
 where
@@ -2363,7 +2408,7 @@ where
     }
 }
 
-pub fn deser_structure_workflow_type<'a, I>(
+pub fn deser_structure_crate_model_workflow_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::WorkflowType>, smithy_json::deserialize::Error>
 where
@@ -2417,7 +2462,7 @@ where
     }
 }
 
-pub fn deser_structure_task_list<'a, I>(
+pub fn deser_structure_crate_model_task_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TaskList>, smithy_json::deserialize::Error>
 where
@@ -2463,7 +2508,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_tag_list<'a, I>(
+pub fn deser_list_com_amazonaws_swf_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, smithy_json::deserialize::Error>
 where
@@ -2500,7 +2545,7 @@ where
     }
 }
 
-pub fn deser_structure_history_event<'a, I>(
+pub fn deser_structure_crate_model_history_event<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::HistoryEvent>, smithy_json::deserialize::Error>
 where
@@ -2548,272 +2593,272 @@ where
                             }
                             "workflowExecutionStartedEventAttributes" => {
                                 builder = builder.set_workflow_execution_started_event_attributes(
-                                    crate::json_deser::deser_structure_workflow_execution_started_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution_started_event_attributes(tokens)?
                                 );
                             }
                             "workflowExecutionCompletedEventAttributes" => {
                                 builder = builder.set_workflow_execution_completed_event_attributes(
-                                    crate::json_deser::deser_structure_workflow_execution_completed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution_completed_event_attributes(tokens)?
                                 );
                             }
                             "completeWorkflowExecutionFailedEventAttributes" => {
                                 builder = builder.set_complete_workflow_execution_failed_event_attributes(
-                                    crate::json_deser::deser_structure_complete_workflow_execution_failed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_complete_workflow_execution_failed_event_attributes(tokens)?
                                 );
                             }
                             "workflowExecutionFailedEventAttributes" => {
                                 builder = builder.set_workflow_execution_failed_event_attributes(
-                                    crate::json_deser::deser_structure_workflow_execution_failed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution_failed_event_attributes(tokens)?
                                 );
                             }
                             "failWorkflowExecutionFailedEventAttributes" => {
                                 builder = builder.set_fail_workflow_execution_failed_event_attributes(
-                                    crate::json_deser::deser_structure_fail_workflow_execution_failed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_fail_workflow_execution_failed_event_attributes(tokens)?
                                 );
                             }
                             "workflowExecutionTimedOutEventAttributes" => {
                                 builder = builder.set_workflow_execution_timed_out_event_attributes(
-                                    crate::json_deser::deser_structure_workflow_execution_timed_out_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution_timed_out_event_attributes(tokens)?
                                 );
                             }
                             "workflowExecutionCanceledEventAttributes" => {
                                 builder = builder.set_workflow_execution_canceled_event_attributes(
-                                    crate::json_deser::deser_structure_workflow_execution_canceled_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution_canceled_event_attributes(tokens)?
                                 );
                             }
                             "cancelWorkflowExecutionFailedEventAttributes" => {
                                 builder = builder.set_cancel_workflow_execution_failed_event_attributes(
-                                    crate::json_deser::deser_structure_cancel_workflow_execution_failed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_cancel_workflow_execution_failed_event_attributes(tokens)?
                                 );
                             }
                             "workflowExecutionContinuedAsNewEventAttributes" => {
                                 builder = builder.set_workflow_execution_continued_as_new_event_attributes(
-                                    crate::json_deser::deser_structure_workflow_execution_continued_as_new_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution_continued_as_new_event_attributes(tokens)?
                                 );
                             }
                             "continueAsNewWorkflowExecutionFailedEventAttributes" => {
                                 builder = builder.set_continue_as_new_workflow_execution_failed_event_attributes(
-                                    crate::json_deser::deser_structure_continue_as_new_workflow_execution_failed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_continue_as_new_workflow_execution_failed_event_attributes(tokens)?
                                 );
                             }
                             "workflowExecutionTerminatedEventAttributes" => {
                                 builder = builder.set_workflow_execution_terminated_event_attributes(
-                                    crate::json_deser::deser_structure_workflow_execution_terminated_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution_terminated_event_attributes(tokens)?
                                 );
                             }
                             "workflowExecutionCancelRequestedEventAttributes" => {
                                 builder = builder.set_workflow_execution_cancel_requested_event_attributes(
-                                    crate::json_deser::deser_structure_workflow_execution_cancel_requested_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution_cancel_requested_event_attributes(tokens)?
                                 );
                             }
                             "decisionTaskScheduledEventAttributes" => {
                                 builder = builder.set_decision_task_scheduled_event_attributes(
-                                    crate::json_deser::deser_structure_decision_task_scheduled_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_decision_task_scheduled_event_attributes(tokens)?
                                 );
                             }
                             "decisionTaskStartedEventAttributes" => {
                                 builder = builder.set_decision_task_started_event_attributes(
-                                    crate::json_deser::deser_structure_decision_task_started_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_decision_task_started_event_attributes(tokens)?
                                 );
                             }
                             "decisionTaskCompletedEventAttributes" => {
                                 builder = builder.set_decision_task_completed_event_attributes(
-                                    crate::json_deser::deser_structure_decision_task_completed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_decision_task_completed_event_attributes(tokens)?
                                 );
                             }
                             "decisionTaskTimedOutEventAttributes" => {
                                 builder = builder.set_decision_task_timed_out_event_attributes(
-                                    crate::json_deser::deser_structure_decision_task_timed_out_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_decision_task_timed_out_event_attributes(tokens)?
                                 );
                             }
                             "activityTaskScheduledEventAttributes" => {
                                 builder = builder.set_activity_task_scheduled_event_attributes(
-                                    crate::json_deser::deser_structure_activity_task_scheduled_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_activity_task_scheduled_event_attributes(tokens)?
                                 );
                             }
                             "activityTaskStartedEventAttributes" => {
                                 builder = builder.set_activity_task_started_event_attributes(
-                                    crate::json_deser::deser_structure_activity_task_started_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_activity_task_started_event_attributes(tokens)?
                                 );
                             }
                             "activityTaskCompletedEventAttributes" => {
                                 builder = builder.set_activity_task_completed_event_attributes(
-                                    crate::json_deser::deser_structure_activity_task_completed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_activity_task_completed_event_attributes(tokens)?
                                 );
                             }
                             "activityTaskFailedEventAttributes" => {
                                 builder = builder.set_activity_task_failed_event_attributes(
-                                    crate::json_deser::deser_structure_activity_task_failed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_activity_task_failed_event_attributes(tokens)?
                                 );
                             }
                             "activityTaskTimedOutEventAttributes" => {
                                 builder = builder.set_activity_task_timed_out_event_attributes(
-                                    crate::json_deser::deser_structure_activity_task_timed_out_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_activity_task_timed_out_event_attributes(tokens)?
                                 );
                             }
                             "activityTaskCanceledEventAttributes" => {
                                 builder = builder.set_activity_task_canceled_event_attributes(
-                                    crate::json_deser::deser_structure_activity_task_canceled_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_activity_task_canceled_event_attributes(tokens)?
                                 );
                             }
                             "activityTaskCancelRequestedEventAttributes" => {
                                 builder = builder.set_activity_task_cancel_requested_event_attributes(
-                                    crate::json_deser::deser_structure_activity_task_cancel_requested_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_activity_task_cancel_requested_event_attributes(tokens)?
                                 );
                             }
                             "workflowExecutionSignaledEventAttributes" => {
                                 builder = builder.set_workflow_execution_signaled_event_attributes(
-                                    crate::json_deser::deser_structure_workflow_execution_signaled_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution_signaled_event_attributes(tokens)?
                                 );
                             }
                             "markerRecordedEventAttributes" => {
                                 builder = builder.set_marker_recorded_event_attributes(
-                                    crate::json_deser::deser_structure_marker_recorded_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_marker_recorded_event_attributes(tokens)?
                                 );
                             }
                             "recordMarkerFailedEventAttributes" => {
                                 builder = builder.set_record_marker_failed_event_attributes(
-                                    crate::json_deser::deser_structure_record_marker_failed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_record_marker_failed_event_attributes(tokens)?
                                 );
                             }
                             "timerStartedEventAttributes" => {
                                 builder = builder.set_timer_started_event_attributes(
-                                    crate::json_deser::deser_structure_timer_started_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_timer_started_event_attributes(tokens)?
                                 );
                             }
                             "timerFiredEventAttributes" => {
                                 builder = builder.set_timer_fired_event_attributes(
-                                    crate::json_deser::deser_structure_timer_fired_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_timer_fired_event_attributes(tokens)?
                                 );
                             }
                             "timerCanceledEventAttributes" => {
                                 builder = builder.set_timer_canceled_event_attributes(
-                                    crate::json_deser::deser_structure_timer_canceled_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_timer_canceled_event_attributes(tokens)?
                                 );
                             }
                             "startChildWorkflowExecutionInitiatedEventAttributes" => {
                                 builder = builder.set_start_child_workflow_execution_initiated_event_attributes(
-                                    crate::json_deser::deser_structure_start_child_workflow_execution_initiated_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_start_child_workflow_execution_initiated_event_attributes(tokens)?
                                 );
                             }
                             "childWorkflowExecutionStartedEventAttributes" => {
                                 builder = builder.set_child_workflow_execution_started_event_attributes(
-                                    crate::json_deser::deser_structure_child_workflow_execution_started_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_child_workflow_execution_started_event_attributes(tokens)?
                                 );
                             }
                             "childWorkflowExecutionCompletedEventAttributes" => {
                                 builder = builder.set_child_workflow_execution_completed_event_attributes(
-                                    crate::json_deser::deser_structure_child_workflow_execution_completed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_child_workflow_execution_completed_event_attributes(tokens)?
                                 );
                             }
                             "childWorkflowExecutionFailedEventAttributes" => {
                                 builder = builder.set_child_workflow_execution_failed_event_attributes(
-                                    crate::json_deser::deser_structure_child_workflow_execution_failed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_child_workflow_execution_failed_event_attributes(tokens)?
                                 );
                             }
                             "childWorkflowExecutionTimedOutEventAttributes" => {
                                 builder = builder.set_child_workflow_execution_timed_out_event_attributes(
-                                    crate::json_deser::deser_structure_child_workflow_execution_timed_out_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_child_workflow_execution_timed_out_event_attributes(tokens)?
                                 );
                             }
                             "childWorkflowExecutionCanceledEventAttributes" => {
                                 builder = builder.set_child_workflow_execution_canceled_event_attributes(
-                                    crate::json_deser::deser_structure_child_workflow_execution_canceled_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_child_workflow_execution_canceled_event_attributes(tokens)?
                                 );
                             }
                             "childWorkflowExecutionTerminatedEventAttributes" => {
                                 builder = builder.set_child_workflow_execution_terminated_event_attributes(
-                                    crate::json_deser::deser_structure_child_workflow_execution_terminated_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_child_workflow_execution_terminated_event_attributes(tokens)?
                                 );
                             }
                             "signalExternalWorkflowExecutionInitiatedEventAttributes" => {
                                 builder = builder.set_signal_external_workflow_execution_initiated_event_attributes(
-                                    crate::json_deser::deser_structure_signal_external_workflow_execution_initiated_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_signal_external_workflow_execution_initiated_event_attributes(tokens)?
                                 );
                             }
                             "externalWorkflowExecutionSignaledEventAttributes" => {
                                 builder = builder.set_external_workflow_execution_signaled_event_attributes(
-                                    crate::json_deser::deser_structure_external_workflow_execution_signaled_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_external_workflow_execution_signaled_event_attributes(tokens)?
                                 );
                             }
                             "signalExternalWorkflowExecutionFailedEventAttributes" => {
                                 builder = builder.set_signal_external_workflow_execution_failed_event_attributes(
-                                    crate::json_deser::deser_structure_signal_external_workflow_execution_failed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_signal_external_workflow_execution_failed_event_attributes(tokens)?
                                 );
                             }
                             "externalWorkflowExecutionCancelRequestedEventAttributes" => {
                                 builder = builder.set_external_workflow_execution_cancel_requested_event_attributes(
-                                    crate::json_deser::deser_structure_external_workflow_execution_cancel_requested_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_external_workflow_execution_cancel_requested_event_attributes(tokens)?
                                 );
                             }
                             "requestCancelExternalWorkflowExecutionInitiatedEventAttributes" => {
                                 builder = builder.set_request_cancel_external_workflow_execution_initiated_event_attributes(
-                                    crate::json_deser::deser_structure_request_cancel_external_workflow_execution_initiated_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_request_cancel_external_workflow_execution_initiated_event_attributes(tokens)?
                                 );
                             }
                             "requestCancelExternalWorkflowExecutionFailedEventAttributes" => {
                                 builder = builder.set_request_cancel_external_workflow_execution_failed_event_attributes(
-                                    crate::json_deser::deser_structure_request_cancel_external_workflow_execution_failed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_request_cancel_external_workflow_execution_failed_event_attributes(tokens)?
                                 );
                             }
                             "scheduleActivityTaskFailedEventAttributes" => {
                                 builder = builder.set_schedule_activity_task_failed_event_attributes(
-                                    crate::json_deser::deser_structure_schedule_activity_task_failed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_schedule_activity_task_failed_event_attributes(tokens)?
                                 );
                             }
                             "requestCancelActivityTaskFailedEventAttributes" => {
                                 builder = builder.set_request_cancel_activity_task_failed_event_attributes(
-                                    crate::json_deser::deser_structure_request_cancel_activity_task_failed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_request_cancel_activity_task_failed_event_attributes(tokens)?
                                 );
                             }
                             "startTimerFailedEventAttributes" => {
                                 builder = builder.set_start_timer_failed_event_attributes(
-                                    crate::json_deser::deser_structure_start_timer_failed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_start_timer_failed_event_attributes(tokens)?
                                 );
                             }
                             "cancelTimerFailedEventAttributes" => {
                                 builder = builder.set_cancel_timer_failed_event_attributes(
-                                    crate::json_deser::deser_structure_cancel_timer_failed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_cancel_timer_failed_event_attributes(tokens)?
                                 );
                             }
                             "startChildWorkflowExecutionFailedEventAttributes" => {
                                 builder = builder.set_start_child_workflow_execution_failed_event_attributes(
-                                    crate::json_deser::deser_structure_start_child_workflow_execution_failed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_start_child_workflow_execution_failed_event_attributes(tokens)?
                                 );
                             }
                             "lambdaFunctionScheduledEventAttributes" => {
                                 builder = builder.set_lambda_function_scheduled_event_attributes(
-                                    crate::json_deser::deser_structure_lambda_function_scheduled_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_lambda_function_scheduled_event_attributes(tokens)?
                                 );
                             }
                             "lambdaFunctionStartedEventAttributes" => {
                                 builder = builder.set_lambda_function_started_event_attributes(
-                                    crate::json_deser::deser_structure_lambda_function_started_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_lambda_function_started_event_attributes(tokens)?
                                 );
                             }
                             "lambdaFunctionCompletedEventAttributes" => {
                                 builder = builder.set_lambda_function_completed_event_attributes(
-                                    crate::json_deser::deser_structure_lambda_function_completed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_lambda_function_completed_event_attributes(tokens)?
                                 );
                             }
                             "lambdaFunctionFailedEventAttributes" => {
                                 builder = builder.set_lambda_function_failed_event_attributes(
-                                    crate::json_deser::deser_structure_lambda_function_failed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_lambda_function_failed_event_attributes(tokens)?
                                 );
                             }
                             "lambdaFunctionTimedOutEventAttributes" => {
                                 builder = builder.set_lambda_function_timed_out_event_attributes(
-                                    crate::json_deser::deser_structure_lambda_function_timed_out_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_lambda_function_timed_out_event_attributes(tokens)?
                                 );
                             }
                             "scheduleLambdaFunctionFailedEventAttributes" => {
                                 builder = builder.set_schedule_lambda_function_failed_event_attributes(
-                                    crate::json_deser::deser_structure_schedule_lambda_function_failed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_schedule_lambda_function_failed_event_attributes(tokens)?
                                 );
                             }
                             "startLambdaFunctionFailedEventAttributes" => {
                                 builder = builder.set_start_lambda_function_failed_event_attributes(
-                                    crate::json_deser::deser_structure_start_lambda_function_failed_event_attributes(tokens)?
+                                    crate::json_deser::deser_structure_crate_model_start_lambda_function_failed_event_attributes(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2834,7 +2879,7 @@ where
     }
 }
 
-pub fn deser_structure_resource_tag<'a, I>(
+pub fn deser_structure_crate_model_resource_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ResourceTag>, smithy_json::deserialize::Error>
 where
@@ -2888,7 +2933,7 @@ where
     }
 }
 
-pub fn deser_structure_workflow_execution_started_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_workflow_execution_started_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::WorkflowExecutionStartedEventAttributes>,
@@ -2950,7 +2995,9 @@ where
                             }
                             "taskList" => {
                                 builder = builder.set_task_list(
-                                    crate::json_deser::deser_structure_task_list(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_task_list(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "taskPriority" => {
@@ -2964,12 +3011,17 @@ where
                             }
                             "workflowType" => {
                                 builder = builder.set_workflow_type(
-                                    crate::json_deser::deser_structure_workflow_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_type(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "tagList" => {
-                                builder = builder
-                                    .set_tag_list(crate::json_deser::deser_list_tag_list(tokens)?);
+                                builder = builder.set_tag_list(
+                                    crate::json_deser::deser_list_com_amazonaws_swf_tag_list(
+                                        tokens,
+                                    )?,
+                                );
                             }
                             "continuedExecutionRunId" => {
                                 builder = builder.set_continued_execution_run_id(
@@ -2982,7 +3034,7 @@ where
                             }
                             "parentWorkflowExecution" => {
                                 builder = builder.set_parent_workflow_execution(
-                                    crate::json_deser::deser_structure_workflow_execution(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution(tokens)?
                                 );
                             }
                             "parentInitiatedEventId" => {
@@ -3020,7 +3072,7 @@ where
     }
 }
 
-pub fn deser_structure_workflow_execution_completed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_workflow_execution_completed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::WorkflowExecutionCompletedEventAttributes>,
@@ -3076,7 +3128,7 @@ where
     }
 }
 
-pub fn deser_structure_complete_workflow_execution_failed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_complete_workflow_execution_failed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::CompleteWorkflowExecutionFailedEventAttributes>,
@@ -3133,7 +3185,7 @@ where
     }
 }
 
-pub fn deser_structure_workflow_execution_failed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_workflow_execution_failed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::WorkflowExecutionFailedEventAttributes>,
@@ -3198,7 +3250,7 @@ where
     }
 }
 
-pub fn deser_structure_fail_workflow_execution_failed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_fail_workflow_execution_failed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::FailWorkflowExecutionFailedEventAttributes>,
@@ -3260,7 +3312,7 @@ where
     }
 }
 
-pub fn deser_structure_workflow_execution_timed_out_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_workflow_execution_timed_out_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::WorkflowExecutionTimedOutEventAttributes>,
@@ -3326,7 +3378,7 @@ where
     }
 }
 
-pub fn deser_structure_workflow_execution_canceled_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_workflow_execution_canceled_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::WorkflowExecutionCanceledEventAttributes>,
@@ -3382,7 +3434,7 @@ where
     }
 }
 
-pub fn deser_structure_cancel_workflow_execution_failed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_cancel_workflow_execution_failed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::CancelWorkflowExecutionFailedEventAttributes>,
@@ -3444,7 +3496,7 @@ where
     }
 }
 
-pub fn deser_structure_workflow_execution_continued_as_new_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_workflow_execution_continued_as_new_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::WorkflowExecutionContinuedAsNewEventAttributes>,
@@ -3503,7 +3555,9 @@ where
                             }
                             "taskList" => {
                                 builder = builder.set_task_list(
-                                    crate::json_deser::deser_structure_task_list(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_task_list(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "taskPriority" => {
@@ -3537,12 +3591,17 @@ where
                                 );
                             }
                             "tagList" => {
-                                builder = builder
-                                    .set_tag_list(crate::json_deser::deser_list_tag_list(tokens)?);
+                                builder = builder.set_tag_list(
+                                    crate::json_deser::deser_list_com_amazonaws_swf_tag_list(
+                                        tokens,
+                                    )?,
+                                );
                             }
                             "workflowType" => {
                                 builder = builder.set_workflow_type(
-                                    crate::json_deser::deser_structure_workflow_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_type(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "lambdaRole" => {
@@ -3572,7 +3631,10 @@ where
     }
 }
 
-pub fn deser_structure_continue_as_new_workflow_execution_failed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_continue_as_new_workflow_execution_failed_event_attributes<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes>,
@@ -3629,7 +3691,7 @@ where
     }
 }
 
-pub fn deser_structure_workflow_execution_terminated_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_workflow_execution_terminated_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::WorkflowExecutionTerminatedEventAttributes>,
@@ -3713,7 +3775,7 @@ where
     }
 }
 
-pub fn deser_structure_workflow_execution_cancel_requested_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_workflow_execution_cancel_requested_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::WorkflowExecutionCancelRequestedEventAttributes>,
@@ -3737,7 +3799,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "externalWorkflowExecution" => {
                                 builder = builder.set_external_workflow_execution(
-                                    crate::json_deser::deser_structure_workflow_execution(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution(tokens)?
                                 );
                             }
                             "externalInitiatedEventId" => {
@@ -3775,7 +3837,7 @@ where
     }
 }
 
-pub fn deser_structure_decision_task_scheduled_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_decision_task_scheduled_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::DecisionTaskScheduledEventAttributes>,
@@ -3798,7 +3860,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "taskList" => {
                                 builder = builder.set_task_list(
-                                    crate::json_deser::deser_structure_task_list(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_task_list(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "taskPriority" => {
@@ -3837,7 +3901,7 @@ where
     }
 }
 
-pub fn deser_structure_decision_task_started_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_decision_task_started_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::DecisionTaskStartedEventAttributes>, smithy_json::deserialize::Error>
 where
@@ -3890,7 +3954,7 @@ where
     }
 }
 
-pub fn deser_structure_decision_task_completed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_decision_task_completed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::DecisionTaskCompletedEventAttributes>,
@@ -3954,7 +4018,7 @@ where
     }
 }
 
-pub fn deser_structure_decision_task_timed_out_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_decision_task_timed_out_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::DecisionTaskTimedOutEventAttributes>,
@@ -4022,7 +4086,7 @@ where
     }
 }
 
-pub fn deser_structure_activity_task_scheduled_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_activity_task_scheduled_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ActivityTaskScheduledEventAttributes>,
@@ -4045,7 +4109,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "activityType" => {
                                 builder = builder.set_activity_type(
-                                    crate::json_deser::deser_structure_activity_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_activity_type(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "activityId" => {
@@ -4104,7 +4170,9 @@ where
                             }
                             "taskList" => {
                                 builder = builder.set_task_list(
-                                    crate::json_deser::deser_structure_task_list(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_task_list(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "taskPriority" => {
@@ -4151,7 +4219,7 @@ where
     }
 }
 
-pub fn deser_structure_activity_task_started_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_activity_task_started_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ActivityTaskStartedEventAttributes>, smithy_json::deserialize::Error>
 where
@@ -4204,7 +4272,7 @@ where
     }
 }
 
-pub fn deser_structure_activity_task_completed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_activity_task_completed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ActivityTaskCompletedEventAttributes>,
@@ -4268,7 +4336,7 @@ where
     }
 }
 
-pub fn deser_structure_activity_task_failed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_activity_task_failed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ActivityTaskFailedEventAttributes>, smithy_json::deserialize::Error>
 where
@@ -4338,7 +4406,7 @@ where
     }
 }
 
-pub fn deser_structure_activity_task_timed_out_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_activity_task_timed_out_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ActivityTaskTimedOutEventAttributes>,
@@ -4415,7 +4483,7 @@ where
     }
 }
 
-pub fn deser_structure_activity_task_canceled_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_activity_task_canceled_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ActivityTaskCanceledEventAttributes>,
@@ -4487,7 +4555,7 @@ where
     }
 }
 
-pub fn deser_structure_activity_task_cancel_requested_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_activity_task_cancel_requested_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ActivityTaskCancelRequestedEventAttributes>,
@@ -4543,7 +4611,7 @@ where
     }
 }
 
-pub fn deser_structure_workflow_execution_signaled_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_workflow_execution_signaled_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::WorkflowExecutionSignaledEventAttributes>,
@@ -4584,7 +4652,7 @@ where
                             }
                             "externalWorkflowExecution" => {
                                 builder = builder.set_external_workflow_execution(
-                                    crate::json_deser::deser_structure_workflow_execution(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution(tokens)?
                                 );
                             }
                             "externalInitiatedEventId" => {
@@ -4613,7 +4681,7 @@ where
     }
 }
 
-pub fn deser_structure_marker_recorded_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_marker_recorded_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MarkerRecordedEventAttributes>, smithy_json::deserialize::Error>
 where
@@ -4675,7 +4743,7 @@ where
     }
 }
 
-pub fn deser_structure_record_marker_failed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_record_marker_failed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RecordMarkerFailedEventAttributes>, smithy_json::deserialize::Error>
 where
@@ -4741,7 +4809,7 @@ where
     }
 }
 
-pub fn deser_structure_timer_started_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_timer_started_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TimerStartedEventAttributes>, smithy_json::deserialize::Error>
 where
@@ -4812,7 +4880,7 @@ where
     }
 }
 
-pub fn deser_structure_timer_fired_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_timer_fired_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TimerFiredEventAttributes>, smithy_json::deserialize::Error>
 where
@@ -4865,7 +4933,7 @@ where
     }
 }
 
-pub fn deser_structure_timer_canceled_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_timer_canceled_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TimerCanceledEventAttributes>, smithy_json::deserialize::Error>
 where
@@ -4926,7 +4994,10 @@ where
     }
 }
 
-pub fn deser_structure_start_child_workflow_execution_initiated_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_start_child_workflow_execution_initiated_event_attributes<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::StartChildWorkflowExecutionInitiatedEventAttributes>,
@@ -4959,7 +5030,9 @@ where
                             }
                             "workflowType" => {
                                 builder = builder.set_workflow_type(
-                                    crate::json_deser::deser_structure_workflow_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_type(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "control" => {
@@ -4991,7 +5064,9 @@ where
                             }
                             "taskList" => {
                                 builder = builder.set_task_list(
-                                    crate::json_deser::deser_structure_task_list(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_task_list(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "taskPriority" => {
@@ -5033,8 +5108,11 @@ where
                                 );
                             }
                             "tagList" => {
-                                builder = builder
-                                    .set_tag_list(crate::json_deser::deser_list_tag_list(tokens)?);
+                                builder = builder.set_tag_list(
+                                    crate::json_deser::deser_list_com_amazonaws_swf_tag_list(
+                                        tokens,
+                                    )?,
+                                );
                             }
                             "lambdaRole" => {
                                 builder = builder.set_lambda_role(
@@ -5063,7 +5141,7 @@ where
     }
 }
 
-pub fn deser_structure_child_workflow_execution_started_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_child_workflow_execution_started_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ChildWorkflowExecutionStartedEventAttributes>,
@@ -5086,12 +5164,14 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "workflowExecution" => {
                                 builder = builder.set_workflow_execution(
-                                    crate::json_deser::deser_structure_workflow_execution(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution(tokens)?
                                 );
                             }
                             "workflowType" => {
                                 builder = builder.set_workflow_type(
-                                    crate::json_deser::deser_structure_workflow_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_type(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "initiatedEventId" => {
@@ -5120,7 +5200,7 @@ where
     }
 }
 
-pub fn deser_structure_child_workflow_execution_completed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_child_workflow_execution_completed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ChildWorkflowExecutionCompletedEventAttributes>,
@@ -5144,12 +5224,14 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "workflowExecution" => {
                                 builder = builder.set_workflow_execution(
-                                    crate::json_deser::deser_structure_workflow_execution(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution(tokens)?
                                 );
                             }
                             "workflowType" => {
                                 builder = builder.set_workflow_type(
-                                    crate::json_deser::deser_structure_workflow_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_type(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "result" => {
@@ -5195,7 +5277,7 @@ where
     }
 }
 
-pub fn deser_structure_child_workflow_execution_failed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_child_workflow_execution_failed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ChildWorkflowExecutionFailedEventAttributes>,
@@ -5218,12 +5300,14 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "workflowExecution" => {
                                 builder = builder.set_workflow_execution(
-                                    crate::json_deser::deser_structure_workflow_execution(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution(tokens)?
                                 );
                             }
                             "workflowType" => {
                                 builder = builder.set_workflow_type(
-                                    crate::json_deser::deser_structure_workflow_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_type(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "reason" => {
@@ -5278,7 +5362,7 @@ where
     }
 }
 
-pub fn deser_structure_child_workflow_execution_timed_out_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_child_workflow_execution_timed_out_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ChildWorkflowExecutionTimedOutEventAttributes>,
@@ -5302,12 +5386,14 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "workflowExecution" => {
                                 builder = builder.set_workflow_execution(
-                                    crate::json_deser::deser_structure_workflow_execution(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution(tokens)?
                                 );
                             }
                             "workflowType" => {
                                 builder = builder.set_workflow_type(
-                                    crate::json_deser::deser_structure_workflow_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_type(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "timeoutType" => {
@@ -5359,7 +5445,7 @@ where
     }
 }
 
-pub fn deser_structure_child_workflow_execution_canceled_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_child_workflow_execution_canceled_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ChildWorkflowExecutionCanceledEventAttributes>,
@@ -5383,12 +5469,14 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "workflowExecution" => {
                                 builder = builder.set_workflow_execution(
-                                    crate::json_deser::deser_structure_workflow_execution(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution(tokens)?
                                 );
                             }
                             "workflowType" => {
                                 builder = builder.set_workflow_type(
-                                    crate::json_deser::deser_structure_workflow_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_type(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "details" => {
@@ -5434,7 +5522,7 @@ where
     }
 }
 
-pub fn deser_structure_child_workflow_execution_terminated_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_child_workflow_execution_terminated_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ChildWorkflowExecutionTerminatedEventAttributes>,
@@ -5458,12 +5546,14 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "workflowExecution" => {
                                 builder = builder.set_workflow_execution(
-                                    crate::json_deser::deser_structure_workflow_execution(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution(tokens)?
                                 );
                             }
                             "workflowType" => {
                                 builder = builder.set_workflow_type(
-                                    crate::json_deser::deser_structure_workflow_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_type(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "initiatedEventId" => {
@@ -5500,7 +5590,10 @@ where
     }
 }
 
-pub fn deser_structure_signal_external_workflow_execution_initiated_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_signal_external_workflow_execution_initiated_event_attributes<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes>,
@@ -5593,7 +5686,7 @@ where
     }
 }
 
-pub fn deser_structure_external_workflow_execution_signaled_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_external_workflow_execution_signaled_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ExternalWorkflowExecutionSignaledEventAttributes>,
@@ -5617,7 +5710,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "workflowExecution" => {
                                 builder = builder.set_workflow_execution(
-                                    crate::json_deser::deser_structure_workflow_execution(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution(tokens)?
                                 );
                             }
                             "initiatedEventId" => {
@@ -5646,7 +5739,10 @@ where
     }
 }
 
-pub fn deser_structure_signal_external_workflow_execution_failed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_signal_external_workflow_execution_failed_event_attributes<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::SignalExternalWorkflowExecutionFailedEventAttributes>,
@@ -5738,7 +5834,10 @@ where
     }
 }
 
-pub fn deser_structure_external_workflow_execution_cancel_requested_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_external_workflow_execution_cancel_requested_event_attributes<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ExternalWorkflowExecutionCancelRequestedEventAttributes>,
@@ -5762,7 +5861,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "workflowExecution" => {
                                 builder = builder.set_workflow_execution(
-                                    crate::json_deser::deser_structure_workflow_execution(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_execution(tokens)?
                                 );
                             }
                             "initiatedEventId" => {
@@ -5791,7 +5890,7 @@ where
     }
 }
 
-pub fn deser_structure_request_cancel_external_workflow_execution_initiated_event_attributes<
+pub fn deser_structure_crate_model_request_cancel_external_workflow_execution_initiated_event_attributes<
     'a,
     I,
 >(
@@ -5867,7 +5966,10 @@ where
     }
 }
 
-pub fn deser_structure_request_cancel_external_workflow_execution_failed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_request_cancel_external_workflow_execution_failed_event_attributes<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::RequestCancelExternalWorkflowExecutionFailedEventAttributes>,
@@ -5960,7 +6062,7 @@ where
     }
 }
 
-pub fn deser_structure_schedule_activity_task_failed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_schedule_activity_task_failed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ScheduleActivityTaskFailedEventAttributes>,
@@ -5983,7 +6085,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "activityType" => {
                                 builder = builder.set_activity_type(
-                                    crate::json_deser::deser_structure_activity_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_activity_type(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "activityId" => {
@@ -6036,7 +6140,7 @@ where
     }
 }
 
-pub fn deser_structure_request_cancel_activity_task_failed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_request_cancel_activity_task_failed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::RequestCancelActivityTaskFailedEventAttributes>,
@@ -6102,7 +6206,7 @@ where
     }
 }
 
-pub fn deser_structure_start_timer_failed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_start_timer_failed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::StartTimerFailedEventAttributes>, smithy_json::deserialize::Error>
 where
@@ -6168,7 +6272,7 @@ where
     }
 }
 
-pub fn deser_structure_cancel_timer_failed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_cancel_timer_failed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::CancelTimerFailedEventAttributes>, smithy_json::deserialize::Error>
 where
@@ -6234,7 +6338,7 @@ where
     }
 }
 
-pub fn deser_structure_start_child_workflow_execution_failed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_start_child_workflow_execution_failed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::StartChildWorkflowExecutionFailedEventAttributes>,
@@ -6258,7 +6362,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "workflowType" => {
                                 builder = builder.set_workflow_type(
-                                    crate::json_deser::deser_structure_workflow_type(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_workflow_type(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "cause" => {
@@ -6322,7 +6428,7 @@ where
     }
 }
 
-pub fn deser_structure_lambda_function_scheduled_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_lambda_function_scheduled_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::LambdaFunctionScheduledEventAttributes>,
@@ -6414,7 +6520,7 @@ where
     }
 }
 
-pub fn deser_structure_lambda_function_started_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_lambda_function_started_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::LambdaFunctionStartedEventAttributes>,
@@ -6461,7 +6567,7 @@ where
     }
 }
 
-pub fn deser_structure_lambda_function_completed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_lambda_function_completed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::LambdaFunctionCompletedEventAttributes>,
@@ -6525,7 +6631,7 @@ where
     }
 }
 
-pub fn deser_structure_lambda_function_failed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_lambda_function_failed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::LambdaFunctionFailedEventAttributes>,
@@ -6598,7 +6704,7 @@ where
     }
 }
 
-pub fn deser_structure_lambda_function_timed_out_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_lambda_function_timed_out_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::LambdaFunctionTimedOutEventAttributes>,
@@ -6668,7 +6774,7 @@ where
     }
 }
 
-pub fn deser_structure_schedule_lambda_function_failed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_schedule_lambda_function_failed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ScheduleLambdaFunctionFailedEventAttributes>,
@@ -6748,7 +6854,7 @@ where
     }
 }
 
-pub fn deser_structure_start_lambda_function_failed_event_attributes<'a, I>(
+pub fn deser_structure_crate_model_start_lambda_function_failed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::StartLambdaFunctionFailedEventAttributes>,

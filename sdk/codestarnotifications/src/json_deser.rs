@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_concurrent_modification_exceptionjson_err(
+pub fn deser_structure_crate_error_concurrent_modification_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::concurrent_modification_exception::Builder,
 ) -> Result<crate::error::concurrent_modification_exception::Builder, smithy_json::deserialize::Error>
@@ -84,7 +84,7 @@ pub fn deser_structure_concurrent_modification_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_configuration_exceptionjson_err(
+pub fn deser_structure_crate_error_configuration_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::configuration_exception::Builder,
 ) -> Result<crate::error::configuration_exception::Builder, smithy_json::deserialize::Error> {
@@ -123,7 +123,7 @@ pub fn deser_structure_configuration_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_limit_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_limit_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::limit_exceeded_exception::Builder,
 ) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -162,7 +162,7 @@ pub fn deser_structure_limit_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_already_exists_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_already_exists_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_already_exists_exception::Builder,
 ) -> Result<crate::error::resource_already_exists_exception::Builder, smithy_json::deserialize::Error>
@@ -202,7 +202,7 @@ pub fn deser_structure_resource_already_exists_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_exceptionjson_err(
+pub fn deser_structure_crate_error_validation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::validation_exception::Builder,
 ) -> Result<crate::error::validation_exception::Builder, smithy_json::deserialize::Error> {
@@ -241,7 +241,7 @@ pub fn deser_structure_validation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_create_notification_rule(
+pub fn deser_operation_crate_operation_create_notification_rule(
     input: &[u8],
     mut builder: crate::output::create_notification_rule_output::Builder,
 ) -> Result<crate::output::create_notification_rule_output::Builder, smithy_json::deserialize::Error>
@@ -281,7 +281,7 @@ pub fn deser_operation_create_notification_rule(
     Ok(builder)
 }
 
-pub fn deser_operation_delete_notification_rule(
+pub fn deser_operation_crate_operation_delete_notification_rule(
     input: &[u8],
     mut builder: crate::output::delete_notification_rule_output::Builder,
 ) -> Result<crate::output::delete_notification_rule_output::Builder, smithy_json::deserialize::Error>
@@ -321,7 +321,7 @@ pub fn deser_operation_delete_notification_rule(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_not_found_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_not_found_exception::Builder,
 ) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
@@ -360,7 +360,7 @@ pub fn deser_structure_resource_not_found_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_describe_notification_rule(
+pub fn deser_operation_crate_operation_describe_notification_rule(
     input: &[u8],
     mut builder: crate::output::describe_notification_rule_output::Builder,
 ) -> Result<
@@ -411,7 +411,7 @@ pub fn deser_operation_describe_notification_rule(
                     }
                     "EventTypes" => {
                         builder = builder.set_event_types(
-                            crate::json_deser::deser_list_event_type_batch(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codestarnotifications_event_type_batch(tokens)?
                         );
                     }
                     "LastModifiedTimestamp" => {
@@ -448,11 +448,16 @@ pub fn deser_operation_describe_notification_rule(
                         );
                     }
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tags(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_codestarnotifications_tags(
+                                tokens,
+                            )?,
+                        );
                     }
                     "Targets" => {
-                        builder = builder
-                            .set_targets(crate::json_deser::deser_list_targets_batch(tokens)?);
+                        builder = builder.set_targets(
+                            crate::json_deser::deser_list_com_amazonaws_codestarnotifications_targets_batch(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -472,7 +477,7 @@ pub fn deser_operation_describe_notification_rule(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_next_token_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_next_token_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_next_token_exception::Builder,
 ) -> Result<crate::error::invalid_next_token_exception::Builder, smithy_json::deserialize::Error> {
@@ -511,7 +516,7 @@ pub fn deser_structure_invalid_next_token_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_list_event_types(
+pub fn deser_operation_crate_operation_list_event_types(
     input: &[u8],
     mut builder: crate::output::list_event_types_output::Builder,
 ) -> Result<crate::output::list_event_types_output::Builder, smithy_json::deserialize::Error> {
@@ -527,7 +532,7 @@ pub fn deser_operation_list_event_types(
                 match key.to_unescaped()?.as_ref() {
                     "EventTypes" => {
                         builder = builder.set_event_types(
-                            crate::json_deser::deser_list_event_type_batch(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codestarnotifications_event_type_batch(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -555,7 +560,7 @@ pub fn deser_operation_list_event_types(
     Ok(builder)
 }
 
-pub fn deser_operation_list_notification_rules(
+pub fn deser_operation_crate_operation_list_notification_rules(
     input: &[u8],
     mut builder: crate::output::list_notification_rules_output::Builder,
 ) -> Result<crate::output::list_notification_rules_output::Builder, smithy_json::deserialize::Error>
@@ -579,7 +584,7 @@ pub fn deser_operation_list_notification_rules(
                     }
                     "NotificationRules" => {
                         builder = builder.set_notification_rules(
-                            crate::json_deser::deser_list_notification_rule_batch(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_codestarnotifications_notification_rule_batch(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -600,7 +605,7 @@ pub fn deser_operation_list_notification_rules(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -616,7 +621,11 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tags(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_codestarnotifications_tags(
+                                tokens,
+                            )?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -636,7 +645,7 @@ pub fn deser_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_list_targets(
+pub fn deser_operation_crate_operation_list_targets(
     input: &[u8],
     mut builder: crate::output::list_targets_output::Builder,
 ) -> Result<crate::output::list_targets_output::Builder, smithy_json::deserialize::Error> {
@@ -658,8 +667,9 @@ pub fn deser_operation_list_targets(
                         );
                     }
                     "Targets" => {
-                        builder = builder
-                            .set_targets(crate::json_deser::deser_list_targets_batch(tokens)?);
+                        builder = builder.set_targets(
+                            crate::json_deser::deser_list_com_amazonaws_codestarnotifications_targets_batch(tokens)?
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -679,7 +689,7 @@ pub fn deser_operation_list_targets(
     Ok(builder)
 }
 
-pub fn deser_operation_subscribe(
+pub fn deser_operation_crate_operation_subscribe(
     input: &[u8],
     mut builder: crate::output::subscribe_output::Builder,
 ) -> Result<crate::output::subscribe_output::Builder, smithy_json::deserialize::Error> {
@@ -718,7 +728,7 @@ pub fn deser_operation_subscribe(
     Ok(builder)
 }
 
-pub fn deser_operation_tag_resource(
+pub fn deser_operation_crate_operation_tag_resource(
     input: &[u8],
     mut builder: crate::output::tag_resource_output::Builder,
 ) -> Result<crate::output::tag_resource_output::Builder, smithy_json::deserialize::Error> {
@@ -733,7 +743,11 @@ pub fn deser_operation_tag_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Tags" => {
-                        builder = builder.set_tags(crate::json_deser::deser_map_tags(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_codestarnotifications_tags(
+                                tokens,
+                            )?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -753,7 +767,7 @@ pub fn deser_operation_tag_resource(
     Ok(builder)
 }
 
-pub fn deser_operation_unsubscribe(
+pub fn deser_operation_crate_operation_unsubscribe(
     input: &[u8],
     mut builder: crate::output::unsubscribe_output::Builder,
 ) -> Result<crate::output::unsubscribe_output::Builder, smithy_json::deserialize::Error> {
@@ -801,7 +815,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_event_type_batch<'a, I>(
+pub fn deser_list_com_amazonaws_codestarnotifications_event_type_batch<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::EventTypeSummary>>, smithy_json::deserialize::Error>
 where
@@ -820,7 +834,10 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_event_type_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_event_type_summary(
+                                tokens,
+                            )?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -836,7 +853,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_tags<'a, I>(
+pub fn deser_map_com_amazonaws_codestarnotifications_tags<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -880,7 +897,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_targets_batch<'a, I>(
+pub fn deser_list_com_amazonaws_codestarnotifications_targets_batch<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::TargetSummary>>, smithy_json::deserialize::Error>
 where
@@ -899,7 +916,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_target_summary(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_target_summary(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -915,7 +933,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_notification_rule_batch<'a, I>(
+pub fn deser_list_com_amazonaws_codestarnotifications_notification_rule_batch<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::NotificationRuleSummary>>,
@@ -938,7 +956,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_notification_rule_summary(tokens)?;
+                            crate::json_deser::deser_structure_crate_model_notification_rule_summary(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -953,7 +972,7 @@ where
     }
 }
 
-pub fn deser_structure_event_type_summary<'a, I>(
+pub fn deser_structure_crate_model_event_type_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::EventTypeSummary>, smithy_json::deserialize::Error>
 where
@@ -1025,7 +1044,7 @@ where
     }
 }
 
-pub fn deser_structure_target_summary<'a, I>(
+pub fn deser_structure_crate_model_target_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::TargetSummary>, smithy_json::deserialize::Error>
 where
@@ -1091,7 +1110,7 @@ where
     }
 }
 
-pub fn deser_structure_notification_rule_summary<'a, I>(
+pub fn deser_structure_crate_model_notification_rule_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::NotificationRuleSummary>, smithy_json::deserialize::Error>
 where

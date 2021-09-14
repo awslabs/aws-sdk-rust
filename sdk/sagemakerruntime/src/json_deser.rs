@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_internal_failurejson_err(
+pub fn deser_structure_crate_error_internal_failurejson_err(
     input: &[u8],
     mut builder: crate::error::internal_failure::Builder,
 ) -> Result<crate::error::internal_failure::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_internal_failurejson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_model_errorjson_err(
+pub fn deser_structure_crate_error_model_errorjson_err(
     input: &[u8],
     mut builder: crate::error::model_error::Builder,
 ) -> Result<crate::error::model_error::Builder, smithy_json::deserialize::Error> {
@@ -103,7 +103,7 @@ pub fn deser_structure_model_errorjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_unavailablejson_err(
+pub fn deser_structure_crate_error_service_unavailablejson_err(
     input: &[u8],
     mut builder: crate::error::service_unavailable::Builder,
 ) -> Result<crate::error::service_unavailable::Builder, smithy_json::deserialize::Error> {
@@ -142,7 +142,7 @@ pub fn deser_structure_service_unavailablejson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_validation_errorjson_err(
+pub fn deser_structure_crate_error_validation_errorjson_err(
     input: &[u8],
     mut builder: crate::error::validation_error::Builder,
 ) -> Result<crate::error::validation_error::Builder, smithy_json::deserialize::Error> {
@@ -181,7 +181,7 @@ pub fn deser_structure_validation_errorjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_invoke_endpoint_async(
+pub fn deser_operation_crate_operation_invoke_endpoint_async(
     input: &[u8],
     mut builder: crate::output::invoke_endpoint_async_output::Builder,
 ) -> Result<crate::output::invoke_endpoint_async_output::Builder, smithy_json::deserialize::Error> {

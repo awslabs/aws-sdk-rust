@@ -5,7 +5,7 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
-pub fn deser_structure_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::access_denied_exception::Builder,
 ) -> Result<crate::error::access_denied_exception::Builder, smithy_json::deserialize::Error> {
@@ -44,7 +44,7 @@ pub fn deser_structure_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_aws_service_access_not_enabled_exceptionjson_err(
+pub fn deser_structure_crate_error_aws_service_access_not_enabled_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::aws_service_access_not_enabled_exception::Builder,
 ) -> Result<
@@ -86,7 +86,7 @@ pub fn deser_structure_aws_service_access_not_enabled_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_dependency_access_denied_exceptionjson_err(
+pub fn deser_structure_crate_error_dependency_access_denied_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::dependency_access_denied_exception::Builder,
 ) -> Result<
@@ -128,7 +128,7 @@ pub fn deser_structure_dependency_access_denied_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_no_available_organization_exceptionjson_err(
+pub fn deser_structure_crate_error_no_available_organization_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::no_available_organization_exception::Builder,
 ) -> Result<
@@ -170,7 +170,7 @@ pub fn deser_structure_no_available_organization_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_organization_not_in_all_features_mode_exceptionjson_err(
+pub fn deser_structure_crate_error_organization_not_in_all_features_mode_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::organization_not_in_all_features_mode_exception::Builder,
 ) -> Result<
@@ -212,7 +212,7 @@ pub fn deser_structure_organization_not_in_all_features_mode_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_exceptionjson_err(
+pub fn deser_structure_crate_error_service_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_exception::Builder,
 ) -> Result<crate::error::service_exception::Builder, smithy_json::deserialize::Error> {
@@ -251,7 +251,7 @@ pub fn deser_structure_service_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_templates_not_available_in_region_exceptionjson_err(
+pub fn deser_structure_crate_error_templates_not_available_in_region_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::templates_not_available_in_region_exception::Builder,
 ) -> Result<
@@ -293,7 +293,7 @@ pub fn deser_structure_templates_not_available_in_region_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_too_many_requests_exceptionjson_err(
+pub fn deser_structure_crate_error_too_many_requests_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::too_many_requests_exception::Builder,
 ) -> Result<crate::error::too_many_requests_exception::Builder, smithy_json::deserialize::Error> {
@@ -332,7 +332,7 @@ pub fn deser_structure_too_many_requests_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_illegal_argument_exceptionjson_err(
+pub fn deser_structure_crate_error_illegal_argument_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::illegal_argument_exception::Builder,
 ) -> Result<crate::error::illegal_argument_exception::Builder, smithy_json::deserialize::Error> {
@@ -371,7 +371,7 @@ pub fn deser_structure_illegal_argument_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_no_such_resource_exceptionjson_err(
+pub fn deser_structure_crate_error_no_such_resource_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::no_such_resource_exception::Builder,
 ) -> Result<crate::error::no_such_resource_exception::Builder, smithy_json::deserialize::Error> {
@@ -410,7 +410,7 @@ pub fn deser_structure_no_such_resource_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_service_quota_template_not_in_use_exceptionjson_err(
+pub fn deser_structure_crate_error_service_quota_template_not_in_use_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::service_quota_template_not_in_use_exception::Builder,
 ) -> Result<
@@ -452,7 +452,7 @@ pub fn deser_structure_service_quota_template_not_in_use_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_get_association_for_service_quota_template(
+pub fn deser_operation_crate_operation_get_association_for_service_quota_template(
     input: &[u8],
     mut builder: crate::output::get_association_for_service_quota_template_output::Builder,
 ) -> Result<
@@ -500,7 +500,7 @@ pub fn deser_operation_get_association_for_service_quota_template(
     Ok(builder)
 }
 
-pub fn deser_operation_get_aws_default_service_quota(
+pub fn deser_operation_crate_operation_get_aws_default_service_quota(
     input: &[u8],
     mut builder: crate::output::get_aws_default_service_quota_output::Builder,
 ) -> Result<
@@ -518,8 +518,9 @@ pub fn deser_operation_get_aws_default_service_quota(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Quota" => {
-                        builder = builder
-                            .set_quota(crate::json_deser::deser_structure_service_quota(tokens)?);
+                        builder = builder.set_quota(
+                            crate::json_deser::deser_structure_crate_model_service_quota(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -539,7 +540,7 @@ pub fn deser_operation_get_aws_default_service_quota(
     Ok(builder)
 }
 
-pub fn deser_operation_get_requested_service_quota_change(
+pub fn deser_operation_crate_operation_get_requested_service_quota_change(
     input: &[u8],
     mut builder: crate::output::get_requested_service_quota_change_output::Builder,
 ) -> Result<
@@ -558,9 +559,7 @@ pub fn deser_operation_get_requested_service_quota_change(
                 match key.to_unescaped()?.as_ref() {
                     "RequestedQuota" => {
                         builder = builder.set_requested_quota(
-                            crate::json_deser::deser_structure_requested_service_quota_change(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_requested_service_quota_change(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -581,7 +580,7 @@ pub fn deser_operation_get_requested_service_quota_change(
     Ok(builder)
 }
 
-pub fn deser_operation_get_service_quota(
+pub fn deser_operation_crate_operation_get_service_quota(
     input: &[u8],
     mut builder: crate::output::get_service_quota_output::Builder,
 ) -> Result<crate::output::get_service_quota_output::Builder, smithy_json::deserialize::Error> {
@@ -596,8 +595,9 @@ pub fn deser_operation_get_service_quota(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Quota" => {
-                        builder = builder
-                            .set_quota(crate::json_deser::deser_structure_service_quota(tokens)?);
+                        builder = builder.set_quota(
+                            crate::json_deser::deser_structure_crate_model_service_quota(tokens)?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -617,7 +617,7 @@ pub fn deser_operation_get_service_quota(
     Ok(builder)
 }
 
-pub fn deser_operation_get_service_quota_increase_request_from_template(
+pub fn deser_operation_crate_operation_get_service_quota_increase_request_from_template(
     input: &[u8],
     mut builder: crate::output::get_service_quota_increase_request_from_template_output::Builder,
 ) -> Result<
@@ -636,7 +636,7 @@ pub fn deser_operation_get_service_quota_increase_request_from_template(
                 match key.to_unescaped()?.as_ref() {
                     "ServiceQuotaIncreaseRequestInTemplate" => {
                         builder = builder.set_service_quota_increase_request_in_template(
-                            crate::json_deser::deser_structure_service_quota_increase_request_in_template(tokens)?
+                            crate::json_deser::deser_structure_crate_model_service_quota_increase_request_in_template(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -657,7 +657,7 @@ pub fn deser_operation_get_service_quota_increase_request_from_template(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_pagination_token_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_pagination_token_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_pagination_token_exception::Builder,
 ) -> Result<
@@ -699,7 +699,7 @@ pub fn deser_structure_invalid_pagination_token_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_list_aws_default_service_quotas(
+pub fn deser_operation_crate_operation_list_aws_default_service_quotas(
     input: &[u8],
     mut builder: crate::output::list_aws_default_service_quotas_output::Builder,
 ) -> Result<
@@ -725,7 +725,7 @@ pub fn deser_operation_list_aws_default_service_quotas(
                     }
                     "Quotas" => {
                         builder = builder.set_quotas(
-                            crate::json_deser::deser_list_service_quota_list_definition(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_servicequotas_service_quota_list_definition(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -746,7 +746,7 @@ pub fn deser_operation_list_aws_default_service_quotas(
     Ok(builder)
 }
 
-pub fn deser_operation_list_requested_service_quota_change_history(
+pub fn deser_operation_crate_operation_list_requested_service_quota_change_history(
     input: &[u8],
     mut builder: crate::output::list_requested_service_quota_change_history_output::Builder,
 ) -> Result<
@@ -772,7 +772,7 @@ pub fn deser_operation_list_requested_service_quota_change_history(
                     }
                     "RequestedQuotas" => {
                         builder = builder.set_requested_quotas(
-                            crate::json_deser::deser_list_requested_service_quota_change_history_list_definition(tokens)?
+                            crate::json_deser::deser_list_com_amazonaws_servicequotas_requested_service_quota_change_history_list_definition(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -793,7 +793,7 @@ pub fn deser_operation_list_requested_service_quota_change_history(
     Ok(builder)
 }
 
-pub fn deser_operation_list_requested_service_quota_change_history_by_quota(
+pub fn deser_operation_crate_operation_list_requested_service_quota_change_history_by_quota(
     input: &[u8],
     mut builder: crate::output::list_requested_service_quota_change_history_by_quota_output::Builder,
 ) -> Result<
@@ -819,7 +819,7 @@ pub fn deser_operation_list_requested_service_quota_change_history_by_quota(
                     }
                     "RequestedQuotas" => {
                         builder = builder.set_requested_quotas(
-                            crate::json_deser::deser_list_requested_service_quota_change_history_list_definition(tokens)?
+                            crate::json_deser::deser_list_com_amazonaws_servicequotas_requested_service_quota_change_history_list_definition(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -840,7 +840,7 @@ pub fn deser_operation_list_requested_service_quota_change_history_by_quota(
     Ok(builder)
 }
 
-pub fn deser_operation_list_service_quota_increase_requests_in_template(
+pub fn deser_operation_crate_operation_list_service_quota_increase_requests_in_template(
     input: &[u8],
     mut builder: crate::output::list_service_quota_increase_requests_in_template_output::Builder,
 ) -> Result<
@@ -859,7 +859,7 @@ pub fn deser_operation_list_service_quota_increase_requests_in_template(
                 match key.to_unescaped()?.as_ref() {
                     "ServiceQuotaIncreaseRequestInTemplateList" => {
                         builder = builder.set_service_quota_increase_request_in_template_list(
-                            crate::json_deser::deser_list_service_quota_increase_request_in_template_list(tokens)?
+                            crate::json_deser::deser_list_com_amazonaws_servicequotas_service_quota_increase_request_in_template_list(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -887,7 +887,7 @@ pub fn deser_operation_list_service_quota_increase_requests_in_template(
     Ok(builder)
 }
 
-pub fn deser_operation_list_service_quotas(
+pub fn deser_operation_crate_operation_list_service_quotas(
     input: &[u8],
     mut builder: crate::output::list_service_quotas_output::Builder,
 ) -> Result<crate::output::list_service_quotas_output::Builder, smithy_json::deserialize::Error> {
@@ -910,7 +910,7 @@ pub fn deser_operation_list_service_quotas(
                     }
                     "Quotas" => {
                         builder = builder.set_quotas(
-                            crate::json_deser::deser_list_service_quota_list_definition(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_servicequotas_service_quota_list_definition(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -931,7 +931,7 @@ pub fn deser_operation_list_service_quotas(
     Ok(builder)
 }
 
-pub fn deser_operation_list_services(
+pub fn deser_operation_crate_operation_list_services(
     input: &[u8],
     mut builder: crate::output::list_services_output::Builder,
 ) -> Result<crate::output::list_services_output::Builder, smithy_json::deserialize::Error> {
@@ -954,7 +954,7 @@ pub fn deser_operation_list_services(
                     }
                     "Services" => {
                         builder = builder.set_services(
-                            crate::json_deser::deser_list_service_info_list_definition(tokens)?,
+                            crate::json_deser::deser_list_com_amazonaws_servicequotas_service_info_list_definition(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -975,7 +975,7 @@ pub fn deser_operation_list_services(
     Ok(builder)
 }
 
-pub fn deser_operation_list_tags_for_resource(
+pub fn deser_operation_crate_operation_list_tags_for_resource(
     input: &[u8],
     mut builder: crate::output::list_tags_for_resource_output::Builder,
 ) -> Result<crate::output::list_tags_for_resource_output::Builder, smithy_json::deserialize::Error>
@@ -991,8 +991,11 @@ pub fn deser_operation_list_tags_for_resource(
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Tags" => {
-                        builder =
-                            builder.set_tags(crate::json_deser::deser_list_output_tags(tokens)?);
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_list_com_amazonaws_servicequotas_output_tags(
+                                tokens,
+                            )?,
+                        );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -1012,7 +1015,7 @@ pub fn deser_operation_list_tags_for_resource(
     Ok(builder)
 }
 
-pub fn deser_structure_quota_exceeded_exceptionjson_err(
+pub fn deser_structure_crate_error_quota_exceeded_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::quota_exceeded_exception::Builder,
 ) -> Result<crate::error::quota_exceeded_exception::Builder, smithy_json::deserialize::Error> {
@@ -1051,7 +1054,7 @@ pub fn deser_structure_quota_exceeded_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_put_service_quota_increase_request_into_template(
+pub fn deser_operation_crate_operation_put_service_quota_increase_request_into_template(
     input: &[u8],
     mut builder: crate::output::put_service_quota_increase_request_into_template_output::Builder,
 ) -> Result<
@@ -1070,7 +1073,7 @@ pub fn deser_operation_put_service_quota_increase_request_into_template(
                 match key.to_unescaped()?.as_ref() {
                     "ServiceQuotaIncreaseRequestInTemplate" => {
                         builder = builder.set_service_quota_increase_request_in_template(
-                            crate::json_deser::deser_structure_service_quota_increase_request_in_template(tokens)?
+                            crate::json_deser::deser_structure_crate_model_service_quota_increase_request_in_template(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1091,7 +1094,7 @@ pub fn deser_operation_put_service_quota_increase_request_into_template(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_resource_state_exceptionjson_err(
+pub fn deser_structure_crate_error_invalid_resource_state_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::invalid_resource_state_exception::Builder,
 ) -> Result<crate::error::invalid_resource_state_exception::Builder, smithy_json::deserialize::Error>
@@ -1131,7 +1134,7 @@ pub fn deser_structure_invalid_resource_state_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_resource_already_exists_exceptionjson_err(
+pub fn deser_structure_crate_error_resource_already_exists_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::resource_already_exists_exception::Builder,
 ) -> Result<crate::error::resource_already_exists_exception::Builder, smithy_json::deserialize::Error>
@@ -1171,7 +1174,7 @@ pub fn deser_structure_resource_already_exists_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_operation_request_service_quota_increase(
+pub fn deser_operation_crate_operation_request_service_quota_increase(
     input: &[u8],
     mut builder: crate::output::request_service_quota_increase_output::Builder,
 ) -> Result<
@@ -1190,9 +1193,7 @@ pub fn deser_operation_request_service_quota_increase(
                 match key.to_unescaped()?.as_ref() {
                     "RequestedQuota" => {
                         builder = builder.set_requested_quota(
-                            crate::json_deser::deser_structure_requested_service_quota_change(
-                                tokens,
-                            )?,
+                            crate::json_deser::deser_structure_crate_model_requested_service_quota_change(tokens)?
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1213,7 +1214,7 @@ pub fn deser_operation_request_service_quota_increase(
     Ok(builder)
 }
 
-pub fn deser_structure_tag_policy_violation_exceptionjson_err(
+pub fn deser_structure_crate_error_tag_policy_violation_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::tag_policy_violation_exception::Builder,
 ) -> Result<crate::error::tag_policy_violation_exception::Builder, smithy_json::deserialize::Error>
@@ -1253,7 +1254,7 @@ pub fn deser_structure_tag_policy_violation_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_too_many_tags_exceptionjson_err(
+pub fn deser_structure_crate_error_too_many_tags_exceptionjson_err(
     input: &[u8],
     mut builder: crate::error::too_many_tags_exception::Builder,
 ) -> Result<crate::error::too_many_tags_exception::Builder, smithy_json::deserialize::Error> {
@@ -1300,7 +1301,7 @@ pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub fn deser_structure_service_quota<'a, I>(
+pub fn deser_structure_crate_model_service_quota<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ServiceQuota>, smithy_json::deserialize::Error>
 where
@@ -1396,17 +1397,23 @@ where
                             }
                             "UsageMetric" => {
                                 builder = builder.set_usage_metric(
-                                    crate::json_deser::deser_structure_metric_info(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_metric_info(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "Period" => {
                                 builder = builder.set_period(
-                                    crate::json_deser::deser_structure_quota_period(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_quota_period(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "ErrorReason" => {
                                 builder = builder.set_error_reason(
-                                    crate::json_deser::deser_structure_error_reason(tokens)?,
+                                    crate::json_deser::deser_structure_crate_model_error_reason(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1427,7 +1434,7 @@ where
     }
 }
 
-pub fn deser_structure_requested_service_quota_change<'a, I>(
+pub fn deser_structure_crate_model_requested_service_quota_change<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::RequestedServiceQuotaChange>, smithy_json::deserialize::Error>
 where
@@ -1587,7 +1594,7 @@ where
     }
 }
 
-pub fn deser_structure_service_quota_increase_request_in_template<'a, I>(
+pub fn deser_structure_crate_model_service_quota_increase_request_in_template<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
@@ -1696,7 +1703,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_service_quota_list_definition<'a, I>(
+pub fn deser_list_com_amazonaws_servicequotas_service_quota_list_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ServiceQuota>>, smithy_json::deserialize::Error>
 where
@@ -1715,7 +1722,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_service_quota(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_service_quota(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1731,7 +1739,10 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_requested_service_quota_change_history_list_definition<'a, I>(
+pub fn deser_list_com_amazonaws_servicequotas_requested_service_quota_change_history_list_definition<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
@@ -1754,9 +1765,8 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_requested_service_quota_change(
-                                tokens,
-                            )?;
+                            crate::json_deser::deser_structure_crate_model_requested_service_quota_change(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1772,7 +1782,10 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_service_quota_increase_request_in_template_list<'a, I>(
+pub fn deser_list_com_amazonaws_servicequotas_service_quota_increase_request_in_template_list<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::vec::Vec<crate::model::ServiceQuotaIncreaseRequestInTemplate>>,
@@ -1795,7 +1808,7 @@ where
                     }
                     _ => {
                         let value =
-                            crate::json_deser::deser_structure_service_quota_increase_request_in_template(tokens)?
+                            crate::json_deser::deser_structure_crate_model_service_quota_increase_request_in_template(tokens)?
                         ;
                         if let Some(value) = value {
                             items.push(value);
@@ -1812,7 +1825,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_service_info_list_definition<'a, I>(
+pub fn deser_list_com_amazonaws_servicequotas_service_info_list_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ServiceInfo>>, smithy_json::deserialize::Error>
 where
@@ -1831,7 +1844,8 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_service_info(tokens)?;
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_service_info(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1847,7 +1861,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_output_tags<'a, I>(
+pub fn deser_list_com_amazonaws_servicequotas_output_tags<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::Tag>>, smithy_json::deserialize::Error>
 where
@@ -1866,7 +1880,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::json_deser::deser_structure_tag(tokens)?;
+                        let value = crate::json_deser::deser_structure_crate_model_tag(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1881,7 +1895,7 @@ where
     }
 }
 
-pub fn deser_structure_metric_info<'a, I>(
+pub fn deser_structure_crate_model_metric_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::MetricInfo>, smithy_json::deserialize::Error>
 where
@@ -1919,9 +1933,7 @@ where
                             }
                             "MetricDimensions" => {
                                 builder = builder.set_metric_dimensions(
-                                    crate::json_deser::deser_map_metric_dimensions_map_definition(
-                                        tokens,
-                                    )?,
+                                    crate::json_deser::deser_map_com_amazonaws_servicequotas_metric_dimensions_map_definition(tokens)?
                                 );
                             }
                             "MetricStatisticRecommendation" => {
@@ -1951,7 +1963,7 @@ where
     }
 }
 
-pub fn deser_structure_quota_period<'a, I>(
+pub fn deser_structure_crate_model_quota_period<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::QuotaPeriod>, smithy_json::deserialize::Error>
 where
@@ -2007,7 +2019,7 @@ where
     }
 }
 
-pub fn deser_structure_error_reason<'a, I>(
+pub fn deser_structure_crate_model_error_reason<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ErrorReason>, smithy_json::deserialize::Error>
 where
@@ -2064,7 +2076,7 @@ where
     }
 }
 
-pub fn deser_structure_service_info<'a, I>(
+pub fn deser_structure_crate_model_service_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ServiceInfo>, smithy_json::deserialize::Error>
 where
@@ -2118,7 +2130,7 @@ where
     }
 }
 
-pub fn deser_structure_tag<'a, I>(
+pub fn deser_structure_crate_model_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::Tag>, smithy_json::deserialize::Error>
 where
@@ -2173,7 +2185,7 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_map_metric_dimensions_map_definition<'a, I>(
+pub fn deser_map_com_amazonaws_servicequotas_metric_dimensions_map_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<std::collections::HashMap<std::string::String, std::string::String>>,
