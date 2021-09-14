@@ -188,6 +188,7 @@ These services have not yet been manually tested by the SDK team and may not hav
 - [x] Amazon Neptune
 - [x] Amazon Network-Firewall
 - [x] Amazon Networkmanager
+- [x] Amazon Opensearch
 - [x] Amazon Ops Works
 - [x] Amazon Opsworkscm
 - [x] Amazon Organizations
