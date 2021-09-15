@@ -147,7 +147,8 @@ impl Instant {
     /// This is fallible since `Instant` holds more precision than an `i64`, and will
     /// return a `ConversionError` for `Instant` values that can't be converted.
     pub fn to_epoch_millis(&self) -> Result<i64, ConversionError> {
-        let subsec_millis = i64::from(self.subsecond_nanos).div_floor(&(NANOS_PER_MILLI as i64));
+        let subsec_millis =
+            Integer::div_floor(&i64::from(self.subsecond_nanos), &(NANOS_PER_MILLI as i64));
         if self.seconds < 0 {
             self.seconds
                 .checked_add(1)
