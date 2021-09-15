@@ -1,6 +1,7 @@
 on: 
   push:
     branches: [main]
+  pull_request:  
     
 env:
   rust_version: 1.51.0
@@ -21,7 +22,8 @@ jobs:
         env: 
           RUSTDOCFLAGS: "--enable-index-page -Zunstable-options"
         working-directory: sdk
-      - name: Push the docs 
+      - name: Push the docs
+        if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           ls
           git checkout -B gh-pages
