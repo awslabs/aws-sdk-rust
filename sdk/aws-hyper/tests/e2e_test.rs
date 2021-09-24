@@ -136,8 +136,7 @@ async fn e2e_test() {
     let resp = resp.expect("successful operation");
     assert_eq!(resp, "Hello!");
 
-    assert_eq!(conn.requests().len(), 1);
-    conn.requests()[0].assert_matches(vec![]);
+    conn.assert_requests_match(&[]);
 }
 
 #[tokio::test]

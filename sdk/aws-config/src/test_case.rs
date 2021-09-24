@@ -6,16 +6,18 @@
 use std::collections::HashMap;
 use std::error::Error;
 use std::path::{Path, PathBuf};
+
 use std::time::{Duration, UNIX_EPOCH};
 
 use crate::provider_config::ProviderConfig;
 use aws_types::credentials::{self, ProvideCredentials};
 use aws_types::os_shim_internal::{Env, Fs};
 use serde::Deserialize;
-use smithy_async::rt::sleep::{AsyncSleep, Sleep};
+use smithy_async::rt::sleep::{AsyncSleep, Sleep, TokioSleep};
 
 use smithy_client::dvr::{NetworkTraffic, RecordingConnection, ReplayingConnection};
 use smithy_client::erase::DynConnector;
+
 use std::future::Future;
 
 /// Test case credentials
@@ -114,22 +116,42 @@ impl TestEnvironment {
         })
     }
 
-    pub async fn provider_config(
-        &self,
-    ) -> (RecordingConnection<ReplayingConnection>, ProviderConfig) {
-        let connector = RecordingConnection::new(ReplayingConnection::new(
-            self.network_traffic.events().clone(),
-        ));
+    pub async fn provider_config(&self) -> (ReplayingConnection, ProviderConfig) {
+        let connector = ReplayingConnection::new(self.network_traffic.events().clone());
         (
             connector.clone(),
             ProviderConfig::empty()
                 .with_fs(self.fs.clone())
                 .with_env(self.env.clone())
                 .with_connector(DynConnector::new(connector.clone()))
-                .with_sleep(InstantSleep)
+                .with_sleep(TokioSleep::new())
                 .load_default_region()
                 .await,
         )
+    }
+
+    #[allow(unused)]
+    /// Record a test case from live (remote) HTTPS traffic
+    ///
+    /// The `default_connector()` from the crate will be used
+    pub async fn execute_from_live_traffic<F, P>(&self, make_provider: impl Fn(ProviderConfig) -> F)
+    where
+        F: Future<Output = P>,
+        P: ProvideCredentials,
+    {
+        // swap out the connector generated from `http-traffic.json` for a real connector:
+        let live_connector = crate::connector::default_connector().unwrap();
+        let live_connector = RecordingConnection::new(live_connector);
+        let (_test_connector, config) = self.provider_config().await;
+        let config = config.with_connector(DynConnector::new(live_connector.clone()));
+        let provider = make_provider(config).await;
+        let result = provider.provide_credentials().await;
+        std::fs::write(
+            self.base_dir.join("http-traffic-recorded.json"),
+            serde_json::to_string(&live_connector.network_traffic()).unwrap(),
+        )
+        .unwrap();
+        self.check_results(&result);
     }
 
     #[allow(dead_code)]
@@ -143,11 +165,13 @@ impl TestEnvironment {
         P: ProvideCredentials,
     {
         let (connector, config) = self.provider_config().await;
+        let recording_connector = RecordingConnection::new(connector);
+        let config = config.with_connector(DynConnector::new(recording_connector.clone()));
         let provider = make_provider(config).await;
         let result = provider.provide_credentials().await;
         std::fs::write(
             self.base_dir.join("http-traffic-recorded.json"),
-            serde_json::to_string(&connector.network_traffic()).unwrap(),
+            serde_json::to_string(&recording_connector.network_traffic()).unwrap(),
         )
         .unwrap();
         self.check_results(&result);
@@ -163,19 +187,16 @@ impl TestEnvironment {
         F: Future<Output = P>,
         P: ProvideCredentials,
     {
-        let connector = ReplayingConnection::new(self.network_traffic.events().clone());
-        let conf = ProviderConfig::empty()
-            .with_fs(self.fs.clone())
-            .with_env(self.env.clone())
-            .with_connector(DynConnector::new(connector.clone()))
-            .load_default_region()
-            .await;
+        let (connector, conf) = self.provider_config().await;
         let provider = make_provider(conf).await;
         let result = provider.provide_credentials().await;
         self.log_info();
         self.check_results(&result);
         // todo: validate bodies
-        match connector.validate(&["CONTENT-TYPE"], |_expected, _actual| Ok(())) {
+        match connector.validate(
+            &["CONTENT-TYPE", "x-aws-ec2-metadata-token"],
+            |_expected, _actual| Ok(()),
+        ) {
             Ok(()) => {}
             Err(e) => panic!("{}", e),
         }

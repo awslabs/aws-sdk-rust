@@ -103,7 +103,7 @@ impl SdkBody {
     pub fn empty() -> Self {
         Self {
             inner: Inner::Once(None),
-            rebuild: None,
+            rebuild: Some(Arc::new(|| Inner::Once(None))),
         }
     }
 

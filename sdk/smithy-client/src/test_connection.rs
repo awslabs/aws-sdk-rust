@@ -106,7 +106,7 @@ pub struct ValidateRequest {
 }
 
 impl ValidateRequest {
-    pub fn assert_matches(&self, ignore_headers: Vec<HeaderName>) {
+    pub fn assert_matches(&self, ignore_headers: &[HeaderName]) {
         let (actual, expected) = (&self.actual, &self.expected);
         for (name, value) in expected.headers() {
             if !ignore_headers.contains(name) {
@@ -191,6 +191,19 @@ impl<B> TestConnection<B> {
 
     pub fn requests(&self) -> impl Deref<Target = Vec<ValidateRequest>> + '_ {
         self.requests.lock().unwrap()
+    }
+
+    pub fn assert_requests_match(&self, ignore_headers: &[HeaderName]) {
+        for req in self.requests().iter() {
+            req.assert_matches(ignore_headers)
+        }
+        let remaining_requests = self.data.lock().unwrap().len();
+        let actual_requests = self.requests().len();
+        assert_eq!(
+            remaining_requests, 0,
+            "Expected {} additional requests ({} were made)",
+            remaining_requests, actual_requests
+        );
     }
 }
 

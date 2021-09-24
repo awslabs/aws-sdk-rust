@@ -1,0 +1,64 @@
+{
+  "events": [
+    {
+      "connection_id": 0,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "http://169.254.169.254/latest/api/token",
+            "headers": {
+              "user-agent": [
+                "aws-sdk-rust/0.1.0 os/macos lang/rust/1.52.1"
+              ],
+              "x-amz-user-agent": [
+                "aws-sdk-rust/0.1.0 api/imds/0.1.0 os/macos lang/rust/1.52.1"
+              ],
+              "x-aws-ec2-metadata-token-ttl-seconds": [
+                "21600"
+              ]
+            },
+            "method": "PUT"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 403,
+              "version": "HTTP/1.1",
+              "headers": {
+                "content-type": [
+                  "text/xml"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    }
+  ],
+  "docs": "failed loading imds credentials. When attempting to retrieve an initial token, IMDS replies with 403, indicating the IMDS is disabled",
+  "version": "V0"
+}

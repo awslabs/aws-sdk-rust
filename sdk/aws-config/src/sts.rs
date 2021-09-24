@@ -3,14 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-pub mod util {
+//! Credential provider augmentation through the AWS Security Token Service (STS).
+
+mod assume_role;
+pub use assume_role::{AssumeRoleProvider, AssumeRoleProviderBuilder};
+
+pub(crate) mod util {
     use aws_sdk_sts::model::Credentials as StsCredentials;
     use aws_types::credentials::{self, CredentialsError};
     use aws_types::Credentials as AwsCredentials;
     use std::time::{SystemTime, UNIX_EPOCH};
 
     /// Convert STS credentials to aws_auth::Credentials
-    pub fn into_credentials(
+    pub(crate) fn into_credentials(
         sts_credentials: Option<StsCredentials>,
         provider_name: &'static str,
     ) -> credentials::Result {
@@ -42,7 +47,7 @@ pub mod util {
     /// STS Assume Role providers MUST assign a name to their generated session. When a user does not
     /// provide a name for the session, the provider will choose a name composed of a base + a timestamp,
     /// eg. `profile-file-provider-123456789`
-    pub fn default_session_name(base: &str) -> String {
+    pub(crate) fn default_session_name(base: &str) -> String {
         let now = SystemTime::now()
             .duration_since(UNIX_EPOCH)
             .expect("post epoch");

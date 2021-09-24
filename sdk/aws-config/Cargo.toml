@@ -8,13 +8,14 @@ exclude = ["test-data/*"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [features]
 default-provider = ["profile", "imds", "meta", "sts", "environment"]
-profile = ["sts", "web-identity-token", "meta", "environment"]
-# note: IMDS currently unsupported
-imds = []
+profile = ["sts", "web-identity-token", "meta", "environment", "imds"]
 meta = ["tokio/sync"]
+imds = ["profile", "smithy-http", "smithy-types", "smithy-http-tower", "smithy-json", "tower", "aws-http", "meta"]
 environment = ["meta"]
 sts = ["aws-sdk-sts", "aws-hyper"]
-web-identity-token = ["sts"]
+web-identity-token = ["sts", "profile"]
+
+# SSO is not supported
 sso = []
 
 rustls = ["smithy-client/rustls"]
@@ -33,6 +34,17 @@ aws-sdk-sts = { path = "../sts", optional = true }
 
 # TODO: remove when middleware stacks are moved inside of clients directly
 aws-hyper = { path = "../aws-hyper", optional = true }
+
+# imds
+smithy-http = { path = "../smithy-http", optional = true }
+smithy-types = { path = "../smithy-types", optional = true }
+smithy-http-tower = { path = "../smithy-http-tower", optional = true }
+tower = { version = "0.4.8", optional = true }
+aws-http = { path = "../aws-http", optional = true }
+bytes = "1.1.0"
+http = "0.2.4"
+smithy-json = { path = "../smithy-json", optional = true }
+
 
 [dev-dependencies]
 futures-util = "0.3.16"

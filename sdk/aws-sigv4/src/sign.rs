@@ -55,3 +55,31 @@ pub fn generate_signing_key(
     let key = hmac::Key::new(hmac::HMAC_SHA256, tag.as_ref());
     hmac::sign(&key, "aws4_request".as_bytes())
 }
+
+#[cfg(test)]
+mod tests {
+    use super::{calculate_signature, generate_signing_key};
+    use crate::date_fmt::parse_date_time;
+    use crate::http_request::test::test_canonical_request;
+    use crate::sign::sha256_hex_string;
+
+    #[test]
+    fn test_signature_calculation() {
+        let secret = "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY";
+        let creq = test_canonical_request("iam");
+        let date = parse_date_time("20150830T123600Z").unwrap();
+
+        let derived_key = generate_signing_key(secret, date.date(), "us-east-1", "iam");
+        let signature = calculate_signature(derived_key, creq.as_bytes());
+
+        let expected = "5d672d79c15b13162d9279b0855cfba6789a8edb4c82c400e06b5924a6f2b5d7";
+        assert_eq!(expected, &signature);
+    }
+
+    #[test]
+    fn sign_payload_empty_string() {
+        let expected = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
+        let actual = sha256_hex_string(&[]);
+        assert_eq!(expected, actual);
+    }
+}

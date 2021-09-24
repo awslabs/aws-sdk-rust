@@ -1,5 +1,25 @@
-vNext (Month Day, Year)
-=======================
+v0.0.19-alpha (September 24th, 2021)
+====================================
+
+**New This Week**
+
+- :tada: IMDS support in the default credential provider chain (aws-sdk-rust#97)
+- :tada: Add `sts::AssumeRoleProvider` to `aws-config`. This enables customers to invoke STS directly,
+  instead of using it via `~/.aws/config`. (smithy-rs#703, aws-sdk-rust#3)
+- Add IMDS client to `aws-config` (smithy-rs#701)
+- Add IMDS credential provider to `aws-config` (smithy-rs#709)
+- Add IMDS region provider to `aws-config` (smithy-rs#715, aws-sdk-rust#97)
+- Update event stream `Receiver`s to be `Send` (aws-sdk-rust#224)
+- Add query param signing to the `aws-sigv4` crate (smithy-rs#707)
+- :bug: Update event stream `Receiver`s to be `Send` (smithy-rs#702, #aws-sdk-rust#224)
+- :bug: Fix panic when signing non-ASCII header values (smithy-rs#708, aws-sdk-rust#226)
+
+**Contributions**
+
+Thank you for your contributions! :heart:
+
+- @jonhoo (smithy-rs#703)
+
 
 v0.0.18-alpha (September 14th, 2021)
 ===================================

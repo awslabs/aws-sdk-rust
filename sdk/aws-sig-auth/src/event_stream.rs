@@ -38,15 +38,15 @@ impl SigV4Signer {
             .get::<SystemTime>()
             .copied()
             .unwrap_or_else(SystemTime::now);
-        SigningParams {
-            access_key: credentials.access_key_id(),
-            secret_key: credentials.secret_access_key(),
-            security_token: credentials.session_token(),
-            region: region.as_ref(),
-            service_name: signing_service.as_ref(),
-            date_time: time.into(),
-            settings: (),
-        }
+        let mut builder = SigningParams::builder()
+            .access_key(credentials.access_key_id())
+            .secret_key(credentials.secret_access_key())
+            .region(region.as_ref())
+            .service_name(signing_service.as_ref())
+            .date_time(time.into())
+            .settings(());
+        builder.set_security_token(credentials.session_token());
+        builder.build().unwrap()
     }
 }
 

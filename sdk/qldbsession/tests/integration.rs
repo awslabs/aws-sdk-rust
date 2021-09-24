@@ -66,8 +66,5 @@ async fn signv4_use_correct_service_name() {
 
     let _ = client.call(op).await.expect("request should succeed");
 
-    assert_eq!(conn.requests().len(), 1);
-    for validate_request in conn.requests().iter() {
-        validate_request.assert_matches(vec![]);
-    }
+    conn.assert_requests_match(&[]);
 }

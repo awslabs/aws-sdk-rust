@@ -42,9 +42,6 @@ async fn test_signer() -> Result<(), aws_sdk_s3::Error> {
     op.properties_mut().insert(AwsUserAgent::for_tests());
 
     client.call(op).await.expect_err("empty response");
-    for req in conn.requests().iter() {
-        req.assert_matches(vec![]);
-    }
-    assert_eq!(conn.requests().len(), 1);
+    conn.assert_requests_match(&[]);
     Ok(())
 }

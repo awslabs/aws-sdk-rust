@@ -263,7 +263,7 @@ mod tests {
         let mut fs = HashMap::new();
         fs.insert(
             "/user/name/.aws/config".to_string(),
-            "[default]\nregion = us-east-1".into(),
+            "[default]\nregion = us-east-1",
         );
 
         let fs = Fs::from_map(fs);

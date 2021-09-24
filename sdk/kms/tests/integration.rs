@@ -48,9 +48,7 @@ async fn generate_random_cn() {
         .expect("success");
 
     assert_eq!(conn.requests().len(), 1);
-    for validate_request in conn.requests().iter() {
-        validate_request.assert_matches(vec![]);
-    }
+    conn.assert_requests_match(&[]);
 }
 
 #[tokio::test]
@@ -101,10 +99,7 @@ async fn generate_random() {
             .sum::<u32>(),
         8562
     );
-    assert_eq!(conn.requests().len(), 1);
-    for validate_request in conn.requests().iter() {
-        validate_request.assert_matches(vec![]);
-    }
+    conn.assert_requests_match(&[]);
 }
 
 #[tokio::test]
@@ -192,8 +187,5 @@ async fn generate_random_keystore_not_found() {
         inner.request_id(),
         Some("bfe81a0a-9a08-4e71-9910-cdb5ab6ea3b6")
     );
-    assert_eq!(conn.requests().len(), 1);
-    for validate_request in conn.requests().iter() {
-        validate_request.assert_matches(vec![AUTHORIZATION]);
-    }
+    conn.assert_requests_match(&[AUTHORIZATION]);
 }

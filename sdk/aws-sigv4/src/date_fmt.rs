@@ -11,12 +11,12 @@ const DATE_TIME_FORMAT: &str = "%Y%m%dT%H%M%SZ";
 const DATE_FORMAT: &str = "%Y%m%d";
 
 /// Formats a chrono `Date<Utc>` in `YYYYMMDD` format.
-pub fn format_date(date: &Date<Utc>) -> String {
+pub(crate) fn format_date(date: &Date<Utc>) -> String {
     date.format(DATE_FORMAT).to_string()
 }
 
 /// Parses `YYYYMMDD` formatted dates into a chrono `Date<Utc>`.
-pub fn parse_date(date_str: &str) -> Result<Date<Utc>, ParseError> {
+pub(crate) fn parse_date(date_str: &str) -> Result<Date<Utc>, ParseError> {
     Ok(Date::<Utc>::from_utc(
         NaiveDate::parse_from_str(date_str, "%Y%m%d")?,
         Utc,
@@ -24,12 +24,12 @@ pub fn parse_date(date_str: &str) -> Result<Date<Utc>, ParseError> {
 }
 
 /// Formats a chrono `DateTime<Utc>` in `YYYYMMDD'T'HHMMSS'Z'` format.
-pub fn format_date_time(date_time: &DateTime<Utc>) -> String {
+pub(crate) fn format_date_time(date_time: &DateTime<Utc>) -> String {
     date_time.format(DATE_TIME_FORMAT).to_string()
 }
 
 /// Parses `YYYYMMDD'T'HHMMSS'Z'` formatted dates into a chrono `DateTime<Utc>`.
-pub fn parse_date_time(date_time_str: &str) -> Result<DateTime<Utc>, ParseError> {
+pub(crate) fn parse_date_time(date_time_str: &str) -> Result<DateTime<Utc>, ParseError> {
     Ok(DateTime::<Utc>::from_utc(
         NaiveDateTime::parse_from_str(date_time_str, DATE_TIME_FORMAT)?,
         Utc,

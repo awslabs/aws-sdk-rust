@@ -322,7 +322,7 @@ mod test {
             (ENV_VAR_ROLE_ARN, "arn:aws:iam::123456789123:role/test-role"),
             (ENV_VAR_SESSION_NAME, "test-session"),
         ]);
-        let fs = Fs::from_map(HashMap::new());
+        let fs = Fs::from_raw_map(HashMap::new());
         let provider = Builder::default()
             .configure(
                 &ProviderConfig::empty()

@@ -1,0 +1,7 @@
+{
+  "name": "imds-token-fail",
+  "docs": "attempts to acquire an IMDS token, but the instance doesn't have a role configured",
+  "result": {
+    "ErrorContains": "required configuration was not set"
+  }
+}

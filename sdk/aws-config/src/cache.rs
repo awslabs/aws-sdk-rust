@@ -3,31 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use aws_types::credentials::CredentialsError;
-use aws_types::{credentials, Credentials};
+//! Expiry-aware cache
+//!
+//! [`ExpiringCache`] implements two important features:
+//! 1. Respect expiry of contents
+//! 2. Deduplicate load requests to prevent thundering herds when no value is present.
+
 use std::future::Future;
+use std::marker::PhantomData;
 use std::sync::Arc;
 use std::time::{Duration, SystemTime};
 use tokio::sync::{OnceCell, RwLock};
 
-#[derive(Clone, Debug)]
-pub(super) struct Cache {
-    /// Amount of time before the actual credential expiration time
-    /// where credentials are considered expired.
+#[derive(Debug)]
+pub(crate) struct ExpiringCache<T, E> {
+    /// Amount of time before the actual expiration time
+    /// when the value is considered expired.
     buffer_time: Duration,
-    value: Arc<RwLock<OnceCell<(Credentials, SystemTime)>>>,
+    value: Arc<RwLock<OnceCell<(T, SystemTime)>>>,
+    _phantom: PhantomData<E>,
 }
 
-impl Cache {
-    pub fn new(buffer_time: Duration) -> Cache {
-        Cache {
+impl<T, E> Clone for ExpiringCache<T, E> {
+    fn clone(&self) -> Self {
+        Self {
+            buffer_time: self.buffer_time,
+            value: self.value.clone(),
+            _phantom: Default::default(),
+        }
+    }
+}
+
+impl<T, E> ExpiringCache<T, E>
+where
+    T: Clone,
+{
+    pub fn new(buffer_time: Duration) -> Self {
+        ExpiringCache {
             buffer_time,
             value: Arc::new(RwLock::new(OnceCell::new())),
+            _phantom: Default::default(),
         }
     }
 
     #[cfg(test)]
-    async fn get(&self) -> Option<Credentials> {
+    async fn get(&self) -> Option<T>
+    where
+        T: Clone,
+    {
         self.value
             .read()
             .await
@@ -36,39 +59,37 @@ impl Cache {
             .map(|(creds, _expiry)| creds)
     }
 
-    /// Attempts to refresh the cached credentials with the given async future.
+    /// Attempts to refresh the cached value with the given future.
     /// If multiple threads attempt to refresh at the same time, one of them will win,
     /// and the others will await that thread's result rather than multiple refreshes occurring.
-    /// The function given to acquire a credentials future, `f`, will not be called
-    /// if another thread is chosen to load the credentials.
-    pub async fn get_or_load<F, Fut>(&self, f: F) -> credentials::Result
+    /// The function given to acquire a value future, `f`, will not be called
+    /// if another thread is chosen to load the value.
+    pub async fn get_or_load<F, Fut>(&self, f: F) -> Result<T, E>
     where
         F: FnOnce() -> Fut,
-        Fut: Future<Output = Result<(Credentials, SystemTime), CredentialsError>>,
+        Fut: Future<Output = Result<(T, SystemTime), E>>,
     {
         let lock = self.value.read().await;
         let future = lock.get_or_try_init(f);
-        future
-            .await
-            .map(|(credentials, _expiry)| credentials.clone())
+        future.await.map(|(value, _expiry)| value.clone())
     }
 
-    /// If the credentials are expired, clears the cache. Otherwise, yields the current credentials value.
-    pub async fn yield_or_clear_if_expired(&self, now: SystemTime) -> Option<Credentials> {
-        // Short-circuit if the credential is not expired
-        if let Some((credentials, expiry)) = self.value.read().await.get() {
+    /// If the value is expired, clears the cache. Otherwise, yields the current value.
+    pub async fn yield_or_clear_if_expired(&self, now: SystemTime) -> Option<T> {
+        // Short-circuit if the value is not expired
+        if let Some((value, expiry)) = self.value.read().await.get() {
             if !expired(*expiry, self.buffer_time, now) {
-                return Some(credentials.clone());
+                return Some(value.clone());
             }
         }
 
         // Acquire a write lock to clear the cache, but then once the lock is acquired,
-        // check again that the credential is not already cleared. If it has been cleared,
+        // check again that the value is not already cleared. If it has been cleared,
         // then another thread is refreshing the cache by the time the write lock was acquired.
         let mut lock = self.value.write().await;
-        if let Some((_credentials, expiration)) = lock.get() {
-            // Also check that we're clearing the expired credentials and not credentials
-            // that have been refreshed by another thread.
+        if let Some((_value, expiration)) = lock.get() {
+            // Also check that we're clearing the expired value and not a value
+            // that has been refreshed by another thread.
             if expired(*expiration, self.buffer_time, now) {
                 *lock = OnceCell::new();
             }
@@ -83,7 +104,7 @@ fn expired(expiration: SystemTime, buffer_time: Duration, now: SystemTime) -> bo
 
 #[cfg(test)]
 mod tests {
-    use super::{expired, Cache};
+    use super::{expired, ExpiringCache};
     use aws_types::credentials::CredentialsError;
     use aws_types::Credentials;
     use std::time::{Duration, SystemTime};
@@ -110,7 +131,7 @@ mod tests {
     #[traced_test]
     #[tokio::test]
     async fn cache_clears_if_expired_only() {
-        let cache = Cache::new(Duration::from_secs(10));
+        let cache = ExpiringCache::new(Duration::from_secs(10));
         assert!(cache
             .yield_or_clear_if_expired(epoch_secs(100))
             .await

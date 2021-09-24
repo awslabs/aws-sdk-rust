@@ -150,13 +150,26 @@ pub mod named {
         providers: HashMap<Cow<'static, str>, Arc<dyn ProvideCredentials>>,
     }
 
+    fn lower_cow(mut inp: Cow<str>) -> Cow<str> {
+        if inp.chars().all(|c| c.is_ascii_lowercase()) {
+            inp
+        } else {
+            inp.to_mut().make_ascii_lowercase();
+            inp
+        }
+    }
+
     impl NamedProviderFactory {
         pub fn new(providers: HashMap<Cow<'static, str>, Arc<dyn ProvideCredentials>>) -> Self {
+            let providers = providers
+                .into_iter()
+                .map(|(k, v)| (lower_cow(k), v))
+                .collect();
             Self { providers }
         }
 
         pub fn provider(&self, name: &str) -> Option<Arc<dyn ProvideCredentials>> {
-            self.providers.get(name).cloned()
+            self.providers.get(&lower_cow(Cow::Borrowed(name))).cloned()
         }
     }
 }
@@ -168,7 +181,23 @@ mod test {
     use crate::profile::credentials::repr::{BaseProvider, ProfileChain};
     use crate::test_case::no_traffic_connector;
     use aws_sdk_sts::Region;
+    use aws_types::Credentials;
     use std::collections::HashMap;
+    use std::sync::Arc;
+
+    #[test]
+    fn providers_case_insensitive() {
+        let mut base = HashMap::new();
+        base.insert(
+            "Environment".into(),
+            Arc::new(Credentials::from_keys("key", "secret", None)) as _,
+        );
+        let provider = NamedProviderFactory::new(base);
+        assert!(provider.provider("environment").is_some());
+        assert!(provider.provider("envIROnment").is_some());
+        assert!(provider.provider(" envIROnment").is_none());
+        assert!(provider.provider("Environment").is_some());
+    }
 
     #[test]
     fn error_on_unknown_provider() {

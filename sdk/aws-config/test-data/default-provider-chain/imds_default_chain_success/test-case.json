@@ -1,0 +1,12 @@
+{
+  "name": "imds-default-chain",
+  "docs": "IMDS isn't specifically configured but is loaded as part of the default chain. This has the exact same HTTP traffic as imds_no_iam_role, they are equivalent.",
+  "result": {
+    "Ok": {
+      "access_key_id": "ASIARTEST",
+      "secret_access_key": "testsecret",
+      "session_token": "testtoken",
+      "expiry": 1632197813
+    }
+  }
+}

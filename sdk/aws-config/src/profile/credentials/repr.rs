@@ -144,7 +144,12 @@ pub fn resolve_chain<'a>(
         let next_profile = match chain_provider(&profile) {
             // this provider wasn't a chain provider, reload it as a base provider
             None => {
-                break base_provider(profile)?;
+                break base_provider(profile).map_err(|err| {
+                    ProfileFileError::InvalidCredentialSource {
+                        profile: profile.name().into(),
+                        message: format!("could not load source profile: {}", err).into(),
+                    }
+                })?;
             }
             Some(result) => {
                 let (chain_profile, next) = result?;
@@ -216,7 +221,7 @@ fn chain_provider(profile: &Profile) -> Option<Result<(RoleArn, NextProfile), Pr
         (None, None) => Err(ProfileFileError::InvalidCredentialSource {
             profile: profile.name().to_string(),
             message:
-                "profile must contain source_profile or credentials_source but neither were defined"
+                "profile must contain `source_profile` or `credential_source` but neither were defined"
                     .into(),
         }),
         (Some(source_profile), None) if source_profile == profile.name() => {
@@ -281,10 +286,8 @@ fn static_creds_from_profile(profile: &Profile) -> Result<Credentials, ProfileFi
     let secret_key = profile.get(AWS_SECRET_ACCESS_KEY);
     let session_token = profile.get(AWS_SESSION_TOKEN);
     if let (None, None, None) = (access_key, secret_key, session_token) {
-        return Err(ProfileFileError::MissingCredentialSource {
+        return Err(ProfileFileError::ProfileDidNotContainCredentials {
             profile: profile.name().to_string(),
-            message: "expected `aws_access_key_id` and `aws_secret_access_key` to be defined"
-                .into(),
         });
     }
     let access_key = access_key.ok_or_else(|| ProfileFileError::InvalidCredentialSource {
