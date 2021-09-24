@@ -5,9 +5,6 @@
 
 //! Lazy, caching, credentials provider implementation
 
-mod cache;
-mod time;
-
 use std::sync::Arc;
 use std::time::Duration;
 
@@ -15,8 +12,10 @@ use smithy_async::future::timeout::Timeout;
 use smithy_async::rt::sleep::AsyncSleep;
 use tracing::{trace_span, Instrument};
 
-use self::{cache::Cache, time::TimeSource};
 use aws_types::credentials::{future, CredentialsError, ProvideCredentials};
+use aws_types::os_shim_internal::TimeSource;
+
+use crate::cache::ExpiringCache;
 
 const DEFAULT_LOAD_TIMEOUT: Duration = Duration::from_secs(5);
 const DEFAULT_CREDENTIAL_EXPIRATION: Duration = Duration::from_secs(15 * 60);
@@ -30,9 +29,9 @@ const DEFAULT_BUFFER_TIME: Duration = Duration::from_secs(10);
 /// will cache those credentials until they expire.
 #[derive(Debug)]
 pub struct LazyCachingCredentialsProvider {
-    time: Box<dyn TimeSource>,
+    time: TimeSource,
     sleeper: Arc<dyn AsyncSleep>,
-    cache: Cache,
+    cache: ExpiringCache<Credentials, CredentialsError>,
     loader: Arc<dyn ProvideCredentials>,
     load_timeout: Duration,
     default_credential_expiration: Duration,
@@ -40,7 +39,7 @@ pub struct LazyCachingCredentialsProvider {
 
 impl LazyCachingCredentialsProvider {
     fn new(
-        time: impl TimeSource,
+        time: TimeSource,
         sleeper: Arc<dyn AsyncSleep>,
         loader: Arc<dyn ProvideCredentials>,
         load_timeout: Duration,
@@ -48,9 +47,9 @@ impl LazyCachingCredentialsProvider {
         buffer_time: Duration,
     ) -> Self {
         LazyCachingCredentialsProvider {
-            time: Box::new(time),
+            time,
             sleeper,
-            cache: Cache::new(buffer_time),
+            cache: ExpiringCache::new(buffer_time),
             loader,
             load_timeout,
             default_credential_expiration,
@@ -89,9 +88,9 @@ impl ProvideCredentials for LazyCachingCredentialsProvider {
                 cache
                     .get_or_load(|| {
                         async move {
-                            let credentials = future
-                                .await
-                                .map_err(|_| CredentialsError::ProviderTimedOut(load_timeout))??;
+                            let credentials = future.await.map_err(|_err| {
+                                CredentialsError::ProviderTimedOut(load_timeout)
+                            })??;
                             // If the credentials don't have an expiration time, then create a default one
                             let expiry = credentials
                                 .expiry()
@@ -108,7 +107,9 @@ impl ProvideCredentials for LazyCachingCredentialsProvider {
     }
 }
 
+use aws_types::Credentials;
 pub use builder::Builder;
+
 mod builder {
     use std::sync::Arc;
     use std::time::Duration;
@@ -120,8 +121,8 @@ mod builder {
         LazyCachingCredentialsProvider, DEFAULT_BUFFER_TIME, DEFAULT_CREDENTIAL_EXPIRATION,
         DEFAULT_LOAD_TIMEOUT,
     };
-    use crate::meta::credentials::lazy_caching::time::SystemTimeSource;
     use crate::provider_config::ProviderConfig;
+    use aws_types::os_shim_internal::TimeSource;
 
     /// Builder for constructing a [`LazyCachingCredentialsProvider`].
     ///
@@ -142,6 +143,7 @@ mod builder {
     #[derive(Default)]
     pub struct Builder {
         sleep: Option<Arc<dyn AsyncSleep>>,
+        time_source: Option<TimeSource>,
         load: Option<Arc<dyn ProvideCredentials>>,
         load_timeout: Option<Duration>,
         buffer_time: Option<Duration>,
@@ -157,6 +159,7 @@ mod builder {
         /// Override configuration for the [Builder]
         pub fn configure(mut self, config: &ProviderConfig) -> Self {
             self.sleep = config.sleep();
+            self.time_source = Some(config.time_source());
             self
         }
 
@@ -216,7 +219,7 @@ mod builder {
                 "default_credential_expiration must be at least 15 minutes"
             );
             LazyCachingCredentialsProvider::new(
-                SystemTimeSource,
+                self.time_source.unwrap_or_default(),
                 self.sleep.unwrap_or_else(|| {
                     default_async_sleep().expect("no default sleep implementation available")
                 }),
@@ -232,7 +235,7 @@ mod builder {
 #[cfg(test)]
 mod tests {
     use std::sync::{Arc, Mutex};
-    use std::time::{Duration, SystemTime};
+    use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
     use aws_types::credentials::{self, CredentialsError, ProvideCredentials};
     use aws_types::Credentials;
@@ -246,32 +249,10 @@ mod tests {
         LazyCachingCredentialsProvider, TimeSource, DEFAULT_BUFFER_TIME,
         DEFAULT_CREDENTIAL_EXPIRATION, DEFAULT_LOAD_TIMEOUT,
     };
+    use aws_types::os_shim_internal::ManualTimeSource;
 
-    #[derive(Clone, Debug)]
-    struct TestTime {
-        time: Arc<Mutex<SystemTime>>,
-    }
-
-    impl TestTime {
-        fn new(time: SystemTime) -> Self {
-            TestTime {
-                time: Arc::new(Mutex::new(time)),
-            }
-        }
-
-        fn set(inner: &Arc<Mutex<SystemTime>>, time: SystemTime) {
-            *inner.lock().unwrap() = time;
-        }
-    }
-
-    impl TimeSource for TestTime {
-        fn now(&self) -> SystemTime {
-            *self.time.lock().unwrap()
-        }
-    }
-
-    fn test_provider<T: TimeSource>(
-        time: T,
+    fn test_provider(
+        time: TimeSource,
         load_list: Vec<credentials::Result>,
     ) -> LazyCachingCredentialsProvider {
         let load_list = Arc::new(Mutex::new(load_list));
@@ -311,13 +292,13 @@ mod tests {
     #[traced_test]
     #[tokio::test]
     async fn initial_populate_credentials() {
-        let time = TestTime::new(epoch_secs(100));
+        let time = ManualTimeSource::new(UNIX_EPOCH);
         let loader = Arc::new(provide_credentials_fn(|| async {
             info!("refreshing the credentials");
             Ok(credentials(1000))
         }));
         let provider = LazyCachingCredentialsProvider::new(
-            time,
+            TimeSource::manual(&time),
             Arc::new(TokioSleep::new()),
             loader,
             DEFAULT_LOAD_TIMEOUT,
@@ -338,10 +319,9 @@ mod tests {
     #[traced_test]
     #[tokio::test]
     async fn reload_expired_credentials() {
-        let time = TestTime::new(epoch_secs(100));
-        let time_inner = time.time.clone();
+        let mut time = ManualTimeSource::new(epoch_secs(100));
         let provider = test_provider(
-            time,
+            TimeSource::manual(&time),
             vec![
                 Ok(credentials(1000)),
                 Ok(credentials(2000)),
@@ -351,10 +331,10 @@ mod tests {
 
         expect_creds(1000, &provider).await;
         expect_creds(1000, &provider).await;
-        TestTime::set(&time_inner, epoch_secs(1500));
+        time.set_time(epoch_secs(1500));
         expect_creds(2000, &provider).await;
         expect_creds(2000, &provider).await;
-        TestTime::set(&time_inner, epoch_secs(2500));
+        time.set_time(epoch_secs(2500));
         expect_creds(3000, &provider).await;
         expect_creds(3000, &provider).await;
     }
@@ -362,10 +342,9 @@ mod tests {
     #[traced_test]
     #[tokio::test]
     async fn load_failed_error() {
-        let time = TestTime::new(epoch_secs(100));
-        let time_inner = time.time.clone();
+        let mut time = ManualTimeSource::new(epoch_secs(100));
         let provider = test_provider(
-            time,
+            TimeSource::manual(&time),
             vec![
                 Ok(credentials(1000)),
                 Err(CredentialsError::CredentialsNotLoaded),
@@ -373,7 +352,7 @@ mod tests {
         );
 
         expect_creds(1000, &provider).await;
-        TestTime::set(&time_inner, epoch_secs(1500));
+        time.set_time(epoch_secs(1500));
         assert!(provider.provide_credentials().await.is_err());
     }
 
@@ -386,10 +365,9 @@ mod tests {
             .build()
             .unwrap();
 
-        let time = TestTime::new(epoch_secs(0));
-        let time_inner = time.time.clone();
+        let time = ManualTimeSource::new(epoch_secs(0));
         let provider = Arc::new(test_provider(
-            time,
+            TimeSource::manual(&time),
             vec![
                 Ok(credentials(500)),
                 Ok(credentials(1500)),
@@ -399,14 +377,16 @@ mod tests {
             ],
         ));
 
+        let locked_time = Arc::new(Mutex::new(time));
+
         for i in 0..4 {
             let mut tasks = Vec::new();
             for j in 0..50 {
                 let provider = provider.clone();
-                let time_inner = time_inner.clone();
+                let time = locked_time.clone();
                 tasks.push(rt.spawn(async move {
                     let now = epoch_secs(i * 1000 + (4 * j));
-                    TestTime::set(&time_inner, now);
+                    time.lock().unwrap().set_time(now);
 
                     let creds = provider.provide_credentials().await.unwrap();
                     assert!(
@@ -426,9 +406,9 @@ mod tests {
     #[tokio::test]
     #[traced_test]
     async fn load_timeout() {
-        let time = TestTime::new(epoch_secs(100));
+        let time = ManualTimeSource::new(epoch_secs(100));
         let provider = LazyCachingCredentialsProvider::new(
-            time,
+            TimeSource::manual(&time),
             Arc::new(TokioSleep::new()),
             Arc::new(provide_credentials_fn(|| async {
                 tokio::time::sleep(Duration::from_millis(10)).await;

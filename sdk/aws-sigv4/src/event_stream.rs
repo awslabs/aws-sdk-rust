@@ -4,6 +4,37 @@
  */
 
 //! Utilities to sign Event Stream messages.
+//!
+//! # Example: Signing an event stream message
+//!
+//! ```rust
+//! use aws_sigv4::event_stream::{sign_message, SigningParams};
+//! use chrono::Utc;
+//! use smithy_eventstream::frame::{Header, HeaderValue, Message};
+//!
+//! // The `last_signature` argument is the previous message's signature, or
+//! // the signature of the initial HTTP request if a message hasn't been signed yet.
+//! let last_signature = "example298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
+//!
+//! let message_to_sign = Message::new(&b"example"[..]).add_header(Header::new(
+//!     "some-header",
+//!     HeaderValue::String("value".into()),
+//! ));
+//!
+//! let params = SigningParams::builder()
+//!     .access_key("example access key")
+//!     .secret_key("example secret key")
+//!     .region("us-east-1")
+//!     .service_name("exampleservice")
+//!     .date_time(Utc::now())
+//!     .settings(())
+//!     .build()
+//!     .unwrap();
+//!
+//! // Use the returned `signature` to sign the next message.
+//! let (signed, signature) =
+//!     sign_message(&message_to_sign, &last_signature, &params).into_parts();
+//! ```
 
 use crate::date_fmt::{format_date, format_date_time};
 use crate::sign::{calculate_signature, generate_signing_key, sha256_hex_string};
@@ -13,6 +44,7 @@ use chrono::{DateTime, SubsecRound, Utc};
 use smithy_eventstream::frame::{write_headers_to, Header, HeaderValue, Message};
 use std::io::Write;
 
+/// Event stream signing parameters
 pub type SigningParams<'a> = super::SigningParams<'a, ()>;
 
 /// Creates a string to sign for an Event Stream message.
@@ -64,6 +96,11 @@ pub fn sign_message<'a>(
     sign_payload(Some(message_payload), last_signature, params)
 }
 
+/// Returns a signed empty message
+///
+/// Empty signed event stream messages differ from normal signed event stream
+/// in that the payload is 0-bytes rather than a nested message. There is no way
+/// to create a signed empty message using [`sign_message`].
 pub fn sign_empty_message<'a>(
     last_signature: &'a str,
     params: &'a SigningParams<'a>,

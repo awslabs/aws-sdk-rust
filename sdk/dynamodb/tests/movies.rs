@@ -259,9 +259,7 @@ async fn movies_it() {
         ]
     );
 
-    for req in conn.requests().iter() {
-        req.assert_matches(vec![AUTHORIZATION, HeaderName::from_static("x-amz-date")]);
-    }
+    conn.assert_requests_match(&[AUTHORIZATION, HeaderName::from_static("x-amz-date")]);
 }
 
 /// Test connection for the movies IT

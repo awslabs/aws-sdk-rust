@@ -193,7 +193,7 @@
       "selected_profile": "A"
     },
     "output": {
-      "Error": "profile must contain source_profile"
+      "Error": "profile must contain `source_profile`"
     }
   },
   {
@@ -265,7 +265,21 @@
       "selected_profile": "A"
     },
     "output": {
-      "Error": "expected `aws_access_key_id` and `aws_secret_access_key` to be defined"
+      "Error": "profile `B` did not contain credential information"
+    }
+  },
+  {
+    "docs": "profile only contains configuration",
+    "input": {
+      "profile": {
+        "A": {
+          "ec2_metadata_service_endpoint_mode": "IPv6"
+        }
+      },
+      "selected_profile": "A"
+    },
+    "output": {
+      "Error": "profile `A` did not contain credential information"
     }
   },
   {

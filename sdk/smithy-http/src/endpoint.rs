@@ -11,7 +11,7 @@ use std::str::FromStr;
 ///
 /// This implements an API endpoint as specified in the
 /// [Smithy Endpoint Specification](https://awslabs.github.io/smithy/1.0/spec/core/endpoint-traits.html)
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Endpoint {
     uri: http::Uri,
 

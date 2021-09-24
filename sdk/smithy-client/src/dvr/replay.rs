@@ -192,12 +192,17 @@ impl tower::Service<http::Request<SdkBody>> for ReplayingConnection {
 
     fn call(&mut self, mut req: Request<SdkBody>) -> Self::Future {
         let event_id = self.next_id();
-        let mut events = self
-            .live_events
-            .lock()
-            .unwrap()
-            .remove(&event_id)
-            .expect("no data for event id");
+        let mut events = match self.live_events.lock().unwrap().remove(&event_id) {
+            Some(traffic) => traffic,
+            None => {
+                return Box::pin(std::future::ready(Err(format!(
+                    "no data for event {}. req: {:?}",
+                    event_id.0, req
+                )
+                .into())))
+            }
+        };
+
         let _initial_request = events.pop_front().unwrap();
         let (sender, response_body) = hyper::Body::channel();
         let body = SdkBody::from(response_body);

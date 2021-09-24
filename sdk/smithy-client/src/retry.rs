@@ -20,7 +20,7 @@ use crate::{SdkError, SdkSuccess};
 use smithy_http::operation;
 use smithy_http::operation::Operation;
 use smithy_http::retry::ClassifyResponse;
-use smithy_types::retry::{ErrorKind, ProvideErrorKind, RetryKind};
+use smithy_types::retry::{ErrorKind, RetryKind};
 use std::future::Future;
 use std::pin::Pin;
 use std::sync::{Arc, Mutex};
@@ -67,6 +67,12 @@ impl Config {
     /// ```
     pub fn with_base(mut self, base: fn() -> f64) -> Self {
         self.base = base;
+        self
+    }
+
+    /// Override the maximum number of retries
+    pub fn with_max_retries(mut self, max_retries: u32) -> Self {
+        self.max_retries = max_retries;
         self
     }
 }
@@ -263,7 +269,6 @@ impl<Handler, R, T, E>
     tower::retry::Policy<operation::Operation<Handler, R>, SdkSuccess<T>, SdkError<E>>
     for RetryHandler
 where
-    E: ProvideErrorKind,
     Handler: Clone,
     R: ClassifyResponse<SdkSuccess<T>, SdkError<E>>,
 {

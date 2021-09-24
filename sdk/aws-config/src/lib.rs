@@ -40,6 +40,9 @@
 //! # }
 //! ```
 
+#[allow(dead_code)]
+const PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
+
 /// Providers that implement the default AWS provider chain
 #[cfg(feature = "default-provider")]
 pub mod default_provider;
@@ -56,7 +59,7 @@ pub mod meta;
 pub mod profile;
 
 #[cfg(feature = "sts")]
-mod sts;
+pub mod sts;
 
 #[cfg(test)]
 mod test_case;
@@ -65,6 +68,10 @@ mod test_case;
 pub mod web_identity_token;
 
 pub mod provider_config;
+
+mod cache;
+#[cfg(feature = "imds")]
+pub mod imds;
 
 /// Create an environment loader for AWS Configuration
 ///

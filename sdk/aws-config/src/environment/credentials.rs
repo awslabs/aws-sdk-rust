@@ -16,7 +16,7 @@ use aws_types::{credentials, Credentials};
 /// - `AWS_ACCESS_KEY_ID`
 /// - `AWS_SECRET_ACCESS_KEY` with fallback to `SECRET_ACCESS_KEY`
 /// - `AWS_SESSION_TOKEN`
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct EnvironmentVariableCredentialsProvider {
     env: Env,
 }

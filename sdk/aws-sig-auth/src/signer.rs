@@ -3,13 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use aws_sigv4::http_request::{
-    calculate_signing_headers, PayloadChecksumKind, SigningSettings, UriEncoding,
-};
+use aws_sigv4::http_request::{sign, PayloadChecksumKind, PercentEncodingMode, SigningSettings};
+use aws_sigv4::SigningParams;
 use aws_types::region::SigningRegion;
 use aws_types::Credentials;
 use aws_types::SigningService;
-use http::header::HeaderName;
 use smithy_http::body::SdkBody;
 use std::error::Error;
 use std::fmt;
@@ -17,6 +15,7 @@ use std::time::SystemTime;
 
 use crate::middleware::Signature;
 pub use aws_sigv4::http_request::SignableBody;
+use aws_sigv4::http_request::SignableRequest;
 
 #[derive(Eq, PartialEq, Clone, Copy)]
 pub enum SigningAlgorithm {
@@ -136,48 +135,55 @@ impl SigV4Signer {
         request: &mut http::Request<SdkBody>,
     ) -> Result<Signature, SigningError> {
         let mut settings = SigningSettings::default();
-        settings.uri_encoding = if operation_config.signing_options.double_uri_encode {
-            UriEncoding::Double
+        settings.percent_encoding_mode = if operation_config.signing_options.double_uri_encode {
+            PercentEncodingMode::Double
         } else {
-            UriEncoding::Single
+            PercentEncodingMode::Single
         };
         settings.payload_checksum_kind = if operation_config.signing_options.content_sha256_header {
             PayloadChecksumKind::XAmzSha256
         } else {
             PayloadChecksumKind::NoHeader
         };
-        let sigv4_config = aws_sigv4::http_request::SigningParams {
-            access_key: credentials.access_key_id(),
-            secret_key: credentials.secret_access_key(),
-            security_token: credentials.session_token(),
-            region: request_config.region.as_ref(),
-            service_name: request_config.service.as_ref(),
-            date_time: request_config.request_ts.into(),
-            settings,
+        let sigv4_config = {
+            let mut builder = SigningParams::builder()
+                .access_key(credentials.access_key_id())
+                .secret_key(credentials.secret_access_key())
+                .region(request_config.region.as_ref())
+                .service_name(request_config.service.as_ref())
+                .date_time(request_config.request_ts.into())
+                .settings(settings);
+            builder.set_security_token(credentials.session_token());
+            builder.build().expect("all required fields set")
         };
 
-        // A body that is already in memory can be signed directly. A  body that is not in memory
-        // (any sort of streaming body) will be signed via UNSIGNED-PAYLOAD.
-        let signable_body = request_config
-            .payload_override
-            // the payload_override is a cheap clone because it contains either a
-            // reference or a short checksum (we're not cloning the entire body)
-            .cloned()
-            .unwrap_or_else(|| {
-                request
-                    .body()
-                    .bytes()
-                    .map(SignableBody::Bytes)
-                    .unwrap_or(SignableBody::UnsignedPayload)
-            });
+        let (signing_instructions, signature) = {
+            // A body that is already in memory can be signed directly. A  body that is not in memory
+            // (any sort of streaming body) will be signed via UNSIGNED-PAYLOAD.
+            let signable_body = request_config
+                .payload_override
+                // the payload_override is a cheap clone because it contains either a
+                // reference or a short checksum (we're not cloning the entire body)
+                .cloned()
+                .unwrap_or_else(|| {
+                    request
+                        .body()
+                        .bytes()
+                        .map(SignableBody::Bytes)
+                        .unwrap_or(SignableBody::UnsignedPayload)
+                });
 
-        let (signing_headers, signature) =
-            calculate_signing_headers(request, signable_body, &sigv4_config)?.into_parts();
-        for (key, value) in signing_headers {
-            request
-                .headers_mut()
-                .append(HeaderName::from_static(key), value);
+            let signable_request = SignableRequest::new(
+                request.method(),
+                request.uri(),
+                request.headers(),
+                signable_body,
+            );
+            sign(signable_request, &sigv4_config)?
         }
+        .into_parts();
+
+        signing_instructions.apply_to_request(request);
 
         Ok(Signature::new(signature))
     }

@@ -19,6 +19,7 @@ use thiserror::Error;
 /// Ths struct should be inserted into the [`PropertyBag`](smithy_http::operation::Request::properties)
 /// during operation construction. [`UserAgentStage`](UserAgentStage) reads `AwsUserAgent`
 /// from the property bag and sets the `User-Agent` and `x-amz-user-agent` headers.
+#[derive(Clone)]
 pub struct AwsUserAgent {
     sdk_metadata: SdkMetadata,
     api_metadata: ApiMetadata,
@@ -30,10 +31,10 @@ pub struct AwsUserAgent {
 impl AwsUserAgent {
     /// Load a User Agent configuration from the environment
     ///
-    /// This utilizes [`BUILD_METADATA`](static@aws_types::build_metadata::BUILD_METADATA) from `aws_types`
+    /// This utilizes [`BUILD_METADATA`](const@aws_types::build_metadata::BUILD_METADATA) from `aws_types`
     /// to capture the Rust version & target platform. `ApiMetadata` provides
     /// the version & name of the specific service.
-    pub fn new_from_environment(api_metadata: ApiMetadata) -> Self {
+    pub const fn new_from_environment(api_metadata: ApiMetadata) -> Self {
         let build_metadata = &BUILD_METADATA;
         let sdk_metadata = SdkMetadata {
             name: "rust",
@@ -132,6 +133,7 @@ impl AwsUserAgent {
     }
 }
 
+#[derive(Clone, Copy)]
 pub struct SdkMetadata {
     name: &'static str,
     version: &'static str,
@@ -164,11 +166,13 @@ impl Display for ApiMetadata {
     }
 }
 
+#[derive(Clone)]
 struct AdditionalMetadata {
     key: String,
     value: String,
 }
 
+#[derive(Clone)]
 struct OsMetadata {
     os_family: &'static OsFamily,
     version: Option<String>,
@@ -191,6 +195,8 @@ impl Display for OsMetadata {
         Ok(())
     }
 }
+
+#[derive(Clone)]
 struct LanguageMetadata {
     lang: &'static str,
     version: &'static str,
@@ -206,6 +212,8 @@ impl Display for LanguageMetadata {
         Ok(())
     }
 }
+
+#[derive(Clone)]
 struct ExecEnvMetadata {
     name: String,
 }

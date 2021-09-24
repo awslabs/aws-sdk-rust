@@ -72,7 +72,7 @@ where
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Default)]
 pub struct MapRequestLayer<M> {
     mapper: M,
 }

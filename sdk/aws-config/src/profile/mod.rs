@@ -10,7 +10,7 @@
 
 mod parser;
 #[doc(inline)]
-pub use parser::{load, Profile, ProfileSet, Property};
+pub use parser::{load, Profile, ProfileParseError, ProfileSet, Property};
 
 pub mod credentials;
 pub mod region;

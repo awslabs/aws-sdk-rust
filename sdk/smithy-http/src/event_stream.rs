@@ -138,7 +138,7 @@ where
 /// Receives Smithy-modeled messages out of an Event Stream.
 #[derive(Debug)]
 pub struct Receiver<T, E> {
-    unmarshaller: Box<dyn UnmarshallMessage<Output = T, Error = E>>,
+    unmarshaller: Box<dyn UnmarshallMessage<Output = T, Error = E> + Send>,
     decoder: MessageFrameDecoder,
     buffer: SegmentedBuf<Bytes>,
     body: SdkBody,
@@ -153,7 +153,7 @@ pub struct Receiver<T, E> {
 impl<T, E> Receiver<T, E> {
     /// Creates a new `Receiver` with the given message unmarshaller and SDK body.
     pub fn new(
-        unmarshaller: impl UnmarshallMessage<Output = T, Error = E> + 'static,
+        unmarshaller: impl UnmarshallMessage<Output = T, Error = E> + Send + 'static,
         body: SdkBody,
     ) -> Self {
         Receiver {
@@ -411,6 +411,13 @@ mod tests {
             TestMessage("two".into()),
             receiver.recv().await.unwrap().unwrap()
         );
+    }
+
+    fn assert_send<T: Send>() {}
+
+    #[tokio::test]
+    async fn receiver_is_send() {
+        assert_send::<Receiver<(), ()>>();
     }
 
     #[derive(Debug)]
