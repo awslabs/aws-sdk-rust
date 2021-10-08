@@ -212,6 +212,11 @@ where
     ) -> fluent_builders::CancelCapacityReservation<C, M, R> {
         fluent_builders::CancelCapacityReservation::new(self.handle.clone())
     }
+    pub fn cancel_capacity_reservation_fleets(
+        &self,
+    ) -> fluent_builders::CancelCapacityReservationFleets<C, M, R> {
+        fluent_builders::CancelCapacityReservationFleets::new(self.handle.clone())
+    }
     pub fn cancel_conversion_task(&self) -> fluent_builders::CancelConversionTask<C, M, R> {
         fluent_builders::CancelConversionTask::new(self.handle.clone())
     }
@@ -250,6 +255,11 @@ where
         &self,
     ) -> fluent_builders::CreateCapacityReservation<C, M, R> {
         fluent_builders::CreateCapacityReservation::new(self.handle.clone())
+    }
+    pub fn create_capacity_reservation_fleet(
+        &self,
+    ) -> fluent_builders::CreateCapacityReservationFleet<C, M, R> {
+        fluent_builders::CreateCapacityReservationFleet::new(self.handle.clone())
     }
     pub fn create_carrier_gateway(&self) -> fluent_builders::CreateCarrierGateway<C, M, R> {
         fluent_builders::CreateCarrierGateway::new(self.handle.clone())
@@ -763,6 +773,11 @@ where
     }
     pub fn describe_byoip_cidrs(&self) -> fluent_builders::DescribeByoipCidrs<C, M, R> {
         fluent_builders::DescribeByoipCidrs::new(self.handle.clone())
+    }
+    pub fn describe_capacity_reservation_fleets(
+        &self,
+    ) -> fluent_builders::DescribeCapacityReservationFleets<C, M, R> {
+        fluent_builders::DescribeCapacityReservationFleets::new(self.handle.clone())
     }
     pub fn describe_capacity_reservations(
         &self,
@@ -1526,6 +1541,16 @@ where
     ) -> fluent_builders::GetTransitGatewayRouteTablePropagations<C, M, R> {
         fluent_builders::GetTransitGatewayRouteTablePropagations::new(self.handle.clone())
     }
+    pub fn get_vpn_connection_device_sample_configuration(
+        &self,
+    ) -> fluent_builders::GetVpnConnectionDeviceSampleConfiguration<C, M, R> {
+        fluent_builders::GetVpnConnectionDeviceSampleConfiguration::new(self.handle.clone())
+    }
+    pub fn get_vpn_connection_device_types(
+        &self,
+    ) -> fluent_builders::GetVpnConnectionDeviceTypes<C, M, R> {
+        fluent_builders::GetVpnConnectionDeviceTypes::new(self.handle.clone())
+    }
     pub fn import_client_vpn_client_certificate_revocation_list(
         &self,
     ) -> fluent_builders::ImportClientVpnClientCertificateRevocationList<C, M, R> {
@@ -1558,6 +1583,11 @@ where
         &self,
     ) -> fluent_builders::ModifyCapacityReservation<C, M, R> {
         fluent_builders::ModifyCapacityReservation::new(self.handle.clone())
+    }
+    pub fn modify_capacity_reservation_fleet(
+        &self,
+    ) -> fluent_builders::ModifyCapacityReservationFleet<C, M, R> {
+        fluent_builders::ModifyCapacityReservationFleet::new(self.handle.clone())
     }
     pub fn modify_client_vpn_endpoint(&self) -> fluent_builders::ModifyClientVpnEndpoint<C, M, R> {
         fluent_builders::ModifyClientVpnEndpoint::new(self.handle.clone())
@@ -3315,7 +3345,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subnet_id(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
@@ -4618,9 +4648,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpn_gateway_id(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, inp: bool) -> Self {
             self.inner = self.inner.dry_run(inp);
             self
@@ -4730,7 +4761,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
@@ -5313,6 +5344,78 @@ pub mod fluent_builders {
         }
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CancelCapacityReservationFleets<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::cancel_capacity_reservation_fleets_input::Builder,
+    }
+    impl<C, M, R> CancelCapacityReservationFleets<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CancelCapacityReservationFleetsOutput,
+            smithy_http::result::SdkError<crate::error::CancelCapacityReservationFleetsError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CancelCapacityReservationFleetsInputOperationOutputAlias,
+                crate::output::CancelCapacityReservationFleetsOutput,
+                crate::error::CancelCapacityReservationFleetsError,
+                crate::input::CancelCapacityReservationFleetsInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// Appends an item to `CapacityReservationFleetIds`.
+        ///
+        /// To override the contents of this collection use [`set_capacity_reservation_fleet_ids`](Self::set_capacity_reservation_fleet_ids).
+        /// <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
+        pub fn capacity_reservation_fleet_ids(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.capacity_reservation_fleet_ids(inp);
+            self
+        }
+        pub fn set_capacity_reservation_fleet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_capacity_reservation_fleet_ids(input);
             self
         }
     }
@@ -6576,6 +6679,200 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct CreateCapacityReservationFleet<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_capacity_reservation_fleet_input::Builder,
+    }
+    impl<C, M, R> CreateCapacityReservationFleet<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateCapacityReservationFleetOutput,
+            smithy_http::result::SdkError<crate::error::CreateCapacityReservationFleetError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateCapacityReservationFleetInputOperationOutputAlias,
+                crate::output::CreateCapacityReservationFleetOutput,
+                crate::error::CreateCapacityReservationFleetError,
+                crate::input::CreateCapacityReservationFleetInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the
+        /// specified instance types to use. Currently, only the <code>prioritized</code>
+        /// allocation strategy is supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy">
+        /// Allocation strategy</a> in the Amazon EC2 User Guide.</p>
+        /// <p>Valid values: <code>prioritized</code>
+        /// </p>
+        pub fn allocation_strategy(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.allocation_strategy(inp);
+            self
+        }
+        pub fn set_allocation_strategy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_allocation_strategy(input);
+            self
+        }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure Idempotency</a>.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// Appends an item to `InstanceTypeSpecifications`.
+        ///
+        /// To override the contents of this collection use [`set_instance_type_specifications`](Self::set_instance_type_specifications).
+        /// <p>Information about the instance types for which to reserve the capacity.</p>
+        pub fn instance_type_specifications(
+            mut self,
+            inp: impl Into<crate::model::ReservationFleetInstanceSpecification>,
+        ) -> Self {
+            self.inner = self.inner.instance_type_specifications(inp);
+            self
+        }
+        pub fn set_instance_type_specifications(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::ReservationFleetInstanceSpecification>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_instance_type_specifications(input);
+            self
+        }
+        /// <p>Indicates the tenancy of the Capacity Reservation Fleet. All Capacity Reservations
+        /// in the Fleet inherit this tenancy. The Capacity Reservation Fleet can have one of
+        /// the following tenancy settings:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>default</code> - The Capacity Reservation Fleet is created on hardware
+        /// that is shared with other Amazon Web Services accounts.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dedicated</code> - The Capacity Reservations are created on single-tenant
+        /// hardware that is dedicated to a single Amazon Web Services account.</p>
+        /// </li>
+        /// </ul>
+        pub fn tenancy(mut self, inp: crate::model::FleetCapacityReservationTenancy) -> Self {
+            self.inner = self.inner.tenancy(inp);
+            self
+        }
+        pub fn set_tenancy(
+            mut self,
+            input: std::option::Option<crate::model::FleetCapacityReservationTenancy>,
+        ) -> Self {
+            self.inner = self.inner.set_tenancy(input);
+            self
+        }
+        /// <p>The total number of capacity units to be reserved by the Capacity Reservation Fleet. This
+        /// value, together with the instance type weights that you assign to each instance type used by
+        /// the Fleet determine the number of instances for which the Fleet reserves capacity. Both values
+        /// are based on units that make sense for your workload. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">
+        /// Total target capacity</a> in the Amazon EC2 User Guide.</p>
+        pub fn total_target_capacity(mut self, inp: i32) -> Self {
+            self.inner = self.inner.total_target_capacity(inp);
+            self
+        }
+        pub fn set_total_target_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_total_target_capacity(input);
+            self
+        }
+        /// <p>The date and time at which the Capacity Reservation Fleet expires. When the Capacity
+        /// Reservation Fleet expires, its state changes to <code>expired</code> and all of the Capacity
+        /// Reservations in the Fleet expire.</p>  
+        /// <p>The Capacity Reservation Fleet expires within an hour after the specified time. For example,
+        /// if you specify <code>5/31/2019</code>, <code>13:30:55</code>, the Capacity Reservation Fleet
+        /// is guaranteed to expire between <code>13:30:55</code> and <code>14:30:55</code> on
+        /// <code>5/31/2019</code>.
+        /// </p>
+        pub fn end_date(mut self, inp: smithy_types::Instant) -> Self {
+            self.inner = self.inner.end_date(inp);
+            self
+        }
+        pub fn set_end_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.inner = self.inner.set_end_date(input);
+            self
+        }
+        /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All
+        /// Capacity Reservations in the Fleet inherit this instance matching criteria.</p>
+        /// <p>Currently, Capacity Reservation Fleets support <code>open</code> instance matching criteria
+        /// only. This means that instances that have matching attributes (instance type, platform, and
+        /// Availability Zone) run in the Capacity Reservations automatically. Instances do not need to
+        /// explicitly target a Capacity Reservation Fleet to use its reserved capacity.</p>
+        pub fn instance_match_criteria(
+            mut self,
+            inp: crate::model::FleetInstanceMatchCriteria,
+        ) -> Self {
+            self.inner = self.inner.instance_match_criteria(inp);
+            self
+        }
+        pub fn set_instance_match_criteria(
+            mut self,
+            input: std::option::Option<crate::model::FleetInstanceMatchCriteria>,
+        ) -> Self {
+            self.inner = self.inner.set_instance_match_criteria(input);
+            self
+        }
+        /// Appends an item to `TagSpecifications`.
+        ///
+        /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+        /// <p>The tags to assign to the Capacity Reservation Fleet. The tags are automatically assigned
+        /// to the Capacity Reservations in the Fleet.</p>
+        pub fn tag_specifications(
+            mut self,
+            inp: impl Into<crate::model::TagSpecification>,
+        ) -> Self {
+            self.inner = self.inner.tag_specifications(inp);
+            self
+        }
+        pub fn set_tag_specifications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagSpecification>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_specifications(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct CreateCarrierGateway<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -6726,7 +7023,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the server certificate. For more information, see
-        /// the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager User Guide</a>.</p>
+        /// the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager User Guide</a>.</p>
         pub fn server_certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_certificate_arn(inp);
             self
@@ -6836,10 +7133,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.</p>
+        /// <p>Indicates whether split-tunnel is enabled on the Client VPN endpoint.</p>
         /// <p>By default, split-tunnel on a VPN endpoint is disabled.</p>
-        /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel AWS Client VPN Endpoint</a> in the <i>AWS
-        /// Client VPN Administrator Guide</i>.</p>
+        /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel Client VPN endpoint</a> in the
+        /// <i>Client VPN Administrator Guide</i>.</p>
         pub fn split_tunnel(mut self, inp: bool) -> Self {
             self.inner = self.inner.split_tunnel(inp);
             self
@@ -6857,7 +7154,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dry_run(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
@@ -7001,7 +7298,7 @@ pub mod fluent_builders {
         /// <p>To add a route for a peered VPC, enter the peered VPC's IPv4 CIDR range</p>
         /// </li>
         /// <li>
-        /// <p>To add a route for an on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR range</p>
+        /// <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p>
         /// </li>
         /// <li>
         /// <p>To add a route for the local network, enter the client CIDR range</p>
@@ -7041,7 +7338,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
@@ -7114,7 +7411,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bgp_asn(input);
             self
         }
-        /// <p>The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
+        /// <p>The Internet-routable IP address for the customer gateway's outside interface. The
+        /// address must be static.</p>
         pub fn public_ip(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.public_ip(inp);
             self
@@ -7135,7 +7433,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificate_arn(input);
             self
         }
-        /// <p>The type of VPN connection that this customer gateway supports (<code>ipsec.1</code>).</p>
+        /// <p>The type of VPN connection that this customer gateway supports
+        /// (<code>ipsec.1</code>).</p>
         pub fn r#type(mut self, inp: crate::model::GatewayType) -> Self {
             self.inner = self.inner.r#type(inp);
             self
@@ -7172,9 +7471,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_device_name(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, inp: bool) -> Self {
             self.inner = self.inner.dry_run(inp);
             self
@@ -14399,7 +14699,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a transit gateway.</p>
+        /// <p>The ID of the virtual private gateway. If you specify a virtual private gateway, you
+        /// cannot specify a transit gateway.</p>
         pub fn vpn_gateway_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vpn_gateway_id(inp);
             self
@@ -14411,7 +14712,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpn_gateway_id(input);
             self
         }
-        /// <p>The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private gateway.</p>
+        /// <p>The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private
+        /// gateway.</p>
         pub fn transit_gateway_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.transit_gateway_id(inp);
             self
@@ -14423,9 +14725,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_transit_gateway_id(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, inp: bool) -> Self {
             self.inner = self.inner.dry_run(inp);
             self
@@ -14617,7 +14920,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tag_specifications(input);
             self
         }
-        /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294 range.</p>
+        /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If
+        /// you're using a 16-bit ASN, it must be in the 64512 to 65534 range. If you're using a
+        /// 32-bit ASN, it must be in the 4200000000 to 4294967294 range.</p>
         /// <p>Default: 64512</p>
         pub fn amazon_side_asn(mut self, inp: i64) -> Self {
             self.inner = self.inner.amazon_side_asn(inp);
@@ -14627,9 +14932,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_amazon_side_asn(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, inp: bool) -> Self {
             self.inner = self.inner.dry_run(inp);
             self
@@ -14919,9 +15225,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_customer_gateway_id(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, inp: bool) -> Self {
             self.inner = self.inner.dry_run(inp);
             self
@@ -18565,9 +18872,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpn_connection_id(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, inp: bool) -> Self {
             self.inner = self.inner.dry_run(inp);
             self
@@ -18702,9 +19010,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpn_gateway_id(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, inp: bool) -> Self {
             self.inner = self.inner.dry_run(inp);
             self
@@ -19846,6 +20155,131 @@ pub mod fluent_builders {
         }
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeCapacityReservationFleets<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_capacity_reservation_fleets_input::Builder,
+    }
+    impl<C, M, R> DescribeCapacityReservationFleets<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeCapacityReservationFleetsOutput,
+            smithy_http::result::SdkError<crate::error::DescribeCapacityReservationFleetsError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeCapacityReservationFleetsInputOperationOutputAlias,
+                crate::output::DescribeCapacityReservationFleetsOutput,
+                crate::error::DescribeCapacityReservationFleetsError,
+                crate::input::DescribeCapacityReservationFleetsInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `CapacityReservationFleetIds`.
+        ///
+        /// To override the contents of this collection use [`set_capacity_reservation_fleet_ids`](Self::set_capacity_reservation_fleet_ids).
+        /// <p>The IDs of the Capacity Reservation Fleets to describe.</p>
+        pub fn capacity_reservation_fleet_ids(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.capacity_reservation_fleet_ids(inp);
+            self
+        }
+        pub fn set_capacity_reservation_fleet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_capacity_reservation_fleet_ids(input);
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        /// <p>One or more filters.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>state</code> - The state of the Fleet (<code>submitted</code> | <code>modifying</code> | <code>active</code> |
+        /// <code>partially_fulfilled</code> | <code>expiring</code> | <code>expired</code> | <code>cancelling</code> |
+        /// <code>cancelled</code> | <code>failed</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>instance-match-criteria</code> - The instance matching criteria for the Fleet. Only <code>open</code> is supported.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>tenancy</code> - The tenancy of the Fleet (<code>default</code> | <code>dedicated</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>allocation-strategy</code> - The allocation strategy used by the Fleet. Only <code>prioritized</code> is supported.</p>
+        /// </li>
+        /// </ul>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
             self
         }
     }
@@ -21163,7 +21597,8 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>bgp-asn</code> - The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+        /// <code>bgp-asn</code> - The customer gateway's Border Gateway Protocol (BGP)
+        /// Autonomous System Number (ASN).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -21171,15 +21606,19 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ip-address</code> - The IP address of the customer gateway's Internet-routable external interface.</p>
+        /// <code>ip-address</code> - The IP address of the customer gateway's
+        /// Internet-routable external interface.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>state</code> - The state of the customer gateway (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
+        /// <code>state</code> - The state of the customer gateway (<code>pending</code> |
+        /// <code>available</code> | <code>deleting</code> |
+        /// <code>deleted</code>).</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>type</code> - The type of customer gateway. Currently, the only supported type is <code>ipsec.1</code>.</p>
+        /// <code>type</code> - The type of customer gateway. Currently, the only
+        /// supported type is <code>ipsec.1</code>.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -21202,9 +21641,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, inp: bool) -> Self {
             self.inner = self.inner.dry_run(inp);
             self
@@ -35743,27 +36183,35 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>customer-gateway-configuration</code> - The configuration information for the customer gateway.</p>
+        /// <code>customer-gateway-configuration</code> - The configuration information
+        /// for the customer gateway.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>customer-gateway-id</code> - The ID of a customer gateway associated with the VPN connection.</p>
+        /// <code>customer-gateway-id</code> - The ID of a customer gateway associated
+        /// with the VPN connection.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>state</code> - The state of the VPN connection (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
+        /// <code>state</code> - The state of the VPN connection (<code>pending</code> |
+        /// <code>available</code> | <code>deleting</code> |
+        /// <code>deleted</code>).</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>option.static-routes-only</code> - Indicates whether the connection has static routes only. Used for devices that do not support Border Gateway Protocol (BGP).</p>
+        /// <code>option.static-routes-only</code> - Indicates whether the connection has
+        /// static routes only. Used for devices that do not support Border Gateway Protocol
+        /// (BGP).</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>route.destination-cidr-block</code> - The destination CIDR block. This corresponds to the subnet used in a customer data center.</p>
+        /// <code>route.destination-cidr-block</code> - The destination CIDR block. This
+        /// corresponds to the subnet used in a customer data center.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>bgp-asn</code> - The BGP Autonomous System Number (ASN) associated with a BGP device.</p>
+        /// <code>bgp-asn</code> - The BGP Autonomous System Number (ASN) associated with
+        /// a BGP device.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -35776,7 +36224,8 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>type</code> - The type of VPN connection. Currently the only supported type is <code>ipsec.1</code>.</p>
+        /// <code>type</code> - The type of VPN connection. Currently the only supported
+        /// type is <code>ipsec.1</code>.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -35784,11 +36233,13 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>vpn-gateway-id</code> - The ID of a virtual private gateway associated with the VPN connection.</p>
+        /// <code>vpn-gateway-id</code> - The ID of a virtual private gateway associated
+        /// with the VPN connection.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>transit-gateway-id</code> - The ID of a transit gateway associated with the VPN connection.</p>
+        /// <code>transit-gateway-id</code> - The ID of a transit gateway associated with
+        /// the VPN connection.</p>
         /// </li>
         /// </ul>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
@@ -35818,9 +36269,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpn_connection_ids(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, inp: bool) -> Self {
             self.inner = self.inner.dry_run(inp);
             self
@@ -35881,11 +36333,14 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.</p>
+        /// <code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the
+        /// Amazon side of the gateway.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p>
+        /// <code>attachment.state</code> - The current state of the attachment between
+        /// the gateway and the VPC (<code>attaching</code> | <code>attached</code> |
+        /// <code>detaching</code> | <code>detached</code>).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -35893,11 +36348,14 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>availability-zone</code> - The Availability Zone for the virtual private gateway (if applicable).</p>
+        /// <code>availability-zone</code> - The Availability Zone for the virtual private
+        /// gateway (if applicable).</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>state</code> - The state of the virtual private gateway (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
+        /// <code>state</code> - The state of the virtual private gateway
+        /// (<code>pending</code> | <code>available</code> | <code>deleting</code> |
+        /// <code>deleted</code>).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -35910,7 +36368,8 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>type</code> - The type of virtual private gateway. Currently the only supported type is <code>ipsec.1</code>.</p>
+        /// <code>type</code> - The type of virtual private gateway. Currently the only
+        /// supported type is <code>ipsec.1</code>.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -35944,9 +36403,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpn_gateway_ids(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, inp: bool) -> Self {
             self.inner = self.inner.dry_run(inp);
             self
@@ -36363,9 +36823,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpn_gateway_id(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, inp: bool) -> Self {
             self.inner = self.inner.dry_run(inp);
             self
@@ -36789,9 +37250,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_route_table_id(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, inp: bool) -> Self {
             self.inner = self.inner.dry_run(inp);
             self
@@ -38151,7 +38613,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be attached to the same VPC that the routing tables are associated with. </p>
+        /// <p>The ID of the virtual private gateway that is attached to a VPC. The virtual private
+        /// gateway must be attached to the same VPC that the routing tables are associated with.
+        /// </p>
         pub fn gateway_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_id(inp);
             self
@@ -38160,7 +38624,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_gateway_id(input);
             self
         }
-        /// <p>The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to. </p>
+        /// <p>The ID of the route table. The routing table must be associated with the same VPC that
+        /// the virtual private gateway is attached to. </p>
         pub fn route_table_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.route_table_id(inp);
             self
@@ -38172,9 +38637,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_route_table_id(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, inp: bool) -> Self {
             self.inner = self.inner.dry_run(inp);
             self
@@ -40915,6 +41381,196 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct GetVpnConnectionDeviceSampleConfiguration<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_vpn_connection_device_sample_configuration_input::Builder,
+    }
+    impl<C, M, R> GetVpnConnectionDeviceSampleConfiguration<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetVpnConnectionDeviceSampleConfigurationOutput,
+            smithy_http::result::SdkError<
+                crate::error::GetVpnConnectionDeviceSampleConfigurationError,
+            >,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetVpnConnectionDeviceSampleConfigurationInputOperationOutputAlias,
+                crate::output::GetVpnConnectionDeviceSampleConfigurationOutput,
+                crate::error::GetVpnConnectionDeviceSampleConfigurationError,
+                crate::input::GetVpnConnectionDeviceSampleConfigurationInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The <code>VpnConnectionId</code> specifies the Site-to-Site VPN connection used for the sample
+        /// configuration.</p>
+        pub fn vpn_connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpn_connection_id(inp);
+            self
+        }
+        pub fn set_vpn_connection_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vpn_connection_id(input);
+            self
+        }
+        /// <p>Device identifier provided by the <code>GetVpnConnectionDeviceTypes</code> API.</p>
+        pub fn vpn_connection_device_type_id(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.vpn_connection_device_type_id(inp);
+            self
+        }
+        pub fn set_vpn_connection_device_type_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vpn_connection_device_type_id(input);
+            self
+        }
+        /// <p>The IKE version to be used in the sample configuration file for your customer gateway
+        /// device. You can specify one of the following versions: <code>ikev1</code> or
+        /// <code>ikev2</code>.</p>
+        pub fn internet_key_exchange_version(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.internet_key_exchange_version(inp);
+            self
+        }
+        pub fn set_internet_key_exchange_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_internet_key_exchange_version(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct GetVpnConnectionDeviceTypes<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_vpn_connection_device_types_input::Builder,
+    }
+    impl<C, M, R> GetVpnConnectionDeviceTypes<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetVpnConnectionDeviceTypesOutput,
+            smithy_http::result::SdkError<crate::error::GetVpnConnectionDeviceTypesError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetVpnConnectionDeviceTypesInputOperationOutputAlias,
+                crate::output::GetVpnConnectionDeviceTypesOutput,
+                crate::error::GetVpnConnectionDeviceTypesError,
+                crate::input::GetVpnConnectionDeviceTypesInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The maximum number of results returned by <code>GetVpnConnectionDeviceTypes</code> in
+        /// paginated output. When this parameter is used, <code>GetVpnConnectionDeviceTypes</code>
+        /// only returns <code>MaxResults</code> results in a single page along with a
+        /// <code>NextToken</code> response element. The remaining results of the initial
+        /// request can be seen by sending another <code>GetVpnConnectionDeviceTypes</code> request
+        /// with the returned <code>NextToken</code> value. This value can be between 200 and 1000.
+        /// If this parameter is not used, then <code>GetVpnConnectionDeviceTypes</code> returns all
+        /// results.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The <code>NextToken</code> value returned from a previous paginated
+        /// <code>GetVpnConnectionDeviceTypes</code> request where <code>MaxResults</code> was
+        /// used and the results exceeded the value of that parameter. Pagination continues from the
+        /// end of the previous results that returned the <code>NextToken</code> value. This value
+        /// is null when there are no more results to return. </p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct ImportClientVpnClientCertificateRevocationList<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -40964,7 +41620,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client certificate revocation list file. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate a Client Certificate Revocation List</a> in the
-        /// <i>AWS Client VPN Administrator Guide</i>.</p>
+        /// <i>Client VPN Administrator Guide</i>.</p>
         pub fn certificate_revocation_list(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_revocation_list(inp);
             self
@@ -42006,6 +42662,117 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct ModifyCapacityReservationFleet<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::modify_capacity_reservation_fleet_input::Builder,
+    }
+    impl<C, M, R> ModifyCapacityReservationFleet<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ModifyCapacityReservationFleetOutput,
+            smithy_http::result::SdkError<crate::error::ModifyCapacityReservationFleetError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ModifyCapacityReservationFleetInputOperationOutputAlias,
+                crate::output::ModifyCapacityReservationFleetOutput,
+                crate::error::ModifyCapacityReservationFleetError,
+                crate::input::ModifyCapacityReservationFleetInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the Capacity Reservation Fleet to modify.</p>
+        pub fn capacity_reservation_fleet_id(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.capacity_reservation_fleet_id(inp);
+            self
+        }
+        pub fn set_capacity_reservation_fleet_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_capacity_reservation_fleet_id(input);
+            self
+        }
+        /// <p>The total number of capacity units to be reserved by the Capacity Reservation Fleet. This value,
+        /// together with the instance type weights that you assign to each instance type used by the Fleet
+        /// determine the number of instances for which the Fleet reserves capacity. Both values are based on
+        /// units that make sense for your workload. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a>
+        /// in the Amazon EC2 User Guide.</p>
+        pub fn total_target_capacity(mut self, inp: i32) -> Self {
+            self.inner = self.inner.total_target_capacity(inp);
+            self
+        }
+        pub fn set_total_target_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_total_target_capacity(input);
+            self
+        }
+        /// <p>The date and time at which the Capacity Reservation Fleet expires. When the Capacity Reservation
+        /// Fleet expires, its state changes to <code>expired</code> and all of the Capacity Reservations in the
+        /// Fleet expire.</p>  
+        /// <p>The Capacity Reservation Fleet expires within an hour after the specified time. For example, if you
+        /// specify <code>5/31/2019</code>, <code>13:30:55</code>, the Capacity Reservation Fleet is guaranteed
+        /// to expire between <code>13:30:55</code> and <code>14:30:55</code> on <code>5/31/2019</code>.</p>
+        /// <p>You can't specify <b>EndDate</b> and <b>
+        /// RemoveEndDate</b> in the same request.</p>
+        pub fn end_date(mut self, inp: smithy_types::Instant) -> Self {
+            self.inner = self.inner.end_date(inp);
+            self
+        }
+        pub fn set_end_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.inner = self.inner.set_end_date(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>Indicates whether to remove the end date from the Capacity Reservation Fleet. If you remove the
+        /// end date, the Capacity Reservation Fleet does not expire and it remains active until you explicitly
+        /// cancel it using the <b>CancelCapacityReservationFleet</b> action.</p>
+        /// <p>You can't specify <b>RemoveEndDate</b> and <b>
+        /// EndDate</b> in the same request.</p>
+        pub fn remove_end_date(mut self, inp: bool) -> Self {
+            self.inner = self.inner.remove_end_date(inp);
+            self
+        }
+        pub fn set_remove_end_date(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_remove_end_date(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct ModifyClientVpnEndpoint<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -42061,7 +42828,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_vpn_endpoint_id(input);
             self
         }
-        /// <p>The ARN of the server certificate to be used. The server certificate must be provisioned in AWS Certificate Manager (ACM).</p>
+        /// <p>The ARN of the server certificate to be used. The server certificate must be provisioned in
+        /// Certificate Manager (ACM).</p>
         pub fn server_certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_certificate_arn(inp);
             self
@@ -42137,8 +42905,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether the VPN is split-tunnel.</p>
-        /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel AWS Client VPN Endpoint</a> in the <i>AWS
-        /// Client VPN Administrator Guide</i>.</p>
+        /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel Client VPN endpoint</a> in the
+        /// <i>Client VPN Administrator Guide</i>.</p>
         pub fn split_tunnel(mut self, inp: bool) -> Self {
             self.inner = self.inner.split_tunnel(inp);
             self
@@ -44003,10 +44771,12 @@ pub mod fluent_builders {
             self
         }
         /// <p>The tenancy for the instance.</p>
-        /// <p>For T3 instances, you can't change the tenancy from <code>dedicated</code> to
-        /// <code>host</code>, or from <code>host</code> to <code>dedicated</code>. Attempting
-        /// to make one of these unsupported tenancy changes results in the <code>InvalidTenancy</code>
-        /// error code.</p>
+        /// <note>
+        /// <p>For T3 instances, you can't change the tenancy from <code>dedicated</code>
+        /// to <code>host</code>, or from <code>host</code> to <code>dedicated</code>.
+        /// Attempting to make one of these unsupported tenancy changes results in the
+        /// <code>InvalidTenancy</code> error code.</p>
+        /// </note>
         pub fn tenancy(mut self, inp: crate::model::HostTenancy) -> Self {
             self.inner = self.inner.tenancy(inp);
             self
@@ -46851,7 +47621,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_customer_gateway_id(input);
             self
         }
-        /// <p>The ID of the virtual private gateway at the AWS side of the VPN connection.</p>
+        /// <p>The ID of the virtual private gateway at the Amazon Web Services side of the VPN
+        /// connection.</p>
         pub fn vpn_gateway_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vpn_gateway_id(inp);
             self
@@ -46863,9 +47634,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpn_gateway_id(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, inp: bool) -> Self {
             self.inner = self.inner.dry_run(inp);
             self
@@ -46919,8 +47691,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Site-to-Site VPN connection.
-        /// </p>
+        /// <p>The ID of the Site-to-Site VPN connection. </p>
         pub fn vpn_connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vpn_connection_id(inp);
             self
@@ -46946,7 +47717,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_local_ipv4_network_cidr(input);
             self
         }
-        /// <p>The IPv4 CIDR on the AWS side of the VPN connection.</p>
+        /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
         /// <p>Default: <code>0.0.0.0/0</code>
         /// </p>
         pub fn remote_ipv4_network_cidr(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -46974,7 +47745,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_local_ipv6_network_cidr(input);
             self
         }
-        /// <p>The IPv6 CIDR on the AWS side of the VPN connection.</p>
+        /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
         /// <p>Default: <code>::/0</code>
         /// </p>
         pub fn remote_ipv6_network_cidr(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -47042,7 +47813,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the AWS Site-to-Site VPN connection.</p>
+        /// <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
         pub fn vpn_connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vpn_connection_id(inp);
             self
@@ -47069,9 +47840,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpn_tunnel_outside_ip_address(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, inp: bool) -> Self {
             self.inner = self.inner.dry_run(inp);
             self
@@ -47125,7 +47897,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the AWS Site-to-Site VPN connection.</p>
+        /// <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
         pub fn vpn_connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vpn_connection_id(inp);
             self
@@ -47167,9 +47939,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tunnel_options(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, inp: bool) -> Self {
             self.inner = self.inner.dry_run(inp);
             self
@@ -51987,21 +52760,6 @@ pub mod fluent_builders {
             self.inner = self.inner.set_local_gateway_route_table_id(input);
             self
         }
-        /// Appends an item to `Filters`.
-        ///
-        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        /// <p>One or more filters.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
-            self
-        }
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.inner = self.inner.set_filters(input);
-            self
-        }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, inp: i32) -> Self {
@@ -52030,6 +52788,21 @@ pub mod fluent_builders {
         }
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        /// <p>One or more filters.</p>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
             self
         }
     }

@@ -398,7 +398,7 @@ impl Builder {
             });
         // TODO: ECS, IMDS, and other named providers
         let factory = exec::named::NamedProviderFactory::new(named_providers);
-        let connector = expect_connector(conf.connector().cloned());
+        let connector = expect_connector(conf.default_connector());
         let core_client = aws_hyper::Client::new(connector.clone());
 
         ProfileFileCredentialsProvider {

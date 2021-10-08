@@ -941,6 +941,13 @@ pub fn deser_operation_crate_operation_get_backend(
             Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "amplifyFeatureFlags" => {
+                        builder = builder.set_amplify_feature_flags(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     "amplifyMetaConfig" => {
                         builder = builder.set_amplify_meta_config(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

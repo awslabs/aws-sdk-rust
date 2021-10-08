@@ -2871,13 +2871,21 @@ pub fn serialize_structure_crate_model_cmaf_group_settings(
     if let Some(var_595) = &input.image_based_trick_play {
         object.key("imageBasedTrickPlay").string(var_595.as_str());
     }
-    if let Some(var_596) = &input.manifest_compression {
-        object.key("manifestCompression").string(var_596.as_str());
+    if let Some(var_596) = &input.image_based_trick_play_settings {
+        let mut object_597 = object.key("imageBasedTrickPlaySettings").start_object();
+        crate::json_ser::serialize_structure_crate_model_cmaf_image_based_trick_play_settings(
+            &mut object_597,
+            var_596,
+        );
+        object_597.finish();
     }
-    if let Some(var_597) = &input.manifest_duration_format {
+    if let Some(var_598) = &input.manifest_compression {
+        object.key("manifestCompression").string(var_598.as_str());
+    }
+    if let Some(var_599) = &input.manifest_duration_format {
         object
             .key("manifestDurationFormat")
-            .string(var_597.as_str());
+            .string(var_599.as_str());
     }
     if input.min_buffer_time != 0 {
         object.key("minBufferTime").number(
@@ -2891,16 +2899,16 @@ pub fn serialize_structure_crate_model_cmaf_group_settings(
             smithy_types::Number::Float((input.min_final_segment_length).into()),
         );
     }
-    if let Some(var_598) = &input.mpd_profile {
-        object.key("mpdProfile").string(var_598.as_str());
+    if let Some(var_600) = &input.mpd_profile {
+        object.key("mpdProfile").string(var_600.as_str());
     }
-    if let Some(var_599) = &input.pts_offset_handling_for_b_frames {
+    if let Some(var_601) = &input.pts_offset_handling_for_b_frames {
         object
             .key("ptsOffsetHandlingForBFrames")
-            .string(var_599.as_str());
+            .string(var_601.as_str());
     }
-    if let Some(var_600) = &input.segment_control {
-        object.key("segmentControl").string(var_600.as_str());
+    if let Some(var_602) = &input.segment_control {
+        object.key("segmentControl").string(var_602.as_str());
     }
     if input.segment_length != 0 {
         object.key("segmentLength").number(
@@ -2908,27 +2916,27 @@ pub fn serialize_structure_crate_model_cmaf_group_settings(
             smithy_types::Number::NegInt((input.segment_length).into()),
         );
     }
-    if let Some(var_601) = &input.segment_length_control {
-        object.key("segmentLengthControl").string(var_601.as_str());
+    if let Some(var_603) = &input.segment_length_control {
+        object.key("segmentLengthControl").string(var_603.as_str());
     }
-    if let Some(var_602) = &input.stream_inf_resolution {
-        object.key("streamInfResolution").string(var_602.as_str());
+    if let Some(var_604) = &input.stream_inf_resolution {
+        object.key("streamInfResolution").string(var_604.as_str());
     }
-    if let Some(var_603) = &input.target_duration_compatibility_mode {
+    if let Some(var_605) = &input.target_duration_compatibility_mode {
         object
             .key("targetDurationCompatibilityMode")
-            .string(var_603.as_str());
+            .string(var_605.as_str());
     }
-    if let Some(var_604) = &input.write_dash_manifest {
-        object.key("writeDashManifest").string(var_604.as_str());
+    if let Some(var_606) = &input.write_dash_manifest {
+        object.key("writeDashManifest").string(var_606.as_str());
     }
-    if let Some(var_605) = &input.write_hls_manifest {
-        object.key("writeHlsManifest").string(var_605.as_str());
+    if let Some(var_607) = &input.write_hls_manifest {
+        object.key("writeHlsManifest").string(var_607.as_str());
     }
-    if let Some(var_606) = &input.write_segment_timeline_in_representation {
+    if let Some(var_608) = &input.write_segment_timeline_in_representation {
         object
             .key("writeSegmentTimelineInRepresentation")
-            .string(var_606.as_str());
+            .string(var_608.as_str());
     }
 }
 
@@ -2936,46 +2944,46 @@ pub fn serialize_structure_crate_model_dash_iso_group_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DashIsoGroupSettings,
 ) {
-    if let Some(var_607) = &input.additional_manifests {
-        let mut array_608 = object.key("additionalManifests").start_array();
-        for item_609 in var_607 {
+    if let Some(var_609) = &input.additional_manifests {
+        let mut array_610 = object.key("additionalManifests").start_array();
+        for item_611 in var_609 {
             {
-                let mut object_610 = array_608.value().start_object();
+                let mut object_612 = array_610.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_dash_additional_manifest(
-                    &mut object_610,
-                    item_609,
+                    &mut object_612,
+                    item_611,
                 );
-                object_610.finish();
+                object_612.finish();
             }
         }
-        array_608.finish();
+        array_610.finish();
     }
-    if let Some(var_611) = &input.audio_channel_config_scheme_id_uri {
+    if let Some(var_613) = &input.audio_channel_config_scheme_id_uri {
         object
             .key("audioChannelConfigSchemeIdUri")
-            .string(var_611.as_str());
+            .string(var_613.as_str());
     }
-    if let Some(var_612) = &input.base_url {
-        object.key("baseUrl").string(var_612);
+    if let Some(var_614) = &input.base_url {
+        object.key("baseUrl").string(var_614);
     }
-    if let Some(var_613) = &input.destination {
-        object.key("destination").string(var_613);
+    if let Some(var_615) = &input.destination {
+        object.key("destination").string(var_615);
     }
-    if let Some(var_614) = &input.destination_settings {
-        let mut object_615 = object.key("destinationSettings").start_object();
+    if let Some(var_616) = &input.destination_settings {
+        let mut object_617 = object.key("destinationSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_destination_settings(
-            &mut object_615,
-            var_614,
-        );
-        object_615.finish();
-    }
-    if let Some(var_616) = &input.encryption {
-        let mut object_617 = object.key("encryption").start_object();
-        crate::json_ser::serialize_structure_crate_model_dash_iso_encryption_settings(
             &mut object_617,
             var_616,
         );
         object_617.finish();
+    }
+    if let Some(var_618) = &input.encryption {
+        let mut object_619 = object.key("encryption").start_object();
+        crate::json_ser::serialize_structure_crate_model_dash_iso_encryption_settings(
+            &mut object_619,
+            var_618,
+        );
+        object_619.finish();
     }
     if input.fragment_length != 0 {
         object.key("fragmentLength").number(
@@ -2983,11 +2991,19 @@ pub fn serialize_structure_crate_model_dash_iso_group_settings(
             smithy_types::Number::NegInt((input.fragment_length).into()),
         );
     }
-    if let Some(var_618) = &input.hbbtv_compliance {
-        object.key("hbbtvCompliance").string(var_618.as_str());
+    if let Some(var_620) = &input.hbbtv_compliance {
+        object.key("hbbtvCompliance").string(var_620.as_str());
     }
-    if let Some(var_619) = &input.image_based_trick_play {
-        object.key("imageBasedTrickPlay").string(var_619.as_str());
+    if let Some(var_621) = &input.image_based_trick_play {
+        object.key("imageBasedTrickPlay").string(var_621.as_str());
+    }
+    if let Some(var_622) = &input.image_based_trick_play_settings {
+        let mut object_623 = object.key("imageBasedTrickPlaySettings").start_object();
+        crate::json_ser::serialize_structure_crate_model_dash_iso_image_based_trick_play_settings(
+            &mut object_623,
+            var_622,
+        );
+        object_623.finish();
     }
     if input.min_buffer_time != 0 {
         object.key("minBufferTime").number(
@@ -3001,16 +3017,16 @@ pub fn serialize_structure_crate_model_dash_iso_group_settings(
             smithy_types::Number::Float((input.min_final_segment_length).into()),
         );
     }
-    if let Some(var_620) = &input.mpd_profile {
-        object.key("mpdProfile").string(var_620.as_str());
+    if let Some(var_624) = &input.mpd_profile {
+        object.key("mpdProfile").string(var_624.as_str());
     }
-    if let Some(var_621) = &input.pts_offset_handling_for_b_frames {
+    if let Some(var_625) = &input.pts_offset_handling_for_b_frames {
         object
             .key("ptsOffsetHandlingForBFrames")
-            .string(var_621.as_str());
+            .string(var_625.as_str());
     }
-    if let Some(var_622) = &input.segment_control {
-        object.key("segmentControl").string(var_622.as_str());
+    if let Some(var_626) = &input.segment_control {
+        object.key("segmentControl").string(var_626.as_str());
     }
     if input.segment_length != 0 {
         object.key("segmentLength").number(
@@ -3018,13 +3034,13 @@ pub fn serialize_structure_crate_model_dash_iso_group_settings(
             smithy_types::Number::NegInt((input.segment_length).into()),
         );
     }
-    if let Some(var_623) = &input.segment_length_control {
-        object.key("segmentLengthControl").string(var_623.as_str());
+    if let Some(var_627) = &input.segment_length_control {
+        object.key("segmentLengthControl").string(var_627.as_str());
     }
-    if let Some(var_624) = &input.write_segment_timeline_in_representation {
+    if let Some(var_628) = &input.write_segment_timeline_in_representation {
         object
             .key("writeSegmentTimelineInRepresentation")
-            .string(var_624.as_str());
+            .string(var_628.as_str());
     }
 }
 
@@ -3032,16 +3048,16 @@ pub fn serialize_structure_crate_model_file_group_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::FileGroupSettings,
 ) {
-    if let Some(var_625) = &input.destination {
-        object.key("destination").string(var_625);
+    if let Some(var_629) = &input.destination {
+        object.key("destination").string(var_629);
     }
-    if let Some(var_626) = &input.destination_settings {
-        let mut object_627 = object.key("destinationSettings").start_object();
+    if let Some(var_630) = &input.destination_settings {
+        let mut object_631 = object.key("destinationSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_destination_settings(
-            &mut object_627,
-            var_626,
+            &mut object_631,
+            var_630,
         );
-        object_627.finish();
+        object_631.finish();
     }
 }
 
@@ -3049,92 +3065,100 @@ pub fn serialize_structure_crate_model_hls_group_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HlsGroupSettings,
 ) {
-    if let Some(var_628) = &input.ad_markers {
-        let mut array_629 = object.key("adMarkers").start_array();
-        for item_630 in var_628 {
+    if let Some(var_632) = &input.ad_markers {
+        let mut array_633 = object.key("adMarkers").start_array();
+        for item_634 in var_632 {
             {
-                array_629.value().string(item_630.as_str());
+                array_633.value().string(item_634.as_str());
             }
         }
-        array_629.finish();
+        array_633.finish();
     }
-    if let Some(var_631) = &input.additional_manifests {
-        let mut array_632 = object.key("additionalManifests").start_array();
-        for item_633 in var_631 {
+    if let Some(var_635) = &input.additional_manifests {
+        let mut array_636 = object.key("additionalManifests").start_array();
+        for item_637 in var_635 {
             {
-                let mut object_634 = array_632.value().start_object();
+                let mut object_638 = array_636.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_hls_additional_manifest(
-                    &mut object_634,
-                    item_633,
+                    &mut object_638,
+                    item_637,
                 );
-                object_634.finish();
+                object_638.finish();
             }
         }
-        array_632.finish();
+        array_636.finish();
     }
-    if let Some(var_635) = &input.audio_only_header {
-        object.key("audioOnlyHeader").string(var_635.as_str());
+    if let Some(var_639) = &input.audio_only_header {
+        object.key("audioOnlyHeader").string(var_639.as_str());
     }
-    if let Some(var_636) = &input.base_url {
-        object.key("baseUrl").string(var_636);
+    if let Some(var_640) = &input.base_url {
+        object.key("baseUrl").string(var_640);
     }
-    if let Some(var_637) = &input.caption_language_mappings {
-        let mut array_638 = object.key("captionLanguageMappings").start_array();
-        for item_639 in var_637 {
+    if let Some(var_641) = &input.caption_language_mappings {
+        let mut array_642 = object.key("captionLanguageMappings").start_array();
+        for item_643 in var_641 {
             {
-                let mut object_640 = array_638.value().start_object();
+                let mut object_644 = array_642.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_hls_caption_language_mapping(
-                    &mut object_640,
-                    item_639,
+                    &mut object_644,
+                    item_643,
                 );
-                object_640.finish();
+                object_644.finish();
             }
         }
-        array_638.finish();
+        array_642.finish();
     }
-    if let Some(var_641) = &input.caption_language_setting {
+    if let Some(var_645) = &input.caption_language_setting {
         object
             .key("captionLanguageSetting")
-            .string(var_641.as_str());
+            .string(var_645.as_str());
     }
-    if let Some(var_642) = &input.client_cache {
-        object.key("clientCache").string(var_642.as_str());
+    if let Some(var_646) = &input.client_cache {
+        object.key("clientCache").string(var_646.as_str());
     }
-    if let Some(var_643) = &input.codec_specification {
-        object.key("codecSpecification").string(var_643.as_str());
+    if let Some(var_647) = &input.codec_specification {
+        object.key("codecSpecification").string(var_647.as_str());
     }
-    if let Some(var_644) = &input.destination {
-        object.key("destination").string(var_644);
+    if let Some(var_648) = &input.destination {
+        object.key("destination").string(var_648);
     }
-    if let Some(var_645) = &input.destination_settings {
-        let mut object_646 = object.key("destinationSettings").start_object();
+    if let Some(var_649) = &input.destination_settings {
+        let mut object_650 = object.key("destinationSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_destination_settings(
-            &mut object_646,
-            var_645,
+            &mut object_650,
+            var_649,
         );
-        object_646.finish();
+        object_650.finish();
     }
-    if let Some(var_647) = &input.directory_structure {
-        object.key("directoryStructure").string(var_647.as_str());
+    if let Some(var_651) = &input.directory_structure {
+        object.key("directoryStructure").string(var_651.as_str());
     }
-    if let Some(var_648) = &input.encryption {
-        let mut object_649 = object.key("encryption").start_object();
+    if let Some(var_652) = &input.encryption {
+        let mut object_653 = object.key("encryption").start_object();
         crate::json_ser::serialize_structure_crate_model_hls_encryption_settings(
-            &mut object_649,
-            var_648,
+            &mut object_653,
+            var_652,
         );
-        object_649.finish();
+        object_653.finish();
     }
-    if let Some(var_650) = &input.image_based_trick_play {
-        object.key("imageBasedTrickPlay").string(var_650.as_str());
+    if let Some(var_654) = &input.image_based_trick_play {
+        object.key("imageBasedTrickPlay").string(var_654.as_str());
     }
-    if let Some(var_651) = &input.manifest_compression {
-        object.key("manifestCompression").string(var_651.as_str());
+    if let Some(var_655) = &input.image_based_trick_play_settings {
+        let mut object_656 = object.key("imageBasedTrickPlaySettings").start_object();
+        crate::json_ser::serialize_structure_crate_model_hls_image_based_trick_play_settings(
+            &mut object_656,
+            var_655,
+        );
+        object_656.finish();
     }
-    if let Some(var_652) = &input.manifest_duration_format {
+    if let Some(var_657) = &input.manifest_compression {
+        object.key("manifestCompression").string(var_657.as_str());
+    }
+    if let Some(var_658) = &input.manifest_duration_format {
         object
             .key("manifestDurationFormat")
-            .string(var_652.as_str());
+            .string(var_658.as_str());
     }
     if input.min_final_segment_length != 0.0 {
         object.key("minFinalSegmentLength").number(
@@ -3148,11 +3172,11 @@ pub fn serialize_structure_crate_model_hls_group_settings(
             smithy_types::Number::NegInt((input.min_segment_length).into()),
         );
     }
-    if let Some(var_653) = &input.output_selection {
-        object.key("outputSelection").string(var_653.as_str());
+    if let Some(var_659) = &input.output_selection {
+        object.key("outputSelection").string(var_659.as_str());
     }
-    if let Some(var_654) = &input.program_date_time {
-        object.key("programDateTime").string(var_654.as_str());
+    if let Some(var_660) = &input.program_date_time {
+        object.key("programDateTime").string(var_660.as_str());
     }
     if input.program_date_time_period != 0 {
         object.key("programDateTimePeriod").number(
@@ -3160,8 +3184,8 @@ pub fn serialize_structure_crate_model_hls_group_settings(
             smithy_types::Number::NegInt((input.program_date_time_period).into()),
         );
     }
-    if let Some(var_655) = &input.segment_control {
-        object.key("segmentControl").string(var_655.as_str());
+    if let Some(var_661) = &input.segment_control {
+        object.key("segmentControl").string(var_661.as_str());
     }
     if input.segment_length != 0 {
         object.key("segmentLength").number(
@@ -3169,8 +3193,8 @@ pub fn serialize_structure_crate_model_hls_group_settings(
             smithy_types::Number::NegInt((input.segment_length).into()),
         );
     }
-    if let Some(var_656) = &input.segment_length_control {
-        object.key("segmentLengthControl").string(var_656.as_str());
+    if let Some(var_662) = &input.segment_length_control {
+        object.key("segmentLengthControl").string(var_662.as_str());
     }
     if input.segments_per_subdirectory != 0 {
         object.key("segmentsPerSubdirectory").number(
@@ -3178,16 +3202,16 @@ pub fn serialize_structure_crate_model_hls_group_settings(
             smithy_types::Number::NegInt((input.segments_per_subdirectory).into()),
         );
     }
-    if let Some(var_657) = &input.stream_inf_resolution {
-        object.key("streamInfResolution").string(var_657.as_str());
+    if let Some(var_663) = &input.stream_inf_resolution {
+        object.key("streamInfResolution").string(var_663.as_str());
     }
-    if let Some(var_658) = &input.target_duration_compatibility_mode {
+    if let Some(var_664) = &input.target_duration_compatibility_mode {
         object
             .key("targetDurationCompatibilityMode")
-            .string(var_658.as_str());
+            .string(var_664.as_str());
     }
-    if let Some(var_659) = &input.timed_metadata_id3_frame {
-        object.key("timedMetadataId3Frame").string(var_659.as_str());
+    if let Some(var_665) = &input.timed_metadata_id3_frame {
+        object.key("timedMetadataId3Frame").string(var_665.as_str());
     }
     if input.timed_metadata_id3_period != 0 {
         object.key("timedMetadataId3Period").number(
@@ -3207,41 +3231,41 @@ pub fn serialize_structure_crate_model_ms_smooth_group_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MsSmoothGroupSettings,
 ) {
-    if let Some(var_660) = &input.additional_manifests {
-        let mut array_661 = object.key("additionalManifests").start_array();
-        for item_662 in var_660 {
+    if let Some(var_666) = &input.additional_manifests {
+        let mut array_667 = object.key("additionalManifests").start_array();
+        for item_668 in var_666 {
             {
-                let mut object_663 = array_661.value().start_object();
+                let mut object_669 = array_667.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_ms_smooth_additional_manifest(
-                    &mut object_663,
-                    item_662,
+                    &mut object_669,
+                    item_668,
                 );
-                object_663.finish();
+                object_669.finish();
             }
         }
-        array_661.finish();
+        array_667.finish();
     }
-    if let Some(var_664) = &input.audio_deduplication {
-        object.key("audioDeduplication").string(var_664.as_str());
+    if let Some(var_670) = &input.audio_deduplication {
+        object.key("audioDeduplication").string(var_670.as_str());
     }
-    if let Some(var_665) = &input.destination {
-        object.key("destination").string(var_665);
+    if let Some(var_671) = &input.destination {
+        object.key("destination").string(var_671);
     }
-    if let Some(var_666) = &input.destination_settings {
-        let mut object_667 = object.key("destinationSettings").start_object();
+    if let Some(var_672) = &input.destination_settings {
+        let mut object_673 = object.key("destinationSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_destination_settings(
-            &mut object_667,
-            var_666,
+            &mut object_673,
+            var_672,
         );
-        object_667.finish();
+        object_673.finish();
     }
-    if let Some(var_668) = &input.encryption {
-        let mut object_669 = object.key("encryption").start_object();
+    if let Some(var_674) = &input.encryption {
+        let mut object_675 = object.key("encryption").start_object();
         crate::json_ser::serialize_structure_crate_model_ms_smooth_encryption_settings(
-            &mut object_669,
-            var_668,
+            &mut object_675,
+            var_674,
         );
-        object_669.finish();
+        object_675.finish();
     }
     if input.fragment_length != 0 {
         object.key("fragmentLength").number(
@@ -3249,11 +3273,11 @@ pub fn serialize_structure_crate_model_ms_smooth_group_settings(
             smithy_types::Number::NegInt((input.fragment_length).into()),
         );
     }
-    if let Some(var_670) = &input.fragment_length_control {
-        object.key("fragmentLengthControl").string(var_670.as_str());
+    if let Some(var_676) = &input.fragment_length_control {
+        object.key("fragmentLengthControl").string(var_676.as_str());
     }
-    if let Some(var_671) = &input.manifest_encoding {
-        object.key("manifestEncoding").string(var_671.as_str());
+    if let Some(var_677) = &input.manifest_encoding {
+        object.key("manifestEncoding").string(var_677.as_str());
     }
 }
 
@@ -3261,25 +3285,25 @@ pub fn serialize_structure_crate_model_caption_description(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CaptionDescription,
 ) {
-    if let Some(var_672) = &input.caption_selector_name {
-        object.key("captionSelectorName").string(var_672);
+    if let Some(var_678) = &input.caption_selector_name {
+        object.key("captionSelectorName").string(var_678);
     }
-    if let Some(var_673) = &input.custom_language_code {
-        object.key("customLanguageCode").string(var_673);
+    if let Some(var_679) = &input.custom_language_code {
+        object.key("customLanguageCode").string(var_679);
     }
-    if let Some(var_674) = &input.destination_settings {
-        let mut object_675 = object.key("destinationSettings").start_object();
+    if let Some(var_680) = &input.destination_settings {
+        let mut object_681 = object.key("destinationSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_caption_destination_settings(
-            &mut object_675,
-            var_674,
+            &mut object_681,
+            var_680,
         );
-        object_675.finish();
+        object_681.finish();
     }
-    if let Some(var_676) = &input.language_code {
-        object.key("languageCode").string(var_676.as_str());
+    if let Some(var_682) = &input.language_code {
+        object.key("languageCode").string(var_682.as_str());
     }
-    if let Some(var_677) = &input.language_description {
-        object.key("languageDescription").string(var_677);
+    if let Some(var_683) = &input.language_description {
+        object.key("languageDescription").string(var_683);
     }
 }
 
@@ -3287,10 +3311,10 @@ pub fn serialize_structure_crate_model_output_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::OutputSettings,
 ) {
-    if let Some(var_678) = &input.hls_settings {
-        let mut object_679 = object.key("hlsSettings").start_object();
-        crate::json_ser::serialize_structure_crate_model_hls_settings(&mut object_679, var_678);
-        object_679.finish();
+    if let Some(var_684) = &input.hls_settings {
+        let mut object_685 = object.key("hlsSettings").start_object();
+        crate::json_ser::serialize_structure_crate_model_hls_settings(&mut object_685, var_684);
+        object_685.finish();
     }
 }
 
@@ -3298,10 +3322,10 @@ pub fn serialize_structure_crate_model_aac_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AacSettings,
 ) {
-    if let Some(var_680) = &input.audio_description_broadcaster_mix {
+    if let Some(var_686) = &input.audio_description_broadcaster_mix {
         object
             .key("audioDescriptionBroadcasterMix")
-            .string(var_680.as_str());
+            .string(var_686.as_str());
     }
     if input.bitrate != 0 {
         object.key("bitrate").number(
@@ -3309,17 +3333,17 @@ pub fn serialize_structure_crate_model_aac_settings(
             smithy_types::Number::NegInt((input.bitrate).into()),
         );
     }
-    if let Some(var_681) = &input.codec_profile {
-        object.key("codecProfile").string(var_681.as_str());
+    if let Some(var_687) = &input.codec_profile {
+        object.key("codecProfile").string(var_687.as_str());
     }
-    if let Some(var_682) = &input.coding_mode {
-        object.key("codingMode").string(var_682.as_str());
+    if let Some(var_688) = &input.coding_mode {
+        object.key("codingMode").string(var_688.as_str());
     }
-    if let Some(var_683) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_683.as_str());
+    if let Some(var_689) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_689.as_str());
     }
-    if let Some(var_684) = &input.raw_format {
-        object.key("rawFormat").string(var_684.as_str());
+    if let Some(var_690) = &input.raw_format {
+        object.key("rawFormat").string(var_690.as_str());
     }
     if input.sample_rate != 0 {
         object.key("sampleRate").number(
@@ -3327,11 +3351,11 @@ pub fn serialize_structure_crate_model_aac_settings(
             smithy_types::Number::NegInt((input.sample_rate).into()),
         );
     }
-    if let Some(var_685) = &input.specification {
-        object.key("specification").string(var_685.as_str());
+    if let Some(var_691) = &input.specification {
+        object.key("specification").string(var_691.as_str());
     }
-    if let Some(var_686) = &input.vbr_quality {
-        object.key("vbrQuality").string(var_686.as_str());
+    if let Some(var_692) = &input.vbr_quality {
+        object.key("vbrQuality").string(var_692.as_str());
     }
 }
 
@@ -3345,11 +3369,11 @@ pub fn serialize_structure_crate_model_ac3_settings(
             smithy_types::Number::NegInt((input.bitrate).into()),
         );
     }
-    if let Some(var_687) = &input.bitstream_mode {
-        object.key("bitstreamMode").string(var_687.as_str());
+    if let Some(var_693) = &input.bitstream_mode {
+        object.key("bitstreamMode").string(var_693.as_str());
     }
-    if let Some(var_688) = &input.coding_mode {
-        object.key("codingMode").string(var_688.as_str());
+    if let Some(var_694) = &input.coding_mode {
+        object.key("codingMode").string(var_694.as_str());
     }
     if input.dialnorm != 0 {
         object.key("dialnorm").number(
@@ -3357,26 +3381,26 @@ pub fn serialize_structure_crate_model_ac3_settings(
             smithy_types::Number::NegInt((input.dialnorm).into()),
         );
     }
-    if let Some(var_689) = &input.dynamic_range_compression_line {
+    if let Some(var_695) = &input.dynamic_range_compression_line {
         object
             .key("dynamicRangeCompressionLine")
-            .string(var_689.as_str());
+            .string(var_695.as_str());
     }
-    if let Some(var_690) = &input.dynamic_range_compression_profile {
+    if let Some(var_696) = &input.dynamic_range_compression_profile {
         object
             .key("dynamicRangeCompressionProfile")
-            .string(var_690.as_str());
+            .string(var_696.as_str());
     }
-    if let Some(var_691) = &input.dynamic_range_compression_rf {
+    if let Some(var_697) = &input.dynamic_range_compression_rf {
         object
             .key("dynamicRangeCompressionRf")
-            .string(var_691.as_str());
+            .string(var_697.as_str());
     }
-    if let Some(var_692) = &input.lfe_filter {
-        object.key("lfeFilter").string(var_692.as_str());
+    if let Some(var_698) = &input.lfe_filter {
+        object.key("lfeFilter").string(var_698.as_str());
     }
-    if let Some(var_693) = &input.metadata_control {
-        object.key("metadataControl").string(var_693.as_str());
+    if let Some(var_699) = &input.metadata_control {
+        object.key("metadataControl").string(var_699.as_str());
     }
     if input.sample_rate != 0 {
         object.key("sampleRate").number(
@@ -3420,30 +3444,30 @@ pub fn serialize_structure_crate_model_eac3_atmos_settings(
             smithy_types::Number::NegInt((input.bitrate).into()),
         );
     }
-    if let Some(var_694) = &input.bitstream_mode {
-        object.key("bitstreamMode").string(var_694.as_str());
+    if let Some(var_700) = &input.bitstream_mode {
+        object.key("bitstreamMode").string(var_700.as_str());
     }
-    if let Some(var_695) = &input.coding_mode {
-        object.key("codingMode").string(var_695.as_str());
+    if let Some(var_701) = &input.coding_mode {
+        object.key("codingMode").string(var_701.as_str());
     }
-    if let Some(var_696) = &input.dialogue_intelligence {
-        object.key("dialogueIntelligence").string(var_696.as_str());
+    if let Some(var_702) = &input.dialogue_intelligence {
+        object.key("dialogueIntelligence").string(var_702.as_str());
     }
-    if let Some(var_697) = &input.downmix_control {
-        object.key("downmixControl").string(var_697.as_str());
+    if let Some(var_703) = &input.downmix_control {
+        object.key("downmixControl").string(var_703.as_str());
     }
-    if let Some(var_698) = &input.dynamic_range_compression_line {
+    if let Some(var_704) = &input.dynamic_range_compression_line {
         object
             .key("dynamicRangeCompressionLine")
-            .string(var_698.as_str());
+            .string(var_704.as_str());
     }
-    if let Some(var_699) = &input.dynamic_range_compression_rf {
+    if let Some(var_705) = &input.dynamic_range_compression_rf {
         object
             .key("dynamicRangeCompressionRf")
-            .string(var_699.as_str());
+            .string(var_705.as_str());
     }
-    if let Some(var_700) = &input.dynamic_range_control {
-        object.key("dynamicRangeControl").string(var_700.as_str());
+    if let Some(var_706) = &input.dynamic_range_control {
+        object.key("dynamicRangeControl").string(var_706.as_str());
     }
     if input.lo_ro_center_mix_level != 0.0 {
         object.key("loRoCenterMixLevel").number(
@@ -3469,8 +3493,8 @@ pub fn serialize_structure_crate_model_eac3_atmos_settings(
             smithy_types::Number::Float((input.lt_rt_surround_mix_level).into()),
         );
     }
-    if let Some(var_701) = &input.metering_mode {
-        object.key("meteringMode").string(var_701.as_str());
+    if let Some(var_707) = &input.metering_mode {
+        object.key("meteringMode").string(var_707.as_str());
     }
     if input.sample_rate != 0 {
         object.key("sampleRate").number(
@@ -3484,11 +3508,11 @@ pub fn serialize_structure_crate_model_eac3_atmos_settings(
             smithy_types::Number::NegInt((input.speech_threshold).into()),
         );
     }
-    if let Some(var_702) = &input.stereo_downmix {
-        object.key("stereoDownmix").string(var_702.as_str());
+    if let Some(var_708) = &input.stereo_downmix {
+        object.key("stereoDownmix").string(var_708.as_str());
     }
-    if let Some(var_703) = &input.surround_ex_mode {
-        object.key("surroundExMode").string(var_703.as_str());
+    if let Some(var_709) = &input.surround_ex_mode {
+        object.key("surroundExMode").string(var_709.as_str());
     }
 }
 
@@ -3496,8 +3520,8 @@ pub fn serialize_structure_crate_model_eac3_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Eac3Settings,
 ) {
-    if let Some(var_704) = &input.attenuation_control {
-        object.key("attenuationControl").string(var_704.as_str());
+    if let Some(var_710) = &input.attenuation_control {
+        object.key("attenuationControl").string(var_710.as_str());
     }
     if input.bitrate != 0 {
         object.key("bitrate").number(
@@ -3505,14 +3529,14 @@ pub fn serialize_structure_crate_model_eac3_settings(
             smithy_types::Number::NegInt((input.bitrate).into()),
         );
     }
-    if let Some(var_705) = &input.bitstream_mode {
-        object.key("bitstreamMode").string(var_705.as_str());
+    if let Some(var_711) = &input.bitstream_mode {
+        object.key("bitstreamMode").string(var_711.as_str());
     }
-    if let Some(var_706) = &input.coding_mode {
-        object.key("codingMode").string(var_706.as_str());
+    if let Some(var_712) = &input.coding_mode {
+        object.key("codingMode").string(var_712.as_str());
     }
-    if let Some(var_707) = &input.dc_filter {
-        object.key("dcFilter").string(var_707.as_str());
+    if let Some(var_713) = &input.dc_filter {
+        object.key("dcFilter").string(var_713.as_str());
     }
     if input.dialnorm != 0 {
         object.key("dialnorm").number(
@@ -3520,21 +3544,21 @@ pub fn serialize_structure_crate_model_eac3_settings(
             smithy_types::Number::NegInt((input.dialnorm).into()),
         );
     }
-    if let Some(var_708) = &input.dynamic_range_compression_line {
+    if let Some(var_714) = &input.dynamic_range_compression_line {
         object
             .key("dynamicRangeCompressionLine")
-            .string(var_708.as_str());
+            .string(var_714.as_str());
     }
-    if let Some(var_709) = &input.dynamic_range_compression_rf {
+    if let Some(var_715) = &input.dynamic_range_compression_rf {
         object
             .key("dynamicRangeCompressionRf")
-            .string(var_709.as_str());
+            .string(var_715.as_str());
     }
-    if let Some(var_710) = &input.lfe_control {
-        object.key("lfeControl").string(var_710.as_str());
+    if let Some(var_716) = &input.lfe_control {
+        object.key("lfeControl").string(var_716.as_str());
     }
-    if let Some(var_711) = &input.lfe_filter {
-        object.key("lfeFilter").string(var_711.as_str());
+    if let Some(var_717) = &input.lfe_filter {
+        object.key("lfeFilter").string(var_717.as_str());
     }
     if input.lo_ro_center_mix_level != 0.0 {
         object.key("loRoCenterMixLevel").number(
@@ -3560,14 +3584,14 @@ pub fn serialize_structure_crate_model_eac3_settings(
             smithy_types::Number::Float((input.lt_rt_surround_mix_level).into()),
         );
     }
-    if let Some(var_712) = &input.metadata_control {
-        object.key("metadataControl").string(var_712.as_str());
+    if let Some(var_718) = &input.metadata_control {
+        object.key("metadataControl").string(var_718.as_str());
     }
-    if let Some(var_713) = &input.passthrough_control {
-        object.key("passthroughControl").string(var_713.as_str());
+    if let Some(var_719) = &input.passthrough_control {
+        object.key("passthroughControl").string(var_719.as_str());
     }
-    if let Some(var_714) = &input.phase_control {
-        object.key("phaseControl").string(var_714.as_str());
+    if let Some(var_720) = &input.phase_control {
+        object.key("phaseControl").string(var_720.as_str());
     }
     if input.sample_rate != 0 {
         object.key("sampleRate").number(
@@ -3575,14 +3599,14 @@ pub fn serialize_structure_crate_model_eac3_settings(
             smithy_types::Number::NegInt((input.sample_rate).into()),
         );
     }
-    if let Some(var_715) = &input.stereo_downmix {
-        object.key("stereoDownmix").string(var_715.as_str());
+    if let Some(var_721) = &input.stereo_downmix {
+        object.key("stereoDownmix").string(var_721.as_str());
     }
-    if let Some(var_716) = &input.surround_ex_mode {
-        object.key("surroundExMode").string(var_716.as_str());
+    if let Some(var_722) = &input.surround_ex_mode {
+        object.key("surroundExMode").string(var_722.as_str());
     }
-    if let Some(var_717) = &input.surround_mode {
-        object.key("surroundMode").string(var_717.as_str());
+    if let Some(var_723) = &input.surround_mode {
+        object.key("surroundMode").string(var_723.as_str());
     }
 }
 
@@ -3626,8 +3650,8 @@ pub fn serialize_structure_crate_model_mp3_settings(
             smithy_types::Number::NegInt((input.channels).into()),
         );
     }
-    if let Some(var_718) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_718.as_str());
+    if let Some(var_724) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_724.as_str());
     }
     if input.sample_rate != 0 {
         object.key("sampleRate").number(
@@ -3707,8 +3731,8 @@ pub fn serialize_structure_crate_model_wav_settings(
             smithy_types::Number::NegInt((input.channels).into()),
         );
     }
-    if let Some(var_719) = &input.format {
-        object.key("format").string(var_719.as_str());
+    if let Some(var_725) = &input.format {
+        object.key("format").string(var_725.as_str());
     }
     if input.sample_rate != 0 {
         object.key("sampleRate").number(
@@ -3722,19 +3746,19 @@ pub fn serialize_structure_crate_model_channel_mapping(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ChannelMapping,
 ) {
-    if let Some(var_720) = &input.output_channels {
-        let mut array_721 = object.key("outputChannels").start_array();
-        for item_722 in var_720 {
+    if let Some(var_726) = &input.output_channels {
+        let mut array_727 = object.key("outputChannels").start_array();
+        for item_728 in var_726 {
             {
-                let mut object_723 = array_721.value().start_object();
+                let mut object_729 = array_727.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_output_channel_mapping(
-                    &mut object_723,
-                    item_722,
+                    &mut object_729,
+                    item_728,
                 );
-                object_723.finish();
+                object_729.finish();
             }
         }
-        array_721.finish();
+        array_727.finish();
     }
 }
 
@@ -3742,95 +3766,11 @@ pub fn serialize_structure_crate_model_burnin_destination_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BurninDestinationSettings,
 ) {
-    if let Some(var_724) = &input.alignment {
-        object.key("alignment").string(var_724.as_str());
+    if let Some(var_730) = &input.alignment {
+        object.key("alignment").string(var_730.as_str());
     }
-    if let Some(var_725) = &input.background_color {
-        object.key("backgroundColor").string(var_725.as_str());
-    }
-    if input.background_opacity != 0 {
-        object.key("backgroundOpacity").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.background_opacity).into()),
-        );
-    }
-    if let Some(var_726) = &input.font_color {
-        object.key("fontColor").string(var_726.as_str());
-    }
-    if input.font_opacity != 0 {
-        object.key("fontOpacity").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.font_opacity).into()),
-        );
-    }
-    if input.font_resolution != 0 {
-        object.key("fontResolution").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.font_resolution).into()),
-        );
-    }
-    if let Some(var_727) = &input.font_script {
-        object.key("fontScript").string(var_727.as_str());
-    }
-    if input.font_size != 0 {
-        object.key("fontSize").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.font_size).into()),
-        );
-    }
-    if let Some(var_728) = &input.outline_color {
-        object.key("outlineColor").string(var_728.as_str());
-    }
-    if input.outline_size != 0 {
-        object.key("outlineSize").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.outline_size).into()),
-        );
-    }
-    if let Some(var_729) = &input.shadow_color {
-        object.key("shadowColor").string(var_729.as_str());
-    }
-    if input.shadow_opacity != 0 {
-        object.key("shadowOpacity").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.shadow_opacity).into()),
-        );
-    }
-    if input.shadow_x_offset != 0 {
-        object.key("shadowXOffset").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.shadow_x_offset).into()),
-        );
-    }
-    if input.shadow_y_offset != 0 {
-        object.key("shadowYOffset").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.shadow_y_offset).into()),
-        );
-    }
-    if let Some(var_730) = &input.teletext_spacing {
-        object.key("teletextSpacing").string(var_730.as_str());
-    }
-    if input.x_position != 0 {
-        object.key("xPosition").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.x_position).into()),
-        );
-    }
-    if input.y_position != 0 {
-        object.key("yPosition").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.y_position).into()),
-        );
-    }
-}
-
-pub fn serialize_structure_crate_model_dvb_sub_destination_settings(
-    object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DvbSubDestinationSettings,
-) {
-    if let Some(var_731) = &input.alignment {
-        object.key("alignment").string(var_731.as_str());
+    if let Some(var_731) = &input.apply_font_color {
+        object.key("applyFontColor").string(var_731.as_str());
     }
     if let Some(var_732) = &input.background_color {
         object.key("backgroundColor").string(var_732.as_str());
@@ -3841,20 +3781,8 @@ pub fn serialize_structure_crate_model_dvb_sub_destination_settings(
             smithy_types::Number::NegInt((input.background_opacity).into()),
         );
     }
-    if let Some(var_733) = &input.dds_handling {
-        object.key("ddsHandling").string(var_733.as_str());
-    }
-    if input.dds_x_coordinate != 0 {
-        object.key("ddsXCoordinate").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.dds_x_coordinate).into()),
-        );
-    }
-    if input.dds_y_coordinate != 0 {
-        object.key("ddsYCoordinate").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.dds_y_coordinate).into()),
-        );
+    if let Some(var_733) = &input.fallback_font {
+        object.key("fallbackFont").string(var_733.as_str());
     }
     if let Some(var_734) = &input.font_color {
         object.key("fontColor").string(var_734.as_str());
@@ -3880,14 +3808,11 @@ pub fn serialize_structure_crate_model_dvb_sub_destination_settings(
             smithy_types::Number::NegInt((input.font_size).into()),
         );
     }
-    if input.height != 0 {
-        object.key("height").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.height).into()),
-        );
+    if let Some(var_736) = &input.hex_font_color {
+        object.key("hexFontColor").string(var_736);
     }
-    if let Some(var_736) = &input.outline_color {
-        object.key("outlineColor").string(var_736.as_str());
+    if let Some(var_737) = &input.outline_color {
+        object.key("outlineColor").string(var_737.as_str());
     }
     if input.outline_size != 0 {
         object.key("outlineSize").number(
@@ -3895,8 +3820,8 @@ pub fn serialize_structure_crate_model_dvb_sub_destination_settings(
             smithy_types::Number::NegInt((input.outline_size).into()),
         );
     }
-    if let Some(var_737) = &input.shadow_color {
-        object.key("shadowColor").string(var_737.as_str());
+    if let Some(var_738) = &input.shadow_color {
+        object.key("shadowColor").string(var_738.as_str());
     }
     if input.shadow_opacity != 0 {
         object.key("shadowOpacity").number(
@@ -3916,11 +3841,134 @@ pub fn serialize_structure_crate_model_dvb_sub_destination_settings(
             smithy_types::Number::NegInt((input.shadow_y_offset).into()),
         );
     }
-    if let Some(var_738) = &input.subtitling_type {
-        object.key("subtitlingType").string(var_738.as_str());
+    if let Some(var_739) = &input.style_passthrough {
+        object.key("stylePassthrough").string(var_739.as_str());
     }
-    if let Some(var_739) = &input.teletext_spacing {
-        object.key("teletextSpacing").string(var_739.as_str());
+    if let Some(var_740) = &input.teletext_spacing {
+        object.key("teletextSpacing").string(var_740.as_str());
+    }
+    if input.x_position != 0 {
+        object.key("xPosition").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.x_position).into()),
+        );
+    }
+    if input.y_position != 0 {
+        object.key("yPosition").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.y_position).into()),
+        );
+    }
+}
+
+pub fn serialize_structure_crate_model_dvb_sub_destination_settings(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::DvbSubDestinationSettings,
+) {
+    if let Some(var_741) = &input.alignment {
+        object.key("alignment").string(var_741.as_str());
+    }
+    if let Some(var_742) = &input.apply_font_color {
+        object.key("applyFontColor").string(var_742.as_str());
+    }
+    if let Some(var_743) = &input.background_color {
+        object.key("backgroundColor").string(var_743.as_str());
+    }
+    if input.background_opacity != 0 {
+        object.key("backgroundOpacity").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.background_opacity).into()),
+        );
+    }
+    if let Some(var_744) = &input.dds_handling {
+        object.key("ddsHandling").string(var_744.as_str());
+    }
+    if input.dds_x_coordinate != 0 {
+        object.key("ddsXCoordinate").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.dds_x_coordinate).into()),
+        );
+    }
+    if input.dds_y_coordinate != 0 {
+        object.key("ddsYCoordinate").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.dds_y_coordinate).into()),
+        );
+    }
+    if let Some(var_745) = &input.fallback_font {
+        object.key("fallbackFont").string(var_745.as_str());
+    }
+    if let Some(var_746) = &input.font_color {
+        object.key("fontColor").string(var_746.as_str());
+    }
+    if input.font_opacity != 0 {
+        object.key("fontOpacity").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.font_opacity).into()),
+        );
+    }
+    if input.font_resolution != 0 {
+        object.key("fontResolution").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.font_resolution).into()),
+        );
+    }
+    if let Some(var_747) = &input.font_script {
+        object.key("fontScript").string(var_747.as_str());
+    }
+    if input.font_size != 0 {
+        object.key("fontSize").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.font_size).into()),
+        );
+    }
+    if input.height != 0 {
+        object.key("height").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.height).into()),
+        );
+    }
+    if let Some(var_748) = &input.hex_font_color {
+        object.key("hexFontColor").string(var_748);
+    }
+    if let Some(var_749) = &input.outline_color {
+        object.key("outlineColor").string(var_749.as_str());
+    }
+    if input.outline_size != 0 {
+        object.key("outlineSize").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.outline_size).into()),
+        );
+    }
+    if let Some(var_750) = &input.shadow_color {
+        object.key("shadowColor").string(var_750.as_str());
+    }
+    if input.shadow_opacity != 0 {
+        object.key("shadowOpacity").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.shadow_opacity).into()),
+        );
+    }
+    if input.shadow_x_offset != 0 {
+        object.key("shadowXOffset").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.shadow_x_offset).into()),
+        );
+    }
+    if input.shadow_y_offset != 0 {
+        object.key("shadowYOffset").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.shadow_y_offset).into()),
+        );
+    }
+    if let Some(var_751) = &input.style_passthrough {
+        object.key("stylePassthrough").string(var_751.as_str());
+    }
+    if let Some(var_752) = &input.subtitling_type {
+        object.key("subtitlingType").string(var_752.as_str());
+    }
+    if let Some(var_753) = &input.teletext_spacing {
+        object.key("teletextSpacing").string(var_753.as_str());
     }
     if input.width != 0 {
         object.key("width").number(
@@ -3964,8 +4012,8 @@ pub fn serialize_structure_crate_model_imsc_destination_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ImscDestinationSettings,
 ) {
-    if let Some(var_740) = &input.style_passthrough {
-        object.key("stylePassthrough").string(var_740.as_str());
+    if let Some(var_754) = &input.style_passthrough {
+        object.key("stylePassthrough").string(var_754.as_str());
     }
 }
 
@@ -3973,8 +4021,8 @@ pub fn serialize_structure_crate_model_scc_destination_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SccDestinationSettings,
 ) {
-    if let Some(var_741) = &input.framerate {
-        object.key("framerate").string(var_741.as_str());
+    if let Some(var_755) = &input.framerate {
+        object.key("framerate").string(var_755.as_str());
     }
 }
 
@@ -3982,8 +4030,8 @@ pub fn serialize_structure_crate_model_srt_destination_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SrtDestinationSettings,
 ) {
-    if let Some(var_742) = &input.style_passthrough {
-        object.key("stylePassthrough").string(var_742.as_str());
+    if let Some(var_756) = &input.style_passthrough {
+        object.key("stylePassthrough").string(var_756.as_str());
     }
 }
 
@@ -3991,17 +4039,17 @@ pub fn serialize_structure_crate_model_teletext_destination_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TeletextDestinationSettings,
 ) {
-    if let Some(var_743) = &input.page_number {
-        object.key("pageNumber").string(var_743);
+    if let Some(var_757) = &input.page_number {
+        object.key("pageNumber").string(var_757);
     }
-    if let Some(var_744) = &input.page_types {
-        let mut array_745 = object.key("pageTypes").start_array();
-        for item_746 in var_744 {
+    if let Some(var_758) = &input.page_types {
+        let mut array_759 = object.key("pageTypes").start_array();
+        for item_760 in var_758 {
             {
-                array_745.value().string(item_746.as_str());
+                array_759.value().string(item_760.as_str());
             }
         }
-        array_745.finish();
+        array_759.finish();
     }
 }
 
@@ -4009,8 +4057,8 @@ pub fn serialize_structure_crate_model_ttml_destination_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TtmlDestinationSettings,
 ) {
-    if let Some(var_747) = &input.style_passthrough {
-        object.key("stylePassthrough").string(var_747.as_str());
+    if let Some(var_761) = &input.style_passthrough {
+        object.key("stylePassthrough").string(var_761.as_str());
     }
 }
 
@@ -4018,8 +4066,8 @@ pub fn serialize_structure_crate_model_webvtt_destination_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WebvttDestinationSettings,
 ) {
-    if let Some(var_748) = &input.style_passthrough {
-        object.key("stylePassthrough").string(var_748.as_str());
+    if let Some(var_762) = &input.style_passthrough {
+        object.key("stylePassthrough").string(var_762.as_str());
     }
 }
 
@@ -4033,8 +4081,8 @@ pub fn serialize_structure_crate_model_dvb_nit_settings(
             smithy_types::Number::NegInt((input.network_id).into()),
         );
     }
-    if let Some(var_749) = &input.network_name {
-        object.key("networkName").string(var_749);
+    if let Some(var_763) = &input.network_name {
+        object.key("networkName").string(var_763);
     }
     if input.nit_interval != 0 {
         object.key("nitInterval").number(
@@ -4048,8 +4096,8 @@ pub fn serialize_structure_crate_model_dvb_sdt_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DvbSdtSettings,
 ) {
-    if let Some(var_750) = &input.output_sdt {
-        object.key("outputSdt").string(var_750.as_str());
+    if let Some(var_764) = &input.output_sdt {
+        object.key("outputSdt").string(var_764.as_str());
     }
     if input.sdt_interval != 0 {
         object.key("sdtInterval").number(
@@ -4057,11 +4105,11 @@ pub fn serialize_structure_crate_model_dvb_sdt_settings(
             smithy_types::Number::NegInt((input.sdt_interval).into()),
         );
     }
-    if let Some(var_751) = &input.service_name {
-        object.key("serviceName").string(var_751);
+    if let Some(var_765) = &input.service_name {
+        object.key("serviceName").string(var_765);
     }
-    if let Some(var_752) = &input.service_provider_name {
-        object.key("serviceProviderName").string(var_752);
+    if let Some(var_766) = &input.service_provider_name {
+        object.key("serviceProviderName").string(var_766);
     }
 }
 
@@ -4093,8 +4141,8 @@ pub fn serialize_structure_crate_model_mxf_xavc_profile_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MxfXavcProfileSettings,
 ) {
-    if let Some(var_753) = &input.duration_mode {
-        object.key("durationMode").string(var_753.as_str());
+    if let Some(var_767) = &input.duration_mode {
+        object.key("durationMode").string(var_767.as_str());
     }
     if input.max_anc_data_size != 0 {
         object.key("maxAncDataSize").number(
@@ -4108,16 +4156,16 @@ pub fn serialize_structure_crate_model_av1_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Av1Settings,
 ) {
-    if let Some(var_754) = &input.adaptive_quantization {
-        object.key("adaptiveQuantization").string(var_754.as_str());
+    if let Some(var_768) = &input.adaptive_quantization {
+        object.key("adaptiveQuantization").string(var_768.as_str());
     }
-    if let Some(var_755) = &input.framerate_control {
-        object.key("framerateControl").string(var_755.as_str());
+    if let Some(var_769) = &input.framerate_control {
+        object.key("framerateControl").string(var_769.as_str());
     }
-    if let Some(var_756) = &input.framerate_conversion_algorithm {
+    if let Some(var_770) = &input.framerate_conversion_algorithm {
         object
             .key("framerateConversionAlgorithm")
-            .string(var_756.as_str());
+            .string(var_770.as_str());
     }
     if input.framerate_denominator != 0 {
         object.key("framerateDenominator").number(
@@ -4149,16 +4197,16 @@ pub fn serialize_structure_crate_model_av1_settings(
             smithy_types::Number::NegInt((input.number_b_frames_between_reference_frames).into()),
         );
     }
-    if let Some(var_757) = &input.qvbr_settings {
-        let mut object_758 = object.key("qvbrSettings").start_object();
+    if let Some(var_771) = &input.qvbr_settings {
+        let mut object_772 = object.key("qvbrSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_av1_qvbr_settings(
-            &mut object_758,
-            var_757,
+            &mut object_772,
+            var_771,
         );
-        object_758.finish();
+        object_772.finish();
     }
-    if let Some(var_759) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_759.as_str());
+    if let Some(var_773) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_773.as_str());
     }
     if input.slices != 0 {
         object.key("slices").number(
@@ -4166,10 +4214,10 @@ pub fn serialize_structure_crate_model_av1_settings(
             smithy_types::Number::NegInt((input.slices).into()),
         );
     }
-    if let Some(var_760) = &input.spatial_adaptive_quantization {
+    if let Some(var_774) = &input.spatial_adaptive_quantization {
         object
             .key("spatialAdaptiveQuantization")
-            .string(var_760.as_str());
+            .string(var_774.as_str());
     }
 }
 
@@ -4177,24 +4225,24 @@ pub fn serialize_structure_crate_model_avc_intra_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AvcIntraSettings,
 ) {
-    if let Some(var_761) = &input.avc_intra_class {
-        object.key("avcIntraClass").string(var_761.as_str());
+    if let Some(var_775) = &input.avc_intra_class {
+        object.key("avcIntraClass").string(var_775.as_str());
     }
-    if let Some(var_762) = &input.avc_intra_uhd_settings {
-        let mut object_763 = object.key("avcIntraUhdSettings").start_object();
+    if let Some(var_776) = &input.avc_intra_uhd_settings {
+        let mut object_777 = object.key("avcIntraUhdSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_avc_intra_uhd_settings(
-            &mut object_763,
-            var_762,
+            &mut object_777,
+            var_776,
         );
-        object_763.finish();
+        object_777.finish();
     }
-    if let Some(var_764) = &input.framerate_control {
-        object.key("framerateControl").string(var_764.as_str());
+    if let Some(var_778) = &input.framerate_control {
+        object.key("framerateControl").string(var_778.as_str());
     }
-    if let Some(var_765) = &input.framerate_conversion_algorithm {
+    if let Some(var_779) = &input.framerate_conversion_algorithm {
         object
             .key("framerateConversionAlgorithm")
-            .string(var_765.as_str());
+            .string(var_779.as_str());
     }
     if input.framerate_denominator != 0 {
         object.key("framerateDenominator").number(
@@ -4208,19 +4256,19 @@ pub fn serialize_structure_crate_model_avc_intra_settings(
             smithy_types::Number::NegInt((input.framerate_numerator).into()),
         );
     }
-    if let Some(var_766) = &input.interlace_mode {
-        object.key("interlaceMode").string(var_766.as_str());
+    if let Some(var_780) = &input.interlace_mode {
+        object.key("interlaceMode").string(var_780.as_str());
     }
-    if let Some(var_767) = &input.scan_type_conversion_mode {
+    if let Some(var_781) = &input.scan_type_conversion_mode {
         object
             .key("scanTypeConversionMode")
-            .string(var_767.as_str());
+            .string(var_781.as_str());
     }
-    if let Some(var_768) = &input.slow_pal {
-        object.key("slowPal").string(var_768.as_str());
+    if let Some(var_782) = &input.slow_pal {
+        object.key("slowPal").string(var_782.as_str());
     }
-    if let Some(var_769) = &input.telecine {
-        object.key("telecine").string(var_769.as_str());
+    if let Some(var_783) = &input.telecine {
+        object.key("telecine").string(var_783.as_str());
     }
 }
 
@@ -4258,8 +4306,8 @@ pub fn serialize_structure_crate_model_h264_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::H264Settings,
 ) {
-    if let Some(var_770) = &input.adaptive_quantization {
-        object.key("adaptiveQuantization").string(var_770.as_str());
+    if let Some(var_784) = &input.adaptive_quantization {
+        object.key("adaptiveQuantization").string(var_784.as_str());
     }
     if input.bitrate != 0 {
         object.key("bitrate").number(
@@ -4267,33 +4315,33 @@ pub fn serialize_structure_crate_model_h264_settings(
             smithy_types::Number::NegInt((input.bitrate).into()),
         );
     }
-    if let Some(var_771) = &input.codec_level {
-        object.key("codecLevel").string(var_771.as_str());
+    if let Some(var_785) = &input.codec_level {
+        object.key("codecLevel").string(var_785.as_str());
     }
-    if let Some(var_772) = &input.codec_profile {
-        object.key("codecProfile").string(var_772.as_str());
+    if let Some(var_786) = &input.codec_profile {
+        object.key("codecProfile").string(var_786.as_str());
     }
-    if let Some(var_773) = &input.dynamic_sub_gop {
-        object.key("dynamicSubGop").string(var_773.as_str());
+    if let Some(var_787) = &input.dynamic_sub_gop {
+        object.key("dynamicSubGop").string(var_787.as_str());
     }
-    if let Some(var_774) = &input.entropy_encoding {
-        object.key("entropyEncoding").string(var_774.as_str());
+    if let Some(var_788) = &input.entropy_encoding {
+        object.key("entropyEncoding").string(var_788.as_str());
     }
-    if let Some(var_775) = &input.field_encoding {
-        object.key("fieldEncoding").string(var_775.as_str());
+    if let Some(var_789) = &input.field_encoding {
+        object.key("fieldEncoding").string(var_789.as_str());
     }
-    if let Some(var_776) = &input.flicker_adaptive_quantization {
+    if let Some(var_790) = &input.flicker_adaptive_quantization {
         object
             .key("flickerAdaptiveQuantization")
-            .string(var_776.as_str());
+            .string(var_790.as_str());
     }
-    if let Some(var_777) = &input.framerate_control {
-        object.key("framerateControl").string(var_777.as_str());
+    if let Some(var_791) = &input.framerate_control {
+        object.key("framerateControl").string(var_791.as_str());
     }
-    if let Some(var_778) = &input.framerate_conversion_algorithm {
+    if let Some(var_792) = &input.framerate_conversion_algorithm {
         object
             .key("framerateConversionAlgorithm")
-            .string(var_778.as_str());
+            .string(var_792.as_str());
     }
     if input.framerate_denominator != 0 {
         object.key("framerateDenominator").number(
@@ -4307,8 +4355,8 @@ pub fn serialize_structure_crate_model_h264_settings(
             smithy_types::Number::NegInt((input.framerate_numerator).into()),
         );
     }
-    if let Some(var_779) = &input.gop_b_reference {
-        object.key("gopBReference").string(var_779.as_str());
+    if let Some(var_793) = &input.gop_b_reference {
+        object.key("gopBReference").string(var_793.as_str());
     }
     if input.gop_closed_cadence != 0 {
         object.key("gopClosedCadence").number(
@@ -4322,8 +4370,8 @@ pub fn serialize_structure_crate_model_h264_settings(
             smithy_types::Number::Float((input.gop_size).into()),
         );
     }
-    if let Some(var_780) = &input.gop_size_units {
-        object.key("gopSizeUnits").string(var_780.as_str());
+    if let Some(var_794) = &input.gop_size_units {
+        object.key("gopSizeUnits").string(var_794.as_str());
     }
     if input.hrd_buffer_initial_fill_percentage != 0 {
         object.key("hrdBufferInitialFillPercentage").number(
@@ -4337,8 +4385,8 @@ pub fn serialize_structure_crate_model_h264_settings(
             smithy_types::Number::NegInt((input.hrd_buffer_size).into()),
         );
     }
-    if let Some(var_781) = &input.interlace_mode {
-        object.key("interlaceMode").string(var_781.as_str());
+    if let Some(var_795) = &input.interlace_mode {
+        object.key("interlaceMode").string(var_795.as_str());
     }
     if input.max_bitrate != 0 {
         object.key("maxBitrate").number(
@@ -4364,8 +4412,8 @@ pub fn serialize_structure_crate_model_h264_settings(
             smithy_types::Number::NegInt((input.number_reference_frames).into()),
         );
     }
-    if let Some(var_782) = &input.par_control {
-        object.key("parControl").string(var_782.as_str());
+    if let Some(var_796) = &input.par_control {
+        object.key("parControl").string(var_796.as_str());
     }
     if input.par_denominator != 0 {
         object.key("parDenominator").number(
@@ -4379,30 +4427,30 @@ pub fn serialize_structure_crate_model_h264_settings(
             smithy_types::Number::NegInt((input.par_numerator).into()),
         );
     }
-    if let Some(var_783) = &input.quality_tuning_level {
-        object.key("qualityTuningLevel").string(var_783.as_str());
+    if let Some(var_797) = &input.quality_tuning_level {
+        object.key("qualityTuningLevel").string(var_797.as_str());
     }
-    if let Some(var_784) = &input.qvbr_settings {
-        let mut object_785 = object.key("qvbrSettings").start_object();
+    if let Some(var_798) = &input.qvbr_settings {
+        let mut object_799 = object.key("qvbrSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_h264_qvbr_settings(
-            &mut object_785,
-            var_784,
+            &mut object_799,
+            var_798,
         );
-        object_785.finish();
+        object_799.finish();
     }
-    if let Some(var_786) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_786.as_str());
+    if let Some(var_800) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_800.as_str());
     }
-    if let Some(var_787) = &input.repeat_pps {
-        object.key("repeatPps").string(var_787.as_str());
+    if let Some(var_801) = &input.repeat_pps {
+        object.key("repeatPps").string(var_801.as_str());
     }
-    if let Some(var_788) = &input.scan_type_conversion_mode {
+    if let Some(var_802) = &input.scan_type_conversion_mode {
         object
             .key("scanTypeConversionMode")
-            .string(var_788.as_str());
+            .string(var_802.as_str());
     }
-    if let Some(var_789) = &input.scene_change_detect {
-        object.key("sceneChangeDetect").string(var_789.as_str());
+    if let Some(var_803) = &input.scene_change_detect {
+        object.key("sceneChangeDetect").string(var_803.as_str());
     }
     if input.slices != 0 {
         object.key("slices").number(
@@ -4410,8 +4458,8 @@ pub fn serialize_structure_crate_model_h264_settings(
             smithy_types::Number::NegInt((input.slices).into()),
         );
     }
-    if let Some(var_790) = &input.slow_pal {
-        object.key("slowPal").string(var_790.as_str());
+    if let Some(var_804) = &input.slow_pal {
+        object.key("slowPal").string(var_804.as_str());
     }
     if input.softness != 0 {
         object.key("softness").number(
@@ -4419,26 +4467,26 @@ pub fn serialize_structure_crate_model_h264_settings(
             smithy_types::Number::NegInt((input.softness).into()),
         );
     }
-    if let Some(var_791) = &input.spatial_adaptive_quantization {
+    if let Some(var_805) = &input.spatial_adaptive_quantization {
         object
             .key("spatialAdaptiveQuantization")
-            .string(var_791.as_str());
+            .string(var_805.as_str());
     }
-    if let Some(var_792) = &input.syntax {
-        object.key("syntax").string(var_792.as_str());
+    if let Some(var_806) = &input.syntax {
+        object.key("syntax").string(var_806.as_str());
     }
-    if let Some(var_793) = &input.telecine {
-        object.key("telecine").string(var_793.as_str());
+    if let Some(var_807) = &input.telecine {
+        object.key("telecine").string(var_807.as_str());
     }
-    if let Some(var_794) = &input.temporal_adaptive_quantization {
+    if let Some(var_808) = &input.temporal_adaptive_quantization {
         object
             .key("temporalAdaptiveQuantization")
-            .string(var_794.as_str());
+            .string(var_808.as_str());
     }
-    if let Some(var_795) = &input.unregistered_sei_timecode {
+    if let Some(var_809) = &input.unregistered_sei_timecode {
         object
             .key("unregisteredSeiTimecode")
-            .string(var_795.as_str());
+            .string(var_809.as_str());
     }
 }
 
@@ -4446,13 +4494,13 @@ pub fn serialize_structure_crate_model_h265_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::H265Settings,
 ) {
-    if let Some(var_796) = &input.adaptive_quantization {
-        object.key("adaptiveQuantization").string(var_796.as_str());
+    if let Some(var_810) = &input.adaptive_quantization {
+        object.key("adaptiveQuantization").string(var_810.as_str());
     }
-    if let Some(var_797) = &input.alternate_transfer_function_sei {
+    if let Some(var_811) = &input.alternate_transfer_function_sei {
         object
             .key("alternateTransferFunctionSei")
-            .string(var_797.as_str());
+            .string(var_811.as_str());
     }
     if input.bitrate != 0 {
         object.key("bitrate").number(
@@ -4460,27 +4508,27 @@ pub fn serialize_structure_crate_model_h265_settings(
             smithy_types::Number::NegInt((input.bitrate).into()),
         );
     }
-    if let Some(var_798) = &input.codec_level {
-        object.key("codecLevel").string(var_798.as_str());
+    if let Some(var_812) = &input.codec_level {
+        object.key("codecLevel").string(var_812.as_str());
     }
-    if let Some(var_799) = &input.codec_profile {
-        object.key("codecProfile").string(var_799.as_str());
+    if let Some(var_813) = &input.codec_profile {
+        object.key("codecProfile").string(var_813.as_str());
     }
-    if let Some(var_800) = &input.dynamic_sub_gop {
-        object.key("dynamicSubGop").string(var_800.as_str());
+    if let Some(var_814) = &input.dynamic_sub_gop {
+        object.key("dynamicSubGop").string(var_814.as_str());
     }
-    if let Some(var_801) = &input.flicker_adaptive_quantization {
+    if let Some(var_815) = &input.flicker_adaptive_quantization {
         object
             .key("flickerAdaptiveQuantization")
-            .string(var_801.as_str());
+            .string(var_815.as_str());
     }
-    if let Some(var_802) = &input.framerate_control {
-        object.key("framerateControl").string(var_802.as_str());
+    if let Some(var_816) = &input.framerate_control {
+        object.key("framerateControl").string(var_816.as_str());
     }
-    if let Some(var_803) = &input.framerate_conversion_algorithm {
+    if let Some(var_817) = &input.framerate_conversion_algorithm {
         object
             .key("framerateConversionAlgorithm")
-            .string(var_803.as_str());
+            .string(var_817.as_str());
     }
     if input.framerate_denominator != 0 {
         object.key("framerateDenominator").number(
@@ -4494,8 +4542,8 @@ pub fn serialize_structure_crate_model_h265_settings(
             smithy_types::Number::NegInt((input.framerate_numerator).into()),
         );
     }
-    if let Some(var_804) = &input.gop_b_reference {
-        object.key("gopBReference").string(var_804.as_str());
+    if let Some(var_818) = &input.gop_b_reference {
+        object.key("gopBReference").string(var_818.as_str());
     }
     if input.gop_closed_cadence != 0 {
         object.key("gopClosedCadence").number(
@@ -4509,8 +4557,8 @@ pub fn serialize_structure_crate_model_h265_settings(
             smithy_types::Number::Float((input.gop_size).into()),
         );
     }
-    if let Some(var_805) = &input.gop_size_units {
-        object.key("gopSizeUnits").string(var_805.as_str());
+    if let Some(var_819) = &input.gop_size_units {
+        object.key("gopSizeUnits").string(var_819.as_str());
     }
     if input.hrd_buffer_initial_fill_percentage != 0 {
         object.key("hrdBufferInitialFillPercentage").number(
@@ -4524,8 +4572,8 @@ pub fn serialize_structure_crate_model_h265_settings(
             smithy_types::Number::NegInt((input.hrd_buffer_size).into()),
         );
     }
-    if let Some(var_806) = &input.interlace_mode {
-        object.key("interlaceMode").string(var_806.as_str());
+    if let Some(var_820) = &input.interlace_mode {
+        object.key("interlaceMode").string(var_820.as_str());
     }
     if input.max_bitrate != 0 {
         object.key("maxBitrate").number(
@@ -4551,8 +4599,8 @@ pub fn serialize_structure_crate_model_h265_settings(
             smithy_types::Number::NegInt((input.number_reference_frames).into()),
         );
     }
-    if let Some(var_807) = &input.par_control {
-        object.key("parControl").string(var_807.as_str());
+    if let Some(var_821) = &input.par_control {
+        object.key("parControl").string(var_821.as_str());
     }
     if input.par_denominator != 0 {
         object.key("parDenominator").number(
@@ -4566,32 +4614,32 @@ pub fn serialize_structure_crate_model_h265_settings(
             smithy_types::Number::NegInt((input.par_numerator).into()),
         );
     }
-    if let Some(var_808) = &input.quality_tuning_level {
-        object.key("qualityTuningLevel").string(var_808.as_str());
+    if let Some(var_822) = &input.quality_tuning_level {
+        object.key("qualityTuningLevel").string(var_822.as_str());
     }
-    if let Some(var_809) = &input.qvbr_settings {
-        let mut object_810 = object.key("qvbrSettings").start_object();
+    if let Some(var_823) = &input.qvbr_settings {
+        let mut object_824 = object.key("qvbrSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_h265_qvbr_settings(
-            &mut object_810,
-            var_809,
+            &mut object_824,
+            var_823,
         );
-        object_810.finish();
+        object_824.finish();
     }
-    if let Some(var_811) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_811.as_str());
+    if let Some(var_825) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_825.as_str());
     }
-    if let Some(var_812) = &input.sample_adaptive_offset_filter_mode {
+    if let Some(var_826) = &input.sample_adaptive_offset_filter_mode {
         object
             .key("sampleAdaptiveOffsetFilterMode")
-            .string(var_812.as_str());
+            .string(var_826.as_str());
     }
-    if let Some(var_813) = &input.scan_type_conversion_mode {
+    if let Some(var_827) = &input.scan_type_conversion_mode {
         object
             .key("scanTypeConversionMode")
-            .string(var_813.as_str());
+            .string(var_827.as_str());
     }
-    if let Some(var_814) = &input.scene_change_detect {
-        object.key("sceneChangeDetect").string(var_814.as_str());
+    if let Some(var_828) = &input.scene_change_detect {
+        object.key("sceneChangeDetect").string(var_828.as_str());
     }
     if input.slices != 0 {
         object.key("slices").number(
@@ -4599,35 +4647,35 @@ pub fn serialize_structure_crate_model_h265_settings(
             smithy_types::Number::NegInt((input.slices).into()),
         );
     }
-    if let Some(var_815) = &input.slow_pal {
-        object.key("slowPal").string(var_815.as_str());
+    if let Some(var_829) = &input.slow_pal {
+        object.key("slowPal").string(var_829.as_str());
     }
-    if let Some(var_816) = &input.spatial_adaptive_quantization {
+    if let Some(var_830) = &input.spatial_adaptive_quantization {
         object
             .key("spatialAdaptiveQuantization")
-            .string(var_816.as_str());
+            .string(var_830.as_str());
     }
-    if let Some(var_817) = &input.telecine {
-        object.key("telecine").string(var_817.as_str());
+    if let Some(var_831) = &input.telecine {
+        object.key("telecine").string(var_831.as_str());
     }
-    if let Some(var_818) = &input.temporal_adaptive_quantization {
+    if let Some(var_832) = &input.temporal_adaptive_quantization {
         object
             .key("temporalAdaptiveQuantization")
-            .string(var_818.as_str());
+            .string(var_832.as_str());
     }
-    if let Some(var_819) = &input.temporal_ids {
-        object.key("temporalIds").string(var_819.as_str());
+    if let Some(var_833) = &input.temporal_ids {
+        object.key("temporalIds").string(var_833.as_str());
     }
-    if let Some(var_820) = &input.tiles {
-        object.key("tiles").string(var_820.as_str());
+    if let Some(var_834) = &input.tiles {
+        object.key("tiles").string(var_834.as_str());
     }
-    if let Some(var_821) = &input.unregistered_sei_timecode {
+    if let Some(var_835) = &input.unregistered_sei_timecode {
         object
             .key("unregisteredSeiTimecode")
-            .string(var_821.as_str());
+            .string(var_835.as_str());
     }
-    if let Some(var_822) = &input.write_mp4_packaging_type {
-        object.key("writeMp4PackagingType").string(var_822.as_str());
+    if let Some(var_836) = &input.write_mp4_packaging_type {
+        object.key("writeMp4PackagingType").string(var_836.as_str());
     }
 }
 
@@ -4635,8 +4683,8 @@ pub fn serialize_structure_crate_model_mpeg2_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Mpeg2Settings,
 ) {
-    if let Some(var_823) = &input.adaptive_quantization {
-        object.key("adaptiveQuantization").string(var_823.as_str());
+    if let Some(var_837) = &input.adaptive_quantization {
+        object.key("adaptiveQuantization").string(var_837.as_str());
     }
     if input.bitrate != 0 {
         object.key("bitrate").number(
@@ -4644,22 +4692,22 @@ pub fn serialize_structure_crate_model_mpeg2_settings(
             smithy_types::Number::NegInt((input.bitrate).into()),
         );
     }
-    if let Some(var_824) = &input.codec_level {
-        object.key("codecLevel").string(var_824.as_str());
+    if let Some(var_838) = &input.codec_level {
+        object.key("codecLevel").string(var_838.as_str());
     }
-    if let Some(var_825) = &input.codec_profile {
-        object.key("codecProfile").string(var_825.as_str());
+    if let Some(var_839) = &input.codec_profile {
+        object.key("codecProfile").string(var_839.as_str());
     }
-    if let Some(var_826) = &input.dynamic_sub_gop {
-        object.key("dynamicSubGop").string(var_826.as_str());
+    if let Some(var_840) = &input.dynamic_sub_gop {
+        object.key("dynamicSubGop").string(var_840.as_str());
     }
-    if let Some(var_827) = &input.framerate_control {
-        object.key("framerateControl").string(var_827.as_str());
+    if let Some(var_841) = &input.framerate_control {
+        object.key("framerateControl").string(var_841.as_str());
     }
-    if let Some(var_828) = &input.framerate_conversion_algorithm {
+    if let Some(var_842) = &input.framerate_conversion_algorithm {
         object
             .key("framerateConversionAlgorithm")
-            .string(var_828.as_str());
+            .string(var_842.as_str());
     }
     if input.framerate_denominator != 0 {
         object.key("framerateDenominator").number(
@@ -4685,8 +4733,8 @@ pub fn serialize_structure_crate_model_mpeg2_settings(
             smithy_types::Number::Float((input.gop_size).into()),
         );
     }
-    if let Some(var_829) = &input.gop_size_units {
-        object.key("gopSizeUnits").string(var_829.as_str());
+    if let Some(var_843) = &input.gop_size_units {
+        object.key("gopSizeUnits").string(var_843.as_str());
     }
     if input.hrd_buffer_initial_fill_percentage != 0 {
         object.key("hrdBufferInitialFillPercentage").number(
@@ -4700,11 +4748,11 @@ pub fn serialize_structure_crate_model_mpeg2_settings(
             smithy_types::Number::NegInt((input.hrd_buffer_size).into()),
         );
     }
-    if let Some(var_830) = &input.interlace_mode {
-        object.key("interlaceMode").string(var_830.as_str());
+    if let Some(var_844) = &input.interlace_mode {
+        object.key("interlaceMode").string(var_844.as_str());
     }
-    if let Some(var_831) = &input.intra_dc_precision {
-        object.key("intraDcPrecision").string(var_831.as_str());
+    if let Some(var_845) = &input.intra_dc_precision {
+        object.key("intraDcPrecision").string(var_845.as_str());
     }
     if input.max_bitrate != 0 {
         object.key("maxBitrate").number(
@@ -4724,8 +4772,8 @@ pub fn serialize_structure_crate_model_mpeg2_settings(
             smithy_types::Number::NegInt((input.number_b_frames_between_reference_frames).into()),
         );
     }
-    if let Some(var_832) = &input.par_control {
-        object.key("parControl").string(var_832.as_str());
+    if let Some(var_846) = &input.par_control {
+        object.key("parControl").string(var_846.as_str());
     }
     if input.par_denominator != 0 {
         object.key("parDenominator").number(
@@ -4739,22 +4787,22 @@ pub fn serialize_structure_crate_model_mpeg2_settings(
             smithy_types::Number::NegInt((input.par_numerator).into()),
         );
     }
-    if let Some(var_833) = &input.quality_tuning_level {
-        object.key("qualityTuningLevel").string(var_833.as_str());
+    if let Some(var_847) = &input.quality_tuning_level {
+        object.key("qualityTuningLevel").string(var_847.as_str());
     }
-    if let Some(var_834) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_834.as_str());
+    if let Some(var_848) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_848.as_str());
     }
-    if let Some(var_835) = &input.scan_type_conversion_mode {
+    if let Some(var_849) = &input.scan_type_conversion_mode {
         object
             .key("scanTypeConversionMode")
-            .string(var_835.as_str());
+            .string(var_849.as_str());
     }
-    if let Some(var_836) = &input.scene_change_detect {
-        object.key("sceneChangeDetect").string(var_836.as_str());
+    if let Some(var_850) = &input.scene_change_detect {
+        object.key("sceneChangeDetect").string(var_850.as_str());
     }
-    if let Some(var_837) = &input.slow_pal {
-        object.key("slowPal").string(var_837.as_str());
+    if let Some(var_851) = &input.slow_pal {
+        object.key("slowPal").string(var_851.as_str());
     }
     if input.softness != 0 {
         object.key("softness").number(
@@ -4762,21 +4810,21 @@ pub fn serialize_structure_crate_model_mpeg2_settings(
             smithy_types::Number::NegInt((input.softness).into()),
         );
     }
-    if let Some(var_838) = &input.spatial_adaptive_quantization {
+    if let Some(var_852) = &input.spatial_adaptive_quantization {
         object
             .key("spatialAdaptiveQuantization")
-            .string(var_838.as_str());
+            .string(var_852.as_str());
     }
-    if let Some(var_839) = &input.syntax {
-        object.key("syntax").string(var_839.as_str());
+    if let Some(var_853) = &input.syntax {
+        object.key("syntax").string(var_853.as_str());
     }
-    if let Some(var_840) = &input.telecine {
-        object.key("telecine").string(var_840.as_str());
+    if let Some(var_854) = &input.telecine {
+        object.key("telecine").string(var_854.as_str());
     }
-    if let Some(var_841) = &input.temporal_adaptive_quantization {
+    if let Some(var_855) = &input.temporal_adaptive_quantization {
         object
             .key("temporalAdaptiveQuantization")
-            .string(var_841.as_str());
+            .string(var_855.as_str());
     }
 }
 
@@ -4784,115 +4832,11 @@ pub fn serialize_structure_crate_model_prores_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ProresSettings,
 ) {
-    if let Some(var_842) = &input.chroma_sampling {
-        object.key("chromaSampling").string(var_842.as_str());
+    if let Some(var_856) = &input.chroma_sampling {
+        object.key("chromaSampling").string(var_856.as_str());
     }
-    if let Some(var_843) = &input.codec_profile {
-        object.key("codecProfile").string(var_843.as_str());
-    }
-    if let Some(var_844) = &input.framerate_control {
-        object.key("framerateControl").string(var_844.as_str());
-    }
-    if let Some(var_845) = &input.framerate_conversion_algorithm {
-        object
-            .key("framerateConversionAlgorithm")
-            .string(var_845.as_str());
-    }
-    if input.framerate_denominator != 0 {
-        object.key("framerateDenominator").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.framerate_denominator).into()),
-        );
-    }
-    if input.framerate_numerator != 0 {
-        object.key("framerateNumerator").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.framerate_numerator).into()),
-        );
-    }
-    if let Some(var_846) = &input.interlace_mode {
-        object.key("interlaceMode").string(var_846.as_str());
-    }
-    if let Some(var_847) = &input.par_control {
-        object.key("parControl").string(var_847.as_str());
-    }
-    if input.par_denominator != 0 {
-        object.key("parDenominator").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.par_denominator).into()),
-        );
-    }
-    if input.par_numerator != 0 {
-        object.key("parNumerator").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.par_numerator).into()),
-        );
-    }
-    if let Some(var_848) = &input.scan_type_conversion_mode {
-        object
-            .key("scanTypeConversionMode")
-            .string(var_848.as_str());
-    }
-    if let Some(var_849) = &input.slow_pal {
-        object.key("slowPal").string(var_849.as_str());
-    }
-    if let Some(var_850) = &input.telecine {
-        object.key("telecine").string(var_850.as_str());
-    }
-}
-
-pub fn serialize_structure_crate_model_vc3_settings(
-    object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::Vc3Settings,
-) {
-    if let Some(var_851) = &input.framerate_control {
-        object.key("framerateControl").string(var_851.as_str());
-    }
-    if let Some(var_852) = &input.framerate_conversion_algorithm {
-        object
-            .key("framerateConversionAlgorithm")
-            .string(var_852.as_str());
-    }
-    if input.framerate_denominator != 0 {
-        object.key("framerateDenominator").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.framerate_denominator).into()),
-        );
-    }
-    if input.framerate_numerator != 0 {
-        object.key("framerateNumerator").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.framerate_numerator).into()),
-        );
-    }
-    if let Some(var_853) = &input.interlace_mode {
-        object.key("interlaceMode").string(var_853.as_str());
-    }
-    if let Some(var_854) = &input.scan_type_conversion_mode {
-        object
-            .key("scanTypeConversionMode")
-            .string(var_854.as_str());
-    }
-    if let Some(var_855) = &input.slow_pal {
-        object.key("slowPal").string(var_855.as_str());
-    }
-    if let Some(var_856) = &input.telecine {
-        object.key("telecine").string(var_856.as_str());
-    }
-    if let Some(var_857) = &input.vc3_class {
-        object.key("vc3Class").string(var_857.as_str());
-    }
-}
-
-pub fn serialize_structure_crate_model_vp8_settings(
-    object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::Vp8Settings,
-) {
-    if input.bitrate != 0 {
-        object.key("bitrate").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.bitrate).into()),
-        );
+    if let Some(var_857) = &input.codec_profile {
+        object.key("codecProfile").string(var_857.as_str());
     }
     if let Some(var_858) = &input.framerate_control {
         object.key("framerateControl").string(var_858.as_str());
@@ -4914,6 +4858,110 @@ pub fn serialize_structure_crate_model_vp8_settings(
             smithy_types::Number::NegInt((input.framerate_numerator).into()),
         );
     }
+    if let Some(var_860) = &input.interlace_mode {
+        object.key("interlaceMode").string(var_860.as_str());
+    }
+    if let Some(var_861) = &input.par_control {
+        object.key("parControl").string(var_861.as_str());
+    }
+    if input.par_denominator != 0 {
+        object.key("parDenominator").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.par_denominator).into()),
+        );
+    }
+    if input.par_numerator != 0 {
+        object.key("parNumerator").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.par_numerator).into()),
+        );
+    }
+    if let Some(var_862) = &input.scan_type_conversion_mode {
+        object
+            .key("scanTypeConversionMode")
+            .string(var_862.as_str());
+    }
+    if let Some(var_863) = &input.slow_pal {
+        object.key("slowPal").string(var_863.as_str());
+    }
+    if let Some(var_864) = &input.telecine {
+        object.key("telecine").string(var_864.as_str());
+    }
+}
+
+pub fn serialize_structure_crate_model_vc3_settings(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::Vc3Settings,
+) {
+    if let Some(var_865) = &input.framerate_control {
+        object.key("framerateControl").string(var_865.as_str());
+    }
+    if let Some(var_866) = &input.framerate_conversion_algorithm {
+        object
+            .key("framerateConversionAlgorithm")
+            .string(var_866.as_str());
+    }
+    if input.framerate_denominator != 0 {
+        object.key("framerateDenominator").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.framerate_denominator).into()),
+        );
+    }
+    if input.framerate_numerator != 0 {
+        object.key("framerateNumerator").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.framerate_numerator).into()),
+        );
+    }
+    if let Some(var_867) = &input.interlace_mode {
+        object.key("interlaceMode").string(var_867.as_str());
+    }
+    if let Some(var_868) = &input.scan_type_conversion_mode {
+        object
+            .key("scanTypeConversionMode")
+            .string(var_868.as_str());
+    }
+    if let Some(var_869) = &input.slow_pal {
+        object.key("slowPal").string(var_869.as_str());
+    }
+    if let Some(var_870) = &input.telecine {
+        object.key("telecine").string(var_870.as_str());
+    }
+    if let Some(var_871) = &input.vc3_class {
+        object.key("vc3Class").string(var_871.as_str());
+    }
+}
+
+pub fn serialize_structure_crate_model_vp8_settings(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::Vp8Settings,
+) {
+    if input.bitrate != 0 {
+        object.key("bitrate").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.bitrate).into()),
+        );
+    }
+    if let Some(var_872) = &input.framerate_control {
+        object.key("framerateControl").string(var_872.as_str());
+    }
+    if let Some(var_873) = &input.framerate_conversion_algorithm {
+        object
+            .key("framerateConversionAlgorithm")
+            .string(var_873.as_str());
+    }
+    if input.framerate_denominator != 0 {
+        object.key("framerateDenominator").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.framerate_denominator).into()),
+        );
+    }
+    if input.framerate_numerator != 0 {
+        object.key("framerateNumerator").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.framerate_numerator).into()),
+        );
+    }
     if input.gop_size != 0.0 {
         object.key("gopSize").number(
             #[allow(clippy::useless_conversion)]
@@ -4932,8 +4980,8 @@ pub fn serialize_structure_crate_model_vp8_settings(
             smithy_types::Number::NegInt((input.max_bitrate).into()),
         );
     }
-    if let Some(var_860) = &input.par_control {
-        object.key("parControl").string(var_860.as_str());
+    if let Some(var_874) = &input.par_control {
+        object.key("parControl").string(var_874.as_str());
     }
     if input.par_denominator != 0 {
         object.key("parDenominator").number(
@@ -4947,11 +4995,11 @@ pub fn serialize_structure_crate_model_vp8_settings(
             smithy_types::Number::NegInt((input.par_numerator).into()),
         );
     }
-    if let Some(var_861) = &input.quality_tuning_level {
-        object.key("qualityTuningLevel").string(var_861.as_str());
+    if let Some(var_875) = &input.quality_tuning_level {
+        object.key("qualityTuningLevel").string(var_875.as_str());
     }
-    if let Some(var_862) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_862.as_str());
+    if let Some(var_876) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_876.as_str());
     }
 }
 
@@ -4965,13 +5013,13 @@ pub fn serialize_structure_crate_model_vp9_settings(
             smithy_types::Number::NegInt((input.bitrate).into()),
         );
     }
-    if let Some(var_863) = &input.framerate_control {
-        object.key("framerateControl").string(var_863.as_str());
+    if let Some(var_877) = &input.framerate_control {
+        object.key("framerateControl").string(var_877.as_str());
     }
-    if let Some(var_864) = &input.framerate_conversion_algorithm {
+    if let Some(var_878) = &input.framerate_conversion_algorithm {
         object
             .key("framerateConversionAlgorithm")
-            .string(var_864.as_str());
+            .string(var_878.as_str());
     }
     if input.framerate_denominator != 0 {
         object.key("framerateDenominator").number(
@@ -5003,8 +5051,8 @@ pub fn serialize_structure_crate_model_vp9_settings(
             smithy_types::Number::NegInt((input.max_bitrate).into()),
         );
     }
-    if let Some(var_865) = &input.par_control {
-        object.key("parControl").string(var_865.as_str());
+    if let Some(var_879) = &input.par_control {
+        object.key("parControl").string(var_879.as_str());
     }
     if input.par_denominator != 0 {
         object.key("parDenominator").number(
@@ -5018,11 +5066,11 @@ pub fn serialize_structure_crate_model_vp9_settings(
             smithy_types::Number::NegInt((input.par_numerator).into()),
         );
     }
-    if let Some(var_866) = &input.quality_tuning_level {
-        object.key("qualityTuningLevel").string(var_866.as_str());
+    if let Some(var_880) = &input.quality_tuning_level {
+        object.key("qualityTuningLevel").string(var_880.as_str());
     }
-    if let Some(var_867) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_867.as_str());
+    if let Some(var_881) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_881.as_str());
     }
 }
 
@@ -5030,19 +5078,19 @@ pub fn serialize_structure_crate_model_xavc_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::XavcSettings,
 ) {
-    if let Some(var_868) = &input.adaptive_quantization {
-        object.key("adaptiveQuantization").string(var_868.as_str());
+    if let Some(var_882) = &input.adaptive_quantization {
+        object.key("adaptiveQuantization").string(var_882.as_str());
     }
-    if let Some(var_869) = &input.entropy_encoding {
-        object.key("entropyEncoding").string(var_869.as_str());
+    if let Some(var_883) = &input.entropy_encoding {
+        object.key("entropyEncoding").string(var_883.as_str());
     }
-    if let Some(var_870) = &input.framerate_control {
-        object.key("framerateControl").string(var_870.as_str());
+    if let Some(var_884) = &input.framerate_control {
+        object.key("framerateControl").string(var_884.as_str());
     }
-    if let Some(var_871) = &input.framerate_conversion_algorithm {
+    if let Some(var_885) = &input.framerate_conversion_algorithm {
         object
             .key("framerateConversionAlgorithm")
-            .string(var_871.as_str());
+            .string(var_885.as_str());
     }
     if input.framerate_denominator != 0 {
         object.key("framerateDenominator").number(
@@ -5056,11 +5104,11 @@ pub fn serialize_structure_crate_model_xavc_settings(
             smithy_types::Number::NegInt((input.framerate_numerator).into()),
         );
     }
-    if let Some(var_872) = &input.profile {
-        object.key("profile").string(var_872.as_str());
+    if let Some(var_886) = &input.profile {
+        object.key("profile").string(var_886.as_str());
     }
-    if let Some(var_873) = &input.slow_pal {
-        object.key("slowPal").string(var_873.as_str());
+    if let Some(var_887) = &input.slow_pal {
+        object.key("slowPal").string(var_887.as_str());
     }
     if input.softness != 0 {
         object.key("softness").number(
@@ -5068,55 +5116,55 @@ pub fn serialize_structure_crate_model_xavc_settings(
             smithy_types::Number::NegInt((input.softness).into()),
         );
     }
-    if let Some(var_874) = &input.spatial_adaptive_quantization {
+    if let Some(var_888) = &input.spatial_adaptive_quantization {
         object
             .key("spatialAdaptiveQuantization")
-            .string(var_874.as_str());
+            .string(var_888.as_str());
     }
-    if let Some(var_875) = &input.temporal_adaptive_quantization {
+    if let Some(var_889) = &input.temporal_adaptive_quantization {
         object
             .key("temporalAdaptiveQuantization")
-            .string(var_875.as_str());
+            .string(var_889.as_str());
     }
-    if let Some(var_876) = &input.xavc4k_intra_cbg_profile_settings {
-        let mut object_877 = object.key("xavc4kIntraCbgProfileSettings").start_object();
+    if let Some(var_890) = &input.xavc4k_intra_cbg_profile_settings {
+        let mut object_891 = object.key("xavc4kIntraCbgProfileSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_xavc4k_intra_cbg_profile_settings(
-            &mut object_877,
-            var_876,
+            &mut object_891,
+            var_890,
         );
-        object_877.finish();
+        object_891.finish();
     }
-    if let Some(var_878) = &input.xavc4k_intra_vbr_profile_settings {
-        let mut object_879 = object.key("xavc4kIntraVbrProfileSettings").start_object();
+    if let Some(var_892) = &input.xavc4k_intra_vbr_profile_settings {
+        let mut object_893 = object.key("xavc4kIntraVbrProfileSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_xavc4k_intra_vbr_profile_settings(
-            &mut object_879,
-            var_878,
+            &mut object_893,
+            var_892,
         );
-        object_879.finish();
+        object_893.finish();
     }
-    if let Some(var_880) = &input.xavc4k_profile_settings {
-        let mut object_881 = object.key("xavc4kProfileSettings").start_object();
+    if let Some(var_894) = &input.xavc4k_profile_settings {
+        let mut object_895 = object.key("xavc4kProfileSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_xavc4k_profile_settings(
-            &mut object_881,
-            var_880,
+            &mut object_895,
+            var_894,
         );
-        object_881.finish();
+        object_895.finish();
     }
-    if let Some(var_882) = &input.xavc_hd_intra_cbg_profile_settings {
-        let mut object_883 = object.key("xavcHdIntraCbgProfileSettings").start_object();
+    if let Some(var_896) = &input.xavc_hd_intra_cbg_profile_settings {
+        let mut object_897 = object.key("xavcHdIntraCbgProfileSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_xavc_hd_intra_cbg_profile_settings(
-            &mut object_883,
-            var_882,
+            &mut object_897,
+            var_896,
         );
-        object_883.finish();
+        object_897.finish();
     }
-    if let Some(var_884) = &input.xavc_hd_profile_settings {
-        let mut object_885 = object.key("xavcHdProfileSettings").start_object();
+    if let Some(var_898) = &input.xavc_hd_profile_settings {
+        let mut object_899 = object.key("xavcHdProfileSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_xavc_hd_profile_settings(
-            &mut object_885,
-            var_884,
+            &mut object_899,
+            var_898,
         );
-        object_885.finish();
+        object_899.finish();
     }
 }
 
@@ -5130,8 +5178,8 @@ pub fn serialize_structure_crate_model_color_corrector(
             smithy_types::Number::NegInt((input.brightness).into()),
         );
     }
-    if let Some(var_886) = &input.color_space_conversion {
-        object.key("colorSpaceConversion").string(var_886.as_str());
+    if let Some(var_900) = &input.color_space_conversion {
+        object.key("colorSpaceConversion").string(var_900.as_str());
     }
     if input.contrast != 0 {
         object.key("contrast").number(
@@ -5139,10 +5187,10 @@ pub fn serialize_structure_crate_model_color_corrector(
             smithy_types::Number::NegInt((input.contrast).into()),
         );
     }
-    if let Some(var_887) = &input.hdr10_metadata {
-        let mut object_888 = object.key("hdr10Metadata").start_object();
-        crate::json_ser::serialize_structure_crate_model_hdr10_metadata(&mut object_888, var_887);
-        object_888.finish();
+    if let Some(var_901) = &input.hdr10_metadata {
+        let mut object_902 = object.key("hdr10Metadata").start_object();
+        crate::json_ser::serialize_structure_crate_model_hdr10_metadata(&mut object_902, var_901);
+        object_902.finish();
     }
     if input.hue != 0 {
         object.key("hue").number(
@@ -5150,8 +5198,8 @@ pub fn serialize_structure_crate_model_color_corrector(
             smithy_types::Number::NegInt((input.hue).into()),
         );
     }
-    if let Some(var_889) = &input.sample_range_conversion {
-        object.key("sampleRangeConversion").string(var_889.as_str());
+    if let Some(var_903) = &input.sample_range_conversion {
+        object.key("sampleRangeConversion").string(var_903.as_str());
     }
     if input.saturation != 0 {
         object.key("saturation").number(
@@ -5165,14 +5213,14 @@ pub fn serialize_structure_crate_model_deinterlacer(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Deinterlacer,
 ) {
-    if let Some(var_890) = &input.algorithm {
-        object.key("algorithm").string(var_890.as_str());
+    if let Some(var_904) = &input.algorithm {
+        object.key("algorithm").string(var_904.as_str());
     }
-    if let Some(var_891) = &input.control {
-        object.key("control").string(var_891.as_str());
+    if let Some(var_905) = &input.control {
+        object.key("control").string(var_905.as_str());
     }
-    if let Some(var_892) = &input.mode {
-        object.key("mode").string(var_892.as_str());
+    if let Some(var_906) = &input.mode {
+        object.key("mode").string(var_906.as_str());
     }
 }
 
@@ -5180,19 +5228,19 @@ pub fn serialize_structure_crate_model_dolby_vision(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DolbyVision,
 ) {
-    if let Some(var_893) = &input.l6_metadata {
-        let mut object_894 = object.key("l6Metadata").start_object();
+    if let Some(var_907) = &input.l6_metadata {
+        let mut object_908 = object.key("l6Metadata").start_object();
         crate::json_ser::serialize_structure_crate_model_dolby_vision_level6_metadata(
-            &mut object_894,
-            var_893,
+            &mut object_908,
+            var_907,
         );
-        object_894.finish();
+        object_908.finish();
     }
-    if let Some(var_895) = &input.l6_mode {
-        object.key("l6Mode").string(var_895.as_str());
+    if let Some(var_909) = &input.l6_mode {
+        object.key("l6Mode").string(var_909.as_str());
     }
-    if let Some(var_896) = &input.profile {
-        object.key("profile").string(var_896.as_str());
+    if let Some(var_910) = &input.profile {
+        object.key("profile").string(var_910.as_str());
     }
 }
 
@@ -5218,32 +5266,32 @@ pub fn serialize_structure_crate_model_noise_reducer(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NoiseReducer,
 ) {
-    if let Some(var_897) = &input.filter {
-        object.key("filter").string(var_897.as_str());
+    if let Some(var_911) = &input.filter {
+        object.key("filter").string(var_911.as_str());
     }
-    if let Some(var_898) = &input.filter_settings {
-        let mut object_899 = object.key("filterSettings").start_object();
+    if let Some(var_912) = &input.filter_settings {
+        let mut object_913 = object.key("filterSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_noise_reducer_filter_settings(
-            &mut object_899,
-            var_898,
+            &mut object_913,
+            var_912,
         );
-        object_899.finish();
+        object_913.finish();
     }
-    if let Some(var_900) = &input.spatial_filter_settings {
-        let mut object_901 = object.key("spatialFilterSettings").start_object();
+    if let Some(var_914) = &input.spatial_filter_settings {
+        let mut object_915 = object.key("spatialFilterSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_noise_reducer_spatial_filter_settings(
-            &mut object_901,
-            var_900,
+            &mut object_915,
+            var_914,
         );
-        object_901.finish();
+        object_915.finish();
     }
-    if let Some(var_902) = &input.temporal_filter_settings {
-        let mut object_903 = object.key("temporalFilterSettings").start_object();
+    if let Some(var_916) = &input.temporal_filter_settings {
+        let mut object_917 = object.key("temporalFilterSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_noise_reducer_temporal_filter_settings(
-            &mut object_903,
-            var_902,
+            &mut object_917,
+            var_916,
         );
-        object_903.finish();
+        object_917.finish();
     }
 }
 
@@ -5251,13 +5299,13 @@ pub fn serialize_structure_crate_model_partner_watermarking(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PartnerWatermarking,
 ) {
-    if let Some(var_904) = &input.nexguard_file_marker_settings {
-        let mut object_905 = object.key("nexguardFileMarkerSettings").start_object();
+    if let Some(var_918) = &input.nexguard_file_marker_settings {
+        let mut object_919 = object.key("nexguardFileMarkerSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_nex_guard_file_marker_settings(
-            &mut object_905,
-            var_904,
+            &mut object_919,
+            var_918,
         );
-        object_905.finish();
+        object_919.finish();
     }
 }
 
@@ -5271,11 +5319,11 @@ pub fn serialize_structure_crate_model_timecode_burnin(
             smithy_types::Number::NegInt((input.font_size).into()),
         );
     }
-    if let Some(var_906) = &input.position {
-        object.key("position").string(var_906.as_str());
+    if let Some(var_920) = &input.position {
+        object.key("position").string(var_920.as_str());
     }
-    if let Some(var_907) = &input.prefix {
-        object.key("prefix").string(var_907);
+    if let Some(var_921) = &input.prefix {
+        object.key("prefix").string(var_921);
     }
 }
 
@@ -5283,8 +5331,8 @@ pub fn serialize_structure_crate_model_ancillary_source_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AncillarySourceSettings,
 ) {
-    if let Some(var_908) = &input.convert608_to708 {
-        object.key("convert608To708").string(var_908.as_str());
+    if let Some(var_922) = &input.convert608_to708 {
+        object.key("convert608To708").string(var_922.as_str());
     }
     if input.source_ancillary_channel_number != 0 {
         object.key("sourceAncillaryChannelNumber").number(
@@ -5292,8 +5340,8 @@ pub fn serialize_structure_crate_model_ancillary_source_settings(
             smithy_types::Number::NegInt((input.source_ancillary_channel_number).into()),
         );
     }
-    if let Some(var_909) = &input.terminate_captions {
-        object.key("terminateCaptions").string(var_909.as_str());
+    if let Some(var_923) = &input.terminate_captions {
+        object.key("terminateCaptions").string(var_923.as_str());
     }
 }
 
@@ -5313,8 +5361,8 @@ pub fn serialize_structure_crate_model_embedded_source_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EmbeddedSourceSettings,
 ) {
-    if let Some(var_910) = &input.convert608_to708 {
-        object.key("convert608To708").string(var_910.as_str());
+    if let Some(var_924) = &input.convert608_to708 {
+        object.key("convert608To708").string(var_924.as_str());
     }
     if input.source608_channel_number != 0 {
         object.key("source608ChannelNumber").number(
@@ -5328,8 +5376,8 @@ pub fn serialize_structure_crate_model_embedded_source_settings(
             smithy_types::Number::NegInt((input.source608_track_number).into()),
         );
     }
-    if let Some(var_911) = &input.terminate_captions {
-        object.key("terminateCaptions").string(var_911.as_str());
+    if let Some(var_925) = &input.terminate_captions {
+        object.key("terminateCaptions").string(var_925.as_str());
     }
 }
 
@@ -5337,19 +5385,19 @@ pub fn serialize_structure_crate_model_file_source_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::FileSourceSettings,
 ) {
-    if let Some(var_912) = &input.convert608_to708 {
-        object.key("convert608To708").string(var_912.as_str());
+    if let Some(var_926) = &input.convert608_to708 {
+        object.key("convert608To708").string(var_926.as_str());
     }
-    if let Some(var_913) = &input.framerate {
-        let mut object_914 = object.key("framerate").start_object();
+    if let Some(var_927) = &input.framerate {
+        let mut object_928 = object.key("framerate").start_object();
         crate::json_ser::serialize_structure_crate_model_caption_source_framerate(
-            &mut object_914,
-            var_913,
+            &mut object_928,
+            var_927,
         );
-        object_914.finish();
+        object_928.finish();
     }
-    if let Some(var_915) = &input.source_file {
-        object.key("sourceFile").string(var_915);
+    if let Some(var_929) = &input.source_file {
+        object.key("sourceFile").string(var_929);
     }
     if input.time_delta != 0 {
         object.key("timeDelta").number(
@@ -5363,8 +5411,8 @@ pub fn serialize_structure_crate_model_teletext_source_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TeletextSourceSettings,
 ) {
-    if let Some(var_916) = &input.page_number {
-        object.key("pageNumber").string(var_916);
+    if let Some(var_930) = &input.page_number {
+        object.key("pageNumber").string(var_930);
     }
 }
 
@@ -5384,88 +5432,20 @@ pub fn serialize_structure_crate_model_webvtt_hls_source_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WebvttHlsSourceSettings,
 ) {
-    if let Some(var_917) = &input.rendition_group_id {
-        object.key("renditionGroupId").string(var_917);
+    if let Some(var_931) = &input.rendition_group_id {
+        object.key("renditionGroupId").string(var_931);
     }
-    if let Some(var_918) = &input.rendition_language_code {
-        object.key("renditionLanguageCode").string(var_918.as_str());
+    if let Some(var_932) = &input.rendition_language_code {
+        object.key("renditionLanguageCode").string(var_932.as_str());
     }
-    if let Some(var_919) = &input.rendition_name {
-        object.key("renditionName").string(var_919);
+    if let Some(var_933) = &input.rendition_name {
+        object.key("renditionName").string(var_933);
     }
 }
 
 pub fn serialize_structure_crate_model_cmaf_additional_manifest(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CmafAdditionalManifest,
-) {
-    if let Some(var_920) = &input.manifest_name_modifier {
-        object.key("manifestNameModifier").string(var_920);
-    }
-    if let Some(var_921) = &input.selected_outputs {
-        let mut array_922 = object.key("selectedOutputs").start_array();
-        for item_923 in var_921 {
-            {
-                array_922.value().string(item_923);
-            }
-        }
-        array_922.finish();
-    }
-}
-
-pub fn serialize_structure_crate_model_destination_settings(
-    object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DestinationSettings,
-) {
-    if let Some(var_924) = &input.s3_settings {
-        let mut object_925 = object.key("s3Settings").start_object();
-        crate::json_ser::serialize_structure_crate_model_s3_destination_settings(
-            &mut object_925,
-            var_924,
-        );
-        object_925.finish();
-    }
-}
-
-pub fn serialize_structure_crate_model_cmaf_encryption_settings(
-    object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::CmafEncryptionSettings,
-) {
-    if let Some(var_926) = &input.constant_initialization_vector {
-        object.key("constantInitializationVector").string(var_926);
-    }
-    if let Some(var_927) = &input.encryption_method {
-        object.key("encryptionMethod").string(var_927.as_str());
-    }
-    if let Some(var_928) = &input.initialization_vector_in_manifest {
-        object
-            .key("initializationVectorInManifest")
-            .string(var_928.as_str());
-    }
-    if let Some(var_929) = &input.speke_key_provider {
-        let mut object_930 = object.key("spekeKeyProvider").start_object();
-        crate::json_ser::serialize_structure_crate_model_speke_key_provider_cmaf(
-            &mut object_930,
-            var_929,
-        );
-        object_930.finish();
-    }
-    if let Some(var_931) = &input.static_key_provider {
-        let mut object_932 = object.key("staticKeyProvider").start_object();
-        crate::json_ser::serialize_structure_crate_model_static_key_provider(
-            &mut object_932,
-            var_931,
-        );
-        object_932.finish();
-    }
-    if let Some(var_933) = &input.r#type {
-        object.key("type").string(var_933.as_str());
-    }
-}
-
-pub fn serialize_structure_crate_model_dash_additional_manifest(
-    object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DashAdditionalManifest,
 ) {
     if let Some(var_934) = &input.manifest_name_modifier {
         object.key("manifestNameModifier").string(var_934);
@@ -5481,106 +5461,174 @@ pub fn serialize_structure_crate_model_dash_additional_manifest(
     }
 }
 
+pub fn serialize_structure_crate_model_destination_settings(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::DestinationSettings,
+) {
+    if let Some(var_938) = &input.s3_settings {
+        let mut object_939 = object.key("s3Settings").start_object();
+        crate::json_ser::serialize_structure_crate_model_s3_destination_settings(
+            &mut object_939,
+            var_938,
+        );
+        object_939.finish();
+    }
+}
+
+pub fn serialize_structure_crate_model_cmaf_encryption_settings(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::CmafEncryptionSettings,
+) {
+    if let Some(var_940) = &input.constant_initialization_vector {
+        object.key("constantInitializationVector").string(var_940);
+    }
+    if let Some(var_941) = &input.encryption_method {
+        object.key("encryptionMethod").string(var_941.as_str());
+    }
+    if let Some(var_942) = &input.initialization_vector_in_manifest {
+        object
+            .key("initializationVectorInManifest")
+            .string(var_942.as_str());
+    }
+    if let Some(var_943) = &input.speke_key_provider {
+        let mut object_944 = object.key("spekeKeyProvider").start_object();
+        crate::json_ser::serialize_structure_crate_model_speke_key_provider_cmaf(
+            &mut object_944,
+            var_943,
+        );
+        object_944.finish();
+    }
+    if let Some(var_945) = &input.static_key_provider {
+        let mut object_946 = object.key("staticKeyProvider").start_object();
+        crate::json_ser::serialize_structure_crate_model_static_key_provider(
+            &mut object_946,
+            var_945,
+        );
+        object_946.finish();
+    }
+    if let Some(var_947) = &input.r#type {
+        object.key("type").string(var_947.as_str());
+    }
+}
+
+pub fn serialize_structure_crate_model_cmaf_image_based_trick_play_settings(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::CmafImageBasedTrickPlaySettings,
+) {
+    if let Some(var_948) = &input.interval_cadence {
+        object.key("intervalCadence").string(var_948.as_str());
+    }
+    if input.thumbnail_height != 0 {
+        object.key("thumbnailHeight").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.thumbnail_height).into()),
+        );
+    }
+    if input.thumbnail_interval != 0.0 {
+        object.key("thumbnailInterval").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::Float((input.thumbnail_interval).into()),
+        );
+    }
+    if input.thumbnail_width != 0 {
+        object.key("thumbnailWidth").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.thumbnail_width).into()),
+        );
+    }
+    if input.tile_height != 0 {
+        object.key("tileHeight").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.tile_height).into()),
+        );
+    }
+    if input.tile_width != 0 {
+        object.key("tileWidth").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.tile_width).into()),
+        );
+    }
+}
+
+pub fn serialize_structure_crate_model_dash_additional_manifest(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::DashAdditionalManifest,
+) {
+    if let Some(var_949) = &input.manifest_name_modifier {
+        object.key("manifestNameModifier").string(var_949);
+    }
+    if let Some(var_950) = &input.selected_outputs {
+        let mut array_951 = object.key("selectedOutputs").start_array();
+        for item_952 in var_950 {
+            {
+                array_951.value().string(item_952);
+            }
+        }
+        array_951.finish();
+    }
+}
+
 pub fn serialize_structure_crate_model_dash_iso_encryption_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DashIsoEncryptionSettings,
 ) {
-    if let Some(var_938) = &input.playback_device_compatibility {
+    if let Some(var_953) = &input.playback_device_compatibility {
         object
             .key("playbackDeviceCompatibility")
-            .string(var_938.as_str());
+            .string(var_953.as_str());
     }
-    if let Some(var_939) = &input.speke_key_provider {
-        let mut object_940 = object.key("spekeKeyProvider").start_object();
+    if let Some(var_954) = &input.speke_key_provider {
+        let mut object_955 = object.key("spekeKeyProvider").start_object();
         crate::json_ser::serialize_structure_crate_model_speke_key_provider(
-            &mut object_940,
-            var_939,
+            &mut object_955,
+            var_954,
         );
-        object_940.finish();
+        object_955.finish();
+    }
+}
+
+pub fn serialize_structure_crate_model_dash_iso_image_based_trick_play_settings(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::DashIsoImageBasedTrickPlaySettings,
+) {
+    if let Some(var_956) = &input.interval_cadence {
+        object.key("intervalCadence").string(var_956.as_str());
+    }
+    if input.thumbnail_height != 0 {
+        object.key("thumbnailHeight").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.thumbnail_height).into()),
+        );
+    }
+    if input.thumbnail_interval != 0.0 {
+        object.key("thumbnailInterval").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::Float((input.thumbnail_interval).into()),
+        );
+    }
+    if input.thumbnail_width != 0 {
+        object.key("thumbnailWidth").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.thumbnail_width).into()),
+        );
+    }
+    if input.tile_height != 0 {
+        object.key("tileHeight").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.tile_height).into()),
+        );
+    }
+    if input.tile_width != 0 {
+        object.key("tileWidth").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.tile_width).into()),
+        );
     }
 }
 
 pub fn serialize_structure_crate_model_hls_additional_manifest(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HlsAdditionalManifest,
-) {
-    if let Some(var_941) = &input.manifest_name_modifier {
-        object.key("manifestNameModifier").string(var_941);
-    }
-    if let Some(var_942) = &input.selected_outputs {
-        let mut array_943 = object.key("selectedOutputs").start_array();
-        for item_944 in var_942 {
-            {
-                array_943.value().string(item_944);
-            }
-        }
-        array_943.finish();
-    }
-}
-
-pub fn serialize_structure_crate_model_hls_caption_language_mapping(
-    object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::HlsCaptionLanguageMapping,
-) {
-    if input.caption_channel != 0 {
-        object.key("captionChannel").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((input.caption_channel).into()),
-        );
-    }
-    if let Some(var_945) = &input.custom_language_code {
-        object.key("customLanguageCode").string(var_945);
-    }
-    if let Some(var_946) = &input.language_code {
-        object.key("languageCode").string(var_946.as_str());
-    }
-    if let Some(var_947) = &input.language_description {
-        object.key("languageDescription").string(var_947);
-    }
-}
-
-pub fn serialize_structure_crate_model_hls_encryption_settings(
-    object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::HlsEncryptionSettings,
-) {
-    if let Some(var_948) = &input.constant_initialization_vector {
-        object.key("constantInitializationVector").string(var_948);
-    }
-    if let Some(var_949) = &input.encryption_method {
-        object.key("encryptionMethod").string(var_949.as_str());
-    }
-    if let Some(var_950) = &input.initialization_vector_in_manifest {
-        object
-            .key("initializationVectorInManifest")
-            .string(var_950.as_str());
-    }
-    if let Some(var_951) = &input.offline_encrypted {
-        object.key("offlineEncrypted").string(var_951.as_str());
-    }
-    if let Some(var_952) = &input.speke_key_provider {
-        let mut object_953 = object.key("spekeKeyProvider").start_object();
-        crate::json_ser::serialize_structure_crate_model_speke_key_provider(
-            &mut object_953,
-            var_952,
-        );
-        object_953.finish();
-    }
-    if let Some(var_954) = &input.static_key_provider {
-        let mut object_955 = object.key("staticKeyProvider").start_object();
-        crate::json_ser::serialize_structure_crate_model_static_key_provider(
-            &mut object_955,
-            var_954,
-        );
-        object_955.finish();
-    }
-    if let Some(var_956) = &input.r#type {
-        object.key("type").string(var_956.as_str());
-    }
-}
-
-pub fn serialize_structure_crate_model_ms_smooth_additional_manifest(
-    object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::MsSmoothAdditionalManifest,
 ) {
     if let Some(var_957) = &input.manifest_name_modifier {
         object.key("manifestNameModifier").string(var_957);
@@ -5596,17 +5644,134 @@ pub fn serialize_structure_crate_model_ms_smooth_additional_manifest(
     }
 }
 
+pub fn serialize_structure_crate_model_hls_caption_language_mapping(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::HlsCaptionLanguageMapping,
+) {
+    if input.caption_channel != 0 {
+        object.key("captionChannel").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.caption_channel).into()),
+        );
+    }
+    if let Some(var_961) = &input.custom_language_code {
+        object.key("customLanguageCode").string(var_961);
+    }
+    if let Some(var_962) = &input.language_code {
+        object.key("languageCode").string(var_962.as_str());
+    }
+    if let Some(var_963) = &input.language_description {
+        object.key("languageDescription").string(var_963);
+    }
+}
+
+pub fn serialize_structure_crate_model_hls_encryption_settings(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::HlsEncryptionSettings,
+) {
+    if let Some(var_964) = &input.constant_initialization_vector {
+        object.key("constantInitializationVector").string(var_964);
+    }
+    if let Some(var_965) = &input.encryption_method {
+        object.key("encryptionMethod").string(var_965.as_str());
+    }
+    if let Some(var_966) = &input.initialization_vector_in_manifest {
+        object
+            .key("initializationVectorInManifest")
+            .string(var_966.as_str());
+    }
+    if let Some(var_967) = &input.offline_encrypted {
+        object.key("offlineEncrypted").string(var_967.as_str());
+    }
+    if let Some(var_968) = &input.speke_key_provider {
+        let mut object_969 = object.key("spekeKeyProvider").start_object();
+        crate::json_ser::serialize_structure_crate_model_speke_key_provider(
+            &mut object_969,
+            var_968,
+        );
+        object_969.finish();
+    }
+    if let Some(var_970) = &input.static_key_provider {
+        let mut object_971 = object.key("staticKeyProvider").start_object();
+        crate::json_ser::serialize_structure_crate_model_static_key_provider(
+            &mut object_971,
+            var_970,
+        );
+        object_971.finish();
+    }
+    if let Some(var_972) = &input.r#type {
+        object.key("type").string(var_972.as_str());
+    }
+}
+
+pub fn serialize_structure_crate_model_hls_image_based_trick_play_settings(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::HlsImageBasedTrickPlaySettings,
+) {
+    if let Some(var_973) = &input.interval_cadence {
+        object.key("intervalCadence").string(var_973.as_str());
+    }
+    if input.thumbnail_height != 0 {
+        object.key("thumbnailHeight").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.thumbnail_height).into()),
+        );
+    }
+    if input.thumbnail_interval != 0.0 {
+        object.key("thumbnailInterval").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::Float((input.thumbnail_interval).into()),
+        );
+    }
+    if input.thumbnail_width != 0 {
+        object.key("thumbnailWidth").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.thumbnail_width).into()),
+        );
+    }
+    if input.tile_height != 0 {
+        object.key("tileHeight").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.tile_height).into()),
+        );
+    }
+    if input.tile_width != 0 {
+        object.key("tileWidth").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((input.tile_width).into()),
+        );
+    }
+}
+
+pub fn serialize_structure_crate_model_ms_smooth_additional_manifest(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::MsSmoothAdditionalManifest,
+) {
+    if let Some(var_974) = &input.manifest_name_modifier {
+        object.key("manifestNameModifier").string(var_974);
+    }
+    if let Some(var_975) = &input.selected_outputs {
+        let mut array_976 = object.key("selectedOutputs").start_array();
+        for item_977 in var_975 {
+            {
+                array_976.value().string(item_977);
+            }
+        }
+        array_976.finish();
+    }
+}
+
 pub fn serialize_structure_crate_model_ms_smooth_encryption_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MsSmoothEncryptionSettings,
 ) {
-    if let Some(var_961) = &input.speke_key_provider {
-        let mut object_962 = object.key("spekeKeyProvider").start_object();
+    if let Some(var_978) = &input.speke_key_provider {
+        let mut object_979 = object.key("spekeKeyProvider").start_object();
         crate::json_ser::serialize_structure_crate_model_speke_key_provider(
-            &mut object_962,
-            var_961,
+            &mut object_979,
+            var_978,
         );
-        object_962.finish();
+        object_979.finish();
     }
 }
 
@@ -5614,28 +5779,28 @@ pub fn serialize_structure_crate_model_hls_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HlsSettings,
 ) {
-    if let Some(var_963) = &input.audio_group_id {
-        object.key("audioGroupId").string(var_963);
+    if let Some(var_980) = &input.audio_group_id {
+        object.key("audioGroupId").string(var_980);
     }
-    if let Some(var_964) = &input.audio_only_container {
-        object.key("audioOnlyContainer").string(var_964.as_str());
+    if let Some(var_981) = &input.audio_only_container {
+        object.key("audioOnlyContainer").string(var_981.as_str());
     }
-    if let Some(var_965) = &input.audio_rendition_sets {
-        object.key("audioRenditionSets").string(var_965);
+    if let Some(var_982) = &input.audio_rendition_sets {
+        object.key("audioRenditionSets").string(var_982);
     }
-    if let Some(var_966) = &input.audio_track_type {
-        object.key("audioTrackType").string(var_966.as_str());
+    if let Some(var_983) = &input.audio_track_type {
+        object.key("audioTrackType").string(var_983.as_str());
     }
-    if let Some(var_967) = &input.descriptive_video_service_flag {
+    if let Some(var_984) = &input.descriptive_video_service_flag {
         object
             .key("descriptiveVideoServiceFlag")
-            .string(var_967.as_str());
+            .string(var_984.as_str());
     }
-    if let Some(var_968) = &input.i_frame_only_manifest {
-        object.key("iFrameOnlyManifest").string(var_968.as_str());
+    if let Some(var_985) = &input.i_frame_only_manifest {
+        object.key("iFrameOnlyManifest").string(var_985.as_str());
     }
-    if let Some(var_969) = &input.segment_modifier {
-        object.key("segmentModifier").string(var_969);
+    if let Some(var_986) = &input.segment_modifier {
+        object.key("segmentModifier").string(var_986);
     }
 }
 
@@ -5643,29 +5808,29 @@ pub fn serialize_structure_crate_model_output_channel_mapping(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::OutputChannelMapping,
 ) {
-    if let Some(var_970) = &input.input_channels {
-        let mut array_971 = object.key("inputChannels").start_array();
-        for item_972 in var_970 {
+    if let Some(var_987) = &input.input_channels {
+        let mut array_988 = object.key("inputChannels").start_array();
+        for item_989 in var_987 {
             {
-                array_971.value().number(
+                array_988.value().number(
                     #[allow(clippy::useless_conversion)]
-                    smithy_types::Number::NegInt((*item_972).into()),
+                    smithy_types::Number::NegInt((*item_989).into()),
                 );
             }
         }
-        array_971.finish();
+        array_988.finish();
     }
-    if let Some(var_973) = &input.input_channels_fine_tune {
-        let mut array_974 = object.key("inputChannelsFineTune").start_array();
-        for item_975 in var_973 {
+    if let Some(var_990) = &input.input_channels_fine_tune {
+        let mut array_991 = object.key("inputChannelsFineTune").start_array();
+        for item_992 in var_990 {
             {
-                array_974.value().number(
+                array_991.value().number(
                     #[allow(clippy::useless_conversion)]
-                    smithy_types::Number::Float((*item_975).into()),
+                    smithy_types::Number::Float((*item_992).into()),
                 );
             }
         }
-        array_974.finish();
+        array_991.finish();
     }
 }
 
@@ -5691,8 +5856,8 @@ pub fn serialize_structure_crate_model_avc_intra_uhd_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AvcIntraUhdSettings,
 ) {
-    if let Some(var_976) = &input.quality_tuning_level {
-        object.key("qualityTuningLevel").string(var_976.as_str());
+    if let Some(var_993) = &input.quality_tuning_level {
+        object.key("qualityTuningLevel").string(var_993.as_str());
     }
 }
 
@@ -5748,8 +5913,8 @@ pub fn serialize_structure_crate_model_xavc4k_intra_cbg_profile_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Xavc4kIntraCbgProfileSettings,
 ) {
-    if let Some(var_977) = &input.xavc_class {
-        object.key("xavcClass").string(var_977.as_str());
+    if let Some(var_994) = &input.xavc_class {
+        object.key("xavcClass").string(var_994.as_str());
     }
 }
 
@@ -5757,8 +5922,8 @@ pub fn serialize_structure_crate_model_xavc4k_intra_vbr_profile_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Xavc4kIntraVbrProfileSettings,
 ) {
-    if let Some(var_978) = &input.xavc_class {
-        object.key("xavcClass").string(var_978.as_str());
+    if let Some(var_995) = &input.xavc_class {
+        object.key("xavcClass").string(var_995.as_str());
     }
 }
 
@@ -5766,19 +5931,19 @@ pub fn serialize_structure_crate_model_xavc4k_profile_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Xavc4kProfileSettings,
 ) {
-    if let Some(var_979) = &input.bitrate_class {
-        object.key("bitrateClass").string(var_979.as_str());
+    if let Some(var_996) = &input.bitrate_class {
+        object.key("bitrateClass").string(var_996.as_str());
     }
-    if let Some(var_980) = &input.codec_profile {
-        object.key("codecProfile").string(var_980.as_str());
+    if let Some(var_997) = &input.codec_profile {
+        object.key("codecProfile").string(var_997.as_str());
     }
-    if let Some(var_981) = &input.flicker_adaptive_quantization {
+    if let Some(var_998) = &input.flicker_adaptive_quantization {
         object
             .key("flickerAdaptiveQuantization")
-            .string(var_981.as_str());
+            .string(var_998.as_str());
     }
-    if let Some(var_982) = &input.gop_b_reference {
-        object.key("gopBReference").string(var_982.as_str());
+    if let Some(var_999) = &input.gop_b_reference {
+        object.key("gopBReference").string(var_999.as_str());
     }
     if input.gop_closed_cadence != 0 {
         object.key("gopClosedCadence").number(
@@ -5792,8 +5957,8 @@ pub fn serialize_structure_crate_model_xavc4k_profile_settings(
             smithy_types::Number::NegInt((input.hrd_buffer_size).into()),
         );
     }
-    if let Some(var_983) = &input.quality_tuning_level {
-        object.key("qualityTuningLevel").string(var_983.as_str());
+    if let Some(var_1000) = &input.quality_tuning_level {
+        object.key("qualityTuningLevel").string(var_1000.as_str());
     }
     if input.slices != 0 {
         object.key("slices").number(
@@ -5807,8 +5972,8 @@ pub fn serialize_structure_crate_model_xavc_hd_intra_cbg_profile_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::XavcHdIntraCbgProfileSettings,
 ) {
-    if let Some(var_984) = &input.xavc_class {
-        object.key("xavcClass").string(var_984.as_str());
+    if let Some(var_1001) = &input.xavc_class {
+        object.key("xavcClass").string(var_1001.as_str());
     }
 }
 
@@ -5816,16 +5981,16 @@ pub fn serialize_structure_crate_model_xavc_hd_profile_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::XavcHdProfileSettings,
 ) {
-    if let Some(var_985) = &input.bitrate_class {
-        object.key("bitrateClass").string(var_985.as_str());
+    if let Some(var_1002) = &input.bitrate_class {
+        object.key("bitrateClass").string(var_1002.as_str());
     }
-    if let Some(var_986) = &input.flicker_adaptive_quantization {
+    if let Some(var_1003) = &input.flicker_adaptive_quantization {
         object
             .key("flickerAdaptiveQuantization")
-            .string(var_986.as_str());
+            .string(var_1003.as_str());
     }
-    if let Some(var_987) = &input.gop_b_reference {
-        object.key("gopBReference").string(var_987.as_str());
+    if let Some(var_1004) = &input.gop_b_reference {
+        object.key("gopBReference").string(var_1004.as_str());
     }
     if input.gop_closed_cadence != 0 {
         object.key("gopClosedCadence").number(
@@ -5839,11 +6004,11 @@ pub fn serialize_structure_crate_model_xavc_hd_profile_settings(
             smithy_types::Number::NegInt((input.hrd_buffer_size).into()),
         );
     }
-    if let Some(var_988) = &input.interlace_mode {
-        object.key("interlaceMode").string(var_988.as_str());
+    if let Some(var_1005) = &input.interlace_mode {
+        object.key("interlaceMode").string(var_1005.as_str());
     }
-    if let Some(var_989) = &input.quality_tuning_level {
-        object.key("qualityTuningLevel").string(var_989.as_str());
+    if let Some(var_1006) = &input.quality_tuning_level {
+        object.key("qualityTuningLevel").string(var_1006.as_str());
     }
     if input.slices != 0 {
         object.key("slices").number(
@@ -5851,8 +6016,8 @@ pub fn serialize_structure_crate_model_xavc_hd_profile_settings(
             smithy_types::Number::NegInt((input.slices).into()),
         );
     }
-    if let Some(var_990) = &input.telecine {
-        object.key("telecine").string(var_990.as_str());
+    if let Some(var_1007) = &input.telecine {
+        object.key("telecine").string(var_1007.as_str());
     }
 }
 
@@ -5920,10 +6085,10 @@ pub fn serialize_structure_crate_model_noise_reducer_temporal_filter_settings(
             smithy_types::Number::NegInt((input.aggressive_mode).into()),
         );
     }
-    if let Some(var_991) = &input.post_temporal_sharpening {
+    if let Some(var_1008) = &input.post_temporal_sharpening {
         object
             .key("postTemporalSharpening")
-            .string(var_991.as_str());
+            .string(var_1008.as_str());
     }
     if input.speed != 0 {
         object.key("speed").number(
@@ -5943,8 +6108,8 @@ pub fn serialize_structure_crate_model_nex_guard_file_marker_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NexGuardFileMarkerSettings,
 ) {
-    if let Some(var_992) = &input.license {
-        object.key("license").string(var_992);
+    if let Some(var_1009) = &input.license {
+        object.key("license").string(var_1009);
     }
     if input.payload != 0 {
         object.key("payload").number(
@@ -5952,11 +6117,11 @@ pub fn serialize_structure_crate_model_nex_guard_file_marker_settings(
             smithy_types::Number::NegInt((input.payload).into()),
         );
     }
-    if let Some(var_993) = &input.preset {
-        object.key("preset").string(var_993);
+    if let Some(var_1010) = &input.preset {
+        object.key("preset").string(var_1010);
     }
-    if let Some(var_994) = &input.strength {
-        object.key("strength").string(var_994.as_str());
+    if let Some(var_1011) = &input.strength {
+        object.key("strength").string(var_1011.as_str());
     }
 }
 
@@ -5982,21 +6147,21 @@ pub fn serialize_structure_crate_model_s3_destination_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3DestinationSettings,
 ) {
-    if let Some(var_995) = &input.access_control {
-        let mut object_996 = object.key("accessControl").start_object();
+    if let Some(var_1012) = &input.access_control {
+        let mut object_1013 = object.key("accessControl").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_access_control(
-            &mut object_996,
-            var_995,
+            &mut object_1013,
+            var_1012,
         );
-        object_996.finish();
+        object_1013.finish();
     }
-    if let Some(var_997) = &input.encryption {
-        let mut object_998 = object.key("encryption").start_object();
+    if let Some(var_1014) = &input.encryption {
+        let mut object_1015 = object.key("encryption").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_encryption_settings(
-            &mut object_998,
-            var_997,
+            &mut object_1015,
+            var_1014,
         );
-        object_998.finish();
+        object_1015.finish();
     }
 }
 
@@ -6004,32 +6169,32 @@ pub fn serialize_structure_crate_model_speke_key_provider_cmaf(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SpekeKeyProviderCmaf,
 ) {
-    if let Some(var_999) = &input.certificate_arn {
-        object.key("certificateArn").string(var_999);
+    if let Some(var_1016) = &input.certificate_arn {
+        object.key("certificateArn").string(var_1016);
     }
-    if let Some(var_1000) = &input.dash_signaled_system_ids {
-        let mut array_1001 = object.key("dashSignaledSystemIds").start_array();
-        for item_1002 in var_1000 {
+    if let Some(var_1017) = &input.dash_signaled_system_ids {
+        let mut array_1018 = object.key("dashSignaledSystemIds").start_array();
+        for item_1019 in var_1017 {
             {
-                array_1001.value().string(item_1002);
+                array_1018.value().string(item_1019);
             }
         }
-        array_1001.finish();
+        array_1018.finish();
     }
-    if let Some(var_1003) = &input.hls_signaled_system_ids {
-        let mut array_1004 = object.key("hlsSignaledSystemIds").start_array();
-        for item_1005 in var_1003 {
+    if let Some(var_1020) = &input.hls_signaled_system_ids {
+        let mut array_1021 = object.key("hlsSignaledSystemIds").start_array();
+        for item_1022 in var_1020 {
             {
-                array_1004.value().string(item_1005);
+                array_1021.value().string(item_1022);
             }
         }
-        array_1004.finish();
+        array_1021.finish();
     }
-    if let Some(var_1006) = &input.resource_id {
-        object.key("resourceId").string(var_1006);
+    if let Some(var_1023) = &input.resource_id {
+        object.key("resourceId").string(var_1023);
     }
-    if let Some(var_1007) = &input.url {
-        object.key("url").string(var_1007);
+    if let Some(var_1024) = &input.url {
+        object.key("url").string(var_1024);
     }
 }
 
@@ -6037,17 +6202,17 @@ pub fn serialize_structure_crate_model_static_key_provider(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StaticKeyProvider,
 ) {
-    if let Some(var_1008) = &input.key_format {
-        object.key("keyFormat").string(var_1008);
+    if let Some(var_1025) = &input.key_format {
+        object.key("keyFormat").string(var_1025);
     }
-    if let Some(var_1009) = &input.key_format_versions {
-        object.key("keyFormatVersions").string(var_1009);
+    if let Some(var_1026) = &input.key_format_versions {
+        object.key("keyFormatVersions").string(var_1026);
     }
-    if let Some(var_1010) = &input.static_key_value {
-        object.key("staticKeyValue").string(var_1010);
+    if let Some(var_1027) = &input.static_key_value {
+        object.key("staticKeyValue").string(var_1027);
     }
-    if let Some(var_1011) = &input.url {
-        object.key("url").string(var_1011);
+    if let Some(var_1028) = &input.url {
+        object.key("url").string(var_1028);
     }
 }
 
@@ -6055,23 +6220,23 @@ pub fn serialize_structure_crate_model_speke_key_provider(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SpekeKeyProvider,
 ) {
-    if let Some(var_1012) = &input.certificate_arn {
-        object.key("certificateArn").string(var_1012);
+    if let Some(var_1029) = &input.certificate_arn {
+        object.key("certificateArn").string(var_1029);
     }
-    if let Some(var_1013) = &input.resource_id {
-        object.key("resourceId").string(var_1013);
+    if let Some(var_1030) = &input.resource_id {
+        object.key("resourceId").string(var_1030);
     }
-    if let Some(var_1014) = &input.system_ids {
-        let mut array_1015 = object.key("systemIds").start_array();
-        for item_1016 in var_1014 {
+    if let Some(var_1031) = &input.system_ids {
+        let mut array_1032 = object.key("systemIds").start_array();
+        for item_1033 in var_1031 {
             {
-                array_1015.value().string(item_1016);
+                array_1032.value().string(item_1033);
             }
         }
-        array_1015.finish();
+        array_1032.finish();
     }
-    if let Some(var_1017) = &input.url {
-        object.key("url").string(var_1017);
+    if let Some(var_1034) = &input.url {
+        object.key("url").string(var_1034);
     }
 }
 
@@ -6079,8 +6244,8 @@ pub fn serialize_structure_crate_model_s3_destination_access_control(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3DestinationAccessControl,
 ) {
-    if let Some(var_1018) = &input.canned_acl {
-        object.key("cannedAcl").string(var_1018.as_str());
+    if let Some(var_1035) = &input.canned_acl {
+        object.key("cannedAcl").string(var_1035.as_str());
     }
 }
 
@@ -6088,13 +6253,13 @@ pub fn serialize_structure_crate_model_s3_encryption_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3EncryptionSettings,
 ) {
-    if let Some(var_1019) = &input.encryption_type {
-        object.key("encryptionType").string(var_1019.as_str());
+    if let Some(var_1036) = &input.encryption_type {
+        object.key("encryptionType").string(var_1036.as_str());
     }
-    if let Some(var_1020) = &input.kms_encryption_context {
-        object.key("kmsEncryptionContext").string(var_1020);
+    if let Some(var_1037) = &input.kms_encryption_context {
+        object.key("kmsEncryptionContext").string(var_1037);
     }
-    if let Some(var_1021) = &input.kms_key_arn {
-        object.key("kmsKeyArn").string(var_1021);
+    if let Some(var_1038) = &input.kms_key_arn {
+        object.key("kmsKeyArn").string(var_1038);
     }
 }

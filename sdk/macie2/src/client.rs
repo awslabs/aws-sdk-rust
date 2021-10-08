@@ -219,6 +219,11 @@ where
     pub fn list_invitations(&self) -> fluent_builders::ListInvitations<C, M, R> {
         fluent_builders::ListInvitations::new(self.handle.clone())
     }
+    pub fn list_managed_data_identifiers(
+        &self,
+    ) -> fluent_builders::ListManagedDataIdentifiers<C, M, R> {
+        fluent_builders::ListManagedDataIdentifiers::new(self.handle.clone())
+    }
     pub fn list_members(&self) -> fluent_builders::ListMembers<C, M, R> {
         fluent_builders::ListMembers::new(self.handle.clone())
     }
@@ -401,7 +406,7 @@ pub mod fluent_builders {
         /// Appends an item to `ids`.
         ///
         /// To override the contents of this collection use [`set_ids`](Self::set_ids).
-        /// <p>An array of strings that lists the unique identifiers for the custom data identifiers to retrieve information about.</p>
+        /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
         pub fn ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ids(inp);
             self
@@ -470,7 +475,7 @@ pub mod fluent_builders {
         /// Appends an item to `customDataIdentifierIds`.
         ///
         /// To override the contents of this collection use [`set_custom_data_identifier_ids`](Self::set_custom_data_identifier_ids).
-        /// <p>The custom data identifiers to use for data analysis and classification.</p>
+        /// <p>An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To use only managed data identifiers, don't specify a value for this property and specify a value other than NONE for the managedDataIdentifierSelector property.</p>
         pub fn custom_data_identifier_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.custom_data_identifier_ids(inp);
             self
@@ -491,7 +496,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Specifies whether to analyze all existing, eligible objects immediately after the job is created.</p>
+        /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p><p>If you configure the job to run only once, don't specify a value for this property.</p>
         pub fn initial_run(mut self, inp: bool) -> Self {
             self.inner = self.inner.initial_run(inp);
             self
@@ -507,6 +512,36 @@ pub mod fluent_builders {
         }
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.inner = self.inner.set_job_type(input);
+            self
+        }
+        /// Appends an item to `managedDataIdentifierIds`.
+        ///
+        /// To override the contents of this collection use [`set_managed_data_identifier_ids`](Self::set_managed_data_identifier_ids).
+        /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
+        pub fn managed_data_identifier_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.managed_data_identifier_ids(inp);
+            self
+        }
+        pub fn set_managed_data_identifier_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_managed_data_identifier_ids(input);
+            self
+        }
+        /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p> <ul><li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li> <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li></ul> <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+        pub fn managed_data_identifier_selector(
+            mut self,
+            inp: crate::model::ManagedDataIdentifierSelector,
+        ) -> Self {
+            self.inner = self.inner.managed_data_identifier_selector(inp);
+            self
+        }
+        pub fn set_managed_data_identifier_selector(
+            mut self,
+            input: std::option::Option<crate::model::ManagedDataIdentifierSelector>,
+        ) -> Self {
+            self.inner = self.inner.set_managed_data_identifier_selector(input);
             self
         }
         /// <p>A custom name for the job. The name can contain as many as 500 characters.</p>
@@ -530,7 +565,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3_job_definition(input);
             self
         }
-        /// <p>The sampling depth, as a percentage, to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.</p>
+        /// <p>The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.</p>
         pub fn sampling_percentage(mut self, inp: i32) -> Self {
             self.inner = self.inner.sampling_percentage(inp);
             self
@@ -638,7 +673,7 @@ pub mod fluent_builders {
         /// Appends an item to `ignoreWords`.
         ///
         /// To override the contents of this collection use [`set_ignore_words`](Self::set_ignore_words).
-        /// <p>An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 characters. Ignore words are case sensitive.</p>
+        /// <p>An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
         pub fn ignore_words(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ignore_words(inp);
             self
@@ -653,7 +688,7 @@ pub mod fluent_builders {
         /// Appends an item to `keywords`.
         ///
         /// To override the contents of this collection use [`set_keywords`](Self::set_keywords).
-        /// <p>An array that lists specific character sequences (keywords), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 characters. Keywords aren't case sensitive.</p>
+        /// <p>An array that lists specific character sequences (keywords), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
         pub fn keywords(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.keywords(inp);
             self
@@ -665,7 +700,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_keywords(input);
             self
         }
-        /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern. The distance can be 1-300 characters. The default value is 50.</p>
+        /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern. The distance can be 1-300 characters. The default value is 50.</p>
         pub fn maximum_match_distance(mut self, inp: i32) -> Self {
             self.inner = self.inner.maximum_match_distance(inp);
             self
@@ -3091,6 +3126,60 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct ListManagedDataIdentifiers<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_managed_data_identifiers_input::Builder,
+    }
+    impl<C, M, R> ListManagedDataIdentifiers<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListManagedDataIdentifiersOutput,
+            smithy_http::result::SdkError<crate::error::ListManagedDataIdentifiersError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListManagedDataIdentifiersInputOperationOutputAlias,
+                crate::output::ListManagedDataIdentifiersOutput,
+                crate::error::ListManagedDataIdentifiersError,
+                crate::input::ListManagedDataIdentifiersInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct ListMembers<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -3620,7 +3709,7 @@ pub mod fluent_builders {
         /// Appends an item to `ignoreWords`.
         ///
         /// To override the contents of this collection use [`set_ignore_words`](Self::set_ignore_words).
-        /// <p>An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 characters. Ignore words are case sensitive.</p>
+        /// <p>An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
         pub fn ignore_words(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ignore_words(inp);
             self
@@ -3635,7 +3724,7 @@ pub mod fluent_builders {
         /// Appends an item to `keywords`.
         ///
         /// To override the contents of this collection use [`set_keywords`](Self::set_keywords).
-        /// <p>An array that lists specific character sequences (keywords), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 characters. Keywords aren't case sensitive.</p>
+        /// <p>An array that lists specific character sequences (keywords), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
         pub fn keywords(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.keywords(inp);
             self
@@ -3647,7 +3736,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_keywords(input);
             self
         }
-        /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern. The distance can be 1-300 characters. The default value is 50.</p>
+        /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern. The distance can be 1-300 characters. The default value is 50.</p>
         pub fn maximum_match_distance(mut self, inp: i32) -> Self {
             self.inner = self.inner.maximum_match_distance(inp);
             self

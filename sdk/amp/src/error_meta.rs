@@ -25,6 +25,68 @@ impl std::fmt::Display for Error {
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateAlertManagerDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateAlertManagerDefinitionError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateAlertManagerDefinitionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::CreateAlertManagerDefinitionErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::CreateAlertManagerDefinitionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::CreateAlertManagerDefinitionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::CreateAlertManagerDefinitionErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+                crate::error::CreateAlertManagerDefinitionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::CreateAlertManagerDefinitionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::CreateAlertManagerDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateRuleGroupsNamespaceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateRuleGroupsNamespaceError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateRuleGroupsNamespaceErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::CreateRuleGroupsNamespaceErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::CreateRuleGroupsNamespaceErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::CreateRuleGroupsNamespaceErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::CreateRuleGroupsNamespaceErrorKind::ServiceQuotaExceededException(
+                    inner,
+                ) => Error::ServiceQuotaExceededException(inner),
+                crate::error::CreateRuleGroupsNamespaceErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::CreateRuleGroupsNamespaceErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::CreateRuleGroupsNamespaceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::CreateWorkspaceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -56,6 +118,78 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteAlertManagerDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteAlertManagerDefinitionError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteAlertManagerDefinitionErrorKind::AccessDeniedException(
+                    inner,
+                ) => Error::AccessDeniedException(inner),
+                crate::error::DeleteAlertManagerDefinitionErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::DeleteAlertManagerDefinitionErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::DeleteAlertManagerDefinitionErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DeleteAlertManagerDefinitionErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DeleteAlertManagerDefinitionErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::DeleteAlertManagerDefinitionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteRuleGroupsNamespaceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteRuleGroupsNamespaceError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteRuleGroupsNamespaceErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DeleteRuleGroupsNamespaceErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::DeleteRuleGroupsNamespaceErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::DeleteRuleGroupsNamespaceErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DeleteRuleGroupsNamespaceErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DeleteRuleGroupsNamespaceErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::DeleteRuleGroupsNamespaceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::DeleteWorkspaceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -65,6 +199,9 @@ where
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteWorkspaceErrorKind::AccessDeniedException(inner) => {
                     Error::AccessDeniedException(inner)
+                }
+                crate::error::DeleteWorkspaceErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
                 crate::error::DeleteWorkspaceErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
@@ -79,6 +216,60 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteWorkspaceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeAlertManagerDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeAlertManagerDefinitionError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeAlertManagerDefinitionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::DescribeAlertManagerDefinitionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::DescribeAlertManagerDefinitionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeAlertManagerDefinitionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::DescribeAlertManagerDefinitionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::DescribeAlertManagerDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeRuleGroupsNamespaceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeRuleGroupsNamespaceError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeRuleGroupsNamespaceErrorKind::AccessDeniedException(
+                    inner,
+                ) => Error::AccessDeniedException(inner),
+                crate::error::DescribeRuleGroupsNamespaceErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::DescribeRuleGroupsNamespaceErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeRuleGroupsNamespaceErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DescribeRuleGroupsNamespaceErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::DescribeRuleGroupsNamespaceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -107,6 +298,39 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeWorkspaceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::ListRuleGroupsNamespacesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListRuleGroupsNamespacesError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListRuleGroupsNamespacesErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::ListRuleGroupsNamespacesErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::ListRuleGroupsNamespacesErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::ListRuleGroupsNamespacesErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::ListRuleGroupsNamespacesErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::ListRuleGroupsNamespacesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -164,6 +388,83 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListWorkspacesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::PutAlertManagerDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::PutAlertManagerDefinitionError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::PutAlertManagerDefinitionErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::PutAlertManagerDefinitionErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::PutAlertManagerDefinitionErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::PutAlertManagerDefinitionErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::PutAlertManagerDefinitionErrorKind::ServiceQuotaExceededException(
+                    inner,
+                ) => Error::ServiceQuotaExceededException(inner),
+                crate::error::PutAlertManagerDefinitionErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::PutAlertManagerDefinitionErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::PutAlertManagerDefinitionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::PutRuleGroupsNamespaceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::PutRuleGroupsNamespaceError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::PutRuleGroupsNamespaceErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::PutRuleGroupsNamespaceErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::PutRuleGroupsNamespaceErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::PutRuleGroupsNamespaceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::PutRuleGroupsNamespaceErrorKind::ServiceQuotaExceededException(
+                    inner,
+                ) => Error::ServiceQuotaExceededException(inner),
+                crate::error::PutRuleGroupsNamespaceErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::PutRuleGroupsNamespaceErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::PutRuleGroupsNamespaceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

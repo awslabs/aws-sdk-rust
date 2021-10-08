@@ -1,6 +1,5 @@
 /*
- * Modifications Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * Original implementation Copyright 2017 http-rs authors
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
 

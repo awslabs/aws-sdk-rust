@@ -1334,6 +1334,8 @@ impl GetBackendApiOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackendOutput {
+    /// <p>A stringified version of the cli.json file for your Amplify project.</p>
+    pub amplify_feature_flags: std::option::Option<std::string::String>,
     /// <p>A stringified version of the current configs for your Amplify project.</p>
     pub amplify_meta_config: std::option::Option<std::string::String>,
     /// <p>The app ID.</p>
@@ -1350,6 +1352,7 @@ pub struct GetBackendOutput {
 impl std::fmt::Debug for GetBackendOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBackendOutput");
+        formatter.field("amplify_feature_flags", &self.amplify_feature_flags);
         formatter.field("amplify_meta_config", &self.amplify_meta_config);
         formatter.field("app_id", &self.app_id);
         formatter.field("app_name", &self.app_name);
@@ -1365,6 +1368,7 @@ pub mod get_backend_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) amplify_feature_flags: std::option::Option<std::string::String>,
         pub(crate) amplify_meta_config: std::option::Option<std::string::String>,
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) app_name: std::option::Option<std::string::String>,
@@ -1374,6 +1378,18 @@ pub mod get_backend_output {
         pub(crate) error: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// <p>A stringified version of the cli.json file for your Amplify project.</p>
+        pub fn amplify_feature_flags(mut self, input: impl Into<std::string::String>) -> Self {
+            self.amplify_feature_flags = Some(input.into());
+            self
+        }
+        pub fn set_amplify_feature_flags(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.amplify_feature_flags = input;
+            self
+        }
         /// <p>A stringified version of the current configs for your Amplify project.</p>
         pub fn amplify_meta_config(mut self, input: impl Into<std::string::String>) -> Self {
             self.amplify_meta_config = Some(input.into());
@@ -1441,6 +1457,7 @@ pub mod get_backend_output {
         /// Consumes the builder and constructs a [`GetBackendOutput`](crate::output::GetBackendOutput)
         pub fn build(self) -> crate::output::GetBackendOutput {
             crate::output::GetBackendOutput {
+                amplify_feature_flags: self.amplify_feature_flags,
                 amplify_meta_config: self.amplify_meta_config,
                 app_id: self.app_id,
                 app_name: self.app_name,

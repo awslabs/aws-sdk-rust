@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Amazon Web Services Price List Service API (Amazon Web Services Price List Service) is a centralized and convenient way to
 //! programmatically query Amazon Web Services for services, products, and pricing information. The Amazon Web Services Price List Service
 //! uses standardized product attributes such as <code>Location</code>, <code>Storage
@@ -48,7 +49,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

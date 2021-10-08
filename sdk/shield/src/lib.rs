@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Shield Advanced</fullname>
 //! <p>This is the <i>Shield Advanced API Reference</i>. This guide is for developers who need detailed information about the Shield Advanced API actions,
 //! data types, and errors. For detailed information about WAF and Shield Advanced features and an overview of how to use the WAF and Shield Advanced APIs, see the
@@ -28,7 +29,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

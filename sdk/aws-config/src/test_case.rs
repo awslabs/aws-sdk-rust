@@ -9,7 +9,7 @@ use std::path::{Path, PathBuf};
 
 use std::time::{Duration, UNIX_EPOCH};
 
-use crate::provider_config::ProviderConfig;
+use crate::provider_config::{HttpSettings, ProviderConfig};
 use aws_types::credentials::{self, ProvideCredentials};
 use aws_types::os_shim_internal::{Env, Fs};
 use serde::Deserialize;
@@ -140,9 +140,11 @@ impl TestEnvironment {
         P: ProvideCredentials,
     {
         // swap out the connector generated from `http-traffic.json` for a real connector:
-        let live_connector = crate::connector::default_connector().unwrap();
-        let live_connector = RecordingConnection::new(live_connector);
+        let settings = HttpSettings::default();
         let (_test_connector, config) = self.provider_config().await;
+        let live_connector =
+            crate::connector::default_connector(&settings, config.sleep()).unwrap();
+        let live_connector = RecordingConnection::new(live_connector);
         let config = config.with_connector(DynConnector::new(live_connector.clone()));
         let provider = make_provider(config).await;
         let result = provider.provide_credentials().await;
@@ -193,10 +195,13 @@ impl TestEnvironment {
         self.log_info();
         self.check_results(&result);
         // todo: validate bodies
-        match connector.validate(
-            &["CONTENT-TYPE", "x-aws-ec2-metadata-token"],
-            |_expected, _actual| Ok(()),
-        ) {
+        match connector
+            .validate(
+                &["CONTENT-TYPE", "x-aws-ec2-metadata-token"],
+                |_expected, _actual| Ok(()),
+            )
+            .await
+        {
             Ok(()) => {}
             Err(e) => panic!("{}", e),
         }

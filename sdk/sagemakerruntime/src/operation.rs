@@ -37,9 +37,9 @@ impl smithy_http::response::ParseStrictResponse for InvokeEndpoint {
         std::result::Result<crate::output::InvokeEndpointOutput, crate::error::InvokeEndpointError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_invoke_endpoint_error(response)
+            crate::operation_ser::parse_invoke_endpoint_error(response)
         } else {
-            crate::operation_deser::parse_invoke_endpoint_response(response)
+            crate::operation_ser::parse_invoke_endpoint_response(response)
         }
     }
 }
@@ -78,9 +78,9 @@ impl smithy_http::response::ParseStrictResponse for InvokeEndpointAsync {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_deser::parse_invoke_endpoint_async_error(response)
+            crate::operation_ser::parse_invoke_endpoint_async_error(response)
         } else {
-            crate::operation_deser::parse_invoke_endpoint_async_response(response)
+            crate::operation_ser::parse_invoke_endpoint_async_response(response)
         }
     }
 }

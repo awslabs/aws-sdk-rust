@@ -1,3 +1,8 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
 #[tokio::main]
 async fn main() -> Result<(), aws_sdk_ecs::Error> {
     let shared_config = aws_config::load_from_env().await;

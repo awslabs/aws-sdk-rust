@@ -22,9 +22,9 @@ impl smithy_http::response::ParseStrictResponse for CancelJob {
     type Output = std::result::Result<crate::output::CancelJobOutput, crate::error::CancelJobError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_deser::parse_cancel_job_error(response)
+            crate::operation_ser::parse_cancel_job_error(response)
         } else {
-            crate::operation_deser::parse_cancel_job_response(response)
+            crate::operation_ser::parse_cancel_job_response(response)
         }
     }
 }
@@ -51,9 +51,9 @@ impl smithy_http::response::ParseStrictResponse for CreateJob {
     type Output = std::result::Result<crate::output::CreateJobOutput, crate::error::CreateJobError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_deser::parse_create_job_error(response)
+            crate::operation_ser::parse_create_job_error(response)
         } else {
-            crate::operation_deser::parse_create_job_response(response)
+            crate::operation_ser::parse_create_job_response(response)
         }
     }
 }
@@ -77,9 +77,9 @@ impl smithy_http::response::ParseStrictResponse for CreatePipeline {
         std::result::Result<crate::output::CreatePipelineOutput, crate::error::CreatePipelineError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_deser::parse_create_pipeline_error(response)
+            crate::operation_ser::parse_create_pipeline_error(response)
         } else {
-            crate::operation_deser::parse_create_pipeline_response(response)
+            crate::operation_ser::parse_create_pipeline_response(response)
         }
     }
 }
@@ -116,9 +116,9 @@ impl smithy_http::response::ParseStrictResponse for CreatePreset {
         std::result::Result<crate::output::CreatePresetOutput, crate::error::CreatePresetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_deser::parse_create_preset_error(response)
+            crate::operation_ser::parse_create_preset_error(response)
         } else {
-            crate::operation_deser::parse_create_preset_response(response)
+            crate::operation_ser::parse_create_preset_response(response)
         }
     }
 }
@@ -145,9 +145,9 @@ impl smithy_http::response::ParseStrictResponse for DeletePipeline {
         std::result::Result<crate::output::DeletePipelineOutput, crate::error::DeletePipelineError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_deser::parse_delete_pipeline_error(response)
+            crate::operation_ser::parse_delete_pipeline_error(response)
         } else {
-            crate::operation_deser::parse_delete_pipeline_response(response)
+            crate::operation_ser::parse_delete_pipeline_response(response)
         }
     }
 }
@@ -174,9 +174,9 @@ impl smithy_http::response::ParseStrictResponse for DeletePreset {
         std::result::Result<crate::output::DeletePresetOutput, crate::error::DeletePresetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_deser::parse_delete_preset_error(response)
+            crate::operation_ser::parse_delete_preset_error(response)
         } else {
-            crate::operation_deser::parse_delete_preset_response(response)
+            crate::operation_ser::parse_delete_preset_response(response)
         }
     }
 }
@@ -204,9 +204,9 @@ impl smithy_http::response::ParseStrictResponse for ListJobsByPipeline {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_jobs_by_pipeline_error(response)
+            crate::operation_ser::parse_list_jobs_by_pipeline_error(response)
         } else {
-            crate::operation_deser::parse_list_jobs_by_pipeline_response(response)
+            crate::operation_ser::parse_list_jobs_by_pipeline_response(response)
         }
     }
 }
@@ -233,9 +233,9 @@ impl smithy_http::response::ParseStrictResponse for ListJobsByStatus {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_jobs_by_status_error(response)
+            crate::operation_ser::parse_list_jobs_by_status_error(response)
         } else {
-            crate::operation_deser::parse_list_jobs_by_status_response(response)
+            crate::operation_ser::parse_list_jobs_by_status_response(response)
         }
     }
 }
@@ -259,9 +259,9 @@ impl smithy_http::response::ParseStrictResponse for ListPipelines {
         std::result::Result<crate::output::ListPipelinesOutput, crate::error::ListPipelinesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_pipelines_error(response)
+            crate::operation_ser::parse_list_pipelines_error(response)
         } else {
-            crate::operation_deser::parse_list_pipelines_response(response)
+            crate::operation_ser::parse_list_pipelines_response(response)
         }
     }
 }
@@ -286,9 +286,9 @@ impl smithy_http::response::ParseStrictResponse for ListPresets {
         std::result::Result<crate::output::ListPresetsOutput, crate::error::ListPresetsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_presets_error(response)
+            crate::operation_ser::parse_list_presets_error(response)
         } else {
-            crate::operation_deser::parse_list_presets_response(response)
+            crate::operation_ser::parse_list_presets_response(response)
         }
     }
 }
@@ -311,9 +311,9 @@ impl smithy_http::response::ParseStrictResponse for ReadJob {
     type Output = std::result::Result<crate::output::ReadJobOutput, crate::error::ReadJobError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_read_job_error(response)
+            crate::operation_ser::parse_read_job_error(response)
         } else {
-            crate::operation_deser::parse_read_job_response(response)
+            crate::operation_ser::parse_read_job_response(response)
         }
     }
 }
@@ -337,9 +337,9 @@ impl smithy_http::response::ParseStrictResponse for ReadPipeline {
         std::result::Result<crate::output::ReadPipelineOutput, crate::error::ReadPipelineError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_read_pipeline_error(response)
+            crate::operation_ser::parse_read_pipeline_error(response)
         } else {
-            crate::operation_deser::parse_read_pipeline_response(response)
+            crate::operation_ser::parse_read_pipeline_response(response)
         }
     }
 }
@@ -363,9 +363,9 @@ impl smithy_http::response::ParseStrictResponse for ReadPreset {
         std::result::Result<crate::output::ReadPresetOutput, crate::error::ReadPresetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_read_preset_error(response)
+            crate::operation_ser::parse_read_preset_error(response)
         } else {
-            crate::operation_deser::parse_read_preset_response(response)
+            crate::operation_ser::parse_read_preset_response(response)
         }
     }
 }
@@ -393,9 +393,9 @@ impl smithy_http::response::ParseStrictResponse for TestRole {
     type Output = std::result::Result<crate::output::TestRoleOutput, crate::error::TestRoleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_test_role_error(response)
+            crate::operation_ser::parse_test_role_error(response)
         } else {
-            crate::operation_deser::parse_test_role_response(response)
+            crate::operation_ser::parse_test_role_response(response)
         }
     }
 }
@@ -424,9 +424,9 @@ impl smithy_http::response::ParseStrictResponse for UpdatePipeline {
         std::result::Result<crate::output::UpdatePipelineOutput, crate::error::UpdatePipelineError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_pipeline_error(response)
+            crate::operation_ser::parse_update_pipeline_error(response)
         } else {
-            crate::operation_deser::parse_update_pipeline_response(response)
+            crate::operation_ser::parse_update_pipeline_response(response)
         }
     }
 }
@@ -453,9 +453,9 @@ impl smithy_http::response::ParseStrictResponse for UpdatePipelineNotifications 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_pipeline_notifications_error(response)
+            crate::operation_ser::parse_update_pipeline_notifications_error(response)
         } else {
-            crate::operation_deser::parse_update_pipeline_notifications_response(response)
+            crate::operation_ser::parse_update_pipeline_notifications_response(response)
         }
     }
 }
@@ -486,9 +486,9 @@ impl smithy_http::response::ParseStrictResponse for UpdatePipelineStatus {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_pipeline_status_error(response)
+            crate::operation_ser::parse_update_pipeline_status_error(response)
         } else {
-            crate::operation_deser::parse_update_pipeline_status_response(response)
+            crate::operation_ser::parse_update_pipeline_status_response(response)
         }
     }
 }

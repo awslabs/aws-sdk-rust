@@ -271,6 +271,9 @@ where
                 crate::error::DeleteRegistryPolicyErrorKind::ServerException(inner) => {
                     Error::ServerException(inner)
                 }
+                crate::error::DeleteRegistryPolicyErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::DeleteRegistryPolicyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -323,6 +326,27 @@ where
                 crate::error::DeleteRepositoryPolicyErrorKind::RepositoryPolicyNotFoundException(inner) => Error::RepositoryPolicyNotFoundException(inner),
                 crate::error::DeleteRepositoryPolicyErrorKind::ServerException(inner) => Error::ServerException(inner),
                 crate::error::DeleteRepositoryPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeImageReplicationStatusError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeImageReplicationStatusError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeImageReplicationStatusErrorKind::ImageNotFoundException(inner) => Error::ImageNotFoundException(inner),
+                crate::error::DescribeImageReplicationStatusErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::DescribeImageReplicationStatusErrorKind::RepositoryNotFoundException(inner) => Error::RepositoryNotFoundException(inner),
+                crate::error::DescribeImageReplicationStatusErrorKind::ServerException(inner) => Error::ServerException(inner),
+                crate::error::DescribeImageReplicationStatusErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::DescribeImageReplicationStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }
@@ -554,6 +578,9 @@ where
                 crate::error::GetRegistryPolicyErrorKind::ServerException(inner) => {
                     Error::ServerException(inner)
                 }
+                crate::error::GetRegistryPolicyErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::GetRegistryPolicyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -784,6 +811,9 @@ where
                 }
                 crate::error::PutRegistryPolicyErrorKind::ServerException(inner) => {
                     Error::ServerException(inner)
+                }
+                crate::error::PutRegistryPolicyErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
                 }
                 crate::error::PutRegistryPolicyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)

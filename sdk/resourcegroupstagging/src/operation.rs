@@ -22,9 +22,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeReportCreation {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_report_creation_error(response)
+            crate::operation_ser::parse_describe_report_creation_error(response)
         } else {
-            crate::operation_deser::parse_describe_report_creation_response(response)
+            crate::operation_ser::parse_describe_report_creation_response(response)
         }
     }
 }
@@ -62,9 +62,9 @@ impl smithy_http::response::ParseStrictResponse for GetComplianceSummary {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_compliance_summary_error(response)
+            crate::operation_ser::parse_get_compliance_summary_error(response)
         } else {
-            crate::operation_deser::parse_get_compliance_summary_response(response)
+            crate::operation_ser::parse_get_compliance_summary_response(response)
         }
     }
 }
@@ -111,9 +111,9 @@ impl smithy_http::response::ParseStrictResponse for GetResources {
         std::result::Result<crate::output::GetResourcesOutput, crate::error::GetResourcesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_resources_error(response)
+            crate::operation_ser::parse_get_resources_error(response)
         } else {
-            crate::operation_deser::parse_get_resources_response(response)
+            crate::operation_ser::parse_get_resources_response(response)
         }
     }
 }
@@ -144,9 +144,9 @@ impl smithy_http::response::ParseStrictResponse for GetTagKeys {
         std::result::Result<crate::output::GetTagKeysOutput, crate::error::GetTagKeysError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_tag_keys_error(response)
+            crate::operation_ser::parse_get_tag_keys_error(response)
         } else {
-            crate::operation_deser::parse_get_tag_keys_response(response)
+            crate::operation_ser::parse_get_tag_keys_response(response)
         }
     }
 }
@@ -177,9 +177,9 @@ impl smithy_http::response::ParseStrictResponse for GetTagValues {
         std::result::Result<crate::output::GetTagValuesOutput, crate::error::GetTagValuesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_tag_values_error(response)
+            crate::operation_ser::parse_get_tag_values_error(response)
         } else {
-            crate::operation_deser::parse_get_tag_values_response(response)
+            crate::operation_ser::parse_get_tag_values_response(response)
         }
     }
 }
@@ -213,9 +213,9 @@ impl smithy_http::response::ParseStrictResponse for StartReportCreation {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_report_creation_error(response)
+            crate::operation_ser::parse_start_report_creation_error(response)
         } else {
-            crate::operation_deser::parse_start_report_creation_response(response)
+            crate::operation_ser::parse_start_report_creation_response(response)
         }
     }
 }
@@ -266,9 +266,9 @@ impl smithy_http::response::ParseStrictResponse for TagResources {
         std::result::Result<crate::output::TagResourcesOutput, crate::error::TagResourcesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resources_error(response)
+            crate::operation_ser::parse_tag_resources_error(response)
         } else {
-            crate::operation_deser::parse_tag_resources_response(response)
+            crate::operation_ser::parse_tag_resources_response(response)
         }
     }
 }
@@ -307,9 +307,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResources {
         std::result::Result<crate::output::UntagResourcesOutput, crate::error::UntagResourcesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resources_error(response)
+            crate::operation_ser::parse_untag_resources_error(response)
         } else {
-            crate::operation_deser::parse_untag_resources_response(response)
+            crate::operation_ser::parse_untag_resources_response(response)
         }
     }
 }

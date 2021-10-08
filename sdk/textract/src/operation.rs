@@ -49,9 +49,9 @@ impl smithy_http::response::ParseStrictResponse for AnalyzeDocument {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_analyze_document_error(response)
+            crate::operation_ser::parse_analyze_document_error(response)
         } else {
-            crate::operation_deser::parse_analyze_document_response(response)
+            crate::operation_ser::parse_analyze_document_response(response)
         }
     }
 }
@@ -88,9 +88,9 @@ impl smithy_http::response::ParseStrictResponse for AnalyzeExpense {
         std::result::Result<crate::output::AnalyzeExpenseOutput, crate::error::AnalyzeExpenseError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_analyze_expense_error(response)
+            crate::operation_ser::parse_analyze_expense_error(response)
         } else {
-            crate::operation_deser::parse_analyze_expense_response(response)
+            crate::operation_ser::parse_analyze_expense_response(response)
         }
     }
 }
@@ -125,9 +125,9 @@ impl smithy_http::response::ParseStrictResponse for DetectDocumentText {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_detect_document_text_error(response)
+            crate::operation_ser::parse_detect_document_text_error(response)
         } else {
-            crate::operation_deser::parse_detect_document_text_response(response)
+            crate::operation_ser::parse_detect_document_text_response(response)
         }
     }
 }
@@ -193,9 +193,9 @@ impl smithy_http::response::ParseStrictResponse for GetDocumentAnalysis {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_document_analysis_error(response)
+            crate::operation_ser::parse_get_document_analysis_error(response)
         } else {
-            crate::operation_deser::parse_get_document_analysis_response(response)
+            crate::operation_ser::parse_get_document_analysis_response(response)
         }
     }
 }
@@ -244,9 +244,9 @@ impl smithy_http::response::ParseStrictResponse for GetDocumentTextDetection {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_document_text_detection_error(response)
+            crate::operation_ser::parse_get_document_text_detection_error(response)
         } else {
-            crate::operation_deser::parse_get_document_text_detection_response(response)
+            crate::operation_ser::parse_get_document_text_detection_response(response)
         }
     }
 }
@@ -288,9 +288,9 @@ impl smithy_http::response::ParseStrictResponse for StartDocumentAnalysis {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_document_analysis_error(response)
+            crate::operation_ser::parse_start_document_analysis_error(response)
         } else {
-            crate::operation_deser::parse_start_document_analysis_response(response)
+            crate::operation_ser::parse_start_document_analysis_response(response)
         }
     }
 }
@@ -332,9 +332,9 @@ impl smithy_http::response::ParseStrictResponse for StartDocumentTextDetection {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_document_text_detection_error(response)
+            crate::operation_ser::parse_start_document_text_detection_error(response)
         } else {
-            crate::operation_deser::parse_start_document_text_detection_response(response)
+            crate::operation_ser::parse_start_document_text_detection_response(response)
         }
     }
 }

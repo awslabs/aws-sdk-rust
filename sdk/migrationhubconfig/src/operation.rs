@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for CreateHomeRegionControl {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_home_region_control_error(response)
+            crate::operation_ser::parse_create_home_region_control_error(response)
         } else {
-            crate::operation_deser::parse_create_home_region_control_response(response)
+            crate::operation_ser::parse_create_home_region_control_response(response)
         }
     }
 }
@@ -49,9 +49,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeHomeRegionControls {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_home_region_controls_error(response)
+            crate::operation_ser::parse_describe_home_region_controls_error(response)
         } else {
-            crate::operation_deser::parse_describe_home_region_controls_response(response)
+            crate::operation_ser::parse_describe_home_region_controls_response(response)
         }
     }
 }
@@ -79,9 +79,9 @@ impl smithy_http::response::ParseStrictResponse for GetHomeRegion {
         std::result::Result<crate::output::GetHomeRegionOutput, crate::error::GetHomeRegionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_home_region_error(response)
+            crate::operation_ser::parse_get_home_region_error(response)
         } else {
-            crate::operation_deser::parse_get_home_region_response(response)
+            crate::operation_ser::parse_get_home_region_response(response)
         }
     }
 }

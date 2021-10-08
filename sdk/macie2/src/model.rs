@@ -435,7 +435,7 @@ impl AsRef<str> for JobStatus {
     }
 }
 
-/// <p>Provides statistical data and other information about an Amazon Web Services resource that Amazon Macie monitors and analyzes.</p>
+/// <p>Provides statistical data and other information about an Amazon Web Services resource that Amazon Macie monitors and analyzes for your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MatchingResource {
@@ -485,7 +485,7 @@ impl MatchingResource {
     }
 }
 
-/// <p>Provides statistical data and other information about an S3 bucket that Amazon Macie monitors and analyzes.</p>
+/// <p>Provides statistical data and other information about an S3 bucket that Amazon Macie monitors and analyzes for your account. If an error occurs when Macie attempts to retrieve and process information about the bucket or the bucket's objects, the value for most of these properties is null. Exceptions are accountId and bucketName. To identify the cause of the error, refer to the errorCode and errorMessage values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MatchingBucket {
@@ -497,6 +497,10 @@ pub struct MatchingBucket {
     pub classifiable_object_count: i64,
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p> <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
     pub classifiable_size_in_bytes: i64,
+    /// <p>Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the information.</p>
+    pub error_code: std::option::Option<crate::model::BucketMetadataErrorCode>,
+    /// <p>A brief description of the error (errorCode) that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. This value is null if Macie was able to retrieve and process the information.</p>
+    pub error_message: std::option::Option<std::string::String>,
     /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze objects in the bucket, and, if so, the details of the job that ran most recently.</p>
     pub job_details: std::option::Option<crate::model::JobDetails>,
     /// <p>The total number of objects in the bucket.</p>
@@ -506,7 +510,7 @@ pub struct MatchingBucket {
         std::option::Option<crate::model::ObjectCountByEncryptionType>,
     /// <p>The total storage size, in bytes, of the bucket.</p> <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the bucket.</p>
     pub size_in_bytes: i64,
-    /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
+    /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
     pub size_in_bytes_compressed: i64,
     /// <p>The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub unclassifiable_object_count: std::option::Option<crate::model::ObjectLevelStatistics>,
@@ -524,6 +528,8 @@ impl std::fmt::Debug for MatchingBucket {
             "classifiable_size_in_bytes",
             &self.classifiable_size_in_bytes,
         );
+        formatter.field("error_code", &self.error_code);
+        formatter.field("error_message", &self.error_message);
         formatter.field("job_details", &self.job_details);
         formatter.field("object_count", &self.object_count);
         formatter.field(
@@ -553,6 +559,8 @@ pub mod matching_bucket {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) classifiable_object_count: std::option::Option<i64>,
         pub(crate) classifiable_size_in_bytes: std::option::Option<i64>,
+        pub(crate) error_code: std::option::Option<crate::model::BucketMetadataErrorCode>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) job_details: std::option::Option<crate::model::JobDetails>,
         pub(crate) object_count: std::option::Option<i64>,
         pub(crate) object_count_by_encryption_type:
@@ -601,6 +609,30 @@ pub mod matching_bucket {
             self.classifiable_size_in_bytes = input;
             self
         }
+        /// <p>Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the information.</p>
+        pub fn error_code(mut self, input: crate::model::BucketMetadataErrorCode) -> Self {
+            self.error_code = Some(input);
+            self
+        }
+        pub fn set_error_code(
+            mut self,
+            input: std::option::Option<crate::model::BucketMetadataErrorCode>,
+        ) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p>A brief description of the error (errorCode) that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. This value is null if Macie was able to retrieve and process the information.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
         /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze objects in the bucket, and, if so, the details of the job that ran most recently.</p>
         pub fn job_details(mut self, input: crate::model::JobDetails) -> Self {
             self.job_details = Some(input);
@@ -646,7 +678,7 @@ pub mod matching_bucket {
             self.size_in_bytes = input;
             self
         }
-        /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
+        /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
         pub fn size_in_bytes_compressed(mut self, input: i64) -> Self {
             self.size_in_bytes_compressed = Some(input);
             self
@@ -692,6 +724,8 @@ pub mod matching_bucket {
                 bucket_name: self.bucket_name,
                 classifiable_object_count: self.classifiable_object_count.unwrap_or_default(),
                 classifiable_size_in_bytes: self.classifiable_size_in_bytes.unwrap_or_default(),
+                error_code: self.error_code,
+                error_message: self.error_message,
                 job_details: self.job_details,
                 object_count: self.object_count.unwrap_or_default(),
                 object_count_by_encryption_type: self.object_count_by_encryption_type,
@@ -710,7 +744,7 @@ impl MatchingBucket {
     }
 }
 
-/// <p>Provides information about the total storage size (in bytes) or number of objects that Amazon Macie can't analyze in one or more S3 buckets. In a BucketMetadata or MatchingBucket object, this data is for a specific bucket. In a GetBucketStatisticsResponse object, this data is aggregated for all the buckets in the query results. If versioning is enabled for a bucket, total storage size values are based on the size of the latest version of each applicable object in the bucket.</p>
+/// <p>Provides information about the total storage size (in bytes) or number of objects that Amazon Macie can't analyze in one or more S3 buckets. In a BucketMetadata or MatchingBucket object, this data is for a specific bucket. In a GetBucketStatisticsResponse object, this data is aggregated for the buckets in the query results. If versioning is enabled for a bucket, total storage size values are based on the size of the latest version of each applicable object in the bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectLevelStatistics {
@@ -789,9 +823,9 @@ impl ObjectLevelStatistics {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectCountByEncryptionType {
-    /// <p>The total number of objects that are encrypted with a customer-managed key. The objects use customer-provided server-side encryption (SSE-C).</p>
+    /// <p>The total number of objects that are encrypted with a customer-provided key. The objects use customer-provided server-side encryption (SSE-C).</p>
     pub customer_managed: i64,
-    /// <p>The total number of objects that are encrypted with an Key Management Service (KMS) customer master key (CMK). The objects use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).</p>
+    /// <p>The total number of objects that are encrypted with an KMS key, either an Amazon Web Services managed key or a customer managed key. The objects use KMS encryption (SSE-KMS).</p>
     pub kms_managed: i64,
     /// <p>The total number of objects that are encrypted with an Amazon S3 managed key. The objects use Amazon S3 managed encryption (SSE-S3).</p>
     pub s3_managed: i64,
@@ -824,7 +858,7 @@ pub mod object_count_by_encryption_type {
         pub(crate) unknown: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The total number of objects that are encrypted with a customer-managed key. The objects use customer-provided server-side encryption (SSE-C).</p>
+        /// <p>The total number of objects that are encrypted with a customer-provided key. The objects use customer-provided server-side encryption (SSE-C).</p>
         pub fn customer_managed(mut self, input: i64) -> Self {
             self.customer_managed = Some(input);
             self
@@ -833,7 +867,7 @@ pub mod object_count_by_encryption_type {
             self.customer_managed = input;
             self
         }
-        /// <p>The total number of objects that are encrypted with an Key Management Service (KMS) customer master key (CMK). The objects use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).</p>
+        /// <p>The total number of objects that are encrypted with an KMS key, either an Amazon Web Services managed key or a customer managed key. The objects use KMS encryption (SSE-KMS).</p>
         pub fn kms_managed(mut self, input: i64) -> Self {
             self.kms_managed = Some(input);
             self
@@ -1091,6 +1125,54 @@ impl IsDefinedInJob {
     }
 }
 impl AsRef<str> for IsDefinedInJob {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The error code for an error that prevented Amazon Macie from retrieving and processing information about an S3 bucket and the bucket's objects.</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum BucketMetadataErrorCode {
+    AccessDenied,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for BucketMetadataErrorCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACCESS_DENIED" => BucketMetadataErrorCode::AccessDenied,
+            other => BucketMetadataErrorCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for BucketMetadataErrorCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BucketMetadataErrorCode::from(s))
+    }
+}
+impl BucketMetadataErrorCode {
+    pub fn as_str(&self) -> &str {
+        match self {
+            BucketMetadataErrorCode::AccessDenied => "ACCESS_DENIED",
+            BucketMetadataErrorCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ACCESS_DENIED"]
+    }
+}
+impl AsRef<str> for BucketMetadataErrorCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -1936,7 +2018,7 @@ pub struct S3Destination {
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The path prefix to use in the path to the location in the bucket. This prefix specifies where to store classification results in the bucket.</p>
     pub key_prefix: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) customer master key (CMK) to use for encryption of the results. This must be the ARN of an existing CMK that's in the same Amazon Web Services Region as the bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key to use for encryption of the results. This must be the ARN of an existing, symmetric, customer managed KMS key that's in the same Amazon Web Services Region as the bucket.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for S3Destination {
@@ -1977,7 +2059,7 @@ pub mod s3_destination {
             self.key_prefix = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) customer master key (CMK) to use for encryption of the results. This must be the ARN of an existing CMK that's in the same Amazon Web Services Region as the bucket.</p>
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to use for encryption of the results. This must be the ARN of an existing, symmetric, customer managed KMS key that's in the same Amazon Web Services Region as the bucket.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
@@ -2382,6 +2464,132 @@ impl AsRef<str> for RelationshipStatus {
     }
 }
 
+/// <p>Provides information about a managed data identifier. For additional information, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ManagedDataIdentifierSummary {
+    /// <p>The category of sensitive data that the managed data identifier detects: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
+    pub category: std::option::Option<crate::model::SensitiveDataItemCategory>,
+    /// <p>The unique identifier for the managed data identifier. This is a string that describes the type of sensitive data that the managed data identifier detects. For example: OPENSSH_PRIVATE_KEY for OpenSSH private keys, CREDIT_CARD_NUMBER for credit card numbers, or USA_PASSPORT_NUMBER for US passport numbers.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ManagedDataIdentifierSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ManagedDataIdentifierSummary");
+        formatter.field("category", &self.category);
+        formatter.field("id", &self.id);
+        formatter.finish()
+    }
+}
+/// See [`ManagedDataIdentifierSummary`](crate::model::ManagedDataIdentifierSummary)
+pub mod managed_data_identifier_summary {
+    /// A builder for [`ManagedDataIdentifierSummary`](crate::model::ManagedDataIdentifierSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) category: std::option::Option<crate::model::SensitiveDataItemCategory>,
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The category of sensitive data that the managed data identifier detects: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
+        pub fn category(mut self, input: crate::model::SensitiveDataItemCategory) -> Self {
+            self.category = Some(input);
+            self
+        }
+        pub fn set_category(
+            mut self,
+            input: std::option::Option<crate::model::SensitiveDataItemCategory>,
+        ) -> Self {
+            self.category = input;
+            self
+        }
+        /// <p>The unique identifier for the managed data identifier. This is a string that describes the type of sensitive data that the managed data identifier detects. For example: OPENSSH_PRIVATE_KEY for OpenSSH private keys, CREDIT_CARD_NUMBER for credit card numbers, or USA_PASSPORT_NUMBER for US passport numbers.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ManagedDataIdentifierSummary`](crate::model::ManagedDataIdentifierSummary)
+        pub fn build(self) -> crate::model::ManagedDataIdentifierSummary {
+            crate::model::ManagedDataIdentifierSummary {
+                category: self.category,
+                id: self.id,
+            }
+        }
+    }
+}
+impl ManagedDataIdentifierSummary {
+    /// Creates a new builder-style object to manufacture [`ManagedDataIdentifierSummary`](crate::model::ManagedDataIdentifierSummary)
+    pub fn builder() -> crate::model::managed_data_identifier_summary::Builder {
+        crate::model::managed_data_identifier_summary::Builder::default()
+    }
+}
+
+/// <p>For a finding, the category of sensitive data that was detected and produced the finding. For a managed data identifier, the category of sensitive data that the managed data identifier detects. Possible values are:</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SensitiveDataItemCategory {
+    Credentials,
+    CustomIdentifier,
+    FinancialInformation,
+    PersonalInformation,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SensitiveDataItemCategory {
+    fn from(s: &str) -> Self {
+        match s {
+            "CREDENTIALS" => SensitiveDataItemCategory::Credentials,
+            "CUSTOM_IDENTIFIER" => SensitiveDataItemCategory::CustomIdentifier,
+            "FINANCIAL_INFORMATION" => SensitiveDataItemCategory::FinancialInformation,
+            "PERSONAL_INFORMATION" => SensitiveDataItemCategory::PersonalInformation,
+            other => SensitiveDataItemCategory::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SensitiveDataItemCategory {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SensitiveDataItemCategory::from(s))
+    }
+}
+impl SensitiveDataItemCategory {
+    pub fn as_str(&self) -> &str {
+        match self {
+            SensitiveDataItemCategory::Credentials => "CREDENTIALS",
+            SensitiveDataItemCategory::CustomIdentifier => "CUSTOM_IDENTIFIER",
+            SensitiveDataItemCategory::FinancialInformation => "FINANCIAL_INFORMATION",
+            SensitiveDataItemCategory::PersonalInformation => "PERSONAL_INFORMATION",
+            SensitiveDataItemCategory::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CREDENTIALS",
+            "CUSTOM_IDENTIFIER",
+            "FINANCIAL_INFORMATION",
+            "PERSONAL_INFORMATION",
+        ]
+    }
+}
+impl AsRef<str> for SensitiveDataItemCategory {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Provides information about an Amazon Macie membership invitation that was received by an account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2774,7 +2982,7 @@ pub struct JobSummary {
     pub created_at: std::option::Option<smithy_types::Instant>,
     /// <p>The unique identifier for the job.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
+    /// <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>The schedule for running the job. Possible values are:</p> <ul><li><p>ONE_TIME - The job runs only once.</p></li> <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis.</p></li></ul>
     pub job_type: std::option::Option<crate::model::JobType>,
@@ -2854,7 +3062,7 @@ pub mod job_summary {
             self.job_id = input;
             self
         }
-        /// <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
+        /// <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
@@ -6172,7 +6380,7 @@ impl AsRef<str> for StorageClass {
 pub struct ServerSideEncryption {
     /// <p>The server-side encryption algorithm that's used when storing data in the bucket or object. If default encryption is disabled for the bucket or the object isn't encrypted using server-side encryption, this value is NONE.</p>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer master key (CMK) that's used to encrypt data in the bucket or the object. If an KMS CMK isn't used, this value is null.</p>
+    /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used to encrypt data in the bucket or the object. This value is null if an KMS key isn't used to encrypt the data.</p>
     pub kms_master_key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServerSideEncryption {
@@ -6205,7 +6413,7 @@ pub mod server_side_encryption {
             self.encryption_type = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer master key (CMK) that's used to encrypt data in the bucket or the object. If an KMS CMK isn't used, this value is null.</p>
+        /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used to encrypt data in the bucket or the object. This value is null if an KMS key isn't used to encrypt the data.</p>
         pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_id = Some(input.into());
             self
@@ -6308,7 +6516,7 @@ pub struct S3Bucket {
     pub default_server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
     /// <p>The name of the bucket.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The display name and Amazon Web Services account ID for the user who owns the bucket.</p>
+    /// <p>The display name and canonical user ID for the Amazon Web Services account that owns the bucket.</p>
     pub owner: std::option::Option<crate::model::S3BucketOwner>,
     /// <p>The permissions settings that determine whether the bucket is publicly accessible.</p>
     pub public_access: std::option::Option<crate::model::BucketPublicAccess>,
@@ -6410,7 +6618,7 @@ pub mod s3_bucket {
             self.name = input;
             self
         }
-        /// <p>The display name and Amazon Web Services account ID for the user who owns the bucket.</p>
+        /// <p>The display name and canonical user ID for the Amazon Web Services account that owns the bucket.</p>
         pub fn owner(mut self, input: crate::model::S3BucketOwner) -> Self {
             self.owner = Some(input);
             self
@@ -7021,13 +7229,13 @@ impl AsRef<str> for EffectivePermission {
     }
 }
 
-/// <p>Provides information about the user who owns an S3 bucket.</p>
+/// <p>Provides information about the Amazon Web Services account that owns an S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3BucketOwner {
-    /// <p>The display name of the user who owns the bucket.</p>
+    /// <p>The display name of the account that owns the bucket.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account ID for the user who owns the bucket.</p>
+    /// <p>The canonical user ID for the account that owns the bucket.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for S3BucketOwner {
@@ -7048,7 +7256,7 @@ pub mod s3_bucket_owner {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The display name of the user who owns the bucket.</p>
+        /// <p>The display name of the account that owns the bucket.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
             self
@@ -7057,7 +7265,7 @@ pub mod s3_bucket_owner {
             self.display_name = input;
             self
         }
-        /// <p>The Amazon Web Services account ID for the user who owns the bucket.</p>
+        /// <p>The canonical user ID for the account that owns the bucket.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
@@ -9142,7 +9350,7 @@ impl ClassificationResultStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SensitiveDataItem {
-    /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as driver's license identification numbers.</p>
+    /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
     pub category: std::option::Option<crate::model::SensitiveDataItemCategory>,
     /// <p>An array of objects, one for each type of sensitive data that was detected. Each object reports the number of occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of those occurrences.</p>
     pub detections: std::option::Option<std::vec::Vec<crate::model::DefaultDetection>>,
@@ -9169,7 +9377,7 @@ pub mod sensitive_data_item {
         pub(crate) total_count: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as driver's license identification numbers.</p>
+        /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
         pub fn category(mut self, input: crate::model::SensitiveDataItemCategory) -> Self {
             self.category = Some(input);
             self
@@ -9220,7 +9428,7 @@ impl SensitiveDataItem {
     }
 }
 
-/// <p>Provides information about a type of sensitive data that was detected by managed data identifiers and produced a sensitive data finding.</p>
+/// <p>Provides information about a type of sensitive data that was detected by a managed data identifier and produced a sensitive data finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultDetection {
@@ -9298,7 +9506,7 @@ impl DefaultDetection {
     }
 }
 
-/// <p>Specifies the location of 1-15 occurrences of sensitive data that was detected by managed data identifiers or a custom data identifier and produced a sensitive data finding.</p>
+/// <p>Specifies the location of 1-15 occurrences of sensitive data that was detected by a managed data identifier or a custom data identifier and produced a sensitive data finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Occurrences {
@@ -9724,68 +9932,6 @@ impl Cell {
     }
 }
 
-/// <p>The category of sensitive data that was detected and produced the finding. Possible values are:</p>
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum SensitiveDataItemCategory {
-    Credentials,
-    CustomIdentifier,
-    FinancialInformation,
-    PersonalInformation,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for SensitiveDataItemCategory {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREDENTIALS" => SensitiveDataItemCategory::Credentials,
-            "CUSTOM_IDENTIFIER" => SensitiveDataItemCategory::CustomIdentifier,
-            "FINANCIAL_INFORMATION" => SensitiveDataItemCategory::FinancialInformation,
-            "PERSONAL_INFORMATION" => SensitiveDataItemCategory::PersonalInformation,
-            other => SensitiveDataItemCategory::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for SensitiveDataItemCategory {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SensitiveDataItemCategory::from(s))
-    }
-}
-impl SensitiveDataItemCategory {
-    pub fn as_str(&self) -> &str {
-        match self {
-            SensitiveDataItemCategory::Credentials => "CREDENTIALS",
-            SensitiveDataItemCategory::CustomIdentifier => "CUSTOM_IDENTIFIER",
-            SensitiveDataItemCategory::FinancialInformation => "FINANCIAL_INFORMATION",
-            SensitiveDataItemCategory::PersonalInformation => "PERSONAL_INFORMATION",
-            SensitiveDataItemCategory::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "CREDENTIALS",
-            "CUSTOM_IDENTIFIER",
-            "FINANCIAL_INFORMATION",
-            "PERSONAL_INFORMATION",
-        ]
-    }
-}
-impl AsRef<str> for SensitiveDataItemCategory {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// <p>Provides information about custom data identifiers that produced a sensitive data finding, and the number of occurrences of the data that they detected for the finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -10179,7 +10325,7 @@ impl BucketCountPolicyAllowsUnencryptedObjectUploads {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketCountByEncryptionType {
-    /// <p>The total number of buckets that use an Key Management Service (KMS) customer master key (CMK) to encrypt new objects by default. These buckets use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS) by default.</p>
+    /// <p>The total number of buckets that use an KMS key to encrypt new objects by default, either an Amazon Web Services managed key or a customer managed key. These buckets use KMS encryption (SSE-KMS) by default.</p>
     pub kms_managed: i64,
     /// <p>The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These buckets use Amazon S3 managed encryption (SSE-S3) by default.</p>
     pub s3_managed: i64,
@@ -10210,7 +10356,7 @@ pub mod bucket_count_by_encryption_type {
         pub(crate) unknown: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The total number of buckets that use an Key Management Service (KMS) customer master key (CMK) to encrypt new objects by default. These buckets use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS) by default.</p>
+        /// <p>The total number of buckets that use an KMS key to encrypt new objects by default, either an Amazon Web Services managed key or a customer managed key. These buckets use KMS encryption (SSE-KMS) by default.</p>
         pub fn kms_managed(mut self, input: i64) -> Self {
             self.kms_managed = Some(input);
             self
@@ -11325,7 +11471,64 @@ impl AsRef<str> for ScopeFilterKey {
     }
 }
 
-/// <p>Provides information about an S3 bucket that Amazon Macie monitors and analyzes.</p>
+/// <p>The selection type that determines which managed data identifiers a classification job uses to analyze data. Valid values are:</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ManagedDataIdentifierSelector {
+    All,
+    Exclude,
+    Include,
+    None,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ManagedDataIdentifierSelector {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL" => ManagedDataIdentifierSelector::All,
+            "EXCLUDE" => ManagedDataIdentifierSelector::Exclude,
+            "INCLUDE" => ManagedDataIdentifierSelector::Include,
+            "NONE" => ManagedDataIdentifierSelector::None,
+            other => ManagedDataIdentifierSelector::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ManagedDataIdentifierSelector {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ManagedDataIdentifierSelector::from(s))
+    }
+}
+impl ManagedDataIdentifierSelector {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ManagedDataIdentifierSelector::All => "ALL",
+            ManagedDataIdentifierSelector::Exclude => "EXCLUDE",
+            ManagedDataIdentifierSelector::Include => "INCLUDE",
+            ManagedDataIdentifierSelector::None => "NONE",
+            ManagedDataIdentifierSelector::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ALL", "EXCLUDE", "INCLUDE", "NONE"]
+    }
+}
+impl AsRef<str> for ManagedDataIdentifierSelector {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Provides statistical data and other information about an S3 bucket that Amazon Macie monitors and analyzes for your account. If an error occurs when Macie attempts to retrieve and process information about the bucket or the bucket's objects, the value for most of these properties is null. Exceptions are accountId, bucketArn, bucketCreatedAt, bucketName, lastUpdated, and region. To identify the cause of the error, refer to the errorCode and errorMessage values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketMetadata {
@@ -11344,6 +11547,10 @@ pub struct BucketMetadata {
     pub classifiable_object_count: i64,
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p> <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
     pub classifiable_size_in_bytes: i64,
+    /// <p>Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the information.</p>
+    pub error_code: std::option::Option<crate::model::BucketMetadataErrorCode>,
+    /// <p>A brief description of the error (errorCode) that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. This value is null if Macie was able to retrieve and process the information.</p>
+    pub error_message: std::option::Option<std::string::String>,
     /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket, and, if so, the details of the job that ran most recently.</p>
     pub job_details: std::option::Option<crate::model::JobDetails>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the bucket.</p>
@@ -11365,7 +11572,7 @@ pub struct BucketMetadata {
     pub shared_access: std::option::Option<crate::model::SharedAccess>,
     /// <p>The total storage size, in bytes, of the bucket.</p> <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the bucket.</p>
     pub size_in_bytes: i64,
-    /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
+    /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
     pub size_in_bytes_compressed: i64,
     /// <p>An array that specifies the tags (keys and values) that are associated with the bucket.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
@@ -11393,6 +11600,8 @@ impl std::fmt::Debug for BucketMetadata {
             "classifiable_size_in_bytes",
             &self.classifiable_size_in_bytes,
         );
+        formatter.field("error_code", &self.error_code);
+        formatter.field("error_message", &self.error_message);
         formatter.field("job_details", &self.job_details);
         formatter.field("last_updated", &self.last_updated);
         formatter.field("object_count", &self.object_count);
@@ -11434,6 +11643,8 @@ pub mod bucket_metadata {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) classifiable_object_count: std::option::Option<i64>,
         pub(crate) classifiable_size_in_bytes: std::option::Option<i64>,
+        pub(crate) error_code: std::option::Option<crate::model::BucketMetadataErrorCode>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) job_details: std::option::Option<crate::model::JobDetails>,
         pub(crate) last_updated: std::option::Option<smithy_types::Instant>,
         pub(crate) object_count: std::option::Option<i64>,
@@ -11525,6 +11736,30 @@ pub mod bucket_metadata {
         }
         pub fn set_classifiable_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.classifiable_size_in_bytes = input;
+            self
+        }
+        /// <p>Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the information.</p>
+        pub fn error_code(mut self, input: crate::model::BucketMetadataErrorCode) -> Self {
+            self.error_code = Some(input);
+            self
+        }
+        pub fn set_error_code(
+            mut self,
+            input: std::option::Option<crate::model::BucketMetadataErrorCode>,
+        ) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p>A brief description of the error (errorCode) that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. This value is null if Macie was able to retrieve and process the information.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
             self
         }
         /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket, and, if so, the details of the job that ran most recently.</p>
@@ -11644,7 +11879,7 @@ pub mod bucket_metadata {
             self.size_in_bytes = input;
             self
         }
-        /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
+        /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
         pub fn size_in_bytes_compressed(mut self, input: i64) -> Self {
             self.size_in_bytes_compressed = Some(input);
             self
@@ -11715,6 +11950,8 @@ pub mod bucket_metadata {
                 bucket_name: self.bucket_name,
                 classifiable_object_count: self.classifiable_object_count.unwrap_or_default(),
                 classifiable_size_in_bytes: self.classifiable_size_in_bytes.unwrap_or_default(),
+                error_code: self.error_code,
+                error_message: self.error_message,
                 job_details: self.job_details,
                 last_updated: self.last_updated,
                 object_count: self.object_count.unwrap_or_default(),
@@ -11803,9 +12040,9 @@ impl AsRef<str> for SharedAccess {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketServerSideEncryption {
-    /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer master key (CMK) that's used by default to encrypt objects that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects by default.</p>
+    /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used by default to encrypt objects that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects by default.</p>
     pub kms_master_key_id: std::option::Option<std::string::String>,
-    /// <p>The type of server-side encryption that's used by default when storing new objects in the bucket. Possible values are:</p> <ul><li><p>AES256 - New objects are encrypted with an Amazon S3 managed key and use Amazon S3 managed encryption (SSE-S3).</p></li> <li><p>aws:kms - New objects are encrypted with an KMS CMK, specified by the kmsMasterKeyId property, and use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).</p></li> <li><p>NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.</p></li></ul>
+    /// <p>The type of server-side encryption that's used by default when storing new objects in the bucket. Possible values are:</p> <ul><li><p>AES256 - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3 encryption.</p></li> <li><p>aws:kms - New objects are encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services managed key or a customer managed key. They use SSE-KMS encryption.</p></li> <li><p>NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.</p></li></ul>
     pub r#type: std::option::Option<crate::model::Type>,
 }
 impl std::fmt::Debug for BucketServerSideEncryption {
@@ -11826,7 +12063,7 @@ pub mod bucket_server_side_encryption {
         pub(crate) r#type: std::option::Option<crate::model::Type>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer master key (CMK) that's used by default to encrypt objects that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects by default.</p>
+        /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used by default to encrypt objects that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects by default.</p>
         pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_id = Some(input.into());
             self
@@ -11838,7 +12075,7 @@ pub mod bucket_server_side_encryption {
             self.kms_master_key_id = input;
             self
         }
-        /// <p>The type of server-side encryption that's used by default when storing new objects in the bucket. Possible values are:</p> <ul><li><p>AES256 - New objects are encrypted with an Amazon S3 managed key and use Amazon S3 managed encryption (SSE-S3).</p></li> <li><p>aws:kms - New objects are encrypted with an KMS CMK, specified by the kmsMasterKeyId property, and use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).</p></li> <li><p>NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.</p></li></ul>
+        /// <p>The type of server-side encryption that's used by default when storing new objects in the bucket. Possible values are:</p> <ul><li><p>AES256 - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3 encryption.</p></li> <li><p>aws:kms - New objects are encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services managed key or a customer managed key. They use SSE-KMS encryption.</p></li> <li><p>NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.</p></li></ul>
         pub fn r#type(mut self, input: crate::model::Type) -> Self {
             self.r#type = Some(input);
             self
@@ -12063,7 +12300,7 @@ impl BucketSortCriteria {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketCriteriaAdditionalProperties {
-    /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Macie uses OR logic to join the values.</p>
+    /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
     pub eq: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The value for the property is greater than the specified value.</p>
     pub gt: i64,

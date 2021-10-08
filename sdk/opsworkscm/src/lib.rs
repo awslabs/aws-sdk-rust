@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>AWS OpsWorks CM</fullname>
 //! <p>AWS OpsWorks for configuration management (CM) is a service that runs and manages
 //! configuration management servers. You can use AWS OpsWorks CM to create and manage AWS
@@ -112,7 +113,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

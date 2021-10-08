@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon Web Services Secrets Manager</fullname>
 //! <p>Amazon Web Services Secrets Manager provides a service to enable you to store, manage, and retrieve, secrets.</p>
 //! <p>This guide provides descriptions of the Secrets Manager API. For more information about using this
@@ -73,7 +74,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

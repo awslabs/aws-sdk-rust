@@ -24,9 +24,9 @@ impl smithy_http::response::ParseStrictResponse for CreateGatewayRoute {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_gateway_route_error(response)
+            crate::operation_ser::parse_create_gateway_route_error(response)
         } else {
-            crate::operation_deser::parse_create_gateway_route_response(response)
+            crate::operation_ser::parse_create_gateway_route_response(response)
         }
     }
 }
@@ -55,9 +55,9 @@ impl smithy_http::response::ParseStrictResponse for CreateMesh {
         std::result::Result<crate::output::CreateMeshOutput, crate::error::CreateMeshError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_mesh_error(response)
+            crate::operation_ser::parse_create_mesh_error(response)
         } else {
-            crate::operation_deser::parse_create_mesh_response(response)
+            crate::operation_ser::parse_create_mesh_response(response)
         }
     }
 }
@@ -84,9 +84,9 @@ impl smithy_http::response::ParseStrictResponse for CreateRoute {
         std::result::Result<crate::output::CreateRouteOutput, crate::error::CreateRouteError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_route_error(response)
+            crate::operation_ser::parse_create_route_error(response)
         } else {
-            crate::operation_deser::parse_create_route_response(response)
+            crate::operation_ser::parse_create_route_response(response)
         }
     }
 }
@@ -118,9 +118,9 @@ impl smithy_http::response::ParseStrictResponse for CreateVirtualGateway {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_virtual_gateway_error(response)
+            crate::operation_ser::parse_create_virtual_gateway_error(response)
         } else {
-            crate::operation_deser::parse_create_virtual_gateway_response(response)
+            crate::operation_ser::parse_create_virtual_gateway_response(response)
         }
     }
 }
@@ -168,9 +168,9 @@ impl smithy_http::response::ParseStrictResponse for CreateVirtualNode {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_virtual_node_error(response)
+            crate::operation_ser::parse_create_virtual_node_error(response)
         } else {
-            crate::operation_deser::parse_create_virtual_node_response(response)
+            crate::operation_ser::parse_create_virtual_node_response(response)
         }
     }
 }
@@ -202,9 +202,9 @@ impl smithy_http::response::ParseStrictResponse for CreateVirtualRouter {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_virtual_router_error(response)
+            crate::operation_ser::parse_create_virtual_router_error(response)
         } else {
-            crate::operation_deser::parse_create_virtual_router_response(response)
+            crate::operation_ser::parse_create_virtual_router_response(response)
         }
     }
 }
@@ -236,9 +236,9 @@ impl smithy_http::response::ParseStrictResponse for CreateVirtualService {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_virtual_service_error(response)
+            crate::operation_ser::parse_create_virtual_service_error(response)
         } else {
-            crate::operation_deser::parse_create_virtual_service_response(response)
+            crate::operation_ser::parse_create_virtual_service_response(response)
         }
     }
 }
@@ -264,9 +264,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteGatewayRoute {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_gateway_route_error(response)
+            crate::operation_ser::parse_delete_gateway_route_error(response)
         } else {
-            crate::operation_deser::parse_delete_gateway_route_response(response)
+            crate::operation_ser::parse_delete_gateway_route_response(response)
         }
     }
 }
@@ -292,9 +292,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteMesh {
         std::result::Result<crate::output::DeleteMeshOutput, crate::error::DeleteMeshError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_mesh_error(response)
+            crate::operation_ser::parse_delete_mesh_error(response)
         } else {
-            crate::operation_deser::parse_delete_mesh_response(response)
+            crate::operation_ser::parse_delete_mesh_response(response)
         }
     }
 }
@@ -318,9 +318,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteRoute {
         std::result::Result<crate::output::DeleteRouteOutput, crate::error::DeleteRouteError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_route_error(response)
+            crate::operation_ser::parse_delete_route_error(response)
         } else {
-            crate::operation_deser::parse_delete_route_response(response)
+            crate::operation_ser::parse_delete_route_response(response)
         }
     }
 }
@@ -347,9 +347,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteVirtualGateway {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_virtual_gateway_error(response)
+            crate::operation_ser::parse_delete_virtual_gateway_error(response)
         } else {
-            crate::operation_deser::parse_delete_virtual_gateway_response(response)
+            crate::operation_ser::parse_delete_virtual_gateway_response(response)
         }
     }
 }
@@ -377,9 +377,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteVirtualNode {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_virtual_node_error(response)
+            crate::operation_ser::parse_delete_virtual_node_error(response)
         } else {
-            crate::operation_deser::parse_delete_virtual_node_response(response)
+            crate::operation_ser::parse_delete_virtual_node_response(response)
         }
     }
 }
@@ -407,9 +407,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteVirtualRouter {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_virtual_router_error(response)
+            crate::operation_ser::parse_delete_virtual_router_error(response)
         } else {
-            crate::operation_deser::parse_delete_virtual_router_response(response)
+            crate::operation_ser::parse_delete_virtual_router_response(response)
         }
     }
 }
@@ -435,9 +435,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteVirtualService {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_virtual_service_error(response)
+            crate::operation_ser::parse_delete_virtual_service_error(response)
         } else {
-            crate::operation_deser::parse_delete_virtual_service_response(response)
+            crate::operation_ser::parse_delete_virtual_service_response(response)
         }
     }
 }
@@ -463,9 +463,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeGatewayRoute {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_gateway_route_error(response)
+            crate::operation_ser::parse_describe_gateway_route_error(response)
         } else {
-            crate::operation_deser::parse_describe_gateway_route_response(response)
+            crate::operation_ser::parse_describe_gateway_route_response(response)
         }
     }
 }
@@ -489,9 +489,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeMesh {
         std::result::Result<crate::output::DescribeMeshOutput, crate::error::DescribeMeshError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_mesh_error(response)
+            crate::operation_ser::parse_describe_mesh_error(response)
         } else {
-            crate::operation_deser::parse_describe_mesh_response(response)
+            crate::operation_ser::parse_describe_mesh_response(response)
         }
     }
 }
@@ -515,9 +515,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeRoute {
         std::result::Result<crate::output::DescribeRouteOutput, crate::error::DescribeRouteError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_route_error(response)
+            crate::operation_ser::parse_describe_route_error(response)
         } else {
-            crate::operation_deser::parse_describe_route_response(response)
+            crate::operation_ser::parse_describe_route_response(response)
         }
     }
 }
@@ -543,9 +543,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeVirtualGateway {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_virtual_gateway_error(response)
+            crate::operation_ser::parse_describe_virtual_gateway_error(response)
         } else {
-            crate::operation_deser::parse_describe_virtual_gateway_response(response)
+            crate::operation_ser::parse_describe_virtual_gateway_response(response)
         }
     }
 }
@@ -571,9 +571,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeVirtualNode {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_virtual_node_error(response)
+            crate::operation_ser::parse_describe_virtual_node_error(response)
         } else {
-            crate::operation_deser::parse_describe_virtual_node_response(response)
+            crate::operation_ser::parse_describe_virtual_node_response(response)
         }
     }
 }
@@ -599,9 +599,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeVirtualRouter {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_virtual_router_error(response)
+            crate::operation_ser::parse_describe_virtual_router_error(response)
         } else {
-            crate::operation_deser::parse_describe_virtual_router_response(response)
+            crate::operation_ser::parse_describe_virtual_router_response(response)
         }
     }
 }
@@ -627,9 +627,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeVirtualService {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_virtual_service_error(response)
+            crate::operation_ser::parse_describe_virtual_service_error(response)
         } else {
-            crate::operation_deser::parse_describe_virtual_service_response(response)
+            crate::operation_ser::parse_describe_virtual_service_response(response)
         }
     }
 }
@@ -656,9 +656,9 @@ impl smithy_http::response::ParseStrictResponse for ListGatewayRoutes {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_gateway_routes_error(response)
+            crate::operation_ser::parse_list_gateway_routes_error(response)
         } else {
-            crate::operation_deser::parse_list_gateway_routes_response(response)
+            crate::operation_ser::parse_list_gateway_routes_response(response)
         }
     }
 }
@@ -682,9 +682,9 @@ impl smithy_http::response::ParseStrictResponse for ListMeshes {
         std::result::Result<crate::output::ListMeshesOutput, crate::error::ListMeshesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_meshes_error(response)
+            crate::operation_ser::parse_list_meshes_error(response)
         } else {
-            crate::operation_deser::parse_list_meshes_response(response)
+            crate::operation_ser::parse_list_meshes_response(response)
         }
     }
 }
@@ -708,9 +708,9 @@ impl smithy_http::response::ParseStrictResponse for ListRoutes {
         std::result::Result<crate::output::ListRoutesOutput, crate::error::ListRoutesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_routes_error(response)
+            crate::operation_ser::parse_list_routes_error(response)
         } else {
-            crate::operation_deser::parse_list_routes_response(response)
+            crate::operation_ser::parse_list_routes_response(response)
         }
     }
 }
@@ -736,9 +736,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::operation_ser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::operation_ser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -764,9 +764,9 @@ impl smithy_http::response::ParseStrictResponse for ListVirtualGateways {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_virtual_gateways_error(response)
+            crate::operation_ser::parse_list_virtual_gateways_error(response)
         } else {
-            crate::operation_deser::parse_list_virtual_gateways_response(response)
+            crate::operation_ser::parse_list_virtual_gateways_response(response)
         }
     }
 }
@@ -792,9 +792,9 @@ impl smithy_http::response::ParseStrictResponse for ListVirtualNodes {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_virtual_nodes_error(response)
+            crate::operation_ser::parse_list_virtual_nodes_error(response)
         } else {
-            crate::operation_deser::parse_list_virtual_nodes_response(response)
+            crate::operation_ser::parse_list_virtual_nodes_response(response)
         }
     }
 }
@@ -820,9 +820,9 @@ impl smithy_http::response::ParseStrictResponse for ListVirtualRouters {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_virtual_routers_error(response)
+            crate::operation_ser::parse_list_virtual_routers_error(response)
         } else {
-            crate::operation_deser::parse_list_virtual_routers_response(response)
+            crate::operation_ser::parse_list_virtual_routers_response(response)
         }
     }
 }
@@ -848,9 +848,9 @@ impl smithy_http::response::ParseStrictResponse for ListVirtualServices {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_virtual_services_error(response)
+            crate::operation_ser::parse_list_virtual_services_error(response)
         } else {
-            crate::operation_deser::parse_list_virtual_services_response(response)
+            crate::operation_ser::parse_list_virtual_services_response(response)
         }
     }
 }
@@ -877,9 +877,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::operation_ser::parse_tag_resource_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::operation_ser::parse_tag_resource_response(response)
         }
     }
 }
@@ -903,9 +903,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::operation_ser::parse_untag_resource_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::operation_ser::parse_untag_resource_response(response)
         }
     }
 }
@@ -932,9 +932,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateGatewayRoute {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_gateway_route_error(response)
+            crate::operation_ser::parse_update_gateway_route_error(response)
         } else {
-            crate::operation_deser::parse_update_gateway_route_response(response)
+            crate::operation_ser::parse_update_gateway_route_response(response)
         }
     }
 }
@@ -958,9 +958,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateMesh {
         std::result::Result<crate::output::UpdateMeshOutput, crate::error::UpdateMeshError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_mesh_error(response)
+            crate::operation_ser::parse_update_mesh_error(response)
         } else {
-            crate::operation_deser::parse_update_mesh_response(response)
+            crate::operation_ser::parse_update_mesh_response(response)
         }
     }
 }
@@ -984,9 +984,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateRoute {
         std::result::Result<crate::output::UpdateRouteOutput, crate::error::UpdateRouteError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_route_error(response)
+            crate::operation_ser::parse_update_route_error(response)
         } else {
-            crate::operation_deser::parse_update_route_response(response)
+            crate::operation_ser::parse_update_route_response(response)
         }
     }
 }
@@ -1012,9 +1012,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateVirtualGateway {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_virtual_gateway_error(response)
+            crate::operation_ser::parse_update_virtual_gateway_error(response)
         } else {
-            crate::operation_deser::parse_update_virtual_gateway_response(response)
+            crate::operation_ser::parse_update_virtual_gateway_response(response)
         }
     }
 }
@@ -1040,9 +1040,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateVirtualNode {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_virtual_node_error(response)
+            crate::operation_ser::parse_update_virtual_node_error(response)
         } else {
-            crate::operation_deser::parse_update_virtual_node_response(response)
+            crate::operation_ser::parse_update_virtual_node_response(response)
         }
     }
 }
@@ -1068,9 +1068,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateVirtualRouter {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_virtual_router_error(response)
+            crate::operation_ser::parse_update_virtual_router_error(response)
         } else {
-            crate::operation_deser::parse_update_virtual_router_response(response)
+            crate::operation_ser::parse_update_virtual_router_response(response)
         }
     }
 }
@@ -1096,9 +1096,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateVirtualService {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_virtual_service_error(response)
+            crate::operation_ser::parse_update_virtual_service_error(response)
         } else {
-            crate::operation_deser::parse_update_virtual_service_response(response)
+            crate::operation_ser::parse_update_virtual_service_response(response)
         }
     }
 }

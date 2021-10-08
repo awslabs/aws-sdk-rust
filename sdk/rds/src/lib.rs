@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon Relational Database Service</fullname>
 //! <p> </p>
 //! <p>Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier to set up, operate, and
@@ -74,7 +75,6 @@ pub mod input;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 mod query_ser;

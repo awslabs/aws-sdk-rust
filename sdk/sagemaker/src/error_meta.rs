@@ -3642,6 +3642,32 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::RetryPipelineExecutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::RetryPipelineExecutionError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::RetryPipelineExecutionErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::RetryPipelineExecutionErrorKind::ResourceLimitExceeded(inner) => {
+                    Error::ResourceLimitExceeded(inner)
+                }
+                crate::error::RetryPipelineExecutionErrorKind::ResourceNotFound(inner) => {
+                    Error::ResourceNotFound(inner)
+                }
+                crate::error::RetryPipelineExecutionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::SearchError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

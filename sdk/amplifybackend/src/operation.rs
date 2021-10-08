@@ -18,9 +18,9 @@ impl smithy_http::response::ParseStrictResponse for CloneBackend {
         std::result::Result<crate::output::CloneBackendOutput, crate::error::CloneBackendError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_clone_backend_error(response)
+            crate::operation_ser::parse_clone_backend_error(response)
         } else {
-            crate::operation_deser::parse_clone_backend_response(response)
+            crate::operation_ser::parse_clone_backend_response(response)
         }
     }
 }
@@ -44,9 +44,9 @@ impl smithy_http::response::ParseStrictResponse for CreateBackend {
         std::result::Result<crate::output::CreateBackendOutput, crate::error::CreateBackendError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_backend_error(response)
+            crate::operation_ser::parse_create_backend_error(response)
         } else {
-            crate::operation_deser::parse_create_backend_response(response)
+            crate::operation_ser::parse_create_backend_response(response)
         }
     }
 }
@@ -72,9 +72,9 @@ impl smithy_http::response::ParseStrictResponse for CreateBackendAPI {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_backend_api_error(response)
+            crate::operation_ser::parse_create_backend_api_error(response)
         } else {
-            crate::operation_deser::parse_create_backend_api_response(response)
+            crate::operation_ser::parse_create_backend_api_response(response)
         }
     }
 }
@@ -100,9 +100,9 @@ impl smithy_http::response::ParseStrictResponse for CreateBackendAuth {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_backend_auth_error(response)
+            crate::operation_ser::parse_create_backend_auth_error(response)
         } else {
-            crate::operation_deser::parse_create_backend_auth_response(response)
+            crate::operation_ser::parse_create_backend_auth_response(response)
         }
     }
 }
@@ -128,9 +128,9 @@ impl smithy_http::response::ParseStrictResponse for CreateBackendConfig {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_backend_config_error(response)
+            crate::operation_ser::parse_create_backend_config_error(response)
         } else {
-            crate::operation_deser::parse_create_backend_config_response(response)
+            crate::operation_ser::parse_create_backend_config_response(response)
         }
     }
 }
@@ -154,9 +154,9 @@ impl smithy_http::response::ParseStrictResponse for CreateToken {
         std::result::Result<crate::output::CreateTokenOutput, crate::error::CreateTokenError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_token_error(response)
+            crate::operation_ser::parse_create_token_error(response)
         } else {
-            crate::operation_deser::parse_create_token_response(response)
+            crate::operation_ser::parse_create_token_response(response)
         }
     }
 }
@@ -180,9 +180,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBackend {
         std::result::Result<crate::output::DeleteBackendOutput, crate::error::DeleteBackendError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_backend_error(response)
+            crate::operation_ser::parse_delete_backend_error(response)
         } else {
-            crate::operation_deser::parse_delete_backend_response(response)
+            crate::operation_ser::parse_delete_backend_response(response)
         }
     }
 }
@@ -208,9 +208,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBackendAPI {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_backend_api_error(response)
+            crate::operation_ser::parse_delete_backend_api_error(response)
         } else {
-            crate::operation_deser::parse_delete_backend_api_response(response)
+            crate::operation_ser::parse_delete_backend_api_response(response)
         }
     }
 }
@@ -236,9 +236,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBackendAuth {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_backend_auth_error(response)
+            crate::operation_ser::parse_delete_backend_auth_error(response)
         } else {
-            crate::operation_deser::parse_delete_backend_auth_response(response)
+            crate::operation_ser::parse_delete_backend_auth_response(response)
         }
     }
 }
@@ -262,9 +262,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteToken {
         std::result::Result<crate::output::DeleteTokenOutput, crate::error::DeleteTokenError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_token_error(response)
+            crate::operation_ser::parse_delete_token_error(response)
         } else {
-            crate::operation_deser::parse_delete_token_response(response)
+            crate::operation_ser::parse_delete_token_response(response)
         }
     }
 }
@@ -290,9 +290,9 @@ impl smithy_http::response::ParseStrictResponse for GenerateBackendAPIModels {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_generate_backend_api_models_error(response)
+            crate::operation_ser::parse_generate_backend_api_models_error(response)
         } else {
-            crate::operation_deser::parse_generate_backend_api_models_response(response)
+            crate::operation_ser::parse_generate_backend_api_models_response(response)
         }
     }
 }
@@ -316,9 +316,9 @@ impl smithy_http::response::ParseStrictResponse for GetBackend {
         std::result::Result<crate::output::GetBackendOutput, crate::error::GetBackendError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_backend_error(response)
+            crate::operation_ser::parse_get_backend_error(response)
         } else {
-            crate::operation_deser::parse_get_backend_response(response)
+            crate::operation_ser::parse_get_backend_response(response)
         }
     }
 }
@@ -342,9 +342,9 @@ impl smithy_http::response::ParseStrictResponse for GetBackendAPI {
         std::result::Result<crate::output::GetBackendApiOutput, crate::error::GetBackendAPIError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_backend_api_error(response)
+            crate::operation_ser::parse_get_backend_api_error(response)
         } else {
-            crate::operation_deser::parse_get_backend_api_response(response)
+            crate::operation_ser::parse_get_backend_api_response(response)
         }
     }
 }
@@ -370,9 +370,9 @@ impl smithy_http::response::ParseStrictResponse for GetBackendAPIModels {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_backend_api_models_error(response)
+            crate::operation_ser::parse_get_backend_api_models_error(response)
         } else {
-            crate::operation_deser::parse_get_backend_api_models_response(response)
+            crate::operation_ser::parse_get_backend_api_models_response(response)
         }
     }
 }
@@ -396,9 +396,9 @@ impl smithy_http::response::ParseStrictResponse for GetBackendAuth {
         std::result::Result<crate::output::GetBackendAuthOutput, crate::error::GetBackendAuthError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_backend_auth_error(response)
+            crate::operation_ser::parse_get_backend_auth_error(response)
         } else {
-            crate::operation_deser::parse_get_backend_auth_response(response)
+            crate::operation_ser::parse_get_backend_auth_response(response)
         }
     }
 }
@@ -422,9 +422,9 @@ impl smithy_http::response::ParseStrictResponse for GetBackendJob {
         std::result::Result<crate::output::GetBackendJobOutput, crate::error::GetBackendJobError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_backend_job_error(response)
+            crate::operation_ser::parse_get_backend_job_error(response)
         } else {
-            crate::operation_deser::parse_get_backend_job_response(response)
+            crate::operation_ser::parse_get_backend_job_response(response)
         }
     }
 }
@@ -447,9 +447,9 @@ impl smithy_http::response::ParseStrictResponse for GetToken {
     type Output = std::result::Result<crate::output::GetTokenOutput, crate::error::GetTokenError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_token_error(response)
+            crate::operation_ser::parse_get_token_error(response)
         } else {
-            crate::operation_deser::parse_get_token_response(response)
+            crate::operation_ser::parse_get_token_response(response)
         }
     }
 }
@@ -475,9 +475,9 @@ impl smithy_http::response::ParseStrictResponse for ImportBackendAuth {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_import_backend_auth_error(response)
+            crate::operation_ser::parse_import_backend_auth_error(response)
         } else {
-            crate::operation_deser::parse_import_backend_auth_response(response)
+            crate::operation_ser::parse_import_backend_auth_response(response)
         }
     }
 }
@@ -503,9 +503,9 @@ impl smithy_http::response::ParseStrictResponse for ListBackendJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_backend_jobs_error(response)
+            crate::operation_ser::parse_list_backend_jobs_error(response)
         } else {
-            crate::operation_deser::parse_list_backend_jobs_response(response)
+            crate::operation_ser::parse_list_backend_jobs_response(response)
         }
     }
 }
@@ -531,9 +531,9 @@ impl smithy_http::response::ParseStrictResponse for RemoveAllBackends {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_remove_all_backends_error(response)
+            crate::operation_ser::parse_remove_all_backends_error(response)
         } else {
-            crate::operation_deser::parse_remove_all_backends_response(response)
+            crate::operation_ser::parse_remove_all_backends_response(response)
         }
     }
 }
@@ -559,9 +559,9 @@ impl smithy_http::response::ParseStrictResponse for RemoveBackendConfig {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_remove_backend_config_error(response)
+            crate::operation_ser::parse_remove_backend_config_error(response)
         } else {
-            crate::operation_deser::parse_remove_backend_config_response(response)
+            crate::operation_ser::parse_remove_backend_config_response(response)
         }
     }
 }
@@ -587,9 +587,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateBackendAPI {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_backend_api_error(response)
+            crate::operation_ser::parse_update_backend_api_error(response)
         } else {
-            crate::operation_deser::parse_update_backend_api_response(response)
+            crate::operation_ser::parse_update_backend_api_response(response)
         }
     }
 }
@@ -615,9 +615,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateBackendAuth {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_backend_auth_error(response)
+            crate::operation_ser::parse_update_backend_auth_error(response)
         } else {
-            crate::operation_deser::parse_update_backend_auth_response(response)
+            crate::operation_ser::parse_update_backend_auth_response(response)
         }
     }
 }
@@ -643,9 +643,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateBackendConfig {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_backend_config_error(response)
+            crate::operation_ser::parse_update_backend_config_error(response)
         } else {
-            crate::operation_deser::parse_update_backend_config_response(response)
+            crate::operation_ser::parse_update_backend_config_response(response)
         }
     }
 }
@@ -671,9 +671,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateBackendJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_backend_job_error(response)
+            crate::operation_ser::parse_update_backend_job_error(response)
         } else {
-            crate::operation_deser::parse_update_backend_job_response(response)
+            crate::operation_ser::parse_update_backend_job_response(response)
         }
     }
 }

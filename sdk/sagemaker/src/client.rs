@@ -757,6 +757,9 @@ where
     pub fn render_ui_template(&self) -> fluent_builders::RenderUiTemplate<C, M, R> {
         fluent_builders::RenderUiTemplate::new(self.handle.clone())
     }
+    pub fn retry_pipeline_execution(&self) -> fluent_builders::RetryPipelineExecution<C, M, R> {
+        fluent_builders::RetryPipelineExecution::new(self.handle.clone())
+    }
     pub fn search(&self) -> fluent_builders::Search<C, M, R> {
         fluent_builders::Search::new(self.handle.clone())
     }
@@ -2792,7 +2795,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed
-        /// customer master key (CMK) by default. For more control, specify a customer managed CMK.</p>
+        /// key by default. For more control, specify a customer managed key.</p>
         pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(inp);
             self
@@ -2912,7 +2915,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_config(input);
             self
         }
-        /// <p>The CMK to use when encrypting the EBS volume the edge packaging job runs on.</p>
+        /// <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the edge packaging job runs on.</p>
         pub fn resource_key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_key(inp);
             self
@@ -3474,11 +3477,13 @@ pub mod fluent_builders {
         /// <code>OfflineStore</code>.</p>
         /// </li>
         /// <li>
-        /// <p>A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data cataolgue. </p>
+        /// <p>A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data catalog. </p>
         /// </li>
         /// <li>
         /// <p>An KMS encryption key to encrypt the Amazon S3 location used for
-        /// <code>OfflineStore</code>.</p>
+        /// <code>OfflineStore</code>. If KMS encryption key is not specified, by default we encrypt all data at rest using
+        /// Amazon Web Services KMS key. By defining your <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level key</a> for SSE,
+        /// you can reduce Amazon Web Services KMS requests costs by up to 99 percent.</p>
         /// </li>
         /// </ul>
         /// <p>To learn more about this parameter, see <a>OfflineStoreConfig</a>.</p>
@@ -17990,8 +17995,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A string in the training job name. This filter returns only models in the training
-        /// job whose name contains the specified string.</p>
+        /// <p>A string in the model name. This filter returns only models whose
+        /// name contains the specified string.</p>
         pub fn name_contains(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(inp);
             self
@@ -21159,6 +21164,76 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct RetryPipelineExecution<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::retry_pipeline_execution_input::Builder,
+    }
+    impl<C, M, R> RetryPipelineExecution<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RetryPipelineExecutionOutput,
+            smithy_http::result::SdkError<crate::error::RetryPipelineExecutionError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::RetryPipelineExecutionInputOperationOutputAlias,
+                crate::output::RetryPipelineExecutionOutput,
+                crate::error::RetryPipelineExecutionError,
+                crate::input::RetryPipelineExecutionInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+        pub fn pipeline_execution_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_arn(inp);
+            self
+        }
+        pub fn set_pipeline_execution_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_pipeline_execution_arn(input);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// operation. An idempotent operation completes no more than once.</p>
+        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(inp);
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct Search<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -21658,7 +21733,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// operation. An idempotent operation completes no more than one time.</p>
+        /// operation. An idempotent operation completes no more than once.</p>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(inp);
             self
@@ -22130,7 +22205,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// operation. An idempotent operation completes no more than one time.</p>
+        /// operation. An idempotent operation completes no more than once.</p>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(inp);
             self

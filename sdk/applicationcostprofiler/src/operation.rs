@@ -21,9 +21,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteReportDefinition {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_report_definition_error(response)
+            crate::operation_ser::parse_delete_report_definition_error(response)
         } else {
-            crate::operation_deser::parse_delete_report_definition_response(response)
+            crate::operation_ser::parse_delete_report_definition_response(response)
         }
     }
 }
@@ -49,9 +49,9 @@ impl smithy_http::response::ParseStrictResponse for GetReportDefinition {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_report_definition_error(response)
+            crate::operation_ser::parse_get_report_definition_error(response)
         } else {
-            crate::operation_deser::parse_get_report_definition_response(response)
+            crate::operation_ser::parse_get_report_definition_response(response)
         }
     }
 }
@@ -80,9 +80,9 @@ impl smithy_http::response::ParseStrictResponse for ImportApplicationUsage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_import_application_usage_error(response)
+            crate::operation_ser::parse_import_application_usage_error(response)
         } else {
-            crate::operation_deser::parse_import_application_usage_response(response)
+            crate::operation_ser::parse_import_application_usage_response(response)
         }
     }
 }
@@ -109,9 +109,9 @@ impl smithy_http::response::ParseStrictResponse for ListReportDefinitions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_report_definitions_error(response)
+            crate::operation_ser::parse_list_report_definitions_error(response)
         } else {
-            crate::operation_deser::parse_list_report_definitions_response(response)
+            crate::operation_ser::parse_list_report_definitions_response(response)
         }
     }
 }
@@ -137,9 +137,9 @@ impl smithy_http::response::ParseStrictResponse for PutReportDefinition {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_report_definition_error(response)
+            crate::operation_ser::parse_put_report_definition_error(response)
         } else {
-            crate::operation_deser::parse_put_report_definition_response(response)
+            crate::operation_ser::parse_put_report_definition_response(response)
         }
     }
 }
@@ -165,9 +165,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateReportDefinition {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_report_definition_error(response)
+            crate::operation_ser::parse_update_report_definition_error(response)
         } else {
-            crate::operation_deser::parse_update_report_definition_response(response)
+            crate::operation_ser::parse_update_report_definition_response(response)
         }
     }
 }

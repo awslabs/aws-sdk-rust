@@ -434,7 +434,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set.</p>
+        /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric
+        /// characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
         pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(inp);
             self
@@ -501,8 +502,8 @@ pub mod fluent_builders {
         /// Appends an item to `Tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        /// <p>An array of objects that define the tags (keys and values) that you want to associate
-        /// with the configuration set.</p>
+        /// <p>An array of objects that define the tags (keys and values) to associate with the
+        /// configuration set.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -574,7 +575,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that you want to add an event destination to.</p>
+        /// <p>The name of the configuration set .</p>
         pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(inp);
             self
@@ -1145,7 +1146,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The email address or domain that you want to verify.</p>
+        /// <p>The email address or domain to verify.</p>
         pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_identity(inp);
             self
@@ -1160,8 +1161,8 @@ pub mod fluent_builders {
         /// Appends an item to `Tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        /// <p>An array of objects that define the tags (keys and values) that you want to associate
-        /// with the email identity.</p>
+        /// <p>An array of objects that define the tags (keys and values) to associate with the email
+        /// identity.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -1174,9 +1175,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your
-        /// Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed to the default method,
-        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
-        /// DKIM</a>.</p>
+        /// Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for
+        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
         /// <p>You can only specify this object if the email identity is a domain, as opposed to an
         /// address.</p>
         pub fn dkim_signing_attributes(mut self, inp: crate::model::DkimSigningAttributes) -> Self {
@@ -1190,9 +1190,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dkim_signing_attributes(input);
             self
         }
-        /// <p>The configuration set to use by default when sending from this identity.
-        /// Note that any configuration set defined in the email sending request takes precedence.
-        /// </p>
+        /// <p>The configuration set to use by default when sending from this identity. Note that any
+        /// configuration set defined in the email sending request takes precedence. </p>
         pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(inp);
             self
@@ -1249,7 +1248,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The email identity for which you want to create a policy.</p>
+        /// <p>The email identity.</p>
         pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_identity(inp);
             self
@@ -1328,7 +1327,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the template you want to create.</p>
+        /// <p>The name of the template.</p>
         pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_name(inp);
             self
@@ -1467,7 +1466,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that you want to delete.</p>
+        /// <p>The name of the configuration set.</p>
         pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(inp);
             self
@@ -1526,7 +1525,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that contains the event destination that you want to
+        /// <p>The name of the configuration set that contains the event destination to
         /// delete.</p>
         pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(inp);
@@ -1539,7 +1538,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_set_name(input);
             self
         }
-        /// <p>The name of the event destination that you want to delete.</p>
+        /// <p>The name of the event destination to delete.</p>
         pub fn event_destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_destination_name(inp);
             self
@@ -1833,7 +1832,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The identity (that is, the email address or domain) that you want to delete.</p>
+        /// <p>The identity (that is, the email address or domain) to delete.</p>
         pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_identity(inp);
             self
@@ -1890,7 +1889,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The email identity for which you want to delete a policy.</p>
+        /// <p>The email identity.</p>
         pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_identity(inp);
             self
@@ -2179,8 +2178,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that you want to obtain more information
-        /// about.</p>
+        /// <p>The name of the configuration set.</p>
         pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(inp);
             self
@@ -2478,7 +2476,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The IP address that you want to obtain more information about. The value you specify
-        /// has to be a dedicated IP address that's assocaited with your AWS account.</p>
+        /// has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
         pub fn ip(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ip(inp);
             self
@@ -2837,7 +2835,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The email identity that you want to retrieve details for.</p>
+        /// <p>The email identity.</p>
         pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_identity(inp);
             self
@@ -2894,7 +2892,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The email identity that you want to retrieve policies for.</p>
+        /// <p>The email identity.</p>
         pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_identity(inp);
             self
@@ -2951,7 +2949,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the template you want to retrieve.</p>
+        /// <p>The name of the template.</p>
         pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_name(inp);
             self
@@ -4036,7 +4034,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are
-        /// associated with your Amazon SES account in the current AWS Region. Set to <code>true</code>
+        /// associated with your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code>
         /// to enable the automatic warm-up feature, or set to <code>false</code> to disable
         /// it.</p>
         pub fn auto_warmup_enabled(mut self, inp: bool) -> Self {
@@ -4155,7 +4153,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether or not your account should have production access in the current
-        /// AWS Region.</p>
+        /// Amazon Web Services Region.</p>
         /// <p>If the value is <code>false</code>, then your account is in the
         /// <i>sandbox</i>. When your account is in the sandbox, you can only send
         /// email to verified identities. Additionally, the maximum number of emails you can send in
@@ -4220,7 +4218,7 @@ pub mod fluent_builders {
         /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to
         /// enable email sending, or set to <code>false</code> to disable email sending.</p>
         /// <note>
-        /// <p>If AWS paused your account's ability to send email, you can't use this operation
+        /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation
         /// to resume your account's ability to send email.</p>
         /// </note>
         pub fn sending_enabled(mut self, inp: bool) -> Self {
@@ -4355,8 +4353,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that you want to associate with a dedicated IP
-        /// pool.</p>
+        /// <p>The name of the configuration set to associate with a dedicated IP pool.</p>
         pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(inp);
             self
@@ -4383,8 +4380,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tls_policy(input);
             self
         }
-        /// <p>The name of the dedicated IP pool that you want to associate with the configuration
-        /// set.</p>
+        /// <p>The name of the dedicated IP pool to associate with the configuration set.</p>
         pub fn sending_pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sending_pool_name(inp);
             self
@@ -4441,8 +4437,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that you want to enable or disable reputation metric
-        /// tracking for.</p>
+        /// <p>The name of the configuration set.</p>
         pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(inp);
             self
@@ -4510,8 +4505,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that you want to enable or disable email sending
-        /// for.</p>
+        /// <p>The name of the configuration set to enable or disable email sending for.</p>
         pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(inp);
             self
@@ -4578,8 +4572,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that you want to change the suppression list
-        /// preferences for.</p>
+        /// <p>The name of the configuration set to change the suppression list preferences
+        /// for.</p>
         pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(inp);
             self
@@ -4607,8 +4601,8 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>BOUNCE</code> – Amazon SES adds an email address to the suppression
-        /// list for your account when a message sent to that address results in a
-        /// hard bounce.</p>
+        /// list for your account when a message sent to that address results in a hard
+        /// bounce.</p>
         /// </li>
         /// </ul>
         pub fn suppressed_reasons(
@@ -4670,8 +4664,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that you want to add a custom tracking domain
-        /// to.</p>
+        /// <p>The name of the configuration set.</p>
         pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(inp);
             self
@@ -4683,7 +4676,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_set_name(input);
             self
         }
-        /// <p>The domain that you want to use to track open and click events.</p>
+        /// <p>The domain to use to track open and click events.</p>
         pub fn custom_redirect_domain(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.custom_redirect_domain(inp);
             self
@@ -4741,7 +4734,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify
-        /// has to be a dedicated IP address that's associated with your AWS account.</p>
+        /// has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
         pub fn ip(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ip(inp);
             self
@@ -4950,7 +4943,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The email address or domain that you want to associate with a configuration set.</p>
+        /// <p>The email address or domain to associate with a configuration set.</p>
         pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_identity(inp);
             self
@@ -4962,7 +4955,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_email_identity(input);
             self
         }
-        /// <p>The configuration set that you want to associate with an email identity.</p>
+        /// <p>The configuration set to associate with an email identity.</p>
         pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(inp);
             self
@@ -5019,7 +5012,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The email identity that you want to change the DKIM settings for.</p>
+        /// <p>The email identity.</p>
         pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_identity(inp);
             self
@@ -5088,7 +5081,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The email identity that you want to configure DKIM for.</p>
+        /// <p>The email identity.</p>
         pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_identity(inp);
             self
@@ -5100,8 +5093,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_email_identity(input);
             self
         }
-        /// <p>The method that you want to use to configure DKIM for the identity. There are two
-        /// possible values:</p>
+        /// <p>The method to use to configure DKIM for the identity. There are the following possible
+        /// values:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -5129,8 +5122,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that contains information about the private key and selector that you want
-        /// to use to configure DKIM for the identity. This object is only required if you want to
-        /// configure Bring Your Own DKIM (BYODKIM) for the identity.</p>
+        /// to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or,
+        /// configures the key length to be used for
+        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
         pub fn signing_attributes(mut self, inp: crate::model::DkimSigningAttributes) -> Self {
             self.inner = self.inner.signing_attributes(inp);
             self
@@ -5187,8 +5181,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The email identity that you want to configure bounce and complaint feedback forwarding
-        /// for.</p>
+        /// <p>The email identity.</p>
         pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_identity(inp);
             self
@@ -5261,8 +5254,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The verified email identity that you want to set up the custom MAIL FROM domain
-        /// for.</p>
+        /// <p>The verified email identity.</p>
         pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_identity(inp);
             self
@@ -5299,10 +5291,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mail_from_domain(input);
             self
         }
-        /// <p>The action that you want to take if the required MX record isn't found when you send
-        /// an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent
-        /// using <i>amazonses.com</i> as the MAIL FROM domain. When you set this
-        /// value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
+        /// <p>The action to take if the required MX record isn't found when you send an email. When
+        /// you set this value to <code>UseDefaultValue</code>, the mail is sent using
+        /// <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
+        /// to <code>RejectMessage</code>, the Amazon SES API v2 returns a
         /// <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
         /// email.</p>
         /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
@@ -5435,7 +5427,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The email address that you want to use as the "From" address for the email. The
+        /// <p>The email address to use as the "From" address for the email. The
         /// address that you specify has to be verified.</p>
         pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.from_email_address(inp);
@@ -5579,7 +5571,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bulk_email_entries(input);
             self
         }
-        /// <p>The name of the configuration set that you want to use when sending the email.</p>
+        /// <p>The name of the configuration set to use when sending the email.</p>
         pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(inp);
             self
@@ -5718,7 +5710,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The email address that you want to use as the "From" address for the email. The
+        /// <p>The email address to use as the "From" address for the email. The
         /// address that you specify has to be verified.
         /// </p>
         pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -5863,7 +5855,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_email_tags(input);
             self
         }
-        /// <p>The name of the configuration set that you want to use when sending the email.</p>
+        /// <p>The name of the configuration set to use when sending the email.</p>
         pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(inp);
             self
@@ -6006,7 +5998,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the template that you want to render.</p>
+        /// <p>The name of the template.</p>
         pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_name(inp);
             self
@@ -6155,7 +6147,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that contains the event destination that you want to
+        /// <p>The name of the configuration set that contains the event destination to
         /// modify.</p>
         pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration_set_name(inp);
@@ -6168,7 +6160,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_set_name(input);
             self
         }
-        /// <p>The name of the event destination that you want to modify.</p>
+        /// <p>The name of the event destination.</p>
         pub fn event_destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_destination_name(inp);
             self
@@ -6547,7 +6539,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The email identity for which you want to update policy.</p>
+        /// <p>The email identity.</p>
         pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_identity(inp);
             self
@@ -6626,7 +6618,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the template you want to update.</p>
+        /// <p>The name of the template.</p>
         pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_name(inp);
             self

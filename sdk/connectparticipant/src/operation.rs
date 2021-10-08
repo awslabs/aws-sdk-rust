@@ -21,9 +21,9 @@ impl smithy_http::response::ParseStrictResponse for CompleteAttachmentUpload {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_complete_attachment_upload_error(response)
+            crate::operation_ser::parse_complete_attachment_upload_error(response)
         } else {
-            crate::operation_deser::parse_complete_attachment_upload_response(response)
+            crate::operation_ser::parse_complete_attachment_upload_response(response)
         }
     }
 }
@@ -67,9 +67,9 @@ impl smithy_http::response::ParseStrictResponse for CreateParticipantConnection 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_participant_connection_error(response)
+            crate::operation_ser::parse_create_participant_connection_error(response)
         } else {
-            crate::operation_deser::parse_create_participant_connection_response(response)
+            crate::operation_ser::parse_create_participant_connection_response(response)
         }
     }
 }
@@ -98,9 +98,9 @@ impl smithy_http::response::ParseStrictResponse for DisconnectParticipant {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_disconnect_participant_error(response)
+            crate::operation_ser::parse_disconnect_participant_error(response)
         } else {
-            crate::operation_deser::parse_disconnect_participant_response(response)
+            crate::operation_ser::parse_disconnect_participant_response(response)
         }
     }
 }
@@ -125,9 +125,9 @@ impl smithy_http::response::ParseStrictResponse for GetAttachment {
         std::result::Result<crate::output::GetAttachmentOutput, crate::error::GetAttachmentError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_attachment_error(response)
+            crate::operation_ser::parse_get_attachment_error(response)
         } else {
-            crate::operation_deser::parse_get_attachment_response(response)
+            crate::operation_ser::parse_get_attachment_response(response)
         }
     }
 }
@@ -154,9 +154,9 @@ impl smithy_http::response::ParseStrictResponse for GetTranscript {
         std::result::Result<crate::output::GetTranscriptOutput, crate::error::GetTranscriptError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_transcript_error(response)
+            crate::operation_ser::parse_get_transcript_error(response)
         } else {
-            crate::operation_deser::parse_get_transcript_response(response)
+            crate::operation_ser::parse_get_transcript_response(response)
         }
     }
 }
@@ -182,9 +182,9 @@ impl smithy_http::response::ParseStrictResponse for SendEvent {
     type Output = std::result::Result<crate::output::SendEventOutput, crate::error::SendEventError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_send_event_error(response)
+            crate::operation_ser::parse_send_event_error(response)
         } else {
-            crate::operation_deser::parse_send_event_response(response)
+            crate::operation_ser::parse_send_event_response(response)
         }
     }
 }
@@ -213,9 +213,9 @@ impl smithy_http::response::ParseStrictResponse for SendMessage {
         std::result::Result<crate::output::SendMessageOutput, crate::error::SendMessageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_send_message_error(response)
+            crate::operation_ser::parse_send_message_error(response)
         } else {
-            crate::operation_deser::parse_send_message_response(response)
+            crate::operation_ser::parse_send_message_response(response)
         }
     }
 }
@@ -242,9 +242,9 @@ impl smithy_http::response::ParseStrictResponse for StartAttachmentUpload {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_attachment_upload_error(response)
+            crate::operation_ser::parse_start_attachment_upload_error(response)
         } else {
-            crate::operation_deser::parse_start_attachment_upload_response(response)
+            crate::operation_ser::parse_start_attachment_upload_response(response)
         }
     }
 }

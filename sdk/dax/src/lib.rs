@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>DAX is a managed caching service engineered for Amazon DynamoDB. DAX
 //! dramatically speeds up database reads by caching frequently-accessed data from DynamoDB, so
 //! applications can access that data with sub-millisecond latency. You can create a DAX
@@ -30,7 +31,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

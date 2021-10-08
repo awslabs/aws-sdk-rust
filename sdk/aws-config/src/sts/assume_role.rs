@@ -12,6 +12,8 @@ use aws_types::credentials::{
 };
 use aws_types::region::Region;
 
+use crate::provider_config::HttpSettings;
+use smithy_async::rt::sleep::default_async_sleep;
 use tracing::Instrument;
 
 /// Credentials provider that uses credentials provided by another provider to assume a role
@@ -129,7 +131,10 @@ impl AssumeRoleProviderBuilder {
             .build();
 
         let conn = self.connection.unwrap_or_else(|| {
-            crate::connector::expect_connector(crate::connector::default_connector())
+            crate::connector::expect_connector(crate::connector::default_connector(
+                &HttpSettings::default(),
+                default_async_sleep(),
+            ))
         });
         let client = aws_hyper::Client::new(conn);
 

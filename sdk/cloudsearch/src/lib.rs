@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon CloudSearch Configuration Service</fullname>
 //! <p>You use the Amazon CloudSearch configuration service to create, configure, and manage search domains.
 //! Configuration service  requests are submitted using the AWS Query protocol. AWS Query requests
@@ -28,7 +29,6 @@ pub mod input;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 mod query_ser;

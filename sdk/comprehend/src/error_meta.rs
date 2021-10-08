@@ -978,6 +978,25 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::ListDocumentClassifierSummariesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListDocumentClassifierSummariesError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListDocumentClassifierSummariesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::ListDocumentClassifierSummariesErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::ListDocumentClassifierSummariesErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::ListDocumentClassifierSummariesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::ListDominantLanguageDetectionJobsError, R>>
     for Error
 where
@@ -1072,6 +1091,33 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListEntityRecognizersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::ListEntityRecognizerSummariesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListEntityRecognizerSummariesError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListEntityRecognizerSummariesErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::ListEntityRecognizerSummariesErrorKind::InvalidRequestException(
+                    inner,
+                ) => Error::InvalidRequestException(inner),
+                crate::error::ListEntityRecognizerSummariesErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
+                crate::error::ListEntityRecognizerSummariesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

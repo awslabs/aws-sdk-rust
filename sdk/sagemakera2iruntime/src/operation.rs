@@ -22,9 +22,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteHumanLoop {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_human_loop_error(response)
+            crate::operation_ser::parse_delete_human_loop_error(response)
         } else {
-            crate::operation_deser::parse_delete_human_loop_response(response)
+            crate::operation_ser::parse_delete_human_loop_response(response)
         }
     }
 }
@@ -51,9 +51,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeHumanLoop {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_human_loop_error(response)
+            crate::operation_ser::parse_describe_human_loop_error(response)
         } else {
-            crate::operation_deser::parse_describe_human_loop_response(response)
+            crate::operation_ser::parse_describe_human_loop_response(response)
         }
     }
 }
@@ -77,9 +77,9 @@ impl smithy_http::response::ParseStrictResponse for ListHumanLoops {
         std::result::Result<crate::output::ListHumanLoopsOutput, crate::error::ListHumanLoopsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_human_loops_error(response)
+            crate::operation_ser::parse_list_human_loops_error(response)
         } else {
-            crate::operation_deser::parse_list_human_loops_response(response)
+            crate::operation_ser::parse_list_human_loops_response(response)
         }
     }
 }
@@ -103,9 +103,9 @@ impl smithy_http::response::ParseStrictResponse for StartHumanLoop {
         std::result::Result<crate::output::StartHumanLoopOutput, crate::error::StartHumanLoopError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_human_loop_error(response)
+            crate::operation_ser::parse_start_human_loop_error(response)
         } else {
-            crate::operation_deser::parse_start_human_loop_response(response)
+            crate::operation_ser::parse_start_human_loop_response(response)
         }
     }
 }
@@ -129,9 +129,9 @@ impl smithy_http::response::ParseStrictResponse for StopHumanLoop {
         std::result::Result<crate::output::StopHumanLoopOutput, crate::error::StopHumanLoopError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_human_loop_error(response)
+            crate::operation_ser::parse_stop_human_loop_error(response)
         } else {
-            crate::operation_deser::parse_stop_human_loop_response(response)
+            crate::operation_ser::parse_stop_human_loop_response(response)
         }
     }
 }

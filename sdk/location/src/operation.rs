@@ -26,9 +26,9 @@ impl smithy_http::response::ParseStrictResponse for AssociateTrackerConsumer {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_associate_tracker_consumer_error(response)
+            crate::operation_ser::parse_associate_tracker_consumer_error(response)
         } else {
-            crate::operation_deser::parse_associate_tracker_consumer_response(response)
+            crate::operation_ser::parse_associate_tracker_consumer_response(response)
         }
     }
 }
@@ -54,9 +54,9 @@ impl smithy_http::response::ParseStrictResponse for BatchDeleteDevicePositionHis
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_delete_device_position_history_error(response)
+            crate::operation_ser::parse_batch_delete_device_position_history_error(response)
         } else {
-            crate::operation_deser::parse_batch_delete_device_position_history_response(response)
+            crate::operation_ser::parse_batch_delete_device_position_history_response(response)
         }
     }
 }
@@ -85,9 +85,9 @@ impl smithy_http::response::ParseStrictResponse for BatchDeleteGeofence {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_delete_geofence_error(response)
+            crate::operation_ser::parse_batch_delete_geofence_error(response)
         } else {
-            crate::operation_deser::parse_batch_delete_geofence_response(response)
+            crate::operation_ser::parse_batch_delete_geofence_response(response)
         }
     }
 }
@@ -133,9 +133,9 @@ impl smithy_http::response::ParseStrictResponse for BatchEvaluateGeofences {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_evaluate_geofences_error(response)
+            crate::operation_ser::parse_batch_evaluate_geofences_error(response)
         } else {
-            crate::operation_deser::parse_batch_evaluate_geofences_response(response)
+            crate::operation_ser::parse_batch_evaluate_geofences_response(response)
         }
     }
 }
@@ -161,9 +161,9 @@ impl smithy_http::response::ParseStrictResponse for BatchGetDevicePosition {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_get_device_position_error(response)
+            crate::operation_ser::parse_batch_get_device_position_error(response)
         } else {
-            crate::operation_deser::parse_batch_get_device_position_response(response)
+            crate::operation_ser::parse_batch_get_device_position_response(response)
         }
     }
 }
@@ -190,19 +190,23 @@ impl smithy_http::response::ParseStrictResponse for BatchPutGeofence {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_put_geofence_error(response)
+            crate::operation_ser::parse_batch_put_geofence_error(response)
         } else {
-            crate::operation_deser::parse_batch_put_geofence_response(response)
+            crate::operation_ser::parse_batch_put_geofence_response(response)
         }
     }
 }
 
 /// <p>Uploads position update data for one or more devices to a tracker resource. Amazon Location
-/// uses the data when reporting the last known device position and position history.</p>
+/// uses the data when it reports the last known device position and position history. Amazon Location retains location data for 30
+/// days.</p>
 /// <note>
-/// <p>Only one position update is stored per sample time. Location data is sampled at a
-/// fixed rate of one position per 30-second interval and retained for 30 days before
-/// it's deleted.</p>
+/// <p>Position updates are handled based on the <code>PositionFiltering</code> property of the tracker.
+/// When <code>PositionFiltering</code> is set to <code>TimeBased</code>, updates are evaluated against linked geofence collections,
+/// and location data is stored at a maximum of one position per 30 second interval. If your update frequency is more often than
+/// every 30 seconds, only one update per 30 seconds is stored for each unique device ID.
+/// When <code>PositionFiltering</code> is set to <code>DistanceBased</code> filtering, location data is stored and evaluated against linked geofence
+/// collections only if the device has moved more than 30 m (98.4 ft).</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct BatchUpdateDevicePosition {
@@ -224,9 +228,9 @@ impl smithy_http::response::ParseStrictResponse for BatchUpdateDevicePosition {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_update_device_position_error(response)
+            crate::operation_ser::parse_batch_update_device_position_error(response)
         } else {
-            crate::operation_deser::parse_batch_update_device_position_response(response)
+            crate::operation_ser::parse_batch_update_device_position_response(response)
         }
     }
 }
@@ -280,9 +284,9 @@ impl smithy_http::response::ParseStrictResponse for CalculateRoute {
         std::result::Result<crate::output::CalculateRouteOutput, crate::error::CalculateRouteError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_calculate_route_error(response)
+            crate::operation_ser::parse_calculate_route_error(response)
         } else {
-            crate::operation_deser::parse_calculate_route_response(response)
+            crate::operation_ser::parse_calculate_route_response(response)
         }
     }
 }
@@ -308,9 +312,9 @@ impl smithy_http::response::ParseStrictResponse for CreateGeofenceCollection {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_geofence_collection_error(response)
+            crate::operation_ser::parse_create_geofence_collection_error(response)
         } else {
-            crate::operation_deser::parse_create_geofence_collection_response(response)
+            crate::operation_ser::parse_create_geofence_collection_response(response)
         }
     }
 }
@@ -334,9 +338,9 @@ impl smithy_http::response::ParseStrictResponse for CreateMap {
     type Output = std::result::Result<crate::output::CreateMapOutput, crate::error::CreateMapError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_map_error(response)
+            crate::operation_ser::parse_create_map_error(response)
         } else {
-            crate::operation_deser::parse_create_map_response(response)
+            crate::operation_ser::parse_create_map_response(response)
         }
     }
 }
@@ -363,9 +367,9 @@ impl smithy_http::response::ParseStrictResponse for CreatePlaceIndex {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_place_index_error(response)
+            crate::operation_ser::parse_create_place_index_error(response)
         } else {
-            crate::operation_deser::parse_create_place_index_response(response)
+            crate::operation_ser::parse_create_place_index_response(response)
         }
     }
 }
@@ -394,9 +398,9 @@ impl smithy_http::response::ParseStrictResponse for CreateRouteCalculator {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_route_calculator_error(response)
+            crate::operation_ser::parse_create_route_calculator_error(response)
         } else {
-            crate::operation_deser::parse_create_route_calculator_response(response)
+            crate::operation_ser::parse_create_route_calculator_response(response)
         }
     }
 }
@@ -421,9 +425,9 @@ impl smithy_http::response::ParseStrictResponse for CreateTracker {
         std::result::Result<crate::output::CreateTrackerOutput, crate::error::CreateTrackerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_tracker_error(response)
+            crate::operation_ser::parse_create_tracker_error(response)
         } else {
-            crate::operation_deser::parse_create_tracker_response(response)
+            crate::operation_ser::parse_create_tracker_response(response)
         }
     }
 }
@@ -453,9 +457,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteGeofenceCollection {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_geofence_collection_error(response)
+            crate::operation_ser::parse_delete_geofence_collection_error(response)
         } else {
-            crate::operation_deser::parse_delete_geofence_collection_response(response)
+            crate::operation_ser::parse_delete_geofence_collection_response(response)
         }
     }
 }
@@ -482,9 +486,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteMap {
     type Output = std::result::Result<crate::output::DeleteMapOutput, crate::error::DeleteMapError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_map_error(response)
+            crate::operation_ser::parse_delete_map_error(response)
         } else {
-            crate::operation_deser::parse_delete_map_response(response)
+            crate::operation_ser::parse_delete_map_response(response)
         }
     }
 }
@@ -513,9 +517,9 @@ impl smithy_http::response::ParseStrictResponse for DeletePlaceIndex {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_place_index_error(response)
+            crate::operation_ser::parse_delete_place_index_error(response)
         } else {
-            crate::operation_deser::parse_delete_place_index_response(response)
+            crate::operation_ser::parse_delete_place_index_response(response)
         }
     }
 }
@@ -544,9 +548,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteRouteCalculator {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_route_calculator_error(response)
+            crate::operation_ser::parse_delete_route_calculator_error(response)
         } else {
-            crate::operation_deser::parse_delete_route_calculator_response(response)
+            crate::operation_ser::parse_delete_route_calculator_response(response)
         }
     }
 }
@@ -575,9 +579,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteTracker {
         std::result::Result<crate::output::DeleteTrackerOutput, crate::error::DeleteTrackerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_tracker_error(response)
+            crate::operation_ser::parse_delete_tracker_error(response)
         } else {
-            crate::operation_deser::parse_delete_tracker_response(response)
+            crate::operation_ser::parse_delete_tracker_response(response)
         }
     }
 }
@@ -603,9 +607,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeGeofenceCollection {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_geofence_collection_error(response)
+            crate::operation_ser::parse_describe_geofence_collection_error(response)
         } else {
-            crate::operation_deser::parse_describe_geofence_collection_response(response)
+            crate::operation_ser::parse_describe_geofence_collection_response(response)
         }
     }
 }
@@ -629,9 +633,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeMap {
         std::result::Result<crate::output::DescribeMapOutput, crate::error::DescribeMapError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_map_error(response)
+            crate::operation_ser::parse_describe_map_error(response)
         } else {
-            crate::operation_deser::parse_describe_map_response(response)
+            crate::operation_ser::parse_describe_map_response(response)
         }
     }
 }
@@ -657,9 +661,9 @@ impl smithy_http::response::ParseStrictResponse for DescribePlaceIndex {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_place_index_error(response)
+            crate::operation_ser::parse_describe_place_index_error(response)
         } else {
-            crate::operation_deser::parse_describe_place_index_response(response)
+            crate::operation_ser::parse_describe_place_index_response(response)
         }
     }
 }
@@ -685,9 +689,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeRouteCalculator {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_route_calculator_error(response)
+            crate::operation_ser::parse_describe_route_calculator_error(response)
         } else {
-            crate::operation_deser::parse_describe_route_calculator_response(response)
+            crate::operation_ser::parse_describe_route_calculator_response(response)
         }
     }
 }
@@ -713,9 +717,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeTracker {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_tracker_error(response)
+            crate::operation_ser::parse_describe_tracker_error(response)
         } else {
-            crate::operation_deser::parse_describe_tracker_response(response)
+            crate::operation_ser::parse_describe_tracker_response(response)
         }
     }
 }
@@ -745,9 +749,9 @@ impl smithy_http::response::ParseStrictResponse for DisassociateTrackerConsumer 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_disassociate_tracker_consumer_error(response)
+            crate::operation_ser::parse_disassociate_tracker_consumer_error(response)
         } else {
-            crate::operation_deser::parse_disassociate_tracker_consumer_response(response)
+            crate::operation_ser::parse_disassociate_tracker_consumer_response(response)
         }
     }
 }
@@ -776,9 +780,9 @@ impl smithy_http::response::ParseStrictResponse for GetDevicePosition {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_device_position_error(response)
+            crate::operation_ser::parse_get_device_position_error(response)
         } else {
-            crate::operation_deser::parse_get_device_position_response(response)
+            crate::operation_ser::parse_get_device_position_response(response)
         }
     }
 }
@@ -808,9 +812,9 @@ impl smithy_http::response::ParseStrictResponse for GetDevicePositionHistory {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_device_position_history_error(response)
+            crate::operation_ser::parse_get_device_position_history_error(response)
         } else {
-            crate::operation_deser::parse_get_device_position_history_response(response)
+            crate::operation_ser::parse_get_device_position_history_response(response)
         }
     }
 }
@@ -834,9 +838,9 @@ impl smithy_http::response::ParseStrictResponse for GetGeofence {
         std::result::Result<crate::output::GetGeofenceOutput, crate::error::GetGeofenceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_geofence_error(response)
+            crate::operation_ser::parse_get_geofence_error(response)
         } else {
-            crate::operation_deser::parse_get_geofence_response(response)
+            crate::operation_ser::parse_get_geofence_response(response)
         }
     }
 }
@@ -860,9 +864,9 @@ impl smithy_http::response::ParseStrictResponse for GetMapGlyphs {
         std::result::Result<crate::output::GetMapGlyphsOutput, crate::error::GetMapGlyphsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_map_glyphs_error(response)
+            crate::operation_ser::parse_get_map_glyphs_error(response)
         } else {
-            crate::operation_deser::parse_get_map_glyphs_response(response)
+            crate::operation_ser::parse_get_map_glyphs_response(response)
         }
     }
 }
@@ -888,9 +892,9 @@ impl smithy_http::response::ParseStrictResponse for GetMapSprites {
         std::result::Result<crate::output::GetMapSpritesOutput, crate::error::GetMapSpritesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_map_sprites_error(response)
+            crate::operation_ser::parse_get_map_sprites_error(response)
         } else {
-            crate::operation_deser::parse_get_map_sprites_response(response)
+            crate::operation_ser::parse_get_map_sprites_response(response)
         }
     }
 }
@@ -919,9 +923,9 @@ impl smithy_http::response::ParseStrictResponse for GetMapStyleDescriptor {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_map_style_descriptor_error(response)
+            crate::operation_ser::parse_get_map_style_descriptor_error(response)
         } else {
-            crate::operation_deser::parse_get_map_style_descriptor_response(response)
+            crate::operation_ser::parse_get_map_style_descriptor_response(response)
         }
     }
 }
@@ -950,9 +954,9 @@ impl smithy_http::response::ParseStrictResponse for GetMapTile {
         std::result::Result<crate::output::GetMapTileOutput, crate::error::GetMapTileError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_map_tile_error(response)
+            crate::operation_ser::parse_get_map_tile_error(response)
         } else {
-            crate::operation_deser::parse_get_map_tile_response(response)
+            crate::operation_ser::parse_get_map_tile_response(response)
         }
     }
 }
@@ -978,9 +982,9 @@ impl smithy_http::response::ParseStrictResponse for ListDevicePositions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_device_positions_error(response)
+            crate::operation_ser::parse_list_device_positions_error(response)
         } else {
-            crate::operation_deser::parse_list_device_positions_response(response)
+            crate::operation_ser::parse_list_device_positions_response(response)
         }
     }
 }
@@ -1006,9 +1010,9 @@ impl smithy_http::response::ParseStrictResponse for ListGeofenceCollections {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_geofence_collections_error(response)
+            crate::operation_ser::parse_list_geofence_collections_error(response)
         } else {
-            crate::operation_deser::parse_list_geofence_collections_response(response)
+            crate::operation_ser::parse_list_geofence_collections_response(response)
         }
     }
 }
@@ -1032,9 +1036,9 @@ impl smithy_http::response::ParseStrictResponse for ListGeofences {
         std::result::Result<crate::output::ListGeofencesOutput, crate::error::ListGeofencesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_geofences_error(response)
+            crate::operation_ser::parse_list_geofences_error(response)
         } else {
-            crate::operation_deser::parse_list_geofences_response(response)
+            crate::operation_ser::parse_list_geofences_response(response)
         }
     }
 }
@@ -1057,9 +1061,9 @@ impl smithy_http::response::ParseStrictResponse for ListMaps {
     type Output = std::result::Result<crate::output::ListMapsOutput, crate::error::ListMapsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_maps_error(response)
+            crate::operation_ser::parse_list_maps_error(response)
         } else {
-            crate::operation_deser::parse_list_maps_response(response)
+            crate::operation_ser::parse_list_maps_response(response)
         }
     }
 }
@@ -1085,9 +1089,9 @@ impl smithy_http::response::ParseStrictResponse for ListPlaceIndexes {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_place_indexes_error(response)
+            crate::operation_ser::parse_list_place_indexes_error(response)
         } else {
-            crate::operation_deser::parse_list_place_indexes_response(response)
+            crate::operation_ser::parse_list_place_indexes_response(response)
         }
     }
 }
@@ -1113,9 +1117,9 @@ impl smithy_http::response::ParseStrictResponse for ListRouteCalculators {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_route_calculators_error(response)
+            crate::operation_ser::parse_list_route_calculators_error(response)
         } else {
-            crate::operation_deser::parse_list_route_calculators_response(response)
+            crate::operation_ser::parse_list_route_calculators_response(response)
         }
     }
 }
@@ -1141,9 +1145,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::operation_ser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::operation_ser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -1169,9 +1173,9 @@ impl smithy_http::response::ParseStrictResponse for ListTrackerConsumers {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tracker_consumers_error(response)
+            crate::operation_ser::parse_list_tracker_consumers_error(response)
         } else {
-            crate::operation_deser::parse_list_tracker_consumers_response(response)
+            crate::operation_ser::parse_list_tracker_consumers_response(response)
         }
     }
 }
@@ -1195,9 +1199,9 @@ impl smithy_http::response::ParseStrictResponse for ListTrackers {
         std::result::Result<crate::output::ListTrackersOutput, crate::error::ListTrackersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_trackers_error(response)
+            crate::operation_ser::parse_list_trackers_error(response)
         } else {
-            crate::operation_deser::parse_list_trackers_response(response)
+            crate::operation_ser::parse_list_trackers_response(response)
         }
     }
 }
@@ -1222,9 +1226,9 @@ impl smithy_http::response::ParseStrictResponse for PutGeofence {
         std::result::Result<crate::output::PutGeofenceOutput, crate::error::PutGeofenceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_geofence_error(response)
+            crate::operation_ser::parse_put_geofence_error(response)
         } else {
-            crate::operation_deser::parse_put_geofence_response(response)
+            crate::operation_ser::parse_put_geofence_response(response)
         }
     }
 }
@@ -1251,9 +1255,9 @@ impl smithy_http::response::ParseStrictResponse for SearchPlaceIndexForPosition 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_search_place_index_for_position_error(response)
+            crate::operation_ser::parse_search_place_index_for_position_error(response)
         } else {
-            crate::operation_deser::parse_search_place_index_for_position_response(response)
+            crate::operation_ser::parse_search_place_index_for_position_response(response)
         }
     }
 }
@@ -1287,9 +1291,9 @@ impl smithy_http::response::ParseStrictResponse for SearchPlaceIndexForText {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_search_place_index_for_text_error(response)
+            crate::operation_ser::parse_search_place_index_for_text_error(response)
         } else {
-            crate::operation_deser::parse_search_place_index_for_text_response(response)
+            crate::operation_ser::parse_search_place_index_for_text_response(response)
         }
     }
 }
@@ -1323,9 +1327,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::operation_ser::parse_tag_resource_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::operation_ser::parse_tag_resource_response(response)
         }
     }
 }
@@ -1349,9 +1353,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::operation_ser::parse_untag_resource_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::operation_ser::parse_untag_resource_response(response)
         }
     }
 }
@@ -1377,9 +1381,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateGeofenceCollection {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_geofence_collection_error(response)
+            crate::operation_ser::parse_update_geofence_collection_error(response)
         } else {
-            crate::operation_deser::parse_update_geofence_collection_response(response)
+            crate::operation_ser::parse_update_geofence_collection_response(response)
         }
     }
 }
@@ -1402,9 +1406,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateMap {
     type Output = std::result::Result<crate::output::UpdateMapOutput, crate::error::UpdateMapError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_map_error(response)
+            crate::operation_ser::parse_update_map_error(response)
         } else {
-            crate::operation_deser::parse_update_map_response(response)
+            crate::operation_ser::parse_update_map_response(response)
         }
     }
 }
@@ -1430,9 +1434,9 @@ impl smithy_http::response::ParseStrictResponse for UpdatePlaceIndex {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_place_index_error(response)
+            crate::operation_ser::parse_update_place_index_error(response)
         } else {
-            crate::operation_deser::parse_update_place_index_response(response)
+            crate::operation_ser::parse_update_place_index_response(response)
         }
     }
 }
@@ -1458,9 +1462,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateRouteCalculator {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_route_calculator_error(response)
+            crate::operation_ser::parse_update_route_calculator_error(response)
         } else {
-            crate::operation_deser::parse_update_route_calculator_response(response)
+            crate::operation_ser::parse_update_route_calculator_response(response)
         }
     }
 }
@@ -1484,9 +1488,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateTracker {
         std::result::Result<crate::output::UpdateTrackerOutput, crate::error::UpdateTrackerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_tracker_error(response)
+            crate::operation_ser::parse_update_tracker_error(response)
         } else {
-            crate::operation_deser::parse_update_tracker_response(response)
+            crate::operation_ser::parse_update_tracker_response(response)
         }
     }
 }

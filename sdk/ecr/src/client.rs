@@ -98,6 +98,11 @@ where
     pub fn delete_repository_policy(&self) -> fluent_builders::DeleteRepositoryPolicy<C, M, R> {
         fluent_builders::DeleteRepositoryPolicy::new(self.handle.clone())
     }
+    pub fn describe_image_replication_status(
+        &self,
+    ) -> fluent_builders::DescribeImageReplicationStatus<C, M, R> {
+        fluent_builders::DescribeImageReplicationStatus::new(self.handle.clone())
+    }
     pub fn describe_images(&self) -> fluent_builders::DescribeImages<C, M, R> {
         fluent_builders::DescribeImages::new(self.handle.clone())
     }
@@ -590,6 +595,16 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
+        /// <p>The AWS account ID associated with the registry to create the repository.
+        /// If you do not specify a registry, the default registry is assumed.</p>
+        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(inp);
+            self
+        }
+        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_registry_id(input);
+            self
+        }
         /// <p>The name to use for the repository. The repository name may be specified on its own
         /// (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group
         /// the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
@@ -927,6 +942,84 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DescribeImageReplicationStatus<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_image_replication_status_input::Builder,
+    }
+    impl<C, M, R> DescribeImageReplicationStatus<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeImageReplicationStatusOutput,
+            smithy_http::result::SdkError<crate::error::DescribeImageReplicationStatusError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeImageReplicationStatusInputOperationOutputAlias,
+                crate::output::DescribeImageReplicationStatusOutput,
+                crate::error::DescribeImageReplicationStatusError,
+                crate::input::DescribeImageReplicationStatusInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the repository that the image is in.</p>
+        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(inp);
+            self
+        }
+        pub fn set_repository_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_repository_name(input);
+            self
+        }
+        /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+        pub fn image_id(mut self, inp: crate::model::ImageIdentifier) -> Self {
+            self.inner = self.inner.image_id(inp);
+            self
+        }
+        pub fn set_image_id(
+            mut self,
+            input: std::option::Option<crate::model::ImageIdentifier>,
+        ) -> Self {
+            self.inner = self.inner.set_image_id(input);
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the registry. If you do not specify a registry, the default registry is assumed.</p>
+        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(inp);
+            self
+        }
+        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_registry_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DescribeImages<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -1118,7 +1211,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>An object with identifying information for an Amazon ECR image.</p>
+        /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
         pub fn image_id(mut self, inp: crate::model::ImageIdentifier) -> Self {
             self.inner = self.inner.image_id(inp);
             self
@@ -2623,7 +2716,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>An object with identifying information for an Amazon ECR image.</p>
+        /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
         pub fn image_id(mut self, inp: crate::model::ImageIdentifier) -> Self {
             self.inner = self.inner.image_id(inp);
             self

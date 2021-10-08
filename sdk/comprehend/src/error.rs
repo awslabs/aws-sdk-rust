@@ -3753,6 +3753,117 @@ impl std::error::Error for ListDocumentClassifiersError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct ListDocumentClassifierSummariesError {
+    pub kind: ListDocumentClassifierSummariesErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListDocumentClassifierSummariesErrorKind {
+    InternalServerException(crate::error::InternalServerException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListDocumentClassifierSummariesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListDocumentClassifierSummariesErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListDocumentClassifierSummariesErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListDocumentClassifierSummariesErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListDocumentClassifierSummariesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListDocumentClassifierSummariesError {
+    fn code(&self) -> Option<&str> {
+        ListDocumentClassifierSummariesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListDocumentClassifierSummariesError {
+    pub fn new(kind: ListDocumentClassifierSummariesErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListDocumentClassifierSummariesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListDocumentClassifierSummariesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDocumentClassifierSummariesErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDocumentClassifierSummariesErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDocumentClassifierSummariesErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for ListDocumentClassifierSummariesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListDocumentClassifierSummariesErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            ListDocumentClassifierSummariesErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            ListDocumentClassifierSummariesErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
+            ListDocumentClassifierSummariesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct ListDominantLanguageDetectionJobsError {
     pub kind: ListDominantLanguageDetectionJobsErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -4189,6 +4300,113 @@ impl std::error::Error for ListEntityRecognizersError {
             ListEntityRecognizersErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListEntityRecognizersErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListEntityRecognizersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListEntityRecognizerSummariesError {
+    pub kind: ListEntityRecognizerSummariesErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListEntityRecognizerSummariesErrorKind {
+    InternalServerException(crate::error::InternalServerException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListEntityRecognizerSummariesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListEntityRecognizerSummariesErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListEntityRecognizerSummariesErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListEntityRecognizerSummariesErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListEntityRecognizerSummariesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListEntityRecognizerSummariesError {
+    fn code(&self) -> Option<&str> {
+        ListEntityRecognizerSummariesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListEntityRecognizerSummariesError {
+    pub fn new(kind: ListEntityRecognizerSummariesErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListEntityRecognizerSummariesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListEntityRecognizerSummariesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEntityRecognizerSummariesErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEntityRecognizerSummariesErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEntityRecognizerSummariesErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for ListEntityRecognizerSummariesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListEntityRecognizerSummariesErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListEntityRecognizerSummariesErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListEntityRecognizerSummariesErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
+            ListEntityRecognizerSummariesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

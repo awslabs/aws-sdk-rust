@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Catalog API actions allow you to manage your entities through list, describe, and update
 //! capabilities. An entity can be a product or an offer on AWS Marketplace. </p>
 //! <p>You can automate your entity update process by integrating the AWS Marketplace Catalog
@@ -30,7 +31,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

@@ -18,9 +18,9 @@ impl smithy_http::response::ParseStrictResponse for CreateCliToken {
         std::result::Result<crate::output::CreateCliTokenOutput, crate::error::CreateCliTokenError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_cli_token_error(response)
+            crate::operation_ser::parse_create_cli_token_error(response)
         } else {
-            crate::operation_deser::parse_create_cli_token_response(response)
+            crate::operation_ser::parse_create_cli_token_response(response)
         }
     }
 }
@@ -46,9 +46,9 @@ impl smithy_http::response::ParseStrictResponse for CreateEnvironment {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_environment_error(response)
+            crate::operation_ser::parse_create_environment_error(response)
         } else {
-            crate::operation_deser::parse_create_environment_response(response)
+            crate::operation_ser::parse_create_environment_response(response)
         }
     }
 }
@@ -74,9 +74,9 @@ impl smithy_http::response::ParseStrictResponse for CreateWebLoginToken {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_web_login_token_error(response)
+            crate::operation_ser::parse_create_web_login_token_error(response)
         } else {
-            crate::operation_deser::parse_create_web_login_token_response(response)
+            crate::operation_ser::parse_create_web_login_token_response(response)
         }
     }
 }
@@ -102,9 +102,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteEnvironment {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_environment_error(response)
+            crate::operation_ser::parse_delete_environment_error(response)
         } else {
-            crate::operation_deser::parse_delete_environment_response(response)
+            crate::operation_ser::parse_delete_environment_response(response)
         }
     }
 }
@@ -128,9 +128,9 @@ impl smithy_http::response::ParseStrictResponse for GetEnvironment {
         std::result::Result<crate::output::GetEnvironmentOutput, crate::error::GetEnvironmentError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_environment_error(response)
+            crate::operation_ser::parse_get_environment_error(response)
         } else {
-            crate::operation_deser::parse_get_environment_response(response)
+            crate::operation_ser::parse_get_environment_response(response)
         }
     }
 }
@@ -156,9 +156,9 @@ impl smithy_http::response::ParseStrictResponse for ListEnvironments {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_environments_error(response)
+            crate::operation_ser::parse_list_environments_error(response)
         } else {
-            crate::operation_deser::parse_list_environments_response(response)
+            crate::operation_ser::parse_list_environments_response(response)
         }
     }
 }
@@ -184,9 +184,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::operation_ser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::operation_ser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -210,9 +210,9 @@ impl smithy_http::response::ParseStrictResponse for PublishMetrics {
         std::result::Result<crate::output::PublishMetricsOutput, crate::error::PublishMetricsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_publish_metrics_error(response)
+            crate::operation_ser::parse_publish_metrics_error(response)
         } else {
-            crate::operation_deser::parse_publish_metrics_response(response)
+            crate::operation_ser::parse_publish_metrics_response(response)
         }
     }
 }
@@ -236,9 +236,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::operation_ser::parse_tag_resource_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::operation_ser::parse_tag_resource_response(response)
         }
     }
 }
@@ -262,9 +262,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::operation_ser::parse_untag_resource_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::operation_ser::parse_untag_resource_response(response)
         }
     }
 }
@@ -290,9 +290,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateEnvironment {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_environment_error(response)
+            crate::operation_ser::parse_update_environment_error(response)
         } else {
-            crate::operation_deser::parse_update_environment_response(response)
+            crate::operation_ser::parse_update_environment_response(response)
         }
     }
 }

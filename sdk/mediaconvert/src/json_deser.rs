@@ -11419,6 +11419,11 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "imageBasedTrickPlaySettings" => {
+                                builder = builder.set_image_based_trick_play_settings(
+                                    crate::json_deser::deser_structure_crate_model_cmaf_image_based_trick_play_settings(tokens)?
+                                );
+                            }
                             "manifestCompression" => {
                                 builder = builder.set_manifest_compression(
                                     smithy_json::deserialize::token::expect_string_or_null(
@@ -11699,6 +11704,11 @@ where
                                         })
                                     })
                                     .transpose()?,
+                                );
+                            }
+                            "imageBasedTrickPlaySettings" => {
+                                builder = builder.set_image_based_trick_play_settings(
+                                    crate::json_deser::deser_structure_crate_model_dash_iso_image_based_trick_play_settings(tokens)?
                                 );
                             }
                             "minBufferTime" => {
@@ -11996,6 +12006,11 @@ where
                                         })
                                     })
                                     .transpose()?,
+                                );
+                            }
+                            "imageBasedTrickPlaySettings" => {
+                                builder = builder.set_image_based_trick_play_settings(
+                                    crate::json_deser::deser_structure_crate_model_hls_image_based_trick_play_settings(tokens)?
                                 );
                             }
                             "manifestCompression" => {
@@ -13654,6 +13669,21 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "applyFontColor" => {
+                                builder = builder.set_apply_font_color(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::BurninSubtitleApplyFontColor::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "backgroundColor" => {
                                 builder = builder.set_background_color(
                                     smithy_json::deserialize::token::expect_string_or_null(
@@ -13675,6 +13705,21 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|v| v.to_i32()),
+                                );
+                            }
+                            "fallbackFont" => {
+                                builder = builder.set_fallback_font(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::BurninSubtitleFallbackFont::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             "fontColor" => {
@@ -13724,6 +13769,15 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|v| v.to_i32()),
+                                );
+                            }
+                            "hexFontColor" => {
+                                builder = builder.set_hex_font_color(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             "outlineColor" => {
@@ -13786,6 +13840,21 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|v| v.to_i32()),
+                                );
+                            }
+                            "stylePassthrough" => {
+                                builder = builder.set_style_passthrough(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::BurnInSubtitleStylePassthrough::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             "teletextSpacing" => {
@@ -13868,6 +13937,21 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "applyFontColor" => {
+                                builder = builder.set_apply_font_color(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::DvbSubtitleApplyFontColor::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "backgroundColor" => {
                                 builder = builder.set_background_color(
                                     smithy_json::deserialize::token::expect_string_or_null(
@@ -13917,6 +14001,21 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|v| v.to_i32()),
+                                );
+                            }
+                            "fallbackFont" => {
+                                builder = builder.set_fallback_font(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::DvbSubSubtitleFallbackFont::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             "fontColor" => {
@@ -13976,6 +14075,15 @@ where
                                     .map(|v| v.to_i32()),
                                 );
                             }
+                            "hexFontColor" => {
+                                builder = builder.set_hex_font_color(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             "outlineColor" => {
                                 builder = builder.set_outline_color(
                                     smithy_json::deserialize::token::expect_string_or_null(
@@ -14032,6 +14140,21 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|v| v.to_i32()),
+                                );
+                            }
+                            "stylePassthrough" => {
+                                builder = builder.set_style_passthrough(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::DvbSubtitleStylePassthrough::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             "subtitlingType" => {
@@ -15938,6 +16061,95 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_cmaf_image_based_trick_play_settings<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::CmafImageBasedTrickPlaySettings>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::CmafImageBasedTrickPlaySettings::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "intervalCadence" => {
+                                builder = builder.set_interval_cadence(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::CmafIntervalCadence::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "thumbnailHeight" => {
+                                builder = builder.set_thumbnail_height(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "thumbnailInterval" => {
+                                builder = builder.set_thumbnail_interval(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f64()),
+                                );
+                            }
+                            "thumbnailWidth" => {
+                                builder = builder.set_thumbnail_width(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "tileHeight" => {
+                                builder = builder.set_tile_height(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "tileWidth" => {
+                                builder = builder.set_tile_width(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 #[allow(clippy::type_complexity, non_snake_case)]
 pub fn deser_list_com_amazonaws_mediaconvert___list_of_dash_additional_manifest<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
@@ -16014,6 +16226,95 @@ where
                             "spekeKeyProvider" => {
                                 builder = builder.set_speke_key_provider(
                                     crate::json_deser::deser_structure_crate_model_speke_key_provider(tokens)?
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_dash_iso_image_based_trick_play_settings<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::DashIsoImageBasedTrickPlaySettings>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::DashIsoImageBasedTrickPlaySettings::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "intervalCadence" => {
+                                builder = builder.set_interval_cadence(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::DashIsoIntervalCadence::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "thumbnailHeight" => {
+                                builder = builder.set_thumbnail_height(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "thumbnailInterval" => {
+                                builder = builder.set_thumbnail_interval(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f64()),
+                                );
+                            }
+                            "thumbnailWidth" => {
+                                builder = builder.set_thumbnail_width(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "tileHeight" => {
+                                builder = builder.set_tile_height(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "tileWidth" => {
+                                builder = builder.set_tile_width(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -16245,6 +16546,95 @@ where
                                         })
                                     })
                                     .transpose()?,
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_hls_image_based_trick_play_settings<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::HlsImageBasedTrickPlaySettings>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::HlsImageBasedTrickPlaySettings::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "intervalCadence" => {
+                                builder = builder.set_interval_cadence(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::HlsIntervalCadence::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "thumbnailHeight" => {
+                                builder = builder.set_thumbnail_height(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "thumbnailInterval" => {
+                                builder = builder.set_thumbnail_interval(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f64()),
+                                );
+                            }
+                            "thumbnailWidth" => {
+                                builder = builder.set_thumbnail_width(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "tileHeight" => {
+                                builder = builder.set_tile_height(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "tileWidth" => {
+                                builder = builder.set_tile_width(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,

@@ -32,9 +32,9 @@ impl smithy_http::response::ParseStrictResponse for AddTagsToResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_add_tags_to_resource_error(response)
+            crate::operation_ser::parse_add_tags_to_resource_error(response)
         } else {
-            crate::operation_deser::parse_add_tags_to_resource_response(response)
+            crate::operation_ser::parse_add_tags_to_resource_response(response)
         }
     }
 }
@@ -69,9 +69,9 @@ impl smithy_http::response::ParseStrictResponse for CreateHapg {
         std::result::Result<crate::output::CreateHapgOutput, crate::error::CreateHapgError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_hapg_error(response)
+            crate::operation_ser::parse_create_hapg_error(response)
         } else {
-            crate::operation_deser::parse_create_hapg_response(response)
+            crate::operation_ser::parse_create_hapg_response(response)
         }
     }
 }
@@ -113,9 +113,9 @@ impl smithy_http::response::ParseStrictResponse for CreateHsm {
     type Output = std::result::Result<crate::output::CreateHsmOutput, crate::error::CreateHsmError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_hsm_error(response)
+            crate::operation_ser::parse_create_hsm_error(response)
         } else {
-            crate::operation_deser::parse_create_hsm_response(response)
+            crate::operation_ser::parse_create_hsm_response(response)
         }
     }
 }
@@ -151,9 +151,9 @@ impl smithy_http::response::ParseStrictResponse for CreateLunaClient {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_luna_client_error(response)
+            crate::operation_ser::parse_create_luna_client_error(response)
         } else {
-            crate::operation_deser::parse_create_luna_client_response(response)
+            crate::operation_ser::parse_create_luna_client_response(response)
         }
     }
 }
@@ -187,9 +187,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteHapg {
         std::result::Result<crate::output::DeleteHapgOutput, crate::error::DeleteHapgError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_hapg_error(response)
+            crate::operation_ser::parse_delete_hapg_error(response)
         } else {
-            crate::operation_deser::parse_delete_hapg_response(response)
+            crate::operation_ser::parse_delete_hapg_response(response)
         }
     }
 }
@@ -223,9 +223,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteHsm {
     type Output = std::result::Result<crate::output::DeleteHsmOutput, crate::error::DeleteHsmError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_hsm_error(response)
+            crate::operation_ser::parse_delete_hsm_error(response)
         } else {
-            crate::operation_deser::parse_delete_hsm_response(response)
+            crate::operation_ser::parse_delete_hsm_response(response)
         }
     }
 }
@@ -261,9 +261,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteLunaClient {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_luna_client_error(response)
+            crate::operation_ser::parse_delete_luna_client_error(response)
         } else {
-            crate::operation_deser::parse_delete_luna_client_response(response)
+            crate::operation_ser::parse_delete_luna_client_response(response)
         }
     }
 }
@@ -297,9 +297,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeHapg {
         std::result::Result<crate::output::DescribeHapgOutput, crate::error::DescribeHapgError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_hapg_error(response)
+            crate::operation_ser::parse_describe_hapg_error(response)
         } else {
-            crate::operation_deser::parse_describe_hapg_response(response)
+            crate::operation_ser::parse_describe_hapg_response(response)
         }
     }
 }
@@ -334,9 +334,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeHsm {
         std::result::Result<crate::output::DescribeHsmOutput, crate::error::DescribeHsmError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_hsm_error(response)
+            crate::operation_ser::parse_describe_hsm_error(response)
         } else {
-            crate::operation_deser::parse_describe_hsm_response(response)
+            crate::operation_ser::parse_describe_hsm_response(response)
         }
     }
 }
@@ -372,9 +372,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeLunaClient {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_luna_client_error(response)
+            crate::operation_ser::parse_describe_luna_client_error(response)
         } else {
-            crate::operation_deser::parse_describe_luna_client_response(response)
+            crate::operation_ser::parse_describe_luna_client_response(response)
         }
     }
 }
@@ -408,9 +408,9 @@ impl smithy_http::response::ParseStrictResponse for GetConfig {
     type Output = std::result::Result<crate::output::GetConfigOutput, crate::error::GetConfigError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_config_error(response)
+            crate::operation_ser::parse_get_config_error(response)
         } else {
-            crate::operation_deser::parse_get_config_response(response)
+            crate::operation_ser::parse_get_config_response(response)
         }
     }
 }
@@ -446,9 +446,9 @@ impl smithy_http::response::ParseStrictResponse for ListAvailableZones {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_available_zones_error(response)
+            crate::operation_ser::parse_list_available_zones_error(response)
         } else {
-            crate::operation_deser::parse_list_available_zones_response(response)
+            crate::operation_ser::parse_list_available_zones_response(response)
         }
     }
 }
@@ -485,9 +485,9 @@ impl smithy_http::response::ParseStrictResponse for ListHapgs {
     type Output = std::result::Result<crate::output::ListHapgsOutput, crate::error::ListHapgsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_hapgs_error(response)
+            crate::operation_ser::parse_list_hapgs_error(response)
         } else {
-            crate::operation_deser::parse_list_hapgs_response(response)
+            crate::operation_ser::parse_list_hapgs_response(response)
         }
     }
 }
@@ -525,9 +525,9 @@ impl smithy_http::response::ParseStrictResponse for ListHsms {
     type Output = std::result::Result<crate::output::ListHsmsOutput, crate::error::ListHsmsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_hsms_error(response)
+            crate::operation_ser::parse_list_hsms_error(response)
         } else {
-            crate::operation_deser::parse_list_hsms_response(response)
+            crate::operation_ser::parse_list_hsms_response(response)
         }
     }
 }
@@ -567,9 +567,9 @@ impl smithy_http::response::ParseStrictResponse for ListLunaClients {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_luna_clients_error(response)
+            crate::operation_ser::parse_list_luna_clients_error(response)
         } else {
-            crate::operation_deser::parse_list_luna_clients_response(response)
+            crate::operation_ser::parse_list_luna_clients_response(response)
         }
     }
 }
@@ -605,9 +605,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::operation_ser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::operation_ser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -641,9 +641,9 @@ impl smithy_http::response::ParseStrictResponse for ModifyHapg {
         std::result::Result<crate::output::ModifyHapgOutput, crate::error::ModifyHapgError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_modify_hapg_error(response)
+            crate::operation_ser::parse_modify_hapg_error(response)
         } else {
-            crate::operation_deser::parse_modify_hapg_response(response)
+            crate::operation_ser::parse_modify_hapg_response(response)
         }
     }
 }
@@ -682,9 +682,9 @@ impl smithy_http::response::ParseStrictResponse for ModifyHsm {
     type Output = std::result::Result<crate::output::ModifyHsmOutput, crate::error::ModifyHsmError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_modify_hsm_error(response)
+            crate::operation_ser::parse_modify_hsm_error(response)
         } else {
-            crate::operation_deser::parse_modify_hsm_response(response)
+            crate::operation_ser::parse_modify_hsm_response(response)
         }
     }
 }
@@ -722,9 +722,9 @@ impl smithy_http::response::ParseStrictResponse for ModifyLunaClient {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_modify_luna_client_error(response)
+            crate::operation_ser::parse_modify_luna_client_error(response)
         } else {
-            crate::operation_deser::parse_modify_luna_client_response(response)
+            crate::operation_ser::parse_modify_luna_client_response(response)
         }
     }
 }
@@ -762,9 +762,9 @@ impl smithy_http::response::ParseStrictResponse for RemoveTagsFromResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_remove_tags_from_resource_error(response)
+            crate::operation_ser::parse_remove_tags_from_resource_error(response)
         } else {
-            crate::operation_deser::parse_remove_tags_from_resource_response(response)
+            crate::operation_ser::parse_remove_tags_from_resource_response(response)
         }
     }
 }

@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Elastic Load Balancing</fullname>
 //! <p>A load balancer can distribute incoming traffic across your EC2 instances.
 //! This enables you to increase the availability of your application. The load balancer
@@ -39,7 +40,6 @@ pub mod input;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 mod query_ser;

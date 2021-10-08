@@ -854,8 +854,7 @@ pub struct DescribeTrackerOutput {
     /// <p>The optional description for the tracker resource.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The pricing plan selected for the specified tracker resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-    /// page</a>.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The specified data provider for the tracker resource.</p>
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
@@ -870,6 +869,8 @@ pub struct DescribeTrackerOutput {
     pub update_time: std::option::Option<smithy_types::Instant>,
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a> assigned to the Amazon Location resource.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The position filtering method of the tracker resource.</p>
+    pub position_filtering: std::option::Option<crate::model::PositionFiltering>,
 }
 impl std::fmt::Debug for DescribeTrackerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -883,6 +884,7 @@ impl std::fmt::Debug for DescribeTrackerOutput {
         formatter.field("create_time", &self.create_time);
         formatter.field("update_time", &self.update_time);
         formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("position_filtering", &self.position_filtering);
         formatter.finish()
     }
 }
@@ -903,6 +905,7 @@ pub mod describe_tracker_output {
         pub(crate) create_time: std::option::Option<smithy_types::Instant>,
         pub(crate) update_time: std::option::Option<smithy_types::Instant>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) position_filtering: std::option::Option<crate::model::PositionFiltering>,
     }
     impl Builder {
         /// <p>The name of the tracker resource.</p>
@@ -941,8 +944,7 @@ pub mod describe_tracker_output {
             self
         }
         /// <p>The pricing plan selected for the specified tracker resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-        /// page</a>.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
@@ -1020,6 +1022,18 @@ pub mod describe_tracker_output {
             self.kms_key_id = input;
             self
         }
+        /// <p>The position filtering method of the tracker resource.</p>
+        pub fn position_filtering(mut self, input: crate::model::PositionFiltering) -> Self {
+            self.position_filtering = Some(input);
+            self
+        }
+        pub fn set_position_filtering(
+            mut self,
+            input: std::option::Option<crate::model::PositionFiltering>,
+        ) -> Self {
+            self.position_filtering = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeTrackerOutput`](crate::output::DescribeTrackerOutput)
         pub fn build(self) -> crate::output::DescribeTrackerOutput {
             crate::output::DescribeTrackerOutput {
@@ -1032,6 +1046,7 @@ pub mod describe_tracker_output {
                 create_time: self.create_time,
                 update_time: self.update_time,
                 kms_key_id: self.kms_key_id,
+                position_filtering: self.position_filtering,
             }
         }
     }
@@ -2160,8 +2175,7 @@ pub struct DescribePlaceIndexOutput {
     /// </ul>
     pub index_arn: std::option::Option<std::string::String>,
     /// <p>The pricing plan selected for the specified place index resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-    /// page</a>.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The optional description for the place index resource.</p>
     pub description: std::option::Option<std::string::String>,
@@ -2184,8 +2198,7 @@ pub struct DescribePlaceIndexOutput {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>For additional details on data providers, see the <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers
-    /// page</a>.</p>
+    /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: std::option::Option<std::string::String>,
     /// <p>The specified data storage option for requesting Places.</p>
     pub data_source_configuration: std::option::Option<crate::model::DataSourceConfiguration>,
@@ -2255,8 +2268,7 @@ pub mod describe_place_index_output {
             self
         }
         /// <p>The pricing plan selected for the specified place index resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-        /// page</a>.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
@@ -2316,8 +2328,7 @@ pub mod describe_place_index_output {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>For additional details on data providers, see the <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers
-        /// page</a>.</p>
+        /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
@@ -2928,8 +2939,7 @@ pub struct DescribeMapOutput {
     /// </ul>
     pub map_arn: std::option::Option<std::string::String>,
     /// <p>The pricing plan selected for the specified map resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-    /// page</a>.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>Specifies the data provider for the associated map tiles.</p>
     pub data_source: std::option::Option<std::string::String>,
@@ -3008,8 +3018,7 @@ pub mod describe_map_output {
             self
         }
         /// <p>The pricing plan selected for the specified map resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-        /// page</a>.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self

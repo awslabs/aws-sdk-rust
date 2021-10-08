@@ -108,7 +108,9 @@ pub struct AddTagsError {
 #[derive(std::fmt::Debug)]
 pub enum AddTagsErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
+    ListenerNotFoundException(crate::error::ListenerNotFoundException),
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
+    RuleNotFoundException(crate::error::RuleNotFoundException),
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -118,7 +120,9 @@ impl std::fmt::Display for AddTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             AddTagsErrorKind::DuplicateTagKeysException(_inner) => _inner.fmt(f),
+            AddTagsErrorKind::ListenerNotFoundException(_inner) => _inner.fmt(f),
             AddTagsErrorKind::LoadBalancerNotFoundException(_inner) => _inner.fmt(f),
+            AddTagsErrorKind::RuleNotFoundException(_inner) => _inner.fmt(f),
             AddTagsErrorKind::TargetGroupNotFoundException(_inner) => _inner.fmt(f),
             AddTagsErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             AddTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -172,11 +176,17 @@ impl AddTagsError {
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::DuplicateTagKeysException(_))
     }
+    pub fn is_listener_not_found_exception(&self) -> bool {
+        matches!(&self.kind, AddTagsErrorKind::ListenerNotFoundException(_))
+    }
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsErrorKind::LoadBalancerNotFoundException(_)
         )
+    }
+    pub fn is_rule_not_found_exception(&self) -> bool {
+        matches!(&self.kind, AddTagsErrorKind::RuleNotFoundException(_))
     }
     pub fn is_target_group_not_found_exception(&self) -> bool {
         matches!(
@@ -192,7 +202,9 @@ impl std::error::Error for AddTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             AddTagsErrorKind::DuplicateTagKeysException(_inner) => Some(_inner),
+            AddTagsErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
             AddTagsErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
+            AddTagsErrorKind::RuleNotFoundException(_inner) => Some(_inner),
             AddTagsErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
             AddTagsErrorKind::TooManyTagsException(_inner) => Some(_inner),
             AddTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -964,6 +976,7 @@ pub struct DeleteListenerError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteListenerErrorKind {
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
+    ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -971,6 +984,7 @@ impl std::fmt::Display for DeleteListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteListenerErrorKind::ListenerNotFoundException(_inner) => _inner.fmt(f),
+            DeleteListenerErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             DeleteListenerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1025,11 +1039,18 @@ impl DeleteListenerError {
             DeleteListenerErrorKind::ListenerNotFoundException(_)
         )
     }
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteListenerErrorKind::ResourceInUseException(_)
+        )
+    }
 }
 impl std::error::Error for DeleteListenerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteListenerErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
+            DeleteListenerErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteListenerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }

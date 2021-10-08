@@ -8,7 +8,10 @@ use http::{HeaderMap, HeaderValue};
 
 const EXTENDED_REQUEST_ID: &str = "s3_extended_request_id";
 
+/// S3-specific service error additions.
 pub trait ErrorExt {
+    /// Returns the S3 Extended Request ID necessary when contacting AWS Support.
+    /// Read more at <https://aws.amazon.com/premiumsupport/knowledge-center/s3-request-id-values/>.
     fn extended_request_id(&self) -> Option<&str>;
 }
 
@@ -18,6 +21,7 @@ impl ErrorExt for smithy_types::Error {
     }
 }
 
+/// Parses the S3 Extended Request ID out of S3 error response headers.
 pub fn parse_extended_error(
     error: smithy_types::Error,
     headers: &HeaderMap<HeaderValue>,

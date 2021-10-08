@@ -1121,6 +1121,161 @@ impl std::error::Error for CreateLicenseConfigurationError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct CreateLicenseConversionTaskForResourceError {
+    pub kind: CreateLicenseConversionTaskForResourceErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateLicenseConversionTaskForResourceErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    AuthorizationException(crate::error::AuthorizationException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    RateLimitExceededException(crate::error::RateLimitExceededException),
+    ServerInternalException(crate::error::ServerInternalException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateLicenseConversionTaskForResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateLicenseConversionTaskForResourceErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateLicenseConversionTaskForResourceErrorKind::AuthorizationException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateLicenseConversionTaskForResourceErrorKind::InvalidParameterValueException(
+                _inner,
+            ) => _inner.fmt(f),
+            CreateLicenseConversionTaskForResourceErrorKind::RateLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateLicenseConversionTaskForResourceErrorKind::ServerInternalException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateLicenseConversionTaskForResourceErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateLicenseConversionTaskForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateLicenseConversionTaskForResourceError {
+    fn code(&self) -> Option<&str> {
+        CreateLicenseConversionTaskForResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateLicenseConversionTaskForResourceError {
+    pub fn new(
+        kind: CreateLicenseConversionTaskForResourceErrorKind,
+        meta: smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateLicenseConversionTaskForResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateLicenseConversionTaskForResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLicenseConversionTaskForResourceErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_authorization_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLicenseConversionTaskForResourceErrorKind::AuthorizationException(_)
+        )
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLicenseConversionTaskForResourceErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_rate_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLicenseConversionTaskForResourceErrorKind::RateLimitExceededException(_)
+        )
+    }
+    pub fn is_server_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLicenseConversionTaskForResourceErrorKind::ServerInternalException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLicenseConversionTaskForResourceErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for CreateLicenseConversionTaskForResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateLicenseConversionTaskForResourceErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            CreateLicenseConversionTaskForResourceErrorKind::AuthorizationException(_inner) => {
+                Some(_inner)
+            }
+            CreateLicenseConversionTaskForResourceErrorKind::InvalidParameterValueException(
+                _inner,
+            ) => Some(_inner),
+            CreateLicenseConversionTaskForResourceErrorKind::RateLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            CreateLicenseConversionTaskForResourceErrorKind::ServerInternalException(_inner) => {
+                Some(_inner)
+            }
+            CreateLicenseConversionTaskForResourceErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            CreateLicenseConversionTaskForResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct CreateLicenseManagerReportGeneratorError {
     pub kind: CreateLicenseManagerReportGeneratorErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -2862,6 +3017,127 @@ impl std::error::Error for GetLicenseConfigurationError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct GetLicenseConversionTaskError {
+    pub kind: GetLicenseConversionTaskErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetLicenseConversionTaskErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    AuthorizationException(crate::error::AuthorizationException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    RateLimitExceededException(crate::error::RateLimitExceededException),
+    ServerInternalException(crate::error::ServerInternalException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetLicenseConversionTaskError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetLicenseConversionTaskErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetLicenseConversionTaskErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
+            GetLicenseConversionTaskErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetLicenseConversionTaskErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
+            GetLicenseConversionTaskErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
+            GetLicenseConversionTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetLicenseConversionTaskError {
+    fn code(&self) -> Option<&str> {
+        GetLicenseConversionTaskError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetLicenseConversionTaskError {
+    pub fn new(kind: GetLicenseConversionTaskErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetLicenseConversionTaskErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetLicenseConversionTaskErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLicenseConversionTaskErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_authorization_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLicenseConversionTaskErrorKind::AuthorizationException(_)
+        )
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLicenseConversionTaskErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_rate_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLicenseConversionTaskErrorKind::RateLimitExceededException(_)
+        )
+    }
+    pub fn is_server_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLicenseConversionTaskErrorKind::ServerInternalException(_)
+        )
+    }
+}
+impl std::error::Error for GetLicenseConversionTaskError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetLicenseConversionTaskErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetLicenseConversionTaskErrorKind::AuthorizationException(_inner) => Some(_inner),
+            GetLicenseConversionTaskErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            GetLicenseConversionTaskErrorKind::RateLimitExceededException(_inner) => Some(_inner),
+            GetLicenseConversionTaskErrorKind::ServerInternalException(_inner) => Some(_inner),
+            GetLicenseConversionTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct GetLicenseManagerReportGeneratorError {
     pub kind: GetLicenseManagerReportGeneratorErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -3829,6 +4105,129 @@ impl std::error::Error for ListLicenseConfigurationsError {
             ListLicenseConfigurationsErrorKind::RateLimitExceededException(_inner) => Some(_inner),
             ListLicenseConfigurationsErrorKind::ServerInternalException(_inner) => Some(_inner),
             ListLicenseConfigurationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListLicenseConversionTasksError {
+    pub kind: ListLicenseConversionTasksErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListLicenseConversionTasksErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    AuthorizationException(crate::error::AuthorizationException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    RateLimitExceededException(crate::error::RateLimitExceededException),
+    ServerInternalException(crate::error::ServerInternalException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListLicenseConversionTasksError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListLicenseConversionTasksErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListLicenseConversionTasksErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
+            ListLicenseConversionTasksErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListLicenseConversionTasksErrorKind::RateLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListLicenseConversionTasksErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
+            ListLicenseConversionTasksErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListLicenseConversionTasksError {
+    fn code(&self) -> Option<&str> {
+        ListLicenseConversionTasksError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListLicenseConversionTasksError {
+    pub fn new(kind: ListLicenseConversionTasksErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListLicenseConversionTasksErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListLicenseConversionTasksErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLicenseConversionTasksErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_authorization_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLicenseConversionTasksErrorKind::AuthorizationException(_)
+        )
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLicenseConversionTasksErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_rate_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLicenseConversionTasksErrorKind::RateLimitExceededException(_)
+        )
+    }
+    pub fn is_server_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLicenseConversionTasksErrorKind::ServerInternalException(_)
+        )
+    }
+}
+impl std::error::Error for ListLicenseConversionTasksError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListLicenseConversionTasksErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListLicenseConversionTasksErrorKind::AuthorizationException(_inner) => Some(_inner),
+            ListLicenseConversionTasksErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            ListLicenseConversionTasksErrorKind::RateLimitExceededException(_inner) => Some(_inner),
+            ListLicenseConversionTasksErrorKind::ServerInternalException(_inner) => Some(_inner),
+            ListLicenseConversionTasksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -6292,7 +6691,7 @@ impl InvalidParameterValueException {
     }
 }
 
-/// <p>The AWS user account does not have permission to perform the action. Check the IAM
+/// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
 /// policy associated with this account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

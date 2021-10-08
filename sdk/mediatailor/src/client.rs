@@ -69,6 +69,11 @@ where
     M: smithy_client::bounds::SmithyMiddleware<C>,
     R: smithy_client::retry::NewRequestPolicy,
 {
+    pub fn configure_logs_for_playback_configuration(
+        &self,
+    ) -> fluent_builders::ConfigureLogsForPlaybackConfiguration<C, M, R> {
+        fluent_builders::ConfigureLogsForPlaybackConfiguration::new(self.handle.clone())
+    }
     pub fn create_channel(&self) -> fluent_builders::CreateChannel<C, M, R> {
         fluent_builders::CreateChannel::new(self.handle.clone())
     }
@@ -172,6 +177,72 @@ where
 }
 pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
+    pub struct ConfigureLogsForPlaybackConfiguration<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::configure_logs_for_playback_configuration_input::Builder,
+    }
+    impl<C, M, R> ConfigureLogsForPlaybackConfiguration<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ConfigureLogsForPlaybackConfigurationOutput,
+            smithy_http::result::SdkError<crate::error::ConfigureLogsForPlaybackConfigurationError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ConfigureLogsForPlaybackConfigurationInputOperationOutputAlias,
+                crate::output::ConfigureLogsForPlaybackConfigurationOutput,
+                crate::error::ConfigureLogsForPlaybackConfigurationError,
+                crate::input::ConfigureLogsForPlaybackConfigurationInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p> <p>Valid values: 0 - 100</p>
+        pub fn percent_enabled(mut self, inp: i32) -> Self {
+            self.inner = self.inner.percent_enabled(inp);
+            self
+        }
+        pub fn set_percent_enabled(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_percent_enabled(input);
+            self
+        }
+        /// <p>The name of the playback configuration.</p>
+        pub fn playback_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.playback_configuration_name(inp);
+            self
+        }
+        pub fn set_playback_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_playback_configuration_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct CreateChannel<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -224,7 +295,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_name(input);
             self
         }
-        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses an LINEAR PlaybackMode.</p>
+        /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
         pub fn filler_slate(mut self, inp: crate::model::SlateSource) -> Self {
             self.inner = self.inner.filler_slate(inp);
             self

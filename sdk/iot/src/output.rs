@@ -2621,6 +2621,35 @@ impl RegisterCaCertificateOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutVerificationStateOnViolationOutput {}
+impl std::fmt::Debug for PutVerificationStateOnViolationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutVerificationStateOnViolationOutput");
+        formatter.finish()
+    }
+}
+/// See [`PutVerificationStateOnViolationOutput`](crate::output::PutVerificationStateOnViolationOutput)
+pub mod put_verification_state_on_violation_output {
+    /// A builder for [`PutVerificationStateOnViolationOutput`](crate::output::PutVerificationStateOnViolationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutVerificationStateOnViolationOutput`](crate::output::PutVerificationStateOnViolationOutput)
+        pub fn build(self) -> crate::output::PutVerificationStateOnViolationOutput {
+            crate::output::PutVerificationStateOnViolationOutput {}
+        }
+    }
+}
+impl PutVerificationStateOnViolationOutput {
+    /// Creates a new builder-style object to manufacture [`PutVerificationStateOnViolationOutput`](crate::output::PutVerificationStateOnViolationOutput)
+    pub fn builder() -> crate::output::put_verification_state_on_violation_output::Builder {
+        crate::output::put_verification_state_on_violation_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListViolationEventsOutput {
     /// <p>The security profile violation alerts issued for this account during the given time period,
     /// potentially filtered by security profile, behavior violated, or thing (device) violating.</p>

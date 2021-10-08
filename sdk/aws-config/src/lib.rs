@@ -1,3 +1,8 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
 #![deny(missing_docs)]
 
 //! `aws-config` provides implementations of region, credential resolution.
@@ -72,6 +77,7 @@ pub mod provider_config;
 mod cache;
 #[cfg(feature = "imds")]
 pub mod imds;
+mod json_credentials;
 
 /// Create an environment loader for AWS Configuration
 ///
@@ -194,22 +200,42 @@ mod connector {
     // no      | yes        | native_tls
     // no      | no         | no default
 
+    use crate::provider_config::HttpSettings;
+    use smithy_async::rt::sleep::AsyncSleep;
     use smithy_client::erase::DynConnector;
+    use std::sync::Arc;
 
     // unused when all crate features are disabled
     #[allow(dead_code)]
-    pub fn expect_connector(connector: Option<DynConnector>) -> DynConnector {
+    pub(crate) fn expect_connector(connector: Option<DynConnector>) -> DynConnector {
         connector.expect("A connector was not available. Either set a custom connector or enable the `rustls` and `native-tls` crate features.")
     }
 
     #[cfg(feature = "rustls")]
-    pub fn default_connector() -> Option<DynConnector> {
-        Some(DynConnector::new(smithy_client::conns::https()))
+    pub(crate) fn default_connector(
+        settings: &HttpSettings,
+        sleep: Option<Arc<dyn AsyncSleep>>,
+    ) -> Option<DynConnector> {
+        let hyper = base(settings, sleep).build(smithy_client::conns::https());
+        Some(DynConnector::new(hyper))
+    }
+
+    fn base(
+        settings: &HttpSettings,
+        sleep: Option<Arc<dyn AsyncSleep>>,
+    ) -> smithy_client::hyper_ext::Builder {
+        let mut hyper =
+            smithy_client::hyper_ext::Adapter::builder().timeout(&settings.timeout_config);
+        if let Some(sleep) = sleep {
+            hyper = hyper.sleep_impl(sleep);
+        }
+        hyper
     }
 
     #[cfg(all(not(feature = "rustls"), feature = "native-tls"))]
     pub fn default_connector() -> Option<DynConnector> {
-        Some(DynConnector::new(smithy_client::conns::native_tls()))
+        base(settings, sleep).build(smithy_client::conns::native_tls());
+        Some(DynConnector::new(hyper))
     }
 
     #[cfg(not(any(feature = "rustls", feature = "native-tls")))]

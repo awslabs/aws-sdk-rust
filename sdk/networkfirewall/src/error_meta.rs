@@ -278,6 +278,9 @@ where
                 crate::error::DeleteResourcePolicyErrorKind::InvalidRequestException(inner) => {
                     Error::InvalidRequestException(inner)
                 }
+                crate::error::DeleteResourcePolicyErrorKind::InvalidResourcePolicyException(
+                    inner,
+                ) => Error::InvalidResourcePolicyException(inner),
                 crate::error::DeleteResourcePolicyErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }

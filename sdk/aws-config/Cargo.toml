@@ -3,7 +3,7 @@ name = "aws-config"
 version = "0.1.0"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
 edition = "2018"
-exclude = ["test-data/*"]
+exclude = ["test-data/*", "integration-tests/*"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [features]

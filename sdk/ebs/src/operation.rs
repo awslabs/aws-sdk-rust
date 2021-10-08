@@ -22,9 +22,9 @@ impl smithy_http::response::ParseStrictResponse for CompleteSnapshot {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_deser::parse_complete_snapshot_error(response)
+            crate::operation_ser::parse_complete_snapshot_error(response)
         } else {
-            crate::operation_deser::parse_complete_snapshot_response(response)
+            crate::operation_ser::parse_complete_snapshot_response(response)
         }
     }
 }
@@ -142,11 +142,11 @@ impl smithy_http::response::ParseHttpResponse for GetSnapshotBlock {
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_deser::parse_get_snapshot_block(response))
+        Some(crate::operation_ser::parse_get_snapshot_block(response))
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_deser::parse_get_snapshot_block_error(response)
+        crate::operation_ser::parse_get_snapshot_block_error(response)
     }
 }
 #[cfg(test)]
@@ -258,9 +258,9 @@ impl smithy_http::response::ParseStrictResponse for ListChangedBlocks {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_changed_blocks_error(response)
+            crate::operation_ser::parse_list_changed_blocks_error(response)
         } else {
-            crate::operation_deser::parse_list_changed_blocks_response(response)
+            crate::operation_ser::parse_list_changed_blocks_response(response)
         }
     }
 }
@@ -372,9 +372,9 @@ impl smithy_http::response::ParseStrictResponse for ListSnapshotBlocks {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_snapshot_blocks_error(response)
+            crate::operation_ser::parse_list_snapshot_blocks_error(response)
         } else {
-            crate::operation_deser::parse_list_snapshot_blocks_response(response)
+            crate::operation_ser::parse_list_snapshot_blocks_response(response)
         }
     }
 }
@@ -489,9 +489,9 @@ impl smithy_http::response::ParseStrictResponse for PutSnapshotBlock {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_deser::parse_put_snapshot_block_error(response)
+            crate::operation_ser::parse_put_snapshot_block_error(response)
         } else {
-            crate::operation_deser::parse_put_snapshot_block_response(response)
+            crate::operation_ser::parse_put_snapshot_block_response(response)
         }
     }
 }
@@ -604,9 +604,9 @@ impl smithy_http::response::ParseStrictResponse for StartSnapshot {
         std::result::Result<crate::output::StartSnapshotOutput, crate::error::StartSnapshotError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_deser::parse_start_snapshot_error(response)
+            crate::operation_ser::parse_start_snapshot_error(response)
         } else {
-            crate::operation_deser::parse_start_snapshot_response(response)
+            crate::operation_ser::parse_start_snapshot_response(response)
         }
     }
 }

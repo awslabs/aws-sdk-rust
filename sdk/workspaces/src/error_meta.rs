@@ -249,6 +249,29 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateUpdatedWorkspaceImageError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateUpdatedWorkspaceImageError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateUpdatedWorkspaceImageErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::CreateUpdatedWorkspaceImageErrorKind::InvalidParameterValuesException(inner) => Error::InvalidParameterValuesException(inner),
+                crate::error::CreateUpdatedWorkspaceImageErrorKind::InvalidResourceStateException(inner) => Error::InvalidResourceStateException(inner),
+                crate::error::CreateUpdatedWorkspaceImageErrorKind::OperationNotSupportedException(inner) => Error::OperationNotSupportedException(inner),
+                crate::error::CreateUpdatedWorkspaceImageErrorKind::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
+                crate::error::CreateUpdatedWorkspaceImageErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+                crate::error::CreateUpdatedWorkspaceImageErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::CreateUpdatedWorkspaceImageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::CreateWorkspaceBundleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

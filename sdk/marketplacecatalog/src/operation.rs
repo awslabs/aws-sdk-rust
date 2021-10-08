@@ -23,9 +23,9 @@ impl smithy_http::response::ParseStrictResponse for CancelChangeSet {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_cancel_change_set_error(response)
+            crate::operation_ser::parse_cancel_change_set_error(response)
         } else {
-            crate::operation_deser::parse_cancel_change_set_response(response)
+            crate::operation_ser::parse_cancel_change_set_response(response)
         }
     }
 }
@@ -51,9 +51,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeChangeSet {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_change_set_error(response)
+            crate::operation_ser::parse_describe_change_set_error(response)
         } else {
-            crate::operation_deser::parse_describe_change_set_response(response)
+            crate::operation_ser::parse_describe_change_set_response(response)
         }
     }
 }
@@ -77,9 +77,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeEntity {
         std::result::Result<crate::output::DescribeEntityOutput, crate::error::DescribeEntityError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_entity_error(response)
+            crate::operation_ser::parse_describe_entity_error(response)
         } else {
-            crate::operation_deser::parse_describe_entity_response(response)
+            crate::operation_ser::parse_describe_entity_response(response)
         }
     }
 }
@@ -108,9 +108,9 @@ impl smithy_http::response::ParseStrictResponse for ListChangeSets {
         std::result::Result<crate::output::ListChangeSetsOutput, crate::error::ListChangeSetsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_change_sets_error(response)
+            crate::operation_ser::parse_list_change_sets_error(response)
         } else {
-            crate::operation_deser::parse_list_change_sets_response(response)
+            crate::operation_ser::parse_list_change_sets_response(response)
         }
     }
 }
@@ -134,9 +134,9 @@ impl smithy_http::response::ParseStrictResponse for ListEntities {
         std::result::Result<crate::output::ListEntitiesOutput, crate::error::ListEntitiesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_entities_error(response)
+            crate::operation_ser::parse_list_entities_error(response)
         } else {
-            crate::operation_deser::parse_list_entities_response(response)
+            crate::operation_ser::parse_list_entities_response(response)
         }
     }
 }
@@ -170,9 +170,9 @@ impl smithy_http::response::ParseStrictResponse for StartChangeSet {
         std::result::Result<crate::output::StartChangeSetOutput, crate::error::StartChangeSetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_change_set_error(response)
+            crate::operation_ser::parse_start_change_set_error(response)
         } else {
-            crate::operation_deser::parse_start_change_set_response(response)
+            crate::operation_ser::parse_start_change_set_response(response)
         }
     }
 }

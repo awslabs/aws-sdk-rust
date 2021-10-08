@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon Simple Notification Service</fullname>
 //! <p>Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build
 //! distributed web-enabled applications. Applications can use Amazon SNS to easily push
@@ -34,7 +35,6 @@ pub mod input;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 mod query_ser;

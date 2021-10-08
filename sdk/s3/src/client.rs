@@ -1266,6 +1266,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bucket(input);
             self
         }
+        /// <p>The configuration information for the bucket.</p>
+        pub fn create_bucket_configuration(
+            mut self,
+            inp: crate::model::CreateBucketConfiguration,
+        ) -> Self {
+            self.inner = self.inner.create_bucket_configuration(inp);
+            self
+        }
+        pub fn set_create_bucket_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CreateBucketConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_create_bucket_configuration(input);
+            self
+        }
         /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
         /// bucket.</p>
         pub fn grant_full_control(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1332,21 +1347,6 @@ pub mod fluent_builders {
             input: std::option::Option<bool>,
         ) -> Self {
             self.inner = self.inner.set_object_lock_enabled_for_bucket(input);
-            self
-        }
-        /// <p>The configuration information for the bucket.</p>
-        pub fn create_bucket_configuration(
-            mut self,
-            inp: crate::model::CreateBucketConfiguration,
-        ) -> Self {
-            self.inner = self.inner.create_bucket_configuration(inp);
-            self
-        }
-        pub fn set_create_bucket_configuration(
-            mut self,
-            input: std::option::Option<crate::model::CreateBucketConfiguration>,
-        ) -> Self {
-            self.inner = self.inner.set_create_bucket_configuration(input);
             self
         }
     }
@@ -1653,7 +1653,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sse_customer_key_md5(input);
             self
         }
-        /// <p>Specifies the ID of the symmetric customer managed Amazon Web Services KMS CMK to use for object
+        /// <p>Specifies the ID of the symmetric customer managed key to use for object
         /// encryption. All GET and PUT requests for an object protected by Amazon Web Services KMS will fail if not
         /// made via SSL or using SigV4. For information about configuring using any of the officially
         /// supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a>
@@ -2832,6 +2832,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bucket(input);
             self
         }
+        /// <p>Container for the request.</p>
+        pub fn delete(mut self, inp: crate::model::Delete) -> Self {
+            self.inner = self.inner.delete(inp);
+            self
+        }
+        pub fn set_delete(mut self, input: std::option::Option<crate::model::Delete>) -> Self {
+            self.inner = self.inner.set_delete(input);
+            self
+        }
         /// <p>The concatenation of the authentication device's serial number, a space, and the value
         /// that is displayed on your authentication device. Required to permanently delete a versioned
         /// object if versioning is configured with MFA delete enabled.</p>
@@ -2879,15 +2888,6 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
-        /// <p>Container for the request.</p>
-        pub fn delete(mut self, inp: crate::model::Delete) -> Self {
-            self.inner = self.inner.delete(inp);
-            self
-        }
-        pub fn set_delete(mut self, input: std::option::Option<crate::model::Delete>) -> Self {
-            self.inner = self.inner.set_delete(input);
             self
         }
     }
@@ -4436,8 +4436,22 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
+        pub async fn presigned(
+            self,
+            presigning_config: crate::presigning::config::PresigningConfig,
+        ) -> Result<
+            crate::presigning::request::PresignedRequest,
+            smithy_http::result::SdkError<crate::error::GetObjectError>,
+        > {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            input.presigned(&self.handle.conf, presigning_config).await
+        }
         /// <p>The bucket name containing the object. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using an Object Lambda access point the hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com.</p>
         /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket(inp);
@@ -6707,18 +6721,6 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bucket(input);
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
-            self
-        }
-        pub fn set_expected_bucket_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
         /// <p>Container for setting the transfer acceleration state.</p>
         pub fn accelerate_configuration(
             mut self,
@@ -6732,6 +6734,18 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::AccelerateConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_accelerate_configuration(input);
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(inp);
+            self
+        }
+        pub fn set_expected_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_expected_bucket_owner(input);
             self
         }
     }
@@ -6789,6 +6803,18 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::BucketCannedAcl>,
         ) -> Self {
             self.inner = self.inner.set_acl(input);
+            self
+        }
+        /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
+        pub fn access_control_policy(mut self, inp: crate::model::AccessControlPolicy) -> Self {
+            self.inner = self.inner.access_control_policy(inp);
+            self
+        }
+        pub fn set_access_control_policy(
+            mut self,
+            input: std::option::Option<crate::model::AccessControlPolicy>,
+        ) -> Self {
+            self.inner = self.inner.set_access_control_policy(input);
             self
         }
         /// <p>The bucket to which to apply the ACL.</p>
@@ -6882,18 +6908,6 @@ pub mod fluent_builders {
             self.inner = self.inner.set_expected_bucket_owner(input);
             self
         }
-        /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
-        pub fn access_control_policy(mut self, inp: crate::model::AccessControlPolicy) -> Self {
-            self.inner = self.inner.access_control_policy(inp);
-            self
-        }
-        pub fn set_access_control_policy(
-            mut self,
-            input: std::option::Option<crate::model::AccessControlPolicy>,
-        ) -> Self {
-            self.inner = self.inner.set_access_control_policy(input);
-            self
-        }
     }
     #[derive(std::fmt::Debug)]
     pub struct PutBucketAnalyticsConfiguration<
@@ -6957,18 +6971,6 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
-            self
-        }
-        pub fn set_expected_bucket_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
         /// <p>The configuration and any analyses for the analytics filter.</p>
         pub fn analytics_configuration(
             mut self,
@@ -6982,6 +6984,18 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::AnalyticsConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_analytics_configuration(input);
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(inp);
+            self
+        }
+        pub fn set_expected_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_expected_bucket_owner(input);
             self
         }
     }
@@ -7038,6 +7052,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bucket(input);
             self
         }
+        /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource
+        /// Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn cors_configuration(mut self, inp: crate::model::CorsConfiguration) -> Self {
+            self.inner = self.inner.cors_configuration(inp);
+            self
+        }
+        pub fn set_cors_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CorsConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_cors_configuration(input);
+            self
+        }
         /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
         /// integrity check to verify that the request body was not corrupted in transit. For more
         /// information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
@@ -7062,20 +7090,6 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
-        /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource
-        /// Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn cors_configuration(mut self, inp: crate::model::CorsConfiguration) -> Self {
-            self.inner = self.inner.cors_configuration(inp);
-            self
-        }
-        pub fn set_cors_configuration(
-            mut self,
-            input: std::option::Option<crate::model::CorsConfiguration>,
-        ) -> Self {
-            self.inner = self.inner.set_cors_configuration(input);
             self
         }
     }
@@ -7124,7 +7138,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed
-        /// keys (SSE-S3) or customer master keys stored in Amazon Web Services KMS (SSE-KMS). For information about
+        /// keys (SSE-S3) or customer managed keys (SSE-KMS). For information about
         /// the Amazon S3 default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Default Bucket Encryption</a>
         /// in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -7145,18 +7159,6 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_md5(input);
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
-            self
-        }
-        pub fn set_expected_bucket_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
         /// <p>Specifies the default server-side-encryption configuration.</p>
         pub fn server_side_encryption_configuration(
             mut self,
@@ -7170,6 +7172,18 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_server_side_encryption_configuration(input);
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(inp);
+            self
+        }
+        pub fn set_expected_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_expected_bucket_owner(input);
             self
         }
     }
@@ -7315,18 +7329,6 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
-            self
-        }
-        pub fn set_expected_bucket_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
         /// <p>Specifies the inventory configuration.</p>
         pub fn inventory_configuration(
             mut self,
@@ -7340,6 +7342,18 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::InventoryConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_inventory_configuration(input);
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(inp);
+            self
+        }
+        pub fn set_expected_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_expected_bucket_owner(input);
             self
         }
     }
@@ -7396,18 +7410,6 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bucket(input);
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
-            self
-        }
-        pub fn set_expected_bucket_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
         /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
         pub fn lifecycle_configuration(
             mut self,
@@ -7421,6 +7423,18 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::BucketLifecycleConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_lifecycle_configuration(input);
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(inp);
+            self
+        }
+        pub fn set_expected_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_expected_bucket_owner(input);
             self
         }
     }
@@ -7477,6 +7491,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bucket(input);
             self
         }
+        /// <p>Container for logging status information.</p>
+        pub fn bucket_logging_status(mut self, inp: crate::model::BucketLoggingStatus) -> Self {
+            self.inner = self.inner.bucket_logging_status(inp);
+            self
+        }
+        pub fn set_bucket_logging_status(
+            mut self,
+            input: std::option::Option<crate::model::BucketLoggingStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_bucket_logging_status(input);
+            self
+        }
         /// <p>The MD5 hash of the <code>PutBucketLogging</code> request body.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn content_md5(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -7497,18 +7523,6 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
-        /// <p>Container for logging status information.</p>
-        pub fn bucket_logging_status(mut self, inp: crate::model::BucketLoggingStatus) -> Self {
-            self.inner = self.inner.bucket_logging_status(inp);
-            self
-        }
-        pub fn set_bucket_logging_status(
-            mut self,
-            input: std::option::Option<crate::model::BucketLoggingStatus>,
-        ) -> Self {
-            self.inner = self.inner.set_bucket_logging_status(input);
             self
         }
     }
@@ -7574,18 +7588,6 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
-            self
-        }
-        pub fn set_expected_bucket_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
         /// <p>Specifies the metrics configuration.</p>
         pub fn metrics_configuration(mut self, inp: crate::model::MetricsConfiguration) -> Self {
             self.inner = self.inner.metrics_configuration(inp);
@@ -7596,6 +7598,18 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::MetricsConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_metrics_configuration(input);
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(inp);
+            self
+        }
+        pub fn set_expected_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_expected_bucket_owner(input);
             self
         }
     }
@@ -7652,18 +7666,6 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bucket(input);
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
-            self
-        }
-        pub fn set_expected_bucket_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
         /// <p>A container for specifying the notification configuration of the bucket. If this element
         /// is empty, notifications are turned off for the bucket.</p>
         pub fn notification_configuration(
@@ -7678,6 +7680,18 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::NotificationConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_notification_configuration(input);
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(inp);
+            self
+        }
+        pub fn set_expected_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_expected_bucket_owner(input);
             self
         }
     }
@@ -7933,6 +7947,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_md5(input);
             self
         }
+        /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a
+        /// replication configuration is 2 MB.</p>
+        pub fn replication_configuration(
+            mut self,
+            inp: crate::model::ReplicationConfiguration,
+        ) -> Self {
+            self.inner = self.inner.replication_configuration(inp);
+            self
+        }
+        pub fn set_replication_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_replication_configuration(input);
+            self
+        }
         /// <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
         pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.token(inp);
@@ -7952,22 +7982,6 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
-        /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a
-        /// replication configuration is 2 MB.</p>
-        pub fn replication_configuration(
-            mut self,
-            inp: crate::model::ReplicationConfiguration,
-        ) -> Self {
-            self.inner = self.inner.replication_configuration(inp);
-            self
-        }
-        pub fn set_replication_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationConfiguration>,
-        ) -> Self {
-            self.inner = self.inner.set_replication_configuration(input);
             self
         }
     }
@@ -8037,18 +8051,6 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_md5(input);
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
-            self
-        }
-        pub fn set_expected_bucket_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
         /// <p>Container for Payer.</p>
         pub fn request_payment_configuration(
             mut self,
@@ -8062,6 +8064,18 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::RequestPaymentConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_request_payment_configuration(input);
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(inp);
+            self
+        }
+        pub fn set_expected_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_expected_bucket_owner(input);
             self
         }
     }
@@ -8130,6 +8144,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_md5(input);
             self
         }
+        /// <p>Container for the <code>TagSet</code> and <code>Tag</code> elements.</p>
+        pub fn tagging(mut self, inp: crate::model::Tagging) -> Self {
+            self.inner = self.inner.tagging(inp);
+            self
+        }
+        pub fn set_tagging(mut self, input: std::option::Option<crate::model::Tagging>) -> Self {
+            self.inner = self.inner.set_tagging(input);
+            self
+        }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
         pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.expected_bucket_owner(inp);
@@ -8140,15 +8163,6 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
-        /// <p>Container for the <code>TagSet</code> and <code>Tag</code> elements.</p>
-        pub fn tagging(mut self, inp: crate::model::Tagging) -> Self {
-            self.inner = self.inner.tagging(inp);
-            self
-        }
-        pub fn set_tagging(mut self, input: std::option::Option<crate::model::Tagging>) -> Self {
-            self.inner = self.inner.set_tagging(input);
             self
         }
     }
@@ -8228,18 +8242,6 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mfa(input);
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
-            self
-        }
-        pub fn set_expected_bucket_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
         /// <p>Container for setting the versioning state.</p>
         pub fn versioning_configuration(
             mut self,
@@ -8253,6 +8255,18 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::VersioningConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_versioning_configuration(input);
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(inp);
+            self
+        }
+        pub fn set_expected_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_expected_bucket_owner(input);
             self
         }
     }
@@ -8321,18 +8335,6 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_md5(input);
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
-            self
-        }
-        pub fn set_expected_bucket_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
         /// <p>Container for the request.</p>
         pub fn website_configuration(mut self, inp: crate::model::WebsiteConfiguration) -> Self {
             self.inner = self.inner.website_configuration(inp);
@@ -8343,6 +8345,18 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::WebsiteConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_website_configuration(input);
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(inp);
+            self
+        }
+        pub fn set_expected_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_expected_bucket_owner(input);
             self
         }
     }
@@ -8389,6 +8403,19 @@ pub mod fluent_builders {
                 .make_operation(&self.handle.conf)
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
+        }
+        pub async fn presigned(
+            self,
+            presigning_config: crate::presigning::config::PresigningConfig,
+        ) -> Result<
+            crate::presigning::request::PresignedRequest,
+            smithy_http::result::SdkError<crate::error::PutObjectError>,
+        > {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            input.presigned(&self.handle.conf, presigning_config).await
         }
         /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
         /// ACL</a>.</p>
@@ -8703,10 +8730,10 @@ pub mod fluent_builders {
         }
         /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
         /// <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service
-        /// (Amazon Web Services KMS) symmetrical customer managed customer master key (CMK) that was used for the
+        /// (Amazon Web Services KMS) symmetrical customer managed key that was used for the
         /// object. If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but do not
         /// provide<code> x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon Web Services
-        /// managed CMK in Amazon Web Services to protect the data. If the KMS key does not exist in the same account
+        /// managed key to protect the data. If the KMS key does not exist in the same account
         /// issuing the command, you must use the full ARN and not just the ID.
         /// </p>
         pub fn ssekms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -8880,6 +8907,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_acl(input);
             self
         }
+        /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
+        pub fn access_control_policy(mut self, inp: crate::model::AccessControlPolicy) -> Self {
+            self.inner = self.inner.access_control_policy(inp);
+            self
+        }
+        pub fn set_access_control_policy(
+            mut self,
+            input: std::option::Option<crate::model::AccessControlPolicy>,
+        ) -> Self {
+            self.inner = self.inner.set_access_control_policy(input);
+            self
+        }
         /// <p>The bucket name that contains the object to which you want to attach the ACL. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -9013,18 +9052,6 @@ pub mod fluent_builders {
             self.inner = self.inner.set_expected_bucket_owner(input);
             self
         }
-        /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
-        pub fn access_control_policy(mut self, inp: crate::model::AccessControlPolicy) -> Self {
-            self.inner = self.inner.access_control_policy(inp);
-            self
-        }
-        pub fn set_access_control_policy(
-            mut self,
-            input: std::option::Option<crate::model::AccessControlPolicy>,
-        ) -> Self {
-            self.inner = self.inner.set_access_control_policy(input);
-            self
-        }
     }
     #[derive(std::fmt::Debug)]
     pub struct PutObjectLegalHold<
@@ -9089,6 +9116,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_key(input);
             self
         }
+        /// <p>Container element for the Legal Hold configuration you want to apply to the specified
+        /// object.</p>
+        pub fn legal_hold(mut self, inp: crate::model::ObjectLockLegalHold) -> Self {
+            self.inner = self.inner.legal_hold(inp);
+            self
+        }
+        pub fn set_legal_hold(
+            mut self,
+            input: std::option::Option<crate::model::ObjectLockLegalHold>,
+        ) -> Self {
+            self.inner = self.inner.set_legal_hold(input);
+            self
+        }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
@@ -9133,19 +9173,6 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
-        /// <p>Container element for the Legal Hold configuration you want to apply to the specified
-        /// object.</p>
-        pub fn legal_hold(mut self, inp: crate::model::ObjectLockLegalHold) -> Self {
-            self.inner = self.inner.legal_hold(inp);
-            self
-        }
-        pub fn set_legal_hold(
-            mut self,
-            input: std::option::Option<crate::model::ObjectLockLegalHold>,
-        ) -> Self {
-            self.inner = self.inner.set_legal_hold(input);
             self
         }
     }
@@ -9202,6 +9229,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bucket(input);
             self
         }
+        /// <p>The Object Lock configuration that you want to apply to the specified bucket.</p>
+        pub fn object_lock_configuration(
+            mut self,
+            inp: crate::model::ObjectLockConfiguration,
+        ) -> Self {
+            self.inner = self.inner.object_lock_configuration(inp);
+            self
+        }
+        pub fn set_object_lock_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ObjectLockConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_object_lock_configuration(input);
+            self
+        }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
@@ -9246,21 +9288,6 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
-        /// <p>The Object Lock configuration that you want to apply to the specified bucket.</p>
-        pub fn object_lock_configuration(
-            mut self,
-            inp: crate::model::ObjectLockConfiguration,
-        ) -> Self {
-            self.inner = self.inner.object_lock_configuration(inp);
-            self
-        }
-        pub fn set_object_lock_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ObjectLockConfiguration>,
-        ) -> Self {
-            self.inner = self.inner.set_object_lock_configuration(input);
             self
         }
     }
@@ -9329,6 +9356,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_key(input);
             self
         }
+        /// <p>The container element for the Object Retention configuration.</p>
+        pub fn retention(mut self, inp: crate::model::ObjectLockRetention) -> Self {
+            self.inner = self.inner.retention(inp);
+            self
+        }
+        pub fn set_retention(
+            mut self,
+            input: std::option::Option<crate::model::ObjectLockRetention>,
+        ) -> Self {
+            self.inner = self.inner.set_retention(input);
+            self
+        }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
@@ -9383,18 +9422,6 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
-        /// <p>The container element for the Object Retention configuration.</p>
-        pub fn retention(mut self, inp: crate::model::ObjectLockRetention) -> Self {
-            self.inner = self.inner.retention(inp);
-            self
-        }
-        pub fn set_retention(
-            mut self,
-            input: std::option::Option<crate::model::ObjectLockRetention>,
-        ) -> Self {
-            self.inner = self.inner.set_retention(input);
             self
         }
     }
@@ -9481,6 +9508,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_md5(input);
             self
         }
+        /// <p>Container for the <code>TagSet</code> and <code>Tag</code> elements</p>
+        pub fn tagging(mut self, inp: crate::model::Tagging) -> Self {
+            self.inner = self.inner.tagging(inp);
+            self
+        }
+        pub fn set_tagging(mut self, input: std::option::Option<crate::model::Tagging>) -> Self {
+            self.inner = self.inner.set_tagging(input);
+            self
+        }
         /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
         pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.expected_bucket_owner(inp);
@@ -9506,15 +9542,6 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::RequestPayer>,
         ) -> Self {
             self.inner = self.inner.set_request_payer(input);
-            self
-        }
-        /// <p>Container for the <code>TagSet</code> and <code>Tag</code> elements</p>
-        pub fn tagging(mut self, inp: crate::model::Tagging) -> Self {
-            self.inner = self.inner.tagging(inp);
-            self
-        }
-        pub fn set_tagging(mut self, input: std::option::Option<crate::model::Tagging>) -> Self {
-            self.inner = self.inner.set_tagging(input);
             self
         }
     }
@@ -9582,18 +9609,6 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_md5(input);
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
-        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_bucket_owner(inp);
-            self
-        }
-        pub fn set_expected_bucket_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
         /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3
         /// bucket. You can enable the configuration options in any combination. For more information
         /// about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -9609,6 +9624,18 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_public_access_block_configuration(input);
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        pub fn expected_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_bucket_owner(inp);
+            self
+        }
+        pub fn set_expected_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_expected_bucket_owner(input);
             self
         }
     }
@@ -9685,6 +9712,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version_id(input);
             self
         }
+        /// <p>Container for restore job parameters.</p>
+        pub fn restore_request(mut self, inp: crate::model::RestoreRequest) -> Self {
+            self.inner = self.inner.restore_request(inp);
+            self
+        }
+        pub fn set_restore_request(
+            mut self,
+            input: std::option::Option<crate::model::RestoreRequest>,
+        ) -> Self {
+            self.inner = self.inner.set_restore_request(input);
+            self
+        }
         /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
         /// owners need not specify this parameter in their requests. For information about downloading
         /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
@@ -9710,18 +9749,6 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_expected_bucket_owner(input);
-            self
-        }
-        /// <p>Container for restore job parameters.</p>
-        pub fn restore_request(mut self, inp: crate::model::RestoreRequest) -> Self {
-            self.inner = self.inner.restore_request(inp);
-            self
-        }
-        pub fn set_restore_request(
-            mut self,
-            input: std::option::Option<crate::model::RestoreRequest>,
-        ) -> Self {
-            self.inner = self.inner.set_restore_request(input);
             self
         }
     }
@@ -10902,7 +10929,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sse_customer_algorithm(input);
             self
         }
-        /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed customer master key (CMK) that was used for stored in Amazon S3 object. </p>
+        /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for stored in Amazon S3 object. </p>
         pub fn ssekms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ssekms_key_id(inp);
             self

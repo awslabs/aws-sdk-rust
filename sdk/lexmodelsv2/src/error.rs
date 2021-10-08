@@ -2704,6 +2704,105 @@ impl std::error::Error for DeleteSlotTypeError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DeleteUtterancesError {
+    pub kind: DeleteUtterancesErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteUtterancesErrorKind {
+    InternalServerException(crate::error::InternalServerException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteUtterancesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteUtterancesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteUtterancesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteUtterancesErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteUtterancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteUtterancesError {
+    fn code(&self) -> Option<&str> {
+        DeleteUtterancesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteUtterancesError {
+    pub fn new(kind: DeleteUtterancesErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteUtterancesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteUtterancesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUtterancesErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUtterancesErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUtterancesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteUtterancesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteUtterancesErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteUtterancesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteUtterancesErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteUtterancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DescribeBotError {
     pub kind: DescribeBotErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -3799,6 +3898,114 @@ impl std::error::Error for DescribeSlotTypeError {
             DescribeSlotTypeErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeSlotTypeErrorKind::ValidationException(_inner) => Some(_inner),
             DescribeSlotTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListAggregatedUtterancesError {
+    pub kind: ListAggregatedUtterancesErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListAggregatedUtterancesErrorKind {
+    InternalServerException(crate::error::InternalServerException),
+    PreconditionFailedException(crate::error::PreconditionFailedException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListAggregatedUtterancesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListAggregatedUtterancesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListAggregatedUtterancesErrorKind::PreconditionFailedException(_inner) => _inner.fmt(f),
+            ListAggregatedUtterancesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListAggregatedUtterancesErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListAggregatedUtterancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListAggregatedUtterancesError {
+    fn code(&self) -> Option<&str> {
+        ListAggregatedUtterancesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListAggregatedUtterancesError {
+    pub fn new(kind: ListAggregatedUtterancesErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListAggregatedUtterancesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListAggregatedUtterancesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAggregatedUtterancesErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_precondition_failed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAggregatedUtterancesErrorKind::PreconditionFailedException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAggregatedUtterancesErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAggregatedUtterancesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListAggregatedUtterancesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListAggregatedUtterancesErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListAggregatedUtterancesErrorKind::PreconditionFailedException(_inner) => Some(_inner),
+            ListAggregatedUtterancesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListAggregatedUtterancesErrorKind::ValidationException(_inner) => Some(_inner),
+            ListAggregatedUtterancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -6266,7 +6473,8 @@ impl std::error::Error for UpdateSlotTypeError {
     }
 }
 
-/// <p></p>
+/// <p>One of the input parameters in your request isn't valid. Check the
+/// parameters and try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -6326,7 +6534,8 @@ impl ValidationException {
     }
 }
 
-/// <p></p>
+/// <p>Your request rate is too high. Reduce the frequency of
+/// requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
@@ -6398,7 +6607,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p></p>
+/// <p>You have reached a quota for your bot. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
@@ -6458,7 +6667,9 @@ impl ServiceQuotaExceededException {
     }
 }
 
-/// <p></p>
+/// <p>Your request couldn't be completed because one or more request
+/// fields aren't valid. Check the fields in your request and try
+/// again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreconditionFailedException {
@@ -6518,7 +6729,8 @@ impl PreconditionFailedException {
     }
 }
 
-/// <p></p>
+/// <p>The service encountered an unexpected condition. Try your request
+/// again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -6578,7 +6790,9 @@ impl InternalServerException {
     }
 }
 
-/// <p></p>
+/// <p>The action that you tried to perform couldn't be completed because
+/// the resource is in a conflicting state. For example, deleting a bot
+/// that is in the CREATING state. Try your request again. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -6638,7 +6852,8 @@ impl ConflictException {
     }
 }
 
-/// <p></p>
+/// <p>You asked to describe a resource that doesn't exist. Check the
+/// resource that you are requesting and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {

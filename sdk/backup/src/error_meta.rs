@@ -1534,6 +1534,9 @@ where
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateFrameworkError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateFrameworkErrorKind::AlreadyExistsException(inner) => {
+                    Error::AlreadyExistsException(inner)
+                }
                 crate::error::UpdateFrameworkErrorKind::ConflictException(inner) => {
                     Error::ConflictException(inner)
                 }

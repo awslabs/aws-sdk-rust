@@ -1,3 +1,8 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
 use crate::{bounds, erase, retry, BoxError, Client};
 use smithy_http::body::SdkBody;
 
@@ -44,8 +49,6 @@ impl<M, R> Builder<(), M, R> {
     /// The connector dictates how requests are turned into responses. Normally, this would entail
     /// sending the request to some kind of remote server, but in certain settings it's useful to
     /// be able to use a custom connector instead, such as to mock the network for tests.
-    ///
-    /// If you want to use a custom hyper connector, use [`Builder::hyper`].
     ///
     /// If you just want to specify a function from request to response instead, use
     /// [`Builder::map_connector`].

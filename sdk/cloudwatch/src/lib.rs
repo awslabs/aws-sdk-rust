@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Amazon CloudWatch monitors your Amazon Web Services (Amazon Web Services) resources and the
 //! applications you run on Amazon Web Services in real time. You can use CloudWatch to collect and track
 //! metrics, which are the variables you want to measure for your resources and
@@ -34,7 +35,6 @@ pub mod input;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 mod query_ser;

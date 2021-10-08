@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>This is the API Reference for AWS Network Firewall. This guide is for developers who need
 //! detailed information about the Network Firewall API actions, data types, and errors. </p>
 //! <ul>
@@ -31,7 +32,8 @@
 //! prevention service for Amazon Virtual Private Cloud (Amazon VPC). With Network Firewall, you can filter traffic at the
 //! perimeter of your VPC. This includes filtering traffic going to and coming from an internet
 //! gateway, NAT gateway, or over VPN or AWS Direct Connect. Network Firewall uses rules that are compatible
-//! with Suricata, a free, open source intrusion detection system (IDS) engine. For information about Suricata,
+//! with Suricata, a free, open source intrusion detection system (IDS) engine.
+//! AWS Network Firewall supports Suricata version 5.0.2. For information about Suricata,
 //! see the <a href="https://suricata-ids.org/">Suricata website</a>.</p>
 //! <p>You can use Network Firewall to monitor and protect your VPC traffic in a number of ways.
 //! The following are just a few examples: </p>
@@ -101,7 +103,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

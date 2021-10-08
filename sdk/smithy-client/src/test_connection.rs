@@ -9,12 +9,17 @@
 
 use http::header::{HeaderName, CONTENT_TYPE};
 use http::Request;
+
 use protocol_test_helpers::{assert_ok, validate_body, MediaType};
+
 use smithy_http::body::SdkBody;
 use std::future::Ready;
+
 use std::ops::Deref;
+
 use std::sync::{Arc, Mutex};
 use std::task::{Context, Poll};
+
 use tokio::sync::oneshot;
 use tower::BoxError;
 
@@ -39,6 +44,9 @@ impl CaptureRequestReceiver {
         self.receiver.try_recv().expect("no request was received")
     }
 }
+
+#[doc(inline)]
+pub use crate::never;
 
 impl tower::Service<http::Request<SdkBody>> for CaptureRequestHandler {
     type Response = http::Response<SdkBody>;
@@ -248,7 +256,7 @@ where
 
 #[cfg(test)]
 mod tests {
-    use crate::test_connection::{capture_request, TestConnection};
+    use crate::test_connection::{capture_request, never::NeverService, TestConnection};
     use crate::{BoxError, Client};
     use hyper::service::Service;
     use smithy_http::body::SdkBody;
@@ -278,5 +286,10 @@ mod tests {
     fn oneshot_client() {
         let (tx, _rx) = capture_request(None);
         is_valid_smithy_connector(tx);
+    }
+
+    #[test]
+    fn never_test() {
+        is_valid_smithy_connector(NeverService::new())
     }
 }

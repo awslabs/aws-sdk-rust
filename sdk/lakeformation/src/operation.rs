@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for AddLFTagsToResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_add_lf_tags_to_resource_error(response)
+            crate::operation_ser::parse_add_lf_tags_to_resource_error(response)
         } else {
-            crate::operation_deser::parse_add_lf_tags_to_resource_response(response)
+            crate::operation_ser::parse_add_lf_tags_to_resource_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for BatchGrantPermissions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_grant_permissions_error(response)
+            crate::operation_ser::parse_batch_grant_permissions_error(response)
         } else {
-            crate::operation_deser::parse_batch_grant_permissions_response(response)
+            crate::operation_ser::parse_batch_grant_permissions_response(response)
         }
     }
 }
@@ -76,9 +76,9 @@ impl smithy_http::response::ParseStrictResponse for BatchRevokePermissions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_revoke_permissions_error(response)
+            crate::operation_ser::parse_batch_revoke_permissions_error(response)
         } else {
-            crate::operation_deser::parse_batch_revoke_permissions_response(response)
+            crate::operation_ser::parse_batch_revoke_permissions_response(response)
         }
     }
 }
@@ -102,9 +102,9 @@ impl smithy_http::response::ParseStrictResponse for CreateLFTag {
         std::result::Result<crate::output::CreateLfTagOutput, crate::error::CreateLFTagError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_lf_tag_error(response)
+            crate::operation_ser::parse_create_lf_tag_error(response)
         } else {
-            crate::operation_deser::parse_create_lf_tag_response(response)
+            crate::operation_ser::parse_create_lf_tag_response(response)
         }
     }
 }
@@ -128,9 +128,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteLFTag {
         std::result::Result<crate::output::DeleteLfTagOutput, crate::error::DeleteLFTagError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_lf_tag_error(response)
+            crate::operation_ser::parse_delete_lf_tag_error(response)
         } else {
-            crate::operation_deser::parse_delete_lf_tag_response(response)
+            crate::operation_ser::parse_delete_lf_tag_response(response)
         }
     }
 }
@@ -157,9 +157,9 @@ impl smithy_http::response::ParseStrictResponse for DeregisterResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_deregister_resource_error(response)
+            crate::operation_ser::parse_deregister_resource_error(response)
         } else {
-            crate::operation_deser::parse_deregister_resource_response(response)
+            crate::operation_ser::parse_deregister_resource_response(response)
         }
     }
 }
@@ -185,9 +185,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_resource_error(response)
+            crate::operation_ser::parse_describe_resource_error(response)
         } else {
-            crate::operation_deser::parse_describe_resource_response(response)
+            crate::operation_ser::parse_describe_resource_response(response)
         }
     }
 }
@@ -213,9 +213,9 @@ impl smithy_http::response::ParseStrictResponse for GetDataLakeSettings {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_data_lake_settings_error(response)
+            crate::operation_ser::parse_get_data_lake_settings_error(response)
         } else {
-            crate::operation_deser::parse_get_data_lake_settings_response(response)
+            crate::operation_ser::parse_get_data_lake_settings_response(response)
         }
     }
 }
@@ -242,9 +242,9 @@ impl smithy_http::response::ParseStrictResponse for GetEffectivePermissionsForPa
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_effective_permissions_for_path_error(response)
+            crate::operation_ser::parse_get_effective_permissions_for_path_error(response)
         } else {
-            crate::operation_deser::parse_get_effective_permissions_for_path_response(response)
+            crate::operation_ser::parse_get_effective_permissions_for_path_response(response)
         }
     }
 }
@@ -267,9 +267,9 @@ impl smithy_http::response::ParseStrictResponse for GetLFTag {
     type Output = std::result::Result<crate::output::GetLfTagOutput, crate::error::GetLFTagError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_lf_tag_error(response)
+            crate::operation_ser::parse_get_lf_tag_error(response)
         } else {
-            crate::operation_deser::parse_get_lf_tag_response(response)
+            crate::operation_ser::parse_get_lf_tag_response(response)
         }
     }
 }
@@ -295,9 +295,9 @@ impl smithy_http::response::ParseStrictResponse for GetResourceLFTags {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_resource_lf_tags_error(response)
+            crate::operation_ser::parse_get_resource_lf_tags_error(response)
         } else {
-            crate::operation_deser::parse_get_resource_lf_tags_response(response)
+            crate::operation_ser::parse_get_resource_lf_tags_response(response)
         }
     }
 }
@@ -324,9 +324,9 @@ impl smithy_http::response::ParseStrictResponse for GrantPermissions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_grant_permissions_error(response)
+            crate::operation_ser::parse_grant_permissions_error(response)
         } else {
-            crate::operation_deser::parse_grant_permissions_response(response)
+            crate::operation_ser::parse_grant_permissions_response(response)
         }
     }
 }
@@ -350,9 +350,9 @@ impl smithy_http::response::ParseStrictResponse for ListLFTags {
         std::result::Result<crate::output::ListLfTagsOutput, crate::error::ListLFTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_lf_tags_error(response)
+            crate::operation_ser::parse_list_lf_tags_error(response)
         } else {
-            crate::operation_deser::parse_list_lf_tags_response(response)
+            crate::operation_ser::parse_list_lf_tags_response(response)
         }
     }
 }
@@ -380,9 +380,9 @@ impl smithy_http::response::ParseStrictResponse for ListPermissions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_permissions_error(response)
+            crate::operation_ser::parse_list_permissions_error(response)
         } else {
-            crate::operation_deser::parse_list_permissions_response(response)
+            crate::operation_ser::parse_list_permissions_response(response)
         }
     }
 }
@@ -406,9 +406,9 @@ impl smithy_http::response::ParseStrictResponse for ListResources {
         std::result::Result<crate::output::ListResourcesOutput, crate::error::ListResourcesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_resources_error(response)
+            crate::operation_ser::parse_list_resources_error(response)
         } else {
-            crate::operation_deser::parse_list_resources_response(response)
+            crate::operation_ser::parse_list_resources_response(response)
         }
     }
 }
@@ -435,9 +435,9 @@ impl smithy_http::response::ParseStrictResponse for PutDataLakeSettings {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_data_lake_settings_error(response)
+            crate::operation_ser::parse_put_data_lake_settings_error(response)
         } else {
-            crate::operation_deser::parse_put_data_lake_settings_response(response)
+            crate::operation_ser::parse_put_data_lake_settings_response(response)
         }
     }
 }
@@ -473,9 +473,9 @@ impl smithy_http::response::ParseStrictResponse for RegisterResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_register_resource_error(response)
+            crate::operation_ser::parse_register_resource_error(response)
         } else {
-            crate::operation_deser::parse_register_resource_response(response)
+            crate::operation_ser::parse_register_resource_response(response)
         }
     }
 }
@@ -501,9 +501,9 @@ impl smithy_http::response::ParseStrictResponse for RemoveLFTagsFromResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_remove_lf_tags_from_resource_error(response)
+            crate::operation_ser::parse_remove_lf_tags_from_resource_error(response)
         } else {
-            crate::operation_deser::parse_remove_lf_tags_from_resource_response(response)
+            crate::operation_ser::parse_remove_lf_tags_from_resource_response(response)
         }
     }
 }
@@ -529,9 +529,9 @@ impl smithy_http::response::ParseStrictResponse for RevokePermissions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_revoke_permissions_error(response)
+            crate::operation_ser::parse_revoke_permissions_error(response)
         } else {
-            crate::operation_deser::parse_revoke_permissions_response(response)
+            crate::operation_ser::parse_revoke_permissions_response(response)
         }
     }
 }
@@ -557,9 +557,9 @@ impl smithy_http::response::ParseStrictResponse for SearchDatabasesByLFTags {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_search_databases_by_lf_tags_error(response)
+            crate::operation_ser::parse_search_databases_by_lf_tags_error(response)
         } else {
-            crate::operation_deser::parse_search_databases_by_lf_tags_response(response)
+            crate::operation_ser::parse_search_databases_by_lf_tags_response(response)
         }
     }
 }
@@ -585,9 +585,9 @@ impl smithy_http::response::ParseStrictResponse for SearchTablesByLFTags {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_search_tables_by_lf_tags_error(response)
+            crate::operation_ser::parse_search_tables_by_lf_tags_error(response)
         } else {
-            crate::operation_deser::parse_search_tables_by_lf_tags_response(response)
+            crate::operation_ser::parse_search_tables_by_lf_tags_response(response)
         }
     }
 }
@@ -611,9 +611,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateLFTag {
         std::result::Result<crate::output::UpdateLfTagOutput, crate::error::UpdateLFTagError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_lf_tag_error(response)
+            crate::operation_ser::parse_update_lf_tag_error(response)
         } else {
-            crate::operation_deser::parse_update_lf_tag_response(response)
+            crate::operation_ser::parse_update_lf_tag_response(response)
         }
     }
 }
@@ -637,9 +637,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateResource {
         std::result::Result<crate::output::UpdateResourceOutput, crate::error::UpdateResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_resource_error(response)
+            crate::operation_ser::parse_update_resource_error(response)
         } else {
-            crate::operation_deser::parse_update_resource_response(response)
+            crate::operation_ser::parse_update_resource_response(response)
         }
     }
 }

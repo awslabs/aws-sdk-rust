@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>The AWS Cost and Usage Report API enables you to programmatically create, query, and delete
 //! AWS Cost and Usage report definitions.</p>
 //! <p>AWS Cost and Usage reports track the monthly AWS costs and usage
@@ -39,7 +40,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

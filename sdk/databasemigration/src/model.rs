@@ -3346,8 +3346,8 @@ pub struct Endpoint {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the
-    /// Amazon S3 bucket. The role must allow the <code>iam:PassRole</code> action.</p>
+    /// <code>ServiceAccessRoleArn</code> -  - The Amazon Resource Name (ARN) used by the service access IAM role.
+    /// The role must allow the <code>iam:PassRole</code> action.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -3723,8 +3723,8 @@ pub mod endpoint {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the
-        /// Amazon S3 bucket. The role must allow the <code>iam:PassRole</code> action.</p>
+        /// <code>ServiceAccessRoleArn</code> -  - The Amazon Resource Name (ARN) used by the service access IAM role.
+        /// The role must allow the <code>iam:PassRole</code> action.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -9535,9 +9535,7 @@ impl AsRef<str> for AuthTypeValue {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DmsTransferSettings {
-    /// <p> The IAM role that has permission to access the Amazon S3 bucket. When specified as part of request syntax,
-    /// such as for the <code>CreateEndpoint</code> and <code>ModifyEndpoint</code> actions,
-    /// the role must allow the <code>iam:PassRole</code> action.</p>
+    /// <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     pub service_access_role_arn: std::option::Option<std::string::String>,
     /// <p> The name of the S3 bucket to use. </p>
     pub bucket_name: std::option::Option<std::string::String>,
@@ -9560,9 +9558,7 @@ pub mod dms_transfer_settings {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The IAM role that has permission to access the Amazon S3 bucket. When specified as part of request syntax,
-        /// such as for the <code>CreateEndpoint</code> and <code>ModifyEndpoint</code> actions,
-        /// the role must allow the <code>iam:PassRole</code> action.</p>
+        /// <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
         pub fn service_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_access_role_arn = Some(input.into());
             self

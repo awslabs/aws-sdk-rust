@@ -1946,6 +1946,20 @@ pub struct ProjectBuildBatchConfig {
     pub restrictions: std::option::Option<crate::model::BatchRestrictions>,
     /// <p>Specifies the maximum amount of time, in minutes, that the batch build must be completed in.</p>
     pub timeout_in_mins: std::option::Option<i32>,
+    /// <p>Specifies how build status reports are sent to the source provider for the batch build. This property is only used
+    /// when the source provider for your project is Bitbucket, GitHub, or GitHub Enterprise,
+    /// and your project is configured to report build statuses to the source provider.</p>
+    /// <dl>
+    /// <dt>REPORT_AGGREGATED_BATCH</dt>
+    /// <dd>
+    /// <p>(Default) Aggregate all of the build statuses into a single status report.</p>
+    /// </dd>
+    /// <dt>REPORT_INDIVIDUAL_BUILDS</dt>
+    /// <dd>
+    /// <p>Send a separate status report for each individual build.</p>
+    /// </dd>
+    /// </dl>
+    pub batch_report_mode: std::option::Option<crate::model::BatchReportModeType>,
 }
 impl std::fmt::Debug for ProjectBuildBatchConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1954,6 +1968,7 @@ impl std::fmt::Debug for ProjectBuildBatchConfig {
         formatter.field("combine_artifacts", &self.combine_artifacts);
         formatter.field("restrictions", &self.restrictions);
         formatter.field("timeout_in_mins", &self.timeout_in_mins);
+        formatter.field("batch_report_mode", &self.batch_report_mode);
         formatter.finish()
     }
 }
@@ -1967,6 +1982,7 @@ pub mod project_build_batch_config {
         pub(crate) combine_artifacts: std::option::Option<bool>,
         pub(crate) restrictions: std::option::Option<crate::model::BatchRestrictions>,
         pub(crate) timeout_in_mins: std::option::Option<i32>,
+        pub(crate) batch_report_mode: std::option::Option<crate::model::BatchReportModeType>,
     }
     impl Builder {
         /// <p>Specifies the service role ARN for the batch build project.</p>
@@ -2010,6 +2026,30 @@ pub mod project_build_batch_config {
             self.timeout_in_mins = input;
             self
         }
+        /// <p>Specifies how build status reports are sent to the source provider for the batch build. This property is only used
+        /// when the source provider for your project is Bitbucket, GitHub, or GitHub Enterprise,
+        /// and your project is configured to report build statuses to the source provider.</p>
+        /// <dl>
+        /// <dt>REPORT_AGGREGATED_BATCH</dt>
+        /// <dd>
+        /// <p>(Default) Aggregate all of the build statuses into a single status report.</p>
+        /// </dd>
+        /// <dt>REPORT_INDIVIDUAL_BUILDS</dt>
+        /// <dd>
+        /// <p>Send a separate status report for each individual build.</p>
+        /// </dd>
+        /// </dl>
+        pub fn batch_report_mode(mut self, input: crate::model::BatchReportModeType) -> Self {
+            self.batch_report_mode = Some(input);
+            self
+        }
+        pub fn set_batch_report_mode(
+            mut self,
+            input: std::option::Option<crate::model::BatchReportModeType>,
+        ) -> Self {
+            self.batch_report_mode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ProjectBuildBatchConfig`](crate::model::ProjectBuildBatchConfig)
         pub fn build(self) -> crate::model::ProjectBuildBatchConfig {
             crate::model::ProjectBuildBatchConfig {
@@ -2017,6 +2057,7 @@ pub mod project_build_batch_config {
                 combine_artifacts: self.combine_artifacts,
                 restrictions: self.restrictions,
                 timeout_in_mins: self.timeout_in_mins,
+                batch_report_mode: self.batch_report_mode,
             }
         }
     }
@@ -2025,6 +2066,56 @@ impl ProjectBuildBatchConfig {
     /// Creates a new builder-style object to manufacture [`ProjectBuildBatchConfig`](crate::model::ProjectBuildBatchConfig)
     pub fn builder() -> crate::model::project_build_batch_config::Builder {
         crate::model::project_build_batch_config::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum BatchReportModeType {
+    ReportAggregatedBatch,
+    ReportIndividualBuilds,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for BatchReportModeType {
+    fn from(s: &str) -> Self {
+        match s {
+            "REPORT_AGGREGATED_BATCH" => BatchReportModeType::ReportAggregatedBatch,
+            "REPORT_INDIVIDUAL_BUILDS" => BatchReportModeType::ReportIndividualBuilds,
+            other => BatchReportModeType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for BatchReportModeType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BatchReportModeType::from(s))
+    }
+}
+impl BatchReportModeType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            BatchReportModeType::ReportAggregatedBatch => "REPORT_AGGREGATED_BATCH",
+            BatchReportModeType::ReportIndividualBuilds => "REPORT_INDIVIDUAL_BUILDS",
+            BatchReportModeType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["REPORT_AGGREGATED_BATCH", "REPORT_INDIVIDUAL_BUILDS"]
+    }
+}
+impl AsRef<str> for BatchReportModeType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

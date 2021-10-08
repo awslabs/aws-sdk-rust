@@ -24,9 +24,9 @@ impl smithy_http::response::ParseStrictResponse for CreateCallAnalyticsCategory 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_call_analytics_category_error(response)
+            crate::operation_ser::parse_create_call_analytics_category_error(response)
         } else {
-            crate::operation_deser::parse_create_call_analytics_category_response(response)
+            crate::operation_ser::parse_create_call_analytics_category_response(response)
         }
     }
 }
@@ -53,9 +53,9 @@ impl smithy_http::response::ParseStrictResponse for CreateLanguageModel {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_language_model_error(response)
+            crate::operation_ser::parse_create_language_model_error(response)
         } else {
-            crate::operation_deser::parse_create_language_model_response(response)
+            crate::operation_ser::parse_create_language_model_response(response)
         }
     }
 }
@@ -81,9 +81,9 @@ impl smithy_http::response::ParseStrictResponse for CreateMedicalVocabulary {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_medical_vocabulary_error(response)
+            crate::operation_ser::parse_create_medical_vocabulary_error(response)
         } else {
-            crate::operation_deser::parse_create_medical_vocabulary_response(response)
+            crate::operation_ser::parse_create_medical_vocabulary_response(response)
         }
     }
 }
@@ -110,9 +110,9 @@ impl smithy_http::response::ParseStrictResponse for CreateVocabulary {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_vocabulary_error(response)
+            crate::operation_ser::parse_create_vocabulary_error(response)
         } else {
-            crate::operation_deser::parse_create_vocabulary_response(response)
+            crate::operation_ser::parse_create_vocabulary_response(response)
         }
     }
 }
@@ -139,9 +139,9 @@ impl smithy_http::response::ParseStrictResponse for CreateVocabularyFilter {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_vocabulary_filter_error(response)
+            crate::operation_ser::parse_create_vocabulary_filter_error(response)
         } else {
-            crate::operation_deser::parse_create_vocabulary_filter_response(response)
+            crate::operation_ser::parse_create_vocabulary_filter_response(response)
         }
     }
 }
@@ -167,9 +167,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteCallAnalyticsCategory 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_call_analytics_category_error(response)
+            crate::operation_ser::parse_delete_call_analytics_category_error(response)
         } else {
-            crate::operation_deser::parse_delete_call_analytics_category_response(response)
+            crate::operation_ser::parse_delete_call_analytics_category_response(response)
         }
     }
 }
@@ -195,9 +195,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteCallAnalyticsJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_call_analytics_job_error(response)
+            crate::operation_ser::parse_delete_call_analytics_job_error(response)
         } else {
-            crate::operation_deser::parse_delete_call_analytics_job_response(response)
+            crate::operation_ser::parse_delete_call_analytics_job_response(response)
         }
     }
 }
@@ -223,9 +223,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteLanguageModel {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_language_model_error(response)
+            crate::operation_ser::parse_delete_language_model_error(response)
         } else {
-            crate::operation_deser::parse_delete_language_model_response(response)
+            crate::operation_ser::parse_delete_language_model_response(response)
         }
     }
 }
@@ -251,9 +251,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteMedicalTranscriptionJo
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_medical_transcription_job_error(response)
+            crate::operation_ser::parse_delete_medical_transcription_job_error(response)
         } else {
-            crate::operation_deser::parse_delete_medical_transcription_job_response(response)
+            crate::operation_ser::parse_delete_medical_transcription_job_response(response)
         }
     }
 }
@@ -279,9 +279,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteMedicalVocabulary {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_medical_vocabulary_error(response)
+            crate::operation_ser::parse_delete_medical_vocabulary_error(response)
         } else {
-            crate::operation_deser::parse_delete_medical_vocabulary_response(response)
+            crate::operation_ser::parse_delete_medical_vocabulary_response(response)
         }
     }
 }
@@ -308,9 +308,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteTranscriptionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_transcription_job_error(response)
+            crate::operation_ser::parse_delete_transcription_job_error(response)
         } else {
-            crate::operation_deser::parse_delete_transcription_job_response(response)
+            crate::operation_ser::parse_delete_transcription_job_response(response)
         }
     }
 }
@@ -336,9 +336,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteVocabulary {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_vocabulary_error(response)
+            crate::operation_ser::parse_delete_vocabulary_error(response)
         } else {
-            crate::operation_deser::parse_delete_vocabulary_response(response)
+            crate::operation_ser::parse_delete_vocabulary_response(response)
         }
     }
 }
@@ -364,9 +364,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteVocabularyFilter {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_vocabulary_filter_error(response)
+            crate::operation_ser::parse_delete_vocabulary_filter_error(response)
         } else {
-            crate::operation_deser::parse_delete_vocabulary_filter_response(response)
+            crate::operation_ser::parse_delete_vocabulary_filter_response(response)
         }
     }
 }
@@ -396,9 +396,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeLanguageModel {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_language_model_error(response)
+            crate::operation_ser::parse_describe_language_model_error(response)
         } else {
-            crate::operation_deser::parse_describe_language_model_response(response)
+            crate::operation_ser::parse_describe_language_model_response(response)
         }
     }
 }
@@ -424,9 +424,9 @@ impl smithy_http::response::ParseStrictResponse for GetCallAnalyticsCategory {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_call_analytics_category_error(response)
+            crate::operation_ser::parse_get_call_analytics_category_error(response)
         } else {
-            crate::operation_deser::parse_get_call_analytics_category_response(response)
+            crate::operation_ser::parse_get_call_analytics_category_response(response)
         }
     }
 }
@@ -456,9 +456,9 @@ impl smithy_http::response::ParseStrictResponse for GetCallAnalyticsJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_call_analytics_job_error(response)
+            crate::operation_ser::parse_get_call_analytics_job_error(response)
         } else {
-            crate::operation_deser::parse_get_call_analytics_job_response(response)
+            crate::operation_ser::parse_get_call_analytics_job_response(response)
         }
     }
 }
@@ -486,9 +486,9 @@ impl smithy_http::response::ParseStrictResponse for GetMedicalTranscriptionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_medical_transcription_job_error(response)
+            crate::operation_ser::parse_get_medical_transcription_job_error(response)
         } else {
-            crate::operation_deser::parse_get_medical_transcription_job_response(response)
+            crate::operation_ser::parse_get_medical_transcription_job_response(response)
         }
     }
 }
@@ -514,9 +514,9 @@ impl smithy_http::response::ParseStrictResponse for GetMedicalVocabulary {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_medical_vocabulary_error(response)
+            crate::operation_ser::parse_get_medical_vocabulary_error(response)
         } else {
-            crate::operation_deser::parse_get_medical_vocabulary_response(response)
+            crate::operation_ser::parse_get_medical_vocabulary_response(response)
         }
     }
 }
@@ -545,9 +545,9 @@ impl smithy_http::response::ParseStrictResponse for GetTranscriptionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_transcription_job_error(response)
+            crate::operation_ser::parse_get_transcription_job_error(response)
         } else {
-            crate::operation_deser::parse_get_transcription_job_response(response)
+            crate::operation_ser::parse_get_transcription_job_response(response)
         }
     }
 }
@@ -571,9 +571,9 @@ impl smithy_http::response::ParseStrictResponse for GetVocabulary {
         std::result::Result<crate::output::GetVocabularyOutput, crate::error::GetVocabularyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_vocabulary_error(response)
+            crate::operation_ser::parse_get_vocabulary_error(response)
         } else {
-            crate::operation_deser::parse_get_vocabulary_response(response)
+            crate::operation_ser::parse_get_vocabulary_response(response)
         }
     }
 }
@@ -599,9 +599,9 @@ impl smithy_http::response::ParseStrictResponse for GetVocabularyFilter {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_vocabulary_filter_error(response)
+            crate::operation_ser::parse_get_vocabulary_filter_error(response)
         } else {
-            crate::operation_deser::parse_get_vocabulary_filter_response(response)
+            crate::operation_ser::parse_get_vocabulary_filter_response(response)
         }
     }
 }
@@ -629,9 +629,9 @@ impl smithy_http::response::ParseStrictResponse for ListCallAnalyticsCategories 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_call_analytics_categories_error(response)
+            crate::operation_ser::parse_list_call_analytics_categories_error(response)
         } else {
-            crate::operation_deser::parse_list_call_analytics_categories_response(response)
+            crate::operation_ser::parse_list_call_analytics_categories_response(response)
         }
     }
 }
@@ -657,9 +657,9 @@ impl smithy_http::response::ParseStrictResponse for ListCallAnalyticsJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_call_analytics_jobs_error(response)
+            crate::operation_ser::parse_list_call_analytics_jobs_error(response)
         } else {
-            crate::operation_deser::parse_list_call_analytics_jobs_response(response)
+            crate::operation_ser::parse_list_call_analytics_jobs_response(response)
         }
     }
 }
@@ -687,9 +687,9 @@ impl smithy_http::response::ParseStrictResponse for ListLanguageModels {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_language_models_error(response)
+            crate::operation_ser::parse_list_language_models_error(response)
         } else {
-            crate::operation_deser::parse_list_language_models_response(response)
+            crate::operation_ser::parse_list_language_models_response(response)
         }
     }
 }
@@ -715,9 +715,9 @@ impl smithy_http::response::ParseStrictResponse for ListMedicalTranscriptionJobs
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_medical_transcription_jobs_error(response)
+            crate::operation_ser::parse_list_medical_transcription_jobs_error(response)
         } else {
-            crate::operation_deser::parse_list_medical_transcription_jobs_response(response)
+            crate::operation_ser::parse_list_medical_transcription_jobs_response(response)
         }
     }
 }
@@ -744,9 +744,9 @@ impl smithy_http::response::ParseStrictResponse for ListMedicalVocabularies {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_medical_vocabularies_error(response)
+            crate::operation_ser::parse_list_medical_vocabularies_error(response)
         } else {
-            crate::operation_deser::parse_list_medical_vocabularies_response(response)
+            crate::operation_ser::parse_list_medical_vocabularies_response(response)
         }
     }
 }
@@ -772,9 +772,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::operation_ser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::operation_ser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -800,9 +800,9 @@ impl smithy_http::response::ParseStrictResponse for ListTranscriptionJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_transcription_jobs_error(response)
+            crate::operation_ser::parse_list_transcription_jobs_error(response)
         } else {
-            crate::operation_deser::parse_list_transcription_jobs_response(response)
+            crate::operation_ser::parse_list_transcription_jobs_response(response)
         }
     }
 }
@@ -829,9 +829,9 @@ impl smithy_http::response::ParseStrictResponse for ListVocabularies {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_vocabularies_error(response)
+            crate::operation_ser::parse_list_vocabularies_error(response)
         } else {
-            crate::operation_deser::parse_list_vocabularies_response(response)
+            crate::operation_ser::parse_list_vocabularies_response(response)
         }
     }
 }
@@ -857,9 +857,9 @@ impl smithy_http::response::ParseStrictResponse for ListVocabularyFilters {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_vocabulary_filters_error(response)
+            crate::operation_ser::parse_list_vocabulary_filters_error(response)
         } else {
-            crate::operation_deser::parse_list_vocabulary_filters_response(response)
+            crate::operation_ser::parse_list_vocabulary_filters_response(response)
         }
     }
 }
@@ -889,9 +889,9 @@ impl smithy_http::response::ParseStrictResponse for StartCallAnalyticsJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_call_analytics_job_error(response)
+            crate::operation_ser::parse_start_call_analytics_job_error(response)
         } else {
-            crate::operation_deser::parse_start_call_analytics_job_response(response)
+            crate::operation_ser::parse_start_call_analytics_job_response(response)
         }
     }
 }
@@ -917,9 +917,9 @@ impl smithy_http::response::ParseStrictResponse for StartMedicalTranscriptionJob
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_medical_transcription_job_error(response)
+            crate::operation_ser::parse_start_medical_transcription_job_error(response)
         } else {
-            crate::operation_deser::parse_start_medical_transcription_job_response(response)
+            crate::operation_ser::parse_start_medical_transcription_job_response(response)
         }
     }
 }
@@ -945,9 +945,9 @@ impl smithy_http::response::ParseStrictResponse for StartTranscriptionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_transcription_job_error(response)
+            crate::operation_ser::parse_start_transcription_job_error(response)
         } else {
-            crate::operation_deser::parse_start_transcription_job_response(response)
+            crate::operation_ser::parse_start_transcription_job_response(response)
         }
     }
 }
@@ -971,9 +971,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::operation_ser::parse_tag_resource_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::operation_ser::parse_tag_resource_response(response)
         }
     }
 }
@@ -997,9 +997,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::operation_ser::parse_untag_resource_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::operation_ser::parse_untag_resource_response(response)
         }
     }
 }
@@ -1026,9 +1026,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateCallAnalyticsCategory 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_call_analytics_category_error(response)
+            crate::operation_ser::parse_update_call_analytics_category_error(response)
         } else {
-            crate::operation_deser::parse_update_call_analytics_category_response(response)
+            crate::operation_ser::parse_update_call_analytics_category_response(response)
         }
     }
 }
@@ -1056,9 +1056,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateMedicalVocabulary {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_medical_vocabulary_error(response)
+            crate::operation_ser::parse_update_medical_vocabulary_error(response)
         } else {
-            crate::operation_deser::parse_update_medical_vocabulary_response(response)
+            crate::operation_ser::parse_update_medical_vocabulary_response(response)
         }
     }
 }
@@ -1085,9 +1085,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateVocabulary {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_vocabulary_error(response)
+            crate::operation_ser::parse_update_vocabulary_error(response)
         } else {
-            crate::operation_deser::parse_update_vocabulary_response(response)
+            crate::operation_ser::parse_update_vocabulary_response(response)
         }
     }
 }
@@ -1113,9 +1113,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateVocabularyFilter {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_vocabulary_filter_error(response)
+            crate::operation_ser::parse_update_vocabulary_filter_error(response)
         } else {
-            crate::operation_deser::parse_update_vocabulary_filter_response(response)
+            crate::operation_ser::parse_update_vocabulary_filter_response(response)
         }
     }
 }

@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Batch</fullname>
 //! <p>Using Batch, you can run batch computing workloads on the Cloud. Batch computing is a common means for
 //! developers, scientists, and engineers to access large amounts of compute resources. Batch uses the advantages of
@@ -35,7 +36,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

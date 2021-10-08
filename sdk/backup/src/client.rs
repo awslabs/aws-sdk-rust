@@ -791,8 +791,12 @@ pub mod fluent_builders {
         /// <p>Identifies the report template for the report. Reports are built using a report
         /// template. The report templates are:</p>
         /// <p>
-        /// <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+        /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
+        /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
         /// </p>
+        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
+        /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
+        /// coverage by Amazon Web Services Regions and frameworks.</p>
         pub fn report_setting(mut self, inp: crate::model::ReportSetting) -> Self {
             self.inner = self.inner.report_setting(inp);
             self
@@ -807,7 +811,7 @@ pub mod fluent_builders {
         /// Adds a key-value pair to `ReportPlanTags`.
         ///
         /// To override the contents of this collection use [`set_report_plan_tags`](Self::set_report_plan_tags).
-        /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag
+        /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag
         /// is a key-value pair.</p>
         pub fn report_plan_tags(
             mut self,
@@ -5464,8 +5468,12 @@ pub mod fluent_builders {
         /// <p>Identifies the report template for the report. Reports are built using a report
         /// template. The report templates are:</p>
         /// <p>
-        /// <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+        /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
+        /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
         /// </p>
+        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
+        /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
+        /// coverage by Amazon Web Services Regions and frameworks.</p>
         pub fn report_setting(mut self, inp: crate::model::ReportSetting) -> Self {
             self.inner = self.inner.report_setting(inp);
             self

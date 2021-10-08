@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>When you create a VPC using Amazon VPC, you automatically get DNS resolution within the VPC
 //! from Route 53 Resolver. By default, Resolver answers DNS queries for VPC domain names
 //! such as domain names for EC2 instances or Elastic Load Balancing load balancers.
@@ -52,7 +53,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

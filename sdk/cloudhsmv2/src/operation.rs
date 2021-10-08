@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for CopyBackupToRegion {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_copy_backup_to_region_error(response)
+            crate::operation_ser::parse_copy_backup_to_region_error(response)
         } else {
-            crate::operation_deser::parse_copy_backup_to_region_response(response)
+            crate::operation_ser::parse_copy_backup_to_region_response(response)
         }
     }
 }
@@ -46,9 +46,9 @@ impl smithy_http::response::ParseStrictResponse for CreateCluster {
         std::result::Result<crate::output::CreateClusterOutput, crate::error::CreateClusterError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_cluster_error(response)
+            crate::operation_ser::parse_create_cluster_error(response)
         } else {
-            crate::operation_deser::parse_create_cluster_response(response)
+            crate::operation_ser::parse_create_cluster_response(response)
         }
     }
 }
@@ -72,9 +72,9 @@ impl smithy_http::response::ParseStrictResponse for CreateHsm {
     type Output = std::result::Result<crate::output::CreateHsmOutput, crate::error::CreateHsmError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_hsm_error(response)
+            crate::operation_ser::parse_create_hsm_error(response)
         } else {
-            crate::operation_deser::parse_create_hsm_response(response)
+            crate::operation_ser::parse_create_hsm_response(response)
         }
     }
 }
@@ -100,9 +100,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBackup {
         std::result::Result<crate::output::DeleteBackupOutput, crate::error::DeleteBackupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_backup_error(response)
+            crate::operation_ser::parse_delete_backup_error(response)
         } else {
-            crate::operation_deser::parse_delete_backup_response(response)
+            crate::operation_ser::parse_delete_backup_response(response)
         }
     }
 }
@@ -127,9 +127,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteCluster {
         std::result::Result<crate::output::DeleteClusterOutput, crate::error::DeleteClusterError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_cluster_error(response)
+            crate::operation_ser::parse_delete_cluster_error(response)
         } else {
-            crate::operation_deser::parse_delete_cluster_response(response)
+            crate::operation_ser::parse_delete_cluster_response(response)
         }
     }
 }
@@ -154,9 +154,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteHsm {
     type Output = std::result::Result<crate::output::DeleteHsmOutput, crate::error::DeleteHsmError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_hsm_error(response)
+            crate::operation_ser::parse_delete_hsm_error(response)
         } else {
-            crate::operation_deser::parse_delete_hsm_response(response)
+            crate::operation_ser::parse_delete_hsm_response(response)
         }
     }
 }
@@ -187,9 +187,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeBackups {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_backups_error(response)
+            crate::operation_ser::parse_describe_backups_error(response)
         } else {
-            crate::operation_deser::parse_describe_backups_response(response)
+            crate::operation_ser::parse_describe_backups_response(response)
         }
     }
 }
@@ -220,9 +220,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeClusters {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_clusters_error(response)
+            crate::operation_ser::parse_describe_clusters_error(response)
         } else {
-            crate::operation_deser::parse_describe_clusters_response(response)
+            crate::operation_ser::parse_describe_clusters_response(response)
         }
     }
 }
@@ -251,9 +251,9 @@ impl smithy_http::response::ParseStrictResponse for InitializeCluster {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_initialize_cluster_error(response)
+            crate::operation_ser::parse_initialize_cluster_error(response)
         } else {
-            crate::operation_deser::parse_initialize_cluster_response(response)
+            crate::operation_ser::parse_initialize_cluster_response(response)
         }
     }
 }
@@ -281,9 +281,9 @@ impl smithy_http::response::ParseStrictResponse for ListTags {
     type Output = std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_error(response)
+            crate::operation_ser::parse_list_tags_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_response(response)
+            crate::operation_ser::parse_list_tags_response(response)
         }
     }
 }
@@ -309,9 +309,9 @@ impl smithy_http::response::ParseStrictResponse for ModifyBackupAttributes {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_modify_backup_attributes_error(response)
+            crate::operation_ser::parse_modify_backup_attributes_error(response)
         } else {
-            crate::operation_deser::parse_modify_backup_attributes_response(response)
+            crate::operation_ser::parse_modify_backup_attributes_response(response)
         }
     }
 }
@@ -335,9 +335,9 @@ impl smithy_http::response::ParseStrictResponse for ModifyCluster {
         std::result::Result<crate::output::ModifyClusterOutput, crate::error::ModifyClusterError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_modify_cluster_error(response)
+            crate::operation_ser::parse_modify_cluster_error(response)
         } else {
-            crate::operation_deser::parse_modify_cluster_response(response)
+            crate::operation_ser::parse_modify_cluster_response(response)
         }
     }
 }
@@ -363,9 +363,9 @@ impl smithy_http::response::ParseStrictResponse for RestoreBackup {
         std::result::Result<crate::output::RestoreBackupOutput, crate::error::RestoreBackupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_restore_backup_error(response)
+            crate::operation_ser::parse_restore_backup_error(response)
         } else {
-            crate::operation_deser::parse_restore_backup_response(response)
+            crate::operation_ser::parse_restore_backup_response(response)
         }
     }
 }
@@ -389,9 +389,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::operation_ser::parse_tag_resource_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::operation_ser::parse_tag_resource_response(response)
         }
     }
 }
@@ -415,9 +415,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::operation_ser::parse_untag_resource_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::operation_ser::parse_untag_resource_response(response)
         }
     }
 }

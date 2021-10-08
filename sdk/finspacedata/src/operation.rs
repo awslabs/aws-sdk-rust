@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for CreateChangeset {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_changeset_error(response)
+            crate::operation_ser::parse_create_changeset_error(response)
         } else {
-            crate::operation_deser::parse_create_changeset_response(response)
+            crate::operation_ser::parse_create_changeset_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for GetProgrammaticAccessCredent
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_programmatic_access_credentials_error(response)
+            crate::operation_ser::parse_get_programmatic_access_credentials_error(response)
         } else {
-            crate::operation_deser::parse_get_programmatic_access_credentials_response(response)
+            crate::operation_ser::parse_get_programmatic_access_credentials_response(response)
         }
     }
 }
@@ -77,9 +77,9 @@ impl smithy_http::response::ParseStrictResponse for GetWorkingLocation {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_working_location_error(response)
+            crate::operation_ser::parse_get_working_location_error(response)
         } else {
-            crate::operation_deser::parse_get_working_location_response(response)
+            crate::operation_ser::parse_get_working_location_response(response)
         }
     }
 }

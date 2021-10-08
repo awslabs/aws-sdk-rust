@@ -540,8 +540,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this role when
-        /// accessing the data source.</p>
+        /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this
+        /// role when accessing the data source.</p>
         pub fn service_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_role_arn(inp);
             self
@@ -577,7 +577,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lambda_config(input);
             self
         }
-        /// <p>Amazon Elasticsearch Service settings.</p>
+        /// <p>Amazon OpenSearch Service settings.</p>
+        /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
+        /// configuration is deprecated. For new data sources, use <a>CreateDataSourceRequest$openSearchServiceConfig</a> to create an OpenSearch data source.</p>
         pub fn elasticsearch_config(
             mut self,
             inp: crate::model::ElasticsearchDataSourceConfig,
@@ -590,6 +592,21 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
         ) -> Self {
             self.inner = self.inner.set_elasticsearch_config(input);
+            self
+        }
+        /// <p>Amazon OpenSearch Service settings.</p>
+        pub fn open_search_service_config(
+            mut self,
+            inp: crate::model::OpenSearchServiceDataSourceConfig,
+        ) -> Self {
+            self.inner = self.inner.open_search_service_config(inp);
+            self
+        }
+        pub fn set_open_search_service_config(
+            mut self,
+            input: std::option::Option<crate::model::OpenSearchServiceDataSourceConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_open_search_service_config(input);
             self
         }
         /// <p>HTTP endpoint settings.</p>
@@ -822,7 +839,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_config(input);
             self
         }
-        /// <p>The authentication type: API key, Identity and Access Management, OIDC, or Amazon Cognito user pools.</p>
+        /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user
+        /// pools, or Amazon Web Services Lambda.</p>
         pub fn authentication_type(mut self, inp: crate::model::AuthenticationType) -> Self {
             self.inner = self.inner.authentication_type(inp);
             self
@@ -910,7 +928,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_xray_enabled(input);
             self
         }
-        /// <p>Configuration for AWS Lambda function authorization.</p>
+        /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
         pub fn lambda_authorizer_config(
             mut self,
             inp: crate::model::LambdaAuthorizerConfig,
@@ -3333,7 +3351,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lambda_config(input);
             self
         }
-        /// <p>The new Elasticsearch Service configuration.</p>
+        /// <p>The new OpenSearch configuration.</p>
+        /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
+        /// configuration is deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a> to update an OpenSearch data source.</p>
         pub fn elasticsearch_config(
             mut self,
             inp: crate::model::ElasticsearchDataSourceConfig,
@@ -3346,6 +3366,21 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
         ) -> Self {
             self.inner = self.inner.set_elasticsearch_config(input);
+            self
+        }
+        /// <p>The new OpenSearch configuration.</p>
+        pub fn open_search_service_config(
+            mut self,
+            inp: crate::model::OpenSearchServiceDataSourceConfig,
+        ) -> Self {
+            self.inner = self.inner.open_search_service_config(inp);
+            self
+        }
+        pub fn set_open_search_service_config(
+            mut self,
+            input: std::option::Option<crate::model::OpenSearchServiceDataSourceConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_open_search_service_config(input);
             self
         }
         /// <p>The new HTTP endpoint configuration.</p>
@@ -3664,7 +3699,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_xray_enabled(input);
             self
         }
-        /// <p>Configuration for AWS Lambda function authorization.</p>
+        /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
         pub fn lambda_authorizer_config(
             mut self,
             inp: crate::model::LambdaAuthorizerConfig,

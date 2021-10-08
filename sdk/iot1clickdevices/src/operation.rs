@@ -21,9 +21,9 @@ impl smithy_http::response::ParseStrictResponse for ClaimDevicesByClaimCode {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_claim_devices_by_claim_code_error(response)
+            crate::operation_ser::parse_claim_devices_by_claim_code_error(response)
         } else {
-            crate::operation_deser::parse_claim_devices_by_claim_code_response(response)
+            crate::operation_ser::parse_claim_devices_by_claim_code_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDevice {
         std::result::Result<crate::output::DescribeDeviceOutput, crate::error::DescribeDeviceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_device_error(response)
+            crate::operation_ser::parse_describe_device_error(response)
         } else {
-            crate::operation_deser::parse_describe_device_response(response)
+            crate::operation_ser::parse_describe_device_response(response)
         }
     }
 }
@@ -80,9 +80,9 @@ impl smithy_http::response::ParseStrictResponse for FinalizeDeviceClaim {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_finalize_device_claim_error(response)
+            crate::operation_ser::parse_finalize_device_claim_error(response)
         } else {
-            crate::operation_deser::parse_finalize_device_claim_response(response)
+            crate::operation_ser::parse_finalize_device_claim_response(response)
         }
     }
 }
@@ -108,9 +108,9 @@ impl smithy_http::response::ParseStrictResponse for GetDeviceMethods {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_device_methods_error(response)
+            crate::operation_ser::parse_get_device_methods_error(response)
         } else {
-            crate::operation_deser::parse_get_device_methods_response(response)
+            crate::operation_ser::parse_get_device_methods_response(response)
         }
     }
 }
@@ -140,9 +140,9 @@ impl smithy_http::response::ParseStrictResponse for InitiateDeviceClaim {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_initiate_device_claim_error(response)
+            crate::operation_ser::parse_initiate_device_claim_error(response)
         } else {
-            crate::operation_deser::parse_initiate_device_claim_response(response)
+            crate::operation_ser::parse_initiate_device_claim_response(response)
         }
     }
 }
@@ -169,9 +169,9 @@ impl smithy_http::response::ParseStrictResponse for InvokeDeviceMethod {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_invoke_device_method_error(response)
+            crate::operation_ser::parse_invoke_device_method_error(response)
         } else {
-            crate::operation_deser::parse_invoke_device_method_response(response)
+            crate::operation_ser::parse_invoke_device_method_response(response)
         }
     }
 }
@@ -198,9 +198,9 @@ impl smithy_http::response::ParseStrictResponse for ListDeviceEvents {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_device_events_error(response)
+            crate::operation_ser::parse_list_device_events_error(response)
         } else {
-            crate::operation_deser::parse_list_device_events_response(response)
+            crate::operation_ser::parse_list_device_events_response(response)
         }
     }
 }
@@ -224,9 +224,9 @@ impl smithy_http::response::ParseStrictResponse for ListDevices {
         std::result::Result<crate::output::ListDevicesOutput, crate::error::ListDevicesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_devices_error(response)
+            crate::operation_ser::parse_list_devices_error(response)
         } else {
-            crate::operation_deser::parse_list_devices_response(response)
+            crate::operation_ser::parse_list_devices_response(response)
         }
     }
 }
@@ -252,9 +252,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::operation_ser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::operation_ser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -279,9 +279,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::operation_ser::parse_tag_resource_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::operation_ser::parse_tag_resource_response(response)
         }
     }
 }
@@ -305,9 +305,9 @@ impl smithy_http::response::ParseStrictResponse for UnclaimDevice {
         std::result::Result<crate::output::UnclaimDeviceOutput, crate::error::UnclaimDeviceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_unclaim_device_error(response)
+            crate::operation_ser::parse_unclaim_device_error(response)
         } else {
-            crate::operation_deser::parse_unclaim_device_response(response)
+            crate::operation_ser::parse_unclaim_device_response(response)
         }
     }
 }
@@ -332,9 +332,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::operation_ser::parse_untag_resource_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::operation_ser::parse_untag_resource_response(response)
         }
     }
 }
@@ -361,9 +361,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateDeviceState {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_device_state_error(response)
+            crate::operation_ser::parse_update_device_state_error(response)
         } else {
-            crate::operation_deser::parse_update_device_state_response(response)
+            crate::operation_ser::parse_update_device_state_response(response)
         }
     }
 }

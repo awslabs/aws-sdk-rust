@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>AWS Systems Manager Incident Manager is an incident management console designed to help
 //! users mitigate and recover from incidents affecting their AWS-hosted applications. An incident
 //! is any unplanned interruption or reduction in quality of services. </p>
@@ -33,7 +34,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

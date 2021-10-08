@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Security Token Service</fullname>
 //! <p>Security Token Service (STS) enables you to request temporary, limited-privilege
 //! credentials for Identity and Access Management (IAM) users or for users that you
@@ -26,7 +27,6 @@ pub mod input;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 mod query_ser;

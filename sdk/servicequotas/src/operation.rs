@@ -23,9 +23,9 @@ impl smithy_http::response::ParseStrictResponse for AssociateServiceQuotaTemplat
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_associate_service_quota_template_error(response)
+            crate::operation_ser::parse_associate_service_quota_template_error(response)
         } else {
-            crate::operation_deser::parse_associate_service_quota_template_response(response)
+            crate::operation_ser::parse_associate_service_quota_template_response(response)
         }
     }
 }
@@ -53,11 +53,13 @@ impl smithy_http::response::ParseStrictResponse for DeleteServiceQuotaIncreaseRe
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_service_quota_increase_request_from_template_error(
+            crate::operation_ser::parse_delete_service_quota_increase_request_from_template_error(
                 response,
             )
         } else {
-            crate::operation_deser::parse_delete_service_quota_increase_request_from_template_response(response)
+            crate::operation_ser::parse_delete_service_quota_increase_request_from_template_response(
+                response,
+            )
         }
     }
 }
@@ -85,9 +87,9 @@ impl smithy_http::response::ParseStrictResponse for DisassociateServiceQuotaTemp
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_disassociate_service_quota_template_error(response)
+            crate::operation_ser::parse_disassociate_service_quota_template_error(response)
         } else {
-            crate::operation_deser::parse_disassociate_service_quota_template_response(response)
+            crate::operation_ser::parse_disassociate_service_quota_template_response(response)
         }
     }
 }
@@ -113,9 +115,9 @@ impl smithy_http::response::ParseStrictResponse for GetAssociationForServiceQuot
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_association_for_service_quota_template_error(response)
+            crate::operation_ser::parse_get_association_for_service_quota_template_error(response)
         } else {
-            crate::operation_deser::parse_get_association_for_service_quota_template_response(
+            crate::operation_ser::parse_get_association_for_service_quota_template_response(
                 response,
             )
         }
@@ -144,9 +146,9 @@ impl smithy_http::response::ParseStrictResponse for GetAWSDefaultServiceQuota {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_aws_default_service_quota_error(response)
+            crate::operation_ser::parse_get_aws_default_service_quota_error(response)
         } else {
-            crate::operation_deser::parse_get_aws_default_service_quota_response(response)
+            crate::operation_ser::parse_get_aws_default_service_quota_response(response)
         }
     }
 }
@@ -172,9 +174,9 @@ impl smithy_http::response::ParseStrictResponse for GetRequestedServiceQuotaChan
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_requested_service_quota_change_error(response)
+            crate::operation_ser::parse_get_requested_service_quota_change_error(response)
         } else {
-            crate::operation_deser::parse_get_requested_service_quota_change_response(response)
+            crate::operation_ser::parse_get_requested_service_quota_change_response(response)
         }
     }
 }
@@ -202,9 +204,9 @@ impl smithy_http::response::ParseStrictResponse for GetServiceQuota {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_service_quota_error(response)
+            crate::operation_ser::parse_get_service_quota_error(response)
         } else {
-            crate::operation_deser::parse_get_service_quota_response(response)
+            crate::operation_ser::parse_get_service_quota_response(response)
         }
     }
 }
@@ -232,11 +234,11 @@ impl smithy_http::response::ParseStrictResponse for GetServiceQuotaIncreaseReque
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_service_quota_increase_request_from_template_error(
+            crate::operation_ser::parse_get_service_quota_increase_request_from_template_error(
                 response,
             )
         } else {
-            crate::operation_deser::parse_get_service_quota_increase_request_from_template_response(
+            crate::operation_ser::parse_get_service_quota_increase_request_from_template_response(
                 response,
             )
         }
@@ -265,9 +267,9 @@ impl smithy_http::response::ParseStrictResponse for ListAWSDefaultServiceQuotas 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_aws_default_service_quotas_error(response)
+            crate::operation_ser::parse_list_aws_default_service_quotas_error(response)
         } else {
-            crate::operation_deser::parse_list_aws_default_service_quotas_response(response)
+            crate::operation_ser::parse_list_aws_default_service_quotas_response(response)
         }
     }
 }
@@ -293,11 +295,9 @@ impl smithy_http::response::ParseStrictResponse for ListRequestedServiceQuotaCha
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_requested_service_quota_change_history_error(
-                response,
-            )
+            crate::operation_ser::parse_list_requested_service_quota_change_history_error(response)
         } else {
-            crate::operation_deser::parse_list_requested_service_quota_change_history_response(
+            crate::operation_ser::parse_list_requested_service_quota_change_history_response(
                 response,
             )
         }
@@ -326,11 +326,11 @@ impl smithy_http::response::ParseStrictResponse for ListRequestedServiceQuotaCha
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_requested_service_quota_change_history_by_quota_error(
+            crate::operation_ser::parse_list_requested_service_quota_change_history_by_quota_error(
                 response,
             )
         } else {
-            crate::operation_deser::parse_list_requested_service_quota_change_history_by_quota_response(response)
+            crate::operation_ser::parse_list_requested_service_quota_change_history_by_quota_response(response)
         }
     }
 }
@@ -357,11 +357,11 @@ impl smithy_http::response::ParseStrictResponse for ListServiceQuotaIncreaseRequ
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_service_quota_increase_requests_in_template_error(
+            crate::operation_ser::parse_list_service_quota_increase_requests_in_template_error(
                 response,
             )
         } else {
-            crate::operation_deser::parse_list_service_quota_increase_requests_in_template_response(
+            crate::operation_ser::parse_list_service_quota_increase_requests_in_template_response(
                 response,
             )
         }
@@ -391,9 +391,9 @@ impl smithy_http::response::ParseStrictResponse for ListServiceQuotas {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_service_quotas_error(response)
+            crate::operation_ser::parse_list_service_quotas_error(response)
         } else {
-            crate::operation_deser::parse_list_service_quotas_response(response)
+            crate::operation_ser::parse_list_service_quotas_response(response)
         }
     }
 }
@@ -417,9 +417,9 @@ impl smithy_http::response::ParseStrictResponse for ListServices {
         std::result::Result<crate::output::ListServicesOutput, crate::error::ListServicesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_services_error(response)
+            crate::operation_ser::parse_list_services_error(response)
         } else {
-            crate::operation_deser::parse_list_services_response(response)
+            crate::operation_ser::parse_list_services_response(response)
         }
     }
 }
@@ -445,9 +445,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::operation_ser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::operation_ser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -474,11 +474,11 @@ impl smithy_http::response::ParseStrictResponse for PutServiceQuotaIncreaseReque
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_service_quota_increase_request_into_template_error(
+            crate::operation_ser::parse_put_service_quota_increase_request_into_template_error(
                 response,
             )
         } else {
-            crate::operation_deser::parse_put_service_quota_increase_request_into_template_response(
+            crate::operation_ser::parse_put_service_quota_increase_request_into_template_response(
                 response,
             )
         }
@@ -506,9 +506,9 @@ impl smithy_http::response::ParseStrictResponse for RequestServiceQuotaIncrease 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_request_service_quota_increase_error(response)
+            crate::operation_ser::parse_request_service_quota_increase_error(response)
         } else {
-            crate::operation_deser::parse_request_service_quota_increase_response(response)
+            crate::operation_ser::parse_request_service_quota_increase_response(response)
         }
     }
 }
@@ -533,9 +533,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::operation_ser::parse_tag_resource_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::operation_ser::parse_tag_resource_response(response)
         }
     }
 }
@@ -560,9 +560,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::operation_ser::parse_untag_resource_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::operation_ser::parse_untag_resource_response(response)
         }
     }
 }

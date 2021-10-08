@@ -1170,7 +1170,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <a>LoggingConfiguration</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the
+        /// <a>LoggingConfiguration</a>.</p>
         pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(inp);
             self
@@ -1795,7 +1796,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <a>LoggingConfiguration</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the
+        /// <a>LoggingConfiguration</a>.</p>
         pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(inp);
             self
@@ -2022,7 +2024,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_web_acl_id(input);
             self
         }
-        /// <p>The name of the rate-based rule to get the keys for.</p>
+        /// <p>The name of the rule group reference statement in your web ACL. This is required only when you have the rate-based rule nested
+        /// inside a rule group. </p>
+        pub fn rule_group_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_rule_name(inp);
+            self
+        }
+        pub fn set_rule_group_rule_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_rule_group_rule_name(input);
+            self
+        }
+        /// <p>The name of the rate-based rule to get the keys for. If you have the rule defined inside a rule group that you're using in your web ACL, also provide the name of the rule group reference statement in the request parameter <code>RuleGroupRuleName</code>.</p>
         pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.rule_name(inp);
             self

@@ -1,4 +1,4 @@
-# The AWS SDK for Rust [![Docs](https://img.shields.io/badge/docs-v0.0.19--alpha-blue)](https://awslabs.github.io/aws-sdk-rust/) ![MSRV](https://img.shields.io/badge/msrv-1.52.1-red)
+# The AWS SDK for Rust [![Docs](https://img.shields.io/badge/docs-v0.0.20--alpha-blue)](https://awslabs.github.io/aws-sdk-rust/) ![MSRV](https://img.shields.io/badge/msrv-1.53-red)
 
 This repo contains the new AWS SDK for Rust (the SDK) and its [public roadmap](https://github.com/awslabs/aws-sdk-rust/projects/1)
 
@@ -13,12 +13,12 @@ The SDK provides one crate per AWS service. You must add [Tokio](https://crates.
 1. Create a new Rust project: `cargo new sdk-example`
 2. Add dependencies to DynamoDB and Tokio to your **Cargo.toml** file:
 
-```toml
-[dependencies]
-aws-config = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.19-alpha", package = "aws-config" }
-aws-sdk-dynamodb = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.19-alpha", package = "aws-sdk-dynamodb" }
-tokio = { version = "1", features = ["full"] }
-```
+    ```toml
+    [dependencies]
+    aws-config = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.20-alpha", package = "aws-config" }
+    aws-sdk-dynamodb = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.20-alpha", package = "aws-sdk-dynamodb" }
+    tokio = { version = "1", features = ["full"] }
+    ```
 
 3. Provide your AWS credentials with the default credential provider chain, which currently looks in:
    - Environment variables: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION`
@@ -75,7 +75,7 @@ The SDK currently does not provide support for every AWS service. You can see al
 
 ## Supported Rust Versions (MSRV)
 
-The SDK currently requires a minimum of Rust 1.52.1, and is not guaranteed to build on compiler versions earlier than that. While we are still in alpha, we will be keeping the minimum compiler version two releases behind the latest stable release where possible (so if the latest stable is 1.55, we will be on 1.53). However, we are not making any guarantees around this at present. Increases in minimum required Rust version will be called out in the Release Notes for new releases of the SDK.
+The SDK currently requires a minimum of Rust 1.53, and is not guaranteed to build on compiler versions earlier than that. While we are still in alpha, we will be keeping the minimum compiler version two releases behind the latest stable release where possible (so if the latest stable is 1.55, we will be on 1.53). However, we are not making any guarantees around this at present. Increases in minimum required Rust version will be called out in the Release Notes for new releases of the SDK.
 
 ## Additional Resources
 

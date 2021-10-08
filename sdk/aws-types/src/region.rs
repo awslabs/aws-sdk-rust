@@ -12,7 +12,7 @@ use std::fmt::{Display, Formatter};
 /// per-client basis unless otherwise noted. A full list of regions is found in the
 /// "Regions and Endpoints" document.
 ///
-/// See http://docs.aws.amazon.com/general/latest/gr/rande.html for
+/// See <http://docs.aws.amazon.com/general/latest/gr/rande.html> for
 /// information on AWS regions.
 #[derive(Clone, Debug, PartialEq, Eq, Hash)]
 pub struct Region(

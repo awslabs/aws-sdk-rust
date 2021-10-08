@@ -25,9 +25,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteScalingPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_scaling_policy_error(response)
+            crate::operation_ser::parse_delete_scaling_policy_error(response)
         } else {
-            crate::operation_deser::parse_delete_scaling_policy_response(response)
+            crate::operation_ser::parse_delete_scaling_policy_response(response)
         }
     }
 }
@@ -54,9 +54,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteScheduledAction {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_scheduled_action_error(response)
+            crate::operation_ser::parse_delete_scheduled_action_error(response)
         } else {
-            crate::operation_deser::parse_delete_scheduled_action_response(response)
+            crate::operation_ser::parse_delete_scheduled_action_response(response)
         }
     }
 }
@@ -87,9 +87,9 @@ impl smithy_http::response::ParseStrictResponse for DeregisterScalableTarget {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_deregister_scalable_target_error(response)
+            crate::operation_ser::parse_deregister_scalable_target_error(response)
         } else {
-            crate::operation_deser::parse_deregister_scalable_target_response(response)
+            crate::operation_ser::parse_deregister_scalable_target_response(response)
         }
     }
 }
@@ -117,9 +117,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeScalableTargets {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_scalable_targets_error(response)
+            crate::operation_ser::parse_describe_scalable_targets_error(response)
         } else {
-            crate::operation_deser::parse_describe_scalable_targets_response(response)
+            crate::operation_ser::parse_describe_scalable_targets_response(response)
         }
     }
 }
@@ -148,9 +148,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeScalingActivities {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_scaling_activities_error(response)
+            crate::operation_ser::parse_describe_scaling_activities_error(response)
         } else {
-            crate::operation_deser::parse_describe_scaling_activities_response(response)
+            crate::operation_ser::parse_describe_scaling_activities_response(response)
         }
     }
 }
@@ -179,9 +179,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeScalingPolicies {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_scaling_policies_error(response)
+            crate::operation_ser::parse_describe_scaling_policies_error(response)
         } else {
-            crate::operation_deser::parse_describe_scaling_policies_response(response)
+            crate::operation_ser::parse_describe_scaling_policies_response(response)
         }
     }
 }
@@ -211,9 +211,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeScheduledActions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_scheduled_actions_error(response)
+            crate::operation_ser::parse_describe_scheduled_actions_error(response)
         } else {
-            crate::operation_deser::parse_describe_scheduled_actions_response(response)
+            crate::operation_ser::parse_describe_scheduled_actions_response(response)
         }
     }
 }
@@ -263,9 +263,9 @@ impl smithy_http::response::ParseStrictResponse for PutScalingPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_scaling_policy_error(response)
+            crate::operation_ser::parse_put_scaling_policy_error(response)
         } else {
-            crate::operation_deser::parse_put_scaling_policy_response(response)
+            crate::operation_ser::parse_put_scaling_policy_response(response)
         }
     }
 }
@@ -305,9 +305,9 @@ impl smithy_http::response::ParseStrictResponse for PutScheduledAction {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_scheduled_action_error(response)
+            crate::operation_ser::parse_put_scheduled_action_error(response)
         } else {
-            crate::operation_deser::parse_put_scheduled_action_response(response)
+            crate::operation_ser::parse_put_scheduled_action_response(response)
         }
     }
 }
@@ -327,6 +327,13 @@ impl smithy_http::response::ParseStrictResponse for PutScheduledAction {
 /// <p>To update a scalable target, specify the parameters that you want to change. Include the
 /// parameters that identify the scalable target: resource ID, scalable dimension, and
 /// namespace. Any parameters that you don't specify are not changed by this update request. </p>
+/// <note>
+/// <p>If you call the <code>RegisterScalableTarget</code> API to update an existing
+/// scalable target, Application Auto Scaling retrieves the current capacity of the resource. If it is below
+/// the minimum capacity or above the maximum capacity, Application Auto Scaling adjusts the capacity of the
+/// scalable target to place it within these bounds, even if you don't include the
+/// <code>MinCapacity</code> or <code>MaxCapacity</code> request parameters.</p>
+/// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterScalableTarget {
     _private: (),
@@ -347,9 +354,9 @@ impl smithy_http::response::ParseStrictResponse for RegisterScalableTarget {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_register_scalable_target_error(response)
+            crate::operation_ser::parse_register_scalable_target_error(response)
         } else {
-            crate::operation_deser::parse_register_scalable_target_response(response)
+            crate::operation_ser::parse_register_scalable_target_response(response)
         }
     }
 }

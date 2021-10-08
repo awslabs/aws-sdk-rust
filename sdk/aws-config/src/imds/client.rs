@@ -19,7 +19,7 @@ use aws_types::os_shim_internal::{Env, Fs};
 use bytes::Bytes;
 use http::uri::InvalidUri;
 use http::{Response, Uri};
-use smithy_client::{erase::DynConnector, SdkSuccess};
+use smithy_client::{erase::DynConnector, timeout, SdkSuccess};
 use smithy_client::{retry, SdkError};
 use smithy_http::body::SdkBody;
 use smithy_http::endpoint::Endpoint;
@@ -35,7 +35,7 @@ use smithy_types::retry::{ErrorKind, RetryKind};
 use crate::connector::expect_connector;
 use crate::imds::client::token::TokenMiddleware;
 use crate::profile::ProfileParseError;
-use crate::provider_config::ProviderConfig;
+use crate::provider_config::{HttpSettings, ProviderConfig};
 use crate::{profile, PKG_VERSION};
 use tokio::sync::OnceCell;
 
@@ -47,6 +47,8 @@ mod token;
 // 6 hours
 const DEFAULT_TOKEN_TTL: Duration = Duration::from_secs(21_600);
 const DEFAULT_RETRIES: u32 = 3;
+const DEFAULT_CONNECT_TIMEOUT: Duration = Duration::from_secs(1);
+const DEFAULT_READ_TIMEOUT: Duration = Duration::from_secs(1);
 
 /// IMDSv2 Client
 ///
@@ -355,6 +357,8 @@ pub struct Builder {
     endpoint: Option<EndpointSource>,
     mode_override: Option<EndpointMode>,
     token_ttl: Option<Duration>,
+    connect_timeout: Option<Duration>,
+    read_timeout: Option<Duration>,
     config: Option<ProviderConfig>,
 }
 
@@ -447,6 +451,22 @@ impl Builder {
         self
     }
 
+    /// Override the connect timeout for IMDS
+    ///
+    /// This value defaults to 1 second
+    pub fn connect_timeout(mut self, timeout: Duration) -> Self {
+        self.connect_timeout = Some(timeout);
+        self
+    }
+
+    /// Override the read timeout for IMDS
+    ///
+    /// This value defaults to 1 second
+    pub fn read_timeout(mut self, timeout: Duration) -> Self {
+        self.read_timeout = Some(timeout);
+        self
+    }
+
     /* TODO: Support customizing the port explicitly */
     /*
     pub fn port(mut self, port: u32) -> Self {
@@ -464,7 +484,10 @@ impl Builder {
     /// Build an IMDSv2 Client
     pub async fn build(self) -> Result<Client, BuildError> {
         let config = self.config.unwrap_or_default();
-        let connector = expect_connector(config.connector().cloned());
+        let timeout_config = timeout::Settings::default()
+            .with_connect_timeout(self.connect_timeout.unwrap_or(DEFAULT_CONNECT_TIMEOUT))
+            .with_read_timeout(self.read_timeout.unwrap_or(DEFAULT_READ_TIMEOUT));
+        let connector = expect_connector(config.connector(&HttpSettings { timeout_config }));
         let endpoint_source = self
             .endpoint
             .unwrap_or_else(|| EndpointSource::Env(config.env(), config.fs()));
@@ -642,7 +665,7 @@ impl<T, E> ClassifyResponse<SdkSuccess<T>, SdkError<E>> for ImdsErrorPolicy {
 pub(crate) mod test {
     use std::collections::HashMap;
     use std::error::Error;
-    use std::time::{Duration, UNIX_EPOCH};
+    use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
     use aws_hyper::DynConnector;
     use aws_types::os_shim_internal::{Env, Fs, ManualTimeSource, TimeSource};
@@ -655,6 +678,7 @@ pub(crate) mod test {
     use crate::imds::client::{Client, EndpointMode};
     use crate::provider_config::ProviderConfig;
     use http::header::USER_AGENT;
+    use smithy_client::SdkError;
 
     const TOKEN_A: &str = "AQAEAFTNrA4eEGx0AQgJ1arIq_Cc-t4tWt3fB0Hd8RKhXlKc5ccvhg==";
     const TOKEN_B: &str = "alternatetoken==";
@@ -921,6 +945,32 @@ pub(crate) mod test {
         let err = client.get("/latest/metadata").await.expect_err("no token");
         assert!(format!("{}", err).contains("not valid UTF-8"), "{}", err);
         connection.assert_requests_match(&[]);
+    }
+
+    /// Verify that the end-to-end real client has a 1-second connect timeout
+    #[ignore]
+    #[tokio::test]
+    async fn one_second_connect_timeout() {
+        let client = Client::builder()
+            // 240.* can never be resolved
+            .endpoint(Uri::from_static("http://240.0.0.0"))
+            .build()
+            .await
+            .expect("valid client");
+        let now = SystemTime::now();
+        let resp = client
+            .get("/latest/metadata")
+            .await
+            .expect_err("240.0.0.0 will never resolve");
+        assert!(now.elapsed().unwrap() > Duration::from_secs(1));
+        assert!(now.elapsed().unwrap() < Duration::from_secs(2));
+        match resp {
+            SdkError::ConstructionFailure(err) if format!("{}", err).contains("timed out") => {} // ok,
+            other => panic!(
+                "wrong error, expected construction failure with TimedOutError inside: {}",
+                other
+            ),
+        }
     }
 
     #[derive(Debug, Deserialize)]

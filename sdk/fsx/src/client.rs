@@ -958,6 +958,30 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ontap_configuration(input);
             self
         }
+        /// <p>Sets the version of the Amazon FSx for Lustre file system you're creating.
+        /// Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Set the value to <code>2.10</code> to create a Lustre 2.10
+        /// file system.</p>
+        /// </li>
+        /// <li>
+        /// <p>Set the value to <code>2.12</code> to create a Lustre 2.12
+        /// file system.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Default value is <code>2.10</code>.</p>
+        pub fn file_system_type_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_type_version(inp);
+            self
+        }
+        pub fn set_file_system_type_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_file_system_type_version(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct CreateFileSystemFromBackup<
@@ -1158,6 +1182,23 @@ pub mod fluent_builders {
         }
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
+            self
+        }
+        /// <p>Sets the version for the Amazon FSx for Lustre file system you're creating from a backup.
+        /// Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+        /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will
+        /// be applied using the backup's <code>FileSystemTypeVersion</code> setting.
+        /// If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the
+        /// value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
+        pub fn file_system_type_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_type_version(inp);
+            self
+        }
+        pub fn set_file_system_type_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_file_system_type_version(input);
             self
         }
     }

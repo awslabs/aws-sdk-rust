@@ -1132,6 +1132,7 @@ where
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateSipMediaApplicationCallErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::CreateSipMediaApplicationCallErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
                 crate::error::CreateSipMediaApplicationCallErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
                 crate::error::CreateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),

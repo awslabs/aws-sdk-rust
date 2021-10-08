@@ -60,6 +60,51 @@ impl TemplateLocation {
     }
 }
 
+/// <p>The object that contains the Docker image URI for either your robot or simulation applications.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Environment {
+    /// <p>The Docker image URI for either your robot or simulation applications.</p>
+    pub uri: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Environment {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Environment");
+        formatter.field("uri", &self.uri);
+        formatter.finish()
+    }
+}
+/// See [`Environment`](crate::model::Environment)
+pub mod environment {
+    /// A builder for [`Environment`](crate::model::Environment)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) uri: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Docker image URI for either your robot or simulation applications.</p>
+        pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uri = Some(input.into());
+            self
+        }
+        pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uri = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Environment`](crate::model::Environment)
+        pub fn build(self) -> crate::model::Environment {
+            crate::model::Environment { uri: self.uri }
+        }
+    }
+}
+impl Environment {
+    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment)
+    pub fn builder() -> crate::model::environment::Builder {
+        crate::model::environment::Builder::default()
+    }
+}
+
 /// <p>Information about a rendering engine.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

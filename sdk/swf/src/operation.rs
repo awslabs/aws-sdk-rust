@@ -66,9 +66,9 @@ impl smithy_http::response::ParseStrictResponse for CountClosedWorkflowExecution
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_count_closed_workflow_executions_error(response)
+            crate::operation_ser::parse_count_closed_workflow_executions_error(response)
         } else {
-            crate::operation_deser::parse_count_closed_workflow_executions_response(response)
+            crate::operation_ser::parse_count_closed_workflow_executions_response(response)
         }
     }
 }
@@ -140,9 +140,9 @@ impl smithy_http::response::ParseStrictResponse for CountOpenWorkflowExecutions 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_count_open_workflow_executions_error(response)
+            crate::operation_ser::parse_count_open_workflow_executions_error(response)
         } else {
-            crate::operation_deser::parse_count_open_workflow_executions_response(response)
+            crate::operation_ser::parse_count_open_workflow_executions_response(response)
         }
     }
 }
@@ -195,9 +195,9 @@ impl smithy_http::response::ParseStrictResponse for CountPendingActivityTasks {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_count_pending_activity_tasks_error(response)
+            crate::operation_ser::parse_count_pending_activity_tasks_error(response)
         } else {
-            crate::operation_deser::parse_count_pending_activity_tasks_response(response)
+            crate::operation_ser::parse_count_pending_activity_tasks_response(response)
         }
     }
 }
@@ -250,9 +250,9 @@ impl smithy_http::response::ParseStrictResponse for CountPendingDecisionTasks {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_count_pending_decision_tasks_error(response)
+            crate::operation_ser::parse_count_pending_decision_tasks_error(response)
         } else {
-            crate::operation_deser::parse_count_pending_decision_tasks_response(response)
+            crate::operation_ser::parse_count_pending_decision_tasks_response(response)
         }
     }
 }
@@ -320,9 +320,9 @@ impl smithy_http::response::ParseStrictResponse for DeprecateActivityType {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_deprecate_activity_type_error(response)
+            crate::operation_ser::parse_deprecate_activity_type_error(response)
         } else {
-            crate::operation_deser::parse_deprecate_activity_type_response(response)
+            crate::operation_ser::parse_deprecate_activity_type_response(response)
         }
     }
 }
@@ -379,9 +379,9 @@ impl smithy_http::response::ParseStrictResponse for DeprecateDomain {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_deprecate_domain_error(response)
+            crate::operation_ser::parse_deprecate_domain_error(response)
         } else {
-            crate::operation_deser::parse_deprecate_domain_response(response)
+            crate::operation_ser::parse_deprecate_domain_response(response)
         }
     }
 }
@@ -450,9 +450,9 @@ impl smithy_http::response::ParseStrictResponse for DeprecateWorkflowType {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_deprecate_workflow_type_error(response)
+            crate::operation_ser::parse_deprecate_workflow_type_error(response)
         } else {
-            crate::operation_deser::parse_deprecate_workflow_type_response(response)
+            crate::operation_ser::parse_deprecate_workflow_type_response(response)
         }
     }
 }
@@ -516,9 +516,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeActivityType {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_activity_type_error(response)
+            crate::operation_ser::parse_describe_activity_type_error(response)
         } else {
-            crate::operation_deser::parse_describe_activity_type_response(response)
+            crate::operation_ser::parse_describe_activity_type_response(response)
         }
     }
 }
@@ -566,9 +566,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDomain {
         std::result::Result<crate::output::DescribeDomainOutput, crate::error::DescribeDomainError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_domain_error(response)
+            crate::operation_ser::parse_describe_domain_error(response)
         } else {
-            crate::operation_deser::parse_describe_domain_response(response)
+            crate::operation_ser::parse_describe_domain_response(response)
         }
     }
 }
@@ -622,9 +622,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeWorkflowExecution {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_workflow_execution_error(response)
+            crate::operation_ser::parse_describe_workflow_execution_error(response)
         } else {
-            crate::operation_deser::parse_describe_workflow_execution_response(response)
+            crate::operation_ser::parse_describe_workflow_execution_response(response)
         }
     }
 }
@@ -688,9 +688,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeWorkflowType {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_workflow_type_error(response)
+            crate::operation_ser::parse_describe_workflow_type_error(response)
         } else {
-            crate::operation_deser::parse_describe_workflow_type_response(response)
+            crate::operation_ser::parse_describe_workflow_type_response(response)
         }
     }
 }
@@ -745,9 +745,9 @@ impl smithy_http::response::ParseStrictResponse for GetWorkflowExecutionHistory 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_workflow_execution_history_error(response)
+            crate::operation_ser::parse_get_workflow_execution_history_error(response)
         } else {
-            crate::operation_deser::parse_get_workflow_execution_history_response(response)
+            crate::operation_ser::parse_get_workflow_execution_history_response(response)
         }
     }
 }
@@ -800,9 +800,9 @@ impl smithy_http::response::ParseStrictResponse for ListActivityTypes {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_activity_types_error(response)
+            crate::operation_ser::parse_list_activity_types_error(response)
         } else {
-            crate::operation_deser::parse_list_activity_types_response(response)
+            crate::operation_ser::parse_list_activity_types_response(response)
         }
     }
 }
@@ -875,9 +875,9 @@ impl smithy_http::response::ParseStrictResponse for ListClosedWorkflowExecutions
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_closed_workflow_executions_error(response)
+            crate::operation_ser::parse_list_closed_workflow_executions_error(response)
         } else {
-            crate::operation_deser::parse_list_closed_workflow_executions_response(response)
+            crate::operation_ser::parse_list_closed_workflow_executions_response(response)
         }
     }
 }
@@ -932,9 +932,9 @@ impl smithy_http::response::ParseStrictResponse for ListDomains {
         std::result::Result<crate::output::ListDomainsOutput, crate::error::ListDomainsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_domains_error(response)
+            crate::operation_ser::parse_list_domains_error(response)
         } else {
-            crate::operation_deser::parse_list_domains_response(response)
+            crate::operation_ser::parse_list_domains_response(response)
         }
     }
 }
@@ -1007,9 +1007,9 @@ impl smithy_http::response::ParseStrictResponse for ListOpenWorkflowExecutions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_open_workflow_executions_error(response)
+            crate::operation_ser::parse_list_open_workflow_executions_error(response)
         } else {
-            crate::operation_deser::parse_list_open_workflow_executions_response(response)
+            crate::operation_ser::parse_list_open_workflow_executions_response(response)
         }
     }
 }
@@ -1035,9 +1035,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::operation_ser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::operation_ser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -1087,9 +1087,9 @@ impl smithy_http::response::ParseStrictResponse for ListWorkflowTypes {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_workflow_types_error(response)
+            crate::operation_ser::parse_list_workflow_types_error(response)
         } else {
-            crate::operation_deser::parse_list_workflow_types_response(response)
+            crate::operation_ser::parse_list_workflow_types_response(response)
         }
     }
 }
@@ -1150,9 +1150,9 @@ impl smithy_http::response::ParseStrictResponse for PollForActivityTask {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_poll_for_activity_task_error(response)
+            crate::operation_ser::parse_poll_for_activity_task_error(response)
         } else {
-            crate::operation_deser::parse_poll_for_activity_task_response(response)
+            crate::operation_ser::parse_poll_for_activity_task_response(response)
         }
     }
 }
@@ -1225,9 +1225,9 @@ impl smithy_http::response::ParseStrictResponse for PollForDecisionTask {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_poll_for_decision_task_error(response)
+            crate::operation_ser::parse_poll_for_decision_task_error(response)
         } else {
-            crate::operation_deser::parse_poll_for_decision_task_response(response)
+            crate::operation_ser::parse_poll_for_decision_task_response(response)
         }
     }
 }
@@ -1300,9 +1300,9 @@ impl smithy_http::response::ParseStrictResponse for RecordActivityTaskHeartbeat 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_record_activity_task_heartbeat_error(response)
+            crate::operation_ser::parse_record_activity_task_heartbeat_error(response)
         } else {
-            crate::operation_deser::parse_record_activity_task_heartbeat_response(response)
+            crate::operation_ser::parse_record_activity_task_heartbeat_response(response)
         }
     }
 }
@@ -1374,9 +1374,9 @@ impl smithy_http::response::ParseStrictResponse for RegisterActivityType {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_register_activity_type_error(response)
+            crate::operation_ser::parse_register_activity_type_error(response)
         } else {
-            crate::operation_deser::parse_register_activity_type_response(response)
+            crate::operation_ser::parse_register_activity_type_response(response)
         }
     }
 }
@@ -1423,9 +1423,9 @@ impl smithy_http::response::ParseStrictResponse for RegisterDomain {
         std::result::Result<crate::output::RegisterDomainOutput, crate::error::RegisterDomainError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_register_domain_error(response)
+            crate::operation_ser::parse_register_domain_error(response)
         } else {
-            crate::operation_deser::parse_register_domain_response(response)
+            crate::operation_ser::parse_register_domain_response(response)
         }
     }
 }
@@ -1498,9 +1498,9 @@ impl smithy_http::response::ParseStrictResponse for RegisterWorkflowType {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_register_workflow_type_error(response)
+            crate::operation_ser::parse_register_workflow_type_error(response)
         } else {
-            crate::operation_deser::parse_register_workflow_type_response(response)
+            crate::operation_ser::parse_register_workflow_type_response(response)
         }
     }
 }
@@ -1562,9 +1562,9 @@ impl smithy_http::response::ParseStrictResponse for RequestCancelWorkflowExecuti
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_request_cancel_workflow_execution_error(response)
+            crate::operation_ser::parse_request_cancel_workflow_execution_error(response)
         } else {
-            crate::operation_deser::parse_request_cancel_workflow_execution_response(response)
+            crate::operation_ser::parse_request_cancel_workflow_execution_response(response)
         }
     }
 }
@@ -1627,9 +1627,9 @@ impl smithy_http::response::ParseStrictResponse for RespondActivityTaskCanceled 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_respond_activity_task_canceled_error(response)
+            crate::operation_ser::parse_respond_activity_task_canceled_error(response)
         } else {
-            crate::operation_deser::parse_respond_activity_task_canceled_response(response)
+            crate::operation_ser::parse_respond_activity_task_canceled_response(response)
         }
     }
 }
@@ -1691,9 +1691,9 @@ impl smithy_http::response::ParseStrictResponse for RespondActivityTaskCompleted
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_respond_activity_task_completed_error(response)
+            crate::operation_ser::parse_respond_activity_task_completed_error(response)
         } else {
-            crate::operation_deser::parse_respond_activity_task_completed_response(response)
+            crate::operation_ser::parse_respond_activity_task_completed_response(response)
         }
     }
 }
@@ -1749,9 +1749,9 @@ impl smithy_http::response::ParseStrictResponse for RespondActivityTaskFailed {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_respond_activity_task_failed_error(response)
+            crate::operation_ser::parse_respond_activity_task_failed_error(response)
         } else {
-            crate::operation_deser::parse_respond_activity_task_failed_response(response)
+            crate::operation_ser::parse_respond_activity_task_failed_response(response)
         }
     }
 }
@@ -1793,9 +1793,9 @@ impl smithy_http::response::ParseStrictResponse for RespondDecisionTaskCompleted
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_respond_decision_task_completed_error(response)
+            crate::operation_ser::parse_respond_decision_task_completed_error(response)
         } else {
-            crate::operation_deser::parse_respond_decision_task_completed_response(response)
+            crate::operation_ser::parse_respond_decision_task_completed_response(response)
         }
     }
 }
@@ -1856,9 +1856,9 @@ impl smithy_http::response::ParseStrictResponse for SignalWorkflowExecution {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_signal_workflow_execution_error(response)
+            crate::operation_ser::parse_signal_workflow_execution_error(response)
         } else {
-            crate::operation_deser::parse_signal_workflow_execution_response(response)
+            crate::operation_ser::parse_signal_workflow_execution_response(response)
         }
     }
 }
@@ -1947,9 +1947,9 @@ impl smithy_http::response::ParseStrictResponse for StartWorkflowExecution {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_workflow_execution_error(response)
+            crate::operation_ser::parse_start_workflow_execution_error(response)
         } else {
-            crate::operation_deser::parse_start_workflow_execution_response(response)
+            crate::operation_ser::parse_start_workflow_execution_response(response)
         }
     }
 }
@@ -1976,9 +1976,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::operation_ser::parse_tag_resource_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::operation_ser::parse_tag_resource_response(response)
         }
     }
 }
@@ -2043,9 +2043,9 @@ impl smithy_http::response::ParseStrictResponse for TerminateWorkflowExecution {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_terminate_workflow_execution_error(response)
+            crate::operation_ser::parse_terminate_workflow_execution_error(response)
         } else {
-            crate::operation_deser::parse_terminate_workflow_execution_response(response)
+            crate::operation_ser::parse_terminate_workflow_execution_response(response)
         }
     }
 }
@@ -2112,9 +2112,9 @@ impl smithy_http::response::ParseStrictResponse for UndeprecateActivityType {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_undeprecate_activity_type_error(response)
+            crate::operation_ser::parse_undeprecate_activity_type_error(response)
         } else {
-            crate::operation_deser::parse_undeprecate_activity_type_response(response)
+            crate::operation_ser::parse_undeprecate_activity_type_response(response)
         }
     }
 }
@@ -2168,9 +2168,9 @@ impl smithy_http::response::ParseStrictResponse for UndeprecateDomain {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_undeprecate_domain_error(response)
+            crate::operation_ser::parse_undeprecate_domain_error(response)
         } else {
-            crate::operation_deser::parse_undeprecate_domain_response(response)
+            crate::operation_ser::parse_undeprecate_domain_response(response)
         }
     }
 }
@@ -2237,9 +2237,9 @@ impl smithy_http::response::ParseStrictResponse for UndeprecateWorkflowType {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_undeprecate_workflow_type_error(response)
+            crate::operation_ser::parse_undeprecate_workflow_type_error(response)
         } else {
-            crate::operation_deser::parse_undeprecate_workflow_type_response(response)
+            crate::operation_ser::parse_undeprecate_workflow_type_response(response)
         }
     }
 }
@@ -2263,9 +2263,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::operation_ser::parse_untag_resource_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::operation_ser::parse_untag_resource_response(response)
         }
     }
 }

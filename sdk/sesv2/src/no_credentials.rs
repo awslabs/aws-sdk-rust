@@ -7,7 +7,7 @@
 use aws_types::credentials::future;
 use aws_types::credentials::{CredentialsError, ProvideCredentials};
 
-/// Stub Provider for use when no credentials provider is used
+/// Stub credentials provider for use when no credentials provider is used.
 #[non_exhaustive]
 #[derive(Debug)]
 pub struct NoCredentials;

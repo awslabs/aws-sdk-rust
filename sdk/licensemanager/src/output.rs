@@ -828,7 +828,7 @@ impl ListLicensesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLicenseManagerReportGeneratorsOutput {
-    /// <p>A report generator that creates periodic reports on your license configurations.</p>
+    /// <p>A report generator that creates periodic reports about your license configurations.</p>
     pub report_generators: std::option::Option<std::vec::Vec<crate::model::ReportGenerator>>,
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -890,6 +890,75 @@ impl ListLicenseManagerReportGeneratorsOutput {
     /// Creates a new builder-style object to manufacture [`ListLicenseManagerReportGeneratorsOutput`](crate::output::ListLicenseManagerReportGeneratorsOutput)
     pub fn builder() -> crate::output::list_license_manager_report_generators_output::Builder {
         crate::output::list_license_manager_report_generators_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListLicenseConversionTasksOutput {
+    /// <p>Information about the license configuration tasks for your account.</p>
+    pub license_conversion_tasks:
+        std::option::Option<std::vec::Vec<crate::model::LicenseConversionTask>>,
+    /// <p>Token for the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListLicenseConversionTasksOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListLicenseConversionTasksOutput");
+        formatter.field("license_conversion_tasks", &self.license_conversion_tasks);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListLicenseConversionTasksOutput`](crate::output::ListLicenseConversionTasksOutput)
+pub mod list_license_conversion_tasks_output {
+    /// A builder for [`ListLicenseConversionTasksOutput`](crate::output::ListLicenseConversionTasksOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) license_conversion_tasks:
+            std::option::Option<std::vec::Vec<crate::model::LicenseConversionTask>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn license_conversion_tasks(
+            mut self,
+            input: impl Into<crate::model::LicenseConversionTask>,
+        ) -> Self {
+            let mut v = self.license_conversion_tasks.unwrap_or_default();
+            v.push(input.into());
+            self.license_conversion_tasks = Some(v);
+            self
+        }
+        pub fn set_license_conversion_tasks(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LicenseConversionTask>>,
+        ) -> Self {
+            self.license_conversion_tasks = input;
+            self
+        }
+        /// <p>Token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListLicenseConversionTasksOutput`](crate::output::ListLicenseConversionTasksOutput)
+        pub fn build(self) -> crate::output::ListLicenseConversionTasksOutput {
+            crate::output::ListLicenseConversionTasksOutput {
+                license_conversion_tasks: self.license_conversion_tasks,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListLicenseConversionTasksOutput {
+    /// Creates a new builder-style object to manufacture [`ListLicenseConversionTasksOutput`](crate::output::ListLicenseConversionTasksOutput)
+    pub fn builder() -> crate::output::list_license_conversion_tasks_output::Builder {
+        crate::output::list_license_conversion_tasks_output::Builder::default()
     }
 }
 
@@ -1181,12 +1250,12 @@ pub struct GetServiceSettingsOutput {
     pub s3_bucket_arn: std::option::Option<std::string::String>,
     /// <p>SNS topic configured to receive notifications from License Manager.</p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p>Indicates whether AWS Organizations is integrated with License Manager for
+    /// <p>Indicates whether Organizations is integrated with License Manager for
     /// cross-account discovery.</p>
     pub organization_configuration: std::option::Option<crate::model::OrganizationConfiguration>,
     /// <p>Indicates whether cross-account discovery is enabled.</p>
     pub enable_cross_accounts_discovery: std::option::Option<bool>,
-    /// <p>Amazon Resource Name (ARN) of the AWS resource share. The License Manager management account
+    /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account
     /// provides member accounts with access to this share.</p>
     pub license_manager_resource_share_arn: std::option::Option<std::string::String>,
 }
@@ -1249,7 +1318,7 @@ pub mod get_service_settings_output {
             self.sns_topic_arn = input;
             self
         }
-        /// <p>Indicates whether AWS Organizations is integrated with License Manager for
+        /// <p>Indicates whether Organizations is integrated with License Manager for
         /// cross-account discovery.</p>
         pub fn organization_configuration(
             mut self,
@@ -1277,7 +1346,7 @@ pub mod get_service_settings_output {
             self.enable_cross_accounts_discovery = input;
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the AWS resource share. The License Manager management account
+        /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account
         /// provides member accounts with access to this share.</p>
         pub fn license_manager_resource_share_arn(
             mut self,
@@ -1364,7 +1433,7 @@ impl GetLicenseUsageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLicenseManagerReportGeneratorOutput {
-    /// <p>A report generator that creates periodic reports on your license configurations.</p>
+    /// <p>A report generator that creates periodic reports about your license configurations.</p>
     pub report_generator: std::option::Option<crate::model::ReportGenerator>,
 }
 impl std::fmt::Debug for GetLicenseManagerReportGeneratorOutput {
@@ -1383,7 +1452,7 @@ pub mod get_license_manager_report_generator_output {
         pub(crate) report_generator: std::option::Option<crate::model::ReportGenerator>,
     }
     impl Builder {
-        /// <p>A report generator that creates periodic reports on your license configurations.</p>
+        /// <p>A report generator that creates periodic reports about your license configurations.</p>
         pub fn report_generator(mut self, input: crate::model::ReportGenerator) -> Self {
             self.report_generator = Some(input);
             self
@@ -1412,6 +1481,196 @@ impl GetLicenseManagerReportGeneratorOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetLicenseConversionTaskOutput {
+    /// <p>ID of the license type conversion task.</p>
+    pub license_conversion_task_id: std::option::Option<std::string::String>,
+    /// <p>Amazon Resource Names (ARN) of the resources the license conversion task is associated with.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>Information about the license type converted from.</p>
+    pub source_license_context: std::option::Option<crate::model::LicenseConversionContext>,
+    /// <p>Information about the license type converted to.</p>
+    pub destination_license_context: std::option::Option<crate::model::LicenseConversionContext>,
+    /// <p>The status message for the conversion task.</p>
+    pub status_message: std::option::Option<std::string::String>,
+    /// <p>Status of the license type conversion task.</p>
+    pub status: std::option::Option<crate::model::LicenseConversionTaskStatus>,
+    /// <p>Time at which the license type conversion task was started .</p>
+    pub start_time: std::option::Option<smithy_types::Instant>,
+    /// <p>Amount of time to complete the license type conversion.</p>
+    pub license_conversion_time: std::option::Option<smithy_types::Instant>,
+    /// <p>Time at which the license type conversion task was completed.</p>
+    pub end_time: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for GetLicenseConversionTaskOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetLicenseConversionTaskOutput");
+        formatter.field(
+            "license_conversion_task_id",
+            &self.license_conversion_task_id,
+        );
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("source_license_context", &self.source_license_context);
+        formatter.field(
+            "destination_license_context",
+            &self.destination_license_context,
+        );
+        formatter.field("status_message", &self.status_message);
+        formatter.field("status", &self.status);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("license_conversion_time", &self.license_conversion_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.finish()
+    }
+}
+/// See [`GetLicenseConversionTaskOutput`](crate::output::GetLicenseConversionTaskOutput)
+pub mod get_license_conversion_task_output {
+    /// A builder for [`GetLicenseConversionTaskOutput`](crate::output::GetLicenseConversionTaskOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) license_conversion_task_id: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) source_license_context:
+            std::option::Option<crate::model::LicenseConversionContext>,
+        pub(crate) destination_license_context:
+            std::option::Option<crate::model::LicenseConversionContext>,
+        pub(crate) status_message: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::LicenseConversionTaskStatus>,
+        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) license_conversion_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>ID of the license type conversion task.</p>
+        pub fn license_conversion_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_conversion_task_id = Some(input.into());
+            self
+        }
+        pub fn set_license_conversion_task_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.license_conversion_task_id = input;
+            self
+        }
+        /// <p>Amazon Resource Names (ARN) of the resources the license conversion task is associated with.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>Information about the license type converted from.</p>
+        pub fn source_license_context(
+            mut self,
+            input: crate::model::LicenseConversionContext,
+        ) -> Self {
+            self.source_license_context = Some(input);
+            self
+        }
+        pub fn set_source_license_context(
+            mut self,
+            input: std::option::Option<crate::model::LicenseConversionContext>,
+        ) -> Self {
+            self.source_license_context = input;
+            self
+        }
+        /// <p>Information about the license type converted to.</p>
+        pub fn destination_license_context(
+            mut self,
+            input: crate::model::LicenseConversionContext,
+        ) -> Self {
+            self.destination_license_context = Some(input);
+            self
+        }
+        pub fn set_destination_license_context(
+            mut self,
+            input: std::option::Option<crate::model::LicenseConversionContext>,
+        ) -> Self {
+            self.destination_license_context = input;
+            self
+        }
+        /// <p>The status message for the conversion task.</p>
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
+            self
+        }
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
+            self
+        }
+        /// <p>Status of the license type conversion task.</p>
+        pub fn status(mut self, input: crate::model::LicenseConversionTaskStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::LicenseConversionTaskStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Time at which the license type conversion task was started .</p>
+        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>Amount of time to complete the license type conversion.</p>
+        pub fn license_conversion_time(mut self, input: smithy_types::Instant) -> Self {
+            self.license_conversion_time = Some(input);
+            self
+        }
+        pub fn set_license_conversion_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.license_conversion_time = input;
+            self
+        }
+        /// <p>Time at which the license type conversion task was completed.</p>
+        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetLicenseConversionTaskOutput`](crate::output::GetLicenseConversionTaskOutput)
+        pub fn build(self) -> crate::output::GetLicenseConversionTaskOutput {
+            crate::output::GetLicenseConversionTaskOutput {
+                license_conversion_task_id: self.license_conversion_task_id,
+                resource_arn: self.resource_arn,
+                source_license_context: self.source_license_context,
+                destination_license_context: self.destination_license_context,
+                status_message: self.status_message,
+                status: self.status,
+                start_time: self.start_time,
+                license_conversion_time: self.license_conversion_time,
+                end_time: self.end_time,
+            }
+        }
+    }
+}
+impl GetLicenseConversionTaskOutput {
+    /// Creates a new builder-style object to manufacture [`GetLicenseConversionTaskOutput`](crate::output::GetLicenseConversionTaskOutput)
+    pub fn builder() -> crate::output::get_license_conversion_task_output::Builder {
+        crate::output::get_license_conversion_task_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLicenseConfigurationOutput {
     /// <p>Unique ID for the license configuration.</p>
     pub license_configuration_id: std::option::Option<std::string::String>,
@@ -1421,7 +1680,7 @@ pub struct GetLicenseConfigurationOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Description of the license configuration.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Dimension on which the licenses are counted.</p>
+    /// <p>Dimension for which the licenses are counted.</p>
     pub license_counting_type: std::option::Option<crate::model::LicenseCountingType>,
     /// <p>License rules.</p>
     pub license_rules: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1558,7 +1817,7 @@ pub mod get_license_configuration_output {
             self.description = input;
             self
         }
-        /// <p>Dimension on which the licenses are counted.</p>
+        /// <p>Dimension for which the licenses are counted.</p>
         pub fn license_counting_type(mut self, input: crate::model::LicenseCountingType) -> Self {
             self.license_counting_type = Some(input);
             self
@@ -2038,7 +2297,7 @@ impl DeleteLicenseConfigurationOutput {
 pub struct DeleteLicenseOutput {
     /// <p>License status.</p>
     pub status: std::option::Option<crate::model::LicenseDeletionStatus>,
-    /// <p>Date on which the license is deleted.</p>
+    /// <p>Date when the license is deleted.</p>
     pub deletion_date: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteLicenseOutput {
@@ -2071,7 +2330,7 @@ pub mod delete_license_output {
             self.status = input;
             self
         }
-        /// <p>Date on which the license is deleted.</p>
+        /// <p>Date when the license is deleted.</p>
         pub fn deletion_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.deletion_date = Some(input.into());
             self
@@ -2330,7 +2589,7 @@ impl CreateLicenseVersionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLicenseManagerReportGeneratorOutput {
-    /// <p>The Amazon Resource Number (ARN) of the new report generator.</p>
+    /// <p>The Amazon Resource Name (ARN) of the new report generator.</p>
     pub license_manager_report_generator_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateLicenseManagerReportGeneratorOutput {
@@ -2352,7 +2611,7 @@ pub mod create_license_manager_report_generator_output {
         pub(crate) license_manager_report_generator_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Number (ARN) of the new report generator.</p>
+        /// <p>The Amazon Resource Name (ARN) of the new report generator.</p>
         pub fn license_manager_report_generator_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -2379,6 +2638,58 @@ impl CreateLicenseManagerReportGeneratorOutput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseManagerReportGeneratorOutput`](crate::output::CreateLicenseManagerReportGeneratorOutput)
     pub fn builder() -> crate::output::create_license_manager_report_generator_output::Builder {
         crate::output::create_license_manager_report_generator_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLicenseConversionTaskForResourceOutput {
+    /// <p>The ID of the created license type conversion task.</p>
+    pub license_conversion_task_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CreateLicenseConversionTaskForResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateLicenseConversionTaskForResourceOutput");
+        formatter.field(
+            "license_conversion_task_id",
+            &self.license_conversion_task_id,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CreateLicenseConversionTaskForResourceOutput`](crate::output::CreateLicenseConversionTaskForResourceOutput)
+pub mod create_license_conversion_task_for_resource_output {
+    /// A builder for [`CreateLicenseConversionTaskForResourceOutput`](crate::output::CreateLicenseConversionTaskForResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) license_conversion_task_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the created license type conversion task.</p>
+        pub fn license_conversion_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_conversion_task_id = Some(input.into());
+            self
+        }
+        pub fn set_license_conversion_task_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.license_conversion_task_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLicenseConversionTaskForResourceOutput`](crate::output::CreateLicenseConversionTaskForResourceOutput)
+        pub fn build(self) -> crate::output::CreateLicenseConversionTaskForResourceOutput {
+            crate::output::CreateLicenseConversionTaskForResourceOutput {
+                license_conversion_task_id: self.license_conversion_task_id,
+            }
+        }
+    }
+}
+impl CreateLicenseConversionTaskForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLicenseConversionTaskForResourceOutput`](crate::output::CreateLicenseConversionTaskForResourceOutput)
+    pub fn builder() -> crate::output::create_license_conversion_task_for_resource_output::Builder {
+        crate::output::create_license_conversion_task_for_resource_output::Builder::default()
     }
 }
 
@@ -2673,6 +2984,8 @@ pub struct CheckoutLicenseOutput {
     pub issued_at: std::option::Option<std::string::String>,
     /// <p>Date and time at which the license checkout expires.</p>
     pub expiration: std::option::Option<std::string::String>,
+    /// <p>Amazon Resource Name (ARN) of the checkout license.</p>
+    pub license_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CheckoutLicenseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2684,6 +2997,7 @@ impl std::fmt::Debug for CheckoutLicenseOutput {
         formatter.field("node_id", &self.node_id);
         formatter.field("issued_at", &self.issued_at);
         formatter.field("expiration", &self.expiration);
+        formatter.field("license_arn", &self.license_arn);
         formatter.finish()
     }
 }
@@ -2701,6 +3015,7 @@ pub mod checkout_license_output {
         pub(crate) node_id: std::option::Option<std::string::String>,
         pub(crate) issued_at: std::option::Option<std::string::String>,
         pub(crate) expiration: std::option::Option<std::string::String>,
+        pub(crate) license_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Checkout type.</p>
@@ -2779,6 +3094,15 @@ pub mod checkout_license_output {
             self.expiration = input;
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the checkout license.</p>
+        pub fn license_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_arn = Some(input.into());
+            self
+        }
+        pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CheckoutLicenseOutput`](crate::output::CheckoutLicenseOutput)
         pub fn build(self) -> crate::output::CheckoutLicenseOutput {
             crate::output::CheckoutLicenseOutput {
@@ -2789,6 +3113,7 @@ pub mod checkout_license_output {
                 node_id: self.node_id,
                 issued_at: self.issued_at,
                 expiration: self.expiration,
+                license_arn: self.license_arn,
             }
         }
     }

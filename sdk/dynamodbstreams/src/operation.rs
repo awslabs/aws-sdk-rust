@@ -26,9 +26,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeStream {
         std::result::Result<crate::output::DescribeStreamOutput, crate::error::DescribeStreamError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_stream_error(response)
+            crate::operation_ser::parse_describe_stream_error(response)
         } else {
-            crate::operation_deser::parse_describe_stream_response(response)
+            crate::operation_ser::parse_describe_stream_response(response)
         }
     }
 }
@@ -62,9 +62,9 @@ impl smithy_http::response::ParseStrictResponse for GetRecords {
         std::result::Result<crate::output::GetRecordsOutput, crate::error::GetRecordsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_records_error(response)
+            crate::operation_ser::parse_get_records_error(response)
         } else {
-            crate::operation_deser::parse_get_records_response(response)
+            crate::operation_ser::parse_get_records_response(response)
         }
     }
 }
@@ -97,9 +97,9 @@ impl smithy_http::response::ParseStrictResponse for GetShardIterator {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_shard_iterator_error(response)
+            crate::operation_ser::parse_get_shard_iterator_error(response)
         } else {
-            crate::operation_deser::parse_get_shard_iterator_response(response)
+            crate::operation_ser::parse_get_shard_iterator_response(response)
         }
     }
 }
@@ -128,9 +128,9 @@ impl smithy_http::response::ParseStrictResponse for ListStreams {
         std::result::Result<crate::output::ListStreamsOutput, crate::error::ListStreamsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_streams_error(response)
+            crate::operation_ser::parse_list_streams_error(response)
         } else {
-            crate::operation_deser::parse_list_streams_response(response)
+            crate::operation_ser::parse_list_streams_response(response)
         }
     }
 }

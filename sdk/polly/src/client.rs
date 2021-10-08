@@ -805,6 +805,19 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
+        pub async fn presigned(
+            self,
+            presigning_config: crate::presigning::config::PresigningConfig,
+        ) -> Result<
+            crate::presigning::request::PresignedRequest,
+            smithy_http::result::SdkError<crate::error::SynthesizeSpeechError>,
+        > {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            input.presigned(&self.handle.conf, presigning_config).await
+        }
         /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>)
         /// for Amazon Polly to use when processing input text for speech synthesis. For
         /// information on Amazon Polly voices and which voices are available in

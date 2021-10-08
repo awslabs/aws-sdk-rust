@@ -412,6 +412,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pending maintenance action to apply to this resource.</p>
+        /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code>
+        /// </p>
         pub fn apply_action(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.apply_action(inp);
             self
@@ -774,8 +776,8 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the
-        /// Amazon S3 bucket. The role must allow the <code>iam:PassRole</code> action.</p>
+        /// <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role.
+        /// The role must allow the <code>iam:PassRole</code> action.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -4619,8 +4621,7 @@ pub mod fluent_builders {
         /// <p>Attributes include the following:</p>
         /// <ul>
         /// <li>
-        /// <p>serviceAccessRoleArn - The Identity and Access Management (IAM) role that has
-        /// permission to access the Amazon S3 bucket. The role must allow the <code>iam:PassRole</code> action.</p>
+        /// <p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
         /// </li>
         /// <li>
         /// <p>BucketName - The name of the S3 bucket to use.</p>
@@ -5616,14 +5617,26 @@ pub mod fluent_builders {
             self
         }
         /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ
-        /// failover. (If the instance isn't configured for Multi-AZ, then you can't specify
-        /// <code>true</code>.)</p>
+        /// failover. If the instance isn't configured for Multi-AZ, then you can't specify
+        /// <code>true</code>.  ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
         pub fn force_failover(mut self, inp: bool) -> Self {
             self.inner = self.inner.force_failover(inp);
             self
         }
         pub fn set_force_failover(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force_failover(input);
+            self
+        }
+        /// <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover
+        /// where resources are released and cleaned up prior to conducting the failover.
+        /// If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>.
+        /// ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+        pub fn force_planned_failover(mut self, inp: bool) -> Self {
+            self.inner = self.inner.force_planned_failover(inp);
+            self
+        }
+        pub fn set_force_planned_failover(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_force_planned_failover(input);
             self
         }
     }

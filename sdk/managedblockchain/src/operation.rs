@@ -19,9 +19,9 @@ impl smithy_http::response::ParseStrictResponse for CreateMember {
         std::result::Result<crate::output::CreateMemberOutput, crate::error::CreateMemberError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_member_error(response)
+            crate::operation_ser::parse_create_member_error(response)
         } else {
-            crate::operation_deser::parse_create_member_response(response)
+            crate::operation_ser::parse_create_member_response(response)
         }
     }
 }
@@ -46,9 +46,9 @@ impl smithy_http::response::ParseStrictResponse for CreateNetwork {
         std::result::Result<crate::output::CreateNetworkOutput, crate::error::CreateNetworkError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_network_error(response)
+            crate::operation_ser::parse_create_network_error(response)
         } else {
-            crate::operation_deser::parse_create_network_response(response)
+            crate::operation_ser::parse_create_network_response(response)
         }
     }
 }
@@ -73,9 +73,9 @@ impl smithy_http::response::ParseStrictResponse for CreateNode {
         std::result::Result<crate::output::CreateNodeOutput, crate::error::CreateNodeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_node_error(response)
+            crate::operation_ser::parse_create_node_error(response)
         } else {
-            crate::operation_deser::parse_create_node_response(response)
+            crate::operation_ser::parse_create_node_response(response)
         }
     }
 }
@@ -100,9 +100,9 @@ impl smithy_http::response::ParseStrictResponse for CreateProposal {
         std::result::Result<crate::output::CreateProposalOutput, crate::error::CreateProposalError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_proposal_error(response)
+            crate::operation_ser::parse_create_proposal_error(response)
         } else {
-            crate::operation_deser::parse_create_proposal_response(response)
+            crate::operation_ser::parse_create_proposal_response(response)
         }
     }
 }
@@ -127,9 +127,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteMember {
         std::result::Result<crate::output::DeleteMemberOutput, crate::error::DeleteMemberError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_member_error(response)
+            crate::operation_ser::parse_delete_member_error(response)
         } else {
-            crate::operation_deser::parse_delete_member_response(response)
+            crate::operation_ser::parse_delete_member_response(response)
         }
     }
 }
@@ -154,9 +154,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteNode {
         std::result::Result<crate::output::DeleteNodeOutput, crate::error::DeleteNodeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_node_error(response)
+            crate::operation_ser::parse_delete_node_error(response)
         } else {
-            crate::operation_deser::parse_delete_node_response(response)
+            crate::operation_ser::parse_delete_node_response(response)
         }
     }
 }
@@ -180,9 +180,9 @@ impl smithy_http::response::ParseStrictResponse for GetMember {
     type Output = std::result::Result<crate::output::GetMemberOutput, crate::error::GetMemberError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_member_error(response)
+            crate::operation_ser::parse_get_member_error(response)
         } else {
-            crate::operation_deser::parse_get_member_response(response)
+            crate::operation_ser::parse_get_member_response(response)
         }
     }
 }
@@ -207,9 +207,9 @@ impl smithy_http::response::ParseStrictResponse for GetNetwork {
         std::result::Result<crate::output::GetNetworkOutput, crate::error::GetNetworkError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_network_error(response)
+            crate::operation_ser::parse_get_network_error(response)
         } else {
-            crate::operation_deser::parse_get_network_response(response)
+            crate::operation_ser::parse_get_network_response(response)
         }
     }
 }
@@ -233,9 +233,9 @@ impl smithy_http::response::ParseStrictResponse for GetNode {
     type Output = std::result::Result<crate::output::GetNodeOutput, crate::error::GetNodeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_node_error(response)
+            crate::operation_ser::parse_get_node_error(response)
         } else {
-            crate::operation_deser::parse_get_node_response(response)
+            crate::operation_ser::parse_get_node_response(response)
         }
     }
 }
@@ -260,9 +260,9 @@ impl smithy_http::response::ParseStrictResponse for GetProposal {
         std::result::Result<crate::output::GetProposalOutput, crate::error::GetProposalError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_proposal_error(response)
+            crate::operation_ser::parse_get_proposal_error(response)
         } else {
-            crate::operation_deser::parse_get_proposal_response(response)
+            crate::operation_ser::parse_get_proposal_response(response)
         }
     }
 }
@@ -289,9 +289,9 @@ impl smithy_http::response::ParseStrictResponse for ListInvitations {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_invitations_error(response)
+            crate::operation_ser::parse_list_invitations_error(response)
         } else {
-            crate::operation_deser::parse_list_invitations_response(response)
+            crate::operation_ser::parse_list_invitations_response(response)
         }
     }
 }
@@ -316,9 +316,9 @@ impl smithy_http::response::ParseStrictResponse for ListMembers {
         std::result::Result<crate::output::ListMembersOutput, crate::error::ListMembersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_members_error(response)
+            crate::operation_ser::parse_list_members_error(response)
         } else {
-            crate::operation_deser::parse_list_members_response(response)
+            crate::operation_ser::parse_list_members_response(response)
         }
     }
 }
@@ -343,9 +343,9 @@ impl smithy_http::response::ParseStrictResponse for ListNetworks {
         std::result::Result<crate::output::ListNetworksOutput, crate::error::ListNetworksError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_networks_error(response)
+            crate::operation_ser::parse_list_networks_error(response)
         } else {
-            crate::operation_deser::parse_list_networks_response(response)
+            crate::operation_ser::parse_list_networks_response(response)
         }
     }
 }
@@ -369,9 +369,9 @@ impl smithy_http::response::ParseStrictResponse for ListNodes {
     type Output = std::result::Result<crate::output::ListNodesOutput, crate::error::ListNodesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_nodes_error(response)
+            crate::operation_ser::parse_list_nodes_error(response)
         } else {
-            crate::operation_deser::parse_list_nodes_response(response)
+            crate::operation_ser::parse_list_nodes_response(response)
         }
     }
 }
@@ -396,9 +396,9 @@ impl smithy_http::response::ParseStrictResponse for ListProposals {
         std::result::Result<crate::output::ListProposalsOutput, crate::error::ListProposalsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_proposals_error(response)
+            crate::operation_ser::parse_list_proposals_error(response)
         } else {
-            crate::operation_deser::parse_list_proposals_response(response)
+            crate::operation_ser::parse_list_proposals_response(response)
         }
     }
 }
@@ -425,9 +425,9 @@ impl smithy_http::response::ParseStrictResponse for ListProposalVotes {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_proposal_votes_error(response)
+            crate::operation_ser::parse_list_proposal_votes_error(response)
         } else {
-            crate::operation_deser::parse_list_proposal_votes_response(response)
+            crate::operation_ser::parse_list_proposal_votes_response(response)
         }
     }
 }
@@ -454,9 +454,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::operation_ser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::operation_ser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -483,9 +483,9 @@ impl smithy_http::response::ParseStrictResponse for RejectInvitation {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_reject_invitation_error(response)
+            crate::operation_ser::parse_reject_invitation_error(response)
         } else {
-            crate::operation_deser::parse_reject_invitation_response(response)
+            crate::operation_ser::parse_reject_invitation_response(response)
         }
     }
 }
@@ -512,9 +512,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::operation_ser::parse_tag_resource_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::operation_ser::parse_tag_resource_response(response)
         }
     }
 }
@@ -539,9 +539,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::operation_ser::parse_untag_resource_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::operation_ser::parse_untag_resource_response(response)
         }
     }
 }
@@ -566,9 +566,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateMember {
         std::result::Result<crate::output::UpdateMemberOutput, crate::error::UpdateMemberError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_member_error(response)
+            crate::operation_ser::parse_update_member_error(response)
         } else {
-            crate::operation_deser::parse_update_member_response(response)
+            crate::operation_ser::parse_update_member_response(response)
         }
     }
 }
@@ -593,9 +593,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateNode {
         std::result::Result<crate::output::UpdateNodeOutput, crate::error::UpdateNodeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_node_error(response)
+            crate::operation_ser::parse_update_node_error(response)
         } else {
-            crate::operation_deser::parse_update_node_response(response)
+            crate::operation_ser::parse_update_node_response(response)
         }
     }
 }
@@ -620,9 +620,9 @@ impl smithy_http::response::ParseStrictResponse for VoteOnProposal {
         std::result::Result<crate::output::VoteOnProposalOutput, crate::error::VoteOnProposalError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_vote_on_proposal_error(response)
+            crate::operation_ser::parse_vote_on_proposal_error(response)
         } else {
-            crate::operation_deser::parse_vote_on_proposal_response(response)
+            crate::operation_ser::parse_vote_on_proposal_response(response)
         }
     }
 }

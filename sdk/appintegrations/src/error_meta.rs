@@ -25,6 +25,41 @@ impl std::fmt::Display for Error {
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateDataIntegrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateDataIntegrationError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateDataIntegrationErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::CreateDataIntegrationErrorKind::DuplicateResourceException(inner) => {
+                    Error::DuplicateResourceException(inner)
+                }
+                crate::error::CreateDataIntegrationErrorKind::InternalServiceError(inner) => {
+                    Error::InternalServiceError(inner)
+                }
+                crate::error::CreateDataIntegrationErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::CreateDataIntegrationErrorKind::ResourceQuotaExceededException(
+                    inner,
+                ) => Error::ResourceQuotaExceededException(inner),
+                crate::error::CreateDataIntegrationErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::CreateDataIntegrationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::CreateEventIntegrationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -53,6 +88,38 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::CreateEventIntegrationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteDataIntegrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteDataIntegrationError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteDataIntegrationErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DeleteDataIntegrationErrorKind::InternalServiceError(inner) => {
+                    Error::InternalServiceError(inner)
+                }
+                crate::error::DeleteDataIntegrationErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DeleteDataIntegrationErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeleteDataIntegrationErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DeleteDataIntegrationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -92,6 +159,36 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::GetDataIntegrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetDataIntegrationError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetDataIntegrationErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::GetDataIntegrationErrorKind::InternalServiceError(inner) => {
+                    Error::InternalServiceError(inner)
+                }
+                crate::error::GetDataIntegrationErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::GetDataIntegrationErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::GetDataIntegrationErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::GetDataIntegrationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::GetEventIntegrationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -115,6 +212,56 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::GetEventIntegrationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::ListDataIntegrationAssociationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListDataIntegrationAssociationsError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListDataIntegrationAssociationsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::ListDataIntegrationAssociationsErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
+                crate::error::ListDataIntegrationAssociationsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::ListDataIntegrationAssociationsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::ListDataIntegrationAssociationsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::ListDataIntegrationAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::ListDataIntegrationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListDataIntegrationsError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListDataIntegrationsErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::ListDataIntegrationsErrorKind::InternalServiceError(inner) => {
+                    Error::InternalServiceError(inner)
+                }
+                crate::error::ListDataIntegrationsErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::ListDataIntegrationsErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::ListDataIntegrationsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -244,6 +391,38 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateDataIntegrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::UpdateDataIntegrationError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateDataIntegrationErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::UpdateDataIntegrationErrorKind::InternalServiceError(inner) => {
+                    Error::InternalServiceError(inner)
+                }
+                crate::error::UpdateDataIntegrationErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::UpdateDataIntegrationErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::UpdateDataIntegrationErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::UpdateDataIntegrationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

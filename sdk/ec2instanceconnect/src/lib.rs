@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Amazon EC2 Instance Connect enables system administrators to publish one-time use SSH
 //! public keys to EC2, providing users a simple and secure way to connect to their
 //! instances.</p>
@@ -26,7 +27,6 @@ mod json_errors;
 mod json_ser;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

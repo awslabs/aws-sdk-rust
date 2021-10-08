@@ -896,11 +896,10 @@ pub struct GraphqlApi {
     /// <p>A flag representing whether X-Ray tracing is enabled for this
     /// <code>GraphqlApi</code>.</p>
     pub xray_enabled: bool,
-    /// <p>The ARN of the WAF ACL associated with this
-    /// <code>GraphqlApi</code>, if one exists.</p>
+    /// <p>The ARN of the WAF ACL associated with this <code>GraphqlApi</code>,
+    /// if one exists.</p>
     pub waf_web_acl_arn: std::option::Option<std::string::String>,
-    /// <p></p>
-    /// <p>Configuration for AWS Lambda function authorization.</p>
+    /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
     pub lambda_authorizer_config: std::option::Option<crate::model::LambdaAuthorizerConfig>,
 }
 impl std::fmt::Debug for GraphqlApi {
@@ -1093,8 +1092,8 @@ pub mod graphql_api {
             self.xray_enabled = input;
             self
         }
-        /// <p>The ARN of the WAF ACL associated with this
-        /// <code>GraphqlApi</code>, if one exists.</p>
+        /// <p>The ARN of the WAF ACL associated with this <code>GraphqlApi</code>,
+        /// if one exists.</p>
         pub fn waf_web_acl_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.waf_web_acl_arn = Some(input.into());
             self
@@ -1106,8 +1105,7 @@ pub mod graphql_api {
             self.waf_web_acl_arn = input;
             self
         }
-        /// <p></p>
-        /// <p>Configuration for AWS Lambda function authorization.</p>
+        /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
         pub fn lambda_authorizer_config(
             mut self,
             input: crate::model::LambdaAuthorizerConfig,
@@ -1149,28 +1147,30 @@ impl GraphqlApi {
     }
 }
 
-/// <p>A <code>LambdaAuthorizerConfig</code> holds configuration on how to authorize AppSync API access when using
-/// the <code>AWS_LAMBDA</code> authorizer mode. Be aware that an AppSync API may have only one Lambda authorizer configured
-/// at a time.</p>
+/// <p>A <code>LambdaAuthorizerConfig</code> holds configuration on how to authorize AppSync
+/// API access when using the <code>AWS_LAMBDA</code> authorizer mode. Be aware that an AppSync
+/// API may have only one Lambda authorizer configured at a time.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaAuthorizerConfig {
-    /// <p>The number of seconds a response should be cached for. The default is 5 minutes (300 seconds).
-    /// The Lambda function can override this by returning a
-    /// <code>ttlOverride</code> key in its response. A value of 0 disables caching of
-    /// responses.</p>
+    /// <p>The number of seconds a response should be cached for. The default is 5 minutes (300
+    /// seconds). The Lambda function can override this by returning a <code>ttlOverride</code> key
+    /// in its response. A value of 0 disables caching of responses.</p>
     pub authorizer_result_ttl_in_seconds: i32,
-    /// <p>The ARN of the lambda function to be called for authorization. This may be a standard
+    /// <p>The ARN of the Lambda function to be called for authorization. This may be a standard
     /// Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p>
     /// <p>
     /// <i>Note</i>: This Lambda function must have the following resource-based
     /// policy assigned to it. When configuring Lambda authorizers in the Console, this is done for
-    /// you. To do so with the AWS CLI, run the following:</p>
+    /// you. To do so with the Amazon Web Services CLI, run the following:</p>
     /// <p>
-    /// <code>aws lambda add-permission --function-name "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync" --principal appsync.amazonaws.com --action lambda:InvokeFunction</code>
+    /// <code>aws lambda add-permission --function-name
+    /// "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync"
+    /// --principal appsync.amazonaws.com --action lambda:InvokeFunction</code>
     /// </p>
     pub authorizer_uri: std::option::Option<std::string::String>,
-    /// <p>A regular expression for validation of tokens before the Lambda Function is called.</p>
+    /// <p>A regular expression for validation of tokens before the Lambda function is
+    /// called.</p>
     pub identity_validation_expression: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LambdaAuthorizerConfig {
@@ -1199,10 +1199,9 @@ pub mod lambda_authorizer_config {
         pub(crate) identity_validation_expression: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The number of seconds a response should be cached for. The default is 5 minutes (300 seconds).
-        /// The Lambda function can override this by returning a
-        /// <code>ttlOverride</code> key in its response. A value of 0 disables caching of
-        /// responses.</p>
+        /// <p>The number of seconds a response should be cached for. The default is 5 minutes (300
+        /// seconds). The Lambda function can override this by returning a <code>ttlOverride</code> key
+        /// in its response. A value of 0 disables caching of responses.</p>
         pub fn authorizer_result_ttl_in_seconds(mut self, input: i32) -> Self {
             self.authorizer_result_ttl_in_seconds = Some(input);
             self
@@ -1214,14 +1213,16 @@ pub mod lambda_authorizer_config {
             self.authorizer_result_ttl_in_seconds = input;
             self
         }
-        /// <p>The ARN of the lambda function to be called for authorization. This may be a standard
+        /// <p>The ARN of the Lambda function to be called for authorization. This may be a standard
         /// Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p>
         /// <p>
         /// <i>Note</i>: This Lambda function must have the following resource-based
         /// policy assigned to it. When configuring Lambda authorizers in the Console, this is done for
-        /// you. To do so with the AWS CLI, run the following:</p>
+        /// you. To do so with the Amazon Web Services CLI, run the following:</p>
         /// <p>
-        /// <code>aws lambda add-permission --function-name "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync" --principal appsync.amazonaws.com --action lambda:InvokeFunction</code>
+        /// <code>aws lambda add-permission --function-name
+        /// "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync"
+        /// --principal appsync.amazonaws.com --action lambda:InvokeFunction</code>
         /// </p>
         pub fn authorizer_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.authorizer_uri = Some(input.into());
@@ -1234,7 +1235,8 @@ pub mod lambda_authorizer_config {
             self.authorizer_uri = input;
             self
         }
-        /// <p>A regular expression for validation of tokens before the Lambda Function is called.</p>
+        /// <p>A regular expression for validation of tokens before the Lambda function is
+        /// called.</p>
         pub fn identity_validation_expression(
             mut self,
             input: impl Into<std::string::String>,
@@ -1272,13 +1274,14 @@ impl LambdaAuthorizerConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdditionalAuthenticationProvider {
-    /// <p>The authentication type: API key, Identity and Access Management, OIDC, or Amazon Cognito user pools.</p>
+    /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user
+    /// pools, or Amazon Web Services Lambda.</p>
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
     /// <p>The OpenID Connect configuration.</p>
     pub open_id_connect_config: std::option::Option<crate::model::OpenIdConnectConfig>,
     /// <p>The Amazon Cognito user pool configuration.</p>
     pub user_pool_config: std::option::Option<crate::model::CognitoUserPoolConfig>,
-    /// <p>Configuration for AWS Lambda function authorization.</p>
+    /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
     pub lambda_authorizer_config: std::option::Option<crate::model::LambdaAuthorizerConfig>,
 }
 impl std::fmt::Debug for AdditionalAuthenticationProvider {
@@ -1304,7 +1307,8 @@ pub mod additional_authentication_provider {
             std::option::Option<crate::model::LambdaAuthorizerConfig>,
     }
     impl Builder {
-        /// <p>The authentication type: API key, Identity and Access Management, OIDC, or Amazon Cognito user pools.</p>
+        /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user
+        /// pools, or Amazon Web Services Lambda.</p>
         pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
             self.authentication_type = Some(input);
             self
@@ -1340,7 +1344,7 @@ pub mod additional_authentication_provider {
             self.user_pool_config = input;
             self
         }
-        /// <p>Configuration for AWS Lambda function authorization.</p>
+        /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
         pub fn lambda_authorizer_config(
             mut self,
             input: crate::model::LambdaAuthorizerConfig,
@@ -1462,8 +1466,8 @@ pub struct OpenIdConnectConfig {
     pub issuer: std::option::Option<std::string::String>,
     /// <p>The client identifier of the Relying party at the OpenID identity provider. This
     /// identifier is typically obtained when the Relying party is registered with the OpenID
-    /// identity provider. You can specify a regular expression so the AppSync can validate
-    /// against multiple client identifiers at a time.</p>
+    /// identity provider. You can specify a regular expression so the AppSync can
+    /// validate against multiple client identifiers at a time.</p>
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The number of milliseconds a token is valid after being issued to a user.</p>
     pub iat_ttl: i64,
@@ -1504,8 +1508,8 @@ pub mod open_id_connect_config {
         }
         /// <p>The client identifier of the Relying party at the OpenID identity provider. This
         /// identifier is typically obtained when the Relying party is registered with the OpenID
-        /// identity provider. You can specify a regular expression so the AppSync can validate
-        /// against multiple client identifiers at a time.</p>
+        /// identity provider. You can specify a regular expression so the AppSync can
+        /// validate against multiple client identifiers at a time.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_id = Some(input.into());
             self
@@ -1810,8 +1814,8 @@ pub struct LogConfig {
     /// </li>
     /// </ul>
     pub field_log_level: std::option::Option<crate::model::FieldLogLevel>,
-    /// <p>The service role that AppSync will assume to publish to Amazon CloudWatch logs in
-    /// your account. </p>
+    /// <p>The service role that AppSync will assume to publish to Amazon
+    /// CloudWatch logs in your account. </p>
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
     /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and
     /// evaluated mapping templates, regardless of logging level.</p>
@@ -1887,8 +1891,8 @@ pub mod log_config {
             self.field_log_level = input;
             self
         }
-        /// <p>The service role that AppSync will assume to publish to Amazon CloudWatch logs in
-        /// your account. </p>
+        /// <p>The service role that AppSync will assume to publish to Amazon
+        /// CloudWatch logs in your account. </p>
         pub fn cloud_watch_logs_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cloud_watch_logs_role_arn = Some(input.into());
             self
@@ -2177,18 +2181,22 @@ pub struct DataSource {
     /// <ul>
     /// <li>
     /// <p>
+    /// <b>AWS_LAMBDA</b>: The data source is an Amazon Web Services Lambda function.</p>
+    /// </li>
+    /// <li>
+    /// <p>
     /// <b>AMAZON_DYNAMODB</b>: The data source is an Amazon
     /// DynamoDB table.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <b>AMAZON_ELASTICSEARCH</b>: The data source is an
-    /// Amazon Elasticsearch Service domain.</p>
+    /// Amazon OpenSearch Service domain.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <b>AWS_LAMBDA</b>: The data source is an Amazon Web Services Lambda
-    /// function.</p>
+    /// <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is
+    /// an Amazon OpenSearch Service domain.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -2209,15 +2217,18 @@ pub struct DataSource {
     /// </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::DataSourceType>,
-    /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this role when
-    /// accessing the data source.</p>
+    /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this
+    /// role when accessing the data source.</p>
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>Amazon DynamoDB settings.</p>
     pub dynamodb_config: std::option::Option<crate::model::DynamodbDataSourceConfig>,
     /// <p>Amazon Web Services Lambda settings.</p>
     pub lambda_config: std::option::Option<crate::model::LambdaDataSourceConfig>,
-    /// <p>Amazon Elasticsearch Service settings.</p>
+    /// <p>Amazon OpenSearch Service settings.</p>
     pub elasticsearch_config: std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
+    /// <p>Amazon OpenSearch Service settings.</p>
+    pub open_search_service_config:
+        std::option::Option<crate::model::OpenSearchServiceDataSourceConfig>,
     /// <p>HTTP endpoint settings.</p>
     pub http_config: std::option::Option<crate::model::HttpDataSourceConfig>,
     /// <p>Relational database settings.</p>
@@ -2235,6 +2246,10 @@ impl std::fmt::Debug for DataSource {
         formatter.field("dynamodb_config", &self.dynamodb_config);
         formatter.field("lambda_config", &self.lambda_config);
         formatter.field("elasticsearch_config", &self.elasticsearch_config);
+        formatter.field(
+            "open_search_service_config",
+            &self.open_search_service_config,
+        );
         formatter.field("http_config", &self.http_config);
         formatter.field(
             "relational_database_config",
@@ -2258,6 +2273,8 @@ pub mod data_source {
         pub(crate) lambda_config: std::option::Option<crate::model::LambdaDataSourceConfig>,
         pub(crate) elasticsearch_config:
             std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
+        pub(crate) open_search_service_config:
+            std::option::Option<crate::model::OpenSearchServiceDataSourceConfig>,
         pub(crate) http_config: std::option::Option<crate::model::HttpDataSourceConfig>,
         pub(crate) relational_database_config:
             std::option::Option<crate::model::RelationalDatabaseDataSourceConfig>,
@@ -2297,18 +2314,22 @@ pub mod data_source {
         /// <ul>
         /// <li>
         /// <p>
+        /// <b>AWS_LAMBDA</b>: The data source is an Amazon Web Services Lambda function.</p>
+        /// </li>
+        /// <li>
+        /// <p>
         /// <b>AMAZON_DYNAMODB</b>: The data source is an Amazon
         /// DynamoDB table.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <b>AMAZON_ELASTICSEARCH</b>: The data source is an
-        /// Amazon Elasticsearch Service domain.</p>
+        /// Amazon OpenSearch Service domain.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <b>AWS_LAMBDA</b>: The data source is an Amazon Web Services Lambda
-        /// function.</p>
+        /// <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is
+        /// an Amazon OpenSearch Service domain.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2339,8 +2360,8 @@ pub mod data_source {
             self.r#type = input;
             self
         }
-        /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this role when
-        /// accessing the data source.</p>
+        /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this
+        /// role when accessing the data source.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role_arn = Some(input.into());
             self
@@ -2376,7 +2397,7 @@ pub mod data_source {
             self.lambda_config = input;
             self
         }
-        /// <p>Amazon Elasticsearch Service settings.</p>
+        /// <p>Amazon OpenSearch Service settings.</p>
         pub fn elasticsearch_config(
             mut self,
             input: crate::model::ElasticsearchDataSourceConfig,
@@ -2389,6 +2410,21 @@ pub mod data_source {
             input: std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
         ) -> Self {
             self.elasticsearch_config = input;
+            self
+        }
+        /// <p>Amazon OpenSearch Service settings.</p>
+        pub fn open_search_service_config(
+            mut self,
+            input: crate::model::OpenSearchServiceDataSourceConfig,
+        ) -> Self {
+            self.open_search_service_config = Some(input);
+            self
+        }
+        pub fn set_open_search_service_config(
+            mut self,
+            input: std::option::Option<crate::model::OpenSearchServiceDataSourceConfig>,
+        ) -> Self {
+            self.open_search_service_config = input;
             self
         }
         /// <p>HTTP endpoint settings.</p>
@@ -2429,6 +2465,7 @@ pub mod data_source {
                 dynamodb_config: self.dynamodb_config,
                 lambda_config: self.lambda_config,
                 elasticsearch_config: self.elasticsearch_config,
+                open_search_service_config: self.open_search_service_config,
                 http_config: self.http_config,
                 relational_database_config: self.relational_database_config,
             }
@@ -2699,8 +2736,9 @@ impl AsRef<str> for RelationalDatabaseSourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpDataSourceConfig {
     /// <p>The HTTP URL endpoint. You can either specify the domain name or IP, and port
-    /// combination, and the URL scheme must be HTTP or HTTPS. If the port is not specified, AppSync uses the default port 80 for the HTTP endpoint and port 443 for HTTPS
-    /// endpoints.</p>
+    /// combination, and the URL scheme must be HTTP or HTTPS. If the port is not specified,
+    /// AppSync uses the default port 80 for the HTTP endpoint and port 443 for
+    /// HTTPS endpoints.</p>
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The authorization config in case the HTTP endpoint requires authorization.</p>
     pub authorization_config: std::option::Option<crate::model::AuthorizationConfig>,
@@ -2724,8 +2762,9 @@ pub mod http_data_source_config {
     }
     impl Builder {
         /// <p>The HTTP URL endpoint. You can either specify the domain name or IP, and port
-        /// combination, and the URL scheme must be HTTP or HTTPS. If the port is not specified, AppSync uses the default port 80 for the HTTP endpoint and port 443 for HTTPS
-        /// endpoints.</p>
+        /// combination, and the URL scheme must be HTTP or HTTPS. If the port is not specified,
+        /// AppSync uses the default port 80 for the HTTP endpoint and port 443 for
+        /// HTTPS endpoints.</p>
         pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint = Some(input.into());
             self
@@ -2957,7 +2996,71 @@ impl AsRef<str> for AuthorizationType {
     }
 }
 
-/// <p>Describes an Elasticsearch data source configuration.</p>
+/// <p>Describes an OpenSearch data source configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OpenSearchServiceDataSourceConfig {
+    /// <p>The endpoint.</p>
+    pub endpoint: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services Region.</p>
+    pub aws_region: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for OpenSearchServiceDataSourceConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OpenSearchServiceDataSourceConfig");
+        formatter.field("endpoint", &self.endpoint);
+        formatter.field("aws_region", &self.aws_region);
+        formatter.finish()
+    }
+}
+/// See [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig)
+pub mod open_search_service_data_source_config {
+    /// A builder for [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) endpoint: std::option::Option<std::string::String>,
+        pub(crate) aws_region: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The endpoint.</p>
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
+            self
+        }
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
+            self
+        }
+        /// <p>The Amazon Web Services Region.</p>
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_region = Some(input.into());
+            self
+        }
+        pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_region = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig)
+        pub fn build(self) -> crate::model::OpenSearchServiceDataSourceConfig {
+            crate::model::OpenSearchServiceDataSourceConfig {
+                endpoint: self.endpoint,
+                aws_region: self.aws_region,
+            }
+        }
+    }
+}
+impl OpenSearchServiceDataSourceConfig {
+    /// Creates a new builder-style object to manufacture [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig)
+    pub fn builder() -> crate::model::open_search_service_data_source_config::Builder {
+        crate::model::open_search_service_data_source_config::Builder::default()
+    }
+}
+
+/// <p>Describes an OpenSearch data source configuration.</p>
+/// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
+/// configuration is deprecated. For new data sources, use <a>OpenSearchServiceDataSourceConfig</a> to specify an OpenSearch data
+/// source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElasticsearchDataSourceConfig {
@@ -3265,6 +3368,7 @@ impl DeltaSyncConfig {
 pub enum DataSourceType {
     AmazonDynamodb,
     AmazonElasticsearch,
+    AmazonOpensearchService,
     AwsLambda,
     Http,
     None,
@@ -3277,6 +3381,7 @@ impl std::convert::From<&str> for DataSourceType {
         match s {
             "AMAZON_DYNAMODB" => DataSourceType::AmazonDynamodb,
             "AMAZON_ELASTICSEARCH" => DataSourceType::AmazonElasticsearch,
+            "AMAZON_OPENSEARCH_SERVICE" => DataSourceType::AmazonOpensearchService,
             "AWS_LAMBDA" => DataSourceType::AwsLambda,
             "HTTP" => DataSourceType::Http,
             "NONE" => DataSourceType::None,
@@ -3297,6 +3402,7 @@ impl DataSourceType {
         match self {
             DataSourceType::AmazonDynamodb => "AMAZON_DYNAMODB",
             DataSourceType::AmazonElasticsearch => "AMAZON_ELASTICSEARCH",
+            DataSourceType::AmazonOpensearchService => "AMAZON_OPENSEARCH_SERVICE",
             DataSourceType::AwsLambda => "AWS_LAMBDA",
             DataSourceType::Http => "HTTP",
             DataSourceType::None => "NONE",
@@ -3308,6 +3414,7 @@ impl DataSourceType {
         &[
             "AMAZON_DYNAMODB",
             "AMAZON_ELASTICSEARCH",
+            "AMAZON_OPENSEARCH_SERVICE",
             "AWS_LAMBDA",
             "HTTP",
             "NONE",
@@ -3322,8 +3429,8 @@ impl AsRef<str> for DataSourceType {
 }
 
 /// <p>Describes an API key.</p>
-/// <p>Customers invoke AppSync GraphQL API operations with API keys as an identity
-/// mechanism. There are two key versions:</p>
+/// <p>Customers invoke AppSync GraphQL API operations with API keys as an
+/// identity mechanism. There are two key versions:</p>
 /// <p>
 /// <b>da1</b>: This version was introduced at launch in November
 /// 2017. These keys always expire after 7 days. Key expiration is managed by Amazon DynamoDB
@@ -3360,33 +3467,33 @@ impl AsRef<str> for DataSourceType {
 /// <ul>
 /// <li>
 /// <p>
-/// <code>ListApiKeys</code> returns the expiration time and deletion time
-/// in seconds.</p>
+/// <code>ListApiKeys</code> returns the expiration time and deletion time in
+/// seconds.</p>
 /// </li>
 /// <li>
 /// <p>
-/// <code>CreateApiKey</code> returns the expiration time and deletion time
-/// in seconds and accepts a user-provided expiration time in seconds.</p>
+/// <code>CreateApiKey</code> returns the expiration time and deletion time in
+/// seconds and accepts a user-provided expiration time in seconds.</p>
 /// </li>
 /// <li>
 /// <p>
-/// <code>UpdateApiKey</code> returns the expiration time and and deletion time
-/// in seconds and accepts a user-provided expiration time in seconds. Expired API keys
-/// are kept for 60 days after the expiration time. Key expiration time can be updated
-/// while the key is not deleted. </p>
+/// <code>UpdateApiKey</code> returns the expiration time and and deletion time in
+/// seconds and accepts a user-provided expiration time in seconds. Expired API keys are
+/// kept for 60 days after the expiration time. Key expiration time can be updated while
+/// the key is not deleted. </p>
 /// </li>
 /// <li>
 /// <p>
 /// <code>DeleteApiKey</code> deletes the item from the table.</p>
 /// </li>
 /// <li>
-/// <p>Expiration is stored in Amazon DynamoDB as seconds. After the expiration
-/// time, using the key to authenticate will fail. But the key can be reinstated before
+/// <p>Expiration is stored in Amazon DynamoDB as seconds. After the expiration time,
+/// using the key to authenticate will fail. But the key can be reinstated before
 /// deletion.</p>
 /// </li>
 /// <li>
-/// <p>Deletion is stored in Amazon DynamoDB as seconds. The key will be deleted
-/// after deletion time. </p>
+/// <p>Deletion is stored in Amazon DynamoDB as seconds. The key will be deleted after
+/// deletion time. </p>
 /// </li>
 /// </ul>
 #[non_exhaustive]
@@ -3399,8 +3506,8 @@ pub struct ApiKey {
     /// <p>The time after which the API key expires. The date is represented as seconds since the
     /// epoch, rounded down to the nearest hour.</p>
     pub expires: i64,
-    /// <p>The time after which the API key is deleted. The date is represented as seconds since the
-    /// epoch, rounded down to the nearest hour.</p>
+    /// <p>The time after which the API key is deleted. The date is represented as seconds since
+    /// the epoch, rounded down to the nearest hour.</p>
     pub deletes: i64,
 }
 impl std::fmt::Debug for ApiKey {
@@ -3453,8 +3560,8 @@ pub mod api_key {
             self.expires = input;
             self
         }
-        /// <p>The time after which the API key is deleted. The date is represented as seconds since the
-        /// epoch, rounded down to the nearest hour.</p>
+        /// <p>The time after which the API key is deleted. The date is represented as seconds since
+        /// the epoch, rounded down to the nearest hour.</p>
         pub fn deletes(mut self, input: i64) -> Self {
             self.deletes = Some(input);
             self

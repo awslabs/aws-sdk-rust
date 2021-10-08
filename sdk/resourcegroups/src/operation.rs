@@ -33,9 +33,9 @@ impl smithy_http::response::ParseStrictResponse for CreateGroup {
         std::result::Result<crate::output::CreateGroupOutput, crate::error::CreateGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_group_error(response)
+            crate::operation_ser::parse_create_group_error(response)
         } else {
-            crate::operation_deser::parse_create_group_response(response)
+            crate::operation_ser::parse_create_group_response(response)
         }
     }
 }
@@ -71,9 +71,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteGroup {
         std::result::Result<crate::output::DeleteGroupOutput, crate::error::DeleteGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_group_error(response)
+            crate::operation_ser::parse_delete_group_error(response)
         } else {
-            crate::operation_deser::parse_delete_group_response(response)
+            crate::operation_ser::parse_delete_group_response(response)
         }
     }
 }
@@ -107,9 +107,9 @@ impl smithy_http::response::ParseStrictResponse for GetGroup {
     type Output = std::result::Result<crate::output::GetGroupOutput, crate::error::GetGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_group_error(response)
+            crate::operation_ser::parse_get_group_error(response)
         } else {
-            crate::operation_deser::parse_get_group_response(response)
+            crate::operation_ser::parse_get_group_response(response)
         }
     }
 }
@@ -148,9 +148,9 @@ impl smithy_http::response::ParseStrictResponse for GetGroupConfiguration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_group_configuration_error(response)
+            crate::operation_ser::parse_get_group_configuration_error(response)
         } else {
-            crate::operation_deser::parse_get_group_configuration_response(response)
+            crate::operation_ser::parse_get_group_configuration_response(response)
         }
     }
 }
@@ -187,9 +187,9 @@ impl smithy_http::response::ParseStrictResponse for GetGroupQuery {
         std::result::Result<crate::output::GetGroupQueryOutput, crate::error::GetGroupQueryError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_group_query_error(response)
+            crate::operation_ser::parse_get_group_query_error(response)
         } else {
-            crate::operation_deser::parse_get_group_query_response(response)
+            crate::operation_ser::parse_get_group_query_response(response)
         }
     }
 }
@@ -224,9 +224,9 @@ impl smithy_http::response::ParseStrictResponse for GetTags {
     type Output = std::result::Result<crate::output::GetTagsOutput, crate::error::GetTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_tags_error(response)
+            crate::operation_ser::parse_get_tags_error(response)
         } else {
-            crate::operation_deser::parse_get_tags_response(response)
+            crate::operation_ser::parse_get_tags_response(response)
         }
     }
 }
@@ -261,9 +261,9 @@ impl smithy_http::response::ParseStrictResponse for GroupResources {
         std::result::Result<crate::output::GroupResourcesOutput, crate::error::GroupResourcesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_group_resources_error(response)
+            crate::operation_ser::parse_group_resources_error(response)
         } else {
-            crate::operation_deser::parse_group_resources_response(response)
+            crate::operation_ser::parse_group_resources_response(response)
         }
     }
 }
@@ -316,9 +316,9 @@ impl smithy_http::response::ParseStrictResponse for ListGroupResources {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_group_resources_error(response)
+            crate::operation_ser::parse_list_group_resources_error(response)
         } else {
-            crate::operation_deser::parse_list_group_resources_response(response)
+            crate::operation_ser::parse_list_group_resources_response(response)
         }
     }
 }
@@ -353,9 +353,9 @@ impl smithy_http::response::ParseStrictResponse for ListGroups {
         std::result::Result<crate::output::ListGroupsOutput, crate::error::ListGroupsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_groups_error(response)
+            crate::operation_ser::parse_list_groups_error(response)
         } else {
-            crate::operation_deser::parse_list_groups_response(response)
+            crate::operation_ser::parse_list_groups_response(response)
         }
     }
 }
@@ -394,9 +394,9 @@ impl smithy_http::response::ParseStrictResponse for PutGroupConfiguration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_deser::parse_put_group_configuration_error(response)
+            crate::operation_ser::parse_put_group_configuration_error(response)
         } else {
-            crate::operation_deser::parse_put_group_configuration_response(response)
+            crate::operation_ser::parse_put_group_configuration_response(response)
         }
     }
 }
@@ -450,9 +450,9 @@ impl smithy_http::response::ParseStrictResponse for SearchResources {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_search_resources_error(response)
+            crate::operation_ser::parse_search_resources_error(response)
         } else {
-            crate::operation_deser::parse_search_resources_response(response)
+            crate::operation_ser::parse_search_resources_response(response)
         }
     }
 }
@@ -493,9 +493,9 @@ impl smithy_http::response::ParseStrictResponse for Tag {
     type Output = std::result::Result<crate::output::TagOutput, crate::error::TagError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_error(response)
+            crate::operation_ser::parse_tag_error(response)
         } else {
-            crate::operation_deser::parse_tag_response(response)
+            crate::operation_ser::parse_tag_response(response)
         }
     }
 }
@@ -532,9 +532,9 @@ impl smithy_http::response::ParseStrictResponse for UngroupResources {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_ungroup_resources_error(response)
+            crate::operation_ser::parse_ungroup_resources_error(response)
         } else {
-            crate::operation_deser::parse_ungroup_resources_response(response)
+            crate::operation_ser::parse_ungroup_resources_response(response)
         }
     }
 }
@@ -568,9 +568,9 @@ impl smithy_http::response::ParseStrictResponse for Untag {
     type Output = std::result::Result<crate::output::UntagOutput, crate::error::UntagError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_error(response)
+            crate::operation_ser::parse_untag_error(response)
         } else {
-            crate::operation_deser::parse_untag_response(response)
+            crate::operation_ser::parse_untag_response(response)
         }
     }
 }
@@ -606,9 +606,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateGroup {
         std::result::Result<crate::output::UpdateGroupOutput, crate::error::UpdateGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_group_error(response)
+            crate::operation_ser::parse_update_group_error(response)
         } else {
-            crate::operation_deser::parse_update_group_response(response)
+            crate::operation_ser::parse_update_group_response(response)
         }
     }
 }
@@ -646,9 +646,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateGroupQuery {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_group_query_error(response)
+            crate::operation_ser::parse_update_group_query_error(response)
         } else {
-            crate::operation_deser::parse_update_group_query_response(response)
+            crate::operation_ser::parse_update_group_query_response(response)
         }
     }
 }

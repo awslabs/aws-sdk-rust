@@ -9,6 +9,100 @@
     std::fmt::Debug,
     std::hash::Hash,
 )]
+pub enum ContentRedactionType {
+    Pii,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ContentRedactionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PII" => ContentRedactionType::Pii,
+            other => ContentRedactionType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ContentRedactionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ContentRedactionType::from(s))
+    }
+}
+impl ContentRedactionType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ContentRedactionType::Pii => "PII",
+            ContentRedactionType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["PII"]
+    }
+}
+impl AsRef<str> for ContentRedactionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ContentIdentificationType {
+    Pii,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ContentIdentificationType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PII" => ContentIdentificationType::Pii,
+            other => ContentIdentificationType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ContentIdentificationType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ContentIdentificationType::from(s))
+    }
+}
+impl ContentIdentificationType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ContentIdentificationType::Pii => "PII",
+            ContentIdentificationType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["PII"]
+    }
+}
+impl AsRef<str> for ContentIdentificationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum PartialResultsStability {
     High,
     Low,
@@ -110,8 +204,7 @@ impl AsRef<str> for VocabularyFilterMethod {
 pub enum TranscriptResultStream {
     /// <p>A portion of the transcription of the audio stream. Events are sent periodically from
     /// Amazon Transcribe to your application. The event can be a partial transcription of a section of the audio
-    /// stream, or it can be the entire transcription of that portion of the audio stream.
-    /// </p>
+    /// stream, or it can be the entire transcription of that portion of the audio stream. </p>
     TranscriptEvent(crate::model::TranscriptEvent),
 }
 impl TranscriptResultStream {
@@ -384,12 +477,15 @@ pub struct Alternative {
     pub transcript: std::option::Option<std::string::String>,
     /// <p>One or more alternative interpretations of the input audio. </p>
     pub items: std::option::Option<std::vec::Vec<crate::model::Item>>,
+    /// <p>Contains the entities identified as personally identifiable information (PII) in the transcription output.</p>
+    pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
 }
 impl std::fmt::Debug for Alternative {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Alternative");
         formatter.field("transcript", &self.transcript);
         formatter.field("items", &self.items);
+        formatter.field("entities", &self.entities);
         formatter.finish()
     }
 }
@@ -401,6 +497,7 @@ pub mod alternative {
     pub struct Builder {
         pub(crate) transcript: std::option::Option<std::string::String>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Item>>,
+        pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
     }
     impl Builder {
         /// <p>The text that was transcribed from the audio.</p>
@@ -425,11 +522,25 @@ pub mod alternative {
             self.items = input;
             self
         }
+        pub fn entities(mut self, input: impl Into<crate::model::Entity>) -> Self {
+            let mut v = self.entities.unwrap_or_default();
+            v.push(input.into());
+            self.entities = Some(v);
+            self
+        }
+        pub fn set_entities(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Entity>>,
+        ) -> Self {
+            self.entities = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Alternative`](crate::model::Alternative)
         pub fn build(self) -> crate::model::Alternative {
             crate::model::Alternative {
                 transcript: self.transcript,
                 items: self.items,
+                entities: self.entities,
             }
         }
     }
@@ -438,6 +549,123 @@ impl Alternative {
     /// Creates a new builder-style object to manufacture [`Alternative`](crate::model::Alternative)
     pub fn builder() -> crate::model::alternative::Builder {
         crate::model::alternative::Builder::default()
+    }
+}
+
+/// <p>The entity identified as personally identifiable information (PII).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Entity {
+    /// <p>The start time of speech that was identified as PII.</p>
+    pub start_time: f64,
+    /// <p>The end time of speech that was identified as PII.</p>
+    pub end_time: f64,
+    /// <p>The category of of information identified in this entity; for example, PII.</p>
+    pub category: std::option::Option<std::string::String>,
+    /// <p>The type of PII identified in this entity; for example, name or credit card number.</p>
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p>The words in the transcription output that have been identified as a PII entity.</p>
+    pub content: std::option::Option<std::string::String>,
+    /// <p>A value between zero and one that Amazon Transcribe assigns to PII identified in the source audio. Larger values indicate a higher confidence in PII identification.</p>
+    pub confidence: std::option::Option<f64>,
+}
+impl std::fmt::Debug for Entity {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Entity");
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.field("category", &self.category);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("content", &self.content);
+        formatter.field("confidence", &self.confidence);
+        formatter.finish()
+    }
+}
+/// See [`Entity`](crate::model::Entity)
+pub mod entity {
+    /// A builder for [`Entity`](crate::model::Entity)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_time: std::option::Option<f64>,
+        pub(crate) end_time: std::option::Option<f64>,
+        pub(crate) category: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) content: std::option::Option<std::string::String>,
+        pub(crate) confidence: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>The start time of speech that was identified as PII.</p>
+        pub fn start_time(mut self, input: f64) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>The end time of speech that was identified as PII.</p>
+        pub fn end_time(mut self, input: f64) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// <p>The category of of information identified in this entity; for example, PII.</p>
+        pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+            self.category = Some(input.into());
+            self
+        }
+        pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.category = input;
+            self
+        }
+        /// <p>The type of PII identified in this entity; for example, name or credit card number.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The words in the transcription output that have been identified as a PII entity.</p>
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content = Some(input.into());
+            self
+        }
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content = input;
+            self
+        }
+        /// <p>A value between zero and one that Amazon Transcribe assigns to PII identified in the source audio. Larger values indicate a higher confidence in PII identification.</p>
+        pub fn confidence(mut self, input: f64) -> Self {
+            self.confidence = Some(input);
+            self
+        }
+        pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
+            self.confidence = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Entity`](crate::model::Entity)
+        pub fn build(self) -> crate::model::Entity {
+            crate::model::Entity {
+                start_time: self.start_time.unwrap_or_default(),
+                end_time: self.end_time.unwrap_or_default(),
+                category: self.category,
+                r#type: self.r#type,
+                content: self.content,
+                confidence: self.confidence,
+            }
+        }
+    }
+}
+impl Entity {
+    /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity)
+    pub fn builder() -> crate::model::entity::Builder {
+        crate::model::entity::Builder::default()
     }
 }
 
@@ -795,10 +1023,10 @@ impl AsRef<str> for LanguageCode {
 pub enum AudioStream {
     /// <p>A blob of audio from your application. You audio stream consists of one or more audio
     /// events.</p>
-    /// <p>For information on audio encoding formats in Amazon Transcribe, see <a>input</a>. For
-    /// information on audio encoding formats in Amazon Transcribe Medical, see <a>input-med</a>.</p>
-    /// <p>For more information on stream encoding in Amazon Transcribe, see <a>event-stream</a>. For
-    /// information on stream encoding in Amazon Transcribe Medical, see <a>event-stream-med</a>.</p>
+    /// <p>For information on audio encoding formats in Amazon Transcribe, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/input.html">Speech input</a>. For
+    /// information on audio encoding formats in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/input-med.html">Speech input</a>.</p>
+    /// <p>For more information on stream encoding in Amazon Transcribe, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html">Event stream encoding</a>. For
+    /// information on stream encoding in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/event-stream-med.html">Event stream encoding</a>.</p>
     AudioEvent(crate::model::AudioEvent),
 }
 impl AudioStream {
@@ -816,8 +1044,10 @@ impl AudioStream {
 }
 
 /// <p>Provides a wrapper for the audio chunks that you are sending.</p>
-/// <p>For information on audio encoding in Amazon Transcribe, see <a>input</a>. For information
-/// on audio encoding formats in Amazon Transcribe Medical, see <a>input-med</a>.</p>
+/// <p>For information on audio encoding in Amazon Transcribe, see
+/// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/input.html">Speech input</a>. For information
+/// on audio encoding formats in Amazon Transcribe Medical, see
+/// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/input-med.html">Speech input</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioEvent {

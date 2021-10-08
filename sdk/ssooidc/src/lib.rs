@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>AWS Single Sign-On (SSO) OpenID Connect (OIDC) is a web service that enables a client
 //! (such as AWS CLI or a native application) to register with AWS SSO. The service also
 //! enables the client to fetch the user’s access token upon successful authentication and
@@ -38,7 +39,6 @@ mod json_errors;
 mod json_ser;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

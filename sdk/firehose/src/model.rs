@@ -1993,6 +1993,380 @@ impl AsRef<str> for HecEndpointType {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AmazonopensearchserviceDestinationUpdate {
+    pub role_arn: std::option::Option<std::string::String>,
+    pub domain_arn: std::option::Option<std::string::String>,
+    pub cluster_endpoint: std::option::Option<std::string::String>,
+    pub index_name: std::option::Option<std::string::String>,
+    pub type_name: std::option::Option<std::string::String>,
+    pub index_rotation_period:
+        std::option::Option<crate::model::AmazonopensearchserviceIndexRotationPeriod>,
+    pub buffering_hints: std::option::Option<crate::model::AmazonopensearchserviceBufferingHints>,
+    pub retry_options: std::option::Option<crate::model::AmazonopensearchserviceRetryOptions>,
+    /// <p>Describes an update for a destination in Amazon S3.</p>
+    pub s3_update: std::option::Option<crate::model::S3DestinationUpdate>,
+    /// <p>Describes a data processing configuration.</p>
+    pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
+    /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
+}
+impl std::fmt::Debug for AmazonopensearchserviceDestinationUpdate {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AmazonopensearchserviceDestinationUpdate");
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("domain_arn", &self.domain_arn);
+        formatter.field("cluster_endpoint", &self.cluster_endpoint);
+        formatter.field("index_name", &self.index_name);
+        formatter.field("type_name", &self.type_name);
+        formatter.field("index_rotation_period", &self.index_rotation_period);
+        formatter.field("buffering_hints", &self.buffering_hints);
+        formatter.field("retry_options", &self.retry_options);
+        formatter.field("s3_update", &self.s3_update);
+        formatter.field("processing_configuration", &self.processing_configuration);
+        formatter.field(
+            "cloud_watch_logging_options",
+            &self.cloud_watch_logging_options,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AmazonopensearchserviceDestinationUpdate`](crate::model::AmazonopensearchserviceDestinationUpdate)
+pub mod amazonopensearchservice_destination_update {
+    /// A builder for [`AmazonopensearchserviceDestinationUpdate`](crate::model::AmazonopensearchserviceDestinationUpdate)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) domain_arn: std::option::Option<std::string::String>,
+        pub(crate) cluster_endpoint: std::option::Option<std::string::String>,
+        pub(crate) index_name: std::option::Option<std::string::String>,
+        pub(crate) type_name: std::option::Option<std::string::String>,
+        pub(crate) index_rotation_period:
+            std::option::Option<crate::model::AmazonopensearchserviceIndexRotationPeriod>,
+        pub(crate) buffering_hints:
+            std::option::Option<crate::model::AmazonopensearchserviceBufferingHints>,
+        pub(crate) retry_options:
+            std::option::Option<crate::model::AmazonopensearchserviceRetryOptions>,
+        pub(crate) s3_update: std::option::Option<crate::model::S3DestinationUpdate>,
+        pub(crate) processing_configuration:
+            std::option::Option<crate::model::ProcessingConfiguration>,
+        pub(crate) cloud_watch_logging_options:
+            std::option::Option<crate::model::CloudWatchLoggingOptions>,
+    }
+    impl Builder {
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        pub fn domain_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_arn = Some(input.into());
+            self
+        }
+        pub fn set_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_arn = input;
+            self
+        }
+        pub fn cluster_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_endpoint = Some(input.into());
+            self
+        }
+        pub fn set_cluster_endpoint(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cluster_endpoint = input;
+            self
+        }
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_name = Some(input.into());
+            self
+        }
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_name = input;
+            self
+        }
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
+            self
+        }
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
+            self
+        }
+        pub fn index_rotation_period(
+            mut self,
+            input: crate::model::AmazonopensearchserviceIndexRotationPeriod,
+        ) -> Self {
+            self.index_rotation_period = Some(input);
+            self
+        }
+        pub fn set_index_rotation_period(
+            mut self,
+            input: std::option::Option<crate::model::AmazonopensearchserviceIndexRotationPeriod>,
+        ) -> Self {
+            self.index_rotation_period = input;
+            self
+        }
+        pub fn buffering_hints(
+            mut self,
+            input: crate::model::AmazonopensearchserviceBufferingHints,
+        ) -> Self {
+            self.buffering_hints = Some(input);
+            self
+        }
+        pub fn set_buffering_hints(
+            mut self,
+            input: std::option::Option<crate::model::AmazonopensearchserviceBufferingHints>,
+        ) -> Self {
+            self.buffering_hints = input;
+            self
+        }
+        pub fn retry_options(
+            mut self,
+            input: crate::model::AmazonopensearchserviceRetryOptions,
+        ) -> Self {
+            self.retry_options = Some(input);
+            self
+        }
+        pub fn set_retry_options(
+            mut self,
+            input: std::option::Option<crate::model::AmazonopensearchserviceRetryOptions>,
+        ) -> Self {
+            self.retry_options = input;
+            self
+        }
+        /// <p>Describes an update for a destination in Amazon S3.</p>
+        pub fn s3_update(mut self, input: crate::model::S3DestinationUpdate) -> Self {
+            self.s3_update = Some(input);
+            self
+        }
+        pub fn set_s3_update(
+            mut self,
+            input: std::option::Option<crate::model::S3DestinationUpdate>,
+        ) -> Self {
+            self.s3_update = input;
+            self
+        }
+        /// <p>Describes a data processing configuration.</p>
+        pub fn processing_configuration(
+            mut self,
+            input: crate::model::ProcessingConfiguration,
+        ) -> Self {
+            self.processing_configuration = Some(input);
+            self
+        }
+        pub fn set_processing_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ProcessingConfiguration>,
+        ) -> Self {
+            self.processing_configuration = input;
+            self
+        }
+        /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+        pub fn cloud_watch_logging_options(
+            mut self,
+            input: crate::model::CloudWatchLoggingOptions,
+        ) -> Self {
+            self.cloud_watch_logging_options = Some(input);
+            self
+        }
+        pub fn set_cloud_watch_logging_options(
+            mut self,
+            input: std::option::Option<crate::model::CloudWatchLoggingOptions>,
+        ) -> Self {
+            self.cloud_watch_logging_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AmazonopensearchserviceDestinationUpdate`](crate::model::AmazonopensearchserviceDestinationUpdate)
+        pub fn build(self) -> crate::model::AmazonopensearchserviceDestinationUpdate {
+            crate::model::AmazonopensearchserviceDestinationUpdate {
+                role_arn: self.role_arn,
+                domain_arn: self.domain_arn,
+                cluster_endpoint: self.cluster_endpoint,
+                index_name: self.index_name,
+                type_name: self.type_name,
+                index_rotation_period: self.index_rotation_period,
+                buffering_hints: self.buffering_hints,
+                retry_options: self.retry_options,
+                s3_update: self.s3_update,
+                processing_configuration: self.processing_configuration,
+                cloud_watch_logging_options: self.cloud_watch_logging_options,
+            }
+        }
+    }
+}
+impl AmazonopensearchserviceDestinationUpdate {
+    /// Creates a new builder-style object to manufacture [`AmazonopensearchserviceDestinationUpdate`](crate::model::AmazonopensearchserviceDestinationUpdate)
+    pub fn builder() -> crate::model::amazonopensearchservice_destination_update::Builder {
+        crate::model::amazonopensearchservice_destination_update::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AmazonopensearchserviceRetryOptions {
+    pub duration_in_seconds: std::option::Option<i32>,
+}
+impl std::fmt::Debug for AmazonopensearchserviceRetryOptions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AmazonopensearchserviceRetryOptions");
+        formatter.field("duration_in_seconds", &self.duration_in_seconds);
+        formatter.finish()
+    }
+}
+/// See [`AmazonopensearchserviceRetryOptions`](crate::model::AmazonopensearchserviceRetryOptions)
+pub mod amazonopensearchservice_retry_options {
+    /// A builder for [`AmazonopensearchserviceRetryOptions`](crate::model::AmazonopensearchserviceRetryOptions)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) duration_in_seconds: std::option::Option<i32>,
+    }
+    impl Builder {
+        pub fn duration_in_seconds(mut self, input: i32) -> Self {
+            self.duration_in_seconds = Some(input);
+            self
+        }
+        pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration_in_seconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AmazonopensearchserviceRetryOptions`](crate::model::AmazonopensearchserviceRetryOptions)
+        pub fn build(self) -> crate::model::AmazonopensearchserviceRetryOptions {
+            crate::model::AmazonopensearchserviceRetryOptions {
+                duration_in_seconds: self.duration_in_seconds,
+            }
+        }
+    }
+}
+impl AmazonopensearchserviceRetryOptions {
+    /// Creates a new builder-style object to manufacture [`AmazonopensearchserviceRetryOptions`](crate::model::AmazonopensearchserviceRetryOptions)
+    pub fn builder() -> crate::model::amazonopensearchservice_retry_options::Builder {
+        crate::model::amazonopensearchservice_retry_options::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AmazonopensearchserviceBufferingHints {
+    pub interval_in_seconds: std::option::Option<i32>,
+    pub size_in_m_bs: std::option::Option<i32>,
+}
+impl std::fmt::Debug for AmazonopensearchserviceBufferingHints {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AmazonopensearchserviceBufferingHints");
+        formatter.field("interval_in_seconds", &self.interval_in_seconds);
+        formatter.field("size_in_m_bs", &self.size_in_m_bs);
+        formatter.finish()
+    }
+}
+/// See [`AmazonopensearchserviceBufferingHints`](crate::model::AmazonopensearchserviceBufferingHints)
+pub mod amazonopensearchservice_buffering_hints {
+    /// A builder for [`AmazonopensearchserviceBufferingHints`](crate::model::AmazonopensearchserviceBufferingHints)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) interval_in_seconds: std::option::Option<i32>,
+        pub(crate) size_in_m_bs: std::option::Option<i32>,
+    }
+    impl Builder {
+        pub fn interval_in_seconds(mut self, input: i32) -> Self {
+            self.interval_in_seconds = Some(input);
+            self
+        }
+        pub fn set_interval_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.interval_in_seconds = input;
+            self
+        }
+        pub fn size_in_m_bs(mut self, input: i32) -> Self {
+            self.size_in_m_bs = Some(input);
+            self
+        }
+        pub fn set_size_in_m_bs(mut self, input: std::option::Option<i32>) -> Self {
+            self.size_in_m_bs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AmazonopensearchserviceBufferingHints`](crate::model::AmazonopensearchserviceBufferingHints)
+        pub fn build(self) -> crate::model::AmazonopensearchserviceBufferingHints {
+            crate::model::AmazonopensearchserviceBufferingHints {
+                interval_in_seconds: self.interval_in_seconds,
+                size_in_m_bs: self.size_in_m_bs,
+            }
+        }
+    }
+}
+impl AmazonopensearchserviceBufferingHints {
+    /// Creates a new builder-style object to manufacture [`AmazonopensearchserviceBufferingHints`](crate::model::AmazonopensearchserviceBufferingHints)
+    pub fn builder() -> crate::model::amazonopensearchservice_buffering_hints::Builder {
+        crate::model::amazonopensearchservice_buffering_hints::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AmazonopensearchserviceIndexRotationPeriod {
+    NoRotation,
+    OneDay,
+    OneHour,
+    OneMonth,
+    OneWeek,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AmazonopensearchserviceIndexRotationPeriod {
+    fn from(s: &str) -> Self {
+        match s {
+            "NoRotation" => AmazonopensearchserviceIndexRotationPeriod::NoRotation,
+            "OneDay" => AmazonopensearchserviceIndexRotationPeriod::OneDay,
+            "OneHour" => AmazonopensearchserviceIndexRotationPeriod::OneHour,
+            "OneMonth" => AmazonopensearchserviceIndexRotationPeriod::OneMonth,
+            "OneWeek" => AmazonopensearchserviceIndexRotationPeriod::OneWeek,
+            other => AmazonopensearchserviceIndexRotationPeriod::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AmazonopensearchserviceIndexRotationPeriod {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AmazonopensearchserviceIndexRotationPeriod::from(s))
+    }
+}
+impl AmazonopensearchserviceIndexRotationPeriod {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AmazonopensearchserviceIndexRotationPeriod::NoRotation => "NoRotation",
+            AmazonopensearchserviceIndexRotationPeriod::OneDay => "OneDay",
+            AmazonopensearchserviceIndexRotationPeriod::OneHour => "OneHour",
+            AmazonopensearchserviceIndexRotationPeriod::OneMonth => "OneMonth",
+            AmazonopensearchserviceIndexRotationPeriod::OneWeek => "OneWeek",
+            AmazonopensearchserviceIndexRotationPeriod::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["NoRotation", "OneDay", "OneHour", "OneMonth", "OneWeek"]
+    }
+}
+impl AsRef<str> for AmazonopensearchserviceIndexRotationPeriod {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Describes an update for a destination in Amazon ES.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5410,6 +5784,8 @@ pub struct DestinationDescription {
     /// <p>The destination in Amazon ES.</p>
     pub elasticsearch_destination_description:
         std::option::Option<crate::model::ElasticsearchDestinationDescription>,
+    pub amazonopensearchservice_destination_description:
+        std::option::Option<crate::model::AmazonopensearchserviceDestinationDescription>,
     /// <p>The destination in Splunk.</p>
     pub splunk_destination_description:
         std::option::Option<crate::model::SplunkDestinationDescription>,
@@ -5438,6 +5814,10 @@ impl std::fmt::Debug for DestinationDescription {
             &self.elasticsearch_destination_description,
         );
         formatter.field(
+            "amazonopensearchservice_destination_description",
+            &self.amazonopensearchservice_destination_description,
+        );
+        formatter.field(
             "splunk_destination_description",
             &self.splunk_destination_description,
         );
@@ -5463,6 +5843,8 @@ pub mod destination_description {
             std::option::Option<crate::model::RedshiftDestinationDescription>,
         pub(crate) elasticsearch_destination_description:
             std::option::Option<crate::model::ElasticsearchDestinationDescription>,
+        pub(crate) amazonopensearchservice_destination_description:
+            std::option::Option<crate::model::AmazonopensearchserviceDestinationDescription>,
         pub(crate) splunk_destination_description:
             std::option::Option<crate::model::SplunkDestinationDescription>,
         pub(crate) http_endpoint_destination_description:
@@ -5541,6 +5923,20 @@ pub mod destination_description {
             self.elasticsearch_destination_description = input;
             self
         }
+        pub fn amazonopensearchservice_destination_description(
+            mut self,
+            input: crate::model::AmazonopensearchserviceDestinationDescription,
+        ) -> Self {
+            self.amazonopensearchservice_destination_description = Some(input);
+            self
+        }
+        pub fn set_amazonopensearchservice_destination_description(
+            mut self,
+            input: std::option::Option<crate::model::AmazonopensearchserviceDestinationDescription>,
+        ) -> Self {
+            self.amazonopensearchservice_destination_description = input;
+            self
+        }
         /// <p>The destination in Splunk.</p>
         pub fn splunk_destination_description(
             mut self,
@@ -5579,6 +5975,8 @@ pub mod destination_description {
                 extended_s3_destination_description: self.extended_s3_destination_description,
                 redshift_destination_description: self.redshift_destination_description,
                 elasticsearch_destination_description: self.elasticsearch_destination_description,
+                amazonopensearchservice_destination_description: self
+                    .amazonopensearchservice_destination_description,
                 splunk_destination_description: self.splunk_destination_description,
                 http_endpoint_destination_description: self.http_endpoint_destination_description,
             }
@@ -6298,6 +6696,534 @@ impl SplunkDestinationDescription {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AmazonopensearchserviceDestinationDescription {
+    pub role_arn: std::option::Option<std::string::String>,
+    pub domain_arn: std::option::Option<std::string::String>,
+    pub cluster_endpoint: std::option::Option<std::string::String>,
+    pub index_name: std::option::Option<std::string::String>,
+    pub type_name: std::option::Option<std::string::String>,
+    pub index_rotation_period:
+        std::option::Option<crate::model::AmazonopensearchserviceIndexRotationPeriod>,
+    pub buffering_hints: std::option::Option<crate::model::AmazonopensearchserviceBufferingHints>,
+    pub retry_options: std::option::Option<crate::model::AmazonopensearchserviceRetryOptions>,
+    pub s3_backup_mode: std::option::Option<crate::model::AmazonopensearchserviceS3BackupMode>,
+    /// <p>Describes a destination in Amazon S3.</p>
+    pub s3_destination_description: std::option::Option<crate::model::S3DestinationDescription>,
+    /// <p>Describes a data processing configuration.</p>
+    pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
+    /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
+    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    pub vpc_configuration_description:
+        std::option::Option<crate::model::VpcConfigurationDescription>,
+}
+impl std::fmt::Debug for AmazonopensearchserviceDestinationDescription {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AmazonopensearchserviceDestinationDescription");
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("domain_arn", &self.domain_arn);
+        formatter.field("cluster_endpoint", &self.cluster_endpoint);
+        formatter.field("index_name", &self.index_name);
+        formatter.field("type_name", &self.type_name);
+        formatter.field("index_rotation_period", &self.index_rotation_period);
+        formatter.field("buffering_hints", &self.buffering_hints);
+        formatter.field("retry_options", &self.retry_options);
+        formatter.field("s3_backup_mode", &self.s3_backup_mode);
+        formatter.field(
+            "s3_destination_description",
+            &self.s3_destination_description,
+        );
+        formatter.field("processing_configuration", &self.processing_configuration);
+        formatter.field(
+            "cloud_watch_logging_options",
+            &self.cloud_watch_logging_options,
+        );
+        formatter.field(
+            "vpc_configuration_description",
+            &self.vpc_configuration_description,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AmazonopensearchserviceDestinationDescription`](crate::model::AmazonopensearchserviceDestinationDescription)
+pub mod amazonopensearchservice_destination_description {
+    /// A builder for [`AmazonopensearchserviceDestinationDescription`](crate::model::AmazonopensearchserviceDestinationDescription)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) domain_arn: std::option::Option<std::string::String>,
+        pub(crate) cluster_endpoint: std::option::Option<std::string::String>,
+        pub(crate) index_name: std::option::Option<std::string::String>,
+        pub(crate) type_name: std::option::Option<std::string::String>,
+        pub(crate) index_rotation_period:
+            std::option::Option<crate::model::AmazonopensearchserviceIndexRotationPeriod>,
+        pub(crate) buffering_hints:
+            std::option::Option<crate::model::AmazonopensearchserviceBufferingHints>,
+        pub(crate) retry_options:
+            std::option::Option<crate::model::AmazonopensearchserviceRetryOptions>,
+        pub(crate) s3_backup_mode:
+            std::option::Option<crate::model::AmazonopensearchserviceS3BackupMode>,
+        pub(crate) s3_destination_description:
+            std::option::Option<crate::model::S3DestinationDescription>,
+        pub(crate) processing_configuration:
+            std::option::Option<crate::model::ProcessingConfiguration>,
+        pub(crate) cloud_watch_logging_options:
+            std::option::Option<crate::model::CloudWatchLoggingOptions>,
+        pub(crate) vpc_configuration_description:
+            std::option::Option<crate::model::VpcConfigurationDescription>,
+    }
+    impl Builder {
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        pub fn domain_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_arn = Some(input.into());
+            self
+        }
+        pub fn set_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_arn = input;
+            self
+        }
+        pub fn cluster_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_endpoint = Some(input.into());
+            self
+        }
+        pub fn set_cluster_endpoint(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cluster_endpoint = input;
+            self
+        }
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_name = Some(input.into());
+            self
+        }
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_name = input;
+            self
+        }
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
+            self
+        }
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
+            self
+        }
+        pub fn index_rotation_period(
+            mut self,
+            input: crate::model::AmazonopensearchserviceIndexRotationPeriod,
+        ) -> Self {
+            self.index_rotation_period = Some(input);
+            self
+        }
+        pub fn set_index_rotation_period(
+            mut self,
+            input: std::option::Option<crate::model::AmazonopensearchserviceIndexRotationPeriod>,
+        ) -> Self {
+            self.index_rotation_period = input;
+            self
+        }
+        pub fn buffering_hints(
+            mut self,
+            input: crate::model::AmazonopensearchserviceBufferingHints,
+        ) -> Self {
+            self.buffering_hints = Some(input);
+            self
+        }
+        pub fn set_buffering_hints(
+            mut self,
+            input: std::option::Option<crate::model::AmazonopensearchserviceBufferingHints>,
+        ) -> Self {
+            self.buffering_hints = input;
+            self
+        }
+        pub fn retry_options(
+            mut self,
+            input: crate::model::AmazonopensearchserviceRetryOptions,
+        ) -> Self {
+            self.retry_options = Some(input);
+            self
+        }
+        pub fn set_retry_options(
+            mut self,
+            input: std::option::Option<crate::model::AmazonopensearchserviceRetryOptions>,
+        ) -> Self {
+            self.retry_options = input;
+            self
+        }
+        pub fn s3_backup_mode(
+            mut self,
+            input: crate::model::AmazonopensearchserviceS3BackupMode,
+        ) -> Self {
+            self.s3_backup_mode = Some(input);
+            self
+        }
+        pub fn set_s3_backup_mode(
+            mut self,
+            input: std::option::Option<crate::model::AmazonopensearchserviceS3BackupMode>,
+        ) -> Self {
+            self.s3_backup_mode = input;
+            self
+        }
+        /// <p>Describes a destination in Amazon S3.</p>
+        pub fn s3_destination_description(
+            mut self,
+            input: crate::model::S3DestinationDescription,
+        ) -> Self {
+            self.s3_destination_description = Some(input);
+            self
+        }
+        pub fn set_s3_destination_description(
+            mut self,
+            input: std::option::Option<crate::model::S3DestinationDescription>,
+        ) -> Self {
+            self.s3_destination_description = input;
+            self
+        }
+        /// <p>Describes a data processing configuration.</p>
+        pub fn processing_configuration(
+            mut self,
+            input: crate::model::ProcessingConfiguration,
+        ) -> Self {
+            self.processing_configuration = Some(input);
+            self
+        }
+        pub fn set_processing_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ProcessingConfiguration>,
+        ) -> Self {
+            self.processing_configuration = input;
+            self
+        }
+        /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+        pub fn cloud_watch_logging_options(
+            mut self,
+            input: crate::model::CloudWatchLoggingOptions,
+        ) -> Self {
+            self.cloud_watch_logging_options = Some(input);
+            self
+        }
+        pub fn set_cloud_watch_logging_options(
+            mut self,
+            input: std::option::Option<crate::model::CloudWatchLoggingOptions>,
+        ) -> Self {
+            self.cloud_watch_logging_options = input;
+            self
+        }
+        /// <p>The details of the VPC of the Amazon ES destination.</p>
+        pub fn vpc_configuration_description(
+            mut self,
+            input: crate::model::VpcConfigurationDescription,
+        ) -> Self {
+            self.vpc_configuration_description = Some(input);
+            self
+        }
+        pub fn set_vpc_configuration_description(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfigurationDescription>,
+        ) -> Self {
+            self.vpc_configuration_description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AmazonopensearchserviceDestinationDescription`](crate::model::AmazonopensearchserviceDestinationDescription)
+        pub fn build(self) -> crate::model::AmazonopensearchserviceDestinationDescription {
+            crate::model::AmazonopensearchserviceDestinationDescription {
+                role_arn: self.role_arn,
+                domain_arn: self.domain_arn,
+                cluster_endpoint: self.cluster_endpoint,
+                index_name: self.index_name,
+                type_name: self.type_name,
+                index_rotation_period: self.index_rotation_period,
+                buffering_hints: self.buffering_hints,
+                retry_options: self.retry_options,
+                s3_backup_mode: self.s3_backup_mode,
+                s3_destination_description: self.s3_destination_description,
+                processing_configuration: self.processing_configuration,
+                cloud_watch_logging_options: self.cloud_watch_logging_options,
+                vpc_configuration_description: self.vpc_configuration_description,
+            }
+        }
+    }
+}
+impl AmazonopensearchserviceDestinationDescription {
+    /// Creates a new builder-style object to manufacture [`AmazonopensearchserviceDestinationDescription`](crate::model::AmazonopensearchserviceDestinationDescription)
+    pub fn builder() -> crate::model::amazonopensearchservice_destination_description::Builder {
+        crate::model::amazonopensearchservice_destination_description::Builder::default()
+    }
+}
+
+/// <p>The details of the VPC of the Amazon ES destination.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VpcConfigurationDescription {
+    /// <p>The IDs of the subnets that Kinesis Data Firehose uses to create ENIs in the VPC of the
+    /// Amazon ES destination. Make sure that the routing tables and inbound and outbound rules
+    /// allow traffic to flow from the subnets whose IDs are specified here to the subnets that
+    /// have the destination Amazon ES endpoints. Kinesis Data Firehose creates at least one ENI in
+    /// each of the subnets that are specified here. Do not delete or modify these ENIs.</p>
+    /// <p>The number of ENIs that Kinesis Data Firehose creates in the subnets specified here
+    /// scales up and down automatically based on throughput. To enable Kinesis Data Firehose to
+    /// scale up the number of ENIs to match throughput, ensure that you have sufficient quota. To
+    /// help you calculate the quota you need, assume that Kinesis Data Firehose can create up to
+    /// three ENIs for this delivery stream for each of the subnets specified here. For more
+    /// information about ENI quota, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-enis">Network Interfaces
+    /// </a> in the Amazon VPC Quotas topic.</p>
+    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ARN of the IAM role that the delivery stream uses to create endpoints in the
+    /// destination VPC. You can use your existing Kinesis Data Firehose delivery role or you can
+    /// specify a new role. In either case, make sure that the role trusts the Kinesis Data
+    /// Firehose service principal and that it grants the following permissions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ec2:DescribeVpcs</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ec2:DescribeVpcAttribute</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ec2:DescribeSubnets</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ec2:DescribeSecurityGroups</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ec2:DescribeNetworkInterfaces</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ec2:CreateNetworkInterface</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ec2:CreateNetworkInterfacePermission</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ec2:DeleteNetworkInterface</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>If you revoke these permissions after you create the delivery stream, Kinesis Data
+    /// Firehose can't scale out by creating more ENIs when necessary. You might therefore see a
+    /// degradation in performance.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The IDs of the security groups that Kinesis Data Firehose uses when it creates ENIs in
+    /// the VPC of the Amazon ES destination. You can use the same security group that the Amazon
+    /// ES domain uses or different ones. If you specify different security groups, ensure that
+    /// they allow outbound HTTPS traffic to the Amazon ES domain's security group. Also ensure
+    /// that the Amazon ES domain's security group allows HTTPS traffic from the security groups
+    /// specified here. If you use the same security group for both your delivery stream and the
+    /// Amazon ES domain, make sure the security group inbound rule allows HTTPS traffic. For more
+    /// information about security group rules, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security group
+    /// rules</a> in the Amazon VPC documentation.</p>
+    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ID of the Amazon ES destination's VPC.</p>
+    pub vpc_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for VpcConfigurationDescription {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VpcConfigurationDescription");
+        formatter.field("subnet_ids", &self.subnet_ids);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.field("vpc_id", &self.vpc_id);
+        formatter.finish()
+    }
+}
+/// See [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription)
+pub mod vpc_configuration_description {
+    /// A builder for [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) vpc_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnet_ids.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_ids = Some(v);
+            self
+        }
+        pub fn set_subnet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnet_ids = input;
+            self
+        }
+        /// <p>The ARN of the IAM role that the delivery stream uses to create endpoints in the
+        /// destination VPC. You can use your existing Kinesis Data Firehose delivery role or you can
+        /// specify a new role. In either case, make sure that the role trusts the Kinesis Data
+        /// Firehose service principal and that it grants the following permissions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ec2:DescribeVpcs</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:DescribeVpcAttribute</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:DescribeSubnets</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:DescribeSecurityGroups</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:DescribeNetworkInterfaces</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:CreateNetworkInterface</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:CreateNetworkInterfacePermission</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:DeleteNetworkInterface</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>If you revoke these permissions after you create the delivery stream, Kinesis Data
+        /// Firehose can't scale out by creating more ENIs when necessary. You might therefore see a
+        /// degradation in performance.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_ids = Some(v);
+            self
+        }
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_ids = input;
+            self
+        }
+        /// <p>The ID of the Amazon ES destination's VPC.</p>
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
+            self
+        }
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription)
+        pub fn build(self) -> crate::model::VpcConfigurationDescription {
+            crate::model::VpcConfigurationDescription {
+                subnet_ids: self.subnet_ids,
+                role_arn: self.role_arn,
+                security_group_ids: self.security_group_ids,
+                vpc_id: self.vpc_id,
+            }
+        }
+    }
+}
+impl VpcConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription)
+    pub fn builder() -> crate::model::vpc_configuration_description::Builder {
+        crate::model::vpc_configuration_description::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AmazonopensearchserviceS3BackupMode {
+    AllDocuments,
+    FailedDocumentsOnly,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AmazonopensearchserviceS3BackupMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "AllDocuments" => AmazonopensearchserviceS3BackupMode::AllDocuments,
+            "FailedDocumentsOnly" => AmazonopensearchserviceS3BackupMode::FailedDocumentsOnly,
+            other => AmazonopensearchserviceS3BackupMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AmazonopensearchserviceS3BackupMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AmazonopensearchserviceS3BackupMode::from(s))
+    }
+}
+impl AmazonopensearchserviceS3BackupMode {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AmazonopensearchserviceS3BackupMode::AllDocuments => "AllDocuments",
+            AmazonopensearchserviceS3BackupMode::FailedDocumentsOnly => "FailedDocumentsOnly",
+            AmazonopensearchserviceS3BackupMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AllDocuments", "FailedDocumentsOnly"]
+    }
+}
+impl AsRef<str> for AmazonopensearchserviceS3BackupMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The destination description in Amazon ES.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6583,218 +7509,6 @@ impl ElasticsearchDestinationDescription {
     /// Creates a new builder-style object to manufacture [`ElasticsearchDestinationDescription`](crate::model::ElasticsearchDestinationDescription)
     pub fn builder() -> crate::model::elasticsearch_destination_description::Builder {
         crate::model::elasticsearch_destination_description::Builder::default()
-    }
-}
-
-/// <p>The details of the VPC of the Amazon ES destination.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VpcConfigurationDescription {
-    /// <p>The IDs of the subnets that Kinesis Data Firehose uses to create ENIs in the VPC of the
-    /// Amazon ES destination. Make sure that the routing tables and inbound and outbound rules
-    /// allow traffic to flow from the subnets whose IDs are specified here to the subnets that
-    /// have the destination Amazon ES endpoints. Kinesis Data Firehose creates at least one ENI in
-    /// each of the subnets that are specified here. Do not delete or modify these ENIs.</p>
-    /// <p>The number of ENIs that Kinesis Data Firehose creates in the subnets specified here
-    /// scales up and down automatically based on throughput. To enable Kinesis Data Firehose to
-    /// scale up the number of ENIs to match throughput, ensure that you have sufficient quota. To
-    /// help you calculate the quota you need, assume that Kinesis Data Firehose can create up to
-    /// three ENIs for this delivery stream for each of the subnets specified here. For more
-    /// information about ENI quota, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-enis">Network Interfaces
-    /// </a> in the Amazon VPC Quotas topic.</p>
-    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The ARN of the IAM role that the delivery stream uses to create endpoints in the
-    /// destination VPC. You can use your existing Kinesis Data Firehose delivery role or you can
-    /// specify a new role. In either case, make sure that the role trusts the Kinesis Data
-    /// Firehose service principal and that it grants the following permissions:</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ec2:DescribeVpcs</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ec2:DescribeVpcAttribute</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ec2:DescribeSubnets</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ec2:DescribeSecurityGroups</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ec2:DescribeNetworkInterfaces</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ec2:CreateNetworkInterface</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ec2:CreateNetworkInterfacePermission</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ec2:DeleteNetworkInterface</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>If you revoke these permissions after you create the delivery stream, Kinesis Data
-    /// Firehose can't scale out by creating more ENIs when necessary. You might therefore see a
-    /// degradation in performance.</p>
-    pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The IDs of the security groups that Kinesis Data Firehose uses when it creates ENIs in
-    /// the VPC of the Amazon ES destination. You can use the same security group that the Amazon
-    /// ES domain uses or different ones. If you specify different security groups, ensure that
-    /// they allow outbound HTTPS traffic to the Amazon ES domain's security group. Also ensure
-    /// that the Amazon ES domain's security group allows HTTPS traffic from the security groups
-    /// specified here. If you use the same security group for both your delivery stream and the
-    /// Amazon ES domain, make sure the security group inbound rule allows HTTPS traffic. For more
-    /// information about security group rules, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security group
-    /// rules</a> in the Amazon VPC documentation.</p>
-    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The ID of the Amazon ES destination's VPC.</p>
-    pub vpc_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for VpcConfigurationDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfigurationDescription");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.finish()
-    }
-}
-/// See [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription)
-pub mod vpc_configuration_description {
-    /// A builder for [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) vpc_id: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
-        }
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
-        }
-        /// <p>The ARN of the IAM role that the delivery stream uses to create endpoints in the
-        /// destination VPC. You can use your existing Kinesis Data Firehose delivery role or you can
-        /// specify a new role. In either case, make sure that the role trusts the Kinesis Data
-        /// Firehose service principal and that it grants the following permissions:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ec2:DescribeVpcs</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ec2:DescribeVpcAttribute</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ec2:DescribeSubnets</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ec2:DescribeSecurityGroups</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ec2:DescribeNetworkInterfaces</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ec2:CreateNetworkInterface</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ec2:CreateNetworkInterfacePermission</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ec2:DeleteNetworkInterface</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>If you revoke these permissions after you create the delivery stream, Kinesis Data
-        /// Firehose can't scale out by creating more ENIs when necessary. You might therefore see a
-        /// degradation in performance.</p>
-        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(input.into());
-            self
-        }
-        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
-        }
-        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
-        }
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
-        }
-        /// <p>The ID of the Amazon ES destination's VPC.</p>
-        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.vpc_id = Some(input.into());
-            self
-        }
-        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription)
-        pub fn build(self) -> crate::model::VpcConfigurationDescription {
-            crate::model::VpcConfigurationDescription {
-                subnet_ids: self.subnet_ids,
-                role_arn: self.role_arn,
-                security_group_ids: self.security_group_ids,
-                vpc_id: self.vpc_id,
-            }
-        }
-    }
-}
-impl VpcConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription)
-    pub fn builder() -> crate::model::vpc_configuration_description::Builder {
-        crate::model::vpc_configuration_description::Builder::default()
     }
 }
 
@@ -8599,6 +9313,456 @@ impl SplunkDestinationConfiguration {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AmazonopensearchserviceDestinationConfiguration {
+    pub role_arn: std::option::Option<std::string::String>,
+    pub domain_arn: std::option::Option<std::string::String>,
+    pub cluster_endpoint: std::option::Option<std::string::String>,
+    pub index_name: std::option::Option<std::string::String>,
+    pub type_name: std::option::Option<std::string::String>,
+    pub index_rotation_period:
+        std::option::Option<crate::model::AmazonopensearchserviceIndexRotationPeriod>,
+    pub buffering_hints: std::option::Option<crate::model::AmazonopensearchserviceBufferingHints>,
+    pub retry_options: std::option::Option<crate::model::AmazonopensearchserviceRetryOptions>,
+    pub s3_backup_mode: std::option::Option<crate::model::AmazonopensearchserviceS3BackupMode>,
+    /// <p>Describes the configuration of a destination in Amazon S3.</p>
+    pub s3_configuration: std::option::Option<crate::model::S3DestinationConfiguration>,
+    /// <p>Describes a data processing configuration.</p>
+    pub processing_configuration: std::option::Option<crate::model::ProcessingConfiguration>,
+    /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    pub cloud_watch_logging_options: std::option::Option<crate::model::CloudWatchLoggingOptions>,
+    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
+}
+impl std::fmt::Debug for AmazonopensearchserviceDestinationConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AmazonopensearchserviceDestinationConfiguration");
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("domain_arn", &self.domain_arn);
+        formatter.field("cluster_endpoint", &self.cluster_endpoint);
+        formatter.field("index_name", &self.index_name);
+        formatter.field("type_name", &self.type_name);
+        formatter.field("index_rotation_period", &self.index_rotation_period);
+        formatter.field("buffering_hints", &self.buffering_hints);
+        formatter.field("retry_options", &self.retry_options);
+        formatter.field("s3_backup_mode", &self.s3_backup_mode);
+        formatter.field("s3_configuration", &self.s3_configuration);
+        formatter.field("processing_configuration", &self.processing_configuration);
+        formatter.field(
+            "cloud_watch_logging_options",
+            &self.cloud_watch_logging_options,
+        );
+        formatter.field("vpc_configuration", &self.vpc_configuration);
+        formatter.finish()
+    }
+}
+/// See [`AmazonopensearchserviceDestinationConfiguration`](crate::model::AmazonopensearchserviceDestinationConfiguration)
+pub mod amazonopensearchservice_destination_configuration {
+    /// A builder for [`AmazonopensearchserviceDestinationConfiguration`](crate::model::AmazonopensearchserviceDestinationConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) domain_arn: std::option::Option<std::string::String>,
+        pub(crate) cluster_endpoint: std::option::Option<std::string::String>,
+        pub(crate) index_name: std::option::Option<std::string::String>,
+        pub(crate) type_name: std::option::Option<std::string::String>,
+        pub(crate) index_rotation_period:
+            std::option::Option<crate::model::AmazonopensearchserviceIndexRotationPeriod>,
+        pub(crate) buffering_hints:
+            std::option::Option<crate::model::AmazonopensearchserviceBufferingHints>,
+        pub(crate) retry_options:
+            std::option::Option<crate::model::AmazonopensearchserviceRetryOptions>,
+        pub(crate) s3_backup_mode:
+            std::option::Option<crate::model::AmazonopensearchserviceS3BackupMode>,
+        pub(crate) s3_configuration: std::option::Option<crate::model::S3DestinationConfiguration>,
+        pub(crate) processing_configuration:
+            std::option::Option<crate::model::ProcessingConfiguration>,
+        pub(crate) cloud_watch_logging_options:
+            std::option::Option<crate::model::CloudWatchLoggingOptions>,
+        pub(crate) vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
+    }
+    impl Builder {
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        pub fn domain_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_arn = Some(input.into());
+            self
+        }
+        pub fn set_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_arn = input;
+            self
+        }
+        pub fn cluster_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_endpoint = Some(input.into());
+            self
+        }
+        pub fn set_cluster_endpoint(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cluster_endpoint = input;
+            self
+        }
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_name = Some(input.into());
+            self
+        }
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_name = input;
+            self
+        }
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
+            self
+        }
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
+            self
+        }
+        pub fn index_rotation_period(
+            mut self,
+            input: crate::model::AmazonopensearchserviceIndexRotationPeriod,
+        ) -> Self {
+            self.index_rotation_period = Some(input);
+            self
+        }
+        pub fn set_index_rotation_period(
+            mut self,
+            input: std::option::Option<crate::model::AmazonopensearchserviceIndexRotationPeriod>,
+        ) -> Self {
+            self.index_rotation_period = input;
+            self
+        }
+        pub fn buffering_hints(
+            mut self,
+            input: crate::model::AmazonopensearchserviceBufferingHints,
+        ) -> Self {
+            self.buffering_hints = Some(input);
+            self
+        }
+        pub fn set_buffering_hints(
+            mut self,
+            input: std::option::Option<crate::model::AmazonopensearchserviceBufferingHints>,
+        ) -> Self {
+            self.buffering_hints = input;
+            self
+        }
+        pub fn retry_options(
+            mut self,
+            input: crate::model::AmazonopensearchserviceRetryOptions,
+        ) -> Self {
+            self.retry_options = Some(input);
+            self
+        }
+        pub fn set_retry_options(
+            mut self,
+            input: std::option::Option<crate::model::AmazonopensearchserviceRetryOptions>,
+        ) -> Self {
+            self.retry_options = input;
+            self
+        }
+        pub fn s3_backup_mode(
+            mut self,
+            input: crate::model::AmazonopensearchserviceS3BackupMode,
+        ) -> Self {
+            self.s3_backup_mode = Some(input);
+            self
+        }
+        pub fn set_s3_backup_mode(
+            mut self,
+            input: std::option::Option<crate::model::AmazonopensearchserviceS3BackupMode>,
+        ) -> Self {
+            self.s3_backup_mode = input;
+            self
+        }
+        /// <p>Describes the configuration of a destination in Amazon S3.</p>
+        pub fn s3_configuration(mut self, input: crate::model::S3DestinationConfiguration) -> Self {
+            self.s3_configuration = Some(input);
+            self
+        }
+        pub fn set_s3_configuration(
+            mut self,
+            input: std::option::Option<crate::model::S3DestinationConfiguration>,
+        ) -> Self {
+            self.s3_configuration = input;
+            self
+        }
+        /// <p>Describes a data processing configuration.</p>
+        pub fn processing_configuration(
+            mut self,
+            input: crate::model::ProcessingConfiguration,
+        ) -> Self {
+            self.processing_configuration = Some(input);
+            self
+        }
+        pub fn set_processing_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ProcessingConfiguration>,
+        ) -> Self {
+            self.processing_configuration = input;
+            self
+        }
+        /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+        pub fn cloud_watch_logging_options(
+            mut self,
+            input: crate::model::CloudWatchLoggingOptions,
+        ) -> Self {
+            self.cloud_watch_logging_options = Some(input);
+            self
+        }
+        pub fn set_cloud_watch_logging_options(
+            mut self,
+            input: std::option::Option<crate::model::CloudWatchLoggingOptions>,
+        ) -> Self {
+            self.cloud_watch_logging_options = input;
+            self
+        }
+        /// <p>The details of the VPC of the Amazon ES destination.</p>
+        pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
+            self.vpc_configuration = Some(input);
+            self
+        }
+        pub fn set_vpc_configuration(
+            mut self,
+            input: std::option::Option<crate::model::VpcConfiguration>,
+        ) -> Self {
+            self.vpc_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AmazonopensearchserviceDestinationConfiguration`](crate::model::AmazonopensearchserviceDestinationConfiguration)
+        pub fn build(self) -> crate::model::AmazonopensearchserviceDestinationConfiguration {
+            crate::model::AmazonopensearchserviceDestinationConfiguration {
+                role_arn: self.role_arn,
+                domain_arn: self.domain_arn,
+                cluster_endpoint: self.cluster_endpoint,
+                index_name: self.index_name,
+                type_name: self.type_name,
+                index_rotation_period: self.index_rotation_period,
+                buffering_hints: self.buffering_hints,
+                retry_options: self.retry_options,
+                s3_backup_mode: self.s3_backup_mode,
+                s3_configuration: self.s3_configuration,
+                processing_configuration: self.processing_configuration,
+                cloud_watch_logging_options: self.cloud_watch_logging_options,
+                vpc_configuration: self.vpc_configuration,
+            }
+        }
+    }
+}
+impl AmazonopensearchserviceDestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`AmazonopensearchserviceDestinationConfiguration`](crate::model::AmazonopensearchserviceDestinationConfiguration)
+    pub fn builder() -> crate::model::amazonopensearchservice_destination_configuration::Builder {
+        crate::model::amazonopensearchservice_destination_configuration::Builder::default()
+    }
+}
+
+/// <p>The details of the VPC of the Amazon ES destination.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VpcConfiguration {
+    /// <p>The IDs of the subnets that you want Kinesis Data Firehose to use to create ENIs in the
+    /// VPC of the Amazon ES destination. Make sure that the routing tables and inbound and
+    /// outbound rules allow traffic to flow from the subnets whose IDs are specified here to the
+    /// subnets that have the destination Amazon ES endpoints. Kinesis Data Firehose creates at
+    /// least one ENI in each of the subnets that are specified here. Do not delete or modify these
+    /// ENIs.</p>
+    /// <p>The number of ENIs that Kinesis Data Firehose creates in the subnets specified here
+    /// scales up and down automatically based on throughput. To enable Kinesis Data Firehose to
+    /// scale up the number of ENIs to match throughput, ensure that you have sufficient quota. To
+    /// help you calculate the quota you need, assume that Kinesis Data Firehose can create up to
+    /// three ENIs for this delivery stream for each of the subnets specified here. For more
+    /// information about ENI quota, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-enis">Network Interfaces
+    /// </a> in the Amazon VPC Quotas topic.</p>
+    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ARN of the IAM role that you want the delivery stream to use to create endpoints in
+    /// the destination VPC. You can use your existing Kinesis Data Firehose delivery role or you
+    /// can specify a new role. In either case, make sure that the role trusts the Kinesis Data
+    /// Firehose service principal and that it grants the following permissions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ec2:DescribeVpcs</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ec2:DescribeVpcAttribute</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ec2:DescribeSubnets</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ec2:DescribeSecurityGroups</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ec2:DescribeNetworkInterfaces</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ec2:CreateNetworkInterface</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ec2:CreateNetworkInterfacePermission</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ec2:DeleteNetworkInterface</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>If you revoke these permissions after you create the delivery stream, Kinesis Data
+    /// Firehose can't scale out by creating more ENIs when necessary. You might therefore see a
+    /// degradation in performance.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The IDs of the security groups that you want Kinesis Data Firehose to use when it
+    /// creates ENIs in the VPC of the Amazon ES destination. You can use the same security group
+    /// that the Amazon ES domain uses or different ones. If you specify different security groups
+    /// here, ensure that they allow outbound HTTPS traffic to the Amazon ES domain's security
+    /// group. Also ensure that the Amazon ES domain's security group allows HTTPS traffic from the
+    /// security groups specified here. If you use the same security group for both your delivery
+    /// stream and the Amazon ES domain, make sure the security group inbound rule allows HTTPS
+    /// traffic. For more information about security group rules, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security group
+    /// rules</a> in the Amazon VPC documentation.</p>
+    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for VpcConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VpcConfiguration");
+        formatter.field("subnet_ids", &self.subnet_ids);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.finish()
+    }
+}
+/// See [`VpcConfiguration`](crate::model::VpcConfiguration)
+pub mod vpc_configuration {
+    /// A builder for [`VpcConfiguration`](crate::model::VpcConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnet_ids.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_ids = Some(v);
+            self
+        }
+        pub fn set_subnet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnet_ids = input;
+            self
+        }
+        /// <p>The ARN of the IAM role that you want the delivery stream to use to create endpoints in
+        /// the destination VPC. You can use your existing Kinesis Data Firehose delivery role or you
+        /// can specify a new role. In either case, make sure that the role trusts the Kinesis Data
+        /// Firehose service principal and that it grants the following permissions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ec2:DescribeVpcs</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:DescribeVpcAttribute</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:DescribeSubnets</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:DescribeSecurityGroups</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:DescribeNetworkInterfaces</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:CreateNetworkInterface</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:CreateNetworkInterfacePermission</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:DeleteNetworkInterface</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>If you revoke these permissions after you create the delivery stream, Kinesis Data
+        /// Firehose can't scale out by creating more ENIs when necessary. You might therefore see a
+        /// degradation in performance.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_ids = Some(v);
+            self
+        }
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VpcConfiguration`](crate::model::VpcConfiguration)
+        pub fn build(self) -> crate::model::VpcConfiguration {
+            crate::model::VpcConfiguration {
+                subnet_ids: self.subnet_ids,
+                role_arn: self.role_arn,
+                security_group_ids: self.security_group_ids,
+            }
+        }
+    }
+}
+impl VpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration)
+    pub fn builder() -> crate::model::vpc_configuration::Builder {
+        crate::model::vpc_configuration::Builder::default()
+    }
+}
+
 /// <p>Describes the configuration of a destination in Amazon ES.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8907,205 +10071,6 @@ impl ElasticsearchDestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`ElasticsearchDestinationConfiguration`](crate::model::ElasticsearchDestinationConfiguration)
     pub fn builder() -> crate::model::elasticsearch_destination_configuration::Builder {
         crate::model::elasticsearch_destination_configuration::Builder::default()
-    }
-}
-
-/// <p>The details of the VPC of the Amazon ES destination.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VpcConfiguration {
-    /// <p>The IDs of the subnets that you want Kinesis Data Firehose to use to create ENIs in the
-    /// VPC of the Amazon ES destination. Make sure that the routing tables and inbound and
-    /// outbound rules allow traffic to flow from the subnets whose IDs are specified here to the
-    /// subnets that have the destination Amazon ES endpoints. Kinesis Data Firehose creates at
-    /// least one ENI in each of the subnets that are specified here. Do not delete or modify these
-    /// ENIs.</p>
-    /// <p>The number of ENIs that Kinesis Data Firehose creates in the subnets specified here
-    /// scales up and down automatically based on throughput. To enable Kinesis Data Firehose to
-    /// scale up the number of ENIs to match throughput, ensure that you have sufficient quota. To
-    /// help you calculate the quota you need, assume that Kinesis Data Firehose can create up to
-    /// three ENIs for this delivery stream for each of the subnets specified here. For more
-    /// information about ENI quota, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-enis">Network Interfaces
-    /// </a> in the Amazon VPC Quotas topic.</p>
-    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The ARN of the IAM role that you want the delivery stream to use to create endpoints in
-    /// the destination VPC. You can use your existing Kinesis Data Firehose delivery role or you
-    /// can specify a new role. In either case, make sure that the role trusts the Kinesis Data
-    /// Firehose service principal and that it grants the following permissions:</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ec2:DescribeVpcs</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ec2:DescribeVpcAttribute</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ec2:DescribeSubnets</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ec2:DescribeSecurityGroups</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ec2:DescribeNetworkInterfaces</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ec2:CreateNetworkInterface</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ec2:CreateNetworkInterfacePermission</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ec2:DeleteNetworkInterface</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>If you revoke these permissions after you create the delivery stream, Kinesis Data
-    /// Firehose can't scale out by creating more ENIs when necessary. You might therefore see a
-    /// degradation in performance.</p>
-    pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The IDs of the security groups that you want Kinesis Data Firehose to use when it
-    /// creates ENIs in the VPC of the Amazon ES destination. You can use the same security group
-    /// that the Amazon ES domain uses or different ones. If you specify different security groups
-    /// here, ensure that they allow outbound HTTPS traffic to the Amazon ES domain's security
-    /// group. Also ensure that the Amazon ES domain's security group allows HTTPS traffic from the
-    /// security groups specified here. If you use the same security group for both your delivery
-    /// stream and the Amazon ES domain, make sure the security group inbound rule allows HTTPS
-    /// traffic. For more information about security group rules, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security group
-    /// rules</a> in the Amazon VPC documentation.</p>
-    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-}
-impl std::fmt::Debug for VpcConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfiguration");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
-    }
-}
-/// See [`VpcConfiguration`](crate::model::VpcConfiguration)
-pub mod vpc_configuration {
-    /// A builder for [`VpcConfiguration`](crate::model::VpcConfiguration)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    }
-    impl Builder {
-        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
-        }
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
-        }
-        /// <p>The ARN of the IAM role that you want the delivery stream to use to create endpoints in
-        /// the destination VPC. You can use your existing Kinesis Data Firehose delivery role or you
-        /// can specify a new role. In either case, make sure that the role trusts the Kinesis Data
-        /// Firehose service principal and that it grants the following permissions:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ec2:DescribeVpcs</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ec2:DescribeVpcAttribute</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ec2:DescribeSubnets</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ec2:DescribeSecurityGroups</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ec2:DescribeNetworkInterfaces</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ec2:CreateNetworkInterface</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ec2:CreateNetworkInterfacePermission</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ec2:DeleteNetworkInterface</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>If you revoke these permissions after you create the delivery stream, Kinesis Data
-        /// Firehose can't scale out by creating more ENIs when necessary. You might therefore see a
-        /// degradation in performance.</p>
-        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(input.into());
-            self
-        }
-        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
-        }
-        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
-        }
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`VpcConfiguration`](crate::model::VpcConfiguration)
-        pub fn build(self) -> crate::model::VpcConfiguration {
-            crate::model::VpcConfiguration {
-                subnet_ids: self.subnet_ids,
-                role_arn: self.role_arn,
-                security_group_ids: self.security_group_ids,
-            }
-        }
-    }
-}
-impl VpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration)
-    pub fn builder() -> crate::model::vpc_configuration::Builder {
-        crate::model::vpc_configuration::Builder::default()
     }
 }
 

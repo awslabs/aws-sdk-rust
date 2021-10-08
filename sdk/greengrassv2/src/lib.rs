@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>IoT Greengrass brings local compute, messaging, data management, sync, and ML inference capabilities
 //! to edge devices. This enables devices to collect and analyze data closer to the source of
 //! information, react autonomously to local events, and communicate securely with each other on
@@ -37,7 +38,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

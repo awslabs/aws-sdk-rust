@@ -22,9 +22,9 @@ impl smithy_http::response::ParseStrictResponse for BatchDetectDominantLanguage 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_detect_dominant_language_error(response)
+            crate::operation_ser::parse_batch_detect_dominant_language_error(response)
         } else {
-            crate::operation_deser::parse_batch_detect_dominant_language_response(response)
+            crate::operation_ser::parse_batch_detect_dominant_language_response(response)
         }
     }
 }
@@ -52,9 +52,9 @@ impl smithy_http::response::ParseStrictResponse for BatchDetectEntities {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_detect_entities_error(response)
+            crate::operation_ser::parse_batch_detect_entities_error(response)
         } else {
-            crate::operation_deser::parse_batch_detect_entities_response(response)
+            crate::operation_ser::parse_batch_detect_entities_response(response)
         }
     }
 }
@@ -80,9 +80,9 @@ impl smithy_http::response::ParseStrictResponse for BatchDetectKeyPhrases {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_detect_key_phrases_error(response)
+            crate::operation_ser::parse_batch_detect_key_phrases_error(response)
         } else {
-            crate::operation_deser::parse_batch_detect_key_phrases_response(response)
+            crate::operation_ser::parse_batch_detect_key_phrases_response(response)
         }
     }
 }
@@ -110,9 +110,9 @@ impl smithy_http::response::ParseStrictResponse for BatchDetectSentiment {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_detect_sentiment_error(response)
+            crate::operation_ser::parse_batch_detect_sentiment_error(response)
         } else {
-            crate::operation_deser::parse_batch_detect_sentiment_response(response)
+            crate::operation_ser::parse_batch_detect_sentiment_response(response)
         }
     }
 }
@@ -139,9 +139,9 @@ impl smithy_http::response::ParseStrictResponse for BatchDetectSyntax {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_detect_syntax_error(response)
+            crate::operation_ser::parse_batch_detect_syntax_error(response)
         } else {
-            crate::operation_deser::parse_batch_detect_syntax_response(response)
+            crate::operation_ser::parse_batch_detect_syntax_response(response)
         }
     }
 }
@@ -168,9 +168,9 @@ impl smithy_http::response::ParseStrictResponse for ClassifyDocument {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_classify_document_error(response)
+            crate::operation_ser::parse_classify_document_error(response)
         } else {
-            crate::operation_deser::parse_classify_document_response(response)
+            crate::operation_ser::parse_classify_document_response(response)
         }
     }
 }
@@ -198,9 +198,9 @@ impl smithy_http::response::ParseStrictResponse for ContainsPiiEntities {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_contains_pii_entities_error(response)
+            crate::operation_ser::parse_contains_pii_entities_error(response)
         } else {
-            crate::operation_deser::parse_contains_pii_entities_response(response)
+            crate::operation_ser::parse_contains_pii_entities_response(response)
         }
     }
 }
@@ -229,9 +229,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDocumentClassifier {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_document_classifier_error(response)
+            crate::operation_ser::parse_create_document_classifier_error(response)
         } else {
-            crate::operation_deser::parse_create_document_classifier_response(response)
+            crate::operation_ser::parse_create_document_classifier_response(response)
         }
     }
 }
@@ -257,9 +257,9 @@ impl smithy_http::response::ParseStrictResponse for CreateEndpoint {
         std::result::Result<crate::output::CreateEndpointOutput, crate::error::CreateEndpointError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_endpoint_error(response)
+            crate::operation_ser::parse_create_endpoint_error(response)
         } else {
-            crate::operation_deser::parse_create_endpoint_response(response)
+            crate::operation_ser::parse_create_endpoint_response(response)
         }
     }
 }
@@ -287,9 +287,9 @@ impl smithy_http::response::ParseStrictResponse for CreateEntityRecognizer {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_entity_recognizer_error(response)
+            crate::operation_ser::parse_create_entity_recognizer_error(response)
         } else {
-            crate::operation_deser::parse_create_entity_recognizer_response(response)
+            crate::operation_ser::parse_create_entity_recognizer_response(response)
         }
     }
 }
@@ -321,9 +321,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteDocumentClassifier {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_document_classifier_error(response)
+            crate::operation_ser::parse_delete_document_classifier_error(response)
         } else {
-            crate::operation_deser::parse_delete_document_classifier_response(response)
+            crate::operation_ser::parse_delete_document_classifier_response(response)
         }
     }
 }
@@ -348,9 +348,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteEndpoint {
         std::result::Result<crate::output::DeleteEndpointOutput, crate::error::DeleteEndpointError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_endpoint_error(response)
+            crate::operation_ser::parse_delete_endpoint_error(response)
         } else {
-            crate::operation_deser::parse_delete_endpoint_response(response)
+            crate::operation_ser::parse_delete_endpoint_response(response)
         }
     }
 }
@@ -382,9 +382,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteEntityRecognizer {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_entity_recognizer_error(response)
+            crate::operation_ser::parse_delete_entity_recognizer_error(response)
         } else {
-            crate::operation_deser::parse_delete_entity_recognizer_response(response)
+            crate::operation_ser::parse_delete_entity_recognizer_response(response)
         }
     }
 }
@@ -411,9 +411,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDocumentClassificati
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_document_classification_job_error(response)
+            crate::operation_ser::parse_describe_document_classification_job_error(response)
         } else {
-            crate::operation_deser::parse_describe_document_classification_job_response(response)
+            crate::operation_ser::parse_describe_document_classification_job_response(response)
         }
     }
 }
@@ -439,9 +439,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDocumentClassifier {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_document_classifier_error(response)
+            crate::operation_ser::parse_describe_document_classifier_error(response)
         } else {
-            crate::operation_deser::parse_describe_document_classifier_response(response)
+            crate::operation_ser::parse_describe_document_classifier_response(response)
         }
     }
 }
@@ -468,11 +468,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDominantLanguageDete
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_dominant_language_detection_job_error(response)
+            crate::operation_ser::parse_describe_dominant_language_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_describe_dominant_language_detection_job_response(
-                response,
-            )
+            crate::operation_ser::parse_describe_dominant_language_detection_job_response(response)
         }
     }
 }
@@ -499,9 +497,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeEndpoint {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_endpoint_error(response)
+            crate::operation_ser::parse_describe_endpoint_error(response)
         } else {
-            crate::operation_deser::parse_describe_endpoint_response(response)
+            crate::operation_ser::parse_describe_endpoint_response(response)
         }
     }
 }
@@ -528,9 +526,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeEntitiesDetectionJob
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_entities_detection_job_error(response)
+            crate::operation_ser::parse_describe_entities_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_describe_entities_detection_job_response(response)
+            crate::operation_ser::parse_describe_entities_detection_job_response(response)
         }
     }
 }
@@ -557,9 +555,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeEntityRecognizer {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_entity_recognizer_error(response)
+            crate::operation_ser::parse_describe_entity_recognizer_error(response)
         } else {
-            crate::operation_deser::parse_describe_entity_recognizer_response(response)
+            crate::operation_ser::parse_describe_entity_recognizer_response(response)
         }
     }
 }
@@ -585,9 +583,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeEventsDetectionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_events_detection_job_error(response)
+            crate::operation_ser::parse_describe_events_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_describe_events_detection_job_response(response)
+            crate::operation_ser::parse_describe_events_detection_job_response(response)
         }
     }
 }
@@ -614,9 +612,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeKeyPhrasesDetectionJ
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_key_phrases_detection_job_error(response)
+            crate::operation_ser::parse_describe_key_phrases_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_describe_key_phrases_detection_job_response(response)
+            crate::operation_ser::parse_describe_key_phrases_detection_job_response(response)
         }
     }
 }
@@ -643,9 +641,9 @@ impl smithy_http::response::ParseStrictResponse for DescribePiiEntitiesDetection
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_pii_entities_detection_job_error(response)
+            crate::operation_ser::parse_describe_pii_entities_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_describe_pii_entities_detection_job_response(response)
+            crate::operation_ser::parse_describe_pii_entities_detection_job_response(response)
         }
     }
 }
@@ -672,9 +670,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeSentimentDetectionJo
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_sentiment_detection_job_error(response)
+            crate::operation_ser::parse_describe_sentiment_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_describe_sentiment_detection_job_response(response)
+            crate::operation_ser::parse_describe_sentiment_detection_job_response(response)
         }
     }
 }
@@ -701,9 +699,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeTopicsDetectionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_topics_detection_job_error(response)
+            crate::operation_ser::parse_describe_topics_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_describe_topics_detection_job_response(response)
+            crate::operation_ser::parse_describe_topics_detection_job_response(response)
         }
     }
 }
@@ -730,9 +728,9 @@ impl smithy_http::response::ParseStrictResponse for DetectDominantLanguage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_detect_dominant_language_error(response)
+            crate::operation_ser::parse_detect_dominant_language_error(response)
         } else {
-            crate::operation_deser::parse_detect_dominant_language_response(response)
+            crate::operation_ser::parse_detect_dominant_language_response(response)
         }
     }
 }
@@ -757,9 +755,9 @@ impl smithy_http::response::ParseStrictResponse for DetectEntities {
         std::result::Result<crate::output::DetectEntitiesOutput, crate::error::DetectEntitiesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_detect_entities_error(response)
+            crate::operation_ser::parse_detect_entities_error(response)
         } else {
-            crate::operation_deser::parse_detect_entities_response(response)
+            crate::operation_ser::parse_detect_entities_response(response)
         }
     }
 }
@@ -785,9 +783,9 @@ impl smithy_http::response::ParseStrictResponse for DetectKeyPhrases {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_detect_key_phrases_error(response)
+            crate::operation_ser::parse_detect_key_phrases_error(response)
         } else {
-            crate::operation_deser::parse_detect_key_phrases_response(response)
+            crate::operation_ser::parse_detect_key_phrases_response(response)
         }
     }
 }
@@ -814,9 +812,9 @@ impl smithy_http::response::ParseStrictResponse for DetectPiiEntities {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_detect_pii_entities_error(response)
+            crate::operation_ser::parse_detect_pii_entities_error(response)
         } else {
-            crate::operation_deser::parse_detect_pii_entities_response(response)
+            crate::operation_ser::parse_detect_pii_entities_response(response)
         }
     }
 }
@@ -843,9 +841,9 @@ impl smithy_http::response::ParseStrictResponse for DetectSentiment {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_detect_sentiment_error(response)
+            crate::operation_ser::parse_detect_sentiment_error(response)
         } else {
-            crate::operation_deser::parse_detect_sentiment_response(response)
+            crate::operation_ser::parse_detect_sentiment_response(response)
         }
     }
 }
@@ -870,9 +868,9 @@ impl smithy_http::response::ParseStrictResponse for DetectSyntax {
         std::result::Result<crate::output::DetectSyntaxOutput, crate::error::DetectSyntaxError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_detect_syntax_error(response)
+            crate::operation_ser::parse_detect_syntax_error(response)
         } else {
-            crate::operation_deser::parse_detect_syntax_response(response)
+            crate::operation_ser::parse_detect_syntax_response(response)
         }
     }
 }
@@ -898,9 +896,9 @@ impl smithy_http::response::ParseStrictResponse for ListDocumentClassificationJo
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_document_classification_jobs_error(response)
+            crate::operation_ser::parse_list_document_classification_jobs_error(response)
         } else {
-            crate::operation_deser::parse_list_document_classification_jobs_response(response)
+            crate::operation_ser::parse_list_document_classification_jobs_response(response)
         }
     }
 }
@@ -926,9 +924,37 @@ impl smithy_http::response::ParseStrictResponse for ListDocumentClassifiers {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_document_classifiers_error(response)
+            crate::operation_ser::parse_list_document_classifiers_error(response)
         } else {
-            crate::operation_deser::parse_list_document_classifiers_response(response)
+            crate::operation_ser::parse_list_document_classifiers_response(response)
+        }
+    }
+}
+
+/// <p>Gets a list of summaries of the document classifiers that you have created</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListDocumentClassifierSummaries {
+    _private: (),
+}
+impl ListDocumentClassifierSummaries {
+    /// Creates a new builder-style object to manufacture [`ListDocumentClassifierSummariesInput`](crate::input::ListDocumentClassifierSummariesInput)
+    pub fn builder() -> crate::input::list_document_classifier_summaries_input::Builder {
+        crate::input::list_document_classifier_summaries_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListDocumentClassifierSummaries {
+    type Output = std::result::Result<
+        crate::output::ListDocumentClassifierSummariesOutput,
+        crate::error::ListDocumentClassifierSummariesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_ser::parse_list_document_classifier_summaries_error(response)
+        } else {
+            crate::operation_ser::parse_list_document_classifier_summaries_response(response)
         }
     }
 }
@@ -954,9 +980,9 @@ impl smithy_http::response::ParseStrictResponse for ListDominantLanguageDetectio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_dominant_language_detection_jobs_error(response)
+            crate::operation_ser::parse_list_dominant_language_detection_jobs_error(response)
         } else {
-            crate::operation_deser::parse_list_dominant_language_detection_jobs_response(response)
+            crate::operation_ser::parse_list_dominant_language_detection_jobs_response(response)
         }
     }
 }
@@ -980,9 +1006,9 @@ impl smithy_http::response::ParseStrictResponse for ListEndpoints {
         std::result::Result<crate::output::ListEndpointsOutput, crate::error::ListEndpointsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_endpoints_error(response)
+            crate::operation_ser::parse_list_endpoints_error(response)
         } else {
-            crate::operation_deser::parse_list_endpoints_response(response)
+            crate::operation_ser::parse_list_endpoints_response(response)
         }
     }
 }
@@ -1008,9 +1034,9 @@ impl smithy_http::response::ParseStrictResponse for ListEntitiesDetectionJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_entities_detection_jobs_error(response)
+            crate::operation_ser::parse_list_entities_detection_jobs_error(response)
         } else {
-            crate::operation_deser::parse_list_entities_detection_jobs_response(response)
+            crate::operation_ser::parse_list_entities_detection_jobs_response(response)
         }
     }
 }
@@ -1041,9 +1067,37 @@ impl smithy_http::response::ParseStrictResponse for ListEntityRecognizers {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_entity_recognizers_error(response)
+            crate::operation_ser::parse_list_entity_recognizers_error(response)
         } else {
-            crate::operation_deser::parse_list_entity_recognizers_response(response)
+            crate::operation_ser::parse_list_entity_recognizers_response(response)
+        }
+    }
+}
+
+/// <p>Gets a list of summaries for the entity recognizers that you have created.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListEntityRecognizerSummaries {
+    _private: (),
+}
+impl ListEntityRecognizerSummaries {
+    /// Creates a new builder-style object to manufacture [`ListEntityRecognizerSummariesInput`](crate::input::ListEntityRecognizerSummariesInput)
+    pub fn builder() -> crate::input::list_entity_recognizer_summaries_input::Builder {
+        crate::input::list_entity_recognizer_summaries_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListEntityRecognizerSummaries {
+    type Output = std::result::Result<
+        crate::output::ListEntityRecognizerSummariesOutput,
+        crate::error::ListEntityRecognizerSummariesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_ser::parse_list_entity_recognizer_summaries_error(response)
+        } else {
+            crate::operation_ser::parse_list_entity_recognizer_summaries_response(response)
         }
     }
 }
@@ -1069,9 +1123,9 @@ impl smithy_http::response::ParseStrictResponse for ListEventsDetectionJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_events_detection_jobs_error(response)
+            crate::operation_ser::parse_list_events_detection_jobs_error(response)
         } else {
-            crate::operation_deser::parse_list_events_detection_jobs_response(response)
+            crate::operation_ser::parse_list_events_detection_jobs_response(response)
         }
     }
 }
@@ -1097,9 +1151,9 @@ impl smithy_http::response::ParseStrictResponse for ListKeyPhrasesDetectionJobs 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_key_phrases_detection_jobs_error(response)
+            crate::operation_ser::parse_list_key_phrases_detection_jobs_error(response)
         } else {
-            crate::operation_deser::parse_list_key_phrases_detection_jobs_response(response)
+            crate::operation_ser::parse_list_key_phrases_detection_jobs_response(response)
         }
     }
 }
@@ -1125,9 +1179,9 @@ impl smithy_http::response::ParseStrictResponse for ListPiiEntitiesDetectionJobs
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_pii_entities_detection_jobs_error(response)
+            crate::operation_ser::parse_list_pii_entities_detection_jobs_error(response)
         } else {
-            crate::operation_deser::parse_list_pii_entities_detection_jobs_response(response)
+            crate::operation_ser::parse_list_pii_entities_detection_jobs_response(response)
         }
     }
 }
@@ -1153,9 +1207,9 @@ impl smithy_http::response::ParseStrictResponse for ListSentimentDetectionJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_sentiment_detection_jobs_error(response)
+            crate::operation_ser::parse_list_sentiment_detection_jobs_error(response)
         } else {
-            crate::operation_deser::parse_list_sentiment_detection_jobs_response(response)
+            crate::operation_ser::parse_list_sentiment_detection_jobs_response(response)
         }
     }
 }
@@ -1181,9 +1235,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::operation_ser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::operation_ser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -1209,9 +1263,9 @@ impl smithy_http::response::ParseStrictResponse for ListTopicsDetectionJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_topics_detection_jobs_error(response)
+            crate::operation_ser::parse_list_topics_detection_jobs_error(response)
         } else {
-            crate::operation_deser::parse_list_topics_detection_jobs_response(response)
+            crate::operation_ser::parse_list_topics_detection_jobs_response(response)
         }
     }
 }
@@ -1238,9 +1292,9 @@ impl smithy_http::response::ParseStrictResponse for StartDocumentClassificationJ
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_document_classification_job_error(response)
+            crate::operation_ser::parse_start_document_classification_job_error(response)
         } else {
-            crate::operation_deser::parse_start_document_classification_job_response(response)
+            crate::operation_ser::parse_start_document_classification_job_response(response)
         }
     }
 }
@@ -1268,9 +1322,9 @@ impl smithy_http::response::ParseStrictResponse for StartDominantLanguageDetecti
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_dominant_language_detection_job_error(response)
+            crate::operation_ser::parse_start_dominant_language_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_start_dominant_language_detection_job_response(response)
+            crate::operation_ser::parse_start_dominant_language_detection_job_response(response)
         }
     }
 }
@@ -1300,9 +1354,9 @@ impl smithy_http::response::ParseStrictResponse for StartEntitiesDetectionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_entities_detection_job_error(response)
+            crate::operation_ser::parse_start_entities_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_start_entities_detection_job_response(response)
+            crate::operation_ser::parse_start_entities_detection_job_response(response)
         }
     }
 }
@@ -1328,9 +1382,9 @@ impl smithy_http::response::ParseStrictResponse for StartEventsDetectionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_events_detection_job_error(response)
+            crate::operation_ser::parse_start_events_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_start_events_detection_job_response(response)
+            crate::operation_ser::parse_start_events_detection_job_response(response)
         }
     }
 }
@@ -1358,9 +1412,9 @@ impl smithy_http::response::ParseStrictResponse for StartKeyPhrasesDetectionJob 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_key_phrases_detection_job_error(response)
+            crate::operation_ser::parse_start_key_phrases_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_start_key_phrases_detection_job_response(response)
+            crate::operation_ser::parse_start_key_phrases_detection_job_response(response)
         }
     }
 }
@@ -1386,9 +1440,9 @@ impl smithy_http::response::ParseStrictResponse for StartPiiEntitiesDetectionJob
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_pii_entities_detection_job_error(response)
+            crate::operation_ser::parse_start_pii_entities_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_start_pii_entities_detection_job_response(response)
+            crate::operation_ser::parse_start_pii_entities_detection_job_response(response)
         }
     }
 }
@@ -1416,9 +1470,9 @@ impl smithy_http::response::ParseStrictResponse for StartSentimentDetectionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_sentiment_detection_job_error(response)
+            crate::operation_ser::parse_start_sentiment_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_start_sentiment_detection_job_response(response)
+            crate::operation_ser::parse_start_sentiment_detection_job_response(response)
         }
     }
 }
@@ -1445,9 +1499,9 @@ impl smithy_http::response::ParseStrictResponse for StartTopicsDetectionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_topics_detection_job_error(response)
+            crate::operation_ser::parse_start_topics_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_start_topics_detection_job_response(response)
+            crate::operation_ser::parse_start_topics_detection_job_response(response)
         }
     }
 }
@@ -1482,9 +1536,9 @@ impl smithy_http::response::ParseStrictResponse for StopDominantLanguageDetectio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_dominant_language_detection_job_error(response)
+            crate::operation_ser::parse_stop_dominant_language_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_stop_dominant_language_detection_job_response(response)
+            crate::operation_ser::parse_stop_dominant_language_detection_job_response(response)
         }
     }
 }
@@ -1519,9 +1573,9 @@ impl smithy_http::response::ParseStrictResponse for StopEntitiesDetectionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_entities_detection_job_error(response)
+            crate::operation_ser::parse_stop_entities_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_stop_entities_detection_job_response(response)
+            crate::operation_ser::parse_stop_entities_detection_job_response(response)
         }
     }
 }
@@ -1547,9 +1601,9 @@ impl smithy_http::response::ParseStrictResponse for StopEventsDetectionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_events_detection_job_error(response)
+            crate::operation_ser::parse_stop_events_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_stop_events_detection_job_response(response)
+            crate::operation_ser::parse_stop_events_detection_job_response(response)
         }
     }
 }
@@ -1584,9 +1638,9 @@ impl smithy_http::response::ParseStrictResponse for StopKeyPhrasesDetectionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_key_phrases_detection_job_error(response)
+            crate::operation_ser::parse_stop_key_phrases_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_stop_key_phrases_detection_job_response(response)
+            crate::operation_ser::parse_stop_key_phrases_detection_job_response(response)
         }
     }
 }
@@ -1612,9 +1666,9 @@ impl smithy_http::response::ParseStrictResponse for StopPiiEntitiesDetectionJob 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_pii_entities_detection_job_error(response)
+            crate::operation_ser::parse_stop_pii_entities_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_stop_pii_entities_detection_job_response(response)
+            crate::operation_ser::parse_stop_pii_entities_detection_job_response(response)
         }
     }
 }
@@ -1649,9 +1703,9 @@ impl smithy_http::response::ParseStrictResponse for StopSentimentDetectionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_sentiment_detection_job_error(response)
+            crate::operation_ser::parse_stop_sentiment_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_stop_sentiment_detection_job_response(response)
+            crate::operation_ser::parse_stop_sentiment_detection_job_response(response)
         }
     }
 }
@@ -1682,9 +1736,9 @@ impl smithy_http::response::ParseStrictResponse for StopTrainingDocumentClassifi
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_training_document_classifier_error(response)
+            crate::operation_ser::parse_stop_training_document_classifier_error(response)
         } else {
-            crate::operation_deser::parse_stop_training_document_classifier_response(response)
+            crate::operation_ser::parse_stop_training_document_classifier_response(response)
         }
     }
 }
@@ -1715,9 +1769,9 @@ impl smithy_http::response::ParseStrictResponse for StopTrainingEntityRecognizer
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_training_entity_recognizer_error(response)
+            crate::operation_ser::parse_stop_training_entity_recognizer_error(response)
         } else {
-            crate::operation_deser::parse_stop_training_entity_recognizer_response(response)
+            crate::operation_ser::parse_stop_training_entity_recognizer_response(response)
         }
     }
 }
@@ -1744,9 +1798,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::operation_ser::parse_tag_resource_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::operation_ser::parse_tag_resource_response(response)
         }
     }
 }
@@ -1770,9 +1824,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::operation_ser::parse_untag_resource_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::operation_ser::parse_untag_resource_response(response)
         }
     }
 }
@@ -1796,9 +1850,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateEndpoint {
         std::result::Result<crate::output::UpdateEndpointOutput, crate::error::UpdateEndpointError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_endpoint_error(response)
+            crate::operation_ser::parse_update_endpoint_error(response)
         } else {
-            crate::operation_deser::parse_update_endpoint_response(response)
+            crate::operation_ser::parse_update_endpoint_response(response)
         }
     }
 }

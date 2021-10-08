@@ -2008,6 +2008,10 @@ pub struct GetSupportedResourceTypesOutput {
     /// <ul>
     /// <li>
     /// <p>
+    /// <code>Aurora</code> for Amazon Aurora</p>
+    /// </li>
+    /// <li>
+    /// <p>
     /// <code>DynamoDB</code> for Amazon DynamoDB</p>
     /// </li>
     /// <li>
@@ -2024,11 +2028,11 @@ pub struct GetSupportedResourceTypesOutput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>RDS</code> for Amazon Relational Database Service</p>
+    /// <code>FSX</code> for Amazon FSx</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Aurora</code> for Amazon Aurora</p>
+    /// <code>RDS</code> for Amazon Relational Database Service</p>
     /// </li>
     /// <li>
     /// <p>
@@ -5116,12 +5120,18 @@ pub struct CreateReportPlanOutput {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
     /// depends on the resource type.</p>
     pub report_plan_arn: std::option::Option<std::string::String>,
+    /// <p>The date and time a backup vault is created, in Unix format and Coordinated Universal
+    /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
+    /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+    /// AM.</p>
+    pub creation_time: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for CreateReportPlanOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateReportPlanOutput");
         formatter.field("report_plan_name", &self.report_plan_name);
         formatter.field("report_plan_arn", &self.report_plan_arn);
+        formatter.field("creation_time", &self.creation_time);
         formatter.finish()
     }
 }
@@ -5133,6 +5143,7 @@ pub mod create_report_plan_output {
     pub struct Builder {
         pub(crate) report_plan_name: std::option::Option<std::string::String>,
         pub(crate) report_plan_arn: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The unique name of the report plan.</p>
@@ -5160,11 +5171,27 @@ pub mod create_report_plan_output {
             self.report_plan_arn = input;
             self
         }
+        /// <p>The date and time a backup vault is created, in Unix format and Coordinated Universal
+        /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
+        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+        /// AM.</p>
+        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateReportPlanOutput`](crate::output::CreateReportPlanOutput)
         pub fn build(self) -> crate::output::CreateReportPlanOutput {
             crate::output::CreateReportPlanOutput {
                 report_plan_name: self.report_plan_name,
                 report_plan_arn: self.report_plan_arn,
+                creation_time: self.creation_time,
             }
         }
     }

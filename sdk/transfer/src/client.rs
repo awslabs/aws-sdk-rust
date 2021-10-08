@@ -252,7 +252,7 @@ pub mod fluent_builders {
         /// <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
         /// <p>
-        /// <code>[ { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code>
+        /// <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code>
         /// </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your
         /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
@@ -742,8 +742,8 @@ pub mod fluent_builders {
         /// <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
         /// <p>
-        /// <code>[ { "Entry": "your-personal-report.pdf", "Target":
-        /// "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code>
+        /// <code>[ { "Entry": "/directory1", "Target":
+        /// "/bucket_name/home/mydirectory" } ]</code>
         /// </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock your user
         /// down to the designated home directory ("<code>chroot</code>"). To do this, you can set
@@ -954,6 +954,11 @@ pub mod fluent_builders {
         /// <i>Tag</i>: add a tag to the file</p>
         /// </li>
         /// </ul>
+        /// <note>
+        /// <p>
+        /// Currently, copying and tagging are supported only on S3.
+        /// </p>
+        /// </note>
         /// <p>
         /// For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path.
         /// </p>
@@ -971,7 +976,12 @@ pub mod fluent_builders {
         /// Appends an item to `OnExceptionSteps`.
         ///
         /// To override the contents of this collection use [`set_on_exception_steps`](Self::set_on_exception_steps).
-        /// <p>Specifies the steps (actions) to take if any errors are encountered during execution of the workflow.</p>
+        /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
+        /// <note>
+        /// <p>For custom steps, the lambda function needs to send <code>FAILURE</code> to the call
+        /// back API to kick off the exception steps. Additionally, if the lambda does not send
+        /// <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
+        /// </note>
         pub fn on_exception_steps(mut self, inp: impl Into<crate::model::WorkflowStep>) -> Self {
             self.inner = self.inner.on_exception_steps(inp);
             self
@@ -2807,7 +2817,7 @@ pub mod fluent_builders {
         /// <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
         /// <p>
-        /// <code>[ { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code>
+        /// <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code>
         /// </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your
         /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
@@ -3267,8 +3277,8 @@ pub mod fluent_builders {
         /// <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
         /// <p>
-        /// <code>[ { "Entry": "your-personal-report.pdf", "Target":
-        /// "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]</code>
+        /// <code>[ { "Entry": "/directory1", "Target":
+        /// "/bucket_name/home/mydirectory" } ]</code>
         /// </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your
         /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set

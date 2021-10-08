@@ -818,7 +818,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <note>
         /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the
-        /// position to the nearest road</a>.</p>
+        /// position to the nearest road</a>. If Esri is the provider for your route calculator,
+        /// specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
         /// </note>
         /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
         /// </p>
@@ -877,6 +878,8 @@ pub mod fluent_builders {
         /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
         /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code>
         /// error.</p>
+        /// <p>If Esri is the provider for your route calculator, specifying a
+        /// route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
         /// </note>
         /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
         /// </p>
@@ -1271,8 +1274,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the pricing plan for your map resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-        /// page</a>.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn pricing_plan(mut self, inp: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(inp);
             self
@@ -1417,7 +1419,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'s
+        /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
         /// coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p>
         /// <important>
         /// <p>Place index resources using HERE Technologies as a data provider can't <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
@@ -1437,8 +1439,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the pricing plan for your place index resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-        /// page</a>.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn pricing_plan(mut self, inp: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(inp);
             self
@@ -1590,7 +1591,8 @@ pub mod fluent_builders {
         /// <p>Specifies the data provider of traffic and road network data.</p>
         /// <note>
         /// <p>This field is case-sensitive. Enter the valid values as shown. For example,
-        /// entering <code>HERE</code> returns an error.</p>
+        /// entering <code>HERE</code> returns an error. Route calculators that use Esri as a data source
+        /// only calculate routes that are shorter than 400 km.</p>
         /// </note>
         /// <p>Valid values include:</p>
         /// <ul>
@@ -1601,7 +1603,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-        /// Technologies</a>'s coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p>
+        /// Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p>
         /// </li>
         /// </ul>
         /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
@@ -1752,8 +1754,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the pricing plan for the tracker resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-        /// page</a>.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn pricing_plan(mut self, inp: crate::model::PricingPlan) -> Self {
             self.inner = self.inner.pricing_plan(inp);
             self
@@ -1787,7 +1788,7 @@ pub mod fluent_builders {
         /// <note>
         /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data will not be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
         /// </note>
-        /// <p>Valid Values: <code>Esri</code> | <code>Here</code>
+        /// <p>Valid values: <code>Esri</code> | <code>Here</code>
         /// </p>
         pub fn pricing_plan_data_source(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.pricing_plan_data_source(inp);
@@ -1850,6 +1851,37 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>Specifies the position filtering for the tracker resource.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TimeBased</code> - Location updates are evaluated against linked geofence collections,
+        /// but not every location update is stored. If your update frequency is more often than 30 seconds,
+        /// only one update per 30 seconds is stored for each unique device ID.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
+        /// ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored.
+        /// This helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
+        /// Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>This field is optional. If not specified, the default value is <code>TimeBased</code>.</p>
+        pub fn position_filtering(mut self, inp: crate::model::PositionFiltering) -> Self {
+            self.inner = self.inner.position_filtering(inp);
+            self
+        }
+        pub fn set_position_filtering(
+            mut self,
+            input: std::option::Option<crate::model::PositionFiltering>,
+        ) -> Self {
+            self.inner = self.inner.set_position_filtering(input);
             self
         }
     }
@@ -2777,7 +2809,7 @@ pub mod fluent_builders {
         }
         /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For
         /// example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
-        /// <p>Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>
+        /// <p>Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>
         /// <ul>
         /// <li>
         /// <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu
@@ -2807,11 +2839,10 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
+        /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
         /// <ul>
         /// <li>
-        /// <p>
-        /// <code>VectorHereBerlin</code> – <code>Fira GO Regular</code> | <code>Fira GO
+        /// <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO
         /// Bold</code>
         /// </p>
         /// </li>
@@ -4620,6 +4651,36 @@ pub mod fluent_builders {
         }
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>Updates the position filtering for the tracker resource.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TimeBased</code> - Location updates are evaluated against linked geofence collections,
+        /// but not every location update is stored. If your update frequency is more often than 30 seconds,
+        /// only one update per 30 seconds is stored for each unique device ID.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
+        /// ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored.
+        /// This helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
+        /// Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn position_filtering(mut self, inp: crate::model::PositionFiltering) -> Self {
+            self.inner = self.inner.position_filtering(inp);
+            self
+        }
+        pub fn set_position_filtering(
+            mut self,
+            input: std::option::Option<crate::model::PositionFiltering>,
+        ) -> Self {
+            self.inner = self.inner.set_position_filtering(input);
             self
         }
     }

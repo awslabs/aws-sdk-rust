@@ -42,7 +42,7 @@ pub mod delete_scaling_policy_input {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -66,7 +66,7 @@ pub mod delete_scaling_policy_input {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -96,6 +96,9 @@ pub mod delete_scaling_policy_input {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -117,7 +120,7 @@ pub mod delete_scaling_policy_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -145,7 +148,7 @@ pub mod delete_scaling_policy_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -182,6 +185,10 @@ pub mod delete_scaling_policy_input {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
@@ -228,87 +235,88 @@ impl DeleteScalingPolicyInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_delete_scaling_policy(
-                    &self,
-                )
+        fn uri_base(
+            _input: &crate::input::DeleteScalingPolicyInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteScalingPolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteScalingPolicyInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AnyScaleFrontendService.DeleteScalingPolicy",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_scaling_policy(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteScalingPolicy::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteScalingPolicy",
-                "applicationautoscaling",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AnyScaleFrontendService.DeleteScalingPolicy",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteScalingPolicy::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteScalingPolicy",
+            "applicationautoscaling",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -374,7 +382,7 @@ pub mod delete_scheduled_action_input {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -398,7 +406,7 @@ pub mod delete_scheduled_action_input {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -428,6 +436,9 @@ pub mod delete_scheduled_action_input {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -449,7 +460,7 @@ pub mod delete_scheduled_action_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -477,7 +488,7 @@ pub mod delete_scheduled_action_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -514,6 +525,10 @@ pub mod delete_scheduled_action_input {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
@@ -560,87 +575,88 @@ impl DeleteScheduledActionInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_delete_scheduled_action(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DeleteScheduledActionInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteScheduledActionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteScheduledActionInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AnyScaleFrontendService.DeleteScheduledAction",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteScheduledAction::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_scheduled_action(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteScheduledAction",
-                "applicationautoscaling",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AnyScaleFrontendService.DeleteScheduledAction",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteScheduledAction::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteScheduledAction",
+            "applicationautoscaling",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -693,7 +709,7 @@ pub mod deregister_scalable_target_input {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -717,7 +733,7 @@ pub mod deregister_scalable_target_input {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -747,6 +763,9 @@ pub mod deregister_scalable_target_input {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -769,7 +788,7 @@ pub mod deregister_scalable_target_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -797,7 +816,7 @@ pub mod deregister_scalable_target_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -834,6 +853,10 @@ pub mod deregister_scalable_target_input {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
@@ -880,83 +903,88 @@ impl DeregisterScalableTargetInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_deregister_scalable_target(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DeregisterScalableTargetInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeregisterScalableTargetInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeregisterScalableTargetInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AnyScaleFrontendService.DeregisterScalableTarget",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeregisterScalableTarget::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_deregister_scalable_target(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeregisterScalableTarget",
-                "applicationautoscaling",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AnyScaleFrontendService.DeregisterScalableTarget",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeregisterScalableTarget::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeregisterScalableTarget",
+            "applicationautoscaling",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1029,7 +1057,7 @@ pub mod describe_scalable_targets_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -1057,7 +1085,7 @@ pub mod describe_scalable_targets_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -1094,6 +1122,10 @@ pub mod describe_scalable_targets_input {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
@@ -1166,83 +1198,88 @@ impl DescribeScalableTargetsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_describe_scalable_targets(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DescribeScalableTargetsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeScalableTargetsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeScalableTargetsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AnyScaleFrontendService.DescribeScalableTargets",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeScalableTargets::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_scalable_targets(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeScalableTargets",
-                "applicationautoscaling",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AnyScaleFrontendService.DescribeScalableTargets",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeScalableTargets::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeScalableTargets",
+            "applicationautoscaling",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1297,7 +1334,7 @@ pub mod describe_scaling_activities_input {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -1321,7 +1358,7 @@ pub mod describe_scaling_activities_input {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -1351,6 +1388,9 @@ pub mod describe_scaling_activities_input {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -1373,7 +1413,7 @@ pub mod describe_scaling_activities_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -1401,7 +1441,7 @@ pub mod describe_scaling_activities_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -1438,6 +1478,10 @@ pub mod describe_scaling_activities_input {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
@@ -1510,83 +1554,88 @@ impl DescribeScalingActivitiesInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_describe_scaling_activities(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DescribeScalingActivitiesInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeScalingActivitiesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeScalingActivitiesInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AnyScaleFrontendService.DescribeScalingActivities",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeScalingActivities::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_scaling_activities(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeScalingActivities",
-                "applicationautoscaling",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AnyScaleFrontendService.DescribeScalingActivities",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeScalingActivities::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeScalingActivities",
+            "applicationautoscaling",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1655,7 +1704,7 @@ pub mod describe_scaling_policies_input {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -1679,7 +1728,7 @@ pub mod describe_scaling_policies_input {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -1709,6 +1758,9 @@ pub mod describe_scaling_policies_input {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -1731,7 +1783,7 @@ pub mod describe_scaling_policies_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -1759,7 +1811,7 @@ pub mod describe_scaling_policies_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -1797,6 +1849,10 @@ pub mod describe_scaling_policies_input {
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
         /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
+        /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
             self.scalable_dimension = Some(input);
@@ -1809,13 +1865,13 @@ pub mod describe_scaling_policies_input {
             self.scalable_dimension = input;
             self
         }
-        /// <p>The maximum number of scalable targets. This value can be between 1 and
-        /// 50. The default value is 50.</p>
+        /// <p>The maximum number of scalable targets. This value can be between 1 and 10. The default
+        /// value is 10.</p>
         /// <p>If this parameter is used, the operation returns up to <code>MaxResults</code> results
         /// at a time, along with a <code>NextToken</code> value. To get the next set of results,
         /// include the <code>NextToken</code> value in a subsequent call. If this parameter is not
-        /// used, the operation returns up to 50 results and a
-        /// <code>NextToken</code> value, if applicable.</p>
+        /// used, the operation returns up to 10 results and a <code>NextToken</code> value, if
+        /// applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -1869,83 +1925,88 @@ impl DescribeScalingPoliciesInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_describe_scaling_policies(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DescribeScalingPoliciesInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeScalingPoliciesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeScalingPoliciesInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AnyScaleFrontendService.DescribeScalingPolicies",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeScalingPolicies::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_scaling_policies(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeScalingPolicies",
-                "applicationautoscaling",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AnyScaleFrontendService.DescribeScalingPolicies",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeScalingPolicies::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeScalingPolicies",
+            "applicationautoscaling",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2014,7 +2075,7 @@ pub mod describe_scheduled_actions_input {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -2038,7 +2099,7 @@ pub mod describe_scheduled_actions_input {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -2068,6 +2129,9 @@ pub mod describe_scheduled_actions_input {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -2090,7 +2154,7 @@ pub mod describe_scheduled_actions_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2118,7 +2182,7 @@ pub mod describe_scheduled_actions_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2155,6 +2219,10 @@ pub mod describe_scheduled_actions_input {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
@@ -2228,83 +2296,88 @@ impl DescribeScheduledActionsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_describe_scheduled_actions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DescribeScheduledActionsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeScheduledActionsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeScheduledActionsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AnyScaleFrontendService.DescribeScheduledActions",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeScheduledActions::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_scheduled_actions(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeScheduledActions",
-                "applicationautoscaling",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AnyScaleFrontendService.DescribeScheduledActions",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeScheduledActions::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeScheduledActions",
+            "applicationautoscaling",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2372,7 +2445,7 @@ pub mod put_scaling_policy_input {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -2396,7 +2469,7 @@ pub mod put_scaling_policy_input {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -2426,6 +2499,9 @@ pub mod put_scaling_policy_input {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -2447,7 +2523,7 @@ pub mod put_scaling_policy_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2475,7 +2551,7 @@ pub mod put_scaling_policy_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2513,6 +2589,10 @@ pub mod put_scaling_policy_input {
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
         /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
+        /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
             self.scalable_dimension = Some(input);
@@ -2530,8 +2610,8 @@ pub mod put_scaling_policy_input {
         /// <p>
         /// <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p>
         /// <p>
-        /// <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces (for Apache
-        /// Cassandra), Amazon MSK, or Amazon ElastiCache for Redis.</p>
+        /// <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or
+        /// Neptune.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
         /// tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
         pub fn policy_type(mut self, input: crate::model::PolicyType) -> Self {
@@ -2617,85 +2697,88 @@ impl PutScalingPolicyInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_put_scaling_policy(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::PutScalingPolicyInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::PutScalingPolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::PutScalingPolicyInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AnyScaleFrontendService.PutScalingPolicy",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::PutScalingPolicy::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "PutScalingPolicy",
-                "applicationautoscaling",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_scaling_policy(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AnyScaleFrontendService.PutScalingPolicy",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutScalingPolicy::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "PutScalingPolicy",
+            "applicationautoscaling",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2809,7 +2892,7 @@ pub mod put_scheduled_action_input {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -2833,7 +2916,7 @@ pub mod put_scheduled_action_input {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -2863,6 +2946,9 @@ pub mod put_scheduled_action_input {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -2884,7 +2970,7 @@ pub mod put_scheduled_action_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2912,7 +2998,7 @@ pub mod put_scheduled_action_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2949,6 +3035,10 @@ pub mod put_scheduled_action_input {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
@@ -3033,87 +3123,86 @@ impl PutScheduledActionInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_put_scheduled_action(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::PutScheduledActionInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::PutScheduledActionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::PutScheduledActionInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AnyScaleFrontendService.PutScheduledAction",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::PutScheduledAction::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "PutScheduledAction",
-                "applicationautoscaling",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_scheduled_action(&self)
+                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AnyScaleFrontendService.PutScheduledAction",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutScheduledAction::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "PutScheduledAction",
+            "applicationautoscaling",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3170,7 +3259,7 @@ pub mod register_scalable_target_input {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -3194,7 +3283,7 @@ pub mod register_scalable_target_input {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -3224,6 +3313,9 @@ pub mod register_scalable_target_input {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -3246,7 +3338,7 @@ pub mod register_scalable_target_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -3274,7 +3366,7 @@ pub mod register_scalable_target_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -3311,6 +3403,10 @@ pub mod register_scalable_target_input {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
@@ -3438,87 +3534,88 @@ impl RegisterScalableTargetInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_register_scalable_target(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::RegisterScalableTargetInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::RegisterScalableTargetInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::RegisterScalableTargetInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AnyScaleFrontendService.RegisterScalableTarget",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::RegisterScalableTarget::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_register_scalable_target(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "RegisterScalableTarget",
-                "applicationautoscaling",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AnyScaleFrontendService.RegisterScalableTarget",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RegisterScalableTarget::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "RegisterScalableTarget",
+            "applicationautoscaling",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3553,7 +3650,7 @@ pub struct RegisterScalableTargetInput {
     /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+    /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
     /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
     /// </li>
     /// <li>
@@ -3577,7 +3674,7 @@ pub struct RegisterScalableTargetInput {
     /// Example: <code>cluster:my-db-cluster</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+    /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
     /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
     /// </li>
     /// <li>
@@ -3607,6 +3704,9 @@ pub struct RegisterScalableTargetInput {
     /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
     /// Example: <code>replication-group/mycluster</code>.</p>
     /// </li>
+    /// <li>
+    /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+    /// </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The scalable dimension associated with the scalable target.
@@ -3622,7 +3722,7 @@ pub struct RegisterScalableTargetInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -3650,7 +3750,7 @@ pub struct RegisterScalableTargetInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -3687,6 +3787,10 @@ pub struct RegisterScalableTargetInput {
     /// <li>
     /// <p>
     /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
     /// </li>
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
@@ -3797,7 +3901,7 @@ pub struct PutScheduledActionInput {
     /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+    /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
     /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
     /// </li>
     /// <li>
@@ -3821,7 +3925,7 @@ pub struct PutScheduledActionInput {
     /// Example: <code>cluster:my-db-cluster</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+    /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
     /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
     /// </li>
     /// <li>
@@ -3851,6 +3955,9 @@ pub struct PutScheduledActionInput {
     /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
     /// Example: <code>replication-group/mycluster</code>.</p>
     /// </li>
+    /// <li>
+    /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+    /// </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -3865,7 +3972,7 @@ pub struct PutScheduledActionInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -3893,7 +4000,7 @@ pub struct PutScheduledActionInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -3930,6 +4037,10 @@ pub struct PutScheduledActionInput {
     /// <li>
     /// <p>
     /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
     /// </li>
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
@@ -3975,7 +4086,7 @@ pub struct PutScalingPolicyInput {
     /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+    /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
     /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
     /// </li>
     /// <li>
@@ -3999,7 +4110,7 @@ pub struct PutScalingPolicyInput {
     /// Example: <code>cluster:my-db-cluster</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+    /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
     /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
     /// </li>
     /// <li>
@@ -4029,6 +4140,9 @@ pub struct PutScalingPolicyInput {
     /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
     /// Example: <code>replication-group/mycluster</code>.</p>
     /// </li>
+    /// <li>
+    /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+    /// </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -4043,7 +4157,7 @@ pub struct PutScalingPolicyInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -4071,7 +4185,7 @@ pub struct PutScalingPolicyInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -4109,6 +4223,10 @@ pub struct PutScalingPolicyInput {
     /// <p>
     /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
     /// </li>
+    /// <li>
+    /// <p>
+    /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
+    /// </li>
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
     /// <p>The policy type. This parameter is required if you are creating a scaling policy.</p>
@@ -4116,8 +4234,8 @@ pub struct PutScalingPolicyInput {
     /// <p>
     /// <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p>
     /// <p>
-    /// <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces (for Apache
-    /// Cassandra), Amazon MSK, or Amazon ElastiCache for Redis.</p>
+    /// <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or
+    /// Neptune.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
     /// tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub policy_type: std::option::Option<crate::model::PolicyType>,
@@ -4169,7 +4287,7 @@ pub struct DescribeScheduledActionsInput {
     /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+    /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
     /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
     /// </li>
     /// <li>
@@ -4193,7 +4311,7 @@ pub struct DescribeScheduledActionsInput {
     /// Example: <code>cluster:my-db-cluster</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+    /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
     /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
     /// </li>
     /// <li>
@@ -4223,6 +4341,9 @@ pub struct DescribeScheduledActionsInput {
     /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
     /// Example: <code>replication-group/mycluster</code>.</p>
     /// </li>
+    /// <li>
+    /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+    /// </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.
@@ -4238,7 +4359,7 @@ pub struct DescribeScheduledActionsInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -4266,7 +4387,7 @@ pub struct DescribeScheduledActionsInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -4303,6 +4424,10 @@ pub struct DescribeScheduledActionsInput {
     /// <li>
     /// <p>
     /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
     /// </li>
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
@@ -4346,7 +4471,7 @@ pub struct DescribeScalingPoliciesInput {
     /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+    /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
     /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
     /// </li>
     /// <li>
@@ -4370,7 +4495,7 @@ pub struct DescribeScalingPoliciesInput {
     /// Example: <code>cluster:my-db-cluster</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+    /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
     /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
     /// </li>
     /// <li>
@@ -4400,6 +4525,9 @@ pub struct DescribeScalingPoliciesInput {
     /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
     /// Example: <code>replication-group/mycluster</code>.</p>
     /// </li>
+    /// <li>
+    /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+    /// </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.
@@ -4415,7 +4543,7 @@ pub struct DescribeScalingPoliciesInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -4443,7 +4571,7 @@ pub struct DescribeScalingPoliciesInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -4481,15 +4609,19 @@ pub struct DescribeScalingPoliciesInput {
     /// <p>
     /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
     /// </li>
+    /// <li>
+    /// <p>
+    /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
+    /// </li>
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
-    /// <p>The maximum number of scalable targets. This value can be between 1 and
-    /// 50. The default value is 50.</p>
+    /// <p>The maximum number of scalable targets. This value can be between 1 and 10. The default
+    /// value is 10.</p>
     /// <p>If this parameter is used, the operation returns up to <code>MaxResults</code> results
     /// at a time, along with a <code>NextToken</code> value. To get the next set of results,
     /// include the <code>NextToken</code> value in a subsequent call. If this parameter is not
-    /// used, the operation returns up to 50 results and a
-    /// <code>NextToken</code> value, if applicable.</p>
+    /// used, the operation returns up to 10 results and a <code>NextToken</code> value, if
+    /// applicable.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -4521,7 +4653,7 @@ pub struct DescribeScalingActivitiesInput {
     /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+    /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
     /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
     /// </li>
     /// <li>
@@ -4545,7 +4677,7 @@ pub struct DescribeScalingActivitiesInput {
     /// Example: <code>cluster:my-db-cluster</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+    /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
     /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
     /// </li>
     /// <li>
@@ -4575,6 +4707,9 @@ pub struct DescribeScalingActivitiesInput {
     /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
     /// Example: <code>replication-group/mycluster</code>.</p>
     /// </li>
+    /// <li>
+    /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+    /// </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.
@@ -4590,7 +4725,7 @@ pub struct DescribeScalingActivitiesInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -4618,7 +4753,7 @@ pub struct DescribeScalingActivitiesInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -4655,6 +4790,10 @@ pub struct DescribeScalingActivitiesInput {
     /// <li>
     /// <p>
     /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
     /// </li>
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
@@ -4695,7 +4834,7 @@ pub struct DescribeScalableTargetsInput {
     /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+    /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
     /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
     /// </li>
     /// <li>
@@ -4719,7 +4858,7 @@ pub struct DescribeScalableTargetsInput {
     /// Example: <code>cluster:my-db-cluster</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+    /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
     /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
     /// </li>
     /// <li>
@@ -4749,6 +4888,9 @@ pub struct DescribeScalableTargetsInput {
     /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
     /// Example: <code>replication-group/mycluster</code>.</p>
     /// </li>
+    /// <li>
+    /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+    /// </li>
     /// </ul>
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The scalable dimension associated with the scalable target.
@@ -4764,7 +4906,7 @@ pub struct DescribeScalableTargetsInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -4792,7 +4934,7 @@ pub struct DescribeScalableTargetsInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -4829,6 +4971,10 @@ pub struct DescribeScalableTargetsInput {
     /// <li>
     /// <p>
     /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
     /// </li>
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
@@ -4869,7 +5015,7 @@ pub struct DeregisterScalableTargetInput {
     /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+    /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
     /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
     /// </li>
     /// <li>
@@ -4893,7 +5039,7 @@ pub struct DeregisterScalableTargetInput {
     /// Example: <code>cluster:my-db-cluster</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+    /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
     /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
     /// </li>
     /// <li>
@@ -4923,6 +5069,9 @@ pub struct DeregisterScalableTargetInput {
     /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
     /// Example: <code>replication-group/mycluster</code>.</p>
     /// </li>
+    /// <li>
+    /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+    /// </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The scalable dimension associated with the scalable target.
@@ -4938,7 +5087,7 @@ pub struct DeregisterScalableTargetInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -4966,7 +5115,7 @@ pub struct DeregisterScalableTargetInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -5003,6 +5152,10 @@ pub struct DeregisterScalableTargetInput {
     /// <li>
     /// <p>
     /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
     /// </li>
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
@@ -5033,7 +5186,7 @@ pub struct DeleteScheduledActionInput {
     /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+    /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
     /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
     /// </li>
     /// <li>
@@ -5057,7 +5210,7 @@ pub struct DeleteScheduledActionInput {
     /// Example: <code>cluster:my-db-cluster</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+    /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
     /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
     /// </li>
     /// <li>
@@ -5087,6 +5240,9 @@ pub struct DeleteScheduledActionInput {
     /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
     /// Example: <code>replication-group/mycluster</code>.</p>
     /// </li>
+    /// <li>
+    /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+    /// </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -5101,7 +5257,7 @@ pub struct DeleteScheduledActionInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -5129,7 +5285,7 @@ pub struct DeleteScheduledActionInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -5166,6 +5322,10 @@ pub struct DeleteScheduledActionInput {
     /// <li>
     /// <p>
     /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
     /// </li>
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
@@ -5197,7 +5357,7 @@ pub struct DeleteScalingPolicyInput {
     /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+    /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
     /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
     /// </li>
     /// <li>
@@ -5221,7 +5381,7 @@ pub struct DeleteScalingPolicyInput {
     /// Example: <code>cluster:my-db-cluster</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+    /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
     /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
     /// </li>
     /// <li>
@@ -5251,6 +5411,9 @@ pub struct DeleteScalingPolicyInput {
     /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
     /// Example: <code>replication-group/mycluster</code>.</p>
     /// </li>
+    /// <li>
+    /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+    /// </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -5265,7 +5428,7 @@ pub struct DeleteScalingPolicyInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -5293,7 +5456,7 @@ pub struct DeleteScalingPolicyInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -5330,6 +5493,10 @@ pub struct DeleteScalingPolicyInput {
     /// <li>
     /// <p>
     /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
     /// </li>
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,

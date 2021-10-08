@@ -1276,6 +1276,16 @@ pub fn deser_operation_crate_operation_describe_tracker(
                                 .transpose()?,
                         );
                     }
+                    "PositionFiltering" => {
+                        builder = builder.set_position_filtering(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| {
+                                    s.to_unescaped()
+                                        .map(|u| crate::model::PositionFiltering::from(u.as_ref()))
+                                })
+                                .transpose()?,
+                        );
+                    }
                     "PricingPlan" => {
                         builder = builder.set_pricing_plan(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

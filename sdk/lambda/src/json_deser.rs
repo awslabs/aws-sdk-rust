@@ -931,6 +931,13 @@ pub fn deser_operation_crate_operation_create_function(
             Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "Architectures" => {
+                        builder = builder.set_architectures(
+                            crate::json_deser::deser_list_com_amazonaws_lambda_architectures_list(
+                                tokens,
+                            )?,
+                        );
+                    }
                     "CodeSha256" => {
                         builder = builder.set_code_sha256(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -1891,6 +1898,13 @@ pub fn deser_operation_crate_operation_get_function_configuration(
             Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "Architectures" => {
+                        builder = builder.set_architectures(
+                            crate::json_deser::deser_list_com_amazonaws_lambda_architectures_list(
+                                tokens,
+                            )?,
+                        );
+                    }
                     "CodeSha256" => {
                         builder = builder.set_code_sha256(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -2221,6 +2235,11 @@ pub fn deser_operation_crate_operation_get_layer_version(
             Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "CompatibleArchitectures" => {
+                        builder = builder.set_compatible_architectures(
+                            crate::json_deser::deser_list_com_amazonaws_lambda_compatible_architectures(tokens)?
+                        );
+                    }
                     "CompatibleRuntimes" => {
                         builder = builder.set_compatible_runtimes(
                             crate::json_deser::deser_list_com_amazonaws_lambda_compatible_runtimes(
@@ -2307,6 +2326,11 @@ pub fn deser_operation_crate_operation_get_layer_version_by_arn(
             Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "CompatibleArchitectures" => {
+                        builder = builder.set_compatible_architectures(
+                            crate::json_deser::deser_list_com_amazonaws_lambda_compatible_architectures(tokens)?
+                        );
+                    }
                     "CompatibleRuntimes" => {
                         builder = builder.set_compatible_runtimes(
                             crate::json_deser::deser_list_com_amazonaws_lambda_compatible_runtimes(
@@ -4095,6 +4119,11 @@ pub fn deser_operation_crate_operation_publish_layer_version(
             Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "CompatibleArchitectures" => {
+                        builder = builder.set_compatible_architectures(
+                            crate::json_deser::deser_list_com_amazonaws_lambda_compatible_architectures(tokens)?
+                        );
+                    }
                     "CompatibleRuntimes" => {
                         builder = builder.set_compatible_runtimes(
                             crate::json_deser::deser_list_com_amazonaws_lambda_compatible_runtimes(
@@ -4180,6 +4209,13 @@ pub fn deser_operation_crate_operation_publish_version(
             Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "Architectures" => {
+                        builder = builder.set_architectures(
+                            crate::json_deser::deser_list_com_amazonaws_lambda_architectures_list(
+                                tokens,
+                            )?,
+                        );
+                    }
                     "CodeSha256" => {
                         builder = builder.set_code_sha256(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -4969,6 +5005,13 @@ pub fn deser_operation_crate_operation_update_function_code(
             Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "Architectures" => {
+                        builder = builder.set_architectures(
+                            crate::json_deser::deser_list_com_amazonaws_lambda_architectures_list(
+                                tokens,
+                            )?,
+                        );
+                    }
                     "CodeSha256" => {
                         builder = builder.set_code_sha256(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -5233,6 +5276,13 @@ pub fn deser_operation_crate_operation_update_function_configuration(
             Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "Architectures" => {
+                        builder = builder.set_architectures(
+                            crate::json_deser::deser_list_com_amazonaws_lambda_architectures_list(
+                                tokens,
+                            )?,
+                        );
+                    }
                     "CodeSha256" => {
                         builder = builder.set_code_sha256(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -5919,6 +5969,47 @@ where
                         let value =
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_lambda_architectures_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<std::vec::Vec<crate::model::Architecture>>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| {
+                                    s.to_unescaped()
+                                        .map(|u| crate::model::Architecture::from(u.as_ref()))
+                                })
                                 .transpose()?;
                         if let Some(value) = value {
                             items.push(value);
@@ -6784,6 +6875,11 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "Architectures" => {
+                                builder = builder.set_architectures(
+                                    crate::json_deser::deser_list_com_amazonaws_lambda_architectures_list(tokens)?
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -6842,6 +6938,47 @@ where
         }
         _ => Err(smithy_json::deserialize::Error::custom(
             "expected start object or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_lambda_compatible_architectures<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<std::vec::Vec<crate::model::Architecture>>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| {
+                                    s.to_unescaped()
+                                        .map(|u| crate::model::Architecture::from(u.as_ref()))
+                                })
+                                .transpose()?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start array or null",
         )),
     }
 }
@@ -8553,6 +8690,11 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "CompatibleArchitectures" => {
+                                builder = builder.set_compatible_architectures(
+                                    crate::json_deser::deser_list_com_amazonaws_lambda_compatible_architectures(tokens)?
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,

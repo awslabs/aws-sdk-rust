@@ -26,6 +26,7 @@ pub struct AwsUserAgent {
     os_metadata: OsMetadata,
     language_metadata: LanguageMetadata,
     exec_env_metadata: Option<ExecEnvMetadata>,
+    additional_metadata: Vec<AdditionalMetadata>,
 }
 
 impl AwsUserAgent {
@@ -54,6 +55,7 @@ impl AwsUserAgent {
                 extras: vec![],
             },
             exec_env_metadata: None,
+            additional_metadata: vec![],
         }
     }
 
@@ -80,6 +82,7 @@ impl AwsUserAgent {
                 extras: vec![],
             },
             exec_env_metadata: None,
+            additional_metadata: vec![],
         }
     }
 
@@ -129,7 +132,14 @@ impl AwsUserAgent {
         write!(ua_value, "{} ", &self.sdk_metadata).unwrap();
         write!(ua_value, "{} ", &self.os_metadata).unwrap();
         write!(ua_value, "{}", &self.language_metadata).unwrap();
+        for metadata in &self.additional_metadata {
+            write!(ua_value, " {}", metadata).unwrap();
+        }
         ua_value
+    }
+
+    pub fn add_metadata(&mut self, additional_metadata: AdditionalMetadata) {
+        self.additional_metadata.push(additional_metadata);
     }
 }
 
@@ -167,9 +177,21 @@ impl Display for ApiMetadata {
 }
 
 #[derive(Clone)]
-struct AdditionalMetadata {
+pub struct AdditionalMetadata {
     key: String,
     value: String,
+}
+
+impl AdditionalMetadata {
+    pub const fn new(key: String, value: String) -> Self {
+        Self { key, value }
+    }
+}
+
+impl Display for AdditionalMetadata {
+    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
+        write!(f, "{}/{}", &self.key, &self.value)
+    }
 }
 
 #[derive(Clone)]
@@ -269,7 +291,7 @@ impl MapRequest for UserAgentStage {
 #[cfg(test)]
 mod test {
     use crate::user_agent::X_AMZ_USER_AGENT;
-    use crate::user_agent::{ApiMetadata, AwsUserAgent, UserAgentStage};
+    use crate::user_agent::{AdditionalMetadata, ApiMetadata, AwsUserAgent, UserAgentStage};
     use aws_types::build_metadata::OsFamily;
     use http::header::USER_AGENT;
     use smithy_http::body::SdkBody;
@@ -295,6 +317,41 @@ mod test {
         assert_eq!(
             ua.ua_header(),
             "aws-sdk-rust/0.1 os/macos/1.15 lang/rust/1.50.0"
+        );
+    }
+
+    #[test]
+    fn generate_a_valid_ua_with_additional_metadata() {
+        let api_metadata = ApiMetadata {
+            service_id: "dynamodb".into(),
+            version: "123",
+        };
+        let mut ua = AwsUserAgent::new_from_environment(api_metadata);
+        ua.sdk_metadata.version = "0.1";
+        ua.language_metadata.version = "1.50.0";
+        ua.os_metadata.os_family = &OsFamily::Macos;
+        ua.os_metadata.version = Some("1.15".to_string());
+        let additional_metadata_0 = AdditionalMetadata {
+            key: "key_0".to_string(),
+            value: "val_0".to_string(),
+        };
+        ua.add_metadata(additional_metadata_0);
+        assert_eq!(
+            ua.aws_ua_header(),
+            "aws-sdk-rust/0.1 api/dynamodb/123 os/macos/1.15 lang/rust/1.50.0"
+        );
+        assert_eq!(
+            ua.ua_header(),
+            "aws-sdk-rust/0.1 os/macos/1.15 lang/rust/1.50.0 key_0/val_0"
+        );
+        let additional_metadata_1 = AdditionalMetadata {
+            key: "key_1".to_string(),
+            value: "val_1".to_string(),
+        };
+        ua.add_metadata(additional_metadata_1);
+        assert_eq!(
+            ua.ua_header(),
+            "aws-sdk-rust/0.1 os/macos/1.15 lang/rust/1.50.0 key_0/val_0 key_1/val_1"
         );
     }
 

@@ -2098,6 +2098,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connection_input(input);
             self
         }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        /// <p>The tags you assign to the connection.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k, v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct CreateCrawler<
@@ -8178,6 +8199,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
+        /// <p>When true, specifies not returning the partition column schema. Useful when you are interested only in other partition attributes such as partition values or location. This approach avoids the problem of a large response by not returning duplicate data.</p>
         pub fn exclude_column_schema(mut self, inp: bool) -> Self {
             self.inner = self.inner.exclude_column_schema(inp);
             self

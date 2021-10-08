@@ -90,7 +90,7 @@ impl CredentialsProviderChain {
                 }
             }
         }
-        return Err(CredentialsError::CredentialsNotLoaded);
+        Err(CredentialsError::CredentialsNotLoaded)
     }
 }
 

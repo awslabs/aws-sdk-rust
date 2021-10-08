@@ -679,6 +679,8 @@ pub struct PutPlaybackConfigurationOutput {
     pub hls_configuration: std::option::Option<crate::model::HlsConfiguration>,
     /// <p>The configuration for pre-roll ad insertion.</p>
     pub live_pre_roll_configuration: std::option::Option<crate::model::LivePreRollConfiguration>,
+    /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+    pub log_configuration: std::option::Option<crate::model::LogConfiguration>,
     /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
     pub manifest_processing_rules: std::option::Option<crate::model::ManifestProcessingRules>,
     /// <p>The identifier for the playback configuration.</p>
@@ -715,6 +717,7 @@ impl std::fmt::Debug for PutPlaybackConfigurationOutput {
             "live_pre_roll_configuration",
             &self.live_pre_roll_configuration,
         );
+        formatter.field("log_configuration", &self.log_configuration);
         formatter.field("manifest_processing_rules", &self.manifest_processing_rules);
         formatter.field("name", &self.name);
         formatter.field(
@@ -757,6 +760,7 @@ pub mod put_playback_configuration_output {
         pub(crate) hls_configuration: std::option::Option<crate::model::HlsConfiguration>,
         pub(crate) live_pre_roll_configuration:
             std::option::Option<crate::model::LivePreRollConfiguration>,
+        pub(crate) log_configuration: std::option::Option<crate::model::LogConfiguration>,
         pub(crate) manifest_processing_rules:
             std::option::Option<crate::model::ManifestProcessingRules>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -876,6 +880,18 @@ pub mod put_playback_configuration_output {
             input: std::option::Option<crate::model::LivePreRollConfiguration>,
         ) -> Self {
             self.live_pre_roll_configuration = input;
+            self
+        }
+        /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+        pub fn log_configuration(mut self, input: crate::model::LogConfiguration) -> Self {
+            self.log_configuration = Some(input);
+            self
+        }
+        pub fn set_log_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LogConfiguration>,
+        ) -> Self {
+            self.log_configuration = input;
             self
         }
         /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
@@ -1016,6 +1032,7 @@ pub mod put_playback_configuration_output {
                 dash_configuration: self.dash_configuration,
                 hls_configuration: self.hls_configuration,
                 live_pre_roll_configuration: self.live_pre_roll_configuration,
+                log_configuration: self.log_configuration,
                 manifest_processing_rules: self.manifest_processing_rules,
                 name: self.name,
                 personalization_threshold_seconds: self
@@ -1469,6 +1486,8 @@ pub struct GetPlaybackConfigurationOutput {
     pub hls_configuration: std::option::Option<crate::model::HlsConfiguration>,
     /// <p>The configuration for pre-roll ad insertion.</p>
     pub live_pre_roll_configuration: std::option::Option<crate::model::LivePreRollConfiguration>,
+    /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+    pub log_configuration: std::option::Option<crate::model::LogConfiguration>,
     /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
     pub manifest_processing_rules: std::option::Option<crate::model::ManifestProcessingRules>,
     /// <p>The identifier for the playback configuration.</p>
@@ -1505,6 +1524,7 @@ impl std::fmt::Debug for GetPlaybackConfigurationOutput {
             "live_pre_roll_configuration",
             &self.live_pre_roll_configuration,
         );
+        formatter.field("log_configuration", &self.log_configuration);
         formatter.field("manifest_processing_rules", &self.manifest_processing_rules);
         formatter.field("name", &self.name);
         formatter.field(
@@ -1547,6 +1567,7 @@ pub mod get_playback_configuration_output {
         pub(crate) hls_configuration: std::option::Option<crate::model::HlsConfiguration>,
         pub(crate) live_pre_roll_configuration:
             std::option::Option<crate::model::LivePreRollConfiguration>,
+        pub(crate) log_configuration: std::option::Option<crate::model::LogConfiguration>,
         pub(crate) manifest_processing_rules:
             std::option::Option<crate::model::ManifestProcessingRules>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1666,6 +1687,18 @@ pub mod get_playback_configuration_output {
             input: std::option::Option<crate::model::LivePreRollConfiguration>,
         ) -> Self {
             self.live_pre_roll_configuration = input;
+            self
+        }
+        /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+        pub fn log_configuration(mut self, input: crate::model::LogConfiguration) -> Self {
+            self.log_configuration = Some(input);
+            self
+        }
+        pub fn set_log_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LogConfiguration>,
+        ) -> Self {
+            self.log_configuration = input;
             self
         }
         /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
@@ -1806,6 +1839,7 @@ pub mod get_playback_configuration_output {
                 dash_configuration: self.dash_configuration,
                 hls_configuration: self.hls_configuration,
                 live_pre_roll_configuration: self.live_pre_roll_configuration,
+                log_configuration: self.log_configuration,
                 manifest_processing_rules: self.manifest_processing_rules,
                 name: self.name,
                 personalization_threshold_seconds: self
@@ -3510,5 +3544,74 @@ impl CreateChannelOutput {
     /// Creates a new builder-style object to manufacture [`CreateChannelOutput`](crate::output::CreateChannelOutput)
     pub fn builder() -> crate::output::create_channel_output::Builder {
         crate::output::create_channel_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConfigureLogsForPlaybackConfigurationOutput {
+    /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.</p>
+    pub percent_enabled: i32,
+    /// <p>The name of the playback configuration.</p>
+    pub playback_configuration_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ConfigureLogsForPlaybackConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConfigureLogsForPlaybackConfigurationOutput");
+        formatter.field("percent_enabled", &self.percent_enabled);
+        formatter.field(
+            "playback_configuration_name",
+            &self.playback_configuration_name,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ConfigureLogsForPlaybackConfigurationOutput`](crate::output::ConfigureLogsForPlaybackConfigurationOutput)
+pub mod configure_logs_for_playback_configuration_output {
+    /// A builder for [`ConfigureLogsForPlaybackConfigurationOutput`](crate::output::ConfigureLogsForPlaybackConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) percent_enabled: std::option::Option<i32>,
+        pub(crate) playback_configuration_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.</p>
+        pub fn percent_enabled(mut self, input: i32) -> Self {
+            self.percent_enabled = Some(input);
+            self
+        }
+        pub fn set_percent_enabled(mut self, input: std::option::Option<i32>) -> Self {
+            self.percent_enabled = input;
+            self
+        }
+        /// <p>The name of the playback configuration.</p>
+        pub fn playback_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.playback_configuration_name = Some(input.into());
+            self
+        }
+        pub fn set_playback_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.playback_configuration_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConfigureLogsForPlaybackConfigurationOutput`](crate::output::ConfigureLogsForPlaybackConfigurationOutput)
+        pub fn build(self) -> crate::output::ConfigureLogsForPlaybackConfigurationOutput {
+            crate::output::ConfigureLogsForPlaybackConfigurationOutput {
+                percent_enabled: self.percent_enabled.unwrap_or_default(),
+                playback_configuration_name: self.playback_configuration_name,
+            }
+        }
+    }
+}
+impl ConfigureLogsForPlaybackConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`ConfigureLogsForPlaybackConfigurationOutput`](crate::output::ConfigureLogsForPlaybackConfigurationOutput)
+    pub fn builder() -> crate::output::configure_logs_for_playback_configuration_output::Builder {
+        crate::output::configure_logs_for_playback_configuration_output::Builder::default()
     }
 }

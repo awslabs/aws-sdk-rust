@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>AWS CloudHSM Service</fullname>
 //! <p>This is documentation for <b>AWS CloudHSM Classic</b>. For
 //! more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM
@@ -35,7 +36,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

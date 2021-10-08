@@ -4329,7 +4329,7 @@ impl Tag {
 pub struct TranscriptionConfiguration {
     /// <p>The transcription configuration settings passed to Amazon Transcribe.</p>
     pub engine_transcribe_settings: std::option::Option<crate::model::EngineTranscribeSettings>,
-    /// <p>The transcription configuration settings passed to Amazon Transcribe.</p>
+    /// <p>The transcription configuration settings passed to Amazon Transcribe Medical.</p>
     pub engine_transcribe_medical_settings:
         std::option::Option<crate::model::EngineTranscribeMedicalSettings>,
 }
@@ -4374,7 +4374,7 @@ pub mod transcription_configuration {
             self.engine_transcribe_settings = input;
             self
         }
-        /// <p>The transcription configuration settings passed to Amazon Transcribe.</p>
+        /// <p>The transcription configuration settings passed to Amazon Transcribe Medical.</p>
         pub fn engine_transcribe_medical_settings(
             mut self,
             input: crate::model::EngineTranscribeMedicalSettings,
@@ -5690,14 +5690,17 @@ impl Proxy {
 
 /// <p>Origination settings enable your SIP hosts to receive inbound calls using your Amazon Chime
 /// Voice Connector.</p>
+/// <note>
+/// <p>The parameters listed below are not required, but you must use at least one. </p>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Origination {
     /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1.
-    /// Maximum value of 20.</p>
+    /// Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
     pub routes: std::option::Option<std::vec::Vec<crate::model::OriginationRoute>>,
     /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime
-    /// Voice Connector.</p>
+    /// Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
     pub disabled: std::option::Option<bool>,
 }
 impl std::fmt::Debug for Origination {
@@ -5732,7 +5735,7 @@ pub mod origination {
             self
         }
         /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime
-        /// Voice Connector.</p>
+        /// Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
         pub fn disabled(mut self, input: bool) -> Self {
             self.disabled = Some(input);
             self
@@ -5760,6 +5763,9 @@ impl Origination {
 /// <p>Origination routes define call distribution properties for your SIP hosts to receive inbound
 /// calls using your Amazon Chime Voice Connector. Limit: Ten origination routes for each
 /// Amazon Chime Voice Connector.</p>
+/// <note>
+/// <p>The parameters listed below are not required, but you must use at least one. </p>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginationRoute {

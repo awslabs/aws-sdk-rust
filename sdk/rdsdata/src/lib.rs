@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon RDS Data Service</fullname>
 //! <p>Amazon RDS provides an HTTP endpoint to run SQL statements on an Amazon Aurora
 //! Serverless DB cluster. To run these statements, you work with the Data Service
@@ -30,7 +31,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

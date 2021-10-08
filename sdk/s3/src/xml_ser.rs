@@ -1753,6 +1753,13 @@ pub fn serialize_union_crate_model_metrics_filter(
                 .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
             crate::xml_ser::serialize_structure_crate_model_tag(&inner, inner_writer)
         }
+        crate::model::MetricsFilter::AccessPointArn(inner) => {
+            let mut inner_writer = scope_writer
+                .start_el("AccessPointArn")
+                .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
+                .finish();
+            inner_writer.data(inner.as_ref());
+        }
         crate::model::MetricsFilter::And(inner) => {
             let inner_writer = scope_writer
                 .start_el("And")
@@ -2698,6 +2705,13 @@ pub fn serialize_structure_crate_model_metrics_and_operator(
             }
         }
     }
+    if let Some(var_199) = &input.access_point_arn {
+        let mut inner_writer = scope
+            .start_el("AccessPointArn")
+            .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
+            .finish();
+        inner_writer.data(var_199.as_ref());
+    }
     scope.finish();
 }
 
@@ -2707,11 +2721,11 @@ pub fn serialize_structure_crate_model_notification_configuration_filter(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_199) = &input.key {
+    if let Some(var_200) = &input.key {
         let inner_writer = scope
             .start_el("S3Key")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_s3_key_filter(&var_199, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_s3_key_filter(&var_200, inner_writer)
     }
     scope.finish();
 }
@@ -2753,21 +2767,21 @@ pub fn serialize_structure_crate_model_source_selection_criteria(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_200) = &input.sse_kms_encrypted_objects {
+    if let Some(var_201) = &input.sse_kms_encrypted_objects {
         let inner_writer = scope
             .start_el("SseKmsEncryptedObjects")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_sse_kms_encrypted_objects(
-            &var_200,
+            &var_201,
             inner_writer,
         )
     }
-    if let Some(var_201) = &input.replica_modifications {
+    if let Some(var_202) = &input.replica_modifications {
         let inner_writer = scope
             .start_el("ReplicaModifications")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_replica_modifications(
-            &var_201,
+            &var_202,
             inner_writer,
         )
     }
@@ -2780,12 +2794,12 @@ pub fn serialize_structure_crate_model_existing_object_replication(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_202) = &input.status {
+    if let Some(var_203) = &input.status {
         let mut inner_writer = scope
             .start_el("Status")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_202.as_str());
+        inner_writer.data(var_203.as_str());
     }
     scope.finish();
 }
@@ -2796,56 +2810,56 @@ pub fn serialize_structure_crate_model_destination(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_203) = &input.bucket {
+    if let Some(var_204) = &input.bucket {
         let mut inner_writer = scope
             .start_el("Bucket")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_203.as_ref());
+        inner_writer.data(var_204.as_ref());
     }
-    if let Some(var_204) = &input.account {
+    if let Some(var_205) = &input.account {
         let mut inner_writer = scope
             .start_el("Account")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_204.as_ref());
+        inner_writer.data(var_205.as_ref());
     }
-    if let Some(var_205) = &input.storage_class {
+    if let Some(var_206) = &input.storage_class {
         let mut inner_writer = scope
             .start_el("StorageClass")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_205.as_str());
+        inner_writer.data(var_206.as_str());
     }
-    if let Some(var_206) = &input.access_control_translation {
+    if let Some(var_207) = &input.access_control_translation {
         let inner_writer = scope
             .start_el("AccessControlTranslation")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_access_control_translation(
-            &var_206,
-            inner_writer,
-        )
-    }
-    if let Some(var_207) = &input.encryption_configuration {
-        let inner_writer = scope
-            .start_el("EncryptionConfiguration")
-            .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_encryption_configuration(
             &var_207,
             inner_writer,
         )
     }
-    if let Some(var_208) = &input.replication_time {
+    if let Some(var_208) = &input.encryption_configuration {
+        let inner_writer = scope
+            .start_el("EncryptionConfiguration")
+            .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
+        crate::xml_ser::serialize_structure_crate_model_encryption_configuration(
+            &var_208,
+            inner_writer,
+        )
+    }
+    if let Some(var_209) = &input.replication_time {
         let inner_writer = scope
             .start_el("ReplicationTime")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_replication_time(&var_208, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_replication_time(&var_209, inner_writer)
     }
-    if let Some(var_209) = &input.metrics {
+    if let Some(var_210) = &input.metrics {
         let inner_writer = scope
             .start_el("Metrics")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_metrics(&var_209, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_metrics(&var_210, inner_writer)
     }
     scope.finish();
 }
@@ -2856,12 +2870,12 @@ pub fn serialize_structure_crate_model_delete_marker_replication(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_210) = &input.status {
+    if let Some(var_211) = &input.status {
         let mut inner_writer = scope
             .start_el("Status")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_210.as_str());
+        inner_writer.data(var_211.as_str());
     }
     scope.finish();
 }
@@ -2872,19 +2886,19 @@ pub fn serialize_structure_crate_model_condition(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_211) = &input.http_error_code_returned_equals {
+    if let Some(var_212) = &input.http_error_code_returned_equals {
         let mut inner_writer = scope
             .start_el("HttpErrorCodeReturnedEquals")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_211.as_ref());
+        inner_writer.data(var_212.as_ref());
     }
-    if let Some(var_212) = &input.key_prefix_equals {
+    if let Some(var_213) = &input.key_prefix_equals {
         let mut inner_writer = scope
             .start_el("KeyPrefixEquals")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_212.as_ref());
+        inner_writer.data(var_213.as_ref());
     }
     scope.finish();
 }
@@ -2895,40 +2909,40 @@ pub fn serialize_structure_crate_model_redirect(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_213) = &input.host_name {
+    if let Some(var_214) = &input.host_name {
         let mut inner_writer = scope
             .start_el("HostName")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_213.as_ref());
+        inner_writer.data(var_214.as_ref());
     }
-    if let Some(var_214) = &input.http_redirect_code {
+    if let Some(var_215) = &input.http_redirect_code {
         let mut inner_writer = scope
             .start_el("HttpRedirectCode")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_214.as_ref());
+        inner_writer.data(var_215.as_ref());
     }
-    if let Some(var_215) = &input.protocol {
+    if let Some(var_216) = &input.protocol {
         let mut inner_writer = scope
             .start_el("Protocol")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_215.as_str());
+        inner_writer.data(var_216.as_str());
     }
-    if let Some(var_216) = &input.replace_key_prefix_with {
+    if let Some(var_217) = &input.replace_key_prefix_with {
         let mut inner_writer = scope
             .start_el("ReplaceKeyPrefixWith")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_216.as_ref());
+        inner_writer.data(var_217.as_ref());
     }
-    if let Some(var_217) = &input.replace_key_with {
+    if let Some(var_218) = &input.replace_key_with {
         let mut inner_writer = scope
             .start_el("ReplaceKeyWith")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_217.as_ref());
+        inner_writer.data(var_218.as_ref());
     }
     scope.finish();
 }
@@ -2939,12 +2953,12 @@ pub fn serialize_structure_crate_model_default_retention(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_218) = &input.mode {
+    if let Some(var_219) = &input.mode {
         let mut inner_writer = scope
             .start_el("Mode")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_218.as_str());
+        inner_writer.data(var_219.as_str());
     }
     if input.days != 0 {
         let mut inner_writer = scope
@@ -2969,76 +2983,76 @@ pub fn serialize_structure_crate_model_s3_location(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_219) = &input.bucket_name {
+    if let Some(var_220) = &input.bucket_name {
         let mut inner_writer = scope
             .start_el("BucketName")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_219.as_ref());
+        inner_writer.data(var_220.as_ref());
     }
-    if let Some(var_220) = &input.prefix {
+    if let Some(var_221) = &input.prefix {
         let mut inner_writer = scope
             .start_el("Prefix")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_220.as_ref());
+        inner_writer.data(var_221.as_ref());
     }
-    if let Some(var_221) = &input.encryption {
+    if let Some(var_222) = &input.encryption {
         let inner_writer = scope
             .start_el("Encryption")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_encryption(&var_221, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_encryption(&var_222, inner_writer)
     }
-    if let Some(var_222) = &input.canned_acl {
+    if let Some(var_223) = &input.canned_acl {
         let mut inner_writer = scope
             .start_el("CannedACL")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_222.as_str());
+        inner_writer.data(var_223.as_str());
     }
-    if let Some(var_223) = &input.access_control_list {
+    if let Some(var_224) = &input.access_control_list {
         let mut inner_writer = scope
             .start_el("AccessControlList")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        for list_item_224 in var_223 {
+        for list_item_225 in var_224 {
             {
                 let inner_writer = inner_writer
                     .start_el("Grant")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-                crate::xml_ser::serialize_structure_crate_model_grant(&list_item_224, inner_writer)
+                crate::xml_ser::serialize_structure_crate_model_grant(&list_item_225, inner_writer)
             }
         }
     }
-    if let Some(var_225) = &input.tagging {
+    if let Some(var_226) = &input.tagging {
         let inner_writer = scope
             .start_el("Tagging")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_tagging(&var_225, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_tagging(&var_226, inner_writer)
     }
-    if let Some(var_226) = &input.user_metadata {
+    if let Some(var_227) = &input.user_metadata {
         let mut inner_writer = scope
             .start_el("UserMetadata")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        for list_item_227 in var_226 {
+        for list_item_228 in var_227 {
             {
                 let inner_writer = inner_writer
                     .start_el("MetadataEntry")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_metadata_entry(
-                    &list_item_227,
+                    &list_item_228,
                     inner_writer,
                 )
             }
         }
     }
-    if let Some(var_228) = &input.storage_class {
+    if let Some(var_229) = &input.storage_class {
         let mut inner_writer = scope
             .start_el("StorageClass")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_228.as_str());
+        inner_writer.data(var_229.as_str());
     }
     scope.finish();
 }
@@ -3049,12 +3063,12 @@ pub fn serialize_structure_crate_model_analytics_export_destination(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_229) = &input.s3_bucket_destination {
+    if let Some(var_230) = &input.s3_bucket_destination {
         let inner_writer = scope
             .start_el("S3BucketDestination")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_analytics_s3_bucket_destination(
-            &var_229,
+            &var_230,
             inner_writer,
         )
     }
@@ -3067,17 +3081,17 @@ pub fn serialize_structure_crate_model_inventory_encryption(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_230) = &input.sses3 {
+    if let Some(var_231) = &input.sses3 {
         let inner_writer = scope
             .start_el("SSE-S3")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_sses3(&var_230, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_sses3(&var_231, inner_writer)
     }
-    if let Some(var_231) = &input.ssekms {
+    if let Some(var_232) = &input.ssekms {
         let inner_writer = scope
             .start_el("SSE-KMS")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_ssekms(&var_231, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_ssekms(&var_232, inner_writer)
     }
     scope.finish();
 }
@@ -3088,20 +3102,20 @@ pub fn serialize_structure_crate_model_lifecycle_rule_and_operator(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_232) = &input.prefix {
+    if let Some(var_233) = &input.prefix {
         let mut inner_writer = scope
             .start_el("Prefix")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_232.as_ref());
+        inner_writer.data(var_233.as_ref());
     }
-    if let Some(var_233) = &input.tags {
-        for list_item_234 in var_233 {
+    if let Some(var_234) = &input.tags {
+        for list_item_235 in var_234 {
             {
                 let inner_writer = scope
                     .start_el("Tag")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-                crate::xml_ser::serialize_structure_crate_model_tag(&list_item_234, inner_writer)
+                crate::xml_ser::serialize_structure_crate_model_tag(&list_item_235, inner_writer)
             }
         }
     }
@@ -3114,14 +3128,14 @@ pub fn serialize_structure_crate_model_s3_key_filter(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_235) = &input.filter_rules {
-        for list_item_236 in var_235 {
+    if let Some(var_236) = &input.filter_rules {
+        for list_item_237 in var_236 {
             {
                 let inner_writer = scope
                     .start_el("FilterRule")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
                 crate::xml_ser::serialize_structure_crate_model_filter_rule(
-                    &list_item_236,
+                    &list_item_237,
                     inner_writer,
                 )
             }
@@ -3136,20 +3150,20 @@ pub fn serialize_structure_crate_model_replication_rule_and_operator(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_237) = &input.prefix {
+    if let Some(var_238) = &input.prefix {
         let mut inner_writer = scope
             .start_el("Prefix")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_237.as_ref());
+        inner_writer.data(var_238.as_ref());
     }
-    if let Some(var_238) = &input.tags {
-        for list_item_239 in var_238 {
+    if let Some(var_239) = &input.tags {
+        for list_item_240 in var_239 {
             {
                 let inner_writer = scope
                     .start_el("Tag")
                     .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-                crate::xml_ser::serialize_structure_crate_model_tag(&list_item_239, inner_writer)
+                crate::xml_ser::serialize_structure_crate_model_tag(&list_item_240, inner_writer)
             }
         }
     }
@@ -3158,22 +3172,6 @@ pub fn serialize_structure_crate_model_replication_rule_and_operator(
 
 pub fn serialize_structure_crate_model_sse_kms_encrypted_objects(
     input: &crate::model::SseKmsEncryptedObjects,
-    writer: smithy_xml::encode::ElWriter,
-) {
-    #[allow(unused_mut)]
-    let mut scope = writer.finish();
-    if let Some(var_240) = &input.status {
-        let mut inner_writer = scope
-            .start_el("Status")
-            .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
-            .finish();
-        inner_writer.data(var_240.as_str());
-    }
-    scope.finish();
-}
-
-pub fn serialize_structure_crate_model_replica_modifications(
-    input: &crate::model::ReplicaModifications,
     writer: smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
@@ -3188,18 +3186,34 @@ pub fn serialize_structure_crate_model_replica_modifications(
     scope.finish();
 }
 
+pub fn serialize_structure_crate_model_replica_modifications(
+    input: &crate::model::ReplicaModifications,
+    writer: smithy_xml::encode::ElWriter,
+) {
+    #[allow(unused_mut)]
+    let mut scope = writer.finish();
+    if let Some(var_242) = &input.status {
+        let mut inner_writer = scope
+            .start_el("Status")
+            .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
+            .finish();
+        inner_writer.data(var_242.as_str());
+    }
+    scope.finish();
+}
+
 pub fn serialize_structure_crate_model_access_control_translation(
     input: &crate::model::AccessControlTranslation,
     writer: smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_242) = &input.owner {
+    if let Some(var_243) = &input.owner {
         let mut inner_writer = scope
             .start_el("Owner")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_242.as_str());
+        inner_writer.data(var_243.as_str());
     }
     scope.finish();
 }
@@ -3210,12 +3224,12 @@ pub fn serialize_structure_crate_model_encryption_configuration(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_243) = &input.replica_kms_key_id {
+    if let Some(var_244) = &input.replica_kms_key_id {
         let mut inner_writer = scope
             .start_el("ReplicaKmsKeyID")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_243.as_ref());
+        inner_writer.data(var_244.as_ref());
     }
     scope.finish();
 }
@@ -3226,19 +3240,19 @@ pub fn serialize_structure_crate_model_replication_time(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_244) = &input.status {
+    if let Some(var_245) = &input.status {
         let mut inner_writer = scope
             .start_el("Status")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_244.as_str());
+        inner_writer.data(var_245.as_str());
     }
-    if let Some(var_245) = &input.time {
+    if let Some(var_246) = &input.time {
         let inner_writer = scope
             .start_el("Time")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_replication_time_value(
-            &var_245,
+            &var_246,
             inner_writer,
         )
     }
@@ -3251,19 +3265,19 @@ pub fn serialize_structure_crate_model_metrics(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_246) = &input.status {
+    if let Some(var_247) = &input.status {
         let mut inner_writer = scope
             .start_el("Status")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_246.as_str());
+        inner_writer.data(var_247.as_str());
     }
-    if let Some(var_247) = &input.event_threshold {
+    if let Some(var_248) = &input.event_threshold {
         let inner_writer = scope
             .start_el("EventThreshold")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
         crate::xml_ser::serialize_structure_crate_model_replication_time_value(
-            &var_247,
+            &var_248,
             inner_writer,
         )
     }
@@ -3276,26 +3290,26 @@ pub fn serialize_structure_crate_model_encryption(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_248) = &input.encryption_type {
+    if let Some(var_249) = &input.encryption_type {
         let mut inner_writer = scope
             .start_el("EncryptionType")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_248.as_str());
+        inner_writer.data(var_249.as_str());
     }
-    if let Some(var_249) = &input.kms_key_id {
+    if let Some(var_250) = &input.kms_key_id {
         let mut inner_writer = scope
             .start_el("KMSKeyId")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_249.as_ref());
+        inner_writer.data(var_250.as_ref());
     }
-    if let Some(var_250) = &input.kms_context {
+    if let Some(var_251) = &input.kms_context {
         let mut inner_writer = scope
             .start_el("KMSContext")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_250.as_ref());
+        inner_writer.data(var_251.as_ref());
     }
     scope.finish();
 }
@@ -3306,19 +3320,19 @@ pub fn serialize_structure_crate_model_metadata_entry(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_251) = &input.name {
+    if let Some(var_252) = &input.name {
         let mut inner_writer = scope
             .start_el("Name")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_251.as_ref());
+        inner_writer.data(var_252.as_ref());
     }
-    if let Some(var_252) = &input.value {
+    if let Some(var_253) = &input.value {
         let mut inner_writer = scope
             .start_el("Value")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_252.as_ref());
+        inner_writer.data(var_253.as_ref());
     }
     scope.finish();
 }
@@ -3329,33 +3343,33 @@ pub fn serialize_structure_crate_model_analytics_s3_bucket_destination(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_253) = &input.format {
+    if let Some(var_254) = &input.format {
         let mut inner_writer = scope
             .start_el("Format")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_253.as_str());
+        inner_writer.data(var_254.as_str());
     }
-    if let Some(var_254) = &input.bucket_account_id {
+    if let Some(var_255) = &input.bucket_account_id {
         let mut inner_writer = scope
             .start_el("BucketAccountId")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_254.as_ref());
+        inner_writer.data(var_255.as_ref());
     }
-    if let Some(var_255) = &input.bucket {
+    if let Some(var_256) = &input.bucket {
         let mut inner_writer = scope
             .start_el("Bucket")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_255.as_ref());
+        inner_writer.data(var_256.as_ref());
     }
-    if let Some(var_256) = &input.prefix {
+    if let Some(var_257) = &input.prefix {
         let mut inner_writer = scope
             .start_el("Prefix")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_256.as_ref());
+        inner_writer.data(var_257.as_ref());
     }
     scope.finish();
 }
@@ -3376,12 +3390,12 @@ pub fn serialize_structure_crate_model_ssekms(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_257) = &input.key_id {
+    if let Some(var_258) = &input.key_id {
         let mut inner_writer = scope
             .start_el("KeyId")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_257.as_ref());
+        inner_writer.data(var_258.as_ref());
     }
     scope.finish();
 }
@@ -3392,19 +3406,19 @@ pub fn serialize_structure_crate_model_filter_rule(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_258) = &input.name {
+    if let Some(var_259) = &input.name {
         let mut inner_writer = scope
             .start_el("Name")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_258.as_str());
+        inner_writer.data(var_259.as_str());
     }
-    if let Some(var_259) = &input.value {
+    if let Some(var_260) = &input.value {
         let mut inner_writer = scope
             .start_el("Value")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_259.as_ref());
+        inner_writer.data(var_260.as_ref());
     }
     scope.finish();
 }

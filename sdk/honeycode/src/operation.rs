@@ -29,9 +29,9 @@ impl smithy_http::response::ParseStrictResponse for BatchCreateTableRows {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_create_table_rows_error(response)
+            crate::operation_ser::parse_batch_create_table_rows_error(response)
         } else {
-            crate::operation_deser::parse_batch_create_table_rows_response(response)
+            crate::operation_ser::parse_batch_create_table_rows_response(response)
         }
     }
 }
@@ -60,9 +60,9 @@ impl smithy_http::response::ParseStrictResponse for BatchDeleteTableRows {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_delete_table_rows_error(response)
+            crate::operation_ser::parse_batch_delete_table_rows_error(response)
         } else {
-            crate::operation_deser::parse_batch_delete_table_rows_response(response)
+            crate::operation_ser::parse_batch_delete_table_rows_response(response)
         }
     }
 }
@@ -97,9 +97,9 @@ impl smithy_http::response::ParseStrictResponse for BatchUpdateTableRows {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_update_table_rows_error(response)
+            crate::operation_ser::parse_batch_update_table_rows_error(response)
         } else {
-            crate::operation_deser::parse_batch_update_table_rows_response(response)
+            crate::operation_ser::parse_batch_update_table_rows_response(response)
         }
     }
 }
@@ -137,9 +137,9 @@ impl smithy_http::response::ParseStrictResponse for BatchUpsertTableRows {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_upsert_table_rows_error(response)
+            crate::operation_ser::parse_batch_upsert_table_rows_error(response)
         } else {
-            crate::operation_deser::parse_batch_upsert_table_rows_response(response)
+            crate::operation_ser::parse_batch_upsert_table_rows_response(response)
         }
     }
 }
@@ -167,9 +167,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeTableDataImportJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_table_data_import_job_error(response)
+            crate::operation_ser::parse_describe_table_data_import_job_error(response)
         } else {
-            crate::operation_deser::parse_describe_table_data_import_job_response(response)
+            crate::operation_ser::parse_describe_table_data_import_job_response(response)
         }
     }
 }
@@ -197,9 +197,9 @@ impl smithy_http::response::ParseStrictResponse for GetScreenData {
         std::result::Result<crate::output::GetScreenDataOutput, crate::error::GetScreenDataError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_screen_data_error(response)
+            crate::operation_ser::parse_get_screen_data_error(response)
         } else {
-            crate::operation_deser::parse_get_screen_data_response(response)
+            crate::operation_ser::parse_get_screen_data_response(response)
         }
     }
 }
@@ -229,9 +229,9 @@ impl smithy_http::response::ParseStrictResponse for InvokeScreenAutomation {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_invoke_screen_automation_error(response)
+            crate::operation_ser::parse_invoke_screen_automation_error(response)
         } else {
-            crate::operation_deser::parse_invoke_screen_automation_response(response)
+            crate::operation_ser::parse_invoke_screen_automation_response(response)
         }
     }
 }
@@ -259,9 +259,9 @@ impl smithy_http::response::ParseStrictResponse for ListTableColumns {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_table_columns_error(response)
+            crate::operation_ser::parse_list_table_columns_error(response)
         } else {
-            crate::operation_deser::parse_list_table_columns_response(response)
+            crate::operation_ser::parse_list_table_columns_response(response)
         }
     }
 }
@@ -287,9 +287,9 @@ impl smithy_http::response::ParseStrictResponse for ListTableRows {
         std::result::Result<crate::output::ListTableRowsOutput, crate::error::ListTableRowsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_table_rows_error(response)
+            crate::operation_ser::parse_list_table_rows_error(response)
         } else {
-            crate::operation_deser::parse_list_table_rows_response(response)
+            crate::operation_ser::parse_list_table_rows_response(response)
         }
     }
 }
@@ -315,9 +315,9 @@ impl smithy_http::response::ParseStrictResponse for ListTables {
         std::result::Result<crate::output::ListTablesOutput, crate::error::ListTablesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tables_error(response)
+            crate::operation_ser::parse_list_tables_error(response)
         } else {
-            crate::operation_deser::parse_list_tables_response(response)
+            crate::operation_ser::parse_list_tables_response(response)
         }
     }
 }
@@ -343,9 +343,9 @@ impl smithy_http::response::ParseStrictResponse for QueryTableRows {
         std::result::Result<crate::output::QueryTableRowsOutput, crate::error::QueryTableRowsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_query_table_rows_error(response)
+            crate::operation_ser::parse_query_table_rows_error(response)
         } else {
-            crate::operation_deser::parse_query_table_rows_response(response)
+            crate::operation_ser::parse_query_table_rows_response(response)
         }
     }
 }
@@ -375,9 +375,9 @@ impl smithy_http::response::ParseStrictResponse for StartTableDataImportJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_table_data_import_job_error(response)
+            crate::operation_ser::parse_start_table_data_import_job_error(response)
         } else {
-            crate::operation_deser::parse_start_table_data_import_job_response(response)
+            crate::operation_ser::parse_start_table_data_import_job_response(response)
         }
     }
 }

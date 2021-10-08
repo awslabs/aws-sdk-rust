@@ -58,9 +58,9 @@ impl smithy_http::response::ParseStrictResponse for AbortMultipartUpload {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_abort_multipart_upload_error(response)
+            crate::operation_ser::parse_abort_multipart_upload_error(response)
         } else {
-            crate::operation_deser::parse_abort_multipart_upload_response(response)
+            crate::operation_ser::parse_abort_multipart_upload_response(response)
         }
     }
 }
@@ -192,9 +192,9 @@ impl smithy_http::response::ParseStrictResponse for CompleteMultipartUpload {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_complete_multipart_upload_error(response)
+            crate::operation_ser::parse_complete_multipart_upload_error(response)
         } else {
-            crate::operation_deser::parse_complete_multipart_upload_response(response)
+            crate::operation_ser::parse_complete_multipart_upload_response(response)
         }
     }
 }
@@ -384,9 +384,9 @@ impl smithy_http::response::ParseStrictResponse for CopyObject {
         std::result::Result<crate::output::CopyObjectOutput, crate::error::CopyObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_copy_object_error(response)
+            crate::operation_ser::parse_copy_object_error(response)
         } else {
-            crate::operation_deser::parse_copy_object_response(response)
+            crate::operation_ser::parse_copy_object_response(response)
         }
     }
 }
@@ -526,9 +526,9 @@ impl smithy_http::response::ParseStrictResponse for CreateBucket {
         std::result::Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_bucket_error(response)
+            crate::operation_ser::parse_create_bucket_error(response)
         } else {
-            crate::operation_deser::parse_create_bucket_response(response)
+            crate::operation_ser::parse_create_bucket_response(response)
         }
     }
 }
@@ -560,18 +560,17 @@ impl smithy_http::response::ParseStrictResponse for CreateBucket {
 /// </note>
 /// <p>You can optionally request server-side encryption. For server-side encryption, Amazon S3
 /// encrypts your data as it writes it to disks in its data centers and decrypts it when you
-/// access it. You can provide your own encryption key, or use Amazon Web Services Key Management Service (Amazon Web Services
-/// KMS) customer master keys (CMKs) or Amazon S3-managed encryption keys. If you choose to provide
+/// access it. You can provide your own encryption key, or use Amazon Web Services KMS keys or Amazon S3-managed encryption keys. If you choose to provide
 /// your own encryption key, the request headers you provide in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a> requests must match the headers you used in the request to
 /// initiate the upload by using <code>CreateMultipartUpload</code>. </p>
-/// <p>To perform a multipart upload with encryption using an Amazon Web Services KMS CMK, the requester must
+/// <p>To perform a multipart upload with encryption using an Amazon Web Services KMS key, the requester must
 /// have permission to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey*</code>
 /// actions on the key. These permissions are required because Amazon S3 must decrypt and read data
 /// from the encrypted file parts before it completes the multipart upload. For more
 /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart upload API
 /// and permissions</a> in the <i>Amazon S3 User Guide</i>.</p>
 /// <p>If your Identity and Access Management (IAM) user or role is in the same Amazon Web Services account
-/// as the Amazon Web Services KMS CMK, then you must have these permissions on the key policy. If your IAM
+/// as the KMS key, then you must have these permissions on the key policy. If your IAM
 /// user or role belongs to a different account than the key, then you must have the
 /// permissions on both the key policy and your IAM user or role.</p>
 /// <p> For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
@@ -609,7 +608,7 @@ impl smithy_http::response::ParseStrictResponse for CreateBucket {
 /// encryption keys or provide your own encryption key. </p>
 /// <ul>
 /// <li>
-/// <p>Use encryption keys managed by Amazon S3 or customer master keys (CMKs) stored
+/// <p>Use encryption keys managed by Amazon S3 or customer managed key stored
 /// in Amazon Web Services Key Management Service (Amazon Web Services KMS) – If you want Amazon Web Services to manage the keys
 /// used to encrypt data, specify the following headers in the request.</p>
 /// <ul>
@@ -626,15 +625,14 @@ impl smithy_http::response::ParseStrictResponse for CreateBucket {
 /// <note>
 /// <p>If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but
 /// don't provide <code>x-amz-server-side-encryption-aws-kms-key-id</code>,
-/// Amazon S3 uses the Amazon Web Services managed CMK in Amazon Web Services KMS to protect the data.</p>
+/// Amazon S3 uses the Amazon Web Services managed key in Amazon Web Services KMS to protect the data.</p>
 /// </note>
 /// <important>
 /// <p>All GET and PUT requests for an object protected by Amazon Web Services KMS fail if
 /// you don't make them with SSL or by using SigV4.</p>
 /// </important>
-/// <p>For more information about server-side encryption with CMKs stored in Amazon Web Services
-/// KMS (SSE-KMS), see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting Data Using Server-Side Encryption with CMKs stored in Amazon Web Services
-/// KMS</a>.</p>
+/// <p>For more information about server-side encryption with KMS key (SSE-KMS),
+/// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting Data Using Server-Side Encryption with KMS keys</a>.</p>
 /// </li>
 /// <li>
 /// <p>Use customer-provided encryption keys – If you want to manage your own
@@ -650,9 +648,8 @@ impl smithy_http::response::ParseStrictResponse for CreateBucket {
 /// <p>x-amz-server-side-encryption-customer-key-MD5</p>
 /// </li>
 /// </ul>
-/// <p>For more information about server-side encryption with CMKs stored in Amazon Web Services
-/// KMS (SSE-KMS), see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting Data Using Server-Side Encryption with CMKs stored in Amazon Web Services
-/// KMS</a>.</p>
+/// <p>For more information about server-side encryption with KMS keys (SSE-KMS),
+/// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting Data Using Server-Side Encryption with KMS keys</a>.</p>
 /// </li>
 /// </ul>
 /// </dd>
@@ -802,9 +799,9 @@ impl smithy_http::response::ParseStrictResponse for CreateMultipartUpload {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_multipart_upload_error(response)
+            crate::operation_ser::parse_create_multipart_upload_error(response)
         } else {
-            crate::operation_deser::parse_create_multipart_upload_response(response)
+            crate::operation_ser::parse_create_multipart_upload_response(response)
         }
     }
 }
@@ -869,9 +866,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucket {
         std::result::Result<crate::output::DeleteBucketOutput, crate::error::DeleteBucketError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_error(response)
+            crate::operation_ser::parse_delete_bucket_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_response(response)
+            crate::operation_ser::parse_delete_bucket_response(response)
         }
     }
 }
@@ -924,9 +921,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketAnalyticsConfigu
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_analytics_configuration_error(response)
+            crate::operation_ser::parse_delete_bucket_analytics_configuration_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_analytics_configuration_response(response)
+            crate::operation_ser::parse_delete_bucket_analytics_configuration_response(response)
         }
     }
 }
@@ -972,9 +969,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketCors {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_cors_error(response)
+            crate::operation_ser::parse_delete_bucket_cors_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_cors_response(response)
+            crate::operation_ser::parse_delete_bucket_cors_response(response)
         }
     }
 }
@@ -1022,17 +1019,17 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketEncryption {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_encryption_error(response)
+            crate::operation_ser::parse_delete_bucket_encryption_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_encryption_response(response)
+            crate::operation_ser::parse_delete_bucket_encryption_response(response)
         }
     }
 }
 
 /// <p>Deletes the S3 Intelligent-Tiering configuration from the specified bucket.</p>
-/// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without additional operational overhead. S3 Intelligent-Tiering delivers automatic cost savings by moving data between access tiers, when access patterns change.</p>
-/// <p>The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB that you plan to store for at least 30 days. If the size of an object is less than 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they are always charged at the frequent access tier rates in the S3 Intelligent-Tiering storage class. </p>
-/// <p>If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days. For more information, see  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
+/// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without performance impact or operational overhead. S3 Intelligent-Tiering delivers automatic cost savings in two low latency and high throughput access tiers. For data that can be accessed asynchronously, you can choose to activate automatic archiving capabilities within the S3 Intelligent-Tiering storage class.</p>
+/// <p>The S3 Intelligent-Tiering storage class is  the ideal storage class for data with unknown, changing, or unpredictable access patterns, independent of object size or retention period. If the size of an object is less than 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they are always charged at the Frequent Access tier rates in the S3 Intelligent-Tiering storage class.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
 /// <p>Operations related to
 /// <code>DeleteBucketIntelligentTieringConfiguration</code> include: </p>
 /// <ul>
@@ -1073,11 +1070,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketIntelligentTieri
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_intelligent_tiering_configuration_error(
+            crate::operation_ser::parse_delete_bucket_intelligent_tiering_configuration_error(
                 response,
             )
         } else {
-            crate::operation_deser::parse_delete_bucket_intelligent_tiering_configuration_response(
+            crate::operation_ser::parse_delete_bucket_intelligent_tiering_configuration_response(
                 response,
             )
         }
@@ -1130,9 +1127,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketInventoryConfigu
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_inventory_configuration_error(response)
+            crate::operation_ser::parse_delete_bucket_inventory_configuration_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_inventory_configuration_response(response)
+            crate::operation_ser::parse_delete_bucket_inventory_configuration_response(response)
         }
     }
 }
@@ -1181,9 +1178,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketLifecycle {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_lifecycle_error(response)
+            crate::operation_ser::parse_delete_bucket_lifecycle_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_lifecycle_response(response)
+            crate::operation_ser::parse_delete_bucket_lifecycle_response(response)
         }
     }
 }
@@ -1242,9 +1239,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketMetricsConfigura
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_metrics_configuration_error(response)
+            crate::operation_ser::parse_delete_bucket_metrics_configuration_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_metrics_configuration_response(response)
+            crate::operation_ser::parse_delete_bucket_metrics_configuration_response(response)
         }
     }
 }
@@ -1288,9 +1285,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketOwnershipControl
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_ownership_controls_error(response)
+            crate::operation_ser::parse_delete_bucket_ownership_controls_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_ownership_controls_response(response)
+            crate::operation_ser::parse_delete_bucket_ownership_controls_response(response)
         }
     }
 }
@@ -1345,9 +1342,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_policy_error(response)
+            crate::operation_ser::parse_delete_bucket_policy_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_policy_response(response)
+            crate::operation_ser::parse_delete_bucket_policy_response(response)
         }
     }
 }
@@ -1396,9 +1393,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketReplication {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_replication_error(response)
+            crate::operation_ser::parse_delete_bucket_replication_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_replication_response(response)
+            crate::operation_ser::parse_delete_bucket_replication_response(response)
         }
     }
 }
@@ -1440,9 +1437,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketTagging {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_tagging_error(response)
+            crate::operation_ser::parse_delete_bucket_tagging_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_tagging_response(response)
+            crate::operation_ser::parse_delete_bucket_tagging_response(response)
         }
     }
 }
@@ -1491,9 +1488,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketWebsite {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_website_error(response)
+            crate::operation_ser::parse_delete_bucket_website_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_website_response(response)
+            crate::operation_ser::parse_delete_bucket_website_response(response)
         }
     }
 }
@@ -1542,9 +1539,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteObject {
         std::result::Result<crate::output::DeleteObjectOutput, crate::error::DeleteObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_object_error(response)
+            crate::operation_ser::parse_delete_object_error(response)
         } else {
-            crate::operation_deser::parse_delete_object_response(response)
+            crate::operation_ser::parse_delete_object_response(response)
         }
     }
 }
@@ -1619,9 +1616,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteObjects {
         std::result::Result<crate::output::DeleteObjectsOutput, crate::error::DeleteObjectsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_objects_error(response)
+            crate::operation_ser::parse_delete_objects_error(response)
         } else {
-            crate::operation_deser::parse_delete_objects_response(response)
+            crate::operation_ser::parse_delete_objects_response(response)
         }
     }
 }
@@ -1668,9 +1665,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteObjectTagging {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_object_tagging_error(response)
+            crate::operation_ser::parse_delete_object_tagging_error(response)
         } else {
-            crate::operation_deser::parse_delete_object_tagging_response(response)
+            crate::operation_ser::parse_delete_object_tagging_response(response)
         }
     }
 }
@@ -1723,9 +1720,9 @@ impl smithy_http::response::ParseStrictResponse for DeletePublicAccessBlock {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_public_access_block_error(response)
+            crate::operation_ser::parse_delete_public_access_block_error(response)
         } else {
-            crate::operation_deser::parse_delete_public_access_block_response(response)
+            crate::operation_ser::parse_delete_public_access_block_response(response)
         }
     }
 }
@@ -1776,9 +1773,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketAccelerateConfigura
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_accelerate_configuration_error(response)
+            crate::operation_ser::parse_get_bucket_accelerate_configuration_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_accelerate_configuration_response(response)
+            crate::operation_ser::parse_get_bucket_accelerate_configuration_response(response)
         }
     }
 }
@@ -1816,9 +1813,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketAcl {
         std::result::Result<crate::output::GetBucketAclOutput, crate::error::GetBucketAclError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_acl_error(response)
+            crate::operation_ser::parse_get_bucket_acl_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_acl_response(response)
+            crate::operation_ser::parse_get_bucket_acl_response(response)
         }
     }
 }
@@ -1872,9 +1869,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketAnalyticsConfigurat
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_analytics_configuration_error(response)
+            crate::operation_ser::parse_get_bucket_analytics_configuration_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_analytics_configuration_response(response)
+            crate::operation_ser::parse_get_bucket_analytics_configuration_response(response)
         }
     }
 }
@@ -1915,9 +1912,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketCors {
         std::result::Result<crate::output::GetBucketCorsOutput, crate::error::GetBucketCorsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_cors_error(response)
+            crate::operation_ser::parse_get_bucket_cors_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_cors_response(response)
+            crate::operation_ser::parse_get_bucket_cors_response(response)
         }
     }
 }
@@ -1964,17 +1961,17 @@ impl smithy_http::response::ParseStrictResponse for GetBucketEncryption {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_encryption_error(response)
+            crate::operation_ser::parse_get_bucket_encryption_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_encryption_response(response)
+            crate::operation_ser::parse_get_bucket_encryption_response(response)
         }
     }
 }
 
 /// <p>Gets the S3 Intelligent-Tiering configuration from the specified bucket.</p>
-/// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without additional operational overhead. S3 Intelligent-Tiering delivers automatic cost savings by moving data between access tiers, when access patterns change.</p>
-/// <p>The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB that you plan to store for at least 30 days. If the size of an object is less than 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they are always charged at the frequent access tier rates in the S3 Intelligent-Tiering storage class. </p>
-/// <p>If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days. For more information, see  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
+/// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without performance impact or operational overhead. S3 Intelligent-Tiering delivers automatic cost savings in two low latency and high throughput access tiers. For data that can be accessed asynchronously, you can choose to activate automatic archiving capabilities within the S3 Intelligent-Tiering storage class.</p>
+/// <p>The S3 Intelligent-Tiering storage class is  the ideal storage class for data with unknown, changing, or unpredictable access patterns, independent of object size or retention period. If the size of an object is less than 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they are always charged at the Frequent Access tier rates in the S3 Intelligent-Tiering storage class.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
 /// <p>Operations related to
 /// <code>GetBucketIntelligentTieringConfiguration</code> include: </p>
 /// <ul>
@@ -2014,11 +2011,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketIntelligentTieringC
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_intelligent_tiering_configuration_error(
-                response,
-            )
+            crate::operation_ser::parse_get_bucket_intelligent_tiering_configuration_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_intelligent_tiering_configuration_response(
+            crate::operation_ser::parse_get_bucket_intelligent_tiering_configuration_response(
                 response,
             )
         }
@@ -2072,9 +2067,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketInventoryConfigurat
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_inventory_configuration_error(response)
+            crate::operation_ser::parse_get_bucket_inventory_configuration_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_inventory_configuration_response(response)
+            crate::operation_ser::parse_get_bucket_inventory_configuration_response(response)
         }
     }
 }
@@ -2153,9 +2148,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketLifecycleConfigurat
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_lifecycle_configuration_error(response)
+            crate::operation_ser::parse_get_bucket_lifecycle_configuration_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_lifecycle_configuration_response(response)
+            crate::operation_ser::parse_get_bucket_lifecycle_configuration_response(response)
         }
     }
 }
@@ -2198,9 +2193,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketLocation {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_location_error(response)
+            crate::operation_ser::parse_get_bucket_location_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_location_response(response)
+            crate::operation_ser::parse_get_bucket_location_response(response)
         }
     }
 }
@@ -2272,9 +2267,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketLogging {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_logging_error(response)
+            crate::operation_ser::parse_get_bucket_logging_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_logging_response(response)
+            crate::operation_ser::parse_get_bucket_logging_response(response)
         }
     }
 }
@@ -2333,9 +2328,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketMetricsConfiguratio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_metrics_configuration_error(response)
+            crate::operation_ser::parse_get_bucket_metrics_configuration_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_metrics_configuration_response(response)
+            crate::operation_ser::parse_get_bucket_metrics_configuration_response(response)
         }
     }
 }
@@ -2378,9 +2373,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketNotificationConfigu
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_notification_configuration_error(response)
+            crate::operation_ser::parse_get_bucket_notification_configuration_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_notification_configuration_response(response)
+            crate::operation_ser::parse_get_bucket_notification_configuration_response(response)
         }
     }
 }
@@ -2423,9 +2418,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketOwnershipControls {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_ownership_controls_error(response)
+            crate::operation_ser::parse_get_bucket_ownership_controls_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_ownership_controls_response(response)
+            crate::operation_ser::parse_get_bucket_ownership_controls_response(response)
         }
     }
 }
@@ -2473,9 +2468,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_policy_error(response)
+            crate::operation_ser::parse_get_bucket_policy_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_policy_response(response)
+            crate::operation_ser::parse_get_bucket_policy_response(response)
         }
     }
 }
@@ -2529,9 +2524,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketPolicyStatus {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_policy_status_error(response)
+            crate::operation_ser::parse_get_bucket_policy_status_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_policy_status_response(response)
+            crate::operation_ser::parse_get_bucket_policy_status_response(response)
         }
     }
 }
@@ -2586,9 +2581,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketReplication {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_replication_error(response)
+            crate::operation_ser::parse_get_bucket_replication_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_replication_response(response)
+            crate::operation_ser::parse_get_bucket_replication_response(response)
         }
     }
 }
@@ -2623,9 +2618,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketRequestPayment {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_request_payment_error(response)
+            crate::operation_ser::parse_get_bucket_request_payment_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_request_payment_response(response)
+            crate::operation_ser::parse_get_bucket_request_payment_response(response)
         }
     }
 }
@@ -2680,9 +2675,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketTagging {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_tagging_error(response)
+            crate::operation_ser::parse_get_bucket_tagging_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_tagging_response(response)
+            crate::operation_ser::parse_get_bucket_tagging_response(response)
         }
     }
 }
@@ -2730,9 +2725,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketVersioning {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_versioning_error(response)
+            crate::operation_ser::parse_get_bucket_versioning_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_versioning_response(response)
+            crate::operation_ser::parse_get_bucket_versioning_response(response)
         }
     }
 }
@@ -2778,9 +2773,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketWebsite {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_website_error(response)
+            crate::operation_ser::parse_get_bucket_website_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_website_response(response)
+            crate::operation_ser::parse_get_bucket_website_response(response)
         }
     }
 }
@@ -2811,8 +2806,8 @@ impl smithy_http::response::ParseStrictResponse for GetBucketWebsite {
 /// objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring Archived
 /// Objects</a>.</p>
 /// <p>Encryption request headers, like <code>x-amz-server-side-encryption</code>, should not
-/// be sent for GET requests if your object uses server-side encryption with CMKs stored in Amazon Web Services
-/// KMS (SSE-KMS) or server-side encryption with Amazon S3–managed encryption keys (SSE-S3). If your
+/// be sent for GET requests if your object uses server-side encryption with KMS keys (SSE-KMS)
+/// or server-side encryption with Amazon S3–managed encryption keys (SSE-S3). If your
 /// object does use these types of keys, you’ll get an HTTP 400 BadRequest error.</p>
 /// <p>If you encrypt an object by using server-side encryption with customer-provided
 /// encryption keys (SSE-C) when you store the object in Amazon S3, then when you GET the object,
@@ -2969,11 +2964,11 @@ impl smithy_http::response::ParseHttpResponse for GetObject {
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_deser::parse_get_object(response))
+        Some(crate::operation_ser::parse_get_object(response))
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_deser::parse_get_object_error(response)
+        crate::operation_ser::parse_get_object_error(response)
     }
 }
 
@@ -3021,9 +3016,9 @@ impl smithy_http::response::ParseStrictResponse for GetObjectAcl {
         std::result::Result<crate::output::GetObjectAclOutput, crate::error::GetObjectAclError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_object_acl_error(response)
+            crate::operation_ser::parse_get_object_acl_error(response)
         } else {
-            crate::operation_deser::parse_get_object_acl_response(response)
+            crate::operation_ser::parse_get_object_acl_response(response)
         }
     }
 }
@@ -3050,9 +3045,9 @@ impl smithy_http::response::ParseStrictResponse for GetObjectLegalHold {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_object_legal_hold_error(response)
+            crate::operation_ser::parse_get_object_legal_hold_error(response)
         } else {
-            crate::operation_deser::parse_get_object_legal_hold_response(response)
+            crate::operation_ser::parse_get_object_legal_hold_response(response)
         }
     }
 }
@@ -3081,9 +3076,9 @@ impl smithy_http::response::ParseStrictResponse for GetObjectLockConfiguration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_object_lock_configuration_error(response)
+            crate::operation_ser::parse_get_object_lock_configuration_error(response)
         } else {
-            crate::operation_deser::parse_get_object_lock_configuration_response(response)
+            crate::operation_ser::parse_get_object_lock_configuration_response(response)
         }
     }
 }
@@ -3110,9 +3105,9 @@ impl smithy_http::response::ParseStrictResponse for GetObjectRetention {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_object_retention_error(response)
+            crate::operation_ser::parse_get_object_retention_error(response)
         } else {
-            crate::operation_deser::parse_get_object_retention_response(response)
+            crate::operation_ser::parse_get_object_retention_response(response)
         }
     }
 }
@@ -3161,9 +3156,9 @@ impl smithy_http::response::ParseStrictResponse for GetObjectTagging {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_object_tagging_error(response)
+            crate::operation_ser::parse_get_object_tagging_error(response)
         } else {
-            crate::operation_deser::parse_get_object_tagging_response(response)
+            crate::operation_ser::parse_get_object_tagging_response(response)
         }
     }
 }
@@ -3211,11 +3206,11 @@ impl smithy_http::response::ParseHttpResponse for GetObjectTorrent {
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_deser::parse_get_object_torrent(response))
+        Some(crate::operation_ser::parse_get_object_torrent(response))
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_deser::parse_get_object_torrent_error(response)
+        crate::operation_ser::parse_get_object_torrent_error(response)
     }
 }
 
@@ -3276,9 +3271,9 @@ impl smithy_http::response::ParseStrictResponse for GetPublicAccessBlock {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_public_access_block_error(response)
+            crate::operation_ser::parse_get_public_access_block_error(response)
         } else {
-            crate::operation_deser::parse_get_public_access_block_response(response)
+            crate::operation_ser::parse_get_public_access_block_response(response)
         }
     }
 }
@@ -3312,9 +3307,9 @@ impl smithy_http::response::ParseStrictResponse for HeadBucket {
         std::result::Result<crate::output::HeadBucketOutput, crate::error::HeadBucketError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_head_bucket_error(response)
+            crate::operation_ser::parse_head_bucket_error(response)
         } else {
-            crate::operation_deser::parse_head_bucket_response(response)
+            crate::operation_ser::parse_head_bucket_response(response)
         }
     }
 }
@@ -3387,8 +3382,8 @@ mod head_bucket_request_test {
 /// <ul>
 /// <li>
 /// <p>Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
-/// not be sent for GET requests if your object uses server-side encryption with CMKs stored
-/// in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon S3–managed encryption keys
+/// not be sent for GET requests if your object uses server-side encryption with KMS keys (SSE-KMS)
+/// or server-side encryption with Amazon S3–managed encryption keys
 /// (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400 BadRequest
 /// error.</p>
 /// </li>
@@ -3482,9 +3477,9 @@ impl smithy_http::response::ParseStrictResponse for HeadObject {
         std::result::Result<crate::output::HeadObjectOutput, crate::error::HeadObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_head_object_error(response)
+            crate::operation_ser::parse_head_object_error(response)
         } else {
-            crate::operation_deser::parse_head_object_response(response)
+            crate::operation_ser::parse_head_object_response(response)
         }
     }
 }
@@ -3585,17 +3580,17 @@ impl smithy_http::response::ParseStrictResponse for ListBucketAnalyticsConfigura
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_bucket_analytics_configurations_error(response)
+            crate::operation_ser::parse_list_bucket_analytics_configurations_error(response)
         } else {
-            crate::operation_deser::parse_list_bucket_analytics_configurations_response(response)
+            crate::operation_ser::parse_list_bucket_analytics_configurations_response(response)
         }
     }
 }
 
 /// <p>Lists the S3 Intelligent-Tiering configuration from the specified bucket.</p>
-/// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without additional operational overhead. S3 Intelligent-Tiering delivers automatic cost savings by moving data between access tiers, when access patterns change.</p>
-/// <p>The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB that you plan to store for at least 30 days. If the size of an object is less than 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they are always charged at the frequent access tier rates in the S3 Intelligent-Tiering storage class. </p>
-/// <p>If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days. For more information, see  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
+/// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without performance impact or operational overhead. S3 Intelligent-Tiering delivers automatic cost savings in two low latency and high throughput access tiers. For data that can be accessed asynchronously, you can choose to activate automatic archiving capabilities within the S3 Intelligent-Tiering storage class.</p>
+/// <p>The S3 Intelligent-Tiering storage class is  the ideal storage class for data with unknown, changing, or unpredictable access patterns, independent of object size or retention period. If the size of an object is less than 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they are always charged at the Frequent Access tier rates in the S3 Intelligent-Tiering storage class.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
 /// <p>Operations related to
 /// <code>ListBucketIntelligentTieringConfigurations</code> include: </p>
 /// <ul>
@@ -3636,11 +3631,11 @@ impl smithy_http::response::ParseStrictResponse for ListBucketIntelligentTiering
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_bucket_intelligent_tiering_configurations_error(
+            crate::operation_ser::parse_list_bucket_intelligent_tiering_configurations_error(
                 response,
             )
         } else {
-            crate::operation_deser::parse_list_bucket_intelligent_tiering_configurations_response(
+            crate::operation_ser::parse_list_bucket_intelligent_tiering_configurations_response(
                 response,
             )
         }
@@ -3702,9 +3697,9 @@ impl smithy_http::response::ParseStrictResponse for ListBucketInventoryConfigura
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_bucket_inventory_configurations_error(response)
+            crate::operation_ser::parse_list_bucket_inventory_configurations_error(response)
         } else {
-            crate::operation_deser::parse_list_bucket_inventory_configurations_response(response)
+            crate::operation_ser::parse_list_bucket_inventory_configurations_response(response)
         }
     }
 }
@@ -3766,9 +3761,9 @@ impl smithy_http::response::ParseStrictResponse for ListBucketMetricsConfigurati
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_bucket_metrics_configurations_error(response)
+            crate::operation_ser::parse_list_bucket_metrics_configurations_error(response)
         } else {
-            crate::operation_deser::parse_list_bucket_metrics_configurations_response(response)
+            crate::operation_ser::parse_list_bucket_metrics_configurations_response(response)
         }
     }
 }
@@ -3792,9 +3787,9 @@ impl smithy_http::response::ParseStrictResponse for ListBuckets {
         std::result::Result<crate::output::ListBucketsOutput, crate::error::ListBucketsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_buckets_error(response)
+            crate::operation_ser::parse_list_buckets_error(response)
         } else {
-            crate::operation_deser::parse_list_buckets_response(response)
+            crate::operation_ser::parse_list_buckets_response(response)
         }
     }
 }
@@ -3865,9 +3860,9 @@ impl smithy_http::response::ParseStrictResponse for ListMultipartUploads {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_multipart_uploads_error(response)
+            crate::operation_ser::parse_list_multipart_uploads_error(response)
         } else {
-            crate::operation_deser::parse_list_multipart_uploads_response(response)
+            crate::operation_ser::parse_list_multipart_uploads_response(response)
         }
     }
 }
@@ -3926,9 +3921,9 @@ impl smithy_http::response::ParseStrictResponse for ListObjects {
         std::result::Result<crate::output::ListObjectsOutput, crate::error::ListObjectsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_objects_error(response)
+            crate::operation_ser::parse_list_objects_error(response)
         } else {
-            crate::operation_deser::parse_list_objects_response(response)
+            crate::operation_ser::parse_list_objects_response(response)
         }
     }
 }
@@ -4085,9 +4080,9 @@ impl smithy_http::response::ParseStrictResponse for ListObjectsV2 {
         std::result::Result<crate::output::ListObjectsV2Output, crate::error::ListObjectsV2Error>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_objects_v2_error(response)
+            crate::operation_ser::parse_list_objects_v2_error(response)
         } else {
-            crate::operation_deser::parse_list_objects_v2_response(response)
+            crate::operation_ser::parse_list_objects_v2_response(response)
         }
     }
 }
@@ -4151,9 +4146,9 @@ impl smithy_http::response::ParseStrictResponse for ListObjectVersions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_object_versions_error(response)
+            crate::operation_ser::parse_list_object_versions_error(response)
         } else {
-            crate::operation_deser::parse_list_object_versions_response(response)
+            crate::operation_ser::parse_list_object_versions_response(response)
         }
     }
 }
@@ -4217,9 +4212,9 @@ impl smithy_http::response::ParseStrictResponse for ListParts {
     type Output = std::result::Result<crate::output::ListPartsOutput, crate::error::ListPartsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_parts_error(response)
+            crate::operation_ser::parse_list_parts_error(response)
         } else {
-            crate::operation_deser::parse_list_parts_response(response)
+            crate::operation_ser::parse_list_parts_response(response)
         }
     }
 }
@@ -4282,9 +4277,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketAccelerateConfigura
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_accelerate_configuration_error(response)
+            crate::operation_ser::parse_put_bucket_accelerate_configuration_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_accelerate_configuration_response(response)
+            crate::operation_ser::parse_put_bucket_accelerate_configuration_response(response)
         }
     }
 }
@@ -4489,9 +4484,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketAcl {
         std::result::Result<crate::output::PutBucketAclOutput, crate::error::PutBucketAclError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_acl_error(response)
+            crate::operation_ser::parse_put_bucket_acl_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_acl_response(response)
+            crate::operation_ser::parse_put_bucket_acl_response(response)
         }
     }
 }
@@ -4621,9 +4616,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketAnalyticsConfigurat
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_analytics_configuration_error(response)
+            crate::operation_ser::parse_put_bucket_analytics_configuration_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_analytics_configuration_response(response)
+            crate::operation_ser::parse_put_bucket_analytics_configuration_response(response)
         }
     }
 }
@@ -4702,9 +4697,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketCors {
         std::result::Result<crate::output::PutBucketCorsOutput, crate::error::PutBucketCorsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_cors_error(response)
+            crate::operation_ser::parse_put_bucket_cors_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_cors_response(response)
+            crate::operation_ser::parse_put_bucket_cors_response(response)
         }
     }
 }
@@ -4712,7 +4707,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketCors {
 /// <p>This action uses the <code>encryption</code> subresource to configure default
 /// encryption and Amazon S3 Bucket Key for an existing bucket.</p>
 /// <p>Default encryption for a bucket can use server-side encryption with Amazon S3-managed keys
-/// (SSE-S3) or Amazon Web Services KMS customer master keys (SSE-KMS). If you specify default encryption
+/// (SSE-S3) or customer managed keys (SSE-KMS). If you specify default encryption
 /// using SSE-KMS, you can also configure Amazon S3 Bucket Key. For information about default
 /// encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 default bucket encryption</a>
 /// in the <i>Amazon S3 User Guide</i>. For more information about S3 Bucket Keys,
@@ -4761,18 +4756,18 @@ impl smithy_http::response::ParseStrictResponse for PutBucketEncryption {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_encryption_error(response)
+            crate::operation_ser::parse_put_bucket_encryption_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_encryption_response(response)
+            crate::operation_ser::parse_put_bucket_encryption_response(response)
         }
     }
 }
 
 /// <p>Puts a S3 Intelligent-Tiering configuration to the specified bucket.
 /// You can have up to 1,000 S3 Intelligent-Tiering configurations per bucket.</p>
-/// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without additional operational overhead. S3 Intelligent-Tiering delivers automatic cost savings by moving data between access tiers, when access patterns change.</p>
-/// <p>The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB that you plan to store for at least 30 days. If the size of an object is less than 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they are always charged at the frequent access tier rates in the S3 Intelligent-Tiering storage class. </p>
-/// <p>If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days. For more information, see  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
+/// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without performance impact or operational overhead. S3 Intelligent-Tiering delivers automatic cost savings in two low latency and high throughput access tiers. For data that can be accessed asynchronously, you can choose to activate automatic archiving capabilities within the S3 Intelligent-Tiering storage class.</p>
+/// <p>The S3 Intelligent-Tiering storage class is  the ideal storage class for data with unknown, changing, or unpredictable access patterns, independent of object size or retention period. If the size of an object is less than 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they are always charged at the Frequent Access tier rates in the S3 Intelligent-Tiering storage class.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
 /// <p>Operations related to
 /// <code>PutBucketIntelligentTieringConfiguration</code> include: </p>
 /// <ul>
@@ -4870,11 +4865,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketIntelligentTieringC
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_intelligent_tiering_configuration_error(
-                response,
-            )
+            crate::operation_ser::parse_put_bucket_intelligent_tiering_configuration_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_intelligent_tiering_configuration_response(
+            crate::operation_ser::parse_put_bucket_intelligent_tiering_configuration_response(
                 response,
             )
         }
@@ -5000,9 +4993,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketInventoryConfigurat
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_inventory_configuration_error(response)
+            crate::operation_ser::parse_put_bucket_inventory_configuration_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_inventory_configuration_response(response)
+            crate::operation_ser::parse_put_bucket_inventory_configuration_response(response)
         }
     }
 }
@@ -5106,9 +5099,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketLifecycleConfigurat
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_lifecycle_configuration_error(response)
+            crate::operation_ser::parse_put_bucket_lifecycle_configuration_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_lifecycle_configuration_response(response)
+            crate::operation_ser::parse_put_bucket_lifecycle_configuration_response(response)
         }
     }
 }
@@ -5245,9 +5238,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketLogging {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_logging_error(response)
+            crate::operation_ser::parse_put_bucket_logging_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_logging_response(response)
+            crate::operation_ser::parse_put_bucket_logging_response(response)
         }
     }
 }
@@ -5273,7 +5266,7 @@ impl smithy_http::response::ParseStrictResponse for PutBucketLogging {
 /// </li>
 /// <li>
 /// <p>
-/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html">PutBucketMetricsConfiguration</a>
+/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetricsConfiguration.html">GetBucketMetricsConfiguration</a>
 /// </p>
 /// </li>
 /// <li>
@@ -5319,9 +5312,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketMetricsConfiguratio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_metrics_configuration_error(response)
+            crate::operation_ser::parse_put_bucket_metrics_configuration_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_metrics_configuration_response(response)
+            crate::operation_ser::parse_put_bucket_metrics_configuration_response(response)
         }
     }
 }
@@ -5399,9 +5392,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketNotificationConfigu
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_notification_configuration_error(response)
+            crate::operation_ser::parse_put_bucket_notification_configuration_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_notification_configuration_response(response)
+            crate::operation_ser::parse_put_bucket_notification_configuration_response(response)
         }
     }
 }
@@ -5443,9 +5436,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketOwnershipControls {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_ownership_controls_error(response)
+            crate::operation_ser::parse_put_bucket_ownership_controls_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_ownership_controls_response(response)
+            crate::operation_ser::parse_put_bucket_ownership_controls_response(response)
         }
     }
 }
@@ -5497,9 +5490,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_policy_error(response)
+            crate::operation_ser::parse_put_bucket_policy_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_policy_response(response)
+            crate::operation_ser::parse_put_bucket_policy_response(response)
         }
     }
 }
@@ -5529,12 +5522,12 @@ impl smithy_http::response::ParseStrictResponse for PutBucketPolicy {
 /// <b>Handling Replication of Encrypted Objects</b>
 /// </p>
 /// <p>By default, Amazon S3 doesn't replicate objects that are stored at rest using server-side
-/// encryption with CMKs stored in Amazon Web Services KMS. To replicate Amazon Web Services KMS-encrypted objects, add the
+/// encryption with KMS keys. To replicate Amazon Web Services KMS-encrypted objects, add the
 /// following: <code>SourceSelectionCriteria</code>, <code>SseKmsEncryptedObjects</code>,
 /// <code>Status</code>, <code>EncryptionConfiguration</code>, and
 /// <code>ReplicaKmsKeyID</code>. For information about replication configuration, see
 /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-config-for-kms-objects.html">Replicating Objects
-/// Created with SSE Using CMKs stored in Amazon Web Services KMS</a>.</p>
+/// Created with SSE Using KMS keys</a>.</p>
 /// <p>For information on <code>PutBucketReplication</code> errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ReplicationErrorCodeList">List of
 /// replication-related error codes</a>
 /// </p>
@@ -5586,9 +5579,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketReplication {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_replication_error(response)
+            crate::operation_ser::parse_put_bucket_replication_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_replication_response(response)
+            crate::operation_ser::parse_put_bucket_replication_response(response)
         }
     }
 }
@@ -5631,9 +5624,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketRequestPayment {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_request_payment_error(response)
+            crate::operation_ser::parse_put_bucket_request_payment_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_request_payment_response(response)
+            crate::operation_ser::parse_put_bucket_request_payment_response(response)
         }
     }
 }
@@ -5733,9 +5726,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketTagging {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_tagging_error(response)
+            crate::operation_ser::parse_put_bucket_tagging_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_tagging_response(response)
+            crate::operation_ser::parse_put_bucket_tagging_response(response)
         }
     }
 }
@@ -5803,9 +5796,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketVersioning {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_versioning_error(response)
+            crate::operation_ser::parse_put_bucket_versioning_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_versioning_response(response)
+            crate::operation_ser::parse_put_bucket_versioning_response(response)
         }
     }
 }
@@ -5952,9 +5945,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketWebsite {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_website_error(response)
+            crate::operation_ser::parse_put_bucket_website_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_website_response(response)
+            crate::operation_ser::parse_put_bucket_website_response(response)
         }
     }
 }
@@ -6061,9 +6054,9 @@ impl smithy_http::response::ParseStrictResponse for PutObject {
     type Output = std::result::Result<crate::output::PutObjectOutput, crate::error::PutObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_object_error(response)
+            crate::operation_ser::parse_put_object_error(response)
         } else {
-            crate::operation_deser::parse_put_object_response(response)
+            crate::operation_ser::parse_put_object_response(response)
         }
     }
 }
@@ -6309,9 +6302,9 @@ impl smithy_http::response::ParseStrictResponse for PutObjectAcl {
         std::result::Result<crate::output::PutObjectAclOutput, crate::error::PutObjectAclError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_object_acl_error(response)
+            crate::operation_ser::parse_put_object_acl_error(response)
         } else {
-            crate::operation_deser::parse_put_object_acl_response(response)
+            crate::operation_ser::parse_put_object_acl_response(response)
         }
     }
 }
@@ -6340,9 +6333,9 @@ impl smithy_http::response::ParseStrictResponse for PutObjectLegalHold {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_object_legal_hold_error(response)
+            crate::operation_ser::parse_put_object_legal_hold_error(response)
         } else {
-            crate::operation_deser::parse_put_object_legal_hold_response(response)
+            crate::operation_ser::parse_put_object_legal_hold_response(response)
         }
     }
 }
@@ -6388,9 +6381,9 @@ impl smithy_http::response::ParseStrictResponse for PutObjectLockConfiguration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_object_lock_configuration_error(response)
+            crate::operation_ser::parse_put_object_lock_configuration_error(response)
         } else {
-            crate::operation_deser::parse_put_object_lock_configuration_response(response)
+            crate::operation_ser::parse_put_object_lock_configuration_response(response)
         }
     }
 }
@@ -6427,9 +6420,9 @@ impl smithy_http::response::ParseStrictResponse for PutObjectRetention {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_object_retention_error(response)
+            crate::operation_ser::parse_put_object_retention_error(response)
         } else {
-            crate::operation_deser::parse_put_object_retention_response(response)
+            crate::operation_ser::parse_put_object_retention_response(response)
         }
     }
 }
@@ -6546,9 +6539,9 @@ impl smithy_http::response::ParseStrictResponse for PutObjectTagging {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_object_tagging_error(response)
+            crate::operation_ser::parse_put_object_tagging_error(response)
         } else {
-            crate::operation_deser::parse_put_object_tagging_response(response)
+            crate::operation_ser::parse_put_object_tagging_response(response)
         }
     }
 }
@@ -6612,9 +6605,9 @@ impl smithy_http::response::ParseStrictResponse for PutPublicAccessBlock {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_public_access_block_error(response)
+            crate::operation_ser::parse_put_public_access_block_error(response)
         } else {
-            crate::operation_deser::parse_put_public_access_block_response(response)
+            crate::operation_ser::parse_put_public_access_block_response(response)
         }
     }
 }
@@ -6928,9 +6921,9 @@ impl smithy_http::response::ParseStrictResponse for RestoreObject {
         std::result::Result<crate::output::RestoreObjectOutput, crate::error::RestoreObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_restore_object_error(response)
+            crate::operation_ser::parse_restore_object_error(response)
         } else {
-            crate::operation_deser::parse_restore_object_response(response)
+            crate::operation_ser::parse_restore_object_response(response)
         }
     }
 }
@@ -6988,7 +6981,7 @@ impl smithy_http::response::ParseStrictResponse for RestoreObject {
 /// (Using Customer-Provided Encryption Keys)</a> in the
 /// <i>Amazon S3 User Guide</i>.</p>
 /// <p>For objects that are encrypted with Amazon S3 managed encryption keys (SSE-S3) and
-/// customer master keys (CMKs) stored in Amazon Web Services Key Management Service (SSE-KMS),
+/// Amazon Web Services KMS keys (SSE-KMS),
 /// server-side encryption is handled transparently, so you don't need to specify
 /// anything. For more information about server-side encryption, including SSE-S3 and
 /// SSE-KMS, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using
@@ -7075,13 +7068,11 @@ impl smithy_http::response::ParseHttpResponse for SelectObjectContent {
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_deser::parse_select_object_content(
-            response,
-        ))
+        Some(crate::operation_ser::parse_select_object_content(response))
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_deser::parse_select_object_content_error(response)
+        crate::operation_ser::parse_select_object_content_error(response)
     }
 }
 
@@ -7223,9 +7214,9 @@ impl smithy_http::response::ParseStrictResponse for UploadPart {
         std::result::Result<crate::output::UploadPartOutput, crate::error::UploadPartError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_upload_part_error(response)
+            crate::operation_ser::parse_upload_part_error(response)
         } else {
-            crate::operation_deser::parse_upload_part_response(response)
+            crate::operation_ser::parse_upload_part_response(response)
         }
     }
 }
@@ -7417,17 +7408,17 @@ impl smithy_http::response::ParseStrictResponse for UploadPartCopy {
         std::result::Result<crate::output::UploadPartCopyOutput, crate::error::UploadPartCopyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_upload_part_copy_error(response)
+            crate::operation_ser::parse_upload_part_copy_error(response)
         } else {
-            crate::operation_deser::parse_upload_part_copy_response(response)
+            crate::operation_ser::parse_upload_part_copy_response(response)
         }
     }
 }
 
 /// <p>Passes transformed
-/// objects to a <code>GetObject</code> operation when using Object Lambda Access Points. For information about
-/// Object Lambda Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming objects with
-/// Object Lambda Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// objects to a <code>GetObject</code> operation when using Object Lambda access points. For information about
+/// Object Lambda access points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming objects with
+/// Object Lambda access points</a> in the <i>Amazon S3 User Guide</i>.</p>
 /// <p>This operation supports metadata that can be returned by <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>, in addition to
 /// <code>RequestRoute</code>, <code>RequestToken</code>, <code>StatusCode</code>,
 /// <code>ErrorCode</code>, and <code>ErrorMessage</code>. The <code>GetObject</code>
@@ -7442,7 +7433,7 @@ impl smithy_http::response::ParseStrictResponse for UploadPartCopy {
 /// <p>Amazon Web Services provides some prebuilt Lambda functions that you can use with S3 Object Lambda to detect and redact
 /// personally identifiable information (PII) and decompress S3 objects. These Lambda functions
 /// are available in the Amazon Web Services Serverless Application Repository, and can be selected through the Amazon Web Services Management Console when you create your
-/// Object Lambda Access Point.</p>
+/// Object Lambda access point.</p>
 /// <p>Example 1: PII Access Control - This Lambda function uses Amazon Comprehend, a natural language processing (NLP) service using machine learning to find insights and relationships in text. It automatically detects personally identifiable information (PII) such as names, addresses, dates, credit card numbers, and social security numbers from documents in your Amazon S3 bucket. </p>
 /// <p>Example 2: PII Redaction - This Lambda function uses Amazon Comprehend, a natural language processing (NLP) service using machine learning to find insights and relationships in text. It automatically redacts personally identifiable information (PII) such as names, addresses, dates, credit card numbers, and social security numbers from documents in your Amazon S3 bucket. </p>
 /// <p>Example 3: Decompression - The Lambda function S3ObjectLambdaDecompression, is equipped to decompress objects stored in S3 in one of six compressed file formats including bzip2, gzip, snappy, zlib, zstandard and ZIP. </p>
@@ -7467,9 +7458,9 @@ impl smithy_http::response::ParseStrictResponse for WriteGetObjectResponse {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_write_get_object_response_error(response)
+            crate::operation_ser::parse_write_get_object_response_error(response)
         } else {
-            crate::operation_deser::parse_write_get_object_response_response(response)
+            crate::operation_ser::parse_write_get_object_response_response(response)
         }
     }
 }

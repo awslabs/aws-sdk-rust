@@ -21,9 +21,9 @@ impl smithy_http::response::ParseStrictResponse for AddRoleToDBCluster {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_add_role_to_db_cluster_error(response)
+            crate::operation_ser::parse_add_role_to_db_cluster_error(response)
         } else {
-            crate::operation_deser::parse_add_role_to_db_cluster_response(response)
+            crate::operation_ser::parse_add_role_to_db_cluster_response(response)
         }
     }
 }
@@ -49,9 +49,9 @@ impl smithy_http::response::ParseStrictResponse for AddSourceIdentifierToSubscri
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_add_source_identifier_to_subscription_error(response)
+            crate::operation_ser::parse_add_source_identifier_to_subscription_error(response)
         } else {
-            crate::operation_deser::parse_add_source_identifier_to_subscription_response(response)
+            crate::operation_ser::parse_add_source_identifier_to_subscription_response(response)
         }
     }
 }
@@ -79,9 +79,9 @@ impl smithy_http::response::ParseStrictResponse for AddTagsToResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_add_tags_to_resource_error(response)
+            crate::operation_ser::parse_add_tags_to_resource_error(response)
         } else {
-            crate::operation_deser::parse_add_tags_to_resource_response(response)
+            crate::operation_ser::parse_add_tags_to_resource_response(response)
         }
     }
 }
@@ -107,9 +107,9 @@ impl smithy_http::response::ParseStrictResponse for ApplyPendingMaintenanceActio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_apply_pending_maintenance_action_error(response)
+            crate::operation_ser::parse_apply_pending_maintenance_action_error(response)
         } else {
-            crate::operation_deser::parse_apply_pending_maintenance_action_response(response)
+            crate::operation_ser::parse_apply_pending_maintenance_action_response(response)
         }
     }
 }
@@ -135,9 +135,9 @@ impl smithy_http::response::ParseStrictResponse for CopyDBClusterParameterGroup 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_copy_db_cluster_parameter_group_error(response)
+            crate::operation_ser::parse_copy_db_cluster_parameter_group_error(response)
         } else {
-            crate::operation_deser::parse_copy_db_cluster_parameter_group_response(response)
+            crate::operation_ser::parse_copy_db_cluster_parameter_group_response(response)
         }
     }
 }
@@ -166,9 +166,9 @@ impl smithy_http::response::ParseStrictResponse for CopyDBClusterSnapshot {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_copy_db_cluster_snapshot_error(response)
+            crate::operation_ser::parse_copy_db_cluster_snapshot_error(response)
         } else {
-            crate::operation_deser::parse_copy_db_cluster_snapshot_response(response)
+            crate::operation_ser::parse_copy_db_cluster_snapshot_response(response)
         }
     }
 }
@@ -194,9 +194,9 @@ impl smithy_http::response::ParseStrictResponse for CopyDBParameterGroup {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_copy_db_parameter_group_error(response)
+            crate::operation_ser::parse_copy_db_parameter_group_error(response)
         } else {
-            crate::operation_deser::parse_copy_db_parameter_group_response(response)
+            crate::operation_ser::parse_copy_db_parameter_group_response(response)
         }
     }
 }
@@ -228,9 +228,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDBCluster {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_db_cluster_error(response)
+            crate::operation_ser::parse_create_db_cluster_error(response)
         } else {
-            crate::operation_deser::parse_create_db_cluster_response(response)
+            crate::operation_ser::parse_create_db_cluster_response(response)
         }
     }
 }
@@ -256,9 +256,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDBClusterEndpoint {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_db_cluster_endpoint_error(response)
+            crate::operation_ser::parse_create_db_cluster_endpoint_error(response)
         } else {
-            crate::operation_deser::parse_create_db_cluster_endpoint_response(response)
+            crate::operation_ser::parse_create_db_cluster_endpoint_response(response)
         }
     }
 }
@@ -308,9 +308,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDBClusterParameterGrou
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_db_cluster_parameter_group_error(response)
+            crate::operation_ser::parse_create_db_cluster_parameter_group_error(response)
         } else {
-            crate::operation_deser::parse_create_db_cluster_parameter_group_response(response)
+            crate::operation_ser::parse_create_db_cluster_parameter_group_response(response)
         }
     }
 }
@@ -336,9 +336,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDBClusterSnapshot {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_db_cluster_snapshot_error(response)
+            crate::operation_ser::parse_create_db_cluster_snapshot_error(response)
         } else {
-            crate::operation_deser::parse_create_db_cluster_snapshot_response(response)
+            crate::operation_ser::parse_create_db_cluster_snapshot_response(response)
         }
     }
 }
@@ -364,9 +364,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDBInstance {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_db_instance_error(response)
+            crate::operation_ser::parse_create_db_instance_error(response)
         } else {
-            crate::operation_deser::parse_create_db_instance_response(response)
+            crate::operation_ser::parse_create_db_instance_response(response)
         }
     }
 }
@@ -411,9 +411,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDBParameterGroup {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_db_parameter_group_error(response)
+            crate::operation_ser::parse_create_db_parameter_group_error(response)
         } else {
-            crate::operation_deser::parse_create_db_parameter_group_response(response)
+            crate::operation_ser::parse_create_db_parameter_group_response(response)
         }
     }
 }
@@ -440,9 +440,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDBSubnetGroup {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_db_subnet_group_error(response)
+            crate::operation_ser::parse_create_db_subnet_group_error(response)
         } else {
-            crate::operation_deser::parse_create_db_subnet_group_response(response)
+            crate::operation_ser::parse_create_db_subnet_group_response(response)
         }
     }
 }
@@ -482,9 +482,9 @@ impl smithy_http::response::ParseStrictResponse for CreateEventSubscription {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_event_subscription_error(response)
+            crate::operation_ser::parse_create_event_subscription_error(response)
         } else {
-            crate::operation_deser::parse_create_event_subscription_response(response)
+            crate::operation_ser::parse_create_event_subscription_response(response)
         }
     }
 }
@@ -515,9 +515,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteDBCluster {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_db_cluster_error(response)
+            crate::operation_ser::parse_delete_db_cluster_error(response)
         } else {
-            crate::operation_deser::parse_delete_db_cluster_response(response)
+            crate::operation_ser::parse_delete_db_cluster_response(response)
         }
     }
 }
@@ -543,9 +543,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteDBClusterEndpoint {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_db_cluster_endpoint_error(response)
+            crate::operation_ser::parse_delete_db_cluster_endpoint_error(response)
         } else {
-            crate::operation_deser::parse_delete_db_cluster_endpoint_response(response)
+            crate::operation_ser::parse_delete_db_cluster_endpoint_response(response)
         }
     }
 }
@@ -572,9 +572,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteDBClusterParameterGrou
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_db_cluster_parameter_group_error(response)
+            crate::operation_ser::parse_delete_db_cluster_parameter_group_error(response)
         } else {
-            crate::operation_deser::parse_delete_db_cluster_parameter_group_response(response)
+            crate::operation_ser::parse_delete_db_cluster_parameter_group_response(response)
         }
     }
 }
@@ -605,9 +605,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteDBClusterSnapshot {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_db_cluster_snapshot_error(response)
+            crate::operation_ser::parse_delete_db_cluster_snapshot_error(response)
         } else {
-            crate::operation_deser::parse_delete_db_cluster_snapshot_response(response)
+            crate::operation_ser::parse_delete_db_cluster_snapshot_response(response)
         }
     }
 }
@@ -646,9 +646,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteDBInstance {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_db_instance_error(response)
+            crate::operation_ser::parse_delete_db_instance_error(response)
         } else {
-            crate::operation_deser::parse_delete_db_instance_response(response)
+            crate::operation_ser::parse_delete_db_instance_response(response)
         }
     }
 }
@@ -675,9 +675,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteDBParameterGroup {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_db_parameter_group_error(response)
+            crate::operation_ser::parse_delete_db_parameter_group_error(response)
         } else {
-            crate::operation_deser::parse_delete_db_parameter_group_response(response)
+            crate::operation_ser::parse_delete_db_parameter_group_response(response)
         }
     }
 }
@@ -706,9 +706,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteDBSubnetGroup {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_db_subnet_group_error(response)
+            crate::operation_ser::parse_delete_db_subnet_group_error(response)
         } else {
-            crate::operation_deser::parse_delete_db_subnet_group_response(response)
+            crate::operation_ser::parse_delete_db_subnet_group_response(response)
         }
     }
 }
@@ -734,9 +734,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteEventSubscription {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_event_subscription_error(response)
+            crate::operation_ser::parse_delete_event_subscription_error(response)
         } else {
-            crate::operation_deser::parse_delete_event_subscription_response(response)
+            crate::operation_ser::parse_delete_event_subscription_response(response)
         }
     }
 }
@@ -766,9 +766,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDBClusterEndpoints {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_db_cluster_endpoints_error(response)
+            crate::operation_ser::parse_describe_db_cluster_endpoints_error(response)
         } else {
-            crate::operation_deser::parse_describe_db_cluster_endpoints_response(response)
+            crate::operation_ser::parse_describe_db_cluster_endpoints_response(response)
         }
     }
 }
@@ -796,9 +796,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDBClusterParameterGr
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_db_cluster_parameter_groups_error(response)
+            crate::operation_ser::parse_describe_db_cluster_parameter_groups_error(response)
         } else {
-            crate::operation_deser::parse_describe_db_cluster_parameter_groups_response(response)
+            crate::operation_ser::parse_describe_db_cluster_parameter_groups_response(response)
         }
     }
 }
@@ -824,9 +824,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDBClusterParameters 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_db_cluster_parameters_error(response)
+            crate::operation_ser::parse_describe_db_cluster_parameters_error(response)
         } else {
-            crate::operation_deser::parse_describe_db_cluster_parameters_response(response)
+            crate::operation_ser::parse_describe_db_cluster_parameters_response(response)
         }
     }
 }
@@ -857,9 +857,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDBClusters {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_db_clusters_error(response)
+            crate::operation_ser::parse_describe_db_clusters_error(response)
         } else {
-            crate::operation_deser::parse_describe_db_clusters_response(response)
+            crate::operation_ser::parse_describe_db_clusters_response(response)
         }
     }
 }
@@ -894,9 +894,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDBClusterSnapshotAtt
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_db_cluster_snapshot_attributes_error(response)
+            crate::operation_ser::parse_describe_db_cluster_snapshot_attributes_error(response)
         } else {
-            crate::operation_deser::parse_describe_db_cluster_snapshot_attributes_response(response)
+            crate::operation_ser::parse_describe_db_cluster_snapshot_attributes_response(response)
         }
     }
 }
@@ -923,9 +923,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDBClusterSnapshots {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_db_cluster_snapshots_error(response)
+            crate::operation_ser::parse_describe_db_cluster_snapshots_error(response)
         } else {
-            crate::operation_deser::parse_describe_db_cluster_snapshots_response(response)
+            crate::operation_ser::parse_describe_db_cluster_snapshots_response(response)
         }
     }
 }
@@ -951,9 +951,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDBEngineVersions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_db_engine_versions_error(response)
+            crate::operation_ser::parse_describe_db_engine_versions_error(response)
         } else {
-            crate::operation_deser::parse_describe_db_engine_versions_response(response)
+            crate::operation_ser::parse_describe_db_engine_versions_response(response)
         }
     }
 }
@@ -983,9 +983,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDBInstances {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_db_instances_error(response)
+            crate::operation_ser::parse_describe_db_instances_error(response)
         } else {
-            crate::operation_deser::parse_describe_db_instances_response(response)
+            crate::operation_ser::parse_describe_db_instances_response(response)
         }
     }
 }
@@ -1013,9 +1013,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDBParameterGroups {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_db_parameter_groups_error(response)
+            crate::operation_ser::parse_describe_db_parameter_groups_error(response)
         } else {
-            crate::operation_deser::parse_describe_db_parameter_groups_response(response)
+            crate::operation_ser::parse_describe_db_parameter_groups_response(response)
         }
     }
 }
@@ -1041,9 +1041,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDBParameters {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_db_parameters_error(response)
+            crate::operation_ser::parse_describe_db_parameters_error(response)
         } else {
-            crate::operation_deser::parse_describe_db_parameters_response(response)
+            crate::operation_ser::parse_describe_db_parameters_response(response)
         }
     }
 }
@@ -1071,9 +1071,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDBSubnetGroups {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_db_subnet_groups_error(response)
+            crate::operation_ser::parse_describe_db_subnet_groups_error(response)
         } else {
-            crate::operation_deser::parse_describe_db_subnet_groups_response(response)
+            crate::operation_ser::parse_describe_db_subnet_groups_response(response)
         }
     }
 }
@@ -1100,9 +1100,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeEngineDefaultCluster
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_engine_default_cluster_parameters_error(response)
+            crate::operation_ser::parse_describe_engine_default_cluster_parameters_error(response)
         } else {
-            crate::operation_deser::parse_describe_engine_default_cluster_parameters_response(
+            crate::operation_ser::parse_describe_engine_default_cluster_parameters_response(
                 response,
             )
         }
@@ -1131,9 +1131,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeEngineDefaultParamet
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_engine_default_parameters_error(response)
+            crate::operation_ser::parse_describe_engine_default_parameters_error(response)
         } else {
-            crate::operation_deser::parse_describe_engine_default_parameters_response(response)
+            crate::operation_ser::parse_describe_engine_default_parameters_response(response)
         }
     }
 }
@@ -1160,9 +1160,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeEventCategories {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_event_categories_error(response)
+            crate::operation_ser::parse_describe_event_categories_error(response)
         } else {
-            crate::operation_deser::parse_describe_event_categories_response(response)
+            crate::operation_ser::parse_describe_event_categories_response(response)
         }
     }
 }
@@ -1189,9 +1189,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeEvents {
         std::result::Result<crate::output::DescribeEventsOutput, crate::error::DescribeEventsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_events_error(response)
+            crate::operation_ser::parse_describe_events_error(response)
         } else {
-            crate::operation_deser::parse_describe_events_response(response)
+            crate::operation_ser::parse_describe_events_response(response)
         }
     }
 }
@@ -1220,9 +1220,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeEventSubscriptions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_event_subscriptions_error(response)
+            crate::operation_ser::parse_describe_event_subscriptions_error(response)
         } else {
-            crate::operation_deser::parse_describe_event_subscriptions_response(response)
+            crate::operation_ser::parse_describe_event_subscriptions_response(response)
         }
     }
 }
@@ -1248,9 +1248,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeOrderableDBInstanceO
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_orderable_db_instance_options_error(response)
+            crate::operation_ser::parse_describe_orderable_db_instance_options_error(response)
         } else {
-            crate::operation_deser::parse_describe_orderable_db_instance_options_response(response)
+            crate::operation_ser::parse_describe_orderable_db_instance_options_response(response)
         }
     }
 }
@@ -1277,9 +1277,9 @@ impl smithy_http::response::ParseStrictResponse for DescribePendingMaintenanceAc
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_pending_maintenance_actions_error(response)
+            crate::operation_ser::parse_describe_pending_maintenance_actions_error(response)
         } else {
-            crate::operation_deser::parse_describe_pending_maintenance_actions_response(response)
+            crate::operation_ser::parse_describe_pending_maintenance_actions_response(response)
         }
     }
 }
@@ -1307,11 +1307,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeValidDBInstanceModif
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_valid_db_instance_modifications_error(response)
+            crate::operation_ser::parse_describe_valid_db_instance_modifications_error(response)
         } else {
-            crate::operation_deser::parse_describe_valid_db_instance_modifications_response(
-                response,
-            )
+            crate::operation_ser::parse_describe_valid_db_instance_modifications_response(response)
         }
     }
 }
@@ -1344,9 +1342,9 @@ impl smithy_http::response::ParseStrictResponse for FailoverDBCluster {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_failover_db_cluster_error(response)
+            crate::operation_ser::parse_failover_db_cluster_error(response)
         } else {
-            crate::operation_deser::parse_failover_db_cluster_response(response)
+            crate::operation_ser::parse_failover_db_cluster_response(response)
         }
     }
 }
@@ -1372,9 +1370,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::operation_ser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::operation_ser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -1401,9 +1399,9 @@ impl smithy_http::response::ParseStrictResponse for ModifyDBCluster {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_modify_db_cluster_error(response)
+            crate::operation_ser::parse_modify_db_cluster_error(response)
         } else {
-            crate::operation_deser::parse_modify_db_cluster_response(response)
+            crate::operation_ser::parse_modify_db_cluster_response(response)
         }
     }
 }
@@ -1429,9 +1427,9 @@ impl smithy_http::response::ParseStrictResponse for ModifyDBClusterEndpoint {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_modify_db_cluster_endpoint_error(response)
+            crate::operation_ser::parse_modify_db_cluster_endpoint_error(response)
         } else {
-            crate::operation_deser::parse_modify_db_cluster_endpoint_response(response)
+            crate::operation_ser::parse_modify_db_cluster_endpoint_response(response)
         }
     }
 }
@@ -1476,9 +1474,9 @@ impl smithy_http::response::ParseStrictResponse for ModifyDBClusterParameterGrou
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_modify_db_cluster_parameter_group_error(response)
+            crate::operation_ser::parse_modify_db_cluster_parameter_group_error(response)
         } else {
-            crate::operation_deser::parse_modify_db_cluster_parameter_group_response(response)
+            crate::operation_ser::parse_modify_db_cluster_parameter_group_response(response)
         }
     }
 }
@@ -1517,9 +1515,9 @@ impl smithy_http::response::ParseStrictResponse for ModifyDBClusterSnapshotAttri
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_modify_db_cluster_snapshot_attribute_error(response)
+            crate::operation_ser::parse_modify_db_cluster_snapshot_attribute_error(response)
         } else {
-            crate::operation_deser::parse_modify_db_cluster_snapshot_attribute_response(response)
+            crate::operation_ser::parse_modify_db_cluster_snapshot_attribute_response(response)
         }
     }
 }
@@ -1547,9 +1545,9 @@ impl smithy_http::response::ParseStrictResponse for ModifyDBInstance {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_modify_db_instance_error(response)
+            crate::operation_ser::parse_modify_db_instance_error(response)
         } else {
-            crate::operation_deser::parse_modify_db_instance_response(response)
+            crate::operation_ser::parse_modify_db_instance_response(response)
         }
     }
 }
@@ -1594,9 +1592,9 @@ impl smithy_http::response::ParseStrictResponse for ModifyDBParameterGroup {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_modify_db_parameter_group_error(response)
+            crate::operation_ser::parse_modify_db_parameter_group_error(response)
         } else {
-            crate::operation_deser::parse_modify_db_parameter_group_response(response)
+            crate::operation_ser::parse_modify_db_parameter_group_response(response)
         }
     }
 }
@@ -1623,9 +1621,9 @@ impl smithy_http::response::ParseStrictResponse for ModifyDBSubnetGroup {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_modify_db_subnet_group_error(response)
+            crate::operation_ser::parse_modify_db_subnet_group_error(response)
         } else {
-            crate::operation_deser::parse_modify_db_subnet_group_response(response)
+            crate::operation_ser::parse_modify_db_subnet_group_response(response)
         }
     }
 }
@@ -1655,9 +1653,9 @@ impl smithy_http::response::ParseStrictResponse for ModifyEventSubscription {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_modify_event_subscription_error(response)
+            crate::operation_ser::parse_modify_event_subscription_error(response)
         } else {
-            crate::operation_deser::parse_modify_event_subscription_response(response)
+            crate::operation_ser::parse_modify_event_subscription_response(response)
         }
     }
 }
@@ -1683,9 +1681,9 @@ impl smithy_http::response::ParseStrictResponse for PromoteReadReplicaDBCluster 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_promote_read_replica_db_cluster_error(response)
+            crate::operation_ser::parse_promote_read_replica_db_cluster_error(response)
         } else {
-            crate::operation_deser::parse_promote_read_replica_db_cluster_response(response)
+            crate::operation_ser::parse_promote_read_replica_db_cluster_response(response)
         }
     }
 }
@@ -1715,9 +1713,9 @@ impl smithy_http::response::ParseStrictResponse for RebootDBInstance {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_reboot_db_instance_error(response)
+            crate::operation_ser::parse_reboot_db_instance_error(response)
         } else {
-            crate::operation_deser::parse_reboot_db_instance_response(response)
+            crate::operation_ser::parse_reboot_db_instance_response(response)
         }
     }
 }
@@ -1743,9 +1741,9 @@ impl smithy_http::response::ParseStrictResponse for RemoveRoleFromDBCluster {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_remove_role_from_db_cluster_error(response)
+            crate::operation_ser::parse_remove_role_from_db_cluster_error(response)
         } else {
-            crate::operation_deser::parse_remove_role_from_db_cluster_response(response)
+            crate::operation_ser::parse_remove_role_from_db_cluster_response(response)
         }
     }
 }
@@ -1771,9 +1769,9 @@ impl smithy_http::response::ParseStrictResponse for RemoveSourceIdentifierFromSu
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_remove_source_identifier_from_subscription_error(response)
+            crate::operation_ser::parse_remove_source_identifier_from_subscription_error(response)
         } else {
-            crate::operation_deser::parse_remove_source_identifier_from_subscription_response(
+            crate::operation_ser::parse_remove_source_identifier_from_subscription_response(
                 response,
             )
         }
@@ -1801,9 +1799,9 @@ impl smithy_http::response::ParseStrictResponse for RemoveTagsFromResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_remove_tags_from_resource_error(response)
+            crate::operation_ser::parse_remove_tags_from_resource_error(response)
         } else {
-            crate::operation_deser::parse_remove_tags_from_resource_response(response)
+            crate::operation_ser::parse_remove_tags_from_resource_response(response)
         }
     }
 }
@@ -1836,9 +1834,9 @@ impl smithy_http::response::ParseStrictResponse for ResetDBClusterParameterGroup
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_reset_db_cluster_parameter_group_error(response)
+            crate::operation_ser::parse_reset_db_cluster_parameter_group_error(response)
         } else {
-            crate::operation_deser::parse_reset_db_cluster_parameter_group_response(response)
+            crate::operation_ser::parse_reset_db_cluster_parameter_group_response(response)
         }
     }
 }
@@ -1870,9 +1868,9 @@ impl smithy_http::response::ParseStrictResponse for ResetDBParameterGroup {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_reset_db_parameter_group_error(response)
+            crate::operation_ser::parse_reset_db_parameter_group_error(response)
         } else {
-            crate::operation_deser::parse_reset_db_parameter_group_response(response)
+            crate::operation_ser::parse_reset_db_parameter_group_response(response)
         }
     }
 }
@@ -1903,9 +1901,9 @@ impl smithy_http::response::ParseStrictResponse for RestoreDBClusterFromSnapshot
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_restore_db_cluster_from_snapshot_error(response)
+            crate::operation_ser::parse_restore_db_cluster_from_snapshot_error(response)
         } else {
-            crate::operation_deser::parse_restore_db_cluster_from_snapshot_response(response)
+            crate::operation_ser::parse_restore_db_cluster_from_snapshot_response(response)
         }
     }
 }
@@ -1943,9 +1941,9 @@ impl smithy_http::response::ParseStrictResponse for RestoreDBClusterToPointInTim
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_restore_db_cluster_to_point_in_time_error(response)
+            crate::operation_ser::parse_restore_db_cluster_to_point_in_time_error(response)
         } else {
-            crate::operation_deser::parse_restore_db_cluster_to_point_in_time_response(response)
+            crate::operation_ser::parse_restore_db_cluster_to_point_in_time_response(response)
         }
     }
 }
@@ -1970,9 +1968,9 @@ impl smithy_http::response::ParseStrictResponse for StartDBCluster {
         std::result::Result<crate::output::StartDbClusterOutput, crate::error::StartDBClusterError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_db_cluster_error(response)
+            crate::operation_ser::parse_start_db_cluster_error(response)
         } else {
-            crate::operation_deser::parse_start_db_cluster_response(response)
+            crate::operation_ser::parse_start_db_cluster_response(response)
         }
     }
 }
@@ -2000,9 +1998,9 @@ impl smithy_http::response::ParseStrictResponse for StopDBCluster {
         std::result::Result<crate::output::StopDbClusterOutput, crate::error::StopDBClusterError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_db_cluster_error(response)
+            crate::operation_ser::parse_stop_db_cluster_error(response)
         } else {
-            crate::operation_deser::parse_stop_db_cluster_response(response)
+            crate::operation_ser::parse_stop_db_cluster_response(response)
         }
     }
 }

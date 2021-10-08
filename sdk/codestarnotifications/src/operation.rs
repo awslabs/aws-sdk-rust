@@ -22,9 +22,9 @@ impl smithy_http::response::ParseStrictResponse for CreateNotificationRule {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_notification_rule_error(response)
+            crate::operation_ser::parse_create_notification_rule_error(response)
         } else {
-            crate::operation_deser::parse_create_notification_rule_response(response)
+            crate::operation_ser::parse_create_notification_rule_response(response)
         }
     }
 }
@@ -50,9 +50,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteNotificationRule {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_notification_rule_error(response)
+            crate::operation_ser::parse_delete_notification_rule_error(response)
         } else {
-            crate::operation_deser::parse_delete_notification_rule_response(response)
+            crate::operation_ser::parse_delete_notification_rule_response(response)
         }
     }
 }
@@ -76,9 +76,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteTarget {
         std::result::Result<crate::output::DeleteTargetOutput, crate::error::DeleteTargetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_target_error(response)
+            crate::operation_ser::parse_delete_target_error(response)
         } else {
-            crate::operation_deser::parse_delete_target_response(response)
+            crate::operation_ser::parse_delete_target_response(response)
         }
     }
 }
@@ -104,9 +104,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeNotificationRule {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_notification_rule_error(response)
+            crate::operation_ser::parse_describe_notification_rule_error(response)
         } else {
-            crate::operation_deser::parse_describe_notification_rule_response(response)
+            crate::operation_ser::parse_describe_notification_rule_response(response)
         }
     }
 }
@@ -130,9 +130,9 @@ impl smithy_http::response::ParseStrictResponse for ListEventTypes {
         std::result::Result<crate::output::ListEventTypesOutput, crate::error::ListEventTypesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_event_types_error(response)
+            crate::operation_ser::parse_list_event_types_error(response)
         } else {
-            crate::operation_deser::parse_list_event_types_response(response)
+            crate::operation_ser::parse_list_event_types_response(response)
         }
     }
 }
@@ -158,9 +158,9 @@ impl smithy_http::response::ParseStrictResponse for ListNotificationRules {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_notification_rules_error(response)
+            crate::operation_ser::parse_list_notification_rules_error(response)
         } else {
-            crate::operation_deser::parse_list_notification_rules_response(response)
+            crate::operation_ser::parse_list_notification_rules_response(response)
         }
     }
 }
@@ -186,9 +186,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::operation_ser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::operation_ser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -212,9 +212,9 @@ impl smithy_http::response::ParseStrictResponse for ListTargets {
         std::result::Result<crate::output::ListTargetsOutput, crate::error::ListTargetsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_targets_error(response)
+            crate::operation_ser::parse_list_targets_error(response)
         } else {
-            crate::operation_deser::parse_list_targets_response(response)
+            crate::operation_ser::parse_list_targets_response(response)
         }
     }
 }
@@ -239,9 +239,9 @@ impl smithy_http::response::ParseStrictResponse for Subscribe {
     type Output = std::result::Result<crate::output::SubscribeOutput, crate::error::SubscribeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_subscribe_error(response)
+            crate::operation_ser::parse_subscribe_error(response)
         } else {
-            crate::operation_deser::parse_subscribe_response(response)
+            crate::operation_ser::parse_subscribe_response(response)
         }
     }
 }
@@ -265,9 +265,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::operation_ser::parse_tag_resource_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::operation_ser::parse_tag_resource_response(response)
         }
     }
 }
@@ -293,9 +293,9 @@ impl smithy_http::response::ParseStrictResponse for Unsubscribe {
         std::result::Result<crate::output::UnsubscribeOutput, crate::error::UnsubscribeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_unsubscribe_error(response)
+            crate::operation_ser::parse_unsubscribe_error(response)
         } else {
-            crate::operation_deser::parse_unsubscribe_response(response)
+            crate::operation_ser::parse_unsubscribe_response(response)
         }
     }
 }
@@ -320,9 +320,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::operation_ser::parse_untag_resource_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::operation_ser::parse_untag_resource_response(response)
         }
     }
 }
@@ -353,9 +353,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateNotificationRule {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_notification_rule_error(response)
+            crate::operation_ser::parse_update_notification_rule_error(response)
         } else {
-            crate::operation_deser::parse_update_notification_rule_response(response)
+            crate::operation_ser::parse_update_notification_rule_response(response)
         }
     }
 }

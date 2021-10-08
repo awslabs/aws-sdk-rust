@@ -21,9 +21,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeEntitiesDetectionV2J
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_entities_detection_v2_job_error(response)
+            crate::operation_ser::parse_describe_entities_detection_v2_job_error(response)
         } else {
-            crate::operation_deser::parse_describe_entities_detection_v2_job_response(response)
+            crate::operation_ser::parse_describe_entities_detection_v2_job_response(response)
         }
     }
 }
@@ -50,9 +50,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeICD10CMInferenceJob 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_icd10_cm_inference_job_error(response)
+            crate::operation_ser::parse_describe_icd10_cm_inference_job_error(response)
         } else {
-            crate::operation_deser::parse_describe_icd10_cm_inference_job_response(response)
+            crate::operation_ser::parse_describe_icd10_cm_inference_job_response(response)
         }
     }
 }
@@ -79,9 +79,9 @@ impl smithy_http::response::ParseStrictResponse for DescribePHIDetectionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_phi_detection_job_error(response)
+            crate::operation_ser::parse_describe_phi_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_describe_phi_detection_job_response(response)
+            crate::operation_ser::parse_describe_phi_detection_job_response(response)
         }
     }
 }
@@ -108,9 +108,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeRxNormInferenceJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_rx_norm_inference_job_error(response)
+            crate::operation_ser::parse_describe_rx_norm_inference_job_error(response)
         } else {
-            crate::operation_deser::parse_describe_rx_norm_inference_job_response(response)
+            crate::operation_ser::parse_describe_rx_norm_inference_job_response(response)
         }
     }
 }
@@ -137,9 +137,9 @@ impl smithy_http::response::ParseStrictResponse for DetectEntities {
         std::result::Result<crate::output::DetectEntitiesOutput, crate::error::DetectEntitiesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_detect_entities_error(response)
+            crate::operation_ser::parse_detect_entities_error(response)
         } else {
-            crate::operation_deser::parse_detect_entities_response(response)
+            crate::operation_ser::parse_detect_entities_response(response)
         }
     }
 }
@@ -174,9 +174,9 @@ impl smithy_http::response::ParseStrictResponse for DetectEntitiesV2 {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_detect_entities_v2_error(response)
+            crate::operation_ser::parse_detect_entities_v2_error(response)
         } else {
-            crate::operation_deser::parse_detect_entities_v2_response(response)
+            crate::operation_ser::parse_detect_entities_v2_response(response)
         }
     }
 }
@@ -201,9 +201,9 @@ impl smithy_http::response::ParseStrictResponse for DetectPHI {
     type Output = std::result::Result<crate::output::DetectPhiOutput, crate::error::DetectPHIError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_detect_phi_error(response)
+            crate::operation_ser::parse_detect_phi_error(response)
         } else {
-            crate::operation_deser::parse_detect_phi_response(response)
+            crate::operation_ser::parse_detect_phi_response(response)
         }
     }
 }
@@ -230,9 +230,9 @@ impl smithy_http::response::ParseStrictResponse for InferICD10CM {
         std::result::Result<crate::output::InferIcd10CmOutput, crate::error::InferICD10CMError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_infer_icd10_cm_error(response)
+            crate::operation_ser::parse_infer_icd10_cm_error(response)
         } else {
-            crate::operation_deser::parse_infer_icd10_cm_response(response)
+            crate::operation_ser::parse_infer_icd10_cm_response(response)
         }
     }
 }
@@ -258,9 +258,9 @@ impl smithy_http::response::ParseStrictResponse for InferRxNorm {
         std::result::Result<crate::output::InferRxNormOutput, crate::error::InferRxNormError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_infer_rx_norm_error(response)
+            crate::operation_ser::parse_infer_rx_norm_error(response)
         } else {
-            crate::operation_deser::parse_infer_rx_norm_response(response)
+            crate::operation_ser::parse_infer_rx_norm_response(response)
         }
     }
 }
@@ -286,9 +286,9 @@ impl smithy_http::response::ParseStrictResponse for ListEntitiesDetectionV2Jobs 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_entities_detection_v2_jobs_error(response)
+            crate::operation_ser::parse_list_entities_detection_v2_jobs_error(response)
         } else {
-            crate::operation_deser::parse_list_entities_detection_v2_jobs_response(response)
+            crate::operation_ser::parse_list_entities_detection_v2_jobs_response(response)
         }
     }
 }
@@ -314,9 +314,9 @@ impl smithy_http::response::ParseStrictResponse for ListICD10CMInferenceJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_icd10_cm_inference_jobs_error(response)
+            crate::operation_ser::parse_list_icd10_cm_inference_jobs_error(response)
         } else {
-            crate::operation_deser::parse_list_icd10_cm_inference_jobs_response(response)
+            crate::operation_ser::parse_list_icd10_cm_inference_jobs_response(response)
         }
     }
 }
@@ -343,9 +343,9 @@ impl smithy_http::response::ParseStrictResponse for ListPHIDetectionJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_phi_detection_jobs_error(response)
+            crate::operation_ser::parse_list_phi_detection_jobs_error(response)
         } else {
-            crate::operation_deser::parse_list_phi_detection_jobs_response(response)
+            crate::operation_ser::parse_list_phi_detection_jobs_response(response)
         }
     }
 }
@@ -371,9 +371,9 @@ impl smithy_http::response::ParseStrictResponse for ListRxNormInferenceJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_rx_norm_inference_jobs_error(response)
+            crate::operation_ser::parse_list_rx_norm_inference_jobs_error(response)
         } else {
-            crate::operation_deser::parse_list_rx_norm_inference_jobs_response(response)
+            crate::operation_ser::parse_list_rx_norm_inference_jobs_response(response)
         }
     }
 }
@@ -400,9 +400,9 @@ impl smithy_http::response::ParseStrictResponse for StartEntitiesDetectionV2Job 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_entities_detection_v2_job_error(response)
+            crate::operation_ser::parse_start_entities_detection_v2_job_error(response)
         } else {
-            crate::operation_deser::parse_start_entities_detection_v2_job_response(response)
+            crate::operation_ser::parse_start_entities_detection_v2_job_response(response)
         }
     }
 }
@@ -430,9 +430,9 @@ impl smithy_http::response::ParseStrictResponse for StartICD10CMInferenceJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_icd10_cm_inference_job_error(response)
+            crate::operation_ser::parse_start_icd10_cm_inference_job_error(response)
         } else {
-            crate::operation_deser::parse_start_icd10_cm_inference_job_response(response)
+            crate::operation_ser::parse_start_icd10_cm_inference_job_response(response)
         }
     }
 }
@@ -459,9 +459,9 @@ impl smithy_http::response::ParseStrictResponse for StartPHIDetectionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_phi_detection_job_error(response)
+            crate::operation_ser::parse_start_phi_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_start_phi_detection_job_response(response)
+            crate::operation_ser::parse_start_phi_detection_job_response(response)
         }
     }
 }
@@ -489,9 +489,9 @@ impl smithy_http::response::ParseStrictResponse for StartRxNormInferenceJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_rx_norm_inference_job_error(response)
+            crate::operation_ser::parse_start_rx_norm_inference_job_error(response)
         } else {
-            crate::operation_deser::parse_start_rx_norm_inference_job_response(response)
+            crate::operation_ser::parse_start_rx_norm_inference_job_response(response)
         }
     }
 }
@@ -517,9 +517,9 @@ impl smithy_http::response::ParseStrictResponse for StopEntitiesDetectionV2Job {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_entities_detection_v2_job_error(response)
+            crate::operation_ser::parse_stop_entities_detection_v2_job_error(response)
         } else {
-            crate::operation_deser::parse_stop_entities_detection_v2_job_response(response)
+            crate::operation_ser::parse_stop_entities_detection_v2_job_response(response)
         }
     }
 }
@@ -545,9 +545,9 @@ impl smithy_http::response::ParseStrictResponse for StopICD10CMInferenceJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_icd10_cm_inference_job_error(response)
+            crate::operation_ser::parse_stop_icd10_cm_inference_job_error(response)
         } else {
-            crate::operation_deser::parse_stop_icd10_cm_inference_job_response(response)
+            crate::operation_ser::parse_stop_icd10_cm_inference_job_response(response)
         }
     }
 }
@@ -573,9 +573,9 @@ impl smithy_http::response::ParseStrictResponse for StopPHIDetectionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_phi_detection_job_error(response)
+            crate::operation_ser::parse_stop_phi_detection_job_error(response)
         } else {
-            crate::operation_deser::parse_stop_phi_detection_job_response(response)
+            crate::operation_ser::parse_stop_phi_detection_job_response(response)
         }
     }
 }
@@ -601,9 +601,9 @@ impl smithy_http::response::ParseStrictResponse for StopRxNormInferenceJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_rx_norm_inference_job_error(response)
+            crate::operation_ser::parse_stop_rx_norm_inference_job_error(response)
         } else {
-            crate::operation_deser::parse_stop_rx_norm_inference_job_response(response)
+            crate::operation_ser::parse_stop_rx_norm_inference_job_response(response)
         }
     }
 }

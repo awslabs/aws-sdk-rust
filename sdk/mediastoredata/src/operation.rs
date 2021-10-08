@@ -18,9 +18,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteObject {
         std::result::Result<crate::output::DeleteObjectOutput, crate::error::DeleteObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_object_error(response)
+            crate::operation_ser::parse_delete_object_error(response)
         } else {
-            crate::operation_deser::parse_delete_object_response(response)
+            crate::operation_ser::parse_delete_object_response(response)
         }
     }
 }
@@ -44,9 +44,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeObject {
         std::result::Result<crate::output::DescribeObjectOutput, crate::error::DescribeObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_object_error(response)
+            crate::operation_ser::parse_describe_object_error(response)
         } else {
-            crate::operation_deser::parse_describe_object_response(response)
+            crate::operation_ser::parse_describe_object_response(response)
         }
     }
 }
@@ -75,11 +75,11 @@ impl smithy_http::response::ParseHttpResponse for GetObject {
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_deser::parse_get_object(response))
+        Some(crate::operation_ser::parse_get_object(response))
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_deser::parse_get_object_error(response)
+        crate::operation_ser::parse_get_object_error(response)
     }
 }
 
@@ -102,9 +102,9 @@ impl smithy_http::response::ParseStrictResponse for ListItems {
     type Output = std::result::Result<crate::output::ListItemsOutput, crate::error::ListItemsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_items_error(response)
+            crate::operation_ser::parse_list_items_error(response)
         } else {
-            crate::operation_deser::parse_list_items_response(response)
+            crate::operation_ser::parse_list_items_response(response)
         }
     }
 }
@@ -127,9 +127,9 @@ impl smithy_http::response::ParseStrictResponse for PutObject {
     type Output = std::result::Result<crate::output::PutObjectOutput, crate::error::PutObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_object_error(response)
+            crate::operation_ser::parse_put_object_error(response)
         } else {
-            crate::operation_deser::parse_put_object_response(response)
+            crate::operation_ser::parse_put_object_response(response)
         }
     }
 }

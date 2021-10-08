@@ -74,8 +74,7 @@ async fn main() {
             );
         }
         Err(e) => {
-            println!("Got an error listing secrets:");
-            println!("{}", e);
+            println!("Got an error while getting a secret value: {}", e);
             process::exit(1);
         }
     };

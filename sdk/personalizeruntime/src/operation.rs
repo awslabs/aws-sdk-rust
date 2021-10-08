@@ -25,9 +25,9 @@ impl smithy_http::response::ParseStrictResponse for GetPersonalizedRanking {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_personalized_ranking_error(response)
+            crate::operation_ser::parse_get_personalized_ranking_error(response)
         } else {
-            crate::operation_deser::parse_get_personalized_ranking_response(response)
+            crate::operation_ser::parse_get_personalized_ranking_response(response)
         }
     }
 }
@@ -67,9 +67,9 @@ impl smithy_http::response::ParseStrictResponse for GetRecommendations {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_recommendations_error(response)
+            crate::operation_ser::parse_get_recommendations_error(response)
         } else {
-            crate::operation_deser::parse_get_recommendations_response(response)
+            crate::operation_ser::parse_get_recommendations_response(response)
         }
     }
 }

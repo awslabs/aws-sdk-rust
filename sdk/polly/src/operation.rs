@@ -21,9 +21,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteLexicon {
         std::result::Result<crate::output::DeleteLexiconOutput, crate::error::DeleteLexiconError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_lexicon_error(response)
+            crate::operation_ser::parse_delete_lexicon_error(response)
         } else {
-            crate::operation_deser::parse_delete_lexicon_response(response)
+            crate::operation_ser::parse_delete_lexicon_response(response)
         }
     }
 }
@@ -62,9 +62,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeVoices {
         std::result::Result<crate::output::DescribeVoicesOutput, crate::error::DescribeVoicesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_voices_error(response)
+            crate::operation_ser::parse_describe_voices_error(response)
         } else {
-            crate::operation_deser::parse_describe_voices_response(response)
+            crate::operation_ser::parse_describe_voices_response(response)
         }
     }
 }
@@ -89,9 +89,9 @@ impl smithy_http::response::ParseStrictResponse for GetLexicon {
         std::result::Result<crate::output::GetLexiconOutput, crate::error::GetLexiconError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_lexicon_error(response)
+            crate::operation_ser::parse_get_lexicon_error(response)
         } else {
-            crate::operation_deser::parse_get_lexicon_response(response)
+            crate::operation_ser::parse_get_lexicon_response(response)
         }
     }
 }
@@ -120,9 +120,9 @@ impl smithy_http::response::ParseStrictResponse for GetSpeechSynthesisTask {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_speech_synthesis_task_error(response)
+            crate::operation_ser::parse_get_speech_synthesis_task_error(response)
         } else {
-            crate::operation_deser::parse_get_speech_synthesis_task_response(response)
+            crate::operation_ser::parse_get_speech_synthesis_task_response(response)
         }
     }
 }
@@ -146,9 +146,9 @@ impl smithy_http::response::ParseStrictResponse for ListLexicons {
         std::result::Result<crate::output::ListLexiconsOutput, crate::error::ListLexiconsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_lexicons_error(response)
+            crate::operation_ser::parse_list_lexicons_error(response)
         } else {
-            crate::operation_deser::parse_list_lexicons_response(response)
+            crate::operation_ser::parse_list_lexicons_response(response)
         }
     }
 }
@@ -176,9 +176,9 @@ impl smithy_http::response::ParseStrictResponse for ListSpeechSynthesisTasks {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_speech_synthesis_tasks_error(response)
+            crate::operation_ser::parse_list_speech_synthesis_tasks_error(response)
         } else {
-            crate::operation_deser::parse_list_speech_synthesis_tasks_response(response)
+            crate::operation_ser::parse_list_speech_synthesis_tasks_response(response)
         }
     }
 }
@@ -207,9 +207,9 @@ impl smithy_http::response::ParseStrictResponse for PutLexicon {
         std::result::Result<crate::output::PutLexiconOutput, crate::error::PutLexiconError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_lexicon_error(response)
+            crate::operation_ser::parse_put_lexicon_error(response)
         } else {
-            crate::operation_deser::parse_put_lexicon_response(response)
+            crate::operation_ser::parse_put_lexicon_response(response)
         }
     }
 }
@@ -244,9 +244,9 @@ impl smithy_http::response::ParseStrictResponse for StartSpeechSynthesisTask {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_speech_synthesis_task_error(response)
+            crate::operation_ser::parse_start_speech_synthesis_task_error(response)
         } else {
-            crate::operation_deser::parse_start_speech_synthesis_task_response(response)
+            crate::operation_ser::parse_start_speech_synthesis_task_response(response)
         }
     }
 }
@@ -282,10 +282,10 @@ impl smithy_http::response::ParseHttpResponse for SynthesizeSpeech {
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_deser::parse_synthesize_speech(response))
+        Some(crate::operation_ser::parse_synthesize_speech(response))
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_deser::parse_synthesize_speech_error(response)
+        crate::operation_ser::parse_synthesize_speech_error(response)
     }
 }

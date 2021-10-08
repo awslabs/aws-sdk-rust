@@ -262,7 +262,7 @@ mod tests {
             connection.events().as_slice(),
             network_traffic.events.as_slice()
         );
-        let requests = inner.take_requests();
+        let requests = inner.take_requests().await;
         assert_eq!(
             requests[0].uri(),
             &Uri::from_static("https://www.example.com")

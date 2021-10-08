@@ -751,8 +751,7 @@ pub mod fluent_builders {
         /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the
         /// following types:</p>
         /// <p>
-        /// <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. Incident Manager is a
-        /// capability of Amazon Web Services Systems Manager.</p>
+        /// <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
         /// <p>
         /// <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
         pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1181,8 +1180,9 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         /// <p>The targets for the association. You can target instances by using tags, Amazon Web Services resource
-        /// groups, all instances in an Amazon Web Services account, or individual instance IDs. For more information about
-        /// choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the
+        /// groups, all instances in an Amazon Web Services account, or individual instance IDs. You can target all
+        /// instances in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
+        /// <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn targets(mut self, inp: impl Into<crate::model::Target>) -> Self {
             self.inner = self.inner.targets(inp);
@@ -1488,20 +1488,17 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document
-        /// (Amazon Web Services API)</a>
+        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a>
         /// </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document
-        /// (Amazon Web Services CLI)</a>
+        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a>
         /// </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document
-        /// (API)</a>
+        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>
         /// </p>
         /// </li>
         /// </ul>
@@ -4212,8 +4209,7 @@ pub mod fluent_builders {
         /// <code>PRODUCT</code>. For example, using the Command Line Interface (CLI), the
         /// following command fails:</p>
         /// <p>
-        /// <code>aws ssm describe-available-patches --filters
-        /// Key=CVE_ID,Values=CVE-2018-3615</code>
+        /// <code>aws ssm describe-available-patches --filters Key=CVE_ID,Values=CVE-2018-3615</code>
         /// </p>
         /// <p>However, the following command succeeds:</p>
         /// <p>
@@ -6737,7 +6733,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the OpsItem for which you want to delete an association between the OpsItem and a
-        /// related resource.</p>
+        /// related item.</p>
         pub fn ops_item_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ops_item_id(inp);
             self
@@ -6747,7 +6743,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the association for which you want to delete an association between the OpsItem
-        /// and a related resource.</p>
+        /// and a related item.</p>
         pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.association_id(inp);
             self
@@ -8333,12 +8329,11 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameter_filters`](Self::set_parameter_filters).
         /// <p>Filters to limit the request results.</p>
         /// <note>
-        /// <p>For <code>GetParametersByPath</code>, the following filter <code>Key</code> names are
-        /// supported: <code>Type</code>, <code>KeyId</code>, <code>Label</code>, and
-        /// <code>DataType</code>.</p>
-        /// <p>The following <code>Key</code> values are not supported for
-        /// <code>GetParametersByPath</code>: <code>tag</code>, <code>Name</code>, <code>Path</code>, and
-        /// <code>Tier</code>.</p>
+        /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>:
+        /// <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
+        /// <p>The following <code>Key</code> values aren't supported for
+        /// <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>,
+        /// <code>Path</code>, and <code>Tier</code>.</p>
         /// </note>
         pub fn parameter_filters(
             mut self,
@@ -11327,6 +11322,46 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
+        /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the
+        /// maintenance windows is reached. </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running
+        /// continue. The default value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CANCEL_TASK</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For Automation, Lambda, Step Functions tasks: When the cutoff
+        /// time is reached, any task invocations that are already running continue, but no new task
+        /// invocations are started.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Run Command tasks: When the cutoff time is reached, the system sends a <a>CancelCommand</a> operation that attempts to cancel the command associated with the
+        /// task. However, there is no guarantee that the command will be terminated and the underlying
+        /// process stopped.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p>
+        /// </li>
+        /// </ul>
+        pub fn cutoff_behavior(
+            mut self,
+            inp: crate::model::MaintenanceWindowTaskCutoffBehavior,
+        ) -> Self {
+            self.inner = self.inner.cutoff_behavior(inp);
+            self
+        }
+        pub fn set_cutoff_behavior(
+            mut self,
+            input: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+        ) -> Self {
+            self.inner = self.inner.set_cutoff_behavior(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct RemoveTagsFromResource<
@@ -11771,9 +11806,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a
-        /// custom document. To run a shared document belonging to another account, specify the document ARN.
-        /// For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a>
-        /// in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// custom document. To run a shared document belonging to another account, specify the document
+        /// Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared
+        /// SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <note>
+        /// <p>If you specify a document name or ARN that hasn't been shared with your account, you
+        /// receive an <code>InvalidDocument</code> error. </p>
+        /// </note>
         pub fn document_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.document_name(inp);
             self
@@ -12421,6 +12460,25 @@ pub mod fluent_builders {
         }
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>Indicates whether the change request can be approved automatically without the need for
+        /// manual approvals.</p>
+        /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting
+        /// <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code>
+        /// creates a change request that bypasses approver review.</p>
+        /// <note>
+        /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an
+        /// associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission
+        /// for this change request to run. If they don't, the change won't be processed until the calendar
+        /// state is again <code>OPEN</code>. </p>
+        /// </note>
+        pub fn auto_approve(mut self, inp: bool) -> Self {
+            self.inner = self.inner.auto_approve(inp);
+            self
+        }
+        pub fn set_auto_approve(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_auto_approve(input);
             self
         }
         /// Appends an item to `Runbooks`.
@@ -14058,6 +14116,46 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replace(input);
             self
         }
+        /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the
+        /// maintenance windows is reached. </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running
+        /// continue. The default value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CANCEL_TASK</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For Automation, Lambda, Step Functions tasks: When the cutoff
+        /// time is reached, any task invocations that are already running continue, but no new task
+        /// invocations are started.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Run Command tasks: When the cutoff time is reached, the system sends a <a>CancelCommand</a> operation that attempts to cancel the command associated with the
+        /// task. However, there is no guarantee that the command will be terminated and the underlying
+        /// process stopped.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p>
+        /// </li>
+        /// </ul>
+        pub fn cutoff_behavior(
+            mut self,
+            inp: crate::model::MaintenanceWindowTaskCutoffBehavior,
+        ) -> Self {
+            self.inner = self.inner.cutoff_behavior(inp);
+            self
+        }
+        pub fn set_cutoff_behavior(
+            mut self,
+            input: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+        ) -> Self {
+            self.inner = self.inner.set_cutoff_behavior(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct UpdateManagedInstanceRole<
@@ -14853,29 +14951,49 @@ pub mod fluent_builders {
             self.inner = self.inner.set_setting_id(input);
             self
         }
-        /// <p>The new value to specify for the service setting. For the
-        /// <code>/ssm/parameter-store/default-parameter-tier</code> setting ID, the setting value can be
-        /// one of the following.</p>
+        /// <p>The new value to specify for the service setting. The following list specifies the available
+        /// values for each setting.</p>
         /// <ul>
         /// <li>
-        /// <p>Standard</p>
+        /// <p>
+        /// <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
+        /// <code>Advanced</code>, <code>Intelligent-Tiering</code>
+        /// </p>
         /// </li>
         /// <li>
-        /// <p>Advanced</p>
+        /// <p>
+        /// <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
+        /// <code>false</code>
+        /// </p>
         /// </li>
         /// <li>
-        /// <p>Intelligent-Tiering</p>
+        /// <p>
+        /// <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or
+        /// <code>false</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or
+        /// <code>Disable</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or
+        /// <code>advanced</code>
+        /// </p>
         /// </li>
         /// </ul>
-        /// <p>For the <code>/ssm/parameter-store/high-throughput-enabled</code>, and
-        /// <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting value can be true or
-        /// false.</p>
-        /// <p>For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the setting
-        /// value can be <code>CloudWatch</code>.</p>
-        /// <p>For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting
-        /// value can be the name of an Amazon CloudWatch Logs log group.</p>
-        /// <p>For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the
-        /// setting value can be <code>Enable</code> or <code>Disable</code>.</p>
         pub fn setting_value(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.setting_value(inp);
             self

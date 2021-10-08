@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>CodeBuild</fullname>
 //! <p>CodeBuild is a fully managed build service in the cloud. CodeBuild compiles your source code,
 //! runs unit tests, and produces artifacts that are ready to deploy. CodeBuild eliminates the
@@ -35,7 +36,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

@@ -3,23 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use applicationautoscaling::model::ServiceNamespace;
-use applicationautoscaling::{Client, Error, Region};
 use aws_config::meta::region::RegionProviderChain;
+use aws_sdk_applicationautoscaling::model::ServiceNamespace;
+use aws_sdk_applicationautoscaling::{Client, Error, Region, PKG_VERSION};
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The region
+    /// The AWS Region.
     #[structopt(short, long)]
     region: Option<String>,
 
-    /// Whether to display additional information
+    /// Whether to display additional information.
     #[structopt(short, long)]
     verbose: bool,
 }
 
-/// Lists your Amazon Cognito identities
+// Lists the Application Auto Scaling policies.
+async fn show_policies(client: &Client) -> Result<(), Error> {
+    let response = client
+        .describe_scaling_policies()
+        .service_namespace(ServiceNamespace::Ec2)
+        .send()
+        .await?;
+    if let Some(policies) = response.scaling_policies {
+        println!("Auto Scaling Policies:");
+        for policy in policies {
+            println!("{:?}\n", policy);
+        }
+    }
+    println!("Next token: {:?}", response.next_token);
+
+    Ok(())
+}
+
+/// Lists your Application Auto Scaling policies in the Region.
 /// # Arguments
 ///
 /// * `[-r REGION]` - The region containing the buckets.
@@ -38,10 +56,7 @@ async fn main() -> Result<(), Error> {
     let shared_config = aws_config::from_env().region(region_provider).load().await;
 
     if verbose {
-        println!(
-            "Application Auto Scaling client version: {}",
-            applicationautoscaling::PKG_VERSION
-        );
+        println!("Application Auto Scaling client version: {}", PKG_VERSION);
         println!(
             "Region:                                  {:?}",
             shared_config.region().unwrap()
@@ -51,18 +66,5 @@ async fn main() -> Result<(), Error> {
 
     let client = Client::new(&shared_config);
 
-    let response = client
-        .describe_scaling_policies()
-        .service_namespace(ServiceNamespace::Ec2)
-        .send()
-        .await?;
-    if let Some(policies) = response.scaling_policies {
-        println!("Auto Scaling Policies:");
-        for policy in policies {
-            println!("{:?}\n", policy);
-        }
-    }
-    println!("Next token: {:?}", response.next_token);
-
-    Ok(())
+    show_policies(&client).await
 }

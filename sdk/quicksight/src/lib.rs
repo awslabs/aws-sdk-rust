@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon QuickSight API Reference</fullname>
 //! <p>Amazon QuickSight is a fully managed, serverless business intelligence service for the
 //! Amazon Web Services Cloud that makes it easy to extend data and insights to every user in your
@@ -29,7 +30,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

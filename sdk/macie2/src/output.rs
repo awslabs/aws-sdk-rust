@@ -616,6 +616,74 @@ impl ListMembersOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListManagedDataIdentifiersOutput {
+    /// <p>An array of objects, one for each managed data identifier.</p>
+    pub items: std::option::Option<std::vec::Vec<crate::model::ManagedDataIdentifierSummary>>,
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListManagedDataIdentifiersOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListManagedDataIdentifiersOutput");
+        formatter.field("items", &self.items);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListManagedDataIdentifiersOutput`](crate::output::ListManagedDataIdentifiersOutput)
+pub mod list_managed_data_identifiers_output {
+    /// A builder for [`ListManagedDataIdentifiersOutput`](crate::output::ListManagedDataIdentifiersOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) items:
+            std::option::Option<std::vec::Vec<crate::model::ManagedDataIdentifierSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn items(
+            mut self,
+            input: impl Into<crate::model::ManagedDataIdentifierSummary>,
+        ) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input.into());
+            self.items = Some(v);
+            self
+        }
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ManagedDataIdentifierSummary>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListManagedDataIdentifiersOutput`](crate::output::ListManagedDataIdentifiersOutput)
+        pub fn build(self) -> crate::output::ListManagedDataIdentifiersOutput {
+            crate::output::ListManagedDataIdentifiersOutput {
+                items: self.items,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListManagedDataIdentifiersOutput {
+    /// Creates a new builder-style object to manufacture [`ListManagedDataIdentifiersOutput`](crate::output::ListManagedDataIdentifiersOutput)
+    pub fn builder() -> crate::output::list_managed_data_identifiers_output::Builder {
+        crate::output::list_managed_data_identifiers_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInvitationsOutput {
     /// <p>An array of objects, one for each invitation that was received by the account.</p>
     pub invitations: std::option::Option<std::vec::Vec<crate::model::Invitation>>,
@@ -1814,7 +1882,7 @@ pub struct GetCustomDataIdentifierOutput {
     pub ignore_words: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array that lists specific character sequences (keywords), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
     pub keywords: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern.</p>
+    /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern.</p>
     pub maximum_match_distance: i32,
     /// <p>The custom name of the custom data identifier.</p>
     pub name: std::option::Option<std::string::String>,
@@ -1933,7 +2001,7 @@ pub mod get_custom_data_identifier_output {
             self.keywords = input;
             self
         }
-        /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern.</p>
+        /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern.</p>
         pub fn maximum_match_distance(mut self, input: i32) -> Self {
             self.maximum_match_distance = Some(input);
             self
@@ -2082,9 +2150,9 @@ pub struct GetBucketStatisticsOutput {
     pub last_updated: std::option::Option<smithy_types::Instant>,
     /// <p>The total number of objects in the buckets.</p>
     pub object_count: i64,
-    /// <p>The total storage size, in bytes, of the buckets.</p> <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
+    /// <p>The total storage size, in bytes, of the buckets.</p> <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
     pub size_in_bytes: i64,
-    /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p> <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
+    /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p> <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
     pub size_in_bytes_compressed: i64,
     /// <p>The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub unclassifiable_object_count: std::option::Option<crate::model::ObjectLevelStatistics>,
@@ -2269,7 +2337,7 @@ pub mod get_bucket_statistics_output {
             self.object_count = input;
             self
         }
-        /// <p>The total storage size, in bytes, of the buckets.</p> <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
+        /// <p>The total storage size, in bytes, of the buckets.</p> <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
         pub fn size_in_bytes(mut self, input: i64) -> Self {
             self.size_in_bytes = Some(input);
             self
@@ -2278,7 +2346,7 @@ pub mod get_bucket_statistics_output {
             self.size_in_bytes = input;
             self
         }
-        /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p> <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
+        /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p> <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
         pub fn size_in_bytes_compressed(mut self, input: i64) -> Self {
             self.size_in_bytes_compressed = Some(input);
             self
@@ -2664,17 +2732,17 @@ pub struct DescribeClassificationJobOutput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
     pub created_at: std::option::Option<smithy_types::Instant>,
-    /// <p>The custom data identifiers that the job uses to analyze data.</p>
+    /// <p>An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value is null if the job uses only managed data identifiers to analyze data.</p>
     pub custom_data_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The custom description of the job.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's created.</p>
+    /// <p>For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects immediately after the job was created (true). If you configured the job to analyze only those objects that were created or changed after the job was created and before the job's first scheduled run, this value is false. This value is also false for a one-time job.</p>
     pub initial_run: bool,
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the job.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
+    /// <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>The schedule for running the job. Possible values are:</p> <ul><li><p>ONE_TIME - The job runs only once.</p></li> <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li></ul>
     pub job_type: std::option::Option<crate::model::JobType>,
@@ -2682,13 +2750,18 @@ pub struct DescribeClassificationJobOutput {
     pub last_run_error_status: std::option::Option<crate::model::LastRunErrorStatus>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started.</p>
     pub last_run_time: std::option::Option<smithy_types::Instant>,
+    /// <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+    pub managed_data_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p> <ul><li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li> <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed data identifiers.</p></li></ul> <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+    pub managed_data_identifier_selector:
+        std::option::Option<crate::model::ManagedDataIdentifierSelector>,
     /// <p>The custom name of the job.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
     pub s3_job_definition: std::option::Option<crate::model::S3JobDefinition>,
     /// <p>The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.</p>
     pub sampling_percentage: i32,
-    /// <p>The recurrence pattern for running the job. If the job is configured to run only once, this value is null.</p>
+    /// <p>The recurrence pattern for running the job. This value is null if the job is configured to run only once.</p>
     pub schedule_frequency: std::option::Option<crate::model::JobScheduleFrequency>,
     /// <p>The number of times that the job has run and processing statistics for the job's current run.</p>
     pub statistics: std::option::Option<crate::model::Statistics>,
@@ -2715,6 +2788,14 @@ impl std::fmt::Debug for DescribeClassificationJobOutput {
         formatter.field("job_type", &self.job_type);
         formatter.field("last_run_error_status", &self.last_run_error_status);
         formatter.field("last_run_time", &self.last_run_time);
+        formatter.field(
+            "managed_data_identifier_ids",
+            &self.managed_data_identifier_ids,
+        );
+        formatter.field(
+            "managed_data_identifier_selector",
+            &self.managed_data_identifier_selector,
+        );
         formatter.field("name", &self.name);
         formatter.field("s3_job_definition", &self.s3_job_definition);
         formatter.field("sampling_percentage", &self.sampling_percentage);
@@ -2743,6 +2824,10 @@ pub mod describe_classification_job_output {
         pub(crate) job_type: std::option::Option<crate::model::JobType>,
         pub(crate) last_run_error_status: std::option::Option<crate::model::LastRunErrorStatus>,
         pub(crate) last_run_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) managed_data_identifier_ids:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) managed_data_identifier_selector:
+            std::option::Option<crate::model::ManagedDataIdentifierSelector>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) s3_job_definition: std::option::Option<crate::model::S3JobDefinition>,
         pub(crate) sampling_percentage: std::option::Option<i32>,
@@ -2794,7 +2879,7 @@ pub mod describe_classification_job_output {
             self.description = input;
             self
         }
-        /// <p>Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's created.</p>
+        /// <p>For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects immediately after the job was created (true). If you configured the job to analyze only those objects that were created or changed after the job was created and before the job's first scheduled run, this value is false. This value is also false for a one-time job.</p>
         pub fn initial_run(mut self, input: bool) -> Self {
             self.initial_run = Some(input);
             self
@@ -2821,7 +2906,7 @@ pub mod describe_classification_job_output {
             self.job_id = input;
             self
         }
-        /// <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
+        /// <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
@@ -2866,6 +2951,37 @@ pub mod describe_classification_job_output {
             self.last_run_time = input;
             self
         }
+        pub fn managed_data_identifier_ids(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.managed_data_identifier_ids.unwrap_or_default();
+            v.push(input.into());
+            self.managed_data_identifier_ids = Some(v);
+            self
+        }
+        pub fn set_managed_data_identifier_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.managed_data_identifier_ids = input;
+            self
+        }
+        /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p> <ul><li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li> <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed data identifiers.</p></li></ul> <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+        pub fn managed_data_identifier_selector(
+            mut self,
+            input: crate::model::ManagedDataIdentifierSelector,
+        ) -> Self {
+            self.managed_data_identifier_selector = Some(input);
+            self
+        }
+        pub fn set_managed_data_identifier_selector(
+            mut self,
+            input: std::option::Option<crate::model::ManagedDataIdentifierSelector>,
+        ) -> Self {
+            self.managed_data_identifier_selector = input;
+            self
+        }
         /// <p>The custom name of the job.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -2896,7 +3012,7 @@ pub mod describe_classification_job_output {
             self.sampling_percentage = input;
             self
         }
-        /// <p>The recurrence pattern for running the job. If the job is configured to run only once, this value is null.</p>
+        /// <p>The recurrence pattern for running the job. This value is null if the job is configured to run only once.</p>
         pub fn schedule_frequency(mut self, input: crate::model::JobScheduleFrequency) -> Self {
             self.schedule_frequency = Some(input);
             self
@@ -2965,6 +3081,8 @@ pub mod describe_classification_job_output {
                 job_type: self.job_type,
                 last_run_error_status: self.last_run_error_status,
                 last_run_time: self.last_run_time,
+                managed_data_identifier_ids: self.managed_data_identifier_ids,
+                managed_data_identifier_selector: self.managed_data_identifier_selector,
                 name: self.name,
                 s3_job_definition: self.s3_job_definition,
                 sampling_percentage: self.sampling_percentage.unwrap_or_default(),
@@ -3544,7 +3662,7 @@ pub struct BatchGetCustomDataIdentifiersOutput {
     /// <p>An array of objects, one for each custom data identifier that meets the criteria specified in the request.</p>
     pub custom_data_identifiers:
         std::option::Option<std::vec::Vec<crate::model::BatchGetCustomDataIdentifierSummary>>,
-    /// <p>An array of identifiers, one for each identifier that was specified in the request, but doesn't correlate to an existing custom data identifier.</p>
+    /// <p>An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but doesn't correlate to an existing custom data identifier.</p>
     pub not_found_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for BatchGetCustomDataIdentifiersOutput {

@@ -1419,6 +1419,24 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::ListManagedDataIdentifiersError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListManagedDataIdentifiersError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListManagedDataIdentifiersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::ListMembersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

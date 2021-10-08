@@ -2247,7 +2247,7 @@ impl std::error::Error for UpdateServiceError {
     }
 }
 
-/// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS account.</p>
+/// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -2488,8 +2488,8 @@ impl InternalServiceErrorException {
 }
 
 /// <p>App Runner can't create this resource. You've reached your account quota for this resource type.</p>
-/// <p>For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">AWS App Runner endpoints and quotas</a> in the
-/// <i>AWS General Reference</i>.</p>
+/// <p>For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App Runner endpoints and quotas</a> in the
+/// <i>Amazon Web Services General Reference</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

@@ -1465,6 +1465,132 @@ impl MobileDeviceAccessRule {
     }
 }
 
+/// <p>The override object.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MobileDeviceAccessOverride {
+    /// <p>The WorkMail user to which the access override applies.</p>
+    pub user_id: std::option::Option<std::string::String>,
+    /// <p>The device to which the override applies.</p>
+    pub device_id: std::option::Option<std::string::String>,
+    /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
+    pub effect: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
+    /// <p>A description of the override.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The date the override was first created.</p>
+    pub date_created: std::option::Option<smithy_types::Instant>,
+    /// <p>The date the override was last modified.</p>
+    pub date_modified: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for MobileDeviceAccessOverride {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MobileDeviceAccessOverride");
+        formatter.field("user_id", &self.user_id);
+        formatter.field("device_id", &self.device_id);
+        formatter.field("effect", &self.effect);
+        formatter.field("description", &self.description);
+        formatter.field("date_created", &self.date_created);
+        formatter.field("date_modified", &self.date_modified);
+        formatter.finish()
+    }
+}
+/// See [`MobileDeviceAccessOverride`](crate::model::MobileDeviceAccessOverride)
+pub mod mobile_device_access_override {
+    /// A builder for [`MobileDeviceAccessOverride`](crate::model::MobileDeviceAccessOverride)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_id: std::option::Option<std::string::String>,
+        pub(crate) device_id: std::option::Option<std::string::String>,
+        pub(crate) effect: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) date_created: std::option::Option<smithy_types::Instant>,
+        pub(crate) date_modified: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>The WorkMail user to which the access override applies.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_id = Some(input.into());
+            self
+        }
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_id = input;
+            self
+        }
+        /// <p>The device to which the override applies.</p>
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_id = Some(input.into());
+            self
+        }
+        pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_id = input;
+            self
+        }
+        /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
+        pub fn effect(mut self, input: crate::model::MobileDeviceAccessRuleEffect) -> Self {
+            self.effect = Some(input);
+            self
+        }
+        pub fn set_effect(
+            mut self,
+            input: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
+        ) -> Self {
+            self.effect = input;
+            self
+        }
+        /// <p>A description of the override.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The date the override was first created.</p>
+        pub fn date_created(mut self, input: smithy_types::Instant) -> Self {
+            self.date_created = Some(input);
+            self
+        }
+        pub fn set_date_created(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.date_created = input;
+            self
+        }
+        /// <p>The date the override was last modified.</p>
+        pub fn date_modified(mut self, input: smithy_types::Instant) -> Self {
+            self.date_modified = Some(input);
+            self
+        }
+        pub fn set_date_modified(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.date_modified = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MobileDeviceAccessOverride`](crate::model::MobileDeviceAccessOverride)
+        pub fn build(self) -> crate::model::MobileDeviceAccessOverride {
+            crate::model::MobileDeviceAccessOverride {
+                user_id: self.user_id,
+                device_id: self.device_id,
+                effect: self.effect,
+                description: self.description,
+                date_created: self.date_created,
+                date_modified: self.date_modified,
+            }
+        }
+    }
+}
+impl MobileDeviceAccessOverride {
+    /// Creates a new builder-style object to manufacture [`MobileDeviceAccessOverride`](crate::model::MobileDeviceAccessOverride)
+    pub fn builder() -> crate::model::mobile_device_access_override::Builder {
+        crate::model::mobile_device_access_override::Builder::default()
+    }
+}
+
 /// <p>Permission granted to a user, group, or resource to access a certain aspect of
 /// another user, group, or resource mailbox.</p>
 #[non_exhaustive]

@@ -145,6 +145,122 @@ impl UpdateRevisionOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateEventActionOutput {
+    /// <p>What occurs after a certain event.</p>
+    pub action: std::option::Option<crate::model::Action>,
+    /// <p>The ARN for the event action.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+    pub created_at: std::option::Option<smithy_types::Instant>,
+    /// <p>What occurs to start an action.</p>
+    pub event: std::option::Option<crate::model::Event>,
+    /// <p>The unique identifier for the event action.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+    pub updated_at: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for UpdateEventActionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateEventActionOutput");
+        formatter.field("action", &self.action);
+        formatter.field("arn", &self.arn);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("event", &self.event);
+        formatter.field("id", &self.id);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.finish()
+    }
+}
+/// See [`UpdateEventActionOutput`](crate::output::UpdateEventActionOutput)
+pub mod update_event_action_output {
+    /// A builder for [`UpdateEventActionOutput`](crate::output::UpdateEventActionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) action: std::option::Option<crate::model::Action>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) event: std::option::Option<crate::model::Event>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>What occurs after a certain event.</p>
+        pub fn action(mut self, input: crate::model::Action) -> Self {
+            self.action = Some(input);
+            self
+        }
+        pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
+            self.action = input;
+            self
+        }
+        /// <p>The ARN for the event action.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>What occurs to start an action.</p>
+        pub fn event(mut self, input: crate::model::Event) -> Self {
+            self.event = Some(input);
+            self
+        }
+        pub fn set_event(mut self, input: std::option::Option<crate::model::Event>) -> Self {
+            self.event = input;
+            self
+        }
+        /// <p>The unique identifier for the event action.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+            self.updated_at = Some(input);
+            self
+        }
+        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.updated_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateEventActionOutput`](crate::output::UpdateEventActionOutput)
+        pub fn build(self) -> crate::output::UpdateEventActionOutput {
+            crate::output::UpdateEventActionOutput {
+                action: self.action,
+                arn: self.arn,
+                created_at: self.created_at,
+                event: self.event,
+                id: self.id,
+                updated_at: self.updated_at,
+            }
+        }
+    }
+}
+impl UpdateEventActionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateEventActionOutput`](crate::output::UpdateEventActionOutput)
+    pub fn builder() -> crate::output::update_event_action_output::Builder {
+        crate::output::update_event_action_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSetOutput {
     /// <p>The ARN for the data set.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -773,6 +889,71 @@ impl ListJobsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEventActionsOutput {
+    /// <p>The event action objects listed by the request.</p>
+    pub event_actions: std::option::Option<std::vec::Vec<crate::model::EventActionEntry>>,
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListEventActionsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListEventActionsOutput");
+        formatter.field("event_actions", &self.event_actions);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListEventActionsOutput`](crate::output::ListEventActionsOutput)
+pub mod list_event_actions_output {
+    /// A builder for [`ListEventActionsOutput`](crate::output::ListEventActionsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_actions:
+            std::option::Option<std::vec::Vec<crate::model::EventActionEntry>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn event_actions(mut self, input: impl Into<crate::model::EventActionEntry>) -> Self {
+            let mut v = self.event_actions.unwrap_or_default();
+            v.push(input.into());
+            self.event_actions = Some(v);
+            self
+        }
+        pub fn set_event_actions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EventActionEntry>>,
+        ) -> Self {
+            self.event_actions = input;
+            self
+        }
+        /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListEventActionsOutput`](crate::output::ListEventActionsOutput)
+        pub fn build(self) -> crate::output::ListEventActionsOutput {
+            crate::output::ListEventActionsOutput {
+                event_actions: self.event_actions,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListEventActionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListEventActionsOutput`](crate::output::ListEventActionsOutput)
+    pub fn builder() -> crate::output::list_event_actions_output::Builder {
+        crate::output::list_event_actions_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSetsOutput {
     /// <p>The data set objects listed by the request.</p>
     pub data_sets: std::option::Option<std::vec::Vec<crate::model::DataSetEntry>>,
@@ -1223,6 +1404,122 @@ impl GetJobOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetEventActionOutput {
+    /// <p>What occurs after a certain event.</p>
+    pub action: std::option::Option<crate::model::Action>,
+    /// <p>The ARN for the event action.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+    pub created_at: std::option::Option<smithy_types::Instant>,
+    /// <p>What occurs to start an action.</p>
+    pub event: std::option::Option<crate::model::Event>,
+    /// <p>The unique identifier for the event action.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+    pub updated_at: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for GetEventActionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetEventActionOutput");
+        formatter.field("action", &self.action);
+        formatter.field("arn", &self.arn);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("event", &self.event);
+        formatter.field("id", &self.id);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.finish()
+    }
+}
+/// See [`GetEventActionOutput`](crate::output::GetEventActionOutput)
+pub mod get_event_action_output {
+    /// A builder for [`GetEventActionOutput`](crate::output::GetEventActionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) action: std::option::Option<crate::model::Action>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) event: std::option::Option<crate::model::Event>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>What occurs after a certain event.</p>
+        pub fn action(mut self, input: crate::model::Action) -> Self {
+            self.action = Some(input);
+            self
+        }
+        pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
+            self.action = input;
+            self
+        }
+        /// <p>The ARN for the event action.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>What occurs to start an action.</p>
+        pub fn event(mut self, input: crate::model::Event) -> Self {
+            self.event = Some(input);
+            self
+        }
+        pub fn set_event(mut self, input: std::option::Option<crate::model::Event>) -> Self {
+            self.event = input;
+            self
+        }
+        /// <p>The unique identifier for the event action.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+            self.updated_at = Some(input);
+            self
+        }
+        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.updated_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetEventActionOutput`](crate::output::GetEventActionOutput)
+        pub fn build(self) -> crate::output::GetEventActionOutput {
+            crate::output::GetEventActionOutput {
+                action: self.action,
+                arn: self.arn,
+                created_at: self.created_at,
+                event: self.event,
+                id: self.id,
+                updated_at: self.updated_at,
+            }
+        }
+    }
+}
+impl GetEventActionOutput {
+    /// Creates a new builder-style object to manufacture [`GetEventActionOutput`](crate::output::GetEventActionOutput)
+    pub fn builder() -> crate::output::get_event_action_output::Builder {
+        crate::output::get_event_action_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataSetOutput {
     /// <p>The ARN for the data set.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -1635,6 +1932,35 @@ impl DeleteRevisionOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteEventActionOutput {}
+impl std::fmt::Debug for DeleteEventActionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteEventActionOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteEventActionOutput`](crate::output::DeleteEventActionOutput)
+pub mod delete_event_action_output {
+    /// A builder for [`DeleteEventActionOutput`](crate::output::DeleteEventActionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteEventActionOutput`](crate::output::DeleteEventActionOutput)
+        pub fn build(self) -> crate::output::DeleteEventActionOutput {
+            crate::output::DeleteEventActionOutput {}
+        }
+    }
+}
+impl DeleteEventActionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEventActionOutput`](crate::output::DeleteEventActionOutput)
+    pub fn builder() -> crate::output::delete_event_action_output::Builder {
+        crate::output::delete_event_action_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDataSetOutput {}
 impl std::fmt::Debug for DeleteDataSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2010,6 +2336,122 @@ impl CreateJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateJobOutput`](crate::output::CreateJobOutput)
     pub fn builder() -> crate::output::create_job_output::Builder {
         crate::output::create_job_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateEventActionOutput {
+    /// <p>What occurs after a certain event.</p>
+    pub action: std::option::Option<crate::model::Action>,
+    /// <p>The ARN for the event action.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+    pub created_at: std::option::Option<smithy_types::Instant>,
+    /// <p>What occurs to start an action.</p>
+    pub event: std::option::Option<crate::model::Event>,
+    /// <p>The unique identifier for the event action.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+    pub updated_at: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for CreateEventActionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateEventActionOutput");
+        formatter.field("action", &self.action);
+        formatter.field("arn", &self.arn);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("event", &self.event);
+        formatter.field("id", &self.id);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.finish()
+    }
+}
+/// See [`CreateEventActionOutput`](crate::output::CreateEventActionOutput)
+pub mod create_event_action_output {
+    /// A builder for [`CreateEventActionOutput`](crate::output::CreateEventActionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) action: std::option::Option<crate::model::Action>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) event: std::option::Option<crate::model::Event>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>What occurs after a certain event.</p>
+        pub fn action(mut self, input: crate::model::Action) -> Self {
+            self.action = Some(input);
+            self
+        }
+        pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
+            self.action = input;
+            self
+        }
+        /// <p>The ARN for the event action.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>What occurs to start an action.</p>
+        pub fn event(mut self, input: crate::model::Event) -> Self {
+            self.event = Some(input);
+            self
+        }
+        pub fn set_event(mut self, input: std::option::Option<crate::model::Event>) -> Self {
+            self.event = input;
+            self
+        }
+        /// <p>The unique identifier for the event action.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+            self.updated_at = Some(input);
+            self
+        }
+        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.updated_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateEventActionOutput`](crate::output::CreateEventActionOutput)
+        pub fn build(self) -> crate::output::CreateEventActionOutput {
+            crate::output::CreateEventActionOutput {
+                action: self.action,
+                arn: self.arn,
+                created_at: self.created_at,
+                event: self.event,
+                id: self.id,
+                updated_at: self.updated_at,
+            }
+        }
+    }
+}
+impl CreateEventActionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateEventActionOutput`](crate::output::CreateEventActionOutput)
+    pub fn builder() -> crate::output::create_event_action_output::Builder {
+        crate::output::create_event_action_output::Builder::default()
     }
 }
 

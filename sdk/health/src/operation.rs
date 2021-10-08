@@ -28,11 +28,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeAffectedAccountsForO
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_affected_accounts_for_organization_error(
-                response,
-            )
+            crate::operation_ser::parse_describe_affected_accounts_for_organization_error(response)
         } else {
-            crate::operation_deser::parse_describe_affected_accounts_for_organization_response(
+            crate::operation_ser::parse_describe_affected_accounts_for_organization_response(
                 response,
             )
         }
@@ -77,9 +75,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeAffectedEntities {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_affected_entities_error(response)
+            crate::operation_ser::parse_describe_affected_entities_error(response)
         } else {
-            crate::operation_deser::parse_describe_affected_entities_response(response)
+            crate::operation_ser::parse_describe_affected_entities_response(response)
         }
     }
 }
@@ -125,11 +123,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeAffectedEntitiesForO
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_affected_entities_for_organization_error(
-                response,
-            )
+            crate::operation_ser::parse_describe_affected_entities_for_organization_error(response)
         } else {
-            crate::operation_deser::parse_describe_affected_entities_for_organization_response(
+            crate::operation_ser::parse_describe_affected_entities_for_organization_response(
                 response,
             )
         }
@@ -158,9 +154,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeEntityAggregates {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_entity_aggregates_error(response)
+            crate::operation_ser::parse_describe_entity_aggregates_error(response)
         } else {
-            crate::operation_deser::parse_describe_entity_aggregates_response(response)
+            crate::operation_ser::parse_describe_entity_aggregates_response(response)
         }
     }
 }
@@ -191,9 +187,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeEventAggregates {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_event_aggregates_error(response)
+            crate::operation_ser::parse_describe_event_aggregates_error(response)
         } else {
-            crate::operation_deser::parse_describe_event_aggregates_response(response)
+            crate::operation_ser::parse_describe_event_aggregates_response(response)
         }
     }
 }
@@ -228,9 +224,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeEventDetails {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_event_details_error(response)
+            crate::operation_ser::parse_describe_event_details_error(response)
         } else {
-            crate::operation_deser::parse_describe_event_details_response(response)
+            crate::operation_ser::parse_describe_event_details_response(response)
         }
     }
 }
@@ -287,9 +283,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeEventDetailsForOrgan
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_event_details_for_organization_error(response)
+            crate::operation_ser::parse_describe_event_details_for_organization_error(response)
         } else {
-            crate::operation_deser::parse_describe_event_details_for_organization_response(response)
+            crate::operation_ser::parse_describe_event_details_for_organization_response(response)
         }
     }
 }
@@ -335,9 +331,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeEvents {
         std::result::Result<crate::output::DescribeEventsOutput, crate::error::DescribeEventsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_events_error(response)
+            crate::operation_ser::parse_describe_events_error(response)
         } else {
-            crate::operation_deser::parse_describe_events_response(response)
+            crate::operation_ser::parse_describe_events_response(response)
         }
     }
 }
@@ -394,9 +390,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeEventsForOrganizatio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_events_for_organization_error(response)
+            crate::operation_ser::parse_describe_events_for_organization_error(response)
         } else {
-            crate::operation_deser::parse_describe_events_for_organization_response(response)
+            crate::operation_ser::parse_describe_events_for_organization_response(response)
         }
     }
 }
@@ -429,9 +425,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeEventTypes {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_event_types_error(response)
+            crate::operation_ser::parse_describe_event_types_error(response)
         } else {
-            crate::operation_deser::parse_describe_event_types_response(response)
+            crate::operation_ser::parse_describe_event_types_response(response)
         }
     }
 }
@@ -461,11 +457,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeHealthServiceStatusF
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_health_service_status_for_organization_error(
+            crate::operation_ser::parse_describe_health_service_status_for_organization_error(
                 response,
             )
         } else {
-            crate::operation_deser::parse_describe_health_service_status_for_organization_response(
+            crate::operation_ser::parse_describe_health_service_status_for_organization_response(
                 response,
             )
         }
@@ -508,11 +504,11 @@ impl smithy_http::response::ParseStrictResponse for DisableHealthServiceAccessFo
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_disable_health_service_access_for_organization_error(
+            crate::operation_ser::parse_disable_health_service_access_for_organization_error(
                 response,
             )
         } else {
-            crate::operation_deser::parse_disable_health_service_access_for_organization_response(
+            crate::operation_ser::parse_disable_health_service_access_for_organization_response(
                 response,
             )
         }
@@ -562,11 +558,11 @@ impl smithy_http::response::ParseStrictResponse for EnableHealthServiceAccessFor
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_enable_health_service_access_for_organization_error(
+            crate::operation_ser::parse_enable_health_service_access_for_organization_error(
                 response,
             )
         } else {
-            crate::operation_deser::parse_enable_health_service_access_for_organization_response(
+            crate::operation_ser::parse_enable_health_service_access_for_organization_response(
                 response,
             )
         }

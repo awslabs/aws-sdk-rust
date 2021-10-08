@@ -21,9 +21,9 @@ impl smithy_http::response::ParseStrictResponse for GetRoleCredentials {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_role_credentials_error(response)
+            crate::operation_ser::parse_get_role_credentials_error(response)
         } else {
-            crate::operation_deser::parse_get_role_credentials_response(response)
+            crate::operation_ser::parse_get_role_credentials_response(response)
         }
     }
 }
@@ -49,9 +49,9 @@ impl smithy_http::response::ParseStrictResponse for ListAccountRoles {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_account_roles_error(response)
+            crate::operation_ser::parse_list_account_roles_error(response)
         } else {
-            crate::operation_deser::parse_list_account_roles_response(response)
+            crate::operation_ser::parse_list_account_roles_response(response)
         }
     }
 }
@@ -77,9 +77,9 @@ impl smithy_http::response::ParseStrictResponse for ListAccounts {
         std::result::Result<crate::output::ListAccountsOutput, crate::error::ListAccountsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_accounts_error(response)
+            crate::operation_ser::parse_list_accounts_error(response)
         } else {
-            crate::operation_deser::parse_list_accounts_response(response)
+            crate::operation_ser::parse_list_accounts_response(response)
         }
     }
 }
@@ -102,9 +102,9 @@ impl smithy_http::response::ParseStrictResponse for Logout {
     type Output = std::result::Result<crate::output::LogoutOutput, crate::error::LogoutError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_logout_error(response)
+            crate::operation_ser::parse_logout_error(response)
         } else {
-            crate::operation_deser::parse_logout_response(response)
+            crate::operation_ser::parse_logout_response(response)
         }
     }
 }

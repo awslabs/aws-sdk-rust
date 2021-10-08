@@ -26,9 +26,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeServices {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_services_error(response)
+            crate::operation_ser::parse_describe_services_error(response)
         } else {
-            crate::operation_deser::parse_describe_services_response(response)
+            crate::operation_ser::parse_describe_services_response(response)
         }
     }
 }
@@ -57,9 +57,9 @@ impl smithy_http::response::ParseStrictResponse for GetAttributeValues {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_attribute_values_error(response)
+            crate::operation_ser::parse_get_attribute_values_error(response)
         } else {
-            crate::operation_deser::parse_get_attribute_values_response(response)
+            crate::operation_ser::parse_get_attribute_values_response(response)
         }
     }
 }
@@ -83,9 +83,9 @@ impl smithy_http::response::ParseStrictResponse for GetProducts {
         std::result::Result<crate::output::GetProductsOutput, crate::error::GetProductsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_products_error(response)
+            crate::operation_ser::parse_get_products_error(response)
         } else {
-            crate::operation_deser::parse_get_products_response(response)
+            crate::operation_ser::parse_get_products_response(response)
         }
     }
 }

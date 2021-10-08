@@ -1683,6 +1683,55 @@ impl SearchOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RetryPipelineExecutionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub pipeline_execution_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RetryPipelineExecutionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RetryPipelineExecutionOutput");
+        formatter.field("pipeline_execution_arn", &self.pipeline_execution_arn);
+        formatter.finish()
+    }
+}
+/// See [`RetryPipelineExecutionOutput`](crate::output::RetryPipelineExecutionOutput)
+pub mod retry_pipeline_execution_output {
+    /// A builder for [`RetryPipelineExecutionOutput`](crate::output::RetryPipelineExecutionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) pipeline_execution_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+        pub fn pipeline_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pipeline_execution_arn = Some(input.into());
+            self
+        }
+        pub fn set_pipeline_execution_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pipeline_execution_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RetryPipelineExecutionOutput`](crate::output::RetryPipelineExecutionOutput)
+        pub fn build(self) -> crate::output::RetryPipelineExecutionOutput {
+            crate::output::RetryPipelineExecutionOutput {
+                pipeline_execution_arn: self.pipeline_execution_arn,
+            }
+        }
+    }
+}
+impl RetryPipelineExecutionOutput {
+    /// Creates a new builder-style object to manufacture [`RetryPipelineExecutionOutput`](crate::output::RetryPipelineExecutionOutput)
+    pub fn builder() -> crate::output::retry_pipeline_execution_output::Builder {
+        crate::output::retry_pipeline_execution_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RenderUiTemplateOutput {
     /// <p>A Liquid template that renders the HTML for the worker UI.</p>
     pub rendered_content: std::option::Option<std::string::String>,
@@ -6431,7 +6480,7 @@ pub struct DescribeTrialComponentOutput {
     pub end_time: std::option::Option<smithy_types::Instant>,
     /// <p>When the component was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Who created the component.</p>
+    /// <p>Who created the trial component.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>When the component was last modified.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
@@ -6609,7 +6658,7 @@ pub mod describe_trial_component_output {
             self.creation_time = input;
             self
         }
-        /// <p>Who created the component.</p>
+        /// <p>Who created the trial component.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -7685,7 +7734,7 @@ pub struct DescribeTrainingJobOutput {
     /// time.</p>
     /// <p>Multiply <code>BillableTimeInSeconds</code> by the number of instances
     /// (<code>InstanceCount</code>) in your training cluster to get the total compute time
-    /// Amazon SageMaker will bill you if you run distributed training. The formula is as follows:
+    /// SageMaker will bill you if you run distributed training. The formula is as follows:
     /// <code>BillableTimeInSeconds * InstanceCount</code> .</p>
     /// <p>You can calculate the savings from using managed spot training using the formula
     /// <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example,
@@ -8386,7 +8435,7 @@ pub mod describe_training_job_output {
         /// time.</p>
         /// <p>Multiply <code>BillableTimeInSeconds</code> by the number of instances
         /// (<code>InstanceCount</code>) in your training cluster to get the total compute time
-        /// Amazon SageMaker will bill you if you run distributed training. The formula is as follows:
+        /// SageMaker will bill you if you run distributed training. The formula is as follows:
         /// <code>BillableTimeInSeconds * InstanceCount</code> .</p>
         /// <p>You can calculate the savings from using managed spot training using the formula
         /// <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example,
@@ -8866,8 +8915,8 @@ pub struct DescribeProjectOutput {
         std::option::Option<crate::model::ServiceCatalogProvisionedProductDetails>,
     /// <p>The status of the project.</p>
     pub project_status: std::option::Option<crate::model::ProjectStatus>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>The time when the project was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
@@ -8994,8 +9043,8 @@ pub mod describe_project_output {
             self.project_status = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -9482,11 +9531,11 @@ pub struct DescribePipelineExecutionOutput {
     pub creation_time: std::option::Option<smithy_types::Instant>,
     /// <p>The time when the pipeline execution was modified last.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
 }
 impl std::fmt::Debug for DescribePipelineExecutionOutput {
@@ -9653,8 +9702,8 @@ pub mod describe_pipeline_execution_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -9666,8 +9715,8 @@ pub mod describe_pipeline_execution_output {
             self.created_by = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
@@ -9793,11 +9842,11 @@ pub struct DescribePipelineOutput {
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
     /// <p>The time when the pipeline was last run.</p>
     pub last_run_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
 }
 impl std::fmt::Debug for DescribePipelineOutput {
@@ -9952,8 +10001,8 @@ pub mod describe_pipeline_output {
             self.last_run_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -9965,8 +10014,8 @@ pub mod describe_pipeline_output {
             self.created_by = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
@@ -11149,8 +11198,8 @@ pub struct DescribeModelPackageGroupOutput {
     pub model_package_group_description: std::option::Option<std::string::String>,
     /// <p>The time that the model group was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>The status of the model group.</p>
     pub model_package_group_status: std::option::Option<crate::model::ModelPackageGroupStatus>,
@@ -11239,8 +11288,8 @@ pub mod describe_model_package_group_output {
             self.creation_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -11321,8 +11370,8 @@ pub struct DescribeModelPackageOutput {
     pub certify_for_marketplace: bool,
     /// <p>The approval status of the model package.</p>
     pub model_approval_status: std::option::Option<crate::model::ModelApprovalStatus>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
@@ -11330,8 +11379,8 @@ pub struct DescribeModelPackageOutput {
     pub model_metrics: std::option::Option<crate::model::ModelMetrics>,
     /// <p>The last time the model package was modified.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>A description provided for the model approval.</p>
     pub approval_description: std::option::Option<std::string::String>,
@@ -11563,8 +11612,8 @@ pub mod describe_model_package_output {
             self.model_approval_status = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -11612,8 +11661,8 @@ pub mod describe_model_package_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
@@ -14933,7 +14982,7 @@ pub struct DescribeEdgePackagingJobOutput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The output configuration for the edge packaging job.</p>
     pub output_config: std::option::Option<crate::model::EdgeOutputConfig>,
-    /// <p>The CMK to use when encrypting the EBS volume the job run on.</p>
+    /// <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job run on.</p>
     pub resource_key: std::option::Option<std::string::String>,
     /// <p>The current status of the packaging job.</p>
     pub edge_packaging_job_status: std::option::Option<crate::model::EdgePackagingJobStatus>,
@@ -15077,7 +15126,7 @@ pub mod describe_edge_packaging_job_output {
             self.output_config = input;
             self
         }
-        /// <p>The CMK to use when encrypting the EBS volume the job run on.</p>
+        /// <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job run on.</p>
         pub fn resource_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_key = Some(input.into());
             self
@@ -15257,7 +15306,7 @@ pub struct DescribeDomainOutput {
     pub url: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services KMS customer managed CMK used to encrypt
+    /// <p>The Amazon Web Services KMS customer managed key used to encrypt
     /// the EFS volume attached to the domain.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
@@ -15514,7 +15563,7 @@ pub mod describe_domain_output {
             self.vpc_id = input;
             self
         }
-        /// <p>The Amazon Web Services KMS customer managed CMK used to encrypt
+        /// <p>The Amazon Web Services KMS customer managed key used to encrypt
         /// the EFS volume attached to the domain.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -16170,13 +16219,13 @@ pub struct DescribeContextOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>When the context was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>When the context was last modified.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
 }
 impl std::fmt::Debug for DescribeContextOutput {
@@ -16294,8 +16343,8 @@ pub mod describe_context_output {
             self.creation_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -16319,8 +16368,8 @@ pub mod describe_context_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
@@ -17249,13 +17298,13 @@ pub struct DescribeArtifactOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>When the artifact was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>When the artifact was last modified.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
@@ -17372,8 +17421,8 @@ pub mod describe_artifact_output {
             self.creation_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -17397,8 +17446,8 @@ pub mod describe_artifact_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
@@ -17587,7 +17636,7 @@ pub struct DescribeAppOutput {
     pub status: std::option::Option<crate::model::AppStatus>,
     /// <p>The timestamp of the last health check.</p>
     pub last_health_check_timestamp: std::option::Option<smithy_types::Instant>,
-    /// <p>The timestamp of the last user's activity.</p>
+    /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
     pub last_user_activity_timestamp: std::option::Option<smithy_types::Instant>,
     /// <p>The creation time.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
@@ -17707,7 +17756,7 @@ pub mod describe_app_output {
             self.last_health_check_timestamp = input;
             self
         }
-        /// <p>The timestamp of the last user's activity.</p>
+        /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
         pub fn last_user_activity_timestamp(mut self, input: smithy_types::Instant) -> Self {
             self.last_user_activity_timestamp = Some(input);
             self
@@ -18031,13 +18080,13 @@ pub struct DescribeActionOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>When the action was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>When the action was last modified.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
@@ -18173,8 +18222,8 @@ pub mod describe_action_output {
             self.creation_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -18198,8 +18247,8 @@ pub mod describe_action_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self

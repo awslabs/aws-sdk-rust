@@ -27,17 +27,17 @@ impl smithy_http::response::ParseHttpResponse for StartMedicalStreamTranscriptio
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_deser::parse_start_medical_stream_transcription(response))
+        Some(crate::operation_ser::parse_start_medical_stream_transcription(response))
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_deser::parse_start_medical_stream_transcription_error(response)
+        crate::operation_ser::parse_start_medical_stream_transcription_error(response)
     }
 }
 
-/// <p>Starts a bidirectional HTTP2 stream where audio is streamed to Amazon Transcribe and the transcription
+/// <p>Starts a bidirectional HTTP/2 stream where audio is streamed to Amazon Transcribe and the transcription
 /// results are streamed to your application.</p>
-/// <p>The following are encoded as HTTP2 headers:</p>
+/// <p>The following are encoded as HTTP/2 headers:</p>
 /// <ul>
 /// <li>
 /// <p>x-amzn-transcribe-language-code</p>
@@ -52,6 +52,7 @@ impl smithy_http::response::ParseHttpResponse for StartMedicalStreamTranscriptio
 /// <p>x-amzn-transcribe-session-id</p>
 /// </li>
 /// </ul>
+/// <p>See the <a href="https://docs.aws.amazon.com/sdk-for-go/api/service/transcribestreamingservice/#TranscribeStreamingService.StartStreamTranscription"> SDK for Go API Reference</a> for more detail.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StartStreamTranscription {
     _private: (),
@@ -78,12 +79,12 @@ impl smithy_http::response::ParseHttpResponse for StartStreamTranscription {
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_deser::parse_start_stream_transcription(
+        Some(crate::operation_ser::parse_start_stream_transcription(
             response,
         ))
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_deser::parse_start_stream_transcription_error(response)
+        crate::operation_ser::parse_start_stream_transcription_error(response)
     }
 }

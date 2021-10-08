@@ -8181,6 +8181,725 @@ impl BotAliasSummary {
     }
 }
 
+/// <p>Provides summary information for aggregated utterances. The
+/// <code>ListAggregatedUtterances</code> operations combines all
+/// instances of the same utterance into a single aggregated
+/// summary.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AggregatedUtterancesSummary {
+    /// <p>The text of the utterance. If the utterance was used with the
+    /// <code>RecognizeUtterance</code> operation, the text is the
+    /// transcription of the audio utterance.</p>
+    pub utterance: std::option::Option<std::string::String>,
+    /// <p>The number of times that the utterance was detected by Amazon Lex during
+    /// the time period. When an utterance is detected, it activates an intent
+    /// or a slot.</p>
+    pub hit_count: std::option::Option<i32>,
+    /// <p>The number of times that the utterance was missed by Amazon Lex An
+    /// utterance is missed when it doesn't activate an intent or slot.</p>
+    pub missed_count: std::option::Option<i32>,
+    /// <p>The date and time that the utterance was first recorded in the time
+    /// window for aggregation. An utterance may have been sent to Amazon Lex before
+    /// that time, but only utterances within the time window are
+    /// counted.</p>
+    pub utterance_first_recorded_in_aggregation_duration:
+        std::option::Option<smithy_types::Instant>,
+    /// <p>The last date and time that an utterance was recorded in the time
+    /// window for aggregation. An utterance may be sent to Amazon Lex after that
+    /// time, but only utterances within the time window are counted.</p>
+    pub utterance_last_recorded_in_aggregation_duration: std::option::Option<smithy_types::Instant>,
+    /// <p>Aggregated utterance data may contain utterances from versions of
+    /// your bot that have since been deleted. When the aggregated contains
+    /// this kind of data, this field is set to true.</p>
+    pub contains_data_from_deleted_resources: std::option::Option<bool>,
+}
+impl std::fmt::Debug for AggregatedUtterancesSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AggregatedUtterancesSummary");
+        formatter.field("utterance", &self.utterance);
+        formatter.field("hit_count", &self.hit_count);
+        formatter.field("missed_count", &self.missed_count);
+        formatter.field(
+            "utterance_first_recorded_in_aggregation_duration",
+            &self.utterance_first_recorded_in_aggregation_duration,
+        );
+        formatter.field(
+            "utterance_last_recorded_in_aggregation_duration",
+            &self.utterance_last_recorded_in_aggregation_duration,
+        );
+        formatter.field(
+            "contains_data_from_deleted_resources",
+            &self.contains_data_from_deleted_resources,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AggregatedUtterancesSummary`](crate::model::AggregatedUtterancesSummary)
+pub mod aggregated_utterances_summary {
+    /// A builder for [`AggregatedUtterancesSummary`](crate::model::AggregatedUtterancesSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) utterance: std::option::Option<std::string::String>,
+        pub(crate) hit_count: std::option::Option<i32>,
+        pub(crate) missed_count: std::option::Option<i32>,
+        pub(crate) utterance_first_recorded_in_aggregation_duration:
+            std::option::Option<smithy_types::Instant>,
+        pub(crate) utterance_last_recorded_in_aggregation_duration:
+            std::option::Option<smithy_types::Instant>,
+        pub(crate) contains_data_from_deleted_resources: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The text of the utterance. If the utterance was used with the
+        /// <code>RecognizeUtterance</code> operation, the text is the
+        /// transcription of the audio utterance.</p>
+        pub fn utterance(mut self, input: impl Into<std::string::String>) -> Self {
+            self.utterance = Some(input.into());
+            self
+        }
+        pub fn set_utterance(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.utterance = input;
+            self
+        }
+        /// <p>The number of times that the utterance was detected by Amazon Lex during
+        /// the time period. When an utterance is detected, it activates an intent
+        /// or a slot.</p>
+        pub fn hit_count(mut self, input: i32) -> Self {
+            self.hit_count = Some(input);
+            self
+        }
+        pub fn set_hit_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.hit_count = input;
+            self
+        }
+        /// <p>The number of times that the utterance was missed by Amazon Lex An
+        /// utterance is missed when it doesn't activate an intent or slot.</p>
+        pub fn missed_count(mut self, input: i32) -> Self {
+            self.missed_count = Some(input);
+            self
+        }
+        pub fn set_missed_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.missed_count = input;
+            self
+        }
+        /// <p>The date and time that the utterance was first recorded in the time
+        /// window for aggregation. An utterance may have been sent to Amazon Lex before
+        /// that time, but only utterances within the time window are
+        /// counted.</p>
+        pub fn utterance_first_recorded_in_aggregation_duration(
+            mut self,
+            input: smithy_types::Instant,
+        ) -> Self {
+            self.utterance_first_recorded_in_aggregation_duration = Some(input);
+            self
+        }
+        pub fn set_utterance_first_recorded_in_aggregation_duration(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.utterance_first_recorded_in_aggregation_duration = input;
+            self
+        }
+        /// <p>The last date and time that an utterance was recorded in the time
+        /// window for aggregation. An utterance may be sent to Amazon Lex after that
+        /// time, but only utterances within the time window are counted.</p>
+        pub fn utterance_last_recorded_in_aggregation_duration(
+            mut self,
+            input: smithy_types::Instant,
+        ) -> Self {
+            self.utterance_last_recorded_in_aggregation_duration = Some(input);
+            self
+        }
+        pub fn set_utterance_last_recorded_in_aggregation_duration(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.utterance_last_recorded_in_aggregation_duration = input;
+            self
+        }
+        /// <p>Aggregated utterance data may contain utterances from versions of
+        /// your bot that have since been deleted. When the aggregated contains
+        /// this kind of data, this field is set to true.</p>
+        pub fn contains_data_from_deleted_resources(mut self, input: bool) -> Self {
+            self.contains_data_from_deleted_resources = Some(input);
+            self
+        }
+        pub fn set_contains_data_from_deleted_resources(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.contains_data_from_deleted_resources = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AggregatedUtterancesSummary`](crate::model::AggregatedUtterancesSummary)
+        pub fn build(self) -> crate::model::AggregatedUtterancesSummary {
+            crate::model::AggregatedUtterancesSummary {
+                utterance: self.utterance,
+                hit_count: self.hit_count,
+                missed_count: self.missed_count,
+                utterance_first_recorded_in_aggregation_duration: self
+                    .utterance_first_recorded_in_aggregation_duration,
+                utterance_last_recorded_in_aggregation_duration: self
+                    .utterance_last_recorded_in_aggregation_duration,
+                contains_data_from_deleted_resources: self.contains_data_from_deleted_resources,
+            }
+        }
+    }
+}
+impl AggregatedUtterancesSummary {
+    /// Creates a new builder-style object to manufacture [`AggregatedUtterancesSummary`](crate::model::AggregatedUtterancesSummary)
+    pub fn builder() -> crate::model::aggregated_utterances_summary::Builder {
+        crate::model::aggregated_utterances_summary::Builder::default()
+    }
+}
+
+/// <p>Provides parameters for setting the time window and duration for
+/// aggregating utterance data.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UtteranceAggregationDuration {
+    /// <p>The desired time window for aggregating utterances. </p>
+    pub relative_aggregation_duration:
+        std::option::Option<crate::model::RelativeAggregationDuration>,
+}
+impl std::fmt::Debug for UtteranceAggregationDuration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UtteranceAggregationDuration");
+        formatter.field(
+            "relative_aggregation_duration",
+            &self.relative_aggregation_duration,
+        );
+        formatter.finish()
+    }
+}
+/// See [`UtteranceAggregationDuration`](crate::model::UtteranceAggregationDuration)
+pub mod utterance_aggregation_duration {
+    /// A builder for [`UtteranceAggregationDuration`](crate::model::UtteranceAggregationDuration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) relative_aggregation_duration:
+            std::option::Option<crate::model::RelativeAggregationDuration>,
+    }
+    impl Builder {
+        /// <p>The desired time window for aggregating utterances. </p>
+        pub fn relative_aggregation_duration(
+            mut self,
+            input: crate::model::RelativeAggregationDuration,
+        ) -> Self {
+            self.relative_aggregation_duration = Some(input);
+            self
+        }
+        pub fn set_relative_aggregation_duration(
+            mut self,
+            input: std::option::Option<crate::model::RelativeAggregationDuration>,
+        ) -> Self {
+            self.relative_aggregation_duration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UtteranceAggregationDuration`](crate::model::UtteranceAggregationDuration)
+        pub fn build(self) -> crate::model::UtteranceAggregationDuration {
+            crate::model::UtteranceAggregationDuration {
+                relative_aggregation_duration: self.relative_aggregation_duration,
+            }
+        }
+    }
+}
+impl UtteranceAggregationDuration {
+    /// Creates a new builder-style object to manufacture [`UtteranceAggregationDuration`](crate::model::UtteranceAggregationDuration)
+    pub fn builder() -> crate::model::utterance_aggregation_duration::Builder {
+        crate::model::utterance_aggregation_duration::Builder::default()
+    }
+}
+
+/// <p>Specifies the time window that utterance statistics are returned
+/// for. The time window is always relative to the last time that the that
+/// utterances were aggregated. For example, if the
+/// <code>ListAggregatedUtterances</code> operation is called at 1600,
+/// the time window is set to 1 hour, and the last refresh time was 1530,
+/// only utterances made between 1430 and 1530 are returned.</p>
+/// <p>You can choose the time window that statistics should be returned
+/// for.</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <b>Hours</b> - You can request
+/// utterance statistics for 1, 3, 6, 12, or 24 hour time windows.
+/// Statistics are refreshed every half hour for 1 hour time windows,
+/// and hourly for the other time windows.</p>
+/// </li>
+/// <li>
+/// <p>
+/// <b>Days</b> - You can request
+/// utterance statistics for 3 days. Statistics are refreshed every 6
+/// hours.</p>
+/// </li>
+/// <li>
+/// <p>
+/// <b>Weeks</b> - You can see
+/// statistics for one or two weeks. Statistics are refreshed every
+/// 12 hours for one week time windows, and once per day for two week
+/// time windows.</p>
+/// </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RelativeAggregationDuration {
+    /// <p>The type of time period that the <code>timeValue</code> field
+    /// represents. </p>
+    pub time_dimension: std::option::Option<crate::model::TimeDimension>,
+    /// <p>The period of the time window to gather statistics for. The valid
+    /// value depends on the setting of the <code>timeDimension</code>
+    /// field.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Hours</code> - 1/3/6/12/24</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Days</code> - 3</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Weeks</code> - 1/2</p>
+    /// </li>
+    /// </ul>
+    pub time_value: i32,
+}
+impl std::fmt::Debug for RelativeAggregationDuration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RelativeAggregationDuration");
+        formatter.field("time_dimension", &self.time_dimension);
+        formatter.field("time_value", &self.time_value);
+        formatter.finish()
+    }
+}
+/// See [`RelativeAggregationDuration`](crate::model::RelativeAggregationDuration)
+pub mod relative_aggregation_duration {
+    /// A builder for [`RelativeAggregationDuration`](crate::model::RelativeAggregationDuration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) time_dimension: std::option::Option<crate::model::TimeDimension>,
+        pub(crate) time_value: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The type of time period that the <code>timeValue</code> field
+        /// represents. </p>
+        pub fn time_dimension(mut self, input: crate::model::TimeDimension) -> Self {
+            self.time_dimension = Some(input);
+            self
+        }
+        pub fn set_time_dimension(
+            mut self,
+            input: std::option::Option<crate::model::TimeDimension>,
+        ) -> Self {
+            self.time_dimension = input;
+            self
+        }
+        /// <p>The period of the time window to gather statistics for. The valid
+        /// value depends on the setting of the <code>timeDimension</code>
+        /// field.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Hours</code> - 1/3/6/12/24</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Days</code> - 3</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Weeks</code> - 1/2</p>
+        /// </li>
+        /// </ul>
+        pub fn time_value(mut self, input: i32) -> Self {
+            self.time_value = Some(input);
+            self
+        }
+        pub fn set_time_value(mut self, input: std::option::Option<i32>) -> Self {
+            self.time_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RelativeAggregationDuration`](crate::model::RelativeAggregationDuration)
+        pub fn build(self) -> crate::model::RelativeAggregationDuration {
+            crate::model::RelativeAggregationDuration {
+                time_dimension: self.time_dimension,
+                time_value: self.time_value.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl RelativeAggregationDuration {
+    /// Creates a new builder-style object to manufacture [`RelativeAggregationDuration`](crate::model::RelativeAggregationDuration)
+    pub fn builder() -> crate::model::relative_aggregation_duration::Builder {
+        crate::model::relative_aggregation_duration::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TimeDimension {
+    Days,
+    Hours,
+    Weeks,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TimeDimension {
+    fn from(s: &str) -> Self {
+        match s {
+            "Days" => TimeDimension::Days,
+            "Hours" => TimeDimension::Hours,
+            "Weeks" => TimeDimension::Weeks,
+            other => TimeDimension::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TimeDimension {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TimeDimension::from(s))
+    }
+}
+impl TimeDimension {
+    pub fn as_str(&self) -> &str {
+        match self {
+            TimeDimension::Days => "Days",
+            TimeDimension::Hours => "Hours",
+            TimeDimension::Weeks => "Weeks",
+            TimeDimension::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Days", "Hours", "Weeks"]
+    }
+}
+impl AsRef<str> for TimeDimension {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Filters responses returned by the
+/// <code>ListAggregatedUtterances</code> operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AggregatedUtterancesFilter {
+    /// <p>The name of the field to filter the utterance list.</p>
+    pub name: std::option::Option<crate::model::AggregatedUtterancesFilterName>,
+    /// <p>The value to use for filtering the list of bots.</p>
+    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The operator to use for the filter. Specify <code>EQ</code> when the
+    /// <code>ListAggregatedUtterances</code> operation should return only
+    /// utterances that equal the specified value. Specify <code>CO</code> when
+    /// the <code>ListAggregatedUtterances</code> operation should return
+    /// utterances that contain the specified value.</p>
+    pub operator: std::option::Option<crate::model::AggregatedUtterancesFilterOperator>,
+}
+impl std::fmt::Debug for AggregatedUtterancesFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AggregatedUtterancesFilter");
+        formatter.field("name", &self.name);
+        formatter.field("values", &self.values);
+        formatter.field("operator", &self.operator);
+        formatter.finish()
+    }
+}
+/// See [`AggregatedUtterancesFilter`](crate::model::AggregatedUtterancesFilter)
+pub mod aggregated_utterances_filter {
+    /// A builder for [`AggregatedUtterancesFilter`](crate::model::AggregatedUtterancesFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<crate::model::AggregatedUtterancesFilterName>,
+        pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) operator: std::option::Option<crate::model::AggregatedUtterancesFilterOperator>,
+    }
+    impl Builder {
+        /// <p>The name of the field to filter the utterance list.</p>
+        pub fn name(mut self, input: crate::model::AggregatedUtterancesFilterName) -> Self {
+            self.name = Some(input);
+            self
+        }
+        pub fn set_name(
+            mut self,
+            input: std::option::Option<crate::model::AggregatedUtterancesFilterName>,
+        ) -> Self {
+            self.name = input;
+            self
+        }
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.values.unwrap_or_default();
+            v.push(input.into());
+            self.values = Some(v);
+            self
+        }
+        pub fn set_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.values = input;
+            self
+        }
+        /// <p>The operator to use for the filter. Specify <code>EQ</code> when the
+        /// <code>ListAggregatedUtterances</code> operation should return only
+        /// utterances that equal the specified value. Specify <code>CO</code> when
+        /// the <code>ListAggregatedUtterances</code> operation should return
+        /// utterances that contain the specified value.</p>
+        pub fn operator(mut self, input: crate::model::AggregatedUtterancesFilterOperator) -> Self {
+            self.operator = Some(input);
+            self
+        }
+        pub fn set_operator(
+            mut self,
+            input: std::option::Option<crate::model::AggregatedUtterancesFilterOperator>,
+        ) -> Self {
+            self.operator = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AggregatedUtterancesFilter`](crate::model::AggregatedUtterancesFilter)
+        pub fn build(self) -> crate::model::AggregatedUtterancesFilter {
+            crate::model::AggregatedUtterancesFilter {
+                name: self.name,
+                values: self.values,
+                operator: self.operator,
+            }
+        }
+    }
+}
+impl AggregatedUtterancesFilter {
+    /// Creates a new builder-style object to manufacture [`AggregatedUtterancesFilter`](crate::model::AggregatedUtterancesFilter)
+    pub fn builder() -> crate::model::aggregated_utterances_filter::Builder {
+        crate::model::aggregated_utterances_filter::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AggregatedUtterancesFilterOperator {
+    Contains,
+    Equals,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AggregatedUtterancesFilterOperator {
+    fn from(s: &str) -> Self {
+        match s {
+            "CO" => AggregatedUtterancesFilterOperator::Contains,
+            "EQ" => AggregatedUtterancesFilterOperator::Equals,
+            other => AggregatedUtterancesFilterOperator::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AggregatedUtterancesFilterOperator {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AggregatedUtterancesFilterOperator::from(s))
+    }
+}
+impl AggregatedUtterancesFilterOperator {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AggregatedUtterancesFilterOperator::Contains => "CO",
+            AggregatedUtterancesFilterOperator::Equals => "EQ",
+            AggregatedUtterancesFilterOperator::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CO", "EQ"]
+    }
+}
+impl AsRef<str> for AggregatedUtterancesFilterOperator {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AggregatedUtterancesFilterName {
+    Utterance,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AggregatedUtterancesFilterName {
+    fn from(s: &str) -> Self {
+        match s {
+            "Utterance" => AggregatedUtterancesFilterName::Utterance,
+            other => AggregatedUtterancesFilterName::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AggregatedUtterancesFilterName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AggregatedUtterancesFilterName::from(s))
+    }
+}
+impl AggregatedUtterancesFilterName {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AggregatedUtterancesFilterName::Utterance => "Utterance",
+            AggregatedUtterancesFilterName::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Utterance"]
+    }
+}
+impl AsRef<str> for AggregatedUtterancesFilterName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies attributes for sorting a list of utterances.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AggregatedUtterancesSortBy {
+    /// <p>The utterance attribute to sort by.</p>
+    pub attribute: std::option::Option<crate::model::AggregatedUtterancesSortAttribute>,
+    /// <p>Specifies whether to sort the aggregated utterances in ascending or
+    /// descending order.</p>
+    pub order: std::option::Option<crate::model::SortOrder>,
+}
+impl std::fmt::Debug for AggregatedUtterancesSortBy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AggregatedUtterancesSortBy");
+        formatter.field("attribute", &self.attribute);
+        formatter.field("order", &self.order);
+        formatter.finish()
+    }
+}
+/// See [`AggregatedUtterancesSortBy`](crate::model::AggregatedUtterancesSortBy)
+pub mod aggregated_utterances_sort_by {
+    /// A builder for [`AggregatedUtterancesSortBy`](crate::model::AggregatedUtterancesSortBy)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attribute: std::option::Option<crate::model::AggregatedUtterancesSortAttribute>,
+        pub(crate) order: std::option::Option<crate::model::SortOrder>,
+    }
+    impl Builder {
+        /// <p>The utterance attribute to sort by.</p>
+        pub fn attribute(mut self, input: crate::model::AggregatedUtterancesSortAttribute) -> Self {
+            self.attribute = Some(input);
+            self
+        }
+        pub fn set_attribute(
+            mut self,
+            input: std::option::Option<crate::model::AggregatedUtterancesSortAttribute>,
+        ) -> Self {
+            self.attribute = input;
+            self
+        }
+        /// <p>Specifies whether to sort the aggregated utterances in ascending or
+        /// descending order.</p>
+        pub fn order(mut self, input: crate::model::SortOrder) -> Self {
+            self.order = Some(input);
+            self
+        }
+        pub fn set_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
+            self.order = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AggregatedUtterancesSortBy`](crate::model::AggregatedUtterancesSortBy)
+        pub fn build(self) -> crate::model::AggregatedUtterancesSortBy {
+            crate::model::AggregatedUtterancesSortBy {
+                attribute: self.attribute,
+                order: self.order,
+            }
+        }
+    }
+}
+impl AggregatedUtterancesSortBy {
+    /// Creates a new builder-style object to manufacture [`AggregatedUtterancesSortBy`](crate::model::AggregatedUtterancesSortBy)
+    pub fn builder() -> crate::model::aggregated_utterances_sort_by::Builder {
+        crate::model::aggregated_utterances_sort_by::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AggregatedUtterancesSortAttribute {
+    HitCount,
+    MissedCount,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AggregatedUtterancesSortAttribute {
+    fn from(s: &str) -> Self {
+        match s {
+            "HitCount" => AggregatedUtterancesSortAttribute::HitCount,
+            "MissedCount" => AggregatedUtterancesSortAttribute::MissedCount,
+            other => AggregatedUtterancesSortAttribute::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AggregatedUtterancesSortAttribute {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AggregatedUtterancesSortAttribute::from(s))
+    }
+}
+impl AggregatedUtterancesSortAttribute {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AggregatedUtterancesSortAttribute::HitCount => "HitCount",
+            AggregatedUtterancesSortAttribute::MissedCount => "MissedCount",
+            AggregatedUtterancesSortAttribute::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["HitCount", "MissedCount"]
+    }
+}
+impl AsRef<str> for AggregatedUtterancesSortAttribute {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Provides information about an event that occurred affecting the bot
 /// locale.</p>
 #[non_exhaustive]

@@ -221,6 +221,39 @@ pub fn deser_structure_crate_error_load_balancer_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
+pub fn deser_structure_crate_error_rule_not_found_exception_xml_err(
+    inp: &[u8],
+    mut builder: crate::error::rule_not_found_exception::Builder,
+) -> Result<crate::error::rule_not_found_exception::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
+    use std::convert::TryFrom;
+    let mut document = smithy_xml::decode::Document::try_from(inp)?;
+    #[allow(unused_mut)]
+    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
+    while let Some(mut tag) = error_decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#RuleNotFoundException$Message */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_message(var_7);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder)
+}
+
+#[allow(unused_mut)]
 pub fn deser_structure_crate_error_target_group_not_found_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::target_group_not_found_exception::Builder,
@@ -235,7 +268,7 @@ pub fn deser_structure_crate_error_target_group_not_found_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#TargetGroupNotFoundException$Message */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -244,7 +277,7 @@ pub fn deser_structure_crate_error_target_group_not_found_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_7);
+                builder = builder.set_message(var_8);
             }
             ,
             _ => {}
@@ -268,7 +301,7 @@ pub fn deser_structure_crate_error_too_many_tags_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#TooManyTagsException$Message */ =>  {
-                let var_8 =
+                let var_9 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -277,7 +310,7 @@ pub fn deser_structure_crate_error_too_many_tags_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_8);
+                builder = builder.set_message(var_9);
             }
             ,
             _ => {}
@@ -302,7 +335,7 @@ pub fn deser_structure_crate_error_alpn_policy_not_supported_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#ALPNPolicyNotSupportedException$Message */ =>  {
-                let var_9 =
+                let var_10 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -311,7 +344,7 @@ pub fn deser_structure_crate_error_alpn_policy_not_supported_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_9);
+                builder = builder.set_message(var_10);
             }
             ,
             _ => {}
@@ -335,7 +368,7 @@ pub fn deser_structure_crate_error_duplicate_listener_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#DuplicateListenerException$Message */ =>  {
-                let var_10 =
+                let var_11 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -344,7 +377,7 @@ pub fn deser_structure_crate_error_duplicate_listener_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_10);
+                builder = builder.set_message(var_11);
             }
             ,
             _ => {}
@@ -368,7 +401,7 @@ pub fn deser_structure_crate_error_incompatible_protocols_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#IncompatibleProtocolsException$Message */ =>  {
-                let var_11 =
+                let var_12 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -377,7 +410,7 @@ pub fn deser_structure_crate_error_incompatible_protocols_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_11);
+                builder = builder.set_message(var_12);
             }
             ,
             _ => {}
@@ -404,7 +437,7 @@ pub fn deser_structure_crate_error_invalid_configuration_request_exception_xml_e
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#InvalidConfigurationRequestException$Message */ =>  {
-                let var_12 =
+                let var_13 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -413,7 +446,7 @@ pub fn deser_structure_crate_error_invalid_configuration_request_exception_xml_e
                         ?
                     )
                 ;
-                builder = builder.set_message(var_12);
+                builder = builder.set_message(var_13);
             }
             ,
             _ => {}
@@ -440,7 +473,7 @@ pub fn deser_structure_crate_error_invalid_load_balancer_action_exception_xml_er
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#InvalidLoadBalancerActionException$Message */ =>  {
-                let var_13 =
+                let var_14 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -449,7 +482,7 @@ pub fn deser_structure_crate_error_invalid_load_balancer_action_exception_xml_er
                         ?
                     )
                 ;
-                builder = builder.set_message(var_13);
+                builder = builder.set_message(var_14);
             }
             ,
             _ => {}
@@ -473,7 +506,7 @@ pub fn deser_structure_crate_error_ssl_policy_not_found_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#SSLPolicyNotFoundException$Message */ =>  {
-                let var_14 =
+                let var_15 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -482,7 +515,7 @@ pub fn deser_structure_crate_error_ssl_policy_not_found_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_14);
+                builder = builder.set_message(var_15);
             }
             ,
             _ => {}
@@ -509,7 +542,7 @@ pub fn deser_structure_crate_error_target_group_association_limit_exception_xml_
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#TargetGroupAssociationLimitException$Message */ =>  {
-                let var_15 =
+                let var_16 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -518,7 +551,7 @@ pub fn deser_structure_crate_error_target_group_association_limit_exception_xml_
                         ?
                     )
                 ;
-                builder = builder.set_message(var_15);
+                builder = builder.set_message(var_16);
             }
             ,
             _ => {}
@@ -542,7 +575,7 @@ pub fn deser_structure_crate_error_too_many_actions_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#TooManyActionsException$Message */ =>  {
-                let var_16 =
+                let var_17 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -551,7 +584,7 @@ pub fn deser_structure_crate_error_too_many_actions_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_16);
+                builder = builder.set_message(var_17);
             }
             ,
             _ => {}
@@ -575,7 +608,7 @@ pub fn deser_structure_crate_error_too_many_listeners_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#TooManyListenersException$Message */ =>  {
-                let var_17 =
+                let var_18 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -584,7 +617,7 @@ pub fn deser_structure_crate_error_too_many_listeners_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_17);
+                builder = builder.set_message(var_18);
             }
             ,
             _ => {}
@@ -611,7 +644,7 @@ pub fn deser_structure_crate_error_too_many_registrations_for_target_id_exceptio
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#TooManyRegistrationsForTargetIdException$Message */ =>  {
-                let var_18 =
+                let var_19 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -620,7 +653,7 @@ pub fn deser_structure_crate_error_too_many_registrations_for_target_id_exceptio
                         ?
                     )
                 ;
-                builder = builder.set_message(var_18);
+                builder = builder.set_message(var_19);
             }
             ,
             _ => {}
@@ -644,7 +677,7 @@ pub fn deser_structure_crate_error_too_many_targets_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#TooManyTargetsException$Message */ =>  {
-                let var_19 =
+                let var_20 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -653,7 +686,7 @@ pub fn deser_structure_crate_error_too_many_targets_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_19);
+                builder = builder.set_message(var_20);
             }
             ,
             _ => {}
@@ -680,7 +713,7 @@ pub fn deser_structure_crate_error_too_many_unique_target_groups_per_load_balanc
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#TooManyUniqueTargetGroupsPerLoadBalancerException$Message */ =>  {
-                let var_20 =
+                let var_21 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -689,7 +722,7 @@ pub fn deser_structure_crate_error_too_many_unique_target_groups_per_load_balanc
                         ?
                     )
                 ;
-                builder = builder.set_message(var_20);
+                builder = builder.set_message(var_21);
             }
             ,
             _ => {}
@@ -713,7 +746,7 @@ pub fn deser_structure_crate_error_unsupported_protocol_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#UnsupportedProtocolException$Message */ =>  {
-                let var_21 =
+                let var_22 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -722,7 +755,7 @@ pub fn deser_structure_crate_error_unsupported_protocol_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_21);
+                builder = builder.set_message(var_22);
             }
             ,
             _ => {}
@@ -759,13 +792,13 @@ pub fn deser_operation_crate_operation_create_listener(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Listeners") /* Listeners com.amazonaws.elasticloadbalancingv2.synthetic#CreateListenerOutput$Listeners */ =>  {
-                let var_22 =
+                let var_23 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_listeners(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_listeners(var_22);
+                builder = builder.set_listeners(var_23);
             }
             ,
             _ => {}
@@ -795,7 +828,7 @@ pub fn deser_structure_crate_error_allocation_id_not_found_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#AllocationIdNotFoundException$Message */ =>  {
-                let var_23 =
+                let var_24 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -804,7 +837,7 @@ pub fn deser_structure_crate_error_allocation_id_not_found_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_23);
+                builder = builder.set_message(var_24);
             }
             ,
             _ => {}
@@ -831,7 +864,7 @@ pub fn deser_structure_crate_error_availability_zone_not_supported_exception_xml
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#AvailabilityZoneNotSupportedException$Message */ =>  {
-                let var_24 =
+                let var_25 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -840,7 +873,7 @@ pub fn deser_structure_crate_error_availability_zone_not_supported_exception_xml
                         ?
                     )
                 ;
-                builder = builder.set_message(var_24);
+                builder = builder.set_message(var_25);
             }
             ,
             _ => {}
@@ -867,7 +900,7 @@ pub fn deser_structure_crate_error_duplicate_load_balancer_name_exception_xml_er
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#DuplicateLoadBalancerNameException$Message */ =>  {
-                let var_25 =
+                let var_26 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -876,7 +909,7 @@ pub fn deser_structure_crate_error_duplicate_load_balancer_name_exception_xml_er
                         ?
                     )
                 ;
-                builder = builder.set_message(var_25);
+                builder = builder.set_message(var_26);
             }
             ,
             _ => {}
@@ -900,7 +933,7 @@ pub fn deser_structure_crate_error_invalid_scheme_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#InvalidSchemeException$Message */ =>  {
-                let var_26 =
+                let var_27 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -909,7 +942,7 @@ pub fn deser_structure_crate_error_invalid_scheme_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_26);
+                builder = builder.set_message(var_27);
             }
             ,
             _ => {}
@@ -933,7 +966,7 @@ pub fn deser_structure_crate_error_invalid_security_group_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#InvalidSecurityGroupException$Message */ =>  {
-                let var_27 =
+                let var_28 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -942,7 +975,7 @@ pub fn deser_structure_crate_error_invalid_security_group_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_27);
+                builder = builder.set_message(var_28);
             }
             ,
             _ => {}
@@ -966,7 +999,7 @@ pub fn deser_structure_crate_error_invalid_subnet_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#InvalidSubnetException$Message */ =>  {
-                let var_28 =
+                let var_29 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -975,7 +1008,7 @@ pub fn deser_structure_crate_error_invalid_subnet_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_28);
+                builder = builder.set_message(var_29);
             }
             ,
             _ => {}
@@ -1000,7 +1033,7 @@ pub fn deser_structure_crate_error_operation_not_permitted_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#OperationNotPermittedException$Message */ =>  {
-                let var_29 =
+                let var_30 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1009,7 +1042,7 @@ pub fn deser_structure_crate_error_operation_not_permitted_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_29);
+                builder = builder.set_message(var_30);
             }
             ,
             _ => {}
@@ -1033,7 +1066,7 @@ pub fn deser_structure_crate_error_resource_in_use_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#ResourceInUseException$Message */ =>  {
-                let var_30 =
+                let var_31 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1042,7 +1075,7 @@ pub fn deser_structure_crate_error_resource_in_use_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_30);
+                builder = builder.set_message(var_31);
             }
             ,
             _ => {}
@@ -1066,7 +1099,7 @@ pub fn deser_structure_crate_error_subnet_not_found_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#SubnetNotFoundException$Message */ =>  {
-                let var_31 =
+                let var_32 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1075,7 +1108,7 @@ pub fn deser_structure_crate_error_subnet_not_found_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_31);
+                builder = builder.set_message(var_32);
             }
             ,
             _ => {}
@@ -1100,7 +1133,7 @@ pub fn deser_structure_crate_error_too_many_load_balancers_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#TooManyLoadBalancersException$Message */ =>  {
-                let var_32 =
+                let var_33 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1109,7 +1142,7 @@ pub fn deser_structure_crate_error_too_many_load_balancers_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_32);
+                builder = builder.set_message(var_33);
             }
             ,
             _ => {}
@@ -1146,13 +1179,13 @@ pub fn deser_operation_crate_operation_create_load_balancer(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("LoadBalancers") /* LoadBalancers com.amazonaws.elasticloadbalancingv2.synthetic#CreateLoadBalancerOutput$LoadBalancers */ =>  {
-                let var_33 =
+                let var_34 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_load_balancers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_load_balancers(var_33);
+                builder = builder.set_load_balancers(var_34);
             }
             ,
             _ => {}
@@ -1181,7 +1214,7 @@ pub fn deser_structure_crate_error_priority_in_use_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#PriorityInUseException$Message */ =>  {
-                let var_34 =
+                let var_35 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1190,7 +1223,7 @@ pub fn deser_structure_crate_error_priority_in_use_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_34);
+                builder = builder.set_message(var_35);
             }
             ,
             _ => {}
@@ -1214,7 +1247,7 @@ pub fn deser_structure_crate_error_too_many_rules_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#TooManyRulesException$Message */ =>  {
-                let var_35 =
+                let var_36 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1223,7 +1256,7 @@ pub fn deser_structure_crate_error_too_many_rules_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_35);
+                builder = builder.set_message(var_36);
             }
             ,
             _ => {}
@@ -1247,7 +1280,7 @@ pub fn deser_structure_crate_error_too_many_target_groups_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#TooManyTargetGroupsException$Message */ =>  {
-                let var_36 =
+                let var_37 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1256,7 +1289,7 @@ pub fn deser_structure_crate_error_too_many_target_groups_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_36);
+                builder = builder.set_message(var_37);
             }
             ,
             _ => {}
@@ -1293,13 +1326,13 @@ pub fn deser_operation_crate_operation_create_rule(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Rules") /* Rules com.amazonaws.elasticloadbalancingv2.synthetic#CreateRuleOutput$Rules */ =>  {
-                let var_37 =
+                let var_38 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_rules(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_rules(var_37);
+                builder = builder.set_rules(var_38);
             }
             ,
             _ => {}
@@ -1331,7 +1364,7 @@ pub fn deser_structure_crate_error_duplicate_target_group_name_exception_xml_err
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#DuplicateTargetGroupNameException$Message */ =>  {
-                let var_38 =
+                let var_39 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1340,7 +1373,7 @@ pub fn deser_structure_crate_error_duplicate_target_group_name_exception_xml_err
                         ?
                     )
                 ;
-                builder = builder.set_message(var_38);
+                builder = builder.set_message(var_39);
             }
             ,
             _ => {}
@@ -1377,13 +1410,13 @@ pub fn deser_operation_crate_operation_create_target_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("TargetGroups") /* TargetGroups com.amazonaws.elasticloadbalancingv2.synthetic#CreateTargetGroupOutput$TargetGroups */ =>  {
-                let var_39 =
+                let var_40 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticloadbalancingv2_target_groups(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_target_groups(var_39);
+                builder = builder.set_target_groups(var_40);
             }
             ,
             _ => {}
@@ -1394,39 +1427,6 @@ pub fn deser_operation_crate_operation_create_target_group(
             "expected CreateTargetGroupResult tag",
         ));
     };
-    Ok(builder)
-}
-
-#[allow(unused_mut)]
-pub fn deser_structure_crate_error_rule_not_found_exception_xml_err(
-    inp: &[u8],
-    mut builder: crate::error::rule_not_found_exception::Builder,
-) -> Result<crate::error::rule_not_found_exception::Builder, smithy_xml::decode::XmlError> {
-    if inp.is_empty() {
-        return Ok(builder);
-    }
-    use std::convert::TryFrom;
-    let mut document = smithy_xml::decode::Document::try_from(inp)?;
-    #[allow(unused_mut)]
-    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
-    while let Some(mut tag) = error_decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("Message") /* Message com.amazonaws.elasticloadbalancingv2#RuleNotFoundException$Message */ =>  {
-                let var_40 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_message(var_40);
-            }
-            ,
-            _ => {}
-        }
-    }
     Ok(builder)
 }
 

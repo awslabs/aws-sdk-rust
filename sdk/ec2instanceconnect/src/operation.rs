@@ -23,9 +23,9 @@ impl smithy_http::response::ParseStrictResponse for SendSerialConsoleSSHPublicKe
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_send_serial_console_ssh_public_key_error(response)
+            crate::operation_ser::parse_send_serial_console_ssh_public_key_error(response)
         } else {
-            crate::operation_deser::parse_send_serial_console_ssh_public_key_response(response)
+            crate::operation_ser::parse_send_serial_console_ssh_public_key_response(response)
         }
     }
 }
@@ -54,9 +54,9 @@ impl smithy_http::response::ParseStrictResponse for SendSSHPublicKey {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_send_ssh_public_key_error(response)
+            crate::operation_ser::parse_send_ssh_public_key_error(response)
         } else {
-            crate::operation_deser::parse_send_ssh_public_key_response(response)
+            crate::operation_ser::parse_send_ssh_public_key_response(response)
         }
     }
 }

@@ -2163,6 +2163,8 @@ impl AssetShallow {
 pub struct EgressEndpoint {
     /// The ID of the PackagingConfiguration being applied to the Asset.
     pub packaging_configuration_id: std::option::Option<std::string::String>,
+    /// The current processing status of the asset used for the packaging configuration. The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status information won't be available for most assets ingested before 2021-09-30.
+    pub status: std::option::Option<std::string::String>,
     /// The URL of the parent manifest for the repackaged Asset.
     pub url: std::option::Option<std::string::String>,
 }
@@ -2173,6 +2175,7 @@ impl std::fmt::Debug for EgressEndpoint {
             "packaging_configuration_id",
             &self.packaging_configuration_id,
         );
+        formatter.field("status", &self.status);
         formatter.field("url", &self.url);
         formatter.finish()
     }
@@ -2184,6 +2187,7 @@ pub mod egress_endpoint {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) packaging_configuration_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) url: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2199,6 +2203,15 @@ pub mod egress_endpoint {
             self.packaging_configuration_id = input;
             self
         }
+        /// The current processing status of the asset used for the packaging configuration. The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status information won't be available for most assets ingested before 2021-09-30.
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
         /// The URL of the parent manifest for the repackaged Asset.
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
@@ -2212,6 +2225,7 @@ pub mod egress_endpoint {
         pub fn build(self) -> crate::model::EgressEndpoint {
             crate::model::EgressEndpoint {
                 packaging_configuration_id: self.packaging_configuration_id,
+                status: self.status,
                 url: self.url,
             }
         }

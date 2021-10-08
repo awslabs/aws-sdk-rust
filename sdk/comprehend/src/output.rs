@@ -1962,6 +1962,78 @@ impl ListEventsDetectionJobsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEntityRecognizerSummariesOutput {
+    /// <p>The list entity recognizer summaries.</p>
+    pub entity_recognizer_summaries_list:
+        std::option::Option<std::vec::Vec<crate::model::EntityRecognizerSummary>>,
+    /// <p>The list entity recognizer summaries.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListEntityRecognizerSummariesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListEntityRecognizerSummariesOutput");
+        formatter.field(
+            "entity_recognizer_summaries_list",
+            &self.entity_recognizer_summaries_list,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListEntityRecognizerSummariesOutput`](crate::output::ListEntityRecognizerSummariesOutput)
+pub mod list_entity_recognizer_summaries_output {
+    /// A builder for [`ListEntityRecognizerSummariesOutput`](crate::output::ListEntityRecognizerSummariesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entity_recognizer_summaries_list:
+            std::option::Option<std::vec::Vec<crate::model::EntityRecognizerSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn entity_recognizer_summaries_list(
+            mut self,
+            input: impl Into<crate::model::EntityRecognizerSummary>,
+        ) -> Self {
+            let mut v = self.entity_recognizer_summaries_list.unwrap_or_default();
+            v.push(input.into());
+            self.entity_recognizer_summaries_list = Some(v);
+            self
+        }
+        pub fn set_entity_recognizer_summaries_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EntityRecognizerSummary>>,
+        ) -> Self {
+            self.entity_recognizer_summaries_list = input;
+            self
+        }
+        /// <p>The list entity recognizer summaries.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListEntityRecognizerSummariesOutput`](crate::output::ListEntityRecognizerSummariesOutput)
+        pub fn build(self) -> crate::output::ListEntityRecognizerSummariesOutput {
+            crate::output::ListEntityRecognizerSummariesOutput {
+                entity_recognizer_summaries_list: self.entity_recognizer_summaries_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListEntityRecognizerSummariesOutput {
+    /// Creates a new builder-style object to manufacture [`ListEntityRecognizerSummariesOutput`](crate::output::ListEntityRecognizerSummariesOutput)
+    pub fn builder() -> crate::output::list_entity_recognizer_summaries_output::Builder {
+        crate::output::list_entity_recognizer_summaries_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntityRecognizersOutput {
     /// <p>The list of properties of an entity recognizer.</p>
     pub entity_recognizer_properties_list:
@@ -2251,6 +2323,78 @@ impl ListDominantLanguageDetectionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListDominantLanguageDetectionJobsOutput`](crate::output::ListDominantLanguageDetectionJobsOutput)
     pub fn builder() -> crate::output::list_dominant_language_detection_jobs_output::Builder {
         crate::output::list_dominant_language_detection_jobs_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDocumentClassifierSummariesOutput {
+    /// <p>The list of summaries of document classifiers.</p>
+    pub document_classifier_summaries_list:
+        std::option::Option<std::vec::Vec<crate::model::DocumentClassifierSummary>>,
+    /// <p>Identifies the next page of results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListDocumentClassifierSummariesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListDocumentClassifierSummariesOutput");
+        formatter.field(
+            "document_classifier_summaries_list",
+            &self.document_classifier_summaries_list,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListDocumentClassifierSummariesOutput`](crate::output::ListDocumentClassifierSummariesOutput)
+pub mod list_document_classifier_summaries_output {
+    /// A builder for [`ListDocumentClassifierSummariesOutput`](crate::output::ListDocumentClassifierSummariesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) document_classifier_summaries_list:
+            std::option::Option<std::vec::Vec<crate::model::DocumentClassifierSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn document_classifier_summaries_list(
+            mut self,
+            input: impl Into<crate::model::DocumentClassifierSummary>,
+        ) -> Self {
+            let mut v = self.document_classifier_summaries_list.unwrap_or_default();
+            v.push(input.into());
+            self.document_classifier_summaries_list = Some(v);
+            self
+        }
+        pub fn set_document_classifier_summaries_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DocumentClassifierSummary>>,
+        ) -> Self {
+            self.document_classifier_summaries_list = input;
+            self
+        }
+        /// <p>Identifies the next page of results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDocumentClassifierSummariesOutput`](crate::output::ListDocumentClassifierSummariesOutput)
+        pub fn build(self) -> crate::output::ListDocumentClassifierSummariesOutput {
+            crate::output::ListDocumentClassifierSummariesOutput {
+                document_classifier_summaries_list: self.document_classifier_summaries_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListDocumentClassifierSummariesOutput {
+    /// Creates a new builder-style object to manufacture [`ListDocumentClassifierSummariesOutput`](crate::output::ListDocumentClassifierSummariesOutput)
+    pub fn builder() -> crate::output::list_document_classifier_summaries_output::Builder {
+        crate::output::list_document_classifier_summaries_output::Builder::default()
     }
 }
 

@@ -71,6 +71,22 @@ pub fn deser_payload_create_import_job_create_import_job_output_import_job_respo
         .transpose()
 }
 
+pub fn deser_payload_create_in_app_template_create_in_app_template_output_template_create_message_body(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::TemplateCreateMessageBody>,
+    crate::error::CreateInAppTemplateError,
+> {
+    (!body.is_empty())
+        .then(|| {
+            crate::json_deser::deser_structure_crate_model_template_create_message_body_payload(
+                body,
+            )
+            .map_err(crate::error::CreateInAppTemplateError::unhandled)
+        })
+        .transpose()
+}
+
 pub fn deser_payload_create_journey_create_journey_output_journey_response(
     body: &[u8],
 ) -> std::result::Result<
@@ -335,6 +351,20 @@ pub fn deser_payload_delete_gcm_channel_delete_gcm_channel_output_gcm_channel_re
         .then(|| {
             crate::json_deser::deser_structure_crate_model_gcm_channel_response_payload(body)
                 .map_err(crate::error::DeleteGcmChannelError::unhandled)
+        })
+        .transpose()
+}
+
+pub fn deser_payload_delete_in_app_template_delete_in_app_template_output_message_body(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::MessageBody>,
+    crate::error::DeleteInAppTemplateError,
+> {
+    (!body.is_empty())
+        .then(|| {
+            crate::json_deser::deser_structure_crate_model_message_body_payload(body)
+                .map_err(crate::error::DeleteInAppTemplateError::unhandled)
         })
         .transpose()
 }
@@ -822,6 +852,34 @@ pub fn deser_payload_get_import_jobs_get_import_jobs_output_import_jobs_response
         .then(|| {
             crate::json_deser::deser_structure_crate_model_import_jobs_response_payload(body)
                 .map_err(crate::error::GetImportJobsError::unhandled)
+        })
+        .transpose()
+}
+
+pub fn deser_payload_get_in_app_messages_get_in_app_messages_output_in_app_messages_response(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::InAppMessagesResponse>,
+    crate::error::GetInAppMessagesError,
+> {
+    (!body.is_empty())
+        .then(|| {
+            crate::json_deser::deser_structure_crate_model_in_app_messages_response_payload(body)
+                .map_err(crate::error::GetInAppMessagesError::unhandled)
+        })
+        .transpose()
+}
+
+pub fn deser_payload_get_in_app_template_get_in_app_template_output_in_app_template_response(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::InAppTemplateResponse>,
+    crate::error::GetInAppTemplateError,
+> {
+    (!body.is_empty())
+        .then(|| {
+            crate::json_deser::deser_structure_crate_model_in_app_template_response_payload(body)
+                .map_err(crate::error::GetInAppTemplateError::unhandled)
         })
         .transpose()
 }
@@ -1384,6 +1442,20 @@ pub fn deser_payload_update_gcm_channel_update_gcm_channel_output_gcm_channel_re
         .then(|| {
             crate::json_deser::deser_structure_crate_model_gcm_channel_response_payload(body)
                 .map_err(crate::error::UpdateGcmChannelError::unhandled)
+        })
+        .transpose()
+}
+
+pub fn deser_payload_update_in_app_template_update_in_app_template_output_message_body(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::MessageBody>,
+    crate::error::UpdateInAppTemplateError,
+> {
+    (!body.is_empty())
+        .then(|| {
+            crate::json_deser::deser_structure_crate_model_message_body_payload(body)
+                .map_err(crate::error::UpdateInAppTemplateError::unhandled)
         })
         .transpose()
 }

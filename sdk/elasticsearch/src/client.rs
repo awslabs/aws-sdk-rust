@@ -2318,6 +2318,18 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
+        /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
+        pub fn engine_type(mut self, inp: crate::model::EngineType) -> Self {
+            self.inner = self.inner.engine_type(inp);
+            self
+        }
+        pub fn set_engine_type(
+            mut self,
+            input: std::option::Option<crate::model::EngineType>,
+        ) -> Self {
+            self.inner = self.inner.set_engine_type(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct ListDomainsForPackage<

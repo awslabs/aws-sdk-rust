@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any machine learning
 //! application. When an AI application can't evaluate data with a high degree of confidence,
 //! human reviewers can take over. This human review is called a human review workflow. To create
@@ -50,7 +51,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

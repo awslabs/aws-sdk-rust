@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for GetDeviceRegistration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_device_registration_error(response)
+            crate::operation_ser::parse_get_device_registration_error(response)
         } else {
-            crate::operation_deser::parse_get_device_registration_response(response)
+            crate::operation_ser::parse_get_device_registration_response(response)
         }
     }
 }
@@ -46,9 +46,9 @@ impl smithy_http::response::ParseStrictResponse for SendHeartbeat {
         std::result::Result<crate::output::SendHeartbeatOutput, crate::error::SendHeartbeatError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_send_heartbeat_error(response)
+            crate::operation_ser::parse_send_heartbeat_error(response)
         } else {
-            crate::operation_deser::parse_send_heartbeat_response(response)
+            crate::operation_ser::parse_send_heartbeat_response(response)
         }
     }
 }

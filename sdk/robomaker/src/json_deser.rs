@@ -662,6 +662,11 @@ pub fn deser_operation_crate_operation_create_robot_application(
                                 .transpose()?,
                         );
                     }
+                    "environment" => {
+                        builder = builder.set_environment(
+                            crate::json_deser::deser_structure_crate_model_environment(tokens)?,
+                        );
+                    }
                     "lastUpdatedAt" => {
                         builder = builder.set_last_updated_at(
                             smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -750,6 +755,11 @@ pub fn deser_operation_crate_operation_create_robot_application_version(
                                 .transpose()?,
                         );
                     }
+                    "environment" => {
+                        builder = builder.set_environment(
+                            crate::json_deser::deser_structure_crate_model_environment(tokens)?,
+                        );
+                    }
                     "lastUpdatedAt" => {
                         builder = builder.set_last_updated_at(
                             smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -831,6 +841,11 @@ pub fn deser_operation_crate_operation_create_simulation_application(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?,
+                        );
+                    }
+                    "environment" => {
+                        builder = builder.set_environment(
+                            crate::json_deser::deser_structure_crate_model_environment(tokens)?,
                         );
                     }
                     "lastUpdatedAt" => {
@@ -931,6 +946,11 @@ pub fn deser_operation_crate_operation_create_simulation_application_version(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?,
+                        );
+                    }
+                    "environment" => {
+                        builder = builder.set_environment(
+                            crate::json_deser::deser_structure_crate_model_environment(tokens)?,
                         );
                     }
                     "lastUpdatedAt" => {
@@ -1835,6 +1855,18 @@ pub fn deser_operation_crate_operation_describe_robot_application(
                                 .transpose()?,
                         );
                     }
+                    "environment" => {
+                        builder = builder.set_environment(
+                            crate::json_deser::deser_structure_crate_model_environment(tokens)?,
+                        );
+                    }
+                    "imageDigest" => {
+                        builder = builder.set_image_digest(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     "lastUpdatedAt" => {
                         builder = builder.set_last_updated_at(
                             smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -1918,6 +1950,18 @@ pub fn deser_operation_crate_operation_describe_simulation_application(
                 match key.to_unescaped()?.as_ref() {
                     "arn" => {
                         builder = builder.set_arn(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "environment" => {
+                        builder = builder.set_environment(
+                            crate::json_deser::deser_structure_crate_model_environment(tokens)?,
+                        );
+                    }
+                    "imageDigest" => {
+                        builder = builder.set_image_digest(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?,
@@ -3525,6 +3569,11 @@ pub fn deser_operation_crate_operation_update_robot_application(
                                 .transpose()?,
                         );
                     }
+                    "environment" => {
+                        builder = builder.set_environment(
+                            crate::json_deser::deser_structure_crate_model_environment(tokens)?,
+                        );
+                    }
                     "lastUpdatedAt" => {
                         builder = builder.set_last_updated_at(
                             smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -3606,6 +3655,11 @@ pub fn deser_operation_crate_operation_update_simulation_application(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?,
+                        );
+                    }
+                    "environment" => {
+                        builder = builder.set_environment(
+                            crate::json_deser::deser_structure_crate_model_environment(tokens)?,
                         );
                     }
                     "lastUpdatedAt" => {
@@ -3967,6 +4021,51 @@ where
                 }
             }
             Ok(Some(map))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_environment<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::Environment>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::Environment::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "uri" => {
+                                builder = builder.set_uri(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
         }
         _ => Err(smithy_json::deserialize::Error::custom(
             "expected start object or null",

@@ -3,19 +3,23 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use aws_sigv4::http_request::{sign, PayloadChecksumKind, PercentEncodingMode, SigningSettings};
-use aws_sigv4::SigningParams;
+use crate::middleware::Signature;
+use aws_sigv4::http_request::{
+    sign, PayloadChecksumKind, PercentEncodingMode, SignableRequest, SignatureLocation,
+    SigningParams, SigningSettings,
+};
 use aws_types::region::SigningRegion;
 use aws_types::Credentials;
 use aws_types::SigningService;
 use smithy_http::body::SdkBody;
 use std::error::Error;
 use std::fmt;
-use std::time::SystemTime;
+use std::time::{Duration, SystemTime};
 
-use crate::middleware::Signature;
 pub use aws_sigv4::http_request::SignableBody;
-use aws_sigv4::http_request::SignableRequest;
+
+const EXPIRATION_WARNING: &str = "Presigned request will expire before the given \
+    `expires_in` duration because the credentials used to sign it will expire first.";
 
 #[derive(Eq, PartialEq, Clone, Copy)]
 pub enum SigningAlgorithm {
@@ -26,12 +30,11 @@ pub enum SigningAlgorithm {
 pub enum HttpSignatureType {
     /// A signature for a full http request should be computed, with header updates applied to the signing result.
     HttpRequestHeaders,
-    /* Currently Unsupported
+
     /// A signature for a full http request should be computed, with query param updates applied to the signing result.
     ///
-    /// This is typically used for presigned URLs & is currently unsupported.
+    /// This is typically used for presigned URLs.
     HttpRequestQueryParams,
-     */
 }
 
 /// Signing Configuration for an Operation
@@ -45,6 +48,7 @@ pub struct OperationSigningConfig {
     pub signature_type: HttpSignatureType,
     pub signing_options: SigningOptions,
     pub signing_requirements: SigningRequirements,
+    pub expires_in: Option<Duration>,
 }
 
 impl OperationSigningConfig {
@@ -60,6 +64,7 @@ impl OperationSigningConfig {
                 content_sha256_header: false,
             },
             signing_requirements: SigningRequirements::Required,
+            expires_in: None,
         }
     }
 }
@@ -123,17 +128,7 @@ impl SigV4Signer {
         SigV4Signer { _private: () }
     }
 
-    /// Sign a request using the SigV4 Protocol
-    ///
-    /// Although the direct signing implementation MAY be used directly. End users will not typically
-    /// interact with this code. It is generally used via middleware in the request pipeline. See [`SigV4SigningStage`](crate::middleware::SigV4SigningStage).
-    pub fn sign(
-        &self,
-        operation_config: &OperationSigningConfig,
-        request_config: &RequestConfig<'_>,
-        credentials: &Credentials,
-        request: &mut http::Request<SdkBody>,
-    ) -> Result<Signature, SigningError> {
+    fn settings(operation_config: &OperationSigningConfig) -> SigningSettings {
         let mut settings = SigningSettings::default();
         settings.percent_encoding_mode = if operation_config.signing_options.double_uri_encode {
             PercentEncodingMode::Double
@@ -145,21 +140,56 @@ impl SigV4Signer {
         } else {
             PayloadChecksumKind::NoHeader
         };
-        let sigv4_config = {
-            let mut builder = SigningParams::builder()
-                .access_key(credentials.access_key_id())
-                .secret_key(credentials.secret_access_key())
-                .region(request_config.region.as_ref())
-                .service_name(request_config.service.as_ref())
-                .date_time(request_config.request_ts.into())
-                .settings(settings);
-            builder.set_security_token(credentials.session_token());
-            builder.build().expect("all required fields set")
+        settings.signature_location = match operation_config.signature_type {
+            HttpSignatureType::HttpRequestHeaders => SignatureLocation::Headers,
+            HttpSignatureType::HttpRequestQueryParams => SignatureLocation::QueryParams,
         };
+        settings.expires_in = operation_config.expires_in;
+        settings
+    }
+
+    fn signing_params<'a>(
+        settings: SigningSettings,
+        credentials: &'a Credentials,
+        request_config: &'a RequestConfig<'a>,
+    ) -> SigningParams<'a> {
+        if let Some(expires_in) = settings.expires_in {
+            if let Some(creds_expires_time) = credentials.expiry() {
+                let presigned_expires_time = request_config.request_ts + expires_in;
+                if presigned_expires_time > creds_expires_time {
+                    tracing::warn!(EXPIRATION_WARNING);
+                }
+            }
+        }
+
+        let mut builder = SigningParams::builder()
+            .access_key(credentials.access_key_id())
+            .secret_key(credentials.secret_access_key())
+            .region(request_config.region.as_ref())
+            .service_name(request_config.service.as_ref())
+            .date_time(request_config.request_ts.into())
+            .settings(settings);
+        builder.set_security_token(credentials.session_token());
+        builder.build().expect("all required fields set")
+    }
+
+    /// Sign a request using the SigV4 Protocol
+    ///
+    /// Although this function may be used, end users will not typically
+    /// interact with this code. It is generally used via middleware in the request pipeline. See [`SigV4SigningStage`](crate::middleware::SigV4SigningStage).
+    pub fn sign(
+        &self,
+        operation_config: &OperationSigningConfig,
+        request_config: &RequestConfig<'_>,
+        credentials: &Credentials,
+        request: &mut http::Request<SdkBody>,
+    ) -> Result<Signature, SigningError> {
+        let settings = Self::settings(operation_config);
+        let signing_params = Self::signing_params(settings, credentials, request_config);
 
         let (signing_instructions, signature) = {
-            // A body that is already in memory can be signed directly. A  body that is not in memory
-            // (any sort of streaming body) will be signed via UNSIGNED-PAYLOAD.
+            // A body that is already in memory can be signed directly. A body that is not in memory
+            // (any sort of streaming body or presigned request) will be signed via UNSIGNED-PAYLOAD.
             let signable_body = request_config
                 .payload_override
                 // the payload_override is a cheap clone because it contains either a
@@ -179,12 +209,54 @@ impl SigV4Signer {
                 request.headers(),
                 signable_body,
             );
-            sign(signable_request, &sigv4_config)?
+            sign(signable_request, &signing_params)?
         }
         .into_parts();
 
         signing_instructions.apply_to_request(request);
 
         Ok(Signature::new(signature))
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::{RequestConfig, SigV4Signer, EXPIRATION_WARNING};
+    use aws_sigv4::http_request::SigningSettings;
+    use aws_types::region::SigningRegion;
+    use aws_types::{Credentials, SigningService};
+    use std::time::{Duration, SystemTime};
+    use tracing_test::traced_test;
+
+    #[test]
+    #[traced_test]
+    fn expiration_warning() {
+        let now = SystemTime::UNIX_EPOCH + Duration::from_secs(1000);
+        let creds_expire_in = Duration::from_secs(100);
+
+        let mut settings = SigningSettings::default();
+        settings.expires_in = Some(creds_expire_in - Duration::from_secs(10));
+
+        let credentials = Credentials::new(
+            "test-access-key",
+            "test-secret-key",
+            Some("test-session-token".into()),
+            Some(now + creds_expire_in),
+            "test",
+        );
+        let request_config = RequestConfig {
+            request_ts: now,
+            region: &SigningRegion::from_static("test"),
+            service: &SigningService::from_static("test"),
+            payload_override: None,
+        };
+        SigV4Signer::signing_params(settings, &credentials, &request_config);
+        assert!(!logs_contain(EXPIRATION_WARNING));
+
+        let mut settings = SigningSettings::default();
+        settings.expires_in = Some(creds_expire_in + Duration::from_secs(10));
+
+        SigV4Signer::signing_params(settings, &credentials, &request_config);
+        assert!(logs_contain(EXPIRATION_WARNING));
     }
 }

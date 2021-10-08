@@ -3579,6 +3579,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sip_media_application_id(input);
             self
         }
+        /// Adds a key-value pair to `SipHeaders`.
+        ///
+        /// To override the contents of this collection use [`set_sip_headers`](Self::set_sip_headers).
+        /// <p>The SIP headers added to an outbound call leg.</p>
+        pub fn sip_headers(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.sip_headers(k, v);
+            self
+        }
+        pub fn set_sip_headers(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_sip_headers(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct CreateSipRule<

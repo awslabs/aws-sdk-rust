@@ -266,7 +266,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>A name for the auto scaling configuration. When you use it for the first time in an AWS Region, App Runner creates revision number <code>1</code> of this
+        /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this
         /// name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
         pub fn auto_scaling_configuration_name(
             mut self,
@@ -379,7 +379,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>A name for the new connection. It must be unique across all App Runner connections for the AWS account in the AWS Region.</p>
+        /// <p>A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region.</p>
         pub fn connection_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.connection_name(inp);
             self
@@ -463,7 +463,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>A name for the new service. It must be unique across all the running App Runner services in your AWS account in the AWS Region.</p>
+        /// <p>A name for the new service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
         pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_name(inp);
             self
@@ -512,7 +512,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default,
-        /// App Runner uses an AWS managed CMK.</p>
+        /// App Runner uses an Amazon Web Services managed CMK.</p>
         pub fn encryption_configuration(
             mut self,
             inp: crate::model::EncryptionConfiguration,
@@ -527,7 +527,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_configuration(input);
             self
         }
-        /// <p>The settings for the health check that AWS App Runner performs to monitor the health of your service.</p>
+        /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
         pub fn health_check_configuration(
             mut self,
             inp: crate::model::HealthCheckConfiguration,
@@ -1758,7 +1758,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_configuration_arn(input);
             self
         }
-        /// <p>The settings for the health check that AWS App Runner performs to monitor the health of your service.</p>
+        /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
         pub fn health_check_configuration(
             mut self,
             inp: crate::model::HealthCheckConfiguration,

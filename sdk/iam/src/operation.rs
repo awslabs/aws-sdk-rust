@@ -23,11 +23,9 @@ impl smithy_http::response::ParseStrictResponse for AddClientIDToOpenIDConnectPr
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_add_client_id_to_open_id_connect_provider_error(response)
+            crate::operation_ser::parse_add_client_id_to_open_id_connect_provider_error(response)
         } else {
-            crate::operation_deser::parse_add_client_id_to_open_id_connect_provider_response(
-                response,
-            )
+            crate::operation_ser::parse_add_client_id_to_open_id_connect_provider_response(response)
         }
     }
 }
@@ -65,9 +63,9 @@ impl smithy_http::response::ParseStrictResponse for AddRoleToInstanceProfile {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_add_role_to_instance_profile_error(response)
+            crate::operation_ser::parse_add_role_to_instance_profile_error(response)
         } else {
-            crate::operation_deser::parse_add_role_to_instance_profile_response(response)
+            crate::operation_ser::parse_add_role_to_instance_profile_response(response)
         }
     }
 }
@@ -91,9 +89,9 @@ impl smithy_http::response::ParseStrictResponse for AddUserToGroup {
         std::result::Result<crate::output::AddUserToGroupOutput, crate::error::AddUserToGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_add_user_to_group_error(response)
+            crate::operation_ser::parse_add_user_to_group_error(response)
         } else {
-            crate::operation_deser::parse_add_user_to_group_response(response)
+            crate::operation_ser::parse_add_user_to_group_response(response)
         }
     }
 }
@@ -126,9 +124,9 @@ impl smithy_http::response::ParseStrictResponse for AttachGroupPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_attach_group_policy_error(response)
+            crate::operation_ser::parse_attach_group_policy_error(response)
         } else {
-            crate::operation_deser::parse_attach_group_policy_response(response)
+            crate::operation_ser::parse_attach_group_policy_response(response)
         }
     }
 }
@@ -168,9 +166,9 @@ impl smithy_http::response::ParseStrictResponse for AttachRolePolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_attach_role_policy_error(response)
+            crate::operation_ser::parse_attach_role_policy_error(response)
         } else {
-            crate::operation_deser::parse_attach_role_policy_response(response)
+            crate::operation_ser::parse_attach_role_policy_response(response)
         }
     }
 }
@@ -203,16 +201,16 @@ impl smithy_http::response::ParseStrictResponse for AttachUserPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_attach_user_policy_error(response)
+            crate::operation_ser::parse_attach_user_policy_error(response)
         } else {
-            crate::operation_deser::parse_attach_user_policy_response(response)
+            crate::operation_ser::parse_attach_user_policy_response(response)
         }
     }
 }
 
 /// <p>Changes the password of the IAM user who is calling this operation. This operation
 /// can be performed using the CLI, the Amazon Web Services API, or the <b>My
-/// Security Credentials</b> page in the Management Console. The account root user
+/// Security Credentials</b> page in the Amazon Web Services Management Console. The Amazon Web Services account root user
 /// password is not affected by this operation.</p>
 /// <p>Use <a>UpdateLoginProfile</a> to use the CLI, the Amazon Web Services API, or the
 /// <b>Users</b> page in the IAM console to change the
@@ -236,9 +234,9 @@ impl smithy_http::response::ParseStrictResponse for ChangePassword {
         std::result::Result<crate::output::ChangePasswordOutput, crate::error::ChangePasswordError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_change_password_error(response)
+            crate::operation_ser::parse_change_password_error(response)
         } else {
-            crate::operation_deser::parse_change_password_response(response)
+            crate::operation_ser::parse_change_password_response(response)
         }
     }
 }
@@ -247,12 +245,12 @@ impl smithy_http::response::ParseStrictResponse for ChangePassword {
 /// specified user. The default status for new keys is <code>Active</code>.</p>
 /// <p>If you do not specify a user name, IAM determines the user name implicitly based on
 /// the Amazon Web Services access key ID signing the request. This operation works for access keys under
-/// the account. Consequently, you can use this operation to manage account root
-/// user credentials. This is true even if the account has no associated users.</p>
+/// the Amazon Web Services account. Consequently, you can use this operation to manage Amazon Web Services account root
+/// user credentials. This is true even if the Amazon Web Services account has no associated users.</p>
 /// <p> For information about quotas on the number of keys you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS
 /// quotas</a> in the <i>IAM User Guide</i>.</p>
 /// <important>
-/// <p>To ensure the security of your account, the secret access key is accessible
+/// <p>To ensure the security of your Amazon Web Services account, the secret access key is accessible
 /// only during key and user creation. You must save the key (for example, in a text
 /// file) if you want to be able to access it again. If a secret key is lost, you can
 /// delete the access keys for the associated user and then create new keys.</p>
@@ -277,16 +275,16 @@ impl smithy_http::response::ParseStrictResponse for CreateAccessKey {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_access_key_error(response)
+            crate::operation_ser::parse_create_access_key_error(response)
         } else {
-            crate::operation_deser::parse_create_access_key_response(response)
+            crate::operation_ser::parse_create_access_key_response(response)
         }
     }
 }
 
-/// <p>Creates an alias for your account. For information about using an account
+/// <p>Creates an alias for your Amazon Web Services account. For information about using an Amazon Web Services account
 /// alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using an
-/// alias for your account ID</a> in the
+/// alias for your Amazon Web Services account ID</a> in the
 /// <i>IAM User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAccountAlias {
@@ -308,9 +306,9 @@ impl smithy_http::response::ParseStrictResponse for CreateAccountAlias {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_account_alias_error(response)
+            crate::operation_ser::parse_create_account_alias_error(response)
         } else {
-            crate::operation_deser::parse_create_account_alias_response(response)
+            crate::operation_ser::parse_create_account_alias_response(response)
         }
     }
 }
@@ -336,9 +334,9 @@ impl smithy_http::response::ParseStrictResponse for CreateGroup {
         std::result::Result<crate::output::CreateGroupOutput, crate::error::CreateGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_group_error(response)
+            crate::operation_ser::parse_create_group_error(response)
         } else {
-            crate::operation_deser::parse_create_group_response(response)
+            crate::operation_ser::parse_create_group_response(response)
         }
     }
 }
@@ -368,19 +366,19 @@ impl smithy_http::response::ParseStrictResponse for CreateInstanceProfile {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_instance_profile_error(response)
+            crate::operation_ser::parse_create_instance_profile_error(response)
         } else {
-            crate::operation_deser::parse_create_instance_profile_response(response)
+            crate::operation_ser::parse_create_instance_profile_response(response)
         }
     }
 }
 
 /// <p>Creates a password for the specified IAM user. A password allows an IAM user to
-/// access Amazon Web Services services through the Management Console.</p>
+/// access Amazon Web Services services through the Amazon Web Services Management Console.</p>
 /// <p>You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in the IAM console to create a password for any IAM user.
 /// Use <a>ChangePassword</a> to update your own existing password in the
 /// <b>My Security Credentials</b> page in the
-/// Management Console.</p>
+/// Amazon Web Services Management Console.</p>
 /// <p>For more information about managing passwords, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing passwords</a> in the
 /// <i>IAM User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -403,9 +401,9 @@ impl smithy_http::response::ParseStrictResponse for CreateLoginProfile {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_login_profile_error(response)
+            crate::operation_ser::parse_create_login_profile_error(response)
         } else {
-            crate::operation_deser::parse_create_login_profile_response(response)
+            crate::operation_ser::parse_create_login_profile_response(response)
         }
     }
 }
@@ -434,7 +432,7 @@ impl smithy_http::response::ParseStrictResponse for CreateLoginProfile {
 /// uses</p>
 /// </li>
 /// </ul>
-/// <p>You get all of this information from the OIDC IdP that you want to use to access
+/// <p>You get all of this information from the OIDC IdP you want to use to access
 /// Amazon Web Services.</p>
 /// <note>
 /// <p>Amazon Web Services secures communication with some OIDC identity providers (IdPs) through our
@@ -468,14 +466,14 @@ impl smithy_http::response::ParseStrictResponse for CreateOpenIDConnectProvider 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_open_id_connect_provider_error(response)
+            crate::operation_ser::parse_create_open_id_connect_provider_error(response)
         } else {
-            crate::operation_deser::parse_create_open_id_connect_provider_response(response)
+            crate::operation_ser::parse_create_open_id_connect_provider_response(response)
         }
     }
 }
 
-/// <p>Creates a new managed policy for your account.</p>
+/// <p>Creates a new managed policy for your Amazon Web Services account.</p>
 /// <p>This operation creates a policy version with a version identifier of <code>v1</code>
 /// and sets v1 as the policy's default version. For more information about policy versions,
 /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the
@@ -504,9 +502,9 @@ impl smithy_http::response::ParseStrictResponse for CreatePolicy {
         std::result::Result<crate::output::CreatePolicyOutput, crate::error::CreatePolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_policy_error(response)
+            crate::operation_ser::parse_create_policy_error(response)
         } else {
-            crate::operation_deser::parse_create_policy_response(response)
+            crate::operation_ser::parse_create_policy_response(response)
         }
     }
 }
@@ -539,14 +537,14 @@ impl smithy_http::response::ParseStrictResponse for CreatePolicyVersion {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_policy_version_error(response)
+            crate::operation_ser::parse_create_policy_version_error(response)
         } else {
-            crate::operation_deser::parse_create_policy_version_response(response)
+            crate::operation_ser::parse_create_policy_version_response(response)
         }
     }
 }
 
-/// <p>Creates a new role for your account. For more information about roles, see
+/// <p>Creates a new role for your Amazon Web Services account. For more information about roles, see
 /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
 /// roles</a>. For information about quotas for role names and the number of roles
 /// you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS quotas</a> in the
@@ -569,9 +567,9 @@ impl smithy_http::response::ParseStrictResponse for CreateRole {
         std::result::Result<crate::output::CreateRoleOutput, crate::error::CreateRoleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_role_error(response)
+            crate::operation_ser::parse_create_role_error(response)
         } else {
-            crate::operation_deser::parse_create_role_response(response)
+            crate::operation_ser::parse_create_role_response(response)
         }
     }
 }
@@ -581,7 +579,7 @@ impl smithy_http::response::ParseStrictResponse for CreateRole {
 /// <p>The SAML provider resource that you create with this operation can be used as a
 /// principal in an IAM role's trust policy. Such a policy can enable federated users who
 /// sign in using the SAML IdP to assume the role. You can create an IAM role that
-/// supports Web-based single sign-on (SSO) to the Management Console or one that supports API access
+/// supports Web-based single sign-on (SSO) to the Amazon Web Services Management Console or one that supports API access
 /// to Amazon Web Services.</p>
 /// <p>When you create the SAML provider resource, you upload a SAML metadata document that
 /// you get from your IdP. That document includes the issuer's name, expiration information,
@@ -592,7 +590,7 @@ impl smithy_http::response::ParseStrictResponse for CreateRole {
 /// <p> This operation requires <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
 /// </note>
 /// <p> For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling SAML 2.0
-/// federated users to access the Management Console</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
+/// federated users to access the Amazon Web Services Management Console</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
 /// federation</a> in the <i>IAM User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSAMLProvider {
@@ -614,9 +612,9 @@ impl smithy_http::response::ParseStrictResponse for CreateSAMLProvider {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_saml_provider_error(response)
+            crate::operation_ser::parse_create_saml_provider_error(response)
         } else {
-            crate::operation_deser::parse_create_saml_provider_response(response)
+            crate::operation_ser::parse_create_saml_provider_response(response)
         }
     }
 }
@@ -650,9 +648,9 @@ impl smithy_http::response::ParseStrictResponse for CreateServiceLinkedRole {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_service_linked_role_error(response)
+            crate::operation_ser::parse_create_service_linked_role_error(response)
         } else {
-            crate::operation_deser::parse_create_service_linked_role_response(response)
+            crate::operation_ser::parse_create_service_linked_role_response(response)
         }
     }
 }
@@ -688,14 +686,14 @@ impl smithy_http::response::ParseStrictResponse for CreateServiceSpecificCredent
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_service_specific_credential_error(response)
+            crate::operation_ser::parse_create_service_specific_credential_error(response)
         } else {
-            crate::operation_deser::parse_create_service_specific_credential_response(response)
+            crate::operation_ser::parse_create_service_specific_credential_response(response)
         }
     }
 }
 
-/// <p>Creates a new IAM user for your account.</p>
+/// <p>Creates a new IAM user for your Amazon Web Services account.</p>
 /// <p> For information about quotas for the number of IAM users you can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS
 /// quotas</a> in the <i>IAM User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -716,14 +714,14 @@ impl smithy_http::response::ParseStrictResponse for CreateUser {
         std::result::Result<crate::output::CreateUserOutput, crate::error::CreateUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_user_error(response)
+            crate::operation_ser::parse_create_user_error(response)
         } else {
-            crate::operation_deser::parse_create_user_response(response)
+            crate::operation_ser::parse_create_user_response(response)
         }
     }
 }
 
-/// <p>Creates a new virtual MFA device for the account. After creating the virtual
+/// <p>Creates a new virtual MFA device for the Amazon Web Services account. After creating the virtual
 /// MFA, use <a>EnableMFADevice</a> to attach the MFA device to an IAM user.
 /// For more information about creating and working with virtual MFA devices, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using a virtual MFA
 /// device</a> in the <i>IAM User Guide</i>.</p>
@@ -756,9 +754,9 @@ impl smithy_http::response::ParseStrictResponse for CreateVirtualMFADevice {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_virtual_mfa_device_error(response)
+            crate::operation_ser::parse_create_virtual_mfa_device_error(response)
         } else {
-            crate::operation_deser::parse_create_virtual_mfa_device_response(response)
+            crate::operation_ser::parse_create_virtual_mfa_device_response(response)
         }
     }
 }
@@ -788,9 +786,9 @@ impl smithy_http::response::ParseStrictResponse for DeactivateMFADevice {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_deactivate_mfa_device_error(response)
+            crate::operation_ser::parse_deactivate_mfa_device_error(response)
         } else {
-            crate::operation_deser::parse_deactivate_mfa_device_response(response)
+            crate::operation_ser::parse_deactivate_mfa_device_response(response)
         }
     }
 }
@@ -798,8 +796,8 @@ impl smithy_http::response::ParseStrictResponse for DeactivateMFADevice {
 /// <p>Deletes the access key pair associated with the specified IAM user.</p>
 /// <p>If you do not specify a user name, IAM determines the user name implicitly based on
 /// the Amazon Web Services access key ID signing the request. This operation works for access keys under
-/// the account. Consequently, you can use this operation to manage account root
-/// user credentials even if the account has no associated users.</p>
+/// the Amazon Web Services account. Consequently, you can use this operation to manage Amazon Web Services account root
+/// user credentials even if the Amazon Web Services account has no associated users.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAccessKey {
     _private: (),
@@ -820,15 +818,15 @@ impl smithy_http::response::ParseStrictResponse for DeleteAccessKey {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_access_key_error(response)
+            crate::operation_ser::parse_delete_access_key_error(response)
         } else {
-            crate::operation_deser::parse_delete_access_key_response(response)
+            crate::operation_ser::parse_delete_access_key_response(response)
         }
     }
 }
 
-/// <p> Deletes the specified account alias. For information about using an Amazon Web Services
-/// account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using an alias for your account ID</a> in the
+/// <p> Deletes the specified Amazon Web Services account alias. For information about using an Amazon Web Services
+/// account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using an alias for your Amazon Web Services account ID</a> in the
 /// <i>IAM User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAccountAlias {
@@ -850,14 +848,14 @@ impl smithy_http::response::ParseStrictResponse for DeleteAccountAlias {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_account_alias_error(response)
+            crate::operation_ser::parse_delete_account_alias_error(response)
         } else {
-            crate::operation_deser::parse_delete_account_alias_response(response)
+            crate::operation_ser::parse_delete_account_alias_response(response)
         }
     }
 }
 
-/// <p>Deletes the password policy for the account. There are no parameters.</p>
+/// <p>Deletes the password policy for the Amazon Web Services account. There are no parameters.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAccountPasswordPolicy {
     _private: (),
@@ -878,9 +876,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteAccountPasswordPolicy 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_account_password_policy_error(response)
+            crate::operation_ser::parse_delete_account_password_policy_error(response)
         } else {
-            crate::operation_deser::parse_delete_account_password_policy_response(response)
+            crate::operation_ser::parse_delete_account_password_policy_response(response)
         }
     }
 }
@@ -905,9 +903,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteGroup {
         std::result::Result<crate::output::DeleteGroupOutput, crate::error::DeleteGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_group_error(response)
+            crate::operation_ser::parse_delete_group_error(response)
         } else {
-            crate::operation_deser::parse_delete_group_response(response)
+            crate::operation_ser::parse_delete_group_response(response)
         }
     }
 }
@@ -938,9 +936,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteGroupPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_group_policy_error(response)
+            crate::operation_ser::parse_delete_group_policy_error(response)
         } else {
-            crate::operation_deser::parse_delete_group_policy_response(response)
+            crate::operation_ser::parse_delete_group_policy_response(response)
         }
     }
 }
@@ -975,19 +973,19 @@ impl smithy_http::response::ParseStrictResponse for DeleteInstanceProfile {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_instance_profile_error(response)
+            crate::operation_ser::parse_delete_instance_profile_error(response)
         } else {
-            crate::operation_deser::parse_delete_instance_profile_response(response)
+            crate::operation_ser::parse_delete_instance_profile_response(response)
         }
     }
 }
 
 /// <p>Deletes the password for the specified IAM user, which terminates the user's ability
-/// to access Amazon Web Services services through the Management Console.</p>
+/// to access Amazon Web Services services through the Amazon Web Services Management Console.</p>
 /// <p>You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in the IAM console to delete a password for any IAM user.
 /// You can use <a>ChangePassword</a> to update, but not delete, your own
 /// password in the <b>My Security Credentials</b> page in the
-/// Management Console.</p>
+/// Amazon Web Services Management Console.</p>
 /// <important>
 /// <p> Deleting a user's password does not prevent a user from accessing Amazon Web Services through
 /// the command line interface or the API. To prevent all user access, you must also
@@ -1015,9 +1013,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteLoginProfile {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_login_profile_error(response)
+            crate::operation_ser::parse_delete_login_profile_error(response)
         } else {
-            crate::operation_deser::parse_delete_login_profile_response(response)
+            crate::operation_ser::parse_delete_login_profile_response(response)
         }
     }
 }
@@ -1048,9 +1046,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteOpenIDConnectProvider 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_open_id_connect_provider_error(response)
+            crate::operation_ser::parse_delete_open_id_connect_provider_error(response)
         } else {
-            crate::operation_deser::parse_delete_open_id_connect_provider_response(response)
+            crate::operation_ser::parse_delete_open_id_connect_provider_response(response)
         }
     }
 }
@@ -1098,9 +1096,9 @@ impl smithy_http::response::ParseStrictResponse for DeletePolicy {
         std::result::Result<crate::output::DeletePolicyOutput, crate::error::DeletePolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_policy_error(response)
+            crate::operation_ser::parse_delete_policy_error(response)
         } else {
-            crate::operation_deser::parse_delete_policy_response(response)
+            crate::operation_ser::parse_delete_policy_response(response)
         }
     }
 }
@@ -1131,9 +1129,9 @@ impl smithy_http::response::ParseStrictResponse for DeletePolicyVersion {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_policy_version_error(response)
+            crate::operation_ser::parse_delete_policy_version_error(response)
         } else {
-            crate::operation_deser::parse_delete_policy_version_response(response)
+            crate::operation_ser::parse_delete_policy_version_response(response)
         }
     }
 }
@@ -1163,9 +1161,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteRole {
         std::result::Result<crate::output::DeleteRoleOutput, crate::error::DeleteRoleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_role_error(response)
+            crate::operation_ser::parse_delete_role_error(response)
         } else {
-            crate::operation_deser::parse_delete_role_response(response)
+            crate::operation_ser::parse_delete_role_response(response)
         }
     }
 }
@@ -1196,9 +1194,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteRolePermissionsBoundar
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_role_permissions_boundary_error(response)
+            crate::operation_ser::parse_delete_role_permissions_boundary_error(response)
         } else {
-            crate::operation_deser::parse_delete_role_permissions_boundary_response(response)
+            crate::operation_ser::parse_delete_role_permissions_boundary_response(response)
         }
     }
 }
@@ -1229,9 +1227,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteRolePolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_role_policy_error(response)
+            crate::operation_ser::parse_delete_role_policy_error(response)
         } else {
-            crate::operation_deser::parse_delete_role_policy_response(response)
+            crate::operation_ser::parse_delete_role_policy_response(response)
         }
     }
 }
@@ -1263,9 +1261,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteSAMLProvider {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_saml_provider_error(response)
+            crate::operation_ser::parse_delete_saml_provider_error(response)
         } else {
-            crate::operation_deser::parse_delete_saml_provider_response(response)
+            crate::operation_ser::parse_delete_saml_provider_response(response)
         }
     }
 }
@@ -1305,9 +1303,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteServerCertificate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_server_certificate_error(response)
+            crate::operation_ser::parse_delete_server_certificate_error(response)
         } else {
-            crate::operation_deser::parse_delete_server_certificate_response(response)
+            crate::operation_ser::parse_delete_server_certificate_response(response)
         }
     }
 }
@@ -1349,9 +1347,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteServiceLinkedRole {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_service_linked_role_error(response)
+            crate::operation_ser::parse_delete_service_linked_role_error(response)
         } else {
-            crate::operation_deser::parse_delete_service_linked_role_response(response)
+            crate::operation_ser::parse_delete_service_linked_role_response(response)
         }
     }
 }
@@ -1377,9 +1375,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteServiceSpecificCredent
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_service_specific_credential_error(response)
+            crate::operation_ser::parse_delete_service_specific_credential_error(response)
         } else {
-            crate::operation_deser::parse_delete_service_specific_credential_response(response)
+            crate::operation_ser::parse_delete_service_specific_credential_response(response)
         }
     }
 }
@@ -1387,8 +1385,8 @@ impl smithy_http::response::ParseStrictResponse for DeleteServiceSpecificCredent
 /// <p>Deletes a signing certificate associated with the specified IAM user.</p>
 /// <p>If you do not specify a user name, IAM determines the user name implicitly based on
 /// the Amazon Web Services access key ID signing the request. This operation works for access keys under
-/// the account. Consequently, you can use this operation to manage account root
-/// user credentials even if the account has no associated IAM users.</p>
+/// the Amazon Web Services account. Consequently, you can use this operation to manage Amazon Web Services account root
+/// user credentials even if the Amazon Web Services account has no associated IAM users.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSigningCertificate {
     _private: (),
@@ -1409,9 +1407,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteSigningCertificate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_signing_certificate_error(response)
+            crate::operation_ser::parse_delete_signing_certificate_error(response)
         } else {
-            crate::operation_deser::parse_delete_signing_certificate_response(response)
+            crate::operation_ser::parse_delete_signing_certificate_response(response)
         }
     }
 }
@@ -1441,14 +1439,14 @@ impl smithy_http::response::ParseStrictResponse for DeleteSSHPublicKey {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_ssh_public_key_error(response)
+            crate::operation_ser::parse_delete_ssh_public_key_error(response)
         } else {
-            crate::operation_deser::parse_delete_ssh_public_key_response(response)
+            crate::operation_ser::parse_delete_ssh_public_key_response(response)
         }
     }
 }
 
-/// <p>Deletes the specified IAM user. Unlike the Management Console, when you delete a user
+/// <p>Deletes the specified IAM user. Unlike the Amazon Web Services Management Console, when you delete a user
 /// programmatically, you must delete the items attached to the user manually, or the
 /// deletion fails. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_deleting_cli">Deleting an IAM
 /// user</a>. Before attempting to delete a user, remove the following items:</p>
@@ -1499,9 +1497,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteUser {
         std::result::Result<crate::output::DeleteUserOutput, crate::error::DeleteUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_user_error(response)
+            crate::operation_ser::parse_delete_user_error(response)
         } else {
-            crate::operation_deser::parse_delete_user_response(response)
+            crate::operation_ser::parse_delete_user_response(response)
         }
     }
 }
@@ -1532,9 +1530,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteUserPermissionsBoundar
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_user_permissions_boundary_error(response)
+            crate::operation_ser::parse_delete_user_permissions_boundary_error(response)
         } else {
-            crate::operation_deser::parse_delete_user_permissions_boundary_response(response)
+            crate::operation_ser::parse_delete_user_permissions_boundary_response(response)
         }
     }
 }
@@ -1565,9 +1563,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteUserPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_user_policy_error(response)
+            crate::operation_ser::parse_delete_user_policy_error(response)
         } else {
-            crate::operation_deser::parse_delete_user_policy_response(response)
+            crate::operation_ser::parse_delete_user_policy_response(response)
         }
     }
 }
@@ -1597,9 +1595,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteVirtualMFADevice {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_virtual_mfa_device_error(response)
+            crate::operation_ser::parse_delete_virtual_mfa_device_error(response)
         } else {
-            crate::operation_deser::parse_delete_virtual_mfa_device_response(response)
+            crate::operation_ser::parse_delete_virtual_mfa_device_response(response)
         }
     }
 }
@@ -1629,9 +1627,9 @@ impl smithy_http::response::ParseStrictResponse for DetachGroupPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_detach_group_policy_error(response)
+            crate::operation_ser::parse_detach_group_policy_error(response)
         } else {
-            crate::operation_deser::parse_detach_group_policy_response(response)
+            crate::operation_ser::parse_detach_group_policy_response(response)
         }
     }
 }
@@ -1661,9 +1659,9 @@ impl smithy_http::response::ParseStrictResponse for DetachRolePolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_detach_role_policy_error(response)
+            crate::operation_ser::parse_detach_role_policy_error(response)
         } else {
-            crate::operation_deser::parse_detach_role_policy_response(response)
+            crate::operation_ser::parse_detach_role_policy_response(response)
         }
     }
 }
@@ -1693,9 +1691,9 @@ impl smithy_http::response::ParseStrictResponse for DetachUserPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_detach_user_policy_error(response)
+            crate::operation_ser::parse_detach_user_policy_error(response)
         } else {
-            crate::operation_deser::parse_detach_user_policy_response(response)
+            crate::operation_ser::parse_detach_user_policy_response(response)
         }
     }
 }
@@ -1723,14 +1721,14 @@ impl smithy_http::response::ParseStrictResponse for EnableMFADevice {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_enable_mfa_device_error(response)
+            crate::operation_ser::parse_enable_mfa_device_error(response)
         } else {
-            crate::operation_deser::parse_enable_mfa_device_response(response)
+            crate::operation_ser::parse_enable_mfa_device_response(response)
         }
     }
 }
 
-/// <p> Generates a credential report for the account. For more information about the
+/// <p> Generates a credential report for the Amazon Web Services account. For more information about the
 /// credential report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting credential reports</a> in
 /// the <i>IAM User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -1753,9 +1751,9 @@ impl smithy_http::response::ParseStrictResponse for GenerateCredentialReport {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_generate_credential_report_error(response)
+            crate::operation_ser::parse_generate_credential_report_error(response)
         } else {
-            crate::operation_deser::parse_generate_credential_report_response(response)
+            crate::operation_ser::parse_generate_credential_report_response(response)
         }
     }
 }
@@ -1784,7 +1782,7 @@ impl smithy_http::response::ParseStrictResponse for GenerateCredentialReport {
 /// <i>IAM User Guide</i>.</p>
 /// <important>
 /// <p>The data includes all attempts to access Amazon Web Services, not just the successful ones. This
-/// includes all attempts that were made using the Management Console, the Amazon Web Services API through any
+/// includes all attempts that were made using the Amazon Web Services Management Console, the Amazon Web Services API through any
 /// of the SDKs, or any of the command line tools. An unexpected entry in the service
 /// last accessed data does not mean that an account has been compromised, because the
 /// request might have been denied. Refer to your CloudTrail logs as the authoritative
@@ -1912,9 +1910,9 @@ impl smithy_http::response::ParseStrictResponse for GenerateOrganizationsAccessR
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_generate_organizations_access_report_error(response)
+            crate::operation_ser::parse_generate_organizations_access_report_error(response)
         } else {
-            crate::operation_deser::parse_generate_organizations_access_report_response(response)
+            crate::operation_ser::parse_generate_organizations_access_report_response(response)
         }
     }
 }
@@ -1927,7 +1925,7 @@ impl smithy_http::response::ParseStrictResponse for GenerateOrganizationsAccessR
 /// <important>
 /// <p>The service last accessed data includes all attempts to access an Amazon Web Services API, not
 /// just the successful ones. This includes all attempts that were made using the
-/// Management Console, the Amazon Web Services API through any of the SDKs, or any of the command line tools.
+/// Amazon Web Services Management Console, the Amazon Web Services API through any of the SDKs, or any of the command line tools.
 /// An unexpected entry in the service last accessed data does not mean that your
 /// account has been compromised, because the request might have been denied. Refer to
 /// your CloudTrail logs as the authoritative source for information about all API calls
@@ -1993,9 +1991,9 @@ impl smithy_http::response::ParseStrictResponse for GenerateServiceLastAccessedD
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_generate_service_last_accessed_details_error(response)
+            crate::operation_ser::parse_generate_service_last_accessed_details_error(response)
         } else {
-            crate::operation_deser::parse_generate_service_last_accessed_details_response(response)
+            crate::operation_ser::parse_generate_service_last_accessed_details_response(response)
         }
     }
 }
@@ -2023,9 +2021,9 @@ impl smithy_http::response::ParseStrictResponse for GetAccessKeyLastUsed {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_access_key_last_used_error(response)
+            crate::operation_ser::parse_get_access_key_last_used_error(response)
         } else {
-            crate::operation_deser::parse_get_access_key_last_used_response(response)
+            crate::operation_ser::parse_get_access_key_last_used_response(response)
         }
     }
 }
@@ -2064,14 +2062,14 @@ impl smithy_http::response::ParseStrictResponse for GetAccountAuthorizationDetai
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_account_authorization_details_error(response)
+            crate::operation_ser::parse_get_account_authorization_details_error(response)
         } else {
-            crate::operation_deser::parse_get_account_authorization_details_response(response)
+            crate::operation_ser::parse_get_account_authorization_details_response(response)
         }
     }
 }
 
-/// <p>Retrieves the password policy for the account. This tells you the complexity
+/// <p>Retrieves the password policy for the Amazon Web Services account. This tells you the complexity
 /// requirements and mandatory rotation periods for the IAM user passwords in your account.
 /// For more information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing an IAM password
 /// policy</a>.</p>
@@ -2095,9 +2093,9 @@ impl smithy_http::response::ParseStrictResponse for GetAccountPasswordPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_account_password_policy_error(response)
+            crate::operation_ser::parse_get_account_password_policy_error(response)
         } else {
-            crate::operation_deser::parse_get_account_password_policy_response(response)
+            crate::operation_ser::parse_get_account_password_policy_response(response)
         }
     }
 }
@@ -2126,9 +2124,9 @@ impl smithy_http::response::ParseStrictResponse for GetAccountSummary {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_account_summary_error(response)
+            crate::operation_ser::parse_get_account_summary_error(response)
         } else {
-            crate::operation_deser::parse_get_account_summary_response(response)
+            crate::operation_ser::parse_get_account_summary_response(response)
         }
     }
 }
@@ -2163,9 +2161,9 @@ impl smithy_http::response::ParseStrictResponse for GetContextKeysForCustomPolic
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_context_keys_for_custom_policy_error(response)
+            crate::operation_ser::parse_get_context_keys_for_custom_policy_error(response)
         } else {
-            crate::operation_deser::parse_get_context_keys_for_custom_policy_response(response)
+            crate::operation_ser::parse_get_context_keys_for_custom_policy_response(response)
         }
     }
 }
@@ -2204,14 +2202,14 @@ impl smithy_http::response::ParseStrictResponse for GetContextKeysForPrincipalPo
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_context_keys_for_principal_policy_error(response)
+            crate::operation_ser::parse_get_context_keys_for_principal_policy_error(response)
         } else {
-            crate::operation_deser::parse_get_context_keys_for_principal_policy_response(response)
+            crate::operation_ser::parse_get_context_keys_for_principal_policy_response(response)
         }
     }
 }
 
-/// <p> Retrieves a credential report for the account. For more information about the
+/// <p> Retrieves a credential report for the Amazon Web Services account. For more information about the
 /// credential report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting credential reports</a> in
 /// the <i>IAM User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -2234,9 +2232,9 @@ impl smithy_http::response::ParseStrictResponse for GetCredentialReport {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_credential_report_error(response)
+            crate::operation_ser::parse_get_credential_report_error(response)
         } else {
-            crate::operation_deser::parse_get_credential_report_response(response)
+            crate::operation_ser::parse_get_credential_report_response(response)
         }
     }
 }
@@ -2260,9 +2258,9 @@ impl smithy_http::response::ParseStrictResponse for GetGroup {
     type Output = std::result::Result<crate::output::GetGroupOutput, crate::error::GetGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_group_error(response)
+            crate::operation_ser::parse_get_group_error(response)
         } else {
-            crate::operation_deser::parse_get_group_response(response)
+            crate::operation_ser::parse_get_group_response(response)
         }
     }
 }
@@ -2300,9 +2298,9 @@ impl smithy_http::response::ParseStrictResponse for GetGroupPolicy {
         std::result::Result<crate::output::GetGroupPolicyOutput, crate::error::GetGroupPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_group_policy_error(response)
+            crate::operation_ser::parse_get_group_policy_error(response)
         } else {
-            crate::operation_deser::parse_get_group_policy_response(response)
+            crate::operation_ser::parse_get_group_policy_response(response)
         }
     }
 }
@@ -2331,23 +2329,23 @@ impl smithy_http::response::ParseStrictResponse for GetInstanceProfile {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_instance_profile_error(response)
+            crate::operation_ser::parse_get_instance_profile_error(response)
         } else {
-            crate::operation_deser::parse_get_instance_profile_response(response)
+            crate::operation_ser::parse_get_instance_profile_response(response)
         }
     }
 }
 
 /// <p>Retrieves the user name for the specified IAM user. A login profile is created when
-/// you create a password for the user to access the Management Console. If the user does not exist
+/// you create a password for the user to access the Amazon Web Services Management Console. If the user does not exist
 /// or does not have a password, the operation returns a 404 (<code>NoSuchEntity</code>)
 /// error.</p>
 /// <p>If you create an IAM user with access to the console, the <code>CreateDate</code>
 /// reflects the date you created the initial password for the user.</p>
 /// <p>If you create an IAM user with programmatic access, and then later add a password
-/// for the user to access the Management Console, the <code>CreateDate</code> reflects the initial
+/// for the user to access the Amazon Web Services Management Console, the <code>CreateDate</code> reflects the initial
 /// password creation date. A user with programmatic access does not have a login profile
-/// unless you create a password for the user to access the Management Console.</p>
+/// unless you create a password for the user to access the Amazon Web Services Management Console.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetLoginProfile {
     _private: (),
@@ -2368,9 +2366,9 @@ impl smithy_http::response::ParseStrictResponse for GetLoginProfile {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_login_profile_error(response)
+            crate::operation_ser::parse_get_login_profile_error(response)
         } else {
-            crate::operation_deser::parse_get_login_profile_response(response)
+            crate::operation_ser::parse_get_login_profile_response(response)
         }
     }
 }
@@ -2397,9 +2395,9 @@ impl smithy_http::response::ParseStrictResponse for GetOpenIDConnectProvider {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_open_id_connect_provider_error(response)
+            crate::operation_ser::parse_get_open_id_connect_provider_error(response)
         } else {
-            crate::operation_deser::parse_get_open_id_connect_provider_response(response)
+            crate::operation_ser::parse_get_open_id_connect_provider_response(response)
         }
     }
 }
@@ -2443,9 +2441,9 @@ impl smithy_http::response::ParseStrictResponse for GetOrganizationsAccessReport
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_organizations_access_report_error(response)
+            crate::operation_ser::parse_get_organizations_access_report_error(response)
         } else {
-            crate::operation_deser::parse_get_organizations_access_report_response(response)
+            crate::operation_ser::parse_get_organizations_access_report_response(response)
         }
     }
 }
@@ -2477,9 +2475,9 @@ impl smithy_http::response::ParseStrictResponse for GetPolicy {
     type Output = std::result::Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_policy_error(response)
+            crate::operation_ser::parse_get_policy_error(response)
         } else {
-            crate::operation_deser::parse_get_policy_response(response)
+            crate::operation_ser::parse_get_policy_response(response)
         }
     }
 }
@@ -2520,9 +2518,9 @@ impl smithy_http::response::ParseStrictResponse for GetPolicyVersion {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_policy_version_error(response)
+            crate::operation_ser::parse_get_policy_version_error(response)
         } else {
-            crate::operation_deser::parse_get_policy_version_response(response)
+            crate::operation_ser::parse_get_policy_version_response(response)
         }
     }
 }
@@ -2554,9 +2552,9 @@ impl smithy_http::response::ParseStrictResponse for GetRole {
     type Output = std::result::Result<crate::output::GetRoleOutput, crate::error::GetRoleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_role_error(response)
+            crate::operation_ser::parse_get_role_error(response)
         } else {
-            crate::operation_deser::parse_get_role_response(response)
+            crate::operation_ser::parse_get_role_response(response)
         }
     }
 }
@@ -2596,9 +2594,9 @@ impl smithy_http::response::ParseStrictResponse for GetRolePolicy {
         std::result::Result<crate::output::GetRolePolicyOutput, crate::error::GetRolePolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_role_policy_error(response)
+            crate::operation_ser::parse_get_role_policy_error(response)
         } else {
-            crate::operation_deser::parse_get_role_policy_response(response)
+            crate::operation_ser::parse_get_role_policy_response(response)
         }
     }
 }
@@ -2628,9 +2626,9 @@ impl smithy_http::response::ParseStrictResponse for GetSAMLProvider {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_saml_provider_error(response)
+            crate::operation_ser::parse_get_saml_provider_error(response)
         } else {
-            crate::operation_deser::parse_get_saml_provider_response(response)
+            crate::operation_ser::parse_get_saml_provider_response(response)
         }
     }
 }
@@ -2660,9 +2658,9 @@ impl smithy_http::response::ParseStrictResponse for GetServerCertificate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_server_certificate_error(response)
+            crate::operation_ser::parse_get_server_certificate_error(response)
         } else {
-            crate::operation_deser::parse_get_server_certificate_response(response)
+            crate::operation_ser::parse_get_server_certificate_response(response)
         }
     }
 }
@@ -2739,9 +2737,9 @@ impl smithy_http::response::ParseStrictResponse for GetServiceLastAccessedDetail
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_service_last_accessed_details_error(response)
+            crate::operation_ser::parse_get_service_last_accessed_details_error(response)
         } else {
-            crate::operation_deser::parse_get_service_last_accessed_details_response(response)
+            crate::operation_ser::parse_get_service_last_accessed_details_response(response)
         }
     }
 }
@@ -2793,11 +2791,11 @@ impl smithy_http::response::ParseStrictResponse for GetServiceLastAccessedDetail
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_service_last_accessed_details_with_entities_error(
+            crate::operation_ser::parse_get_service_last_accessed_details_with_entities_error(
                 response,
             )
         } else {
-            crate::operation_deser::parse_get_service_last_accessed_details_with_entities_response(
+            crate::operation_ser::parse_get_service_last_accessed_details_with_entities_response(
                 response,
             )
         }
@@ -2829,9 +2827,9 @@ impl smithy_http::response::ParseStrictResponse for GetServiceLinkedRoleDeletion
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_service_linked_role_deletion_status_error(response)
+            crate::operation_ser::parse_get_service_linked_role_deletion_status_error(response)
         } else {
-            crate::operation_deser::parse_get_service_linked_role_deletion_status_response(response)
+            crate::operation_ser::parse_get_service_linked_role_deletion_status_response(response)
         }
     }
 }
@@ -2861,9 +2859,9 @@ impl smithy_http::response::ParseStrictResponse for GetSSHPublicKey {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_ssh_public_key_error(response)
+            crate::operation_ser::parse_get_ssh_public_key_error(response)
         } else {
-            crate::operation_deser::parse_get_ssh_public_key_response(response)
+            crate::operation_ser::parse_get_ssh_public_key_response(response)
         }
     }
 }
@@ -2889,9 +2887,9 @@ impl smithy_http::response::ParseStrictResponse for GetUser {
     type Output = std::result::Result<crate::output::GetUserOutput, crate::error::GetUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_user_error(response)
+            crate::operation_ser::parse_get_user_error(response)
         } else {
-            crate::operation_deser::parse_get_user_response(response)
+            crate::operation_ser::parse_get_user_response(response)
         }
     }
 }
@@ -2929,9 +2927,9 @@ impl smithy_http::response::ParseStrictResponse for GetUserPolicy {
         std::result::Result<crate::output::GetUserPolicyOutput, crate::error::GetUserPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_user_policy_error(response)
+            crate::operation_ser::parse_get_user_policy_error(response)
         } else {
-            crate::operation_deser::parse_get_user_policy_response(response)
+            crate::operation_ser::parse_get_user_policy_response(response)
         }
     }
 }
@@ -2942,11 +2940,11 @@ impl smithy_http::response::ParseStrictResponse for GetUserPolicy {
 /// results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
 /// <p>If the <code>UserName</code> field is not specified, the user name is determined
 /// implicitly based on the Amazon Web Services access key ID used to sign the request. This operation
-/// works for access keys under the account. Consequently, you can use this operation
-/// to manage account root user credentials even if the account has no
+/// works for access keys under the Amazon Web Services account. Consequently, you can use this operation
+/// to manage Amazon Web Services account root user credentials even if the Amazon Web Services account has no
 /// associated users.</p>
 /// <note>
-/// <p>To ensure the security of your account, the secret access key is accessible
+/// <p>To ensure the security of your Amazon Web Services account, the secret access key is accessible
 /// only during key and user creation.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -2967,16 +2965,16 @@ impl smithy_http::response::ParseStrictResponse for ListAccessKeys {
         std::result::Result<crate::output::ListAccessKeysOutput, crate::error::ListAccessKeysError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_access_keys_error(response)
+            crate::operation_ser::parse_list_access_keys_error(response)
         } else {
-            crate::operation_deser::parse_list_access_keys_response(response)
+            crate::operation_ser::parse_list_access_keys_response(response)
         }
     }
 }
 
-/// <p>Lists the account alias associated with the account (Note: you can have only
-/// one). For information about using an account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using an alias for your
-/// account ID</a> in the <i>IAM User Guide</i>.</p>
+/// <p>Lists the account alias associated with the Amazon Web Services account (Note: you can have only
+/// one). For information about using an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using an alias for your
+/// Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListAccountAliases {
     _private: (),
@@ -2997,9 +2995,9 @@ impl smithy_http::response::ParseStrictResponse for ListAccountAliases {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_account_aliases_error(response)
+            crate::operation_ser::parse_list_account_aliases_error(response)
         } else {
-            crate::operation_deser::parse_list_account_aliases_response(response)
+            crate::operation_ser::parse_list_account_aliases_response(response)
         }
     }
 }
@@ -3034,9 +3032,9 @@ impl smithy_http::response::ParseStrictResponse for ListAttachedGroupPolicies {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_attached_group_policies_error(response)
+            crate::operation_ser::parse_list_attached_group_policies_error(response)
         } else {
-            crate::operation_deser::parse_list_attached_group_policies_response(response)
+            crate::operation_ser::parse_list_attached_group_policies_response(response)
         }
     }
 }
@@ -3071,9 +3069,9 @@ impl smithy_http::response::ParseStrictResponse for ListAttachedRolePolicies {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_attached_role_policies_error(response)
+            crate::operation_ser::parse_list_attached_role_policies_error(response)
         } else {
-            crate::operation_deser::parse_list_attached_role_policies_response(response)
+            crate::operation_ser::parse_list_attached_role_policies_response(response)
         }
     }
 }
@@ -3108,9 +3106,9 @@ impl smithy_http::response::ParseStrictResponse for ListAttachedUserPolicies {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_attached_user_policies_error(response)
+            crate::operation_ser::parse_list_attached_user_policies_error(response)
         } else {
-            crate::operation_deser::parse_list_attached_user_policies_response(response)
+            crate::operation_ser::parse_list_attached_user_policies_response(response)
         }
     }
 }
@@ -3143,9 +3141,9 @@ impl smithy_http::response::ParseStrictResponse for ListEntitiesForPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_entities_for_policy_error(response)
+            crate::operation_ser::parse_list_entities_for_policy_error(response)
         } else {
-            crate::operation_deser::parse_list_entities_for_policy_response(response)
+            crate::operation_ser::parse_list_entities_for_policy_response(response)
         }
     }
 }
@@ -3179,9 +3177,9 @@ impl smithy_http::response::ParseStrictResponse for ListGroupPolicies {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_group_policies_error(response)
+            crate::operation_ser::parse_list_group_policies_error(response)
         } else {
-            crate::operation_deser::parse_list_group_policies_response(response)
+            crate::operation_ser::parse_list_group_policies_response(response)
         }
     }
 }
@@ -3207,9 +3205,9 @@ impl smithy_http::response::ParseStrictResponse for ListGroups {
         std::result::Result<crate::output::ListGroupsOutput, crate::error::ListGroupsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_groups_error(response)
+            crate::operation_ser::parse_list_groups_error(response)
         } else {
-            crate::operation_deser::parse_list_groups_response(response)
+            crate::operation_ser::parse_list_groups_response(response)
         }
     }
 }
@@ -3237,9 +3235,9 @@ impl smithy_http::response::ParseStrictResponse for ListGroupsForUser {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_groups_for_user_error(response)
+            crate::operation_ser::parse_list_groups_for_user_error(response)
         } else {
-            crate::operation_deser::parse_list_groups_for_user_response(response)
+            crate::operation_ser::parse_list_groups_for_user_response(response)
         }
     }
 }
@@ -3274,9 +3272,9 @@ impl smithy_http::response::ParseStrictResponse for ListInstanceProfiles {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_instance_profiles_error(response)
+            crate::operation_ser::parse_list_instance_profiles_error(response)
         } else {
-            crate::operation_deser::parse_list_instance_profiles_response(response)
+            crate::operation_ser::parse_list_instance_profiles_response(response)
         }
     }
 }
@@ -3307,9 +3305,9 @@ impl smithy_http::response::ParseStrictResponse for ListInstanceProfilesForRole 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_instance_profiles_for_role_error(response)
+            crate::operation_ser::parse_list_instance_profiles_for_role_error(response)
         } else {
-            crate::operation_deser::parse_list_instance_profiles_for_role_response(response)
+            crate::operation_ser::parse_list_instance_profiles_for_role_response(response)
         }
     }
 }
@@ -3337,9 +3335,9 @@ impl smithy_http::response::ParseStrictResponse for ListInstanceProfileTags {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_instance_profile_tags_error(response)
+            crate::operation_ser::parse_list_instance_profile_tags_error(response)
         } else {
-            crate::operation_deser::parse_list_instance_profile_tags_response(response)
+            crate::operation_ser::parse_list_instance_profile_tags_response(response)
         }
     }
 }
@@ -3368,9 +3366,9 @@ impl smithy_http::response::ParseStrictResponse for ListMFADevices {
         std::result::Result<crate::output::ListMfaDevicesOutput, crate::error::ListMFADevicesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_mfa_devices_error(response)
+            crate::operation_ser::parse_list_mfa_devices_error(response)
         } else {
-            crate::operation_deser::parse_list_mfa_devices_response(response)
+            crate::operation_ser::parse_list_mfa_devices_response(response)
         }
     }
 }
@@ -3398,15 +3396,15 @@ impl smithy_http::response::ParseStrictResponse for ListMFADeviceTags {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_mfa_device_tags_error(response)
+            crate::operation_ser::parse_list_mfa_device_tags_error(response)
         } else {
-            crate::operation_deser::parse_list_mfa_device_tags_response(response)
+            crate::operation_ser::parse_list_mfa_device_tags_response(response)
         }
     }
 }
 
 /// <p>Lists information about the IAM OpenID Connect (OIDC) provider resource objects
-/// defined in the account.</p>
+/// defined in the Amazon Web Services account.</p>
 /// <note>
 /// <p>IAM resource-listing operations return a subset of the available
 /// attributes for the resource. For example, this operation does not return tags, even though they are an attribute of the returned object. To view all of the information for an OIDC provider, see <a>GetOpenIDConnectProvider</a>.</p>
@@ -3431,9 +3429,9 @@ impl smithy_http::response::ParseStrictResponse for ListOpenIDConnectProviders {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_open_id_connect_providers_error(response)
+            crate::operation_ser::parse_list_open_id_connect_providers_error(response)
         } else {
-            crate::operation_deser::parse_list_open_id_connect_providers_response(response)
+            crate::operation_ser::parse_list_open_id_connect_providers_response(response)
         }
     }
 }
@@ -3463,14 +3461,14 @@ impl smithy_http::response::ParseStrictResponse for ListOpenIDConnectProviderTag
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_open_id_connect_provider_tags_error(response)
+            crate::operation_ser::parse_list_open_id_connect_provider_tags_error(response)
         } else {
-            crate::operation_deser::parse_list_open_id_connect_provider_tags_response(response)
+            crate::operation_ser::parse_list_open_id_connect_provider_tags_response(response)
         }
     }
 }
 
-/// <p>Lists all the managed policies that are available in your account, including
+/// <p>Lists all the managed policies that are available in your Amazon Web Services account, including
 /// your own customer-defined managed policies and all Amazon Web Services managed policies.</p>
 /// <p>You can filter the list of policies that is returned using the optional
 /// <code>OnlyAttached</code>, <code>Scope</code>, and <code>PathPrefix</code>
@@ -3504,9 +3502,9 @@ impl smithy_http::response::ParseStrictResponse for ListPolicies {
         std::result::Result<crate::output::ListPoliciesOutput, crate::error::ListPoliciesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_policies_error(response)
+            crate::operation_ser::parse_list_policies_error(response)
         } else {
-            crate::operation_deser::parse_list_policies_response(response)
+            crate::operation_ser::parse_list_policies_response(response)
         }
     }
 }
@@ -3571,9 +3569,9 @@ impl smithy_http::response::ParseStrictResponse for ListPoliciesGrantingServiceA
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_policies_granting_service_access_error(response)
+            crate::operation_ser::parse_list_policies_granting_service_access_error(response)
         } else {
-            crate::operation_deser::parse_list_policies_granting_service_access_response(response)
+            crate::operation_ser::parse_list_policies_granting_service_access_response(response)
         }
     }
 }
@@ -3599,9 +3597,9 @@ impl smithy_http::response::ParseStrictResponse for ListPolicyTags {
         std::result::Result<crate::output::ListPolicyTagsOutput, crate::error::ListPolicyTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_policy_tags_error(response)
+            crate::operation_ser::parse_list_policy_tags_error(response)
         } else {
-            crate::operation_deser::parse_list_policy_tags_response(response)
+            crate::operation_ser::parse_list_policy_tags_response(response)
         }
     }
 }
@@ -3630,9 +3628,9 @@ impl smithy_http::response::ParseStrictResponse for ListPolicyVersions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_policy_versions_error(response)
+            crate::operation_ser::parse_list_policy_versions_error(response)
         } else {
-            crate::operation_deser::parse_list_policy_versions_response(response)
+            crate::operation_ser::parse_list_policy_versions_response(response)
         }
     }
 }
@@ -3666,9 +3664,9 @@ impl smithy_http::response::ParseStrictResponse for ListRolePolicies {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_role_policies_error(response)
+            crate::operation_ser::parse_list_role_policies_error(response)
         } else {
-            crate::operation_deser::parse_list_role_policies_response(response)
+            crate::operation_ser::parse_list_role_policies_response(response)
         }
     }
 }
@@ -3699,9 +3697,9 @@ impl smithy_http::response::ParseStrictResponse for ListRoles {
     type Output = std::result::Result<crate::output::ListRolesOutput, crate::error::ListRolesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_roles_error(response)
+            crate::operation_ser::parse_list_roles_error(response)
         } else {
-            crate::operation_deser::parse_list_roles_response(response)
+            crate::operation_ser::parse_list_roles_response(response)
         }
     }
 }
@@ -3727,9 +3725,9 @@ impl smithy_http::response::ParseStrictResponse for ListRoleTags {
         std::result::Result<crate::output::ListRoleTagsOutput, crate::error::ListRoleTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_role_tags_error(response)
+            crate::operation_ser::parse_list_role_tags_error(response)
         } else {
-            crate::operation_deser::parse_list_role_tags_response(response)
+            crate::operation_ser::parse_list_role_tags_response(response)
         }
     }
 }
@@ -3760,9 +3758,9 @@ impl smithy_http::response::ParseStrictResponse for ListSAMLProviders {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_saml_providers_error(response)
+            crate::operation_ser::parse_list_saml_providers_error(response)
         } else {
-            crate::operation_deser::parse_list_saml_providers_response(response)
+            crate::operation_ser::parse_list_saml_providers_response(response)
         }
     }
 }
@@ -3792,9 +3790,9 @@ impl smithy_http::response::ParseStrictResponse for ListSAMLProviderTags {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_saml_provider_tags_error(response)
+            crate::operation_ser::parse_list_saml_provider_tags_error(response)
         } else {
-            crate::operation_deser::parse_list_saml_provider_tags_response(response)
+            crate::operation_ser::parse_list_saml_provider_tags_response(response)
         }
     }
 }
@@ -3831,9 +3829,9 @@ impl smithy_http::response::ParseStrictResponse for ListServerCertificates {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_server_certificates_error(response)
+            crate::operation_ser::parse_list_server_certificates_error(response)
         } else {
-            crate::operation_deser::parse_list_server_certificates_response(response)
+            crate::operation_ser::parse_list_server_certificates_response(response)
         }
     }
 }
@@ -3868,9 +3866,9 @@ impl smithy_http::response::ParseStrictResponse for ListServerCertificateTags {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_server_certificate_tags_error(response)
+            crate::operation_ser::parse_list_server_certificate_tags_error(response)
         } else {
-            crate::operation_deser::parse_list_server_certificate_tags_response(response)
+            crate::operation_ser::parse_list_server_certificate_tags_response(response)
         }
     }
 }
@@ -3901,9 +3899,9 @@ impl smithy_http::response::ParseStrictResponse for ListServiceSpecificCredentia
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_service_specific_credentials_error(response)
+            crate::operation_ser::parse_list_service_specific_credentials_error(response)
         } else {
-            crate::operation_deser::parse_list_service_specific_credentials_response(response)
+            crate::operation_ser::parse_list_service_specific_credentials_response(response)
         }
     }
 }
@@ -3915,8 +3913,8 @@ impl smithy_http::response::ParseStrictResponse for ListServiceSpecificCredentia
 /// parameters.</p>
 /// <p>If the <code>UserName</code> field is not specified, the user name is determined
 /// implicitly based on the Amazon Web Services access key ID used to sign the request for this operation.
-/// This operation works for access keys under the account. Consequently, you can use
-/// this operation to manage account root user credentials even if the account
+/// This operation works for access keys under the Amazon Web Services account. Consequently, you can use
+/// this operation to manage Amazon Web Services account root user credentials even if the Amazon Web Services account
 /// has no associated users.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListSigningCertificates {
@@ -3938,9 +3936,9 @@ impl smithy_http::response::ParseStrictResponse for ListSigningCertificates {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_signing_certificates_error(response)
+            crate::operation_ser::parse_list_signing_certificates_error(response)
         } else {
-            crate::operation_deser::parse_list_signing_certificates_response(response)
+            crate::operation_ser::parse_list_signing_certificates_response(response)
         }
     }
 }
@@ -3973,9 +3971,9 @@ impl smithy_http::response::ParseStrictResponse for ListSSHPublicKeys {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_ssh_public_keys_error(response)
+            crate::operation_ser::parse_list_ssh_public_keys_error(response)
         } else {
-            crate::operation_deser::parse_list_ssh_public_keys_response(response)
+            crate::operation_ser::parse_list_ssh_public_keys_response(response)
         }
     }
 }
@@ -4008,15 +4006,15 @@ impl smithy_http::response::ParseStrictResponse for ListUserPolicies {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_user_policies_error(response)
+            crate::operation_ser::parse_list_user_policies_error(response)
         } else {
-            crate::operation_deser::parse_list_user_policies_response(response)
+            crate::operation_ser::parse_list_user_policies_response(response)
         }
     }
 }
 
 /// <p>Lists the IAM users that have the specified path prefix. If no path prefix is
-/// specified, the operation returns all users in the account. If there are none, the
+/// specified, the operation returns all users in the Amazon Web Services account. If there are none, the
 /// operation returns an empty list.</p>
 /// <note>
 /// <p>IAM resource-listing operations return a subset of the available
@@ -4041,9 +4039,9 @@ impl smithy_http::response::ParseStrictResponse for ListUsers {
     type Output = std::result::Result<crate::output::ListUsersOutput, crate::error::ListUsersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_users_error(response)
+            crate::operation_ser::parse_list_users_error(response)
         } else {
-            crate::operation_deser::parse_list_users_response(response)
+            crate::operation_ser::parse_list_users_response(response)
         }
     }
 }
@@ -4068,14 +4066,14 @@ impl smithy_http::response::ParseStrictResponse for ListUserTags {
         std::result::Result<crate::output::ListUserTagsOutput, crate::error::ListUserTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_user_tags_error(response)
+            crate::operation_ser::parse_list_user_tags_error(response)
         } else {
-            crate::operation_deser::parse_list_user_tags_response(response)
+            crate::operation_ser::parse_list_user_tags_response(response)
         }
     }
 }
 
-/// <p>Lists the virtual MFA devices defined in the account by assignment status. If
+/// <p>Lists the virtual MFA devices defined in the Amazon Web Services account by assignment status. If
 /// you do not specify an assignment status, the operation returns a list of all virtual MFA
 /// devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>, or
 /// <code>Any</code>.</p>
@@ -4106,9 +4104,9 @@ impl smithy_http::response::ParseStrictResponse for ListVirtualMFADevices {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_virtual_mfa_devices_error(response)
+            crate::operation_ser::parse_list_virtual_mfa_devices_error(response)
         } else {
-            crate::operation_deser::parse_list_virtual_mfa_devices_response(response)
+            crate::operation_ser::parse_list_virtual_mfa_devices_response(response)
         }
     }
 }
@@ -4146,9 +4144,9 @@ impl smithy_http::response::ParseStrictResponse for PutGroupPolicy {
         std::result::Result<crate::output::PutGroupPolicyOutput, crate::error::PutGroupPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_group_policy_error(response)
+            crate::operation_ser::parse_put_group_policy_error(response)
         } else {
-            crate::operation_deser::parse_put_group_policy_response(response)
+            crate::operation_ser::parse_put_group_policy_response(response)
         }
     }
 }
@@ -4185,9 +4183,9 @@ impl smithy_http::response::ParseStrictResponse for PutRolePermissionsBoundary {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_role_permissions_boundary_error(response)
+            crate::operation_ser::parse_put_role_permissions_boundary_error(response)
         } else {
-            crate::operation_deser::parse_put_role_permissions_boundary_response(response)
+            crate::operation_ser::parse_put_role_permissions_boundary_response(response)
         }
     }
 }
@@ -4230,9 +4228,9 @@ impl smithy_http::response::ParseStrictResponse for PutRolePolicy {
         std::result::Result<crate::output::PutRolePolicyOutput, crate::error::PutRolePolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_role_policy_error(response)
+            crate::operation_ser::parse_put_role_policy_error(response)
         } else {
-            crate::operation_deser::parse_put_role_policy_response(response)
+            crate::operation_ser::parse_put_role_policy_response(response)
         }
     }
 }
@@ -4268,9 +4266,9 @@ impl smithy_http::response::ParseStrictResponse for PutUserPermissionsBoundary {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_user_permissions_boundary_error(response)
+            crate::operation_ser::parse_put_user_permissions_boundary_error(response)
         } else {
-            crate::operation_deser::parse_put_user_permissions_boundary_response(response)
+            crate::operation_ser::parse_put_user_permissions_boundary_response(response)
         }
     }
 }
@@ -4308,9 +4306,9 @@ impl smithy_http::response::ParseStrictResponse for PutUserPolicy {
         std::result::Result<crate::output::PutUserPolicyOutput, crate::error::PutUserPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_user_policy_error(response)
+            crate::operation_ser::parse_put_user_policy_error(response)
         } else {
-            crate::operation_deser::parse_put_user_policy_response(response)
+            crate::operation_ser::parse_put_user_policy_response(response)
         }
     }
 }
@@ -4341,11 +4339,11 @@ impl smithy_http::response::ParseStrictResponse for RemoveClientIDFromOpenIDConn
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_remove_client_id_from_open_id_connect_provider_error(
+            crate::operation_ser::parse_remove_client_id_from_open_id_connect_provider_error(
                 response,
             )
         } else {
-            crate::operation_deser::parse_remove_client_id_from_open_id_connect_provider_response(
+            crate::operation_ser::parse_remove_client_id_from_open_id_connect_provider_response(
                 response,
             )
         }
@@ -4382,9 +4380,9 @@ impl smithy_http::response::ParseStrictResponse for RemoveRoleFromInstanceProfil
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_remove_role_from_instance_profile_error(response)
+            crate::operation_ser::parse_remove_role_from_instance_profile_error(response)
         } else {
-            crate::operation_deser::parse_remove_role_from_instance_profile_response(response)
+            crate::operation_ser::parse_remove_role_from_instance_profile_response(response)
         }
     }
 }
@@ -4410,9 +4408,9 @@ impl smithy_http::response::ParseStrictResponse for RemoveUserFromGroup {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_remove_user_from_group_error(response)
+            crate::operation_ser::parse_remove_user_from_group_error(response)
         } else {
-            crate::operation_deser::parse_remove_user_from_group_response(response)
+            crate::operation_ser::parse_remove_user_from_group_response(response)
         }
     }
 }
@@ -4441,9 +4439,9 @@ impl smithy_http::response::ParseStrictResponse for ResetServiceSpecificCredenti
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_reset_service_specific_credential_error(response)
+            crate::operation_ser::parse_reset_service_specific_credential_error(response)
         } else {
-            crate::operation_deser::parse_reset_service_specific_credential_response(response)
+            crate::operation_ser::parse_reset_service_specific_credential_response(response)
         }
     }
 }
@@ -4472,9 +4470,9 @@ impl smithy_http::response::ParseStrictResponse for ResyncMFADevice {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_resync_mfa_device_error(response)
+            crate::operation_ser::parse_resync_mfa_device_error(response)
         } else {
-            crate::operation_deser::parse_resync_mfa_device_response(response)
+            crate::operation_ser::parse_resync_mfa_device_response(response)
         }
     }
 }
@@ -4505,15 +4503,15 @@ impl smithy_http::response::ParseStrictResponse for SetDefaultPolicyVersion {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_set_default_policy_version_error(response)
+            crate::operation_ser::parse_set_default_policy_version_error(response)
         } else {
-            crate::operation_deser::parse_set_default_policy_version_response(response)
+            crate::operation_ser::parse_set_default_policy_version_response(response)
         }
     }
 }
 
 /// <p>Sets the specified version of the global endpoint token as the token version used for
-/// the account.</p>
+/// the Amazon Web Services account.</p>
 /// <p>By default, Security Token Service (STS) is available as a global service, and all STS requests
 /// go to a single endpoint at <code>https://sts.amazonaws.com</code>. Amazon Web Services recommends
 /// using Regional STS endpoints to reduce latency, build in redundancy, and increase
@@ -4522,12 +4520,12 @@ impl smithy_http::response::ParseStrictResponse for SetDefaultPolicyVersion {
 /// endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
 /// <p>If you make an STS call to the global endpoint, the resulting session tokens might
 /// be valid in some Regions but not others. It depends on the version that is set in this
-/// operation. Version 1 tokens are valid only in Regions that are
+/// operation. Version 1 tokens are valid only in Amazon Web Services Regions that are
 /// available by default. These tokens do not work in manually enabled Regions, such as Asia
 /// Pacific (Hong Kong). Version 2 tokens are valid in all Regions. However, version 2
 /// tokens are longer and might affect systems where you temporarily store tokens. For
 /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-/// deactivating STS in an Region</a> in the
+/// deactivating STS in an Amazon Web Services Region</a> in the
 /// <i>IAM User Guide</i>.</p>
 /// <p>To view the current session token version, see the
 /// <code>GlobalEndpointTokenVersion</code> entry in the response of the <a>GetAccountSummary</a> operation.</p>
@@ -4551,9 +4549,9 @@ impl smithy_http::response::ParseStrictResponse for SetSecurityTokenServicePrefe
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_set_security_token_service_preferences_error(response)
+            crate::operation_ser::parse_set_security_token_service_preferences_error(response)
         } else {
-            crate::operation_deser::parse_set_security_token_service_preferences_response(response)
+            crate::operation_ser::parse_set_security_token_service_preferences_response(response)
         }
     }
 }
@@ -4595,9 +4593,9 @@ impl smithy_http::response::ParseStrictResponse for SimulateCustomPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_simulate_custom_policy_error(response)
+            crate::operation_ser::parse_simulate_custom_policy_error(response)
         } else {
-            crate::operation_deser::parse_simulate_custom_policy_response(response)
+            crate::operation_ser::parse_simulate_custom_policy_response(response)
         }
     }
 }
@@ -4648,9 +4646,9 @@ impl smithy_http::response::ParseStrictResponse for SimulatePrincipalPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_simulate_principal_policy_error(response)
+            crate::operation_ser::parse_simulate_principal_policy_error(response)
         } else {
-            crate::operation_deser::parse_simulate_principal_policy_response(response)
+            crate::operation_ser::parse_simulate_principal_policy_response(response)
         }
     }
 }
@@ -4711,9 +4709,9 @@ impl smithy_http::response::ParseStrictResponse for TagInstanceProfile {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_instance_profile_error(response)
+            crate::operation_ser::parse_tag_instance_profile_error(response)
         } else {
-            crate::operation_deser::parse_tag_instance_profile_response(response)
+            crate::operation_ser::parse_tag_instance_profile_response(response)
         }
     }
 }
@@ -4773,9 +4771,9 @@ impl smithy_http::response::ParseStrictResponse for TagMFADevice {
         std::result::Result<crate::output::TagMfaDeviceOutput, crate::error::TagMFADeviceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_mfa_device_error(response)
+            crate::operation_ser::parse_tag_mfa_device_error(response)
         } else {
-            crate::operation_deser::parse_tag_mfa_device_response(response)
+            crate::operation_ser::parse_tag_mfa_device_response(response)
         }
     }
 }
@@ -4838,9 +4836,9 @@ impl smithy_http::response::ParseStrictResponse for TagOpenIDConnectProvider {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_open_id_connect_provider_error(response)
+            crate::operation_ser::parse_tag_open_id_connect_provider_error(response)
         } else {
-            crate::operation_deser::parse_tag_open_id_connect_provider_response(response)
+            crate::operation_ser::parse_tag_open_id_connect_provider_response(response)
         }
     }
 }
@@ -4898,9 +4896,9 @@ impl smithy_http::response::ParseStrictResponse for TagPolicy {
     type Output = std::result::Result<crate::output::TagPolicyOutput, crate::error::TagPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_policy_error(response)
+            crate::operation_ser::parse_tag_policy_error(response)
         } else {
-            crate::operation_deser::parse_tag_policy_response(response)
+            crate::operation_ser::parse_tag_policy_response(response)
         }
     }
 }
@@ -4967,9 +4965,9 @@ impl smithy_http::response::ParseStrictResponse for TagRole {
     type Output = std::result::Result<crate::output::TagRoleOutput, crate::error::TagRoleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_role_error(response)
+            crate::operation_ser::parse_tag_role_error(response)
         } else {
-            crate::operation_deser::parse_tag_role_response(response)
+            crate::operation_ser::parse_tag_role_response(response)
         }
     }
 }
@@ -5032,9 +5030,9 @@ impl smithy_http::response::ParseStrictResponse for TagSAMLProvider {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_saml_provider_error(response)
+            crate::operation_ser::parse_tag_saml_provider_error(response)
         } else {
-            crate::operation_deser::parse_tag_saml_provider_response(response)
+            crate::operation_ser::parse_tag_saml_provider_response(response)
         }
     }
 }
@@ -5107,9 +5105,9 @@ impl smithy_http::response::ParseStrictResponse for TagServerCertificate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_server_certificate_error(response)
+            crate::operation_ser::parse_tag_server_certificate_error(response)
         } else {
-            crate::operation_deser::parse_tag_server_certificate_response(response)
+            crate::operation_ser::parse_tag_server_certificate_response(response)
         }
     }
 }
@@ -5175,9 +5173,9 @@ impl smithy_http::response::ParseStrictResponse for TagUser {
     type Output = std::result::Result<crate::output::TagUserOutput, crate::error::TagUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_user_error(response)
+            crate::operation_ser::parse_tag_user_error(response)
         } else {
-            crate::operation_deser::parse_tag_user_response(response)
+            crate::operation_ser::parse_tag_user_response(response)
         }
     }
 }
@@ -5204,9 +5202,9 @@ impl smithy_http::response::ParseStrictResponse for UntagInstanceProfile {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_instance_profile_error(response)
+            crate::operation_ser::parse_untag_instance_profile_error(response)
         } else {
-            crate::operation_deser::parse_untag_instance_profile_response(response)
+            crate::operation_ser::parse_untag_instance_profile_response(response)
         }
     }
 }
@@ -5232,9 +5230,9 @@ impl smithy_http::response::ParseStrictResponse for UntagMFADevice {
         std::result::Result<crate::output::UntagMfaDeviceOutput, crate::error::UntagMFADeviceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_mfa_device_error(response)
+            crate::operation_ser::parse_untag_mfa_device_error(response)
         } else {
-            crate::operation_deser::parse_untag_mfa_device_response(response)
+            crate::operation_ser::parse_untag_mfa_device_response(response)
         }
     }
 }
@@ -5263,9 +5261,9 @@ impl smithy_http::response::ParseStrictResponse for UntagOpenIDConnectProvider {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_open_id_connect_provider_error(response)
+            crate::operation_ser::parse_untag_open_id_connect_provider_error(response)
         } else {
-            crate::operation_deser::parse_untag_open_id_connect_provider_response(response)
+            crate::operation_ser::parse_untag_open_id_connect_provider_response(response)
         }
     }
 }
@@ -5290,9 +5288,9 @@ impl smithy_http::response::ParseStrictResponse for UntagPolicy {
         std::result::Result<crate::output::UntagPolicyOutput, crate::error::UntagPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_policy_error(response)
+            crate::operation_ser::parse_untag_policy_error(response)
         } else {
-            crate::operation_deser::parse_untag_policy_response(response)
+            crate::operation_ser::parse_untag_policy_response(response)
         }
     }
 }
@@ -5316,9 +5314,9 @@ impl smithy_http::response::ParseStrictResponse for UntagRole {
     type Output = std::result::Result<crate::output::UntagRoleOutput, crate::error::UntagRoleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_role_error(response)
+            crate::operation_ser::parse_untag_role_error(response)
         } else {
-            crate::operation_deser::parse_untag_role_response(response)
+            crate::operation_ser::parse_untag_role_response(response)
         }
     }
 }
@@ -5347,9 +5345,9 @@ impl smithy_http::response::ParseStrictResponse for UntagSAMLProvider {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_saml_provider_error(response)
+            crate::operation_ser::parse_untag_saml_provider_error(response)
         } else {
-            crate::operation_deser::parse_untag_saml_provider_response(response)
+            crate::operation_ser::parse_untag_saml_provider_response(response)
         }
     }
 }
@@ -5384,9 +5382,9 @@ impl smithy_http::response::ParseStrictResponse for UntagServerCertificate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_server_certificate_error(response)
+            crate::operation_ser::parse_untag_server_certificate_error(response)
         } else {
-            crate::operation_deser::parse_untag_server_certificate_response(response)
+            crate::operation_ser::parse_untag_server_certificate_response(response)
         }
     }
 }
@@ -5410,9 +5408,9 @@ impl smithy_http::response::ParseStrictResponse for UntagUser {
     type Output = std::result::Result<crate::output::UntagUserOutput, crate::error::UntagUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_user_error(response)
+            crate::operation_ser::parse_untag_user_error(response)
         } else {
-            crate::operation_deser::parse_untag_user_response(response)
+            crate::operation_ser::parse_untag_user_response(response)
         }
     }
 }
@@ -5422,8 +5420,8 @@ impl smithy_http::response::ParseStrictResponse for UntagUser {
 /// workflow.</p>
 /// <p>If the <code>UserName</code> is not specified, the user name is determined implicitly
 /// based on the Amazon Web Services access key ID used to sign the request. This operation works for
-/// access keys under the account. Consequently, you can use this operation to manage
-/// account root user credentials even if the account has no associated
+/// access keys under the Amazon Web Services account. Consequently, you can use this operation to manage
+/// Amazon Web Services account root user credentials even if the Amazon Web Services account has no associated
 /// users.</p>
 /// <p>For information about rotating keys, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing keys and certificates</a>
 /// in the <i>IAM User Guide</i>.</p>
@@ -5447,14 +5445,14 @@ impl smithy_http::response::ParseStrictResponse for UpdateAccessKey {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_access_key_error(response)
+            crate::operation_ser::parse_update_access_key_error(response)
         } else {
-            crate::operation_deser::parse_update_access_key_response(response)
+            crate::operation_ser::parse_update_access_key_response(response)
         }
     }
 }
 
-/// <p>Updates the password policy settings for the account.</p>
+/// <p>Updates the password policy settings for the Amazon Web Services account.</p>
 /// <note>
 /// <ul>
 /// <li>
@@ -5490,9 +5488,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateAccountPasswordPolicy 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_account_password_policy_error(response)
+            crate::operation_ser::parse_update_account_password_policy_error(response)
         } else {
-            crate::operation_deser::parse_update_account_password_policy_response(response)
+            crate::operation_ser::parse_update_account_password_policy_response(response)
         }
     }
 }
@@ -5521,9 +5519,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateAssumeRolePolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_assume_role_policy_error(response)
+            crate::operation_ser::parse_update_assume_role_policy_error(response)
         } else {
-            crate::operation_deser::parse_update_assume_role_policy_response(response)
+            crate::operation_ser::parse_update_assume_role_policy_response(response)
         }
     }
 }
@@ -5561,9 +5559,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateGroup {
         std::result::Result<crate::output::UpdateGroupOutput, crate::error::UpdateGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_group_error(response)
+            crate::operation_ser::parse_update_group_error(response)
         } else {
-            crate::operation_deser::parse_update_group_response(response)
+            crate::operation_ser::parse_update_group_response(response)
         }
     }
 }
@@ -5572,7 +5570,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateGroup {
 /// the Amazon Web Services API, or the <b>Users</b> page in the IAM console
 /// to change the password for any IAM user. Use <a>ChangePassword</a> to
 /// change your own password in the <b>My Security Credentials</b>
-/// page in the Management Console.</p>
+/// page in the Amazon Web Services Management Console.</p>
 /// <p>For more information about modifying passwords, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing passwords</a> in the
 /// <i>IAM User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -5595,9 +5593,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateLoginProfile {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_login_profile_error(response)
+            crate::operation_ser::parse_update_login_profile_error(response)
         } else {
-            crate::operation_deser::parse_update_login_profile_response(response)
+            crate::operation_ser::parse_update_login_profile_response(response)
         }
     }
 }
@@ -5644,9 +5642,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateOpenIDConnectProviderT
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_open_id_connect_provider_thumbprint_error(response)
+            crate::operation_ser::parse_update_open_id_connect_provider_thumbprint_error(response)
         } else {
-            crate::operation_deser::parse_update_open_id_connect_provider_thumbprint_response(
+            crate::operation_ser::parse_update_open_id_connect_provider_thumbprint_response(
                 response,
             )
         }
@@ -5672,9 +5670,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateRole {
         std::result::Result<crate::output::UpdateRoleOutput, crate::error::UpdateRoleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_role_error(response)
+            crate::operation_ser::parse_update_role_error(response)
         } else {
-            crate::operation_deser::parse_update_role_response(response)
+            crate::operation_ser::parse_update_role_response(response)
         }
     }
 }
@@ -5702,9 +5700,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateRoleDescription {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_role_description_error(response)
+            crate::operation_ser::parse_update_role_description_error(response)
         } else {
-            crate::operation_deser::parse_update_role_description_response(response)
+            crate::operation_ser::parse_update_role_description_response(response)
         }
     }
 }
@@ -5733,9 +5731,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateSAMLProvider {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_saml_provider_error(response)
+            crate::operation_ser::parse_update_saml_provider_error(response)
         } else {
-            crate::operation_deser::parse_update_saml_provider_response(response)
+            crate::operation_ser::parse_update_saml_provider_response(response)
         }
     }
 }
@@ -5780,9 +5778,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateServerCertificate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_server_certificate_error(response)
+            crate::operation_ser::parse_update_server_certificate_error(response)
         } else {
-            crate::operation_deser::parse_update_server_certificate_response(response)
+            crate::operation_ser::parse_update_server_certificate_response(response)
         }
     }
 }
@@ -5811,9 +5809,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateServiceSpecificCredent
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_service_specific_credential_error(response)
+            crate::operation_ser::parse_update_service_specific_credential_error(response)
         } else {
-            crate::operation_deser::parse_update_service_specific_credential_response(response)
+            crate::operation_ser::parse_update_service_specific_credential_response(response)
         }
     }
 }
@@ -5823,8 +5821,8 @@ impl smithy_http::response::ParseStrictResponse for UpdateServiceSpecificCredent
 /// as part of a certificate rotation work flow.</p>
 /// <p>If the <code>UserName</code> field is not specified, the user name is determined
 /// implicitly based on the Amazon Web Services access key ID used to sign the request. This operation
-/// works for access keys under the account. Consequently, you can use this operation
-/// to manage account root user credentials even if the account has no
+/// works for access keys under the Amazon Web Services account. Consequently, you can use this operation
+/// to manage Amazon Web Services account root user credentials even if the Amazon Web Services account has no
 /// associated users.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSigningCertificate {
@@ -5846,9 +5844,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateSigningCertificate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_signing_certificate_error(response)
+            crate::operation_ser::parse_update_signing_certificate_error(response)
         } else {
-            crate::operation_deser::parse_update_signing_certificate_response(response)
+            crate::operation_ser::parse_update_signing_certificate_response(response)
         }
     }
 }
@@ -5880,9 +5878,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateSSHPublicKey {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_ssh_public_key_error(response)
+            crate::operation_ser::parse_update_ssh_public_key_error(response)
         } else {
-            crate::operation_deser::parse_update_ssh_public_key_response(response)
+            crate::operation_ser::parse_update_ssh_public_key_response(response)
         }
     }
 }
@@ -5918,14 +5916,14 @@ impl smithy_http::response::ParseStrictResponse for UpdateUser {
         std::result::Result<crate::output::UpdateUserOutput, crate::error::UpdateUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_user_error(response)
+            crate::operation_ser::parse_update_user_error(response)
         } else {
-            crate::operation_deser::parse_update_user_response(response)
+            crate::operation_ser::parse_update_user_response(response)
         }
     }
 }
 
-/// <p>Uploads a server certificate entity for the account. The server certificate
+/// <p>Uploads a server certificate entity for the Amazon Web Services account. The server certificate
 /// entity includes a public key certificate, a private key, and an optional certificate
 /// chain, which should all be PEM-encoded.</p>
 /// <p>We recommend that you use <a href="https://docs.aws.amazon.com/acm/">Certificate Manager</a> to provision, manage, and deploy your server certificates. With ACM
@@ -5967,9 +5965,9 @@ impl smithy_http::response::ParseStrictResponse for UploadServerCertificate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_upload_server_certificate_error(response)
+            crate::operation_ser::parse_upload_server_certificate_error(response)
         } else {
-            crate::operation_deser::parse_upload_server_certificate_response(response)
+            crate::operation_ser::parse_upload_server_certificate_response(response)
         }
     }
 }
@@ -5983,8 +5981,8 @@ impl smithy_http::response::ParseStrictResponse for UploadServerCertificate {
 /// <i>IAM User Guide</i>.</p>
 /// <p>If the <code>UserName</code> is not specified, the IAM user name is determined
 /// implicitly based on the Amazon Web Services access key ID used to sign the request. This operation
-/// works for access keys under the account. Consequently, you can use this operation
-/// to manage account root user credentials even if the account has no
+/// works for access keys under the Amazon Web Services account. Consequently, you can use this operation
+/// to manage Amazon Web Services account root user credentials even if the Amazon Web Services account has no
 /// associated users.</p>
 /// <note>
 /// <p>Because the body of an X.509 certificate can be large, you should use POST rather
@@ -6014,9 +6012,9 @@ impl smithy_http::response::ParseStrictResponse for UploadSigningCertificate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_upload_signing_certificate_error(response)
+            crate::operation_ser::parse_upload_signing_certificate_error(response)
         } else {
-            crate::operation_deser::parse_upload_signing_certificate_response(response)
+            crate::operation_ser::parse_upload_signing_certificate_response(response)
         }
     }
 }
@@ -6046,9 +6044,9 @@ impl smithy_http::response::ParseStrictResponse for UploadSSHPublicKey {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_upload_ssh_public_key_error(response)
+            crate::operation_ser::parse_upload_ssh_public_key_error(response)
         } else {
-            crate::operation_deser::parse_upload_ssh_public_key_response(response)
+            crate::operation_ser::parse_upload_ssh_public_key_response(response)
         }
     }
 }

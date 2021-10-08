@@ -21,9 +21,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDataset {
         std::result::Result<crate::output::CreateDatasetOutput, crate::error::CreateDatasetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_dataset_error(response)
+            crate::operation_ser::parse_create_dataset_error(response)
         } else {
-            crate::operation_deser::parse_create_dataset_response(response)
+            crate::operation_ser::parse_create_dataset_response(response)
         }
     }
 }
@@ -53,9 +53,9 @@ impl smithy_http::response::ParseStrictResponse for CreateInferenceScheduler {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_inference_scheduler_error(response)
+            crate::operation_ser::parse_create_inference_scheduler_error(response)
         } else {
-            crate::operation_deser::parse_create_inference_scheduler_response(response)
+            crate::operation_ser::parse_create_inference_scheduler_response(response)
         }
     }
 }
@@ -87,9 +87,9 @@ impl smithy_http::response::ParseStrictResponse for CreateModel {
         std::result::Result<crate::output::CreateModelOutput, crate::error::CreateModelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_model_error(response)
+            crate::operation_ser::parse_create_model_error(response)
         } else {
-            crate::operation_deser::parse_create_model_response(response)
+            crate::operation_ser::parse_create_model_response(response)
         }
     }
 }
@@ -117,9 +117,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteDataset {
         std::result::Result<crate::output::DeleteDatasetOutput, crate::error::DeleteDatasetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_dataset_error(response)
+            crate::operation_ser::parse_delete_dataset_error(response)
         } else {
-            crate::operation_deser::parse_delete_dataset_response(response)
+            crate::operation_ser::parse_delete_dataset_response(response)
         }
     }
 }
@@ -146,9 +146,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteInferenceScheduler {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_inference_scheduler_error(response)
+            crate::operation_ser::parse_delete_inference_scheduler_error(response)
         } else {
-            crate::operation_deser::parse_delete_inference_scheduler_response(response)
+            crate::operation_ser::parse_delete_inference_scheduler_response(response)
         }
     }
 }
@@ -173,9 +173,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteModel {
         std::result::Result<crate::output::DeleteModelOutput, crate::error::DeleteModelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_model_error(response)
+            crate::operation_ser::parse_delete_model_error(response)
         } else {
-            crate::operation_deser::parse_delete_model_response(response)
+            crate::operation_ser::parse_delete_model_response(response)
         }
     }
 }
@@ -202,9 +202,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDataIngestionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_data_ingestion_job_error(response)
+            crate::operation_ser::parse_describe_data_ingestion_job_error(response)
         } else {
-            crate::operation_deser::parse_describe_data_ingestion_job_response(response)
+            crate::operation_ser::parse_describe_data_ingestion_job_response(response)
         }
     }
 }
@@ -230,9 +230,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDataset {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_dataset_error(response)
+            crate::operation_ser::parse_describe_dataset_error(response)
         } else {
-            crate::operation_deser::parse_describe_dataset_response(response)
+            crate::operation_ser::parse_describe_dataset_response(response)
         }
     }
 }
@@ -259,9 +259,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeInferenceScheduler {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_inference_scheduler_error(response)
+            crate::operation_ser::parse_describe_inference_scheduler_error(response)
         } else {
-            crate::operation_deser::parse_describe_inference_scheduler_response(response)
+            crate::operation_ser::parse_describe_inference_scheduler_response(response)
         }
     }
 }
@@ -286,9 +286,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeModel {
         std::result::Result<crate::output::DescribeModelOutput, crate::error::DescribeModelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_model_error(response)
+            crate::operation_ser::parse_describe_model_error(response)
         } else {
-            crate::operation_deser::parse_describe_model_response(response)
+            crate::operation_ser::parse_describe_model_response(response)
         }
     }
 }
@@ -315,9 +315,9 @@ impl smithy_http::response::ParseStrictResponse for ListDataIngestionJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_data_ingestion_jobs_error(response)
+            crate::operation_ser::parse_list_data_ingestion_jobs_error(response)
         } else {
-            crate::operation_deser::parse_list_data_ingestion_jobs_response(response)
+            crate::operation_ser::parse_list_data_ingestion_jobs_response(response)
         }
     }
 }
@@ -342,9 +342,9 @@ impl smithy_http::response::ParseStrictResponse for ListDatasets {
         std::result::Result<crate::output::ListDatasetsOutput, crate::error::ListDatasetsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_datasets_error(response)
+            crate::operation_ser::parse_list_datasets_error(response)
         } else {
-            crate::operation_deser::parse_list_datasets_response(response)
+            crate::operation_ser::parse_list_datasets_response(response)
         }
     }
 }
@@ -371,9 +371,9 @@ impl smithy_http::response::ParseStrictResponse for ListInferenceExecutions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_inference_executions_error(response)
+            crate::operation_ser::parse_list_inference_executions_error(response)
         } else {
-            crate::operation_deser::parse_list_inference_executions_response(response)
+            crate::operation_ser::parse_list_inference_executions_response(response)
         }
     }
 }
@@ -400,9 +400,9 @@ impl smithy_http::response::ParseStrictResponse for ListInferenceSchedulers {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_inference_schedulers_error(response)
+            crate::operation_ser::parse_list_inference_schedulers_error(response)
         } else {
-            crate::operation_deser::parse_list_inference_schedulers_response(response)
+            crate::operation_ser::parse_list_inference_schedulers_response(response)
         }
     }
 }
@@ -427,9 +427,9 @@ impl smithy_http::response::ParseStrictResponse for ListModels {
         std::result::Result<crate::output::ListModelsOutput, crate::error::ListModelsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_models_error(response)
+            crate::operation_ser::parse_list_models_error(response)
         } else {
-            crate::operation_deser::parse_list_models_response(response)
+            crate::operation_ser::parse_list_models_response(response)
         }
     }
 }
@@ -455,9 +455,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::operation_ser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::operation_ser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -483,9 +483,9 @@ impl smithy_http::response::ParseStrictResponse for StartDataIngestionJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_data_ingestion_job_error(response)
+            crate::operation_ser::parse_start_data_ingestion_job_error(response)
         } else {
-            crate::operation_deser::parse_start_data_ingestion_job_response(response)
+            crate::operation_ser::parse_start_data_ingestion_job_response(response)
         }
     }
 }
@@ -511,9 +511,9 @@ impl smithy_http::response::ParseStrictResponse for StartInferenceScheduler {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_inference_scheduler_error(response)
+            crate::operation_ser::parse_start_inference_scheduler_error(response)
         } else {
-            crate::operation_deser::parse_start_inference_scheduler_response(response)
+            crate::operation_ser::parse_start_inference_scheduler_response(response)
         }
     }
 }
@@ -539,9 +539,9 @@ impl smithy_http::response::ParseStrictResponse for StopInferenceScheduler {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_inference_scheduler_error(response)
+            crate::operation_ser::parse_stop_inference_scheduler_error(response)
         } else {
-            crate::operation_deser::parse_stop_inference_scheduler_response(response)
+            crate::operation_ser::parse_stop_inference_scheduler_response(response)
         }
     }
 }
@@ -569,9 +569,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::operation_ser::parse_tag_resource_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::operation_ser::parse_tag_resource_response(response)
         }
     }
 }
@@ -595,9 +595,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::operation_ser::parse_untag_resource_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::operation_ser::parse_untag_resource_response(response)
         }
     }
 }
@@ -623,9 +623,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateInferenceScheduler {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_inference_scheduler_error(response)
+            crate::operation_ser::parse_update_inference_scheduler_error(response)
         } else {
-            crate::operation_deser::parse_update_inference_scheduler_response(response)
+            crate::operation_ser::parse_update_inference_scheduler_response(response)
         }
     }
 }

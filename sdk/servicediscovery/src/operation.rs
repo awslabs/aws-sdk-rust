@@ -24,9 +24,9 @@ impl smithy_http::response::ParseStrictResponse for CreateHttpNamespace {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_http_namespace_error(response)
+            crate::operation_ser::parse_create_http_namespace_error(response)
         } else {
-            crate::operation_deser::parse_create_http_namespace_response(response)
+            crate::operation_ser::parse_create_http_namespace_response(response)
         }
     }
 }
@@ -58,9 +58,9 @@ impl smithy_http::response::ParseStrictResponse for CreatePrivateDnsNamespace {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_private_dns_namespace_error(response)
+            crate::operation_ser::parse_create_private_dns_namespace_error(response)
         } else {
-            crate::operation_deser::parse_create_private_dns_namespace_response(response)
+            crate::operation_ser::parse_create_private_dns_namespace_response(response)
         }
     }
 }
@@ -91,9 +91,9 @@ impl smithy_http::response::ParseStrictResponse for CreatePublicDnsNamespace {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_public_dns_namespace_error(response)
+            crate::operation_ser::parse_create_public_dns_namespace_error(response)
         } else {
-            crate::operation_deser::parse_create_public_dns_namespace_response(response)
+            crate::operation_ser::parse_create_public_dns_namespace_response(response)
         }
     }
 }
@@ -157,9 +157,9 @@ impl smithy_http::response::ParseStrictResponse for CreateService {
         std::result::Result<crate::output::CreateServiceOutput, crate::error::CreateServiceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_service_error(response)
+            crate::operation_ser::parse_create_service_error(response)
         } else {
-            crate::operation_deser::parse_create_service_response(response)
+            crate::operation_ser::parse_create_service_response(response)
         }
     }
 }
@@ -186,9 +186,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteNamespace {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_namespace_error(response)
+            crate::operation_ser::parse_delete_namespace_error(response)
         } else {
-            crate::operation_deser::parse_delete_namespace_response(response)
+            crate::operation_ser::parse_delete_namespace_response(response)
         }
     }
 }
@@ -213,9 +213,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteService {
         std::result::Result<crate::output::DeleteServiceOutput, crate::error::DeleteServiceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_service_error(response)
+            crate::operation_ser::parse_delete_service_error(response)
         } else {
-            crate::operation_deser::parse_delete_service_response(response)
+            crate::operation_ser::parse_delete_service_response(response)
         }
     }
 }
@@ -242,9 +242,9 @@ impl smithy_http::response::ParseStrictResponse for DeregisterInstance {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_deregister_instance_error(response)
+            crate::operation_ser::parse_deregister_instance_error(response)
         } else {
-            crate::operation_deser::parse_deregister_instance_response(response)
+            crate::operation_ser::parse_deregister_instance_response(response)
         }
     }
 }
@@ -272,9 +272,9 @@ impl smithy_http::response::ParseStrictResponse for DiscoverInstances {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_discover_instances_error(response)
+            crate::operation_ser::parse_discover_instances_error(response)
         } else {
-            crate::operation_deser::parse_discover_instances_response(response)
+            crate::operation_ser::parse_discover_instances_response(response)
         }
     }
 }
@@ -298,9 +298,9 @@ impl smithy_http::response::ParseStrictResponse for GetInstance {
         std::result::Result<crate::output::GetInstanceOutput, crate::error::GetInstanceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_instance_error(response)
+            crate::operation_ser::parse_get_instance_error(response)
         } else {
-            crate::operation_deser::parse_get_instance_response(response)
+            crate::operation_ser::parse_get_instance_response(response)
         }
     }
 }
@@ -331,9 +331,9 @@ impl smithy_http::response::ParseStrictResponse for GetInstancesHealthStatus {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_instances_health_status_error(response)
+            crate::operation_ser::parse_get_instances_health_status_error(response)
         } else {
-            crate::operation_deser::parse_get_instances_health_status_response(response)
+            crate::operation_ser::parse_get_instances_health_status_response(response)
         }
     }
 }
@@ -357,9 +357,9 @@ impl smithy_http::response::ParseStrictResponse for GetNamespace {
         std::result::Result<crate::output::GetNamespaceOutput, crate::error::GetNamespaceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_namespace_error(response)
+            crate::operation_ser::parse_get_namespace_error(response)
         } else {
-            crate::operation_deser::parse_get_namespace_response(response)
+            crate::operation_ser::parse_get_namespace_response(response)
         }
     }
 }
@@ -387,9 +387,9 @@ impl smithy_http::response::ParseStrictResponse for GetOperation {
         std::result::Result<crate::output::GetOperationOutput, crate::error::GetOperationError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_operation_error(response)
+            crate::operation_ser::parse_get_operation_error(response)
         } else {
-            crate::operation_deser::parse_get_operation_response(response)
+            crate::operation_ser::parse_get_operation_response(response)
         }
     }
 }
@@ -413,9 +413,9 @@ impl smithy_http::response::ParseStrictResponse for GetService {
         std::result::Result<crate::output::GetServiceOutput, crate::error::GetServiceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_service_error(response)
+            crate::operation_ser::parse_get_service_error(response)
         } else {
-            crate::operation_deser::parse_get_service_response(response)
+            crate::operation_ser::parse_get_service_response(response)
         }
     }
 }
@@ -439,9 +439,9 @@ impl smithy_http::response::ParseStrictResponse for ListInstances {
         std::result::Result<crate::output::ListInstancesOutput, crate::error::ListInstancesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_instances_error(response)
+            crate::operation_ser::parse_list_instances_error(response)
         } else {
-            crate::operation_deser::parse_list_instances_response(response)
+            crate::operation_ser::parse_list_instances_response(response)
         }
     }
 }
@@ -465,9 +465,9 @@ impl smithy_http::response::ParseStrictResponse for ListNamespaces {
         std::result::Result<crate::output::ListNamespacesOutput, crate::error::ListNamespacesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_namespaces_error(response)
+            crate::operation_ser::parse_list_namespaces_error(response)
         } else {
-            crate::operation_deser::parse_list_namespaces_response(response)
+            crate::operation_ser::parse_list_namespaces_response(response)
         }
     }
 }
@@ -491,9 +491,9 @@ impl smithy_http::response::ParseStrictResponse for ListOperations {
         std::result::Result<crate::output::ListOperationsOutput, crate::error::ListOperationsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_operations_error(response)
+            crate::operation_ser::parse_list_operations_error(response)
         } else {
-            crate::operation_deser::parse_list_operations_response(response)
+            crate::operation_ser::parse_list_operations_response(response)
         }
     }
 }
@@ -517,9 +517,9 @@ impl smithy_http::response::ParseStrictResponse for ListServices {
         std::result::Result<crate::output::ListServicesOutput, crate::error::ListServicesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_services_error(response)
+            crate::operation_ser::parse_list_services_error(response)
         } else {
-            crate::operation_deser::parse_list_services_response(response)
+            crate::operation_ser::parse_list_services_response(response)
         }
     }
 }
@@ -545,9 +545,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::operation_ser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::operation_ser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -612,9 +612,9 @@ impl smithy_http::response::ParseStrictResponse for RegisterInstance {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_register_instance_error(response)
+            crate::operation_ser::parse_register_instance_error(response)
         } else {
-            crate::operation_deser::parse_register_instance_response(response)
+            crate::operation_ser::parse_register_instance_response(response)
         }
     }
 }
@@ -638,9 +638,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::operation_ser::parse_tag_resource_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::operation_ser::parse_tag_resource_response(response)
         }
     }
 }
@@ -664,9 +664,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::operation_ser::parse_untag_resource_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::operation_ser::parse_untag_resource_response(response)
         }
     }
 }
@@ -693,9 +693,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateHttpNamespace {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_http_namespace_error(response)
+            crate::operation_ser::parse_update_http_namespace_error(response)
         } else {
-            crate::operation_deser::parse_update_http_namespace_response(response)
+            crate::operation_ser::parse_update_http_namespace_response(response)
         }
     }
 }
@@ -725,9 +725,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateInstanceCustomHealthSt
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_instance_custom_health_status_error(response)
+            crate::operation_ser::parse_update_instance_custom_health_status_error(response)
         } else {
-            crate::operation_deser::parse_update_instance_custom_health_status_response(response)
+            crate::operation_ser::parse_update_instance_custom_health_status_response(response)
         }
     }
 }
@@ -754,9 +754,9 @@ impl smithy_http::response::ParseStrictResponse for UpdatePrivateDnsNamespace {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_private_dns_namespace_error(response)
+            crate::operation_ser::parse_update_private_dns_namespace_error(response)
         } else {
-            crate::operation_deser::parse_update_private_dns_namespace_response(response)
+            crate::operation_ser::parse_update_private_dns_namespace_response(response)
         }
     }
 }
@@ -783,9 +783,9 @@ impl smithy_http::response::ParseStrictResponse for UpdatePublicDnsNamespace {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_public_dns_namespace_error(response)
+            crate::operation_ser::parse_update_public_dns_namespace_error(response)
         } else {
-            crate::operation_deser::parse_update_public_dns_namespace_response(response)
+            crate::operation_ser::parse_update_public_dns_namespace_response(response)
         }
     }
 }
@@ -833,9 +833,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateService {
         std::result::Result<crate::output::UpdateServiceOutput, crate::error::UpdateServiceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_service_error(response)
+            crate::operation_ser::parse_update_service_error(response)
         } else {
-            crate::operation_deser::parse_update_service_response(response)
+            crate::operation_ser::parse_update_service_response(response)
         }
     }
 }

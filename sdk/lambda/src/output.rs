@@ -224,6 +224,9 @@ pub struct UpdateFunctionConfigurationOutput {
     pub signing_profile_version_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the signing job.</p>
     pub signing_job_arn: std::option::Option<std::string::String>,
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
+    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl std::fmt::Debug for UpdateFunctionConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -265,6 +268,7 @@ impl std::fmt::Debug for UpdateFunctionConfigurationOutput {
             &self.signing_profile_version_arn,
         );
         formatter.field("signing_job_arn", &self.signing_job_arn);
+        formatter.field("architectures", &self.architectures);
         formatter.finish()
     }
 }
@@ -307,6 +311,7 @@ pub mod update_function_configuration_output {
         pub(crate) image_config_response: std::option::Option<crate::model::ImageConfigResponse>,
         pub(crate) signing_profile_version_arn: std::option::Option<std::string::String>,
         pub(crate) signing_job_arn: std::option::Option<std::string::String>,
+        pub(crate) architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
     }
     impl Builder {
         /// <p>The name of the function.</p>
@@ -651,6 +656,19 @@ pub mod update_function_configuration_output {
             self.signing_job_arn = input;
             self
         }
+        pub fn architectures(mut self, input: impl Into<crate::model::Architecture>) -> Self {
+            let mut v = self.architectures.unwrap_or_default();
+            v.push(input.into());
+            self.architectures = Some(v);
+            self
+        }
+        pub fn set_architectures(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        ) -> Self {
+            self.architectures = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFunctionConfigurationOutput`](crate::output::UpdateFunctionConfigurationOutput)
         pub fn build(self) -> crate::output::UpdateFunctionConfigurationOutput {
             crate::output::UpdateFunctionConfigurationOutput {
@@ -685,6 +703,7 @@ pub mod update_function_configuration_output {
                 image_config_response: self.image_config_response,
                 signing_profile_version_arn: self.signing_profile_version_arn,
                 signing_job_arn: self.signing_job_arn,
+                architectures: self.architectures,
             }
         }
     }
@@ -768,6 +787,9 @@ pub struct UpdateFunctionCodeOutput {
     pub signing_profile_version_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the signing job.</p>
     pub signing_job_arn: std::option::Option<std::string::String>,
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
+    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl std::fmt::Debug for UpdateFunctionCodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -809,6 +831,7 @@ impl std::fmt::Debug for UpdateFunctionCodeOutput {
             &self.signing_profile_version_arn,
         );
         formatter.field("signing_job_arn", &self.signing_job_arn);
+        formatter.field("architectures", &self.architectures);
         formatter.finish()
     }
 }
@@ -851,6 +874,7 @@ pub mod update_function_code_output {
         pub(crate) image_config_response: std::option::Option<crate::model::ImageConfigResponse>,
         pub(crate) signing_profile_version_arn: std::option::Option<std::string::String>,
         pub(crate) signing_job_arn: std::option::Option<std::string::String>,
+        pub(crate) architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
     }
     impl Builder {
         /// <p>The name of the function.</p>
@@ -1195,6 +1219,19 @@ pub mod update_function_code_output {
             self.signing_job_arn = input;
             self
         }
+        pub fn architectures(mut self, input: impl Into<crate::model::Architecture>) -> Self {
+            let mut v = self.architectures.unwrap_or_default();
+            v.push(input.into());
+            self.architectures = Some(v);
+            self
+        }
+        pub fn set_architectures(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        ) -> Self {
+            self.architectures = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFunctionCodeOutput`](crate::output::UpdateFunctionCodeOutput)
         pub fn build(self) -> crate::output::UpdateFunctionCodeOutput {
             crate::output::UpdateFunctionCodeOutput {
@@ -1229,6 +1266,7 @@ pub mod update_function_code_output {
                 image_config_response: self.image_config_response,
                 signing_profile_version_arn: self.signing_profile_version_arn,
                 signing_job_arn: self.signing_job_arn,
+                architectures: self.architectures,
             }
         }
     }
@@ -1252,9 +1290,13 @@ pub struct UpdateEventSourceMappingOutput {
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
     /// reading.</p>
     pub starting_position_timestamp: std::option::Option<smithy_types::Instant>,
-    /// <p>The maximum number of items to retrieve in a single batch.</p>
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
+    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub batch_size: std::option::Option<i32>,
-    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
+    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
+    /// <p>Default: 0</p>
+    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
     /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
     pub parallelization_factor: std::option::Option<i32>,
@@ -1411,7 +1453,9 @@ pub mod update_event_source_mapping_output {
             self.starting_position_timestamp = input;
             self
         }
-        /// <p>The maximum number of items to retrieve in a single batch.</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
+        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+        /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn batch_size(mut self, input: i32) -> Self {
             self.batch_size = Some(input);
             self
@@ -1420,7 +1464,9 @@ pub mod update_event_source_mapping_output {
             self.batch_size = input;
             self
         }
-        /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
+        /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
+        /// <p>Default: 0</p>
+        /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
             self.maximum_batching_window_in_seconds = Some(input);
             self
@@ -2266,7 +2312,7 @@ impl PutFunctionEventInvokeConfigOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutFunctionConcurrencyOutput {
-    /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.</p>
+    /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Concurrency</a>.</p>
     pub reserved_concurrent_executions: std::option::Option<i32>,
 }
 impl std::fmt::Debug for PutFunctionConcurrencyOutput {
@@ -2288,7 +2334,7 @@ pub mod put_function_concurrency_output {
         pub(crate) reserved_concurrent_executions: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.</p>
+        /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Concurrency</a>.</p>
         pub fn reserved_concurrent_executions(mut self, input: i32) -> Self {
             self.reserved_concurrent_executions = Some(input);
             self
@@ -2491,6 +2537,9 @@ pub struct PublishVersionOutput {
     pub signing_profile_version_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the signing job.</p>
     pub signing_job_arn: std::option::Option<std::string::String>,
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
+    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl std::fmt::Debug for PublishVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2532,6 +2581,7 @@ impl std::fmt::Debug for PublishVersionOutput {
             &self.signing_profile_version_arn,
         );
         formatter.field("signing_job_arn", &self.signing_job_arn);
+        formatter.field("architectures", &self.architectures);
         formatter.finish()
     }
 }
@@ -2574,6 +2624,7 @@ pub mod publish_version_output {
         pub(crate) image_config_response: std::option::Option<crate::model::ImageConfigResponse>,
         pub(crate) signing_profile_version_arn: std::option::Option<std::string::String>,
         pub(crate) signing_job_arn: std::option::Option<std::string::String>,
+        pub(crate) architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
     }
     impl Builder {
         /// <p>The name of the function.</p>
@@ -2918,6 +2969,19 @@ pub mod publish_version_output {
             self.signing_job_arn = input;
             self
         }
+        pub fn architectures(mut self, input: impl Into<crate::model::Architecture>) -> Self {
+            let mut v = self.architectures.unwrap_or_default();
+            v.push(input.into());
+            self.architectures = Some(v);
+            self
+        }
+        pub fn set_architectures(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        ) -> Self {
+            self.architectures = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PublishVersionOutput`](crate::output::PublishVersionOutput)
         pub fn build(self) -> crate::output::PublishVersionOutput {
             crate::output::PublishVersionOutput {
@@ -2952,6 +3016,7 @@ pub mod publish_version_output {
                 image_config_response: self.image_config_response,
                 signing_profile_version_arn: self.signing_profile_version_arn,
                 signing_job_arn: self.signing_job_arn,
+                architectures: self.architectures,
             }
         }
     }
@@ -2982,6 +3047,9 @@ pub struct PublishLayerVersionOutput {
     pub compatible_runtimes: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
     /// <p>The layer's software license.</p>
     pub license_info: std::option::Option<std::string::String>,
+    /// <p>A list of compatible  
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    pub compatible_architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl std::fmt::Debug for PublishLayerVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2994,6 +3062,7 @@ impl std::fmt::Debug for PublishLayerVersionOutput {
         formatter.field("version", &self.version);
         formatter.field("compatible_runtimes", &self.compatible_runtimes);
         formatter.field("license_info", &self.license_info);
+        formatter.field("compatible_architectures", &self.compatible_architectures);
         formatter.finish()
     }
 }
@@ -3011,6 +3080,8 @@ pub mod publish_layer_version_output {
         pub(crate) version: std::option::Option<i64>,
         pub(crate) compatible_runtimes: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
         pub(crate) license_info: std::option::Option<std::string::String>,
+        pub(crate) compatible_architectures:
+            std::option::Option<std::vec::Vec<crate::model::Architecture>>,
     }
     impl Builder {
         /// <p>Details about the layer version.</p>
@@ -3095,6 +3166,22 @@ pub mod publish_layer_version_output {
             self.license_info = input;
             self
         }
+        pub fn compatible_architectures(
+            mut self,
+            input: impl Into<crate::model::Architecture>,
+        ) -> Self {
+            let mut v = self.compatible_architectures.unwrap_or_default();
+            v.push(input.into());
+            self.compatible_architectures = Some(v);
+            self
+        }
+        pub fn set_compatible_architectures(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        ) -> Self {
+            self.compatible_architectures = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PublishLayerVersionOutput`](crate::output::PublishLayerVersionOutput)
         pub fn build(self) -> crate::output::PublishLayerVersionOutput {
             crate::output::PublishLayerVersionOutput {
@@ -3106,6 +3193,7 @@ pub mod publish_layer_version_output {
                 version: self.version.unwrap_or_default(),
                 compatible_runtimes: self.compatible_runtimes,
                 license_info: self.license_info,
+                compatible_architectures: self.compatible_architectures,
             }
         }
     }
@@ -4298,6 +4386,9 @@ pub struct GetLayerVersionByArnOutput {
     pub compatible_runtimes: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
     /// <p>The layer's software license.</p>
     pub license_info: std::option::Option<std::string::String>,
+    /// <p>A list of compatible  
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    pub compatible_architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl std::fmt::Debug for GetLayerVersionByArnOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4310,6 +4401,7 @@ impl std::fmt::Debug for GetLayerVersionByArnOutput {
         formatter.field("version", &self.version);
         formatter.field("compatible_runtimes", &self.compatible_runtimes);
         formatter.field("license_info", &self.license_info);
+        formatter.field("compatible_architectures", &self.compatible_architectures);
         formatter.finish()
     }
 }
@@ -4327,6 +4419,8 @@ pub mod get_layer_version_by_arn_output {
         pub(crate) version: std::option::Option<i64>,
         pub(crate) compatible_runtimes: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
         pub(crate) license_info: std::option::Option<std::string::String>,
+        pub(crate) compatible_architectures:
+            std::option::Option<std::vec::Vec<crate::model::Architecture>>,
     }
     impl Builder {
         /// <p>Details about the layer version.</p>
@@ -4411,6 +4505,22 @@ pub mod get_layer_version_by_arn_output {
             self.license_info = input;
             self
         }
+        pub fn compatible_architectures(
+            mut self,
+            input: impl Into<crate::model::Architecture>,
+        ) -> Self {
+            let mut v = self.compatible_architectures.unwrap_or_default();
+            v.push(input.into());
+            self.compatible_architectures = Some(v);
+            self
+        }
+        pub fn set_compatible_architectures(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        ) -> Self {
+            self.compatible_architectures = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetLayerVersionByArnOutput`](crate::output::GetLayerVersionByArnOutput)
         pub fn build(self) -> crate::output::GetLayerVersionByArnOutput {
             crate::output::GetLayerVersionByArnOutput {
@@ -4422,6 +4532,7 @@ pub mod get_layer_version_by_arn_output {
                 version: self.version.unwrap_or_default(),
                 compatible_runtimes: self.compatible_runtimes,
                 license_info: self.license_info,
+                compatible_architectures: self.compatible_architectures,
             }
         }
     }
@@ -4452,6 +4563,9 @@ pub struct GetLayerVersionOutput {
     pub compatible_runtimes: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
     /// <p>The layer's software license.</p>
     pub license_info: std::option::Option<std::string::String>,
+    /// <p>A list of compatible  
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    pub compatible_architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl std::fmt::Debug for GetLayerVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4464,6 +4578,7 @@ impl std::fmt::Debug for GetLayerVersionOutput {
         formatter.field("version", &self.version);
         formatter.field("compatible_runtimes", &self.compatible_runtimes);
         formatter.field("license_info", &self.license_info);
+        formatter.field("compatible_architectures", &self.compatible_architectures);
         formatter.finish()
     }
 }
@@ -4481,6 +4596,8 @@ pub mod get_layer_version_output {
         pub(crate) version: std::option::Option<i64>,
         pub(crate) compatible_runtimes: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
         pub(crate) license_info: std::option::Option<std::string::String>,
+        pub(crate) compatible_architectures:
+            std::option::Option<std::vec::Vec<crate::model::Architecture>>,
     }
     impl Builder {
         /// <p>Details about the layer version.</p>
@@ -4565,6 +4682,22 @@ pub mod get_layer_version_output {
             self.license_info = input;
             self
         }
+        pub fn compatible_architectures(
+            mut self,
+            input: impl Into<crate::model::Architecture>,
+        ) -> Self {
+            let mut v = self.compatible_architectures.unwrap_or_default();
+            v.push(input.into());
+            self.compatible_architectures = Some(v);
+            self
+        }
+        pub fn set_compatible_architectures(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        ) -> Self {
+            self.compatible_architectures = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetLayerVersionOutput`](crate::output::GetLayerVersionOutput)
         pub fn build(self) -> crate::output::GetLayerVersionOutput {
             crate::output::GetLayerVersionOutput {
@@ -4576,6 +4709,7 @@ pub mod get_layer_version_output {
                 version: self.version.unwrap_or_default(),
                 compatible_runtimes: self.compatible_runtimes,
                 license_info: self.license_info,
+                compatible_architectures: self.compatible_architectures,
             }
         }
     }
@@ -4812,6 +4946,9 @@ pub struct GetFunctionConfigurationOutput {
     pub signing_profile_version_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the signing job.</p>
     pub signing_job_arn: std::option::Option<std::string::String>,
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
+    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl std::fmt::Debug for GetFunctionConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4853,6 +4990,7 @@ impl std::fmt::Debug for GetFunctionConfigurationOutput {
             &self.signing_profile_version_arn,
         );
         formatter.field("signing_job_arn", &self.signing_job_arn);
+        formatter.field("architectures", &self.architectures);
         formatter.finish()
     }
 }
@@ -4895,6 +5033,7 @@ pub mod get_function_configuration_output {
         pub(crate) image_config_response: std::option::Option<crate::model::ImageConfigResponse>,
         pub(crate) signing_profile_version_arn: std::option::Option<std::string::String>,
         pub(crate) signing_job_arn: std::option::Option<std::string::String>,
+        pub(crate) architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
     }
     impl Builder {
         /// <p>The name of the function.</p>
@@ -5239,6 +5378,19 @@ pub mod get_function_configuration_output {
             self.signing_job_arn = input;
             self
         }
+        pub fn architectures(mut self, input: impl Into<crate::model::Architecture>) -> Self {
+            let mut v = self.architectures.unwrap_or_default();
+            v.push(input.into());
+            self.architectures = Some(v);
+            self
+        }
+        pub fn set_architectures(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        ) -> Self {
+            self.architectures = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetFunctionConfigurationOutput`](crate::output::GetFunctionConfigurationOutput)
         pub fn build(self) -> crate::output::GetFunctionConfigurationOutput {
             crate::output::GetFunctionConfigurationOutput {
@@ -5273,6 +5425,7 @@ pub mod get_function_configuration_output {
                 image_config_response: self.image_config_response,
                 signing_profile_version_arn: self.signing_profile_version_arn,
                 signing_job_arn: self.signing_job_arn,
+                architectures: self.architectures,
             }
         }
     }
@@ -5564,9 +5717,13 @@ pub struct GetEventSourceMappingOutput {
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
     /// reading.</p>
     pub starting_position_timestamp: std::option::Option<smithy_types::Instant>,
-    /// <p>The maximum number of items to retrieve in a single batch.</p>
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
+    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub batch_size: std::option::Option<i32>,
-    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
+    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
+    /// <p>Default: 0</p>
+    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
     /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
     pub parallelization_factor: std::option::Option<i32>,
@@ -5723,7 +5880,9 @@ pub mod get_event_source_mapping_output {
             self.starting_position_timestamp = input;
             self
         }
-        /// <p>The maximum number of items to retrieve in a single batch.</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
+        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+        /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn batch_size(mut self, input: i32) -> Self {
             self.batch_size = Some(input);
             self
@@ -5732,7 +5891,9 @@ pub mod get_event_source_mapping_output {
             self.batch_size = input;
             self
         }
-        /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
+        /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
+        /// <p>Default: 0</p>
+        /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
             self.maximum_batching_window_in_seconds = Some(input);
             self
@@ -6412,9 +6573,13 @@ pub struct DeleteEventSourceMappingOutput {
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
     /// reading.</p>
     pub starting_position_timestamp: std::option::Option<smithy_types::Instant>,
-    /// <p>The maximum number of items to retrieve in a single batch.</p>
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
+    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub batch_size: std::option::Option<i32>,
-    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
+    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
+    /// <p>Default: 0</p>
+    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
     /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
     pub parallelization_factor: std::option::Option<i32>,
@@ -6571,7 +6736,9 @@ pub mod delete_event_source_mapping_output {
             self.starting_position_timestamp = input;
             self
         }
-        /// <p>The maximum number of items to retrieve in a single batch.</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
+        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+        /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn batch_size(mut self, input: i32) -> Self {
             self.batch_size = Some(input);
             self
@@ -6580,7 +6747,9 @@ pub mod delete_event_source_mapping_output {
             self.batch_size = input;
             self
         }
-        /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
+        /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
+        /// <p>Default: 0</p>
+        /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
             self.maximum_batching_window_in_seconds = Some(input);
             self
@@ -6964,6 +7133,9 @@ pub struct CreateFunctionOutput {
     pub signing_profile_version_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the signing job.</p>
     pub signing_job_arn: std::option::Option<std::string::String>,
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
+    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl std::fmt::Debug for CreateFunctionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7005,6 +7177,7 @@ impl std::fmt::Debug for CreateFunctionOutput {
             &self.signing_profile_version_arn,
         );
         formatter.field("signing_job_arn", &self.signing_job_arn);
+        formatter.field("architectures", &self.architectures);
         formatter.finish()
     }
 }
@@ -7047,6 +7220,7 @@ pub mod create_function_output {
         pub(crate) image_config_response: std::option::Option<crate::model::ImageConfigResponse>,
         pub(crate) signing_profile_version_arn: std::option::Option<std::string::String>,
         pub(crate) signing_job_arn: std::option::Option<std::string::String>,
+        pub(crate) architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
     }
     impl Builder {
         /// <p>The name of the function.</p>
@@ -7391,6 +7565,19 @@ pub mod create_function_output {
             self.signing_job_arn = input;
             self
         }
+        pub fn architectures(mut self, input: impl Into<crate::model::Architecture>) -> Self {
+            let mut v = self.architectures.unwrap_or_default();
+            v.push(input.into());
+            self.architectures = Some(v);
+            self
+        }
+        pub fn set_architectures(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        ) -> Self {
+            self.architectures = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateFunctionOutput`](crate::output::CreateFunctionOutput)
         pub fn build(self) -> crate::output::CreateFunctionOutput {
             crate::output::CreateFunctionOutput {
@@ -7425,6 +7612,7 @@ pub mod create_function_output {
                 image_config_response: self.image_config_response,
                 signing_profile_version_arn: self.signing_profile_version_arn,
                 signing_job_arn: self.signing_job_arn,
+                architectures: self.architectures,
             }
         }
     }
@@ -7448,9 +7636,13 @@ pub struct CreateEventSourceMappingOutput {
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
     /// reading.</p>
     pub starting_position_timestamp: std::option::Option<smithy_types::Instant>,
-    /// <p>The maximum number of items to retrieve in a single batch.</p>
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
+    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub batch_size: std::option::Option<i32>,
-    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
+    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
+    /// <p>Default: 0</p>
+    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
     /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
     pub parallelization_factor: std::option::Option<i32>,
@@ -7607,7 +7799,9 @@ pub mod create_event_source_mapping_output {
             self.starting_position_timestamp = input;
             self
         }
-        /// <p>The maximum number of items to retrieve in a single batch.</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
+        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+        /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn batch_size(mut self, input: i32) -> Self {
             self.batch_size = Some(input);
             self
@@ -7616,7 +7810,9 @@ pub mod create_event_source_mapping_output {
             self.batch_size = input;
             self
         }
-        /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
+        /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
+        /// <p>Default: 0</p>
+        /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
             self.maximum_batching_window_in_seconds = Some(input);
             self

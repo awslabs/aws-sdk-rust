@@ -696,6 +696,7 @@ pub enum DeleteRegistryPolicyErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     RegistryPolicyNotFoundException(crate::error::RegistryPolicyNotFoundException),
     ServerException(crate::error::ServerException),
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -705,6 +706,7 @@ impl std::fmt::Display for DeleteRegistryPolicyError {
             DeleteRegistryPolicyErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             DeleteRegistryPolicyErrorKind::RegistryPolicyNotFoundException(_inner) => _inner.fmt(f),
             DeleteRegistryPolicyErrorKind::ServerException(_inner) => _inner.fmt(f),
+            DeleteRegistryPolicyErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DeleteRegistryPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -771,6 +773,12 @@ impl DeleteRegistryPolicyError {
             DeleteRegistryPolicyErrorKind::ServerException(_)
         )
     }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRegistryPolicyErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for DeleteRegistryPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -778,6 +786,7 @@ impl std::error::Error for DeleteRegistryPolicyError {
             DeleteRegistryPolicyErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteRegistryPolicyErrorKind::RegistryPolicyNotFoundException(_inner) => Some(_inner),
             DeleteRegistryPolicyErrorKind::ServerException(_inner) => Some(_inner),
+            DeleteRegistryPolicyErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteRegistryPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1002,6 +1011,133 @@ impl std::error::Error for DeleteRepositoryPolicyError {
             }
             DeleteRepositoryPolicyErrorKind::ServerException(_inner) => Some(_inner),
             DeleteRepositoryPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeImageReplicationStatusError {
+    pub kind: DescribeImageReplicationStatusErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeImageReplicationStatusErrorKind {
+    ImageNotFoundException(crate::error::ImageNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
+    ServerException(crate::error::ServerException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeImageReplicationStatusError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeImageReplicationStatusErrorKind::ImageNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeImageReplicationStatusErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeImageReplicationStatusErrorKind::RepositoryNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeImageReplicationStatusErrorKind::ServerException(_inner) => _inner.fmt(f),
+            DescribeImageReplicationStatusErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DescribeImageReplicationStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeImageReplicationStatusError {
+    fn code(&self) -> Option<&str> {
+        DescribeImageReplicationStatusError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeImageReplicationStatusError {
+    pub fn new(kind: DescribeImageReplicationStatusErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeImageReplicationStatusErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeImageReplicationStatusErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_image_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeImageReplicationStatusErrorKind::ImageNotFoundException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeImageReplicationStatusErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_repository_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeImageReplicationStatusErrorKind::RepositoryNotFoundException(_)
+        )
+    }
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeImageReplicationStatusErrorKind::ServerException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeImageReplicationStatusErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeImageReplicationStatusError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeImageReplicationStatusErrorKind::ImageNotFoundException(_inner) => Some(_inner),
+            DescribeImageReplicationStatusErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            DescribeImageReplicationStatusErrorKind::RepositoryNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeImageReplicationStatusErrorKind::ServerException(_inner) => Some(_inner),
+            DescribeImageReplicationStatusErrorKind::ValidationException(_inner) => Some(_inner),
+            DescribeImageReplicationStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1863,6 +1999,7 @@ pub enum GetRegistryPolicyErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     RegistryPolicyNotFoundException(crate::error::RegistryPolicyNotFoundException),
     ServerException(crate::error::ServerException),
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1872,6 +2009,7 @@ impl std::fmt::Display for GetRegistryPolicyError {
             GetRegistryPolicyErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             GetRegistryPolicyErrorKind::RegistryPolicyNotFoundException(_inner) => _inner.fmt(f),
             GetRegistryPolicyErrorKind::ServerException(_inner) => _inner.fmt(f),
+            GetRegistryPolicyErrorKind::ValidationException(_inner) => _inner.fmt(f),
             GetRegistryPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1935,6 +2073,12 @@ impl GetRegistryPolicyError {
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, GetRegistryPolicyErrorKind::ServerException(_))
     }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRegistryPolicyErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for GetRegistryPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1942,6 +2086,7 @@ impl std::error::Error for GetRegistryPolicyError {
             GetRegistryPolicyErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetRegistryPolicyErrorKind::RegistryPolicyNotFoundException(_inner) => Some(_inner),
             GetRegistryPolicyErrorKind::ServerException(_inner) => Some(_inner),
+            GetRegistryPolicyErrorKind::ValidationException(_inner) => Some(_inner),
             GetRegistryPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2808,6 +2953,7 @@ pub struct PutRegistryPolicyError {
 pub enum PutRegistryPolicyErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     ServerException(crate::error::ServerException),
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2816,6 +2962,7 @@ impl std::fmt::Display for PutRegistryPolicyError {
         match &self.kind {
             PutRegistryPolicyErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             PutRegistryPolicyErrorKind::ServerException(_inner) => _inner.fmt(f),
+            PutRegistryPolicyErrorKind::ValidationException(_inner) => _inner.fmt(f),
             PutRegistryPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2873,12 +3020,19 @@ impl PutRegistryPolicyError {
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, PutRegistryPolicyErrorKind::ServerException(_))
     }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRegistryPolicyErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for PutRegistryPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             PutRegistryPolicyErrorKind::InvalidParameterException(_inner) => Some(_inner),
             PutRegistryPolicyErrorKind::ServerException(_inner) => Some(_inner),
+            PutRegistryPolicyErrorKind::ValidationException(_inner) => Some(_inner),
             PutRegistryPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }

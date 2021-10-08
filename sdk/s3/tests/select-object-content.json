@@ -1,0 +1,117 @@
+[
+  {
+    "connection_id": 0,
+    "action": {
+      "Request": {
+        "request": {
+          "uri": "https://s3.us-east-2.amazonaws.com/aws-rust-sdk/sample_data.csv?select&select-type=2&x-id=SelectObjectContent",
+          "headers": {
+            "x-amz-date": [
+              "20210831T010050Z"
+            ],
+            "content-type": [
+              "application/xml"
+            ],
+            "x-amz-content-sha256": [
+              "3e2ed0bf97f28640f16193df06b497374232511cd2112b48985a306d40fb16d3"
+            ],
+            "content-length": [
+              "799"
+            ],
+            "authorization": [
+              "AWS4-HMAC-SHA256 Credential=test/test/us-east-2/s3/aws4_request, SignedHeaders=content-length;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-user-agent, Signature=test"
+            ],
+            "user-agent": [
+              "aws-sdk-rust/0.1.0 os/linux lang/rust/1.52.1"
+            ],
+            "x-amz-user-agent": [
+              "aws-sdk-rust/0.1.0 api/s3/0.0.16-alpha os/linux lang/rust/1.52.1"
+            ]
+          },
+          "method": "POST"
+        }
+      }
+    }
+  },
+  {
+    "connection_id": 0,
+    "action": {
+      "Data": {
+        "data": {
+          "Utf8": "<SelectObjectContentRequest xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"><Expression xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">SELECT * FROM s3object s WHERE s.&quot;Name&quot; = &apos;Jane&apos;</Expression><ExpressionType xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">SQL</ExpressionType><InputSerialization xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"><CSV xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"><FileHeaderInfo xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">USE</FileHeaderInfo></CSV><CompressionType xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">NONE</CompressionType></InputSerialization><OutputSerialization xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"><CSV xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"></CSV></OutputSerialization></SelectObjectContentRequest>"
+        },
+        "direction": "Request"
+      }
+    }
+  },
+  {
+    "connection_id": 0,
+    "action": {
+      "Eof": {
+        "ok": true,
+        "direction": "Request"
+      }
+    }
+  },
+  {
+    "connection_id": 0,
+    "action": {
+      "Response": {
+        "response": {
+          "Ok": {
+            "status": 200,
+            "version": "HTTP/1.1",
+            "headers": {
+              "x-amz-request-id": [
+                "NVKMNP55BP15194G"
+              ],
+              "x-amz-id-2": [
+                "geaWcKlzoJpu+EJLNG+t9uaD/9EOuQzGqcxL41SguR9xoDOVMFnjw7CFLm/yHQc3AVpHqHCo3a0="
+              ],
+              "transfer-encoding": [
+                "chunked"
+              ],
+              "server": [
+                "AmazonS3"
+              ],
+              "date": [
+                "Tue, 31 Aug 2021 01:00:52 GMT"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "connection_id": 0,
+    "action": {
+      "Data": {
+        "data": {
+          "Base64": "AAAAjAAAAFUKNSeBDTptZXNzYWdlLXR5cGUHAAVldmVudAs6ZXZlbnQtdHlwZQcAB1JlY29yZHMNOmNvbnRlbnQtdHlwZQcAGGFwcGxpY2F0aW9uL29jdGV0LXN0cmVhbUphbmUsKDk0OSkgNTU1LTY3MDQsQ2hpY2FnbyxEZXZlbG9wZXINCuadLyI="
+        },
+        "direction": "Response"
+      }
+    }
+  },
+  {
+    "connection_id": 0,
+    "action": {
+      "Data": {
+        "data": {
+          "Base64": "AAAA0AAAAEMDArAaDTptZXNzYWdlLXR5cGUHAAVldmVudAs6ZXZlbnQtdHlwZQcABVN0YXRzDTpjb250ZW50LXR5cGUHAAh0ZXh0L3htbDxTdGF0cyB4bWxucz0iIj48Qnl0ZXNTY2FubmVkPjMzMzwvQnl0ZXNTY2FubmVkPjxCeXRlc1Byb2Nlc3NlZD4zMzM8L0J5dGVzUHJvY2Vzc2VkPjxCeXRlc1JldHVybmVkPjM5PC9CeXRlc1JldHVybmVkPjwvU3RhdHM+Ey79egAAADgAAAAowcaE1A06bWVzc2FnZS10eXBlBwAFZXZlbnQLOmV2ZW50LXR5cGUHAANFbmTPl9OS"
+        },
+        "direction": "Response"
+      }
+    }
+  },
+  {
+    "connection_id": 0,
+    "action": {
+      "Eof": {
+        "ok": true,
+        "direction": "Response"
+      }
+    }
+  }
+]

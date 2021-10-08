@@ -6610,9 +6610,12 @@ pub struct Action {
     pub cloudwatch_alarm: std::option::Option<crate::model::CloudwatchAlarmAction>,
     /// <p>Send data to CloudWatch Logs.</p>
     pub cloudwatch_logs: std::option::Option<crate::model::CloudwatchLogsAction>,
-    /// <p>Write data to an Amazon Elasticsearch Service domain.</p>
+    /// <p>Write data to an Amazon OpenSearch Service domain.</p>   
     /// <note>
-    /// <p>This action is deprecated. Use the <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch action</a> instead.</p>
+    /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions.
+    /// To create a new rule action or to update an existing rule action, use the
+    /// <code>OpenSearch</code> rule action instead. For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
     /// </note>
     pub elasticsearch: std::option::Option<crate::model::ElasticsearchAction>,
     /// <p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
@@ -6832,9 +6835,12 @@ pub mod action {
             self.cloudwatch_logs = input;
             self
         }
-        /// <p>Write data to an Amazon Elasticsearch Service domain.</p>
+        /// <p>Write data to an Amazon OpenSearch Service domain.</p>   
         /// <note>
-        /// <p>This action is deprecated. Use the <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch action</a> instead.</p>
+        /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions.
+        /// To create a new rule action or to update an existing rule action, use the
+        /// <code>OpenSearch</code> rule action instead. For more information, see
+        /// <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
         /// </note>
         pub fn elasticsearch(mut self, input: crate::model::ElasticsearchAction) -> Self {
             self.elasticsearch = Some(input);
@@ -8584,19 +8590,21 @@ impl SalesforceAction {
     }
 }
 
-/// <p>Describes an action that writes data to an Amazon Elasticsearch Service
-/// domain.</p>
+/// <p>Describes an action that writes data to an Amazon OpenSearch Service
+/// domain.</p>  
 /// <note>
-/// <p>This action is deprecated. Use the <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch action</a> instead.</p>
+/// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions. To create a
+/// new rule action or to update an existing rule action, use the
+/// <code>OpenSearch</code> rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElasticsearchAction {
-    /// <p>The IAM role ARN that has access to Elasticsearch.</p>
+    /// <p>The IAM role ARN that has access to OpenSearch.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The endpoint of your Elasticsearch domain.</p>
+    /// <p>The endpoint of your OpenSearch domain.</p>
     pub endpoint: std::option::Option<std::string::String>,
-    /// <p>The Elasticsearch index where you want to store your data.</p>
+    /// <p>The index where you want to store your data.</p>
     pub index: std::option::Option<std::string::String>,
     /// <p>The type of document you are storing.</p>
     pub r#type: std::option::Option<std::string::String>,
@@ -8627,7 +8635,7 @@ pub mod elasticsearch_action {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IAM role ARN that has access to Elasticsearch.</p>
+        /// <p>The IAM role ARN that has access to OpenSearch.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -8636,7 +8644,7 @@ pub mod elasticsearch_action {
             self.role_arn = input;
             self
         }
-        /// <p>The endpoint of your Elasticsearch domain.</p>
+        /// <p>The endpoint of your OpenSearch domain.</p>
         pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint = Some(input.into());
             self
@@ -8645,7 +8653,7 @@ pub mod elasticsearch_action {
             self.endpoint = input;
             self
         }
-        /// <p>The Elasticsearch index where you want to store your data.</p>
+        /// <p>The index where you want to store your data.</p>
         pub fn index(mut self, input: impl Into<std::string::String>) -> Self {
             self.index = Some(input.into());
             self
@@ -10056,6 +10064,69 @@ impl AsRef<str> for DynamoKeyType {
     }
 }
 
+/// **NOTE:** `VerificationState::Unknown` has been renamed to `::UnknownValue`.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum VerificationState {
+    BenignPositive,
+    FalsePositive,
+    TruePositive,
+    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    UnknownValue,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for VerificationState {
+    fn from(s: &str) -> Self {
+        match s {
+            "BENIGN_POSITIVE" => VerificationState::BenignPositive,
+            "FALSE_POSITIVE" => VerificationState::FalsePositive,
+            "TRUE_POSITIVE" => VerificationState::TruePositive,
+            "UNKNOWN" => VerificationState::UnknownValue,
+            other => VerificationState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for VerificationState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VerificationState::from(s))
+    }
+}
+impl VerificationState {
+    pub fn as_str(&self) -> &str {
+        match self {
+            VerificationState::BenignPositive => "BENIGN_POSITIVE",
+            VerificationState::FalsePositive => "FALSE_POSITIVE",
+            VerificationState::TruePositive => "TRUE_POSITIVE",
+            VerificationState::UnknownValue => "UNKNOWN",
+            VerificationState::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BENIGN_POSITIVE",
+            "FALSE_POSITIVE",
+            "TRUE_POSITIVE",
+            "UNKNOWN",
+        ]
+    }
+}
+impl AsRef<str> for VerificationState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Information about a Device Defender security profile behavior violation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -10077,6 +10148,10 @@ pub struct ViolationEvent {
         std::option::Option<crate::model::ViolationEventAdditionalInfo>,
     /// <p>The type of violation event.</p>
     pub violation_event_type: std::option::Option<crate::model::ViolationEventType>,
+    /// <p>The verification state of the violation (detect alarm).</p>
+    pub verification_state: std::option::Option<crate::model::VerificationState>,
+    /// <p>The description of the verification state of the violation.</p>
+    pub verification_state_description: std::option::Option<std::string::String>,
     /// <p>The time the violation event occurred.</p>
     pub violation_event_time: std::option::Option<smithy_types::Instant>,
 }
@@ -10093,6 +10168,11 @@ impl std::fmt::Debug for ViolationEvent {
             &self.violation_event_additional_info,
         );
         formatter.field("violation_event_type", &self.violation_event_type);
+        formatter.field("verification_state", &self.verification_state);
+        formatter.field(
+            "verification_state_description",
+            &self.verification_state_description,
+        );
         formatter.field("violation_event_time", &self.violation_event_time);
         formatter.finish()
     }
@@ -10111,6 +10191,8 @@ pub mod violation_event {
         pub(crate) violation_event_additional_info:
             std::option::Option<crate::model::ViolationEventAdditionalInfo>,
         pub(crate) violation_event_type: std::option::Option<crate::model::ViolationEventType>,
+        pub(crate) verification_state: std::option::Option<crate::model::VerificationState>,
+        pub(crate) verification_state_description: std::option::Option<std::string::String>,
         pub(crate) violation_event_time: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
@@ -10194,6 +10276,33 @@ pub mod violation_event {
             self.violation_event_type = input;
             self
         }
+        /// <p>The verification state of the violation (detect alarm).</p>
+        pub fn verification_state(mut self, input: crate::model::VerificationState) -> Self {
+            self.verification_state = Some(input);
+            self
+        }
+        pub fn set_verification_state(
+            mut self,
+            input: std::option::Option<crate::model::VerificationState>,
+        ) -> Self {
+            self.verification_state = input;
+            self
+        }
+        /// <p>The description of the verification state of the violation.</p>
+        pub fn verification_state_description(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.verification_state_description = Some(input.into());
+            self
+        }
+        pub fn set_verification_state_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.verification_state_description = input;
+            self
+        }
         /// <p>The time the violation event occurred.</p>
         pub fn violation_event_time(mut self, input: smithy_types::Instant) -> Self {
             self.violation_event_time = Some(input);
@@ -10216,6 +10325,8 @@ pub mod violation_event {
                 metric_value: self.metric_value,
                 violation_event_additional_info: self.violation_event_additional_info,
                 violation_event_type: self.violation_event_type,
+                verification_state: self.verification_state,
+                verification_state_description: self.verification_state_description,
                 violation_event_time: self.violation_event_time,
             }
         }
@@ -15842,6 +15953,10 @@ pub struct ActiveViolation {
     /// </p>
     pub violation_event_additional_info:
         std::option::Option<crate::model::ViolationEventAdditionalInfo>,
+    /// <p>The verification state of the violation (detect alarm).</p>
+    pub verification_state: std::option::Option<crate::model::VerificationState>,
+    /// <p>The description of the verification state of the violation.</p>
+    pub verification_state_description: std::option::Option<std::string::String>,
     /// <p>The time the most recent violation occurred.</p>
     pub last_violation_time: std::option::Option<smithy_types::Instant>,
     /// <p>The time the violation started.</p>
@@ -15858,6 +15973,11 @@ impl std::fmt::Debug for ActiveViolation {
         formatter.field(
             "violation_event_additional_info",
             &self.violation_event_additional_info,
+        );
+        formatter.field("verification_state", &self.verification_state);
+        formatter.field(
+            "verification_state_description",
+            &self.verification_state_description,
         );
         formatter.field("last_violation_time", &self.last_violation_time);
         formatter.field("violation_start_time", &self.violation_start_time);
@@ -15877,6 +15997,8 @@ pub mod active_violation {
         pub(crate) last_violation_value: std::option::Option<crate::model::MetricValue>,
         pub(crate) violation_event_additional_info:
             std::option::Option<crate::model::ViolationEventAdditionalInfo>,
+        pub(crate) verification_state: std::option::Option<crate::model::VerificationState>,
+        pub(crate) verification_state_description: std::option::Option<std::string::String>,
         pub(crate) last_violation_time: std::option::Option<smithy_types::Instant>,
         pub(crate) violation_start_time: std::option::Option<smithy_types::Instant>,
     }
@@ -15949,6 +16071,33 @@ pub mod active_violation {
             self.violation_event_additional_info = input;
             self
         }
+        /// <p>The verification state of the violation (detect alarm).</p>
+        pub fn verification_state(mut self, input: crate::model::VerificationState) -> Self {
+            self.verification_state = Some(input);
+            self
+        }
+        pub fn set_verification_state(
+            mut self,
+            input: std::option::Option<crate::model::VerificationState>,
+        ) -> Self {
+            self.verification_state = input;
+            self
+        }
+        /// <p>The description of the verification state of the violation.</p>
+        pub fn verification_state_description(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.verification_state_description = Some(input.into());
+            self
+        }
+        pub fn set_verification_state_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.verification_state_description = input;
+            self
+        }
         /// <p>The time the most recent violation occurred.</p>
         pub fn last_violation_time(mut self, input: smithy_types::Instant) -> Self {
             self.last_violation_time = Some(input);
@@ -15982,6 +16131,8 @@ pub mod active_violation {
                 behavior: self.behavior,
                 last_violation_value: self.last_violation_value,
                 violation_event_additional_info: self.violation_event_additional_info,
+                verification_state: self.verification_state,
+                verification_state_description: self.verification_state_description,
                 last_violation_time: self.last_violation_time,
                 violation_start_time: self.violation_start_time,
             }

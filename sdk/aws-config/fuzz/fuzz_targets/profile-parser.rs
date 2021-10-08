@@ -1,3 +1,8 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
 #![no_main]
 use aws_config::profile;
 use aws_types::os_shim_internal::{Env, Fs};

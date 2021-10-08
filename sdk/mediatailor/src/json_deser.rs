@@ -5,6 +5,54 @@ pub fn parse_http_generic_error(
     crate::json_errors::parse_generic_error(response.body(), response.headers())
 }
 
+pub fn deser_operation_crate_operation_configure_logs_for_playback_configuration(
+    input: &[u8],
+    mut builder: crate::output::configure_logs_for_playback_configuration_output::Builder,
+) -> Result<
+    crate::output::configure_logs_for_playback_configuration_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "PercentEnabled" => {
+                        builder = builder.set_percent_enabled(
+                            smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                .map(|v| v.to_i32()),
+                        );
+                    }
+                    "PlaybackConfigurationName" => {
+                        builder = builder.set_playback_configuration_name(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_crate_operation_create_channel(
     input: &[u8],
     mut builder: crate::output::create_channel_output::Builder,
@@ -851,6 +899,13 @@ pub fn deser_operation_crate_operation_get_playback_configuration(
                             crate::json_deser::deser_structure_crate_model_live_pre_roll_configuration(tokens)?
                         );
                     }
+                    "LogConfiguration" => {
+                        builder = builder.set_log_configuration(
+                            crate::json_deser::deser_structure_crate_model_log_configuration(
+                                tokens,
+                            )?,
+                        );
+                    }
                     "ManifestProcessingRules" => {
                         builder = builder.set_manifest_processing_rules(
                             crate::json_deser::deser_structure_crate_model_manifest_processing_rules(tokens)?
@@ -1299,6 +1354,13 @@ pub fn deser_operation_crate_operation_put_playback_configuration(
                     "LivePreRollConfiguration" => {
                         builder = builder.set_live_pre_roll_configuration(
                             crate::json_deser::deser_structure_crate_model_live_pre_roll_configuration(tokens)?
+                        );
+                    }
+                    "LogConfiguration" => {
+                        builder = builder.set_log_configuration(
+                            crate::json_deser::deser_structure_crate_model_log_configuration(
+                                tokens,
+                            )?,
                         );
                     }
                     "ManifestProcessingRules" => {
@@ -2424,6 +2486,50 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_log_configuration<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::LogConfiguration>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::LogConfiguration::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "PercentEnabled" => {
+                                builder = builder.set_percent_enabled(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 pub fn deser_structure_crate_model_manifest_processing_rules<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ManifestProcessingRules>, smithy_json::deserialize::Error>
@@ -3320,6 +3426,11 @@ where
                             "LivePreRollConfiguration" => {
                                 builder = builder.set_live_pre_roll_configuration(
                                     crate::json_deser::deser_structure_crate_model_live_pre_roll_configuration(tokens)?
+                                );
+                            }
+                            "LogConfiguration" => {
+                                builder = builder.set_log_configuration(
+                                    crate::json_deser::deser_structure_crate_model_log_configuration(tokens)?
                                 );
                             }
                             "ManifestProcessingRules" => {

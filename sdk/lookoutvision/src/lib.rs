@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>This is the Amazon Lookout for Vision API Reference. It provides descriptions of actions,
 //! data types, common parameters, and common errors.</p>
 //! <p>Amazon Lookout for Vision enables you to find visual defects in industrial products,
@@ -33,7 +34,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

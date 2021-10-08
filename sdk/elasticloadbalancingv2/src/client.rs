@@ -966,8 +966,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>,
         /// health checks are disabled by default but can be enabled. If the target type is
-        /// <code>instance</code> or <code>ip</code>, health checks are always enabled and cannot be
-        /// disabled.</p>
+        /// <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always
+        /// enabled and cannot be disabled.</p>
         pub fn health_check_enabled(mut self, inp: bool) -> Self {
             self.inner = self.inner.health_check_enabled(inp);
             self
@@ -1073,6 +1073,10 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>lambda</code> - Register a single Lambda function as a target.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>alb</code> - Register a single Application Load Balancer as a target.</p>
         /// </li>
         /// </ul>
         pub fn target_type(mut self, inp: crate::model::TargetTypeEnum) -> Self {

@@ -4443,6 +4443,7 @@ pub struct CreateSipMediaApplicationCallError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSipMediaApplicationCallErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
     BadRequestException(crate::error::BadRequestException),
     ForbiddenException(crate::error::ForbiddenException),
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
@@ -4456,6 +4457,7 @@ pub enum CreateSipMediaApplicationCallErrorKind {
 impl std::fmt::Display for CreateSipMediaApplicationCallError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            CreateSipMediaApplicationCallErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateSipMediaApplicationCallErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             CreateSipMediaApplicationCallErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             CreateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(_inner) => {
@@ -4521,6 +4523,12 @@ impl CreateSipMediaApplicationCallError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSipMediaApplicationCallErrorKind::AccessDeniedException(_)
+        )
+    }
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4567,6 +4575,7 @@ impl CreateSipMediaApplicationCallError {
 impl std::error::Error for CreateSipMediaApplicationCallError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            CreateSipMediaApplicationCallErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateSipMediaApplicationCallErrorKind::BadRequestException(_inner) => Some(_inner),
             CreateSipMediaApplicationCallErrorKind::ForbiddenException(_inner) => Some(_inner),
             CreateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(_inner) => {

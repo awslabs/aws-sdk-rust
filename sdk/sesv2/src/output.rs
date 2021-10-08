@@ -407,7 +407,8 @@ impl SendCustomVerificationEmailOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendBulkEmailOutput {
-    /// <p>A list of <code>BulkMailEntry</code> objects.</p>
+    /// <p>One object per intended recipient. Check each response object and retry any messages
+    /// with a failure status.</p>
     pub bulk_email_entry_results:
         std::option::Option<std::vec::Vec<crate::model::BulkEmailEntryResult>>,
 }
@@ -736,7 +737,8 @@ impl PutEmailIdentityDkimAttributesOutput {
     }
 }
 
-/// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
+/// <p>If the action is successful, the service sends back an HTTP 200 response with an empty
+/// HTTP body.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEmailIdentityConfigurationSetAttributesOutput {}
@@ -1417,7 +1419,7 @@ impl ListEmailTemplatesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEmailIdentitiesOutput {
-    /// <p>An array that includes all of the email identities associated with your AWS
+    /// <p>An array that includes all of the email identities associated with your Amazon Web Services
     /// account.</p>
     pub email_identities: std::option::Option<std::vec::Vec<crate::model::IdentityInfo>>,
     /// <p>A token that indicates that there are additional configuration sets to list. To view
@@ -1647,7 +1649,7 @@ impl ListDeliverabilityTestReportsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDedicatedIpPoolsOutput {
-    /// <p>A list of all of the dedicated IP pools that are associated with your AWS account in
+    /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in
     /// the current Region.</p>
     pub dedicated_ip_pools: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A token that indicates that there are additional IP pools to list. To view additional
@@ -1931,12 +1933,12 @@ impl ListContactListsOutput {
     }
 }
 
-/// <p>A list of configuration sets in your Amazon SES account in the current AWS Region.</p>
+/// <p>A list of configuration sets in your Amazon SES account in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationSetsOutput {
     /// <p>An array that contains all of the configuration sets in your Amazon SES account in the
-    /// current AWS Region.</p>
+    /// current Amazon Web Services Region.</p>
     pub configuration_sets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A token that indicates that there are additional configuration sets to list. To view
     /// additional configuration sets, issue another request to
@@ -2240,7 +2242,7 @@ impl GetImportJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEmailTemplateOutput {
-    /// <p>The name of the template you want to retrieve.</p>
+    /// <p>The name of the template.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a
     /// text-only part.</p>
@@ -2264,7 +2266,7 @@ pub mod get_email_template_output {
         pub(crate) template_content: std::option::Option<crate::model::EmailTemplateContent>,
     }
     impl Builder {
-        /// <p>The name of the template you want to retrieve.</p>
+        /// <p>The name of the template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
@@ -2369,7 +2371,8 @@ impl GetEmailIdentityPoliciesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEmailIdentityOutput {
-    /// <p>The email identity type.</p>
+    /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not
+    /// supported.</p>
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The feedback forwarding configuration for the identity.</p>
     /// <p>If the value is <code>true</code>, you receive email notifications when bounce or
@@ -2436,7 +2439,8 @@ pub mod get_email_identity_output {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The email identity type.</p>
+        /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not
+        /// supported.</p>
         pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
             self.identity_type = Some(input);
             self
@@ -2989,12 +2993,12 @@ impl GetDeliverabilityDashboardOptionsOutput {
     }
 }
 
-/// <p>Information about the dedicated IP addresses that are associated with your AWS
+/// <p>Information about the dedicated IP addresses that are associated with your Amazon Web Services
 /// account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDedicatedIpsOutput {
-    /// <p>A list of dedicated IP addresses that are associated with your AWS account.</p>
+    /// <p>A list of dedicated IP addresses that are associated with your Amazon Web Services account.</p>
     pub dedicated_ips: std::option::Option<std::vec::Vec<crate::model::DedicatedIp>>,
     /// <p>A token that indicates that there are additional dedicated IP addresses to list. To
     /// view additional addresses, issue another request to <code>GetDedicatedIps</code>,
@@ -3849,7 +3853,7 @@ impl GetBlacklistReportsOutput {
 }
 
 /// <p>A list of details about the email-sending capabilities of your Amazon SES account in the
-/// current AWS Region.</p>
+/// current Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountOutput {
@@ -3879,7 +3883,7 @@ pub struct GetAccountOutput {
     /// </li>
     /// </ul>
     pub enforcement_status: std::option::Option<std::string::String>,
-    /// <p>Indicates whether or not your account has production access in the current AWS
+    /// <p>Indicates whether or not your account has production access in the current Amazon Web Services
     /// Region.</p>
     /// <p>If the value is <code>false</code>, then your account is in the
     /// <i>sandbox</i>. When your account is in the sandbox, you can only send
@@ -3891,13 +3895,13 @@ pub struct GetAccountOutput {
     /// maximum sending rate for your account vary based on your specific use case.</p>
     pub production_access_enabled: bool,
     /// <p>An object that contains information about the per-day and per-second sending limits
-    /// for your Amazon SES account in the current AWS Region.</p>
+    /// for your Amazon SES account in the current Amazon Web Services Region.</p>
     pub send_quota: std::option::Option<crate::model::SendQuota>,
     /// <p>Indicates whether or not email sending is enabled for your Amazon SES account in the
-    /// current AWS Region.</p>
+    /// current Amazon Web Services Region.</p>
     pub sending_enabled: bool,
     /// <p>An object that contains information about the email address suppression preferences
-    /// for your account in the current AWS Region.</p>
+    /// for your account in the current Amazon Web Services Region.</p>
     pub suppression_attributes: std::option::Option<crate::model::SuppressionAttributes>,
     /// <p>An object that defines your account details.</p>
     pub details: std::option::Option<crate::model::AccountDetails>,
@@ -3979,7 +3983,7 @@ pub mod get_account_output {
             self.enforcement_status = input;
             self
         }
-        /// <p>Indicates whether or not your account has production access in the current AWS
+        /// <p>Indicates whether or not your account has production access in the current Amazon Web Services
         /// Region.</p>
         /// <p>If the value is <code>false</code>, then your account is in the
         /// <i>sandbox</i>. When your account is in the sandbox, you can only send
@@ -3998,7 +4002,7 @@ pub mod get_account_output {
             self
         }
         /// <p>An object that contains information about the per-day and per-second sending limits
-        /// for your Amazon SES account in the current AWS Region.</p>
+        /// for your Amazon SES account in the current Amazon Web Services Region.</p>
         pub fn send_quota(mut self, input: crate::model::SendQuota) -> Self {
             self.send_quota = Some(input);
             self
@@ -4011,7 +4015,7 @@ pub mod get_account_output {
             self
         }
         /// <p>Indicates whether or not email sending is enabled for your Amazon SES account in the
-        /// current AWS Region.</p>
+        /// current Amazon Web Services Region.</p>
         pub fn sending_enabled(mut self, input: bool) -> Self {
             self.sending_enabled = Some(input);
             self
@@ -4021,7 +4025,7 @@ pub mod get_account_output {
             self
         }
         /// <p>An object that contains information about the email address suppression preferences
-        /// for your account in the current AWS Region.</p>
+        /// for your account in the current Amazon Web Services Region.</p>
         pub fn suppression_attributes(
             mut self,
             input: crate::model::SuppressionAttributes,
@@ -4493,7 +4497,8 @@ impl CreateEmailIdentityPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEmailIdentityOutput {
-    /// <p>The email identity type.</p>
+    /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not
+    /// supported.</p>
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>Specifies whether or not the identity is verified. You can only send email from
     /// verified email addresses or domains. For more information about verifying identities,
@@ -4525,7 +4530,8 @@ pub mod create_email_identity_output {
         pub(crate) dkim_attributes: std::option::Option<crate::model::DkimAttributes>,
     }
     impl Builder {
-        /// <p>The email identity type.</p>
+        /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not
+        /// supported.</p>
         pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
             self.identity_type = Some(input);
             self

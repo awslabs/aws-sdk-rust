@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Amazon Lightsail is the easiest way to get started with Amazon Web Services (AWS) for developers
 //! who need to build websites or web applications. It includes everything you need to launch your
 //! project quickly - instances (virtual private servers), container services, storage buckets,
@@ -37,7 +38,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

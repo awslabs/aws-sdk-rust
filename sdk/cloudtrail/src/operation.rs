@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for AddTags {
     type Output = std::result::Result<crate::output::AddTagsOutput, crate::error::AddTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_add_tags_error(response)
+            crate::operation_ser::parse_add_tags_error(response)
         } else {
-            crate::operation_deser::parse_add_tags_response(response)
+            crate::operation_ser::parse_add_tags_response(response)
         }
     }
 }
@@ -47,9 +47,9 @@ impl smithy_http::response::ParseStrictResponse for CreateTrail {
         std::result::Result<crate::output::CreateTrailOutput, crate::error::CreateTrailError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_trail_error(response)
+            crate::operation_ser::parse_create_trail_error(response)
         } else {
-            crate::operation_deser::parse_create_trail_response(response)
+            crate::operation_ser::parse_create_trail_response(response)
         }
     }
 }
@@ -75,9 +75,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteTrail {
         std::result::Result<crate::output::DeleteTrailOutput, crate::error::DeleteTrailError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_trail_error(response)
+            crate::operation_ser::parse_delete_trail_error(response)
         } else {
-            crate::operation_deser::parse_delete_trail_response(response)
+            crate::operation_ser::parse_delete_trail_response(response)
         }
     }
 }
@@ -101,9 +101,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeTrails {
         std::result::Result<crate::output::DescribeTrailsOutput, crate::error::DescribeTrailsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_trails_error(response)
+            crate::operation_ser::parse_describe_trails_error(response)
         } else {
-            crate::operation_deser::parse_describe_trails_response(response)
+            crate::operation_ser::parse_describe_trails_response(response)
         }
     }
 }
@@ -145,9 +145,9 @@ impl smithy_http::response::ParseStrictResponse for GetEventSelectors {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_event_selectors_error(response)
+            crate::operation_ser::parse_get_event_selectors_error(response)
         } else {
-            crate::operation_deser::parse_get_event_selectors_response(response)
+            crate::operation_ser::parse_get_event_selectors_response(response)
         }
     }
 }
@@ -179,9 +179,9 @@ impl smithy_http::response::ParseStrictResponse for GetInsightSelectors {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_insight_selectors_error(response)
+            crate::operation_ser::parse_get_insight_selectors_error(response)
         } else {
-            crate::operation_deser::parse_get_insight_selectors_response(response)
+            crate::operation_ser::parse_get_insight_selectors_response(response)
         }
     }
 }
@@ -204,9 +204,9 @@ impl smithy_http::response::ParseStrictResponse for GetTrail {
     type Output = std::result::Result<crate::output::GetTrailOutput, crate::error::GetTrailError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_trail_error(response)
+            crate::operation_ser::parse_get_trail_error(response)
         } else {
-            crate::operation_deser::parse_get_trail_response(response)
+            crate::operation_ser::parse_get_trail_response(response)
         }
     }
 }
@@ -230,9 +230,9 @@ impl smithy_http::response::ParseStrictResponse for GetTrailStatus {
         std::result::Result<crate::output::GetTrailStatusOutput, crate::error::GetTrailStatusError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_trail_status_error(response)
+            crate::operation_ser::parse_get_trail_status_error(response)
         } else {
-            crate::operation_deser::parse_get_trail_status_response(response)
+            crate::operation_ser::parse_get_trail_status_response(response)
         }
     }
 }
@@ -261,9 +261,9 @@ impl smithy_http::response::ParseStrictResponse for ListPublicKeys {
         std::result::Result<crate::output::ListPublicKeysOutput, crate::error::ListPublicKeysError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_public_keys_error(response)
+            crate::operation_ser::parse_list_public_keys_error(response)
         } else {
-            crate::operation_deser::parse_list_public_keys_response(response)
+            crate::operation_ser::parse_list_public_keys_response(response)
         }
     }
 }
@@ -286,9 +286,9 @@ impl smithy_http::response::ParseStrictResponse for ListTags {
     type Output = std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_error(response)
+            crate::operation_ser::parse_list_tags_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_response(response)
+            crate::operation_ser::parse_list_tags_response(response)
         }
     }
 }
@@ -312,9 +312,9 @@ impl smithy_http::response::ParseStrictResponse for ListTrails {
         std::result::Result<crate::output::ListTrailsOutput, crate::error::ListTrailsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_trails_error(response)
+            crate::operation_ser::parse_list_trails_error(response)
         } else {
-            crate::operation_deser::parse_list_trails_response(response)
+            crate::operation_ser::parse_list_trails_response(response)
         }
     }
 }
@@ -385,9 +385,9 @@ impl smithy_http::response::ParseStrictResponse for LookupEvents {
         std::result::Result<crate::output::LookupEventsOutput, crate::error::LookupEventsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_lookup_events_error(response)
+            crate::operation_ser::parse_lookup_events_error(response)
         } else {
-            crate::operation_deser::parse_lookup_events_response(response)
+            crate::operation_ser::parse_lookup_events_response(response)
         }
     }
 }
@@ -457,9 +457,9 @@ impl smithy_http::response::ParseStrictResponse for PutEventSelectors {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_event_selectors_error(response)
+            crate::operation_ser::parse_put_event_selectors_error(response)
         } else {
-            crate::operation_deser::parse_put_event_selectors_response(response)
+            crate::operation_ser::parse_put_event_selectors_response(response)
         }
     }
 }
@@ -488,9 +488,9 @@ impl smithy_http::response::ParseStrictResponse for PutInsightSelectors {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_insight_selectors_error(response)
+            crate::operation_ser::parse_put_insight_selectors_error(response)
         } else {
-            crate::operation_deser::parse_put_insight_selectors_response(response)
+            crate::operation_ser::parse_put_insight_selectors_response(response)
         }
     }
 }
@@ -514,9 +514,9 @@ impl smithy_http::response::ParseStrictResponse for RemoveTags {
         std::result::Result<crate::output::RemoveTagsOutput, crate::error::RemoveTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_remove_tags_error(response)
+            crate::operation_ser::parse_remove_tags_error(response)
         } else {
-            crate::operation_deser::parse_remove_tags_response(response)
+            crate::operation_ser::parse_remove_tags_response(response)
         }
     }
 }
@@ -540,9 +540,9 @@ impl smithy_http::response::ParseStrictResponse for StartLogging {
         std::result::Result<crate::output::StartLoggingOutput, crate::error::StartLoggingError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_logging_error(response)
+            crate::operation_ser::parse_start_logging_error(response)
         } else {
-            crate::operation_deser::parse_start_logging_response(response)
+            crate::operation_ser::parse_start_logging_response(response)
         }
     }
 }
@@ -572,9 +572,9 @@ impl smithy_http::response::ParseStrictResponse for StopLogging {
         std::result::Result<crate::output::StopLoggingOutput, crate::error::StopLoggingError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_logging_error(response)
+            crate::operation_ser::parse_stop_logging_error(response)
         } else {
-            crate::operation_deser::parse_stop_logging_response(response)
+            crate::operation_ser::parse_stop_logging_response(response)
         }
     }
 }
@@ -603,9 +603,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateTrail {
         std::result::Result<crate::output::UpdateTrailOutput, crate::error::UpdateTrailError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_trail_error(response)
+            crate::operation_ser::parse_update_trail_error(response)
         } else {
-            crate::operation_deser::parse_update_trail_response(response)
+            crate::operation_ser::parse_update_trail_response(response)
         }
     }
 }

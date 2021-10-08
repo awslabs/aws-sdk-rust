@@ -21,9 +21,9 @@ impl smithy_http::response::ParseStrictResponse for CancelImageCreation {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_cancel_image_creation_error(response)
+            crate::operation_ser::parse_cancel_image_creation_error(response)
         } else {
-            crate::operation_deser::parse_cancel_image_creation_response(response)
+            crate::operation_ser::parse_cancel_image_creation_response(response)
         }
     }
 }
@@ -50,9 +50,9 @@ impl smithy_http::response::ParseStrictResponse for CreateComponent {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_component_error(response)
+            crate::operation_ser::parse_create_component_error(response)
         } else {
-            crate::operation_deser::parse_create_component_response(response)
+            crate::operation_ser::parse_create_component_response(response)
         }
     }
 }
@@ -78,9 +78,9 @@ impl smithy_http::response::ParseStrictResponse for CreateContainerRecipe {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_container_recipe_error(response)
+            crate::operation_ser::parse_create_container_recipe_error(response)
         } else {
-            crate::operation_deser::parse_create_container_recipe_response(response)
+            crate::operation_ser::parse_create_container_recipe_response(response)
         }
     }
 }
@@ -107,9 +107,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDistributionConfigurat
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_distribution_configuration_error(response)
+            crate::operation_ser::parse_create_distribution_configuration_error(response)
         } else {
-            crate::operation_deser::parse_create_distribution_configuration_response(response)
+            crate::operation_ser::parse_create_distribution_configuration_response(response)
         }
     }
 }
@@ -135,9 +135,9 @@ impl smithy_http::response::ParseStrictResponse for CreateImage {
         std::result::Result<crate::output::CreateImageOutput, crate::error::CreateImageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_image_error(response)
+            crate::operation_ser::parse_create_image_error(response)
         } else {
-            crate::operation_deser::parse_create_image_response(response)
+            crate::operation_ser::parse_create_image_response(response)
         }
     }
 }
@@ -164,9 +164,9 @@ impl smithy_http::response::ParseStrictResponse for CreateImagePipeline {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_image_pipeline_error(response)
+            crate::operation_ser::parse_create_image_pipeline_error(response)
         } else {
-            crate::operation_deser::parse_create_image_pipeline_response(response)
+            crate::operation_ser::parse_create_image_pipeline_response(response)
         }
     }
 }
@@ -193,9 +193,9 @@ impl smithy_http::response::ParseStrictResponse for CreateImageRecipe {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_image_recipe_error(response)
+            crate::operation_ser::parse_create_image_recipe_error(response)
         } else {
-            crate::operation_deser::parse_create_image_recipe_response(response)
+            crate::operation_ser::parse_create_image_recipe_response(response)
         }
     }
 }
@@ -222,9 +222,9 @@ impl smithy_http::response::ParseStrictResponse for CreateInfrastructureConfigur
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_infrastructure_configuration_error(response)
+            crate::operation_ser::parse_create_infrastructure_configuration_error(response)
         } else {
-            crate::operation_deser::parse_create_infrastructure_configuration_response(response)
+            crate::operation_ser::parse_create_infrastructure_configuration_response(response)
         }
     }
 }
@@ -250,9 +250,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteComponent {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_component_error(response)
+            crate::operation_ser::parse_delete_component_error(response)
         } else {
-            crate::operation_deser::parse_delete_component_response(response)
+            crate::operation_ser::parse_delete_component_response(response)
         }
     }
 }
@@ -278,9 +278,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteContainerRecipe {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_container_recipe_error(response)
+            crate::operation_ser::parse_delete_container_recipe_error(response)
         } else {
-            crate::operation_deser::parse_delete_container_recipe_response(response)
+            crate::operation_ser::parse_delete_container_recipe_response(response)
         }
     }
 }
@@ -306,14 +306,34 @@ impl smithy_http::response::ParseStrictResponse for DeleteDistributionConfigurat
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_distribution_configuration_error(response)
+            crate::operation_ser::parse_delete_distribution_configuration_error(response)
         } else {
-            crate::operation_deser::parse_delete_distribution_configuration_response(response)
+            crate::operation_ser::parse_delete_distribution_configuration_response(response)
         }
     }
 }
 
-/// <p> Deletes an image.</p>
+/// <p>Deletes an Image Builder image resource. This does not delete any EC2 AMIs or ECR container images
+/// that are created during the image build process. You must clean those up separately,
+/// using the appropriate Amazon EC2 or Amazon ECR console actions, or API or CLI commands.</p>
+/// <ul>
+/// <li>
+/// <p>To deregister an EC2 Linux AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html">Deregister
+/// your Linux AMI</a> in the <i>
+/// <i>Amazon EC2 User Guide</i>
+/// </i>.</p>
+/// </li>
+/// <li>
+/// <p>To deregister an EC2 Windows AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/deregister-ami.html">Deregister
+/// your Windows AMI</a> in the <i>
+/// <i>Amazon EC2 Windows Guide</i>
+/// </i>.</p>
+/// </li>
+/// <li>
+/// <p>To delete a container image from Amazon ECR, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.comAmazonECR/latest/userguide/delete_image.html">Deleting
+/// an image</a> in the <i>Amazon ECR User Guide</i>.</p>
+/// </li>
+/// </ul>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteImage {
     _private: (),
@@ -332,9 +352,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteImage {
         std::result::Result<crate::output::DeleteImageOutput, crate::error::DeleteImageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_image_error(response)
+            crate::operation_ser::parse_delete_image_error(response)
         } else {
-            crate::operation_deser::parse_delete_image_response(response)
+            crate::operation_ser::parse_delete_image_response(response)
         }
     }
 }
@@ -360,9 +380,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteImagePipeline {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_image_pipeline_error(response)
+            crate::operation_ser::parse_delete_image_pipeline_error(response)
         } else {
-            crate::operation_deser::parse_delete_image_pipeline_response(response)
+            crate::operation_ser::parse_delete_image_pipeline_response(response)
         }
     }
 }
@@ -388,9 +408,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteImageRecipe {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_image_recipe_error(response)
+            crate::operation_ser::parse_delete_image_recipe_error(response)
         } else {
-            crate::operation_deser::parse_delete_image_recipe_response(response)
+            crate::operation_ser::parse_delete_image_recipe_response(response)
         }
     }
 }
@@ -416,9 +436,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteInfrastructureConfigur
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_infrastructure_configuration_error(response)
+            crate::operation_ser::parse_delete_infrastructure_configuration_error(response)
         } else {
-            crate::operation_deser::parse_delete_infrastructure_configuration_response(response)
+            crate::operation_ser::parse_delete_infrastructure_configuration_response(response)
         }
     }
 }
@@ -442,9 +462,9 @@ impl smithy_http::response::ParseStrictResponse for GetComponent {
         std::result::Result<crate::output::GetComponentOutput, crate::error::GetComponentError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_component_error(response)
+            crate::operation_ser::parse_get_component_error(response)
         } else {
-            crate::operation_deser::parse_get_component_response(response)
+            crate::operation_ser::parse_get_component_response(response)
         }
     }
 }
@@ -470,9 +490,9 @@ impl smithy_http::response::ParseStrictResponse for GetComponentPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_component_policy_error(response)
+            crate::operation_ser::parse_get_component_policy_error(response)
         } else {
-            crate::operation_deser::parse_get_component_policy_response(response)
+            crate::operation_ser::parse_get_component_policy_response(response)
         }
     }
 }
@@ -498,9 +518,9 @@ impl smithy_http::response::ParseStrictResponse for GetContainerRecipe {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_container_recipe_error(response)
+            crate::operation_ser::parse_get_container_recipe_error(response)
         } else {
-            crate::operation_deser::parse_get_container_recipe_response(response)
+            crate::operation_ser::parse_get_container_recipe_response(response)
         }
     }
 }
@@ -526,9 +546,9 @@ impl smithy_http::response::ParseStrictResponse for GetContainerRecipePolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_container_recipe_policy_error(response)
+            crate::operation_ser::parse_get_container_recipe_policy_error(response)
         } else {
-            crate::operation_deser::parse_get_container_recipe_policy_response(response)
+            crate::operation_ser::parse_get_container_recipe_policy_response(response)
         }
     }
 }
@@ -554,9 +574,9 @@ impl smithy_http::response::ParseStrictResponse for GetDistributionConfiguration
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_distribution_configuration_error(response)
+            crate::operation_ser::parse_get_distribution_configuration_error(response)
         } else {
-            crate::operation_deser::parse_get_distribution_configuration_response(response)
+            crate::operation_ser::parse_get_distribution_configuration_response(response)
         }
     }
 }
@@ -579,9 +599,9 @@ impl smithy_http::response::ParseStrictResponse for GetImage {
     type Output = std::result::Result<crate::output::GetImageOutput, crate::error::GetImageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_image_error(response)
+            crate::operation_ser::parse_get_image_error(response)
         } else {
-            crate::operation_deser::parse_get_image_response(response)
+            crate::operation_ser::parse_get_image_response(response)
         }
     }
 }
@@ -607,9 +627,9 @@ impl smithy_http::response::ParseStrictResponse for GetImagePipeline {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_image_pipeline_error(response)
+            crate::operation_ser::parse_get_image_pipeline_error(response)
         } else {
-            crate::operation_deser::parse_get_image_pipeline_response(response)
+            crate::operation_ser::parse_get_image_pipeline_response(response)
         }
     }
 }
@@ -633,9 +653,9 @@ impl smithy_http::response::ParseStrictResponse for GetImagePolicy {
         std::result::Result<crate::output::GetImagePolicyOutput, crate::error::GetImagePolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_image_policy_error(response)
+            crate::operation_ser::parse_get_image_policy_error(response)
         } else {
-            crate::operation_deser::parse_get_image_policy_response(response)
+            crate::operation_ser::parse_get_image_policy_response(response)
         }
     }
 }
@@ -659,9 +679,9 @@ impl smithy_http::response::ParseStrictResponse for GetImageRecipe {
         std::result::Result<crate::output::GetImageRecipeOutput, crate::error::GetImageRecipeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_image_recipe_error(response)
+            crate::operation_ser::parse_get_image_recipe_error(response)
         } else {
-            crate::operation_deser::parse_get_image_recipe_response(response)
+            crate::operation_ser::parse_get_image_recipe_response(response)
         }
     }
 }
@@ -687,9 +707,9 @@ impl smithy_http::response::ParseStrictResponse for GetImageRecipePolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_image_recipe_policy_error(response)
+            crate::operation_ser::parse_get_image_recipe_policy_error(response)
         } else {
-            crate::operation_deser::parse_get_image_recipe_policy_response(response)
+            crate::operation_ser::parse_get_image_recipe_policy_response(response)
         }
     }
 }
@@ -715,9 +735,9 @@ impl smithy_http::response::ParseStrictResponse for GetInfrastructureConfigurati
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_infrastructure_configuration_error(response)
+            crate::operation_ser::parse_get_infrastructure_configuration_error(response)
         } else {
-            crate::operation_deser::parse_get_infrastructure_configuration_response(response)
+            crate::operation_ser::parse_get_infrastructure_configuration_response(response)
         }
     }
 }
@@ -743,9 +763,9 @@ impl smithy_http::response::ParseStrictResponse for ImportComponent {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_import_component_error(response)
+            crate::operation_ser::parse_import_component_error(response)
         } else {
-            crate::operation_deser::parse_import_component_response(response)
+            crate::operation_ser::parse_import_component_response(response)
         }
     }
 }
@@ -755,11 +775,10 @@ impl smithy_http::response::ParseStrictResponse for ImportComponent {
 /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
 /// You can assign values for the first three, and can filter on all of them.</p>
 /// <p>
-/// <b>Filtering:</b> When you retrieve or reference a resource with a semantic version, you can use
-/// wildcards (x) to filter your results. When you use a wildcard in any node, all nodes to the right of the
-/// first wildcard must also be wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
-/// results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image Builder
-/// automatically uses a wildcard for that, if applicable.</p>
+/// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
+/// to specify the most recent versions or nodes when selecting the base image or components for your
+/// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
+/// wildcards.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListComponentBuildVersions {
@@ -781,9 +800,9 @@ impl smithy_http::response::ParseStrictResponse for ListComponentBuildVersions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_component_build_versions_error(response)
+            crate::operation_ser::parse_list_component_build_versions_error(response)
         } else {
-            crate::operation_deser::parse_list_component_build_versions_response(response)
+            crate::operation_ser::parse_list_component_build_versions_response(response)
         }
     }
 }
@@ -793,11 +812,10 @@ impl smithy_http::response::ParseStrictResponse for ListComponentBuildVersions {
 /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
 /// You can assign values for the first three, and can filter on all of them.</p>
 /// <p>
-/// <b>Filtering:</b> When you retrieve or reference a resource with a semantic version, you can use
-/// wildcards (x) to filter your results. When you use a wildcard in any node, all nodes to the right of the
-/// first wildcard must also be wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
-/// results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image Builder
-/// automatically uses a wildcard for that, if applicable.</p>
+/// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
+/// to specify the most recent versions or nodes when selecting the base image or components for your
+/// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
+/// wildcards.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListComponents {
@@ -817,9 +835,9 @@ impl smithy_http::response::ParseStrictResponse for ListComponents {
         std::result::Result<crate::output::ListComponentsOutput, crate::error::ListComponentsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_components_error(response)
+            crate::operation_ser::parse_list_components_error(response)
         } else {
-            crate::operation_deser::parse_list_components_response(response)
+            crate::operation_ser::parse_list_components_response(response)
         }
     }
 }
@@ -845,9 +863,9 @@ impl smithy_http::response::ParseStrictResponse for ListContainerRecipes {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_container_recipes_error(response)
+            crate::operation_ser::parse_list_container_recipes_error(response)
         } else {
-            crate::operation_deser::parse_list_container_recipes_response(response)
+            crate::operation_ser::parse_list_container_recipes_response(response)
         }
     }
 }
@@ -873,9 +891,9 @@ impl smithy_http::response::ParseStrictResponse for ListDistributionConfiguratio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_distribution_configurations_error(response)
+            crate::operation_ser::parse_list_distribution_configurations_error(response)
         } else {
-            crate::operation_deser::parse_list_distribution_configurations_response(response)
+            crate::operation_ser::parse_list_distribution_configurations_response(response)
         }
     }
 }
@@ -901,14 +919,14 @@ impl smithy_http::response::ParseStrictResponse for ListImageBuildVersions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_image_build_versions_error(response)
+            crate::operation_ser::parse_list_image_build_versions_error(response)
         } else {
-            crate::operation_deser::parse_list_image_build_versions_response(response)
+            crate::operation_ser::parse_list_image_build_versions_response(response)
         }
     }
 }
 
-/// <p>List the Packages that are associated with an Image Build Version, as determined by Amazon EC2 Systems Manager Inventory at build time.</p>
+/// <p>List the Packages that are associated with an Image Build Version, as determined by Amazon Web Services Systems Manager Inventory at build time.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListImagePackages {
     _private: (),
@@ -929,9 +947,9 @@ impl smithy_http::response::ParseStrictResponse for ListImagePackages {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_image_packages_error(response)
+            crate::operation_ser::parse_list_image_packages_error(response)
         } else {
-            crate::operation_deser::parse_list_image_packages_response(response)
+            crate::operation_ser::parse_list_image_packages_response(response)
         }
     }
 }
@@ -957,9 +975,9 @@ impl smithy_http::response::ParseStrictResponse for ListImagePipelineImages {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_image_pipeline_images_error(response)
+            crate::operation_ser::parse_list_image_pipeline_images_error(response)
         } else {
-            crate::operation_deser::parse_list_image_pipeline_images_response(response)
+            crate::operation_ser::parse_list_image_pipeline_images_response(response)
         }
     }
 }
@@ -985,9 +1003,9 @@ impl smithy_http::response::ParseStrictResponse for ListImagePipelines {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_image_pipelines_error(response)
+            crate::operation_ser::parse_list_image_pipelines_error(response)
         } else {
-            crate::operation_deser::parse_list_image_pipelines_response(response)
+            crate::operation_ser::parse_list_image_pipelines_response(response)
         }
     }
 }
@@ -1013,9 +1031,9 @@ impl smithy_http::response::ParseStrictResponse for ListImageRecipes {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_image_recipes_error(response)
+            crate::operation_ser::parse_list_image_recipes_error(response)
         } else {
-            crate::operation_deser::parse_list_image_recipes_response(response)
+            crate::operation_ser::parse_list_image_recipes_response(response)
         }
     }
 }
@@ -1039,9 +1057,9 @@ impl smithy_http::response::ParseStrictResponse for ListImages {
         std::result::Result<crate::output::ListImagesOutput, crate::error::ListImagesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_images_error(response)
+            crate::operation_ser::parse_list_images_error(response)
         } else {
-            crate::operation_deser::parse_list_images_response(response)
+            crate::operation_ser::parse_list_images_response(response)
         }
     }
 }
@@ -1067,9 +1085,9 @@ impl smithy_http::response::ParseStrictResponse for ListInfrastructureConfigurat
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_infrastructure_configurations_error(response)
+            crate::operation_ser::parse_list_infrastructure_configurations_error(response)
         } else {
-            crate::operation_deser::parse_list_infrastructure_configurations_response(response)
+            crate::operation_ser::parse_list_infrastructure_configurations_response(response)
         }
     }
 }
@@ -1095,9 +1113,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::operation_ser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::operation_ser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -1125,9 +1143,9 @@ impl smithy_http::response::ParseStrictResponse for PutComponentPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_component_policy_error(response)
+            crate::operation_ser::parse_put_component_policy_error(response)
         } else {
-            crate::operation_deser::parse_put_component_policy_response(response)
+            crate::operation_ser::parse_put_component_policy_response(response)
         }
     }
 }
@@ -1153,9 +1171,9 @@ impl smithy_http::response::ParseStrictResponse for PutContainerRecipePolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_container_recipe_policy_error(response)
+            crate::operation_ser::parse_put_container_recipe_policy_error(response)
         } else {
-            crate::operation_deser::parse_put_container_recipe_policy_response(response)
+            crate::operation_ser::parse_put_container_recipe_policy_response(response)
         }
     }
 }
@@ -1181,9 +1199,9 @@ impl smithy_http::response::ParseStrictResponse for PutImagePolicy {
         std::result::Result<crate::output::PutImagePolicyOutput, crate::error::PutImagePolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_image_policy_error(response)
+            crate::operation_ser::parse_put_image_policy_error(response)
         } else {
-            crate::operation_deser::parse_put_image_policy_response(response)
+            crate::operation_ser::parse_put_image_policy_response(response)
         }
     }
 }
@@ -1211,9 +1229,9 @@ impl smithy_http::response::ParseStrictResponse for PutImageRecipePolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_image_recipe_policy_error(response)
+            crate::operation_ser::parse_put_image_recipe_policy_error(response)
         } else {
-            crate::operation_deser::parse_put_image_recipe_policy_response(response)
+            crate::operation_ser::parse_put_image_recipe_policy_response(response)
         }
     }
 }
@@ -1239,9 +1257,9 @@ impl smithy_http::response::ParseStrictResponse for StartImagePipelineExecution 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_image_pipeline_execution_error(response)
+            crate::operation_ser::parse_start_image_pipeline_execution_error(response)
         } else {
-            crate::operation_deser::parse_start_image_pipeline_execution_response(response)
+            crate::operation_ser::parse_start_image_pipeline_execution_response(response)
         }
     }
 }
@@ -1265,9 +1283,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::operation_ser::parse_tag_resource_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::operation_ser::parse_tag_resource_response(response)
         }
     }
 }
@@ -1291,9 +1309,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::operation_ser::parse_untag_resource_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::operation_ser::parse_untag_resource_response(response)
         }
     }
 }
@@ -1320,9 +1338,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateDistributionConfigurat
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_distribution_configuration_error(response)
+            crate::operation_ser::parse_update_distribution_configuration_error(response)
         } else {
-            crate::operation_deser::parse_update_distribution_configuration_response(response)
+            crate::operation_ser::parse_update_distribution_configuration_response(response)
         }
     }
 }
@@ -1354,9 +1372,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateImagePipeline {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_image_pipeline_error(response)
+            crate::operation_ser::parse_update_image_pipeline_error(response)
         } else {
-            crate::operation_deser::parse_update_image_pipeline_response(response)
+            crate::operation_ser::parse_update_image_pipeline_response(response)
         }
     }
 }
@@ -1383,9 +1401,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateInfrastructureConfigur
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_infrastructure_configuration_error(response)
+            crate::operation_ser::parse_update_infrastructure_configuration_error(response)
         } else {
-            crate::operation_deser::parse_update_infrastructure_configuration_response(response)
+            crate::operation_ser::parse_update_infrastructure_configuration_response(response)
         }
     }
 }

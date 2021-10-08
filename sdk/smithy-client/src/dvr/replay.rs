@@ -13,6 +13,32 @@ use std::error::Error;
 use std::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::{Arc, Mutex};
 use std::task::{Context, Poll};
+use tokio::task::JoinHandle;
+
+/// Wrapper type to enable optionally waiting for a future to complete
+#[derive(Debug)]
+enum Waitable<T> {
+    Loading(JoinHandle<T>),
+    Value(T),
+}
+
+impl<T> Waitable<T> {
+    /// Consumes the future and returns the value
+    async fn take(self) -> T {
+        match self {
+            Waitable::Loading(f) => f.await.expect("join failed"),
+            Waitable::Value(value) => value,
+        }
+    }
+
+    /// Waits for the future to be ready
+    async fn wait(&mut self) {
+        match self {
+            Waitable::Loading(f) => *self = Waitable::Value(f.await.expect("join failed")),
+            Waitable::Value(_) => {}
+        }
+    }
+}
 
 /// Replay traffic recorded by a [`RecordingConnection`](super::RecordingConnection)
 #[derive(Clone, Debug)]
@@ -20,7 +46,7 @@ pub struct ReplayingConnection {
     live_events: Arc<Mutex<HashMap<ConnectionId, VecDeque<Event>>>>,
     verifiable_events: Arc<HashMap<ConnectionId, Request<Bytes>>>,
     num_events: Arc<AtomicUsize>,
-    recorded_requests: Arc<Mutex<HashMap<ConnectionId, http::Request<Bytes>>>>,
+    recorded_requests: Arc<Mutex<HashMap<ConnectionId, Waitable<http::Request<Bytes>>>>>,
 }
 
 impl ReplayingConnection {
@@ -29,19 +55,23 @@ impl ReplayingConnection {
     }
 
     /// Validate actual requests against expected requests
-    pub fn validate(
+    pub async fn validate(
         self,
         checked_headers: &[&str],
         body_comparer: impl Fn(&[u8], &[u8]) -> Result<(), Box<dyn Error>>,
     ) -> Result<(), Box<dyn Error>> {
-        let actual_requests = self.recorded_requests.lock().unwrap();
+        let mut actual_requests = self.recorded_requests.lock().unwrap();
         for conn_id in 0..self.verifiable_events.len() {
             let conn_id = ConnectionId(conn_id);
             let expected = self.verifiable_events.get(&conn_id).unwrap();
-            let actual = actual_requests.get(&conn_id).ok_or(format!(
-                "expected connection {:?} but request was never sent",
-                conn_id
-            ))?;
+            let actual = actual_requests
+                .remove(&conn_id)
+                .ok_or(format!(
+                    "expected connection {:?} but request was never sent",
+                    conn_id
+                ))?
+                .take()
+                .await;
             if actual.uri() != expected.uri() {
                 return Err(format!(
                     "URI did not match. Expected: {}. Found: {}",
@@ -67,20 +97,22 @@ impl ReplayingConnection {
                     ))
                 })
                 .collect::<Vec<_>>();
-            protocol_test_helpers::validate_headers(actual, expected_headers.as_slice())?;
+            protocol_test_helpers::validate_headers(&actual, expected_headers.as_slice())?;
         }
         Ok(())
     }
 
     /// Return all the recorded requests for further analysis
-    pub fn take_requests(self) -> Vec<http::Request<Bytes>> {
+    pub async fn take_requests(self) -> Vec<http::Request<Bytes>> {
         let mut recorded_requests = self.recorded_requests.lock().unwrap();
         let mut out = Vec::with_capacity(recorded_requests.len());
         for conn_id in 0..recorded_requests.len() {
             out.push(
                 recorded_requests
                     .remove(&ConnectionId(conn_id))
-                    .expect("should exist"),
+                    .expect("should exist")
+                    .take()
+                    .await,
             )
         }
         out
@@ -207,17 +239,15 @@ impl tower::Service<http::Request<SdkBody>> for ReplayingConnection {
         let (sender, response_body) = hyper::Body::channel();
         let body = SdkBody::from(response_body);
         let recording = self.recorded_requests.clone();
-        let mut request_complete = Some(tokio::spawn(async move {
+        let recorded_request = tokio::spawn(async move {
             let mut data_read = vec![];
             while let Some(data) = req.body_mut().data().await {
                 data_read
                     .extend_from_slice(data.expect("in memory request should not fail").as_ref())
             }
-            recording
-                .lock()
-                .unwrap()
-                .insert(event_id, req.map(|_| Bytes::from(data_read)));
-        }));
+            req.map(|_| Bytes::from(data_read))
+        });
+        let mut recorded_request = Waitable::Loading(recorded_request);
         let fut = async move {
             let resp = loop {
                 let event = events
@@ -229,12 +259,9 @@ impl tower::Service<http::Request<SdkBody>> for ReplayingConnection {
                     Action::Eof {
                         direction: Direction::Request,
                         ..
-                    } => match request_complete.take() {
-                        Some(handle) => {
-                            let _ = handle.await;
-                        }
-                        None => panic!("double await on request eof"),
-                    },
+                    } => {
+                        recorded_request.wait().await;
+                    }
                     Action::Request { .. } => panic!("invalid"),
                     Action::Response {
                         response: Err(error),
@@ -274,6 +301,7 @@ impl tower::Service<http::Request<SdkBody>> for ReplayingConnection {
                     } => panic!("got response data before response"),
                 }
             };
+            recording.lock().unwrap().insert(event_id, recorded_request);
             resp
         };
         Box::pin(fut)

@@ -2735,16 +2735,19 @@ impl Certificate {
 pub struct TargetDescription {
     /// <p>The ID of the target. If the target type of the target group is <code>instance</code>,
     /// specify an instance ID. If the target type is <code>ip</code>, specify an IP address. If the
-    /// target type is <code>lambda</code>, specify the ARN of the Lambda function.</p>
+    /// target type is <code>lambda</code>, specify the ARN of the Lambda function. If the target type
+    /// is <code>alb</code>, specify the ARN of the Application Load Balancer target. </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The port on which the target is listening. If the target group protocol is GENEVE, the
-    /// supported port is 6081. Not used if the target is a Lambda function.</p>
+    /// supported port is 6081. If the target type is <code>alb</code>, the targeted Application Load
+    /// Balancer must have at least one listener whose port matches the target group port. Not used if
+    /// the target is a Lambda function.</p>
     pub port: std::option::Option<i32>,
     /// <p>An Availability Zone or <code>all</code>. This determines whether the target receives
     /// traffic from the load balancer nodes in the specified Availability Zone or from all enabled
     /// Availability Zones for the load balancer.</p>
     /// <p>This parameter is not supported if the target type of the target group is
-    /// <code>instance</code>.</p>
+    /// <code>instance</code> or <code>alb</code>.</p>
     /// <p>If the target type is <code>ip</code> and the IP address is in a subnet of the VPC for the
     /// target group, the Availability Zone is automatically detected and this parameter is optional.
     /// If the IP address is outside the VPC, this parameter is required.</p>
@@ -2777,7 +2780,8 @@ pub mod target_description {
     impl Builder {
         /// <p>The ID of the target. If the target type of the target group is <code>instance</code>,
         /// specify an instance ID. If the target type is <code>ip</code>, specify an IP address. If the
-        /// target type is <code>lambda</code>, specify the ARN of the Lambda function.</p>
+        /// target type is <code>lambda</code>, specify the ARN of the Lambda function. If the target type
+        /// is <code>alb</code>, specify the ARN of the Application Load Balancer target. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
@@ -2787,7 +2791,9 @@ pub mod target_description {
             self
         }
         /// <p>The port on which the target is listening. If the target group protocol is GENEVE, the
-        /// supported port is 6081. Not used if the target is a Lambda function.</p>
+        /// supported port is 6081. If the target type is <code>alb</code>, the targeted Application Load
+        /// Balancer must have at least one listener whose port matches the target group port. Not used if
+        /// the target is a Lambda function.</p>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
@@ -2800,7 +2806,7 @@ pub mod target_description {
         /// traffic from the load balancer nodes in the specified Availability Zone or from all enabled
         /// Availability Zones for the load balancer.</p>
         /// <p>This parameter is not supported if the target type of the target group is
-        /// <code>instance</code>.</p>
+        /// <code>instance</code> or <code>alb</code>.</p>
         /// <p>If the target type is <code>ip</code> and the IP address is in a subnet of the VPC for the
         /// target group, the Availability Zone is automatically detected and this parameter is optional.
         /// If the IP address is outside the VPC, this parameter is required.</p>
@@ -3148,8 +3154,9 @@ pub struct TargetGroup {
     pub load_balancer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of target that you must specify when registering targets with this target group.
     /// The possible values are <code>instance</code> (register targets by instance ID),
-    /// <code>ip</code> (register targets by IP address), or <code>lambda</code> (register a single
-    /// Lambda function as a target).</p>
+    /// <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single
+    /// Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer
+    /// as a target).</p>
     pub target_type: std::option::Option<crate::model::TargetTypeEnum>,
     /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>,
     /// <code>HTTP1</code>, and <code>HTTP2</code>.</p>
@@ -3378,8 +3385,9 @@ pub mod target_group {
         }
         /// <p>The type of target that you must specify when registering targets with this target group.
         /// The possible values are <code>instance</code> (register targets by instance ID),
-        /// <code>ip</code> (register targets by IP address), or <code>lambda</code> (register a single
-        /// Lambda function as a target).</p>
+        /// <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single
+        /// Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer
+        /// as a target).</p>
         pub fn target_type(mut self, input: crate::model::TargetTypeEnum) -> Self {
             self.target_type = Some(input);
             self
@@ -3446,6 +3454,7 @@ impl TargetGroup {
     std::hash::Hash,
 )]
 pub enum TargetTypeEnum {
+    Alb,
     Instance,
     Ip,
     Lambda,
@@ -3455,6 +3464,7 @@ pub enum TargetTypeEnum {
 impl std::convert::From<&str> for TargetTypeEnum {
     fn from(s: &str) -> Self {
         match s {
+            "alb" => TargetTypeEnum::Alb,
             "instance" => TargetTypeEnum::Instance,
             "ip" => TargetTypeEnum::Ip,
             "lambda" => TargetTypeEnum::Lambda,
@@ -3472,6 +3482,7 @@ impl std::str::FromStr for TargetTypeEnum {
 impl TargetTypeEnum {
     pub fn as_str(&self) -> &str {
         match self {
+            TargetTypeEnum::Alb => "alb",
             TargetTypeEnum::Instance => "instance",
             TargetTypeEnum::Ip => "ip",
             TargetTypeEnum::Lambda => "lambda",
@@ -3479,7 +3490,7 @@ impl TargetTypeEnum {
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["instance", "ip", "lambda"]
+        &["alb", "instance", "ip", "lambda"]
     }
 }
 impl AsRef<str> for TargetTypeEnum {
@@ -3681,14 +3692,14 @@ pub struct LoadBalancerAttribute {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates
-    /// whether the two headers (<code>x-amzn-tls-version</code> and
-    /// <code>x-amzn-tls-cipher-suite</code>), which contain information about the negotiated
-    /// TLS version and cipher suite, are added to the client request before sending it to the
-    /// target. The <code>x-amzn-tls-version</code> header has information about the TLS protocol
-    /// version negotiated with the client, and the <code>x-amzn-tls-cipher-suite</code> header
-    /// has information about the cipher suite negotiated with the client. Both headers are in
-    /// OpenSSL format. The possible values for the attribute are <code>true</code> and
+    /// <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates whether the two headers (<code>x-amzn-tls-version</code> and
+    /// <code>x-amzn-tls-cipher-suite</code>), which contain information about
+    /// the negotiated TLS version and cipher suite, are added to the client request
+    /// before sending it to the target. The <code>x-amzn-tls-version</code> header
+    /// has information about the TLS protocol version negotiated with the client,
+    /// and the <code>x-amzn-tls-cipher-suite</code> header has information about
+    /// the cipher suite negotiated with the client. Both headers are in OpenSSL
+    /// format. The possible values for the attribute are <code>true</code> and
     /// <code>false</code>. The default is <code>false</code>.</p>
     /// </li>
     /// <li>
@@ -3798,14 +3809,14 @@ pub mod load_balancer_attribute {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates
-        /// whether the two headers (<code>x-amzn-tls-version</code> and
-        /// <code>x-amzn-tls-cipher-suite</code>), which contain information about the negotiated
-        /// TLS version and cipher suite, are added to the client request before sending it to the
-        /// target. The <code>x-amzn-tls-version</code> header has information about the TLS protocol
-        /// version negotiated with the client, and the <code>x-amzn-tls-cipher-suite</code> header
-        /// has information about the cipher suite negotiated with the client. Both headers are in
-        /// OpenSSL format. The possible values for the attribute are <code>true</code> and
+        /// <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates whether the two headers (<code>x-amzn-tls-version</code> and
+        /// <code>x-amzn-tls-cipher-suite</code>), which contain information about
+        /// the negotiated TLS version and cipher suite, are added to the client request
+        /// before sending it to the target. The <code>x-amzn-tls-version</code> header
+        /// has information about the TLS protocol version negotiated with the client,
+        /// and the <code>x-amzn-tls-cipher-suite</code> header has information about
+        /// the cipher suite negotiated with the client. Both headers are in OpenSSL
+        /// format. The possible values for the attribute are <code>true</code> and
         /// <code>false</code>. The default is <code>false</code>.</p>
         /// </li>
         /// <li>

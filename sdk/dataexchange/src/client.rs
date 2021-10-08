@@ -75,6 +75,9 @@ where
     pub fn create_data_set(&self) -> fluent_builders::CreateDataSet<C, M, R> {
         fluent_builders::CreateDataSet::new(self.handle.clone())
     }
+    pub fn create_event_action(&self) -> fluent_builders::CreateEventAction<C, M, R> {
+        fluent_builders::CreateEventAction::new(self.handle.clone())
+    }
     pub fn create_job(&self) -> fluent_builders::CreateJob<C, M, R> {
         fluent_builders::CreateJob::new(self.handle.clone())
     }
@@ -87,6 +90,9 @@ where
     pub fn delete_data_set(&self) -> fluent_builders::DeleteDataSet<C, M, R> {
         fluent_builders::DeleteDataSet::new(self.handle.clone())
     }
+    pub fn delete_event_action(&self) -> fluent_builders::DeleteEventAction<C, M, R> {
+        fluent_builders::DeleteEventAction::new(self.handle.clone())
+    }
     pub fn delete_revision(&self) -> fluent_builders::DeleteRevision<C, M, R> {
         fluent_builders::DeleteRevision::new(self.handle.clone())
     }
@@ -95,6 +101,9 @@ where
     }
     pub fn get_data_set(&self) -> fluent_builders::GetDataSet<C, M, R> {
         fluent_builders::GetDataSet::new(self.handle.clone())
+    }
+    pub fn get_event_action(&self) -> fluent_builders::GetEventAction<C, M, R> {
+        fluent_builders::GetEventAction::new(self.handle.clone())
     }
     pub fn get_job(&self) -> fluent_builders::GetJob<C, M, R> {
         fluent_builders::GetJob::new(self.handle.clone())
@@ -107,6 +116,9 @@ where
     }
     pub fn list_data_sets(&self) -> fluent_builders::ListDataSets<C, M, R> {
         fluent_builders::ListDataSets::new(self.handle.clone())
+    }
+    pub fn list_event_actions(&self) -> fluent_builders::ListEventActions<C, M, R> {
+        fluent_builders::ListEventActions::new(self.handle.clone())
     }
     pub fn list_jobs(&self) -> fluent_builders::ListJobs<C, M, R> {
         fluent_builders::ListJobs::new(self.handle.clone())
@@ -131,6 +143,9 @@ where
     }
     pub fn update_data_set(&self) -> fluent_builders::UpdateDataSet<C, M, R> {
         fluent_builders::UpdateDataSet::new(self.handle.clone())
+    }
+    pub fn update_event_action(&self) -> fluent_builders::UpdateEventAction<C, M, R> {
+        fluent_builders::UpdateEventAction::new(self.handle.clone())
     }
     pub fn update_revision(&self) -> fluent_builders::UpdateRevision<C, M, R> {
         fluent_builders::UpdateRevision::new(self.handle.clone())
@@ -284,6 +299,69 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreateEventAction<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_event_action_input::Builder,
+    }
+    impl<C, M, R> CreateEventAction<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateEventActionOutput,
+            smithy_http::result::SdkError<crate::error::CreateEventActionError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateEventActionInputOperationOutputAlias,
+                crate::output::CreateEventActionOutput,
+                crate::error::CreateEventActionError,
+                crate::input::CreateEventActionInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>What occurs after a certain event.</p>
+        pub fn action(mut self, inp: crate::model::Action) -> Self {
+            self.inner = self.inner.action(inp);
+            self
+        }
+        pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
+            self.inner = self.inner.set_action(input);
+            self
+        }
+        /// <p>What occurs to start an action.</p>
+        pub fn event(mut self, inp: crate::model::Event) -> Self {
+            self.inner = self.inner.event(inp);
+            self
+        }
+        pub fn set_event(mut self, input: std::option::Option<crate::model::Event>) -> Self {
+            self.inner = self.inner.set_event(input);
             self
         }
     }
@@ -564,6 +642,63 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DeleteEventAction<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_event_action_input::Builder,
+    }
+    impl<C, M, R> DeleteEventAction<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteEventActionOutput,
+            smithy_http::result::SdkError<crate::error::DeleteEventActionError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteEventActionInputOperationOutputAlias,
+                crate::output::DeleteEventActionOutput,
+                crate::error::DeleteEventActionError,
+                crate::input::DeleteEventActionInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the event action.</p>
+        pub fn event_action_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_action_id(inp);
+            self
+        }
+        pub fn set_event_action_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_action_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DeleteRevision<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -749,6 +884,63 @@ pub mod fluent_builders {
         }
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_data_set_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct GetEventAction<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_event_action_input::Builder,
+    }
+    impl<C, M, R> GetEventAction<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetEventActionOutput,
+            smithy_http::result::SdkError<crate::error::GetEventActionError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetEventActionInputOperationOutputAlias,
+                crate::output::GetEventActionOutput,
+                crate::error::GetEventActionError,
+                crate::input::GetEventActionInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the event action.</p>
+        pub fn event_action_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_action_id(inp);
+            self
+        }
+        pub fn set_event_action_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_action_id(input);
             self
         }
     }
@@ -1010,6 +1202,81 @@ pub mod fluent_builders {
         }
         pub fn set_origin(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_origin(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListEventActions<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_event_actions_input::Builder,
+    }
+    impl<C, M, R> ListEventActions<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListEventActionsOutput,
+            smithy_http::result::SdkError<crate::error::ListEventActionsError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListEventActionsInputOperationOutputAlias,
+                crate::output::ListEventActionsOutput,
+                crate::error::ListEventActionsError,
+                crate::input::ListEventActionsInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the event source.</p>
+        pub fn event_source_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_source_id(inp);
+            self
+        }
+        pub fn set_event_source_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_source_id(input);
+            self
+        }
+        /// <p>The maximum number of results returned by a single call.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -1577,6 +1844,72 @@ pub mod fluent_builders {
         }
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateEventAction<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_event_action_input::Builder,
+    }
+    impl<C, M, R> UpdateEventAction<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateEventActionOutput,
+            smithy_http::result::SdkError<crate::error::UpdateEventActionError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateEventActionInputOperationOutputAlias,
+                crate::output::UpdateEventActionOutput,
+                crate::error::UpdateEventActionError,
+                crate::input::UpdateEventActionInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>What occurs after a certain event.</p>
+        pub fn action(mut self, inp: crate::model::Action) -> Self {
+            self.inner = self.inner.action(inp);
+            self
+        }
+        pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
+            self.inner = self.inner.set_action(input);
+            self
+        }
+        /// <p>The unique identifier for the event action.</p>
+        pub fn event_action_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_action_id(inp);
+            self
+        }
+        pub fn set_event_action_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_action_id(input);
             self
         }
     }

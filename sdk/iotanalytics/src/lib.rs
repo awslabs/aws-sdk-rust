@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>IoT Analytics allows you to collect large amounts of device data, process messages, and store them.
 //! You can then query the data and run sophisticated analytics on it.  IoT Analytics enables advanced
 //! data exploration through integration with Jupyter Notebooks and data visualization through integration
@@ -41,7 +42,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

@@ -27,9 +27,9 @@ impl smithy_http::response::ParseStrictResponse for CancelTaskExecution {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_cancel_task_execution_error(response)
+            crate::operation_ser::parse_cancel_task_execution_error(response)
         } else {
-            crate::operation_deser::parse_cancel_task_execution_response(response)
+            crate::operation_ser::parse_cancel_task_execution_response(response)
         }
     }
 }
@@ -65,9 +65,9 @@ impl smithy_http::response::ParseStrictResponse for CreateAgent {
         std::result::Result<crate::output::CreateAgentOutput, crate::error::CreateAgentError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_agent_error(response)
+            crate::operation_ser::parse_create_agent_error(response)
         } else {
-            crate::operation_deser::parse_create_agent_response(response)
+            crate::operation_ser::parse_create_agent_response(response)
         }
     }
 }
@@ -93,9 +93,9 @@ impl smithy_http::response::ParseStrictResponse for CreateLocationEfs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_location_efs_error(response)
+            crate::operation_ser::parse_create_location_efs_error(response)
         } else {
-            crate::operation_deser::parse_create_location_efs_response(response)
+            crate::operation_ser::parse_create_location_efs_response(response)
         }
     }
 }
@@ -121,9 +121,9 @@ impl smithy_http::response::ParseStrictResponse for CreateLocationFsxWindows {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_location_fsx_windows_error(response)
+            crate::operation_ser::parse_create_location_fsx_windows_error(response)
         } else {
-            crate::operation_deser::parse_create_location_fsx_windows_response(response)
+            crate::operation_ser::parse_create_location_fsx_windows_response(response)
         }
     }
 }
@@ -150,9 +150,9 @@ impl smithy_http::response::ParseStrictResponse for CreateLocationNfs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_location_nfs_error(response)
+            crate::operation_ser::parse_create_location_nfs_error(response)
         } else {
-            crate::operation_deser::parse_create_location_nfs_response(response)
+            crate::operation_ser::parse_create_location_nfs_response(response)
         }
     }
 }
@@ -179,9 +179,9 @@ impl smithy_http::response::ParseStrictResponse for CreateLocationObjectStorage 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_location_object_storage_error(response)
+            crate::operation_ser::parse_create_location_object_storage_error(response)
         } else {
-            crate::operation_deser::parse_create_location_object_storage_response(response)
+            crate::operation_ser::parse_create_location_object_storage_response(response)
         }
     }
 }
@@ -211,9 +211,9 @@ impl smithy_http::response::ParseStrictResponse for CreateLocationS3 {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_location_s3_error(response)
+            crate::operation_ser::parse_create_location_s3_error(response)
         } else {
-            crate::operation_deser::parse_create_location_s3_response(response)
+            crate::operation_ser::parse_create_location_s3_response(response)
         }
     }
 }
@@ -240,9 +240,9 @@ impl smithy_http::response::ParseStrictResponse for CreateLocationSmb {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_location_smb_error(response)
+            crate::operation_ser::parse_create_location_smb_error(response)
         } else {
-            crate::operation_deser::parse_create_location_smb_response(response)
+            crate::operation_ser::parse_create_location_smb_response(response)
         }
     }
 }
@@ -283,9 +283,9 @@ impl smithy_http::response::ParseStrictResponse for CreateTask {
         std::result::Result<crate::output::CreateTaskOutput, crate::error::CreateTaskError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_task_error(response)
+            crate::operation_ser::parse_create_task_error(response)
         } else {
-            crate::operation_deser::parse_create_task_response(response)
+            crate::operation_ser::parse_create_task_response(response)
         }
     }
 }
@@ -312,9 +312,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteAgent {
         std::result::Result<crate::output::DeleteAgentOutput, crate::error::DeleteAgentError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_agent_error(response)
+            crate::operation_ser::parse_delete_agent_error(response)
         } else {
-            crate::operation_deser::parse_delete_agent_response(response)
+            crate::operation_ser::parse_delete_agent_response(response)
         }
     }
 }
@@ -338,9 +338,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteLocation {
         std::result::Result<crate::output::DeleteLocationOutput, crate::error::DeleteLocationError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_location_error(response)
+            crate::operation_ser::parse_delete_location_error(response)
         } else {
-            crate::operation_deser::parse_delete_location_response(response)
+            crate::operation_ser::parse_delete_location_response(response)
         }
     }
 }
@@ -364,9 +364,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteTask {
         std::result::Result<crate::output::DeleteTaskOutput, crate::error::DeleteTaskError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_task_error(response)
+            crate::operation_ser::parse_delete_task_error(response)
         } else {
-            crate::operation_deser::parse_delete_task_response(response)
+            crate::operation_ser::parse_delete_task_response(response)
         }
     }
 }
@@ -392,9 +392,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeAgent {
         std::result::Result<crate::output::DescribeAgentOutput, crate::error::DescribeAgentError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_agent_error(response)
+            crate::operation_ser::parse_describe_agent_error(response)
         } else {
-            crate::operation_deser::parse_describe_agent_response(response)
+            crate::operation_ser::parse_describe_agent_response(response)
         }
     }
 }
@@ -420,9 +420,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeLocationEfs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_location_efs_error(response)
+            crate::operation_ser::parse_describe_location_efs_error(response)
         } else {
-            crate::operation_deser::parse_describe_location_efs_response(response)
+            crate::operation_ser::parse_describe_location_efs_response(response)
         }
     }
 }
@@ -449,9 +449,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeLocationFsxWindows {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_location_fsx_windows_error(response)
+            crate::operation_ser::parse_describe_location_fsx_windows_error(response)
         } else {
-            crate::operation_deser::parse_describe_location_fsx_windows_response(response)
+            crate::operation_ser::parse_describe_location_fsx_windows_response(response)
         }
     }
 }
@@ -477,9 +477,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeLocationNfs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_location_nfs_error(response)
+            crate::operation_ser::parse_describe_location_nfs_error(response)
         } else {
-            crate::operation_deser::parse_describe_location_nfs_response(response)
+            crate::operation_ser::parse_describe_location_nfs_response(response)
         }
     }
 }
@@ -506,9 +506,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeLocationObjectStorag
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_location_object_storage_error(response)
+            crate::operation_ser::parse_describe_location_object_storage_error(response)
         } else {
-            crate::operation_deser::parse_describe_location_object_storage_response(response)
+            crate::operation_ser::parse_describe_location_object_storage_response(response)
         }
     }
 }
@@ -534,9 +534,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeLocationS3 {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_location_s3_error(response)
+            crate::operation_ser::parse_describe_location_s3_error(response)
         } else {
-            crate::operation_deser::parse_describe_location_s3_response(response)
+            crate::operation_ser::parse_describe_location_s3_response(response)
         }
     }
 }
@@ -562,9 +562,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeLocationSmb {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_location_smb_error(response)
+            crate::operation_ser::parse_describe_location_smb_error(response)
         } else {
-            crate::operation_deser::parse_describe_location_smb_response(response)
+            crate::operation_ser::parse_describe_location_smb_response(response)
         }
     }
 }
@@ -588,9 +588,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeTask {
         std::result::Result<crate::output::DescribeTaskOutput, crate::error::DescribeTaskError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_task_error(response)
+            crate::operation_ser::parse_describe_task_error(response)
         } else {
-            crate::operation_deser::parse_describe_task_response(response)
+            crate::operation_ser::parse_describe_task_response(response)
         }
     }
 }
@@ -616,9 +616,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeTaskExecution {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_task_execution_error(response)
+            crate::operation_ser::parse_describe_task_execution_error(response)
         } else {
-            crate::operation_deser::parse_describe_task_execution_response(response)
+            crate::operation_ser::parse_describe_task_execution_response(response)
         }
     }
 }
@@ -649,9 +649,9 @@ impl smithy_http::response::ParseStrictResponse for ListAgents {
         std::result::Result<crate::output::ListAgentsOutput, crate::error::ListAgentsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_agents_error(response)
+            crate::operation_ser::parse_list_agents_error(response)
         } else {
-            crate::operation_deser::parse_list_agents_response(response)
+            crate::operation_ser::parse_list_agents_response(response)
         }
     }
 }
@@ -678,9 +678,9 @@ impl smithy_http::response::ParseStrictResponse for ListLocations {
         std::result::Result<crate::output::ListLocationsOutput, crate::error::ListLocationsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_locations_error(response)
+            crate::operation_ser::parse_list_locations_error(response)
         } else {
-            crate::operation_deser::parse_list_locations_response(response)
+            crate::operation_ser::parse_list_locations_response(response)
         }
     }
 }
@@ -706,9 +706,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::operation_ser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::operation_ser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -734,9 +734,9 @@ impl smithy_http::response::ParseStrictResponse for ListTaskExecutions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_task_executions_error(response)
+            crate::operation_ser::parse_list_task_executions_error(response)
         } else {
-            crate::operation_deser::parse_list_task_executions_response(response)
+            crate::operation_ser::parse_list_task_executions_response(response)
         }
     }
 }
@@ -759,9 +759,9 @@ impl smithy_http::response::ParseStrictResponse for ListTasks {
     type Output = std::result::Result<crate::output::ListTasksOutput, crate::error::ListTasksError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tasks_error(response)
+            crate::operation_ser::parse_list_tasks_error(response)
         } else {
-            crate::operation_deser::parse_list_tasks_response(response)
+            crate::operation_ser::parse_list_tasks_response(response)
         }
     }
 }
@@ -794,9 +794,9 @@ impl smithy_http::response::ParseStrictResponse for StartTaskExecution {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_task_execution_error(response)
+            crate::operation_ser::parse_start_task_execution_error(response)
         } else {
-            crate::operation_deser::parse_start_task_execution_response(response)
+            crate::operation_ser::parse_start_task_execution_response(response)
         }
     }
 }
@@ -820,9 +820,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::operation_ser::parse_tag_resource_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::operation_ser::parse_tag_resource_response(response)
         }
     }
 }
@@ -846,9 +846,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::operation_ser::parse_untag_resource_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::operation_ser::parse_untag_resource_response(response)
         }
     }
 }
@@ -872,9 +872,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateAgent {
         std::result::Result<crate::output::UpdateAgentOutput, crate::error::UpdateAgentError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_agent_error(response)
+            crate::operation_ser::parse_update_agent_error(response)
         } else {
-            crate::operation_deser::parse_update_agent_response(response)
+            crate::operation_ser::parse_update_agent_response(response)
         }
     }
 }
@@ -901,9 +901,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateLocationNfs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_location_nfs_error(response)
+            crate::operation_ser::parse_update_location_nfs_error(response)
         } else {
-            crate::operation_deser::parse_update_location_nfs_response(response)
+            crate::operation_ser::parse_update_location_nfs_response(response)
         }
     }
 }
@@ -931,9 +931,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateLocationObjectStorage 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_location_object_storage_error(response)
+            crate::operation_ser::parse_update_location_object_storage_error(response)
         } else {
-            crate::operation_deser::parse_update_location_object_storage_response(response)
+            crate::operation_ser::parse_update_location_object_storage_response(response)
         }
     }
 }
@@ -961,9 +961,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateLocationSmb {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_location_smb_error(response)
+            crate::operation_ser::parse_update_location_smb_error(response)
         } else {
-            crate::operation_deser::parse_update_location_smb_response(response)
+            crate::operation_ser::parse_update_location_smb_response(response)
         }
     }
 }
@@ -987,9 +987,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateTask {
         std::result::Result<crate::output::UpdateTaskOutput, crate::error::UpdateTaskError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_task_error(response)
+            crate::operation_ser::parse_update_task_error(response)
         } else {
-            crate::operation_deser::parse_update_task_response(response)
+            crate::operation_ser::parse_update_task_response(response)
         }
     }
 }
@@ -1023,9 +1023,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateTaskExecution {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_task_execution_error(response)
+            crate::operation_ser::parse_update_task_execution_error(response)
         } else {
-            crate::operation_deser::parse_update_task_execution_response(response)
+            crate::operation_ser::parse_update_task_execution_response(response)
         }
     }
 }

@@ -6062,7 +6062,8 @@ impl NotFoundException {
 
 /// <p>The request was rejected because the state of the specified resource is not valid for this
 /// request.</p>
-/// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i>
+/// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
+/// key</a> in the <i>
 /// <i>Key Management Service Developer Guide</i>
 /// </i>.</p>
 #[non_exhaustive]
@@ -6250,8 +6251,8 @@ impl KmsInternalException {
     }
 }
 
-/// <p>The request was rejected because the specified KMS key was not available. You can retry the
-/// request.</p>
+/// <p>The request was rejected because the specified KMS key was not available. You can retry
+/// the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyUnavailableException {
@@ -6319,15 +6320,15 @@ impl KeyUnavailableException {
 /// </li>
 /// <li>
 /// <p>The encryption algorithm or signing algorithm specified for the operation is
-/// incompatible with the type of key material in the KMS key
-/// <code>(KeySpec</code>).</p>
+/// incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p>
 /// </li>
 /// </ul>
 /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the
 /// <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the
 /// <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of
 /// a KMS key, use the <a>DescribeKey</a> operation.</p>
-/// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <a>DescribeKey</a> operation.</p>
+/// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the
+/// <a>DescribeKey</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidKeyUsageException {
@@ -7544,8 +7545,8 @@ impl InvalidCiphertextException {
 
 /// <p>The request was rejected because the specified KMS key cannot decrypt the data. The
 /// <code>KeyId</code> in a <a>Decrypt</a> request and the <code>SourceKeyId</code>
-/// in a <a>ReEncrypt</a> request must identify the same KMS key that was used to encrypt
-/// the ciphertext.</p>
+/// in a <a>ReEncrypt</a> request must identify the same KMS key that was used to
+/// encrypt the ciphertext.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncorrectKeyException {
@@ -7849,8 +7850,10 @@ impl ExpiredImportTokenException {
     }
 }
 
-/// <p>The request was rejected because the custom key store contains KMS keys. After verifying that you do not need to use the KMS keys, use the <a>ScheduleKeyDeletion</a> operation to delete the KMS keys. After they are deleted, you
-/// can delete the custom key store.</p>
+/// <p>The request was rejected because the custom key store contains KMS keys. After verifying
+/// that you do not need to use the KMS keys, use the <a>ScheduleKeyDeletion</a>
+/// operation to delete the KMS keys. After they are deleted, you can delete the custom key
+/// store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomKeyStoreHasCmKsException {

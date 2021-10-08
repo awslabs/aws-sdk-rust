@@ -112,6 +112,11 @@ where
     pub fn delete_mailbox_permissions(&self) -> fluent_builders::DeleteMailboxPermissions<C, M, R> {
         fluent_builders::DeleteMailboxPermissions::new(self.handle.clone())
     }
+    pub fn delete_mobile_device_access_override(
+        &self,
+    ) -> fluent_builders::DeleteMobileDeviceAccessOverride<C, M, R> {
+        fluent_builders::DeleteMobileDeviceAccessOverride::new(self.handle.clone())
+    }
     pub fn delete_mobile_device_access_rule(
         &self,
     ) -> fluent_builders::DeleteMobileDeviceAccessRule<C, M, R> {
@@ -134,6 +139,11 @@ where
     }
     pub fn describe_group(&self) -> fluent_builders::DescribeGroup<C, M, R> {
         fluent_builders::DescribeGroup::new(self.handle.clone())
+    }
+    pub fn describe_inbound_dmarc_settings(
+        &self,
+    ) -> fluent_builders::DescribeInboundDmarcSettings<C, M, R> {
+        fluent_builders::DescribeInboundDmarcSettings::new(self.handle.clone())
     }
     pub fn describe_mailbox_export_job(
         &self,
@@ -175,6 +185,11 @@ where
     ) -> fluent_builders::GetMobileDeviceAccessEffect<C, M, R> {
         fluent_builders::GetMobileDeviceAccessEffect::new(self.handle.clone())
     }
+    pub fn get_mobile_device_access_override(
+        &self,
+    ) -> fluent_builders::GetMobileDeviceAccessOverride<C, M, R> {
+        fluent_builders::GetMobileDeviceAccessOverride::new(self.handle.clone())
+    }
     pub fn list_access_control_rules(&self) -> fluent_builders::ListAccessControlRules<C, M, R> {
         fluent_builders::ListAccessControlRules::new(self.handle.clone())
     }
@@ -192,6 +207,11 @@ where
     }
     pub fn list_mailbox_permissions(&self) -> fluent_builders::ListMailboxPermissions<C, M, R> {
         fluent_builders::ListMailboxPermissions::new(self.handle.clone())
+    }
+    pub fn list_mobile_device_access_overrides(
+        &self,
+    ) -> fluent_builders::ListMobileDeviceAccessOverrides<C, M, R> {
+        fluent_builders::ListMobileDeviceAccessOverrides::new(self.handle.clone())
     }
     pub fn list_mobile_device_access_rules(
         &self,
@@ -216,8 +236,16 @@ where
     pub fn put_access_control_rule(&self) -> fluent_builders::PutAccessControlRule<C, M, R> {
         fluent_builders::PutAccessControlRule::new(self.handle.clone())
     }
+    pub fn put_inbound_dmarc_settings(&self) -> fluent_builders::PutInboundDmarcSettings<C, M, R> {
+        fluent_builders::PutInboundDmarcSettings::new(self.handle.clone())
+    }
     pub fn put_mailbox_permissions(&self) -> fluent_builders::PutMailboxPermissions<C, M, R> {
         fluent_builders::PutMailboxPermissions::new(self.handle.clone())
+    }
+    pub fn put_mobile_device_access_override(
+        &self,
+    ) -> fluent_builders::PutMobileDeviceAccessOverride<C, M, R> {
+        fluent_builders::PutMobileDeviceAccessOverride::new(self.handle.clone())
     }
     pub fn put_retention_policy(&self) -> fluent_builders::PutRetentionPolicy<C, M, R> {
         fluent_builders::PutRetentionPolicy::new(self.handle.clone())
@@ -1391,6 +1419,95 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DeleteMobileDeviceAccessOverride<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_mobile_device_access_override_input::Builder,
+    }
+    impl<C, M, R> DeleteMobileDeviceAccessOverride<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteMobileDeviceAccessOverrideOutput,
+            smithy_http::result::SdkError<crate::error::DeleteMobileDeviceAccessOverrideError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteMobileDeviceAccessOverrideInputOperationOutputAlias,
+                crate::output::DeleteMobileDeviceAccessOverrideOutput,
+                crate::error::DeleteMobileDeviceAccessOverrideError,
+                crate::input::DeleteMobileDeviceAccessOverrideInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon WorkMail organization for which the access override will be deleted.</p>
+        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(inp);
+            self
+        }
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
+        /// <ul>
+        /// <li>
+        /// <p>User ID:  <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Email address: <code>user@domain.tld</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>User name: <code>user</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(inp);
+            self
+        }
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_id(input);
+            self
+        }
+        /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
+        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(inp);
+            self
+        }
+        pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_device_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DeleteMobileDeviceAccessRule<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -1862,6 +1979,63 @@ pub mod fluent_builders {
         }
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_group_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeInboundDmarcSettings<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_inbound_dmarc_settings_input::Builder,
+    }
+    impl<C, M, R> DescribeInboundDmarcSettings<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeInboundDmarcSettingsOutput,
+            smithy_http::result::SdkError<crate::error::DescribeInboundDmarcSettingsError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeInboundDmarcSettingsInputOperationOutputAlias,
+                crate::output::DescribeInboundDmarcSettingsOutput,
+                crate::error::DescribeInboundDmarcSettingsError,
+                crate::input::DescribeInboundDmarcSettingsInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Lists the ID of the given organization.</p>
+        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(inp);
+            self
+        }
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
             self
         }
     }
@@ -2583,6 +2757,95 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct GetMobileDeviceAccessOverride<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_mobile_device_access_override_input::Builder,
+    }
+    impl<C, M, R> GetMobileDeviceAccessOverride<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetMobileDeviceAccessOverrideOutput,
+            smithy_http::result::SdkError<crate::error::GetMobileDeviceAccessOverrideError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetMobileDeviceAccessOverrideInputOperationOutputAlias,
+                crate::output::GetMobileDeviceAccessOverrideOutput,
+                crate::error::GetMobileDeviceAccessOverrideError,
+                crate::input::GetMobileDeviceAccessOverrideInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(inp);
+            self
+        }
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
+        /// <ul>
+        /// <li>
+        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Email address: <code>user@domain.tld</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>User name: <code>user</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(inp);
+            self
+        }
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_id(input);
+            self
+        }
+        /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
+        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(inp);
+            self
+        }
+        pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_device_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct ListAccessControlRules<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -3030,6 +3293,113 @@ pub mod fluent_builders {
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not
         /// contain any tokens.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return in a single call.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListMobileDeviceAccessOverrides<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_mobile_device_access_overrides_input::Builder,
+    }
+    impl<C, M, R> ListMobileDeviceAccessOverrides<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListMobileDeviceAccessOverridesOutput,
+            smithy_http::result::SdkError<crate::error::ListMobileDeviceAccessOverridesError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListMobileDeviceAccessOverridesInputOperationOutputAlias,
+                crate::output::ListMobileDeviceAccessOverridesOutput,
+                crate::error::ListMobileDeviceAccessOverridesError,
+                crate::input::ListMobileDeviceAccessOverridesInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon WorkMail organization under which to list mobile device access overrides.</p>
+        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(inp);
+            self
+        }
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
+        /// <ul>
+        /// <li>
+        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Email address: <code>user@domain.tld</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>User name: <code>user</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(inp);
+            self
+        }
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_id(input);
+            self
+        }
+        /// <p>The mobile device to which the access override applies.</p>
+        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(inp);
+            self
+        }
+        pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_device_id(input);
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
@@ -3643,6 +4013,72 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct PutInboundDmarcSettings<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::put_inbound_dmarc_settings_input::Builder,
+    }
+    impl<C, M, R> PutInboundDmarcSettings<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutInboundDmarcSettingsOutput,
+            smithy_http::result::SdkError<crate::error::PutInboundDmarcSettingsError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::PutInboundDmarcSettingsInputOperationOutputAlias,
+                crate::output::PutInboundDmarcSettingsOutput,
+                crate::error::PutInboundDmarcSettingsError,
+                crate::input::PutInboundDmarcSettingsInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the organization that you are applying the DMARC policy to. </p>
+        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(inp);
+            self
+        }
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>Enforces or suspends a policy after it's applied.</p>
+        pub fn enforced(mut self, inp: bool) -> Self {
+            self.inner = self.inner.enforced(inp);
+            self
+        }
+        pub fn set_enforced(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enforced(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct PutMailboxPermissions<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -3737,6 +4173,116 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
         ) -> Self {
             self.inner = self.inner.set_permission_values(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct PutMobileDeviceAccessOverride<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::put_mobile_device_access_override_input::Builder,
+    }
+    impl<C, M, R> PutMobileDeviceAccessOverride<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutMobileDeviceAccessOverrideOutput,
+            smithy_http::result::SdkError<crate::error::PutMobileDeviceAccessOverrideError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::PutMobileDeviceAccessOverrideInputOperationOutputAlias,
+                crate::output::PutMobileDeviceAccessOverrideOutput,
+                crate::error::PutMobileDeviceAccessOverrideError,
+                crate::input::PutMobileDeviceAccessOverrideInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Identifies the Amazon WorkMail organization for which you create the override.</p>
+        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(inp);
+            self
+        }
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
+        /// <ul>
+        /// <li>
+        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Email address: <code>user@domain.tld</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>User name: <code>user</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(inp);
+            self
+        }
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_user_id(input);
+            self
+        }
+        /// <p>The mobile device for which you create the override. <code>DeviceId</code> is case insensitive.</p>
+        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(inp);
+            self
+        }
+        pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_device_id(input);
+            self
+        }
+        /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
+        pub fn effect(mut self, inp: crate::model::MobileDeviceAccessRuleEffect) -> Self {
+            self.inner = self.inner.effect(inp);
+            self
+        }
+        pub fn set_effect(
+            mut self,
+            input: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
+        ) -> Self {
+            self.inner = self.inner.set_effect(input);
+            self
+        }
+        /// <p>A description of the override.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
     }

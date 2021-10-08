@@ -9040,7 +9040,7 @@ impl EfsMountConnectivityException {
     }
 }
 
-/// <p>An error occured when reading from or writing to a connected file system.</p>
+/// <p>An error occurred when reading from or writing to a connected file system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EfsioException {

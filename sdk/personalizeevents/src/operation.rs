@@ -18,9 +18,9 @@ impl smithy_http::response::ParseStrictResponse for PutEvents {
     type Output = std::result::Result<crate::output::PutEventsOutput, crate::error::PutEventsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_events_error(response)
+            crate::operation_ser::parse_put_events_error(response)
         } else {
-            crate::operation_deser::parse_put_events_response(response)
+            crate::operation_ser::parse_put_events_response(response)
         }
     }
 }
@@ -45,9 +45,9 @@ impl smithy_http::response::ParseStrictResponse for PutItems {
     type Output = std::result::Result<crate::output::PutItemsOutput, crate::error::PutItemsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_items_error(response)
+            crate::operation_ser::parse_put_items_error(response)
         } else {
-            crate::operation_deser::parse_put_items_response(response)
+            crate::operation_ser::parse_put_items_response(response)
         }
     }
 }
@@ -71,9 +71,9 @@ impl smithy_http::response::ParseStrictResponse for PutUsers {
     type Output = std::result::Result<crate::output::PutUsersOutput, crate::error::PutUsersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_users_error(response)
+            crate::operation_ser::parse_put_users_error(response)
         } else {
-            crate::operation_deser::parse_put_users_response(response)
+            crate::operation_ser::parse_put_users_response(response)
         }
     }
 }

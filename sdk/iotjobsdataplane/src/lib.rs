@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>AWS IoT Jobs is a service that allows you to define a set of jobs — remote operations that are sent to
 //! and executed on one or more devices connected to AWS IoT. For example, you can define a job that instructs a
 //! set of devices to download and install application or firmware updates, reboot, rotate certificates, or perform
@@ -35,7 +36,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

@@ -24,9 +24,9 @@ impl smithy_http::response::ParseStrictResponse for CreateConfigurationSet {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_configuration_set_error(response)
+            crate::operation_ser::parse_create_configuration_set_error(response)
         } else {
-            crate::operation_deser::parse_create_configuration_set_response(response)
+            crate::operation_ser::parse_create_configuration_set_response(response)
         }
     }
 }
@@ -58,9 +58,9 @@ impl smithy_http::response::ParseStrictResponse for CreateConfigurationSetEventD
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_configuration_set_event_destination_error(response)
+            crate::operation_ser::parse_create_configuration_set_event_destination_error(response)
         } else {
-            crate::operation_deser::parse_create_configuration_set_event_destination_response(
+            crate::operation_ser::parse_create_configuration_set_event_destination_response(
                 response,
             )
         }
@@ -87,9 +87,9 @@ impl smithy_http::response::ParseStrictResponse for CreateContact {
         std::result::Result<crate::output::CreateContactOutput, crate::error::CreateContactError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_contact_error(response)
+            crate::operation_ser::parse_create_contact_error(response)
         } else {
-            crate::operation_deser::parse_create_contact_response(response)
+            crate::operation_ser::parse_create_contact_response(response)
         }
     }
 }
@@ -115,9 +115,9 @@ impl smithy_http::response::ParseStrictResponse for CreateContactList {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_contact_list_error(response)
+            crate::operation_ser::parse_create_contact_list_error(response)
         } else {
-            crate::operation_deser::parse_create_contact_list_response(response)
+            crate::operation_ser::parse_create_contact_list_response(response)
         }
     }
 }
@@ -146,17 +146,15 @@ impl smithy_http::response::ParseStrictResponse for CreateCustomVerificationEmai
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_custom_verification_email_template_error(response)
+            crate::operation_ser::parse_create_custom_verification_email_template_error(response)
         } else {
-            crate::operation_deser::parse_create_custom_verification_email_template_response(
-                response,
-            )
+            crate::operation_ser::parse_create_custom_verification_email_template_response(response)
         }
     }
 }
 
 /// <p>Create a new pool of dedicated IP addresses. A pool can include one or more dedicated
-/// IP addresses that are associated with your AWS account. You can associate a pool with
+/// IP addresses that are associated with your Amazon Web Services account. You can associate a pool with
 /// a configuration set. When you send an email that uses that configuration set, the
 /// message is sent from one of the addresses in the associated pool.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -179,9 +177,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDedicatedIpPool {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_dedicated_ip_pool_error(response)
+            crate::operation_ser::parse_create_dedicated_ip_pool_error(response)
         } else {
-            crate::operation_deser::parse_create_dedicated_ip_pool_response(response)
+            crate::operation_ser::parse_create_dedicated_ip_pool_response(response)
         }
     }
 }
@@ -213,9 +211,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDeliverabilityTestRepo
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_deliverability_test_report_error(response)
+            crate::operation_ser::parse_create_deliverability_test_report_error(response)
         } else {
-            crate::operation_deser::parse_create_deliverability_test_report_response(response)
+            crate::operation_ser::parse_create_deliverability_test_report_response(response)
         }
     }
 }
@@ -238,7 +236,7 @@ impl smithy_http::response::ParseStrictResponse for CreateDeliverabilityTestRepo
 /// (BYODKIM). To use BYODKIM, your call to the <code>CreateEmailIdentity</code> operation
 /// has to include the <code>DkimSigningAttributes</code> object. When you specify this
 /// object, you provide a selector (a component of the DNS record name that identifies the
-/// public key that you want to use for DKIM authentication) and a private key.</p>
+/// public key to use for DKIM authentication) and a private key.</p>
 /// <p>When you verify a domain, this operation provides a set of DKIM tokens, which you can
 /// convert into CNAME tokens. You add these CNAME tokens to the DNS configuration for your
 /// domain. Your domain is verified when Amazon SES detects these records in the DNS
@@ -265,9 +263,9 @@ impl smithy_http::response::ParseStrictResponse for CreateEmailIdentity {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_email_identity_error(response)
+            crate::operation_ser::parse_create_email_identity_error(response)
         } else {
-            crate::operation_deser::parse_create_email_identity_response(response)
+            crate::operation_ser::parse_create_email_identity_response(response)
         }
     }
 }
@@ -303,16 +301,16 @@ impl smithy_http::response::ParseStrictResponse for CreateEmailIdentityPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_email_identity_policy_error(response)
+            crate::operation_ser::parse_create_email_identity_policy_error(response)
         } else {
-            crate::operation_deser::parse_create_email_identity_policy_response(response)
+            crate::operation_ser::parse_create_email_identity_policy_response(response)
         }
     }
 }
 
 /// <p>Creates an email template. Email templates enable you to send personalized email to
-/// one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
-/// Developer Guide</a>.</p>
+/// one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
+/// Guide</a>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEmailTemplate {
@@ -334,9 +332,9 @@ impl smithy_http::response::ParseStrictResponse for CreateEmailTemplate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_email_template_error(response)
+            crate::operation_ser::parse_create_email_template_error(response)
         } else {
-            crate::operation_deser::parse_create_email_template_response(response)
+            crate::operation_ser::parse_create_email_template_response(response)
         }
     }
 }
@@ -362,9 +360,9 @@ impl smithy_http::response::ParseStrictResponse for CreateImportJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_import_job_error(response)
+            crate::operation_ser::parse_create_import_job_error(response)
         } else {
-            crate::operation_deser::parse_create_import_job_response(response)
+            crate::operation_ser::parse_create_import_job_response(response)
         }
     }
 }
@@ -395,9 +393,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteConfigurationSet {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_configuration_set_error(response)
+            crate::operation_ser::parse_delete_configuration_set_error(response)
         } else {
-            crate::operation_deser::parse_delete_configuration_set_response(response)
+            crate::operation_ser::parse_delete_configuration_set_response(response)
         }
     }
 }
@@ -429,9 +427,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteConfigurationSetEventD
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_configuration_set_event_destination_error(response)
+            crate::operation_ser::parse_delete_configuration_set_event_destination_error(response)
         } else {
-            crate::operation_deser::parse_delete_configuration_set_event_destination_response(
+            crate::operation_ser::parse_delete_configuration_set_event_destination_response(
                 response,
             )
         }
@@ -457,9 +455,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteContact {
         std::result::Result<crate::output::DeleteContactOutput, crate::error::DeleteContactError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_contact_error(response)
+            crate::operation_ser::parse_delete_contact_error(response)
         } else {
-            crate::operation_deser::parse_delete_contact_response(response)
+            crate::operation_ser::parse_delete_contact_response(response)
         }
     }
 }
@@ -485,15 +483,15 @@ impl smithy_http::response::ParseStrictResponse for DeleteContactList {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_contact_list_error(response)
+            crate::operation_ser::parse_delete_contact_list_error(response)
         } else {
-            crate::operation_deser::parse_delete_contact_list_response(response)
+            crate::operation_ser::parse_delete_contact_list_response(response)
         }
     }
 }
 
 /// <p>Deletes an existing custom verification email template.</p>
-/// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/es/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
+/// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
 /// Guide</i>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -516,11 +514,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteCustomVerificationEmai
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_custom_verification_email_template_error(response)
+            crate::operation_ser::parse_delete_custom_verification_email_template_error(response)
         } else {
-            crate::operation_deser::parse_delete_custom_verification_email_template_response(
-                response,
-            )
+            crate::operation_ser::parse_delete_custom_verification_email_template_response(response)
         }
     }
 }
@@ -546,9 +542,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteDedicatedIpPool {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_dedicated_ip_pool_error(response)
+            crate::operation_ser::parse_delete_dedicated_ip_pool_error(response)
         } else {
-            crate::operation_deser::parse_delete_dedicated_ip_pool_response(response)
+            crate::operation_ser::parse_delete_dedicated_ip_pool_response(response)
         }
     }
 }
@@ -575,9 +571,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteEmailIdentity {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_email_identity_error(response)
+            crate::operation_ser::parse_delete_email_identity_error(response)
         } else {
-            crate::operation_deser::parse_delete_email_identity_response(response)
+            crate::operation_ser::parse_delete_email_identity_response(response)
         }
     }
 }
@@ -614,9 +610,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteEmailIdentityPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_email_identity_policy_error(response)
+            crate::operation_ser::parse_delete_email_identity_policy_error(response)
         } else {
-            crate::operation_deser::parse_delete_email_identity_policy_response(response)
+            crate::operation_ser::parse_delete_email_identity_policy_response(response)
         }
     }
 }
@@ -643,9 +639,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteEmailTemplate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_email_template_error(response)
+            crate::operation_ser::parse_delete_email_template_error(response)
         } else {
-            crate::operation_deser::parse_delete_email_template_response(response)
+            crate::operation_ser::parse_delete_email_template_response(response)
         }
     }
 }
@@ -671,15 +667,15 @@ impl smithy_http::response::ParseStrictResponse for DeleteSuppressedDestination 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_suppressed_destination_error(response)
+            crate::operation_ser::parse_delete_suppressed_destination_error(response)
         } else {
-            crate::operation_deser::parse_delete_suppressed_destination_response(response)
+            crate::operation_ser::parse_delete_suppressed_destination_response(response)
         }
     }
 }
 
 /// <p>Obtain information about the email-sending status and capabilities of your Amazon SES
-/// account in the current AWS Region.</p>
+/// account in the current Amazon Web Services Region.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetAccount {
     _private: (),
@@ -698,9 +694,9 @@ impl smithy_http::response::ParseStrictResponse for GetAccount {
         std::result::Result<crate::output::GetAccountOutput, crate::error::GetAccountError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_account_error(response)
+            crate::operation_ser::parse_get_account_error(response)
         } else {
-            crate::operation_deser::parse_get_account_response(response)
+            crate::operation_ser::parse_get_account_response(response)
         }
     }
 }
@@ -726,9 +722,9 @@ impl smithy_http::response::ParseStrictResponse for GetBlacklistReports {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_blacklist_reports_error(response)
+            crate::operation_ser::parse_get_blacklist_reports_error(response)
         } else {
-            crate::operation_deser::parse_get_blacklist_reports_response(response)
+            crate::operation_ser::parse_get_blacklist_reports_response(response)
         }
     }
 }
@@ -761,9 +757,9 @@ impl smithy_http::response::ParseStrictResponse for GetConfigurationSet {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_configuration_set_error(response)
+            crate::operation_ser::parse_get_configuration_set_error(response)
         } else {
-            crate::operation_deser::parse_get_configuration_set_response(response)
+            crate::operation_ser::parse_get_configuration_set_response(response)
         }
     }
 }
@@ -796,11 +792,9 @@ impl smithy_http::response::ParseStrictResponse for GetConfigurationSetEventDest
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_configuration_set_event_destinations_error(response)
+            crate::operation_ser::parse_get_configuration_set_event_destinations_error(response)
         } else {
-            crate::operation_deser::parse_get_configuration_set_event_destinations_response(
-                response,
-            )
+            crate::operation_ser::parse_get_configuration_set_event_destinations_response(response)
         }
     }
 }
@@ -824,9 +818,9 @@ impl smithy_http::response::ParseStrictResponse for GetContact {
         std::result::Result<crate::output::GetContactOutput, crate::error::GetContactError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_contact_error(response)
+            crate::operation_ser::parse_get_contact_error(response)
         } else {
-            crate::operation_deser::parse_get_contact_response(response)
+            crate::operation_ser::parse_get_contact_response(response)
         }
     }
 }
@@ -851,9 +845,9 @@ impl smithy_http::response::ParseStrictResponse for GetContactList {
         std::result::Result<crate::output::GetContactListOutput, crate::error::GetContactListError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_contact_list_error(response)
+            crate::operation_ser::parse_get_contact_list_error(response)
         } else {
-            crate::operation_deser::parse_get_contact_list_response(response)
+            crate::operation_ser::parse_get_contact_list_response(response)
         }
     }
 }
@@ -883,9 +877,9 @@ impl smithy_http::response::ParseStrictResponse for GetCustomVerificationEmailTe
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_custom_verification_email_template_error(response)
+            crate::operation_ser::parse_get_custom_verification_email_template_error(response)
         } else {
-            crate::operation_deser::parse_get_custom_verification_email_template_response(response)
+            crate::operation_ser::parse_get_custom_verification_email_template_response(response)
         }
     }
 }
@@ -911,14 +905,14 @@ impl smithy_http::response::ParseStrictResponse for GetDedicatedIp {
         std::result::Result<crate::output::GetDedicatedIpOutput, crate::error::GetDedicatedIpError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_dedicated_ip_error(response)
+            crate::operation_ser::parse_get_dedicated_ip_error(response)
         } else {
-            crate::operation_deser::parse_get_dedicated_ip_response(response)
+            crate::operation_ser::parse_get_dedicated_ip_response(response)
         }
     }
 }
 
-/// <p>List the dedicated IP addresses that are associated with your AWS
+/// <p>List the dedicated IP addresses that are associated with your Amazon Web Services
 /// account.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetDedicatedIps {
@@ -940,9 +934,9 @@ impl smithy_http::response::ParseStrictResponse for GetDedicatedIps {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_dedicated_ips_error(response)
+            crate::operation_ser::parse_get_dedicated_ips_error(response)
         } else {
-            crate::operation_deser::parse_get_dedicated_ips_response(response)
+            crate::operation_ser::parse_get_dedicated_ips_response(response)
         }
     }
 }
@@ -952,7 +946,7 @@ impl smithy_http::response::ParseStrictResponse for GetDedicatedIps {
 /// metrics for the domains that you use to send email. You also gain the ability to perform
 /// predictive inbox placement tests.</p>
 /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition
-/// to any other fees that you accrue by using Amazon SES and other AWS services. For more
+/// to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more
 /// information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetDeliverabilityDashboardOptions {
@@ -974,9 +968,9 @@ impl smithy_http::response::ParseStrictResponse for GetDeliverabilityDashboardOp
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_deliverability_dashboard_options_error(response)
+            crate::operation_ser::parse_get_deliverability_dashboard_options_error(response)
         } else {
-            crate::operation_deser::parse_get_deliverability_dashboard_options_response(response)
+            crate::operation_ser::parse_get_deliverability_dashboard_options_response(response)
         }
     }
 }
@@ -1002,9 +996,9 @@ impl smithy_http::response::ParseStrictResponse for GetDeliverabilityTestReport 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_deliverability_test_report_error(response)
+            crate::operation_ser::parse_get_deliverability_test_report_error(response)
         } else {
-            crate::operation_deser::parse_get_deliverability_test_report_response(response)
+            crate::operation_ser::parse_get_deliverability_test_report_response(response)
         }
     }
 }
@@ -1032,9 +1026,9 @@ impl smithy_http::response::ParseStrictResponse for GetDomainDeliverabilityCampa
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_domain_deliverability_campaign_error(response)
+            crate::operation_ser::parse_get_domain_deliverability_campaign_error(response)
         } else {
-            crate::operation_deser::parse_get_domain_deliverability_campaign_response(response)
+            crate::operation_ser::parse_get_domain_deliverability_campaign_response(response)
         }
     }
 }
@@ -1061,9 +1055,9 @@ impl smithy_http::response::ParseStrictResponse for GetDomainStatisticsReport {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_domain_statistics_report_error(response)
+            crate::operation_ser::parse_get_domain_statistics_report_error(response)
         } else {
-            crate::operation_deser::parse_get_domain_statistics_report_response(response)
+            crate::operation_ser::parse_get_domain_statistics_report_response(response)
         }
     }
 }
@@ -1091,9 +1085,9 @@ impl smithy_http::response::ParseStrictResponse for GetEmailIdentity {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_email_identity_error(response)
+            crate::operation_ser::parse_get_email_identity_error(response)
         } else {
-            crate::operation_deser::parse_get_email_identity_response(response)
+            crate::operation_ser::parse_get_email_identity_response(response)
         }
     }
 }
@@ -1130,9 +1124,9 @@ impl smithy_http::response::ParseStrictResponse for GetEmailIdentityPolicies {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_email_identity_policies_error(response)
+            crate::operation_ser::parse_get_email_identity_policies_error(response)
         } else {
-            crate::operation_deser::parse_get_email_identity_policies_response(response)
+            crate::operation_ser::parse_get_email_identity_policies_response(response)
         }
     }
 }
@@ -1160,9 +1154,9 @@ impl smithy_http::response::ParseStrictResponse for GetEmailTemplate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_email_template_error(response)
+            crate::operation_ser::parse_get_email_template_error(response)
         } else {
-            crate::operation_deser::parse_get_email_template_response(response)
+            crate::operation_ser::parse_get_email_template_response(response)
         }
     }
 }
@@ -1186,9 +1180,9 @@ impl smithy_http::response::ParseStrictResponse for GetImportJob {
         std::result::Result<crate::output::GetImportJobOutput, crate::error::GetImportJobError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_import_job_error(response)
+            crate::operation_ser::parse_get_import_job_error(response)
         } else {
-            crate::operation_deser::parse_get_import_job_response(response)
+            crate::operation_ser::parse_get_import_job_response(response)
         }
     }
 }
@@ -1215,9 +1209,9 @@ impl smithy_http::response::ParseStrictResponse for GetSuppressedDestination {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_suppressed_destination_error(response)
+            crate::operation_ser::parse_get_suppressed_destination_error(response)
         } else {
-            crate::operation_deser::parse_get_suppressed_destination_response(response)
+            crate::operation_ser::parse_get_suppressed_destination_response(response)
         }
     }
 }
@@ -1249,9 +1243,9 @@ impl smithy_http::response::ParseStrictResponse for ListConfigurationSets {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_configuration_sets_error(response)
+            crate::operation_ser::parse_list_configuration_sets_error(response)
         } else {
-            crate::operation_deser::parse_list_configuration_sets_response(response)
+            crate::operation_ser::parse_list_configuration_sets_response(response)
         }
     }
 }
@@ -1277,9 +1271,9 @@ impl smithy_http::response::ParseStrictResponse for ListContactLists {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_contact_lists_error(response)
+            crate::operation_ser::parse_list_contact_lists_error(response)
         } else {
-            crate::operation_deser::parse_list_contact_lists_response(response)
+            crate::operation_ser::parse_list_contact_lists_response(response)
         }
     }
 }
@@ -1303,15 +1297,15 @@ impl smithy_http::response::ParseStrictResponse for ListContacts {
         std::result::Result<crate::output::ListContactsOutput, crate::error::ListContactsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_contacts_error(response)
+            crate::operation_ser::parse_list_contacts_error(response)
         } else {
-            crate::operation_deser::parse_list_contacts_response(response)
+            crate::operation_ser::parse_list_contacts_response(response)
         }
     }
 }
 
 /// <p>Lists the existing custom verification email templates for your account in the current
-/// AWS Region.</p>
+/// Amazon Web Services Region.</p>
 /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
 /// Guide</i>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
@@ -1335,16 +1329,14 @@ impl smithy_http::response::ParseStrictResponse for ListCustomVerificationEmailT
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_custom_verification_email_templates_error(response)
+            crate::operation_ser::parse_list_custom_verification_email_templates_error(response)
         } else {
-            crate::operation_deser::parse_list_custom_verification_email_templates_response(
-                response,
-            )
+            crate::operation_ser::parse_list_custom_verification_email_templates_response(response)
         }
     }
 }
 
-/// <p>List all of the dedicated IP pools that exist in your AWS account in the current
+/// <p>List all of the dedicated IP pools that exist in your Amazon Web Services account in the current
 /// Region.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListDedicatedIpPools {
@@ -1366,9 +1358,9 @@ impl smithy_http::response::ParseStrictResponse for ListDedicatedIpPools {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_dedicated_ip_pools_error(response)
+            crate::operation_ser::parse_list_dedicated_ip_pools_error(response)
         } else {
-            crate::operation_deser::parse_list_dedicated_ip_pools_response(response)
+            crate::operation_ser::parse_list_dedicated_ip_pools_response(response)
         }
     }
 }
@@ -1396,9 +1388,9 @@ impl smithy_http::response::ParseStrictResponse for ListDeliverabilityTestReport
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_deliverability_test_reports_error(response)
+            crate::operation_ser::parse_list_deliverability_test_reports_error(response)
         } else {
-            crate::operation_deser::parse_list_deliverability_test_reports_response(response)
+            crate::operation_ser::parse_list_deliverability_test_reports_response(response)
         }
     }
 }
@@ -1426,14 +1418,14 @@ impl smithy_http::response::ParseStrictResponse for ListDomainDeliverabilityCamp
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_domain_deliverability_campaigns_error(response)
+            crate::operation_ser::parse_list_domain_deliverability_campaigns_error(response)
         } else {
-            crate::operation_deser::parse_list_domain_deliverability_campaigns_response(response)
+            crate::operation_ser::parse_list_domain_deliverability_campaigns_response(response)
         }
     }
 }
 
-/// <p>Returns a list of all of the email identities that are associated with your AWS
+/// <p>Returns a list of all of the email identities that are associated with your Amazon Web Services
 /// account. An identity can be either an email address or a domain. This operation returns
 /// identities that are verified as well as those that aren't. This operation returns
 /// identities that are associated with Amazon SES and Amazon Pinpoint.</p>
@@ -1457,14 +1449,14 @@ impl smithy_http::response::ParseStrictResponse for ListEmailIdentities {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_email_identities_error(response)
+            crate::operation_ser::parse_list_email_identities_error(response)
         } else {
-            crate::operation_deser::parse_list_email_identities_response(response)
+            crate::operation_ser::parse_list_email_identities_response(response)
         }
     }
 }
 
-/// <p>Lists the email templates present in your Amazon SES account in the current AWS
+/// <p>Lists the email templates present in your Amazon SES account in the current Amazon Web Services
 /// Region.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -1487,9 +1479,9 @@ impl smithy_http::response::ParseStrictResponse for ListEmailTemplates {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_email_templates_error(response)
+            crate::operation_ser::parse_list_email_templates_error(response)
         } else {
-            crate::operation_deser::parse_list_email_templates_response(response)
+            crate::operation_ser::parse_list_email_templates_response(response)
         }
     }
 }
@@ -1513,9 +1505,9 @@ impl smithy_http::response::ParseStrictResponse for ListImportJobs {
         std::result::Result<crate::output::ListImportJobsOutput, crate::error::ListImportJobsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_import_jobs_error(response)
+            crate::operation_ser::parse_list_import_jobs_error(response)
         } else {
-            crate::operation_deser::parse_list_import_jobs_response(response)
+            crate::operation_ser::parse_list_import_jobs_response(response)
         }
     }
 }
@@ -1542,9 +1534,9 @@ impl smithy_http::response::ParseStrictResponse for ListSuppressedDestinations {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_suppressed_destinations_error(response)
+            crate::operation_ser::parse_list_suppressed_destinations_error(response)
         } else {
-            crate::operation_deser::parse_list_suppressed_destinations_response(response)
+            crate::operation_ser::parse_list_suppressed_destinations_response(response)
         }
     }
 }
@@ -1575,9 +1567,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::operation_ser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::operation_ser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -1603,9 +1595,9 @@ impl smithy_http::response::ParseStrictResponse for PutAccountDedicatedIpWarmupA
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_account_dedicated_ip_warmup_attributes_error(response)
+            crate::operation_ser::parse_put_account_dedicated_ip_warmup_attributes_error(response)
         } else {
-            crate::operation_deser::parse_put_account_dedicated_ip_warmup_attributes_response(
+            crate::operation_ser::parse_put_account_dedicated_ip_warmup_attributes_response(
                 response,
             )
         }
@@ -1633,9 +1625,9 @@ impl smithy_http::response::ParseStrictResponse for PutAccountDetails {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_account_details_error(response)
+            crate::operation_ser::parse_put_account_details_error(response)
         } else {
-            crate::operation_deser::parse_put_account_details_response(response)
+            crate::operation_ser::parse_put_account_details_response(response)
         }
     }
 }
@@ -1661,9 +1653,9 @@ impl smithy_http::response::ParseStrictResponse for PutAccountSendingAttributes 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_account_sending_attributes_error(response)
+            crate::operation_ser::parse_put_account_sending_attributes_error(response)
         } else {
-            crate::operation_deser::parse_put_account_sending_attributes_response(response)
+            crate::operation_ser::parse_put_account_sending_attributes_response(response)
         }
     }
 }
@@ -1689,9 +1681,9 @@ impl smithy_http::response::ParseStrictResponse for PutAccountSuppressionAttribu
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_account_suppression_attributes_error(response)
+            crate::operation_ser::parse_put_account_suppression_attributes_error(response)
         } else {
-            crate::operation_deser::parse_put_account_suppression_attributes_response(response)
+            crate::operation_ser::parse_put_account_suppression_attributes_response(response)
         }
     }
 }
@@ -1718,15 +1710,15 @@ impl smithy_http::response::ParseStrictResponse for PutConfigurationSetDeliveryO
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_configuration_set_delivery_options_error(response)
+            crate::operation_ser::parse_put_configuration_set_delivery_options_error(response)
         } else {
-            crate::operation_deser::parse_put_configuration_set_delivery_options_response(response)
+            crate::operation_ser::parse_put_configuration_set_delivery_options_response(response)
         }
     }
 }
 
 /// <p>Enable or disable collection of reputation metrics for emails that you send using a
-/// particular configuration set in a specific AWS Region.</p>
+/// particular configuration set in a specific Amazon Web Services Region.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutConfigurationSetReputationOptions {
     _private: (),
@@ -1747,17 +1739,15 @@ impl smithy_http::response::ParseStrictResponse for PutConfigurationSetReputatio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_configuration_set_reputation_options_error(response)
+            crate::operation_ser::parse_put_configuration_set_reputation_options_error(response)
         } else {
-            crate::operation_deser::parse_put_configuration_set_reputation_options_response(
-                response,
-            )
+            crate::operation_ser::parse_put_configuration_set_reputation_options_response(response)
         }
     }
 }
 
 /// <p>Enable or disable email sending for messages that use a particular configuration set
-/// in a specific AWS Region.</p>
+/// in a specific Amazon Web Services Region.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutConfigurationSetSendingOptions {
     _private: (),
@@ -1778,9 +1768,9 @@ impl smithy_http::response::ParseStrictResponse for PutConfigurationSetSendingOp
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_configuration_set_sending_options_error(response)
+            crate::operation_ser::parse_put_configuration_set_sending_options_error(response)
         } else {
-            crate::operation_deser::parse_put_configuration_set_sending_options_response(response)
+            crate::operation_ser::parse_put_configuration_set_sending_options_response(response)
         }
     }
 }
@@ -1806,11 +1796,9 @@ impl smithy_http::response::ParseStrictResponse for PutConfigurationSetSuppressi
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_configuration_set_suppression_options_error(response)
+            crate::operation_ser::parse_put_configuration_set_suppression_options_error(response)
         } else {
-            crate::operation_deser::parse_put_configuration_set_suppression_options_response(
-                response,
-            )
+            crate::operation_ser::parse_put_configuration_set_suppression_options_response(response)
         }
     }
 }
@@ -1837,9 +1825,9 @@ impl smithy_http::response::ParseStrictResponse for PutConfigurationSetTrackingO
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_configuration_set_tracking_options_error(response)
+            crate::operation_ser::parse_put_configuration_set_tracking_options_error(response)
         } else {
-            crate::operation_deser::parse_put_configuration_set_tracking_options_response(response)
+            crate::operation_ser::parse_put_configuration_set_tracking_options_response(response)
         }
     }
 }
@@ -1847,7 +1835,7 @@ impl smithy_http::response::ParseStrictResponse for PutConfigurationSetTrackingO
 /// <p>Move a dedicated IP address to an existing dedicated IP pool.</p>
 /// <note>
 /// <p>The dedicated IP address that you specify must already exist, and must be
-/// associated with your AWS account.
+/// associated with your Amazon Web Services account.
 /// </p>
 /// <p>The dedicated IP pool you specify must already exist. You can create a new pool by
 /// using the <code>CreateDedicatedIpPool</code> operation.</p>
@@ -1872,9 +1860,9 @@ impl smithy_http::response::ParseStrictResponse for PutDedicatedIpInPool {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_dedicated_ip_in_pool_error(response)
+            crate::operation_ser::parse_put_dedicated_ip_in_pool_error(response)
         } else {
-            crate::operation_deser::parse_put_dedicated_ip_in_pool_response(response)
+            crate::operation_ser::parse_put_dedicated_ip_in_pool_response(response)
         }
     }
 }
@@ -1900,9 +1888,9 @@ impl smithy_http::response::ParseStrictResponse for PutDedicatedIpWarmupAttribut
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_dedicated_ip_warmup_attributes_error(response)
+            crate::operation_ser::parse_put_dedicated_ip_warmup_attributes_error(response)
         } else {
-            crate::operation_deser::parse_put_dedicated_ip_warmup_attributes_response(response)
+            crate::operation_ser::parse_put_dedicated_ip_warmup_attributes_response(response)
         }
     }
 }
@@ -1911,7 +1899,7 @@ impl smithy_http::response::ParseStrictResponse for PutDedicatedIpWarmupAttribut
 /// access to reputation, deliverability, and other metrics for the domains that you use to
 /// send email. You also gain the ability to perform predictive inbox placement tests.</p>
 /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition
-/// to any other fees that you accrue by using Amazon SES and other AWS services. For more
+/// to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more
 /// information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutDeliverabilityDashboardOption {
@@ -1933,9 +1921,9 @@ impl smithy_http::response::ParseStrictResponse for PutDeliverabilityDashboardOp
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_deliverability_dashboard_option_error(response)
+            crate::operation_ser::parse_put_deliverability_dashboard_option_error(response)
         } else {
-            crate::operation_deser::parse_put_deliverability_dashboard_option_response(response)
+            crate::operation_ser::parse_put_deliverability_dashboard_option_response(response)
         }
     }
 }
@@ -1962,11 +1950,11 @@ impl smithy_http::response::ParseStrictResponse for PutEmailIdentityConfiguratio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_email_identity_configuration_set_attributes_error(
+            crate::operation_ser::parse_put_email_identity_configuration_set_attributes_error(
                 response,
             )
         } else {
-            crate::operation_deser::parse_put_email_identity_configuration_set_attributes_response(
+            crate::operation_ser::parse_put_email_identity_configuration_set_attributes_response(
                 response,
             )
         }
@@ -1994,9 +1982,9 @@ impl smithy_http::response::ParseStrictResponse for PutEmailIdentityDkimAttribut
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_email_identity_dkim_attributes_error(response)
+            crate::operation_ser::parse_put_email_identity_dkim_attributes_error(response)
         } else {
-            crate::operation_deser::parse_put_email_identity_dkim_attributes_response(response)
+            crate::operation_ser::parse_put_email_identity_dkim_attributes_response(response)
         }
     }
 }
@@ -2007,6 +1995,9 @@ impl smithy_http::response::ParseStrictResponse for PutEmailIdentityDkimAttribut
 /// <li>
 /// <p>Update the signing attributes for an identity that uses Bring Your Own DKIM
 /// (BYODKIM).</p>
+/// </li>
+/// <li>
+/// <p>Update the key length that should be used for Easy DKIM.</p>
 /// </li>
 /// <li>
 /// <p>Change from using no DKIM authentication to using Easy DKIM.</p>
@@ -2041,9 +2032,9 @@ impl smithy_http::response::ParseStrictResponse for PutEmailIdentityDkimSigningA
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_email_identity_dkim_signing_attributes_error(response)
+            crate::operation_ser::parse_put_email_identity_dkim_signing_attributes_error(response)
         } else {
-            crate::operation_deser::parse_put_email_identity_dkim_signing_attributes_response(
+            crate::operation_ser::parse_put_email_identity_dkim_signing_attributes_response(
                 response,
             )
         }
@@ -2080,9 +2071,9 @@ impl smithy_http::response::ParseStrictResponse for PutEmailIdentityFeedbackAttr
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_email_identity_feedback_attributes_error(response)
+            crate::operation_ser::parse_put_email_identity_feedback_attributes_error(response)
         } else {
-            crate::operation_deser::parse_put_email_identity_feedback_attributes_response(response)
+            crate::operation_ser::parse_put_email_identity_feedback_attributes_response(response)
         }
     }
 }
@@ -2109,9 +2100,9 @@ impl smithy_http::response::ParseStrictResponse for PutEmailIdentityMailFromAttr
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_email_identity_mail_from_attributes_error(response)
+            crate::operation_ser::parse_put_email_identity_mail_from_attributes_error(response)
         } else {
-            crate::operation_deser::parse_put_email_identity_mail_from_attributes_response(response)
+            crate::operation_ser::parse_put_email_identity_mail_from_attributes_response(response)
         }
     }
 }
@@ -2137,9 +2128,9 @@ impl smithy_http::response::ParseStrictResponse for PutSuppressedDestination {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_suppressed_destination_error(response)
+            crate::operation_ser::parse_put_suppressed_destination_error(response)
         } else {
-            crate::operation_deser::parse_put_suppressed_destination_response(response)
+            crate::operation_ser::parse_put_suppressed_destination_response(response)
         }
     }
 }
@@ -2163,15 +2154,15 @@ impl smithy_http::response::ParseStrictResponse for SendBulkEmail {
         std::result::Result<crate::output::SendBulkEmailOutput, crate::error::SendBulkEmailError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_send_bulk_email_error(response)
+            crate::operation_ser::parse_send_bulk_email_error(response)
         } else {
-            crate::operation_deser::parse_send_bulk_email_response(response)
+            crate::operation_ser::parse_send_bulk_email_response(response)
         }
     }
 }
 
 /// <p>Adds an email address to the list of identities for your Amazon SES account in the current
-/// AWS Region and attempts to verify it. As a result of executing this operation, a
+/// Amazon Web Services Region and attempts to verify it. As a result of executing this operation, a
 /// customized verification email is sent to the specified address.</p>
 /// <p>To use this operation, you must first create a custom verification email template. For
 /// more information about creating and using custom verification email templates, see
@@ -2198,14 +2189,14 @@ impl smithy_http::response::ParseStrictResponse for SendCustomVerificationEmail 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_send_custom_verification_email_error(response)
+            crate::operation_ser::parse_send_custom_verification_email_error(response)
         } else {
-            crate::operation_deser::parse_send_custom_verification_email_response(response)
+            crate::operation_ser::parse_send_custom_verification_email_response(response)
         }
     }
 }
 
-/// <p>Sends an email message. You can use the Amazon SES API v2 to send two types of
+/// <p>Sends an email message. You can use the Amazon SES API v2 to send the following types of
 /// messages:</p>
 /// <ul>
 /// <li>
@@ -2246,9 +2237,9 @@ impl smithy_http::response::ParseStrictResponse for SendEmail {
     type Output = std::result::Result<crate::output::SendEmailOutput, crate::error::SendEmailError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_send_email_error(response)
+            crate::operation_ser::parse_send_email_error(response)
         } else {
-            crate::operation_deser::parse_send_email_response(response)
+            crate::operation_ser::parse_send_email_response(response)
         }
     }
 }
@@ -2280,9 +2271,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::operation_ser::parse_tag_resource_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::operation_ser::parse_tag_resource_response(response)
         }
     }
 }
@@ -2310,9 +2301,9 @@ impl smithy_http::response::ParseStrictResponse for TestRenderEmailTemplate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_test_render_email_template_error(response)
+            crate::operation_ser::parse_test_render_email_template_error(response)
         } else {
-            crate::operation_deser::parse_test_render_email_template_response(response)
+            crate::operation_ser::parse_test_render_email_template_response(response)
         }
     }
 }
@@ -2336,9 +2327,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::operation_ser::parse_untag_resource_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::operation_ser::parse_untag_resource_response(response)
         }
     }
 }
@@ -2370,9 +2361,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateConfigurationSetEventD
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_configuration_set_event_destination_error(response)
+            crate::operation_ser::parse_update_configuration_set_event_destination_error(response)
         } else {
-            crate::operation_deser::parse_update_configuration_set_event_destination_response(
+            crate::operation_ser::parse_update_configuration_set_event_destination_response(
                 response,
             )
         }
@@ -2400,9 +2391,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateContact {
         std::result::Result<crate::output::UpdateContactOutput, crate::error::UpdateContactError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_contact_error(response)
+            crate::operation_ser::parse_update_contact_error(response)
         } else {
-            crate::operation_deser::parse_update_contact_response(response)
+            crate::operation_ser::parse_update_contact_response(response)
         }
     }
 }
@@ -2428,9 +2419,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateContactList {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_contact_list_error(response)
+            crate::operation_ser::parse_update_contact_list_error(response)
         } else {
-            crate::operation_deser::parse_update_contact_list_response(response)
+            crate::operation_ser::parse_update_contact_list_response(response)
         }
     }
 }
@@ -2459,11 +2450,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateCustomVerificationEmai
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_custom_verification_email_template_error(response)
+            crate::operation_ser::parse_update_custom_verification_email_template_error(response)
         } else {
-            crate::operation_deser::parse_update_custom_verification_email_template_response(
-                response,
-            )
+            crate::operation_ser::parse_update_custom_verification_email_template_response(response)
         }
     }
 }
@@ -2500,16 +2489,16 @@ impl smithy_http::response::ParseStrictResponse for UpdateEmailIdentityPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_email_identity_policy_error(response)
+            crate::operation_ser::parse_update_email_identity_policy_error(response)
         } else {
-            crate::operation_deser::parse_update_email_identity_policy_response(response)
+            crate::operation_ser::parse_update_email_identity_policy_response(response)
         }
     }
 }
 
 /// <p>Updates an email template. Email templates enable you to send personalized email to
-/// one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
-/// Developer Guide</a>.</p>
+/// one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
+/// Guide</a>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEmailTemplate {
@@ -2531,9 +2520,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateEmailTemplate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_email_template_error(response)
+            crate::operation_ser::parse_update_email_template_error(response)
         } else {
-            crate::operation_deser::parse_update_email_template_response(response)
+            crate::operation_ser::parse_update_email_template_response(response)
         }
     }
 }

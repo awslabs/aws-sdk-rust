@@ -4,9 +4,8 @@
  */
 
 use super::{PayloadChecksumKind, SignatureLocation};
-use crate::http_request::canonical_request::header::{
-    X_AMZ_CONTENT_SHA_256, X_AMZ_DATE, X_AMZ_SECURITY_TOKEN,
-};
+use crate::http_request::canonical_request::header;
+use crate::http_request::canonical_request::param;
 use crate::http_request::canonical_request::{CanonicalRequest, StringToSign, HMAC_256};
 use crate::http_request::query_writer::QueryWriter;
 use crate::http_request::SigningParams;
@@ -199,18 +198,21 @@ fn calculate_signing_params<'a>(
 
     let values = creq.values.into_query_params().expect("signing with query");
     let mut signing_params = vec![
-        ("X-Amz-Algorithm", Cow::Borrowed(values.algorithm)),
-        ("X-Amz-Credential", Cow::Owned(values.credential)),
-        ("X-Amz-Date", Cow::Owned(values.date_time)),
-        ("X-Amz-Expires", Cow::Owned(values.expires)),
+        (param::X_AMZ_ALGORITHM, Cow::Borrowed(values.algorithm)),
+        (param::X_AMZ_CREDENTIAL, Cow::Owned(values.credential)),
+        (param::X_AMZ_DATE, Cow::Owned(values.date_time)),
+        (param::X_AMZ_EXPIRES, Cow::Owned(values.expires)),
         (
-            "X-Amz-SignedHeaders",
+            param::X_AMZ_SIGNED_HEADERS,
             Cow::Owned(values.signed_headers.as_str().into()),
         ),
-        ("X-Amz-Signature", Cow::Owned(signature.clone())),
+        (param::X_AMZ_SIGNATURE, Cow::Owned(signature.clone())),
     ];
     if let Some(security_token) = params.security_token {
-        signing_params.push((X_AMZ_SECURITY_TOKEN, Cow::Owned(security_token.to_string())));
+        signing_params.push((
+            param::X_AMZ_SECURITY_TOKEN,
+            Cow::Owned(security_token.to_string()),
+        ));
     }
     Ok((signing_params, signature))
 }
@@ -250,16 +252,20 @@ fn calculate_signing_headers<'a>(
     // Step 4: https://docs.aws.amazon.com/en_pv/general/latest/gr/sigv4-add-signature-to-request.html
     let values = creq.values.as_headers().expect("signing with headers");
     let mut headers = HeaderMap::new();
-    add_header(&mut headers, X_AMZ_DATE, &values.date_time);
+    add_header(&mut headers, header::X_AMZ_DATE, &values.date_time);
     headers.insert(
         "authorization",
         build_authorization_header(params.access_key, &creq, sts, &signature),
     );
     if params.settings.payload_checksum_kind == PayloadChecksumKind::XAmzSha256 {
-        add_header(&mut headers, X_AMZ_CONTENT_SHA_256, &values.content_sha256);
+        add_header(
+            &mut headers,
+            header::X_AMZ_CONTENT_SHA_256,
+            &values.content_sha256,
+        );
     }
     if let Some(security_token) = values.security_token {
-        add_header(&mut headers, X_AMZ_SECURITY_TOKEN, security_token);
+        add_header(&mut headers, header::X_AMZ_SECURITY_TOKEN, security_token);
     }
     Ok(SigningOutput::new(headers, signature))
 }

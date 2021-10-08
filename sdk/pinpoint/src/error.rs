@@ -613,6 +613,123 @@ impl std::error::Error for CreateImportJobError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct CreateInAppTemplateError {
+    pub kind: CreateInAppTemplateErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateInAppTemplateErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    MethodNotAllowedException(crate::error::MethodNotAllowedException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateInAppTemplateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateInAppTemplateErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateInAppTemplateErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            CreateInAppTemplateErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            CreateInAppTemplateErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
+            CreateInAppTemplateErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateInAppTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateInAppTemplateError {
+    fn code(&self) -> Option<&str> {
+        CreateInAppTemplateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateInAppTemplateError {
+    pub fn new(kind: CreateInAppTemplateErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateInAppTemplateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateInAppTemplateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInAppTemplateErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInAppTemplateErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInAppTemplateErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_method_not_allowed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInAppTemplateErrorKind::MethodNotAllowedException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInAppTemplateErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for CreateInAppTemplateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateInAppTemplateErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateInAppTemplateErrorKind::ForbiddenException(_inner) => Some(_inner),
+            CreateInAppTemplateErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            CreateInAppTemplateErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
+            CreateInAppTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateInAppTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct CreateJourneyError {
     pub kind: CreateJourneyErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -3076,6 +3193,141 @@ impl std::error::Error for DeleteGcmChannelError {
             DeleteGcmChannelErrorKind::PayloadTooLargeException(_inner) => Some(_inner),
             DeleteGcmChannelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteGcmChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteInAppTemplateError {
+    pub kind: DeleteInAppTemplateErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteInAppTemplateErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    MethodNotAllowedException(crate::error::MethodNotAllowedException),
+    NotFoundException(crate::error::NotFoundException),
+    PayloadTooLargeException(crate::error::PayloadTooLargeException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteInAppTemplateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteInAppTemplateErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteInAppTemplateErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DeleteInAppTemplateErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DeleteInAppTemplateErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
+            DeleteInAppTemplateErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteInAppTemplateErrorKind::PayloadTooLargeException(_inner) => _inner.fmt(f),
+            DeleteInAppTemplateErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteInAppTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteInAppTemplateError {
+    fn code(&self) -> Option<&str> {
+        DeleteInAppTemplateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteInAppTemplateError {
+    pub fn new(kind: DeleteInAppTemplateErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteInAppTemplateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteInAppTemplateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInAppTemplateErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInAppTemplateErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInAppTemplateErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_method_not_allowed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInAppTemplateErrorKind::MethodNotAllowedException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInAppTemplateErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_payload_too_large_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInAppTemplateErrorKind::PayloadTooLargeException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInAppTemplateErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteInAppTemplateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteInAppTemplateErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteInAppTemplateErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DeleteInAppTemplateErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DeleteInAppTemplateErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
+            DeleteInAppTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteInAppTemplateErrorKind::PayloadTooLargeException(_inner) => Some(_inner),
+            DeleteInAppTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteInAppTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -7627,6 +7879,264 @@ impl std::error::Error for GetImportJobsError {
             GetImportJobsErrorKind::PayloadTooLargeException(_inner) => Some(_inner),
             GetImportJobsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetImportJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetInAppMessagesError {
+    pub kind: GetInAppMessagesErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetInAppMessagesErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    MethodNotAllowedException(crate::error::MethodNotAllowedException),
+    NotFoundException(crate::error::NotFoundException),
+    PayloadTooLargeException(crate::error::PayloadTooLargeException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetInAppMessagesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetInAppMessagesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetInAppMessagesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            GetInAppMessagesErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            GetInAppMessagesErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
+            GetInAppMessagesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetInAppMessagesErrorKind::PayloadTooLargeException(_inner) => _inner.fmt(f),
+            GetInAppMessagesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetInAppMessagesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetInAppMessagesError {
+    fn code(&self) -> Option<&str> {
+        GetInAppMessagesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetInAppMessagesError {
+    pub fn new(kind: GetInAppMessagesErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetInAppMessagesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetInAppMessagesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInAppMessagesErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, GetInAppMessagesErrorKind::ForbiddenException(_))
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInAppMessagesErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_method_not_allowed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInAppMessagesErrorKind::MethodNotAllowedException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetInAppMessagesErrorKind::NotFoundException(_))
+    }
+    pub fn is_payload_too_large_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInAppMessagesErrorKind::PayloadTooLargeException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInAppMessagesErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for GetInAppMessagesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetInAppMessagesErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetInAppMessagesErrorKind::ForbiddenException(_inner) => Some(_inner),
+            GetInAppMessagesErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            GetInAppMessagesErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
+            GetInAppMessagesErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetInAppMessagesErrorKind::PayloadTooLargeException(_inner) => Some(_inner),
+            GetInAppMessagesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetInAppMessagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetInAppTemplateError {
+    pub kind: GetInAppTemplateErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetInAppTemplateErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    MethodNotAllowedException(crate::error::MethodNotAllowedException),
+    NotFoundException(crate::error::NotFoundException),
+    PayloadTooLargeException(crate::error::PayloadTooLargeException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetInAppTemplateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetInAppTemplateErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetInAppTemplateErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            GetInAppTemplateErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            GetInAppTemplateErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
+            GetInAppTemplateErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetInAppTemplateErrorKind::PayloadTooLargeException(_inner) => _inner.fmt(f),
+            GetInAppTemplateErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetInAppTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetInAppTemplateError {
+    fn code(&self) -> Option<&str> {
+        GetInAppTemplateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetInAppTemplateError {
+    pub fn new(kind: GetInAppTemplateErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetInAppTemplateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetInAppTemplateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInAppTemplateErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, GetInAppTemplateErrorKind::ForbiddenException(_))
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInAppTemplateErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_method_not_allowed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInAppTemplateErrorKind::MethodNotAllowedException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetInAppTemplateErrorKind::NotFoundException(_))
+    }
+    pub fn is_payload_too_large_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInAppTemplateErrorKind::PayloadTooLargeException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInAppTemplateErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for GetInAppTemplateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetInAppTemplateErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetInAppTemplateErrorKind::ForbiddenException(_inner) => Some(_inner),
+            GetInAppTemplateErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            GetInAppTemplateErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
+            GetInAppTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetInAppTemplateErrorKind::PayloadTooLargeException(_inner) => Some(_inner),
+            GetInAppTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetInAppTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -13107,6 +13617,141 @@ impl std::error::Error for UpdateGcmChannelError {
             UpdateGcmChannelErrorKind::PayloadTooLargeException(_inner) => Some(_inner),
             UpdateGcmChannelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateGcmChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateInAppTemplateError {
+    pub kind: UpdateInAppTemplateErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateInAppTemplateErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    MethodNotAllowedException(crate::error::MethodNotAllowedException),
+    NotFoundException(crate::error::NotFoundException),
+    PayloadTooLargeException(crate::error::PayloadTooLargeException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateInAppTemplateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateInAppTemplateErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateInAppTemplateErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            UpdateInAppTemplateErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            UpdateInAppTemplateErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
+            UpdateInAppTemplateErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateInAppTemplateErrorKind::PayloadTooLargeException(_inner) => _inner.fmt(f),
+            UpdateInAppTemplateErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateInAppTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateInAppTemplateError {
+    fn code(&self) -> Option<&str> {
+        UpdateInAppTemplateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateInAppTemplateError {
+    pub fn new(kind: UpdateInAppTemplateErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateInAppTemplateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateInAppTemplateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInAppTemplateErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInAppTemplateErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInAppTemplateErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_method_not_allowed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInAppTemplateErrorKind::MethodNotAllowedException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInAppTemplateErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_payload_too_large_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInAppTemplateErrorKind::PayloadTooLargeException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInAppTemplateErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateInAppTemplateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateInAppTemplateErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateInAppTemplateErrorKind::ForbiddenException(_inner) => Some(_inner),
+            UpdateInAppTemplateErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            UpdateInAppTemplateErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
+            UpdateInAppTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateInAppTemplateErrorKind::PayloadTooLargeException(_inner) => Some(_inner),
+            UpdateInAppTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateInAppTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

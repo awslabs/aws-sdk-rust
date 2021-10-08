@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>The Amazon Chime SDK Messaging APIs in this section allow software developers to send
 //! and receive messages in custom messaging applications. These APIs depend on the frameworks
 //! provided by the Amazon Chime SDK Identity APIs. For more information about the messaging
@@ -30,7 +31,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

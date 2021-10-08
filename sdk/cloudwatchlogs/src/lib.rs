@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>You can use Amazon CloudWatch Logs to monitor, store, and access your log files from
 //! EC2 instances, CloudTrail, and other sources. You can then retrieve the associated
 //! log data from CloudWatch Logs using the CloudWatch console, CloudWatch Logs commands in the
@@ -58,7 +59,6 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

@@ -1848,17 +1848,9 @@ impl FileLocation {
     }
 }
 
-/// <p>Specifies the details for the file location for the file being used in the workflow. Only applicable if you are using Amazon EFS for storage.</p>
+/// <p>Reserved for future use.</p>
 /// <p>
-/// You need to provide the file system ID and the pathname.
-/// The pathname can represent either a path or a file.
-/// This is determined by whether or not you end the path value with the forward slash (/) character.
-/// If the final character is "/", then your file is copied to the folder, and its name does not change.
-/// If, rather, the final character is alphanumeric, your uploaded file is renamed to the path value. In this case, if a file with that name already exists, it is overwritten.
 /// </p>
-/// <p>For example, if your path is <code>shared-files/bob/</code>, your uploaded files are copied to the <code>shared-files/bob/</code>, folder.
-/// If your path is <code>shared-files/today</code>, each uploaded file is copied to the <code>shared-files</code> folder and named <code>today</code>:
-/// each upload overwrites the previous version of the <code>bob</code> file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EfsFileLocation {
@@ -1923,16 +1915,6 @@ impl EfsFileLocation {
 }
 
 /// <p>Specifies the details for the file location for the file being used in the workflow. Only applicable if you are using S3 storage.</p>
-/// <p>
-/// You need to provide the bucket and key.
-/// The key can represent either a path or a file.
-/// This is determined by whether or not you end the key value with the forward slash (/) character.
-/// If the final character is "/", then your file is copied to the folder, and its name does not change.
-/// If, rather, the final character is alphanumeric, your uploaded file is renamed to the path value. In this case, if a file with that name already exists, it is overwritten.
-/// </p>
-/// <p>For example, if your path is <code>shared-files/bob/</code>, your uploaded files are copied to the <code>shared-files/bob/</code>, folder.
-/// If your path is <code>shared-files/today</code>, each uploaded file is copied to the <code>shared-files</code> folder and named <code>today</code>:
-/// each upload overwrites the previous version of the <i>bob</i> file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3FileLocation {
@@ -2158,7 +2140,7 @@ pub struct DescribedWorkflow {
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
     pub steps: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
-    /// <p>Specifies the steps (actions) to take if any errors are encountered during execution of the workflow.</p>
+    /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
     pub on_exception_steps: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
     /// <p>A unique identifier for the workflow.</p>
     pub workflow_id: std::option::Option<std::string::String>,
@@ -2313,7 +2295,7 @@ pub struct WorkflowStep {
     /// <p>A description</p>
     /// </li>
     /// <li>
-    /// <p>An S3 or EFS location for the destination of the file copy.</p>
+    /// <p>An S3 location for the destination of the file copy.</p>
     /// </li>
     /// <li>
     /// <p>A flag that indicates whether or not to overwrite an existing file of the same name.
@@ -2326,7 +2308,7 @@ pub struct WorkflowStep {
     /// Consists of the lambda function name, target, and timeout (in seconds).
     /// </p>
     pub custom_step_details: std::option::Option<crate::model::CustomStepDetails>,
-    /// <p>You need to specify the name of the file to be deleted.</p>
+    /// <p>Details for a step that deletes the file.</p>
     pub delete_step_details: std::option::Option<crate::model::DeleteStepDetails>,
     /// <p>Details for a step that creates one or more tags.</p>
     /// <p>You specify one or more tags: each tag contains a key/value pair.</p>
@@ -2397,7 +2379,7 @@ pub mod workflow_step {
         /// <p>A description</p>
         /// </li>
         /// <li>
-        /// <p>An S3 or EFS location for the destination of the file copy.</p>
+        /// <p>An S3 location for the destination of the file copy.</p>
         /// </li>
         /// <li>
         /// <p>A flag that indicates whether or not to overwrite an existing file of the same name.
@@ -2430,7 +2412,7 @@ pub mod workflow_step {
             self.custom_step_details = input;
             self
         }
-        /// <p>You need to specify the name of the file to be deleted.</p>
+        /// <p>Details for a step that deletes the file.</p>
         pub fn delete_step_details(mut self, input: crate::model::DeleteStepDetails) -> Self {
             self.delete_step_details = Some(input);
             self
@@ -2601,7 +2583,7 @@ impl S3Tag {
     }
 }
 
-/// <p>The name of the step, used to identify the step that is being deleted.</p>
+/// <p>The name of the step, used to identify the delete step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStepDetails {
@@ -2860,7 +2842,7 @@ impl AsRef<str> for OverwriteExisting {
 pub struct InputFileLocation {
     /// <p>Specifies the details for the S3 file being copied.</p>
     pub s3_file_location: std::option::Option<crate::model::S3InputFileLocation>,
-    /// <p>Specifies the details for the Amazon EFS file being copied.</p>
+    /// <p>Reserved for future use.</p>
     pub efs_file_location: std::option::Option<crate::model::EfsFileLocation>,
 }
 impl std::fmt::Debug for InputFileLocation {
@@ -2893,7 +2875,7 @@ pub mod input_file_location {
             self.s3_file_location = input;
             self
         }
-        /// <p>Specifies the details for the Amazon EFS file being copied.</p>
+        /// <p>Reserved for future use.</p>
         pub fn efs_file_location(mut self, input: crate::model::EfsFileLocation) -> Self {
             self.efs_file_location = Some(input);
             self
@@ -2921,11 +2903,21 @@ impl InputFileLocation {
     }
 }
 
-/// <p>Specifies the details for the S3 file being copied.</p>
+/// <p>Specifies the customer input S3 file location. If it is used inside <code>copyStepDetails.DestinationFileLocation</code>, it should be the S3 copy destination.</p>
+/// <p>
+/// You need to provide the bucket and key.
+/// The key can represent either a path or a file.
+/// This is determined by whether or not you end the key value with the forward slash (/) character.
+/// If the final character is "/", then your file is copied to the folder, and its name does not change.
+/// If, rather, the final character is alphanumeric, your uploaded file is renamed to the path value. In this case, if a file with that name already exists, it is overwritten.
+/// </p>
+/// <p>For example, if your path is <code>shared-files/bob/</code>, your uploaded files are copied to the <code>shared-files/bob/</code>, folder.
+/// If your path is <code>shared-files/today</code>, each uploaded file is copied to the <code>shared-files</code> folder and named <code>today</code>:
+/// each upload overwrites the previous version of the <i>bob</i> file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3InputFileLocation {
-    /// <p>Specifies the S3 bucket that contains the file being copied.</p>
+    /// <p>Specifies the S3 bucket for the customer input file.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The name assigned to the file when it was created in S3. You use the object key to retrieve the object.</p>
     pub key: std::option::Option<std::string::String>,
@@ -2948,7 +2940,7 @@ pub mod s3_input_file_location {
         pub(crate) key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the S3 bucket that contains the file being copied.</p>
+        /// <p>Specifies the S3 bucket for the customer input file.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
@@ -4104,7 +4096,7 @@ impl DescribedExecution {
 pub struct ExecutionResults {
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
     pub steps: std::option::Option<std::vec::Vec<crate::model::ExecutionStepResult>>,
-    /// <p>Specifies the steps (actions) to take if any errors are encountered during execution of the workflow.</p>
+    /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
     pub on_exception_steps: std::option::Option<std::vec::Vec<crate::model::ExecutionStepResult>>,
 }
 impl std::fmt::Debug for ExecutionResults {

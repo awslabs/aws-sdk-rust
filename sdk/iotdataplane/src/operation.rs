@@ -22,9 +22,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteThingShadow {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_thing_shadow_error(response)
+            crate::operation_ser::parse_delete_thing_shadow_error(response)
         } else {
-            crate::operation_deser::parse_delete_thing_shadow_response(response)
+            crate::operation_ser::parse_delete_thing_shadow_response(response)
         }
     }
 }
@@ -56,9 +56,9 @@ impl smithy_http::response::ParseStrictResponse for GetRetainedMessage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_retained_message_error(response)
+            crate::operation_ser::parse_get_retained_message_error(response)
         } else {
-            crate::operation_deser::parse_get_retained_message_response(response)
+            crate::operation_ser::parse_get_retained_message_response(response)
         }
     }
 }
@@ -85,9 +85,9 @@ impl smithy_http::response::ParseStrictResponse for GetThingShadow {
         std::result::Result<crate::output::GetThingShadowOutput, crate::error::GetThingShadowError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_thing_shadow_error(response)
+            crate::operation_ser::parse_get_thing_shadow_error(response)
         } else {
-            crate::operation_deser::parse_get_thing_shadow_response(response)
+            crate::operation_ser::parse_get_thing_shadow_response(response)
         }
     }
 }
@@ -114,9 +114,9 @@ impl smithy_http::response::ParseStrictResponse for ListNamedShadowsForThing {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_named_shadows_for_thing_error(response)
+            crate::operation_ser::parse_list_named_shadows_for_thing_error(response)
         } else {
-            crate::operation_deser::parse_list_named_shadows_for_thing_response(response)
+            crate::operation_ser::parse_list_named_shadows_for_thing_response(response)
         }
     }
 }
@@ -151,9 +151,9 @@ impl smithy_http::response::ParseStrictResponse for ListRetainedMessages {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_retained_messages_error(response)
+            crate::operation_ser::parse_list_retained_messages_error(response)
         } else {
-            crate::operation_deser::parse_list_retained_messages_response(response)
+            crate::operation_ser::parse_list_retained_messages_response(response)
         }
     }
 }
@@ -182,9 +182,9 @@ impl smithy_http::response::ParseStrictResponse for Publish {
     type Output = std::result::Result<crate::output::PublishOutput, crate::error::PublishError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_publish_error(response)
+            crate::operation_ser::parse_publish_error(response)
         } else {
-            crate::operation_deser::parse_publish_response(response)
+            crate::operation_ser::parse_publish_response(response)
         }
     }
 }
@@ -213,9 +213,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateThingShadow {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_thing_shadow_error(response)
+            crate::operation_ser::parse_update_thing_shadow_error(response)
         } else {
-            crate::operation_deser::parse_update_thing_shadow_response(response)
+            crate::operation_ser::parse_update_thing_shadow_response(response)
         }
     }
 }

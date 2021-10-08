@@ -1,3 +1,8 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
 //! Type-erased variants of [`Client`] and friends.
 
 // These types are technically public in that they're reachable from the public trait impls on
