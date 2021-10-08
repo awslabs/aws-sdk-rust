@@ -8,7 +8,7 @@ The SDK is code generated from [Smithy models](https://awslabs.github.io/smithy/
 
 ## Getting Started with the SDK
 
-> Examples are availble for many services and operations, check out the [examples folder](https://github.com/awslabs/aws-sdk-rust/tree/main/sdk/examples)
+> Examples are availble for many services and operations, check out the [examples folder](https://github.com/awslabs/aws-sdk-rust/tree/main/sdk/examples).
 
 
 The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio) as a dependency within your Rust project to execute asynchronous code. We will not push the SDK to **crates.io** during Alpha; you must use it via a Git dependency.
