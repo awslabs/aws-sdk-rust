@@ -8,6 +8,9 @@ The SDK is code generated from [Smithy models](https://awslabs.github.io/smithy/
 
 ## Getting Started with the SDK
 
+> Examples are availble for many services and operations, check out the [examples folder](https://github.com/awslabs/aws-sdk-rust/tree/main/sdk/examples).
+
+
 The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio) as a dependency within your Rust project to execute asynchronous code. We will not push the SDK to **crates.io** during Alpha; you must use it via a Git dependency.
 
 1. Create a new Rust project: `cargo new sdk-example`
@@ -22,9 +25,10 @@ tokio = { version = "1", features = ["full"] }
 
 3. Provide your AWS credentials with the default credential provider chain, which currently looks in:
    - Environment variables: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION`
-   - Web Identity Token credentials from the environment or container
+   - Web Identity Token credentials from the environment or container (including EKS)
    - The default credentials files located in `~/.aws/config` and `~/.aws/credentials` (location can vary per platform)
-**Note:** SSO, ECS, IMDS, and EKS credential sources are not supported yet.
+   - EC2 Instance Metadata Service (IAM Roles attached to instance)
+**Note:** SSO, and ECS credential sources are not supported yet.
 
 4. Make a request using DynamoDB
 
