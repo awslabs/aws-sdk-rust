@@ -15,6 +15,7 @@ use std::task::{Context, Poll};
 use tokio::net::TcpStream;
 
 use crate::erase::boxclone::BoxFuture;
+use smithy_http::result::ConnectorError;
 use tower::BoxError;
 
 /// A service that will never return whatever it is you want
@@ -104,7 +105,7 @@ mod stream {
     }
 }
 
-/// A service where the underyling TCP connection never connects
+/// A service where the underlying TCP connection never connects
 pub type NeverConnected = NeverService<TcpStream>;
 
 /// A service that will connect but never send any data
@@ -133,7 +134,7 @@ impl tower::Service<Uri> for NeverReplies {
 
 impl<Req, Resp> tower::Service<Req> for NeverService<Resp> {
     type Response = Resp;
-    type Error = BoxError;
+    type Error = ConnectorError;
     type Future = BoxFuture<Self::Response, Self::Error>;
 
     fn poll_ready(&mut self, _cx: &mut Context<'_>) -> Poll<Result<(), Self::Error>> {

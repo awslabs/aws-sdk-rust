@@ -31,9 +31,9 @@ impl smithy_http::response::ParseStrictResponse for CreateCanary {
         std::result::Result<crate::output::CreateCanaryOutput, crate::error::CreateCanaryError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_canary_error(response)
+            crate::operation_deser::parse_create_canary_error(response)
         } else {
-            crate::operation_ser::parse_create_canary_response(response)
+            crate::operation_deser::parse_create_canary_response(response)
         }
     }
 }
@@ -90,9 +90,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteCanary {
         std::result::Result<crate::output::DeleteCanaryOutput, crate::error::DeleteCanaryError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_canary_error(response)
+            crate::operation_deser::parse_delete_canary_error(response)
         } else {
-            crate::operation_ser::parse_delete_canary_response(response)
+            crate::operation_deser::parse_delete_canary_response(response)
         }
     }
 }
@@ -123,9 +123,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeCanaries {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_canaries_error(response)
+            crate::operation_deser::parse_describe_canaries_error(response)
         } else {
-            crate::operation_ser::parse_describe_canaries_response(response)
+            crate::operation_deser::parse_describe_canaries_response(response)
         }
     }
 }
@@ -151,9 +151,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeCanariesLastRun {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_canaries_last_run_error(response)
+            crate::operation_deser::parse_describe_canaries_last_run_error(response)
         } else {
-            crate::operation_ser::parse_describe_canaries_last_run_response(response)
+            crate::operation_deser::parse_describe_canaries_last_run_response(response)
         }
     }
 }
@@ -181,9 +181,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeRuntimeVersions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_runtime_versions_error(response)
+            crate::operation_deser::parse_describe_runtime_versions_error(response)
         } else {
-            crate::operation_ser::parse_describe_runtime_versions_response(response)
+            crate::operation_deser::parse_describe_runtime_versions_response(response)
         }
     }
 }
@@ -208,9 +208,9 @@ impl smithy_http::response::ParseStrictResponse for GetCanary {
     type Output = std::result::Result<crate::output::GetCanaryOutput, crate::error::GetCanaryError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_canary_error(response)
+            crate::operation_deser::parse_get_canary_error(response)
         } else {
-            crate::operation_ser::parse_get_canary_response(response)
+            crate::operation_deser::parse_get_canary_response(response)
         }
     }
 }
@@ -234,9 +234,9 @@ impl smithy_http::response::ParseStrictResponse for GetCanaryRuns {
         std::result::Result<crate::output::GetCanaryRunsOutput, crate::error::GetCanaryRunsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_canary_runs_error(response)
+            crate::operation_deser::parse_get_canary_runs_error(response)
         } else {
-            crate::operation_ser::parse_get_canary_runs_response(response)
+            crate::operation_deser::parse_get_canary_runs_response(response)
         }
     }
 }
@@ -262,9 +262,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -290,9 +290,9 @@ impl smithy_http::response::ParseStrictResponse for StartCanary {
         std::result::Result<crate::output::StartCanaryOutput, crate::error::StartCanaryError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_start_canary_error(response)
+            crate::operation_deser::parse_start_canary_error(response)
         } else {
-            crate::operation_ser::parse_start_canary_response(response)
+            crate::operation_deser::parse_start_canary_response(response)
         }
     }
 }
@@ -321,9 +321,9 @@ impl smithy_http::response::ParseStrictResponse for StopCanary {
         std::result::Result<crate::output::StopCanaryOutput, crate::error::StopCanaryError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_stop_canary_error(response)
+            crate::operation_deser::parse_stop_canary_error(response)
         } else {
-            crate::operation_ser::parse_stop_canary_response(response)
+            crate::operation_deser::parse_stop_canary_response(response)
         }
     }
 }
@@ -356,9 +356,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -382,9 +382,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -412,9 +412,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateCanary {
         std::result::Result<crate::output::UpdateCanaryOutput, crate::error::UpdateCanaryError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_canary_error(response)
+            crate::operation_deser::parse_update_canary_error(response)
         } else {
-            crate::operation_ser::parse_update_canary_response(response)
+            crate::operation_deser::parse_update_canary_response(response)
         }
     }
 }

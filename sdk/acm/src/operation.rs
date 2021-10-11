@@ -33,9 +33,9 @@ impl smithy_http::response::ParseStrictResponse for AddTagsToCertificate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_add_tags_to_certificate_error(response)
+            crate::operation_deser::parse_add_tags_to_certificate_error(response)
         } else {
-            crate::operation_ser::parse_add_tags_to_certificate_response(response)
+            crate::operation_deser::parse_add_tags_to_certificate_response(response)
         }
     }
 }
@@ -68,9 +68,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteCertificate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_certificate_error(response)
+            crate::operation_deser::parse_delete_certificate_error(response)
         } else {
-            crate::operation_ser::parse_delete_certificate_response(response)
+            crate::operation_deser::parse_delete_certificate_response(response)
         }
     }
 }
@@ -96,9 +96,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeCertificate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_certificate_error(response)
+            crate::operation_deser::parse_describe_certificate_error(response)
         } else {
-            crate::operation_ser::parse_describe_certificate_response(response)
+            crate::operation_deser::parse_describe_certificate_response(response)
         }
     }
 }
@@ -130,9 +130,9 @@ impl smithy_http::response::ParseStrictResponse for ExportCertificate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_export_certificate_error(response)
+            crate::operation_deser::parse_export_certificate_error(response)
         } else {
-            crate::operation_ser::parse_export_certificate_response(response)
+            crate::operation_deser::parse_export_certificate_response(response)
         }
     }
 }
@@ -159,9 +159,9 @@ impl smithy_http::response::ParseStrictResponse for GetAccountConfiguration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_account_configuration_error(response)
+            crate::operation_deser::parse_get_account_configuration_error(response)
         } else {
-            crate::operation_ser::parse_get_account_configuration_response(response)
+            crate::operation_deser::parse_get_account_configuration_response(response)
         }
     }
 }
@@ -188,9 +188,9 @@ impl smithy_http::response::ParseStrictResponse for GetCertificate {
         std::result::Result<crate::output::GetCertificateOutput, crate::error::GetCertificateError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_certificate_error(response)
+            crate::operation_deser::parse_get_certificate_error(response)
         } else {
-            crate::operation_ser::parse_get_certificate_response(response)
+            crate::operation_deser::parse_get_certificate_response(response)
         }
     }
 }
@@ -283,9 +283,9 @@ impl smithy_http::response::ParseStrictResponse for ImportCertificate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_import_certificate_error(response)
+            crate::operation_deser::parse_import_certificate_error(response)
         } else {
-            crate::operation_ser::parse_import_certificate_response(response)
+            crate::operation_deser::parse_import_certificate_response(response)
         }
     }
 }
@@ -314,9 +314,9 @@ impl smithy_http::response::ParseStrictResponse for ListCertificates {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_certificates_error(response)
+            crate::operation_deser::parse_list_certificates_error(response)
         } else {
-            crate::operation_ser::parse_list_certificates_response(response)
+            crate::operation_deser::parse_list_certificates_response(response)
         }
     }
 }
@@ -344,9 +344,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForCertificate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_certificate_error(response)
+            crate::operation_deser::parse_list_tags_for_certificate_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_certificate_response(response)
+            crate::operation_deser::parse_list_tags_for_certificate_response(response)
         }
     }
 }
@@ -380,9 +380,9 @@ impl smithy_http::response::ParseStrictResponse for PutAccountConfiguration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_account_configuration_error(response)
+            crate::operation_deser::parse_put_account_configuration_error(response)
         } else {
-            crate::operation_ser::parse_put_account_configuration_response(response)
+            crate::operation_deser::parse_put_account_configuration_response(response)
         }
     }
 }
@@ -413,9 +413,9 @@ impl smithy_http::response::ParseStrictResponse for RemoveTagsFromCertificate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_remove_tags_from_certificate_error(response)
+            crate::operation_deser::parse_remove_tags_from_certificate_error(response)
         } else {
-            crate::operation_ser::parse_remove_tags_from_certificate_response(response)
+            crate::operation_deser::parse_remove_tags_from_certificate_response(response)
         }
     }
 }
@@ -445,9 +445,9 @@ impl smithy_http::response::ParseStrictResponse for RenewCertificate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_renew_certificate_error(response)
+            crate::operation_deser::parse_renew_certificate_error(response)
         } else {
-            crate::operation_ser::parse_renew_certificate_response(response)
+            crate::operation_deser::parse_renew_certificate_response(response)
         }
     }
 }
@@ -486,9 +486,9 @@ impl smithy_http::response::ParseStrictResponse for RequestCertificate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_request_certificate_error(response)
+            crate::operation_deser::parse_request_certificate_error(response)
         } else {
-            crate::operation_ser::parse_request_certificate_response(response)
+            crate::operation_deser::parse_request_certificate_response(response)
         }
     }
 }
@@ -522,9 +522,9 @@ impl smithy_http::response::ParseStrictResponse for ResendValidationEmail {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_resend_validation_email_error(response)
+            crate::operation_deser::parse_resend_validation_email_error(response)
         } else {
-            crate::operation_ser::parse_resend_validation_email_response(response)
+            crate::operation_deser::parse_resend_validation_email_response(response)
         }
     }
 }
@@ -553,9 +553,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateCertificateOptions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_certificate_options_error(response)
+            crate::operation_deser::parse_update_certificate_options_error(response)
         } else {
-            crate::operation_ser::parse_update_certificate_options_response(response)
+            crate::operation_deser::parse_update_certificate_options_response(response)
         }
     }
 }

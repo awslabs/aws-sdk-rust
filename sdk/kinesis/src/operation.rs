@@ -28,9 +28,9 @@ impl smithy_http::response::ParseStrictResponse for AddTagsToStream {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_add_tags_to_stream_error(response)
+            crate::operation_deser::parse_add_tags_to_stream_error(response)
         } else {
-            crate::operation_ser::parse_add_tags_to_stream_response(response)
+            crate::operation_deser::parse_add_tags_to_stream_response(response)
         }
     }
 }
@@ -92,9 +92,9 @@ impl smithy_http::response::ParseStrictResponse for CreateStream {
         std::result::Result<crate::output::CreateStreamOutput, crate::error::CreateStreamError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_stream_error(response)
+            crate::operation_deser::parse_create_stream_error(response)
         } else {
-            crate::operation_ser::parse_create_stream_response(response)
+            crate::operation_deser::parse_create_stream_response(response)
         }
     }
 }
@@ -125,9 +125,9 @@ impl smithy_http::response::ParseStrictResponse for DecreaseStreamRetentionPerio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_decrease_stream_retention_period_error(response)
+            crate::operation_deser::parse_decrease_stream_retention_period_error(response)
         } else {
-            crate::operation_ser::parse_decrease_stream_retention_period_response(response)
+            crate::operation_deser::parse_decrease_stream_retention_period_response(response)
         }
     }
 }
@@ -169,9 +169,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteStream {
         std::result::Result<crate::output::DeleteStreamOutput, crate::error::DeleteStreamError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_stream_error(response)
+            crate::operation_deser::parse_delete_stream_error(response)
         } else {
-            crate::operation_ser::parse_delete_stream_response(response)
+            crate::operation_deser::parse_delete_stream_response(response)
         }
     }
 }
@@ -204,9 +204,9 @@ impl smithy_http::response::ParseStrictResponse for DeregisterStreamConsumer {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_deregister_stream_consumer_error(response)
+            crate::operation_deser::parse_deregister_stream_consumer_error(response)
         } else {
-            crate::operation_ser::parse_deregister_stream_consumer_response(response)
+            crate::operation_deser::parse_deregister_stream_consumer_response(response)
         }
     }
 }
@@ -233,9 +233,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeLimits {
         std::result::Result<crate::output::DescribeLimitsOutput, crate::error::DescribeLimitsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_limits_error(response)
+            crate::operation_deser::parse_describe_limits_error(response)
         } else {
-            crate::operation_ser::parse_describe_limits_response(response)
+            crate::operation_deser::parse_describe_limits_response(response)
         }
     }
 }
@@ -273,9 +273,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeStream {
         std::result::Result<crate::output::DescribeStreamOutput, crate::error::DescribeStreamError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_stream_error(response)
+            crate::operation_deser::parse_describe_stream_error(response)
         } else {
-            crate::operation_ser::parse_describe_stream_response(response)
+            crate::operation_deser::parse_describe_stream_response(response)
         }
     }
 }
@@ -308,9 +308,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeStreamConsumer {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_stream_consumer_error(response)
+            crate::operation_deser::parse_describe_stream_consumer_error(response)
         } else {
-            crate::operation_ser::parse_describe_stream_consumer_response(response)
+            crate::operation_deser::parse_describe_stream_consumer_response(response)
         }
     }
 }
@@ -343,9 +343,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeStreamSummary {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_stream_summary_error(response)
+            crate::operation_deser::parse_describe_stream_summary_error(response)
         } else {
-            crate::operation_ser::parse_describe_stream_summary_response(response)
+            crate::operation_deser::parse_describe_stream_summary_response(response)
         }
     }
 }
@@ -371,9 +371,9 @@ impl smithy_http::response::ParseStrictResponse for DisableEnhancedMonitoring {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_disable_enhanced_monitoring_error(response)
+            crate::operation_deser::parse_disable_enhanced_monitoring_error(response)
         } else {
-            crate::operation_ser::parse_disable_enhanced_monitoring_response(response)
+            crate::operation_deser::parse_disable_enhanced_monitoring_response(response)
         }
     }
 }
@@ -399,9 +399,9 @@ impl smithy_http::response::ParseStrictResponse for EnableEnhancedMonitoring {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_enable_enhanced_monitoring_error(response)
+            crate::operation_deser::parse_enable_enhanced_monitoring_error(response)
         } else {
-            crate::operation_ser::parse_enable_enhanced_monitoring_response(response)
+            crate::operation_deser::parse_enable_enhanced_monitoring_response(response)
         }
     }
 }
@@ -470,9 +470,9 @@ impl smithy_http::response::ParseStrictResponse for GetRecords {
         std::result::Result<crate::output::GetRecordsOutput, crate::error::GetRecordsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_records_error(response)
+            crate::operation_deser::parse_get_records_error(response)
         } else {
-            crate::operation_ser::parse_get_records_response(response)
+            crate::operation_deser::parse_get_records_response(response)
         }
     }
 }
@@ -531,9 +531,9 @@ impl smithy_http::response::ParseStrictResponse for GetShardIterator {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_shard_iterator_error(response)
+            crate::operation_deser::parse_get_shard_iterator_error(response)
         } else {
-            crate::operation_ser::parse_get_shard_iterator_response(response)
+            crate::operation_deser::parse_get_shard_iterator_response(response)
         }
     }
 }
@@ -567,9 +567,9 @@ impl smithy_http::response::ParseStrictResponse for IncreaseStreamRetentionPerio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_increase_stream_retention_period_error(response)
+            crate::operation_deser::parse_increase_stream_retention_period_error(response)
         } else {
-            crate::operation_ser::parse_increase_stream_retention_period_response(response)
+            crate::operation_deser::parse_increase_stream_retention_period_response(response)
         }
     }
 }
@@ -601,9 +601,9 @@ impl smithy_http::response::ParseStrictResponse for ListShards {
         std::result::Result<crate::output::ListShardsOutput, crate::error::ListShardsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_shards_error(response)
+            crate::operation_deser::parse_list_shards_error(response)
         } else {
-            crate::operation_ser::parse_list_shards_response(response)
+            crate::operation_deser::parse_list_shards_response(response)
         }
     }
 }
@@ -631,9 +631,9 @@ impl smithy_http::response::ParseStrictResponse for ListStreamConsumers {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_stream_consumers_error(response)
+            crate::operation_deser::parse_list_stream_consumers_error(response)
         } else {
-            crate::operation_ser::parse_list_stream_consumers_response(response)
+            crate::operation_deser::parse_list_stream_consumers_response(response)
         }
     }
 }
@@ -672,9 +672,9 @@ impl smithy_http::response::ParseStrictResponse for ListStreams {
         std::result::Result<crate::output::ListStreamsOutput, crate::error::ListStreamsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_streams_error(response)
+            crate::operation_deser::parse_list_streams_error(response)
         } else {
-            crate::operation_ser::parse_list_streams_response(response)
+            crate::operation_deser::parse_list_streams_response(response)
         }
     }
 }
@@ -701,9 +701,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForStream {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_stream_error(response)
+            crate::operation_deser::parse_list_tags_for_stream_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_stream_response(response)
+            crate::operation_deser::parse_list_tags_for_stream_response(response)
         }
     }
 }
@@ -762,9 +762,9 @@ impl smithy_http::response::ParseStrictResponse for MergeShards {
         std::result::Result<crate::output::MergeShardsOutput, crate::error::MergeShardsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_merge_shards_error(response)
+            crate::operation_deser::parse_merge_shards_error(response)
         } else {
-            crate::operation_ser::parse_merge_shards_response(response)
+            crate::operation_deser::parse_merge_shards_response(response)
         }
     }
 }
@@ -822,9 +822,9 @@ impl smithy_http::response::ParseStrictResponse for PutRecord {
     type Output = std::result::Result<crate::output::PutRecordOutput, crate::error::PutRecordError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_record_error(response)
+            crate::operation_deser::parse_put_record_error(response)
         } else {
-            crate::operation_ser::parse_put_record_response(response)
+            crate::operation_deser::parse_put_record_response(response)
         }
     }
 }
@@ -903,9 +903,9 @@ impl smithy_http::response::ParseStrictResponse for PutRecords {
         std::result::Result<crate::output::PutRecordsOutput, crate::error::PutRecordsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_records_error(response)
+            crate::operation_deser::parse_put_records_error(response)
         } else {
-            crate::operation_ser::parse_put_records_response(response)
+            crate::operation_deser::parse_put_records_response(response)
         }
     }
 }
@@ -944,9 +944,9 @@ impl smithy_http::response::ParseStrictResponse for RegisterStreamConsumer {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_register_stream_consumer_error(response)
+            crate::operation_deser::parse_register_stream_consumer_error(response)
         } else {
-            crate::operation_ser::parse_register_stream_consumer_response(response)
+            crate::operation_deser::parse_register_stream_consumer_response(response)
         }
     }
 }
@@ -977,9 +977,9 @@ impl smithy_http::response::ParseStrictResponse for RemoveTagsFromStream {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_remove_tags_from_stream_error(response)
+            crate::operation_deser::parse_remove_tags_from_stream_error(response)
         } else {
-            crate::operation_ser::parse_remove_tags_from_stream_response(response)
+            crate::operation_deser::parse_remove_tags_from_stream_response(response)
         }
     }
 }
@@ -1044,9 +1044,9 @@ impl smithy_http::response::ParseStrictResponse for SplitShard {
         std::result::Result<crate::output::SplitShardOutput, crate::error::SplitShardError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_split_shard_error(response)
+            crate::operation_deser::parse_split_shard_error(response)
         } else {
-            crate::operation_ser::parse_split_shard_response(response)
+            crate::operation_deser::parse_split_shard_response(response)
         }
     }
 }
@@ -1087,9 +1087,9 @@ impl smithy_http::response::ParseStrictResponse for StartStreamEncryption {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_start_stream_encryption_error(response)
+            crate::operation_deser::parse_start_stream_encryption_error(response)
         } else {
-            crate::operation_ser::parse_start_stream_encryption_response(response)
+            crate::operation_deser::parse_start_stream_encryption_response(response)
         }
     }
 }
@@ -1130,9 +1130,9 @@ impl smithy_http::response::ParseStrictResponse for StopStreamEncryption {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_stop_stream_encryption_error(response)
+            crate::operation_deser::parse_stop_stream_encryption_error(response)
         } else {
-            crate::operation_ser::parse_stop_stream_encryption_response(response)
+            crate::operation_deser::parse_stop_stream_encryption_response(response)
         }
     }
 }
@@ -1201,9 +1201,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateShardCount {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_shard_count_error(response)
+            crate::operation_deser::parse_update_shard_count_error(response)
         } else {
-            crate::operation_ser::parse_update_shard_count_response(response)
+            crate::operation_deser::parse_update_shard_count_response(response)
         }
     }
 }

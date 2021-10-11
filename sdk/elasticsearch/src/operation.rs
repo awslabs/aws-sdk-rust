@@ -21,11 +21,11 @@ impl smithy_http::response::ParseStrictResponse for AcceptInboundCrossClusterSea
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_accept_inbound_cross_cluster_search_connection_error(
+            crate::operation_deser::parse_accept_inbound_cross_cluster_search_connection_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_accept_inbound_cross_cluster_search_connection_response(
+            crate::operation_deser::parse_accept_inbound_cross_cluster_search_connection_response(
                 response,
             )
         }
@@ -51,9 +51,9 @@ impl smithy_http::response::ParseStrictResponse for AddTags {
     type Output = std::result::Result<crate::output::AddTagsOutput, crate::error::AddTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_add_tags_error(response)
+            crate::operation_deser::parse_add_tags_error(response)
         } else {
-            crate::operation_ser::parse_add_tags_response(response)
+            crate::operation_deser::parse_add_tags_response(response)
         }
     }
 }
@@ -79,9 +79,9 @@ impl smithy_http::response::ParseStrictResponse for AssociatePackage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_associate_package_error(response)
+            crate::operation_deser::parse_associate_package_error(response)
         } else {
-            crate::operation_ser::parse_associate_package_response(response)
+            crate::operation_deser::parse_associate_package_response(response)
         }
     }
 }
@@ -107,9 +107,11 @@ impl smithy_http::response::ParseStrictResponse for CancelElasticsearchServiceSo
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_cancel_elasticsearch_service_software_update_error(response)
+            crate::operation_deser::parse_cancel_elasticsearch_service_software_update_error(
+                response,
+            )
         } else {
-            crate::operation_ser::parse_cancel_elasticsearch_service_software_update_response(
+            crate::operation_deser::parse_cancel_elasticsearch_service_software_update_response(
                 response,
             )
         }
@@ -138,9 +140,9 @@ impl smithy_http::response::ParseStrictResponse for CreateElasticsearchDomain {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_elasticsearch_domain_error(response)
+            crate::operation_deser::parse_create_elasticsearch_domain_error(response)
         } else {
-            crate::operation_ser::parse_create_elasticsearch_domain_response(response)
+            crate::operation_deser::parse_create_elasticsearch_domain_response(response)
         }
     }
 }
@@ -167,11 +169,11 @@ impl smithy_http::response::ParseStrictResponse for CreateOutboundCrossClusterSe
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_outbound_cross_cluster_search_connection_error(
+            crate::operation_deser::parse_create_outbound_cross_cluster_search_connection_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_create_outbound_cross_cluster_search_connection_response(
+            crate::operation_deser::parse_create_outbound_cross_cluster_search_connection_response(
                 response,
             )
         }
@@ -197,9 +199,9 @@ impl smithy_http::response::ParseStrictResponse for CreatePackage {
         std::result::Result<crate::output::CreatePackageOutput, crate::error::CreatePackageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_package_error(response)
+            crate::operation_deser::parse_create_package_error(response)
         } else {
-            crate::operation_ser::parse_create_package_response(response)
+            crate::operation_deser::parse_create_package_response(response)
         }
     }
 }
@@ -225,9 +227,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteElasticsearchDomain {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_elasticsearch_domain_error(response)
+            crate::operation_deser::parse_delete_elasticsearch_domain_error(response)
         } else {
-            crate::operation_ser::parse_delete_elasticsearch_domain_response(response)
+            crate::operation_deser::parse_delete_elasticsearch_domain_response(response)
         }
     }
 }
@@ -253,9 +255,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteElasticsearchServiceRo
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_elasticsearch_service_role_error(response)
+            crate::operation_deser::parse_delete_elasticsearch_service_role_error(response)
         } else {
-            crate::operation_ser::parse_delete_elasticsearch_service_role_response(response)
+            crate::operation_deser::parse_delete_elasticsearch_service_role_response(response)
         }
     }
 }
@@ -282,11 +284,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteInboundCrossClusterSea
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_inbound_cross_cluster_search_connection_error(
+            crate::operation_deser::parse_delete_inbound_cross_cluster_search_connection_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_delete_inbound_cross_cluster_search_connection_response(
+            crate::operation_deser::parse_delete_inbound_cross_cluster_search_connection_response(
                 response,
             )
         }
@@ -315,11 +317,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteOutboundCrossClusterSe
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_outbound_cross_cluster_search_connection_error(
+            crate::operation_deser::parse_delete_outbound_cross_cluster_search_connection_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_delete_outbound_cross_cluster_search_connection_response(
+            crate::operation_deser::parse_delete_outbound_cross_cluster_search_connection_response(
                 response,
             )
         }
@@ -345,9 +347,9 @@ impl smithy_http::response::ParseStrictResponse for DeletePackage {
         std::result::Result<crate::output::DeletePackageOutput, crate::error::DeletePackageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_package_error(response)
+            crate::operation_deser::parse_delete_package_error(response)
         } else {
-            crate::operation_ser::parse_delete_package_response(response)
+            crate::operation_deser::parse_delete_package_response(response)
         }
     }
 }
@@ -373,9 +375,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDomainAutoTunes {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_domain_auto_tunes_error(response)
+            crate::operation_deser::parse_describe_domain_auto_tunes_error(response)
         } else {
-            crate::operation_ser::parse_describe_domain_auto_tunes_response(response)
+            crate::operation_deser::parse_describe_domain_auto_tunes_response(response)
         }
     }
 }
@@ -401,9 +403,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeElasticsearchDomain 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_elasticsearch_domain_error(response)
+            crate::operation_deser::parse_describe_elasticsearch_domain_error(response)
         } else {
-            crate::operation_ser::parse_describe_elasticsearch_domain_response(response)
+            crate::operation_deser::parse_describe_elasticsearch_domain_response(response)
         }
     }
 }
@@ -429,9 +431,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeElasticsearchDomainC
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_elasticsearch_domain_config_error(response)
+            crate::operation_deser::parse_describe_elasticsearch_domain_config_error(response)
         } else {
-            crate::operation_ser::parse_describe_elasticsearch_domain_config_response(response)
+            crate::operation_deser::parse_describe_elasticsearch_domain_config_response(response)
         }
     }
 }
@@ -457,9 +459,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeElasticsearchDomains
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_elasticsearch_domains_error(response)
+            crate::operation_deser::parse_describe_elasticsearch_domains_error(response)
         } else {
-            crate::operation_ser::parse_describe_elasticsearch_domains_response(response)
+            crate::operation_deser::parse_describe_elasticsearch_domains_response(response)
         }
     }
 }
@@ -492,9 +494,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeElasticsearchInstanc
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_elasticsearch_instance_type_limits_error(response)
+            crate::operation_deser::parse_describe_elasticsearch_instance_type_limits_error(
+                response,
+            )
         } else {
-            crate::operation_ser::parse_describe_elasticsearch_instance_type_limits_response(
+            crate::operation_deser::parse_describe_elasticsearch_instance_type_limits_response(
                 response,
             )
         }
@@ -523,11 +527,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeInboundCrossClusterS
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_inbound_cross_cluster_search_connections_error(
+            crate::operation_deser::parse_describe_inbound_cross_cluster_search_connections_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_describe_inbound_cross_cluster_search_connections_response(
+            crate::operation_deser::parse_describe_inbound_cross_cluster_search_connections_response(
                 response,
             )
         }
@@ -556,13 +560,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeOutboundCrossCluster
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_outbound_cross_cluster_search_connections_error(
+            crate::operation_deser::parse_describe_outbound_cross_cluster_search_connections_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_describe_outbound_cross_cluster_search_connections_response(
-                response,
-            )
+            crate::operation_deser::parse_describe_outbound_cross_cluster_search_connections_response(response)
         }
     }
 }
@@ -588,9 +590,9 @@ impl smithy_http::response::ParseStrictResponse for DescribePackages {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_packages_error(response)
+            crate::operation_deser::parse_describe_packages_error(response)
         } else {
-            crate::operation_ser::parse_describe_packages_response(response)
+            crate::operation_deser::parse_describe_packages_response(response)
         }
     }
 }
@@ -617,13 +619,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeReservedElasticsearc
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_reserved_elasticsearch_instance_offerings_error(
+            crate::operation_deser::parse_describe_reserved_elasticsearch_instance_offerings_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_describe_reserved_elasticsearch_instance_offerings_response(
-                response,
-            )
+            crate::operation_deser::parse_describe_reserved_elasticsearch_instance_offerings_response(response)
         }
     }
 }
@@ -649,9 +649,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeReservedElasticsearc
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_reserved_elasticsearch_instances_error(response)
+            crate::operation_deser::parse_describe_reserved_elasticsearch_instances_error(response)
         } else {
-            crate::operation_ser::parse_describe_reserved_elasticsearch_instances_response(response)
+            crate::operation_deser::parse_describe_reserved_elasticsearch_instances_response(
+                response,
+            )
         }
     }
 }
@@ -677,9 +679,9 @@ impl smithy_http::response::ParseStrictResponse for DissociatePackage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_dissociate_package_error(response)
+            crate::operation_deser::parse_dissociate_package_error(response)
         } else {
-            crate::operation_ser::parse_dissociate_package_response(response)
+            crate::operation_deser::parse_dissociate_package_response(response)
         }
     }
 }
@@ -712,9 +714,9 @@ impl smithy_http::response::ParseStrictResponse for GetCompatibleElasticsearchVe
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_compatible_elasticsearch_versions_error(response)
+            crate::operation_deser::parse_get_compatible_elasticsearch_versions_error(response)
         } else {
-            crate::operation_ser::parse_get_compatible_elasticsearch_versions_response(response)
+            crate::operation_deser::parse_get_compatible_elasticsearch_versions_response(response)
         }
     }
 }
@@ -740,9 +742,9 @@ impl smithy_http::response::ParseStrictResponse for GetPackageVersionHistory {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_package_version_history_error(response)
+            crate::operation_deser::parse_get_package_version_history_error(response)
         } else {
-            crate::operation_ser::parse_get_package_version_history_response(response)
+            crate::operation_deser::parse_get_package_version_history_response(response)
         }
     }
 }
@@ -768,9 +770,9 @@ impl smithy_http::response::ParseStrictResponse for GetUpgradeHistory {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_upgrade_history_error(response)
+            crate::operation_deser::parse_get_upgrade_history_error(response)
         } else {
-            crate::operation_ser::parse_get_upgrade_history_response(response)
+            crate::operation_deser::parse_get_upgrade_history_response(response)
         }
     }
 }
@@ -796,9 +798,9 @@ impl smithy_http::response::ParseStrictResponse for GetUpgradeStatus {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_upgrade_status_error(response)
+            crate::operation_deser::parse_get_upgrade_status_error(response)
         } else {
-            crate::operation_ser::parse_get_upgrade_status_response(response)
+            crate::operation_deser::parse_get_upgrade_status_response(response)
         }
     }
 }
@@ -824,9 +826,9 @@ impl smithy_http::response::ParseStrictResponse for ListDomainNames {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_domain_names_error(response)
+            crate::operation_deser::parse_list_domain_names_error(response)
         } else {
-            crate::operation_ser::parse_list_domain_names_response(response)
+            crate::operation_deser::parse_list_domain_names_response(response)
         }
     }
 }
@@ -852,9 +854,9 @@ impl smithy_http::response::ParseStrictResponse for ListDomainsForPackage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_domains_for_package_error(response)
+            crate::operation_deser::parse_list_domains_for_package_error(response)
         } else {
-            crate::operation_ser::parse_list_domains_for_package_response(response)
+            crate::operation_deser::parse_list_domains_for_package_response(response)
         }
     }
 }
@@ -880,9 +882,9 @@ impl smithy_http::response::ParseStrictResponse for ListElasticsearchInstanceTyp
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_elasticsearch_instance_types_error(response)
+            crate::operation_deser::parse_list_elasticsearch_instance_types_error(response)
         } else {
-            crate::operation_ser::parse_list_elasticsearch_instance_types_response(response)
+            crate::operation_deser::parse_list_elasticsearch_instance_types_response(response)
         }
     }
 }
@@ -908,9 +910,9 @@ impl smithy_http::response::ParseStrictResponse for ListElasticsearchVersions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_elasticsearch_versions_error(response)
+            crate::operation_deser::parse_list_elasticsearch_versions_error(response)
         } else {
-            crate::operation_ser::parse_list_elasticsearch_versions_response(response)
+            crate::operation_deser::parse_list_elasticsearch_versions_response(response)
         }
     }
 }
@@ -936,9 +938,9 @@ impl smithy_http::response::ParseStrictResponse for ListPackagesForDomain {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_packages_for_domain_error(response)
+            crate::operation_deser::parse_list_packages_for_domain_error(response)
         } else {
-            crate::operation_ser::parse_list_packages_for_domain_response(response)
+            crate::operation_deser::parse_list_packages_for_domain_response(response)
         }
     }
 }
@@ -961,9 +963,9 @@ impl smithy_http::response::ParseStrictResponse for ListTags {
     type Output = std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_error(response)
+            crate::operation_deser::parse_list_tags_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_response(response)
+            crate::operation_deser::parse_list_tags_response(response)
         }
     }
 }
@@ -990,11 +992,11 @@ impl smithy_http::response::ParseStrictResponse for PurchaseReservedElasticsearc
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_purchase_reserved_elasticsearch_instance_offering_error(
+            crate::operation_deser::parse_purchase_reserved_elasticsearch_instance_offering_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_purchase_reserved_elasticsearch_instance_offering_response(
+            crate::operation_deser::parse_purchase_reserved_elasticsearch_instance_offering_response(
                 response,
             )
         }
@@ -1023,11 +1025,11 @@ impl smithy_http::response::ParseStrictResponse for RejectInboundCrossClusterSea
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_reject_inbound_cross_cluster_search_connection_error(
+            crate::operation_deser::parse_reject_inbound_cross_cluster_search_connection_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_reject_inbound_cross_cluster_search_connection_response(
+            crate::operation_deser::parse_reject_inbound_cross_cluster_search_connection_response(
                 response,
             )
         }
@@ -1053,9 +1055,9 @@ impl smithy_http::response::ParseStrictResponse for RemoveTags {
         std::result::Result<crate::output::RemoveTagsOutput, crate::error::RemoveTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_remove_tags_error(response)
+            crate::operation_deser::parse_remove_tags_error(response)
         } else {
-            crate::operation_ser::parse_remove_tags_response(response)
+            crate::operation_deser::parse_remove_tags_response(response)
         }
     }
 }
@@ -1081,9 +1083,11 @@ impl smithy_http::response::ParseStrictResponse for StartElasticsearchServiceSof
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_start_elasticsearch_service_software_update_error(response)
+            crate::operation_deser::parse_start_elasticsearch_service_software_update_error(
+                response,
+            )
         } else {
-            crate::operation_ser::parse_start_elasticsearch_service_software_update_response(
+            crate::operation_deser::parse_start_elasticsearch_service_software_update_response(
                 response,
             )
         }
@@ -1111,9 +1115,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateElasticsearchDomainCon
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_elasticsearch_domain_config_error(response)
+            crate::operation_deser::parse_update_elasticsearch_domain_config_error(response)
         } else {
-            crate::operation_ser::parse_update_elasticsearch_domain_config_response(response)
+            crate::operation_deser::parse_update_elasticsearch_domain_config_response(response)
         }
     }
 }
@@ -1137,9 +1141,9 @@ impl smithy_http::response::ParseStrictResponse for UpdatePackage {
         std::result::Result<crate::output::UpdatePackageOutput, crate::error::UpdatePackageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_package_error(response)
+            crate::operation_deser::parse_update_package_error(response)
         } else {
-            crate::operation_ser::parse_update_package_response(response)
+            crate::operation_deser::parse_update_package_response(response)
         }
     }
 }
@@ -1165,9 +1169,9 @@ impl smithy_http::response::ParseStrictResponse for UpgradeElasticsearchDomain {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_upgrade_elasticsearch_domain_error(response)
+            crate::operation_deser::parse_upgrade_elasticsearch_domain_error(response)
         } else {
-            crate::operation_ser::parse_upgrade_elasticsearch_domain_response(response)
+            crate::operation_deser::parse_upgrade_elasticsearch_domain_response(response)
         }
     }
 }

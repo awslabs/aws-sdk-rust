@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for AcceptResourceShareInvitatio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_accept_resource_share_invitation_error(response)
+            crate::operation_deser::parse_accept_resource_share_invitation_error(response)
         } else {
-            crate::operation_ser::parse_accept_resource_share_invitation_response(response)
+            crate::operation_deser::parse_accept_resource_share_invitation_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for AssociateResourceShare {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_associate_resource_share_error(response)
+            crate::operation_deser::parse_associate_resource_share_error(response)
         } else {
-            crate::operation_ser::parse_associate_resource_share_response(response)
+            crate::operation_deser::parse_associate_resource_share_response(response)
         }
     }
 }
@@ -76,9 +76,9 @@ impl smithy_http::response::ParseStrictResponse for AssociateResourceSharePermis
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_associate_resource_share_permission_error(response)
+            crate::operation_deser::parse_associate_resource_share_permission_error(response)
         } else {
-            crate::operation_ser::parse_associate_resource_share_permission_response(response)
+            crate::operation_deser::parse_associate_resource_share_permission_response(response)
         }
     }
 }
@@ -111,9 +111,9 @@ impl smithy_http::response::ParseStrictResponse for CreateResourceShare {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_resource_share_error(response)
+            crate::operation_deser::parse_create_resource_share_error(response)
         } else {
-            crate::operation_ser::parse_create_resource_share_response(response)
+            crate::operation_deser::parse_create_resource_share_response(response)
         }
     }
 }
@@ -139,9 +139,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteResourceShare {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_resource_share_error(response)
+            crate::operation_deser::parse_delete_resource_share_error(response)
         } else {
-            crate::operation_ser::parse_delete_resource_share_response(response)
+            crate::operation_deser::parse_delete_resource_share_response(response)
         }
     }
 }
@@ -167,9 +167,9 @@ impl smithy_http::response::ParseStrictResponse for DisassociateResourceShare {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_disassociate_resource_share_error(response)
+            crate::operation_deser::parse_disassociate_resource_share_error(response)
         } else {
-            crate::operation_ser::parse_disassociate_resource_share_response(response)
+            crate::operation_deser::parse_disassociate_resource_share_response(response)
         }
     }
 }
@@ -195,9 +195,9 @@ impl smithy_http::response::ParseStrictResponse for DisassociateResourceSharePer
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_disassociate_resource_share_permission_error(response)
+            crate::operation_deser::parse_disassociate_resource_share_permission_error(response)
         } else {
-            crate::operation_ser::parse_disassociate_resource_share_permission_response(response)
+            crate::operation_deser::parse_disassociate_resource_share_permission_response(response)
         }
     }
 }
@@ -224,9 +224,9 @@ impl smithy_http::response::ParseStrictResponse for EnableSharingWithAwsOrganiza
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_enable_sharing_with_aws_organization_error(response)
+            crate::operation_deser::parse_enable_sharing_with_aws_organization_error(response)
         } else {
-            crate::operation_ser::parse_enable_sharing_with_aws_organization_response(response)
+            crate::operation_deser::parse_enable_sharing_with_aws_organization_response(response)
         }
     }
 }
@@ -250,9 +250,9 @@ impl smithy_http::response::ParseStrictResponse for GetPermission {
         std::result::Result<crate::output::GetPermissionOutput, crate::error::GetPermissionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_permission_error(response)
+            crate::operation_deser::parse_get_permission_error(response)
         } else {
-            crate::operation_ser::parse_get_permission_response(response)
+            crate::operation_deser::parse_get_permission_response(response)
         }
     }
 }
@@ -278,9 +278,9 @@ impl smithy_http::response::ParseStrictResponse for GetResourcePolicies {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_resource_policies_error(response)
+            crate::operation_deser::parse_get_resource_policies_error(response)
         } else {
-            crate::operation_ser::parse_get_resource_policies_response(response)
+            crate::operation_deser::parse_get_resource_policies_response(response)
         }
     }
 }
@@ -306,9 +306,9 @@ impl smithy_http::response::ParseStrictResponse for GetResourceShareAssociations
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_resource_share_associations_error(response)
+            crate::operation_deser::parse_get_resource_share_associations_error(response)
         } else {
-            crate::operation_ser::parse_get_resource_share_associations_response(response)
+            crate::operation_deser::parse_get_resource_share_associations_response(response)
         }
     }
 }
@@ -334,9 +334,9 @@ impl smithy_http::response::ParseStrictResponse for GetResourceShareInvitations 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_resource_share_invitations_error(response)
+            crate::operation_deser::parse_get_resource_share_invitations_error(response)
         } else {
-            crate::operation_ser::parse_get_resource_share_invitations_response(response)
+            crate::operation_deser::parse_get_resource_share_invitations_response(response)
         }
     }
 }
@@ -362,9 +362,9 @@ impl smithy_http::response::ParseStrictResponse for GetResourceShares {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_resource_shares_error(response)
+            crate::operation_deser::parse_get_resource_shares_error(response)
         } else {
-            crate::operation_ser::parse_get_resource_shares_response(response)
+            crate::operation_deser::parse_get_resource_shares_response(response)
         }
     }
 }
@@ -391,9 +391,9 @@ impl smithy_http::response::ParseStrictResponse for ListPendingInvitationResourc
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_pending_invitation_resources_error(response)
+            crate::operation_deser::parse_list_pending_invitation_resources_error(response)
         } else {
-            crate::operation_ser::parse_list_pending_invitation_resources_response(response)
+            crate::operation_deser::parse_list_pending_invitation_resources_response(response)
         }
     }
 }
@@ -419,9 +419,9 @@ impl smithy_http::response::ParseStrictResponse for ListPermissions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_permissions_error(response)
+            crate::operation_deser::parse_list_permissions_error(response)
         } else {
-            crate::operation_ser::parse_list_permissions_response(response)
+            crate::operation_deser::parse_list_permissions_response(response)
         }
     }
 }
@@ -446,9 +446,9 @@ impl smithy_http::response::ParseStrictResponse for ListPrincipals {
         std::result::Result<crate::output::ListPrincipalsOutput, crate::error::ListPrincipalsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_principals_error(response)
+            crate::operation_deser::parse_list_principals_error(response)
         } else {
-            crate::operation_ser::parse_list_principals_response(response)
+            crate::operation_deser::parse_list_principals_response(response)
         }
     }
 }
@@ -473,9 +473,9 @@ impl smithy_http::response::ParseStrictResponse for ListResources {
         std::result::Result<crate::output::ListResourcesOutput, crate::error::ListResourcesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_resources_error(response)
+            crate::operation_deser::parse_list_resources_error(response)
         } else {
-            crate::operation_ser::parse_list_resources_response(response)
+            crate::operation_deser::parse_list_resources_response(response)
         }
     }
 }
@@ -501,9 +501,9 @@ impl smithy_http::response::ParseStrictResponse for ListResourceSharePermissions
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_resource_share_permissions_error(response)
+            crate::operation_deser::parse_list_resource_share_permissions_error(response)
         } else {
-            crate::operation_ser::parse_list_resource_share_permissions_response(response)
+            crate::operation_deser::parse_list_resource_share_permissions_response(response)
         }
     }
 }
@@ -529,9 +529,9 @@ impl smithy_http::response::ParseStrictResponse for ListResourceTypes {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_resource_types_error(response)
+            crate::operation_deser::parse_list_resource_types_error(response)
         } else {
-            crate::operation_ser::parse_list_resource_types_response(response)
+            crate::operation_deser::parse_list_resource_types_response(response)
         }
     }
 }
@@ -568,9 +568,9 @@ impl smithy_http::response::ParseStrictResponse for PromoteResourceShareCreatedF
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_promote_resource_share_created_from_policy_error(response)
+            crate::operation_deser::parse_promote_resource_share_created_from_policy_error(response)
         } else {
-            crate::operation_ser::parse_promote_resource_share_created_from_policy_response(
+            crate::operation_deser::parse_promote_resource_share_created_from_policy_response(
                 response,
             )
         }
@@ -598,9 +598,9 @@ impl smithy_http::response::ParseStrictResponse for RejectResourceShareInvitatio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_reject_resource_share_invitation_error(response)
+            crate::operation_deser::parse_reject_resource_share_invitation_error(response)
         } else {
-            crate::operation_ser::parse_reject_resource_share_invitation_response(response)
+            crate::operation_deser::parse_reject_resource_share_invitation_response(response)
         }
     }
 }
@@ -624,9 +624,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -650,9 +650,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -678,9 +678,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateResourceShare {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_resource_share_error(response)
+            crate::operation_deser::parse_update_resource_share_error(response)
         } else {
-            crate::operation_ser::parse_update_resource_share_response(response)
+            crate::operation_deser::parse_update_resource_share_response(response)
         }
     }
 }

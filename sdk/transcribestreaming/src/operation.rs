@@ -27,11 +27,11 @@ impl smithy_http::response::ParseHttpResponse for StartMedicalStreamTranscriptio
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_ser::parse_start_medical_stream_transcription(response))
+        Some(crate::operation_deser::parse_start_medical_stream_transcription(response))
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_ser::parse_start_medical_stream_transcription_error(response)
+        crate::operation_deser::parse_start_medical_stream_transcription_error(response)
     }
 }
 
@@ -79,12 +79,12 @@ impl smithy_http::response::ParseHttpResponse for StartStreamTranscription {
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_ser::parse_start_stream_transcription(
+        Some(crate::operation_deser::parse_start_stream_transcription(
             response,
         ))
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_ser::parse_start_stream_transcription_error(response)
+        crate::operation_deser::parse_start_stream_transcription_error(response)
     }
 }

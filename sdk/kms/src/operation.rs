@@ -33,9 +33,9 @@ impl smithy_http::response::ParseStrictResponse for CancelKeyDeletion {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_cancel_key_deletion_error(response)
+            crate::operation_deser::parse_cancel_key_deletion_error(response)
         } else {
-            crate::operation_ser::parse_cancel_key_deletion_response(response)
+            crate::operation_deser::parse_cancel_key_deletion_response(response)
         }
     }
 }
@@ -121,9 +121,9 @@ impl smithy_http::response::ParseStrictResponse for ConnectCustomKeyStore {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_connect_custom_key_store_error(response)
+            crate::operation_deser::parse_connect_custom_key_store_error(response)
         } else {
-            crate::operation_ser::parse_connect_custom_key_store_response(response)
+            crate::operation_deser::parse_connect_custom_key_store_response(response)
         }
     }
 }
@@ -203,9 +203,9 @@ impl smithy_http::response::ParseStrictResponse for CreateAlias {
         std::result::Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_alias_error(response)
+            crate::operation_deser::parse_create_alias_error(response)
         } else {
-            crate::operation_ser::parse_create_alias_response(response)
+            crate::operation_deser::parse_create_alias_response(response)
         }
     }
 }
@@ -280,9 +280,9 @@ impl smithy_http::response::ParseStrictResponse for CreateCustomKeyStore {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_custom_key_store_error(response)
+            crate::operation_deser::parse_create_custom_key_store_error(response)
         } else {
-            crate::operation_ser::parse_create_custom_key_store_response(response)
+            crate::operation_deser::parse_create_custom_key_store_response(response)
         }
     }
 }
@@ -368,9 +368,9 @@ impl smithy_http::response::ParseStrictResponse for CreateGrant {
         std::result::Result<crate::output::CreateGrantOutput, crate::error::CreateGrantError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_grant_error(response)
+            crate::operation_deser::parse_create_grant_error(response)
         } else {
-            crate::operation_ser::parse_create_grant_response(response)
+            crate::operation_deser::parse_create_grant_response(response)
         }
     }
 }
@@ -512,9 +512,9 @@ impl smithy_http::response::ParseStrictResponse for CreateKey {
     type Output = std::result::Result<crate::output::CreateKeyOutput, crate::error::CreateKeyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_key_error(response)
+            crate::operation_deser::parse_create_key_error(response)
         } else {
-            crate::operation_ser::parse_create_key_response(response)
+            crate::operation_deser::parse_create_key_response(response)
         }
     }
 }
@@ -624,9 +624,9 @@ impl smithy_http::response::ParseStrictResponse for Decrypt {
     type Output = std::result::Result<crate::output::DecryptOutput, crate::error::DecryptError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_decrypt_error(response)
+            crate::operation_deser::parse_decrypt_error(response)
         } else {
-            crate::operation_ser::parse_decrypt_response(response)
+            crate::operation_deser::parse_decrypt_response(response)
         }
     }
 }
@@ -697,9 +697,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteAlias {
         std::result::Result<crate::output::DeleteAliasOutput, crate::error::DeleteAliasError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_alias_error(response)
+            crate::operation_deser::parse_delete_alias_error(response)
         } else {
-            crate::operation_ser::parse_delete_alias_response(response)
+            crate::operation_deser::parse_delete_alias_response(response)
         }
     }
 }
@@ -778,9 +778,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteCustomKeyStore {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_custom_key_store_error(response)
+            crate::operation_deser::parse_delete_custom_key_store_error(response)
         } else {
-            crate::operation_ser::parse_delete_custom_key_store_response(response)
+            crate::operation_deser::parse_delete_custom_key_store_response(response)
         }
     }
 }
@@ -834,9 +834,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteImportedKeyMaterial {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_imported_key_material_error(response)
+            crate::operation_deser::parse_delete_imported_key_material_error(response)
         } else {
-            crate::operation_ser::parse_delete_imported_key_material_response(response)
+            crate::operation_deser::parse_delete_imported_key_material_response(response)
         }
     }
 }
@@ -915,9 +915,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeCustomKeyStores {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_custom_key_stores_error(response)
+            crate::operation_deser::parse_describe_custom_key_stores_error(response)
         } else {
-            crate::operation_ser::parse_describe_custom_key_stores_response(response)
+            crate::operation_deser::parse_describe_custom_key_stores_response(response)
         }
     }
 }
@@ -1019,9 +1019,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeKey {
         std::result::Result<crate::output::DescribeKeyOutput, crate::error::DescribeKeyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_key_error(response)
+            crate::operation_deser::parse_describe_key_error(response)
         } else {
-            crate::operation_ser::parse_describe_key_response(response)
+            crate::operation_deser::parse_describe_key_response(response)
         }
     }
 }
@@ -1059,9 +1059,9 @@ impl smithy_http::response::ParseStrictResponse for DisableKey {
         std::result::Result<crate::output::DisableKeyOutput, crate::error::DisableKeyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_disable_key_error(response)
+            crate::operation_deser::parse_disable_key_error(response)
         } else {
-            crate::operation_ser::parse_disable_key_response(response)
+            crate::operation_deser::parse_disable_key_response(response)
         }
     }
 }
@@ -1111,9 +1111,9 @@ impl smithy_http::response::ParseStrictResponse for DisableKeyRotation {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_disable_key_rotation_error(response)
+            crate::operation_deser::parse_disable_key_rotation_error(response)
         } else {
-            crate::operation_ser::parse_disable_key_rotation_response(response)
+            crate::operation_deser::parse_disable_key_rotation_response(response)
         }
     }
 }
@@ -1189,9 +1189,9 @@ impl smithy_http::response::ParseStrictResponse for DisconnectCustomKeyStore {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_disconnect_custom_key_store_error(response)
+            crate::operation_deser::parse_disconnect_custom_key_store_error(response)
         } else {
-            crate::operation_ser::parse_disconnect_custom_key_store_response(response)
+            crate::operation_deser::parse_disconnect_custom_key_store_response(response)
         }
     }
 }
@@ -1225,9 +1225,9 @@ impl smithy_http::response::ParseStrictResponse for EnableKey {
     type Output = std::result::Result<crate::output::EnableKeyOutput, crate::error::EnableKeyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_enable_key_error(response)
+            crate::operation_deser::parse_enable_key_error(response)
         } else {
-            crate::operation_ser::parse_enable_key_response(response)
+            crate::operation_deser::parse_enable_key_response(response)
         }
     }
 }
@@ -1277,9 +1277,9 @@ impl smithy_http::response::ParseStrictResponse for EnableKeyRotation {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_enable_key_rotation_error(response)
+            crate::operation_deser::parse_enable_key_rotation_error(response)
         } else {
-            crate::operation_ser::parse_enable_key_rotation_response(response)
+            crate::operation_deser::parse_enable_key_rotation_response(response)
         }
     }
 }
@@ -1420,9 +1420,9 @@ impl smithy_http::response::ParseStrictResponse for Encrypt {
     type Output = std::result::Result<crate::output::EncryptOutput, crate::error::EncryptError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_encrypt_error(response)
+            crate::operation_deser::parse_encrypt_error(response)
         } else {
-            crate::operation_ser::parse_encrypt_response(response)
+            crate::operation_deser::parse_encrypt_response(response)
         }
     }
 }
@@ -1540,9 +1540,9 @@ impl smithy_http::response::ParseStrictResponse for GenerateDataKey {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_generate_data_key_error(response)
+            crate::operation_deser::parse_generate_data_key_error(response)
         } else {
-            crate::operation_ser::parse_generate_data_key_response(response)
+            crate::operation_deser::parse_generate_data_key_response(response)
         }
     }
 }
@@ -1638,9 +1638,9 @@ impl smithy_http::response::ParseStrictResponse for GenerateDataKeyPair {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_generate_data_key_pair_error(response)
+            crate::operation_deser::parse_generate_data_key_pair_error(response)
         } else {
-            crate::operation_ser::parse_generate_data_key_pair_response(response)
+            crate::operation_deser::parse_generate_data_key_pair_response(response)
         }
     }
 }
@@ -1730,9 +1730,11 @@ impl smithy_http::response::ParseStrictResponse for GenerateDataKeyPairWithoutPl
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_generate_data_key_pair_without_plaintext_error(response)
+            crate::operation_deser::parse_generate_data_key_pair_without_plaintext_error(response)
         } else {
-            crate::operation_ser::parse_generate_data_key_pair_without_plaintext_response(response)
+            crate::operation_deser::parse_generate_data_key_pair_without_plaintext_response(
+                response,
+            )
         }
     }
 }
@@ -1825,9 +1827,9 @@ impl smithy_http::response::ParseStrictResponse for GenerateDataKeyWithoutPlaint
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_generate_data_key_without_plaintext_error(response)
+            crate::operation_deser::parse_generate_data_key_without_plaintext_error(response)
         } else {
-            crate::operation_ser::parse_generate_data_key_without_plaintext_response(response)
+            crate::operation_deser::parse_generate_data_key_without_plaintext_response(response)
         }
     }
 }
@@ -1859,9 +1861,9 @@ impl smithy_http::response::ParseStrictResponse for GenerateRandom {
         std::result::Result<crate::output::GenerateRandomOutput, crate::error::GenerateRandomError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_generate_random_error(response)
+            crate::operation_deser::parse_generate_random_error(response)
         } else {
-            crate::operation_ser::parse_generate_random_response(response)
+            crate::operation_deser::parse_generate_random_response(response)
         }
     }
 }
@@ -1892,9 +1894,9 @@ impl smithy_http::response::ParseStrictResponse for GetKeyPolicy {
         std::result::Result<crate::output::GetKeyPolicyOutput, crate::error::GetKeyPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_key_policy_error(response)
+            crate::operation_deser::parse_get_key_policy_error(response)
         } else {
-            crate::operation_ser::parse_get_key_policy_response(response)
+            crate::operation_deser::parse_get_key_policy_response(response)
         }
     }
 }
@@ -1956,9 +1958,9 @@ impl smithy_http::response::ParseStrictResponse for GetKeyRotationStatus {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_key_rotation_status_error(response)
+            crate::operation_deser::parse_get_key_rotation_status_error(response)
         } else {
-            crate::operation_ser::parse_get_key_rotation_status_response(response)
+            crate::operation_deser::parse_get_key_rotation_status_response(response)
         }
     }
 }
@@ -2017,9 +2019,9 @@ impl smithy_http::response::ParseStrictResponse for GetParametersForImport {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_parameters_for_import_error(response)
+            crate::operation_deser::parse_get_parameters_for_import_error(response)
         } else {
-            crate::operation_ser::parse_get_parameters_for_import_response(response)
+            crate::operation_deser::parse_get_parameters_for_import_response(response)
         }
     }
 }
@@ -2088,9 +2090,9 @@ impl smithy_http::response::ParseStrictResponse for GetPublicKey {
         std::result::Result<crate::output::GetPublicKeyOutput, crate::error::GetPublicKeyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_public_key_error(response)
+            crate::operation_deser::parse_get_public_key_error(response)
         } else {
-            crate::operation_ser::parse_get_public_key_response(response)
+            crate::operation_deser::parse_get_public_key_response(response)
         }
     }
 }
@@ -2178,9 +2180,9 @@ impl smithy_http::response::ParseStrictResponse for ImportKeyMaterial {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_import_key_material_error(response)
+            crate::operation_deser::parse_import_key_material_error(response)
         } else {
-            crate::operation_ser::parse_import_key_material_response(response)
+            crate::operation_deser::parse_import_key_material_response(response)
         }
     }
 }
@@ -2244,9 +2246,9 @@ impl smithy_http::response::ParseStrictResponse for ListAliases {
         std::result::Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_aliases_error(response)
+            crate::operation_deser::parse_list_aliases_error(response)
         } else {
-            crate::operation_ser::parse_list_aliases_response(response)
+            crate::operation_deser::parse_list_aliases_response(response)
         }
     }
 }
@@ -2314,9 +2316,9 @@ impl smithy_http::response::ParseStrictResponse for ListGrants {
         std::result::Result<crate::output::ListGrantsOutput, crate::error::ListGrantsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_grants_error(response)
+            crate::operation_deser::parse_list_grants_error(response)
         } else {
-            crate::operation_ser::parse_list_grants_response(response)
+            crate::operation_deser::parse_list_grants_response(response)
         }
     }
 }
@@ -2363,9 +2365,9 @@ impl smithy_http::response::ParseStrictResponse for ListKeyPolicies {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_key_policies_error(response)
+            crate::operation_deser::parse_list_key_policies_error(response)
         } else {
-            crate::operation_ser::parse_list_key_policies_response(response)
+            crate::operation_deser::parse_list_key_policies_response(response)
         }
     }
 }
@@ -2417,9 +2419,9 @@ impl smithy_http::response::ParseStrictResponse for ListKeys {
     type Output = std::result::Result<crate::output::ListKeysOutput, crate::error::ListKeysError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_keys_error(response)
+            crate::operation_deser::parse_list_keys_error(response)
         } else {
-            crate::operation_ser::parse_list_keys_response(response)
+            crate::operation_deser::parse_list_keys_response(response)
         }
     }
 }
@@ -2478,9 +2480,9 @@ impl smithy_http::response::ParseStrictResponse for ListResourceTags {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_resource_tags_error(response)
+            crate::operation_deser::parse_list_resource_tags_error(response)
         } else {
-            crate::operation_ser::parse_list_resource_tags_response(response)
+            crate::operation_deser::parse_list_resource_tags_response(response)
         }
     }
 }
@@ -2548,9 +2550,9 @@ impl smithy_http::response::ParseStrictResponse for ListRetirableGrants {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_retirable_grants_error(response)
+            crate::operation_deser::parse_list_retirable_grants_error(response)
         } else {
-            crate::operation_ser::parse_list_retirable_grants_response(response)
+            crate::operation_deser::parse_list_retirable_grants_response(response)
         }
     }
 }
@@ -2586,9 +2588,9 @@ impl smithy_http::response::ParseStrictResponse for PutKeyPolicy {
         std::result::Result<crate::output::PutKeyPolicyOutput, crate::error::PutKeyPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_key_policy_error(response)
+            crate::operation_deser::parse_put_key_policy_error(response)
         } else {
-            crate::operation_ser::parse_put_key_policy_response(response)
+            crate::operation_deser::parse_put_key_policy_response(response)
         }
     }
 }
@@ -2706,9 +2708,9 @@ impl smithy_http::response::ParseStrictResponse for ReEncrypt {
     type Output = std::result::Result<crate::output::ReEncryptOutput, crate::error::ReEncryptError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_re_encrypt_error(response)
+            crate::operation_deser::parse_re_encrypt_error(response)
         } else {
-            crate::operation_ser::parse_re_encrypt_response(response)
+            crate::operation_deser::parse_re_encrypt_response(response)
         }
     }
 }
@@ -2809,9 +2811,9 @@ impl smithy_http::response::ParseStrictResponse for ReplicateKey {
         std::result::Result<crate::output::ReplicateKeyOutput, crate::error::ReplicateKeyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_replicate_key_error(response)
+            crate::operation_deser::parse_replicate_key_error(response)
         } else {
-            crate::operation_ser::parse_replicate_key_response(response)
+            crate::operation_deser::parse_replicate_key_response(response)
         }
     }
 }
@@ -2881,9 +2883,9 @@ impl smithy_http::response::ParseStrictResponse for RetireGrant {
         std::result::Result<crate::output::RetireGrantOutput, crate::error::RetireGrantError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_retire_grant_error(response)
+            crate::operation_deser::parse_retire_grant_error(response)
         } else {
-            crate::operation_ser::parse_retire_grant_response(response)
+            crate::operation_deser::parse_retire_grant_response(response)
         }
     }
 }
@@ -2950,9 +2952,9 @@ impl smithy_http::response::ParseStrictResponse for RevokeGrant {
         std::result::Result<crate::output::RevokeGrantOutput, crate::error::RevokeGrantError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_revoke_grant_error(response)
+            crate::operation_deser::parse_revoke_grant_error(response)
         } else {
-            crate::operation_ser::parse_revoke_grant_response(response)
+            crate::operation_deser::parse_revoke_grant_response(response)
         }
     }
 }
@@ -3030,9 +3032,9 @@ impl smithy_http::response::ParseStrictResponse for ScheduleKeyDeletion {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_schedule_key_deletion_error(response)
+            crate::operation_deser::parse_schedule_key_deletion_error(response)
         } else {
-            crate::operation_ser::parse_schedule_key_deletion_response(response)
+            crate::operation_deser::parse_schedule_key_deletion_response(response)
         }
     }
 }
@@ -3099,9 +3101,9 @@ impl smithy_http::response::ParseStrictResponse for Sign {
     type Output = std::result::Result<crate::output::SignOutput, crate::error::SignError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_sign_error(response)
+            crate::operation_deser::parse_sign_error(response)
         } else {
-            crate::operation_ser::parse_sign_response(response)
+            crate::operation_deser::parse_sign_response(response)
         }
     }
 }
@@ -3171,9 +3173,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -3238,9 +3240,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -3326,9 +3328,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateAlias {
         std::result::Result<crate::output::UpdateAliasOutput, crate::error::UpdateAliasError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_alias_error(response)
+            crate::operation_deser::parse_update_alias_error(response)
         } else {
-            crate::operation_ser::parse_update_alias_response(response)
+            crate::operation_deser::parse_update_alias_response(response)
         }
     }
 }
@@ -3426,9 +3428,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateCustomKeyStore {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_custom_key_store_error(response)
+            crate::operation_deser::parse_update_custom_key_store_error(response)
         } else {
-            crate::operation_ser::parse_update_custom_key_store_response(response)
+            crate::operation_deser::parse_update_custom_key_store_response(response)
         }
     }
 }
@@ -3476,9 +3478,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateKeyDescription {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_key_description_error(response)
+            crate::operation_deser::parse_update_key_description_error(response)
         } else {
-            crate::operation_ser::parse_update_key_description_response(response)
+            crate::operation_deser::parse_update_key_description_response(response)
         }
     }
 }
@@ -3569,9 +3571,9 @@ impl smithy_http::response::ParseStrictResponse for UpdatePrimaryRegion {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_primary_region_error(response)
+            crate::operation_deser::parse_update_primary_region_error(response)
         } else {
-            crate::operation_ser::parse_update_primary_region_response(response)
+            crate::operation_deser::parse_update_primary_region_response(response)
         }
     }
 }
@@ -3623,9 +3625,9 @@ impl smithy_http::response::ParseStrictResponse for Verify {
     type Output = std::result::Result<crate::output::VerifyOutput, crate::error::VerifyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_verify_error(response)
+            crate::operation_deser::parse_verify_error(response)
         } else {
-            crate::operation_ser::parse_verify_response(response)
+            crate::operation_deser::parse_verify_response(response)
         }
     }
 }

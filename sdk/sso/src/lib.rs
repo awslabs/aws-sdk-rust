@@ -37,7 +37,7 @@ mod json_errors;
 pub mod model;
 mod no_credentials;
 pub mod operation;
-mod operation_ser;
+mod operation_deser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 pub use smithy_http::byte_stream::ByteStream;

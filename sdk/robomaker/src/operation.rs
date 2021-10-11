@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for BatchDeleteWorlds {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_batch_delete_worlds_error(response)
+            crate::operation_deser::parse_batch_delete_worlds_error(response)
         } else {
-            crate::operation_ser::parse_batch_delete_worlds_response(response)
+            crate::operation_deser::parse_batch_delete_worlds_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for BatchDescribeSimulationJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_batch_describe_simulation_job_error(response)
+            crate::operation_deser::parse_batch_describe_simulation_job_error(response)
         } else {
-            crate::operation_ser::parse_batch_describe_simulation_job_response(response)
+            crate::operation_deser::parse_batch_describe_simulation_job_response(response)
         }
     }
 }
@@ -76,9 +76,9 @@ impl smithy_http::response::ParseStrictResponse for CancelDeploymentJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_cancel_deployment_job_error(response)
+            crate::operation_deser::parse_cancel_deployment_job_error(response)
         } else {
-            crate::operation_ser::parse_cancel_deployment_job_response(response)
+            crate::operation_deser::parse_cancel_deployment_job_response(response)
         }
     }
 }
@@ -104,9 +104,9 @@ impl smithy_http::response::ParseStrictResponse for CancelSimulationJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_cancel_simulation_job_error(response)
+            crate::operation_deser::parse_cancel_simulation_job_error(response)
         } else {
-            crate::operation_ser::parse_cancel_simulation_job_response(response)
+            crate::operation_deser::parse_cancel_simulation_job_response(response)
         }
     }
 }
@@ -133,9 +133,9 @@ impl smithy_http::response::ParseStrictResponse for CancelSimulationJobBatch {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_cancel_simulation_job_batch_error(response)
+            crate::operation_deser::parse_cancel_simulation_job_batch_error(response)
         } else {
-            crate::operation_ser::parse_cancel_simulation_job_batch_response(response)
+            crate::operation_deser::parse_cancel_simulation_job_batch_response(response)
         }
     }
 }
@@ -161,9 +161,9 @@ impl smithy_http::response::ParseStrictResponse for CancelWorldExportJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_cancel_world_export_job_error(response)
+            crate::operation_deser::parse_cancel_world_export_job_error(response)
         } else {
-            crate::operation_ser::parse_cancel_world_export_job_response(response)
+            crate::operation_deser::parse_cancel_world_export_job_response(response)
         }
     }
 }
@@ -189,9 +189,9 @@ impl smithy_http::response::ParseStrictResponse for CancelWorldGenerationJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_cancel_world_generation_job_error(response)
+            crate::operation_deser::parse_cancel_world_generation_job_error(response)
         } else {
-            crate::operation_ser::parse_cancel_world_generation_job_response(response)
+            crate::operation_deser::parse_cancel_world_generation_job_response(response)
         }
     }
 }
@@ -224,9 +224,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDeploymentJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_deployment_job_error(response)
+            crate::operation_deser::parse_create_deployment_job_error(response)
         } else {
-            crate::operation_ser::parse_create_deployment_job_response(response)
+            crate::operation_deser::parse_create_deployment_job_response(response)
         }
     }
 }
@@ -250,9 +250,9 @@ impl smithy_http::response::ParseStrictResponse for CreateFleet {
         std::result::Result<crate::output::CreateFleetOutput, crate::error::CreateFleetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_fleet_error(response)
+            crate::operation_deser::parse_create_fleet_error(response)
         } else {
-            crate::operation_ser::parse_create_fleet_response(response)
+            crate::operation_deser::parse_create_fleet_response(response)
         }
     }
 }
@@ -276,9 +276,9 @@ impl smithy_http::response::ParseStrictResponse for CreateRobot {
         std::result::Result<crate::output::CreateRobotOutput, crate::error::CreateRobotError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_robot_error(response)
+            crate::operation_deser::parse_create_robot_error(response)
         } else {
-            crate::operation_ser::parse_create_robot_response(response)
+            crate::operation_deser::parse_create_robot_response(response)
         }
     }
 }
@@ -304,9 +304,9 @@ impl smithy_http::response::ParseStrictResponse for CreateRobotApplication {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_robot_application_error(response)
+            crate::operation_deser::parse_create_robot_application_error(response)
         } else {
-            crate::operation_ser::parse_create_robot_application_response(response)
+            crate::operation_deser::parse_create_robot_application_response(response)
         }
     }
 }
@@ -332,9 +332,9 @@ impl smithy_http::response::ParseStrictResponse for CreateRobotApplicationVersio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_robot_application_version_error(response)
+            crate::operation_deser::parse_create_robot_application_version_error(response)
         } else {
-            crate::operation_ser::parse_create_robot_application_version_response(response)
+            crate::operation_deser::parse_create_robot_application_version_response(response)
         }
     }
 }
@@ -360,9 +360,9 @@ impl smithy_http::response::ParseStrictResponse for CreateSimulationApplication 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_simulation_application_error(response)
+            crate::operation_deser::parse_create_simulation_application_error(response)
         } else {
-            crate::operation_ser::parse_create_simulation_application_response(response)
+            crate::operation_deser::parse_create_simulation_application_response(response)
         }
     }
 }
@@ -388,9 +388,9 @@ impl smithy_http::response::ParseStrictResponse for CreateSimulationApplicationV
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_simulation_application_version_error(response)
+            crate::operation_deser::parse_create_simulation_application_version_error(response)
         } else {
-            crate::operation_ser::parse_create_simulation_application_version_response(response)
+            crate::operation_deser::parse_create_simulation_application_version_response(response)
         }
     }
 }
@@ -420,9 +420,9 @@ impl smithy_http::response::ParseStrictResponse for CreateSimulationJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_simulation_job_error(response)
+            crate::operation_deser::parse_create_simulation_job_error(response)
         } else {
-            crate::operation_ser::parse_create_simulation_job_response(response)
+            crate::operation_deser::parse_create_simulation_job_response(response)
         }
     }
 }
@@ -448,9 +448,9 @@ impl smithy_http::response::ParseStrictResponse for CreateWorldExportJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_world_export_job_error(response)
+            crate::operation_deser::parse_create_world_export_job_error(response)
         } else {
-            crate::operation_ser::parse_create_world_export_job_response(response)
+            crate::operation_deser::parse_create_world_export_job_response(response)
         }
     }
 }
@@ -476,9 +476,9 @@ impl smithy_http::response::ParseStrictResponse for CreateWorldGenerationJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_world_generation_job_error(response)
+            crate::operation_deser::parse_create_world_generation_job_error(response)
         } else {
-            crate::operation_ser::parse_create_world_generation_job_response(response)
+            crate::operation_deser::parse_create_world_generation_job_response(response)
         }
     }
 }
@@ -504,9 +504,9 @@ impl smithy_http::response::ParseStrictResponse for CreateWorldTemplate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_world_template_error(response)
+            crate::operation_deser::parse_create_world_template_error(response)
         } else {
-            crate::operation_ser::parse_create_world_template_response(response)
+            crate::operation_deser::parse_create_world_template_response(response)
         }
     }
 }
@@ -530,9 +530,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteFleet {
         std::result::Result<crate::output::DeleteFleetOutput, crate::error::DeleteFleetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_fleet_error(response)
+            crate::operation_deser::parse_delete_fleet_error(response)
         } else {
-            crate::operation_ser::parse_delete_fleet_response(response)
+            crate::operation_deser::parse_delete_fleet_response(response)
         }
     }
 }
@@ -556,9 +556,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteRobot {
         std::result::Result<crate::output::DeleteRobotOutput, crate::error::DeleteRobotError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_robot_error(response)
+            crate::operation_deser::parse_delete_robot_error(response)
         } else {
-            crate::operation_ser::parse_delete_robot_response(response)
+            crate::operation_deser::parse_delete_robot_response(response)
         }
     }
 }
@@ -584,9 +584,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteRobotApplication {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_robot_application_error(response)
+            crate::operation_deser::parse_delete_robot_application_error(response)
         } else {
-            crate::operation_ser::parse_delete_robot_application_response(response)
+            crate::operation_deser::parse_delete_robot_application_response(response)
         }
     }
 }
@@ -612,9 +612,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteSimulationApplication 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_simulation_application_error(response)
+            crate::operation_deser::parse_delete_simulation_application_error(response)
         } else {
-            crate::operation_ser::parse_delete_simulation_application_response(response)
+            crate::operation_deser::parse_delete_simulation_application_response(response)
         }
     }
 }
@@ -640,9 +640,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteWorldTemplate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_world_template_error(response)
+            crate::operation_deser::parse_delete_world_template_error(response)
         } else {
-            crate::operation_ser::parse_delete_world_template_response(response)
+            crate::operation_deser::parse_delete_world_template_response(response)
         }
     }
 }
@@ -668,9 +668,9 @@ impl smithy_http::response::ParseStrictResponse for DeregisterRobot {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_deregister_robot_error(response)
+            crate::operation_deser::parse_deregister_robot_error(response)
         } else {
-            crate::operation_ser::parse_deregister_robot_response(response)
+            crate::operation_deser::parse_deregister_robot_response(response)
         }
     }
 }
@@ -696,9 +696,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDeploymentJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_deployment_job_error(response)
+            crate::operation_deser::parse_describe_deployment_job_error(response)
         } else {
-            crate::operation_ser::parse_describe_deployment_job_response(response)
+            crate::operation_deser::parse_describe_deployment_job_response(response)
         }
     }
 }
@@ -722,9 +722,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeFleet {
         std::result::Result<crate::output::DescribeFleetOutput, crate::error::DescribeFleetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_fleet_error(response)
+            crate::operation_deser::parse_describe_fleet_error(response)
         } else {
-            crate::operation_ser::parse_describe_fleet_response(response)
+            crate::operation_deser::parse_describe_fleet_response(response)
         }
     }
 }
@@ -748,9 +748,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeRobot {
         std::result::Result<crate::output::DescribeRobotOutput, crate::error::DescribeRobotError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_robot_error(response)
+            crate::operation_deser::parse_describe_robot_error(response)
         } else {
-            crate::operation_ser::parse_describe_robot_response(response)
+            crate::operation_deser::parse_describe_robot_response(response)
         }
     }
 }
@@ -776,9 +776,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeRobotApplication {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_robot_application_error(response)
+            crate::operation_deser::parse_describe_robot_application_error(response)
         } else {
-            crate::operation_ser::parse_describe_robot_application_response(response)
+            crate::operation_deser::parse_describe_robot_application_response(response)
         }
     }
 }
@@ -804,9 +804,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeSimulationApplicatio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_simulation_application_error(response)
+            crate::operation_deser::parse_describe_simulation_application_error(response)
         } else {
-            crate::operation_ser::parse_describe_simulation_application_response(response)
+            crate::operation_deser::parse_describe_simulation_application_response(response)
         }
     }
 }
@@ -832,9 +832,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeSimulationJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_simulation_job_error(response)
+            crate::operation_deser::parse_describe_simulation_job_error(response)
         } else {
-            crate::operation_ser::parse_describe_simulation_job_response(response)
+            crate::operation_deser::parse_describe_simulation_job_response(response)
         }
     }
 }
@@ -860,9 +860,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeSimulationJobBatch {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_simulation_job_batch_error(response)
+            crate::operation_deser::parse_describe_simulation_job_batch_error(response)
         } else {
-            crate::operation_ser::parse_describe_simulation_job_batch_response(response)
+            crate::operation_deser::parse_describe_simulation_job_batch_response(response)
         }
     }
 }
@@ -886,9 +886,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeWorld {
         std::result::Result<crate::output::DescribeWorldOutput, crate::error::DescribeWorldError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_world_error(response)
+            crate::operation_deser::parse_describe_world_error(response)
         } else {
-            crate::operation_ser::parse_describe_world_response(response)
+            crate::operation_deser::parse_describe_world_response(response)
         }
     }
 }
@@ -914,9 +914,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeWorldExportJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_world_export_job_error(response)
+            crate::operation_deser::parse_describe_world_export_job_error(response)
         } else {
-            crate::operation_ser::parse_describe_world_export_job_response(response)
+            crate::operation_deser::parse_describe_world_export_job_response(response)
         }
     }
 }
@@ -942,9 +942,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeWorldGenerationJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_world_generation_job_error(response)
+            crate::operation_deser::parse_describe_world_generation_job_error(response)
         } else {
-            crate::operation_ser::parse_describe_world_generation_job_response(response)
+            crate::operation_deser::parse_describe_world_generation_job_response(response)
         }
     }
 }
@@ -970,9 +970,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeWorldTemplate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_world_template_error(response)
+            crate::operation_deser::parse_describe_world_template_error(response)
         } else {
-            crate::operation_ser::parse_describe_world_template_response(response)
+            crate::operation_deser::parse_describe_world_template_response(response)
         }
     }
 }
@@ -998,9 +998,9 @@ impl smithy_http::response::ParseStrictResponse for GetWorldTemplateBody {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_world_template_body_error(response)
+            crate::operation_deser::parse_get_world_template_body_error(response)
         } else {
-            crate::operation_ser::parse_get_world_template_body_response(response)
+            crate::operation_deser::parse_get_world_template_body_response(response)
         }
     }
 }
@@ -1027,9 +1027,9 @@ impl smithy_http::response::ParseStrictResponse for ListDeploymentJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_deployment_jobs_error(response)
+            crate::operation_deser::parse_list_deployment_jobs_error(response)
         } else {
-            crate::operation_ser::parse_list_deployment_jobs_response(response)
+            crate::operation_deser::parse_list_deployment_jobs_response(response)
         }
     }
 }
@@ -1054,9 +1054,9 @@ impl smithy_http::response::ParseStrictResponse for ListFleets {
         std::result::Result<crate::output::ListFleetsOutput, crate::error::ListFleetsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_fleets_error(response)
+            crate::operation_deser::parse_list_fleets_error(response)
         } else {
-            crate::operation_ser::parse_list_fleets_response(response)
+            crate::operation_deser::parse_list_fleets_response(response)
         }
     }
 }
@@ -1083,9 +1083,9 @@ impl smithy_http::response::ParseStrictResponse for ListRobotApplications {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_robot_applications_error(response)
+            crate::operation_deser::parse_list_robot_applications_error(response)
         } else {
-            crate::operation_ser::parse_list_robot_applications_response(response)
+            crate::operation_deser::parse_list_robot_applications_response(response)
         }
     }
 }
@@ -1110,9 +1110,9 @@ impl smithy_http::response::ParseStrictResponse for ListRobots {
         std::result::Result<crate::output::ListRobotsOutput, crate::error::ListRobotsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_robots_error(response)
+            crate::operation_deser::parse_list_robots_error(response)
         } else {
-            crate::operation_ser::parse_list_robots_response(response)
+            crate::operation_deser::parse_list_robots_response(response)
         }
     }
 }
@@ -1139,9 +1139,9 @@ impl smithy_http::response::ParseStrictResponse for ListSimulationApplications {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_simulation_applications_error(response)
+            crate::operation_deser::parse_list_simulation_applications_error(response)
         } else {
-            crate::operation_ser::parse_list_simulation_applications_response(response)
+            crate::operation_deser::parse_list_simulation_applications_response(response)
         }
     }
 }
@@ -1168,9 +1168,9 @@ impl smithy_http::response::ParseStrictResponse for ListSimulationJobBatches {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_simulation_job_batches_error(response)
+            crate::operation_deser::parse_list_simulation_job_batches_error(response)
         } else {
-            crate::operation_ser::parse_list_simulation_job_batches_response(response)
+            crate::operation_deser::parse_list_simulation_job_batches_response(response)
         }
     }
 }
@@ -1197,9 +1197,9 @@ impl smithy_http::response::ParseStrictResponse for ListSimulationJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_simulation_jobs_error(response)
+            crate::operation_deser::parse_list_simulation_jobs_error(response)
         } else {
-            crate::operation_ser::parse_list_simulation_jobs_response(response)
+            crate::operation_deser::parse_list_simulation_jobs_response(response)
         }
     }
 }
@@ -1225,9 +1225,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -1253,9 +1253,9 @@ impl smithy_http::response::ParseStrictResponse for ListWorldExportJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_world_export_jobs_error(response)
+            crate::operation_deser::parse_list_world_export_jobs_error(response)
         } else {
-            crate::operation_ser::parse_list_world_export_jobs_response(response)
+            crate::operation_deser::parse_list_world_export_jobs_response(response)
         }
     }
 }
@@ -1281,9 +1281,9 @@ impl smithy_http::response::ParseStrictResponse for ListWorldGenerationJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_world_generation_jobs_error(response)
+            crate::operation_deser::parse_list_world_generation_jobs_error(response)
         } else {
-            crate::operation_ser::parse_list_world_generation_jobs_response(response)
+            crate::operation_deser::parse_list_world_generation_jobs_response(response)
         }
     }
 }
@@ -1307,9 +1307,9 @@ impl smithy_http::response::ParseStrictResponse for ListWorlds {
         std::result::Result<crate::output::ListWorldsOutput, crate::error::ListWorldsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_worlds_error(response)
+            crate::operation_deser::parse_list_worlds_error(response)
         } else {
-            crate::operation_ser::parse_list_worlds_response(response)
+            crate::operation_deser::parse_list_worlds_response(response)
         }
     }
 }
@@ -1335,9 +1335,9 @@ impl smithy_http::response::ParseStrictResponse for ListWorldTemplates {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_world_templates_error(response)
+            crate::operation_deser::parse_list_world_templates_error(response)
         } else {
-            crate::operation_ser::parse_list_world_templates_response(response)
+            crate::operation_deser::parse_list_world_templates_response(response)
         }
     }
 }
@@ -1361,9 +1361,9 @@ impl smithy_http::response::ParseStrictResponse for RegisterRobot {
         std::result::Result<crate::output::RegisterRobotOutput, crate::error::RegisterRobotError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_register_robot_error(response)
+            crate::operation_deser::parse_register_robot_error(response)
         } else {
-            crate::operation_ser::parse_register_robot_response(response)
+            crate::operation_deser::parse_register_robot_response(response)
         }
     }
 }
@@ -1389,9 +1389,9 @@ impl smithy_http::response::ParseStrictResponse for RestartSimulationJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_restart_simulation_job_error(response)
+            crate::operation_deser::parse_restart_simulation_job_error(response)
         } else {
-            crate::operation_ser::parse_restart_simulation_job_response(response)
+            crate::operation_deser::parse_restart_simulation_job_response(response)
         }
     }
 }
@@ -1418,9 +1418,9 @@ impl smithy_http::response::ParseStrictResponse for StartSimulationJobBatch {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_start_simulation_job_batch_error(response)
+            crate::operation_deser::parse_start_simulation_job_batch_error(response)
         } else {
-            crate::operation_ser::parse_start_simulation_job_batch_response(response)
+            crate::operation_deser::parse_start_simulation_job_batch_response(response)
         }
     }
 }
@@ -1447,9 +1447,9 @@ impl smithy_http::response::ParseStrictResponse for SyncDeploymentJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_sync_deployment_job_error(response)
+            crate::operation_deser::parse_sync_deployment_job_error(response)
         } else {
-            crate::operation_ser::parse_sync_deployment_job_response(response)
+            crate::operation_deser::parse_sync_deployment_job_response(response)
         }
     }
 }
@@ -1477,9 +1477,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -1507,9 +1507,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -1535,9 +1535,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateRobotApplication {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_robot_application_error(response)
+            crate::operation_deser::parse_update_robot_application_error(response)
         } else {
-            crate::operation_ser::parse_update_robot_application_response(response)
+            crate::operation_deser::parse_update_robot_application_response(response)
         }
     }
 }
@@ -1563,9 +1563,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateSimulationApplication 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_simulation_application_error(response)
+            crate::operation_deser::parse_update_simulation_application_error(response)
         } else {
-            crate::operation_ser::parse_update_simulation_application_response(response)
+            crate::operation_deser::parse_update_simulation_application_response(response)
         }
     }
 }
@@ -1591,9 +1591,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateWorldTemplate {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_world_template_error(response)
+            crate::operation_deser::parse_update_world_template_error(response)
         } else {
-            crate::operation_ser::parse_update_world_template_response(response)
+            crate::operation_deser::parse_update_world_template_response(response)
         }
     }
 }

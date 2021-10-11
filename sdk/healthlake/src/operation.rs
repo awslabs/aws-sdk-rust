@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for CreateFHIRDatastore {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_fhir_datastore_error(response)
+            crate::operation_deser::parse_create_fhir_datastore_error(response)
         } else {
-            crate::operation_ser::parse_create_fhir_datastore_response(response)
+            crate::operation_deser::parse_create_fhir_datastore_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteFHIRDatastore {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_fhir_datastore_error(response)
+            crate::operation_deser::parse_delete_fhir_datastore_error(response)
         } else {
-            crate::operation_ser::parse_delete_fhir_datastore_response(response)
+            crate::operation_deser::parse_delete_fhir_datastore_response(response)
         }
     }
 }
@@ -78,9 +78,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeFHIRDatastore {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_fhir_datastore_error(response)
+            crate::operation_deser::parse_describe_fhir_datastore_error(response)
         } else {
-            crate::operation_ser::parse_describe_fhir_datastore_response(response)
+            crate::operation_deser::parse_describe_fhir_datastore_response(response)
         }
     }
 }
@@ -106,9 +106,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeFHIRExportJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_fhir_export_job_error(response)
+            crate::operation_deser::parse_describe_fhir_export_job_error(response)
         } else {
-            crate::operation_ser::parse_describe_fhir_export_job_response(response)
+            crate::operation_deser::parse_describe_fhir_export_job_response(response)
         }
     }
 }
@@ -134,9 +134,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeFHIRImportJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_fhir_import_job_error(response)
+            crate::operation_deser::parse_describe_fhir_import_job_error(response)
         } else {
-            crate::operation_ser::parse_describe_fhir_import_job_response(response)
+            crate::operation_deser::parse_describe_fhir_import_job_response(response)
         }
     }
 }
@@ -163,9 +163,9 @@ impl smithy_http::response::ParseStrictResponse for ListFHIRDatastores {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_fhir_datastores_error(response)
+            crate::operation_deser::parse_list_fhir_datastores_error(response)
         } else {
-            crate::operation_ser::parse_list_fhir_datastores_response(response)
+            crate::operation_deser::parse_list_fhir_datastores_response(response)
         }
     }
 }
@@ -193,9 +193,9 @@ impl smithy_http::response::ParseStrictResponse for ListFHIRExportJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_fhir_export_jobs_error(response)
+            crate::operation_deser::parse_list_fhir_export_jobs_error(response)
         } else {
-            crate::operation_ser::parse_list_fhir_export_jobs_response(response)
+            crate::operation_deser::parse_list_fhir_export_jobs_response(response)
         }
     }
 }
@@ -223,9 +223,9 @@ impl smithy_http::response::ParseStrictResponse for ListFHIRImportJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_fhir_import_jobs_error(response)
+            crate::operation_deser::parse_list_fhir_import_jobs_error(response)
         } else {
-            crate::operation_ser::parse_list_fhir_import_jobs_response(response)
+            crate::operation_deser::parse_list_fhir_import_jobs_response(response)
         }
     }
 }
@@ -253,9 +253,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -281,9 +281,9 @@ impl smithy_http::response::ParseStrictResponse for StartFHIRExportJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_start_fhir_export_job_error(response)
+            crate::operation_deser::parse_start_fhir_export_job_error(response)
         } else {
-            crate::operation_ser::parse_start_fhir_export_job_response(response)
+            crate::operation_deser::parse_start_fhir_export_job_response(response)
         }
     }
 }
@@ -309,9 +309,9 @@ impl smithy_http::response::ParseStrictResponse for StartFHIRImportJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_start_fhir_import_job_error(response)
+            crate::operation_deser::parse_start_fhir_import_job_error(response)
         } else {
-            crate::operation_ser::parse_start_fhir_import_job_response(response)
+            crate::operation_deser::parse_start_fhir_import_job_response(response)
         }
     }
 }
@@ -337,9 +337,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -365,9 +365,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }

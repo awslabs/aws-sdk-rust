@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for AssociateLenses {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_associate_lenses_error(response)
+            crate::operation_deser::parse_associate_lenses_error(response)
         } else {
-            crate::operation_ser::parse_associate_lenses_response(response)
+            crate::operation_deser::parse_associate_lenses_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for CreateMilestone {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_milestone_error(response)
+            crate::operation_deser::parse_create_milestone_error(response)
         } else {
-            crate::operation_ser::parse_create_milestone_response(response)
+            crate::operation_deser::parse_create_milestone_response(response)
         }
     }
 }
@@ -78,9 +78,9 @@ impl smithy_http::response::ParseStrictResponse for CreateWorkload {
         std::result::Result<crate::output::CreateWorkloadOutput, crate::error::CreateWorkloadError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_workload_error(response)
+            crate::operation_deser::parse_create_workload_error(response)
         } else {
-            crate::operation_ser::parse_create_workload_response(response)
+            crate::operation_deser::parse_create_workload_response(response)
         }
     }
 }
@@ -111,9 +111,9 @@ impl smithy_http::response::ParseStrictResponse for CreateWorkloadShare {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_workload_share_error(response)
+            crate::operation_deser::parse_create_workload_share_error(response)
         } else {
-            crate::operation_ser::parse_create_workload_share_response(response)
+            crate::operation_deser::parse_create_workload_share_response(response)
         }
     }
 }
@@ -137,9 +137,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteWorkload {
         std::result::Result<crate::output::DeleteWorkloadOutput, crate::error::DeleteWorkloadError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_workload_error(response)
+            crate::operation_deser::parse_delete_workload_error(response)
         } else {
-            crate::operation_ser::parse_delete_workload_response(response)
+            crate::operation_deser::parse_delete_workload_response(response)
         }
     }
 }
@@ -165,9 +165,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteWorkloadShare {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_workload_share_error(response)
+            crate::operation_deser::parse_delete_workload_share_error(response)
         } else {
-            crate::operation_ser::parse_delete_workload_share_response(response)
+            crate::operation_deser::parse_delete_workload_share_response(response)
         }
     }
 }
@@ -197,9 +197,9 @@ impl smithy_http::response::ParseStrictResponse for DisassociateLenses {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_disassociate_lenses_error(response)
+            crate::operation_deser::parse_disassociate_lenses_error(response)
         } else {
-            crate::operation_ser::parse_disassociate_lenses_response(response)
+            crate::operation_deser::parse_disassociate_lenses_response(response)
         }
     }
 }
@@ -222,9 +222,9 @@ impl smithy_http::response::ParseStrictResponse for GetAnswer {
     type Output = std::result::Result<crate::output::GetAnswerOutput, crate::error::GetAnswerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_answer_error(response)
+            crate::operation_deser::parse_get_answer_error(response)
         } else {
-            crate::operation_ser::parse_get_answer_response(response)
+            crate::operation_deser::parse_get_answer_response(response)
         }
     }
 }
@@ -248,9 +248,9 @@ impl smithy_http::response::ParseStrictResponse for GetLensReview {
         std::result::Result<crate::output::GetLensReviewOutput, crate::error::GetLensReviewError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_lens_review_error(response)
+            crate::operation_deser::parse_get_lens_review_error(response)
         } else {
-            crate::operation_ser::parse_get_lens_review_response(response)
+            crate::operation_deser::parse_get_lens_review_response(response)
         }
     }
 }
@@ -276,9 +276,9 @@ impl smithy_http::response::ParseStrictResponse for GetLensReviewReport {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_lens_review_report_error(response)
+            crate::operation_deser::parse_get_lens_review_report_error(response)
         } else {
-            crate::operation_ser::parse_get_lens_review_report_response(response)
+            crate::operation_deser::parse_get_lens_review_report_response(response)
         }
     }
 }
@@ -304,9 +304,9 @@ impl smithy_http::response::ParseStrictResponse for GetLensVersionDifference {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_lens_version_difference_error(response)
+            crate::operation_deser::parse_get_lens_version_difference_error(response)
         } else {
-            crate::operation_ser::parse_get_lens_version_difference_response(response)
+            crate::operation_deser::parse_get_lens_version_difference_response(response)
         }
     }
 }
@@ -330,9 +330,9 @@ impl smithy_http::response::ParseStrictResponse for GetMilestone {
         std::result::Result<crate::output::GetMilestoneOutput, crate::error::GetMilestoneError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_milestone_error(response)
+            crate::operation_deser::parse_get_milestone_error(response)
         } else {
-            crate::operation_ser::parse_get_milestone_response(response)
+            crate::operation_deser::parse_get_milestone_response(response)
         }
     }
 }
@@ -356,9 +356,9 @@ impl smithy_http::response::ParseStrictResponse for GetWorkload {
         std::result::Result<crate::output::GetWorkloadOutput, crate::error::GetWorkloadError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_workload_error(response)
+            crate::operation_deser::parse_get_workload_error(response)
         } else {
-            crate::operation_ser::parse_get_workload_response(response)
+            crate::operation_deser::parse_get_workload_response(response)
         }
     }
 }
@@ -382,9 +382,9 @@ impl smithy_http::response::ParseStrictResponse for ListAnswers {
         std::result::Result<crate::output::ListAnswersOutput, crate::error::ListAnswersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_answers_error(response)
+            crate::operation_deser::parse_list_answers_error(response)
         } else {
-            crate::operation_ser::parse_list_answers_response(response)
+            crate::operation_deser::parse_list_answers_response(response)
         }
     }
 }
@@ -408,9 +408,9 @@ impl smithy_http::response::ParseStrictResponse for ListLenses {
         std::result::Result<crate::output::ListLensesOutput, crate::error::ListLensesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_lenses_error(response)
+            crate::operation_deser::parse_list_lenses_error(response)
         } else {
-            crate::operation_ser::parse_list_lenses_response(response)
+            crate::operation_deser::parse_list_lenses_response(response)
         }
     }
 }
@@ -436,9 +436,9 @@ impl smithy_http::response::ParseStrictResponse for ListLensReviewImprovements {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_lens_review_improvements_error(response)
+            crate::operation_deser::parse_list_lens_review_improvements_error(response)
         } else {
-            crate::operation_ser::parse_list_lens_review_improvements_response(response)
+            crate::operation_deser::parse_list_lens_review_improvements_response(response)
         }
     }
 }
@@ -464,9 +464,9 @@ impl smithy_http::response::ParseStrictResponse for ListLensReviews {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_lens_reviews_error(response)
+            crate::operation_deser::parse_list_lens_reviews_error(response)
         } else {
-            crate::operation_ser::parse_list_lens_reviews_response(response)
+            crate::operation_deser::parse_list_lens_reviews_response(response)
         }
     }
 }
@@ -490,9 +490,9 @@ impl smithy_http::response::ParseStrictResponse for ListMilestones {
         std::result::Result<crate::output::ListMilestonesOutput, crate::error::ListMilestonesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_milestones_error(response)
+            crate::operation_deser::parse_list_milestones_error(response)
         } else {
-            crate::operation_ser::parse_list_milestones_response(response)
+            crate::operation_deser::parse_list_milestones_response(response)
         }
     }
 }
@@ -518,9 +518,9 @@ impl smithy_http::response::ParseStrictResponse for ListNotifications {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_notifications_error(response)
+            crate::operation_deser::parse_list_notifications_error(response)
         } else {
-            crate::operation_ser::parse_list_notifications_response(response)
+            crate::operation_deser::parse_list_notifications_response(response)
         }
     }
 }
@@ -546,9 +546,9 @@ impl smithy_http::response::ParseStrictResponse for ListShareInvitations {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_share_invitations_error(response)
+            crate::operation_deser::parse_list_share_invitations_error(response)
         } else {
-            crate::operation_ser::parse_list_share_invitations_response(response)
+            crate::operation_deser::parse_list_share_invitations_response(response)
         }
     }
 }
@@ -574,9 +574,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -600,9 +600,9 @@ impl smithy_http::response::ParseStrictResponse for ListWorkloads {
         std::result::Result<crate::output::ListWorkloadsOutput, crate::error::ListWorkloadsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_workloads_error(response)
+            crate::operation_deser::parse_list_workloads_error(response)
         } else {
-            crate::operation_ser::parse_list_workloads_response(response)
+            crate::operation_deser::parse_list_workloads_response(response)
         }
     }
 }
@@ -628,9 +628,9 @@ impl smithy_http::response::ParseStrictResponse for ListWorkloadShares {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_workload_shares_error(response)
+            crate::operation_deser::parse_list_workload_shares_error(response)
         } else {
-            crate::operation_ser::parse_list_workload_shares_response(response)
+            crate::operation_deser::parse_list_workload_shares_response(response)
         }
     }
 }
@@ -654,9 +654,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -684,9 +684,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -710,9 +710,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateAnswer {
         std::result::Result<crate::output::UpdateAnswerOutput, crate::error::UpdateAnswerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_answer_error(response)
+            crate::operation_deser::parse_update_answer_error(response)
         } else {
-            crate::operation_ser::parse_update_answer_response(response)
+            crate::operation_deser::parse_update_answer_response(response)
         }
     }
 }
@@ -738,9 +738,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateLensReview {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_lens_review_error(response)
+            crate::operation_deser::parse_update_lens_review_error(response)
         } else {
-            crate::operation_ser::parse_update_lens_review_response(response)
+            crate::operation_deser::parse_update_lens_review_response(response)
         }
     }
 }
@@ -766,9 +766,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateShareInvitation {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_share_invitation_error(response)
+            crate::operation_deser::parse_update_share_invitation_error(response)
         } else {
-            crate::operation_ser::parse_update_share_invitation_response(response)
+            crate::operation_deser::parse_update_share_invitation_response(response)
         }
     }
 }
@@ -792,9 +792,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateWorkload {
         std::result::Result<crate::output::UpdateWorkloadOutput, crate::error::UpdateWorkloadError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_workload_error(response)
+            crate::operation_deser::parse_update_workload_error(response)
         } else {
-            crate::operation_ser::parse_update_workload_response(response)
+            crate::operation_deser::parse_update_workload_response(response)
         }
     }
 }
@@ -820,9 +820,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateWorkloadShare {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_workload_share_error(response)
+            crate::operation_deser::parse_update_workload_share_error(response)
         } else {
-            crate::operation_ser::parse_update_workload_share_response(response)
+            crate::operation_deser::parse_update_workload_share_response(response)
         }
     }
 }
@@ -848,9 +848,9 @@ impl smithy_http::response::ParseStrictResponse for UpgradeLensReview {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_upgrade_lens_review_error(response)
+            crate::operation_deser::parse_upgrade_lens_review_error(response)
         } else {
-            crate::operation_ser::parse_upgrade_lens_review_response(response)
+            crate::operation_deser::parse_upgrade_lens_review_response(response)
         }
     }
 }

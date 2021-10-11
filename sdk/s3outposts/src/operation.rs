@@ -39,9 +39,9 @@ impl smithy_http::response::ParseStrictResponse for CreateEndpoint {
         std::result::Result<crate::output::CreateEndpointOutput, crate::error::CreateEndpointError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_endpoint_error(response)
+            crate::operation_deser::parse_create_endpoint_error(response)
         } else {
-            crate::operation_ser::parse_create_endpoint_response(response)
+            crate::operation_deser::parse_create_endpoint_response(response)
         }
     }
 }
@@ -86,9 +86,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteEndpoint {
         std::result::Result<crate::output::DeleteEndpointOutput, crate::error::DeleteEndpointError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_endpoint_error(response)
+            crate::operation_deser::parse_delete_endpoint_error(response)
         } else {
-            crate::operation_ser::parse_delete_endpoint_response(response)
+            crate::operation_deser::parse_delete_endpoint_response(response)
         }
     }
 }
@@ -131,9 +131,9 @@ impl smithy_http::response::ParseStrictResponse for ListEndpoints {
         std::result::Result<crate::output::ListEndpointsOutput, crate::error::ListEndpointsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_endpoints_error(response)
+            crate::operation_deser::parse_list_endpoints_error(response)
         } else {
-            crate::operation_ser::parse_list_endpoints_response(response)
+            crate::operation_deser::parse_list_endpoints_response(response)
         }
     }
 }

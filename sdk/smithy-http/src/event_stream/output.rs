@@ -4,7 +4,7 @@
  */
 
 use crate::body::SdkBody;
-use crate::result::SdkError;
+use crate::result::{ConnectorError, SdkError};
 use bytes::Buf;
 use bytes::Bytes;
 use bytes_utils::SegmentedBuf;
@@ -170,7 +170,7 @@ impl<T, E> Receiver<T, E> {
                 .data()
                 .await
                 .transpose()
-                .map_err(|err| SdkError::DispatchFailure(err))?;
+                .map_err(|err| SdkError::DispatchFailure(ConnectorError::io(err)))?;
             let buffer = mem::replace(&mut self.buffer, RecvBuf::Empty);
             if let Some(chunk) = next_chunk {
                 self.buffer = buffer.with_partial(chunk);

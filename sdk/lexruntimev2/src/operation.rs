@@ -31,9 +31,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteSession {
         std::result::Result<crate::output::DeleteSessionOutput, crate::error::DeleteSessionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_session_error(response)
+            crate::operation_deser::parse_delete_session_error(response)
         } else {
-            crate::operation_ser::parse_delete_session_response(response)
+            crate::operation_deser::parse_delete_session_response(response)
         }
     }
 }
@@ -65,9 +65,9 @@ impl smithy_http::response::ParseStrictResponse for GetSession {
         std::result::Result<crate::output::GetSessionOutput, crate::error::GetSessionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_session_error(response)
+            crate::operation_deser::parse_get_session_error(response)
         } else {
-            crate::operation_ser::parse_get_session_response(response)
+            crate::operation_deser::parse_get_session_response(response)
         }
     }
 }
@@ -99,11 +99,11 @@ impl smithy_http::response::ParseHttpResponse for PutSession {
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_ser::parse_put_session(response))
+        Some(crate::operation_deser::parse_put_session(response))
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_ser::parse_put_session_error(response)
+        crate::operation_deser::parse_put_session_error(response)
     }
 }
 
@@ -130,9 +130,9 @@ impl smithy_http::response::ParseStrictResponse for RecognizeText {
         std::result::Result<crate::output::RecognizeTextOutput, crate::error::RecognizeTextError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_recognize_text_error(response)
+            crate::operation_deser::parse_recognize_text_error(response)
         } else {
-            crate::operation_ser::parse_recognize_text_response(response)
+            crate::operation_deser::parse_recognize_text_response(response)
         }
     }
 }
@@ -200,10 +200,10 @@ impl smithy_http::response::ParseHttpResponse for RecognizeUtterance {
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_ser::parse_recognize_utterance(response))
+        Some(crate::operation_deser::parse_recognize_utterance(response))
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_ser::parse_recognize_utterance_error(response)
+        crate::operation_deser::parse_recognize_utterance_error(response)
     }
 }

@@ -61,11 +61,11 @@ impl smithy_http::response::ParseHttpResponse for GetClip {
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_ser::parse_get_clip(response))
+        Some(crate::operation_deser::parse_get_clip(response))
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_ser::parse_get_clip_error(response)
+        crate::operation_deser::parse_get_clip_error(response)
     }
 }
 
@@ -233,9 +233,9 @@ impl smithy_http::response::ParseStrictResponse for GetDASHStreamingSessionURL {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_dash_streaming_session_url_error(response)
+            crate::operation_deser::parse_get_dash_streaming_session_url_error(response)
         } else {
-            crate::operation_ser::parse_get_dash_streaming_session_url_response(response)
+            crate::operation_deser::parse_get_dash_streaming_session_url_response(response)
         }
     }
 }
@@ -439,9 +439,9 @@ impl smithy_http::response::ParseStrictResponse for GetHLSStreamingSessionURL {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_hls_streaming_session_url_error(response)
+            crate::operation_deser::parse_get_hls_streaming_session_url_error(response)
         } else {
-            crate::operation_ser::parse_get_hls_streaming_session_url_response(response)
+            crate::operation_deser::parse_get_hls_streaming_session_url_response(response)
         }
     }
 }
@@ -506,13 +506,13 @@ impl smithy_http::response::ParseHttpResponse for GetMediaForFragmentList {
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_ser::parse_get_media_for_fragment_list(
+        Some(crate::operation_deser::parse_get_media_for_fragment_list(
             response,
         ))
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_ser::parse_get_media_for_fragment_list_error(response)
+        crate::operation_deser::parse_get_media_for_fragment_list_error(response)
     }
 }
 
@@ -570,9 +570,9 @@ impl smithy_http::response::ParseStrictResponse for ListFragments {
         std::result::Result<crate::output::ListFragmentsOutput, crate::error::ListFragmentsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_fragments_error(response)
+            crate::operation_deser::parse_list_fragments_error(response)
         } else {
-            crate::operation_ser::parse_list_fragments_response(response)
+            crate::operation_deser::parse_list_fragments_response(response)
         }
     }
 }

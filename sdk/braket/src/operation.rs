@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for CancelQuantumTask {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_cancel_quantum_task_error(response)
+            crate::operation_deser::parse_cancel_quantum_task_error(response)
         } else {
-            crate::operation_ser::parse_cancel_quantum_task_response(response)
+            crate::operation_deser::parse_cancel_quantum_task_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for CreateQuantumTask {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_quantum_task_error(response)
+            crate::operation_deser::parse_create_quantum_task_error(response)
         } else {
-            crate::operation_ser::parse_create_quantum_task_response(response)
+            crate::operation_deser::parse_create_quantum_task_response(response)
         }
     }
 }
@@ -73,9 +73,9 @@ impl smithy_http::response::ParseStrictResponse for GetDevice {
     type Output = std::result::Result<crate::output::GetDeviceOutput, crate::error::GetDeviceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_device_error(response)
+            crate::operation_deser::parse_get_device_error(response)
         } else {
-            crate::operation_ser::parse_get_device_response(response)
+            crate::operation_deser::parse_get_device_response(response)
         }
     }
 }
@@ -99,9 +99,9 @@ impl smithy_http::response::ParseStrictResponse for GetQuantumTask {
         std::result::Result<crate::output::GetQuantumTaskOutput, crate::error::GetQuantumTaskError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_quantum_task_error(response)
+            crate::operation_deser::parse_get_quantum_task_error(response)
         } else {
-            crate::operation_ser::parse_get_quantum_task_response(response)
+            crate::operation_deser::parse_get_quantum_task_response(response)
         }
     }
 }
@@ -127,9 +127,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -153,9 +153,9 @@ impl smithy_http::response::ParseStrictResponse for SearchDevices {
         std::result::Result<crate::output::SearchDevicesOutput, crate::error::SearchDevicesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_search_devices_error(response)
+            crate::operation_deser::parse_search_devices_error(response)
         } else {
-            crate::operation_ser::parse_search_devices_response(response)
+            crate::operation_deser::parse_search_devices_response(response)
         }
     }
 }
@@ -181,9 +181,9 @@ impl smithy_http::response::ParseStrictResponse for SearchQuantumTasks {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_search_quantum_tasks_error(response)
+            crate::operation_deser::parse_search_quantum_tasks_error(response)
         } else {
-            crate::operation_ser::parse_search_quantum_tasks_response(response)
+            crate::operation_deser::parse_search_quantum_tasks_response(response)
         }
     }
 }
@@ -207,9 +207,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -233,9 +233,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }

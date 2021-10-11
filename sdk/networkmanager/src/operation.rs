@@ -28,9 +28,9 @@ impl smithy_http::response::ParseStrictResponse for AssociateCustomerGateway {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_associate_customer_gateway_error(response)
+            crate::operation_deser::parse_associate_customer_gateway_error(response)
         } else {
-            crate::operation_ser::parse_associate_customer_gateway_response(response)
+            crate::operation_deser::parse_associate_customer_gateway_response(response)
         }
     }
 }
@@ -54,9 +54,9 @@ impl smithy_http::response::ParseStrictResponse for AssociateLink {
         std::result::Result<crate::output::AssociateLinkOutput, crate::error::AssociateLinkError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_associate_link_error(response)
+            crate::operation_deser::parse_associate_link_error(response)
         } else {
-            crate::operation_ser::parse_associate_link_response(response)
+            crate::operation_deser::parse_associate_link_response(response)
         }
     }
 }
@@ -86,9 +86,9 @@ impl smithy_http::response::ParseStrictResponse for AssociateTransitGatewayConne
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_associate_transit_gateway_connect_peer_error(response)
+            crate::operation_deser::parse_associate_transit_gateway_connect_peer_error(response)
         } else {
-            crate::operation_ser::parse_associate_transit_gateway_connect_peer_response(response)
+            crate::operation_deser::parse_associate_transit_gateway_connect_peer_response(response)
         }
     }
 }
@@ -114,9 +114,9 @@ impl smithy_http::response::ParseStrictResponse for CreateConnection {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_connection_error(response)
+            crate::operation_deser::parse_create_connection_error(response)
         } else {
-            crate::operation_ser::parse_create_connection_response(response)
+            crate::operation_deser::parse_create_connection_response(response)
         }
     }
 }
@@ -141,9 +141,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDevice {
         std::result::Result<crate::output::CreateDeviceOutput, crate::error::CreateDeviceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_device_error(response)
+            crate::operation_deser::parse_create_device_error(response)
         } else {
-            crate::operation_ser::parse_create_device_response(response)
+            crate::operation_deser::parse_create_device_response(response)
         }
     }
 }
@@ -169,9 +169,9 @@ impl smithy_http::response::ParseStrictResponse for CreateGlobalNetwork {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_global_network_error(response)
+            crate::operation_deser::parse_create_global_network_error(response)
         } else {
-            crate::operation_ser::parse_create_global_network_response(response)
+            crate::operation_deser::parse_create_global_network_response(response)
         }
     }
 }
@@ -195,9 +195,9 @@ impl smithy_http::response::ParseStrictResponse for CreateLink {
         std::result::Result<crate::output::CreateLinkOutput, crate::error::CreateLinkError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_link_error(response)
+            crate::operation_deser::parse_create_link_error(response)
         } else {
-            crate::operation_ser::parse_create_link_response(response)
+            crate::operation_deser::parse_create_link_response(response)
         }
     }
 }
@@ -221,9 +221,9 @@ impl smithy_http::response::ParseStrictResponse for CreateSite {
         std::result::Result<crate::output::CreateSiteOutput, crate::error::CreateSiteError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_site_error(response)
+            crate::operation_deser::parse_create_site_error(response)
         } else {
-            crate::operation_ser::parse_create_site_response(response)
+            crate::operation_deser::parse_create_site_response(response)
         }
     }
 }
@@ -249,9 +249,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteConnection {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_connection_error(response)
+            crate::operation_deser::parse_delete_connection_error(response)
         } else {
-            crate::operation_ser::parse_delete_connection_response(response)
+            crate::operation_deser::parse_delete_connection_response(response)
         }
     }
 }
@@ -276,9 +276,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteDevice {
         std::result::Result<crate::output::DeleteDeviceOutput, crate::error::DeleteDeviceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_device_error(response)
+            crate::operation_deser::parse_delete_device_error(response)
         } else {
-            crate::operation_ser::parse_delete_device_response(response)
+            crate::operation_deser::parse_delete_device_response(response)
         }
     }
 }
@@ -305,9 +305,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteGlobalNetwork {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_global_network_error(response)
+            crate::operation_deser::parse_delete_global_network_error(response)
         } else {
-            crate::operation_ser::parse_delete_global_network_response(response)
+            crate::operation_deser::parse_delete_global_network_response(response)
         }
     }
 }
@@ -332,9 +332,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteLink {
         std::result::Result<crate::output::DeleteLinkOutput, crate::error::DeleteLinkError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_link_error(response)
+            crate::operation_deser::parse_delete_link_error(response)
         } else {
-            crate::operation_ser::parse_delete_link_response(response)
+            crate::operation_deser::parse_delete_link_response(response)
         }
     }
 }
@@ -358,9 +358,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteSite {
         std::result::Result<crate::output::DeleteSiteOutput, crate::error::DeleteSiteError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_site_error(response)
+            crate::operation_deser::parse_delete_site_error(response)
         } else {
-            crate::operation_ser::parse_delete_site_response(response)
+            crate::operation_deser::parse_delete_site_response(response)
         }
     }
 }
@@ -387,9 +387,9 @@ impl smithy_http::response::ParseStrictResponse for DeregisterTransitGateway {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_deregister_transit_gateway_error(response)
+            crate::operation_deser::parse_deregister_transit_gateway_error(response)
         } else {
-            crate::operation_ser::parse_deregister_transit_gateway_response(response)
+            crate::operation_deser::parse_deregister_transit_gateway_response(response)
         }
     }
 }
@@ -418,9 +418,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeGlobalNetworks {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_global_networks_error(response)
+            crate::operation_deser::parse_describe_global_networks_error(response)
         } else {
-            crate::operation_ser::parse_describe_global_networks_response(response)
+            crate::operation_deser::parse_describe_global_networks_response(response)
         }
     }
 }
@@ -446,9 +446,9 @@ impl smithy_http::response::ParseStrictResponse for DisassociateCustomerGateway 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_disassociate_customer_gateway_error(response)
+            crate::operation_deser::parse_disassociate_customer_gateway_error(response)
         } else {
-            crate::operation_ser::parse_disassociate_customer_gateway_response(response)
+            crate::operation_deser::parse_disassociate_customer_gateway_response(response)
         }
     }
 }
@@ -475,9 +475,9 @@ impl smithy_http::response::ParseStrictResponse for DisassociateLink {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_disassociate_link_error(response)
+            crate::operation_deser::parse_disassociate_link_error(response)
         } else {
-            crate::operation_ser::parse_disassociate_link_response(response)
+            crate::operation_deser::parse_disassociate_link_response(response)
         }
     }
 }
@@ -503,9 +503,11 @@ impl smithy_http::response::ParseStrictResponse for DisassociateTransitGatewayCo
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_disassociate_transit_gateway_connect_peer_error(response)
+            crate::operation_deser::parse_disassociate_transit_gateway_connect_peer_error(response)
         } else {
-            crate::operation_ser::parse_disassociate_transit_gateway_connect_peer_response(response)
+            crate::operation_deser::parse_disassociate_transit_gateway_connect_peer_response(
+                response,
+            )
         }
     }
 }
@@ -529,9 +531,9 @@ impl smithy_http::response::ParseStrictResponse for GetConnections {
         std::result::Result<crate::output::GetConnectionsOutput, crate::error::GetConnectionsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_connections_error(response)
+            crate::operation_deser::parse_get_connections_error(response)
         } else {
-            crate::operation_ser::parse_get_connections_response(response)
+            crate::operation_deser::parse_get_connections_response(response)
         }
     }
 }
@@ -558,9 +560,9 @@ impl smithy_http::response::ParseStrictResponse for GetCustomerGatewayAssociatio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_customer_gateway_associations_error(response)
+            crate::operation_deser::parse_get_customer_gateway_associations_error(response)
         } else {
-            crate::operation_ser::parse_get_customer_gateway_associations_response(response)
+            crate::operation_deser::parse_get_customer_gateway_associations_response(response)
         }
     }
 }
@@ -584,9 +586,9 @@ impl smithy_http::response::ParseStrictResponse for GetDevices {
         std::result::Result<crate::output::GetDevicesOutput, crate::error::GetDevicesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_devices_error(response)
+            crate::operation_deser::parse_get_devices_error(response)
         } else {
-            crate::operation_ser::parse_get_devices_response(response)
+            crate::operation_deser::parse_get_devices_response(response)
         }
     }
 }
@@ -613,9 +615,9 @@ impl smithy_http::response::ParseStrictResponse for GetLinkAssociations {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_link_associations_error(response)
+            crate::operation_deser::parse_get_link_associations_error(response)
         } else {
-            crate::operation_ser::parse_get_link_associations_response(response)
+            crate::operation_deser::parse_get_link_associations_response(response)
         }
     }
 }
@@ -639,9 +641,9 @@ impl smithy_http::response::ParseStrictResponse for GetLinks {
     type Output = std::result::Result<crate::output::GetLinksOutput, crate::error::GetLinksError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_links_error(response)
+            crate::operation_deser::parse_get_links_error(response)
         } else {
-            crate::operation_ser::parse_get_links_response(response)
+            crate::operation_deser::parse_get_links_response(response)
         }
     }
 }
@@ -664,9 +666,9 @@ impl smithy_http::response::ParseStrictResponse for GetSites {
     type Output = std::result::Result<crate::output::GetSitesOutput, crate::error::GetSitesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_sites_error(response)
+            crate::operation_deser::parse_get_sites_error(response)
         } else {
-            crate::operation_ser::parse_get_sites_response(response)
+            crate::operation_deser::parse_get_sites_response(response)
         }
     }
 }
@@ -692,11 +694,11 @@ impl smithy_http::response::ParseStrictResponse for GetTransitGatewayConnectPeer
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_transit_gateway_connect_peer_associations_error(
+            crate::operation_deser::parse_get_transit_gateway_connect_peer_associations_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_get_transit_gateway_connect_peer_associations_response(
+            crate::operation_deser::parse_get_transit_gateway_connect_peer_associations_response(
                 response,
             )
         }
@@ -725,9 +727,9 @@ impl smithy_http::response::ParseStrictResponse for GetTransitGatewayRegistratio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_transit_gateway_registrations_error(response)
+            crate::operation_deser::parse_get_transit_gateway_registrations_error(response)
         } else {
-            crate::operation_ser::parse_get_transit_gateway_registrations_response(response)
+            crate::operation_deser::parse_get_transit_gateway_registrations_response(response)
         }
     }
 }
@@ -753,9 +755,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -783,9 +785,9 @@ impl smithy_http::response::ParseStrictResponse for RegisterTransitGateway {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_register_transit_gateway_error(response)
+            crate::operation_deser::parse_register_transit_gateway_error(response)
         } else {
-            crate::operation_ser::parse_register_transit_gateway_response(response)
+            crate::operation_deser::parse_register_transit_gateway_response(response)
         }
     }
 }
@@ -809,9 +811,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -835,9 +837,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -864,9 +866,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateConnection {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_connection_error(response)
+            crate::operation_deser::parse_update_connection_error(response)
         } else {
-            crate::operation_ser::parse_update_connection_response(response)
+            crate::operation_deser::parse_update_connection_response(response)
         }
     }
 }
@@ -891,9 +893,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateDevice {
         std::result::Result<crate::output::UpdateDeviceOutput, crate::error::UpdateDeviceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_device_error(response)
+            crate::operation_deser::parse_update_device_error(response)
         } else {
-            crate::operation_ser::parse_update_device_response(response)
+            crate::operation_deser::parse_update_device_response(response)
         }
     }
 }
@@ -920,9 +922,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateGlobalNetwork {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_global_network_error(response)
+            crate::operation_deser::parse_update_global_network_error(response)
         } else {
-            crate::operation_ser::parse_update_global_network_response(response)
+            crate::operation_deser::parse_update_global_network_response(response)
         }
     }
 }
@@ -947,9 +949,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateLink {
         std::result::Result<crate::output::UpdateLinkOutput, crate::error::UpdateLinkError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_link_error(response)
+            crate::operation_deser::parse_update_link_error(response)
         } else {
-            crate::operation_ser::parse_update_link_response(response)
+            crate::operation_deser::parse_update_link_response(response)
         }
     }
 }
@@ -974,9 +976,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateSite {
         std::result::Result<crate::output::UpdateSiteOutput, crate::error::UpdateSiteError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_site_error(response)
+            crate::operation_deser::parse_update_site_error(response)
         } else {
-            crate::operation_ser::parse_update_site_response(response)
+            crate::operation_deser::parse_update_site_response(response)
         }
     }
 }

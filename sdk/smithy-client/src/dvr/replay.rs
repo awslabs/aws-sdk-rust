@@ -8,6 +8,7 @@ use bytes::{Bytes, BytesMut};
 use http::{Request, Version};
 use http_body::Body;
 use smithy_http::body::SdkBody;
+use smithy_http::result::ConnectorError;
 use std::collections::{HashMap, VecDeque};
 use std::error::Error;
 use std::sync::atomic::{AtomicUsize, Ordering};
@@ -211,7 +212,7 @@ fn convert_version(version: &str) -> Version {
 
 impl tower::Service<http::Request<SdkBody>> for ReplayingConnection {
     type Response = http::Response<SdkBody>;
-    type Error = Box<dyn Error + Send + Sync + 'static>;
+    type Error = ConnectorError;
 
     #[allow(clippy::type_complexity)]
     type Future = std::pin::Pin<
@@ -227,11 +228,10 @@ impl tower::Service<http::Request<SdkBody>> for ReplayingConnection {
         let mut events = match self.live_events.lock().unwrap().remove(&event_id) {
             Some(traffic) => traffic,
             None => {
-                return Box::pin(std::future::ready(Err(format!(
-                    "no data for event {}. req: {:?}",
-                    event_id.0, req
-                )
-                .into())))
+                return Box::pin(std::future::ready(Err(ConnectorError::other(
+                    format!("no data for event {}. req: {:?}", event_id.0, req).into(),
+                    None,
+                ))))
             }
         };
 
@@ -265,7 +265,7 @@ impl tower::Service<http::Request<SdkBody>> for ReplayingConnection {
                     Action::Request { .. } => panic!("invalid"),
                     Action::Response {
                         response: Err(error),
-                    } => break Err(error.0.into()),
+                    } => break Err(ConnectorError::other(error.0.into(), None)),
                     Action::Response {
                         response: Ok(response),
                     } => {

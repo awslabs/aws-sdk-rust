@@ -24,9 +24,9 @@ impl smithy_http::response::ParseStrictResponse for CancelJournalKinesisStream {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_cancel_journal_kinesis_stream_error(response)
+            crate::operation_deser::parse_cancel_journal_kinesis_stream_error(response)
         } else {
-            crate::operation_ser::parse_cancel_journal_kinesis_stream_response(response)
+            crate::operation_deser::parse_cancel_journal_kinesis_stream_response(response)
         }
     }
 }
@@ -50,9 +50,9 @@ impl smithy_http::response::ParseStrictResponse for CreateLedger {
         std::result::Result<crate::output::CreateLedgerOutput, crate::error::CreateLedgerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_ledger_error(response)
+            crate::operation_deser::parse_create_ledger_error(response)
         } else {
-            crate::operation_ser::parse_create_ledger_response(response)
+            crate::operation_deser::parse_create_ledger_response(response)
         }
     }
 }
@@ -78,9 +78,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteLedger {
         std::result::Result<crate::output::DeleteLedgerOutput, crate::error::DeleteLedgerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_ledger_error(response)
+            crate::operation_deser::parse_delete_ledger_error(response)
         } else {
-            crate::operation_ser::parse_delete_ledger_response(response)
+            crate::operation_deser::parse_delete_ledger_response(response)
         }
     }
 }
@@ -111,9 +111,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeJournalKinesisStream
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_journal_kinesis_stream_error(response)
+            crate::operation_deser::parse_describe_journal_kinesis_stream_error(response)
         } else {
-            crate::operation_ser::parse_describe_journal_kinesis_stream_response(response)
+            crate::operation_deser::parse_describe_journal_kinesis_stream_response(response)
         }
     }
 }
@@ -147,9 +147,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeJournalS3Export {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_journal_s3_export_error(response)
+            crate::operation_deser::parse_describe_journal_s3_export_error(response)
         } else {
-            crate::operation_ser::parse_describe_journal_s3_export_response(response)
+            crate::operation_deser::parse_describe_journal_s3_export_response(response)
         }
     }
 }
@@ -174,9 +174,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeLedger {
         std::result::Result<crate::output::DescribeLedgerOutput, crate::error::DescribeLedgerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_ledger_error(response)
+            crate::operation_deser::parse_describe_ledger_error(response)
         } else {
-            crate::operation_ser::parse_describe_ledger_response(response)
+            crate::operation_deser::parse_describe_ledger_response(response)
         }
     }
 }
@@ -209,9 +209,9 @@ impl smithy_http::response::ParseStrictResponse for ExportJournalToS3 {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_export_journal_to_s3_error(response)
+            crate::operation_deser::parse_export_journal_to_s3_error(response)
         } else {
-            crate::operation_ser::parse_export_journal_to_s3_response(response)
+            crate::operation_deser::parse_export_journal_to_s3_response(response)
         }
     }
 }
@@ -243,9 +243,9 @@ impl smithy_http::response::ParseStrictResponse for GetBlock {
     type Output = std::result::Result<crate::output::GetBlockOutput, crate::error::GetBlockError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_block_error(response)
+            crate::operation_deser::parse_get_block_error(response)
         } else {
-            crate::operation_ser::parse_get_block_response(response)
+            crate::operation_deser::parse_get_block_response(response)
         }
     }
 }
@@ -269,9 +269,9 @@ impl smithy_http::response::ParseStrictResponse for GetDigest {
     type Output = std::result::Result<crate::output::GetDigestOutput, crate::error::GetDigestError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_digest_error(response)
+            crate::operation_deser::parse_get_digest_error(response)
         } else {
-            crate::operation_ser::parse_get_digest_response(response)
+            crate::operation_deser::parse_get_digest_response(response)
         }
     }
 }
@@ -297,9 +297,9 @@ impl smithy_http::response::ParseStrictResponse for GetRevision {
         std::result::Result<crate::output::GetRevisionOutput, crate::error::GetRevisionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_revision_error(response)
+            crate::operation_deser::parse_get_revision_error(response)
         } else {
-            crate::operation_ser::parse_get_revision_response(response)
+            crate::operation_deser::parse_get_revision_response(response)
         }
     }
 }
@@ -333,9 +333,9 @@ impl smithy_http::response::ParseStrictResponse for ListJournalKinesisStreamsFor
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_journal_kinesis_streams_for_ledger_error(response)
+            crate::operation_deser::parse_list_journal_kinesis_streams_for_ledger_error(response)
         } else {
-            crate::operation_ser::parse_list_journal_kinesis_streams_for_ledger_response(response)
+            crate::operation_deser::parse_list_journal_kinesis_streams_for_ledger_response(response)
         }
     }
 }
@@ -367,9 +367,9 @@ impl smithy_http::response::ParseStrictResponse for ListJournalS3Exports {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_journal_s3_exports_error(response)
+            crate::operation_deser::parse_list_journal_s3_exports_error(response)
         } else {
-            crate::operation_ser::parse_list_journal_s3_exports_response(response)
+            crate::operation_deser::parse_list_journal_s3_exports_response(response)
         }
     }
 }
@@ -400,9 +400,9 @@ impl smithy_http::response::ParseStrictResponse for ListJournalS3ExportsForLedge
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_journal_s3_exports_for_ledger_error(response)
+            crate::operation_deser::parse_list_journal_s3_exports_for_ledger_error(response)
         } else {
-            crate::operation_ser::parse_list_journal_s3_exports_for_ledger_response(response)
+            crate::operation_deser::parse_list_journal_s3_exports_for_ledger_response(response)
         }
     }
 }
@@ -429,9 +429,9 @@ impl smithy_http::response::ParseStrictResponse for ListLedgers {
         std::result::Result<crate::output::ListLedgersOutput, crate::error::ListLedgersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_ledgers_error(response)
+            crate::operation_deser::parse_list_ledgers_error(response)
         } else {
-            crate::operation_ser::parse_list_ledgers_response(response)
+            crate::operation_deser::parse_list_ledgers_response(response)
         }
     }
 }
@@ -457,9 +457,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -487,9 +487,9 @@ impl smithy_http::response::ParseStrictResponse for StreamJournalToKinesis {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_stream_journal_to_kinesis_error(response)
+            crate::operation_deser::parse_stream_journal_to_kinesis_error(response)
         } else {
-            crate::operation_ser::parse_stream_journal_to_kinesis_response(response)
+            crate::operation_deser::parse_stream_journal_to_kinesis_response(response)
         }
     }
 }
@@ -515,9 +515,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -542,9 +542,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -568,9 +568,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateLedger {
         std::result::Result<crate::output::UpdateLedgerOutput, crate::error::UpdateLedgerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_ledger_error(response)
+            crate::operation_deser::parse_update_ledger_error(response)
         } else {
-            crate::operation_ser::parse_update_ledger_response(response)
+            crate::operation_deser::parse_update_ledger_response(response)
         }
     }
 }
@@ -602,9 +602,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateLedgerPermissionsMode 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_ledger_permissions_mode_error(response)
+            crate::operation_deser::parse_update_ledger_permissions_mode_error(response)
         } else {
-            crate::operation_ser::parse_update_ledger_permissions_mode_response(response)
+            crate::operation_deser::parse_update_ledger_permissions_mode_response(response)
         }
     }
 }

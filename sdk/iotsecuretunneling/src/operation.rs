@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for CloseTunnel {
         std::result::Result<crate::output::CloseTunnelOutput, crate::error::CloseTunnelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_close_tunnel_error(response)
+            crate::operation_deser::parse_close_tunnel_error(response)
         } else {
-            crate::operation_ser::parse_close_tunnel_response(response)
+            crate::operation_deser::parse_close_tunnel_response(response)
         }
     }
 }
@@ -46,9 +46,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeTunnel {
         std::result::Result<crate::output::DescribeTunnelOutput, crate::error::DescribeTunnelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_tunnel_error(response)
+            crate::operation_deser::parse_describe_tunnel_error(response)
         } else {
-            crate::operation_ser::parse_describe_tunnel_response(response)
+            crate::operation_deser::parse_describe_tunnel_response(response)
         }
     }
 }
@@ -74,9 +74,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -101,9 +101,9 @@ impl smithy_http::response::ParseStrictResponse for ListTunnels {
         std::result::Result<crate::output::ListTunnelsOutput, crate::error::ListTunnelsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tunnels_error(response)
+            crate::operation_deser::parse_list_tunnels_error(response)
         } else {
-            crate::operation_ser::parse_list_tunnels_response(response)
+            crate::operation_deser::parse_list_tunnels_response(response)
         }
     }
 }
@@ -128,9 +128,9 @@ impl smithy_http::response::ParseStrictResponse for OpenTunnel {
         std::result::Result<crate::output::OpenTunnelOutput, crate::error::OpenTunnelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_open_tunnel_error(response)
+            crate::operation_deser::parse_open_tunnel_error(response)
         } else {
-            crate::operation_ser::parse_open_tunnel_response(response)
+            crate::operation_deser::parse_open_tunnel_response(response)
         }
     }
 }
@@ -154,9 +154,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -180,9 +180,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }

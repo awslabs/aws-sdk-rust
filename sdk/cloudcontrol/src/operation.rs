@@ -23,9 +23,9 @@ impl smithy_http::response::ParseStrictResponse for CancelResourceRequest {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_cancel_resource_request_error(response)
+            crate::operation_deser::parse_cancel_resource_request_error(response)
         } else {
-            crate::operation_ser::parse_cancel_resource_request_response(response)
+            crate::operation_deser::parse_cancel_resource_request_response(response)
         }
     }
 }
@@ -53,9 +53,9 @@ impl smithy_http::response::ParseStrictResponse for CreateResource {
         std::result::Result<crate::output::CreateResourceOutput, crate::error::CreateResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_resource_error(response)
+            crate::operation_deser::parse_create_resource_error(response)
         } else {
-            crate::operation_ser::parse_create_resource_response(response)
+            crate::operation_deser::parse_create_resource_response(response)
         }
     }
 }
@@ -83,9 +83,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteResource {
         std::result::Result<crate::output::DeleteResourceOutput, crate::error::DeleteResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_resource_error(response)
+            crate::operation_deser::parse_delete_resource_error(response)
         } else {
-            crate::operation_ser::parse_delete_resource_response(response)
+            crate::operation_deser::parse_delete_resource_response(response)
         }
     }
 }
@@ -112,9 +112,9 @@ impl smithy_http::response::ParseStrictResponse for GetResource {
         std::result::Result<crate::output::GetResourceOutput, crate::error::GetResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_resource_error(response)
+            crate::operation_deser::parse_get_resource_error(response)
         } else {
-            crate::operation_ser::parse_get_resource_response(response)
+            crate::operation_deser::parse_get_resource_response(response)
         }
     }
 }
@@ -142,9 +142,9 @@ impl smithy_http::response::ParseStrictResponse for GetResourceRequestStatus {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_resource_request_status_error(response)
+            crate::operation_deser::parse_get_resource_request_status_error(response)
         } else {
-            crate::operation_ser::parse_get_resource_request_status_response(response)
+            crate::operation_deser::parse_get_resource_request_status_response(response)
         }
     }
 }
@@ -175,9 +175,9 @@ impl smithy_http::response::ParseStrictResponse for ListResourceRequests {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_resource_requests_error(response)
+            crate::operation_deser::parse_list_resource_requests_error(response)
         } else {
-            crate::operation_ser::parse_list_resource_requests_response(response)
+            crate::operation_deser::parse_list_resource_requests_response(response)
         }
     }
 }
@@ -204,9 +204,9 @@ impl smithy_http::response::ParseStrictResponse for ListResources {
         std::result::Result<crate::output::ListResourcesOutput, crate::error::ListResourcesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_resources_error(response)
+            crate::operation_deser::parse_list_resources_error(response)
         } else {
-            crate::operation_ser::parse_list_resources_response(response)
+            crate::operation_deser::parse_list_resources_response(response)
         }
     }
 }
@@ -242,9 +242,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateResource {
         std::result::Result<crate::output::UpdateResourceOutput, crate::error::UpdateResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_resource_error(response)
+            crate::operation_deser::parse_update_resource_error(response)
         } else {
-            crate::operation_ser::parse_update_resource_response(response)
+            crate::operation_deser::parse_update_resource_response(response)
         }
     }
 }

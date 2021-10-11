@@ -25,9 +25,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDimensionKeys {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_dimension_keys_error(response)
+            crate::operation_deser::parse_describe_dimension_keys_error(response)
         } else {
-            crate::operation_ser::parse_describe_dimension_keys_response(response)
+            crate::operation_deser::parse_describe_dimension_keys_response(response)
         }
     }
 }
@@ -56,9 +56,9 @@ impl smithy_http::response::ParseStrictResponse for GetDimensionKeyDetails {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_dimension_key_details_error(response)
+            crate::operation_deser::parse_get_dimension_key_details_error(response)
         } else {
-            crate::operation_ser::parse_get_dimension_key_details_response(response)
+            crate::operation_deser::parse_get_dimension_key_details_response(response)
         }
     }
 }
@@ -90,9 +90,9 @@ impl smithy_http::response::ParseStrictResponse for GetResourceMetrics {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_resource_metrics_error(response)
+            crate::operation_deser::parse_get_resource_metrics_error(response)
         } else {
-            crate::operation_ser::parse_get_resource_metrics_response(response)
+            crate::operation_deser::parse_get_resource_metrics_response(response)
         }
     }
 }

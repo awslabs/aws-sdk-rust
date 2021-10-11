@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for CreateScalingPlan {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_scaling_plan_error(response)
+            crate::operation_deser::parse_create_scaling_plan_error(response)
         } else {
-            crate::operation_ser::parse_create_scaling_plan_response(response)
+            crate::operation_deser::parse_create_scaling_plan_response(response)
         }
     }
 }
@@ -52,9 +52,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteScalingPlan {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_scaling_plan_error(response)
+            crate::operation_deser::parse_delete_scaling_plan_error(response)
         } else {
-            crate::operation_ser::parse_delete_scaling_plan_response(response)
+            crate::operation_deser::parse_delete_scaling_plan_response(response)
         }
     }
 }
@@ -80,9 +80,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeScalingPlanResources
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_scaling_plan_resources_error(response)
+            crate::operation_deser::parse_describe_scaling_plan_resources_error(response)
         } else {
-            crate::operation_ser::parse_describe_scaling_plan_resources_response(response)
+            crate::operation_deser::parse_describe_scaling_plan_resources_response(response)
         }
     }
 }
@@ -108,9 +108,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeScalingPlans {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_scaling_plans_error(response)
+            crate::operation_deser::parse_describe_scaling_plans_error(response)
         } else {
-            crate::operation_ser::parse_describe_scaling_plans_response(response)
+            crate::operation_deser::parse_describe_scaling_plans_response(response)
         }
     }
 }
@@ -139,9 +139,9 @@ impl smithy_http::response::ParseStrictResponse for GetScalingPlanResourceForeca
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_scaling_plan_resource_forecast_data_error(response)
+            crate::operation_deser::parse_get_scaling_plan_resource_forecast_data_error(response)
         } else {
-            crate::operation_ser::parse_get_scaling_plan_resource_forecast_data_response(response)
+            crate::operation_deser::parse_get_scaling_plan_resource_forecast_data_response(response)
         }
     }
 }
@@ -169,9 +169,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateScalingPlan {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_scaling_plan_error(response)
+            crate::operation_deser::parse_update_scaling_plan_error(response)
         } else {
-            crate::operation_ser::parse_update_scaling_plan_response(response)
+            crate::operation_deser::parse_update_scaling_plan_response(response)
         }
     }
 }

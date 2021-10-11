@@ -18,9 +18,9 @@ impl smithy_http::response::ParseStrictResponse for AcceptGrant {
         std::result::Result<crate::output::AcceptGrantOutput, crate::error::AcceptGrantError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_accept_grant_error(response)
+            crate::operation_deser::parse_accept_grant_error(response)
         } else {
-            crate::operation_ser::parse_accept_grant_response(response)
+            crate::operation_deser::parse_accept_grant_response(response)
         }
     }
 }
@@ -44,9 +44,9 @@ impl smithy_http::response::ParseStrictResponse for CheckInLicense {
         std::result::Result<crate::output::CheckInLicenseOutput, crate::error::CheckInLicenseError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_check_in_license_error(response)
+            crate::operation_deser::parse_check_in_license_error(response)
         } else {
-            crate::operation_ser::parse_check_in_license_response(response)
+            crate::operation_deser::parse_check_in_license_response(response)
         }
     }
 }
@@ -72,9 +72,9 @@ impl smithy_http::response::ParseStrictResponse for CheckoutBorrowLicense {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_checkout_borrow_license_error(response)
+            crate::operation_deser::parse_checkout_borrow_license_error(response)
         } else {
-            crate::operation_ser::parse_checkout_borrow_license_response(response)
+            crate::operation_deser::parse_checkout_borrow_license_response(response)
         }
     }
 }
@@ -100,9 +100,9 @@ impl smithy_http::response::ParseStrictResponse for CheckoutLicense {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_checkout_license_error(response)
+            crate::operation_deser::parse_checkout_license_error(response)
         } else {
-            crate::operation_ser::parse_checkout_license_response(response)
+            crate::operation_deser::parse_checkout_license_response(response)
         }
     }
 }
@@ -126,9 +126,9 @@ impl smithy_http::response::ParseStrictResponse for CreateGrant {
         std::result::Result<crate::output::CreateGrantOutput, crate::error::CreateGrantError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_grant_error(response)
+            crate::operation_deser::parse_create_grant_error(response)
         } else {
-            crate::operation_ser::parse_create_grant_response(response)
+            crate::operation_deser::parse_create_grant_response(response)
         }
     }
 }
@@ -154,9 +154,9 @@ impl smithy_http::response::ParseStrictResponse for CreateGrantVersion {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_grant_version_error(response)
+            crate::operation_deser::parse_create_grant_version_error(response)
         } else {
-            crate::operation_ser::parse_create_grant_version_response(response)
+            crate::operation_deser::parse_create_grant_version_response(response)
         }
     }
 }
@@ -180,9 +180,9 @@ impl smithy_http::response::ParseStrictResponse for CreateLicense {
         std::result::Result<crate::output::CreateLicenseOutput, crate::error::CreateLicenseError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_license_error(response)
+            crate::operation_deser::parse_create_license_error(response)
         } else {
-            crate::operation_ser::parse_create_license_response(response)
+            crate::operation_deser::parse_create_license_response(response)
         }
     }
 }
@@ -213,9 +213,9 @@ impl smithy_http::response::ParseStrictResponse for CreateLicenseConfiguration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_license_configuration_error(response)
+            crate::operation_deser::parse_create_license_configuration_error(response)
         } else {
-            crate::operation_ser::parse_create_license_configuration_response(response)
+            crate::operation_deser::parse_create_license_configuration_response(response)
         }
     }
 }
@@ -241,9 +241,11 @@ impl smithy_http::response::ParseStrictResponse for CreateLicenseConversionTaskF
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_license_conversion_task_for_resource_error(response)
+            crate::operation_deser::parse_create_license_conversion_task_for_resource_error(
+                response,
+            )
         } else {
-            crate::operation_ser::parse_create_license_conversion_task_for_resource_response(
+            crate::operation_deser::parse_create_license_conversion_task_for_resource_response(
                 response,
             )
         }
@@ -271,9 +273,9 @@ impl smithy_http::response::ParseStrictResponse for CreateLicenseManagerReportGe
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_license_manager_report_generator_error(response)
+            crate::operation_deser::parse_create_license_manager_report_generator_error(response)
         } else {
-            crate::operation_ser::parse_create_license_manager_report_generator_response(response)
+            crate::operation_deser::parse_create_license_manager_report_generator_response(response)
         }
     }
 }
@@ -299,9 +301,9 @@ impl smithy_http::response::ParseStrictResponse for CreateLicenseVersion {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_license_version_error(response)
+            crate::operation_deser::parse_create_license_version_error(response)
         } else {
-            crate::operation_ser::parse_create_license_version_response(response)
+            crate::operation_deser::parse_create_license_version_response(response)
         }
     }
 }
@@ -328,9 +330,9 @@ impl smithy_http::response::ParseStrictResponse for CreateToken {
         std::result::Result<crate::output::CreateTokenOutput, crate::error::CreateTokenError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_token_error(response)
+            crate::operation_deser::parse_create_token_error(response)
         } else {
-            crate::operation_ser::parse_create_token_response(response)
+            crate::operation_deser::parse_create_token_response(response)
         }
     }
 }
@@ -354,9 +356,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteGrant {
         std::result::Result<crate::output::DeleteGrantOutput, crate::error::DeleteGrantError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_grant_error(response)
+            crate::operation_deser::parse_delete_grant_error(response)
         } else {
-            crate::operation_ser::parse_delete_grant_response(response)
+            crate::operation_deser::parse_delete_grant_response(response)
         }
     }
 }
@@ -380,9 +382,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteLicense {
         std::result::Result<crate::output::DeleteLicenseOutput, crate::error::DeleteLicenseError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_license_error(response)
+            crate::operation_deser::parse_delete_license_error(response)
         } else {
-            crate::operation_ser::parse_delete_license_response(response)
+            crate::operation_deser::parse_delete_license_response(response)
         }
     }
 }
@@ -409,9 +411,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteLicenseConfiguration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_license_configuration_error(response)
+            crate::operation_deser::parse_delete_license_configuration_error(response)
         } else {
-            crate::operation_ser::parse_delete_license_configuration_response(response)
+            crate::operation_deser::parse_delete_license_configuration_response(response)
         }
     }
 }
@@ -439,9 +441,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteLicenseManagerReportGe
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_license_manager_report_generator_error(response)
+            crate::operation_deser::parse_delete_license_manager_report_generator_error(response)
         } else {
-            crate::operation_ser::parse_delete_license_manager_report_generator_response(response)
+            crate::operation_deser::parse_delete_license_manager_report_generator_response(response)
         }
     }
 }
@@ -465,9 +467,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteToken {
         std::result::Result<crate::output::DeleteTokenOutput, crate::error::DeleteTokenError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_token_error(response)
+            crate::operation_deser::parse_delete_token_error(response)
         } else {
-            crate::operation_ser::parse_delete_token_response(response)
+            crate::operation_deser::parse_delete_token_response(response)
         }
     }
 }
@@ -493,9 +495,9 @@ impl smithy_http::response::ParseStrictResponse for ExtendLicenseConsumption {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_extend_license_consumption_error(response)
+            crate::operation_deser::parse_extend_license_consumption_error(response)
         } else {
-            crate::operation_ser::parse_extend_license_consumption_response(response)
+            crate::operation_deser::parse_extend_license_consumption_response(response)
         }
     }
 }
@@ -520,9 +522,9 @@ impl smithy_http::response::ParseStrictResponse for GetAccessToken {
         std::result::Result<crate::output::GetAccessTokenOutput, crate::error::GetAccessTokenError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_access_token_error(response)
+            crate::operation_deser::parse_get_access_token_error(response)
         } else {
-            crate::operation_ser::parse_get_access_token_response(response)
+            crate::operation_deser::parse_get_access_token_response(response)
         }
     }
 }
@@ -545,9 +547,9 @@ impl smithy_http::response::ParseStrictResponse for GetGrant {
     type Output = std::result::Result<crate::output::GetGrantOutput, crate::error::GetGrantError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_grant_error(response)
+            crate::operation_deser::parse_get_grant_error(response)
         } else {
-            crate::operation_ser::parse_get_grant_response(response)
+            crate::operation_deser::parse_get_grant_response(response)
         }
     }
 }
@@ -571,9 +573,9 @@ impl smithy_http::response::ParseStrictResponse for GetLicense {
         std::result::Result<crate::output::GetLicenseOutput, crate::error::GetLicenseError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_license_error(response)
+            crate::operation_deser::parse_get_license_error(response)
         } else {
-            crate::operation_ser::parse_get_license_response(response)
+            crate::operation_deser::parse_get_license_response(response)
         }
     }
 }
@@ -599,9 +601,9 @@ impl smithy_http::response::ParseStrictResponse for GetLicenseConfiguration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_license_configuration_error(response)
+            crate::operation_deser::parse_get_license_configuration_error(response)
         } else {
-            crate::operation_ser::parse_get_license_configuration_response(response)
+            crate::operation_deser::parse_get_license_configuration_response(response)
         }
     }
 }
@@ -627,9 +629,9 @@ impl smithy_http::response::ParseStrictResponse for GetLicenseConversionTask {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_license_conversion_task_error(response)
+            crate::operation_deser::parse_get_license_conversion_task_error(response)
         } else {
-            crate::operation_ser::parse_get_license_conversion_task_response(response)
+            crate::operation_deser::parse_get_license_conversion_task_response(response)
         }
     }
 }
@@ -655,9 +657,9 @@ impl smithy_http::response::ParseStrictResponse for GetLicenseManagerReportGener
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_license_manager_report_generator_error(response)
+            crate::operation_deser::parse_get_license_manager_report_generator_error(response)
         } else {
-            crate::operation_ser::parse_get_license_manager_report_generator_response(response)
+            crate::operation_deser::parse_get_license_manager_report_generator_response(response)
         }
     }
 }
@@ -683,9 +685,9 @@ impl smithy_http::response::ParseStrictResponse for GetLicenseUsage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_license_usage_error(response)
+            crate::operation_deser::parse_get_license_usage_error(response)
         } else {
-            crate::operation_ser::parse_get_license_usage_response(response)
+            crate::operation_deser::parse_get_license_usage_response(response)
         }
     }
 }
@@ -711,9 +713,9 @@ impl smithy_http::response::ParseStrictResponse for GetServiceSettings {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_service_settings_error(response)
+            crate::operation_deser::parse_get_service_settings_error(response)
         } else {
-            crate::operation_ser::parse_get_service_settings_response(response)
+            crate::operation_deser::parse_get_service_settings_response(response)
         }
     }
 }
@@ -742,9 +744,11 @@ impl smithy_http::response::ParseStrictResponse for ListAssociationsForLicenseCo
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_associations_for_license_configuration_error(response)
+            crate::operation_deser::parse_list_associations_for_license_configuration_error(
+                response,
+            )
         } else {
-            crate::operation_ser::parse_list_associations_for_license_configuration_response(
+            crate::operation_deser::parse_list_associations_for_license_configuration_response(
                 response,
             )
         }
@@ -772,9 +776,9 @@ impl smithy_http::response::ParseStrictResponse for ListDistributedGrants {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_distributed_grants_error(response)
+            crate::operation_deser::parse_list_distributed_grants_error(response)
         } else {
-            crate::operation_ser::parse_list_distributed_grants_response(response)
+            crate::operation_deser::parse_list_distributed_grants_response(response)
         }
     }
 }
@@ -801,13 +805,11 @@ impl smithy_http::response::ParseStrictResponse for ListFailuresForLicenseConfig
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_failures_for_license_configuration_operations_error(
+            crate::operation_deser::parse_list_failures_for_license_configuration_operations_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_list_failures_for_license_configuration_operations_response(
-                response,
-            )
+            crate::operation_deser::parse_list_failures_for_license_configuration_operations_response(response)
         }
     }
 }
@@ -833,9 +835,9 @@ impl smithy_http::response::ParseStrictResponse for ListLicenseConfigurations {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_license_configurations_error(response)
+            crate::operation_deser::parse_list_license_configurations_error(response)
         } else {
-            crate::operation_ser::parse_list_license_configurations_response(response)
+            crate::operation_deser::parse_list_license_configurations_response(response)
         }
     }
 }
@@ -861,9 +863,9 @@ impl smithy_http::response::ParseStrictResponse for ListLicenseConversionTasks {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_license_conversion_tasks_error(response)
+            crate::operation_deser::parse_list_license_conversion_tasks_error(response)
         } else {
-            crate::operation_ser::parse_list_license_conversion_tasks_response(response)
+            crate::operation_deser::parse_list_license_conversion_tasks_response(response)
         }
     }
 }
@@ -889,9 +891,9 @@ impl smithy_http::response::ParseStrictResponse for ListLicenseManagerReportGene
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_license_manager_report_generators_error(response)
+            crate::operation_deser::parse_list_license_manager_report_generators_error(response)
         } else {
-            crate::operation_ser::parse_list_license_manager_report_generators_response(response)
+            crate::operation_deser::parse_list_license_manager_report_generators_response(response)
         }
     }
 }
@@ -915,9 +917,9 @@ impl smithy_http::response::ParseStrictResponse for ListLicenses {
         std::result::Result<crate::output::ListLicensesOutput, crate::error::ListLicensesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_licenses_error(response)
+            crate::operation_deser::parse_list_licenses_error(response)
         } else {
-            crate::operation_ser::parse_list_licenses_response(response)
+            crate::operation_deser::parse_list_licenses_response(response)
         }
     }
 }
@@ -943,9 +945,11 @@ impl smithy_http::response::ParseStrictResponse for ListLicenseSpecificationsFor
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_license_specifications_for_resource_error(response)
+            crate::operation_deser::parse_list_license_specifications_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_license_specifications_for_resource_response(response)
+            crate::operation_deser::parse_list_license_specifications_for_resource_response(
+                response,
+            )
         }
     }
 }
@@ -971,9 +975,9 @@ impl smithy_http::response::ParseStrictResponse for ListLicenseVersions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_license_versions_error(response)
+            crate::operation_deser::parse_list_license_versions_error(response)
         } else {
-            crate::operation_ser::parse_list_license_versions_response(response)
+            crate::operation_deser::parse_list_license_versions_response(response)
         }
     }
 }
@@ -999,9 +1003,9 @@ impl smithy_http::response::ParseStrictResponse for ListReceivedGrants {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_received_grants_error(response)
+            crate::operation_deser::parse_list_received_grants_error(response)
         } else {
-            crate::operation_ser::parse_list_received_grants_response(response)
+            crate::operation_deser::parse_list_received_grants_response(response)
         }
     }
 }
@@ -1027,9 +1031,9 @@ impl smithy_http::response::ParseStrictResponse for ListReceivedLicenses {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_received_licenses_error(response)
+            crate::operation_deser::parse_list_received_licenses_error(response)
         } else {
-            crate::operation_ser::parse_list_received_licenses_response(response)
+            crate::operation_deser::parse_list_received_licenses_response(response)
         }
     }
 }
@@ -1055,9 +1059,9 @@ impl smithy_http::response::ParseStrictResponse for ListResourceInventory {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_resource_inventory_error(response)
+            crate::operation_deser::parse_list_resource_inventory_error(response)
         } else {
-            crate::operation_ser::parse_list_resource_inventory_response(response)
+            crate::operation_deser::parse_list_resource_inventory_response(response)
         }
     }
 }
@@ -1083,9 +1087,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -1109,9 +1113,9 @@ impl smithy_http::response::ParseStrictResponse for ListTokens {
         std::result::Result<crate::output::ListTokensOutput, crate::error::ListTokensError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tokens_error(response)
+            crate::operation_deser::parse_list_tokens_error(response)
         } else {
-            crate::operation_ser::parse_list_tokens_response(response)
+            crate::operation_deser::parse_list_tokens_response(response)
         }
     }
 }
@@ -1139,9 +1143,9 @@ impl smithy_http::response::ParseStrictResponse for ListUsageForLicenseConfigura
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_usage_for_license_configuration_error(response)
+            crate::operation_deser::parse_list_usage_for_license_configuration_error(response)
         } else {
-            crate::operation_ser::parse_list_usage_for_license_configuration_response(response)
+            crate::operation_deser::parse_list_usage_for_license_configuration_response(response)
         }
     }
 }
@@ -1165,9 +1169,9 @@ impl smithy_http::response::ParseStrictResponse for RejectGrant {
         std::result::Result<crate::output::RejectGrantOutput, crate::error::RejectGrantError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_reject_grant_error(response)
+            crate::operation_deser::parse_reject_grant_error(response)
         } else {
-            crate::operation_ser::parse_reject_grant_response(response)
+            crate::operation_deser::parse_reject_grant_response(response)
         }
     }
 }
@@ -1191,9 +1195,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -1217,9 +1221,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -1245,9 +1249,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateLicenseConfiguration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_license_configuration_error(response)
+            crate::operation_deser::parse_update_license_configuration_error(response)
         } else {
-            crate::operation_ser::parse_update_license_configuration_response(response)
+            crate::operation_deser::parse_update_license_configuration_response(response)
         }
     }
 }
@@ -1274,9 +1278,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateLicenseManagerReportGe
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_license_manager_report_generator_error(response)
+            crate::operation_deser::parse_update_license_manager_report_generator_error(response)
         } else {
-            crate::operation_ser::parse_update_license_manager_report_generator_response(response)
+            crate::operation_deser::parse_update_license_manager_report_generator_response(response)
         }
     }
 }
@@ -1305,9 +1309,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateLicenseSpecificationsF
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_license_specifications_for_resource_error(response)
+            crate::operation_deser::parse_update_license_specifications_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_update_license_specifications_for_resource_response(
+            crate::operation_deser::parse_update_license_specifications_for_resource_response(
                 response,
             )
         }
@@ -1335,9 +1339,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateServiceSettings {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_service_settings_error(response)
+            crate::operation_deser::parse_update_service_settings_error(response)
         } else {
-            crate::operation_ser::parse_update_service_settings_response(response)
+            crate::operation_deser::parse_update_service_settings_response(response)
         }
     }
 }

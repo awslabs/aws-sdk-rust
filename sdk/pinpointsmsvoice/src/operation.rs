@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for CreateConfigurationSet {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_configuration_set_error(response)
+            crate::operation_deser::parse_create_configuration_set_error(response)
         } else {
-            crate::operation_ser::parse_create_configuration_set_response(response)
+            crate::operation_deser::parse_create_configuration_set_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for CreateConfigurationSetEventD
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_configuration_set_event_destination_error(response)
+            crate::operation_deser::parse_create_configuration_set_event_destination_error(response)
         } else {
-            crate::operation_ser::parse_create_configuration_set_event_destination_response(
+            crate::operation_deser::parse_create_configuration_set_event_destination_response(
                 response,
             )
         }
@@ -78,9 +78,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteConfigurationSet {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_configuration_set_error(response)
+            crate::operation_deser::parse_delete_configuration_set_error(response)
         } else {
-            crate::operation_ser::parse_delete_configuration_set_response(response)
+            crate::operation_deser::parse_delete_configuration_set_response(response)
         }
     }
 }
@@ -106,9 +106,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteConfigurationSetEventD
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_configuration_set_event_destination_error(response)
+            crate::operation_deser::parse_delete_configuration_set_event_destination_error(response)
         } else {
-            crate::operation_ser::parse_delete_configuration_set_event_destination_response(
+            crate::operation_deser::parse_delete_configuration_set_event_destination_response(
                 response,
             )
         }
@@ -136,9 +136,11 @@ impl smithy_http::response::ParseStrictResponse for GetConfigurationSetEventDest
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_configuration_set_event_destinations_error(response)
+            crate::operation_deser::parse_get_configuration_set_event_destinations_error(response)
         } else {
-            crate::operation_ser::parse_get_configuration_set_event_destinations_response(response)
+            crate::operation_deser::parse_get_configuration_set_event_destinations_response(
+                response,
+            )
         }
     }
 }
@@ -164,9 +166,9 @@ impl smithy_http::response::ParseStrictResponse for ListConfigurationSets {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_configuration_sets_error(response)
+            crate::operation_deser::parse_list_configuration_sets_error(response)
         } else {
-            crate::operation_ser::parse_list_configuration_sets_response(response)
+            crate::operation_deser::parse_list_configuration_sets_response(response)
         }
     }
 }
@@ -192,9 +194,9 @@ impl smithy_http::response::ParseStrictResponse for SendVoiceMessage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_send_voice_message_error(response)
+            crate::operation_deser::parse_send_voice_message_error(response)
         } else {
-            crate::operation_ser::parse_send_voice_message_response(response)
+            crate::operation_deser::parse_send_voice_message_response(response)
         }
     }
 }
@@ -220,9 +222,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateConfigurationSetEventD
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_configuration_set_event_destination_error(response)
+            crate::operation_deser::parse_update_configuration_set_event_destination_error(response)
         } else {
-            crate::operation_ser::parse_update_configuration_set_event_destination_response(
+            crate::operation_deser::parse_update_configuration_set_event_destination_response(
                 response,
             )
         }

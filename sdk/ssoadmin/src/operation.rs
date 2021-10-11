@@ -28,9 +28,9 @@ impl smithy_http::response::ParseStrictResponse for AttachManagedPolicyToPermiss
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_attach_managed_policy_to_permission_set_error(response)
+            crate::operation_deser::parse_attach_managed_policy_to_permission_set_error(response)
         } else {
-            crate::operation_ser::parse_attach_managed_policy_to_permission_set_response(response)
+            crate::operation_deser::parse_attach_managed_policy_to_permission_set_response(response)
         }
     }
 }
@@ -70,9 +70,9 @@ impl smithy_http::response::ParseStrictResponse for CreateAccountAssignment {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_account_assignment_error(response)
+            crate::operation_deser::parse_create_account_assignment_error(response)
         } else {
-            crate::operation_ser::parse_create_account_assignment_response(response)
+            crate::operation_deser::parse_create_account_assignment_response(response)
         }
     }
 }
@@ -104,11 +104,9 @@ impl smithy_http::response::ParseStrictResponse
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_instance_access_control_attribute_configuration_error(
-                response,
-            )
+            crate::operation_deser::parse_create_instance_access_control_attribute_configuration_error(response)
         } else {
-            crate::operation_ser::parse_create_instance_access_control_attribute_configuration_response(response)
+            crate::operation_deser::parse_create_instance_access_control_attribute_configuration_response(response)
         }
     }
 }
@@ -139,9 +137,9 @@ impl smithy_http::response::ParseStrictResponse for CreatePermissionSet {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_permission_set_error(response)
+            crate::operation_deser::parse_create_permission_set_error(response)
         } else {
-            crate::operation_ser::parse_create_permission_set_response(response)
+            crate::operation_deser::parse_create_permission_set_response(response)
         }
     }
 }
@@ -168,9 +166,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteAccountAssignment {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_account_assignment_error(response)
+            crate::operation_deser::parse_delete_account_assignment_error(response)
         } else {
-            crate::operation_ser::parse_delete_account_assignment_response(response)
+            crate::operation_deser::parse_delete_account_assignment_response(response)
         }
     }
 }
@@ -196,9 +194,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteInlinePolicyFromPermis
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_inline_policy_from_permission_set_error(response)
+            crate::operation_deser::parse_delete_inline_policy_from_permission_set_error(response)
         } else {
-            crate::operation_ser::parse_delete_inline_policy_from_permission_set_response(response)
+            crate::operation_deser::parse_delete_inline_policy_from_permission_set_response(
+                response,
+            )
         }
     }
 }
@@ -231,11 +231,9 @@ impl smithy_http::response::ParseStrictResponse
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_instance_access_control_attribute_configuration_error(
-                response,
-            )
+            crate::operation_deser::parse_delete_instance_access_control_attribute_configuration_error(response)
         } else {
-            crate::operation_ser::parse_delete_instance_access_control_attribute_configuration_response(response)
+            crate::operation_deser::parse_delete_instance_access_control_attribute_configuration_response(response)
         }
     }
 }
@@ -261,9 +259,9 @@ impl smithy_http::response::ParseStrictResponse for DeletePermissionSet {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_permission_set_error(response)
+            crate::operation_deser::parse_delete_permission_set_error(response)
         } else {
-            crate::operation_ser::parse_delete_permission_set_response(response)
+            crate::operation_deser::parse_delete_permission_set_response(response)
         }
     }
 }
@@ -289,9 +287,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeAccountAssignmentCre
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_account_assignment_creation_status_error(response)
+            crate::operation_deser::parse_describe_account_assignment_creation_status_error(
+                response,
+            )
         } else {
-            crate::operation_ser::parse_describe_account_assignment_creation_status_response(
+            crate::operation_deser::parse_describe_account_assignment_creation_status_response(
                 response,
             )
         }
@@ -319,9 +319,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeAccountAssignmentDel
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_account_assignment_deletion_status_error(response)
+            crate::operation_deser::parse_describe_account_assignment_deletion_status_error(
+                response,
+            )
         } else {
-            crate::operation_ser::parse_describe_account_assignment_deletion_status_response(
+            crate::operation_deser::parse_describe_account_assignment_deletion_status_response(
                 response,
             )
         }
@@ -355,9 +357,9 @@ impl smithy_http::response::ParseStrictResponse
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_instance_access_control_attribute_configuration_error(response)
+            crate::operation_deser::parse_describe_instance_access_control_attribute_configuration_error(response)
         } else {
-            crate::operation_ser::parse_describe_instance_access_control_attribute_configuration_response(response)
+            crate::operation_deser::parse_describe_instance_access_control_attribute_configuration_response(response)
         }
     }
 }
@@ -383,9 +385,9 @@ impl smithy_http::response::ParseStrictResponse for DescribePermissionSet {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_permission_set_error(response)
+            crate::operation_deser::parse_describe_permission_set_error(response)
         } else {
-            crate::operation_ser::parse_describe_permission_set_response(response)
+            crate::operation_deser::parse_describe_permission_set_response(response)
         }
     }
 }
@@ -411,9 +413,11 @@ impl smithy_http::response::ParseStrictResponse for DescribePermissionSetProvisi
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_permission_set_provisioning_status_error(response)
+            crate::operation_deser::parse_describe_permission_set_provisioning_status_error(
+                response,
+            )
         } else {
-            crate::operation_ser::parse_describe_permission_set_provisioning_status_response(
+            crate::operation_deser::parse_describe_permission_set_provisioning_status_response(
                 response,
             )
         }
@@ -441,9 +445,11 @@ impl smithy_http::response::ParseStrictResponse for DetachManagedPolicyFromPermi
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_detach_managed_policy_from_permission_set_error(response)
+            crate::operation_deser::parse_detach_managed_policy_from_permission_set_error(response)
         } else {
-            crate::operation_ser::parse_detach_managed_policy_from_permission_set_response(response)
+            crate::operation_deser::parse_detach_managed_policy_from_permission_set_response(
+                response,
+            )
         }
     }
 }
@@ -469,9 +475,9 @@ impl smithy_http::response::ParseStrictResponse for GetInlinePolicyForPermission
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_inline_policy_for_permission_set_error(response)
+            crate::operation_deser::parse_get_inline_policy_for_permission_set_error(response)
         } else {
-            crate::operation_ser::parse_get_inline_policy_for_permission_set_response(response)
+            crate::operation_deser::parse_get_inline_policy_for_permission_set_response(response)
         }
     }
 }
@@ -498,9 +504,9 @@ impl smithy_http::response::ParseStrictResponse for ListAccountAssignmentCreatio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_account_assignment_creation_status_error(response)
+            crate::operation_deser::parse_list_account_assignment_creation_status_error(response)
         } else {
-            crate::operation_ser::parse_list_account_assignment_creation_status_response(response)
+            crate::operation_deser::parse_list_account_assignment_creation_status_response(response)
         }
     }
 }
@@ -527,9 +533,9 @@ impl smithy_http::response::ParseStrictResponse for ListAccountAssignmentDeletio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_account_assignment_deletion_status_error(response)
+            crate::operation_deser::parse_list_account_assignment_deletion_status_error(response)
         } else {
-            crate::operation_ser::parse_list_account_assignment_deletion_status_response(response)
+            crate::operation_deser::parse_list_account_assignment_deletion_status_response(response)
         }
     }
 }
@@ -556,9 +562,9 @@ impl smithy_http::response::ParseStrictResponse for ListAccountAssignments {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_account_assignments_error(response)
+            crate::operation_deser::parse_list_account_assignments_error(response)
         } else {
-            crate::operation_ser::parse_list_account_assignments_response(response)
+            crate::operation_deser::parse_list_account_assignments_response(response)
         }
     }
 }
@@ -584,9 +590,11 @@ impl smithy_http::response::ParseStrictResponse for ListAccountsForProvisionedPe
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_accounts_for_provisioned_permission_set_error(response)
+            crate::operation_deser::parse_list_accounts_for_provisioned_permission_set_error(
+                response,
+            )
         } else {
-            crate::operation_ser::parse_list_accounts_for_provisioned_permission_set_response(
+            crate::operation_deser::parse_list_accounts_for_provisioned_permission_set_response(
                 response,
             )
         }
@@ -612,9 +620,9 @@ impl smithy_http::response::ParseStrictResponse for ListInstances {
         std::result::Result<crate::output::ListInstancesOutput, crate::error::ListInstancesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_instances_error(response)
+            crate::operation_deser::parse_list_instances_error(response)
         } else {
-            crate::operation_ser::parse_list_instances_response(response)
+            crate::operation_deser::parse_list_instances_response(response)
         }
     }
 }
@@ -640,9 +648,9 @@ impl smithy_http::response::ParseStrictResponse for ListManagedPoliciesInPermiss
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_managed_policies_in_permission_set_error(response)
+            crate::operation_deser::parse_list_managed_policies_in_permission_set_error(response)
         } else {
-            crate::operation_ser::parse_list_managed_policies_in_permission_set_response(response)
+            crate::operation_deser::parse_list_managed_policies_in_permission_set_response(response)
         }
     }
 }
@@ -669,9 +677,9 @@ impl smithy_http::response::ParseStrictResponse for ListPermissionSetProvisionin
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_permission_set_provisioning_status_error(response)
+            crate::operation_deser::parse_list_permission_set_provisioning_status_error(response)
         } else {
-            crate::operation_ser::parse_list_permission_set_provisioning_status_response(response)
+            crate::operation_deser::parse_list_permission_set_provisioning_status_response(response)
         }
     }
 }
@@ -697,9 +705,9 @@ impl smithy_http::response::ParseStrictResponse for ListPermissionSets {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_permission_sets_error(response)
+            crate::operation_deser::parse_list_permission_sets_error(response)
         } else {
-            crate::operation_ser::parse_list_permission_sets_response(response)
+            crate::operation_deser::parse_list_permission_sets_response(response)
         }
     }
 }
@@ -725,9 +733,11 @@ impl smithy_http::response::ParseStrictResponse for ListPermissionSetsProvisione
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_permission_sets_provisioned_to_account_error(response)
+            crate::operation_deser::parse_list_permission_sets_provisioned_to_account_error(
+                response,
+            )
         } else {
-            crate::operation_ser::parse_list_permission_sets_provisioned_to_account_response(
+            crate::operation_deser::parse_list_permission_sets_provisioned_to_account_response(
                 response,
             )
         }
@@ -755,9 +765,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -784,9 +794,9 @@ impl smithy_http::response::ParseStrictResponse for ProvisionPermissionSet {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_provision_permission_set_error(response)
+            crate::operation_deser::parse_provision_permission_set_error(response)
         } else {
-            crate::operation_ser::parse_provision_permission_set_response(response)
+            crate::operation_deser::parse_provision_permission_set_response(response)
         }
     }
 }
@@ -819,9 +829,9 @@ impl smithy_http::response::ParseStrictResponse for PutInlinePolicyToPermissionS
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_inline_policy_to_permission_set_error(response)
+            crate::operation_deser::parse_put_inline_policy_to_permission_set_error(response)
         } else {
-            crate::operation_ser::parse_put_inline_policy_to_permission_set_response(response)
+            crate::operation_deser::parse_put_inline_policy_to_permission_set_response(response)
         }
     }
 }
@@ -845,9 +855,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -871,9 +881,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -908,11 +918,9 @@ impl smithy_http::response::ParseStrictResponse
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_instance_access_control_attribute_configuration_error(
-                response,
-            )
+            crate::operation_deser::parse_update_instance_access_control_attribute_configuration_error(response)
         } else {
-            crate::operation_ser::parse_update_instance_access_control_attribute_configuration_response(response)
+            crate::operation_deser::parse_update_instance_access_control_attribute_configuration_response(response)
         }
     }
 }
@@ -938,9 +946,9 @@ impl smithy_http::response::ParseStrictResponse for UpdatePermissionSet {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_permission_set_error(response)
+            crate::operation_deser::parse_update_permission_set_error(response)
         } else {
-            crate::operation_ser::parse_update_permission_set_response(response)
+            crate::operation_deser::parse_update_permission_set_response(response)
         }
     }
 }

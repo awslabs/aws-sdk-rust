@@ -23,9 +23,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeRecommendationExport
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_recommendation_export_jobs_error(response)
+            crate::operation_deser::parse_describe_recommendation_export_jobs_error(response)
         } else {
-            crate::operation_ser::parse_describe_recommendation_export_jobs_response(response)
+            crate::operation_deser::parse_describe_recommendation_export_jobs_response(response)
         }
     }
 }
@@ -56,9 +56,11 @@ impl smithy_http::response::ParseStrictResponse for ExportAutoScalingGroupRecomm
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_export_auto_scaling_group_recommendations_error(response)
+            crate::operation_deser::parse_export_auto_scaling_group_recommendations_error(response)
         } else {
-            crate::operation_ser::parse_export_auto_scaling_group_recommendations_response(response)
+            crate::operation_deser::parse_export_auto_scaling_group_recommendations_response(
+                response,
+            )
         }
     }
 }
@@ -90,9 +92,9 @@ impl smithy_http::response::ParseStrictResponse for ExportEBSVolumeRecommendatio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_export_ebs_volume_recommendations_error(response)
+            crate::operation_deser::parse_export_ebs_volume_recommendations_error(response)
         } else {
-            crate::operation_ser::parse_export_ebs_volume_recommendations_response(response)
+            crate::operation_deser::parse_export_ebs_volume_recommendations_response(response)
         }
     }
 }
@@ -124,9 +126,9 @@ impl smithy_http::response::ParseStrictResponse for ExportEC2InstanceRecommendat
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_export_ec2_instance_recommendations_error(response)
+            crate::operation_deser::parse_export_ec2_instance_recommendations_error(response)
         } else {
-            crate::operation_ser::parse_export_ec2_instance_recommendations_response(response)
+            crate::operation_deser::parse_export_ec2_instance_recommendations_response(response)
         }
     }
 }
@@ -158,9 +160,9 @@ impl smithy_http::response::ParseStrictResponse for ExportLambdaFunctionRecommen
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_export_lambda_function_recommendations_error(response)
+            crate::operation_deser::parse_export_lambda_function_recommendations_error(response)
         } else {
-            crate::operation_ser::parse_export_lambda_function_recommendations_response(response)
+            crate::operation_deser::parse_export_lambda_function_recommendations_response(response)
         }
     }
 }
@@ -190,9 +192,9 @@ impl smithy_http::response::ParseStrictResponse for GetAutoScalingGroupRecommend
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_auto_scaling_group_recommendations_error(response)
+            crate::operation_deser::parse_get_auto_scaling_group_recommendations_error(response)
         } else {
-            crate::operation_ser::parse_get_auto_scaling_group_recommendations_response(response)
+            crate::operation_deser::parse_get_auto_scaling_group_recommendations_response(response)
         }
     }
 }
@@ -222,9 +224,9 @@ impl smithy_http::response::ParseStrictResponse for GetEBSVolumeRecommendations 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_ebs_volume_recommendations_error(response)
+            crate::operation_deser::parse_get_ebs_volume_recommendations_error(response)
         } else {
-            crate::operation_ser::parse_get_ebs_volume_recommendations_response(response)
+            crate::operation_deser::parse_get_ebs_volume_recommendations_response(response)
         }
     }
 }
@@ -254,9 +256,9 @@ impl smithy_http::response::ParseStrictResponse for GetEC2InstanceRecommendation
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_ec2_instance_recommendations_error(response)
+            crate::operation_deser::parse_get_ec2_instance_recommendations_error(response)
         } else {
-            crate::operation_ser::parse_get_ec2_instance_recommendations_response(response)
+            crate::operation_deser::parse_get_ec2_instance_recommendations_response(response)
         }
     }
 }
@@ -289,9 +291,11 @@ impl smithy_http::response::ParseStrictResponse for GetEC2RecommendationProjecte
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_ec2_recommendation_projected_metrics_error(response)
+            crate::operation_deser::parse_get_ec2_recommendation_projected_metrics_error(response)
         } else {
-            crate::operation_ser::parse_get_ec2_recommendation_projected_metrics_response(response)
+            crate::operation_deser::parse_get_ec2_recommendation_projected_metrics_response(
+                response,
+            )
         }
     }
 }
@@ -321,9 +325,9 @@ impl smithy_http::response::ParseStrictResponse for GetEnrollmentStatus {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_enrollment_status_error(response)
+            crate::operation_deser::parse_get_enrollment_status_error(response)
         } else {
-            crate::operation_ser::parse_get_enrollment_status_response(response)
+            crate::operation_deser::parse_get_enrollment_status_response(response)
         }
     }
 }
@@ -351,9 +355,11 @@ impl smithy_http::response::ParseStrictResponse for GetEnrollmentStatusesForOrga
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_enrollment_statuses_for_organization_error(response)
+            crate::operation_deser::parse_get_enrollment_statuses_for_organization_error(response)
         } else {
-            crate::operation_ser::parse_get_enrollment_statuses_for_organization_response(response)
+            crate::operation_deser::parse_get_enrollment_statuses_for_organization_response(
+                response,
+            )
         }
     }
 }
@@ -383,9 +389,9 @@ impl smithy_http::response::ParseStrictResponse for GetLambdaFunctionRecommendat
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_lambda_function_recommendations_error(response)
+            crate::operation_deser::parse_get_lambda_function_recommendations_error(response)
         } else {
-            crate::operation_ser::parse_get_lambda_function_recommendations_response(response)
+            crate::operation_deser::parse_get_lambda_function_recommendations_response(response)
         }
     }
 }
@@ -431,9 +437,9 @@ impl smithy_http::response::ParseStrictResponse for GetRecommendationSummaries {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_recommendation_summaries_error(response)
+            crate::operation_deser::parse_get_recommendation_summaries_error(response)
         } else {
-            crate::operation_ser::parse_get_recommendation_summaries_response(response)
+            crate::operation_deser::parse_get_recommendation_summaries_response(response)
         }
     }
 }
@@ -466,9 +472,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateEnrollmentStatus {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_enrollment_status_error(response)
+            crate::operation_deser::parse_update_enrollment_status_error(response)
         } else {
-            crate::operation_ser::parse_update_enrollment_status_response(response)
+            crate::operation_deser::parse_update_enrollment_status_response(response)
         }
     }
 }

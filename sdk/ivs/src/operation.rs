@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for BatchGetChannel {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_batch_get_channel_error(response)
+            crate::operation_deser::parse_batch_get_channel_error(response)
         } else {
-            crate::operation_ser::parse_batch_get_channel_response(response)
+            crate::operation_deser::parse_batch_get_channel_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for BatchGetStreamKey {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_batch_get_stream_key_error(response)
+            crate::operation_deser::parse_batch_get_stream_key_error(response)
         } else {
-            crate::operation_ser::parse_batch_get_stream_key_response(response)
+            crate::operation_deser::parse_batch_get_stream_key_response(response)
         }
     }
 }
@@ -74,9 +74,9 @@ impl smithy_http::response::ParseStrictResponse for CreateChannel {
         std::result::Result<crate::output::CreateChannelOutput, crate::error::CreateChannelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_channel_error(response)
+            crate::operation_deser::parse_create_channel_error(response)
         } else {
-            crate::operation_ser::parse_create_channel_response(response)
+            crate::operation_deser::parse_create_channel_response(response)
         }
     }
 }
@@ -113,9 +113,9 @@ impl smithy_http::response::ParseStrictResponse for CreateRecordingConfiguration
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_recording_configuration_error(response)
+            crate::operation_deser::parse_create_recording_configuration_error(response)
         } else {
-            crate::operation_ser::parse_create_recording_configuration_response(response)
+            crate::operation_deser::parse_create_recording_configuration_response(response)
         }
     }
 }
@@ -144,9 +144,9 @@ impl smithy_http::response::ParseStrictResponse for CreateStreamKey {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_stream_key_error(response)
+            crate::operation_deser::parse_create_stream_key_error(response)
         } else {
-            crate::operation_ser::parse_create_stream_key_response(response)
+            crate::operation_deser::parse_create_stream_key_response(response)
         }
     }
 }
@@ -174,9 +174,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteChannel {
         std::result::Result<crate::output::DeleteChannelOutput, crate::error::DeleteChannelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_channel_error(response)
+            crate::operation_deser::parse_delete_channel_error(response)
         } else {
-            crate::operation_ser::parse_delete_channel_response(response)
+            crate::operation_deser::parse_delete_channel_response(response)
         }
     }
 }
@@ -204,9 +204,9 @@ impl smithy_http::response::ParseStrictResponse for DeletePlaybackKeyPair {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_playback_key_pair_error(response)
+            crate::operation_deser::parse_delete_playback_key_pair_error(response)
         } else {
-            crate::operation_ser::parse_delete_playback_key_pair_response(response)
+            crate::operation_deser::parse_delete_playback_key_pair_response(response)
         }
     }
 }
@@ -237,9 +237,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteRecordingConfiguration
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_recording_configuration_error(response)
+            crate::operation_deser::parse_delete_recording_configuration_error(response)
         } else {
-            crate::operation_ser::parse_delete_recording_configuration_response(response)
+            crate::operation_deser::parse_delete_recording_configuration_response(response)
         }
     }
 }
@@ -266,9 +266,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteStreamKey {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_stream_key_error(response)
+            crate::operation_deser::parse_delete_stream_key_error(response)
         } else {
-            crate::operation_ser::parse_delete_stream_key_response(response)
+            crate::operation_deser::parse_delete_stream_key_response(response)
         }
     }
 }
@@ -292,9 +292,9 @@ impl smithy_http::response::ParseStrictResponse for GetChannel {
         std::result::Result<crate::output::GetChannelOutput, crate::error::GetChannelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_channel_error(response)
+            crate::operation_deser::parse_get_channel_error(response)
         } else {
-            crate::operation_ser::parse_get_channel_response(response)
+            crate::operation_deser::parse_get_channel_response(response)
         }
     }
 }
@@ -324,9 +324,9 @@ impl smithy_http::response::ParseStrictResponse for GetPlaybackKeyPair {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_playback_key_pair_error(response)
+            crate::operation_deser::parse_get_playback_key_pair_error(response)
         } else {
-            crate::operation_ser::parse_get_playback_key_pair_response(response)
+            crate::operation_deser::parse_get_playback_key_pair_response(response)
         }
     }
 }
@@ -352,9 +352,9 @@ impl smithy_http::response::ParseStrictResponse for GetRecordingConfiguration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_recording_configuration_error(response)
+            crate::operation_deser::parse_get_recording_configuration_error(response)
         } else {
-            crate::operation_ser::parse_get_recording_configuration_response(response)
+            crate::operation_deser::parse_get_recording_configuration_response(response)
         }
     }
 }
@@ -377,9 +377,9 @@ impl smithy_http::response::ParseStrictResponse for GetStream {
     type Output = std::result::Result<crate::output::GetStreamOutput, crate::error::GetStreamError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_stream_error(response)
+            crate::operation_deser::parse_get_stream_error(response)
         } else {
-            crate::operation_ser::parse_get_stream_response(response)
+            crate::operation_deser::parse_get_stream_response(response)
         }
     }
 }
@@ -403,9 +403,9 @@ impl smithy_http::response::ParseStrictResponse for GetStreamKey {
         std::result::Result<crate::output::GetStreamKeyOutput, crate::error::GetStreamKeyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_stream_key_error(response)
+            crate::operation_deser::parse_get_stream_key_error(response)
         } else {
-            crate::operation_ser::parse_get_stream_key_response(response)
+            crate::operation_deser::parse_get_stream_key_response(response)
         }
     }
 }
@@ -435,9 +435,9 @@ impl smithy_http::response::ParseStrictResponse for ImportPlaybackKeyPair {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_import_playback_key_pair_error(response)
+            crate::operation_deser::parse_import_playback_key_pair_error(response)
         } else {
-            crate::operation_ser::parse_import_playback_key_pair_response(response)
+            crate::operation_deser::parse_import_playback_key_pair_response(response)
         }
     }
 }
@@ -464,9 +464,9 @@ impl smithy_http::response::ParseStrictResponse for ListChannels {
         std::result::Result<crate::output::ListChannelsOutput, crate::error::ListChannelsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_channels_error(response)
+            crate::operation_deser::parse_list_channels_error(response)
         } else {
-            crate::operation_ser::parse_list_channels_response(response)
+            crate::operation_deser::parse_list_channels_response(response)
         }
     }
 }
@@ -493,9 +493,9 @@ impl smithy_http::response::ParseStrictResponse for ListPlaybackKeyPairs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_playback_key_pairs_error(response)
+            crate::operation_deser::parse_list_playback_key_pairs_error(response)
         } else {
-            crate::operation_ser::parse_list_playback_key_pairs_response(response)
+            crate::operation_deser::parse_list_playback_key_pairs_response(response)
         }
     }
 }
@@ -522,9 +522,9 @@ impl smithy_http::response::ParseStrictResponse for ListRecordingConfigurations 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_recording_configurations_error(response)
+            crate::operation_deser::parse_list_recording_configurations_error(response)
         } else {
-            crate::operation_ser::parse_list_recording_configurations_response(response)
+            crate::operation_deser::parse_list_recording_configurations_response(response)
         }
     }
 }
@@ -548,9 +548,9 @@ impl smithy_http::response::ParseStrictResponse for ListStreamKeys {
         std::result::Result<crate::output::ListStreamKeysOutput, crate::error::ListStreamKeysError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_stream_keys_error(response)
+            crate::operation_deser::parse_list_stream_keys_error(response)
         } else {
-            crate::operation_ser::parse_list_stream_keys_response(response)
+            crate::operation_deser::parse_list_stream_keys_response(response)
         }
     }
 }
@@ -575,9 +575,9 @@ impl smithy_http::response::ParseStrictResponse for ListStreams {
         std::result::Result<crate::output::ListStreamsOutput, crate::error::ListStreamsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_streams_error(response)
+            crate::operation_deser::parse_list_streams_error(response)
         } else {
-            crate::operation_ser::parse_list_streams_response(response)
+            crate::operation_deser::parse_list_streams_response(response)
         }
     }
 }
@@ -603,9 +603,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -633,9 +633,9 @@ impl smithy_http::response::ParseStrictResponse for PutMetadata {
         std::result::Result<crate::output::PutMetadataOutput, crate::error::PutMetadataError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_metadata_error(response)
+            crate::operation_deser::parse_put_metadata_error(response)
         } else {
-            crate::operation_ser::parse_put_metadata_response(response)
+            crate::operation_deser::parse_put_metadata_response(response)
         }
     }
 }
@@ -666,9 +666,9 @@ impl smithy_http::response::ParseStrictResponse for StopStream {
         std::result::Result<crate::output::StopStreamOutput, crate::error::StopStreamError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_stop_stream_error(response)
+            crate::operation_deser::parse_stop_stream_error(response)
         } else {
-            crate::operation_ser::parse_stop_stream_response(response)
+            crate::operation_deser::parse_stop_stream_response(response)
         }
     }
 }
@@ -692,9 +692,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -718,9 +718,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -745,9 +745,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateChannel {
         std::result::Result<crate::output::UpdateChannelOutput, crate::error::UpdateChannelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_channel_error(response)
+            crate::operation_deser::parse_update_channel_error(response)
         } else {
-            crate::operation_ser::parse_update_channel_response(response)
+            crate::operation_deser::parse_update_channel_response(response)
         }
     }
 }

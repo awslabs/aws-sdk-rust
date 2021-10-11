@@ -67,10 +67,10 @@ impl smithy_http::response::ParseHttpResponse for GetMedia {
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_ser::parse_get_media(response))
+        Some(crate::operation_deser::parse_get_media(response))
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_ser::parse_get_media_error(response)
+        crate::operation_deser::parse_get_media_error(response)
     }
 }

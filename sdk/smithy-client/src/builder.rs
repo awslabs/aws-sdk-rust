@@ -3,8 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use crate::{bounds, erase, retry, BoxError, Client};
+use crate::{bounds, erase, retry, Client};
 use smithy_http::body::SdkBody;
+use smithy_http::result::ConnectorError;
 
 /// A builder that provides more customization options when constructing a [`Client`].
 ///
@@ -81,7 +82,7 @@ impl<M, R> Builder<(), M, R> {
     pub fn connector_fn<F, FF>(self, map: F) -> Builder<tower::util::ServiceFn<F>, M, R>
     where
         F: Fn(http::Request<SdkBody>) -> FF + Send,
-        FF: std::future::Future<Output = Result<http::Response<SdkBody>, BoxError>>,
+        FF: std::future::Future<Output = Result<http::Response<SdkBody>, ConnectorError>>,
         // NOTE: The extra bound here is to help the type checker give better errors earlier.
         tower::util::ServiceFn<F>: bounds::SmithyConnector,
     {

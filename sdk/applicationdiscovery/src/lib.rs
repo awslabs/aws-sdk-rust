@@ -139,6 +139,7 @@ mod json_ser;
 pub mod model;
 mod no_credentials;
 pub mod operation;
+mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

@@ -24,6 +24,7 @@ pub mod input;
 pub mod model;
 mod no_credentials;
 pub mod operation;
+mod operation_deser;
 mod operation_ser;
 pub mod output;
 mod rest_xml_wrapped_errors;

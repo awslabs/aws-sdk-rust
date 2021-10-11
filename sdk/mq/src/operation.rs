@@ -18,9 +18,9 @@ impl smithy_http::response::ParseStrictResponse for CreateBroker {
         std::result::Result<crate::output::CreateBrokerOutput, crate::error::CreateBrokerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_broker_error(response)
+            crate::operation_deser::parse_create_broker_error(response)
         } else {
-            crate::operation_ser::parse_create_broker_response(response)
+            crate::operation_deser::parse_create_broker_response(response)
         }
     }
 }
@@ -46,9 +46,9 @@ impl smithy_http::response::ParseStrictResponse for CreateConfiguration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_configuration_error(response)
+            crate::operation_deser::parse_create_configuration_error(response)
         } else {
-            crate::operation_ser::parse_create_configuration_response(response)
+            crate::operation_deser::parse_create_configuration_response(response)
         }
     }
 }
@@ -72,9 +72,9 @@ impl smithy_http::response::ParseStrictResponse for CreateTags {
         std::result::Result<crate::output::CreateTagsOutput, crate::error::CreateTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_create_tags_error(response)
+            crate::operation_deser::parse_create_tags_error(response)
         } else {
-            crate::operation_ser::parse_create_tags_response(response)
+            crate::operation_deser::parse_create_tags_response(response)
         }
     }
 }
@@ -98,9 +98,9 @@ impl smithy_http::response::ParseStrictResponse for CreateUser {
         std::result::Result<crate::output::CreateUserOutput, crate::error::CreateUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_user_error(response)
+            crate::operation_deser::parse_create_user_error(response)
         } else {
-            crate::operation_ser::parse_create_user_response(response)
+            crate::operation_deser::parse_create_user_response(response)
         }
     }
 }
@@ -124,9 +124,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBroker {
         std::result::Result<crate::output::DeleteBrokerOutput, crate::error::DeleteBrokerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_broker_error(response)
+            crate::operation_deser::parse_delete_broker_error(response)
         } else {
-            crate::operation_ser::parse_delete_broker_response(response)
+            crate::operation_deser::parse_delete_broker_response(response)
         }
     }
 }
@@ -150,9 +150,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteTags {
         std::result::Result<crate::output::DeleteTagsOutput, crate::error::DeleteTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_tags_error(response)
+            crate::operation_deser::parse_delete_tags_error(response)
         } else {
-            crate::operation_ser::parse_delete_tags_response(response)
+            crate::operation_deser::parse_delete_tags_response(response)
         }
     }
 }
@@ -176,9 +176,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteUser {
         std::result::Result<crate::output::DeleteUserOutput, crate::error::DeleteUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_user_error(response)
+            crate::operation_deser::parse_delete_user_error(response)
         } else {
-            crate::operation_ser::parse_delete_user_response(response)
+            crate::operation_deser::parse_delete_user_response(response)
         }
     }
 }
@@ -202,9 +202,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeBroker {
         std::result::Result<crate::output::DescribeBrokerOutput, crate::error::DescribeBrokerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_broker_error(response)
+            crate::operation_deser::parse_describe_broker_error(response)
         } else {
-            crate::operation_ser::parse_describe_broker_response(response)
+            crate::operation_deser::parse_describe_broker_response(response)
         }
     }
 }
@@ -230,9 +230,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeBrokerEngineTypes {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_broker_engine_types_error(response)
+            crate::operation_deser::parse_describe_broker_engine_types_error(response)
         } else {
-            crate::operation_ser::parse_describe_broker_engine_types_response(response)
+            crate::operation_deser::parse_describe_broker_engine_types_response(response)
         }
     }
 }
@@ -258,9 +258,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeBrokerInstanceOption
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_broker_instance_options_error(response)
+            crate::operation_deser::parse_describe_broker_instance_options_error(response)
         } else {
-            crate::operation_ser::parse_describe_broker_instance_options_response(response)
+            crate::operation_deser::parse_describe_broker_instance_options_response(response)
         }
     }
 }
@@ -286,9 +286,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeConfiguration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_configuration_error(response)
+            crate::operation_deser::parse_describe_configuration_error(response)
         } else {
-            crate::operation_ser::parse_describe_configuration_response(response)
+            crate::operation_deser::parse_describe_configuration_response(response)
         }
     }
 }
@@ -314,9 +314,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeConfigurationRevisio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_configuration_revision_error(response)
+            crate::operation_deser::parse_describe_configuration_revision_error(response)
         } else {
-            crate::operation_ser::parse_describe_configuration_revision_response(response)
+            crate::operation_deser::parse_describe_configuration_revision_response(response)
         }
     }
 }
@@ -340,9 +340,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeUser {
         std::result::Result<crate::output::DescribeUserOutput, crate::error::DescribeUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_user_error(response)
+            crate::operation_deser::parse_describe_user_error(response)
         } else {
-            crate::operation_ser::parse_describe_user_response(response)
+            crate::operation_deser::parse_describe_user_response(response)
         }
     }
 }
@@ -366,9 +366,9 @@ impl smithy_http::response::ParseStrictResponse for ListBrokers {
         std::result::Result<crate::output::ListBrokersOutput, crate::error::ListBrokersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_brokers_error(response)
+            crate::operation_deser::parse_list_brokers_error(response)
         } else {
-            crate::operation_ser::parse_list_brokers_response(response)
+            crate::operation_deser::parse_list_brokers_response(response)
         }
     }
 }
@@ -394,9 +394,9 @@ impl smithy_http::response::ParseStrictResponse for ListConfigurationRevisions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_configuration_revisions_error(response)
+            crate::operation_deser::parse_list_configuration_revisions_error(response)
         } else {
-            crate::operation_ser::parse_list_configuration_revisions_response(response)
+            crate::operation_deser::parse_list_configuration_revisions_response(response)
         }
     }
 }
@@ -422,9 +422,9 @@ impl smithy_http::response::ParseStrictResponse for ListConfigurations {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_configurations_error(response)
+            crate::operation_deser::parse_list_configurations_error(response)
         } else {
-            crate::operation_ser::parse_list_configurations_response(response)
+            crate::operation_deser::parse_list_configurations_response(response)
         }
     }
 }
@@ -447,9 +447,9 @@ impl smithy_http::response::ParseStrictResponse for ListTags {
     type Output = std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_error(response)
+            crate::operation_deser::parse_list_tags_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_response(response)
+            crate::operation_deser::parse_list_tags_response(response)
         }
     }
 }
@@ -472,9 +472,9 @@ impl smithy_http::response::ParseStrictResponse for ListUsers {
     type Output = std::result::Result<crate::output::ListUsersOutput, crate::error::ListUsersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_users_error(response)
+            crate::operation_deser::parse_list_users_error(response)
         } else {
-            crate::operation_ser::parse_list_users_response(response)
+            crate::operation_deser::parse_list_users_response(response)
         }
     }
 }
@@ -498,9 +498,9 @@ impl smithy_http::response::ParseStrictResponse for RebootBroker {
         std::result::Result<crate::output::RebootBrokerOutput, crate::error::RebootBrokerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_reboot_broker_error(response)
+            crate::operation_deser::parse_reboot_broker_error(response)
         } else {
-            crate::operation_ser::parse_reboot_broker_response(response)
+            crate::operation_deser::parse_reboot_broker_response(response)
         }
     }
 }
@@ -524,9 +524,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateBroker {
         std::result::Result<crate::output::UpdateBrokerOutput, crate::error::UpdateBrokerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_broker_error(response)
+            crate::operation_deser::parse_update_broker_error(response)
         } else {
-            crate::operation_ser::parse_update_broker_response(response)
+            crate::operation_deser::parse_update_broker_response(response)
         }
     }
 }
@@ -552,9 +552,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateConfiguration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_configuration_error(response)
+            crate::operation_deser::parse_update_configuration_error(response)
         } else {
-            crate::operation_ser::parse_update_configuration_response(response)
+            crate::operation_deser::parse_update_configuration_response(response)
         }
     }
 }
@@ -578,9 +578,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateUser {
         std::result::Result<crate::output::UpdateUserOutput, crate::error::UpdateUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_user_error(response)
+            crate::operation_deser::parse_update_user_error(response)
         } else {
-            crate::operation_ser::parse_update_user_response(response)
+            crate::operation_deser::parse_update_user_response(response)
         }
     }
 }

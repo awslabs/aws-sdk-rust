@@ -28,9 +28,9 @@ impl smithy_http::response::ParseStrictResponse for BatchExecuteStatement {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_batch_execute_statement_error(response)
+            crate::operation_deser::parse_batch_execute_statement_error(response)
         } else {
-            crate::operation_ser::parse_batch_execute_statement_response(response)
+            crate::operation_deser::parse_batch_execute_statement_response(response)
         }
     }
 }
@@ -66,9 +66,9 @@ impl smithy_http::response::ParseStrictResponse for BeginTransaction {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_begin_transaction_error(response)
+            crate::operation_deser::parse_begin_transaction_error(response)
         } else {
-            crate::operation_ser::parse_begin_transaction_response(response)
+            crate::operation_deser::parse_begin_transaction_response(response)
         }
     }
 }
@@ -95,9 +95,9 @@ impl smithy_http::response::ParseStrictResponse for CommitTransaction {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_commit_transaction_error(response)
+            crate::operation_deser::parse_commit_transaction_error(response)
         } else {
-            crate::operation_ser::parse_commit_transaction_response(response)
+            crate::operation_deser::parse_commit_transaction_response(response)
         }
     }
 }
@@ -125,9 +125,9 @@ impl smithy_http::response::ParseStrictResponse for ExecuteSql {
         std::result::Result<crate::output::ExecuteSqlOutput, crate::error::ExecuteSqlError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_execute_sql_error(response)
+            crate::operation_deser::parse_execute_sql_error(response)
         } else {
-            crate::operation_ser::parse_execute_sql_response(response)
+            crate::operation_deser::parse_execute_sql_response(response)
         }
     }
 }
@@ -159,9 +159,9 @@ impl smithy_http::response::ParseStrictResponse for ExecuteStatement {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_execute_statement_error(response)
+            crate::operation_deser::parse_execute_statement_error(response)
         } else {
-            crate::operation_ser::parse_execute_statement_response(response)
+            crate::operation_deser::parse_execute_statement_response(response)
         }
     }
 }
@@ -187,9 +187,9 @@ impl smithy_http::response::ParseStrictResponse for RollbackTransaction {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_rollback_transaction_error(response)
+            crate::operation_deser::parse_rollback_transaction_error(response)
         } else {
-            crate::operation_ser::parse_rollback_transaction_response(response)
+            crate::operation_deser::parse_rollback_transaction_response(response)
         }
     }
 }

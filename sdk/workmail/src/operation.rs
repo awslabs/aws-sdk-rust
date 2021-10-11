@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for AssociateDelegateToResource 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_associate_delegate_to_resource_error(response)
+            crate::operation_deser::parse_associate_delegate_to_resource_error(response)
         } else {
-            crate::operation_ser::parse_associate_delegate_to_resource_response(response)
+            crate::operation_deser::parse_associate_delegate_to_resource_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for AssociateMemberToGroup {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_associate_member_to_group_error(response)
+            crate::operation_deser::parse_associate_member_to_group_error(response)
         } else {
-            crate::operation_ser::parse_associate_member_to_group_response(response)
+            crate::operation_deser::parse_associate_member_to_group_response(response)
         }
     }
 }
@@ -80,9 +80,9 @@ impl smithy_http::response::ParseStrictResponse for CancelMailboxExportJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_cancel_mailbox_export_job_error(response)
+            crate::operation_deser::parse_cancel_mailbox_export_job_error(response)
         } else {
-            crate::operation_ser::parse_cancel_mailbox_export_job_response(response)
+            crate::operation_deser::parse_cancel_mailbox_export_job_response(response)
         }
     }
 }
@@ -106,9 +106,9 @@ impl smithy_http::response::ParseStrictResponse for CreateAlias {
         std::result::Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_alias_error(response)
+            crate::operation_deser::parse_create_alias_error(response)
         } else {
-            crate::operation_ser::parse_create_alias_response(response)
+            crate::operation_deser::parse_create_alias_response(response)
         }
     }
 }
@@ -132,9 +132,9 @@ impl smithy_http::response::ParseStrictResponse for CreateGroup {
         std::result::Result<crate::output::CreateGroupOutput, crate::error::CreateGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_group_error(response)
+            crate::operation_deser::parse_create_group_error(response)
         } else {
-            crate::operation_ser::parse_create_group_response(response)
+            crate::operation_deser::parse_create_group_response(response)
         }
     }
 }
@@ -160,9 +160,9 @@ impl smithy_http::response::ParseStrictResponse for CreateMobileDeviceAccessRule
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_mobile_device_access_rule_error(response)
+            crate::operation_deser::parse_create_mobile_device_access_rule_error(response)
         } else {
-            crate::operation_ser::parse_create_mobile_device_access_rule_response(response)
+            crate::operation_deser::parse_create_mobile_device_access_rule_response(response)
         }
     }
 }
@@ -192,9 +192,9 @@ impl smithy_http::response::ParseStrictResponse for CreateOrganization {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_organization_error(response)
+            crate::operation_deser::parse_create_organization_error(response)
         } else {
-            crate::operation_ser::parse_create_organization_response(response)
+            crate::operation_deser::parse_create_organization_response(response)
         }
     }
 }
@@ -218,9 +218,9 @@ impl smithy_http::response::ParseStrictResponse for CreateResource {
         std::result::Result<crate::output::CreateResourceOutput, crate::error::CreateResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_resource_error(response)
+            crate::operation_deser::parse_create_resource_error(response)
         } else {
-            crate::operation_ser::parse_create_resource_response(response)
+            crate::operation_deser::parse_create_resource_response(response)
         }
     }
 }
@@ -244,9 +244,9 @@ impl smithy_http::response::ParseStrictResponse for CreateUser {
         std::result::Result<crate::output::CreateUserOutput, crate::error::CreateUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_user_error(response)
+            crate::operation_deser::parse_create_user_error(response)
         } else {
-            crate::operation_ser::parse_create_user_response(response)
+            crate::operation_deser::parse_create_user_response(response)
         }
     }
 }
@@ -272,9 +272,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteAccessControlRule {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_access_control_rule_error(response)
+            crate::operation_deser::parse_delete_access_control_rule_error(response)
         } else {
-            crate::operation_ser::parse_delete_access_control_rule_response(response)
+            crate::operation_deser::parse_delete_access_control_rule_response(response)
         }
     }
 }
@@ -299,9 +299,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteAlias {
         std::result::Result<crate::output::DeleteAliasOutput, crate::error::DeleteAliasError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_alias_error(response)
+            crate::operation_deser::parse_delete_alias_error(response)
         } else {
-            crate::operation_ser::parse_delete_alias_response(response)
+            crate::operation_deser::parse_delete_alias_response(response)
         }
     }
 }
@@ -325,9 +325,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteGroup {
         std::result::Result<crate::output::DeleteGroupOutput, crate::error::DeleteGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_group_error(response)
+            crate::operation_deser::parse_delete_group_error(response)
         } else {
-            crate::operation_ser::parse_delete_group_response(response)
+            crate::operation_deser::parse_delete_group_response(response)
         }
     }
 }
@@ -353,9 +353,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteMailboxPermissions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_mailbox_permissions_error(response)
+            crate::operation_deser::parse_delete_mailbox_permissions_error(response)
         } else {
-            crate::operation_ser::parse_delete_mailbox_permissions_response(response)
+            crate::operation_deser::parse_delete_mailbox_permissions_response(response)
         }
     }
 }
@@ -381,9 +381,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteMobileDeviceAccessOver
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_mobile_device_access_override_error(response)
+            crate::operation_deser::parse_delete_mobile_device_access_override_error(response)
         } else {
-            crate::operation_ser::parse_delete_mobile_device_access_override_response(response)
+            crate::operation_deser::parse_delete_mobile_device_access_override_response(response)
         }
     }
 }
@@ -409,9 +409,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteMobileDeviceAccessRule
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_mobile_device_access_rule_error(response)
+            crate::operation_deser::parse_delete_mobile_device_access_rule_error(response)
         } else {
-            crate::operation_ser::parse_delete_mobile_device_access_rule_response(response)
+            crate::operation_deser::parse_delete_mobile_device_access_rule_response(response)
         }
     }
 }
@@ -437,9 +437,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteOrganization {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_organization_error(response)
+            crate::operation_deser::parse_delete_organization_error(response)
         } else {
-            crate::operation_ser::parse_delete_organization_response(response)
+            crate::operation_deser::parse_delete_organization_response(response)
         }
     }
 }
@@ -463,9 +463,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteResource {
         std::result::Result<crate::output::DeleteResourceOutput, crate::error::DeleteResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_resource_error(response)
+            crate::operation_deser::parse_delete_resource_error(response)
         } else {
-            crate::operation_ser::parse_delete_resource_response(response)
+            crate::operation_deser::parse_delete_resource_response(response)
         }
     }
 }
@@ -491,9 +491,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteRetentionPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_retention_policy_error(response)
+            crate::operation_deser::parse_delete_retention_policy_error(response)
         } else {
-            crate::operation_ser::parse_delete_retention_policy_response(response)
+            crate::operation_deser::parse_delete_retention_policy_response(response)
         }
     }
 }
@@ -521,9 +521,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteUser {
         std::result::Result<crate::output::DeleteUserOutput, crate::error::DeleteUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_user_error(response)
+            crate::operation_deser::parse_delete_user_error(response)
         } else {
-            crate::operation_ser::parse_delete_user_response(response)
+            crate::operation_deser::parse_delete_user_response(response)
         }
     }
 }
@@ -552,9 +552,9 @@ impl smithy_http::response::ParseStrictResponse for DeregisterFromWorkMail {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_deregister_from_work_mail_error(response)
+            crate::operation_deser::parse_deregister_from_work_mail_error(response)
         } else {
-            crate::operation_ser::parse_deregister_from_work_mail_response(response)
+            crate::operation_deser::parse_deregister_from_work_mail_response(response)
         }
     }
 }
@@ -578,9 +578,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeGroup {
         std::result::Result<crate::output::DescribeGroupOutput, crate::error::DescribeGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_group_error(response)
+            crate::operation_deser::parse_describe_group_error(response)
         } else {
-            crate::operation_ser::parse_describe_group_response(response)
+            crate::operation_deser::parse_describe_group_response(response)
         }
     }
 }
@@ -606,9 +606,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeInboundDmarcSettings
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_inbound_dmarc_settings_error(response)
+            crate::operation_deser::parse_describe_inbound_dmarc_settings_error(response)
         } else {
-            crate::operation_ser::parse_describe_inbound_dmarc_settings_response(response)
+            crate::operation_deser::parse_describe_inbound_dmarc_settings_response(response)
         }
     }
 }
@@ -634,9 +634,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeMailboxExportJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_mailbox_export_job_error(response)
+            crate::operation_deser::parse_describe_mailbox_export_job_error(response)
         } else {
-            crate::operation_ser::parse_describe_mailbox_export_job_response(response)
+            crate::operation_deser::parse_describe_mailbox_export_job_response(response)
         }
     }
 }
@@ -663,9 +663,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeOrganization {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_organization_error(response)
+            crate::operation_deser::parse_describe_organization_error(response)
         } else {
-            crate::operation_ser::parse_describe_organization_response(response)
+            crate::operation_deser::parse_describe_organization_response(response)
         }
     }
 }
@@ -691,9 +691,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_resource_error(response)
+            crate::operation_deser::parse_describe_resource_error(response)
         } else {
-            crate::operation_ser::parse_describe_resource_response(response)
+            crate::operation_deser::parse_describe_resource_response(response)
         }
     }
 }
@@ -717,9 +717,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeUser {
         std::result::Result<crate::output::DescribeUserOutput, crate::error::DescribeUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_user_error(response)
+            crate::operation_deser::parse_describe_user_error(response)
         } else {
-            crate::operation_ser::parse_describe_user_response(response)
+            crate::operation_deser::parse_describe_user_response(response)
         }
     }
 }
@@ -745,9 +745,9 @@ impl smithy_http::response::ParseStrictResponse for DisassociateDelegateFromReso
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_disassociate_delegate_from_resource_error(response)
+            crate::operation_deser::parse_disassociate_delegate_from_resource_error(response)
         } else {
-            crate::operation_ser::parse_disassociate_delegate_from_resource_response(response)
+            crate::operation_deser::parse_disassociate_delegate_from_resource_response(response)
         }
     }
 }
@@ -773,9 +773,9 @@ impl smithy_http::response::ParseStrictResponse for DisassociateMemberFromGroup 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_disassociate_member_from_group_error(response)
+            crate::operation_deser::parse_disassociate_member_from_group_error(response)
         } else {
-            crate::operation_ser::parse_disassociate_member_from_group_response(response)
+            crate::operation_deser::parse_disassociate_member_from_group_response(response)
         }
     }
 }
@@ -802,9 +802,9 @@ impl smithy_http::response::ParseStrictResponse for GetAccessControlEffect {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_access_control_effect_error(response)
+            crate::operation_deser::parse_get_access_control_effect_error(response)
         } else {
-            crate::operation_ser::parse_get_access_control_effect_response(response)
+            crate::operation_deser::parse_get_access_control_effect_response(response)
         }
     }
 }
@@ -830,9 +830,9 @@ impl smithy_http::response::ParseStrictResponse for GetDefaultRetentionPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_default_retention_policy_error(response)
+            crate::operation_deser::parse_get_default_retention_policy_error(response)
         } else {
-            crate::operation_ser::parse_get_default_retention_policy_response(response)
+            crate::operation_deser::parse_get_default_retention_policy_response(response)
         }
     }
 }
@@ -858,9 +858,9 @@ impl smithy_http::response::ParseStrictResponse for GetMailboxDetails {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_mailbox_details_error(response)
+            crate::operation_deser::parse_get_mailbox_details_error(response)
         } else {
-            crate::operation_ser::parse_get_mailbox_details_response(response)
+            crate::operation_deser::parse_get_mailbox_details_response(response)
         }
     }
 }
@@ -887,9 +887,9 @@ impl smithy_http::response::ParseStrictResponse for GetMobileDeviceAccessEffect 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_mobile_device_access_effect_error(response)
+            crate::operation_deser::parse_get_mobile_device_access_effect_error(response)
         } else {
-            crate::operation_ser::parse_get_mobile_device_access_effect_response(response)
+            crate::operation_deser::parse_get_mobile_device_access_effect_response(response)
         }
     }
 }
@@ -915,9 +915,9 @@ impl smithy_http::response::ParseStrictResponse for GetMobileDeviceAccessOverrid
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_mobile_device_access_override_error(response)
+            crate::operation_deser::parse_get_mobile_device_access_override_error(response)
         } else {
-            crate::operation_ser::parse_get_mobile_device_access_override_response(response)
+            crate::operation_deser::parse_get_mobile_device_access_override_response(response)
         }
     }
 }
@@ -943,9 +943,9 @@ impl smithy_http::response::ParseStrictResponse for ListAccessControlRules {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_access_control_rules_error(response)
+            crate::operation_deser::parse_list_access_control_rules_error(response)
         } else {
-            crate::operation_ser::parse_list_access_control_rules_response(response)
+            crate::operation_deser::parse_list_access_control_rules_response(response)
         }
     }
 }
@@ -970,9 +970,9 @@ impl smithy_http::response::ParseStrictResponse for ListAliases {
         std::result::Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_aliases_error(response)
+            crate::operation_deser::parse_list_aliases_error(response)
         } else {
-            crate::operation_ser::parse_list_aliases_response(response)
+            crate::operation_deser::parse_list_aliases_response(response)
         }
     }
 }
@@ -999,9 +999,9 @@ impl smithy_http::response::ParseStrictResponse for ListGroupMembers {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_group_members_error(response)
+            crate::operation_deser::parse_list_group_members_error(response)
         } else {
-            crate::operation_ser::parse_list_group_members_response(response)
+            crate::operation_deser::parse_list_group_members_response(response)
         }
     }
 }
@@ -1025,9 +1025,9 @@ impl smithy_http::response::ParseStrictResponse for ListGroups {
         std::result::Result<crate::output::ListGroupsOutput, crate::error::ListGroupsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_groups_error(response)
+            crate::operation_deser::parse_list_groups_error(response)
         } else {
-            crate::operation_ser::parse_list_groups_response(response)
+            crate::operation_deser::parse_list_groups_response(response)
         }
     }
 }
@@ -1054,9 +1054,9 @@ impl smithy_http::response::ParseStrictResponse for ListMailboxExportJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_mailbox_export_jobs_error(response)
+            crate::operation_deser::parse_list_mailbox_export_jobs_error(response)
         } else {
-            crate::operation_ser::parse_list_mailbox_export_jobs_response(response)
+            crate::operation_deser::parse_list_mailbox_export_jobs_response(response)
         }
     }
 }
@@ -1083,9 +1083,9 @@ impl smithy_http::response::ParseStrictResponse for ListMailboxPermissions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_mailbox_permissions_error(response)
+            crate::operation_deser::parse_list_mailbox_permissions_error(response)
         } else {
-            crate::operation_ser::parse_list_mailbox_permissions_response(response)
+            crate::operation_deser::parse_list_mailbox_permissions_response(response)
         }
     }
 }
@@ -1111,9 +1111,9 @@ impl smithy_http::response::ParseStrictResponse for ListMobileDeviceAccessOverri
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_mobile_device_access_overrides_error(response)
+            crate::operation_deser::parse_list_mobile_device_access_overrides_error(response)
         } else {
-            crate::operation_ser::parse_list_mobile_device_access_overrides_response(response)
+            crate::operation_deser::parse_list_mobile_device_access_overrides_response(response)
         }
     }
 }
@@ -1139,9 +1139,9 @@ impl smithy_http::response::ParseStrictResponse for ListMobileDeviceAccessRules 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_mobile_device_access_rules_error(response)
+            crate::operation_deser::parse_list_mobile_device_access_rules_error(response)
         } else {
-            crate::operation_ser::parse_list_mobile_device_access_rules_response(response)
+            crate::operation_deser::parse_list_mobile_device_access_rules_response(response)
         }
     }
 }
@@ -1167,9 +1167,9 @@ impl smithy_http::response::ParseStrictResponse for ListOrganizations {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_organizations_error(response)
+            crate::operation_deser::parse_list_organizations_error(response)
         } else {
-            crate::operation_ser::parse_list_organizations_response(response)
+            crate::operation_deser::parse_list_organizations_response(response)
         }
     }
 }
@@ -1196,9 +1196,9 @@ impl smithy_http::response::ParseStrictResponse for ListResourceDelegates {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_resource_delegates_error(response)
+            crate::operation_deser::parse_list_resource_delegates_error(response)
         } else {
-            crate::operation_ser::parse_list_resource_delegates_response(response)
+            crate::operation_deser::parse_list_resource_delegates_response(response)
         }
     }
 }
@@ -1222,9 +1222,9 @@ impl smithy_http::response::ParseStrictResponse for ListResources {
         std::result::Result<crate::output::ListResourcesOutput, crate::error::ListResourcesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_resources_error(response)
+            crate::operation_deser::parse_list_resources_error(response)
         } else {
-            crate::operation_ser::parse_list_resources_response(response)
+            crate::operation_deser::parse_list_resources_response(response)
         }
     }
 }
@@ -1250,9 +1250,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -1275,9 +1275,9 @@ impl smithy_http::response::ParseStrictResponse for ListUsers {
     type Output = std::result::Result<crate::output::ListUsersOutput, crate::error::ListUsersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_users_error(response)
+            crate::operation_deser::parse_list_users_error(response)
         } else {
-            crate::operation_ser::parse_list_users_response(response)
+            crate::operation_deser::parse_list_users_response(response)
         }
     }
 }
@@ -1306,9 +1306,9 @@ impl smithy_http::response::ParseStrictResponse for PutAccessControlRule {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_access_control_rule_error(response)
+            crate::operation_deser::parse_put_access_control_rule_error(response)
         } else {
-            crate::operation_ser::parse_put_access_control_rule_response(response)
+            crate::operation_deser::parse_put_access_control_rule_response(response)
         }
     }
 }
@@ -1334,9 +1334,9 @@ impl smithy_http::response::ParseStrictResponse for PutInboundDmarcSettings {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_inbound_dmarc_settings_error(response)
+            crate::operation_deser::parse_put_inbound_dmarc_settings_error(response)
         } else {
-            crate::operation_ser::parse_put_inbound_dmarc_settings_response(response)
+            crate::operation_deser::parse_put_inbound_dmarc_settings_response(response)
         }
     }
 }
@@ -1363,9 +1363,9 @@ impl smithy_http::response::ParseStrictResponse for PutMailboxPermissions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_mailbox_permissions_error(response)
+            crate::operation_deser::parse_put_mailbox_permissions_error(response)
         } else {
-            crate::operation_ser::parse_put_mailbox_permissions_response(response)
+            crate::operation_deser::parse_put_mailbox_permissions_response(response)
         }
     }
 }
@@ -1391,9 +1391,9 @@ impl smithy_http::response::ParseStrictResponse for PutMobileDeviceAccessOverrid
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_mobile_device_access_override_error(response)
+            crate::operation_deser::parse_put_mobile_device_access_override_error(response)
         } else {
-            crate::operation_ser::parse_put_mobile_device_access_override_response(response)
+            crate::operation_deser::parse_put_mobile_device_access_override_response(response)
         }
     }
 }
@@ -1419,9 +1419,9 @@ impl smithy_http::response::ParseStrictResponse for PutRetentionPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_retention_policy_error(response)
+            crate::operation_deser::parse_put_retention_policy_error(response)
         } else {
-            crate::operation_ser::parse_put_retention_policy_response(response)
+            crate::operation_deser::parse_put_retention_policy_response(response)
         }
     }
 }
@@ -1453,9 +1453,9 @@ impl smithy_http::response::ParseStrictResponse for RegisterToWorkMail {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_register_to_work_mail_error(response)
+            crate::operation_deser::parse_register_to_work_mail_error(response)
         } else {
-            crate::operation_ser::parse_register_to_work_mail_response(response)
+            crate::operation_deser::parse_register_to_work_mail_response(response)
         }
     }
 }
@@ -1479,9 +1479,9 @@ impl smithy_http::response::ParseStrictResponse for ResetPassword {
         std::result::Result<crate::output::ResetPasswordOutput, crate::error::ResetPasswordError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_reset_password_error(response)
+            crate::operation_deser::parse_reset_password_error(response)
         } else {
-            crate::operation_ser::parse_reset_password_response(response)
+            crate::operation_deser::parse_reset_password_response(response)
         }
     }
 }
@@ -1510,9 +1510,9 @@ impl smithy_http::response::ParseStrictResponse for StartMailboxExportJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_start_mailbox_export_job_error(response)
+            crate::operation_deser::parse_start_mailbox_export_job_error(response)
         } else {
-            crate::operation_ser::parse_start_mailbox_export_job_response(response)
+            crate::operation_deser::parse_start_mailbox_export_job_response(response)
         }
     }
 }
@@ -1537,9 +1537,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -1564,9 +1564,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -1593,9 +1593,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateMailboxQuota {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_mailbox_quota_error(response)
+            crate::operation_deser::parse_update_mailbox_quota_error(response)
         } else {
-            crate::operation_ser::parse_update_mailbox_quota_response(response)
+            crate::operation_deser::parse_update_mailbox_quota_response(response)
         }
     }
 }
@@ -1621,9 +1621,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateMobileDeviceAccessRule
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_mobile_device_access_rule_error(response)
+            crate::operation_deser::parse_update_mobile_device_access_rule_error(response)
         } else {
-            crate::operation_ser::parse_update_mobile_device_access_rule_response(response)
+            crate::operation_deser::parse_update_mobile_device_access_rule_response(response)
         }
     }
 }
@@ -1651,9 +1651,9 @@ impl smithy_http::response::ParseStrictResponse for UpdatePrimaryEmailAddress {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_primary_email_address_error(response)
+            crate::operation_deser::parse_update_primary_email_address_error(response)
         } else {
-            crate::operation_ser::parse_update_primary_email_address_response(response)
+            crate::operation_deser::parse_update_primary_email_address_response(response)
         }
     }
 }
@@ -1679,9 +1679,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateResource {
         std::result::Result<crate::output::UpdateResourceOutput, crate::error::UpdateResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_resource_error(response)
+            crate::operation_deser::parse_update_resource_error(response)
         } else {
-            crate::operation_ser::parse_update_resource_response(response)
+            crate::operation_deser::parse_update_resource_response(response)
         }
     }
 }

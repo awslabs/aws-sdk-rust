@@ -37,9 +37,9 @@ impl smithy_http::response::ParseStrictResponse for AddAttachmentsToSet {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_add_attachments_to_set_error(response)
+            crate::operation_deser::parse_add_attachments_to_set_error(response)
         } else {
-            crate::operation_ser::parse_add_attachments_to_set_response(response)
+            crate::operation_deser::parse_add_attachments_to_set_response(response)
         }
     }
 }
@@ -83,9 +83,9 @@ impl smithy_http::response::ParseStrictResponse for AddCommunicationToCase {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_add_communication_to_case_error(response)
+            crate::operation_deser::parse_add_communication_to_case_error(response)
         } else {
-            crate::operation_ser::parse_add_communication_to_case_response(response)
+            crate::operation_deser::parse_add_communication_to_case_response(response)
         }
     }
 }
@@ -141,9 +141,9 @@ impl smithy_http::response::ParseStrictResponse for CreateCase {
         std::result::Result<crate::output::CreateCaseOutput, crate::error::CreateCaseError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_case_error(response)
+            crate::operation_deser::parse_create_case_error(response)
         } else {
-            crate::operation_ser::parse_create_case_response(response)
+            crate::operation_deser::parse_create_case_response(response)
         }
     }
 }
@@ -187,9 +187,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeAttachment {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_attachment_error(response)
+            crate::operation_deser::parse_describe_attachment_error(response)
         } else {
-            crate::operation_ser::parse_describe_attachment_response(response)
+            crate::operation_deser::parse_describe_attachment_response(response)
         }
     }
 }
@@ -243,9 +243,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeCases {
         std::result::Result<crate::output::DescribeCasesOutput, crate::error::DescribeCasesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_cases_error(response)
+            crate::operation_deser::parse_describe_cases_error(response)
         } else {
-            crate::operation_ser::parse_describe_cases_response(response)
+            crate::operation_deser::parse_describe_cases_response(response)
         }
     }
 }
@@ -294,9 +294,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeCommunications {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_communications_error(response)
+            crate::operation_deser::parse_describe_communications_error(response)
         } else {
-            crate::operation_ser::parse_describe_communications_response(response)
+            crate::operation_deser::parse_describe_communications_response(response)
         }
     }
 }
@@ -344,9 +344,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeServices {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_services_error(response)
+            crate::operation_deser::parse_describe_services_error(response)
         } else {
-            crate::operation_ser::parse_describe_services_response(response)
+            crate::operation_deser::parse_describe_services_response(response)
         }
     }
 }
@@ -388,9 +388,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeSeverityLevels {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_severity_levels_error(response)
+            crate::operation_deser::parse_describe_severity_levels_error(response)
         } else {
-            crate::operation_ser::parse_describe_severity_levels_response(response)
+            crate::operation_deser::parse_describe_severity_levels_response(response)
         }
     }
 }
@@ -436,11 +436,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeTrustedAdvisorCheckR
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_trusted_advisor_check_refresh_statuses_error(
+            crate::operation_deser::parse_describe_trusted_advisor_check_refresh_statuses_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_describe_trusted_advisor_check_refresh_statuses_response(
+            crate::operation_deser::parse_describe_trusted_advisor_check_refresh_statuses_response(
                 response,
             )
         }
@@ -522,9 +522,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeTrustedAdvisorCheckR
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_trusted_advisor_check_result_error(response)
+            crate::operation_deser::parse_describe_trusted_advisor_check_result_error(response)
         } else {
-            crate::operation_ser::parse_describe_trusted_advisor_check_result_response(response)
+            crate::operation_deser::parse_describe_trusted_advisor_check_result_response(response)
         }
     }
 }
@@ -571,9 +571,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeTrustedAdvisorChecks
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_trusted_advisor_checks_error(response)
+            crate::operation_deser::parse_describe_trusted_advisor_checks_error(response)
         } else {
-            crate::operation_ser::parse_describe_trusted_advisor_checks_response(response)
+            crate::operation_deser::parse_describe_trusted_advisor_checks_response(response)
         }
     }
 }
@@ -616,9 +616,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeTrustedAdvisorCheckS
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_trusted_advisor_check_summaries_error(response)
+            crate::operation_deser::parse_describe_trusted_advisor_check_summaries_error(response)
         } else {
-            crate::operation_ser::parse_describe_trusted_advisor_check_summaries_response(response)
+            crate::operation_deser::parse_describe_trusted_advisor_check_summaries_response(
+                response,
+            )
         }
     }
 }
@@ -667,9 +669,9 @@ impl smithy_http::response::ParseStrictResponse for RefreshTrustedAdvisorCheck {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_refresh_trusted_advisor_check_error(response)
+            crate::operation_deser::parse_refresh_trusted_advisor_check_error(response)
         } else {
-            crate::operation_ser::parse_refresh_trusted_advisor_check_response(response)
+            crate::operation_deser::parse_refresh_trusted_advisor_check_response(response)
         }
     }
 }
@@ -708,9 +710,9 @@ impl smithy_http::response::ParseStrictResponse for ResolveCase {
         std::result::Result<crate::output::ResolveCaseOutput, crate::error::ResolveCaseError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_resolve_case_error(response)
+            crate::operation_deser::parse_resolve_case_error(response)
         } else {
-            crate::operation_ser::parse_resolve_case_response(response)
+            crate::operation_deser::parse_resolve_case_response(response)
         }
     }
 }

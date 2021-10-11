@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeJobExecution {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_job_execution_error(response)
+            crate::operation_deser::parse_describe_job_execution_error(response)
         } else {
-            crate::operation_ser::parse_describe_job_execution_response(response)
+            crate::operation_deser::parse_describe_job_execution_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for GetPendingJobExecutions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_pending_job_executions_error(response)
+            crate::operation_deser::parse_get_pending_job_executions_error(response)
         } else {
-            crate::operation_ser::parse_get_pending_job_executions_response(response)
+            crate::operation_deser::parse_get_pending_job_executions_response(response)
         }
     }
 }
@@ -76,9 +76,9 @@ impl smithy_http::response::ParseStrictResponse for StartNextPendingJobExecution
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_start_next_pending_job_execution_error(response)
+            crate::operation_deser::parse_start_next_pending_job_execution_error(response)
         } else {
-            crate::operation_ser::parse_start_next_pending_job_execution_response(response)
+            crate::operation_deser::parse_start_next_pending_job_execution_response(response)
         }
     }
 }
@@ -104,9 +104,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateJobExecution {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_job_execution_error(response)
+            crate::operation_deser::parse_update_job_execution_error(response)
         } else {
-            crate::operation_ser::parse_update_job_execution_response(response)
+            crate::operation_deser::parse_update_job_execution_response(response)
         }
     }
 }

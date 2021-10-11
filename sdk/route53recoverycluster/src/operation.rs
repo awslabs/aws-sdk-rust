@@ -29,9 +29,9 @@ impl smithy_http::response::ParseStrictResponse for GetRoutingControlState {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_routing_control_state_error(response)
+            crate::operation_deser::parse_get_routing_control_state_error(response)
         } else {
-            crate::operation_ser::parse_get_routing_control_state_response(response)
+            crate::operation_deser::parse_get_routing_control_state_response(response)
         }
     }
 }
@@ -61,9 +61,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateRoutingControlState {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_routing_control_state_error(response)
+            crate::operation_deser::parse_update_routing_control_state_error(response)
         } else {
-            crate::operation_ser::parse_update_routing_control_state_response(response)
+            crate::operation_deser::parse_update_routing_control_state_response(response)
         }
     }
 }
@@ -93,9 +93,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateRoutingControlStates {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_routing_control_states_error(response)
+            crate::operation_deser::parse_update_routing_control_states_error(response)
         } else {
-            crate::operation_ser::parse_update_routing_control_states_response(response)
+            crate::operation_deser::parse_update_routing_control_states_response(response)
         }
     }
 }

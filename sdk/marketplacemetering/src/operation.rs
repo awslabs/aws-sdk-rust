@@ -30,9 +30,9 @@ impl smithy_http::response::ParseStrictResponse for BatchMeterUsage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_batch_meter_usage_error(response)
+            crate::operation_deser::parse_batch_meter_usage_error(response)
         } else {
-            crate::operation_ser::parse_batch_meter_usage_response(response)
+            crate::operation_deser::parse_batch_meter_usage_response(response)
         }
     }
 }
@@ -62,9 +62,9 @@ impl smithy_http::response::ParseStrictResponse for MeterUsage {
         std::result::Result<crate::output::MeterUsageOutput, crate::error::MeterUsageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_meter_usage_error(response)
+            crate::operation_deser::parse_meter_usage_error(response)
         } else {
-            crate::operation_ser::parse_meter_usage_response(response)
+            crate::operation_deser::parse_meter_usage_response(response)
         }
     }
 }
@@ -125,9 +125,9 @@ impl smithy_http::response::ParseStrictResponse for RegisterUsage {
         std::result::Result<crate::output::RegisterUsageOutput, crate::error::RegisterUsageError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_register_usage_error(response)
+            crate::operation_deser::parse_register_usage_error(response)
         } else {
-            crate::operation_ser::parse_register_usage_response(response)
+            crate::operation_deser::parse_register_usage_response(response)
         }
     }
 }
@@ -156,9 +156,9 @@ impl smithy_http::response::ParseStrictResponse for ResolveCustomer {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_resolve_customer_error(response)
+            crate::operation_deser::parse_resolve_customer_error(response)
         } else {
-            crate::operation_ser::parse_resolve_customer_response(response)
+            crate::operation_deser::parse_resolve_customer_response(response)
         }
     }
 }

@@ -25,9 +25,9 @@ impl smithy_http::response::ParseStrictResponse for Search {
     type Output = std::result::Result<crate::output::SearchOutput, crate::error::SearchError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_search_error(response)
+            crate::operation_deser::parse_search_error(response)
         } else {
-            crate::operation_ser::parse_search_response(response)
+            crate::operation_deser::parse_search_response(response)
         }
     }
 }
@@ -52,9 +52,9 @@ impl smithy_http::response::ParseStrictResponse for Suggest {
     type Output = std::result::Result<crate::output::SuggestOutput, crate::error::SuggestError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_suggest_error(response)
+            crate::operation_deser::parse_suggest_error(response)
         } else {
-            crate::operation_ser::parse_suggest_response(response)
+            crate::operation_deser::parse_suggest_response(response)
         }
     }
 }
@@ -83,9 +83,9 @@ impl smithy_http::response::ParseStrictResponse for UploadDocuments {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_upload_documents_error(response)
+            crate::operation_deser::parse_upload_documents_error(response)
         } else {
-            crate::operation_ser::parse_upload_documents_response(response)
+            crate::operation_deser::parse_upload_documents_response(response)
         }
     }
 }

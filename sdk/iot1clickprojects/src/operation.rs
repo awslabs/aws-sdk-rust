@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for AssociateDeviceWithPlacement
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_associate_device_with_placement_error(response)
+            crate::operation_deser::parse_associate_device_with_placement_error(response)
         } else {
-            crate::operation_ser::parse_associate_device_with_placement_response(response)
+            crate::operation_deser::parse_associate_device_with_placement_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for CreatePlacement {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_placement_error(response)
+            crate::operation_deser::parse_create_placement_error(response)
         } else {
-            crate::operation_ser::parse_create_placement_response(response)
+            crate::operation_deser::parse_create_placement_response(response)
         }
     }
 }
@@ -75,9 +75,9 @@ impl smithy_http::response::ParseStrictResponse for CreateProject {
         std::result::Result<crate::output::CreateProjectOutput, crate::error::CreateProjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_project_error(response)
+            crate::operation_deser::parse_create_project_error(response)
         } else {
-            crate::operation_ser::parse_create_project_response(response)
+            crate::operation_deser::parse_create_project_response(response)
         }
     }
 }
@@ -107,9 +107,9 @@ impl smithy_http::response::ParseStrictResponse for DeletePlacement {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_placement_error(response)
+            crate::operation_deser::parse_delete_placement_error(response)
         } else {
-            crate::operation_ser::parse_delete_placement_response(response)
+            crate::operation_deser::parse_delete_placement_response(response)
         }
     }
 }
@@ -137,9 +137,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteProject {
         std::result::Result<crate::output::DeleteProjectOutput, crate::error::DeleteProjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_project_error(response)
+            crate::operation_deser::parse_delete_project_error(response)
         } else {
-            crate::operation_ser::parse_delete_project_response(response)
+            crate::operation_deser::parse_delete_project_response(response)
         }
     }
 }
@@ -165,9 +165,9 @@ impl smithy_http::response::ParseStrictResponse for DescribePlacement {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_placement_error(response)
+            crate::operation_deser::parse_describe_placement_error(response)
         } else {
-            crate::operation_ser::parse_describe_placement_response(response)
+            crate::operation_deser::parse_describe_placement_response(response)
         }
     }
 }
@@ -193,9 +193,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeProject {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_project_error(response)
+            crate::operation_deser::parse_describe_project_error(response)
         } else {
-            crate::operation_ser::parse_describe_project_response(response)
+            crate::operation_deser::parse_describe_project_response(response)
         }
     }
 }
@@ -221,9 +221,9 @@ impl smithy_http::response::ParseStrictResponse for DisassociateDeviceFromPlacem
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_disassociate_device_from_placement_error(response)
+            crate::operation_deser::parse_disassociate_device_from_placement_error(response)
         } else {
-            crate::operation_ser::parse_disassociate_device_from_placement_response(response)
+            crate::operation_deser::parse_disassociate_device_from_placement_response(response)
         }
     }
 }
@@ -249,9 +249,9 @@ impl smithy_http::response::ParseStrictResponse for GetDevicesInPlacement {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_devices_in_placement_error(response)
+            crate::operation_deser::parse_get_devices_in_placement_error(response)
         } else {
-            crate::operation_ser::parse_get_devices_in_placement_response(response)
+            crate::operation_deser::parse_get_devices_in_placement_response(response)
         }
     }
 }
@@ -275,9 +275,9 @@ impl smithy_http::response::ParseStrictResponse for ListPlacements {
         std::result::Result<crate::output::ListPlacementsOutput, crate::error::ListPlacementsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_placements_error(response)
+            crate::operation_deser::parse_list_placements_error(response)
         } else {
-            crate::operation_ser::parse_list_placements_response(response)
+            crate::operation_deser::parse_list_placements_response(response)
         }
     }
 }
@@ -301,9 +301,9 @@ impl smithy_http::response::ParseStrictResponse for ListProjects {
         std::result::Result<crate::output::ListProjectsOutput, crate::error::ListProjectsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_projects_error(response)
+            crate::operation_deser::parse_list_projects_error(response)
         } else {
-            crate::operation_ser::parse_list_projects_response(response)
+            crate::operation_deser::parse_list_projects_response(response)
         }
     }
 }
@@ -329,9 +329,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -357,9 +357,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -383,9 +383,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -412,9 +412,9 @@ impl smithy_http::response::ParseStrictResponse for UpdatePlacement {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_placement_error(response)
+            crate::operation_deser::parse_update_placement_error(response)
         } else {
-            crate::operation_ser::parse_update_placement_response(response)
+            crate::operation_deser::parse_update_placement_response(response)
         }
     }
 }
@@ -441,9 +441,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateProject {
         std::result::Result<crate::output::UpdateProjectOutput, crate::error::UpdateProjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_project_error(response)
+            crate::operation_deser::parse_update_project_error(response)
         } else {
-            crate::operation_ser::parse_update_project_response(response)
+            crate::operation_deser::parse_update_project_response(response)
         }
     }
 }

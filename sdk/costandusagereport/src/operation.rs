@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteReportDefinition {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_report_definition_error(response)
+            crate::operation_deser::parse_delete_report_definition_error(response)
         } else {
-            crate::operation_ser::parse_delete_report_definition_response(response)
+            crate::operation_deser::parse_delete_report_definition_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeReportDefinitions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_report_definitions_error(response)
+            crate::operation_deser::parse_describe_report_definitions_error(response)
         } else {
-            crate::operation_ser::parse_describe_report_definitions_response(response)
+            crate::operation_deser::parse_describe_report_definitions_response(response)
         }
     }
 }
@@ -76,9 +76,9 @@ impl smithy_http::response::ParseStrictResponse for ModifyReportDefinition {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_modify_report_definition_error(response)
+            crate::operation_deser::parse_modify_report_definition_error(response)
         } else {
-            crate::operation_ser::parse_modify_report_definition_response(response)
+            crate::operation_deser::parse_modify_report_definition_response(response)
         }
     }
 }
@@ -104,9 +104,9 @@ impl smithy_http::response::ParseStrictResponse for PutReportDefinition {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_report_definition_error(response)
+            crate::operation_deser::parse_put_report_definition_error(response)
         } else {
-            crate::operation_ser::parse_put_report_definition_response(response)
+            crate::operation_deser::parse_put_report_definition_response(response)
         }
     }
 }

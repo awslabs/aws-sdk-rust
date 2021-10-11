@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for CreateProject {
         std::result::Result<crate::output::CreateProjectOutput, crate::error::CreateProjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_project_error(response)
+            crate::operation_deser::parse_create_project_error(response)
         } else {
-            crate::operation_ser::parse_create_project_response(response)
+            crate::operation_deser::parse_create_project_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteProject {
         std::result::Result<crate::output::DeleteProjectOutput, crate::error::DeleteProjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_project_error(response)
+            crate::operation_deser::parse_delete_project_error(response)
         } else {
-            crate::operation_ser::parse_delete_project_response(response)
+            crate::operation_deser::parse_delete_project_response(response)
         }
     }
 }
@@ -76,9 +76,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeBundle {
         std::result::Result<crate::output::DescribeBundleOutput, crate::error::DescribeBundleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_bundle_error(response)
+            crate::operation_deser::parse_describe_bundle_error(response)
         } else {
-            crate::operation_ser::parse_describe_bundle_response(response)
+            crate::operation_deser::parse_describe_bundle_response(response)
         }
     }
 }
@@ -106,9 +106,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeProject {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_project_error(response)
+            crate::operation_deser::parse_describe_project_error(response)
         } else {
-            crate::operation_ser::parse_describe_project_response(response)
+            crate::operation_deser::parse_describe_project_response(response)
         }
     }
 }
@@ -135,9 +135,9 @@ impl smithy_http::response::ParseStrictResponse for ExportBundle {
         std::result::Result<crate::output::ExportBundleOutput, crate::error::ExportBundleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_export_bundle_error(response)
+            crate::operation_deser::parse_export_bundle_error(response)
         } else {
-            crate::operation_ser::parse_export_bundle_response(response)
+            crate::operation_deser::parse_export_bundle_response(response)
         }
     }
 }
@@ -165,9 +165,9 @@ impl smithy_http::response::ParseStrictResponse for ExportProject {
         std::result::Result<crate::output::ExportProjectOutput, crate::error::ExportProjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_export_project_error(response)
+            crate::operation_deser::parse_export_project_error(response)
         } else {
-            crate::operation_ser::parse_export_project_response(response)
+            crate::operation_deser::parse_export_project_response(response)
         }
     }
 }
@@ -193,9 +193,9 @@ impl smithy_http::response::ParseStrictResponse for ListBundles {
         std::result::Result<crate::output::ListBundlesOutput, crate::error::ListBundlesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_bundles_error(response)
+            crate::operation_deser::parse_list_bundles_error(response)
         } else {
-            crate::operation_ser::parse_list_bundles_response(response)
+            crate::operation_deser::parse_list_bundles_response(response)
         }
     }
 }
@@ -221,9 +221,9 @@ impl smithy_http::response::ParseStrictResponse for ListProjects {
         std::result::Result<crate::output::ListProjectsOutput, crate::error::ListProjectsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_projects_error(response)
+            crate::operation_deser::parse_list_projects_error(response)
         } else {
-            crate::operation_ser::parse_list_projects_response(response)
+            crate::operation_deser::parse_list_projects_response(response)
         }
     }
 }
@@ -249,9 +249,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateProject {
         std::result::Result<crate::output::UpdateProjectOutput, crate::error::UpdateProjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_project_error(response)
+            crate::operation_deser::parse_update_project_error(response)
         } else {
-            crate::operation_ser::parse_update_project_response(response)
+            crate::operation_deser::parse_update_project_response(response)
         }
     }
 }

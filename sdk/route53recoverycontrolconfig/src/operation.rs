@@ -18,9 +18,9 @@ impl smithy_http::response::ParseStrictResponse for CreateCluster {
         std::result::Result<crate::output::CreateClusterOutput, crate::error::CreateClusterError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_cluster_error(response)
+            crate::operation_deser::parse_create_cluster_error(response)
         } else {
-            crate::operation_ser::parse_create_cluster_response(response)
+            crate::operation_deser::parse_create_cluster_response(response)
         }
     }
 }
@@ -46,9 +46,9 @@ impl smithy_http::response::ParseStrictResponse for CreateControlPanel {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_control_panel_error(response)
+            crate::operation_deser::parse_create_control_panel_error(response)
         } else {
-            crate::operation_ser::parse_create_control_panel_response(response)
+            crate::operation_deser::parse_create_control_panel_response(response)
         }
     }
 }
@@ -74,9 +74,9 @@ impl smithy_http::response::ParseStrictResponse for CreateRoutingControl {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_routing_control_error(response)
+            crate::operation_deser::parse_create_routing_control_error(response)
         } else {
-            crate::operation_ser::parse_create_routing_control_response(response)
+            crate::operation_deser::parse_create_routing_control_response(response)
         }
     }
 }
@@ -102,9 +102,9 @@ impl smithy_http::response::ParseStrictResponse for CreateSafetyRule {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_safety_rule_error(response)
+            crate::operation_deser::parse_create_safety_rule_error(response)
         } else {
-            crate::operation_ser::parse_create_safety_rule_response(response)
+            crate::operation_deser::parse_create_safety_rule_response(response)
         }
     }
 }
@@ -128,9 +128,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteCluster {
         std::result::Result<crate::output::DeleteClusterOutput, crate::error::DeleteClusterError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_cluster_error(response)
+            crate::operation_deser::parse_delete_cluster_error(response)
         } else {
-            crate::operation_ser::parse_delete_cluster_response(response)
+            crate::operation_deser::parse_delete_cluster_response(response)
         }
     }
 }
@@ -156,9 +156,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteControlPanel {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_control_panel_error(response)
+            crate::operation_deser::parse_delete_control_panel_error(response)
         } else {
-            crate::operation_ser::parse_delete_control_panel_response(response)
+            crate::operation_deser::parse_delete_control_panel_response(response)
         }
     }
 }
@@ -184,9 +184,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteRoutingControl {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_routing_control_error(response)
+            crate::operation_deser::parse_delete_routing_control_error(response)
         } else {
-            crate::operation_ser::parse_delete_routing_control_response(response)
+            crate::operation_deser::parse_delete_routing_control_response(response)
         }
     }
 }
@@ -212,9 +212,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteSafetyRule {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_safety_rule_error(response)
+            crate::operation_deser::parse_delete_safety_rule_error(response)
         } else {
-            crate::operation_ser::parse_delete_safety_rule_response(response)
+            crate::operation_deser::parse_delete_safety_rule_response(response)
         }
     }
 }
@@ -240,9 +240,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeCluster {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_cluster_error(response)
+            crate::operation_deser::parse_describe_cluster_error(response)
         } else {
-            crate::operation_ser::parse_describe_cluster_response(response)
+            crate::operation_deser::parse_describe_cluster_response(response)
         }
     }
 }
@@ -268,9 +268,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeControlPanel {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_control_panel_error(response)
+            crate::operation_deser::parse_describe_control_panel_error(response)
         } else {
-            crate::operation_ser::parse_describe_control_panel_response(response)
+            crate::operation_deser::parse_describe_control_panel_response(response)
         }
     }
 }
@@ -296,9 +296,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeRoutingControl {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_routing_control_error(response)
+            crate::operation_deser::parse_describe_routing_control_error(response)
         } else {
-            crate::operation_ser::parse_describe_routing_control_response(response)
+            crate::operation_deser::parse_describe_routing_control_response(response)
         }
     }
 }
@@ -324,9 +324,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeSafetyRule {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_safety_rule_error(response)
+            crate::operation_deser::parse_describe_safety_rule_error(response)
         } else {
-            crate::operation_ser::parse_describe_safety_rule_response(response)
+            crate::operation_deser::parse_describe_safety_rule_response(response)
         }
     }
 }
@@ -352,9 +352,9 @@ impl smithy_http::response::ParseStrictResponse for ListAssociatedRoute53HealthC
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_associated_route53_health_checks_error(response)
+            crate::operation_deser::parse_list_associated_route53_health_checks_error(response)
         } else {
-            crate::operation_ser::parse_list_associated_route53_health_checks_response(response)
+            crate::operation_deser::parse_list_associated_route53_health_checks_response(response)
         }
     }
 }
@@ -378,9 +378,9 @@ impl smithy_http::response::ParseStrictResponse for ListClusters {
         std::result::Result<crate::output::ListClustersOutput, crate::error::ListClustersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_clusters_error(response)
+            crate::operation_deser::parse_list_clusters_error(response)
         } else {
-            crate::operation_ser::parse_list_clusters_response(response)
+            crate::operation_deser::parse_list_clusters_response(response)
         }
     }
 }
@@ -406,9 +406,9 @@ impl smithy_http::response::ParseStrictResponse for ListControlPanels {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_control_panels_error(response)
+            crate::operation_deser::parse_list_control_panels_error(response)
         } else {
-            crate::operation_ser::parse_list_control_panels_response(response)
+            crate::operation_deser::parse_list_control_panels_response(response)
         }
     }
 }
@@ -434,9 +434,9 @@ impl smithy_http::response::ParseStrictResponse for ListRoutingControls {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_routing_controls_error(response)
+            crate::operation_deser::parse_list_routing_controls_error(response)
         } else {
-            crate::operation_ser::parse_list_routing_controls_response(response)
+            crate::operation_deser::parse_list_routing_controls_response(response)
         }
     }
 }
@@ -462,9 +462,9 @@ impl smithy_http::response::ParseStrictResponse for ListSafetyRules {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_safety_rules_error(response)
+            crate::operation_deser::parse_list_safety_rules_error(response)
         } else {
-            crate::operation_ser::parse_list_safety_rules_response(response)
+            crate::operation_deser::parse_list_safety_rules_response(response)
         }
     }
 }
@@ -490,9 +490,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateControlPanel {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_control_panel_error(response)
+            crate::operation_deser::parse_update_control_panel_error(response)
         } else {
-            crate::operation_ser::parse_update_control_panel_response(response)
+            crate::operation_deser::parse_update_control_panel_response(response)
         }
     }
 }
@@ -518,9 +518,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateRoutingControl {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_routing_control_error(response)
+            crate::operation_deser::parse_update_routing_control_error(response)
         } else {
-            crate::operation_ser::parse_update_routing_control_response(response)
+            crate::operation_deser::parse_update_routing_control_response(response)
         }
     }
 }
@@ -546,9 +546,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateSafetyRule {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_safety_rule_error(response)
+            crate::operation_deser::parse_update_safety_rule_error(response)
         } else {
-            crate::operation_ser::parse_update_safety_rule_response(response)
+            crate::operation_deser::parse_update_safety_rule_response(response)
         }
     }
 }

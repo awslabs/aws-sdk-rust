@@ -23,9 +23,9 @@ impl smithy_http::response::ParseStrictResponse for CreateAppInstance {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_app_instance_error(response)
+            crate::operation_deser::parse_create_app_instance_error(response)
         } else {
-            crate::operation_ser::parse_create_app_instance_response(response)
+            crate::operation_deser::parse_create_app_instance_response(response)
         }
     }
 }
@@ -65,9 +65,9 @@ impl smithy_http::response::ParseStrictResponse for CreateAppInstanceAdmin {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_app_instance_admin_error(response)
+            crate::operation_deser::parse_create_app_instance_admin_error(response)
         } else {
-            crate::operation_ser::parse_create_app_instance_admin_response(response)
+            crate::operation_deser::parse_create_app_instance_admin_response(response)
         }
     }
 }
@@ -94,9 +94,9 @@ impl smithy_http::response::ParseStrictResponse for CreateAppInstanceUser {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_app_instance_user_error(response)
+            crate::operation_deser::parse_create_app_instance_user_error(response)
         } else {
-            crate::operation_ser::parse_create_app_instance_user_response(response)
+            crate::operation_deser::parse_create_app_instance_user_response(response)
         }
     }
 }
@@ -122,9 +122,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteAppInstance {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_app_instance_error(response)
+            crate::operation_deser::parse_delete_app_instance_error(response)
         } else {
-            crate::operation_ser::parse_delete_app_instance_response(response)
+            crate::operation_deser::parse_delete_app_instance_response(response)
         }
     }
 }
@@ -151,9 +151,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteAppInstanceAdmin {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_app_instance_admin_error(response)
+            crate::operation_deser::parse_delete_app_instance_admin_error(response)
         } else {
-            crate::operation_ser::parse_delete_app_instance_admin_response(response)
+            crate::operation_deser::parse_delete_app_instance_admin_response(response)
         }
     }
 }
@@ -179,9 +179,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteAppInstanceUser {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_app_instance_user_error(response)
+            crate::operation_deser::parse_delete_app_instance_user_error(response)
         } else {
-            crate::operation_ser::parse_delete_app_instance_user_response(response)
+            crate::operation_deser::parse_delete_app_instance_user_response(response)
         }
     }
 }
@@ -207,9 +207,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeAppInstance {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_app_instance_error(response)
+            crate::operation_deser::parse_describe_app_instance_error(response)
         } else {
-            crate::operation_ser::parse_describe_app_instance_response(response)
+            crate::operation_deser::parse_describe_app_instance_response(response)
         }
     }
 }
@@ -235,9 +235,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeAppInstanceAdmin {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_app_instance_admin_error(response)
+            crate::operation_deser::parse_describe_app_instance_admin_error(response)
         } else {
-            crate::operation_ser::parse_describe_app_instance_admin_response(response)
+            crate::operation_deser::parse_describe_app_instance_admin_response(response)
         }
     }
 }
@@ -263,9 +263,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeAppInstanceUser {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_app_instance_user_error(response)
+            crate::operation_deser::parse_describe_app_instance_user_error(response)
         } else {
-            crate::operation_ser::parse_describe_app_instance_user_response(response)
+            crate::operation_deser::parse_describe_app_instance_user_response(response)
         }
     }
 }
@@ -291,9 +291,9 @@ impl smithy_http::response::ParseStrictResponse for GetAppInstanceRetentionSetti
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_app_instance_retention_settings_error(response)
+            crate::operation_deser::parse_get_app_instance_retention_settings_error(response)
         } else {
-            crate::operation_ser::parse_get_app_instance_retention_settings_response(response)
+            crate::operation_deser::parse_get_app_instance_retention_settings_response(response)
         }
     }
 }
@@ -319,9 +319,9 @@ impl smithy_http::response::ParseStrictResponse for ListAppInstanceAdmins {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_app_instance_admins_error(response)
+            crate::operation_deser::parse_list_app_instance_admins_error(response)
         } else {
-            crate::operation_ser::parse_list_app_instance_admins_response(response)
+            crate::operation_deser::parse_list_app_instance_admins_response(response)
         }
     }
 }
@@ -348,9 +348,9 @@ impl smithy_http::response::ParseStrictResponse for ListAppInstances {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_app_instances_error(response)
+            crate::operation_deser::parse_list_app_instances_error(response)
         } else {
-            crate::operation_ser::parse_list_app_instances_response(response)
+            crate::operation_deser::parse_list_app_instances_response(response)
         }
     }
 }
@@ -377,9 +377,9 @@ impl smithy_http::response::ParseStrictResponse for ListAppInstanceUsers {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_app_instance_users_error(response)
+            crate::operation_deser::parse_list_app_instance_users_error(response)
         } else {
-            crate::operation_ser::parse_list_app_instance_users_response(response)
+            crate::operation_deser::parse_list_app_instance_users_response(response)
         }
     }
 }
@@ -406,9 +406,9 @@ impl smithy_http::response::ParseStrictResponse for PutAppInstanceRetentionSetti
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_app_instance_retention_settings_error(response)
+            crate::operation_deser::parse_put_app_instance_retention_settings_error(response)
         } else {
-            crate::operation_ser::parse_put_app_instance_retention_settings_response(response)
+            crate::operation_deser::parse_put_app_instance_retention_settings_response(response)
         }
     }
 }
@@ -434,9 +434,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateAppInstance {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_app_instance_error(response)
+            crate::operation_deser::parse_update_app_instance_error(response)
         } else {
-            crate::operation_ser::parse_update_app_instance_response(response)
+            crate::operation_deser::parse_update_app_instance_response(response)
         }
     }
 }
@@ -463,9 +463,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateAppInstanceUser {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_app_instance_user_error(response)
+            crate::operation_deser::parse_update_app_instance_user_error(response)
         } else {
-            crate::operation_ser::parse_update_app_instance_user_response(response)
+            crate::operation_deser::parse_update_app_instance_user_response(response)
         }
     }
 }

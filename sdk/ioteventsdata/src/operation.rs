@@ -21,9 +21,9 @@ impl smithy_http::response::ParseStrictResponse for BatchAcknowledgeAlarm {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_ser::parse_batch_acknowledge_alarm_error(response)
+            crate::operation_deser::parse_batch_acknowledge_alarm_error(response)
         } else {
-            crate::operation_ser::parse_batch_acknowledge_alarm_response(response)
+            crate::operation_deser::parse_batch_acknowledge_alarm_response(response)
         }
     }
 }
@@ -50,9 +50,9 @@ impl smithy_http::response::ParseStrictResponse for BatchDisableAlarm {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_ser::parse_batch_disable_alarm_error(response)
+            crate::operation_deser::parse_batch_disable_alarm_error(response)
         } else {
-            crate::operation_ser::parse_batch_disable_alarm_response(response)
+            crate::operation_deser::parse_batch_disable_alarm_response(response)
         }
     }
 }
@@ -79,9 +79,9 @@ impl smithy_http::response::ParseStrictResponse for BatchEnableAlarm {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_ser::parse_batch_enable_alarm_error(response)
+            crate::operation_deser::parse_batch_enable_alarm_error(response)
         } else {
-            crate::operation_ser::parse_batch_enable_alarm_response(response)
+            crate::operation_deser::parse_batch_enable_alarm_response(response)
         }
     }
 }
@@ -111,9 +111,9 @@ impl smithy_http::response::ParseStrictResponse for BatchPutMessage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_batch_put_message_error(response)
+            crate::operation_deser::parse_batch_put_message_error(response)
         } else {
-            crate::operation_ser::parse_batch_put_message_response(response)
+            crate::operation_deser::parse_batch_put_message_response(response)
         }
     }
 }
@@ -140,9 +140,9 @@ impl smithy_http::response::ParseStrictResponse for BatchResetAlarm {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_ser::parse_batch_reset_alarm_error(response)
+            crate::operation_deser::parse_batch_reset_alarm_error(response)
         } else {
-            crate::operation_ser::parse_batch_reset_alarm_response(response)
+            crate::operation_deser::parse_batch_reset_alarm_response(response)
         }
     }
 }
@@ -169,9 +169,9 @@ impl smithy_http::response::ParseStrictResponse for BatchSnoozeAlarm {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_ser::parse_batch_snooze_alarm_error(response)
+            crate::operation_deser::parse_batch_snooze_alarm_error(response)
         } else {
-            crate::operation_ser::parse_batch_snooze_alarm_response(response)
+            crate::operation_deser::parse_batch_snooze_alarm_response(response)
         }
     }
 }
@@ -198,9 +198,9 @@ impl smithy_http::response::ParseStrictResponse for BatchUpdateDetector {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_batch_update_detector_error(response)
+            crate::operation_deser::parse_batch_update_detector_error(response)
         } else {
-            crate::operation_ser::parse_batch_update_detector_response(response)
+            crate::operation_deser::parse_batch_update_detector_response(response)
         }
     }
 }
@@ -224,9 +224,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeAlarm {
         std::result::Result<crate::output::DescribeAlarmOutput, crate::error::DescribeAlarmError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_alarm_error(response)
+            crate::operation_deser::parse_describe_alarm_error(response)
         } else {
-            crate::operation_ser::parse_describe_alarm_response(response)
+            crate::operation_deser::parse_describe_alarm_response(response)
         }
     }
 }
@@ -252,9 +252,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDetector {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_detector_error(response)
+            crate::operation_deser::parse_describe_detector_error(response)
         } else {
-            crate::operation_ser::parse_describe_detector_response(response)
+            crate::operation_deser::parse_describe_detector_response(response)
         }
     }
 }
@@ -279,9 +279,9 @@ impl smithy_http::response::ParseStrictResponse for ListAlarms {
         std::result::Result<crate::output::ListAlarmsOutput, crate::error::ListAlarmsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_alarms_error(response)
+            crate::operation_deser::parse_list_alarms_error(response)
         } else {
-            crate::operation_ser::parse_list_alarms_response(response)
+            crate::operation_deser::parse_list_alarms_response(response)
         }
     }
 }
@@ -305,9 +305,9 @@ impl smithy_http::response::ParseStrictResponse for ListDetectors {
         std::result::Result<crate::output::ListDetectorsOutput, crate::error::ListDetectorsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_detectors_error(response)
+            crate::operation_deser::parse_list_detectors_error(response)
         } else {
-            crate::operation_ser::parse_list_detectors_response(response)
+            crate::operation_deser::parse_list_detectors_response(response)
         }
     }
 }

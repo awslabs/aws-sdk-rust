@@ -23,9 +23,9 @@ impl smithy_http::response::ParseStrictResponse for CreateParallelData {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_parallel_data_error(response)
+            crate::operation_deser::parse_create_parallel_data_error(response)
         } else {
-            crate::operation_ser::parse_create_parallel_data_response(response)
+            crate::operation_deser::parse_create_parallel_data_response(response)
         }
     }
 }
@@ -51,9 +51,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteParallelData {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_parallel_data_error(response)
+            crate::operation_deser::parse_delete_parallel_data_error(response)
         } else {
-            crate::operation_ser::parse_delete_parallel_data_response(response)
+            crate::operation_deser::parse_delete_parallel_data_response(response)
         }
     }
 }
@@ -79,9 +79,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteTerminology {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_terminology_error(response)
+            crate::operation_deser::parse_delete_terminology_error(response)
         } else {
-            crate::operation_ser::parse_delete_terminology_response(response)
+            crate::operation_deser::parse_delete_terminology_response(response)
         }
     }
 }
@@ -108,9 +108,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeTextTranslationJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_text_translation_job_error(response)
+            crate::operation_deser::parse_describe_text_translation_job_error(response)
         } else {
-            crate::operation_ser::parse_describe_text_translation_job_response(response)
+            crate::operation_deser::parse_describe_text_translation_job_response(response)
         }
     }
 }
@@ -136,9 +136,9 @@ impl smithy_http::response::ParseStrictResponse for GetParallelData {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_parallel_data_error(response)
+            crate::operation_deser::parse_get_parallel_data_error(response)
         } else {
-            crate::operation_ser::parse_get_parallel_data_response(response)
+            crate::operation_deser::parse_get_parallel_data_response(response)
         }
     }
 }
@@ -162,9 +162,9 @@ impl smithy_http::response::ParseStrictResponse for GetTerminology {
         std::result::Result<crate::output::GetTerminologyOutput, crate::error::GetTerminologyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_terminology_error(response)
+            crate::operation_deser::parse_get_terminology_error(response)
         } else {
-            crate::operation_ser::parse_get_terminology_response(response)
+            crate::operation_deser::parse_get_terminology_response(response)
         }
     }
 }
@@ -197,9 +197,9 @@ impl smithy_http::response::ParseStrictResponse for ImportTerminology {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_import_terminology_error(response)
+            crate::operation_deser::parse_import_terminology_error(response)
         } else {
-            crate::operation_ser::parse_import_terminology_response(response)
+            crate::operation_deser::parse_import_terminology_response(response)
         }
     }
 }
@@ -225,9 +225,9 @@ impl smithy_http::response::ParseStrictResponse for ListParallelData {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_parallel_data_error(response)
+            crate::operation_deser::parse_list_parallel_data_error(response)
         } else {
-            crate::operation_ser::parse_list_parallel_data_response(response)
+            crate::operation_deser::parse_list_parallel_data_response(response)
         }
     }
 }
@@ -253,9 +253,9 @@ impl smithy_http::response::ParseStrictResponse for ListTerminologies {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_terminologies_error(response)
+            crate::operation_deser::parse_list_terminologies_error(response)
         } else {
-            crate::operation_ser::parse_list_terminologies_response(response)
+            crate::operation_deser::parse_list_terminologies_response(response)
         }
     }
 }
@@ -281,9 +281,9 @@ impl smithy_http::response::ParseStrictResponse for ListTextTranslationJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_text_translation_jobs_error(response)
+            crate::operation_deser::parse_list_text_translation_jobs_error(response)
         } else {
-            crate::operation_ser::parse_list_text_translation_jobs_response(response)
+            crate::operation_deser::parse_list_text_translation_jobs_response(response)
         }
     }
 }
@@ -315,9 +315,9 @@ impl smithy_http::response::ParseStrictResponse for StartTextTranslationJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_start_text_translation_job_error(response)
+            crate::operation_deser::parse_start_text_translation_job_error(response)
         } else {
-            crate::operation_ser::parse_start_text_translation_job_response(response)
+            crate::operation_deser::parse_start_text_translation_job_response(response)
         }
     }
 }
@@ -349,9 +349,9 @@ impl smithy_http::response::ParseStrictResponse for StopTextTranslationJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_stop_text_translation_job_error(response)
+            crate::operation_deser::parse_stop_text_translation_job_error(response)
         } else {
-            crate::operation_ser::parse_stop_text_translation_job_response(response)
+            crate::operation_deser::parse_stop_text_translation_job_response(response)
         }
     }
 }
@@ -376,9 +376,9 @@ impl smithy_http::response::ParseStrictResponse for TranslateText {
         std::result::Result<crate::output::TranslateTextOutput, crate::error::TranslateTextError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_translate_text_error(response)
+            crate::operation_deser::parse_translate_text_error(response)
         } else {
-            crate::operation_ser::parse_translate_text_response(response)
+            crate::operation_deser::parse_translate_text_response(response)
         }
     }
 }
@@ -405,9 +405,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateParallelData {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_parallel_data_error(response)
+            crate::operation_deser::parse_update_parallel_data_error(response)
         } else {
-            crate::operation_ser::parse_update_parallel_data_response(response)
+            crate::operation_deser::parse_update_parallel_data_response(response)
         }
     }
 }

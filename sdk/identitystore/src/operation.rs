@@ -18,9 +18,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeGroup {
         std::result::Result<crate::output::DescribeGroupOutput, crate::error::DescribeGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_group_error(response)
+            crate::operation_deser::parse_describe_group_error(response)
         } else {
-            crate::operation_ser::parse_describe_group_response(response)
+            crate::operation_deser::parse_describe_group_response(response)
         }
     }
 }
@@ -44,9 +44,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeUser {
         std::result::Result<crate::output::DescribeUserOutput, crate::error::DescribeUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_user_error(response)
+            crate::operation_deser::parse_describe_user_error(response)
         } else {
-            crate::operation_ser::parse_describe_user_response(response)
+            crate::operation_deser::parse_describe_user_response(response)
         }
     }
 }
@@ -72,9 +72,9 @@ impl smithy_http::response::ParseStrictResponse for ListGroups {
         std::result::Result<crate::output::ListGroupsOutput, crate::error::ListGroupsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_groups_error(response)
+            crate::operation_deser::parse_list_groups_error(response)
         } else {
-            crate::operation_ser::parse_list_groups_response(response)
+            crate::operation_deser::parse_list_groups_response(response)
         }
     }
 }
@@ -99,9 +99,9 @@ impl smithy_http::response::ParseStrictResponse for ListUsers {
     type Output = std::result::Result<crate::output::ListUsersOutput, crate::error::ListUsersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_users_error(response)
+            crate::operation_deser::parse_list_users_error(response)
         } else {
-            crate::operation_ser::parse_list_users_response(response)
+            crate::operation_deser::parse_list_users_response(response)
         }
     }
 }

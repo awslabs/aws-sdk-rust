@@ -21,9 +21,9 @@ impl smithy_http::response::ParseStrictResponse for ActivateKeySigningKey {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_activate_key_signing_key_error(response)
+            crate::operation_deser::parse_activate_key_signing_key_error(response)
         } else {
-            crate::operation_ser::parse_activate_key_signing_key_response(response)
+            crate::operation_deser::parse_activate_key_signing_key_response(response)
         }
     }
 }
@@ -59,9 +59,9 @@ impl smithy_http::response::ParseStrictResponse for AssociateVPCWithHostedZone {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_associate_vpc_with_hosted_zone_error(response)
+            crate::operation_deser::parse_associate_vpc_with_hosted_zone_error(response)
         } else {
-            crate::operation_ser::parse_associate_vpc_with_hosted_zone_response(response)
+            crate::operation_deser::parse_associate_vpc_with_hosted_zone_response(response)
         }
     }
 }
@@ -157,9 +157,9 @@ impl smithy_http::response::ParseStrictResponse for ChangeResourceRecordSets {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_change_resource_record_sets_error(response)
+            crate::operation_deser::parse_change_resource_record_sets_error(response)
         } else {
-            crate::operation_ser::parse_change_resource_record_sets_response(response)
+            crate::operation_deser::parse_change_resource_record_sets_response(response)
         }
     }
 }
@@ -188,9 +188,9 @@ impl smithy_http::response::ParseStrictResponse for ChangeTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_change_tags_for_resource_error(response)
+            crate::operation_deser::parse_change_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_change_tags_for_resource_response(response)
+            crate::operation_deser::parse_change_tags_for_resource_response(response)
         }
     }
 }
@@ -247,9 +247,9 @@ impl smithy_http::response::ParseStrictResponse for CreateHealthCheck {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_health_check_error(response)
+            crate::operation_deser::parse_create_health_check_error(response)
         } else {
-            crate::operation_ser::parse_create_health_check_response(response)
+            crate::operation_deser::parse_create_health_check_response(response)
         }
     }
 }
@@ -307,9 +307,9 @@ impl smithy_http::response::ParseStrictResponse for CreateHostedZone {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_hosted_zone_error(response)
+            crate::operation_deser::parse_create_hosted_zone_error(response)
         } else {
-            crate::operation_ser::parse_create_hosted_zone_response(response)
+            crate::operation_deser::parse_create_hosted_zone_response(response)
         }
     }
 }
@@ -335,9 +335,9 @@ impl smithy_http::response::ParseStrictResponse for CreateKeySigningKey {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_key_signing_key_error(response)
+            crate::operation_deser::parse_create_key_signing_key_error(response)
         } else {
-            crate::operation_ser::parse_create_key_signing_key_response(response)
+            crate::operation_deser::parse_create_key_signing_key_response(response)
         }
     }
 }
@@ -478,9 +478,9 @@ impl smithy_http::response::ParseStrictResponse for CreateQueryLoggingConfig {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_query_logging_config_error(response)
+            crate::operation_deser::parse_create_query_logging_config_error(response)
         } else {
-            crate::operation_ser::parse_create_query_logging_config_response(response)
+            crate::operation_deser::parse_create_query_logging_config_response(response)
         }
     }
 }
@@ -554,9 +554,9 @@ impl smithy_http::response::ParseStrictResponse for CreateReusableDelegationSet 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_reusable_delegation_set_error(response)
+            crate::operation_deser::parse_create_reusable_delegation_set_error(response)
         } else {
-            crate::operation_ser::parse_create_reusable_delegation_set_response(response)
+            crate::operation_deser::parse_create_reusable_delegation_set_response(response)
         }
     }
 }
@@ -583,9 +583,9 @@ impl smithy_http::response::ParseStrictResponse for CreateTrafficPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_traffic_policy_error(response)
+            crate::operation_deser::parse_create_traffic_policy_error(response)
         } else {
-            crate::operation_ser::parse_create_traffic_policy_response(response)
+            crate::operation_deser::parse_create_traffic_policy_response(response)
         }
     }
 }
@@ -614,9 +614,9 @@ impl smithy_http::response::ParseStrictResponse for CreateTrafficPolicyInstance 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_traffic_policy_instance_error(response)
+            crate::operation_deser::parse_create_traffic_policy_instance_error(response)
         } else {
-            crate::operation_ser::parse_create_traffic_policy_instance_response(response)
+            crate::operation_deser::parse_create_traffic_policy_instance_response(response)
         }
     }
 }
@@ -646,9 +646,9 @@ impl smithy_http::response::ParseStrictResponse for CreateTrafficPolicyVersion {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_traffic_policy_version_error(response)
+            crate::operation_deser::parse_create_traffic_policy_version_error(response)
         } else {
-            crate::operation_ser::parse_create_traffic_policy_version_response(response)
+            crate::operation_deser::parse_create_traffic_policy_version_response(response)
         }
     }
 }
@@ -682,9 +682,9 @@ impl smithy_http::response::ParseStrictResponse for CreateVPCAssociationAuthoriz
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_vpc_association_authorization_error(response)
+            crate::operation_deser::parse_create_vpc_association_authorization_error(response)
         } else {
-            crate::operation_ser::parse_create_vpc_association_authorization_response(response)
+            crate::operation_deser::parse_create_vpc_association_authorization_response(response)
         }
     }
 }
@@ -711,9 +711,9 @@ impl smithy_http::response::ParseStrictResponse for DeactivateKeySigningKey {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_deactivate_key_signing_key_error(response)
+            crate::operation_deser::parse_deactivate_key_signing_key_error(response)
         } else {
-            crate::operation_ser::parse_deactivate_key_signing_key_response(response)
+            crate::operation_deser::parse_deactivate_key_signing_key_response(response)
         }
     }
 }
@@ -751,9 +751,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteHealthCheck {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_health_check_error(response)
+            crate::operation_deser::parse_delete_health_check_error(response)
         } else {
-            crate::operation_ser::parse_delete_health_check_response(response)
+            crate::operation_deser::parse_delete_health_check_response(response)
         }
     }
 }
@@ -812,9 +812,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteHostedZone {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_hosted_zone_error(response)
+            crate::operation_deser::parse_delete_hosted_zone_error(response)
         } else {
-            crate::operation_ser::parse_delete_hosted_zone_response(response)
+            crate::operation_deser::parse_delete_hosted_zone_response(response)
         }
     }
 }
@@ -841,9 +841,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteKeySigningKey {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_key_signing_key_error(response)
+            crate::operation_deser::parse_delete_key_signing_key_error(response)
         } else {
-            crate::operation_ser::parse_delete_key_signing_key_response(response)
+            crate::operation_deser::parse_delete_key_signing_key_response(response)
         }
     }
 }
@@ -872,9 +872,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteQueryLoggingConfig {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_query_logging_config_error(response)
+            crate::operation_deser::parse_delete_query_logging_config_error(response)
         } else {
-            crate::operation_ser::parse_delete_query_logging_config_response(response)
+            crate::operation_deser::parse_delete_query_logging_config_response(response)
         }
     }
 }
@@ -906,9 +906,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteReusableDelegationSet 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_reusable_delegation_set_error(response)
+            crate::operation_deser::parse_delete_reusable_delegation_set_error(response)
         } else {
-            crate::operation_ser::parse_delete_reusable_delegation_set_response(response)
+            crate::operation_deser::parse_delete_reusable_delegation_set_response(response)
         }
     }
 }
@@ -948,9 +948,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteTrafficPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_traffic_policy_error(response)
+            crate::operation_deser::parse_delete_traffic_policy_error(response)
         } else {
-            crate::operation_ser::parse_delete_traffic_policy_response(response)
+            crate::operation_deser::parse_delete_traffic_policy_response(response)
         }
     }
 }
@@ -979,9 +979,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteTrafficPolicyInstance 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_traffic_policy_instance_error(response)
+            crate::operation_deser::parse_delete_traffic_policy_instance_error(response)
         } else {
-            crate::operation_ser::parse_delete_traffic_policy_instance_response(response)
+            crate::operation_deser::parse_delete_traffic_policy_instance_response(response)
         }
     }
 }
@@ -1015,9 +1015,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteVPCAssociationAuthoriz
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_vpc_association_authorization_error(response)
+            crate::operation_deser::parse_delete_vpc_association_authorization_error(response)
         } else {
-            crate::operation_ser::parse_delete_vpc_association_authorization_response(response)
+            crate::operation_deser::parse_delete_vpc_association_authorization_response(response)
         }
     }
 }
@@ -1044,9 +1044,9 @@ impl smithy_http::response::ParseStrictResponse for DisableHostedZoneDNSSEC {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_disable_hosted_zone_dnssec_error(response)
+            crate::operation_deser::parse_disable_hosted_zone_dnssec_error(response)
         } else {
-            crate::operation_ser::parse_disable_hosted_zone_dnssec_response(response)
+            crate::operation_deser::parse_disable_hosted_zone_dnssec_response(response)
         }
     }
 }
@@ -1092,9 +1092,9 @@ impl smithy_http::response::ParseStrictResponse for DisassociateVPCFromHostedZon
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_disassociate_vpc_from_hosted_zone_error(response)
+            crate::operation_deser::parse_disassociate_vpc_from_hosted_zone_error(response)
         } else {
-            crate::operation_ser::parse_disassociate_vpc_from_hosted_zone_response(response)
+            crate::operation_deser::parse_disassociate_vpc_from_hosted_zone_response(response)
         }
     }
 }
@@ -1120,9 +1120,9 @@ impl smithy_http::response::ParseStrictResponse for EnableHostedZoneDNSSEC {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_enable_hosted_zone_dnssec_error(response)
+            crate::operation_deser::parse_enable_hosted_zone_dnssec_error(response)
         } else {
-            crate::operation_ser::parse_enable_hosted_zone_dnssec_response(response)
+            crate::operation_deser::parse_enable_hosted_zone_dnssec_response(response)
         }
     }
 }
@@ -1157,9 +1157,9 @@ impl smithy_http::response::ParseStrictResponse for GetAccountLimit {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_account_limit_error(response)
+            crate::operation_deser::parse_get_account_limit_error(response)
         } else {
-            crate::operation_ser::parse_get_account_limit_response(response)
+            crate::operation_deser::parse_get_account_limit_response(response)
         }
     }
 }
@@ -1194,9 +1194,9 @@ impl smithy_http::response::ParseStrictResponse for GetChange {
     type Output = std::result::Result<crate::output::GetChangeOutput, crate::error::GetChangeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_change_error(response)
+            crate::operation_deser::parse_get_change_error(response)
         } else {
-            crate::operation_ser::parse_get_change_response(response)
+            crate::operation_deser::parse_get_change_response(response)
         }
     }
 }
@@ -1229,9 +1229,9 @@ impl smithy_http::response::ParseStrictResponse for GetCheckerIpRanges {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_checker_ip_ranges_error(response)
+            crate::operation_deser::parse_get_checker_ip_ranges_error(response)
         } else {
-            crate::operation_ser::parse_get_checker_ip_ranges_response(response)
+            crate::operation_deser::parse_get_checker_ip_ranges_response(response)
         }
     }
 }
@@ -1254,9 +1254,9 @@ impl smithy_http::response::ParseStrictResponse for GetDNSSEC {
     type Output = std::result::Result<crate::output::GetDnssecOutput, crate::error::GetDNSSECError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_dnssec_error(response)
+            crate::operation_deser::parse_get_dnssec_error(response)
         } else {
-            crate::operation_ser::parse_get_dnssec_response(response)
+            crate::operation_deser::parse_get_dnssec_response(response)
         }
     }
 }
@@ -1297,9 +1297,9 @@ impl smithy_http::response::ParseStrictResponse for GetGeoLocation {
         std::result::Result<crate::output::GetGeoLocationOutput, crate::error::GetGeoLocationError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_geo_location_error(response)
+            crate::operation_deser::parse_get_geo_location_error(response)
         } else {
-            crate::operation_ser::parse_get_geo_location_response(response)
+            crate::operation_deser::parse_get_geo_location_response(response)
         }
     }
 }
@@ -1323,9 +1323,9 @@ impl smithy_http::response::ParseStrictResponse for GetHealthCheck {
         std::result::Result<crate::output::GetHealthCheckOutput, crate::error::GetHealthCheckError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_health_check_error(response)
+            crate::operation_deser::parse_get_health_check_error(response)
         } else {
-            crate::operation_ser::parse_get_health_check_response(response)
+            crate::operation_deser::parse_get_health_check_response(response)
         }
     }
 }
@@ -1351,9 +1351,9 @@ impl smithy_http::response::ParseStrictResponse for GetHealthCheckCount {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_health_check_count_error(response)
+            crate::operation_deser::parse_get_health_check_count_error(response)
         } else {
-            crate::operation_ser::parse_get_health_check_count_response(response)
+            crate::operation_deser::parse_get_health_check_count_response(response)
         }
     }
 }
@@ -1379,9 +1379,9 @@ impl smithy_http::response::ParseStrictResponse for GetHealthCheckLastFailureRea
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_health_check_last_failure_reason_error(response)
+            crate::operation_deser::parse_get_health_check_last_failure_reason_error(response)
         } else {
-            crate::operation_ser::parse_get_health_check_last_failure_reason_response(response)
+            crate::operation_deser::parse_get_health_check_last_failure_reason_response(response)
         }
     }
 }
@@ -1410,9 +1410,9 @@ impl smithy_http::response::ParseStrictResponse for GetHealthCheckStatus {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_health_check_status_error(response)
+            crate::operation_deser::parse_get_health_check_status_error(response)
         } else {
-            crate::operation_ser::parse_get_health_check_status_response(response)
+            crate::operation_deser::parse_get_health_check_status_response(response)
         }
     }
 }
@@ -1436,9 +1436,9 @@ impl smithy_http::response::ParseStrictResponse for GetHostedZone {
         std::result::Result<crate::output::GetHostedZoneOutput, crate::error::GetHostedZoneError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_hosted_zone_error(response)
+            crate::operation_deser::parse_get_hosted_zone_error(response)
         } else {
-            crate::operation_ser::parse_get_hosted_zone_response(response)
+            crate::operation_deser::parse_get_hosted_zone_response(response)
         }
     }
 }
@@ -1464,9 +1464,9 @@ impl smithy_http::response::ParseStrictResponse for GetHostedZoneCount {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_hosted_zone_count_error(response)
+            crate::operation_deser::parse_get_hosted_zone_count_error(response)
         } else {
-            crate::operation_ser::parse_get_hosted_zone_count_response(response)
+            crate::operation_deser::parse_get_hosted_zone_count_response(response)
         }
     }
 }
@@ -1496,9 +1496,9 @@ impl smithy_http::response::ParseStrictResponse for GetHostedZoneLimit {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_hosted_zone_limit_error(response)
+            crate::operation_deser::parse_get_hosted_zone_limit_error(response)
         } else {
-            crate::operation_ser::parse_get_hosted_zone_limit_response(response)
+            crate::operation_deser::parse_get_hosted_zone_limit_response(response)
         }
     }
 }
@@ -1528,9 +1528,9 @@ impl smithy_http::response::ParseStrictResponse for GetQueryLoggingConfig {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_query_logging_config_error(response)
+            crate::operation_deser::parse_get_query_logging_config_error(response)
         } else {
-            crate::operation_ser::parse_get_query_logging_config_response(response)
+            crate::operation_deser::parse_get_query_logging_config_response(response)
         }
     }
 }
@@ -1557,9 +1557,9 @@ impl smithy_http::response::ParseStrictResponse for GetReusableDelegationSet {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_reusable_delegation_set_error(response)
+            crate::operation_deser::parse_get_reusable_delegation_set_error(response)
         } else {
-            crate::operation_ser::parse_get_reusable_delegation_set_response(response)
+            crate::operation_deser::parse_get_reusable_delegation_set_response(response)
         }
     }
 }
@@ -1588,9 +1588,9 @@ impl smithy_http::response::ParseStrictResponse for GetReusableDelegationSetLimi
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_reusable_delegation_set_limit_error(response)
+            crate::operation_deser::parse_get_reusable_delegation_set_limit_error(response)
         } else {
-            crate::operation_ser::parse_get_reusable_delegation_set_limit_response(response)
+            crate::operation_deser::parse_get_reusable_delegation_set_limit_response(response)
         }
     }
 }
@@ -1619,9 +1619,9 @@ impl smithy_http::response::ParseStrictResponse for GetTrafficPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_traffic_policy_error(response)
+            crate::operation_deser::parse_get_traffic_policy_error(response)
         } else {
-            crate::operation_ser::parse_get_traffic_policy_response(response)
+            crate::operation_deser::parse_get_traffic_policy_response(response)
         }
     }
 }
@@ -1655,9 +1655,9 @@ impl smithy_http::response::ParseStrictResponse for GetTrafficPolicyInstance {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_traffic_policy_instance_error(response)
+            crate::operation_deser::parse_get_traffic_policy_instance_error(response)
         } else {
-            crate::operation_ser::parse_get_traffic_policy_instance_response(response)
+            crate::operation_deser::parse_get_traffic_policy_instance_response(response)
         }
     }
 }
@@ -1683,9 +1683,9 @@ impl smithy_http::response::ParseStrictResponse for GetTrafficPolicyInstanceCoun
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_traffic_policy_instance_count_error(response)
+            crate::operation_deser::parse_get_traffic_policy_instance_count_error(response)
         } else {
-            crate::operation_ser::parse_get_traffic_policy_instance_count_response(response)
+            crate::operation_deser::parse_get_traffic_policy_instance_count_response(response)
         }
     }
 }
@@ -1716,9 +1716,9 @@ impl smithy_http::response::ParseStrictResponse for ListGeoLocations {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_geo_locations_error(response)
+            crate::operation_deser::parse_list_geo_locations_error(response)
         } else {
-            crate::operation_ser::parse_list_geo_locations_response(response)
+            crate::operation_deser::parse_list_geo_locations_response(response)
         }
     }
 }
@@ -1744,9 +1744,9 @@ impl smithy_http::response::ParseStrictResponse for ListHealthChecks {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_health_checks_error(response)
+            crate::operation_deser::parse_list_health_checks_error(response)
         } else {
-            crate::operation_ser::parse_list_health_checks_response(response)
+            crate::operation_deser::parse_list_health_checks_response(response)
         }
     }
 }
@@ -1775,9 +1775,9 @@ impl smithy_http::response::ParseStrictResponse for ListHostedZones {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_hosted_zones_error(response)
+            crate::operation_deser::parse_list_hosted_zones_error(response)
         } else {
-            crate::operation_ser::parse_list_hosted_zones_response(response)
+            crate::operation_deser::parse_list_hosted_zones_response(response)
         }
     }
 }
@@ -1843,9 +1843,9 @@ impl smithy_http::response::ParseStrictResponse for ListHostedZonesByName {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_hosted_zones_by_name_error(response)
+            crate::operation_deser::parse_list_hosted_zones_by_name_error(response)
         } else {
-            crate::operation_ser::parse_list_hosted_zones_by_name_response(response)
+            crate::operation_deser::parse_list_hosted_zones_by_name_response(response)
         }
     }
 }
@@ -1883,9 +1883,9 @@ impl smithy_http::response::ParseStrictResponse for ListHostedZonesByVPC {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_hosted_zones_by_vpc_error(response)
+            crate::operation_deser::parse_list_hosted_zones_by_vpc_error(response)
         } else {
-            crate::operation_ser::parse_list_hosted_zones_by_vpc_response(response)
+            crate::operation_deser::parse_list_hosted_zones_by_vpc_response(response)
         }
     }
 }
@@ -1917,9 +1917,9 @@ impl smithy_http::response::ParseStrictResponse for ListQueryLoggingConfigs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_query_logging_configs_error(response)
+            crate::operation_deser::parse_list_query_logging_configs_error(response)
         } else {
-            crate::operation_ser::parse_list_query_logging_configs_response(response)
+            crate::operation_deser::parse_list_query_logging_configs_response(response)
         }
     }
 }
@@ -2003,9 +2003,9 @@ impl smithy_http::response::ParseStrictResponse for ListResourceRecordSets {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_resource_record_sets_error(response)
+            crate::operation_deser::parse_list_resource_record_sets_error(response)
         } else {
-            crate::operation_ser::parse_list_resource_record_sets_response(response)
+            crate::operation_deser::parse_list_resource_record_sets_response(response)
         }
     }
 }
@@ -2031,9 +2031,9 @@ impl smithy_http::response::ParseStrictResponse for ListReusableDelegationSets {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_reusable_delegation_sets_error(response)
+            crate::operation_deser::parse_list_reusable_delegation_sets_error(response)
         } else {
-            crate::operation_ser::parse_list_reusable_delegation_sets_response(response)
+            crate::operation_deser::parse_list_reusable_delegation_sets_response(response)
         }
     }
 }
@@ -2062,9 +2062,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -2093,9 +2093,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResources {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resources_error(response)
+            crate::operation_deser::parse_list_tags_for_resources_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resources_response(response)
+            crate::operation_deser::parse_list_tags_for_resources_response(response)
         }
     }
 }
@@ -2125,9 +2125,9 @@ impl smithy_http::response::ParseStrictResponse for ListTrafficPolicies {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_traffic_policies_error(response)
+            crate::operation_deser::parse_list_traffic_policies_error(response)
         } else {
-            crate::operation_ser::parse_list_traffic_policies_response(response)
+            crate::operation_deser::parse_list_traffic_policies_response(response)
         }
     }
 }
@@ -2159,9 +2159,9 @@ impl smithy_http::response::ParseStrictResponse for ListTrafficPolicyInstances {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_traffic_policy_instances_error(response)
+            crate::operation_deser::parse_list_traffic_policy_instances_error(response)
         } else {
-            crate::operation_ser::parse_list_traffic_policy_instances_response(response)
+            crate::operation_deser::parse_list_traffic_policy_instances_response(response)
         }
     }
 }
@@ -2194,9 +2194,11 @@ impl smithy_http::response::ParseStrictResponse for ListTrafficPolicyInstancesBy
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_traffic_policy_instances_by_hosted_zone_error(response)
+            crate::operation_deser::parse_list_traffic_policy_instances_by_hosted_zone_error(
+                response,
+            )
         } else {
-            crate::operation_ser::parse_list_traffic_policy_instances_by_hosted_zone_response(
+            crate::operation_deser::parse_list_traffic_policy_instances_by_hosted_zone_response(
                 response,
             )
         }
@@ -2231,9 +2233,9 @@ impl smithy_http::response::ParseStrictResponse for ListTrafficPolicyInstancesBy
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_traffic_policy_instances_by_policy_error(response)
+            crate::operation_deser::parse_list_traffic_policy_instances_by_policy_error(response)
         } else {
-            crate::operation_ser::parse_list_traffic_policy_instances_by_policy_response(response)
+            crate::operation_deser::parse_list_traffic_policy_instances_by_policy_response(response)
         }
     }
 }
@@ -2260,9 +2262,9 @@ impl smithy_http::response::ParseStrictResponse for ListTrafficPolicyVersions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_traffic_policy_versions_error(response)
+            crate::operation_deser::parse_list_traffic_policy_versions_error(response)
         } else {
-            crate::operation_ser::parse_list_traffic_policy_versions_response(response)
+            crate::operation_deser::parse_list_traffic_policy_versions_response(response)
         }
     }
 }
@@ -2291,9 +2293,9 @@ impl smithy_http::response::ParseStrictResponse for ListVPCAssociationAuthorizat
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_vpc_association_authorizations_error(response)
+            crate::operation_deser::parse_list_vpc_association_authorizations_error(response)
         } else {
-            crate::operation_ser::parse_list_vpc_association_authorizations_response(response)
+            crate::operation_deser::parse_list_vpc_association_authorizations_response(response)
         }
     }
 }
@@ -2319,9 +2321,9 @@ impl smithy_http::response::ParseStrictResponse for TestDNSAnswer {
         std::result::Result<crate::output::TestDnsAnswerOutput, crate::error::TestDNSAnswerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_test_dns_answer_error(response)
+            crate::operation_deser::parse_test_dns_answer_error(response)
         } else {
-            crate::operation_ser::parse_test_dns_answer_response(response)
+            crate::operation_deser::parse_test_dns_answer_response(response)
         }
     }
 }
@@ -2350,9 +2352,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateHealthCheck {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_health_check_error(response)
+            crate::operation_deser::parse_update_health_check_error(response)
         } else {
-            crate::operation_ser::parse_update_health_check_response(response)
+            crate::operation_deser::parse_update_health_check_response(response)
         }
     }
 }
@@ -2378,9 +2380,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateHostedZoneComment {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_hosted_zone_comment_error(response)
+            crate::operation_deser::parse_update_hosted_zone_comment_error(response)
         } else {
-            crate::operation_ser::parse_update_hosted_zone_comment_response(response)
+            crate::operation_deser::parse_update_hosted_zone_comment_response(response)
         }
     }
 }
@@ -2406,9 +2408,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateTrafficPolicyComment {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_traffic_policy_comment_error(response)
+            crate::operation_deser::parse_update_traffic_policy_comment_error(response)
         } else {
-            crate::operation_ser::parse_update_traffic_policy_comment_response(response)
+            crate::operation_deser::parse_update_traffic_policy_comment_response(response)
         }
     }
 }
@@ -2449,9 +2451,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateTrafficPolicyInstance 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_traffic_policy_instance_error(response)
+            crate::operation_deser::parse_update_traffic_policy_instance_error(response)
         } else {
-            crate::operation_ser::parse_update_traffic_policy_instance_response(response)
+            crate::operation_deser::parse_update_traffic_policy_instance_response(response)
         }
     }
 }

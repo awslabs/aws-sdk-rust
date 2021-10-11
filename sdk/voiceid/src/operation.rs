@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDomain {
         std::result::Result<crate::output::CreateDomainOutput, crate::error::CreateDomainError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_domain_error(response)
+            crate::operation_deser::parse_create_domain_error(response)
         } else {
-            crate::operation_ser::parse_create_domain_response(response)
+            crate::operation_deser::parse_create_domain_response(response)
         }
     }
 }
@@ -46,9 +46,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteDomain {
         std::result::Result<crate::output::DeleteDomainOutput, crate::error::DeleteDomainError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_domain_error(response)
+            crate::operation_deser::parse_delete_domain_error(response)
         } else {
-            crate::operation_ser::parse_delete_domain_response(response)
+            crate::operation_deser::parse_delete_domain_response(response)
         }
     }
 }
@@ -74,9 +74,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteFraudster {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_fraudster_error(response)
+            crate::operation_deser::parse_delete_fraudster_error(response)
         } else {
-            crate::operation_ser::parse_delete_fraudster_response(response)
+            crate::operation_deser::parse_delete_fraudster_response(response)
         }
     }
 }
@@ -100,9 +100,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteSpeaker {
         std::result::Result<crate::output::DeleteSpeakerOutput, crate::error::DeleteSpeakerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_speaker_error(response)
+            crate::operation_deser::parse_delete_speaker_error(response)
         } else {
-            crate::operation_ser::parse_delete_speaker_response(response)
+            crate::operation_deser::parse_delete_speaker_response(response)
         }
     }
 }
@@ -126,9 +126,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDomain {
         std::result::Result<crate::output::DescribeDomainOutput, crate::error::DescribeDomainError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_domain_error(response)
+            crate::operation_deser::parse_describe_domain_error(response)
         } else {
-            crate::operation_ser::parse_describe_domain_response(response)
+            crate::operation_deser::parse_describe_domain_response(response)
         }
     }
 }
@@ -154,9 +154,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeFraudster {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_fraudster_error(response)
+            crate::operation_deser::parse_describe_fraudster_error(response)
         } else {
-            crate::operation_ser::parse_describe_fraudster_response(response)
+            crate::operation_deser::parse_describe_fraudster_response(response)
         }
     }
 }
@@ -182,9 +182,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeFraudsterRegistratio
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_fraudster_registration_job_error(response)
+            crate::operation_deser::parse_describe_fraudster_registration_job_error(response)
         } else {
-            crate::operation_ser::parse_describe_fraudster_registration_job_response(response)
+            crate::operation_deser::parse_describe_fraudster_registration_job_response(response)
         }
     }
 }
@@ -210,9 +210,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeSpeaker {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_speaker_error(response)
+            crate::operation_deser::parse_describe_speaker_error(response)
         } else {
-            crate::operation_ser::parse_describe_speaker_response(response)
+            crate::operation_deser::parse_describe_speaker_response(response)
         }
     }
 }
@@ -238,9 +238,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeSpeakerEnrollmentJob
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_speaker_enrollment_job_error(response)
+            crate::operation_deser::parse_describe_speaker_enrollment_job_error(response)
         } else {
-            crate::operation_ser::parse_describe_speaker_enrollment_job_response(response)
+            crate::operation_deser::parse_describe_speaker_enrollment_job_response(response)
         }
     }
 }
@@ -267,9 +267,9 @@ impl smithy_http::response::ParseStrictResponse for EvaluateSession {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_evaluate_session_error(response)
+            crate::operation_deser::parse_evaluate_session_error(response)
         } else {
-            crate::operation_ser::parse_evaluate_session_response(response)
+            crate::operation_deser::parse_evaluate_session_response(response)
         }
     }
 }
@@ -294,9 +294,9 @@ impl smithy_http::response::ParseStrictResponse for ListDomains {
         std::result::Result<crate::output::ListDomainsOutput, crate::error::ListDomainsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_domains_error(response)
+            crate::operation_deser::parse_list_domains_error(response)
         } else {
-            crate::operation_ser::parse_list_domains_response(response)
+            crate::operation_deser::parse_list_domains_response(response)
         }
     }
 }
@@ -325,9 +325,9 @@ impl smithy_http::response::ParseStrictResponse for ListFraudsterRegistrationJob
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_fraudster_registration_jobs_error(response)
+            crate::operation_deser::parse_list_fraudster_registration_jobs_error(response)
         } else {
-            crate::operation_ser::parse_list_fraudster_registration_jobs_response(response)
+            crate::operation_deser::parse_list_fraudster_registration_jobs_response(response)
         }
     }
 }
@@ -355,9 +355,9 @@ impl smithy_http::response::ParseStrictResponse for ListSpeakerEnrollmentJobs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_speaker_enrollment_jobs_error(response)
+            crate::operation_deser::parse_list_speaker_enrollment_jobs_error(response)
         } else {
-            crate::operation_ser::parse_list_speaker_enrollment_jobs_response(response)
+            crate::operation_deser::parse_list_speaker_enrollment_jobs_response(response)
         }
     }
 }
@@ -381,9 +381,9 @@ impl smithy_http::response::ParseStrictResponse for ListSpeakers {
         std::result::Result<crate::output::ListSpeakersOutput, crate::error::ListSpeakersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_speakers_error(response)
+            crate::operation_deser::parse_list_speakers_error(response)
         } else {
-            crate::operation_ser::parse_list_speakers_response(response)
+            crate::operation_deser::parse_list_speakers_response(response)
         }
     }
 }
@@ -409,9 +409,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -439,9 +439,9 @@ impl smithy_http::response::ParseStrictResponse for OptOutSpeaker {
         std::result::Result<crate::output::OptOutSpeakerOutput, crate::error::OptOutSpeakerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_opt_out_speaker_error(response)
+            crate::operation_deser::parse_opt_out_speaker_error(response)
         } else {
-            crate::operation_ser::parse_opt_out_speaker_response(response)
+            crate::operation_deser::parse_opt_out_speaker_response(response)
         }
     }
 }
@@ -467,9 +467,9 @@ impl smithy_http::response::ParseStrictResponse for StartFraudsterRegistrationJo
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_start_fraudster_registration_job_error(response)
+            crate::operation_deser::parse_start_fraudster_registration_job_error(response)
         } else {
-            crate::operation_ser::parse_start_fraudster_registration_job_response(response)
+            crate::operation_deser::parse_start_fraudster_registration_job_response(response)
         }
     }
 }
@@ -495,9 +495,9 @@ impl smithy_http::response::ParseStrictResponse for StartSpeakerEnrollmentJob {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_start_speaker_enrollment_job_error(response)
+            crate::operation_deser::parse_start_speaker_enrollment_job_error(response)
         } else {
-            crate::operation_ser::parse_start_speaker_enrollment_job_response(response)
+            crate::operation_deser::parse_start_speaker_enrollment_job_response(response)
         }
     }
 }
@@ -521,9 +521,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -547,9 +547,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -574,9 +574,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateDomain {
         std::result::Result<crate::output::UpdateDomainOutput, crate::error::UpdateDomainError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_domain_error(response)
+            crate::operation_deser::parse_update_domain_error(response)
         } else {
-            crate::operation_ser::parse_update_domain_response(response)
+            crate::operation_deser::parse_update_domain_response(response)
         }
     }
 }

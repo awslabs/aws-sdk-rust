@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for CreateAlertManagerDefinition
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_ser::parse_create_alert_manager_definition_error(response)
+            crate::operation_deser::parse_create_alert_manager_definition_error(response)
         } else {
-            crate::operation_ser::parse_create_alert_manager_definition_response(response)
+            crate::operation_deser::parse_create_alert_manager_definition_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for CreateRuleGroupsNamespace {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_ser::parse_create_rule_groups_namespace_error(response)
+            crate::operation_deser::parse_create_rule_groups_namespace_error(response)
         } else {
-            crate::operation_ser::parse_create_rule_groups_namespace_response(response)
+            crate::operation_deser::parse_create_rule_groups_namespace_response(response)
         }
     }
 }
@@ -76,9 +76,9 @@ impl smithy_http::response::ParseStrictResponse for CreateWorkspace {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_ser::parse_create_workspace_error(response)
+            crate::operation_deser::parse_create_workspace_error(response)
         } else {
-            crate::operation_ser::parse_create_workspace_response(response)
+            crate::operation_deser::parse_create_workspace_response(response)
         }
     }
 }
@@ -104,9 +104,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteAlertManagerDefinition
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_ser::parse_delete_alert_manager_definition_error(response)
+            crate::operation_deser::parse_delete_alert_manager_definition_error(response)
         } else {
-            crate::operation_ser::parse_delete_alert_manager_definition_response(response)
+            crate::operation_deser::parse_delete_alert_manager_definition_response(response)
         }
     }
 }
@@ -132,9 +132,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteRuleGroupsNamespace {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_ser::parse_delete_rule_groups_namespace_error(response)
+            crate::operation_deser::parse_delete_rule_groups_namespace_error(response)
         } else {
-            crate::operation_ser::parse_delete_rule_groups_namespace_response(response)
+            crate::operation_deser::parse_delete_rule_groups_namespace_response(response)
         }
     }
 }
@@ -160,9 +160,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteWorkspace {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_ser::parse_delete_workspace_error(response)
+            crate::operation_deser::parse_delete_workspace_error(response)
         } else {
-            crate::operation_ser::parse_delete_workspace_response(response)
+            crate::operation_deser::parse_delete_workspace_response(response)
         }
     }
 }
@@ -188,9 +188,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeAlertManagerDefiniti
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_alert_manager_definition_error(response)
+            crate::operation_deser::parse_describe_alert_manager_definition_error(response)
         } else {
-            crate::operation_ser::parse_describe_alert_manager_definition_response(response)
+            crate::operation_deser::parse_describe_alert_manager_definition_response(response)
         }
     }
 }
@@ -216,9 +216,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeRuleGroupsNamespace 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_rule_groups_namespace_error(response)
+            crate::operation_deser::parse_describe_rule_groups_namespace_error(response)
         } else {
-            crate::operation_ser::parse_describe_rule_groups_namespace_response(response)
+            crate::operation_deser::parse_describe_rule_groups_namespace_response(response)
         }
     }
 }
@@ -244,9 +244,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeWorkspace {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_workspace_error(response)
+            crate::operation_deser::parse_describe_workspace_error(response)
         } else {
-            crate::operation_ser::parse_describe_workspace_response(response)
+            crate::operation_deser::parse_describe_workspace_response(response)
         }
     }
 }
@@ -272,9 +272,9 @@ impl smithy_http::response::ParseStrictResponse for ListRuleGroupsNamespaces {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_rule_groups_namespaces_error(response)
+            crate::operation_deser::parse_list_rule_groups_namespaces_error(response)
         } else {
-            crate::operation_ser::parse_list_rule_groups_namespaces_response(response)
+            crate::operation_deser::parse_list_rule_groups_namespaces_response(response)
         }
     }
 }
@@ -300,9 +300,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -326,9 +326,9 @@ impl smithy_http::response::ParseStrictResponse for ListWorkspaces {
         std::result::Result<crate::output::ListWorkspacesOutput, crate::error::ListWorkspacesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_workspaces_error(response)
+            crate::operation_deser::parse_list_workspaces_error(response)
         } else {
-            crate::operation_ser::parse_list_workspaces_response(response)
+            crate::operation_deser::parse_list_workspaces_response(response)
         }
     }
 }
@@ -354,9 +354,9 @@ impl smithy_http::response::ParseStrictResponse for PutAlertManagerDefinition {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_ser::parse_put_alert_manager_definition_error(response)
+            crate::operation_deser::parse_put_alert_manager_definition_error(response)
         } else {
-            crate::operation_ser::parse_put_alert_manager_definition_response(response)
+            crate::operation_deser::parse_put_alert_manager_definition_response(response)
         }
     }
 }
@@ -382,9 +382,9 @@ impl smithy_http::response::ParseStrictResponse for PutRuleGroupsNamespace {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_ser::parse_put_rule_groups_namespace_error(response)
+            crate::operation_deser::parse_put_rule_groups_namespace_error(response)
         } else {
-            crate::operation_ser::parse_put_rule_groups_namespace_response(response)
+            crate::operation_deser::parse_put_rule_groups_namespace_response(response)
         }
     }
 }
@@ -408,9 +408,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -434,9 +434,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -462,9 +462,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateWorkspaceAlias {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_update_workspace_alias_error(response)
+            crate::operation_deser::parse_update_workspace_alias_error(response)
         } else {
-            crate::operation_ser::parse_update_workspace_alias_response(response)
+            crate::operation_deser::parse_update_workspace_alias_response(response)
         }
     }
 }

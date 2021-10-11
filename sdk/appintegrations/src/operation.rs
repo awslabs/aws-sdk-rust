@@ -25,9 +25,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDataIntegration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_data_integration_error(response)
+            crate::operation_deser::parse_create_data_integration_error(response)
         } else {
-            crate::operation_ser::parse_create_data_integration_response(response)
+            crate::operation_deser::parse_create_data_integration_response(response)
         }
     }
 }
@@ -56,9 +56,9 @@ impl smithy_http::response::ParseStrictResponse for CreateEventIntegration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_event_integration_error(response)
+            crate::operation_deser::parse_create_event_integration_error(response)
         } else {
-            crate::operation_ser::parse_create_event_integration_response(response)
+            crate::operation_deser::parse_create_event_integration_response(response)
         }
     }
 }
@@ -91,9 +91,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteDataIntegration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_data_integration_error(response)
+            crate::operation_deser::parse_delete_data_integration_error(response)
         } else {
-            crate::operation_ser::parse_delete_data_integration_response(response)
+            crate::operation_deser::parse_delete_data_integration_response(response)
         }
     }
 }
@@ -120,9 +120,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteEventIntegration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_event_integration_error(response)
+            crate::operation_deser::parse_delete_event_integration_error(response)
         } else {
-            crate::operation_ser::parse_delete_event_integration_response(response)
+            crate::operation_deser::parse_delete_event_integration_response(response)
         }
     }
 }
@@ -153,9 +153,9 @@ impl smithy_http::response::ParseStrictResponse for GetDataIntegration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_data_integration_error(response)
+            crate::operation_deser::parse_get_data_integration_error(response)
         } else {
-            crate::operation_ser::parse_get_data_integration_response(response)
+            crate::operation_deser::parse_get_data_integration_response(response)
         }
     }
 }
@@ -181,9 +181,9 @@ impl smithy_http::response::ParseStrictResponse for GetEventIntegration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_event_integration_error(response)
+            crate::operation_deser::parse_get_event_integration_error(response)
         } else {
-            crate::operation_ser::parse_get_event_integration_response(response)
+            crate::operation_deser::parse_get_event_integration_response(response)
         }
     }
 }
@@ -214,9 +214,9 @@ impl smithy_http::response::ParseStrictResponse for ListDataIntegrationAssociati
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_data_integration_associations_error(response)
+            crate::operation_deser::parse_list_data_integration_associations_error(response)
         } else {
-            crate::operation_ser::parse_list_data_integration_associations_response(response)
+            crate::operation_deser::parse_list_data_integration_associations_response(response)
         }
     }
 }
@@ -247,9 +247,9 @@ impl smithy_http::response::ParseStrictResponse for ListDataIntegrations {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_data_integrations_error(response)
+            crate::operation_deser::parse_list_data_integrations_error(response)
         } else {
-            crate::operation_ser::parse_list_data_integrations_response(response)
+            crate::operation_deser::parse_list_data_integrations_response(response)
         }
     }
 }
@@ -275,9 +275,9 @@ impl smithy_http::response::ParseStrictResponse for ListEventIntegrationAssociat
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_event_integration_associations_error(response)
+            crate::operation_deser::parse_list_event_integration_associations_error(response)
         } else {
-            crate::operation_ser::parse_list_event_integration_associations_response(response)
+            crate::operation_deser::parse_list_event_integration_associations_response(response)
         }
     }
 }
@@ -303,9 +303,9 @@ impl smithy_http::response::ParseStrictResponse for ListEventIntegrations {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_event_integrations_error(response)
+            crate::operation_deser::parse_list_event_integrations_error(response)
         } else {
-            crate::operation_ser::parse_list_event_integrations_response(response)
+            crate::operation_deser::parse_list_event_integrations_response(response)
         }
     }
 }
@@ -331,9 +331,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -357,9 +357,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -383,9 +383,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -416,9 +416,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateDataIntegration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_data_integration_error(response)
+            crate::operation_deser::parse_update_data_integration_error(response)
         } else {
-            crate::operation_ser::parse_update_data_integration_response(response)
+            crate::operation_deser::parse_update_data_integration_response(response)
         }
     }
 }
@@ -444,9 +444,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateEventIntegration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_event_integration_error(response)
+            crate::operation_deser::parse_update_event_integration_error(response)
         } else {
-            crate::operation_ser::parse_update_event_integration_response(response)
+            crate::operation_deser::parse_update_event_integration_response(response)
         }
     }
 }

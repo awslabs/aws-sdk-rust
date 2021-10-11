@@ -25,6 +25,7 @@ mod json_deser;
 mod json_errors;
 mod no_credentials;
 pub mod operation;
+mod operation_deser;
 mod operation_ser;
 pub mod output;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

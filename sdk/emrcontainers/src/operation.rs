@@ -18,9 +18,9 @@ impl smithy_http::response::ParseStrictResponse for CancelJobRun {
         std::result::Result<crate::output::CancelJobRunOutput, crate::error::CancelJobRunError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_cancel_job_run_error(response)
+            crate::operation_deser::parse_cancel_job_run_error(response)
         } else {
-            crate::operation_ser::parse_cancel_job_run_response(response)
+            crate::operation_deser::parse_cancel_job_run_response(response)
         }
     }
 }
@@ -46,9 +46,9 @@ impl smithy_http::response::ParseStrictResponse for CreateManagedEndpoint {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_managed_endpoint_error(response)
+            crate::operation_deser::parse_create_managed_endpoint_error(response)
         } else {
-            crate::operation_ser::parse_create_managed_endpoint_response(response)
+            crate::operation_deser::parse_create_managed_endpoint_response(response)
         }
     }
 }
@@ -74,9 +74,9 @@ impl smithy_http::response::ParseStrictResponse for CreateVirtualCluster {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_virtual_cluster_error(response)
+            crate::operation_deser::parse_create_virtual_cluster_error(response)
         } else {
-            crate::operation_ser::parse_create_virtual_cluster_response(response)
+            crate::operation_deser::parse_create_virtual_cluster_response(response)
         }
     }
 }
@@ -102,9 +102,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteManagedEndpoint {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_managed_endpoint_error(response)
+            crate::operation_deser::parse_delete_managed_endpoint_error(response)
         } else {
-            crate::operation_ser::parse_delete_managed_endpoint_response(response)
+            crate::operation_deser::parse_delete_managed_endpoint_response(response)
         }
     }
 }
@@ -130,9 +130,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteVirtualCluster {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_virtual_cluster_error(response)
+            crate::operation_deser::parse_delete_virtual_cluster_error(response)
         } else {
-            crate::operation_ser::parse_delete_virtual_cluster_response(response)
+            crate::operation_deser::parse_delete_virtual_cluster_response(response)
         }
     }
 }
@@ -156,9 +156,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeJobRun {
         std::result::Result<crate::output::DescribeJobRunOutput, crate::error::DescribeJobRunError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_job_run_error(response)
+            crate::operation_deser::parse_describe_job_run_error(response)
         } else {
-            crate::operation_ser::parse_describe_job_run_response(response)
+            crate::operation_deser::parse_describe_job_run_response(response)
         }
     }
 }
@@ -184,9 +184,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeManagedEndpoint {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_managed_endpoint_error(response)
+            crate::operation_deser::parse_describe_managed_endpoint_error(response)
         } else {
-            crate::operation_ser::parse_describe_managed_endpoint_response(response)
+            crate::operation_deser::parse_describe_managed_endpoint_response(response)
         }
     }
 }
@@ -212,9 +212,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeVirtualCluster {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_virtual_cluster_error(response)
+            crate::operation_deser::parse_describe_virtual_cluster_error(response)
         } else {
-            crate::operation_ser::parse_describe_virtual_cluster_response(response)
+            crate::operation_deser::parse_describe_virtual_cluster_response(response)
         }
     }
 }
@@ -238,9 +238,9 @@ impl smithy_http::response::ParseStrictResponse for ListJobRuns {
         std::result::Result<crate::output::ListJobRunsOutput, crate::error::ListJobRunsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_job_runs_error(response)
+            crate::operation_deser::parse_list_job_runs_error(response)
         } else {
-            crate::operation_ser::parse_list_job_runs_response(response)
+            crate::operation_deser::parse_list_job_runs_response(response)
         }
     }
 }
@@ -266,9 +266,9 @@ impl smithy_http::response::ParseStrictResponse for ListManagedEndpoints {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_managed_endpoints_error(response)
+            crate::operation_deser::parse_list_managed_endpoints_error(response)
         } else {
-            crate::operation_ser::parse_list_managed_endpoints_response(response)
+            crate::operation_deser::parse_list_managed_endpoints_response(response)
         }
     }
 }
@@ -294,9 +294,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -322,9 +322,9 @@ impl smithy_http::response::ParseStrictResponse for ListVirtualClusters {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_virtual_clusters_error(response)
+            crate::operation_deser::parse_list_virtual_clusters_error(response)
         } else {
-            crate::operation_ser::parse_list_virtual_clusters_response(response)
+            crate::operation_deser::parse_list_virtual_clusters_response(response)
         }
     }
 }
@@ -348,9 +348,9 @@ impl smithy_http::response::ParseStrictResponse for StartJobRun {
         std::result::Result<crate::output::StartJobRunOutput, crate::error::StartJobRunError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_start_job_run_error(response)
+            crate::operation_deser::parse_start_job_run_error(response)
         } else {
-            crate::operation_ser::parse_start_job_run_response(response)
+            crate::operation_deser::parse_start_job_run_response(response)
         }
     }
 }
@@ -374,9 +374,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -400,9 +400,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }

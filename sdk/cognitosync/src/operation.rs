@@ -18,9 +18,9 @@ impl smithy_http::response::ParseStrictResponse for BulkPublish {
         std::result::Result<crate::output::BulkPublishOutput, crate::error::BulkPublishError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_bulk_publish_error(response)
+            crate::operation_deser::parse_bulk_publish_error(response)
         } else {
-            crate::operation_ser::parse_bulk_publish_response(response)
+            crate::operation_deser::parse_bulk_publish_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteDataset {
         std::result::Result<crate::output::DeleteDatasetOutput, crate::error::DeleteDatasetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_dataset_error(response)
+            crate::operation_deser::parse_delete_dataset_error(response)
         } else {
-            crate::operation_ser::parse_delete_dataset_response(response)
+            crate::operation_deser::parse_delete_dataset_response(response)
         }
     }
 }
@@ -79,9 +79,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDataset {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_dataset_error(response)
+            crate::operation_deser::parse_describe_dataset_error(response)
         } else {
-            crate::operation_ser::parse_describe_dataset_response(response)
+            crate::operation_deser::parse_describe_dataset_response(response)
         }
     }
 }
@@ -152,9 +152,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeIdentityPoolUsage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_identity_pool_usage_error(response)
+            crate::operation_deser::parse_describe_identity_pool_usage_error(response)
         } else {
-            crate::operation_ser::parse_describe_identity_pool_usage_response(response)
+            crate::operation_deser::parse_describe_identity_pool_usage_response(response)
         }
     }
 }
@@ -227,9 +227,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeIdentityUsage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_identity_usage_error(response)
+            crate::operation_deser::parse_describe_identity_usage_error(response)
         } else {
-            crate::operation_ser::parse_describe_identity_usage_response(response)
+            crate::operation_deser::parse_describe_identity_usage_response(response)
         }
     }
 }
@@ -255,9 +255,9 @@ impl smithy_http::response::ParseStrictResponse for GetBulkPublishDetails {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_bulk_publish_details_error(response)
+            crate::operation_deser::parse_get_bulk_publish_details_error(response)
         } else {
-            crate::operation_ser::parse_get_bulk_publish_details_response(response)
+            crate::operation_deser::parse_get_bulk_publish_details_response(response)
         }
     }
 }
@@ -283,9 +283,9 @@ impl smithy_http::response::ParseStrictResponse for GetCognitoEvents {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_cognito_events_error(response)
+            crate::operation_deser::parse_get_cognito_events_error(response)
         } else {
-            crate::operation_ser::parse_get_cognito_events_response(response)
+            crate::operation_deser::parse_get_cognito_events_response(response)
         }
     }
 }
@@ -354,9 +354,9 @@ impl smithy_http::response::ParseStrictResponse for GetIdentityPoolConfiguration
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_identity_pool_configuration_error(response)
+            crate::operation_deser::parse_get_identity_pool_configuration_error(response)
         } else {
-            crate::operation_ser::parse_get_identity_pool_configuration_response(response)
+            crate::operation_deser::parse_get_identity_pool_configuration_response(response)
         }
     }
 }
@@ -436,9 +436,9 @@ impl smithy_http::response::ParseStrictResponse for ListDatasets {
         std::result::Result<crate::output::ListDatasetsOutput, crate::error::ListDatasetsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_datasets_error(response)
+            crate::operation_deser::parse_list_datasets_error(response)
         } else {
-            crate::operation_ser::parse_list_datasets_response(response)
+            crate::operation_deser::parse_list_datasets_response(response)
         }
     }
 }
@@ -520,9 +520,9 @@ impl smithy_http::response::ParseStrictResponse for ListIdentityPoolUsage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_identity_pool_usage_error(response)
+            crate::operation_deser::parse_list_identity_pool_usage_error(response)
         } else {
-            crate::operation_ser::parse_list_identity_pool_usage_response(response)
+            crate::operation_deser::parse_list_identity_pool_usage_response(response)
         }
     }
 }
@@ -599,9 +599,9 @@ impl smithy_http::response::ParseStrictResponse for ListRecords {
         std::result::Result<crate::output::ListRecordsOutput, crate::error::ListRecordsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_records_error(response)
+            crate::operation_deser::parse_list_records_error(response)
         } else {
-            crate::operation_ser::parse_list_records_response(response)
+            crate::operation_deser::parse_list_records_response(response)
         }
     }
 }
@@ -667,9 +667,9 @@ impl smithy_http::response::ParseStrictResponse for RegisterDevice {
         std::result::Result<crate::output::RegisterDeviceOutput, crate::error::RegisterDeviceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_register_device_error(response)
+            crate::operation_deser::parse_register_device_error(response)
         } else {
-            crate::operation_ser::parse_register_device_response(response)
+            crate::operation_deser::parse_register_device_response(response)
         }
     }
 }
@@ -695,9 +695,9 @@ impl smithy_http::response::ParseStrictResponse for SetCognitoEvents {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_set_cognito_events_error(response)
+            crate::operation_deser::parse_set_cognito_events_error(response)
         } else {
-            crate::operation_ser::parse_set_cognito_events_response(response)
+            crate::operation_deser::parse_set_cognito_events_response(response)
         }
     }
 }
@@ -771,9 +771,9 @@ impl smithy_http::response::ParseStrictResponse for SetIdentityPoolConfiguration
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_set_identity_pool_configuration_error(response)
+            crate::operation_deser::parse_set_identity_pool_configuration_error(response)
         } else {
-            crate::operation_ser::parse_set_identity_pool_configuration_response(response)
+            crate::operation_deser::parse_set_identity_pool_configuration_response(response)
         }
     }
 }
@@ -840,9 +840,9 @@ impl smithy_http::response::ParseStrictResponse for SubscribeToDataset {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_subscribe_to_dataset_error(response)
+            crate::operation_deser::parse_subscribe_to_dataset_error(response)
         } else {
-            crate::operation_ser::parse_subscribe_to_dataset_response(response)
+            crate::operation_deser::parse_subscribe_to_dataset_response(response)
         }
     }
 }
@@ -910,9 +910,9 @@ impl smithy_http::response::ParseStrictResponse for UnsubscribeFromDataset {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_unsubscribe_from_dataset_error(response)
+            crate::operation_deser::parse_unsubscribe_from_dataset_error(response)
         } else {
-            crate::operation_ser::parse_unsubscribe_from_dataset_response(response)
+            crate::operation_deser::parse_unsubscribe_from_dataset_response(response)
         }
     }
 }
@@ -938,9 +938,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateRecords {
         std::result::Result<crate::output::UpdateRecordsOutput, crate::error::UpdateRecordsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_records_error(response)
+            crate::operation_deser::parse_update_records_error(response)
         } else {
-            crate::operation_ser::parse_update_records_response(response)
+            crate::operation_deser::parse_update_records_response(response)
         }
     }
 }

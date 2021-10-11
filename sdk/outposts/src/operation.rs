@@ -18,9 +18,9 @@ impl smithy_http::response::ParseStrictResponse for CreateOrder {
         std::result::Result<crate::output::CreateOrderOutput, crate::error::CreateOrderError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_order_error(response)
+            crate::operation_deser::parse_create_order_error(response)
         } else {
-            crate::operation_ser::parse_create_order_response(response)
+            crate::operation_deser::parse_create_order_response(response)
         }
     }
 }
@@ -45,9 +45,9 @@ impl smithy_http::response::ParseStrictResponse for CreateOutpost {
         std::result::Result<crate::output::CreateOutpostOutput, crate::error::CreateOutpostError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_outpost_error(response)
+            crate::operation_deser::parse_create_outpost_error(response)
         } else {
-            crate::operation_ser::parse_create_outpost_response(response)
+            crate::operation_deser::parse_create_outpost_response(response)
         }
     }
 }
@@ -71,9 +71,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteOutpost {
         std::result::Result<crate::output::DeleteOutpostOutput, crate::error::DeleteOutpostError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_outpost_error(response)
+            crate::operation_deser::parse_delete_outpost_error(response)
         } else {
-            crate::operation_ser::parse_delete_outpost_response(response)
+            crate::operation_deser::parse_delete_outpost_response(response)
         }
     }
 }
@@ -97,9 +97,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteSite {
         std::result::Result<crate::output::DeleteSiteOutput, crate::error::DeleteSiteError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_site_error(response)
+            crate::operation_deser::parse_delete_site_error(response)
         } else {
-            crate::operation_ser::parse_delete_site_response(response)
+            crate::operation_deser::parse_delete_site_response(response)
         }
     }
 }
@@ -123,9 +123,9 @@ impl smithy_http::response::ParseStrictResponse for GetOutpost {
         std::result::Result<crate::output::GetOutpostOutput, crate::error::GetOutpostError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_outpost_error(response)
+            crate::operation_deser::parse_get_outpost_error(response)
         } else {
-            crate::operation_ser::parse_get_outpost_response(response)
+            crate::operation_deser::parse_get_outpost_response(response)
         }
     }
 }
@@ -151,9 +151,9 @@ impl smithy_http::response::ParseStrictResponse for GetOutpostInstanceTypes {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_outpost_instance_types_error(response)
+            crate::operation_deser::parse_get_outpost_instance_types_error(response)
         } else {
-            crate::operation_ser::parse_get_outpost_instance_types_response(response)
+            crate::operation_deser::parse_get_outpost_instance_types_response(response)
         }
     }
 }
@@ -181,9 +181,9 @@ impl smithy_http::response::ParseStrictResponse for ListOutposts {
         std::result::Result<crate::output::ListOutpostsOutput, crate::error::ListOutpostsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_outposts_error(response)
+            crate::operation_deser::parse_list_outposts_error(response)
         } else {
-            crate::operation_ser::parse_list_outposts_response(response)
+            crate::operation_deser::parse_list_outposts_response(response)
         }
     }
 }
@@ -206,9 +206,9 @@ impl smithy_http::response::ParseStrictResponse for ListSites {
     type Output = std::result::Result<crate::output::ListSitesOutput, crate::error::ListSitesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_sites_error(response)
+            crate::operation_deser::parse_list_sites_error(response)
         } else {
-            crate::operation_ser::parse_list_sites_response(response)
+            crate::operation_deser::parse_list_sites_response(response)
         }
     }
 }
@@ -234,9 +234,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -260,9 +260,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -286,9 +286,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }

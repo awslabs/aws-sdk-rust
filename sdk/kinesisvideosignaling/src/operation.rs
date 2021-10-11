@@ -33,9 +33,9 @@ impl smithy_http::response::ParseStrictResponse for GetIceServerConfig {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_ice_server_config_error(response)
+            crate::operation_deser::parse_get_ice_server_config_error(response)
         } else {
-            crate::operation_ser::parse_get_ice_server_config_response(response)
+            crate::operation_deser::parse_get_ice_server_config_response(response)
         }
     }
 }
@@ -66,9 +66,9 @@ impl smithy_http::response::ParseStrictResponse for SendAlexaOfferToMaster {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_send_alexa_offer_to_master_error(response)
+            crate::operation_deser::parse_send_alexa_offer_to_master_error(response)
         } else {
-            crate::operation_ser::parse_send_alexa_offer_to_master_response(response)
+            crate::operation_deser::parse_send_alexa_offer_to_master_response(response)
         }
     }
 }

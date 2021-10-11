@@ -27,9 +27,9 @@ impl smithy_http::response::ParseStrictResponse for GenerateDataSet {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_generate_data_set_error(response)
+            crate::operation_deser::parse_generate_data_set_error(response)
         } else {
-            crate::operation_ser::parse_generate_data_set_response(response)
+            crate::operation_deser::parse_generate_data_set_response(response)
         }
     }
 }
@@ -62,9 +62,9 @@ impl smithy_http::response::ParseStrictResponse for StartSupportDataExport {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_start_support_data_export_error(response)
+            crate::operation_deser::parse_start_support_data_export_error(response)
         } else {
-            crate::operation_ser::parse_start_support_data_export_response(response)
+            crate::operation_deser::parse_start_support_data_export_response(response)
         }
     }
 }

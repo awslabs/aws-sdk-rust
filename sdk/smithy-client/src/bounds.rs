@@ -16,6 +16,7 @@
 //! [do not need to be repeated]: https://github.com/rust-lang/rust/issues/20671#issuecomment-529752828
 
 use crate::*;
+use smithy_http::result::ConnectorError;
 
 /// A service that has parsed a raw Smithy response.
 pub type Parsed<S, O, Retry> = smithy_http_tower::parse_response::ParseResponseService<S, O, Retry>;
@@ -38,7 +39,7 @@ pub trait SmithyConnector:
     /// Forwarding type to `<Self as Service>::Error` for bound inference.
     ///
     /// See module-level docs for details.
-    type Error: Into<BoxError> + Send + Sync + 'static;
+    type Error: Into<ConnectorError> + Send + Sync + 'static;
 
     /// Forwarding type to `<Self as Service>::Future` for bound inference.
     ///
@@ -53,7 +54,7 @@ where
         + Sync
         + Clone
         + 'static,
-    T::Error: Into<BoxError> + Send + Sync + 'static,
+    T::Error: Into<ConnectorError> + Send + Sync + 'static,
     T::Future: Send + 'static,
 {
     type Error = T::Error;

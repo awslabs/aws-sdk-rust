@@ -22,9 +22,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteAlternateContact {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_alternate_contact_error(response)
+            crate::operation_deser::parse_delete_alternate_contact_error(response)
         } else {
-            crate::operation_ser::parse_delete_alternate_contact_response(response)
+            crate::operation_deser::parse_delete_alternate_contact_response(response)
         }
     }
 }
@@ -52,9 +52,9 @@ impl smithy_http::response::ParseStrictResponse for GetAlternateContact {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_alternate_contact_error(response)
+            crate::operation_deser::parse_get_alternate_contact_error(response)
         } else {
-            crate::operation_ser::parse_get_alternate_contact_response(response)
+            crate::operation_deser::parse_get_alternate_contact_response(response)
         }
     }
 }
@@ -82,9 +82,9 @@ impl smithy_http::response::ParseStrictResponse for PutAlternateContact {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_alternate_contact_error(response)
+            crate::operation_deser::parse_put_alternate_contact_error(response)
         } else {
-            crate::operation_ser::parse_put_alternate_contact_response(response)
+            crate::operation_deser::parse_put_alternate_contact_response(response)
         }
     }
 }

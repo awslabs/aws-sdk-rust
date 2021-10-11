@@ -20,9 +20,11 @@ impl smithy_http::response::ParseStrictResponse for ConfigureLogsForPlaybackConf
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_configure_logs_for_playback_configuration_error(response)
+            crate::operation_deser::parse_configure_logs_for_playback_configuration_error(response)
         } else {
-            crate::operation_ser::parse_configure_logs_for_playback_configuration_response(response)
+            crate::operation_deser::parse_configure_logs_for_playback_configuration_response(
+                response,
+            )
         }
     }
 }
@@ -46,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for CreateChannel {
         std::result::Result<crate::output::CreateChannelOutput, crate::error::CreateChannelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_channel_error(response)
+            crate::operation_deser::parse_create_channel_error(response)
         } else {
-            crate::operation_ser::parse_create_channel_response(response)
+            crate::operation_deser::parse_create_channel_response(response)
         }
     }
 }
@@ -72,9 +74,9 @@ impl smithy_http::response::ParseStrictResponse for CreateProgram {
         std::result::Result<crate::output::CreateProgramOutput, crate::error::CreateProgramError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_program_error(response)
+            crate::operation_deser::parse_create_program_error(response)
         } else {
-            crate::operation_ser::parse_create_program_response(response)
+            crate::operation_deser::parse_create_program_response(response)
         }
     }
 }
@@ -100,9 +102,9 @@ impl smithy_http::response::ParseStrictResponse for CreateSourceLocation {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_source_location_error(response)
+            crate::operation_deser::parse_create_source_location_error(response)
         } else {
-            crate::operation_ser::parse_create_source_location_response(response)
+            crate::operation_deser::parse_create_source_location_response(response)
         }
     }
 }
@@ -128,9 +130,9 @@ impl smithy_http::response::ParseStrictResponse for CreateVodSource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_vod_source_error(response)
+            crate::operation_deser::parse_create_vod_source_error(response)
         } else {
-            crate::operation_ser::parse_create_vod_source_response(response)
+            crate::operation_deser::parse_create_vod_source_response(response)
         }
     }
 }
@@ -154,9 +156,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteChannel {
         std::result::Result<crate::output::DeleteChannelOutput, crate::error::DeleteChannelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_channel_error(response)
+            crate::operation_deser::parse_delete_channel_error(response)
         } else {
-            crate::operation_ser::parse_delete_channel_response(response)
+            crate::operation_deser::parse_delete_channel_response(response)
         }
     }
 }
@@ -182,9 +184,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteChannelPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_channel_policy_error(response)
+            crate::operation_deser::parse_delete_channel_policy_error(response)
         } else {
-            crate::operation_ser::parse_delete_channel_policy_response(response)
+            crate::operation_deser::parse_delete_channel_policy_response(response)
         }
     }
 }
@@ -210,9 +212,9 @@ impl smithy_http::response::ParseStrictResponse for DeletePlaybackConfiguration 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_playback_configuration_error(response)
+            crate::operation_deser::parse_delete_playback_configuration_error(response)
         } else {
-            crate::operation_ser::parse_delete_playback_configuration_response(response)
+            crate::operation_deser::parse_delete_playback_configuration_response(response)
         }
     }
 }
@@ -236,9 +238,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteProgram {
         std::result::Result<crate::output::DeleteProgramOutput, crate::error::DeleteProgramError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_program_error(response)
+            crate::operation_deser::parse_delete_program_error(response)
         } else {
-            crate::operation_ser::parse_delete_program_response(response)
+            crate::operation_deser::parse_delete_program_response(response)
         }
     }
 }
@@ -264,9 +266,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteSourceLocation {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_source_location_error(response)
+            crate::operation_deser::parse_delete_source_location_error(response)
         } else {
-            crate::operation_ser::parse_delete_source_location_response(response)
+            crate::operation_deser::parse_delete_source_location_response(response)
         }
     }
 }
@@ -292,9 +294,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteVodSource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_vod_source_error(response)
+            crate::operation_deser::parse_delete_vod_source_error(response)
         } else {
-            crate::operation_ser::parse_delete_vod_source_response(response)
+            crate::operation_deser::parse_delete_vod_source_response(response)
         }
     }
 }
@@ -320,9 +322,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeChannel {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_channel_error(response)
+            crate::operation_deser::parse_describe_channel_error(response)
         } else {
-            crate::operation_ser::parse_describe_channel_response(response)
+            crate::operation_deser::parse_describe_channel_response(response)
         }
     }
 }
@@ -348,9 +350,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeProgram {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_program_error(response)
+            crate::operation_deser::parse_describe_program_error(response)
         } else {
-            crate::operation_ser::parse_describe_program_response(response)
+            crate::operation_deser::parse_describe_program_response(response)
         }
     }
 }
@@ -376,9 +378,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeSourceLocation {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_source_location_error(response)
+            crate::operation_deser::parse_describe_source_location_error(response)
         } else {
-            crate::operation_ser::parse_describe_source_location_response(response)
+            crate::operation_deser::parse_describe_source_location_response(response)
         }
     }
 }
@@ -404,9 +406,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeVodSource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_vod_source_error(response)
+            crate::operation_deser::parse_describe_vod_source_error(response)
         } else {
-            crate::operation_ser::parse_describe_vod_source_response(response)
+            crate::operation_deser::parse_describe_vod_source_response(response)
         }
     }
 }
@@ -432,9 +434,9 @@ impl smithy_http::response::ParseStrictResponse for GetChannelPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_channel_policy_error(response)
+            crate::operation_deser::parse_get_channel_policy_error(response)
         } else {
-            crate::operation_ser::parse_get_channel_policy_response(response)
+            crate::operation_deser::parse_get_channel_policy_response(response)
         }
     }
 }
@@ -460,9 +462,9 @@ impl smithy_http::response::ParseStrictResponse for GetChannelSchedule {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_channel_schedule_error(response)
+            crate::operation_deser::parse_get_channel_schedule_error(response)
         } else {
-            crate::operation_ser::parse_get_channel_schedule_response(response)
+            crate::operation_deser::parse_get_channel_schedule_response(response)
         }
     }
 }
@@ -488,9 +490,9 @@ impl smithy_http::response::ParseStrictResponse for GetPlaybackConfiguration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_playback_configuration_error(response)
+            crate::operation_deser::parse_get_playback_configuration_error(response)
         } else {
-            crate::operation_ser::parse_get_playback_configuration_response(response)
+            crate::operation_deser::parse_get_playback_configuration_response(response)
         }
     }
 }
@@ -514,9 +516,9 @@ impl smithy_http::response::ParseStrictResponse for ListAlerts {
         std::result::Result<crate::output::ListAlertsOutput, crate::error::ListAlertsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_alerts_error(response)
+            crate::operation_deser::parse_list_alerts_error(response)
         } else {
-            crate::operation_ser::parse_list_alerts_response(response)
+            crate::operation_deser::parse_list_alerts_response(response)
         }
     }
 }
@@ -540,9 +542,9 @@ impl smithy_http::response::ParseStrictResponse for ListChannels {
         std::result::Result<crate::output::ListChannelsOutput, crate::error::ListChannelsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_channels_error(response)
+            crate::operation_deser::parse_list_channels_error(response)
         } else {
-            crate::operation_ser::parse_list_channels_response(response)
+            crate::operation_deser::parse_list_channels_response(response)
         }
     }
 }
@@ -568,9 +570,9 @@ impl smithy_http::response::ParseStrictResponse for ListPlaybackConfigurations {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_playback_configurations_error(response)
+            crate::operation_deser::parse_list_playback_configurations_error(response)
         } else {
-            crate::operation_ser::parse_list_playback_configurations_response(response)
+            crate::operation_deser::parse_list_playback_configurations_response(response)
         }
     }
 }
@@ -596,9 +598,9 @@ impl smithy_http::response::ParseStrictResponse for ListSourceLocations {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_source_locations_error(response)
+            crate::operation_deser::parse_list_source_locations_error(response)
         } else {
-            crate::operation_ser::parse_list_source_locations_response(response)
+            crate::operation_deser::parse_list_source_locations_response(response)
         }
     }
 }
@@ -624,9 +626,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -650,9 +652,9 @@ impl smithy_http::response::ParseStrictResponse for ListVodSources {
         std::result::Result<crate::output::ListVodSourcesOutput, crate::error::ListVodSourcesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_vod_sources_error(response)
+            crate::operation_deser::parse_list_vod_sources_error(response)
         } else {
-            crate::operation_ser::parse_list_vod_sources_response(response)
+            crate::operation_deser::parse_list_vod_sources_response(response)
         }
     }
 }
@@ -678,9 +680,9 @@ impl smithy_http::response::ParseStrictResponse for PutChannelPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_channel_policy_error(response)
+            crate::operation_deser::parse_put_channel_policy_error(response)
         } else {
-            crate::operation_ser::parse_put_channel_policy_response(response)
+            crate::operation_deser::parse_put_channel_policy_response(response)
         }
     }
 }
@@ -706,9 +708,9 @@ impl smithy_http::response::ParseStrictResponse for PutPlaybackConfiguration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_playback_configuration_error(response)
+            crate::operation_deser::parse_put_playback_configuration_error(response)
         } else {
-            crate::operation_ser::parse_put_playback_configuration_response(response)
+            crate::operation_deser::parse_put_playback_configuration_response(response)
         }
     }
 }
@@ -732,9 +734,9 @@ impl smithy_http::response::ParseStrictResponse for StartChannel {
         std::result::Result<crate::output::StartChannelOutput, crate::error::StartChannelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_start_channel_error(response)
+            crate::operation_deser::parse_start_channel_error(response)
         } else {
-            crate::operation_ser::parse_start_channel_response(response)
+            crate::operation_deser::parse_start_channel_response(response)
         }
     }
 }
@@ -758,9 +760,9 @@ impl smithy_http::response::ParseStrictResponse for StopChannel {
         std::result::Result<crate::output::StopChannelOutput, crate::error::StopChannelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_stop_channel_error(response)
+            crate::operation_deser::parse_stop_channel_error(response)
         } else {
-            crate::operation_ser::parse_stop_channel_response(response)
+            crate::operation_deser::parse_stop_channel_response(response)
         }
     }
 }
@@ -784,9 +786,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -810,9 +812,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -836,9 +838,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateChannel {
         std::result::Result<crate::output::UpdateChannelOutput, crate::error::UpdateChannelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_channel_error(response)
+            crate::operation_deser::parse_update_channel_error(response)
         } else {
-            crate::operation_ser::parse_update_channel_response(response)
+            crate::operation_deser::parse_update_channel_response(response)
         }
     }
 }
@@ -864,9 +866,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateSourceLocation {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_source_location_error(response)
+            crate::operation_deser::parse_update_source_location_error(response)
         } else {
-            crate::operation_ser::parse_update_source_location_response(response)
+            crate::operation_deser::parse_update_source_location_response(response)
         }
     }
 }
@@ -892,9 +894,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateVodSource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_vod_source_error(response)
+            crate::operation_deser::parse_update_vod_source_error(response)
         } else {
-            crate::operation_ser::parse_update_vod_source_response(response)
+            crate::operation_deser::parse_update_vod_source_response(response)
         }
     }
 }

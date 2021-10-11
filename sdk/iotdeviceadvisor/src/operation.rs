@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for CreateSuiteDefinition {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_suite_definition_error(response)
+            crate::operation_deser::parse_create_suite_definition_error(response)
         } else {
-            crate::operation_ser::parse_create_suite_definition_response(response)
+            crate::operation_deser::parse_create_suite_definition_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteSuiteDefinition {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_suite_definition_error(response)
+            crate::operation_deser::parse_delete_suite_definition_error(response)
         } else {
-            crate::operation_ser::parse_delete_suite_definition_response(response)
+            crate::operation_deser::parse_delete_suite_definition_response(response)
         }
     }
 }
@@ -76,9 +76,9 @@ impl smithy_http::response::ParseStrictResponse for GetSuiteDefinition {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_suite_definition_error(response)
+            crate::operation_deser::parse_get_suite_definition_error(response)
         } else {
-            crate::operation_ser::parse_get_suite_definition_response(response)
+            crate::operation_deser::parse_get_suite_definition_response(response)
         }
     }
 }
@@ -102,9 +102,9 @@ impl smithy_http::response::ParseStrictResponse for GetSuiteRun {
         std::result::Result<crate::output::GetSuiteRunOutput, crate::error::GetSuiteRunError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_suite_run_error(response)
+            crate::operation_deser::parse_get_suite_run_error(response)
         } else {
-            crate::operation_ser::parse_get_suite_run_response(response)
+            crate::operation_deser::parse_get_suite_run_response(response)
         }
     }
 }
@@ -130,9 +130,9 @@ impl smithy_http::response::ParseStrictResponse for GetSuiteRunReport {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_suite_run_report_error(response)
+            crate::operation_deser::parse_get_suite_run_report_error(response)
         } else {
-            crate::operation_ser::parse_get_suite_run_report_response(response)
+            crate::operation_deser::parse_get_suite_run_report_response(response)
         }
     }
 }
@@ -158,9 +158,9 @@ impl smithy_http::response::ParseStrictResponse for ListSuiteDefinitions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_suite_definitions_error(response)
+            crate::operation_deser::parse_list_suite_definitions_error(response)
         } else {
-            crate::operation_ser::parse_list_suite_definitions_response(response)
+            crate::operation_deser::parse_list_suite_definitions_response(response)
         }
     }
 }
@@ -185,9 +185,9 @@ impl smithy_http::response::ParseStrictResponse for ListSuiteRuns {
         std::result::Result<crate::output::ListSuiteRunsOutput, crate::error::ListSuiteRunsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_suite_runs_error(response)
+            crate::operation_deser::parse_list_suite_runs_error(response)
         } else {
-            crate::operation_ser::parse_list_suite_runs_response(response)
+            crate::operation_deser::parse_list_suite_runs_response(response)
         }
     }
 }
@@ -213,9 +213,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -239,9 +239,9 @@ impl smithy_http::response::ParseStrictResponse for StartSuiteRun {
         std::result::Result<crate::output::StartSuiteRunOutput, crate::error::StartSuiteRunError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_start_suite_run_error(response)
+            crate::operation_deser::parse_start_suite_run_error(response)
         } else {
-            crate::operation_ser::parse_start_suite_run_response(response)
+            crate::operation_deser::parse_start_suite_run_response(response)
         }
     }
 }
@@ -265,9 +265,9 @@ impl smithy_http::response::ParseStrictResponse for StopSuiteRun {
         std::result::Result<crate::output::StopSuiteRunOutput, crate::error::StopSuiteRunError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_stop_suite_run_error(response)
+            crate::operation_deser::parse_stop_suite_run_error(response)
         } else {
-            crate::operation_ser::parse_stop_suite_run_response(response)
+            crate::operation_deser::parse_stop_suite_run_response(response)
         }
     }
 }
@@ -291,9 +291,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -317,9 +317,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -345,9 +345,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateSuiteDefinition {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_suite_definition_error(response)
+            crate::operation_deser::parse_update_suite_definition_error(response)
         } else {
-            crate::operation_ser::parse_update_suite_definition_response(response)
+            crate::operation_deser::parse_update_suite_definition_response(response)
         }
     }
 }

@@ -91,8 +91,6 @@ use std::error::Error;
 
 use tower::{Layer, Service, ServiceBuilder, ServiceExt};
 
-type BoxError = Box<dyn Error + Send + Sync + 'static>;
-
 /// Smithy service client.
 ///
 /// The service client is customizeable in a number of ways (see [`Builder`]), but most customers

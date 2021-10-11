@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for AssociateAwsAccountWithPartn
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_associate_aws_account_with_partner_account_error(response)
+            crate::operation_deser::parse_associate_aws_account_with_partner_account_error(response)
         } else {
-            crate::operation_ser::parse_associate_aws_account_with_partner_account_response(
+            crate::operation_deser::parse_associate_aws_account_with_partner_account_response(
                 response,
             )
         }
@@ -50,9 +50,9 @@ impl smithy_http::response::ParseStrictResponse for AssociateWirelessDeviceWithT
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_associate_wireless_device_with_thing_error(response)
+            crate::operation_deser::parse_associate_wireless_device_with_thing_error(response)
         } else {
-            crate::operation_ser::parse_associate_wireless_device_with_thing_response(response)
+            crate::operation_deser::parse_associate_wireless_device_with_thing_response(response)
         }
     }
 }
@@ -78,9 +78,11 @@ impl smithy_http::response::ParseStrictResponse for AssociateWirelessGatewayWith
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_associate_wireless_gateway_with_certificate_error(response)
+            crate::operation_deser::parse_associate_wireless_gateway_with_certificate_error(
+                response,
+            )
         } else {
-            crate::operation_ser::parse_associate_wireless_gateway_with_certificate_response(
+            crate::operation_deser::parse_associate_wireless_gateway_with_certificate_response(
                 response,
             )
         }
@@ -108,9 +110,9 @@ impl smithy_http::response::ParseStrictResponse for AssociateWirelessGatewayWith
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_associate_wireless_gateway_with_thing_error(response)
+            crate::operation_deser::parse_associate_wireless_gateway_with_thing_error(response)
         } else {
-            crate::operation_ser::parse_associate_wireless_gateway_with_thing_response(response)
+            crate::operation_deser::parse_associate_wireless_gateway_with_thing_response(response)
         }
     }
 }
@@ -136,9 +138,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDestination {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_destination_error(response)
+            crate::operation_deser::parse_create_destination_error(response)
         } else {
-            crate::operation_ser::parse_create_destination_response(response)
+            crate::operation_deser::parse_create_destination_response(response)
         }
     }
 }
@@ -164,9 +166,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDeviceProfile {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_device_profile_error(response)
+            crate::operation_deser::parse_create_device_profile_error(response)
         } else {
-            crate::operation_ser::parse_create_device_profile_response(response)
+            crate::operation_deser::parse_create_device_profile_response(response)
         }
     }
 }
@@ -192,9 +194,9 @@ impl smithy_http::response::ParseStrictResponse for CreateServiceProfile {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_service_profile_error(response)
+            crate::operation_deser::parse_create_service_profile_error(response)
         } else {
-            crate::operation_ser::parse_create_service_profile_response(response)
+            crate::operation_deser::parse_create_service_profile_response(response)
         }
     }
 }
@@ -220,9 +222,9 @@ impl smithy_http::response::ParseStrictResponse for CreateWirelessDevice {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_wireless_device_error(response)
+            crate::operation_deser::parse_create_wireless_device_error(response)
         } else {
-            crate::operation_ser::parse_create_wireless_device_response(response)
+            crate::operation_deser::parse_create_wireless_device_response(response)
         }
     }
 }
@@ -248,9 +250,9 @@ impl smithy_http::response::ParseStrictResponse for CreateWirelessGateway {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_wireless_gateway_error(response)
+            crate::operation_deser::parse_create_wireless_gateway_error(response)
         } else {
-            crate::operation_ser::parse_create_wireless_gateway_response(response)
+            crate::operation_deser::parse_create_wireless_gateway_response(response)
         }
     }
 }
@@ -276,9 +278,9 @@ impl smithy_http::response::ParseStrictResponse for CreateWirelessGatewayTask {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_wireless_gateway_task_error(response)
+            crate::operation_deser::parse_create_wireless_gateway_task_error(response)
         } else {
-            crate::operation_ser::parse_create_wireless_gateway_task_response(response)
+            crate::operation_deser::parse_create_wireless_gateway_task_response(response)
         }
     }
 }
@@ -304,9 +306,9 @@ impl smithy_http::response::ParseStrictResponse for CreateWirelessGatewayTaskDef
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_wireless_gateway_task_definition_error(response)
+            crate::operation_deser::parse_create_wireless_gateway_task_definition_error(response)
         } else {
-            crate::operation_ser::parse_create_wireless_gateway_task_definition_response(response)
+            crate::operation_deser::parse_create_wireless_gateway_task_definition_response(response)
         }
     }
 }
@@ -332,9 +334,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteDestination {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_destination_error(response)
+            crate::operation_deser::parse_delete_destination_error(response)
         } else {
-            crate::operation_ser::parse_delete_destination_response(response)
+            crate::operation_deser::parse_delete_destination_response(response)
         }
     }
 }
@@ -360,9 +362,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteDeviceProfile {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_device_profile_error(response)
+            crate::operation_deser::parse_delete_device_profile_error(response)
         } else {
-            crate::operation_ser::parse_delete_device_profile_response(response)
+            crate::operation_deser::parse_delete_device_profile_response(response)
         }
     }
 }
@@ -388,9 +390,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteServiceProfile {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_service_profile_error(response)
+            crate::operation_deser::parse_delete_service_profile_error(response)
         } else {
-            crate::operation_ser::parse_delete_service_profile_response(response)
+            crate::operation_deser::parse_delete_service_profile_response(response)
         }
     }
 }
@@ -416,9 +418,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteWirelessDevice {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_wireless_device_error(response)
+            crate::operation_deser::parse_delete_wireless_device_error(response)
         } else {
-            crate::operation_ser::parse_delete_wireless_device_response(response)
+            crate::operation_deser::parse_delete_wireless_device_response(response)
         }
     }
 }
@@ -444,9 +446,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteWirelessGateway {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_wireless_gateway_error(response)
+            crate::operation_deser::parse_delete_wireless_gateway_error(response)
         } else {
-            crate::operation_ser::parse_delete_wireless_gateway_response(response)
+            crate::operation_deser::parse_delete_wireless_gateway_response(response)
         }
     }
 }
@@ -472,9 +474,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteWirelessGatewayTask {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_wireless_gateway_task_error(response)
+            crate::operation_deser::parse_delete_wireless_gateway_task_error(response)
         } else {
-            crate::operation_ser::parse_delete_wireless_gateway_task_response(response)
+            crate::operation_deser::parse_delete_wireless_gateway_task_response(response)
         }
     }
 }
@@ -500,9 +502,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteWirelessGatewayTaskDef
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_wireless_gateway_task_definition_error(response)
+            crate::operation_deser::parse_delete_wireless_gateway_task_definition_error(response)
         } else {
-            crate::operation_ser::parse_delete_wireless_gateway_task_definition_response(response)
+            crate::operation_deser::parse_delete_wireless_gateway_task_definition_response(response)
         }
     }
 }
@@ -528,11 +530,11 @@ impl smithy_http::response::ParseStrictResponse for DisassociateAwsAccountFromPa
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_disassociate_aws_account_from_partner_account_error(
+            crate::operation_deser::parse_disassociate_aws_account_from_partner_account_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_disassociate_aws_account_from_partner_account_response(
+            crate::operation_deser::parse_disassociate_aws_account_from_partner_account_response(
                 response,
             )
         }
@@ -560,9 +562,9 @@ impl smithy_http::response::ParseStrictResponse for DisassociateWirelessDeviceFr
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_disassociate_wireless_device_from_thing_error(response)
+            crate::operation_deser::parse_disassociate_wireless_device_from_thing_error(response)
         } else {
-            crate::operation_ser::parse_disassociate_wireless_device_from_thing_response(response)
+            crate::operation_deser::parse_disassociate_wireless_device_from_thing_response(response)
         }
     }
 }
@@ -589,11 +591,11 @@ impl smithy_http::response::ParseStrictResponse for DisassociateWirelessGatewayF
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_disassociate_wireless_gateway_from_certificate_error(
+            crate::operation_deser::parse_disassociate_wireless_gateway_from_certificate_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_disassociate_wireless_gateway_from_certificate_response(
+            crate::operation_deser::parse_disassociate_wireless_gateway_from_certificate_response(
                 response,
             )
         }
@@ -621,9 +623,11 @@ impl smithy_http::response::ParseStrictResponse for DisassociateWirelessGatewayF
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_disassociate_wireless_gateway_from_thing_error(response)
+            crate::operation_deser::parse_disassociate_wireless_gateway_from_thing_error(response)
         } else {
-            crate::operation_ser::parse_disassociate_wireless_gateway_from_thing_response(response)
+            crate::operation_deser::parse_disassociate_wireless_gateway_from_thing_response(
+                response,
+            )
         }
     }
 }
@@ -647,9 +651,9 @@ impl smithy_http::response::ParseStrictResponse for GetDestination {
         std::result::Result<crate::output::GetDestinationOutput, crate::error::GetDestinationError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_destination_error(response)
+            crate::operation_deser::parse_get_destination_error(response)
         } else {
-            crate::operation_ser::parse_get_destination_response(response)
+            crate::operation_deser::parse_get_destination_response(response)
         }
     }
 }
@@ -675,9 +679,9 @@ impl smithy_http::response::ParseStrictResponse for GetDeviceProfile {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_device_profile_error(response)
+            crate::operation_deser::parse_get_device_profile_error(response)
         } else {
-            crate::operation_ser::parse_get_device_profile_response(response)
+            crate::operation_deser::parse_get_device_profile_response(response)
         }
     }
 }
@@ -704,9 +708,9 @@ impl smithy_http::response::ParseStrictResponse for GetLogLevelsByResourceTypes 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_log_levels_by_resource_types_error(response)
+            crate::operation_deser::parse_get_log_levels_by_resource_types_error(response)
         } else {
-            crate::operation_ser::parse_get_log_levels_by_resource_types_response(response)
+            crate::operation_deser::parse_get_log_levels_by_resource_types_response(response)
         }
     }
 }
@@ -732,9 +736,9 @@ impl smithy_http::response::ParseStrictResponse for GetPartnerAccount {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_partner_account_error(response)
+            crate::operation_deser::parse_get_partner_account_error(response)
         } else {
-            crate::operation_ser::parse_get_partner_account_response(response)
+            crate::operation_deser::parse_get_partner_account_response(response)
         }
     }
 }
@@ -761,9 +765,9 @@ impl smithy_http::response::ParseStrictResponse for GetResourceLogLevel {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_resource_log_level_error(response)
+            crate::operation_deser::parse_get_resource_log_level_error(response)
         } else {
-            crate::operation_ser::parse_get_resource_log_level_response(response)
+            crate::operation_deser::parse_get_resource_log_level_response(response)
         }
     }
 }
@@ -789,9 +793,9 @@ impl smithy_http::response::ParseStrictResponse for GetServiceEndpoint {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_service_endpoint_error(response)
+            crate::operation_deser::parse_get_service_endpoint_error(response)
         } else {
-            crate::operation_ser::parse_get_service_endpoint_response(response)
+            crate::operation_deser::parse_get_service_endpoint_response(response)
         }
     }
 }
@@ -817,9 +821,9 @@ impl smithy_http::response::ParseStrictResponse for GetServiceProfile {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_service_profile_error(response)
+            crate::operation_deser::parse_get_service_profile_error(response)
         } else {
-            crate::operation_ser::parse_get_service_profile_response(response)
+            crate::operation_deser::parse_get_service_profile_response(response)
         }
     }
 }
@@ -845,9 +849,9 @@ impl smithy_http::response::ParseStrictResponse for GetWirelessDevice {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_wireless_device_error(response)
+            crate::operation_deser::parse_get_wireless_device_error(response)
         } else {
-            crate::operation_ser::parse_get_wireless_device_response(response)
+            crate::operation_deser::parse_get_wireless_device_response(response)
         }
     }
 }
@@ -873,9 +877,9 @@ impl smithy_http::response::ParseStrictResponse for GetWirelessDeviceStatistics 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_wireless_device_statistics_error(response)
+            crate::operation_deser::parse_get_wireless_device_statistics_error(response)
         } else {
-            crate::operation_ser::parse_get_wireless_device_statistics_response(response)
+            crate::operation_deser::parse_get_wireless_device_statistics_response(response)
         }
     }
 }
@@ -901,9 +905,9 @@ impl smithy_http::response::ParseStrictResponse for GetWirelessGateway {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_wireless_gateway_error(response)
+            crate::operation_deser::parse_get_wireless_gateway_error(response)
         } else {
-            crate::operation_ser::parse_get_wireless_gateway_response(response)
+            crate::operation_deser::parse_get_wireless_gateway_response(response)
         }
     }
 }
@@ -929,9 +933,9 @@ impl smithy_http::response::ParseStrictResponse for GetWirelessGatewayCertificat
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_wireless_gateway_certificate_error(response)
+            crate::operation_deser::parse_get_wireless_gateway_certificate_error(response)
         } else {
-            crate::operation_ser::parse_get_wireless_gateway_certificate_response(response)
+            crate::operation_deser::parse_get_wireless_gateway_certificate_response(response)
         }
     }
 }
@@ -957,9 +961,11 @@ impl smithy_http::response::ParseStrictResponse for GetWirelessGatewayFirmwareIn
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_wireless_gateway_firmware_information_error(response)
+            crate::operation_deser::parse_get_wireless_gateway_firmware_information_error(response)
         } else {
-            crate::operation_ser::parse_get_wireless_gateway_firmware_information_response(response)
+            crate::operation_deser::parse_get_wireless_gateway_firmware_information_response(
+                response,
+            )
         }
     }
 }
@@ -985,9 +991,9 @@ impl smithy_http::response::ParseStrictResponse for GetWirelessGatewayStatistics
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_wireless_gateway_statistics_error(response)
+            crate::operation_deser::parse_get_wireless_gateway_statistics_error(response)
         } else {
-            crate::operation_ser::parse_get_wireless_gateway_statistics_response(response)
+            crate::operation_deser::parse_get_wireless_gateway_statistics_response(response)
         }
     }
 }
@@ -1013,9 +1019,9 @@ impl smithy_http::response::ParseStrictResponse for GetWirelessGatewayTask {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_wireless_gateway_task_error(response)
+            crate::operation_deser::parse_get_wireless_gateway_task_error(response)
         } else {
-            crate::operation_ser::parse_get_wireless_gateway_task_response(response)
+            crate::operation_deser::parse_get_wireless_gateway_task_response(response)
         }
     }
 }
@@ -1041,9 +1047,9 @@ impl smithy_http::response::ParseStrictResponse for GetWirelessGatewayTaskDefini
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_wireless_gateway_task_definition_error(response)
+            crate::operation_deser::parse_get_wireless_gateway_task_definition_error(response)
         } else {
-            crate::operation_ser::parse_get_wireless_gateway_task_definition_response(response)
+            crate::operation_deser::parse_get_wireless_gateway_task_definition_response(response)
         }
     }
 }
@@ -1069,9 +1075,9 @@ impl smithy_http::response::ParseStrictResponse for ListDestinations {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_destinations_error(response)
+            crate::operation_deser::parse_list_destinations_error(response)
         } else {
-            crate::operation_ser::parse_list_destinations_response(response)
+            crate::operation_deser::parse_list_destinations_response(response)
         }
     }
 }
@@ -1097,9 +1103,9 @@ impl smithy_http::response::ParseStrictResponse for ListDeviceProfiles {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_device_profiles_error(response)
+            crate::operation_deser::parse_list_device_profiles_error(response)
         } else {
-            crate::operation_ser::parse_list_device_profiles_response(response)
+            crate::operation_deser::parse_list_device_profiles_response(response)
         }
     }
 }
@@ -1125,9 +1131,9 @@ impl smithy_http::response::ParseStrictResponse for ListPartnerAccounts {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_partner_accounts_error(response)
+            crate::operation_deser::parse_list_partner_accounts_error(response)
         } else {
-            crate::operation_ser::parse_list_partner_accounts_response(response)
+            crate::operation_deser::parse_list_partner_accounts_response(response)
         }
     }
 }
@@ -1153,9 +1159,9 @@ impl smithy_http::response::ParseStrictResponse for ListServiceProfiles {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_service_profiles_error(response)
+            crate::operation_deser::parse_list_service_profiles_error(response)
         } else {
-            crate::operation_ser::parse_list_service_profiles_response(response)
+            crate::operation_deser::parse_list_service_profiles_response(response)
         }
     }
 }
@@ -1181,9 +1187,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -1209,9 +1215,9 @@ impl smithy_http::response::ParseStrictResponse for ListWirelessDevices {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_wireless_devices_error(response)
+            crate::operation_deser::parse_list_wireless_devices_error(response)
         } else {
-            crate::operation_ser::parse_list_wireless_devices_response(response)
+            crate::operation_deser::parse_list_wireless_devices_response(response)
         }
     }
 }
@@ -1237,9 +1243,9 @@ impl smithy_http::response::ParseStrictResponse for ListWirelessGateways {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_wireless_gateways_error(response)
+            crate::operation_deser::parse_list_wireless_gateways_error(response)
         } else {
-            crate::operation_ser::parse_list_wireless_gateways_response(response)
+            crate::operation_deser::parse_list_wireless_gateways_response(response)
         }
     }
 }
@@ -1265,9 +1271,9 @@ impl smithy_http::response::ParseStrictResponse for ListWirelessGatewayTaskDefin
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_wireless_gateway_task_definitions_error(response)
+            crate::operation_deser::parse_list_wireless_gateway_task_definitions_error(response)
         } else {
-            crate::operation_ser::parse_list_wireless_gateway_task_definitions_response(response)
+            crate::operation_deser::parse_list_wireless_gateway_task_definitions_response(response)
         }
     }
 }
@@ -1294,9 +1300,9 @@ impl smithy_http::response::ParseStrictResponse for PutResourceLogLevel {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_resource_log_level_error(response)
+            crate::operation_deser::parse_put_resource_log_level_error(response)
         } else {
-            crate::operation_ser::parse_put_resource_log_level_response(response)
+            crate::operation_deser::parse_put_resource_log_level_response(response)
         }
     }
 }
@@ -1322,9 +1328,9 @@ impl smithy_http::response::ParseStrictResponse for ResetAllResourceLogLevels {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_reset_all_resource_log_levels_error(response)
+            crate::operation_deser::parse_reset_all_resource_log_levels_error(response)
         } else {
-            crate::operation_ser::parse_reset_all_resource_log_levels_response(response)
+            crate::operation_deser::parse_reset_all_resource_log_levels_response(response)
         }
     }
 }
@@ -1351,9 +1357,9 @@ impl smithy_http::response::ParseStrictResponse for ResetResourceLogLevel {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_reset_resource_log_level_error(response)
+            crate::operation_deser::parse_reset_resource_log_level_error(response)
         } else {
-            crate::operation_ser::parse_reset_resource_log_level_response(response)
+            crate::operation_deser::parse_reset_resource_log_level_response(response)
         }
     }
 }
@@ -1379,9 +1385,9 @@ impl smithy_http::response::ParseStrictResponse for SendDataToWirelessDevice {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
-            crate::operation_ser::parse_send_data_to_wireless_device_error(response)
+            crate::operation_deser::parse_send_data_to_wireless_device_error(response)
         } else {
-            crate::operation_ser::parse_send_data_to_wireless_device_response(response)
+            crate::operation_deser::parse_send_data_to_wireless_device_response(response)
         }
     }
 }
@@ -1405,9 +1411,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -1433,9 +1439,9 @@ impl smithy_http::response::ParseStrictResponse for TestWirelessDevice {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_test_wireless_device_error(response)
+            crate::operation_deser::parse_test_wireless_device_error(response)
         } else {
-            crate::operation_ser::parse_test_wireless_device_response(response)
+            crate::operation_deser::parse_test_wireless_device_response(response)
         }
     }
 }
@@ -1459,9 +1465,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -1487,9 +1493,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateDestination {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_update_destination_error(response)
+            crate::operation_deser::parse_update_destination_error(response)
         } else {
-            crate::operation_ser::parse_update_destination_response(response)
+            crate::operation_deser::parse_update_destination_response(response)
         }
     }
 }
@@ -1516,9 +1522,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateLogLevelsByResourceTyp
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_log_levels_by_resource_types_error(response)
+            crate::operation_deser::parse_update_log_levels_by_resource_types_error(response)
         } else {
-            crate::operation_ser::parse_update_log_levels_by_resource_types_response(response)
+            crate::operation_deser::parse_update_log_levels_by_resource_types_response(response)
         }
     }
 }
@@ -1544,9 +1550,9 @@ impl smithy_http::response::ParseStrictResponse for UpdatePartnerAccount {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_update_partner_account_error(response)
+            crate::operation_deser::parse_update_partner_account_error(response)
         } else {
-            crate::operation_ser::parse_update_partner_account_response(response)
+            crate::operation_deser::parse_update_partner_account_response(response)
         }
     }
 }
@@ -1572,9 +1578,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateWirelessDevice {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_update_wireless_device_error(response)
+            crate::operation_deser::parse_update_wireless_device_error(response)
         } else {
-            crate::operation_ser::parse_update_wireless_device_response(response)
+            crate::operation_deser::parse_update_wireless_device_response(response)
         }
     }
 }
@@ -1600,9 +1606,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateWirelessGateway {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_update_wireless_gateway_error(response)
+            crate::operation_deser::parse_update_wireless_gateway_error(response)
         } else {
-            crate::operation_ser::parse_update_wireless_gateway_response(response)
+            crate::operation_deser::parse_update_wireless_gateway_response(response)
         }
     }
 }

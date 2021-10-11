@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for AddTagsToOnPremisesInstances
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_add_tags_to_on_premises_instances_error(response)
+            crate::operation_deser::parse_add_tags_to_on_premises_instances_error(response)
         } else {
-            crate::operation_ser::parse_add_tags_to_on_premises_instances_response(response)
+            crate::operation_deser::parse_add_tags_to_on_premises_instances_response(response)
         }
     }
 }
@@ -49,9 +49,9 @@ impl smithy_http::response::ParseStrictResponse for BatchGetApplicationRevisions
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_batch_get_application_revisions_error(response)
+            crate::operation_deser::parse_batch_get_application_revisions_error(response)
         } else {
-            crate::operation_ser::parse_batch_get_application_revisions_response(response)
+            crate::operation_deser::parse_batch_get_application_revisions_response(response)
         }
     }
 }
@@ -78,9 +78,9 @@ impl smithy_http::response::ParseStrictResponse for BatchGetApplications {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_batch_get_applications_error(response)
+            crate::operation_deser::parse_batch_get_applications_error(response)
         } else {
-            crate::operation_ser::parse_batch_get_applications_response(response)
+            crate::operation_deser::parse_batch_get_applications_response(response)
         }
     }
 }
@@ -106,9 +106,9 @@ impl smithy_http::response::ParseStrictResponse for BatchGetDeploymentGroups {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_batch_get_deployment_groups_error(response)
+            crate::operation_deser::parse_batch_get_deployment_groups_error(response)
         } else {
-            crate::operation_ser::parse_batch_get_deployment_groups_response(response)
+            crate::operation_deser::parse_batch_get_deployment_groups_response(response)
         }
     }
 }
@@ -141,9 +141,9 @@ impl smithy_http::response::ParseStrictResponse for BatchGetDeploymentInstances 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_batch_get_deployment_instances_error(response)
+            crate::operation_deser::parse_batch_get_deployment_instances_error(response)
         } else {
-            crate::operation_ser::parse_batch_get_deployment_instances_response(response)
+            crate::operation_deser::parse_batch_get_deployment_instances_response(response)
         }
     }
 }
@@ -170,9 +170,9 @@ impl smithy_http::response::ParseStrictResponse for BatchGetDeployments {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_batch_get_deployments_error(response)
+            crate::operation_deser::parse_batch_get_deployments_error(response)
         } else {
-            crate::operation_ser::parse_batch_get_deployments_response(response)
+            crate::operation_deser::parse_batch_get_deployments_response(response)
         }
     }
 }
@@ -225,9 +225,9 @@ impl smithy_http::response::ParseStrictResponse for BatchGetDeploymentTargets {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_batch_get_deployment_targets_error(response)
+            crate::operation_deser::parse_batch_get_deployment_targets_error(response)
         } else {
-            crate::operation_ser::parse_batch_get_deployment_targets_response(response)
+            crate::operation_deser::parse_batch_get_deployment_targets_response(response)
         }
     }
 }
@@ -254,9 +254,9 @@ impl smithy_http::response::ParseStrictResponse for BatchGetOnPremisesInstances 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_batch_get_on_premises_instances_error(response)
+            crate::operation_deser::parse_batch_get_on_premises_instances_error(response)
         } else {
-            crate::operation_ser::parse_batch_get_on_premises_instances_response(response)
+            crate::operation_deser::parse_batch_get_on_premises_instances_response(response)
         }
     }
 }
@@ -286,9 +286,9 @@ impl smithy_http::response::ParseStrictResponse for ContinueDeployment {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_continue_deployment_error(response)
+            crate::operation_deser::parse_continue_deployment_error(response)
         } else {
-            crate::operation_ser::parse_continue_deployment_response(response)
+            crate::operation_deser::parse_continue_deployment_response(response)
         }
     }
 }
@@ -314,9 +314,9 @@ impl smithy_http::response::ParseStrictResponse for CreateApplication {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_application_error(response)
+            crate::operation_deser::parse_create_application_error(response)
         } else {
-            crate::operation_ser::parse_create_application_response(response)
+            crate::operation_deser::parse_create_application_response(response)
         }
     }
 }
@@ -342,9 +342,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDeployment {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_deployment_error(response)
+            crate::operation_deser::parse_create_deployment_error(response)
         } else {
-            crate::operation_ser::parse_create_deployment_response(response)
+            crate::operation_deser::parse_create_deployment_response(response)
         }
     }
 }
@@ -370,9 +370,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDeploymentConfig {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_deployment_config_error(response)
+            crate::operation_deser::parse_create_deployment_config_error(response)
         } else {
-            crate::operation_ser::parse_create_deployment_config_response(response)
+            crate::operation_deser::parse_create_deployment_config_response(response)
         }
     }
 }
@@ -398,9 +398,9 @@ impl smithy_http::response::ParseStrictResponse for CreateDeploymentGroup {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_deployment_group_error(response)
+            crate::operation_deser::parse_create_deployment_group_error(response)
         } else {
-            crate::operation_ser::parse_create_deployment_group_response(response)
+            crate::operation_deser::parse_create_deployment_group_response(response)
         }
     }
 }
@@ -426,9 +426,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteApplication {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_application_error(response)
+            crate::operation_deser::parse_delete_application_error(response)
         } else {
-            crate::operation_ser::parse_delete_application_response(response)
+            crate::operation_deser::parse_delete_application_response(response)
         }
     }
 }
@@ -458,9 +458,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteDeploymentConfig {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_deployment_config_error(response)
+            crate::operation_deser::parse_delete_deployment_config_error(response)
         } else {
-            crate::operation_ser::parse_delete_deployment_config_response(response)
+            crate::operation_deser::parse_delete_deployment_config_response(response)
         }
     }
 }
@@ -486,9 +486,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteDeploymentGroup {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_deployment_group_error(response)
+            crate::operation_deser::parse_delete_deployment_group_error(response)
         } else {
-            crate::operation_ser::parse_delete_deployment_group_response(response)
+            crate::operation_deser::parse_delete_deployment_group_response(response)
         }
     }
 }
@@ -514,9 +514,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteGitHubAccountToken {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_git_hub_account_token_error(response)
+            crate::operation_deser::parse_delete_git_hub_account_token_error(response)
         } else {
-            crate::operation_ser::parse_delete_git_hub_account_token_response(response)
+            crate::operation_deser::parse_delete_git_hub_account_token_response(response)
         }
     }
 }
@@ -542,9 +542,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteResourcesByExternalId 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_resources_by_external_id_error(response)
+            crate::operation_deser::parse_delete_resources_by_external_id_error(response)
         } else {
-            crate::operation_ser::parse_delete_resources_by_external_id_response(response)
+            crate::operation_deser::parse_delete_resources_by_external_id_response(response)
         }
     }
 }
@@ -570,9 +570,9 @@ impl smithy_http::response::ParseStrictResponse for DeregisterOnPremisesInstance
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_deregister_on_premises_instance_error(response)
+            crate::operation_deser::parse_deregister_on_premises_instance_error(response)
         } else {
-            crate::operation_ser::parse_deregister_on_premises_instance_response(response)
+            crate::operation_deser::parse_deregister_on_premises_instance_response(response)
         }
     }
 }
@@ -596,9 +596,9 @@ impl smithy_http::response::ParseStrictResponse for GetApplication {
         std::result::Result<crate::output::GetApplicationOutput, crate::error::GetApplicationError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_application_error(response)
+            crate::operation_deser::parse_get_application_error(response)
         } else {
-            crate::operation_ser::parse_get_application_response(response)
+            crate::operation_deser::parse_get_application_response(response)
         }
     }
 }
@@ -624,9 +624,9 @@ impl smithy_http::response::ParseStrictResponse for GetApplicationRevision {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_application_revision_error(response)
+            crate::operation_deser::parse_get_application_revision_error(response)
         } else {
-            crate::operation_ser::parse_get_application_revision_response(response)
+            crate::operation_deser::parse_get_application_revision_response(response)
         }
     }
 }
@@ -656,9 +656,9 @@ impl smithy_http::response::ParseStrictResponse for GetDeployment {
         std::result::Result<crate::output::GetDeploymentOutput, crate::error::GetDeploymentError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_deployment_error(response)
+            crate::operation_deser::parse_get_deployment_error(response)
         } else {
-            crate::operation_ser::parse_get_deployment_response(response)
+            crate::operation_deser::parse_get_deployment_response(response)
         }
     }
 }
@@ -684,9 +684,9 @@ impl smithy_http::response::ParseStrictResponse for GetDeploymentConfig {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_deployment_config_error(response)
+            crate::operation_deser::parse_get_deployment_config_error(response)
         } else {
-            crate::operation_ser::parse_get_deployment_config_response(response)
+            crate::operation_deser::parse_get_deployment_config_response(response)
         }
     }
 }
@@ -712,9 +712,9 @@ impl smithy_http::response::ParseStrictResponse for GetDeploymentGroup {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_deployment_group_error(response)
+            crate::operation_deser::parse_get_deployment_group_error(response)
         } else {
-            crate::operation_ser::parse_get_deployment_group_response(response)
+            crate::operation_deser::parse_get_deployment_group_response(response)
         }
     }
 }
@@ -740,9 +740,9 @@ impl smithy_http::response::ParseStrictResponse for GetDeploymentInstance {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_deployment_instance_error(response)
+            crate::operation_deser::parse_get_deployment_instance_error(response)
         } else {
-            crate::operation_ser::parse_get_deployment_instance_response(response)
+            crate::operation_deser::parse_get_deployment_instance_response(response)
         }
     }
 }
@@ -768,9 +768,9 @@ impl smithy_http::response::ParseStrictResponse for GetDeploymentTarget {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_deployment_target_error(response)
+            crate::operation_deser::parse_get_deployment_target_error(response)
         } else {
-            crate::operation_ser::parse_get_deployment_target_response(response)
+            crate::operation_deser::parse_get_deployment_target_response(response)
         }
     }
 }
@@ -796,9 +796,9 @@ impl smithy_http::response::ParseStrictResponse for GetOnPremisesInstance {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_on_premises_instance_error(response)
+            crate::operation_deser::parse_get_on_premises_instance_error(response)
         } else {
-            crate::operation_ser::parse_get_on_premises_instance_response(response)
+            crate::operation_deser::parse_get_on_premises_instance_response(response)
         }
     }
 }
@@ -824,9 +824,9 @@ impl smithy_http::response::ParseStrictResponse for ListApplicationRevisions {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_application_revisions_error(response)
+            crate::operation_deser::parse_list_application_revisions_error(response)
         } else {
-            crate::operation_ser::parse_list_application_revisions_response(response)
+            crate::operation_deser::parse_list_application_revisions_response(response)
         }
     }
 }
@@ -852,9 +852,9 @@ impl smithy_http::response::ParseStrictResponse for ListApplications {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_applications_error(response)
+            crate::operation_deser::parse_list_applications_error(response)
         } else {
-            crate::operation_ser::parse_list_applications_response(response)
+            crate::operation_deser::parse_list_applications_response(response)
         }
     }
 }
@@ -880,9 +880,9 @@ impl smithy_http::response::ParseStrictResponse for ListDeploymentConfigs {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_deployment_configs_error(response)
+            crate::operation_deser::parse_list_deployment_configs_error(response)
         } else {
-            crate::operation_ser::parse_list_deployment_configs_response(response)
+            crate::operation_deser::parse_list_deployment_configs_response(response)
         }
     }
 }
@@ -909,9 +909,9 @@ impl smithy_http::response::ParseStrictResponse for ListDeploymentGroups {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_deployment_groups_error(response)
+            crate::operation_deser::parse_list_deployment_groups_error(response)
         } else {
-            crate::operation_ser::parse_list_deployment_groups_response(response)
+            crate::operation_deser::parse_list_deployment_groups_response(response)
         }
     }
 }
@@ -943,9 +943,9 @@ impl smithy_http::response::ParseStrictResponse for ListDeploymentInstances {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_deployment_instances_error(response)
+            crate::operation_deser::parse_list_deployment_instances_error(response)
         } else {
-            crate::operation_ser::parse_list_deployment_instances_response(response)
+            crate::operation_deser::parse_list_deployment_instances_response(response)
         }
     }
 }
@@ -972,9 +972,9 @@ impl smithy_http::response::ParseStrictResponse for ListDeployments {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_deployments_error(response)
+            crate::operation_deser::parse_list_deployments_error(response)
         } else {
-            crate::operation_ser::parse_list_deployments_response(response)
+            crate::operation_deser::parse_list_deployments_response(response)
         }
     }
 }
@@ -1000,9 +1000,9 @@ impl smithy_http::response::ParseStrictResponse for ListDeploymentTargets {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_deployment_targets_error(response)
+            crate::operation_deser::parse_list_deployment_targets_error(response)
         } else {
-            crate::operation_ser::parse_list_deployment_targets_response(response)
+            crate::operation_deser::parse_list_deployment_targets_response(response)
         }
     }
 }
@@ -1028,9 +1028,9 @@ impl smithy_http::response::ParseStrictResponse for ListGitHubAccountTokenNames 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_git_hub_account_token_names_error(response)
+            crate::operation_deser::parse_list_git_hub_account_token_names_error(response)
         } else {
-            crate::operation_ser::parse_list_git_hub_account_token_names_response(response)
+            crate::operation_deser::parse_list_git_hub_account_token_names_response(response)
         }
     }
 }
@@ -1059,9 +1059,9 @@ impl smithy_http::response::ParseStrictResponse for ListOnPremisesInstances {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_on_premises_instances_error(response)
+            crate::operation_deser::parse_list_on_premises_instances_error(response)
         } else {
-            crate::operation_ser::parse_list_on_premises_instances_response(response)
+            crate::operation_deser::parse_list_on_premises_instances_response(response)
         }
     }
 }
@@ -1088,9 +1088,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_tags_for_resource_error(response)
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
-            crate::operation_ser::parse_list_tags_for_resource_response(response)
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
         }
     }
 }
@@ -1124,9 +1124,11 @@ impl smithy_http::response::ParseStrictResponse for PutLifecycleEventHookExecuti
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_lifecycle_event_hook_execution_status_error(response)
+            crate::operation_deser::parse_put_lifecycle_event_hook_execution_status_error(response)
         } else {
-            crate::operation_ser::parse_put_lifecycle_event_hook_execution_status_response(response)
+            crate::operation_deser::parse_put_lifecycle_event_hook_execution_status_response(
+                response,
+            )
         }
     }
 }
@@ -1152,9 +1154,9 @@ impl smithy_http::response::ParseStrictResponse for RegisterApplicationRevision 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_register_application_revision_error(response)
+            crate::operation_deser::parse_register_application_revision_error(response)
         } else {
-            crate::operation_ser::parse_register_application_revision_response(response)
+            crate::operation_deser::parse_register_application_revision_response(response)
         }
     }
 }
@@ -1184,9 +1186,9 @@ impl smithy_http::response::ParseStrictResponse for RegisterOnPremisesInstance {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_register_on_premises_instance_error(response)
+            crate::operation_deser::parse_register_on_premises_instance_error(response)
         } else {
-            crate::operation_ser::parse_register_on_premises_instance_response(response)
+            crate::operation_deser::parse_register_on_premises_instance_response(response)
         }
     }
 }
@@ -1212,9 +1214,9 @@ impl smithy_http::response::ParseStrictResponse for RemoveTagsFromOnPremisesInst
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_remove_tags_from_on_premises_instances_error(response)
+            crate::operation_deser::parse_remove_tags_from_on_premises_instances_error(response)
         } else {
-            crate::operation_ser::parse_remove_tags_from_on_premises_instances_response(response)
+            crate::operation_deser::parse_remove_tags_from_on_premises_instances_response(response)
         }
     }
 }
@@ -1241,9 +1243,9 @@ impl smithy_http::response::ParseStrictResponse for SkipWaitTimeForInstanceTermi
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_skip_wait_time_for_instance_termination_error(response)
+            crate::operation_deser::parse_skip_wait_time_for_instance_termination_error(response)
         } else {
-            crate::operation_ser::parse_skip_wait_time_for_instance_termination_response(response)
+            crate::operation_deser::parse_skip_wait_time_for_instance_termination_response(response)
         }
     }
 }
@@ -1267,9 +1269,9 @@ impl smithy_http::response::ParseStrictResponse for StopDeployment {
         std::result::Result<crate::output::StopDeploymentOutput, crate::error::StopDeploymentError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_stop_deployment_error(response)
+            crate::operation_deser::parse_stop_deployment_error(response)
         } else {
-            crate::operation_ser::parse_stop_deployment_response(response)
+            crate::operation_deser::parse_stop_deployment_response(response)
         }
     }
 }
@@ -1294,9 +1296,9 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_tag_resource_error(response)
+            crate::operation_deser::parse_tag_resource_error(response)
         } else {
-            crate::operation_ser::parse_tag_resource_response(response)
+            crate::operation_deser::parse_tag_resource_response(response)
         }
     }
 }
@@ -1322,9 +1324,9 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_untag_resource_error(response)
+            crate::operation_deser::parse_untag_resource_error(response)
         } else {
-            crate::operation_ser::parse_untag_resource_response(response)
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }
@@ -1350,9 +1352,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateApplication {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_application_error(response)
+            crate::operation_deser::parse_update_application_error(response)
         } else {
-            crate::operation_ser::parse_update_application_response(response)
+            crate::operation_deser::parse_update_application_response(response)
         }
     }
 }
@@ -1378,9 +1380,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateDeploymentGroup {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_deployment_group_error(response)
+            crate::operation_deser::parse_update_deployment_group_error(response)
         } else {
-            crate::operation_ser::parse_update_deployment_group_response(response)
+            crate::operation_deser::parse_update_deployment_group_response(response)
         }
     }
 }

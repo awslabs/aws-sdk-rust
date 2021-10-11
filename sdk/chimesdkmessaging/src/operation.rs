@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for BatchCreateChannelMembership
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_batch_create_channel_membership_error(response)
+            crate::operation_deser::parse_batch_create_channel_membership_error(response)
         } else {
-            crate::operation_ser::parse_batch_create_channel_membership_response(response)
+            crate::operation_deser::parse_batch_create_channel_membership_response(response)
         }
     }
 }
@@ -54,9 +54,9 @@ impl smithy_http::response::ParseStrictResponse for CreateChannel {
         std::result::Result<crate::output::CreateChannelOutput, crate::error::CreateChannelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_channel_error(response)
+            crate::operation_deser::parse_create_channel_error(response)
         } else {
-            crate::operation_ser::parse_create_channel_response(response)
+            crate::operation_deser::parse_create_channel_response(response)
         }
     }
 }
@@ -92,9 +92,9 @@ impl smithy_http::response::ParseStrictResponse for CreateChannelBan {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_channel_ban_error(response)
+            crate::operation_deser::parse_create_channel_ban_error(response)
         } else {
-            crate::operation_ser::parse_create_channel_ban_response(response)
+            crate::operation_deser::parse_create_channel_ban_response(response)
         }
     }
 }
@@ -153,9 +153,9 @@ impl smithy_http::response::ParseStrictResponse for CreateChannelMembership {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_channel_membership_error(response)
+            crate::operation_deser::parse_create_channel_membership_error(response)
         } else {
-            crate::operation_ser::parse_create_channel_membership_response(response)
+            crate::operation_deser::parse_create_channel_membership_response(response)
         }
     }
 }
@@ -203,9 +203,9 @@ impl smithy_http::response::ParseStrictResponse for CreateChannelModerator {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_create_channel_moderator_error(response)
+            crate::operation_deser::parse_create_channel_moderator_error(response)
         } else {
-            crate::operation_ser::parse_create_channel_moderator_response(response)
+            crate::operation_deser::parse_create_channel_moderator_response(response)
         }
     }
 }
@@ -235,9 +235,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteChannel {
         std::result::Result<crate::output::DeleteChannelOutput, crate::error::DeleteChannelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_channel_error(response)
+            crate::operation_deser::parse_delete_channel_error(response)
         } else {
-            crate::operation_ser::parse_delete_channel_response(response)
+            crate::operation_deser::parse_delete_channel_response(response)
         }
     }
 }
@@ -268,9 +268,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteChannelBan {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_channel_ban_error(response)
+            crate::operation_deser::parse_delete_channel_ban_error(response)
         } else {
-            crate::operation_ser::parse_delete_channel_ban_response(response)
+            crate::operation_deser::parse_delete_channel_ban_response(response)
         }
     }
 }
@@ -301,9 +301,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteChannelMembership {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_channel_membership_error(response)
+            crate::operation_deser::parse_delete_channel_membership_error(response)
         } else {
-            crate::operation_ser::parse_delete_channel_membership_response(response)
+            crate::operation_deser::parse_delete_channel_membership_response(response)
         }
     }
 }
@@ -336,9 +336,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteChannelMessage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_channel_message_error(response)
+            crate::operation_deser::parse_delete_channel_message_error(response)
         } else {
-            crate::operation_ser::parse_delete_channel_message_response(response)
+            crate::operation_deser::parse_delete_channel_message_response(response)
         }
     }
 }
@@ -369,9 +369,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteChannelModerator {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_channel_moderator_error(response)
+            crate::operation_deser::parse_delete_channel_moderator_error(response)
         } else {
-            crate::operation_ser::parse_delete_channel_moderator_response(response)
+            crate::operation_deser::parse_delete_channel_moderator_response(response)
         }
     }
 }
@@ -403,9 +403,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeChannel {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_channel_error(response)
+            crate::operation_deser::parse_describe_channel_error(response)
         } else {
-            crate::operation_ser::parse_describe_channel_response(response)
+            crate::operation_deser::parse_describe_channel_response(response)
         }
     }
 }
@@ -436,9 +436,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeChannelBan {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_channel_ban_error(response)
+            crate::operation_deser::parse_describe_channel_ban_error(response)
         } else {
-            crate::operation_ser::parse_describe_channel_ban_response(response)
+            crate::operation_deser::parse_describe_channel_ban_response(response)
         }
     }
 }
@@ -469,9 +469,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeChannelMembership {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_channel_membership_error(response)
+            crate::operation_deser::parse_describe_channel_membership_error(response)
         } else {
-            crate::operation_ser::parse_describe_channel_membership_response(response)
+            crate::operation_deser::parse_describe_channel_membership_response(response)
         }
     }
 }
@@ -504,11 +504,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeChannelMembershipFor
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_channel_membership_for_app_instance_user_error(
+            crate::operation_deser::parse_describe_channel_membership_for_app_instance_user_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_describe_channel_membership_for_app_instance_user_response(
+            crate::operation_deser::parse_describe_channel_membership_for_app_instance_user_response(
                 response,
             )
         }
@@ -543,11 +543,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeChannelModeratedByAp
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_channel_moderated_by_app_instance_user_error(
+            crate::operation_deser::parse_describe_channel_moderated_by_app_instance_user_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_describe_channel_moderated_by_app_instance_user_response(
+            crate::operation_deser::parse_describe_channel_moderated_by_app_instance_user_response(
                 response,
             )
         }
@@ -580,9 +580,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeChannelModerator {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_channel_moderator_error(response)
+            crate::operation_deser::parse_describe_channel_moderator_error(response)
         } else {
-            crate::operation_ser::parse_describe_channel_moderator_response(response)
+            crate::operation_deser::parse_describe_channel_moderator_response(response)
         }
     }
 }
@@ -613,9 +613,9 @@ impl smithy_http::response::ParseStrictResponse for GetChannelMessage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_channel_message_error(response)
+            crate::operation_deser::parse_get_channel_message_error(response)
         } else {
-            crate::operation_ser::parse_get_channel_message_response(response)
+            crate::operation_deser::parse_get_channel_message_response(response)
         }
     }
 }
@@ -641,9 +641,9 @@ impl smithy_http::response::ParseStrictResponse for GetMessagingSessionEndpoint 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_messaging_session_endpoint_error(response)
+            crate::operation_deser::parse_get_messaging_session_endpoint_error(response)
         } else {
-            crate::operation_ser::parse_get_messaging_session_endpoint_response(response)
+            crate::operation_deser::parse_get_messaging_session_endpoint_response(response)
         }
     }
 }
@@ -674,9 +674,9 @@ impl smithy_http::response::ParseStrictResponse for ListChannelBans {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_channel_bans_error(response)
+            crate::operation_deser::parse_list_channel_bans_error(response)
         } else {
-            crate::operation_ser::parse_list_channel_bans_response(response)
+            crate::operation_deser::parse_list_channel_bans_response(response)
         }
     }
 }
@@ -707,9 +707,9 @@ impl smithy_http::response::ParseStrictResponse for ListChannelMemberships {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_channel_memberships_error(response)
+            crate::operation_deser::parse_list_channel_memberships_error(response)
         } else {
-            crate::operation_ser::parse_list_channel_memberships_response(response)
+            crate::operation_deser::parse_list_channel_memberships_response(response)
         }
     }
 }
@@ -742,11 +742,11 @@ impl smithy_http::response::ParseStrictResponse for ListChannelMembershipsForApp
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_channel_memberships_for_app_instance_user_error(
+            crate::operation_deser::parse_list_channel_memberships_for_app_instance_user_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_list_channel_memberships_for_app_instance_user_response(
+            crate::operation_deser::parse_list_channel_memberships_for_app_instance_user_response(
                 response,
             )
         }
@@ -784,9 +784,9 @@ impl smithy_http::response::ParseStrictResponse for ListChannelMessages {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_channel_messages_error(response)
+            crate::operation_deser::parse_list_channel_messages_error(response)
         } else {
-            crate::operation_ser::parse_list_channel_messages_response(response)
+            crate::operation_deser::parse_list_channel_messages_response(response)
         }
     }
 }
@@ -817,9 +817,9 @@ impl smithy_http::response::ParseStrictResponse for ListChannelModerators {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_channel_moderators_error(response)
+            crate::operation_deser::parse_list_channel_moderators_error(response)
         } else {
-            crate::operation_ser::parse_list_channel_moderators_response(response)
+            crate::operation_deser::parse_list_channel_moderators_response(response)
         }
     }
 }
@@ -862,9 +862,9 @@ impl smithy_http::response::ParseStrictResponse for ListChannels {
         std::result::Result<crate::output::ListChannelsOutput, crate::error::ListChannelsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_channels_error(response)
+            crate::operation_deser::parse_list_channels_error(response)
         } else {
-            crate::operation_ser::parse_list_channels_response(response)
+            crate::operation_deser::parse_list_channels_response(response)
         }
     }
 }
@@ -895,9 +895,11 @@ impl smithy_http::response::ParseStrictResponse for ListChannelsModeratedByAppIn
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_channels_moderated_by_app_instance_user_error(response)
+            crate::operation_deser::parse_list_channels_moderated_by_app_instance_user_error(
+                response,
+            )
         } else {
-            crate::operation_ser::parse_list_channels_moderated_by_app_instance_user_response(
+            crate::operation_deser::parse_list_channels_moderated_by_app_instance_user_response(
                 response,
             )
         }
@@ -931,9 +933,9 @@ impl smithy_http::response::ParseStrictResponse for RedactChannelMessage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_redact_channel_message_error(response)
+            crate::operation_deser::parse_redact_channel_message_error(response)
         } else {
-            crate::operation_ser::parse_redact_channel_message_response(response)
+            crate::operation_deser::parse_redact_channel_message_response(response)
         }
     }
 }
@@ -966,9 +968,9 @@ impl smithy_http::response::ParseStrictResponse for SendChannelMessage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_ser::parse_send_channel_message_error(response)
+            crate::operation_deser::parse_send_channel_message_error(response)
         } else {
-            crate::operation_ser::parse_send_channel_message_response(response)
+            crate::operation_deser::parse_send_channel_message_response(response)
         }
     }
 }
@@ -999,9 +1001,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateChannel {
         std::result::Result<crate::output::UpdateChannelOutput, crate::error::UpdateChannelError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_channel_error(response)
+            crate::operation_deser::parse_update_channel_error(response)
         } else {
-            crate::operation_ser::parse_update_channel_response(response)
+            crate::operation_deser::parse_update_channel_response(response)
         }
     }
 }
@@ -1032,9 +1034,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateChannelMessage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_channel_message_error(response)
+            crate::operation_deser::parse_update_channel_message_error(response)
         } else {
-            crate::operation_ser::parse_update_channel_message_response(response)
+            crate::operation_deser::parse_update_channel_message_response(response)
         }
     }
 }
@@ -1065,9 +1067,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateChannelReadMarker {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_channel_read_marker_error(response)
+            crate::operation_deser::parse_update_channel_read_marker_error(response)
         } else {
-            crate::operation_ser::parse_update_channel_read_marker_response(response)
+            crate::operation_deser::parse_update_channel_read_marker_response(response)
         }
     }
 }

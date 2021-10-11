@@ -21,9 +21,9 @@ impl smithy_http::response::ParseStrictResponse for AssociateMemberAccount {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_associate_member_account_error(response)
+            crate::operation_deser::parse_associate_member_account_error(response)
         } else {
-            crate::operation_ser::parse_associate_member_account_response(response)
+            crate::operation_deser::parse_associate_member_account_response(response)
         }
     }
 }
@@ -53,9 +53,9 @@ impl smithy_http::response::ParseStrictResponse for AssociateS3Resources {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_associate_s3_resources_error(response)
+            crate::operation_deser::parse_associate_s3_resources_error(response)
         } else {
-            crate::operation_ser::parse_associate_s3_resources_response(response)
+            crate::operation_deser::parse_associate_s3_resources_response(response)
         }
     }
 }
@@ -81,9 +81,9 @@ impl smithy_http::response::ParseStrictResponse for DisassociateMemberAccount {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_disassociate_member_account_error(response)
+            crate::operation_deser::parse_disassociate_member_account_error(response)
         } else {
-            crate::operation_ser::parse_disassociate_member_account_response(response)
+            crate::operation_deser::parse_disassociate_member_account_response(response)
         }
     }
 }
@@ -112,9 +112,9 @@ impl smithy_http::response::ParseStrictResponse for DisassociateS3Resources {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_disassociate_s3_resources_error(response)
+            crate::operation_deser::parse_disassociate_s3_resources_error(response)
         } else {
-            crate::operation_ser::parse_disassociate_s3_resources_response(response)
+            crate::operation_deser::parse_disassociate_s3_resources_response(response)
         }
     }
 }
@@ -140,9 +140,9 @@ impl smithy_http::response::ParseStrictResponse for ListMemberAccounts {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_member_accounts_error(response)
+            crate::operation_deser::parse_list_member_accounts_error(response)
         } else {
-            crate::operation_ser::parse_list_member_accounts_response(response)
+            crate::operation_deser::parse_list_member_accounts_response(response)
         }
     }
 }
@@ -171,9 +171,9 @@ impl smithy_http::response::ParseStrictResponse for ListS3Resources {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_s3_resources_error(response)
+            crate::operation_deser::parse_list_s3_resources_error(response)
         } else {
-            crate::operation_ser::parse_list_s3_resources_response(response)
+            crate::operation_deser::parse_list_s3_resources_response(response)
         }
     }
 }
@@ -203,9 +203,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateS3Resources {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_s3_resources_error(response)
+            crate::operation_deser::parse_update_s3_resources_error(response)
         } else {
-            crate::operation_ser::parse_update_s3_resources_response(response)
+            crate::operation_deser::parse_update_s3_resources_response(response)
         }
     }
 }

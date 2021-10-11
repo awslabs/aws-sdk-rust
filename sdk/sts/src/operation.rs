@@ -101,9 +101,9 @@ impl smithy_http::response::ParseStrictResponse for AssumeRole {
         std::result::Result<crate::output::AssumeRoleOutput, crate::error::AssumeRoleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_assume_role_error(response)
+            crate::operation_deser::parse_assume_role_error(response)
         } else {
-            crate::operation_ser::parse_assume_role_response(response)
+            crate::operation_deser::parse_assume_role_response(response)
         }
     }
 }
@@ -259,9 +259,9 @@ impl smithy_http::response::ParseStrictResponse for AssumeRoleWithSAML {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_assume_role_with_saml_error(response)
+            crate::operation_deser::parse_assume_role_with_saml_error(response)
         } else {
-            crate::operation_ser::parse_assume_role_with_saml_response(response)
+            crate::operation_deser::parse_assume_role_with_saml_response(response)
         }
     }
 }
@@ -421,9 +421,9 @@ impl smithy_http::response::ParseStrictResponse for AssumeRoleWithWebIdentity {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_assume_role_with_web_identity_error(response)
+            crate::operation_deser::parse_assume_role_with_web_identity_error(response)
         } else {
-            crate::operation_ser::parse_assume_role_with_web_identity_response(response)
+            crate::operation_deser::parse_assume_role_with_web_identity_response(response)
         }
     }
 }
@@ -484,9 +484,9 @@ impl smithy_http::response::ParseStrictResponse for DecodeAuthorizationMessage {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_decode_authorization_message_error(response)
+            crate::operation_deser::parse_decode_authorization_message_error(response)
         } else {
-            crate::operation_ser::parse_decode_authorization_message_response(response)
+            crate::operation_deser::parse_decode_authorization_message_response(response)
         }
     }
 }
@@ -529,9 +529,9 @@ impl smithy_http::response::ParseStrictResponse for GetAccessKeyInfo {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_access_key_info_error(response)
+            crate::operation_deser::parse_get_access_key_info_error(response)
         } else {
-            crate::operation_ser::parse_get_access_key_info_response(response)
+            crate::operation_deser::parse_get_access_key_info_response(response)
         }
     }
 }
@@ -566,9 +566,9 @@ impl smithy_http::response::ParseStrictResponse for GetCallerIdentity {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_caller_identity_error(response)
+            crate::operation_deser::parse_get_caller_identity_error(response)
         } else {
-            crate::operation_ser::parse_get_caller_identity_response(response)
+            crate::operation_deser::parse_get_caller_identity_response(response)
         }
     }
 }
@@ -732,9 +732,9 @@ impl smithy_http::response::ParseStrictResponse for GetFederationToken {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_federation_token_error(response)
+            crate::operation_deser::parse_get_federation_token_error(response)
         } else {
-            crate::operation_ser::parse_get_federation_token_response(response)
+            crate::operation_deser::parse_get_federation_token_response(response)
         }
     }
 }
@@ -811,9 +811,9 @@ impl smithy_http::response::ParseStrictResponse for GetSessionToken {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_session_token_error(response)
+            crate::operation_deser::parse_get_session_token_error(response)
         } else {
-            crate::operation_ser::parse_get_session_token_response(response)
+            crate::operation_deser::parse_get_session_token_response(response)
         }
     }
 }

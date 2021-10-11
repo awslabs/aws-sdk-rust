@@ -20,9 +20,9 @@ impl smithy_http::response::ParseStrictResponse for CreateConnector {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_connector_error(response)
+            crate::operation_deser::parse_create_connector_error(response)
         } else {
-            crate::operation_ser::parse_create_connector_response(response)
+            crate::operation_deser::parse_create_connector_response(response)
         }
     }
 }
@@ -48,9 +48,9 @@ impl smithy_http::response::ParseStrictResponse for CreateCustomPlugin {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_custom_plugin_error(response)
+            crate::operation_deser::parse_create_custom_plugin_error(response)
         } else {
-            crate::operation_ser::parse_create_custom_plugin_response(response)
+            crate::operation_deser::parse_create_custom_plugin_response(response)
         }
     }
 }
@@ -76,9 +76,9 @@ impl smithy_http::response::ParseStrictResponse for CreateWorkerConfiguration {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_worker_configuration_error(response)
+            crate::operation_deser::parse_create_worker_configuration_error(response)
         } else {
-            crate::operation_ser::parse_create_worker_configuration_response(response)
+            crate::operation_deser::parse_create_worker_configuration_response(response)
         }
     }
 }
@@ -104,9 +104,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteConnector {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_connector_error(response)
+            crate::operation_deser::parse_delete_connector_error(response)
         } else {
-            crate::operation_ser::parse_delete_connector_response(response)
+            crate::operation_deser::parse_delete_connector_response(response)
         }
     }
 }
@@ -132,9 +132,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeConnector {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_connector_error(response)
+            crate::operation_deser::parse_describe_connector_error(response)
         } else {
-            crate::operation_ser::parse_describe_connector_response(response)
+            crate::operation_deser::parse_describe_connector_response(response)
         }
     }
 }
@@ -160,9 +160,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeCustomPlugin {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_custom_plugin_error(response)
+            crate::operation_deser::parse_describe_custom_plugin_error(response)
         } else {
-            crate::operation_ser::parse_describe_custom_plugin_response(response)
+            crate::operation_deser::parse_describe_custom_plugin_response(response)
         }
     }
 }
@@ -188,9 +188,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeWorkerConfiguration 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_worker_configuration_error(response)
+            crate::operation_deser::parse_describe_worker_configuration_error(response)
         } else {
-            crate::operation_ser::parse_describe_worker_configuration_response(response)
+            crate::operation_deser::parse_describe_worker_configuration_response(response)
         }
     }
 }
@@ -214,9 +214,9 @@ impl smithy_http::response::ParseStrictResponse for ListConnectors {
         std::result::Result<crate::output::ListConnectorsOutput, crate::error::ListConnectorsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_connectors_error(response)
+            crate::operation_deser::parse_list_connectors_error(response)
         } else {
-            crate::operation_ser::parse_list_connectors_response(response)
+            crate::operation_deser::parse_list_connectors_response(response)
         }
     }
 }
@@ -242,9 +242,9 @@ impl smithy_http::response::ParseStrictResponse for ListCustomPlugins {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_custom_plugins_error(response)
+            crate::operation_deser::parse_list_custom_plugins_error(response)
         } else {
-            crate::operation_ser::parse_list_custom_plugins_response(response)
+            crate::operation_deser::parse_list_custom_plugins_response(response)
         }
     }
 }
@@ -270,9 +270,9 @@ impl smithy_http::response::ParseStrictResponse for ListWorkerConfigurations {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_worker_configurations_error(response)
+            crate::operation_deser::parse_list_worker_configurations_error(response)
         } else {
-            crate::operation_ser::parse_list_worker_configurations_response(response)
+            crate::operation_deser::parse_list_worker_configurations_response(response)
         }
     }
 }
@@ -298,9 +298,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateConnector {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_connector_error(response)
+            crate::operation_deser::parse_update_connector_error(response)
         } else {
-            crate::operation_ser::parse_update_connector_response(response)
+            crate::operation_deser::parse_update_connector_response(response)
         }
     }
 }

@@ -21,9 +21,9 @@ impl smithy_http::response::ParseStrictResponse for GetEntitlements {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_entitlements_error(response)
+            crate::operation_deser::parse_get_entitlements_error(response)
         } else {
-            crate::operation_ser::parse_get_entitlements_response(response)
+            crate::operation_deser::parse_get_entitlements_response(response)
         }
     }
 }

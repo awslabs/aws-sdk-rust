@@ -50,9 +50,9 @@ impl smithy_http::response::ParseStrictResponse for CreateAccessPoint {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_access_point_error(response)
+            crate::operation_deser::parse_create_access_point_error(response)
         } else {
-            crate::operation_ser::parse_create_access_point_response(response)
+            crate::operation_deser::parse_create_access_point_response(response)
         }
     }
 }
@@ -97,9 +97,9 @@ impl smithy_http::response::ParseStrictResponse for CreateAccessPointForObjectLa
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_access_point_for_object_lambda_error(response)
+            crate::operation_deser::parse_create_access_point_for_object_lambda_error(response)
         } else {
-            crate::operation_ser::parse_create_access_point_for_object_lambda_response(response)
+            crate::operation_deser::parse_create_access_point_for_object_lambda_response(response)
         }
     }
 }
@@ -171,9 +171,9 @@ impl smithy_http::response::ParseStrictResponse for CreateBucket {
         std::result::Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_bucket_error(response)
+            crate::operation_deser::parse_create_bucket_error(response)
         } else {
-            crate::operation_ser::parse_create_bucket_response(response)
+            crate::operation_deser::parse_create_bucket_response(response)
         }
     }
 }
@@ -229,9 +229,9 @@ impl smithy_http::response::ParseStrictResponse for CreateJob {
     type Output = std::result::Result<crate::output::CreateJobOutput, crate::error::CreateJobError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_job_error(response)
+            crate::operation_deser::parse_create_job_error(response)
         } else {
-            crate::operation_ser::parse_create_job_response(response)
+            crate::operation_deser::parse_create_job_response(response)
         }
     }
 }
@@ -290,9 +290,9 @@ impl smithy_http::response::ParseStrictResponse for CreateMultiRegionAccessPoint
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_create_multi_region_access_point_error(response)
+            crate::operation_deser::parse_create_multi_region_access_point_error(response)
         } else {
-            crate::operation_ser::parse_create_multi_region_access_point_response(response)
+            crate::operation_deser::parse_create_multi_region_access_point_response(response)
         }
     }
 }
@@ -337,9 +337,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteAccessPoint {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_access_point_error(response)
+            crate::operation_deser::parse_delete_access_point_error(response)
         } else {
-            crate::operation_ser::parse_delete_access_point_response(response)
+            crate::operation_deser::parse_delete_access_point_response(response)
         }
     }
 }
@@ -383,9 +383,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteAccessPointForObjectLa
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_access_point_for_object_lambda_error(response)
+            crate::operation_deser::parse_delete_access_point_for_object_lambda_error(response)
         } else {
-            crate::operation_ser::parse_delete_access_point_for_object_lambda_response(response)
+            crate::operation_deser::parse_delete_access_point_for_object_lambda_response(response)
         }
     }
 }
@@ -426,9 +426,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteAccessPointPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_access_point_policy_error(response)
+            crate::operation_deser::parse_delete_access_point_policy_error(response)
         } else {
-            crate::operation_ser::parse_delete_access_point_policy_response(response)
+            crate::operation_deser::parse_delete_access_point_policy_response(response)
         }
     }
 }
@@ -467,9 +467,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteAccessPointPolicyForOb
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_access_point_policy_for_object_lambda_error(response)
+            crate::operation_deser::parse_delete_access_point_policy_for_object_lambda_error(
+                response,
+            )
         } else {
-            crate::operation_ser::parse_delete_access_point_policy_for_object_lambda_response(
+            crate::operation_deser::parse_delete_access_point_policy_for_object_lambda_response(
                 response,
             )
         }
@@ -523,9 +525,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucket {
         std::result::Result<crate::output::DeleteBucketOutput, crate::error::DeleteBucketError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_bucket_error(response)
+            crate::operation_deser::parse_delete_bucket_error(response)
         } else {
-            crate::operation_ser::parse_delete_bucket_response(response)
+            crate::operation_deser::parse_delete_bucket_response(response)
         }
     }
 }
@@ -578,9 +580,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketLifecycleConfigu
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_bucket_lifecycle_configuration_error(response)
+            crate::operation_deser::parse_delete_bucket_lifecycle_configuration_error(response)
         } else {
-            crate::operation_ser::parse_delete_bucket_lifecycle_configuration_response(response)
+            crate::operation_deser::parse_delete_bucket_lifecycle_configuration_response(response)
         }
     }
 }
@@ -640,9 +642,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_bucket_policy_error(response)
+            crate::operation_deser::parse_delete_bucket_policy_error(response)
         } else {
-            crate::operation_ser::parse_delete_bucket_policy_response(response)
+            crate::operation_deser::parse_delete_bucket_policy_response(response)
         }
     }
 }
@@ -691,9 +693,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteBucketTagging {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_ser::parse_delete_bucket_tagging_error(response)
+            crate::operation_deser::parse_delete_bucket_tagging_error(response)
         } else {
-            crate::operation_ser::parse_delete_bucket_tagging_response(response)
+            crate::operation_deser::parse_delete_bucket_tagging_response(response)
         }
     }
 }
@@ -741,9 +743,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteJobTagging {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_job_tagging_error(response)
+            crate::operation_deser::parse_delete_job_tagging_error(response)
         } else {
-            crate::operation_ser::parse_delete_job_tagging_response(response)
+            crate::operation_deser::parse_delete_job_tagging_response(response)
         }
     }
 }
@@ -801,9 +803,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteMultiRegionAccessPoint
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_multi_region_access_point_error(response)
+            crate::operation_deser::parse_delete_multi_region_access_point_error(response)
         } else {
-            crate::operation_ser::parse_delete_multi_region_access_point_response(response)
+            crate::operation_deser::parse_delete_multi_region_access_point_response(response)
         }
     }
 }
@@ -844,9 +846,9 @@ impl smithy_http::response::ParseStrictResponse for DeletePublicAccessBlock {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_public_access_block_error(response)
+            crate::operation_deser::parse_delete_public_access_block_error(response)
         } else {
-            crate::operation_ser::parse_delete_public_access_block_response(response)
+            crate::operation_deser::parse_delete_public_access_block_response(response)
         }
     }
 }
@@ -881,9 +883,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteStorageLensConfigurati
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_storage_lens_configuration_error(response)
+            crate::operation_deser::parse_delete_storage_lens_configuration_error(response)
         } else {
-            crate::operation_ser::parse_delete_storage_lens_configuration_response(response)
+            crate::operation_deser::parse_delete_storage_lens_configuration_response(response)
         }
     }
 }
@@ -918,9 +920,11 @@ impl smithy_http::response::ParseStrictResponse for DeleteStorageLensConfigurati
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_delete_storage_lens_configuration_tagging_error(response)
+            crate::operation_deser::parse_delete_storage_lens_configuration_tagging_error(response)
         } else {
-            crate::operation_ser::parse_delete_storage_lens_configuration_tagging_response(response)
+            crate::operation_deser::parse_delete_storage_lens_configuration_tagging_response(
+                response,
+            )
         }
     }
 }
@@ -970,9 +974,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeJob {
         std::result::Result<crate::output::DescribeJobOutput, crate::error::DescribeJobError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_job_error(response)
+            crate::operation_deser::parse_describe_job_error(response)
         } else {
-            crate::operation_ser::parse_describe_job_response(response)
+            crate::operation_deser::parse_describe_job_response(response)
         }
     }
 }
@@ -1024,9 +1028,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeMultiRegionAccessPoi
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_describe_multi_region_access_point_operation_error(response)
+            crate::operation_deser::parse_describe_multi_region_access_point_operation_error(
+                response,
+            )
         } else {
-            crate::operation_ser::parse_describe_multi_region_access_point_operation_response(
+            crate::operation_deser::parse_describe_multi_region_access_point_operation_response(
                 response,
             )
         }
@@ -1072,9 +1078,9 @@ impl smithy_http::response::ParseStrictResponse for GetAccessPoint {
         std::result::Result<crate::output::GetAccessPointOutput, crate::error::GetAccessPointError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_access_point_error(response)
+            crate::operation_deser::parse_get_access_point_error(response)
         } else {
-            crate::operation_ser::parse_get_access_point_response(response)
+            crate::operation_deser::parse_get_access_point_response(response)
         }
     }
 }
@@ -1109,11 +1115,11 @@ impl smithy_http::response::ParseStrictResponse for GetAccessPointConfigurationF
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_access_point_configuration_for_object_lambda_error(
+            crate::operation_deser::parse_get_access_point_configuration_for_object_lambda_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_get_access_point_configuration_for_object_lambda_response(
+            crate::operation_deser::parse_get_access_point_configuration_for_object_lambda_response(
                 response,
             )
         }
@@ -1159,9 +1165,9 @@ impl smithy_http::response::ParseStrictResponse for GetAccessPointForObjectLambd
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_access_point_for_object_lambda_error(response)
+            crate::operation_deser::parse_get_access_point_for_object_lambda_error(response)
         } else {
-            crate::operation_ser::parse_get_access_point_for_object_lambda_response(response)
+            crate::operation_deser::parse_get_access_point_for_object_lambda_response(response)
         }
     }
 }
@@ -1200,9 +1206,9 @@ impl smithy_http::response::ParseStrictResponse for GetAccessPointPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_access_point_policy_error(response)
+            crate::operation_deser::parse_get_access_point_policy_error(response)
         } else {
-            crate::operation_ser::parse_get_access_point_policy_response(response)
+            crate::operation_deser::parse_get_access_point_policy_response(response)
         }
     }
 }
@@ -1241,9 +1247,11 @@ impl smithy_http::response::ParseStrictResponse for GetAccessPointPolicyForObjec
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_access_point_policy_for_object_lambda_error(response)
+            crate::operation_deser::parse_get_access_point_policy_for_object_lambda_error(response)
         } else {
-            crate::operation_ser::parse_get_access_point_policy_for_object_lambda_response(response)
+            crate::operation_deser::parse_get_access_point_policy_for_object_lambda_response(
+                response,
+            )
         }
     }
 }
@@ -1269,9 +1277,9 @@ impl smithy_http::response::ParseStrictResponse for GetAccessPointPolicyStatus {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_access_point_policy_status_error(response)
+            crate::operation_deser::parse_get_access_point_policy_status_error(response)
         } else {
-            crate::operation_ser::parse_get_access_point_policy_status_response(response)
+            crate::operation_deser::parse_get_access_point_policy_status_response(response)
         }
     }
 }
@@ -1298,11 +1306,11 @@ impl smithy_http::response::ParseStrictResponse for GetAccessPointPolicyStatusFo
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_access_point_policy_status_for_object_lambda_error(
+            crate::operation_deser::parse_get_access_point_policy_status_for_object_lambda_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_get_access_point_policy_status_for_object_lambda_response(
+            crate::operation_deser::parse_get_access_point_policy_status_for_object_lambda_response(
                 response,
             )
         }
@@ -1357,9 +1365,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucket {
     type Output = std::result::Result<crate::output::GetBucketOutput, crate::error::GetBucketError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_bucket_error(response)
+            crate::operation_deser::parse_get_bucket_error(response)
         } else {
-            crate::operation_ser::parse_get_bucket_response(response)
+            crate::operation_deser::parse_get_bucket_response(response)
         }
     }
 }
@@ -1430,9 +1438,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketLifecycleConfigurat
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_bucket_lifecycle_configuration_error(response)
+            crate::operation_deser::parse_get_bucket_lifecycle_configuration_error(response)
         } else {
-            crate::operation_ser::parse_get_bucket_lifecycle_configuration_response(response)
+            crate::operation_deser::parse_get_bucket_lifecycle_configuration_response(response)
         }
     }
 }
@@ -1493,9 +1501,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_bucket_policy_error(response)
+            crate::operation_deser::parse_get_bucket_policy_error(response)
         } else {
-            crate::operation_ser::parse_get_bucket_policy_response(response)
+            crate::operation_deser::parse_get_bucket_policy_response(response)
         }
     }
 }
@@ -1557,9 +1565,9 @@ impl smithy_http::response::ParseStrictResponse for GetBucketTagging {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_bucket_tagging_error(response)
+            crate::operation_deser::parse_get_bucket_tagging_error(response)
         } else {
-            crate::operation_ser::parse_get_bucket_tagging_response(response)
+            crate::operation_deser::parse_get_bucket_tagging_response(response)
         }
     }
 }
@@ -1606,9 +1614,9 @@ impl smithy_http::response::ParseStrictResponse for GetJobTagging {
         std::result::Result<crate::output::GetJobTaggingOutput, crate::error::GetJobTaggingError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_job_tagging_error(response)
+            crate::operation_deser::parse_get_job_tagging_error(response)
         } else {
-            crate::operation_ser::parse_get_job_tagging_response(response)
+            crate::operation_deser::parse_get_job_tagging_response(response)
         }
     }
 }
@@ -1661,9 +1669,9 @@ impl smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPoint {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_multi_region_access_point_error(response)
+            crate::operation_deser::parse_get_multi_region_access_point_error(response)
         } else {
-            crate::operation_ser::parse_get_multi_region_access_point_response(response)
+            crate::operation_deser::parse_get_multi_region_access_point_response(response)
         }
     }
 }
@@ -1706,9 +1714,9 @@ impl smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPointPol
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_multi_region_access_point_policy_error(response)
+            crate::operation_deser::parse_get_multi_region_access_point_policy_error(response)
         } else {
-            crate::operation_ser::parse_get_multi_region_access_point_policy_response(response)
+            crate::operation_deser::parse_get_multi_region_access_point_policy_response(response)
         }
     }
 }
@@ -1752,9 +1760,11 @@ impl smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPointPol
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_multi_region_access_point_policy_status_error(response)
+            crate::operation_deser::parse_get_multi_region_access_point_policy_status_error(
+                response,
+            )
         } else {
-            crate::operation_ser::parse_get_multi_region_access_point_policy_status_response(
+            crate::operation_deser::parse_get_multi_region_access_point_policy_status_response(
                 response,
             )
         }
@@ -1797,9 +1807,9 @@ impl smithy_http::response::ParseStrictResponse for GetPublicAccessBlock {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_public_access_block_error(response)
+            crate::operation_deser::parse_get_public_access_block_error(response)
         } else {
-            crate::operation_ser::parse_get_public_access_block_response(response)
+            crate::operation_deser::parse_get_public_access_block_response(response)
         }
     }
 }
@@ -1834,9 +1844,9 @@ impl smithy_http::response::ParseStrictResponse for GetStorageLensConfiguration 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_storage_lens_configuration_error(response)
+            crate::operation_deser::parse_get_storage_lens_configuration_error(response)
         } else {
-            crate::operation_ser::parse_get_storage_lens_configuration_response(response)
+            crate::operation_deser::parse_get_storage_lens_configuration_response(response)
         }
     }
 }
@@ -1870,9 +1880,9 @@ impl smithy_http::response::ParseStrictResponse for GetStorageLensConfigurationT
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_get_storage_lens_configuration_tagging_error(response)
+            crate::operation_deser::parse_get_storage_lens_configuration_tagging_error(response)
         } else {
-            crate::operation_ser::parse_get_storage_lens_configuration_tagging_response(response)
+            crate::operation_deser::parse_get_storage_lens_configuration_tagging_response(response)
         }
     }
 }
@@ -1921,9 +1931,9 @@ impl smithy_http::response::ParseStrictResponse for ListAccessPoints {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_access_points_error(response)
+            crate::operation_deser::parse_list_access_points_error(response)
         } else {
-            crate::operation_ser::parse_list_access_points_response(response)
+            crate::operation_deser::parse_list_access_points_response(response)
         }
     }
 }
@@ -1970,9 +1980,9 @@ impl smithy_http::response::ParseStrictResponse for ListAccessPointsForObjectLam
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_access_points_for_object_lambda_error(response)
+            crate::operation_deser::parse_list_access_points_for_object_lambda_error(response)
         } else {
-            crate::operation_ser::parse_list_access_points_for_object_lambda_response(response)
+            crate::operation_deser::parse_list_access_points_for_object_lambda_response(response)
         }
     }
 }
@@ -2021,9 +2031,9 @@ impl smithy_http::response::ParseStrictResponse for ListJobs {
     type Output = std::result::Result<crate::output::ListJobsOutput, crate::error::ListJobsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_jobs_error(response)
+            crate::operation_deser::parse_list_jobs_error(response)
         } else {
-            crate::operation_ser::parse_list_jobs_response(response)
+            crate::operation_deser::parse_list_jobs_response(response)
         }
     }
 }
@@ -2078,9 +2088,9 @@ impl smithy_http::response::ParseStrictResponse for ListMultiRegionAccessPoints 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_multi_region_access_points_error(response)
+            crate::operation_deser::parse_list_multi_region_access_points_error(response)
         } else {
-            crate::operation_ser::parse_list_multi_region_access_points_response(response)
+            crate::operation_deser::parse_list_multi_region_access_points_response(response)
         }
     }
 }
@@ -2110,9 +2120,9 @@ impl smithy_http::response::ParseStrictResponse for ListRegionalBuckets {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_regional_buckets_error(response)
+            crate::operation_deser::parse_list_regional_buckets_error(response)
         } else {
-            crate::operation_ser::parse_list_regional_buckets_response(response)
+            crate::operation_deser::parse_list_regional_buckets_response(response)
         }
     }
 }
@@ -2147,9 +2157,9 @@ impl smithy_http::response::ParseStrictResponse for ListStorageLensConfiguration
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_list_storage_lens_configurations_error(response)
+            crate::operation_deser::parse_list_storage_lens_configurations_error(response)
         } else {
-            crate::operation_ser::parse_list_storage_lens_configurations_response(response)
+            crate::operation_deser::parse_list_storage_lens_configurations_response(response)
         }
     }
 }
@@ -2184,11 +2194,11 @@ impl smithy_http::response::ParseStrictResponse for PutAccessPointConfigurationF
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_access_point_configuration_for_object_lambda_error(
+            crate::operation_deser::parse_put_access_point_configuration_for_object_lambda_error(
                 response,
             )
         } else {
-            crate::operation_ser::parse_put_access_point_configuration_for_object_lambda_response(
+            crate::operation_deser::parse_put_access_point_configuration_for_object_lambda_response(
                 response,
             )
         }
@@ -2232,9 +2242,9 @@ impl smithy_http::response::ParseStrictResponse for PutAccessPointPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_access_point_policy_error(response)
+            crate::operation_deser::parse_put_access_point_policy_error(response)
         } else {
-            crate::operation_ser::parse_put_access_point_policy_response(response)
+            crate::operation_deser::parse_put_access_point_policy_response(response)
         }
     }
 }
@@ -2274,9 +2284,11 @@ impl smithy_http::response::ParseStrictResponse for PutAccessPointPolicyForObjec
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_access_point_policy_for_object_lambda_error(response)
+            crate::operation_deser::parse_put_access_point_policy_for_object_lambda_error(response)
         } else {
-            crate::operation_ser::parse_put_access_point_policy_for_object_lambda_response(response)
+            crate::operation_deser::parse_put_access_point_policy_for_object_lambda_response(
+                response,
+            )
         }
     }
 }
@@ -2324,9 +2336,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketLifecycleConfigurat
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_bucket_lifecycle_configuration_error(response)
+            crate::operation_deser::parse_put_bucket_lifecycle_configuration_error(response)
         } else {
-            crate::operation_ser::parse_put_bucket_lifecycle_configuration_response(response)
+            crate::operation_deser::parse_put_bucket_lifecycle_configuration_response(response)
         }
     }
 }
@@ -2384,9 +2396,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketPolicy {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_bucket_policy_error(response)
+            crate::operation_deser::parse_put_bucket_policy_error(response)
         } else {
-            crate::operation_ser::parse_put_bucket_policy_response(response)
+            crate::operation_deser::parse_put_bucket_policy_response(response)
         }
     }
 }
@@ -2492,9 +2504,9 @@ impl smithy_http::response::ParseStrictResponse for PutBucketTagging {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_bucket_tagging_error(response)
+            crate::operation_deser::parse_put_bucket_tagging_error(response)
         } else {
-            crate::operation_ser::parse_put_bucket_tagging_response(response)
+            crate::operation_deser::parse_put_bucket_tagging_response(response)
         }
     }
 }
@@ -2580,9 +2592,9 @@ impl smithy_http::response::ParseStrictResponse for PutJobTagging {
         std::result::Result<crate::output::PutJobTaggingOutput, crate::error::PutJobTaggingError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_job_tagging_error(response)
+            crate::operation_deser::parse_put_job_tagging_error(response)
         } else {
-            crate::operation_ser::parse_put_job_tagging_response(response)
+            crate::operation_deser::parse_put_job_tagging_response(response)
         }
     }
 }
@@ -2627,9 +2639,9 @@ impl smithy_http::response::ParseStrictResponse for PutMultiRegionAccessPointPol
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_multi_region_access_point_policy_error(response)
+            crate::operation_deser::parse_put_multi_region_access_point_policy_error(response)
         } else {
-            crate::operation_ser::parse_put_multi_region_access_point_policy_response(response)
+            crate::operation_deser::parse_put_multi_region_access_point_policy_response(response)
         }
     }
 }
@@ -2670,9 +2682,9 @@ impl smithy_http::response::ParseStrictResponse for PutPublicAccessBlock {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_public_access_block_error(response)
+            crate::operation_deser::parse_put_public_access_block_error(response)
         } else {
-            crate::operation_ser::parse_put_public_access_block_response(response)
+            crate::operation_deser::parse_put_public_access_block_response(response)
         }
     }
 }
@@ -2705,9 +2717,9 @@ impl smithy_http::response::ParseStrictResponse for PutStorageLensConfiguration 
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_storage_lens_configuration_error(response)
+            crate::operation_deser::parse_put_storage_lens_configuration_error(response)
         } else {
-            crate::operation_ser::parse_put_storage_lens_configuration_response(response)
+            crate::operation_deser::parse_put_storage_lens_configuration_response(response)
         }
     }
 }
@@ -2742,9 +2754,9 @@ impl smithy_http::response::ParseStrictResponse for PutStorageLensConfigurationT
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_put_storage_lens_configuration_tagging_error(response)
+            crate::operation_deser::parse_put_storage_lens_configuration_tagging_error(response)
         } else {
-            crate::operation_ser::parse_put_storage_lens_configuration_tagging_response(response)
+            crate::operation_deser::parse_put_storage_lens_configuration_tagging_response(response)
         }
     }
 }
@@ -2795,9 +2807,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateJobPriority {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_job_priority_error(response)
+            crate::operation_deser::parse_update_job_priority_error(response)
         } else {
-            crate::operation_ser::parse_update_job_priority_response(response)
+            crate::operation_deser::parse_update_job_priority_response(response)
         }
     }
 }
@@ -2849,9 +2861,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateJobStatus {
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_ser::parse_update_job_status_error(response)
+            crate::operation_deser::parse_update_job_status_error(response)
         } else {
-            crate::operation_ser::parse_update_job_status_response(response)
+            crate::operation_deser::parse_update_job_status_response(response)
         }
     }
 }
